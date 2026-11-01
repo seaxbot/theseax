@@ -779,6 +779,60 @@ ol.mn .mm{font-size:12px;color:var(--muted)}
   .score-strip{margin-left:-4px}
 }
 
+
+/* ---------- site search ---------- */
+nav.main .wrap{overflow:visible;gap:10px}
+nav.main .nav-scroll{display:flex;align-items:center;gap:0;flex:1;min-width:0;overflow-x:auto;scrollbar-width:none}
+nav.main .nav-scroll.ovf{-webkit-mask-image:linear-gradient(90deg,#000 calc(100% - 28px),transparent);mask-image:linear-gradient(90deg,#000 calc(100% - 28px),transparent);padding-right:24px}
+nav.main button.adv{flex:none;margin-left:0}
+nav.main .nav-scroll::-webkit-scrollbar{display:none}
+nav.main .nav-scroll button{padding:8px 8.5px;font-size:13.8px}
+@media (max-width:640px){ nav.main button.adv{display:none} }
+nav.main button.srch-btn{flex:none;display:inline-flex;align-items:center;gap:7px;background:#fff;border:1.5px solid var(--ink);color:var(--ink);font-weight:700;padding:7px 14px 7px 11px}
+nav.main button.srch-btn:hover{background:var(--ink);color:#fff}
+body.srch-open{overflow:hidden}
+.srch{position:fixed;inset:0;z-index:200;background:rgba(14,27,48,.55);backdrop-filter:blur(3px);display:flex;justify-content:center;align-items:flex-start;padding:6vh 16px 16px}
+.srch[hidden]{display:none}
+.srch-panel{width:100%;max-width:760px;max-height:86vh;display:flex;flex-direction:column;background:var(--paper);border-radius:14px;box-shadow:0 24px 70px rgba(0,0,0,.35);overflow:hidden;border-top:5px solid var(--red)}
+.srch-bar{display:flex;align-items:center;gap:12px;padding:14px 18px;border-bottom:1px solid var(--hair);background:#fff;color:var(--ink)}
+.srch-bar input{flex:1;min-width:0;border:0;outline:0;background:none;font:600 21px/1.2 var(--sans);color:var(--ink);letter-spacing:-.01em}
+.srch-bar input::placeholder{color:#9a927f;font-weight:500}
+.srch-bar input::-webkit-search-cancel-button{display:none}
+.srch-x{border:1px solid var(--hair);background:var(--paper);border-radius:6px;padding:4px 9px;font:700 12px var(--sans);color:var(--muted);cursor:pointer}
+.srch-tabs{display:flex;gap:6px;padding:10px 18px 0;overflow-x:auto;scrollbar-width:none;flex:none}
+.srch-tabs:empty{display:none}
+.srch-tabs button{flex:none;border:1px solid var(--hair);background:#fff;border-radius:99px;padding:5px 11px;font:650 12.5px var(--sans);color:var(--ink);cursor:pointer}
+.srch-tabs button b{color:var(--muted);font-weight:800;margin-left:2px}
+.srch-tabs button.on{background:var(--ink);border-color:var(--ink);color:#fff}.srch-tabs button.on b{color:#c9d2e0}
+.srch-res{overflow:auto;padding:6px 18px 18px;overscroll-behavior:contain}
+.srch-list{list-style:none;margin:0;padding:0}
+.srch-list li{border-bottom:1px solid var(--hair)}
+.srch-list a{display:block;padding:12px 10px 12px 14px;margin:0 -10px;border-radius:8px;text-decoration:none;color:var(--ink);position:relative;outline:none}
+.srch-list a::before{content:"";position:absolute;left:2px;top:18px;width:6px;height:6px;border-radius:1px;background:var(--c)}
+.srch-list a:hover,.srch-list a:focus-visible{background:#fff}
+.srch-list a:focus-visible{box-shadow:inset 0 0 0 2px var(--ink)}
+.sk{display:flex;gap:8px;align-items:baseline;font-size:10.5px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--c)}
+.sk em{font-style:normal;color:var(--muted)}
+.srch-list b{display:block;font-size:16.5px;line-height:1.28;margin:2px 0 3px;letter-spacing:-.01em}
+.srch-list .st{display:block;font-size:13.5px;line-height:1.4;color:var(--ink2);margin-bottom:3px}
+.srch-list .sm{font-size:12px;color:var(--muted)}
+.srch-list .sm i{font-style:normal}
+.srch-list mark{background:#ffe08a;color:inherit;border-radius:2px;padding:0 1px}
+.srch-empty{padding:14px 0 6px}
+.srch-empty h4{font-size:11px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;margin:0 0 10px;color:var(--muted)}
+.srch-sugg{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px}
+.srch-sugg button{border:1px solid var(--hair);background:#fff;border-radius:99px;padding:7px 13px;font:650 13.5px var(--sans);color:var(--ink);cursor:pointer}
+.srch-sugg button:hover{border-color:var(--ink)}
+.srch-empty p{font-size:13px;color:var(--muted);margin:0}
+.srch-empty kbd{font:700 11px var(--mono);border:1px solid var(--hair);border-bottom-width:2px;border-radius:4px;padding:1px 5px;background:#fff}
+.srch-none{padding:22px 0;font-size:14.5px;color:var(--ink2)}
+@media (max-width:640px){
+  .srch{padding:0;background:var(--paper)}
+  .srch-panel{max-width:none;max-height:none;height:100%;border-radius:0}
+  .srch-bar input{font-size:18px}
+  nav.main button.srch-btn span{display:none}
+  nav.main button.srch-btn{padding:7px 10px}
+}
 </style>
 </head>
 <body>
@@ -829,6 +883,7 @@ ol.mn .mm{font-size:12px;color:var(--muted)}
 
 <nav class="main" aria-label="Sections">
   <div class="wrap">
+    <div class="nav-scroll">
     <button data-go="top">Home</button>
     <button data-go="news">News</button>
     <button data-go="around">Around Essex</button>
@@ -842,9 +897,22 @@ ol.mn .mm{font-size:12px;color:var(--muted)}
     <button data-go="vital">Vital Info</button>
     <button data-go="specials">Deals</button>
     <button data-go="sources">Sources</button>
+        </div>
     <button class="adv" data-go="advertise">Advertise</button>
+    <button class="srch-btn" data-srchopen aria-label="Search The Seax" title="Search (press /)"><svg viewBox="0 0 24 24" width="17" height="17" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5" fill="none" stroke="currentColor" stroke-width="2.4"/><path d="M15.5 15.5 21 21" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg><span>Search</span></button>
   </div>
 </nav>
+<div class="srch" id="srch" hidden role="dialog" aria-modal="true" aria-label="Search The Seax">
+  <div class="srch-panel">
+    <form class="srch-bar" id="srchForm" role="search">
+      <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5" fill="none" stroke="currentColor" stroke-width="2.4"/><path d="M15.5 15.5 21 21" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg>
+      <input id="srchQ" type="search" autocomplete="off" spellcheck="false" placeholder="Search Essex news, sport, events, places…" aria-label="Search">
+      <button type="button" class="srch-x" data-srchclose aria-label="Close search">Esc</button>
+    </form>
+    <div class="srch-tabs" id="srchTabs"></div>
+    <div class="srch-res" id="srchResults" aria-live="polite"></div>
+  </div>
+</div>
 
 <div class="ticker" aria-label="Latest headlines">
   <div class="wrap">
@@ -2847,6 +2915,169 @@ document.addEventListener("click", e => {
     try{ navigator.clipboard.writeText(url).then(() => done(true), () => done(false)); }catch(_){ done(false); }
   }
 });
+
+/* ============================================================
+   Site search: one box across every story, result, fixture,
+   event, culture listing, deal, day out and source.
+   State lives on window (no top-level let/const).
+   ============================================================ */
+function srchTypes(){
+  return [
+    ["all", "Everything"], ["news", "News"], ["services", "Public Services"], ["community", "Community"],
+    ["sport", "Sport"], ["travel", "Travel"], ["whatson", "What's On"], ["culture", "Culture"], ["deals", "Deals"], ["escape", "Days out"], ["sources", "Sources"]
+  ];
+}
+function srchNorm(t){ return String(t || "").toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "").replace(/[’']/g, ""); }
+function srchIndex(){
+  if(window.SEAX_SRCH_IDX && window.SEAX_SRCH_ED === ED && window.SEAX_SRCH_U === ED.updatedAt) return window.SEAX_SRCH_IDX;
+  const idx = [];
+  const story = (s, type, kick) => idx.push({type, kick, title:s.headline, text:s.summary || "", place:s.place || "", meta:(s.org || s.source || ""),
+    time:s.time, href:storyHref(s), ext:false, c:iconColour(s), hay:[s.headline, s.summary, (s.points||[]).join(" "), s.place, s.org, s.source, s.tag].join(" ")});
+  (ED.stories || []).forEach(s => story(s, "news", s.tag || "News"));
+  deskItems().forEach(s => story(s, "services", s.tag || KIND_LABEL[s.kind] || "Public Services"));
+  (ED.community || []).forEach(s => story(s, "community", s.org || "Community"));
+  (ED.sport && ED.sport.stories || []).forEach(s => story(s, "sport", s.tag || "Sport"));
+  (ED.sport && ED.sport.results || []).forEach(r => idx.push({type:"sport", kick:(r.comp || "Result") + " · Result", title:`${r.home} ${r.hs ?? ""}-${r.as ?? ""} ${r.away}`, text:r.note || "", place:"", meta:r.status || "FT",
+    time:r.date, href:r.url || "#sport", ext:!!r.url, c:"#1f8a4c", hay:[r.home, r.away, r.comp, r.note].join(" ")}));
+  (ED.sport && ED.sport.fixtures || []).forEach(f => idx.push({type:"sport", kick:(f.comp || "Fixture") + " · Coming up", title:f.title, text:[f.where, f.note].filter(Boolean).join(" · "), place:"", meta:"",
+    time:f.date, future:true, href:f.url || "#sport", ext:!!f.url, c:"#1f8a4c", hay:[f.title, f.comp, f.where, f.note].join(" ")}));
+  (ED.travel || []).forEach(t => idx.push({type:"travel", kick:t.level === "red" ? "Travel · Severe" : "Travel alert", title:t.text, text:"", place:"", meta:t.url ? hostOf(t.url) : "",
+    href:t.url || "#vital", ext:!!t.url, c:t.level === "red" ? "#c8102e" : t.level === "green" ? "#1f8a4c" : "#a8650a", hay:t.text + " travel roads road roadworks closure trains rail bus"}));
+  (ED.events || []).forEach(e => idx.push({type:"whatson", kick:e.cat || "Event", title:e.title, text:e.blurb || "", place:e.where || "", meta:[e.time, e.price].filter(Boolean).join(" · "),
+    time:e.start, future:true, href:e.url || "#whatson", ext:!!e.url, c:"#c27c1a", hay:[e.title, e.blurb, e.where, e.venue, e.cat, e.price].join(" ")}));
+  (ED.culture || []).forEach(e => idx.push({type:"culture", kick:e.cat || "Culture", title:e.title, text:e.blurb || "", place:[e.venue, e.where].filter(Boolean).join(", "), meta:"",
+    time:e.start, future:true, href:e.url || "#culture", ext:!!e.url, c:"#5b3f8c", hay:[e.title, e.blurb, e.venue, e.where, e.cat].join(" ")}));
+  (ED.deals || []).forEach(d => idx.push({type:"deals", kick:d.tag || "Deal", title:d.title, text:d.detail || "", place:d.where || "", meta:"",
+    href:d.url || "#specials", ext:!!d.url, c:"#a8761a", hay:[d.title, d.detail, d.where, d.tag].join(" ")}));
+  (typeof ESCAPE !== "undefined" ? ESCAPE : []).forEach(e => idx.push({type:"escape", kick:"Day out", title:e.title, text:e.text || "", place:e.place || "", meta:"",
+    href:"#escape", ext:false, c:"#2c6e8f", hay:[e.title, e.text, e.place].join(" ")}));
+  (typeof SOURCES !== "undefined" ? SOURCES : []).forEach(g => (g.list || []).forEach(([name, url, area]) => idx.push({type:"sources", kick:g.title, title:name, text:"", place:area || "", meta:hostOf(url),
+    href:url, ext:true, c:"#55606e", hay:[name, g.title, area, url].join(" ")})));
+  idx.forEach(it => { it.n = srchNorm(it.hay); it.nt = srchNorm(it.title); it.np = srchNorm(it.place + " " + it.kick); });
+  window.SEAX_SRCH_IDX = idx; window.SEAX_SRCH_ED = ED; window.SEAX_SRCH_U = ED.updatedAt;
+  return idx;
+}
+function srchRun(q, type){
+  const terms = srchNorm(q).split(/[^a-z0-9£]+/).filter(t => t.length > 1 || /\d/.test(t));
+  if(!terms.length) return [];
+  const now = Date.now();
+  const res = [];
+  srchIndex().forEach(it => {
+    if(type !== "all" && it.type !== type) return;
+    let score = 0;
+    for(const t of terms){
+      const re = new RegExp("(^|[^a-z0-9])" + t.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"));
+      if(!it.n.includes(t)) return;                     // every word must appear somewhere
+      score += 1;
+      if(re.test(it.nt)) score += 6; else if(it.nt.includes(t)) score += 3;
+      if(re.test(it.np)) score += 3;
+      if(re.test(it.n)) score += 1;
+    }
+    if(it.nt.includes(srchNorm(q).trim())) score += 5;     // whole phrase in the title
+    const t = new Date(it.time || 0).getTime();
+    if(t){ const days = Math.abs(now - t) / 864e5; score += Math.max(0, 3 - days / 3); }
+    if(it.type === "sources") score -= 1.5;
+    res.push([score, it]);
+  });
+  const seen = new Set();
+  return res.sort((a, b) => b[0] - a[0]).map(r => r[1]).filter(it => { const k = it.nt.replace(/[^a-z0-9]/g, ""); if(seen.has(k)) return false; seen.add(k); return true; });
+}
+function srchMark(text, q){
+  let out = esc(text);
+  srchNorm(q).split(/[^a-z0-9£]+/).filter(t => t.length > 1).forEach(t => {
+    out = out.replace(new RegExp("(" + t.replace(/[.*+?^${}()|[\]\\]/g, "\\$&") + ")", "gi"), "<mark>$1</mark>");
+  });
+  return out.replace(/<mark>([^<]*)<mark>([^<]*)<\/mark>([^<]*)<\/mark>/g, "<mark>$1$2$3</mark>");
+}
+function srchWhen(it){
+  if(!it.time) return "";
+  const d = new Date(it.time); if(!isFinite(d)) return "";
+  return it.future && d > Date.now() ? fmt(d, {weekday:"short", day:"numeric", month:"short"}) : ago(it.time);
+}
+function srchSnippet(text, q){
+  const s = String(text || ""); if(s.length < 170) return s;
+  const t = srchNorm(q).split(/[^a-z0-9£]+/).filter(x => x.length > 1)[0];
+  const i = t ? srchNorm(s).indexOf(t) : -1;
+  if(i < 80) return s.slice(0, 160).replace(/\s+\S*$/, "") + "…";
+  const start = s.lastIndexOf(" ", i - 60);
+  return "…" + s.slice(start + 1, start + 170).replace(/\s+\S*$/, "") + "…";
+}
+function renderSearch(){
+  const box = document.getElementById("srchResults"), tabs = document.getElementById("srchTabs"); if(!box) return;
+  const q = window.SEAX_SRCH_Q || "", type = window.SEAX_SRCH_T || "all";
+  if(srchNorm(q).trim().length < 2){
+    tabs.innerHTML = "";
+    const sugg = ["Bonfire", "Colchester United", "Panto", "Free", "Roadworks", "Chelmsford", "Court", "Southend", "Christmas", "Volunteer"];
+    box.innerHTML = `<div class="srch-empty"><h4>Try searching for</h4><div class="srch-sugg">${sugg.map(s => `<button data-srchq="${esc(s)}">${esc(s)}</button>`).join("")}</div>
+      <p>Searches every story, result, fixture, event, show, deal and all ${typeof SOURCE_COUNT !== "undefined" ? SOURCE_COUNT : ""} sources in this edition. Tip: press <kbd>/</kbd> anywhere to search.</p></div>`;
+    return;
+  }
+  const all = srchRun(q, "all");
+  const counts = {}; all.forEach(it => counts[it.type] = (counts[it.type] || 0) + 1);
+  tabs.innerHTML = srchTypes().filter(([k]) => k === "all" || counts[k]).map(([k, v]) => `<button class="${k === type ? "on" : ""}" data-srcht="${k}">${esc(v)} <b>${k === "all" ? all.length : counts[k]}</b></button>`).join("");
+  const list = type === "all" ? all : all.filter(it => it.type === type);
+  if(!list.length){ box.innerHTML = `<div class="srch-none"><b>No results for “${esc(q)}”.</b> Check the spelling, try fewer words, or a nearby town.</div>`; return; }
+  const shown = list.slice(0, window.SEAX_SRCH_MORE ? 200 : 30);
+  box.innerHTML = `<ol class="srch-list">${shown.map(it => {
+    const label = srchTypes().find(t => t[0] === it.type)[1];
+    const when = srchWhen(it);
+    return `<li style="--c:${it.c}"><a href="${esc(it.href)}"${it.ext ? ` target="_blank" rel="noopener"` : ""} data-srchgo>
+      <span class="sk"><em>${esc(label)}</em>${esc(it.kick && it.kick !== label ? it.kick : "")}</span>
+      <b>${srchMark(it.title, q)}</b>
+      ${it.text ? `<span class="st">${srchMark(srchSnippet(it.text, q), q)}</span>` : ""}
+      <span class="sm">${[it.place && esc(it.place), when && esc(when), it.meta && esc(it.meta)].filter(Boolean).join(" · ")}${it.ext ? ` <i>↗</i>` : ""}</span></a></li>`;
+  }).join("")}</ol>${list.length > shown.length ? `<div class="show-all"><button data-srchmore>Show all ${list.length} results</button></div>` : ""}`;
+}
+function openSearch(q){
+  const ov = document.getElementById("srch"); if(!ov) return;
+  ov.hidden = false; document.body.classList.add("srch-open");
+  const inp = document.getElementById("srchQ");
+  if(typeof q === "string"){ inp.value = q; window.SEAX_SRCH_Q = q; }
+  window.SEAX_SRCH_T = "all"; window.SEAX_SRCH_MORE = false;
+  renderSearch(); setTimeout(() => { inp.focus(); inp.select(); }, 30);
+}
+function closeSearch(){
+  const ov = document.getElementById("srch"); if(!ov || ov.hidden) return;
+  ov.hidden = true; document.body.classList.remove("srch-open");
+}
+document.addEventListener("click", e => {
+  if(e.target.closest("[data-srchopen]")){ e.preventDefault(); openSearch(); return; }
+  const ov = document.getElementById("srch"); if(!ov || ov.hidden) return;
+  if(e.target.closest("[data-srchclose]") || e.target === ov){ closeSearch(); return; }
+  const sq = e.target.closest("[data-srchq]"); if(sq){ openSearch(sq.dataset.srchq); return; }
+  const st = e.target.closest("[data-srcht]"); if(st){ window.SEAX_SRCH_T = st.dataset.srcht; window.SEAX_SRCH_MORE = false; renderSearch(); return; }
+  if(e.target.closest("[data-srchmore]")){ window.SEAX_SRCH_MORE = true; renderSearch(); return; }
+  const go = e.target.closest("[data-srchgo]");
+  if(go && !go.target){
+    const h = go.getAttribute("href") || "";
+    closeSearch();
+    if(h.startsWith("#") && !h.startsWith("#story-")){ e.preventDefault(); const el = document.getElementById(h.slice(1)); if(location.hash.startsWith("#story-")) location.hash = ""; setTimeout(() => { const t = document.getElementById(h.slice(1)); if(t) t.scrollIntoView({behavior:"smooth", block:"start"}); }, 60); }
+  }
+});
+document.addEventListener("input", e => {
+  if(e.target.id !== "srchQ") return;
+  window.SEAX_SRCH_Q = e.target.value; window.SEAX_SRCH_T = "all"; window.SEAX_SRCH_MORE = false;
+  clearTimeout(window.SEAX_SRCH_TM); window.SEAX_SRCH_TM = setTimeout(renderSearch, 90);
+});
+document.addEventListener("keydown", e => {
+  const ov = document.getElementById("srch");
+  if(e.key === "Escape" && ov && !ov.hidden){ closeSearch(); return; }
+  if((e.key === "/" || (e.key.toLowerCase() === "k" && (e.metaKey || e.ctrlKey))) && !/^(INPUT|TEXTAREA|SELECT)$/.test(document.activeElement.tagName)){ e.preventDefault(); openSearch(); return; }
+  if(ov && !ov.hidden && (e.key === "ArrowDown" || e.key === "ArrowUp")){
+    const links = [...ov.querySelectorAll(".srch-list a")]; if(!links.length) return;
+    e.preventDefault();
+    const i = links.indexOf(document.activeElement);
+    const n = e.key === "ArrowDown" ? (i + 1) % links.length : (i <= 0 ? -1 : i - 1);
+    if(n < 0) document.getElementById("srchQ").focus(); else links[n].focus();
+  }
+});
+document.addEventListener("submit", e => { if(e.target.id === "srchForm"){ e.preventDefault(); const a = document.querySelector(".srch-list a"); if(a) a.click(); } });
+
+/* fade the menu edge only when it actually overflows */
+function navOverflow(){ const n = document.querySelector("nav.main .nav-scroll"); if(n) n.classList.toggle("ovf", n.scrollWidth > n.clientWidth + 2 && n.scrollLeft + n.clientWidth < n.scrollWidth - 4); }
+window.addEventListener("resize", navOverflow);
+document.addEventListener("scroll", e => { if(e.target && e.target.classList && e.target.classList.contains("nav-scroll")) navOverflow(); }, true);
+setTimeout(navOverflow, 0);
 
 </script>
 </body>
