@@ -779,65 +779,6 @@ ol.mn .mm{font-size:12px;color:var(--muted)}
   .score-strip{margin-left:-4px}
 }
 
-/* ---------- interactive county news map ---------- */
-.nmap{display:grid;grid-template-columns:minmax(0,1fr) 330px;gap:0;border:1px solid var(--hair);background:var(--card);margin-bottom:22px}
-.nm-stage{position:relative;height:560px;background:#d6e1e7;overflow:hidden;border-right:1px solid var(--hair)}
-.nm-svg{width:100%;height:100%;cursor:grab;user-select:none;-webkit-user-select:none}
-.nm-svg.dragging{cursor:grabbing}
-.nm-svg .nd{fill:#fbf8f1;stroke:#b9af9c;stroke-width:1.1;transition:fill .15s;cursor:pointer;outline:none}
-.nm-svg .nd.hov,.nm-svg .nd:focus-visible{fill:#fff1c9;stroke:#8a7a5a}
-.nm-svg .nd.sel{fill:#fde4a6;stroke:#0e1b30;stroke-width:2}
-.nm-svg .ndl{font-family:var(--sans);font-weight:800;font-size:calc(11px * var(--nmk,1));letter-spacing:.1em;text-transform:uppercase;fill:#8b8372;pointer-events:none;paint-order:stroke;stroke:#fbf8f1;stroke-width:3px}
-.nm-svg .np{cursor:pointer;outline:none}
-.nm-svg .npc{fill:var(--c);stroke:#fff;stroke-width:calc(1.8px * var(--nmk,1));transition:transform .12s;transform-box:fill-box;transform-origin:center}
-.nm-svg .np:hover .npc,.nm-svg .np:focus-visible .npc{transform:scale(1.6);stroke:#0e1b30}
-.nm-svg .npu{fill:var(--c);opacity:.3;pointer-events:none;transform-box:fill-box;transform-origin:center;animation:pinpulse 2.2s ease-out infinite}
-.nm-ctl{position:absolute;right:12px;top:12px;display:grid;gap:0;background:#fff;border:1px solid var(--hair);border-radius:8px;overflow:hidden;box-shadow:0 2px 8px rgba(14,27,48,.12);z-index:2}
-.nm-ctl button{width:36px;height:36px;border:0;border-bottom:1px solid var(--hair);background:#fff;font-size:20px;font-weight:600;line-height:1;cursor:pointer;color:var(--ink)}
-.nm-ctl button:last-child{border-bottom:0;font-size:16px}
-.nm-ctl button:hover{background:var(--paper2)}
-.nm-ctl.small{right:8px;top:8px}.nm-ctl.small button{width:30px;height:30px;font-size:17px}
-.nm-hint{position:absolute;left:50%;bottom:12px;transform:translateX(-50%);background:rgba(14,27,48,.86);color:#fff;font-size:12.5px;font-weight:600;padding:6px 12px;border-radius:99px;opacity:0;transition:opacity .25s;pointer-events:none;white-space:nowrap;z-index:2}
-.nm-hint.show{opacity:1}
-.nm-tip{position:absolute;z-index:3;max-width:290px;background:#fff;border:1px solid var(--hair);border-top:4px solid var(--c);border-radius:6px;padding:9px 12px 10px;box-shadow:0 8px 24px rgba(14,27,48,.18);pointer-events:none}
-.nm-tip.sticky{pointer-events:auto}
-.nm-tip .k{display:block;font-size:10.5px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--c)}
-.nm-tip b{display:block;font-size:15px;line-height:1.25;margin:3px 0 4px;color:var(--ink)}
-.nm-tip .m{font-size:12px;color:var(--muted)}
-.nm-tip a{color:var(--red);font-weight:700}
-.nm-side{display:flex;flex-direction:column;min-width:0}
-.nm-filters{display:flex;flex-wrap:wrap;gap:6px;padding:14px 16px;border-bottom:1px solid var(--hair)}
-.nm-f{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--hair);background:#fff;border-radius:99px;padding:5px 10px;font-size:12.5px;font-weight:650;cursor:pointer;color:var(--ink)}
-.nm-f i{width:9px;height:9px;border-radius:50%;background:var(--c)}
-.nm-f b{font-weight:800;color:var(--muted);font-variant-numeric:tabular-nums}
-.nm-f.on{background:var(--ink);color:#fff;border-color:var(--ink)}.nm-f.on b{color:#c9d2e0}
-.nm-panel{padding:14px 16px 16px;overflow:auto;max-height:470px}
-.nm-panel h4{font-family:var(--serif);font-size:21px;letter-spacing:-.02em;margin:0 0 2px}
-.nm-sub{font-size:13px;color:var(--muted);margin:0 0 10px;line-height:1.4}
-.nm-clear{background:none;border:0;padding:0;color:var(--red);font-weight:700;font-size:13px;cursor:pointer;text-decoration:underline}
-.nm-bars{list-style:none;margin:0;padding:0}
-.nm-bars button{display:grid;grid-template-columns:118px 1fr 26px;align-items:center;gap:8px;width:100%;background:none;border:0;padding:6px 0;cursor:pointer;text-align:left;font-size:13px;color:var(--ink)}
-.nm-bars button:hover .nb-l{color:var(--red);text-decoration:underline}
-.nm-bars button.on .nb-l{font-weight:800}
-.nb-l{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-weight:600}
-.nb-b{height:8px;background:var(--paper2);border-radius:99px;overflow:hidden}
-.nb-b i{display:block;height:100%;background:var(--ink);border-radius:99px}
-.nm-bars button.on .nb-b i{background:var(--red)}
-.nm-bars b{text-align:right;font-variant-numeric:tabular-nums}
-.nm-list{list-style:none;margin:0;padding:0}
-.nm-list li{border-bottom:1px solid var(--hair)}
-.nm-list li.none{font-size:13px;color:var(--muted);padding:8px 0;border:0}
-.nm-list a{display:block;padding:9px 0 9px 12px;position:relative;text-decoration:none;color:var(--ink)}
-.nm-list a::before{content:"";position:absolute;left:0;top:14px;width:6px;height:6px;border-radius:50%;background:var(--c)}
-.nm-list .k{display:block;font-size:10.5px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--c)}
-.nm-list b{display:block;font-size:14px;line-height:1.28;margin:1px 0 2px}
-.nm-list a:hover b{color:var(--red)}
-.nm-list .m{font-size:11.5px;color:var(--muted)}
-.wmap svg.emap{cursor:grab;touch-action:none}
-.wmap svg.emap.dragging{cursor:grabbing}
-.wmap .nm-hint{bottom:8px;font-size:11.5px}
-@media (max-width:980px){ .nmap{grid-template-columns:1fr} .nm-stage{height:440px;border-right:0;border-bottom:1px solid var(--hair)} .nm-panel{max-height:none} }
-@media (max-width:560px){ .nm-stage{height:360px} .nm-svg .ndl{font-size:calc(14px * var(--nmk,1))} }
 </style>
 </head>
 <body>
@@ -891,7 +832,7 @@ ol.mn .mm{font-size:12px;color:var(--muted)}
     <button data-go="top">Home</button>
     <button data-go="news">News</button>
     <button data-go="around">Around Essex</button>
-    <button data-go="desk">Official</button>
+    <button data-go="desk">Public Services</button>
     <button data-go="community">Community</button>
     <button data-go="sport">Sport</button>
     <button data-go="weather">Weather</button>
@@ -955,22 +896,21 @@ ol.mn .mm{font-size:12px;color:var(--muted)}
 
 <section class="block" id="around">
   <div class="wrap">
-    <div class="bh"><h2>Around Essex<small>Every story in this edition, on the map. Explore it, or pick your patch</small></h2></div>
-    <div class="nmap" id="newsMap"></div>
+    <div class="bh"><h2>Around Essex<small>The latest from every part of the county</small></h2></div>
     <div class="around-grid" id="aroundGrid"></div>
   </div>
 </section>
 
 <section class="block" id="desk">
   <div class="wrap">
-    <div class="bh"><h2>Official Desk<small>Straight from Essex Police, Fire &amp; Rescue, the ambulance service, the courts and every council</small></h2><div class="tools" id="deskTools"></div></div>
+    <div class="bh"><h2>Public Services<small>Straight from Essex Police, Fire &amp; Rescue, the ambulance service, the courts and every council</small></h2><div class="tools" id="deskTools"></div></div>
     <div class="desk">
       <div class="desk-feed" id="deskFeed"></div>
       <aside class="desk-side">
         <div class="side-panel"><div class="sec-h"><h3>Fire incident log</h3><span class="sub">Essex County Fire &amp; Rescue</span></div><ul class="inc" id="incidents"></ul><a class="more" href="https://www.essex-fire.gov.uk/incidents" target="_blank" rel="noopener">Full incident log ↗</a></div>
         <div class="side-panel"><div class="sec-h"><h3>Court diary</h3><span class="sub">Upcoming hearings</span></div><ul class="inc" id="hearings"></ul><a class="more" href="https://www.causealert.com/crown-court-listings" target="_blank" rel="noopener">Today's Crown Court lists ↗</a></div>
         <div class="side-panel dark"><h3>Sources we watch</h3><p id="watchCount"></p><button class="src-jump" data-go="sources">Browse the full directory</button></div>
-        <div class="ad" style="min-height:150px"><span class="k">Sponsor</span><div class="in"><strong style="font-size:18px">Sponsor the Official Desk</strong>A trusted, brand-safe home for public safety news.<br><button data-advert>Enquire</button></div></div>
+        <div class="ad" style="min-height:150px"><span class="k">Sponsor</span><div class="in"><strong style="font-size:18px">Sponsor Public Services</strong>A trusted, brand-safe home for public safety news.<br><button data-advert>Enquire</button></div></div>
       </aside>
     </div>
   </div>
@@ -1107,7 +1047,7 @@ ol.mn .mm{font-size:12px;color:var(--muted)}
     </div>
     <div>
       <h5>Sections</h5>
-      <p>News · Official Desk · Community &amp; Charity · Sport · Weather · What's On · Escape · Vital Info · Specials · Advertise</p>
+      <p>News · Public Services · Community &amp; Charity · Sport · Weather · What's On · Escape · Vital Info · Specials · Advertise</p>
       <h5 style="margin-top:16px">Badge</h5>
       <p>The badge follows the official blazon of the arms of Essex: gules, three seaxes fesswise in pale argent, pommels and hilts or.</p>
     </div>
@@ -2426,9 +2366,9 @@ function renderDesk(){
   const shown = DESK_ALL ? list : list.slice(0, 10);
   $("#deskFeed").innerHTML = list.length ? shown.map(s => `<a class="drow" href="${storyHref(s)}">
       <span class="org k-${esc(s.kind)}"><i></i>${esc(s.org)}</span>
-      <div><h4>${esc(s.headline)}</h4><p>${esc(s.summary)}</p><div class="dm"><b>${esc(s.place||"Essex")}</b><span>·</span><span data-ago="${esc(s.time||"")}">${ago(s.time)}</span><span>·</span><span>${esc(s.tag||KIND_LABEL[s.kind]||"Official")}</span><span>·</span><span>${esc(hostOf(s.url))}</span></div></div>
+      <div><h4>${esc(s.headline)}</h4><p>${esc(s.summary)}</p><div class="dm"><b>${esc(s.place||"Essex")}</b><span>·</span><span data-ago="${esc(s.time||"")}">${ago(s.time)}</span><span>·</span><span>${esc(s.tag||KIND_LABEL[s.kind]||"Public Services")}</span><span>·</span><span>${esc(hostOf(s.url))}</span></div></div>
 </a>`).join("")
-      + (list.length > shown.length ? `<button class="desk-more" data-deskall>Show all ${list.length} official updates</button>` : "")
+      + (list.length > shown.length ? `<button class="desk-more" data-deskall>Show all ${list.length} public service updates</button>` : "")
     : `<div class="empty">No official updates tagged for this area right now. Try All Essex.</div>`;
   $("#incidents").innerHTML = ED.incidents.slice(0,7).map(i => `<li><a href="${safeUrl(i.url)}" target="_blank" rel="noopener">${esc(i.title)}</a><span>${esc(i.place||"")}${i.time?` · ${fmt(new Date(i.time),{day:"numeric",month:"short",hour:"2-digit",minute:"2-digit"})}`:""}</span></li>`).join("");
   const hs = ED.hearings.filter(h => new Date(h.date) >= new Date(Date.now() - 864e5)).filter(inArea).sort((a,b) => new Date(a.date) - new Date(b.date));
@@ -2595,7 +2535,7 @@ function renderStory(id){
   const more = related.length >= 2 ? related : allStories().filter(x => x.id !== s.id).slice(0,4);
   $("#storyMain").innerHTML = `
     <div class="story-rule" style="--c:${iconColour(s)}"><span class="${s.breaking?"hot":""}">${s.breaking?"Breaking":esc(s.tag||"News")}</span><span>${esc(s.place||"Essex")}</span></div>
-    ${s.org && s.kind ? `<div class="official-flag k-${esc(s.kind)}" style="margin-top:0"><i></i>${OFFICIAL_KINDS.has(s.kind) ? "Official update" : "Community"} · ${esc(s.org)}</div>` : ""}
+    ${s.org && s.kind ? `<div class="official-flag k-${esc(s.kind)}" style="margin-top:0"><i></i>${OFFICIAL_KINDS.has(s.kind) ? "Public Services" : "Community"} · ${esc(s.org)}</div>` : ""}
     <h1>${esc(s.headline)}</h1>
     <div class="smeta"><b>${esc(s.place||"Essex")}</b><span>·</span><span data-ago="${esc(s.time||"")}">${ago(s.time)}</span>${s.time?`<span>·</span><span>${fmt(new Date(s.time),{weekday:"long",day:"numeric",month:"long",hour:"2-digit",minute:"2-digit"})}</span>`:""}<span>·</span><span>Reported by ${esc(s.source)}</span><span>·</span><span>${Math.max(1, Math.round(((s.summary||"") + " " + (s.points||[]).join(" ")).split(/\s+/).length / 200))} min read</span></div>
     <div class="sharebar"><button data-copylink="${esc(s.id)}">Copy link</button><a href="${safeUrl(s.url)}" target="_blank" rel="noopener">Original report ↗</a></div>
@@ -2621,7 +2561,7 @@ function closeStory(){
 }
 function route(){
   const h = location.hash.replace(/^#/,"");
-  if(h.startsWith("story-")){ renderStory(h.slice(6)); enhanceStoryMap(); }
+  if(h.startsWith("story-")) renderStory(h.slice(6));
   else { const wasReading = document.body.classList.contains("reading"); closeStory(); if(h && document.getElementById(h)) document.getElementById(h).scrollIntoView(); else if(wasReading) window.scrollTo({top:0}); }
 }
 window.addEventListener("hashchange", route);
@@ -2640,7 +2580,7 @@ function updateLiveLine(){
 function renderAll(){
   renderChips(); renderTicker(); buildHero(); renderTopList(); renderNews(); renderDesk(); renderCommunity(); renderSport(); renderWeather();
   renderEvents(); renderCulture(); renderVital(); renderSpecials(); renderSources(); renderMeta(); afterRender(); updateLiveLine();
-  if(location.hash.startsWith("#story-")){ renderStory(location.hash.slice(7)); enhanceStoryMap(); }
+  if(location.hash.startsWith("#story-")) renderStory(location.hash.slice(7));
 }
 
 /* every second: clock. every minute: relative times, countdowns, live line, ticker, weather */
@@ -2797,7 +2737,7 @@ function renderTopList(){
   const add = (s, lab) => { if(s && s.headline && s.time && isFinite(new Date(s.time))) pool.push({s, lab, t: new Date(s.time).getTime()}); };
   ED.stories.filter(inArea).forEach(s => add(s, s.tag || "News"));
   ED.sport.stories.filter(inArea).forEach(s => add(s, s.tag || "Sport"));
-  deskItems().filter(inArea).forEach(s => add(s, s.org || "Official"));
+  deskItems().filter(inArea).forEach(s => add(s, s.org || "Public Services"));
   ED.community.filter(inArea).forEach(s => add(s, s.org || "Community"));
   const now = Date.now();
   const seen = new Set();
@@ -2890,7 +2830,6 @@ function capList(containerSel, moreSel, limit, flag, label){
 }
 function afterRender(){
   renderAround();
-  renderNewsMap();
   capList("#events", "evMore", 8, "SEAX_EV_ALL", "events");
   capList("#culture-grid", "culMore", 9, "SEAX_CUL_ALL", "listings");
   capList("#mnList", "mnMore", window.innerWidth < 860 ? 8 : 14, "SEAX_MN_ALL", "headlines");
@@ -2907,236 +2846,6 @@ document.addEventListener("click", e => {
     const done = ok => { b.textContent = ok ? "Link copied" : url; setTimeout(() => b.textContent = "Copy link", 2500); };
     try{ navigator.clipboard.writeText(url).then(() => done(true), () => done(false)); }catch(_){ done(false); }
   }
-});
-
-/* ============================================================
-   Interactive maps: county news map (pins for every story,
-   clickable districts) + zoom / pan for story maps
-   No top-level let/const: state lives on window.
-   ============================================================ */
-function nmCats(){
-  return [
-    ["all", "Everything", "#0e1b30"],
-    ["news", "News", "#c8102e"],
-    ["sport", "Sport", "#1f8a4c"],
-    ["official", "Official & courts", "#1f4fbf"],
-    ["community", "Community", "#1f7a78"]
-  ];
-}
-function nmDistrictArea(d){
-  for(const [a, ds] of Object.entries(AREA_DISTRICTS)) if(ds.includes(d)) return a;
-  return null;
-}
-function nmItems(){
-  const out = [], seen = new Set();
-  const add = (list, cat) => (list||[]).forEach(s => {
-    if(!s || !s.id || seen.has(s.id)) return;
-    const p = storyPins(s)[0]; if(!p) return;
-    seen.add(s.id); out.push({s, cat, x:p.x, y:p.y, place:p.name, d:p.d});
-  });
-  add(ED.stories, "news"); add(ED.sport && ED.sport.stories, "sport"); add(deskItems(), "official"); add(ED.community, "community");
-  out.sort((a,b) => new Date(a.s.time||0) - new Date(b.s.time||0));   // newest drawn last (on top)
-  // spread pins that share a spot into a small ring
-  const groups = {};
-  out.forEach(it => { const k = Math.round(it.x/6) + "," + Math.round(it.y/6); (groups[k] = groups[k] || []).push(it); });
-  Object.values(groups).forEach(g => { if(g.length < 2) return; const r = 5 + g.length * 1.3;
-    g.forEach((it, i) => { const a = i / g.length * Math.PI * 2 - Math.PI/2; it.x += Math.cos(a) * r; it.y += Math.sin(a) * r; }); });
-  // district for every pin (point in polygon via the browser, done lazily) falls back to story areas
-  return out;
-}
-function nmCatColour(cat){ const c = nmCats().find(x => x[0] === cat); return c ? c[2] : "#0e1b30"; }
-function nmLabel(it){ return it.s.tag || (it.cat === "official" ? "Official" : it.cat === "sport" ? "Sport" : it.cat === "community" ? (it.s.org || "Community") : "News"); }
-
-function renderNewsMap(){
-  const box = document.getElementById("newsMap"); if(!box) return;
-  const M = ESSEX_MAP, filt = window.SEAX_NM_FILTER || "all";
-  const all = nmItems(); window.SEAX_NM_ITEMS = all;
-  const items = all.filter(it => filt === "all" || it.cat === filt);
-  const now = Date.now();
-  const activeAreaDs = AREA === "all" ? [] : (AREA_DISTRICTS[AREA] || []);
-  const districts = Object.entries(M.districts).map(([n, d]) => {
-    const a = nmDistrictArea(n), on = activeAreaDs.includes(n);
-    return `<path d="${d}" class="nd${on ? " sel" : ""}" data-d="${esc(n)}" data-area="${a ? (AREA === a ? "all" : a) : ""}" tabindex="0" role="button" aria-label="${esc(n)}: ${on ? "show all of Essex" : "filter the site to this area"}"/>`;
-  }).join("");
-  const labels = Object.entries(M.centroids).map(([n, [x, y]]) => `<text class="ndl" x="${x}" y="${y + 30}" text-anchor="middle">${esc(n === "Southend-on-Sea" ? "Southend" : n === "Castle Point" ? "Castle Pt" : n)}</text>`).join("");
-  const pins = items.map((it, i) => {
-    const fresh = now - new Date(it.s.time || 0) < 3 * 36e5;
-    return `<g class="np${fresh ? " fresh" : ""}" data-ni="${all.indexOf(it)}" style="--c:${nmCatColour(it.cat)}" tabindex="0" role="link" aria-label="${esc(it.s.headline)}">${fresh ? `<circle class="npu" cx="${it.x.toFixed(1)}" cy="${it.y.toFixed(1)}" data-r="15" r="15"/>` : ""}<circle class="npc" cx="${it.x.toFixed(1)}" cy="${it.y.toFixed(1)}" data-r="${fresh ? 7.5 : 6}" r="${fresh ? 7.5 : 6}"/></g>`;
-  }).join("");
-  const counts = nmCats().map(([k, v, c]) => `<button class="nm-f${filt === k ? " on" : ""}" data-nmf="${k}" style="--c:${c}"><i></i>${esc(v)} <b>${k === "all" ? all.length : all.filter(it => it.cat === k).length}</b></button>`).join("");
-  box.innerHTML = `
-    <div class="nm-stage">
-      <svg class="emap nm-svg" viewBox="150 45 800 640" preserveAspectRatio="xMidYMid meet" role="group" aria-label="Map of Essex with today's stories">
-        <rect x="-500" y="-500" width="${M.w + 1000}" height="${M.h + 1000}" class="sea"/><path d="${M.context}" class="land"/>
-        <g class="nd-g">${districts}</g><g class="ndl-g">${labels}</g><g class="np-g">${pins}</g>
-      </svg>
-      <div class="nm-ctl"><button data-nmz="in" aria-label="Zoom in">+</button><button data-nmz="out" aria-label="Zoom out">−</button><button data-nmz="reset" aria-label="Reset map" title="Reset">⤢</button></div>
-      <div class="nm-hint" aria-hidden="true">Drag to move · pinch, ctrl + scroll or +/− to zoom</div>
-      <div class="nm-tip" role="status" hidden></div>
-    </div>
-    <aside class="nm-side">
-      <div class="nm-filters">${counts}</div>
-      <div class="nm-panel" id="nmPanel"></div>
-    </aside>`;
-  const svg = box.querySelector(".nm-svg");
-  mapPanZoom(svg, {store:"SEAX_NM_VIEW", min:140, max:900, onChange:nmScaleMarks, ctl:box.querySelector(".nm-ctl"), hint:box.querySelector(".nm-hint")});
-  nmPanelDefault();
-  nmWire(box, svg);
-}
-function nmScaleMarks(svg, k){
-  svg.querySelectorAll("[data-r]").forEach(c => c.setAttribute("r", (+c.dataset.r * Math.max(.45, k)).toFixed(2)));
-  svg.style.setProperty("--nmk", k);
-}
-function nmPanelDefault(){
-  const p = document.getElementById("nmPanel"); if(!p) return;
-  const items = window.SEAX_NM_ITEMS || [], filt = window.SEAX_NM_FILTER || "all";
-  const use = items.filter(it => filt === "all" || it.cat === filt);
-  const per = {};
-  use.forEach(it => { const a = nmAreaOf(it); if(a) per[a] = (per[a] || 0) + 1; });
-  const rows = AREAS.filter(([k]) => k !== "all").map(([k, v]) => [k, v, per[k] || 0]).sort((a, b) => b[2] - a[2]);
-  const max = Math.max(1, ...rows.map(r => r[2]));
-  p.innerHTML = `<h4>${AREA === "all" ? "Where the news is" : "Showing " + esc(AREAS.find(a => a[0] === AREA)[1])}</h4>
-    <p class="nm-sub">${AREA === "all" ? "Stories on the map by area. Point at or tap a district to see its stories, or pick an area below to set My Essex." : `The site is filtered to this area. <button class="nm-clear" data-area="all">Show all of Essex</button>`}</p>
-    <ol class="nm-bars">${rows.map(([k, v, n]) => `<li><button data-area="${AREA === k ? "all" : k}" class="${AREA === k ? "on" : ""}"><span class="nb-l">${esc(v)}</span><span class="nb-b"><i style="width:${(n / max * 100).toFixed(1)}%"></i></span><b>${n}</b></button></li>`).join("")}</ol>`;
-}
-function nmAreaOf(it){
-  if(it.d){ const a = nmDistrictArea(it.d); if(a) return a; }
-  const ar = (it.s.areas || []).filter(a => a !== "all"); return ar[0] || null;
-}
-function nmPanelDistrict(d){
-  const p = document.getElementById("nmPanel"); if(!p) return;
-  const a = nmDistrictArea(d), filt = window.SEAX_NM_FILTER || "all";
-  const list = (window.SEAX_NM_ITEMS || []).filter(it => (filt === "all" || it.cat === filt) && (it.d ? it.d === d : nmAreaOf(it) === a))
-    .sort((x, y) => new Date(y.s.time || 0) - new Date(x.s.time || 0));
-  p.innerHTML = `<h4>${esc(d)}</h4><p class="nm-sub">${list.length} ${list.length === 1 ? "story" : "stories"} on the map${a ? ` · <button class="nm-clear" data-area="${AREA === a ? "all" : a}">${AREA === a ? "Show all of Essex" : "Filter the site to this area"}</button>` : ""}</p>
-    <ol class="nm-list">${list.slice(0, 7).map(it => `<li style="--c:${nmCatColour(it.cat)}"><a href="${storyHref(it.s)}"><span class="k">${esc(nmLabel(it))}</span><b>${esc(it.s.headline)}</b><span class="m">${esc(it.place)} · ${ago(it.s.time)}</span></a></li>`).join("") || `<li class="none">Nothing pinned here in this edition.</li>`}</ol>`;
-}
-function nmShowTip(box, it, clientX, clientY, sticky){
-  const tip = box.querySelector(".nm-tip"), st = box.querySelector(".nm-stage").getBoundingClientRect();
-  tip.style.setProperty("--c", nmCatColour(it.cat));
-  tip.innerHTML = `<span class="k">${esc(nmLabel(it))} · ${esc(it.place)}</span><b>${esc(it.s.headline)}</b><span class="m">${ago(it.s.time)}${sticky ? ` · <a href="${storyHref(it.s)}">Read the story →</a>` : " · click to read"}</span>`;
-  tip.hidden = false;
-  const tw = tip.offsetWidth, th = tip.offsetHeight;
-  let x = clientX - st.left + 14, y = clientY - st.top - th - 12;
-  if(x + tw > st.width - 8) x = clientX - st.left - tw - 14;
-  if(y < 8) y = clientY - st.top + 16;
-  tip.style.left = Math.max(8, x) + "px"; tip.style.top = y + "px";
-  tip.classList.toggle("sticky", !!sticky);
-}
-function nmWire(box, svg){
-  const tip = box.querySelector(".nm-tip");
-  const itemOf = el => { const g = el && el.closest && el.closest(".np"); return g ? (window.SEAX_NM_ITEMS || [])[+g.dataset.ni] : null; };
-  svg.addEventListener("pointerdown", e => { svg.__ptype = e.pointerType || "mouse"; }, true);
-  const isMouse = e => (e.pointerType || svg.__ptype || "mouse") === "mouse";
-  svg.addEventListener("pointerover", e => {
-    const it = itemOf(e.target);
-    if(it){ if(e.pointerType === "mouse") nmShowTip(box, it, e.clientX, e.clientY, false); return; }
-    const dEl = e.target.closest && e.target.closest(".nd");
-    if(dEl && e.pointerType === "mouse"){ svg.querySelectorAll(".nd.hov").forEach(x => x.classList.remove("hov")); dEl.classList.add("hov"); nmPanelDistrict(dEl.dataset.d); }
-  });
-  svg.addEventListener("pointermove", e => { const it = itemOf(e.target); if(it && e.pointerType === "mouse" && !tip.classList.contains("sticky")) nmShowTip(box, it, e.clientX, e.clientY, false); });
-  svg.addEventListener("pointerout", e => { if(itemOf(e.target) && !tip.classList.contains("sticky")) tip.hidden = true; });
-  svg.addEventListener("pointerleave", () => { svg.querySelectorAll(".nd.hov").forEach(x => x.classList.remove("hov")); if(!tip.classList.contains("sticky")) tip.hidden = true; nmPanelDefault(); });
-  // clicks: capture phase so a drag never triggers navigation / filtering
-  svg.addEventListener("click", e => {
-    if(svg.__dragged){ e.stopPropagation(); e.preventDefault(); return; }
-    const it = itemOf(e.target);
-    if(it){
-      e.stopPropagation();
-      if(isMouse(e) || e.detail === 0) { location.hash = storyHref(it.s).replace(/^#/, ""); return; }
-      nmShowTip(box, it, e.clientX, e.clientY, true);   // touch: first tap previews, link inside opens
-      return;
-    }
-    const dEl = e.target.closest(".nd");
-    if(dEl && !isMouse(e) && svg.__lastTapD !== dEl.dataset.d){ // touch: first tap shows the district's stories
-      e.stopPropagation(); svg.__lastTapD = dEl.dataset.d; tip.hidden = true; tip.classList.remove("sticky");
-      svg.querySelectorAll(".nd.hov").forEach(x => x.classList.remove("hov")); dEl.classList.add("hov"); nmPanelDistrict(dEl.dataset.d);
-      return;
-    }
-    tip.hidden = true; tip.classList.remove("sticky");
-  }, true);
-  svg.addEventListener("keydown", e => {
-    if(e.key !== "Enter" && e.key !== " ") return;
-    const it = itemOf(e.target); if(it){ e.preventDefault(); location.hash = storyHref(it.s).replace(/^#/, ""); return; }
-    const dEl = e.target.closest(".nd"); if(dEl && dEl.dataset.area){ e.preventDefault(); dEl.dispatchEvent(new MouseEvent("click", {bubbles:true})); }
-  });
-  svg.addEventListener("focusin", e => { const it = itemOf(e.target); if(it){ const r = e.target.getBoundingClientRect(); nmShowTip(box, it, r.left + r.width/2, r.top, false); } const dEl = e.target.closest && e.target.closest(".nd"); if(dEl) nmPanelDistrict(dEl.dataset.d); });
-}
-
-/* ---------- generic pan / zoom on an SVG viewBox ---------- */
-function mapPanZoom(svg, o){
-  o = o || {};
-  const vb0 = svg.viewBox.baseVal, home = {x:vb0.x, y:vb0.y, w:vb0.width, h:vb0.height};
-  const M = ESSEX_MAP, ratio = home.h / home.w;
-  const minW = o.min || home.w / 3, maxW = o.max || Math.max(home.w, 900);
-  let v = Object.assign({}, home);
-  if(o.store && window[o.store]) v = Object.assign({}, window[o.store]);
-  const clamp = () => {
-    v.w = Math.max(minW, Math.min(maxW, v.w)); v.h = v.w * ratio;
-    const pad = v.w * .35;
-    v.x = Math.max(-pad, Math.min(M.w - v.w + pad, v.x)); v.y = Math.max(-pad, Math.min(M.h - v.h + pad, v.y));
-  };
-  const apply = () => { clamp(); svg.setAttribute("viewBox", `${v.x.toFixed(1)} ${v.y.toFixed(1)} ${v.w.toFixed(1)} ${v.h.toFixed(1)}`); if(o.store) window[o.store] = Object.assign({}, v); if(o.onChange) o.onChange(svg, v.w / home.w); };
-  const toMap = (cx, cy) => { const r = svg.getBoundingClientRect(); const s = Math.max(v.w / r.width, v.h / r.height);
-    const ox = (r.width - v.w / s) / 2, oy = (r.height - v.h / s) / 2; return [v.x + (cx - r.left - ox) * s, v.y + (cy - r.top - oy) * s]; };
-  const zoomAt = (f, cx, cy) => { const r = svg.getBoundingClientRect(); if(cx == null){ cx = r.left + r.width/2; cy = r.top + r.height/2; }
-    const [mx, my] = toMap(cx, cy); const nw = Math.max(minW, Math.min(maxW, v.w * f)); const k = nw / v.w;
-    v.x = mx - (mx - v.x) * k; v.y = my - (my - v.y) * k; v.w = nw; apply(); };
-  svg.__zoom = zoomAt; svg.__reset = () => { v = Object.assign({}, home); apply(); };
-  apply();
-  // pointers: drag to pan, two fingers to pinch
-  const pts = new Map(); let last = null, pinch = null, moved = 0;
-  svg.style.touchAction = "none";
-  svg.addEventListener("pointerdown", e => {
-    if(e.button > 0) return;
-    pts.set(e.pointerId, [e.clientX, e.clientY]); moved = 0; svg.__dragged = false;
-    if(pts.size === 1) last = [e.clientX, e.clientY];
-    if(pts.size === 2){ const [a, b] = [...pts.values()]; pinch = {d: Math.hypot(a[0]-b[0], a[1]-b[1]), w: v.w}; }
-  });
-  svg.addEventListener("pointermove", e => {
-    if(!pts.has(e.pointerId)) return;
-    pts.set(e.pointerId, [e.clientX, e.clientY]);
-    if(pts.size === 2 && pinch){
-      const [a, b] = [...pts.values()], d = Math.hypot(a[0]-b[0], a[1]-b[1]);
-      if(d > 0){ zoomAt((pinch.w * pinch.d / d) / v.w, (a[0]+b[0])/2, (a[1]+b[1])/2); moved += 10; svg.__dragged = true; }
-      return;
-    }
-    if(!last) return;
-    const r = svg.getBoundingClientRect(), s = Math.max(v.w / r.width, v.h / r.height);
-    const dx = e.clientX - last[0], dy = e.clientY - last[1]; moved += Math.abs(dx) + Math.abs(dy);
-    if(moved > 5){
-      if(!svg.__dragged){ svg.__dragged = true; try{ svg.setPointerCapture(e.pointerId); }catch(_){} svg.classList.add("dragging"); }
-      v.x -= dx * s; v.y -= dy * s; apply();
-    }
-    last = [e.clientX, e.clientY];
-  });
-  const end = e => { pts.delete(e.pointerId); if(pts.size < 2) pinch = null; if(!pts.size){ last = null; svg.classList.remove("dragging"); setTimeout(() => { svg.__dragged = false; }, 0); } else { last = [...pts.values()][0]; } };
-  svg.addEventListener("pointerup", end); svg.addEventListener("pointercancel", end);
-  svg.addEventListener("wheel", e => {
-    if(!(e.ctrlKey || e.metaKey)){ if(o.hint){ o.hint.classList.add("show"); clearTimeout(o.hint.__t); o.hint.__t = setTimeout(() => o.hint.classList.remove("show"), 1400); } return; }
-    e.preventDefault(); zoomAt(Math.exp(e.deltaY * .0025), e.clientX, e.clientY);
-  }, {passive:false});
-  svg.addEventListener("dblclick", e => { e.preventDefault(); zoomAt(.6, e.clientX, e.clientY); });
-  if(o.ctl) o.ctl.addEventListener("click", e => { const b = e.target.closest("[data-nmz]"); if(!b) return; e.stopPropagation();
-    if(b.dataset.nmz === "in") zoomAt(.7); else if(b.dataset.nmz === "out") zoomAt(1/.7); else svg.__reset(); });
-}
-
-/* story page: make the "Where it happened" map explorable */
-function enhanceStoryMap(){
-  document.querySelectorAll(".side-box.where .wmap").forEach(w => {
-    if(w.__pz) return; const svg = w.querySelector("svg.emap"); if(!svg) return; w.__pz = true;
-    w.style.position = "relative";
-    w.insertAdjacentHTML("beforeend", `<div class="nm-ctl small"><button data-nmz="in" aria-label="Zoom in">+</button><button data-nmz="out" aria-label="Zoom out">−</button><button data-nmz="reset" aria-label="Reset map" title="Reset">⤢</button></div><div class="nm-hint" aria-hidden="true">Drag to move · +/− to zoom out to all Essex</div>`);
-    svg.setAttribute("preserveAspectRatio", "xMidYMid slice");
-    const vb = svg.viewBox.baseVal;
-    mapPanZoom(svg, {min: vb.width * .55, max: 900, ctl: w.querySelector(".nm-ctl"), hint: w.querySelector(".nm-hint")});
-  });
-}
-
-/* filter chips on the news map */
-document.addEventListener("click", e => {
-  const f = e.target.closest("[data-nmf]"); if(!f) return;
-  window.SEAX_NM_FILTER = f.dataset.nmf; renderNewsMap();
 });
 
 </script>
