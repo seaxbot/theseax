@@ -2817,11 +2817,16 @@ function renderTopList(){
 }
 /* trim the Latest rail so it ends exactly where the lead story ends */
 function fitLatest(){
-  const ol = document.getElementById("latestList"); if(!ol) return;
+  const ol = document.getElementById("latestList"), rail = document.querySelector(".latest"), lead = document.getElementById("leadPkg");
+  if(!ol || !rail || !lead) return;
   const lis = Array.from(ol.children); lis.forEach(li => li.style.display = "");
-  if(window.innerWidth <= 980){ lis.forEach((li, i) => { if(i >= 5) li.style.display = "none"; }); return; }
+  if(window.innerWidth <= 980){ rail.style.height = ""; lis.forEach((li, i) => { if(i >= 5) li.style.display = "none"; }); return; }
+  rail.style.height = lead.offsetHeight + "px";            // exactly as tall as the lead story
+  for(let i = lis.length - 1; i > 2 && rail.scrollHeight > rail.clientHeight + 1; i--) lis[i].style.display = "none";
   for(let i = lis.length - 1; i > 2 && ol.scrollHeight > ol.clientHeight + 1; i--) lis[i].style.display = "none";
 }
+if(window.ResizeObserver) setTimeout(() => { const lead = document.getElementById("leadPkg"); if(lead) new ResizeObserver(() => fitLatest()).observe(lead); }, 0);
+window.addEventListener("load", fitLatest);
 window.addEventListener("resize", () => { clearTimeout(window.SEAX_FIT_T); window.SEAX_FIT_T = setTimeout(fitLatest, 120); });
 if(document.fonts && document.fonts.ready) document.fonts.ready.then(fitLatest);
 
@@ -2909,6 +2914,7 @@ function capList(containerSel, moreSel, limit, flag, label){
   more.innerHTML = kids.length > limit ? `<button data-showall="${flag}">${window[flag] ? "Show fewer" : `Show all ${kids.length} ${label}`}</button>` : "";
 }
 function afterRender(){
+  fitLatest();
   renderAround();
   capList("#events", "evMore", 8, "SEAX_EV_ALL", "events");
   capList("#culture-grid", "culMore", 9, "SEAX_CUL_ALL", "listings");
