@@ -856,6 +856,7 @@ body.srch-open{overflow:hidden}
 .cam-note a{color:inherit;font-weight:700}
 @media (max-width:980px){ .cams{grid-template-columns:repeat(2,1fr)} }
 @media (max-width:640px){ .cams{grid-template-columns:1fr} }
+.lp-upd{color:var(--c,#b3121b);font-weight:700}
 </style>
 </head>
 <body>
@@ -2339,8 +2340,11 @@ function cleanStory(s){
   o.also = Array.isArray(o.also) ? o.also.filter(a => a && a.url) : [];
   o.areas = Array.isArray(o.areas) ? o.areas : ["all"];
   if(o.img && typeof o.img !== "object") delete o.img;
+  if(o.breaking && Date.now() - newsTime(o) > 6*36e5) o.breaking = false;
   return o;
 }
+/* the time a story last genuinely moved: its publish time, or its "updated" time if later */
+function newsTime(s){ const a = +new Date(s.time||0) || 0, b = +new Date(s.updated||0) || 0; return Math.max(a, b); }
 function normalise(d){
   const o = Object.assign({}, EMBED, d || {});
   o.stories = (Array.isArray(o.stories) && o.stories.length ? o.stories : EMBED.stories).map(cleanStory).filter(Boolean);
@@ -2810,15 +2814,51 @@ function shortWhen(t){
   if(dayKey(d) === dayKey(y)) return "Yest";
   return fmt(d,{weekday:"short"});
 }
+/* ---------- editorial ranking ----------
+   Each story carries a newsroom "weight" (1 to 10: how much it matters to Essex).
+   Front-page score = weight + a strong "today" boost, fading for older stories.
+   The newsroom's chosen lead (ED.lead.id) and secondaries (ED.front) win when present. */
+var TAG_WEIGHT = {Police:5, Court:5, Transport:5, Politics:5, Health:5, Education:4, Environment:4, Business:4, Property:4, Community:3, "What's On":3, History:3, Halloween:3};
+function storyWeight(s){
+  const w = Number(s.weight);
+  if(Number.isFinite(w) && w > 0) return Math.min(10, w);
+  return ((TAG_WEIGHT || {})[s.tag] || ({Police:5, Court:5, Transport:5, Politics:5, Health:5})[s.tag] || 4) + Math.min(2, (s.also||[]).length * 0.7) + (s.breaking ? 3 : 0);
+}
+function frontScore(s, now){
+  const t = newsTime(s); if(!t) return storyWeight(s) - 6;
+  const ageH = Math.max(0, (now - t) / 36e5);
+  let r = 0;
+  if(dayKey(new Date(t)) === dayKey(new Date(now))) r += 3;   /* today's news beats yesterday's */
+  if(ageH < 3) r += 2; else if(ageH < 8) r += 1;
+  if(ageH > 24) r -= (ageH - 24) / 12;                          /* about 2 points a day after that */
+  if(s.breaking) r += 3;
+  if(s.developing && ageH < 12) r += 1;
+  return storyWeight(s) + r;
+}
+function rankStories(list, now){ return list.slice().sort((a,b) => frontScore(b, now) - frontScore(a, now) || newsTime(b) - newsTime(a)); }
 function frontPicks(){
-  const list = ED.stories.filter(inArea).slice().sort(byTime);
-  const lead = list.find(s => s.breaking) || list.find(s => (s.points||[]).length >= 2) || list[0] || ED.stories[0];
-  const rest = list.filter(s => s !== lead);
-  /* secondaries: newest stories from different areas where possible */
-  const seconds = [], seenArea = new Set((lead && lead.areas) || []);
-  for(const s of rest){ if(seconds.length >= 3) break; const a = (s.areas||[])[0]; if(!seenArea.has(a)){ seconds.push(s); seenArea.add(a); } }
+  const now = Date.now();
+  const list = ED.stories.filter(inArea);
+  const ranked = rankStories(list, now);
+  let lead = null;
+  const L = ED.lead || {};
+  if(L.id){ const c = list.find(s => s.id === L.id); if(c && now - newsTime(c) < 36*36e5) lead = c; }
+  if(!lead) lead = ranked[0] || ED.stories[0];
+  const rest = ranked.filter(s => s !== lead);
+  const seconds = [];
+  if(Array.isArray(ED.front)) ED.front.forEach(id => { const c = rest.find(s => s.id === id); if(c && seconds.length < 3 && !seconds.includes(c)) seconds.push(c); });
+  /* fill any gaps with the strongest stories from other districts and other subjects */
+  const seenArea = new Set([...((lead && lead.areas) || []), ...seconds.flatMap(s => s.areas || [])]);
+  const seenTag = new Set([lead && lead.tag, ...seconds.map(s => s.tag)]);
+  for(const s of rest){ if(seconds.length >= 3) break; const a = (s.areas||[])[0]; if(!seconds.includes(s) && !seenArea.has(a) && !seenTag.has(s.tag)){ seconds.push(s); seenArea.add(a); seenTag.add(s.tag); } }
+  for(const s of rest){ if(seconds.length >= 3) break; const a = (s.areas||[])[0]; if(!seconds.includes(s) && !seenArea.has(a)){ seconds.push(s); seenArea.add(a); } }
   for(const s of rest){ if(seconds.length >= 3) break; if(!seconds.includes(s)) seconds.push(s); }
   return {lead, seconds};
+}
+function leadKicker(s){
+  if(s.breaking) return '<i class="hotdot"></i>Breaking';
+  if(s.developing) return '<i class="hotdot"></i>Developing';
+  return esc(s.tag||"Top story");
 }
 
 /* ---------- front page ---------- */
@@ -2829,11 +2869,11 @@ function buildHero(){
   if(!s){ $("#leadPkg").innerHTML = ""; return; }
   const pts = (s.points||[]).slice(0,3);
   $("#leadPkg").innerHTML = `<div class="lp-text" style="--c:${pillar(s)}">
-      <span class="lp-kick">${s.breaking ? '<i class="hotdot"></i>Breaking' : esc(s.tag||"Top story")}<em>${esc(s.place||"Essex")}</em></span>
+      <span class="lp-kick">${leadKicker(s)}<em>${esc(s.place||"Essex")}</em></span>
       <h2><a href="${storyHref(s)}">${esc(s.headline)}</a></h2>
       <p class="lp-stand">${esc(s.summary)}</p>
       ${pts.length ? `<ul class="lp-pts">${pts.map(p=>`<li>${esc(p)}</li>`).join("")}</ul>` : ""}
-      <div class="lp-meta"><span data-ago="${esc(s.time||"")}">${ago(s.time)}</span><span>·</span><span>${esc(s.source)}${s.also && s.also.length ? ` and ${s.also.length} more` : ""}</span><a class="lp-read" href="${storyHref(s)}">Read the story</a></div>
+      <div class="lp-meta">${s.updated && new Date(s.updated) > new Date(s.time||0) ? `<span class="lp-upd">Updated ${esc(hhmm(s.updated))}</span><span>·</span>` : `<span data-ago="${esc(s.time||"")}">${ago(s.time)}</span><span>·</span>`}<span>${esc(s.source)}${s.also && s.also.length ? ` and ${s.also.length} more` : ""}</span><a class="lp-read" href="${storyHref(s)}">Read the story</a></div>
     </div>
     <a class="lp-map" href="${storyHref(s)}" style="--c:${pillar(s)}" aria-label="Map: ${esc(mapCaption(s))}">${storyMap(s,{zoom:430,aspect:1.05})}<span class="mcap"><b>Where</b> ${esc(mapCaption(s))}</span></a>`;
   $("#seconds").innerHTML = seconds.map(x => `<a class="sec" href="${storyHref(x)}" style="--c:${pillar(x)}">
@@ -2896,7 +2936,9 @@ function renderToday(){
 function renderNews(){
   const all = ED.stories.filter(inArea).slice().sort(byTime);
   const used = new Set(heroList.map(s => s && s.id));
-  const list = all.filter(s => !used.has(s.id));
+  const ranked = rankStories(all.filter(s => !used.has(s.id)), Date.now());
+  const topIds = new Set(ranked.slice(0, 5).map(s => s.id));
+  const list = [...ranked.slice(0, 5), ...all.filter(s => !used.has(s.id) && !topIds.has(s.id))];
   const n = new Set(allStories().flatMap(s => [s.source, ...(s.also||[]).map(a=>a.name)])).size;
   $("#newsCount").textContent = AREA==="all" ? `${ED.stories.length} stories · ${n} sources` : `${all.length} for ${AREAS.find(a=>a[0]===AREA)[1]}`;
   const top = list.slice(0, 5), rest = list.slice(5);
