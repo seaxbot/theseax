@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 140">
+        <defs>
+          <linearGradient id="shg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#d81431"/><stop offset="1" stop-color="#a50d25"/></linearGradient>
+          <linearGradient id="blade" x1="0" y1="-11" x2="0" y2="5" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#ffffff"/><stop offset=".6" stop-color="#f1f3f5"/><stop offset="1" stop-color="#d3d8de"/></linearGradient>
+          <linearGradient id="gold" x1="0" y1="-7" x2="0" y2="7" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#f6d77e"/><stop offset=".5" stop-color="#d9a93e"/><stop offset="1" stop-color="#a87a1f"/></linearGradient>
+          <g id="seax">
+            <circle cx="4.2" cy="0" r="4.2" fill="url(#gold)"/>
+            <rect x="7" y="-2.9" width="14.5" height="5.8" rx="1.4" fill="url(#gold)"/>
+            <path d="M10.5 -2.9v5.8M14.3 -2.9v5.8M18.1 -2.9v5.8" stroke="#9a6e18" stroke-width=".8"/>
+            <rect x="21" y="-6.8" width="4.2" height="13.6" rx="1.6" fill="url(#gold)"/>
+            <path d="M25 -4.4 C47 -6.4 69 -11 84 -10.2 C93.5 -9.6 98.6 -5.4 101.2 0.8 C97.4 3 94 4.1 90 4.6 H82.4 A4.3 4.3 0 0 0 73.8 4.6 H25 Z" fill="url(#blade)" stroke="#9aa1a9" stroke-width=".5"/>
+            <path d="M28 0.6 C50 -0.6 70 -3.4 86 -3.2" fill="none" stroke="#c4cad1" stroke-width=".7"/>
+          </g>
+        </defs>
+        <path d="M6 6 H114 V68 C114 106 86 127 60 136 C34 127 6 106 6 68 Z" fill="url(#shg)" stroke="#d0a13a" stroke-width="3.5"/>
+        <path d="M12 12 H108 V68 C108 101 83 120 60 129" fill="none" stroke="#fff" stroke-opacity=".12" stroke-width="2"/>
+        <use href="#seax" transform="translate(11 38) scale(.95)"/>
+        <use href="#seax" transform="translate(11 70) scale(.95)"/>
+        <use href="#seax" transform="translate(17.5 102) scale(.83)"/>
+      </svg>
