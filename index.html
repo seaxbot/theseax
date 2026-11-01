@@ -657,7 +657,10 @@ h1,h2,h3,h4,.story h1,.lead h2,.card h3,.drow h4{letter-spacing:-.022em}
 .lp-map .mcap{position:absolute;left:12px;bottom:12px;background:rgba(255,253,247,.95);border:1px solid var(--hair);border-radius:4px;padding:6px 10px;font-size:12.5px;font-weight:600;color:var(--ink)}
 .lp-map .mcap b{color:var(--c);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;margin-right:6px}
 
-.latest{background:var(--card);border:1px solid var(--hair);padding:16px 18px 14px;position:sticky;top:64px}
+.fp-grid{align-items:stretch}
+.latest{background:var(--card);border:1px solid var(--hair);padding:16px 18px 14px;display:flex;flex-direction:column;contain:size;min-height:0}
+.latest ol{flex:1;min-height:0;overflow:hidden}
+.latest-more{flex:none}
 .latest .lh{display:flex;justify-content:space-between;align-items:center;border-bottom:2px solid var(--ink);padding-bottom:10px;margin-bottom:4px}
 .latest h3{font-family:var(--serif);font-size:22px;margin:0;display:flex;align-items:center;gap:9px;letter-spacing:-.02em}
 .latest .ld{width:10px;height:10px;border-radius:50%;background:var(--red);box-shadow:0 0 0 0 rgba(200,16,46,.5);animation:liveGlow 1.6s ease-out infinite}
@@ -757,7 +760,7 @@ ol.mn .mm{font-size:12px;color:var(--muted)}
 
 /* responsive */
 @media (max-width:1180px){ .around-grid{grid-template-columns:repeat(3,1fr)} .lp-text h2{font-size:38px} }
-@media (max-width:980px){ .fp-grid{grid-template-columns:1fr} .latest{position:static} }
+@media (max-width:980px){ .fp-grid{grid-template-columns:1fr} .latest{contain:none} .latest ol{overflow:visible} }
 @media (max-width:860px){
   .lead-pkg{grid-template-columns:1fr;min-height:0}
   .lp-map{order:-1;height:230px;border-left:0;border-bottom:1px solid var(--hair)}
@@ -773,7 +776,6 @@ ol.mn .mm{font-size:12px;color:var(--muted)}
 @media (max-width:560px){ .around-grid{grid-template-columns:1fr} .rt-row{grid-template-columns:1fr 64px 1fr;font-size:13.5px} .rt-row .st{display:none} .lp-read{margin-left:0} }
 
 @media (max-width:860px){
-  .latest li:nth-child(n+6){display:none}
   .sec-map{display:none}
   .ar li:nth-child(n+3){display:none}
   .score-strip{margin-left:-4px}
@@ -2811,7 +2813,17 @@ function renderTopList(){
   const seen = new Set();
   const items = pool.filter(i => i.t <= now + 36e5).sort((a,b) => b.t - a.t).filter(i => { if(seen.has(i.s.id)) return false; seen.add(i.s.id); return true; }).slice(0, 9);
   $("#latestList").innerHTML = items.map(i => `<li style="--c:${pillar(i.s)}"><time class="${now - i.t < 2*36e5 ? "new" : ""}">${esc(shortWhen(i.s.time))}</time><div><span class="lab">${esc(i.lab)}</span><a href="${storyHref(i.s)}">${esc(i.s.headline)}</a></div></li>`).join("") || `<li><div>No updates for this area yet.</div></li>`;
+  fitLatest();
 }
+/* trim the Latest rail so it ends exactly where the lead story ends */
+function fitLatest(){
+  const ol = document.getElementById("latestList"); if(!ol) return;
+  const lis = Array.from(ol.children); lis.forEach(li => li.style.display = "");
+  if(window.innerWidth <= 980){ lis.forEach((li, i) => { if(i >= 5) li.style.display = "none"; }); return; }
+  for(let i = lis.length - 1; i > 2 && ol.scrollHeight > ol.clientHeight + 1; i--) lis[i].style.display = "none";
+}
+window.addEventListener("resize", () => { clearTimeout(window.SEAX_FIT_T); window.SEAX_FIT_T = setTimeout(fitLatest, 120); });
+if(document.fonts && document.fonts.ready) document.fonts.ready.then(fitLatest);
 
 function renderToday(){
   const el = document.getElementById("todayBar"); if(!el) return;
