@@ -611,6 +611,173 @@ h1,h2,h3,h4,.story h1,.lead h2,.card h3,.drow h4{letter-spacing:-.022em}
 /* ticker freshness stamps */
 .ticker .track a .tk-age{font-weight:800;font-size:.82em;letter-spacing:.04em;text-transform:uppercase;color:rgba(255,255,255,.75);margin-right:8px}
 .ticker .track a .tk-age.new{background:#fff;color:var(--red);border-radius:4px;padding:1px 6px}
+
+/* ================= REDESIGN 2026-11 ================= */
+:root{--hair:#e3dccb}
+/* section pillars (Guardian-style colour coding) */
+#news{--pillar:#c8102e} #around{--pillar:#0e1b30} #desk{--pillar:#1f4fbf} #community{--pillar:#1f7a78}
+#sport{--pillar:#1f8a4c} #weather{--pillar:#2f6fa8} #whatson{--pillar:#c27c1a} #culture{--pillar:#5b3f8c}
+#escape{--pillar:#2c6e8f} #vital{--pillar:#b23a48} #specials{--pillar:#a8761a} #sources{--pillar:#55606e}
+.bh{border-top:4px solid var(--pillar,var(--ink));padding-top:14px;position:relative}
+.bh h2{display:flex;align-items:baseline;flex-wrap:wrap;gap:0 4px;font-size:36px;letter-spacing:-.03em}
+.bh h2::before{content:"";width:12px;height:12px;background:var(--pillar,var(--ink));border-radius:2px;margin-right:10px;align-self:center;flex:none}
+.block{padding-top:44px}
+
+/* ---------- Today in Essex strip (FT markets-bar idea) ---------- */
+.frontpage{padding:18px 0 8px}
+.todaybar{display:flex;align-items:stretch;gap:0;border-top:1px solid var(--ink);border-bottom:1px solid var(--hair);margin-bottom:18px;overflow-x:auto;scrollbar-width:none;white-space:nowrap}
+.todaybar::-webkit-scrollbar{display:none}
+.tb-h{font-size:11px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;padding:10px 14px 10px 0;color:var(--ink);display:flex;align-items:center}
+.tb{display:flex;align-items:center;gap:7px;padding:10px 16px;border-left:1px solid var(--hair);font-size:13.5px;color:var(--ink2);text-decoration:none}
+.tb:hover{background:rgba(0,0,0,.03)}
+.tb .k{font-size:10.5px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.tb b{color:var(--ink);font-weight:700;font-variant-numeric:tabular-nums}
+.tb b.r{color:#c8102e}.tb b.a{color:#a8650a}
+.tb.warn{background:#fdf3d7}.tb.warn .k{color:#8a5a00}
+
+/* ---------- lead package + latest rail ---------- */
+.fp-grid{display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:28px;align-items:start}
+.lead-pkg{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:0;background:var(--card);border:1px solid var(--hair);min-height:440px}
+.lp-text{padding:30px 32px 26px;display:flex;flex-direction:column;border-top:5px solid var(--c)}
+.lp-kick{display:flex;align-items:center;gap:10px;font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--c)}
+.lp-kick em{font-style:normal;color:var(--muted);letter-spacing:.02em;text-transform:none;font-weight:600;font-size:13px}
+.lp-kick .hotdot{width:9px;height:9px;border-radius:50%;background:var(--red);display:inline-block;animation:liveDot 1s steps(1,end) infinite}
+.lp-text h2{font-family:var(--serif);font-weight:800;font-size:44px;line-height:1.02;letter-spacing:-.035em;margin:12px 0 14px;text-wrap:balance}
+.lp-text h2 a{color:var(--ink);text-decoration:none}
+.lp-text h2 a:hover{text-decoration:underline;text-decoration-thickness:3px;text-underline-offset:5px;text-decoration-color:var(--c)}
+.lp-stand{font-size:18px;line-height:1.45;color:var(--ink2);margin:0 0 14px}
+.lp-pts{list-style:none;margin:0 0 16px;padding:12px 0 0;border-top:1px solid var(--hair);display:grid;gap:8px}
+.lp-pts li{position:relative;padding-left:18px;font-size:14.5px;line-height:1.4;color:var(--ink)}
+.lp-pts li::before{content:"";position:absolute;left:0;top:7px;width:8px;height:8px;background:var(--c);border-radius:1px}
+.lp-meta{margin-top:auto;display:flex;flex-wrap:wrap;gap:6px;align-items:center;font-size:13px;color:var(--muted)}
+.lp-read{margin-left:auto;background:var(--ink);color:#fff;font-weight:700;font-size:13px;padding:8px 14px;border-radius:99px;text-decoration:none}
+.lp-read:hover{background:var(--c)}
+.lp-map{position:relative;display:block;border-left:1px solid var(--hair);overflow:hidden;background:#dfe9ee}
+.lp-map svg{position:absolute;inset:0;width:100%;height:100%}
+.lp-map .mcap{position:absolute;left:12px;bottom:12px;background:rgba(255,253,247,.95);border:1px solid var(--hair);border-radius:4px;padding:6px 10px;font-size:12.5px;font-weight:600;color:var(--ink)}
+.lp-map .mcap b{color:var(--c);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;margin-right:6px}
+
+.latest{background:var(--card);border:1px solid var(--hair);padding:16px 18px 14px;position:sticky;top:64px}
+.latest .lh{display:flex;justify-content:space-between;align-items:center;border-bottom:2px solid var(--ink);padding-bottom:10px;margin-bottom:4px}
+.latest h3{font-family:var(--serif);font-size:22px;margin:0;display:flex;align-items:center;gap:9px;letter-spacing:-.02em}
+.latest .ld{width:10px;height:10px;border-radius:50%;background:var(--red);box-shadow:0 0 0 0 rgba(200,16,46,.5);animation:liveGlow 1.6s ease-out infinite}
+.latest ol{list-style:none;margin:0;padding:0}
+.latest li{display:grid;grid-template-columns:44px 1fr;gap:10px;padding:10px 0;border-bottom:1px solid var(--hair);position:relative}
+.latest li::before{content:"";position:absolute;left:47px;top:14px;bottom:-1px;width:1px;background:var(--hair)}
+.latest time{font-size:12px;font-weight:800;color:var(--muted);font-variant-numeric:tabular-nums;padding-top:1px}
+.latest time.new{color:var(--red)}
+.latest .lab{display:block;font-size:10.5px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--c);margin-bottom:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.latest li a{font-weight:650;font-size:14px;line-height:1.3;color:var(--ink);text-decoration:none}
+.latest li a:hover{color:var(--red)}
+.latest-more{margin-top:10px;width:100%;background:none;border:1px solid var(--ink);border-radius:99px;padding:8px;font-weight:700;font-size:13px;cursor:pointer;color:var(--ink)}
+.latest-more:hover{background:var(--ink);color:#fff}
+
+.seconds{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:24px;border-top:1px solid var(--ink)}
+.sec{display:block;padding:16px 20px 18px;border-right:1px solid var(--hair);text-decoration:none;color:inherit}
+.sec:first-child{padding-left:0}.sec:last-child{border-right:0;padding-right:0}
+.sec-map{height:118px;overflow:hidden;border:1px solid var(--hair);background:#dfe9ee;margin-bottom:12px;position:relative}
+.sec-map svg{width:100%;height:100%;display:block}
+.kick2{display:flex;gap:8px;align-items:center;font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--c)}
+.kick2 em{font-style:normal;color:var(--muted);letter-spacing:.02em;text-transform:none;font-weight:600;font-size:12.5px}
+.sec h3{font-family:var(--serif);font-size:21px;line-height:1.15;letter-spacing:-.025em;margin:6px 0 6px;font-weight:800;text-wrap:balance}
+.sec:hover h3{text-decoration:underline;text-decoration-color:var(--c);text-underline-offset:3px}
+.sec p{font-size:14px;color:var(--ink2);margin:0 0 8px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.sec .m{font-size:12px;color:var(--muted)}
+
+/* ---------- flatter cards (NYT/FT hairline grid) ---------- */
+.card.tc{border:0;border-top:3px solid var(--c);border-radius:0;background:transparent;box-shadow:none}
+.card.tc .body{padding:12px 0 14px}
+.card.tc:hover{transform:none;box-shadow:none}
+.card.tc:hover h3{text-decoration:underline;text-decoration-color:var(--c);text-underline-offset:3px}
+.card.tc h3{font-size:21px;letter-spacing:-.025em}
+.card.tc.wide h3{font-size:30px;line-height:1.08}
+.card.tc .src{border-top:1px solid var(--hair)}
+.news-grid,.comm-grid,#sportStories{column-gap:28px;row-gap:26px}
+
+/* compact headline lists */
+.more-news{margin-top:30px}
+.mn-h{font-size:12px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;margin:0 0 6px;padding-bottom:8px;border-bottom:2px solid var(--ink)}
+ol.mn{list-style:none;margin:0;padding:0;columns:2;column-gap:32px}
+ol.mn.one{columns:1}
+ol.mn li{break-inside:avoid;border-bottom:1px solid var(--hair)}
+ol.mn a{display:block;padding:11px 0 11px 14px;text-decoration:none;color:var(--ink);position:relative}
+ol.mn a::before{content:"";position:absolute;left:0;top:16px;width:6px;height:6px;background:var(--c);border-radius:1px}
+ol.mn .mk{display:block;font-size:10.5px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--c)}
+ol.mn b{display:block;font-size:16px;line-height:1.28;font-weight:700;margin:1px 0 3px;letter-spacing:-.01em}
+ol.mn a:hover b{color:var(--red)}
+ol.mn .mm{font-size:12px;color:var(--muted)}
+
+/* ---------- Around Essex (BBC local-style grid) ---------- */
+.around-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:0;border-left:1px solid var(--hair)}
+.ar{border-right:1px solid var(--hair);border-bottom:1px solid var(--hair);padding:14px 16px 16px;background:var(--card)}
+.ar.on{background:#fff6dc}
+.ar-h{display:flex;justify-content:space-between;align-items:baseline;gap:8px;margin-bottom:6px;border-bottom:2px solid var(--ink);padding-bottom:7px}
+.ar-h h4{font-family:var(--serif);font-size:18px;margin:0;letter-spacing:-.02em}
+.ar-go{background:none;border:0;font-size:11.5px;font-weight:700;color:var(--muted);cursor:pointer;padding:0;white-space:nowrap}
+.ar-go:hover{color:var(--red);text-decoration:underline}
+.ar ul{list-style:none;margin:0;padding:0}
+.ar li{padding:8px 0 8px 10px;border-bottom:1px dashed var(--hair);position:relative}
+.ar li:last-child{border-bottom:0}
+.ar li::before{content:"";position:absolute;left:0;top:13px;width:4px;height:4px;background:var(--c)}
+.ar li a{font-size:13.5px;font-weight:650;line-height:1.28;color:var(--ink);text-decoration:none}
+.ar li a:hover{color:var(--red)}
+.ar li > span{display:block;font-size:11.5px;color:var(--muted);margin-top:2px}
+.ar-none{font-size:13px;color:var(--muted)}
+
+/* ---------- Sport: scores strip + results tables (BBC Sport / The Athletic) ---------- */
+.score-strip{display:flex;gap:10px;overflow-x:auto;padding:2px 2px 12px;margin-bottom:18px;scroll-snap-type:x proximity}
+.chip-score{flex:none;scroll-snap-align:start;width:186px;background:var(--navy);color:#fff;border-radius:8px;padding:9px 12px;text-decoration:none;display:grid;gap:3px}
+.chip-score:hover{background:#16294a}
+.cs-c{font-size:10px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:#9fb0cc;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.cs-r{display:flex;justify-content:space-between;gap:8px;font-size:13.5px}
+.cs-r b{font-weight:650;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.cs-r i{font-style:normal;font-weight:800;font-variant-numeric:tabular-nums}
+.cs-s{font-size:10.5px;font-weight:800;color:var(--gold);letter-spacing:.08em}
+#scores{display:grid;gap:16px}
+.rt{background:var(--card);border:1px solid var(--hair)}
+.rt h4{margin:0;display:flex;justify-content:space-between;font-size:11.5px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;padding:9px 14px;background:var(--navy);color:#fff}
+.rt h4 span{color:#9fb0cc;letter-spacing:.04em}
+.rt-row{display:grid;grid-template-columns:1fr 78px 1fr 34px;align-items:center;gap:10px;padding:9px 14px;border-top:1px solid var(--hair);text-decoration:none;color:var(--ink);font-size:14.5px}
+.rt-row:hover{background:#fbf6ea}
+.rt-row .h{text-align:right}
+.rt-row .w{font-weight:800}
+.rt-row .sc{text-align:center;font-weight:800;font-variant-numeric:tabular-nums;background:var(--paper2);border-radius:5px;padding:3px 0;font-size:15px}
+.rt-row .sc i{font-style:normal;margin:0 6px;color:var(--muted)}
+.rt-row .st{font-size:10.5px;font-weight:800;color:var(--muted);letter-spacing:.06em}
+
+/* show-all buttons */
+.show-all{text-align:center;margin-top:16px}
+.show-all button{background:none;border:1px solid var(--ink);border-radius:99px;padding:9px 20px;font-weight:700;font-size:13.5px;cursor:pointer;color:var(--ink)}
+.show-all button:hover{background:var(--ink);color:#fff}
+
+/* story page share bar */
+.sharebar{display:flex;gap:10px;margin:0 0 18px}
+.sharebar button,.sharebar a{border:1px solid var(--line);background:var(--card);border-radius:99px;padding:7px 14px;font-weight:700;font-size:13px;color:var(--ink);cursor:pointer;text-decoration:none}
+.sharebar button:hover,.sharebar a:hover{border-color:var(--ink)}
+
+/* responsive */
+@media (max-width:1180px){ .around-grid{grid-template-columns:repeat(3,1fr)} .lp-text h2{font-size:38px} }
+@media (max-width:980px){ .fp-grid{grid-template-columns:1fr} .latest{position:static} }
+@media (max-width:860px){
+  .lead-pkg{grid-template-columns:1fr;min-height:0}
+  .lp-map{order:-1;height:230px;border-left:0;border-bottom:1px solid var(--hair)}
+  .lp-text{padding:20px 20px 18px}
+  .lp-text h2{font-size:30px}
+  .lp-stand{font-size:16px}
+  .seconds{grid-template-columns:1fr}
+  .sec{padding:16px 0;border-right:0;border-bottom:1px solid var(--hair)}
+  ol.mn{columns:1}
+  .around-grid{grid-template-columns:1fr 1fr}
+  .bh h2{font-size:28px}
+}
+@media (max-width:560px){ .around-grid{grid-template-columns:1fr} .rt-row{grid-template-columns:1fr 64px 1fr;font-size:13.5px} .rt-row .st{display:none} .lp-read{margin-left:0} }
+
+@media (max-width:860px){
+  .latest li:nth-child(n+6){display:none}
+  .sec-map{display:none}
+  .ar li:nth-child(n+3){display:none}
+  .score-strip{margin-left:-4px}
+}
 </style>
 </head>
 <body>
@@ -663,6 +830,7 @@ h1,h2,h3,h4,.story h1,.lead h2,.card h3,.drow h4{letter-spacing:-.022em}
   <div class="wrap">
     <button data-go="top">Home</button>
     <button data-go="news">News</button>
+    <button data-go="around">Around Essex</button>
     <button data-go="desk">Official</button>
     <button data-go="community">Community</button>
     <button data-go="sport">Sport</button>
@@ -701,26 +869,34 @@ h1,h2,h3,h4,.story h1,.lead h2,.card h3,.drow h4{letter-spacing:-.022em}
   <div class="wrap" id="areaChips"><span class="lbl">My Essex</span></div>
 </div>
 
-<section class="hero">
+<section class="frontpage">
   <div class="wrap">
-    <div class="stage" id="stage">
-      <div id="slides"></div>
-      <div class="dots" id="dots"></div>
-      <div class="caption" id="caption"></div>
+    <div class="todaybar" id="todayBar"></div>
+    <div class="fp-grid">
+      <article class="lead-pkg" id="leadPkg"></article>
+      <aside class="latest">
+        <div class="lh"><h3><i class="ld"></i>Latest</h3><span class="status" id="feedStatus"><i></i>Live edition</span></div>
+        <ol id="latestList"></ol>
+        <button class="latest-more" data-go="news">All the news ↓</button>
+      </aside>
     </div>
-    <aside class="top-list">
-      <div class="sec-h"><h3>Top stories</h3><span class="status" id="feedStatus"><i></i>Live edition</span></div>
-      <ol id="topList"></ol>
-      <div class="ad" style="min-height:96px;margin-top:12px"><span class="k">Advertisement</span><div class="in" style="padding:24px 14px 14px"><strong style="font-size:17px">Your brand, beside the headlines</strong><button data-advert style="margin-top:6px">Book this space</button></div></div>
-    </aside>
+    <div class="seconds" id="seconds"></div>
   </div>
 </section>
 
 <section class="block" id="news">
   <div class="wrap">
     <div class="bh"><h2>News<small id="newsCount"></small></h2><div class="tools" id="newsTools"></div></div>
-    <div class="grid" id="newsGrid"></div>
+    <div class="grid news-grid" id="newsGrid"></div>
+    <div class="more-news" id="moreNews"></div>
     <div class="ad billboard"><span class="k">Advertisement · Billboard 970×250</span><div class="in"><strong>Put your business in front of Essex</strong>Premium billboard placement across every page of The Seax.<br><button data-advert>See formats and rates</button></div></div>
+  </div>
+</section>
+
+<section class="block" id="around">
+  <div class="wrap">
+    <div class="bh"><h2>Around Essex<small>The latest from every part of the county</small></h2></div>
+    <div class="around-grid" id="aroundGrid"></div>
   </div>
 </section>
 
@@ -743,7 +919,7 @@ h1,h2,h3,h4,.story h1,.lead h2,.card h3,.drow h4{letter-spacing:-.022em}
   <div class="wrap">
     <div class="bh"><h2>Community &amp; Charity<small id="commCount">Good causes, volunteers and the groups that hold Essex together</small></h2><div class="tools" id="commTools"></div></div>
     <div class="comm">
-      <div class="grid comm-grid" id="commGrid"></div>
+      <div><div class="grid comm-grid" id="commGrid"></div><div class="more-news comm-more" id="commMore"></div></div>
       <aside class="help"><div class="sec-h"><h3>Help and get help</h3><span class="sub">Volunteer, give, find support</span></div><ul id="helpList"></ul></aside>
     </div>
   </div>
@@ -751,7 +927,8 @@ h1,h2,h3,h4,.story h1,.lead h2,.card h3,.drow h4{letter-spacing:-.022em}
 
 <section class="block" id="sport">
   <div class="wrap">
-    <div class="bh"><h2>Sport<small>Football, racing and more across the county</small></h2></div>
+    <div class="bh"><h2>Sport<small>Scores, results and fixtures from every level of Essex sport</small></h2></div>
+    <div class="score-strip" id="scoreStrip"></div>
     <div class="sport">
       <div>
         <div class="scores" id="scores"></div>
@@ -784,6 +961,7 @@ h1,h2,h3,h4,.story h1,.lead h2,.card h3,.drow h4{letter-spacing:-.022em}
   <div class="wrap">
     <div class="bh"><h2>What's On<small>Fireworks, festivals, lights and live sport</small></h2><div class="tools" id="evTools"></div></div>
     <div class="events" id="events"></div>
+    <div class="show-all" id="evMore"></div>
   </div>
 </section>
 
@@ -791,6 +969,7 @@ h1,h2,h3,h4,.story h1,.lead h2,.card h3,.drow h4{letter-spacing:-.022em}
   <div class="wrap">
     <div class="bh"><h2>Culture<small>Panto, theatre, exhibitions and screenings across the county</small></h2><div class="tools" id="culTools"></div></div>
     <div class="culture" id="culture-grid"></div>
+    <div class="show-all" id="culMore"></div>
   </div>
 </section>
 
@@ -2357,7 +2536,8 @@ function renderStory(id){
     <div class="story-rule" style="--c:${iconColour(s)}"><span class="${s.breaking?"hot":""}">${s.breaking?"Breaking":esc(s.tag||"News")}</span><span>${esc(s.place||"Essex")}</span></div>
     ${s.org && s.kind ? `<div class="official-flag k-${esc(s.kind)}" style="margin-top:0"><i></i>${OFFICIAL_KINDS.has(s.kind) ? "Official update" : "Community"} · ${esc(s.org)}</div>` : ""}
     <h1>${esc(s.headline)}</h1>
-    <div class="smeta"><b>${esc(s.place||"Essex")}</b><span>·</span><span data-ago="${esc(s.time||"")}">${ago(s.time)}</span>${s.time?`<span>·</span><span>${fmt(new Date(s.time),{weekday:"long",day:"numeric",month:"long",hour:"2-digit",minute:"2-digit"})}</span>`:""}<span>·</span><span>Reported by ${esc(s.source)}</span></div>
+    <div class="smeta"><b>${esc(s.place||"Essex")}</b><span>·</span><span data-ago="${esc(s.time||"")}">${ago(s.time)}</span>${s.time?`<span>·</span><span>${fmt(new Date(s.time),{weekday:"long",day:"numeric",month:"long",hour:"2-digit",minute:"2-digit"})}</span>`:""}<span>·</span><span>Reported by ${esc(s.source)}</span><span>·</span><span>${Math.max(1, Math.round(((s.summary||"") + " " + (s.points||[]).join(" ")).split(/\s+/).length / 200))} min read</span></div>
+    <div class="sharebar"><button data-copylink="${esc(s.id)}">Copy link</button><a href="${safeUrl(s.url)}" target="_blank" rel="noopener">Original report ↗</a></div>
     <p class="standfirst">${esc(s.summary)}</p>
     ${s.points.length ? `<h2>Key points</h2><ul class="points">${s.points.map(p=>`<li>${esc(p)}</li>`).join("")}</ul>` : ""}
     <div class="readfull">
@@ -2398,7 +2578,7 @@ function updateLiveLine(){
 
 function renderAll(){
   renderChips(); renderTicker(); buildHero(); renderTopList(); renderNews(); renderDesk(); renderCommunity(); renderSport(); renderWeather();
-  renderEvents(); renderCulture(); renderVital(); renderSpecials(); renderSources(); renderMeta(); updateLiveLine();
+  renderEvents(); renderCulture(); renderVital(); renderSpecials(); renderSources(); renderMeta(); afterRender(); updateLiveLine();
   if(location.hash.startsWith("#story-")) renderStory(location.hash.slice(7));
 }
 
@@ -2416,7 +2596,7 @@ function tickMinute(){
   updateLiveLine();
   const k = dayKey(n);
   if(k !== lastDay){ lastDay = k; renderAll(); }
-  else { renderWeather(); renderTicker(); }
+  else { renderWeather(); renderTicker(); renderToday(); }
 }
 setInterval(() => { tickSecond(); const m = new Date().getMinutes(); if(m !== lastMinute){ lastMinute = m; tickMinute(); } }, 1000);
 
@@ -2425,11 +2605,11 @@ document.addEventListener("click", e => {
   const t = e.target.closest("[data-area],[data-go],[data-slide],[data-evcat],[data-culcat],[data-srccat],[data-advert],[data-home],[data-desk],[data-deskall]");
   if(!t) return;
   if(t.hasAttribute("data-home")){ e.preventDefault(); if(location.hash) location.hash = ""; closeStory(); window.scrollTo({top:0}); }
-  else if(t.dataset.area){ AREA = t.dataset.area; try{ localStorage.setItem("seax-area", AREA); }catch(_){} renderChips(); buildHero(); renderTopList(); renderNews(); renderDesk(); renderCommunity(); renderSport(); renderEvents(); renderCulture(); renderSpecials(); renderSources(); }
+  else if(t.dataset.area){ AREA = t.dataset.area; try{ localStorage.setItem("seax-area", AREA); }catch(_){} renderChips(); buildHero(); renderTopList(); renderNews(); renderDesk(); renderCommunity(); renderSport(); renderEvents(); renderCulture(); renderSpecials(); renderSources(); afterRender(); }
   else if(t.dataset.go){ if(document.body.classList.contains("reading")){ location.hash = ""; closeStory(); } const el = document.getElementById(t.dataset.go); if(el) setTimeout(()=>el.scrollIntoView({behavior:"smooth", block:"start"}), 30); }
   else if(t.dataset.slide){ showSlide(+t.dataset.slide); clearInterval(heroTimer); heroTimer = setInterval(() => showSlide(heroIdx+1), 9000); }
-  else if(t.dataset.evcat){ EVCAT = t.dataset.evcat; renderEvents(); }
-  else if(t.dataset.culcat){ CULCAT = t.dataset.culcat; renderCulture(); }
+  else if(t.dataset.evcat){ EVCAT = t.dataset.evcat; renderEvents(); afterRender(); }
+  else if(t.dataset.culcat){ CULCAT = t.dataset.culcat; renderCulture(); afterRender(); }
   else if(t.dataset.srccat){ SRCCAT = t.dataset.srccat; renderSources(); }
   else if(t.dataset.desk){ DESK = t.dataset.desk; DESK_ALL = false; renderDesk(); }
   else if(t.hasAttribute("data-deskall")){ DESK_ALL = true; renderDesk(); }
@@ -2496,6 +2676,176 @@ setFeed("embedded"); route();
   pull(); setInterval(pull, 60000);
   document.addEventListener("visibilitychange", () => { if(!document.hidden) pull(); });
 })();
+
+/* ============================================================
+   REDESIGN: lead package, latest rail, today bar, tiered news,
+   Around Essex, compact sport, capped listings.
+   Function declarations here replace the earlier versions.
+   (No top-level const/let: these run at boot before this file's
+   own top-level statements.)
+   ============================================================ */
+function pillar(s){ return iconColour(s); }
+function hhmm(t){ const d = new Date(t); return isFinite(d) ? fmt(d,{hour:"2-digit",minute:"2-digit"}) : ""; }
+function shortWhen(t){
+  const d = new Date(t); if(!isFinite(d)) return "";
+  const now = new Date();
+  if(dayKey(d) === dayKey(now)) return hhmm(t);
+  const y = new Date(now.getTime() - 864e5);
+  if(dayKey(d) === dayKey(y)) return "Yest";
+  return fmt(d,{weekday:"short"});
+}
+function frontPicks(){
+  const list = ED.stories.filter(inArea).slice().sort(byTime);
+  const lead = list.find(s => s.breaking) || list.find(s => (s.points||[]).length >= 2) || list[0] || ED.stories[0];
+  const rest = list.filter(s => s !== lead);
+  /* secondaries: newest stories from different areas where possible */
+  const seconds = [], seenArea = new Set((lead && lead.areas) || []);
+  for(const s of rest){ if(seconds.length >= 3) break; const a = (s.areas||[])[0]; if(!seenArea.has(a)){ seconds.push(s); seenArea.add(a); } }
+  for(const s of rest){ if(seconds.length >= 3) break; if(!seconds.includes(s)) seconds.push(s); }
+  return {lead, seconds};
+}
+
+/* ---------- front page ---------- */
+function buildHero(){
+  const {lead, seconds} = frontPicks();
+  heroList = [lead, ...seconds].filter(Boolean);
+  const s = lead;
+  if(!s){ $("#leadPkg").innerHTML = ""; return; }
+  const pts = (s.points||[]).slice(0,3);
+  $("#leadPkg").innerHTML = `<div class="lp-text" style="--c:${pillar(s)}">
+      <span class="lp-kick">${s.breaking ? '<i class="hotdot"></i>Breaking' : esc(s.tag||"Top story")}<em>${esc(s.place||"Essex")}</em></span>
+      <h2><a href="${storyHref(s)}">${esc(s.headline)}</a></h2>
+      <p class="lp-stand">${esc(s.summary)}</p>
+      ${pts.length ? `<ul class="lp-pts">${pts.map(p=>`<li>${esc(p)}</li>`).join("")}</ul>` : ""}
+      <div class="lp-meta"><span data-ago="${esc(s.time||"")}">${ago(s.time)}</span><span>·</span><span>${esc(s.source)}${s.also && s.also.length ? ` and ${s.also.length} more` : ""}</span><a class="lp-read" href="${storyHref(s)}">Read the story</a></div>
+    </div>
+    <a class="lp-map" href="${storyHref(s)}" style="--c:${pillar(s)}" aria-label="Map: ${esc(mapCaption(s))}">${storyMap(s,{zoom:430,aspect:1.05})}<span class="mcap"><b>Where</b> ${esc(mapCaption(s))}</span></a>`;
+  $("#seconds").innerHTML = seconds.map(x => `<a class="sec" href="${storyHref(x)}" style="--c:${pillar(x)}">
+      <div class="sec-map">${storyMap(x,{zoom:300,aspect:2.1})}</div>
+      <div class="sec-body"><span class="kick2">${esc(x.tag||"News")}<em>${esc(x.place||"Essex")}</em></span>
+      <h3>${esc(x.headline)}</h3><p>${esc(x.summary)}</p>
+      <div class="m"><span data-ago="${esc(x.time||"")}">${ago(x.time)}</span> · ${esc(x.source)}</div></div></a>`).join("");
+  renderToday();
+}
+function showSlide(){ /* carousel retired */ }
+function setCaption(){}
+
+function renderTopList(){
+  /* the "Latest" rail: newest items from every section */
+  const pool = [];
+  const add = (s, lab) => { if(s && s.headline && s.time && isFinite(new Date(s.time))) pool.push({s, lab, t: new Date(s.time).getTime()}); };
+  ED.stories.filter(inArea).forEach(s => add(s, s.tag || "News"));
+  ED.sport.stories.filter(inArea).forEach(s => add(s, s.tag || "Sport"));
+  deskItems().filter(inArea).forEach(s => add(s, s.org || "Official"));
+  ED.community.filter(inArea).forEach(s => add(s, s.org || "Community"));
+  const now = Date.now();
+  const seen = new Set();
+  const items = pool.filter(i => i.t <= now + 36e5).sort((a,b) => b.t - a.t).filter(i => { if(seen.has(i.s.id)) return false; seen.add(i.s.id); return true; }).slice(0, 9);
+  $("#latestList").innerHTML = items.map(i => `<li style="--c:${pillar(i.s)}"><time class="${now - i.t < 2*36e5 ? "new" : ""}">${esc(shortWhen(i.s.time))}</time><div><span class="lab">${esc(i.lab)}</span><a href="${storyHref(i.s)}">${esc(i.s.headline)}</a></div></li>`).join("") || `<li><div>No updates for this area yet.</div></li>`;
+}
+
+function renderToday(){
+  const el = document.getElementById("todayBar"); if(!el) return;
+  const now = new Date(), st = solar(now), w = ED.weather || {};
+  const bits = [];
+  if(w.now) bits.push(`<a href="#weather" class="tb"><span class="k">Weather</span><b>${esc(w.now.temp)}°C</b> ${esc(String(w.now.desc||"").toLowerCase())}</a>`);
+  bits.push(`<a href="#weather" class="tb"><span class="k">${now < st.set ? "Sunset" : "Sunrise"}</span><b>${fmt(now < st.set ? st.set : solar(new Date(now.getTime()+864e5)).rise,{hour:"2-digit",minute:"2-digit"})}</b></a>`);
+  const tr = (ED.travel||[]); const red = tr.filter(t => t.level === "red").length, amber = tr.filter(t => t.level === "amber").length;
+  if(tr.length) bits.push(`<a href="#vital" class="tb"><span class="k">Travel</span>${red?`<b class="r">${red} severe</b> `:""}${amber?`<b class="a">${amber} alerts</b>`:""}${!red && !amber ? "<b>Good service</b>" : ""}</a>`);
+  const res = (ED.sport.results||[]).filter(m => Number.isFinite(m.hs)).length;
+  if(res) bits.push(`<a href="#sport" class="tb"><span class="k">Results</span><b>${res}</b> Essex scores</a>`);
+  const nextEv = (ED.events||[]).filter(e => new Date(e.start) > now).sort((a,b) => new Date(a.start) - new Date(b.start))[0];
+  if(nextEv) bits.push(`<a href="#whatson" class="tb"><span class="k">Next up</span><b>${esc(nextEv.title)}</b> ${esc(countdown(nextEv.start, true) || "")}</a>`);
+  const warn = (w.warnings||[])[0];
+  if(warn) bits.unshift(`<a href="#weather" class="tb warn"><span class="k">Warning</span><b>${esc(warn)}</b></a>`);
+  el.innerHTML = `<span class="tb-h">Today in Essex</span>${bits.join("")}`;
+}
+
+/* ---------- news: tiered ---------- */
+function renderNews(){
+  const all = ED.stories.filter(inArea).slice().sort(byTime);
+  const used = new Set(heroList.map(s => s && s.id));
+  const list = all.filter(s => !used.has(s.id));
+  const n = new Set(allStories().flatMap(s => [s.source, ...(s.also||[]).map(a=>a.name)])).size;
+  $("#newsCount").textContent = AREA==="all" ? `${ED.stories.length} stories · ${n} sources` : `${all.length} for ${AREAS.find(a=>a[0]===AREA)[1]}`;
+  const top = list.slice(0, 5), rest = list.slice(5);
+  $("#newsGrid").innerHTML = top.length ? top.map((s,i) => cardHtml(s, i===0)).join("") : `<div class="empty">No more stories tagged for this area right now. Try All Essex, or check back after the next newsroom refresh.</div>`;
+  $("#moreNews").innerHTML = rest.length ? `<h4 class="mn-h">More Essex news</h4><ol class="mn" id="mnList">${rest.map(s => compactRow(s)).join("")}</ol><div class="show-all" id="mnMore"></div>` : "";
+}
+function compactRow(s, label){
+  return `<li style="--c:${pillar(s)}"><a href="${storyHref(s)}"><span class="mk">${esc(label || s.tag || "News")}</span><b>${esc(s.headline)}</b><span class="mm">${esc(s.place||"Essex")} · <span data-ago="${esc(s.time||"")}">${ago(s.time)}</span></span></a></li>`;
+}
+
+/* ---------- Around Essex ---------- */
+function renderAround(){
+  const el = document.getElementById("aroundGrid"); if(!el) return;
+  const pool = [...ED.stories, ...ED.sport.stories, ...deskItems(), ...ED.community].filter(s => s && s.headline);
+  el.innerHTML = AREAS.filter(a => a[0] !== "all").map(([k, name]) => {
+    const seen = new Set();
+    const items = pool.filter(s => (s.areas||[]).includes(k)).sort(byTime).filter(s => { if(seen.has(s.headline)) return false; seen.add(s.headline); return true; });
+    const top = items.slice(0, 4);
+    return `<div class="ar${AREA===k?" on":""}"><div class="ar-h"><h4>${esc(name)}</h4><button data-area="${k}" class="ar-go">${items.length} stories</button></div>
+      ${top.length ? `<ul>${top.map(s => `<li style="--c:${pillar(s)}"><a href="${storyHref(s)}">${esc(s.headline)}</a><span>${esc(s.place||"")} · <span data-ago="${esc(s.time||"")}">${ago(s.time)}</span></span></li>`).join("")}</ul>` : `<p class="ar-none">No stories tagged here yet.</p>`}</div>`;
+  }).join("");
+}
+
+/* ---------- community: cards then list ---------- */
+function renderCommunity(){
+  const list = ED.community.filter(inArea).sort(byTime);
+  $("#commCount").textContent = AREA==="all" ? `${ED.community.length} stories from charities, volunteers and community groups` : `${list.length} for ${AREAS.find(a=>a[0]===AREA)[1]}`;
+  $("#commGrid").innerHTML = list.length ? list.slice(0,4).map(s => cardHtml(s)).join("") : `<div class="empty" style="grid-column:1/-1">No community stories tagged for this area yet. Try All Essex.</div>`;
+  const rest = list.slice(4);
+  $("#commMore").innerHTML = rest.length ? `<h4 class="mn-h">More from charities and community groups</h4><ol class="mn one" id="commList">${rest.map(s => compactRow(s, s.org)).join("")}</ol><div class="show-all" id="commListMore"></div>` : "";
+  const cls = k => /volunteer|join/i.test(k) ? "v" : /give|fund/i.test(k) ? "g" : /help/i.test(k) ? "h" : "";
+  $("#helpList").innerHTML = ED.getInvolved.map(g => `<li><a href="${safeUrl(g.url)}" target="_blank" rel="noopener"><span class="hk ${cls(g.kind||"")}">${esc(g.kind||"Info")}</span><div><b>${esc(g.title)}</b><span>${esc(g.org||"")}${g.when?` · ${esc(g.when)}`:""}</span></div></a></li>`).join("");
+}
+
+/* ---------- sport: strip + grouped table ---------- */
+function renderSport(){
+  const sp = ED.sport;
+  const done = m => Number.isFinite(m.hs) && Number.isFinite(m.as);
+  const res = sp.results.slice().sort((a,b) => new Date(b.date) - new Date(a.date));
+  const strip = document.getElementById("scoreStrip");
+  if(strip) strip.innerHTML = res.length ? res.map(m => `<a class="chip-score" href="${safeUrl(m.url||"#")}" target="_blank" rel="noopener"><span class="cs-c">${esc(m.comp)}</span><span class="cs-r"><b>${esc(m.home)}</b><i>${done(m) ? m.hs : "-"}</i></span><span class="cs-r"><b>${esc(m.away)}</b><i>${done(m) ? m.as : "-"}</i></span><span class="cs-s">${esc(done(m) ? (m.status||"FT") : (m.status||"Live"))}</span></a>`).join("") : "";
+  const groups = {};
+  res.forEach(m => { (groups[m.comp] = groups[m.comp] || []).push(m); });
+  $("#scores").innerHTML = Object.entries(groups).map(([comp, ms]) => `<div class="rt"><h4>${esc(comp)}<span>${ms[0].date ? fmt(new Date(ms[0].date),{weekday:"short",day:"numeric",month:"short"}) : ""}</span></h4>
+    ${ms.map(m => `<a class="rt-row" href="${safeUrl(m.url||"#")}" target="_blank" rel="noopener" title="${esc(m.note||"")}"><span class="h${done(m) && m.hs > m.as ? " w" : ""}">${esc(m.home)}</span><span class="sc">${done(m) ? `${m.hs}<i>-</i>${m.as}` : esc(m.status||"v")}</span><span class="a${done(m) && m.as > m.hs ? " w" : ""}">${esc(m.away)}</span><span class="st">${esc(done(m) ? (m.status||"FT") : "")}</span></a>`).join("")}</div>`).join("");
+  $("#sportStories").innerHTML = sp.stories.filter(inArea).sort(byTime).slice(0,6).map(s => cardHtml(s)).join("");
+  $("#fixtures").innerHTML = [...sp.fixtures].filter(f => new Date(f.date) >= new Date(Date.now() - 3*36e5)).sort((x,y) => new Date(x.date) - new Date(y.date)).map(f => {
+    const d = new Date(f.date); const cd = countdown(f.date, f.allDay);
+    return `<a class="fx" href="${safeUrl(f.url)}" target="_blank" rel="noopener"><div class="d"><span>${fmt(d,{month:"short"})}</span><b>${fmt(d,{day:"numeric"})}</b><span>${fmt(d,{weekday:"short"})}</span></div>
+      <div><div class="w">${esc(f.title)}${cd?`<span class="cd" data-cd="${esc(f.date)}" data-allday="${f.allDay?1:0}">${cd}</span>`:""}</div><div class="s">${esc(f.comp)} · ${esc(f.where||"")}${f.allDay?"":" · "+fmt(d,{hour:"2-digit",minute:"2-digit"})}${f.note?" · "+esc(f.note):""}</div></div></a>`;
+  }).join("");
+}
+
+/* ---------- capped listings ---------- */
+function capList(containerSel, moreSel, limit, flag, label){
+  const box = document.querySelector(containerSel), more = document.getElementById(moreSel);
+  if(!box || !more) return;
+  const kids = Array.from(box.children).filter(c => !c.classList.contains("empty"));
+  kids.forEach((c,i) => c.style.display = (window[flag] || i < limit) ? "" : "none");
+  more.innerHTML = kids.length > limit ? `<button data-showall="${flag}">${window[flag] ? "Show fewer" : `Show all ${kids.length} ${label}`}</button>` : "";
+}
+function afterRender(){
+  renderAround();
+  capList("#events", "evMore", 8, "SEAX_EV_ALL", "events");
+  capList("#culture-grid", "culMore", 9, "SEAX_CUL_ALL", "listings");
+  capList("#mnList", "mnMore", window.innerWidth < 860 ? 8 : 14, "SEAX_MN_ALL", "headlines");
+  capList("#commList", "commListMore", 8, "SEAX_COMM_ALL", "community stories");
+}
+
+/* interactions for the redesign (attached after boot) */
+document.addEventListener("click", e => {
+  const b = e.target.closest("[data-showall],[data-copylink]");
+  if(!b) return;
+  if(b.dataset.showall){ window[b.dataset.showall] = !window[b.dataset.showall]; afterRender(); }
+  else if(b.dataset.copylink){
+    const url = location.href.split("#")[0] + "#story-" + b.dataset.copylink;
+    const done = ok => { b.textContent = ok ? "Link copied" : url; setTimeout(() => b.textContent = "Copy link", 2500); };
+    try{ navigator.clipboard.writeText(url).then(() => done(true), () => done(false)); }catch(_){ done(false); }
+  }
+});
 
 </script>
 </body>
