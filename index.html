@@ -835,6 +835,23 @@ body.srch-open{overflow:hidden}
   nav.main button.srch-btn span{display:none}
   nav.main button.srch-btn{padding:7px 10px}
 }
+/* webcams */
+.cams{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.cam{background:var(--card);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;display:flex;flex-direction:column}
+.cam-frame{position:relative;aspect-ratio:16/9;background:#0e1b30}
+.cam-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.cam-frame .live{position:absolute;top:10px;right:10px;z-index:2;pointer-events:none;display:inline-flex;align-items:center;gap:6px;background:rgba(14,27,48,.82);color:#fff;font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;padding:4px 9px;border-radius:4px}
+.cam-frame .live:before{content:"";width:7px;height:7px;border-radius:50%;background:#e23a3a;box-shadow:0 0 0 3px rgba(226,58,58,.25)}
+.cam-body{padding:14px 16px 16px;display:flex;flex-direction:column;gap:6px;flex:1}
+.cam-body .pl{font-size:12px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--teal)}
+.cam-body h4{font-family:var(--serif);font-size:20px;line-height:1.2;margin:0}
+.cam-body p{margin:0;font-size:14.5px;color:var(--ink2);line-height:1.45}
+.cam-body .cr{margin-top:auto;padding-top:8px;font-size:12.5px;color:var(--muted)}
+.cam-body .cr a{color:inherit;font-weight:700}
+.cam-note{margin-top:16px;font-size:13px;color:var(--muted)}
+.cam-note a{color:inherit;font-weight:700}
+@media (max-width:980px){ .cams{grid-template-columns:repeat(2,1fr)} }
+@media (max-width:640px){ .cams{grid-template-columns:1fr} }
 </style>
 </head>
 <body>
@@ -893,6 +910,7 @@ body.srch-open{overflow:hidden}
     <button data-go="community">Community</button>
     <button data-go="sport">Sport</button>
     <button data-go="weather">Weather</button>
+    <button data-go="webcams">Webcams</button>
     <button data-go="whatson">What's On</button>
     <button data-go="culture">Culture</button>
     <button data-go="escape">Escape</button>
@@ -1025,6 +1043,14 @@ body.srch-open{overflow:hidden}
         <div class="wx-note" id="wxNote"></div>
       </div>
     </div>
+  </div>
+</section>
+
+<section class="block" id="webcams">
+  <div class="wrap">
+    <div class="bh"><h2>Webcams<small>Live views from the Essex coast and the Thames</small></h2></div>
+    <div class="cams" id="camGrid"></div>
+    <p class="cam-note">Each camera shows its latest picture, usually a few minutes old. Press play to watch the last 24 hours. Players by <a href="https://www.windy.com/" target="_blank" rel="noopener">windy.com</a>; each camera belongs to the organisation named under it. <a href="https://www.windy.com/webcams/add" target="_blank" rel="noopener">Add a webcam</a>.</p>
   </div>
 </section>
 
@@ -2513,6 +2539,20 @@ function renderEvents(){
   }).join("") : `<div class="empty" style="grid-column:1/-1">Nothing listed for this filter yet.</div>`;
 }
 
+const WEBCAMS = [
+  {id:"1735475366", place:"Southend-on-Sea", area:"southend", title:"Southend Pier", text:"The view from the world's longest pleasure pier, out over the Thames Estuary.", owner:"Southend Pier", url:"https://www.southendpier.co.uk/webcam"},
+  {id:"1632722717", place:"Leigh-on-Sea", area:"southend", title:"Bell Wharf Beach", text:"Old Leigh's little beach by the cockle sheds, with the tide coming and going on the estuary.", owner:"Leigh Sailing Club", url:"https://www.leighsailingclub.org/"},
+  {id:"1462962335", place:"Southend-on-Sea", area:"southend", title:"Thames Estuary Yacht Club jetty", text:"Southend's seafront and the estuary from the yacht club jetty.", owner:"Thames Estuary Yacht Club", url:"http://www.teyc.co.uk/teyc-webcam/"},
+  {id:"1793899732", place:"Thorpe Bay", area:"southend", title:"Thorpe Bay Yacht Club", text:"The beach and moorings at Thorpe Bay, looking out to sea.", owner:"Thorpe Bay Yacht Club", url:"https://www.tbyc.org/useful-info/tbyc-webcam-1"},
+  {id:"1645319597", place:"Burnham-on-Crouch", area:"maldon", title:"Burnham Yacht Harbour", text:"Pontoons, the boat lift and the River Crouch at Burnham.", owner:"Burnham Yacht Harbour", url:"https://burnhamyachtharbour.co.uk/"},
+  {id:"1655111214", place:"North Fambridge", area:"maldon", title:"Fambridge Yacht Haven", text:"Moorings on the River Crouch at North Fambridge.", owner:"Fambridge Yacht Haven", url:"https://www.yachthavens.com/fambridge-yacht-haven/at-the-marina/webcams"},
+  {id:"1793899529", place:"Grays", area:"south", title:"Grays Beach Riverside Park", text:"The Thames at Grays, from the riverside park.", owner:"Public camera on Ivideon", url:"https://public.ivideon.com/camera/100-HhlCHDZkbL9lrQgvFh1Yqc:1179648/"},
+  {id:"1762689801", place:"Salcott", area:"maldon", title:"Sky over Salcott", text:"A sky camera near the Blackwater, looking north-east. Good for checking the cloud, and for sunsets.", owner:"AllSky7 network", url:"https://allsky7.net/index.html"}
+];
+function renderWebcams(){
+  const g = $("#camGrid"); if(!g) return;
+  g.innerHTML = WEBCAMS.map(c => `<article class="cam"><div class="cam-frame"><span class="live">Live</span><iframe src="https://webcams.windy.com/webcams/public/embed/player/${c.id}/day" title="${esc(c.title)} webcam, ${esc(c.place)}" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade"></iframe></div><div class="cam-body"><div class="pl">${esc(c.place)}</div><h4>${esc(c.title)}</h4><p>${esc(c.text)}</p><div class="cr">Camera: <a href="${esc(c.url)}" target="_blank" rel="noopener">${esc(c.owner)}</a> · <a href="https://www.windy.com/webcams/${c.id}" target="_blank" rel="noopener">windy.com</a></div></div></article>`).join("");
+}
 function renderEscape(){
   $("#escapeGrid").innerHTML = ESCAPE.map(e => `<div class="esc" style="--c:${ICON_COLOUR[SCENE_ICON[e.scene]]||"#1b2a44"}"><div class="in"><div class="pl">${esc(e.place)}</div><h4>${esc(e.title)}</h4><p>${esc(e.text)}</p></div></div>`).join("");
 }
@@ -2704,7 +2744,7 @@ $("#srcQ").addEventListener("input", e => { SRCQ = e.target.value; renderSources
 
 /* boot */
 ED = normalise(EMBED);
-tickSecond(); renderEscape(); renderAll(); lastDay = dayKey(new Date()); lastMinute = new Date().getMinutes();
+tickSecond(); renderEscape(); renderWebcams(); renderAll(); lastDay = dayKey(new Date()); lastMinute = new Date().getMinutes();
 setFeed("embedded"); route();
 
 /* live edition from the page's data store */
@@ -2942,7 +2982,7 @@ document.addEventListener("click", e => {
 function srchTypes(){
   return [
     ["all", "Everything"], ["news", "News"], ["services", "Public Services"], ["community", "Community"],
-    ["sport", "Sport"], ["travel", "Travel"], ["whatson", "What's On"], ["culture", "Culture"], ["deals", "Deals"], ["escape", "Days out"], ["sources", "Sources"]
+    ["sport", "Sport"], ["travel", "Travel"], ["whatson", "What's On"], ["culture", "Culture"], ["deals", "Deals"], ["escape", "Days out"], ["webcams", "Webcams"], ["sources", "Sources"]
   ];
 }
 function srchNorm(t){ return String(t || "").toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "").replace(/[’']/g, ""); }
@@ -2969,6 +3009,8 @@ function srchIndex(){
     href:d.url || "#specials", ext:!!d.url, c:"#a8761a", hay:[d.title, d.detail, d.where, d.tag].join(" ")}));
   (typeof ESCAPE !== "undefined" ? ESCAPE : []).forEach(e => idx.push({type:"escape", kick:"Day out", title:e.title, text:e.text || "", place:e.place || "", meta:"",
     href:"#escape", ext:false, c:"#2c6e8f", hay:[e.title, e.text, e.place].join(" ")}));
+  (typeof WEBCAMS !== "undefined" ? WEBCAMS : []).forEach(c => idx.push({type:"webcams", kick:"Webcam", title:c.title + " webcam", text:c.text, place:c.place, meta:"Live view",
+    href:"#webcams", ext:false, c:"#1f7a78", hay:[c.title, c.text, c.place, c.owner, "webcam webcams live camera cam view"].join(" ")}));
   (typeof SOURCES !== "undefined" ? SOURCES : []).forEach(g => (g.list || []).forEach(([name, url, area]) => idx.push({type:"sources", kick:g.title, title:name, text:"", place:area || "", meta:hostOf(url),
     href:url, ext:true, c:"#55606e", hay:[name, g.title, area, url].join(" ")})));
   idx.forEach(it => { it.n = srchNorm(it.hay); it.nt = srchNorm(it.title); it.np = srchNorm(it.place + " " + it.kick); });
