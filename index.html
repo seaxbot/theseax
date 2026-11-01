@@ -11,6 +11,9 @@
 <meta property="og:title" content="The Seax · Essex news, sport and life, live">
 <meta property="og:description" content="Live Essex news, sport, weather, culture and what's on, updated through the day.">
 <meta property="og:type" content="website">
+<meta property="og:url" content="https://theseax.com/">
+<meta property="og:site_name" content="The Seax">
+<link rel="canonical" href="https://theseax.com/">
 <meta name="theme-color" content="#c8102e">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <script>window.SEAX_FEED_URL = "edition.json";</script>
@@ -788,7 +791,7 @@ nav.main .nav-scroll{display:flex;align-items:center;gap:0;flex:1;min-width:0;ov
 nav.main .nav-scroll.ovf{-webkit-mask-image:linear-gradient(90deg,#000 calc(100% - 28px),transparent);mask-image:linear-gradient(90deg,#000 calc(100% - 28px),transparent);padding-right:24px}
 nav.main button.adv{flex:none;margin-left:0}
 nav.main .nav-scroll::-webkit-scrollbar{display:none}
-nav.main .nav-scroll button{padding:8px 8.5px;font-size:13.8px}
+nav.main .nav-scroll button{padding:8px 6.5px;font-size:13.6px}
 @media (max-width:640px){ nav.main button.adv{display:none} }
 nav.main button.srch-btn{flex:none;display:inline-flex;align-items:center;gap:7px;background:#fff;border:1.5px solid var(--ink);color:var(--ink);font-weight:700;padding:7px 14px 7px 11px}
 nav.main button.srch-btn:hover{background:var(--ink);color:#fff}
@@ -835,6 +838,7 @@ body.srch-open{overflow:hidden}
   nav.main button.srch-btn span{display:none}
   nav.main button.srch-btn{padding:7px 10px}
 }
+
 /* webcams */
 .cams{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
 .cam{background:var(--card);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;display:flex;flex-direction:column}
@@ -2299,6 +2303,21 @@ function moonSvg(frac){
 }
 
 
+const WEBCAMS = [
+  {id:"1735475366", place:"Southend-on-Sea", area:"southend", title:"Southend Pier", text:"The view from the world's longest pleasure pier, out over the Thames Estuary.", owner:"Southend Pier", url:"https://www.southendpier.co.uk/webcam"},
+  {id:"1632722717", place:"Leigh-on-Sea", area:"southend", title:"Bell Wharf Beach", text:"Old Leigh's little beach by the cockle sheds, with the tide coming and going on the estuary.", owner:"Leigh Sailing Club", url:"https://www.leighsailingclub.org/"},
+  {id:"1462962335", place:"Southend-on-Sea", area:"southend", title:"Thames Estuary Yacht Club jetty", text:"Southend's seafront and the estuary from the yacht club jetty.", owner:"Thames Estuary Yacht Club", url:"http://www.teyc.co.uk/teyc-webcam/"},
+  {id:"1793899732", place:"Thorpe Bay", area:"southend", title:"Thorpe Bay Yacht Club", text:"The beach and moorings at Thorpe Bay, looking out to sea.", owner:"Thorpe Bay Yacht Club", url:"https://www.tbyc.org/useful-info/tbyc-webcam-1"},
+  {id:"1645319597", place:"Burnham-on-Crouch", area:"maldon", title:"Burnham Yacht Harbour", text:"Pontoons, the boat lift and the River Crouch at Burnham.", owner:"Burnham Yacht Harbour", url:"https://burnhamyachtharbour.co.uk/"},
+  {id:"1655111214", place:"North Fambridge", area:"maldon", title:"Fambridge Yacht Haven", text:"Moorings on the River Crouch at North Fambridge.", owner:"Fambridge Yacht Haven", url:"https://www.yachthavens.com/fambridge-yacht-haven/at-the-marina/webcams"},
+  {id:"1793899529", place:"Grays", area:"south", title:"Grays Beach Riverside Park", text:"The Thames at Grays, from the riverside park.", owner:"Public camera on Ivideon", url:"https://public.ivideon.com/camera/100-HhlCHDZkbL9lrQgvFh1Yqc:1179648/"},
+  {id:"1762689801", place:"Salcott", area:"maldon", title:"Sky over Salcott", text:"A sky camera near the Blackwater, looking north-east. Good for checking the cloud, and for sunsets.", owner:"AllSky7 network", url:"https://allsky7.net/index.html"}
+];
+function renderWebcams(){
+  const g = $("#camGrid"); if(!g) return;
+  g.innerHTML = WEBCAMS.map(c => `<article class="cam"><div class="cam-frame"><span class="live">Live</span><iframe src="https://webcams.windy.com/webcams/public/embed/player/${c.id}/day" title="${esc(c.title)} webcam, ${esc(c.place)}" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade"></iframe></div><div class="cam-body"><div class="pl">${esc(c.place)}</div><h4>${esc(c.title)}</h4><p>${esc(c.text)}</p><div class="cr">Camera: <a href="${esc(c.url)}" target="_blank" rel="noopener">${esc(c.owner)}</a> · <a href="https://www.windy.com/webcams/${c.id}" target="_blank" rel="noopener">windy.com</a></div></div></article>`).join("");
+}
+
 /* ============================================================
    state & rendering
    ============================================================ */
@@ -2539,20 +2558,6 @@ function renderEvents(){
   }).join("") : `<div class="empty" style="grid-column:1/-1">Nothing listed for this filter yet.</div>`;
 }
 
-const WEBCAMS = [
-  {id:"1735475366", place:"Southend-on-Sea", area:"southend", title:"Southend Pier", text:"The view from the world's longest pleasure pier, out over the Thames Estuary.", owner:"Southend Pier", url:"https://www.southendpier.co.uk/webcam"},
-  {id:"1632722717", place:"Leigh-on-Sea", area:"southend", title:"Bell Wharf Beach", text:"Old Leigh's little beach by the cockle sheds, with the tide coming and going on the estuary.", owner:"Leigh Sailing Club", url:"https://www.leighsailingclub.org/"},
-  {id:"1462962335", place:"Southend-on-Sea", area:"southend", title:"Thames Estuary Yacht Club jetty", text:"Southend's seafront and the estuary from the yacht club jetty.", owner:"Thames Estuary Yacht Club", url:"http://www.teyc.co.uk/teyc-webcam/"},
-  {id:"1793899732", place:"Thorpe Bay", area:"southend", title:"Thorpe Bay Yacht Club", text:"The beach and moorings at Thorpe Bay, looking out to sea.", owner:"Thorpe Bay Yacht Club", url:"https://www.tbyc.org/useful-info/tbyc-webcam-1"},
-  {id:"1645319597", place:"Burnham-on-Crouch", area:"maldon", title:"Burnham Yacht Harbour", text:"Pontoons, the boat lift and the River Crouch at Burnham.", owner:"Burnham Yacht Harbour", url:"https://burnhamyachtharbour.co.uk/"},
-  {id:"1655111214", place:"North Fambridge", area:"maldon", title:"Fambridge Yacht Haven", text:"Moorings on the River Crouch at North Fambridge.", owner:"Fambridge Yacht Haven", url:"https://www.yachthavens.com/fambridge-yacht-haven/at-the-marina/webcams"},
-  {id:"1793899529", place:"Grays", area:"south", title:"Grays Beach Riverside Park", text:"The Thames at Grays, from the riverside park.", owner:"Public camera on Ivideon", url:"https://public.ivideon.com/camera/100-HhlCHDZkbL9lrQgvFh1Yqc:1179648/"},
-  {id:"1762689801", place:"Salcott", area:"maldon", title:"Sky over Salcott", text:"A sky camera near the Blackwater, looking north-east. Good for checking the cloud, and for sunsets.", owner:"AllSky7 network", url:"https://allsky7.net/index.html"}
-];
-function renderWebcams(){
-  const g = $("#camGrid"); if(!g) return;
-  g.innerHTML = WEBCAMS.map(c => `<article class="cam"><div class="cam-frame"><span class="live">Live</span><iframe src="https://webcams.windy.com/webcams/public/embed/player/${c.id}/day" title="${esc(c.title)} webcam, ${esc(c.place)}" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade"></iframe></div><div class="cam-body"><div class="pl">${esc(c.place)}</div><h4>${esc(c.title)}</h4><p>${esc(c.text)}</p><div class="cr">Camera: <a href="${esc(c.url)}" target="_blank" rel="noopener">${esc(c.owner)}</a> · <a href="https://www.windy.com/webcams/${c.id}" target="_blank" rel="noopener">windy.com</a></div></div></article>`).join("");
-}
 function renderEscape(){
   $("#escapeGrid").innerHTML = ESCAPE.map(e => `<div class="esc" style="--c:${ICON_COLOUR[SCENE_ICON[e.scene]]||"#1b2a44"}"><div class="in"><div class="pl">${esc(e.place)}</div><h4>${esc(e.title)}</h4><p>${esc(e.text)}</p></div></div>`).join("");
 }
