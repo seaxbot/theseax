@@ -355,6 +355,10 @@ body.reading .front{display:none}
 .story .smeta b{color:var(--teal)}
 .story .standfirst{font-family:var(--serif);font-size:23px;line-height:1.4;color:var(--ink);margin:0 0 22px;font-weight:500}
 .story h2{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--red);margin:26px 0 10px}
+.story .sbody{margin:0 0 6px;max-width:68ch}
+.story .sbody p{font-size:18px;line-height:1.65;color:var(--ink);margin:0 0 16px}
+.story .sbody p:first-child::first-letter{font-family:var(--serif);font-weight:800;float:left;font-size:3.1em;line-height:.9;margin:4px 8px 0 0;color:var(--c,var(--ink))}
+@media (max-width:960px){ .story .sbody p{font-size:17px} }
 .story ul.points{margin:0;padding:0;list-style:none;display:grid;gap:10px}
 .story ul.points li{display:grid;grid-template-columns:22px 1fr;gap:8px;font-size:17px;line-height:1.5}
 .story ul.points li::before{content:"";width:9px;height:9px;margin-top:9px;background:var(--gold);transform:rotate(45deg)}
@@ -2670,10 +2674,11 @@ function renderStory(id){
     <div class="story-rule" style="--c:${iconColour(s)}"><span class="${s.breaking?"hot":""}">${s.breaking?"Breaking":esc(s.tag||"News")}</span><span>${esc(s.place||"Essex")}</span></div>
     ${s.org && s.kind ? `<div class="official-flag k-${esc(s.kind)}" style="margin-top:0"><i></i>${OFFICIAL_KINDS.has(s.kind) ? "Public Services" : "Community"} · ${esc(s.org)}</div>` : ""}
     <h1>${esc(s.headline)}</h1>
-    <div class="smeta"><b>${esc(s.place||"Essex")}</b><span>·</span><span data-ago="${esc(s.time||"")}">${ago(s.time)}</span>${s.time?`<span>·</span><span>${fmt(new Date(s.time),{weekday:"long",day:"numeric",month:"long",hour:"2-digit",minute:"2-digit"})}</span>`:""}<span>·</span><span>Reported by ${esc(s.source)}</span><span>·</span><span>${Math.max(1, Math.round(((s.summary||"") + " " + (s.points||[]).join(" ")).split(/\s+/).length / 200))} min read</span></div>
+    <div class="smeta"><b>${esc(s.place||"Essex")}</b><span>·</span><span data-ago="${esc(s.time||"")}">${ago(s.time)}</span>${s.time?`<span>·</span><span>${fmt(new Date(s.time),{weekday:"long",day:"numeric",month:"long",hour:"2-digit",minute:"2-digit"})}</span>`:""}<span>·</span><span>Reported by ${esc(s.source)}</span><span>·</span><span>${Math.max(1, Math.round(((s.summary||"") + " " + (s.body||[]).join(" ") + " " + (s.points||[]).join(" ")).split(/\s+/).length / 200))} min read</span></div>
     <div class="sharebar"><button data-copylink="${esc(s.id)}">Copy link</button><a href="${safeUrl(s.url)}" target="_blank" rel="noopener">Original report ↗</a></div>
     <p class="standfirst">${esc(s.summary)}</p>
-    ${s.points.length ? `<h2>Key points</h2><ul class="points">${s.points.map(p=>`<li>${esc(p)}</li>`).join("")}</ul>` : ""}
+    ${Array.isArray(s.body) && s.body.length ? `<div class="sbody">${s.body.map(p=>`<p>${esc(p)}</p>`).join("")}</div>` : ""}
+    ${(s.points||[]).length ? `<h2>Key points</h2><ul class="points">${s.points.map(p=>`<li>${esc(p)}</li>`).join("")}</ul>` : ""}
     <div class="readfull">
       <div><div class="k">${OFFICIAL_KINDS.has(s.kind) && hostOf(s.url).match(/police\.uk|gov\.uk|nhs\.uk/) ? "Read the official statement" : "Read the full story"}</div><div class="src">${esc(s.source)}</div><div class="u">${esc(s.url)}</div></div>
       <a class="go" href="${safeUrl(s.url)}" target="_blank" rel="noopener">Open at ${esc(host||s.source)} ↗</a>
