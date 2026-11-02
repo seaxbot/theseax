@@ -637,6 +637,9 @@ h1,h2,h3,h4,.story h1,.lead h2,.card h3,.drow h4{letter-spacing:-.022em}
 .tb b{color:var(--ink);font-weight:700;font-variant-numeric:tabular-nums}
 .tb b.r{color:#c8102e}.tb b.a{color:#a8650a}
 .tb.warn{background:#fdf3d7}.tb.warn .k{color:#8a5a00}
+.tb-wx .wk{font-size:10.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-right:5px}
+.tb-wx .wp{white-space:nowrap}
+.tb-wx .wsep{width:1px;align-self:stretch;background:var(--hair);margin:0 4px}
 
 /* ---------- lead package + latest rail ---------- */
 .fp-grid{display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:28px;align-items:start}
@@ -2930,14 +2933,21 @@ function renderToday(){
   const el = document.getElementById("todayBar"); if(!el) return;
   const now = new Date(), st = solar(now), w = ED.weather || {};
   const bits = [];
-  if(w.now) bits.push(`<a href="#weather" class="tb"><span class="k">Weather</span><b>${esc(w.now.temp)}°C</b> ${esc(String(w.now.desc||"").toLowerCase())}</a>`);
+  if(w.now){
+    const ukDate = d => new Intl.DateTimeFormat("en-CA",{timeZone:"Europe/London",year:"numeric",month:"2-digit",day:"2-digit"}).format(d);
+    const ukHour = Number(new Intl.DateTimeFormat("en-GB",{timeZone:"Europe/London",hour:"2-digit",hour12:false}).format(now));
+    const days = w.days || [], today = days.find(d => d.date === ukDate(now)), tmrw = days.find(d => d.date === ukDate(new Date(now.getTime()+864e5)));
+    const low = s => esc(String(s||"").toLowerCase());
+    const rain = d => Number.isFinite(+d.rain) && +d.rain >= 20 ? `, ${+d.rain}% rain` : "";
+    const parts = [`<span class="wk">Now</span><b>${esc(w.now.temp)}°C</b> ${low(w.now.desc)}`];
+    if(today && ukHour < 16) parts.push(`<span class="wk">Later</span>high <b>${esc(today.hi)}°C</b>${today.desc ? `, ${low(today.desc)}` : ""}${rain(today)}`);
+    if(today && ukHour < 23) parts.push(`<span class="wk">Tonight</span>low <b>${esc(today.lo)}°C</b>`);
+    if(tmrw) parts.push(`<span class="wk">Tomorrow</span><b>${esc(tmrw.hi)}°C</b> ${low(tmrw.desc)}${rain(tmrw)}`);
+    bits.push(`<a href="#weather" class="tb tb-wx"><span class="k">Weather</span>${parts.map(x => `<span class="wp">${x}</span>`).join('<span class="wsep" aria-hidden="true"></span>')}</a>`);
+  }
   bits.push(`<a href="#weather" class="tb"><span class="k">${now < st.set ? "Sunset" : "Sunrise"}</span><b>${fmt(now < st.set ? st.set : solar(new Date(now.getTime()+864e5)).rise,{hour:"2-digit",minute:"2-digit"})}</b></a>`);
   const tr = (ED.travel||[]); const red = tr.filter(t => t.level === "red").length, amber = tr.filter(t => t.level === "amber").length;
   if(tr.length) bits.push(`<a href="#vital" class="tb"><span class="k">Travel</span>${red?`<b class="r">${red} severe</b> `:""}${amber?`<b class="a">${amber} alerts</b>`:""}${!red && !amber ? "<b>Good service</b>" : ""}</a>`);
-  const res = (ED.sport.results||[]).filter(m => Number.isFinite(m.hs)).length;
-  if(res) bits.push(`<a href="#sport" class="tb"><span class="k">Results</span><b>${res}</b> Essex scores</a>`);
-  const nextEv = (ED.events||[]).filter(e => new Date(e.start) > now).sort((a,b) => new Date(a.start) - new Date(b.start))[0];
-  if(nextEv) bits.push(`<a href="#whatson" class="tb"><span class="k">Next up</span><b>${esc(nextEv.title)}</b> ${esc(countdown(nextEv.start, true) || "")}</a>`);
   const warn = (w.warnings||[])[0];
   if(warn) bits.unshift(`<a href="#weather" class="tb warn"><span class="k">Warning</span><b>${esc(warn)}</b></a>`);
   el.innerHTML = `<span class="tb-h">Today in Essex</span>${bits.join("")}`;
