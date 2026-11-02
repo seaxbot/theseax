@@ -2946,8 +2946,6 @@ function renderToday(){
     bits.push(`<a href="#weather" class="tb tb-wx"><span class="k">Weather</span>${parts.map(x => `<span class="wp">${x}</span>`).join('<span class="wsep" aria-hidden="true"></span>')}</a>`);
   }
   bits.push(`<a href="#weather" class="tb"><span class="k">${now < st.set ? "Sunset" : "Sunrise"}</span><b>${fmt(now < st.set ? st.set : solar(new Date(now.getTime()+864e5)).rise,{hour:"2-digit",minute:"2-digit"})}</b></a>`);
-  const tr = (ED.travel||[]); const red = tr.filter(t => t.level === "red").length, amber = tr.filter(t => t.level === "amber").length;
-  if(tr.length) bits.push(`<a href="#vital" class="tb"><span class="k">Travel</span>${red?`<b class="r">${red} severe</b> `:""}${amber?`<b class="a">${amber} alerts</b>`:""}${!red && !amber ? "<b>Good service</b>" : ""}</a>`);
   const warn = (w.warnings||[])[0];
   if(warn) bits.unshift(`<a href="#weather" class="tb warn"><span class="k">Warning</span><b>${esc(warn)}</b></a>`);
   el.innerHTML = `<span class="tb-h">Today in Essex</span>${bits.join("")}`;
