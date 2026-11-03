@@ -869,6 +869,14 @@ body.srch-open{overflow:hidden}
 .brand svg{width:70px;height:82px;flex:none;transform:translateY(-1px)}
 @media (max-width:860px){ .brand svg{width:57px;height:67px;transform:translateY(-2px)} }
 @media (max-width:520px){ .brand svg{width:46px;height:54px;transform:translateY(-2px)} }
+/* Strapline centred under the title (the LIVE badge sits in its own column) */
+.brand-text{display:grid;grid-template-columns:auto auto;column-gap:16px;align-items:center;justify-content:start}
+.brand-text .title-row{display:contents}
+.brand-text h1{grid-column:1;grid-row:1}
+.brand-text .live-badge{grid-column:2;grid-row:1;justify-self:start}
+.brand-text .tag{grid-column:1;grid-row:2;text-align:center}
+@media (max-width:860px){ .brand-text{column-gap:10px} }
+@media (max-width:520px){ .brand-text{column-gap:8px} }
 </style>
 </head>
 <body>
@@ -908,7 +916,7 @@ body.srch-open{overflow:hidden}
         <use href="#seax" transform="translate(11 70) scale(.95)"/>
         <use href="#seax" transform="translate(17.5 102) scale(.83)"/>
       </svg>
-      <div>
+      <div class="brand-text">
         <div class="title-row"><h1>The <em>Seax</em></h1><span class="live-badge" role="status" aria-label="Live, updating now"><i></i>LIVE</span></div>
         <div class="tag">Essex News, Sport, Life.</div>
       </div>
