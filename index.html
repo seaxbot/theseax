@@ -865,6 +865,43 @@ body.srch-open{overflow:hidden}
 @media (max-width:980px){ .cams{grid-template-columns:repeat(2,1fr)} }
 @media (max-width:640px){ .cams{grid-template-columns:1fr} }
 .lp-upd{color:var(--c,#b3121b);font-weight:700}
+/* Essex in the tables */
+.tbl-wrap{margin:-4px 0 22px}
+.tbl-wrap .sec-h{margin-bottom:10px;flex-wrap:wrap;row-gap:2px}
+.tbl-wrap .sec-h h3{white-space:nowrap}
+.tbl-strip{display:flex;gap:10px;overflow-x:auto;padding:2px 2px 10px;scroll-snap-type:x proximity;scrollbar-width:thin}
+.tcard{flex:none;scroll-snap-align:start;width:176px;text-align:left;font:inherit;color:var(--ink);background:var(--card);border:1px solid var(--hair);border-top:4px solid #b9b2a3;border-radius:6px;padding:9px 12px 10px;display:grid;gap:3px;cursor:pointer}
+.tcard:hover{border-color:var(--ink)}
+.tcard.on{outline:2px solid var(--ink);outline-offset:-1px}
+.tcard.promo{border-top-color:#1f8a4c} .tcard.playoff{border-top-color:#2f6fa8} .tcard.releg{border-top-color:#c8102e}
+.tcard.local{background:#fffaf0}
+.tc-div{font-size:10.5px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.tc-team{font-weight:800;font-size:15px;line-height:1.15;min-height:2.3em;display:flex;align-items:flex-end}
+.tc-pos{display:flex;align-items:baseline;gap:6px}
+.tc-pos b{font-family:var(--serif);font-size:28px;font-weight:900;letter-spacing:-.03em;line-height:1}
+.tc-pos i{font-style:normal;font-size:12px;color:var(--muted)}
+.tc-stats{font-size:12.5px;color:var(--ink2)}
+.tc-zone{font-size:11px;font-weight:700;color:var(--muted)}
+.tcard.promo .tc-zone{color:#1f8a4c} .tcard.playoff .tc-zone{color:#2f6fa8} .tcard.releg .tc-zone{color:#c8102e}
+.tbl-full{background:var(--card);border:1px solid var(--hair);border-radius:6px;padding:14px 16px 12px;margin-top:4px}
+.tf-h{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:4px 14px;margin-bottom:8px}
+.tf-h h4{margin:0;font-size:17px}
+.tf-h span{font-size:12.5px;color:var(--muted)} .tf-h a{color:inherit}
+.tf-note{font-size:13px;color:var(--ink2);margin:0 0 8px}
+.tf-scroll{overflow-x:auto}
+table.tf{width:100%;border-collapse:collapse;font-size:13.5px;font-variant-numeric:tabular-nums}
+.tf th{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);text-align:right;padding:6px 8px;border-bottom:1px solid var(--line)}
+.tf td{text-align:right;padding:6px 8px;border-bottom:1px solid var(--hair)}
+.tf th:first-child,.tf td:first-child{text-align:left;width:34px;border-left:3px solid transparent}
+.tf .tm{text-align:left;width:100%}
+.tf tr.promo td:first-child{border-left-color:#1f8a4c} .tf tr.playoff td:first-child{border-left-color:#2f6fa8} .tf tr.releg td:first-child{border-left-color:#c8102e}
+.tf tr.ex td{background:#fff4dc;font-weight:700}
+.tf tr.me td{background:#ffe9b8}
+.tf-key{display:flex;flex-wrap:wrap;gap:12px;margin-top:8px;font-size:11.5px;color:var(--muted)}
+.tf-key span::before{content:"";display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:5px;vertical-align:-1px;background:#b9b2a3}
+.tf-key .promo::before{background:#1f8a4c} .tf-key .playoff::before{background:#2f6fa8} .tf-key .releg::before{background:#c8102e} .tf-key .ex::before{background:#ffd98a}
+@media (max-width:700px){ .tcard{width:160px} .tf{font-size:13px} .tf th,.tf td{padding:6px 5px} .tf .hide-m{display:none} }
+
 /* Features */
 .feat-grid{column-gap:28px;row-gap:26px}
 @media (max-width:1060px){ .feat-grid{grid-template-columns:repeat(2,1fr)} }
@@ -1048,6 +1085,11 @@ body.srch-open{overflow:hidden}
   <div class="wrap">
     <div class="bh"><h2>Sport<small>Scores, results and fixtures from every level of Essex sport</small></h2></div>
     <div class="score-strip" id="scoreStrip"></div>
+    <div class="tbl-wrap" id="tblWrap" hidden>
+      <div class="sec-h"><h3>Essex in the tables</h3><span class="sub" id="tblAsOf">Tap a club for the full table</span></div>
+      <div class="tbl-strip" id="tblStrip" role="list"></div>
+      <div class="tbl-full" id="tblFull" hidden></div>
+    </div>
     <div class="sport">
       <div>
         <div class="scores" id="scores"></div>
@@ -2659,6 +2701,54 @@ function renderSpecials(){
     <div class="ad mpu"><span class="k">Advertisement · MPU 300×250</span><div class="in"><strong>Book this space</strong>Shown beside every edition.<br><button data-advert>Enquire</button></div></div>`;
 }
 
+/* ---------- Essex in the tables ---------- */
+let TBL_OPEN = "";
+const ordinal = n => n + (["th","st","nd","rd"][((n%100)-20)%10] || ["th","st","nd","rd"][n%100] || "th");
+function tblZone(t, pos){
+  const z = t.zones || {}, inR = r => r && pos >= r[0] && pos <= r[1];
+  return inR(z.promo) ? ["promo","Promotion place"] : inR(z.playoff) ? ["playoff","Play-off place"] : inR(z.releg) ? ["releg","Relegation zone"] : ["", ""];
+}
+function renderTables(){
+  const wrap = document.getElementById("tblWrap"); if(!wrap) return;
+  const tables = (ED.sport && Array.isArray(ED.sport.tables) ? ED.sport.tables : []).filter(t => t && Array.isArray(t.rows) && t.essex);
+  wrap.hidden = !tables.length; if(!tables.length) return;
+  const cards = [];
+  tables.forEach((t, ti) => Object.entries(t.essex).forEach(([team, areas]) => {
+    const r = t.rows.find(x => x.team === team); if(!r) return;
+    const local = AREA !== "all" && (areas || []).includes(AREA);
+    cards.push({t, ti, r, local});
+  }));
+  cards.sort((a,b) => (b.local - a.local) || (a.ti - b.ti) || (a.r.pos - b.r.pos));
+  const dates = tables.map(t => t.asOf).filter(Boolean).sort();
+  const asOf = dates.length ? fmt(new Date(dates[0] + "T12:00:00Z"), {day:"numeric", month:"short"}) : "";
+  $("#tblAsOf").textContent = `Tap a club for the full table${asOf ? ` · as of ${asOf}` : ""}`;
+  $("#tblStrip").innerHTML = cards.map(({t, r, local}) => {
+    const [zc, zl] = tblZone(t, r.pos), key = t.id + "|" + r.team, on = TBL_OPEN === key;
+    return `<button class="tcard ${zc}${local ? " local" : ""}${on ? " on" : ""}" role="listitem" data-tblkey="${esc(key)}" aria-expanded="${on}">
+      <span class="tc-div">${esc(t.short || t.comp)}</span>
+      <span class="tc-team">${esc(r.team)}</span>
+      <span class="tc-pos"><b>${ordinal(r.pos)}</b><i>of ${t.size || t.rows.length}</i></span>
+      <span class="tc-stats">P${r.p} · GD ${r.gd > 0 ? "+" : ""}${r.gd} · <b>${r.pts} pts</b></span>
+      ${zl ? `<span class="tc-zone">${zl}</span>` : ""}</button>`;
+  }).join("");
+  const full = $("#tblFull");
+  const open = cards.find(c => c.t.id + "|" + c.r.team === TBL_OPEN);
+  if(!open){ full.hidden = true; full.innerHTML = ""; return; }
+  const t = open.t, ess = new Set(Object.keys(t.essex));
+  full.hidden = false;
+  full.innerHTML = `<div class="tf-h"><h4>${esc(t.comp)}</h4><span>${t.asOf ? "As of " + esc(fmt(new Date(t.asOf + "T12:00:00Z"), {day:"numeric", month:"long"})) + " · " : ""}<a href="${safeUrl(t.url)}" target="_blank" rel="noopener">${t.full ? "Source: " + esc(t.source) : "Full table: " + esc(t.source)} ↗</a></span></div>
+    ${t.full ? "" : `<p class="tf-note">Essex clubs only. The complete table is on the ${esc(t.source)} site.</p>`}
+    <div class="tf-scroll"><table class="tf"><thead><tr><th>Pos</th><th class="tm">Club</th><th>P</th><th>W</th><th>D</th><th>L</th><th>GD</th><th>Pts</th></tr></thead><tbody>
+    ${t.rows.map(r => { const [zc] = tblZone(t, r.pos); return `<tr class="${zc}${ess.has(r.team) ? " ex" : ""}${r.team === open.r.team ? " me" : ""}"><td>${r.pos}</td><td class="tm">${esc(r.team)}</td><td>${r.p}</td><td>${r.w}</td><td>${r.d}</td><td>${r.l}</td><td>${r.gd > 0 ? "+" : ""}${r.gd}</td><td><b>${r.pts}</b></td></tr>`; }).join("")}
+    </tbody></table></div>
+    <div class="tf-key"><span class="promo">Promotion</span><span class="playoff">Play-offs</span>${t.zones && t.zones.releg ? `<span class="releg">Relegation</span>` : ""}<span class="ex">Essex club</span></div>`;
+}
+document.addEventListener("click", e => {
+  const b = e.target.closest && e.target.closest("[data-tblkey]"); if(!b) return;
+  TBL_OPEN = TBL_OPEN === b.dataset.tblkey ? "" : b.dataset.tblkey;
+  renderTables();
+});
+
 function renderFeatures(){
   const sec = document.getElementById("features"); if(!sec) return;
   const list = (ED.features || []).filter(inArea);
@@ -2771,7 +2861,7 @@ function updateLiveLine(){
 }
 
 function renderAll(){
-  renderChips(); renderTicker(); buildHero(); renderTopList(); renderNews(); renderDesk(); renderCommunity(); renderSport(); renderWeather();
+  renderChips(); renderTicker(); buildHero(); renderTopList(); renderNews(); renderDesk(); renderCommunity(); renderSport(); renderTables(); renderWeather();
   renderEvents(); renderCulture(); renderFeatures(); renderVital(); renderSpecials(); renderSources(); renderMeta(); afterRender(); updateLiveLine();
   if(location.hash.startsWith("#story-")) renderStory(location.hash.slice(7));
 }
@@ -2799,7 +2889,7 @@ document.addEventListener("click", e => {
   const t = e.target.closest("[data-area],[data-go],[data-slide],[data-evcat],[data-culcat],[data-srccat],[data-advert],[data-home],[data-desk],[data-deskall]");
   if(!t) return;
   if(t.hasAttribute("data-home")){ e.preventDefault(); if(location.hash) location.hash = ""; closeStory(); window.scrollTo({top:0}); }
-  else if(t.dataset.area){ AREA = t.dataset.area; try{ localStorage.setItem("seax-area", AREA); }catch(_){} renderChips(); buildHero(); renderTopList(); renderNews(); renderDesk(); renderCommunity(); renderSport(); renderEvents(); renderCulture(); renderFeatures(); renderSpecials(); renderSources(); afterRender(); }
+  else if(t.dataset.area){ AREA = t.dataset.area; try{ localStorage.setItem("seax-area", AREA); }catch(_){} renderChips(); buildHero(); renderTopList(); renderNews(); renderDesk(); renderCommunity(); renderSport(); renderTables(); renderEvents(); renderCulture(); renderFeatures(); renderSpecials(); renderSources(); afterRender(); }
   else if(t.dataset.go){ if(document.body.classList.contains("reading")){ location.hash = ""; closeStory(); } const el = document.getElementById(t.dataset.go); if(el) setTimeout(()=>el.scrollIntoView({behavior:"smooth", block:"start"}), 30); }
   else if(t.dataset.slide){ showSlide(+t.dataset.slide); clearInterval(heroTimer); heroTimer = setInterval(() => showSlide(heroIdx+1), 9000); }
   else if(t.dataset.evcat){ EVCAT = t.dataset.evcat; renderEvents(); afterRender(); }
