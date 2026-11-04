@@ -131,6 +131,8 @@ section.block{padding:38px 0 8px;scroll-margin-top:60px}
 .thumb{height:178px;background-repeat:no-repeat;background-color:#223;position:relative}
 .thumb .tag{position:absolute;left:12px;top:12px;background:rgba(255,253,247,.95);color:var(--ink);font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;padding:4px 8px;border-radius:4px}
 .thumb .tag.hot{background:var(--red);color:#fff}
+.card .cart{aspect-ratio:2.6/1;overflow:hidden;border-bottom:1px solid var(--line)}
+.card .cart svg{width:100%;height:100%;display:block}
 .card .body{padding:16px 18px 18px;display:flex;flex-direction:column;flex:1}
 .card .meta{font-size:12px;color:var(--muted);display:flex;gap:6px;align-items:center;flex-wrap:wrap}
 .card .meta .place{font-weight:700;color:var(--teal)}
@@ -2560,8 +2562,126 @@ function weatherArt(s, opts){
 </svg>`;
 }
 /* the art shown for a story: weather artwork for county-wide weather, otherwise the map */
-function storyArt(s, opts){ return isWeatherArtStory(s) ? weatherArt(s, opts) : storyMap(s, opts); }
-function artCaption(s){ return isWeatherArtStory(s) ? `Across Essex · ${WX_LABEL[wxKindOf(s)]}` : mapCaption(s); }
+/* ============================================================
+   Club colour panels: for a story about one of our clubs, an
+   original kit-fabric panel in the club's colours with the club
+   name and nickname set in type. No crest or badge elements.
+   ============================================================ */
+const CLUBS = {
+  "Colchester United":  {re:/\bcolchester\b/, nick:"The U's", pat:"stripes", c:["#1f4e9e","#f4f6f8"], ink:"#0f2148", acc:"#ffffff"},
+  "Southend United":    {re:/\bsouthend\b|\bshrimpers\b/, nick:"The Shrimpers", pat:"plain", c:["#1b3a87","#ffffff"], ink:"#0c1c45", acc:"#ffffff"},
+  "Chelmsford Chieftains": {re:/\bchieftains\b/, nick:"", sport:"Ice hockey", pat:"hem", c:["#16171a","#f2a900","#ffffff"], ink:"#0b0b0d", acc:"#f2a900"},
+  "Chelmsford City":    {re:/\bchelmsford\b(?! chieftains)|\bclarets\b/, nick:"The Clarets", pat:"plain", c:["#74182f","#ffffff"], ink:"#3d0b18", acc:"#ffffff"},
+  "Billericay Town":    {re:/\bbillericay\b/, nick:"The Blues", pat:"plain", c:["#1d4fa3","#ffffff"], ink:"#0e2350", acc:"#ffffff"},
+  "Braintree Town":     {re:/\bbraintree\b/, nick:"The Iron", pat:"plain", c:["#e86f1c","#1c3a73"], ink:"#16294f", acc:"#f08a3e"},
+  "Aveley":             {re:/\baveley\b/, nick:"The Millers", pat:"hoops", c:["#1f55a6","#ffffff"], ink:"#0d2550", acc:"#ffffff"},
+  "Brentwood Town":     {re:/\bbrentwood\b/, nick:"The Blues", pat:"plain", c:["#6fabdc","#ffffff"], ink:"#163a5c", acc:"#bfe0f7"},
+  "Maldon & Tiptree":   {re:/\bmaldon\b|\btiptree\b|\bjammers\b/, nick:"The Jammers", pat:"stripes", c:["#1f3d8c","#c8202f"], ink:"#101f49", acc:"#e0414f"},
+  "Stanway Rovers":     {re:/\bstanway\b/, nick:"Rovers", pat:"pinstripes", c:["#f2b705","#141414"], ink:"#141414", acc:"#f2b705"},
+  "Little Oakley":      {re:/\blittle oakley\b|\bacorns\b/, nick:"The Acorns", pat:"stripes", c:["#1f4fa0","#121417"], ink:"#0d1424", acc:"#7fa8e6"},
+  "Concord Rangers":    {re:/\bconcord\b/, nick:"The Beach Boys", pat:"plain", c:["#f5d01c","#1c3d8c"], ink:"#14295e", acc:"#f5d01c"},
+  "Witham Town":        {re:/\bwitham\b/, nick:"The Town", pat:"stripes", c:["#f3f4f6","#1c2b5a","#c8202f"], ink:"#1c2b5a", acc:"#e0414f"},
+  "Bowers & Pitsea":    {re:/\bbowers\b|\bpitsea\b/, nick:"Bowers", pat:"stripes", c:["#c8202f","#ffffff"], ink:"#5e0e16", acc:"#ffffff"},
+  "Takeley":            {re:/\btakeley\b/, nick:"", pat:"band", c:["#1f4fa0","#ffffff"], ink:"#0e2350", acc:"#ffffff"},
+  "Tilbury":            {re:/\btilbury\b|\bdockers\b/, nick:"The Dockers", pat:"stripes", c:["#141414","#f4f4f4"], ink:"#0b0b0b", acc:"#ffffff"},
+  "Canvey Island":      {re:/\bcanvey\b|\bgulls\b/, nick:"The Gulls", pat:"plain", c:["#f5d01c","#1c3d8c"], ink:"#14295e", acc:"#f5d01c"},
+  "Grays Athletic":     {re:/\bgrays\b|\bgravelmen\b/, nick:"The Gravelmen", pat:"plain", c:["#1f4fa0","#ffffff"], ink:"#0e2350", acc:"#ffffff"},
+  "Buckhurst Hill":     {re:/\bbuckhurst hill\b|\bstags\b/, nick:"The Stags", pat:"plain", c:["#1f4fa0","#121417"], ink:"#0d1424", acc:"#7fa8e6"},
+  "Brightlingsea Regent": {re:/\bbrightlingsea\b/, nick:"The R's", pat:"stripes", c:["#b8202c","#141414"], ink:"#141414", acc:"#e0414f"}
+};
+function clubOf(s){
+  if(!s) return null;
+  if(s.club && CLUBS[s.club]) return s.club;
+  const k = iconKey(s), tag = String(s.tag || "");
+  if(!(k === "football" || /football|ice hockey/i.test(tag))) return null;
+  for(const field of [s.headline, s.summary]){
+    const t = String(field || "").toLowerCase();
+    let best = null, at = Infinity;
+    for(const [name, c] of Object.entries(CLUBS)){
+      const m = t.match(c.re);
+      if(m && m.index < at){ at = m.index; best = name; }
+    }
+    if(best) return best;
+  }
+  return null;
+}
+function clubLeague(name){
+  try{ const t = ((ED && ED.sport && ED.sport.tables) || []).find(t => t.essex && Object.prototype.hasOwnProperty.call(t.essex, name)); return t ? (t.short || t.comp || "") : ""; }catch(_){ return ""; }
+}
+function clubArt(s, opts){
+  opts = opts || {};
+  const name = clubOf(s), C = CLUBS[name], u = "cl" + (++WXUID), R = wxRand(name + (s && s.id || ""));
+  const asp = Math.max(.6, Math.min(3, opts.aspect || 1.25)), W = 1000, H = Math.round(W / asp);
+  const [c1, c2, c3] = C.c;
+  const ph = R() * 6.28, ph2 = R() * 6.28, A = 6 + R() * 5;
+  const dx = (x, y) => A * Math.sin(y * .0042 + x * .0011 + ph) + A * .3 * Math.sin(y * .011 + ph2);
+  const dy = (x, y) => A * .9 * Math.sin(x * .0042 + y * .001 + ph) + A * .3 * Math.sin(x * .011 + ph2);
+  const vBand = (x0, x1) => { const L = [], Rr = []; for(let y = -40; y <= H + 40; y += 32){ L.push(`${(x0 + dx(x0, y)).toFixed(1)},${y}`); Rr.unshift(`${(x1 + dx(x1, y)).toFixed(1)},${y}`); } return `M${L.join(" L")} L${Rr.join(" L")}Z`; };
+  const hBand = (y0, y1) => { const T = [], B = []; for(let x = -40; x <= W + 40; x += 32){ T.push(`${x},${(y0 + dy(x, y0)).toFixed(1)}`); B.unshift(`${x},${(y1 + dy(x, y1)).toFixed(1)}`); } return `M${T.join(" L")} L${B.join(" L")}Z`; };
+  let pat = "";
+  if(C.pat === "stripes"){
+    const n = 9, sw = (W + 160) / n;
+    for(let i = 1; i < n; i += 2) pat += `<path d="${vBand(-80 + i * sw, -80 + (i + 1) * sw)}" fill="${c2}"/>`;
+    if(c3) for(let i = 1; i < n; i += 2){ const m = -80 + i * sw + sw / 2; pat += `<path d="${vBand(m - 5, m + 5)}" fill="${c3}" opacity=".9"/>`; }
+  } else if(C.pat === "pinstripes"){
+    const n = 16, sw = (W + 160) / n;
+    for(let i = 1; i < n; i++){ const x = -80 + i * sw; pat += `<path d="${vBand(x - 3.5, x + 3.5)}" fill="${c2}" opacity=".85"/>`; }
+  } else if(C.pat === "hoops"){
+    const n = 7, sh = (H + 160) / n;
+    for(let i = 1; i < n; i += 2) pat += `<path d="${hBand(-80 + i * sh, -80 + i * sh + sh * .42)}" fill="${c2}"/>`;
+  } else if(C.pat === "band"){
+    pat += `<path d="${hBand(H * .44, H * .56)}" fill="${c2}"/>`;
+  } else if(C.pat === "hem"){
+    pat += `<path d="${hBand(H * .70, H * .80)}" fill="${c2}"/><path d="${hBand(H * .815, H * .845)}" fill="${c3 || "#fff"}"/><path d="${hBand(H * .86, H * .89)}" fill="${c2}"/>`;
+  } else {
+    pat += `<path d="${vBand(W * .52, W * .56)}" fill="${c2}" opacity=".12"/>`;
+  }
+  /* drape: soft folds following the same wave */
+  let folds = "";
+  for(let i = 0; i < 6; i++){
+    const x = W * (.08 + i * .18) + R() * 40, w = 30 + R() * 60;
+    folds += `<path d="${vBand(x, x + w)}" fill="${i % 2 ? "#000" : "#fff"}" opacity="${i % 2 ? .20 : .10}" filter="url(#${u}b)"/>`;
+  }
+  const seamX = W * (.6 + R() * .15);
+  const seam = `M${seamX},-10 C${seamX + 60},${H * .3} ${W * .88},${H * .55} ${W + 20},${H * .62}`;
+  const kick = (C.sport || clubLeague(name) || "Essex football").toUpperCase();
+  const big = C.nick || name, small = C.nick ? name.toUpperCase() : (C.sport ? "ESSEX" : "ESSEX FOOTBALL");
+  const un = Math.min(W, H * 1.25) / 1000, pad = 42 * un, ip = 34 * un;
+  const maxW = W * (asp < 1 ? .86 : .62) - 2 * ip;
+  const fsBig = Math.min(108 * un, maxW / (Math.max(big.length, 6) * .56)), fsK = 24 * un, fsS = 27 * un;
+  const tw = Math.max(big.length * fsBig * .56, kick.length * fsK * .8, small.length * fsS * .68);
+  const bw = tw + 2 * ip, bh = ip * 2 + fsK + 14 * un + fsBig * .95 + 14 * un + fsS;
+  const label = opts.label === false ? "" : `<g>
+    <rect x="${pad}" y="${pad}" width="${bw.toFixed(1)}" height="${bh.toFixed(1)}" fill="${C.ink}" opacity=".93"/>
+    <rect x="${pad}" y="${pad}" width="${(6 * un).toFixed(1)}" height="${bh.toFixed(1)}" fill="${C.acc}"/>
+    <text x="${pad + ip}" y="${(pad + ip + fsK * .8).toFixed(1)}" fill="${C.acc}" opacity=".9" style="font-family:var(--mono);font-weight:600;letter-spacing:.18em" font-size="${fsK.toFixed(1)}">${esc(kick)}</text>
+    <text x="${pad + ip - fsBig * .04}" y="${(pad + ip + fsK + 14 * un + fsBig * .78).toFixed(1)}" fill="#fff" style="font-family:var(--serif);font-weight:800;letter-spacing:-.02em" font-size="${fsBig.toFixed(1)}">${esc(big)}</text>
+    <text x="${pad + ip}" y="${(pad + bh - ip).toFixed(1)}" fill="#fff" opacity=".78" style="font-family:var(--sans);font-weight:600;letter-spacing:.14em" font-size="${fsS.toFixed(1)}">${esc(small)}</text>
+  </g>`;
+  return `<svg class="emap clubart" viewBox="0 0 ${W} ${H}" preserveAspectRatio="xMinYMin slice" role="img" aria-label="${esc(name)} colours">
+  <defs>
+    <filter id="${u}b" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="26"/></filter>
+    <filter id="${u}g" filterUnits="userSpaceOnUse" x="0" y="0" width="${W}" height="${H}"><feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="2" seed="${Math.floor(R() * 99)}"/><feColorMatrix type="saturate" values="0"/></filter>
+    <pattern id="${u}w" width="6" height="6" patternUnits="userSpaceOnUse"><path d="M0 1.5H6M0 4.5H6" stroke="#000" stroke-opacity=".07" stroke-width="1"/><path d="M1.5 0V6M4.5 0V6" stroke="#fff" stroke-opacity=".05" stroke-width="1"/></pattern>
+    <linearGradient id="${u}l" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".16"/><stop offset=".45" stop-color="#fff" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".42"/></linearGradient>
+    <radialGradient id="${u}v" cx=".55" cy=".45" r=".8"><stop offset=".55" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".38"/></radialGradient>
+  </defs>
+  <rect width="${W}" height="${H}" fill="${c1}"/>
+  ${pat}
+  ${folds}
+  <path d="${seam}" fill="none" stroke="#000" stroke-opacity=".22" stroke-width="3"/>
+  <path d="${seam}" fill="none" stroke="#fff" stroke-opacity=".28" stroke-width="1.6" stroke-dasharray="7 6" transform="translate(-9,4)"/>
+  <rect width="${W}" height="${H}" fill="url(#${u}w)"/>
+  <rect width="${W}" height="${H}" fill="url(#${u}l)"/>
+  <rect width="${W}" height="${H}" fill="url(#${u}v)"/>
+  <rect width="${W}" height="${H}" filter="url(#${u}g)" opacity=".07"/>
+  ${label}
+</svg>`;
+}
+/* the art shown for a story: weather artwork for county-wide weather, club colours for our clubs, otherwise the map */
+function storyArt(s, opts){ return isWeatherArtStory(s) ? weatherArt(s, opts) : clubOf(s) ? clubArt(s, opts) : storyMap(s, opts); }
+function artCaption(s){ if(isWeatherArtStory(s)) return `Across Essex · ${WX_LABEL[wxKindOf(s)]}`; const c = clubOf(s); if(c) return CLUBS[c].nick ? `${c} · ${CLUBS[c].nick}` : c; return mapCaption(s); }
+function artKick(s){ return !isWeatherArtStory(s) && clubOf(s) ? "Club" : "Where"; }
 
 /* ============================================================
    weather icons, sun and moon
@@ -2742,7 +2862,7 @@ function buildHero(){
   heroList = [lead, ...list.filter(s => s !== lead)].slice(0, 5);
   $("#slides").innerHTML = heroList.map((s,i) => `
     <div class="slide${i===0?" on":""}" style="--c:${iconColour(s)}">
-      <div class="smap">${storyArt(s,{zoom:440,aspect:1.15})}<div class="mcap"><b>Where</b> ${esc(artCaption(s))}</div></div>
+      <div class="smap">${storyArt(s,{zoom:440,aspect:1.15})}<div class="mcap"><b>${artKick(s)}</b> ${esc(artCaption(s))}</div></div>
       <div class="lead">
         <span class="kicker">${s.breaking ? '<span class="dot" style="background:#fff;animation:none;box-shadow:none"></span>Breaking' : esc(s.tag||"Top story")}</span>
         <h2><a href="${storyHref(s)}">${esc(s.headline)}</a></h2>
@@ -2772,8 +2892,9 @@ function renderTopList(){
   $("#topList").innerHTML = pick.map(s => `<li><div><h4><a href="${storyHref(s)}">${esc(s.headline)}</a></h4><div class="m">${esc(s.place||"")} · <span data-ago="${esc(s.time||"")}">${ago(s.time)}</span> · ${esc(s.source)}</div></div></li>`).join("") || `<li><div class="m">No other stories for this area yet.</div></li>`;
 }
 
-function cardHtml(s, wide){
+function cardHtml(s, wide, art){
   return `<a class="card tc${wide?" wide":""}" href="${storyHref(s)}" style="--c:${iconColour(s)}">
+    ${art && clubOf(s) ? `<div class="cart">${clubArt(s,{aspect:2.6})}</div>` : ""}
     <div class="body">
       <div class="kick"><span class="tg${s.breaking?" hot":""}">${s.breaking?"Breaking":esc(s.tag||"News")}</span></div>
       <div class="meta"><span class="place">${esc(s.place||"Essex")}</span><span>·</span><span data-ago="${esc(s.time||"")}">${ago(s.time)}</span></div>
@@ -3047,7 +3168,7 @@ function renderStory(id){
     <div class="note-copy">This page is a summary written by The Seax. The original reporting, quotes and images belong to ${esc(s.source)}${s.also.length?" and the other outlets listed":""}.</div>`;
   $("#storySide").innerHTML = `
     <div class="ad mpu"><span class="k">Advertisement · MPU 300×250</span><div class="in"><strong>Your brand, on every story</strong>Story pages are prime, brand-safe space.<br><button data-advert>Enquire</button></div></div>
-    <div class="side-box where" style="--c:${iconColour(s)}"><h4>Where it happened</h4><div class="wmap">${storyArt(s,{zoom:400,aspect:.82})}</div><div class="mcap">${esc(artCaption(s))}</div></div>
+    <div class="side-box where" style="--c:${iconColour(s)}"><h4>${artKick(s) === "Club" ? "The club" : "Where it happened"}</h4><div class="wmap">${storyArt(s,{zoom:400,aspect:.82})}</div><div class="mcap">${esc(artCaption(s))}</div></div>
     <div class="side-box"><h4>More from Essex</h4>${more.map(x=>`<a class="rel" href="${storyHref(x)}" style="--c:${iconColour(x)}"><i></i><b>${esc(x.headline)}</b></a>`).join("")}</div>`;
   document.body.classList.add("reading");
   document.title = s.headline + " · The Seax";
@@ -3254,7 +3375,7 @@ function buildHero(){
       ${pts.length ? `<ul class="lp-pts">${pts.map(p=>`<li>${esc(p)}</li>`).join("")}</ul>` : ""}
       <div class="lp-meta">${s.updated && new Date(s.updated) > new Date(s.time||0) ? `<span class="lp-upd">Updated ${esc(hhmm(s.updated))}</span><span>·</span>` : `<span data-ago="${esc(s.time||"")}">${ago(s.time)}</span><span>·</span>`}<span>${esc(s.source)}${s.also && s.also.length ? ` and ${s.also.length} more` : ""}</span><a class="lp-read" href="${storyHref(s)}">Read the story</a></div>
     </div>
-    <a class="lp-map" href="${storyHref(s)}" style="--c:${pillar(s)}" aria-label="Map: ${esc(artCaption(s))}">${storyArt(s,{zoom:430,aspect:1.05})}<span class="mcap"><b>Where</b> ${esc(artCaption(s))}</span></a>`;
+    <a class="lp-map" href="${storyHref(s)}" style="--c:${pillar(s)}" aria-label="${artKick(s) === "Club" ? "Club colours" : "Map"}: ${esc(artCaption(s))}">${storyArt(s,{zoom:430,aspect:1.05})}<span class="mcap"><b>${artKick(s)}</b> ${esc(artCaption(s))}</span></a>`;
   $("#seconds").innerHTML = seconds.map(x => `<a class="sec" href="${storyHref(x)}" style="--c:${pillar(x)}">
       <div class="sec-map">${storyArt(x,{zoom:300,aspect:2.1,label:false})}</div>
       <div class="sec-body"><span class="kick2">${esc(x.tag||"News")}<em>${esc(x.place||"Essex")}</em></span>
@@ -3368,7 +3489,7 @@ function renderSport(){
   res.forEach(m => { (groups[m.comp] = groups[m.comp] || []).push(m); });
   $("#scores").innerHTML = Object.entries(groups).map(([comp, ms]) => `<div class="rt"><h4>${esc(comp)}<span>${ms[0].date ? fmt(new Date(ms[0].date),{weekday:"short",day:"numeric",month:"short"}) : ""}</span></h4>
     ${ms.map(m => `<a class="rt-row" href="${safeUrl(m.url||"#")}" target="_blank" rel="noopener" title="${esc(m.note||"")}"><span class="h${done(m) && m.hs > m.as ? " w" : ""}">${esc(m.home)}</span><span class="sc">${done(m) ? `${m.hs}<i>-</i>${m.as}` : esc(m.status||"v")}</span><span class="a${done(m) && m.as > m.hs ? " w" : ""}">${esc(m.away)}</span><span class="st">${esc(done(m) ? (m.status||"FT") : "")}</span></a>`).join("")}</div>`).join("");
-  $("#sportStories").innerHTML = sp.stories.filter(inArea).sort(byTime).slice(0,6).map(s => cardHtml(s)).join("");
+  $("#sportStories").innerHTML = sp.stories.filter(inArea).sort(byTime).slice(0,6).map(s => cardHtml(s, false, true)).join("");
   $("#fixtures").innerHTML = [...sp.fixtures].filter(f => new Date(f.date) >= new Date(Date.now() - 3*36e5)).sort((x,y) => new Date(x.date) - new Date(y.date)).map(f => {
     const d = new Date(f.date); const cd = countdown(f.date, f.allDay);
     return `<a class="fx" href="${safeUrl(f.url)}" target="_blank" rel="noopener"><div class="d"><span>${fmt(d,{month:"short"})}</span><b>${fmt(d,{day:"numeric"})}</b><span>${fmt(d,{weekday:"short"})}</span></div>
