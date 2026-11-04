@@ -3061,10 +3061,10 @@ function sportArt(s, opts){
   ${label}
 </svg>`;
 }
-/* the art shown for a story: weather scenes for county-wide weather, club colours for our clubs, a sport object for other sport, occasion scenes, otherwise the map */
-function storyArt(s, opts){ return isWeatherArtStory(s) ? weatherArt(s, opts) : clubOf(s) ? clubArt(s, opts) : sportKindOf(s) ? sportArt(s, opts) : seasonKindOf(s) ? seasonArt(s, opts) : storyMap(s, opts); }
-function artCaption(s){ if(isWeatherArtStory(s)) return `Across Essex · ${WX_LABEL[wxKindOf(s)]}`; const c = clubOf(s); if(c) return CLUBS[c].nick ? `${c} · ${CLUBS[c].nick}` : c; const sk = sportKindOf(s); if(sk) return `${s.place || "Essex"} · ${SPORT_LABEL[sk]}`; const k = seasonKindOf(s); if(k) return `${s.place || "Essex"} · ${SEASON_LABEL[k]}`; return mapCaption(s); }
-function artKick(s){ if(isWeatherArtStory(s)) return "Where"; if(clubOf(s)) return "Club"; if(sportKindOf(s)) return "Sport"; return "Where"; }
+/* the art shown for a story: weather scenes for county-wide weather, a sport object for every sport story, club colours (now unused for sport), occasion scenes, otherwise the map */
+function storyArt(s, opts){ return isWeatherArtStory(s) ? weatherArt(s, opts) : sportKindOf(s) ? sportArt(s, opts) : clubOf(s) ? clubArt(s, opts) : seasonKindOf(s) ? seasonArt(s, opts) : storyMap(s, opts); }
+function artCaption(s){ if(isWeatherArtStory(s)) return `Across Essex · ${WX_LABEL[wxKindOf(s)]}`; const c = clubOf(s), sk = sportKindOf(s); if(sk) return `${c || s.place || "Essex"} · ${SPORT_LABEL[sk]}`; if(c) return CLUBS[c].nick ? `${c} · ${CLUBS[c].nick}` : c; const k = seasonKindOf(s); if(k) return `${s.place || "Essex"} · ${SEASON_LABEL[k]}`; return mapCaption(s); }
+function artKick(s){ if(isWeatherArtStory(s)) return "Where"; if(sportKindOf(s)) return "Sport"; if(clubOf(s)) return "Club"; return "Where"; }
 
 /* ============================================================
    weather icons, sun and moon
