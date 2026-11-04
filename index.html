@@ -2435,6 +2435,135 @@ function mapCaption(s){
 }
 
 /* ============================================================
+   County-wide weather artwork: used in place of the map when a
+   story is about weather across Essex. Flat Essex horizon (marsh,
+   church tower, pylons, tree line) under the weather itself.
+   ============================================================ */
+const WX_KINDS = ["rain","storm","wind","snow","ice","fog","heat","flood"];
+const WX_LABEL = {rain:"Heavy rain", storm:"Thunderstorms", wind:"Strong winds", snow:"Snow", ice:"Ice and frost", fog:"Fog", heat:"Heat", flood:"Flooding"};
+function wxKindOf(s){
+  if(!s) return null;
+  if(s.wx && WX_KINDS.includes(String(s.wx).toLowerCase())) return String(s.wx).toLowerCase();
+  const t = " " + [s.headline, s.summary, (s.points||[]).join(" ")].join(" ").toLowerCase() + " ";
+  const tests = [["flood",/\bflood(s|ing|ed)?\b|flood warning|flood alert/],["storm",/\bstorm|thunder|lightning/],["snow",/\bsnow/],
+    ["ice",/\bice\b|\bicy\b|frost|freez|gritt/],["fog",/\bfog|\bmist/],["heat",/heatwave|\bheat\b|hottest|temperatures? (soar|climb|reach)|high temperatures/],
+    ["wind",/\bwind|\bgale|gusts?\b/],["rain",/\brain|downpour|deluge|wet weather|showers/]];
+  for(const [k, re] of tests) if(re.test(t)) return k;
+  return null;
+}
+function isWeatherArtStory(s){
+  if(!s) return false;
+  const k = iconKey(s);
+  const tagged = k === "weather" || !!s.wx || (k === "environment" && /met office|weather warning|yellow warning|amber warning|red warning/i.test((s.headline||"") + " " + (s.summary||"")));
+  if(!tagged || !wxKindOf(s)) return false;
+  const areas = s.areas || [];
+  return areas.includes("all") || areas.length >= 4 || /\b(essex|county|countywide|across)\b/i.test(String(s.place||"")) || !storyPins(s).length;
+}
+let WXUID = 0;
+function wxRand(seed){ let h = 2166136261; for(const ch of String(seed)){ h ^= ch.charCodeAt(0); h = Math.imul(h, 16777619); } return () => { h ^= h << 13; h ^= h >>> 17; h ^= h << 5; return ((h >>> 0) % 100000) / 100000; }; }
+function weatherArt(s, opts){
+  opts = opts || {};
+  const kind = wxKindOf(s) || "rain", R = wxRand((s && s.id || "wx") + kind), u = "wx" + (++WXUID);
+  const W = 1000, H = 800, hz = 520;
+  const P = {
+    rain:  {sky:["#2c3742","#55636f","#7d8a94"], land:"#1c252b", far:"#3b4852", mid:"#28333a", glow:"#9aa7b1"},
+    storm: {sky:["#14181f","#2b313b","#5a4f4c"], land:"#111519", far:"#262c34", mid:"#1a1f25", glow:"#c98d5a"},
+    wind:  {sky:["#45596b","#7b8e9d","#b4c0c8"], land:"#2a3530", far:"#5b6b70", mid:"#37443f", glow:"#d4dadd"},
+    snow:  {sky:["#7d8996","#a8b2bb","#d3d9de"], land:"#e9edf0", far:"#a5afb8", mid:"#c9d0d6", glow:"#f4f6f7"},
+    ice:   {sky:["#1e2c45","#6b7e98","#e9b98f"], land:"#d9e2ea", far:"#7c8ca1", mid:"#aebccb", glow:"#ffd9ad"},
+    fog:   {sky:["#9ea5a8","#b9bec0","#c9cdce"], land:"#a9afb1", far:"#b4b9bb", mid:"#9aa1a4", glow:"#d6d9da"},
+    heat:  {sky:["#c9763f","#e7a660","#f4d79a"], land:"#8a5a2c", far:"#b7804a", mid:"#9b6834", glow:"#fff1c9"},
+    flood: {sky:["#4c5862","#76838d","#a3adb4"], land:"#26302f", far:"#4f5c63", mid:"#33403f", glow:"#c3cbd0"}
+  }[kind];
+  const f = n => n.toFixed(1);
+  // horizon silhouette: low Essex skyline with a church tower, pylons and a tree line
+  const farLine = (() => { let d = `M0 ${hz}`; for(let x = 0; x <= W; x += 25){ d += ` L${x} ${f(hz - 6 - 10 * Math.sin(x/170) - R()*7)}`; } return d + ` L${W} ${H} L0 ${H}Z`; })();
+  const lean = kind === "wind" ? 0.22 : 0;
+  const trees = (() => { let g = ""; const blob = (x, y, r) => { g += `<circle cx="${f(x)}" cy="${f(y)}" r="${f(r)}"/>`; };
+    for(let x = -10; x < W + 10; x += 6 + R()*6){ const r = 5 + R()*6; blob(x, hz + 2 - r*0.5, r); }
+    for(let i = 0; i < 9; i++){ const x = 30 + R()*940; if(x > 590 && x < 720) continue; const ht = 34 + R()*34, w = 16 + R()*16;
+      g += `<rect x="${f(x-1.2)}" y="${f(hz-ht*0.45)}" width="2.4" height="${f(ht*0.45)}"/>`;
+      for(let j = 0; j < 9; j++){ const a = R()*Math.PI*2, rr = R()*w*0.7; blob(x + Math.cos(a)*rr + lean*ht*0.8, hz - ht*0.62 + Math.sin(a)*rr*0.7, w*(0.35+R()*0.3)); } }
+    return g; })();
+  const church = `M612 ${hz+4} v-22 l14 -10 h30 v32 Z M650 ${hz+4} v-50 h3 v-3 h3 v3 h3 v-3 h3 v3 h3 v-3 h3 v3 h3 v-3 h3 v3 h3 v50 Z M660 ${hz-50} l7.5 -34 l7.5 34 Z`;
+  const pylon = (x, sc) => `<g transform="translate(${x} ${hz+2}) scale(${sc})" stroke="${P.mid}" stroke-width="1.4" fill="none"><path d="M-9 0 L0 -86 L9 0 M-6 -30 L6 -30 M-4 -52 L4 -52 M-16 -66 L16 -66 M-12 -78 L12 -78 M-9 0 L6 -30 M9 0 L-6 -30 M-6 -30 L4 -52 M6 -30 L-4 -52"/></g>`;
+  const wires = `<path d="M140 ${hz-62} Q 330 ${hz-40} 470 ${hz-56} Q 640 ${hz-38} 860 ${hz-60}" stroke="${P.mid}" stroke-width=".8" fill="none" opacity=".7"/>`;
+  const reeds = (() => { let d = ""; for(let i = 0; i < 70; i++){ const x = R()*W, h = 40 + R()*90, lean = (kind === "wind" ? 26 : 6) * (0.6 + R()); d += `M${f(x)} ${H} q${f(lean*0.3)} ${f(-h*0.5)} ${f(lean)} ${f(-h)}`; } return d; })();
+  // clouds: soft layered banks
+  const cloudBank = (y, n, col, op, stretch) => { let g = ""; for(let i = 0; i < n; i++){ const cx = R()*W*1.2 - W*0.1, rx = (120 + R()*220) * stretch, ry = 26 + R()*40; g += `<ellipse cx="${f(cx)}" cy="${f(y + R()*60 - 30)}" rx="${f(rx)}" ry="${f(ry)}" fill="${col}" opacity="${(op*(0.6+R()*0.4)).toFixed(2)}"/>`; } return `<g filter="url(#${u}b)">${g}</g>`; };
+  let sky = "", fx = "", ground = "";
+  const rainLines = (n, len, op, ang) => { let d = ""; for(let i = 0; i < n; i++){ const x = R()*(W+300) - 150, y = R()*H, l = len*(0.6+R()*0.8); d += `M${f(x)} ${f(y)} l${f(-l*ang)} ${f(l)}`; } return `<path d="${d}" stroke="#dfe7ee" stroke-width=".9" stroke-linecap="round" opacity="${op}"/>`; };
+  switch(kind){
+    case "rain":
+      sky = cloudBank(110, 9, "#1f2830", .8, 1.2) + cloudBank(250, 8, "#3a4651", .6, 1.4);
+      fx = rainLines(420, 46, .32, .18) + rainLines(160, 80, .22, .18);
+      ground = `<rect x="0" y="${hz+8}" width="${W}" height="40" fill="url(#${u}sheen)" opacity=".35"/>`; break;
+    case "storm":
+      sky = cloudBank(90, 10, "#0b0e12", .9, 1.3) + cloudBank(230, 8, "#3a3436", .55, 1.5) + `<ellipse cx="380" cy="${hz-40}" rx="420" ry="90" fill="${P.glow}" opacity=".18" filter="url(#${u}b)"/>`;
+      { const bolt = (x, y, end, step, spread) => { let d = `M${f(x)} ${f(y)}`; const pts = []; while(y < end){ x += (R()-0.5)*spread; y = Math.min(end, y + step*(0.5+R())); d += ` L${f(x)} ${f(y)}`; pts.push([x,y]); } return {d, pts}; };
+        const main = bolt(560, 150, hz - 34, 22, 46); const d = main.d; let forks = "";
+        [0.3, 0.55].forEach(t => { const [bx, by] = main.pts[Math.floor(main.pts.length*t)]; let x = bx, y = by, fd = `M${f(x)} ${f(y)}`; const dir = R() < .5 ? -1 : 1; for(let i = 0; i < 4; i++){ x += dir*(6 + R()*12); y += 8 + R()*10; fd += ` L${f(x)} ${f(y)}`; } forks += fd + " "; });
+        fx = `<path d="${d}" stroke="#fff3d6" stroke-width="16" opacity=".22" fill="none" filter="url(#${u}b2)"/><path d="${d}" stroke="#fffaf0" stroke-width="1.6" fill="none" stroke-linejoin="bevel"/><path d="${forks}" stroke="#fffaf0" stroke-width=".8" opacity=".75" fill="none"/>` + rainLines(380, 60, .26, .28); }
+      break;
+    case "wind":
+      sky = (() => { let g = ""; for(let i = 0; i < 14; i++){ const y = 60 + R()*360; g += `<ellipse cx="${f(R()*W)}" cy="${f(y)}" rx="${f(260+R()*320)}" ry="${f(8+R()*16)}" fill="#e9eef1" opacity="${(0.18+R()*0.3).toFixed(2)}"/>`; } return `<g filter="url(#${u}b)" transform="rotate(-4 500 300)">${g}</g>`; })();
+      fx = (() => { let d = ""; for(let i = 0; i < 40; i++){ const x = R()*W, y = R()*hz, l = 60 + R()*160; d += `M${f(x)} ${f(y)} q${f(l/2)} ${f(-6)} ${f(l)} 0`; } return `<path d="${d}" stroke="#f4f7f9" stroke-width=".8" fill="none" opacity=".35"/>`; })();
+      break;
+    case "snow":
+      sky = cloudBank(120, 8, "#8e9aa5", .5, 1.4);
+      fx = (() => { let g = ""; for(let i = 0; i < 260; i++){ g += `<circle cx="${f(R()*W)}" cy="${f(R()*H)}" r="${f(0.8 + R()*2.2)}"/>`; } return `<g fill="#ffffff" opacity=".85">${g}</g>`; })();
+      ground = `<path d="M0 ${hz+40} Q 300 ${hz+20} 600 ${hz+50} T ${W} ${hz+36} V ${H} H 0Z" fill="#f6f8f9" opacity=".7"/>`; break;
+    case "ice":
+      sky = `<circle cx="300" cy="${hz-8}" r="34" fill="#fff0da"/><circle cx="300" cy="${hz-18}" r="120" fill="${P.glow}" opacity=".25" filter="url(#${u}b)"/>` + cloudBank(140, 4, "#8193ab", .25, 2);
+      ground = `<rect x="0" y="${hz+6}" width="${W}" height="${H-hz}" fill="url(#${u}sheen)" opacity=".5"/>` + (() => { let d = ""; for(let i = 0; i < 120; i++){ const x = R()*W, y = hz + 20 + R()*(H-hz-20); d += `M${f(x)} ${f(y)} l${f(4+R()*10)} 0`; } return `<path d="${d}" stroke="#ffffff" stroke-width=".8" opacity=".6"/>`; })(); break;
+    case "fog":
+      fx = (() => { let g = ""; for(let i = 0; i < 9; i++){ const y = hz - 120 + i*40; g += `<rect x="-50" y="${y}" width="${W+100}" height="${30+R()*30}" fill="#dcdfe0" opacity="${(0.18+R()*0.22).toFixed(2)}"/>`; } return `<g filter="url(#${u}b2)">${g}</g>`; })();
+      break;
+    case "heat":
+      sky = `<circle cx="700" cy="${hz-150}" r="300" fill="${P.glow}" opacity=".28" filter="url(#${u}b)"/><circle cx="700" cy="${hz-150}" r="120" fill="${P.glow}" opacity=".45" filter="url(#${u}b)"/><circle cx="700" cy="${hz-150}" r="38" fill="#fffaf0"/>`;
+      fx = (() => { let d = ""; for(let i = 0; i < 18; i++){ const y = hz - 30 + i*6, x = R()*200; d += `M${f(x)} ${f(y)} q 40 -3 80 0 t 80 0 t 80 0 t 80 0 t 80 0 t 80 0 t 80 0 t 80 0 t 80 0 t 80 0`; } return `<path d="${d}" stroke="#fff3d2" stroke-width=".8" fill="none" opacity=".35"/>`; })();
+      break;
+    case "flood":
+      sky = cloudBank(120, 8, "#3e4952", .6, 1.4) + cloudBank(260, 6, "#5f6b75", .4, 1.6);
+      ground = `<rect x="0" y="${hz+14}" width="${W}" height="${H-hz-14}" fill="url(#${u}water)"/>` +
+        `<g transform="translate(0 ${2*hz+28}) scale(1 -1)" opacity=".28"><g fill="${P.mid}">${trees}</g><path d="${church}" fill="${P.mid}"/></g>` +
+        (() => { let d = "", p = ""; for(let i = 0; i < 60; i++){ const x = R()*W, y = hz + 30 + R()*(H-hz-30); d += `M${f(x)} ${f(y)} l${f(20+R()*70)} 0`; } for(let i = 0; i < 9; i++){ const x = 80 + i*105; p += `M${x} ${hz+70+i*14} v-28`; } return `<path d="${d}" stroke="#e7edf1" stroke-width=".9" opacity=".35"/><path d="${p}" stroke="${P.land}" stroke-width="4"/>`; })();
+      break;
+  }
+  const furrows = (() => { let d = ""; const vx = 520, vy = hz - 40; for(let i = -14; i <= 26; i++){ const x = i * 55; const t = (hz + 8 - vy) / (H - vy); d += `M${f(vx + (x - vx) * t)} ${hz+8} L${x} ${H}`; } return `<path d="${d}" stroke="${kind === "snow" || kind === "ice" ? "#b7c3cd" : "#000"}" stroke-width=".9" opacity="${kind === "snow" || kind === "ice" ? .35 : .14}"/>`; })();
+  const fogFade = kind === "fog" ? .45 : kind === "snow" ? .7 : 1;
+  const label = opts.label !== true ? "" : `<g class="wxlabel"><rect x="40" y="${H-92}" width="${f(24 + WX_LABEL[kind].length * 19)}" height="52" rx="4" fill="#0e1318" opacity=".55"/><text x="58" y="${H-57}" font-size="30" font-family="inherit" font-weight="600" letter-spacing="1.5" fill="#f4f6f7">${WX_LABEL[kind].toUpperCase()}</text></g>`;
+  return `<svg class="emap wxart" viewBox="0 0 ${W} ${H}" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Illustration: ${esc(WX_LABEL[kind])} across Essex">
+  <defs>
+    <linearGradient id="${u}s" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="${P.sky[0]}"/><stop offset=".6" stop-color="${P.sky[1]}"/><stop offset="1" stop-color="${P.sky[2]}"/></linearGradient>
+    <linearGradient id="${u}sheen" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="${P.glow}" stop-opacity=".8"/><stop offset="1" stop-color="${P.glow}" stop-opacity="0"/></linearGradient>
+    <linearGradient id="${u}water" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="${P.sky[2]}"/><stop offset="1" stop-color="${P.sky[0]}"/></linearGradient>
+    <linearGradient id="${u}l" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="${P.far}"/><stop offset=".25" stop-color="${P.land}"/><stop offset="1" stop-color="${P.land}"/></linearGradient>
+    <radialGradient id="${u}v" cx=".5" cy=".45" r=".75"><stop offset=".6" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity="${kind === "snow" || kind === "fog" ? .12 : .32}"/></radialGradient>
+    <filter id="${u}b" filterUnits="userSpaceOnUse" x="-200" y="-200" width="1400" height="1200"><feGaussianBlur stdDeviation="18"/></filter>
+    <filter id="${u}b2" filterUnits="userSpaceOnUse" x="-200" y="-200" width="1400" height="1200"><feGaussianBlur stdDeviation="10"/></filter>
+    <filter id="${u}g"><feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="2" seed="7"/><feColorMatrix values="0 0 0 0 .5  0 0 0 0 .5  0 0 0 0 .5  0 0 0 .5 0"/></filter>
+  </defs>
+  <rect width="${W}" height="${H}" fill="url(#${u}s)"/>
+  ${sky}
+  <path d="${farLine}" fill="${P.far}" opacity="${fogFade * .9}"/>
+  <g opacity="${fogFade}">${pylon(140, .9)}${pylon(470, 1.05)}${pylon(860, .95)}${wires}<g fill="${P.mid}">${trees}</g><path d="${church}" fill="${P.mid}"/></g>
+  <rect x="0" y="${hz+4}" width="${W}" height="${H-hz-4}" fill="url(#${u}l)"/>
+  ${kind === "flood" ? "" : furrows}
+  ${ground}
+  <rect x="-40" y="${hz-26}" width="${W+80}" height="44" fill="${P.glow}" opacity="${kind === "storm" ? .12 : .22}" filter="url(#${u}b2)"/>
+  <path d="${reeds}" stroke="${kind === "snow" || kind === "ice" ? "#9aa6b0" : P.mid}" stroke-width="1.6" fill="none" opacity=".9"/>
+  ${fx}
+  <rect width="${W}" height="${H}" fill="url(#${u}v)"/>
+  <rect width="${W}" height="${H}" filter="url(#${u}g)" opacity=".08"/>
+  ${label}
+</svg>`;
+}
+/* the art shown for a story: weather artwork for county-wide weather, otherwise the map */
+function storyArt(s, opts){ return isWeatherArtStory(s) ? weatherArt(s, opts) : storyMap(s, opts); }
+function artCaption(s){ return isWeatherArtStory(s) ? `Across Essex · ${WX_LABEL[wxKindOf(s)]}` : mapCaption(s); }
+
+/* ============================================================
    weather icons, sun and moon
    ============================================================ */
 function wxIcon(kind, night){
@@ -2613,7 +2742,7 @@ function buildHero(){
   heroList = [lead, ...list.filter(s => s !== lead)].slice(0, 5);
   $("#slides").innerHTML = heroList.map((s,i) => `
     <div class="slide${i===0?" on":""}" style="--c:${iconColour(s)}">
-      <div class="smap">${storyMap(s,{zoom:440,aspect:1.15})}<div class="mcap"><b>Where</b> ${esc(mapCaption(s))}</div></div>
+      <div class="smap">${storyArt(s,{zoom:440,aspect:1.15})}<div class="mcap"><b>Where</b> ${esc(artCaption(s))}</div></div>
       <div class="lead">
         <span class="kicker">${s.breaking ? '<span class="dot" style="background:#fff;animation:none;box-shadow:none"></span>Breaking' : esc(s.tag||"Top story")}</span>
         <h2><a href="${storyHref(s)}">${esc(s.headline)}</a></h2>
@@ -2918,7 +3047,7 @@ function renderStory(id){
     <div class="note-copy">This page is a summary written by The Seax. The original reporting, quotes and images belong to ${esc(s.source)}${s.also.length?" and the other outlets listed":""}.</div>`;
   $("#storySide").innerHTML = `
     <div class="ad mpu"><span class="k">Advertisement · MPU 300×250</span><div class="in"><strong>Your brand, on every story</strong>Story pages are prime, brand-safe space.<br><button data-advert>Enquire</button></div></div>
-    <div class="side-box where" style="--c:${iconColour(s)}"><h4>Where it happened</h4><div class="wmap">${storyMap(s,{zoom:400,aspect:.82})}</div><div class="mcap">${esc(mapCaption(s))}</div></div>
+    <div class="side-box where" style="--c:${iconColour(s)}"><h4>Where it happened</h4><div class="wmap">${storyArt(s,{zoom:400,aspect:.82})}</div><div class="mcap">${esc(artCaption(s))}</div></div>
     <div class="side-box"><h4>More from Essex</h4>${more.map(x=>`<a class="rel" href="${storyHref(x)}" style="--c:${iconColour(x)}"><i></i><b>${esc(x.headline)}</b></a>`).join("")}</div>`;
   document.body.classList.add("reading");
   document.title = s.headline + " · The Seax";
@@ -3125,9 +3254,9 @@ function buildHero(){
       ${pts.length ? `<ul class="lp-pts">${pts.map(p=>`<li>${esc(p)}</li>`).join("")}</ul>` : ""}
       <div class="lp-meta">${s.updated && new Date(s.updated) > new Date(s.time||0) ? `<span class="lp-upd">Updated ${esc(hhmm(s.updated))}</span><span>·</span>` : `<span data-ago="${esc(s.time||"")}">${ago(s.time)}</span><span>·</span>`}<span>${esc(s.source)}${s.also && s.also.length ? ` and ${s.also.length} more` : ""}</span><a class="lp-read" href="${storyHref(s)}">Read the story</a></div>
     </div>
-    <a class="lp-map" href="${storyHref(s)}" style="--c:${pillar(s)}" aria-label="Map: ${esc(mapCaption(s))}">${storyMap(s,{zoom:430,aspect:1.05})}<span class="mcap"><b>Where</b> ${esc(mapCaption(s))}</span></a>`;
+    <a class="lp-map" href="${storyHref(s)}" style="--c:${pillar(s)}" aria-label="Map: ${esc(artCaption(s))}">${storyArt(s,{zoom:430,aspect:1.05})}<span class="mcap"><b>Where</b> ${esc(artCaption(s))}</span></a>`;
   $("#seconds").innerHTML = seconds.map(x => `<a class="sec" href="${storyHref(x)}" style="--c:${pillar(x)}">
-      <div class="sec-map">${storyMap(x,{zoom:300,aspect:2.1})}</div>
+      <div class="sec-map">${storyArt(x,{zoom:300,aspect:2.1,label:false})}</div>
       <div class="sec-body"><span class="kick2">${esc(x.tag||"News")}<em>${esc(x.place||"Essex")}</em></span>
       <h3>${esc(x.headline)}</h3><p>${esc(x.summary)}</p>
       <div class="m"><span data-ago="${esc(x.time||"")}">${ago(x.time)}</span> · ${esc(x.source)}</div></div></a>`).join("");
