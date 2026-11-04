@@ -2467,8 +2467,12 @@ function storyMap(s, opts){
   let cx, cy, w;
   if(pins.length){
     const xs = pins.map(p=>p.x), ys = pins.map(p=>p.y);
-    cx = (Math.min(...xs)+Math.max(...xs))/2; cy = (Math.min(...ys)+Math.max(...ys))/2;
-    w = Math.max(opts.zoom || 430, (Math.max(...xs)-Math.min(...xs)) * 1.7 + 160, (Math.max(...ys)-Math.min(...ys)) * 1.7 + 160);
+    /* fit every place in the frame's real shape (aspect = height / width); if they are too far
+       apart to show at a readable size, centre on the main place, which is named first */
+    const asp = opts.aspect || 1, need = Math.max((Math.max(...xs)-Math.min(...xs)) * 1.7 + 160, ((Math.max(...ys)-Math.min(...ys)) * 1.7 + 160) / asp);
+    const dx = Math.max(...xs)-Math.min(...xs), dy = Math.max(...ys)-Math.min(...ys), fitW = Math.min(820, Math.max(opts.zoom || 430, need));
+    if(dx <= fitW * .9 && dy <= fitW * asp * .85){ cx = (Math.min(...xs)+Math.max(...xs))/2; cy = (Math.min(...ys)+Math.max(...ys))/2; w = fitW; }
+    else { cx = pins[0].x; cy = pins[0].y; w = opts.zoom || 430; }
   } else if(lit.size){
     const cs = [...lit].map(d => M.centroids[d]).filter(Boolean);
     cx = cs.reduce((a,c)=>a+c[0],0)/cs.length; cy = cs.reduce((a,c)=>a+c[1],0)/cs.length;
@@ -2483,14 +2487,18 @@ function storyMap(s, opts){
     const [x, y] = ESSEX_PLACES[t]; if(x < x0 || x > x0+w || y < y0 || y > y0+h) return "";
     return `<g class="ref"><circle cx="${x}" cy="${y}" r="${(fs*.22).toFixed(1)}"/><text x="${(x+fs*.45).toFixed(1)}" y="${(y+fs*.32).toFixed(1)}" font-size="${(fs*.78).toFixed(1)}">${t}</text></g>`; }).join("");
   const litLabels = [...lit].filter(d => M.centroids[d] && !pins.some(p => Math.hypot(p.x-M.centroids[d][0], p.y-M.centroids[d][1]) < w/6)).map(d => { const [x,y] = M.centroids[d]; return `<text class="dl" x="${x}" y="${y}" font-size="${(fs*.8).toFixed(1)}" text-anchor="middle">${d.toUpperCase()}</text>`; }).join("");
+  const placed = [], hits = (x, y, wd, ht) => placed.some(q => x < q[0] + q[2] && x + wd > q[0] && y < q[1] + q[3] && y + ht > q[1]);
   const pinSvg = pins.map((p, i) => {
-    const r = fs * .42, lw = p.name.length * fs * .56 + fs * 1.1, right = p.x + lw + fs < x0 + w;
-    const lx = right ? p.x + r + fs*.5 : p.x - r - fs*.5 - lw, ly = p.y - fs*.85;
+    const r = fs * .42, lw = p.name.length * fs * .56 + fs * 1.1, lh = fs * 1.7, right = p.x + lw + fs < x0 + w;
+    /* put the label beside its pin, on whichever side (or above or below) does not cover another label */
+    const tries = [[right ? p.x + r + fs*.5 : p.x - r - fs*.5 - lw, p.y - fs*.85], [right ? p.x - r - fs*.5 - lw : p.x + r + fs*.5, p.y - fs*.85], [p.x - lw/2, p.y - r - fs*.4 - lh], [p.x - lw/2, p.y + r + fs*.4]];
+    const spot = tries.find(t => !hits(t[0], t[1], lw, lh)) || tries[0]; placed.push([spot[0], spot[1], lw, lh]);
+    const lx = spot[0], ly = spot[1];
     return `<g class="pin"><circle class="pulse" cx="${p.x}" cy="${p.y}" r="${(r*2.6).toFixed(1)}" style="animation-delay:${i*.4}s"/><circle cx="${p.x}" cy="${p.y}" r="${r.toFixed(1)}" stroke-width="${(sw*2.6).toFixed(2)}"/>
       <rect x="${lx.toFixed(1)}" y="${ly.toFixed(1)}" width="${lw.toFixed(1)}" height="${(fs*1.7).toFixed(1)}" rx="${(fs*.25).toFixed(1)}"/><text x="${(lx+fs*.55).toFixed(1)}" y="${(ly+fs*1.18).toFixed(1)}" font-size="${(fs*.95).toFixed(1)}">${esc(p.name)}</text></g>`; }).join("");
   const essex = countywide ? `<text class="cw" x="${M.centroids.Chelmsford[0]}" y="${M.centroids.Chelmsford[1]+fs*.3}" font-size="${(fs*2.2).toFixed(1)}" text-anchor="middle">ESSEX</text>` : "";
   return `<svg class="emap" viewBox="${x0.toFixed(1)} ${y0.toFixed(1)} ${w.toFixed(1)} ${h.toFixed(1)}" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Map of Essex showing ${esc(pins.map(p=>p.name).join(", ") || [...lit].join(", ") || "the whole county")}">
-    <rect x="0" y="0" width="${M.w}" height="${M.h}" class="sea"/><path d="${M.context}" class="land"/>${districts}${litLabels}${refs}${essex}${pinSvg}</svg>`;
+    <rect x="-2000" y="-2000" width="${M.w + 4000}" height="${M.h + 4000}" class="sea"/><path d="${M.context}" class="land"/>${districts}${litLabels}${refs}${essex}${pinSvg}</svg>`;
 }
 function mapCaption(s){
   const pins = storyPins(s), lit = [...storyDistricts(s, pins)];
@@ -3762,7 +3770,7 @@ function buildHero(){
     </div>
     <a class="lp-map" href="${storyHref(s)}" style="--c:${pillar(s)}" aria-label="${artKick(s) === "Club" ? "Club colours" : artKick(s) === "Sport" ? "Illustration" : "Map"}: ${esc(artCaption(s))}">${storyArt(s,{zoom:430,aspect:1.05})}<span class="mcap"><b>${artKick(s)}</b> ${esc(artCaption(s))}</span></a>`;
   $("#seconds").innerHTML = seconds.map(x => `<a class="sec" href="${storyHref(x)}" style="--c:${pillar(x)}">
-      <div class="sec-map">${storyArt(x,{zoom:300,aspect:2.1,label:false})}</div>
+      <div class="sec-map">${storyArt(x,{zoom:340,aspect:.24,label:false})}</div>
       <div class="sec-body"><span class="kick2">${esc(x.tag||"News")}<em>${esc(x.place||"Essex")}</em></span>
       <h3>${esc(x.headline)}</h3><p>${esc(x.summary)}</p>
       <div class="m"><span data-ago="${esc(x.time||"")}">${ago(x.time)}</span> · ${esc(x.source)}</div></div></a>`).join("");
