@@ -3122,7 +3122,7 @@ function renderSources(){
 function renderMeta(){
   const now = new Date(), d = new Date(ED.updatedAt);
   $("#mhLeft").innerHTML = `<strong>${fmt(now,{weekday:"long", day:"numeric", month:"long", year:"numeric"})}</strong><br>Edition ${fmt(d,{hour:"2-digit",minute:"2-digit"})} · ${esc(allStories().length)} stories`;
-  $("#mhRight").innerHTML = `<strong>All of Essex, in one place</strong><br><span class="nw">${SOURCE_COUNT} sources watched</span>`;
+  $("#mhRight").innerHTML = `<strong>All of Essex, in one place</strong><br><span class="nw">${SOURCE_COUNT} sources watched 24/7</span>`;
   const srcs = Array.from(new Set(allStories().flatMap(s => [s.source, ...(s.also||[]).map(a=>a.name)]).filter(Boolean)));
   $("#sourcesList").textContent = srcs.join(" · ");
   $("#howUpdates").textContent = "The page checks for a fresh edition every minute and the newsroom publishes new editions through the day, drawing on national and local outlets, police, councils and official bodies. Sunrise, sunset, moon phase and countdowns are calculated live in your browser. The Seax carries no photos: every story links straight to the original reporting.";
