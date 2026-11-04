@@ -49,6 +49,9 @@ button{font:inherit;cursor:pointer}
 .masthead .wrap{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:20px}
 .mh-left,.mh-right{font-size:13px;color:var(--muted)}
 .mh-right{text-align:right}
+.mh-right .nw{white-space:nowrap}
+.mh-right .sep{font-style:normal}
+@media (min-width:861px) and (max-width:1240px){ .mh-right .nw{display:block} .mh-right .sep{display:none} }
 .mh-left strong,.mh-right strong{color:var(--ink);font-weight:600}
 .brand{display:flex;align-items:center;gap:16px}
 .brand svg{width:62px;height:72px;filter:drop-shadow(0 4px 10px rgba(150,10,33,.25))}
@@ -924,17 +927,6 @@ table.tf{width:100%;border-collapse:collapse;font-size:13.5px;font-variant-numer
 </style>
 </head>
 <body>
-
-<div class="topbar">
-  <div class="wrap">
-    <span class="clock" id="clock">--:--:--</span>
-    <span id="today"></span>
-    <span class="live"><span class="dot"></span><span id="liveTxt">LIVE</span></span>
-    <span class="grow"></span>
-    <span class="sun" id="sunTop"></span>
-    <span class="mini-wx" id="miniWx"></span>
-  </div>
-</div>
 
 <header class="masthead">
   <div class="wrap">
@@ -2974,8 +2966,8 @@ function renderWeather(){
     <div class="tile">${wxIcon(bonDay?bonDay.icon:"partly",true)}<div><b>Bonfire Night outlook</b><span>${bonDay ? `${esc(bonDay.desc)}, ${esc(bonDay.lo)} to ${esc(bonDay.hi)}°C, ${Number(bonDay.rain)<10?"looking dry":esc(bonDay.rain)+"% chance of rain"}` : "Forecast coming soon"}</span></div></div>`;
   const warn = (w.warnings||[]).map(x=>`<b style="color:var(--red)">⚠ ${esc(x)}</b> `).join("");
   $("#wxNote").innerHTML = `${warn}Forecast: ${esc(w.source||"")} · <a href="${safeUrl(w.url)}" target="_blank" rel="noopener">Full Met Office forecast ↗</a> · Sun and moon times are calculated live for Chelmsford.`;
-  $("#miniWx").innerHTML = `${wxIcon(w.now.icon, night)}<b>${esc(w.now.temp)}°C</b><span>${esc(w.place||"Chelmsford")}</span>`;
-  $("#sunTop").textContent = `☀ ${fmt(st.rise,{hour:"2-digit",minute:"2-digit"})}  ☾ ${fmt(st.set,{hour:"2-digit",minute:"2-digit"})}`;
+  if($("#miniWx")) $("#miniWx").innerHTML = `${wxIcon(w.now.icon, night)}<b>${esc(w.now.temp)}°C</b><span>${esc(w.place||"Chelmsford")}</span>`;
+  if($("#sunTop")) $("#sunTop").textContent = `☀ ${fmt(st.rise,{hour:"2-digit",minute:"2-digit"})}  ☾ ${fmt(st.set,{hour:"2-digit",minute:"2-digit"})}`;
 }
 
 function renderEvents(){
@@ -3132,10 +3124,10 @@ function renderSources(){
 function renderMeta(){
   const now = new Date(), d = new Date(ED.updatedAt);
   $("#mhLeft").innerHTML = `<strong>${fmt(now,{weekday:"long", day:"numeric", month:"long", year:"numeric"})}</strong><br>Edition ${fmt(d,{hour:"2-digit",minute:"2-digit"})} · ${esc(allStories().length)} stories`;
-  $("#mhRight").innerHTML = `<strong>Serving all of Essex</strong><br>Three cities · 14 local authority areas`;
+  $("#mhRight").innerHTML = `<strong>All of Essex, in one place</strong><br><span class="nw">${SOURCE_COUNT} sources watched</span> <span class="nw"><i class="sep">· </i>updated hourly, 24/7</span>`;
   const srcs = Array.from(new Set(allStories().flatMap(s => [s.source, ...(s.also||[]).map(a=>a.name)]).filter(Boolean)));
   $("#sourcesList").textContent = srcs.join(" · ");
-  $("#howUpdates").textContent = "The page checks for a fresh edition every minute and the newsroom publishes new editions through the day, drawing on national and local outlets, police, councils and official bodies. Sunrise, sunset, moon phase, countdowns and the clock are calculated live in your browser. The Seax carries no photos: every story links straight to the original reporting.";
+  $("#howUpdates").textContent = "The page checks for a fresh edition every minute and the newsroom publishes new editions through the day, drawing on national and local outlets, police, councils and official bodies. Sunrise, sunset, moon phase and countdowns are calculated live in your browser. The Seax carries no photos: every story links straight to the original reporting.";
   $("#fine").textContent = `© ${now.getFullYear()} The Seax. Headlines and summaries are written by The Seax; full reporting belongs to the original publishers and is linked from every story. Maps contain National Statistics and OS data © Crown copyright and database right, used under the Open Government Licence.`;
 }
 
@@ -3189,7 +3181,7 @@ function setFeed(state){
 }
 function updateLiveLine(){
   const d = new Date(ED.updatedAt);
-  $("#liveTxt").textContent = `LIVE · edition ${fmt(d,{hour:"2-digit",minute:"2-digit"})}`;
+  if($("#liveTxt")) $("#liveTxt").textContent = `LIVE · edition ${fmt(d,{hour:"2-digit",minute:"2-digit"})}`;
 }
 
 function renderAll(){
@@ -3201,8 +3193,8 @@ function renderAll(){
 /* every second: clock. every minute: relative times, countdowns, live line, ticker, weather */
 function tickSecond(){
   const n = new Date();
-  $("#clock").textContent = fmt(n,{hour:"2-digit",minute:"2-digit",second:"2-digit",hour12:false});
-  $("#today").textContent = fmt(n,{weekday:"short", day:"numeric", month:"short"});
+  if($("#clock")) $("#clock").textContent = fmt(n,{hour:"2-digit",minute:"2-digit",second:"2-digit",hour12:false});
+  if($("#today")) $("#today").textContent = fmt(n,{weekday:"short", day:"numeric", month:"short"});
 }
 let lastMinute = -1, lastDay = "";
 function tickMinute(){
