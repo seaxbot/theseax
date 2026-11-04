@@ -3549,11 +3549,12 @@ function renderSport(){
   const done = m => Number.isFinite(m.hs) && Number.isFinite(m.as);
   const res = sp.results.slice().sort((a,b) => new Date(b.date) - new Date(a.date));
   const strip = document.getElementById("scoreStrip");
-  if(strip) strip.innerHTML = res.length ? res.map(m => `<a class="chip-score" href="${safeUrl(m.url||"#")}" target="_blank" rel="noopener"><span class="cs-c">${esc(m.comp)}</span><span class="cs-r"><b>${esc(m.home)}</b><i>${done(m) ? m.hs : "-"}</i></span><span class="cs-r"><b>${esc(m.away)}</b><i>${done(m) ? m.as : "-"}</i></span><span class="cs-s">${esc(done(m) ? (m.status||"FT") : (m.status||"Live"))}</span></a>`).join("") : "";
+  if(strip) strip.innerHTML = res.length ? res.map(m => `<a class="chip-score" href="${safeUrl(m.url||"#")}" target="_blank" rel="noopener"><span class="cs-c">${esc(m.comp)}${m.date ? " · " + esc(fmt(new Date(m.date),{weekday:"short",day:"numeric"})) : ""}</span><span class="cs-r"><b>${esc(m.home)}</b><i>${done(m) ? m.hs : "-"}</i></span><span class="cs-r"><b>${esc(m.away)}</b><i>${done(m) ? m.as : "-"}</i></span><span class="cs-s">${esc(done(m) ? (m.status||"FT") : (m.status||"Live"))}</span></a>`).join("") : "";
   const groups = {};
-  res.forEach(m => { (groups[m.comp] = groups[m.comp] || []).push(m); });
-  $("#scores").innerHTML = Object.entries(groups).map(([comp, ms]) => `<div class="rt"><h4>${esc(comp)}<span>${ms[0].date ? fmt(new Date(ms[0].date),{weekday:"short",day:"numeric",month:"short"}) : ""}</span></h4>
-    ${ms.map(m => `<a class="rt-row" href="${safeUrl(m.url||"#")}" target="_blank" rel="noopener" title="${esc(m.note||"")}"><span class="h${done(m) && m.hs > m.as ? " w" : ""}">${esc(m.home)}</span><span class="sc">${done(m) ? `${m.hs}<i>-</i>${m.as}` : esc(m.status||"v")}</span><span class="a${done(m) && m.as > m.hs ? " w" : ""}">${esc(m.away)}</span><span class="st">${esc(done(m) ? (m.status||"FT") : "")}</span></a>`).join("")}</div>`).join("");
+  const dayOf = m => m.date ? fmt(new Date(m.date),{weekday:"short",day:"numeric",month:"short"}) : "";
+  res.forEach(m => { const k = m.comp + "\u0001" + dayOf(m); (groups[k] = groups[k] || []).push(m); });
+  $("#scores").innerHTML = Object.entries(groups).map(([k, ms]) => { const comp = ms[0].comp; return `<div class="rt"><h4>${esc(comp)}<span>${esc(dayOf(ms[0]))}</span></h4>
+    ${ms.map(m => `<a class="rt-row" href="${safeUrl(m.url||"#")}" target="_blank" rel="noopener" title="${esc(m.note||"")}"><span class="h${done(m) && m.hs > m.as ? " w" : ""}">${esc(m.home)}</span><span class="sc">${done(m) ? `${m.hs}<i>-</i>${m.as}` : esc(m.status||"v")}</span><span class="a${done(m) && m.as > m.hs ? " w" : ""}">${esc(m.away)}</span><span class="st">${esc(done(m) ? (m.status||"FT") : "")}</span></a>`).join("")}</div>`; }).join("");
   $("#sportStories").innerHTML = sp.stories.filter(inArea).sort(byTime).slice(0,6).map(s => cardHtml(s, false, true)).join("");
   $("#fixtures").innerHTML = [...sp.fixtures].filter(f => new Date(f.date) >= new Date(Date.now() - 3*36e5)).sort((x,y) => new Date(x.date) - new Date(y.date)).map(f => {
     const d = new Date(f.date); const cd = countdown(f.date, f.allDay);
