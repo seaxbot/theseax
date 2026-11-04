@@ -973,7 +973,6 @@ table.tf{width:100%;border-collapse:collapse;font-size:13.5px;font-variant-numer
     <button data-go="whatson">What's On</button>
     <button data-go="culture">Culture</button>
     <button data-go="features">Features</button>
-    <button data-go="escape">Escape</button>
     <button data-go="vital">Vital Info</button>
     <button data-go="specials">Deals</button>
         </div>
@@ -1136,13 +1135,6 @@ table.tf{width:100%;border-collapse:collapse;font-size:13.5px;font-variant-numer
   </div>
 </section>
 
-<section class="block" id="escape">
-  <div class="wrap">
-    <div class="bh"><h2>Escape<small>The best of Essex, from the coast to Constable Country</small></h2></div>
-    <div class="escape" id="escapeGrid"></div>
-  </div>
-</section>
-
 <section class="block" id="vital">
   <div class="wrap">
     <div class="bh"><h2>Vital Info<small>Numbers, travel and services worth bookmarking</small></h2></div>
@@ -1188,7 +1180,7 @@ table.tf{width:100%;border-collapse:collapse;font-size:13.5px;font-variant-numer
         <div class="fmt"><b>Ticker sponsor</b><span>"Latest, brought to you by..." on every view.</span></div>
         <div class="fmt"><b>Weather sponsor</b><span>Your name on the county forecast.</span></div>
         <div class="fmt"><b>Featured listing</b><span>Promote your event or offer in What's On and Specials.</span></div>
-        <div class="fmt"><b>Section sponsor</b><span>Sport, Escape or Vital Info, yours for the month.</span></div>
+        <div class="fmt"><b>Section sponsor</b><span>Sport, Culture or Vital Info, yours for the month.</span></div>
         <div class="fmt"><b>Area targeting</b><span>Show only to readers who pick your part of Essex.</span></div>
       </div>
     </div>
@@ -1209,7 +1201,7 @@ table.tf{width:100%;border-collapse:collapse;font-size:13.5px;font-variant-numer
     </div>
     <div>
       <h5>Sections</h5>
-      <p>News · Public Services · Community &amp; Charity · Sport · Weather · What's On · Escape · Vital Info · Specials · Advertise</p>
+      <p>News · Public Services · Community &amp; Charity · Sport · Weather · What's On · Vital Info · Specials · Advertise</p>
       <h5 style="margin-top:16px">Badge</h5>
       <p>The badge follows the official blazon of the arms of Essex: gules, three seaxes fesswise in pale argent, pommels and hilts or.</p>
     </div>
@@ -2986,6 +2978,7 @@ function renderEvents(){
 }
 
 function renderEscape(){
+  if(!$("#escapeGrid")) return;
   $("#escapeGrid").innerHTML = ESCAPE.map(e => `<div class="esc" style="--c:${ICON_COLOUR[SCENE_ICON[e.scene]]||"#1b2a44"}"><div class="in"><div class="pl">${esc(e.place)}</div><h4>${esc(e.title)}</h4><p>${esc(e.text)}</p></div></div>`).join("");
 }
 
@@ -3239,7 +3232,7 @@ $("#srcQ").addEventListener("input", e => { SRCQ = e.target.value; renderSources
 
 /* boot */
 ED = normalise(EMBED);
-tickSecond(); renderEscape(); renderWebcams(); renderAll(); lastDay = dayKey(new Date()); lastMinute = new Date().getMinutes();
+tickSecond(); renderWebcams(); renderAll(); lastDay = dayKey(new Date()); lastMinute = new Date().getMinutes();
 setFeed("embedded"); route();
 
 /* live edition from the page's data store */
@@ -3521,7 +3514,7 @@ document.addEventListener("click", e => {
 function srchTypes(){
   return [
     ["all", "Everything"], ["news", "News"], ["services", "Public Services"], ["community", "Community"],
-    ["sport", "Sport"], ["travel", "Travel"], ["whatson", "What's On"], ["culture", "Culture"], ["features", "Features"], ["deals", "Deals"], ["escape", "Days out"], ["webcams", "Webcams"], ["sources", "Sources"]
+    ["sport", "Sport"], ["travel", "Travel"], ["whatson", "What's On"], ["culture", "Culture"], ["features", "Features"], ["deals", "Deals"], ["webcams", "Webcams"], ["sources", "Sources"]
   ];
 }
 function srchNorm(t){ return String(t || "").toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "").replace(/[’']/g, ""); }
@@ -3547,8 +3540,6 @@ function srchIndex(){
     time:e.start, future:true, href:e.url || "#culture", ext:!!e.url, c:"#5b3f8c", hay:[e.title, e.blurb, e.venue, e.where, e.cat].join(" ")}));
   (ED.deals || []).forEach(d => idx.push({type:"deals", kick:d.tag || "Deal", title:d.title, text:d.detail || "", place:d.where || "", meta:"",
     href:d.url || "#specials", ext:!!d.url, c:"#a8761a", hay:[d.title, d.detail, d.where, d.tag].join(" ")}));
-  (typeof ESCAPE !== "undefined" ? ESCAPE : []).forEach(e => idx.push({type:"escape", kick:"Day out", title:e.title, text:e.text || "", place:e.place || "", meta:"",
-    href:"#escape", ext:false, c:"#2c6e8f", hay:[e.title, e.text, e.place].join(" ")}));
   (typeof WEBCAMS !== "undefined" ? WEBCAMS : []).forEach(c => idx.push({type:"webcams", kick:"Webcam", title:c.title + " webcam", text:c.text, place:c.place, meta:"Live view",
     href:"#webcams", ext:false, c:"#1f7a78", hay:[c.title, c.text, c.place, c.owner, "webcam webcams live camera cam view"].join(" ")}));
   (typeof SOURCES !== "undefined" ? SOURCES : []).forEach(g => (g.list || []).forEach(([name, url, area]) => idx.push({type:"sources", kick:g.title, title:name, text:"", place:area || "", meta:hostOf(url),
