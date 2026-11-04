@@ -2741,8 +2741,189 @@ function clubArt(s, opts){
 </svg>`;
 }
 /* the art shown for a story: weather artwork for county-wide weather, club colours for our clubs, otherwise the map */
-function storyArt(s, opts){ return isWeatherArtStory(s) ? weatherArt(s, opts) : clubOf(s) ? clubArt(s, opts) : storyMap(s, opts); }
-function artCaption(s){ if(isWeatherArtStory(s)) return `Across Essex · ${WX_LABEL[wxKindOf(s)]}`; const c = clubOf(s); if(c) return CLUBS[c].nick ? `${c} · ${CLUBS[c].nick}` : c; return mapCaption(s); }
+/* ============================================================
+   Occasion artwork: mature painted scenes for stories about
+   recurring occasions (Remembrance, Bonfire Night, Halloween,
+   Christmas, New Year, Easter). Same painterly language as the
+   weather scenes; no cartoon faces or clip-art.
+   ============================================================ */
+const SEASON_LABEL = {remembrance:"Remembrance", bonfire:"Bonfire Night", halloween:"Halloween", christmas:"Christmas", newyear:"New Year", easter:"Easter"};
+function seasonKindOf(s){
+  if(!s) return null;
+  if(s.season && SEASON_LABEL[String(s.season).toLowerCase()]) return String(s.season).toLowerCase();
+  const k = iconKey(s), tag = String(s.tag || "");
+  if(["police","crime","court","appeal","fire","ambulance","tribute"].includes(k) || /police|court|crime|appeal|tribute|fire|ambulance/i.test(tag)) return null;
+  const h = " " + String(s.headline || "").toLowerCase() + " ";
+  if(/\b(arrest|charged|jailed|died|death|dead|killed|crash|stabb|assault|injur|attack|investigation)/.test(h)) return null;
+  const d = s.time ? new Date(s.time) : new Date(), m = d.getMonth(), day = d.getDate();
+  const ny = (m === 11 && day >= 20) || (m === 0 && day <= 6);
+  if(/remembrance|armistice|\bpoppy|\bpoppies|cenotaph|war memorial|two[- ]minute silence|royal british legion/.test(h)) return "remembrance";
+  if(/new year'?s? eve|new year celebrations|new year fireworks|hogmanay|new year'?s? day/.test(h)) return "newyear";
+  if(/bonfire|firework|guy fawkes/.test(h)) return ny ? "newyear" : "bonfire";
+  if(/hallowe'?en|trick[- ]or[- ]treat|pumpkin/.test(h)) return "halloween";
+  if(/christmas|festive|santa|carol service|\bcarols\b|nativity|\badvent\b|lights switch[- ]on/.test(h)) return "christmas";
+  if(/\beaster\b/.test(h)) return "easter";
+  return null;
+}
+function seasonArt(s, opts){
+  opts = opts || {};
+  const kind = seasonKindOf(s) || "christmas", R = wxRand((s && s.id || "ss") + kind), u = "ss" + (++WXUID);
+  const W = 1000, H = 800, f = n => n.toFixed(1), rnd = (a, b) => a + R() * (b - a);
+  let hz = 520, body = "", sky = ["#000", "#000", "#000"], vig = .34;
+  const blobTrees = (y, col, minX = -10, maxX = W + 10, skip) => { let g = ""; for(let x = minX; x < maxX; x += 6 + R()*6){ if(skip && x > skip[0] && x < skip[1]) continue; const r = 5 + R()*7; g += `<circle cx="${f(x)}" cy="${f(y + 2 - r*0.5)}" r="${f(r)}"/>`; }
+    for(let i = 0; i < 8; i++){ const x = minX + 20 + R()*(maxX - minX - 40); if(skip && x > skip[0] - 30 && x < skip[1] + 30) continue; const ht = 34 + R()*36, w = 16 + R()*16; g += `<rect x="${f(x-1.2)}" y="${f(y-ht*0.45)}" width="2.4" height="${f(ht*0.45)}"/>`; for(let j = 0; j < 9; j++){ const a = R()*6.283, rr = R()*w*0.7; g += `<circle cx="${f(x + Math.cos(a)*rr)}" cy="${f(y - ht*0.62 + Math.sin(a)*rr*0.7)}" r="${f(w*(0.35+R()*0.3))}"/>`; } }
+    return `<g fill="${col}">${g}</g>`; };
+  const church = (x, y, sc, col, lit) => `<g transform="translate(${x} ${y}) scale(${sc})"><path d="M-38 0 v-22 l14 -10 h30 v32 Z M0 0 v-50 h3 v-3 h3 v3 h3 v-3 h3 v3 h3 v-3 h3 v3 h3 v-3 h3 v3 h3 v50 Z M10 -50 l7.5 -34 l7.5 34 Z" fill="${col}"/>${lit ? `<g fill="#ffc86b"><rect x="-30" y="-17" width="4" height="9" rx="2"/><rect x="-21" y="-17" width="4" height="9" rx="2"/><rect x="-12" y="-17" width="4" height="9" rx="2"/><rect x="11" y="-36" width="5" height="10" rx="2.5"/></g>` : ""}</g>`;
+  let GI = 0; const glow = (cx, cy, r, col, op, blur, ry) => { const id = u + "gl" + (++GI); return `<radialGradient id="${id}"><stop offset="0" stop-color="${col}" stop-opacity="${op}"/><stop offset=".45" stop-color="${col}" stop-opacity="${(op*0.45).toFixed(3)}"/><stop offset="1" stop-color="${col}" stop-opacity="0"/></radialGradient><ellipse cx="${f(cx)}" cy="${f(cy)}" rx="${f(r)}" ry="${f(ry || r)}" fill="url(#${id})"/>`; };
+  const clouds = (y, n, col, op, stretch) => { let g = ""; for(let i = 0; i < n; i++){ g += `<ellipse cx="${f(R()*W*1.2 - W*0.1)}" cy="${f(y + R()*60 - 30)}" rx="${f((120 + R()*220)*stretch)}" ry="${f(22 + R()*36)}" fill="${col}" opacity="${(op*(0.6+R()*0.4)).toFixed(2)}"/>`; } return `<g filter="url(#${u}b)">${g}</g>`; };
+  const stars = (n, maxY, op) => { let g = ""; for(let i = 0; i < n; i++) g += `<circle cx="${f(R()*W)}" cy="${f(R()*maxY)}" r="${f(.4 + R()*1.1)}" opacity="${(op*(0.3+R()*0.7)).toFixed(2)}"/>`; return `<g fill="#fff">${g}</g>`; };
+  const burst = (cx, cy, r, col, n) => { let d = "", dots = "", core = ""; for(let k = 0; k < n; k++){ const a = (k / n) * 6.283 + R()*0.12, r0 = r*0.12, r1 = r*(0.75 + R()*0.3), droop = r*0.12*R();
+      const x1 = cx + Math.cos(a)*r1, y1 = cy + Math.sin(a)*r1;
+      d += `M${f(cx + Math.cos(a)*r0)} ${f(cy + Math.sin(a)*r0)} Q${f(cx + Math.cos(a)*r1*0.7)} ${f(cy + Math.sin(a)*r1*0.7)} ${f(x1)} ${f(y1 + droop)}`;
+      dots += `<circle cx="${f(x1)}" cy="${f(y1 + droop + 3)}" r="${f(1 + R()*1.4)}"/>`;
+      core += `M${f(cx)} ${f(cy)} L${f(cx + Math.cos(a)*r*0.35)} ${f(cy + Math.sin(a)*r*0.35)}`; }
+    return `${glow(cx, cy, r*1.15, col, .22)}<path d="${d}" stroke="${col}" stroke-width="1.5" fill="none" stroke-linecap="round" opacity=".85"/><g fill="${col}">${dots}</g>`; };
+  const trail = (x, y0, y1) => `<path d="M${f(x)} ${f(y0)} q ${f(rnd(-14,14))} ${f((y1-y0)/2)} ${f(rnd(-10,10))} ${f(y1-y0)}" stroke="#ffd9a0" stroke-width="1" opacity=".3" fill="none"/>`;
+  const field = (n, draw) => { const items = []; for(let i = 0; i < n; i++) items.push(Math.pow(R(), 0.75)); items.sort((a, b) => a - b); return items.map(d => draw(d, rnd(-20, W + 20), hz + 12 + (H - hz - 4) * Math.pow(d, 1.35))).join(""); };
+  switch(kind){
+    case "remembrance": {
+      hz = 470; sky = ["#2d2c33", "#6f665f", "#cfae84"]; vig = .4;
+      const poppy = (d, x, y) => { const r = 1.6 + 24 * Math.pow(d, 2.1); if(r < 3.2) return `<circle cx="${f(x)}" cy="${f(y)}" r="${f(r)}" fill="${R() < .5 ? "#a3141c" : "#bf1e27"}" opacity="${(0.55 + d*0.4).toFixed(2)}"/>`;
+        const rot = R()*90, cols = ["#b0141d", "#c8222b", "#9c1119", "#d02b2f"]; let g = "";
+        const stem = r > 6 ? `<path d="M${f(x)} ${f(y + r*0.3)} q ${f(rnd(-r*.6, r*.6))} ${f(r*1.6)} ${f(rnd(-r*.3, r*.3))} ${f(r*3.4)}" stroke="#3f4a2c" stroke-width="${f(Math.max(.8, r*0.09))}" fill="none"/>` : "";
+        for(let p = 0; p < 4; p++){ const a = (rot + p*90) * Math.PI / 180; g += `<ellipse cx="${f(x + Math.cos(a)*r*0.42)}" cy="${f(y + Math.sin(a)*r*0.3)}" rx="${f(r*0.62)}" ry="${f(r*0.46)}" transform="rotate(${f(rot + p*90)} ${f(x + Math.cos(a)*r*0.42)} ${f(y + Math.sin(a)*r*0.3)})" fill="${cols[(p + Math.floor(R()*4)) % 4]}"/>`; }
+        return `${stem}<g opacity="${(0.82 + d*0.18).toFixed(2)}" ${d > .93 ? `filter="url(#${u}dof)"` : ""}>${g}<circle cx="${f(x)}" cy="${f(y)}" r="${f(r*0.2)}" fill="#1b1012"/><circle cx="${f(x)}" cy="${f(y)}" r="${f(r*0.32)}" fill="none" stroke="#2a1416" stroke-width="${f(r*0.06)}" stroke-dasharray="${f(r*0.06)} ${f(r*0.08)}"/></g>`; };
+      const grass = (() => { let p = ""; for(let i = 0; i < 260; i++){ const x = R()*W, y = hz + 40 + Math.pow(R(), .6)*(H - hz - 40), h = 8 + (y - hz)*0.12*R(); p += `M${f(x)} ${f(y)} q ${f(rnd(-3,3))} ${f(-h/2)} ${f(rnd(-5,5))} ${f(-h)}`; } return `<path d="${p}" stroke="#56603c" stroke-width=".9" fill="none" opacity=".7"/>`; })();
+      const mx = 720, my = hz + 34;
+      const memorial = `<g fill="#2b2a2b"><rect x="${mx-38}" y="${my-10}" width="76" height="10"/><rect x="${mx-29}" y="${my-20}" width="58" height="10"/><rect x="${mx-21}" y="${my-32}" width="42" height="12"/><path d="M${mx-13} ${my-32} L${mx-9} ${my-150} L${mx+9} ${my-150} L${mx+13} ${my-32} Z"/><path d="M${mx-10} ${my-150} L${mx} ${my-166} L${mx+10} ${my-150} Z"/></g><path d="M${mx-12} ${my-34} L${mx-8} ${my-148}" stroke="#8a7d6c" stroke-width="1.2" opacity=".5"/><circle cx="${mx}" cy="${my-50}" r="8.5" fill="none" stroke="#8e1a20" stroke-width="4.5"/><circle cx="${mx}" cy="${my-50}" r="8.5" fill="none" stroke="#c42a2f" stroke-width="1.5" stroke-dasharray="2 3"/>`;
+      body = `${glow(300, hz-10, 420, "#f1c98f", .8, 0, 170)}${glow(300, hz-4, 70, "#fff3da", .9)}${clouds(120, 7, "#3a3640", .55, 1.5)}${clouds(260, 5, "#8b7a6a", .35, 1.8)}
+        <path d="M0 ${hz} ${Array.from({length:41}, (_, i) => `L${i*25} ${f(hz - 4 - 8*Math.sin(i*25/160) - R()*6)}`).join(" ")} L${W} ${H} L0 ${H}Z" fill="#5d5650"/>
+        ${blobTrees(hz, "#3a3735", -10, W+10, [640, 800])}${church(860, hz + 2, .8, "#3a3735")}
+        <rect x="0" y="${hz+2}" width="${W}" height="${H-hz}" fill="url(#${u}l)"/>
+        <path d="M470 ${my+14} C 600 ${my+10} 640 ${my-6} ${mx} ${my-4} C 800 ${my-6} 840 ${my+10} 980 ${my+16} L 980 ${my+40} L 470 ${my+40} Z" fill="#4a4636" opacity=".85"/>${memorial}
+        <rect x="-40" y="${hz-20}" width="${W+80}" height="50" fill="#e8c999" opacity=".2" filter="url(#${u}b2)"/>
+        ${grass}${field(420, poppy)}`;
+      break; }
+    case "bonfire": {
+      hz = 560; sky = ["#05070f", "#141a2e", "#3a2a2c"]; vig = .45;
+      const bx = 290, by = hz + 54;
+      const flames = (() => { let g = ""; for(let i = 0; i < 26; i++){ const t = R(), x = bx + (t - 0.5)*110, h = (40 + R()*120) * (1 - Math.abs(t - 0.5)*1.2), w = 7 + R()*14, lean = rnd(-14, 18);
+          const b0 = by - 4 - R()*10; g += `<path d="M${f(x-w)} ${f(b0)} C ${f(x-w)} ${f(b0-h*0.4)} ${f(x+lean-w*0.3)} ${f(b0-h*0.75)} ${f(x+lean)} ${f(b0-h)} C ${f(x+lean*0.4+w*0.4)} ${f(b0-h*0.7)} ${f(x+w)} ${f(b0-h*0.35)} ${f(x+w)} ${f(b0)} Q ${f(x)} ${f(b0+8)} ${f(x-w)} ${f(b0)} Z" fill="url(#${u}fl)" opacity="${(0.45+R()*0.45).toFixed(2)}"/>`; }
+        return `<g filter="url(#${u}b2)" opacity=".8">${g}</g>${g}`; })();
+      const logs = (() => { let g = ""; for(let i = 0; i < 9; i++){ const a = rnd(-0.55, 0.55), len = rnd(60, 110), cx = bx + rnd(-34, 34), cy = by - rnd(0, 12); g += `<rect x="${f(cx - len/2)}" y="${f(cy - 4)}" width="${f(len)}" height="${f(rnd(6, 10))}" rx="3" transform="rotate(${f(a*57.3)} ${f(cx)} ${f(cy)})" fill="#1b100b" stroke="#ff8a3a" stroke-opacity=".35" stroke-width="1"/>`; } return g; })();
+      const sparks = (() => { let g = ""; for(let i = 0; i < 70; i++){ g += `<circle cx="${f(bx + rnd(-60, 90) + R()*R()*120)}" cy="${f(by - 60 - R()*300)}" r="${f(.6 + R()*1.4)}" opacity="${(0.3+R()*0.6).toFixed(2)}"/>`; } return `<g fill="#ffb24a">${g}</g>`; })();
+      const smoke = (() => { let g = ""; for(let i = 0; i < 9; i++){ g += `<ellipse cx="${f(bx + 30 + i*55 + rnd(-20,20))}" cy="${f(by - 170 - i*38)}" rx="${f(70 + i*18)}" ry="${f(30 + i*6)}" fill="${i < 3 ? "#6b4a3a" : "#3a3b47"}" opacity="${(0.32 - i*0.025).toFixed(2)}"/>`; } return `<g filter="url(#${u}b)">${g}</g>`; })();
+      const crowd = (() => { let g = ""; for(let x = -20; x < W + 30; x += rnd(30, 46)){ const hy = H - rnd(96, 128), hr = rnd(11, 15); g += `<circle cx="${f(x)}" cy="${f(hy)}" r="${f(hr)}"/><path d="M${f(x - hr*2.1)} ${H} Q ${f(x - hr*2.2)} ${f(hy + hr*1.3)} ${f(x)} ${f(hy + hr*1.1)} Q ${f(x + hr*2.2)} ${f(hy + hr*1.3)} ${f(x + hr*2.1)} ${H} Z"/>`; } return `<g fill="#05060a">${g}</g>`; })();
+      const rim = (() => { let g = ""; for(let x = -20; x < W + 30; x += 60){ g += ""; } return g; })();
+      body = `${stars(160, 420, .7)}${clouds(140, 5, "#1d2236", .5, 1.6)}
+        ${trail(560, hz, 210)}${trail(780, hz, 150)}${trail(420, hz, 120)}
+        ${burst(560, 200, 120, "#ffd27a", 46)}${burst(790, 140, 95, "#ff6b5a", 40)}${burst(410, 120, 80, "#e8f1ff", 36)}${burst(880, 300, 60, "#9fd8c9", 30)}
+        ${smoke}
+        <path d="M0 ${hz} ${Array.from({length:41}, (_, i) => `L${i*25} ${f(hz - 6 - 10*Math.sin(i*25/150) - R()*8)}`).join(" ")} L${W} ${H} L0 ${H}Z" fill="#0b0d14"/>
+        ${blobTrees(hz, "#07080d", -10, W+10, [200, 380])}${church(820, hz + 2, .75, "#07080d", true)}
+        ${glow(bx, by - 60, 320, "#ff7a2a", .62, 0, 240)}${glow(bx, by - 40, 130, "#ffc066", .8)}
+        ${flames}<ellipse cx="${bx}" cy="${by-4}" rx="68" ry="12" fill="#ff8a2a" opacity=".85" filter="url(#${u}b2)"/>${logs}${sparks}
+        <ellipse cx="${bx}" cy="${by+6}" rx="260" ry="34" fill="#ff8a3a" opacity=".18" filter="url(#${u}b2)"/>
+        ${crowd}`;
+      break; }
+    case "halloween": {
+      hz = 540; sky = ["#070b14", "#13213a", "#2e3f54"]; vig = .5;
+      const mxx = 700, myy = 210;
+      const moon = `${glow(mxx, myy, 240, "#d9d3bd", .32)}<circle cx="${mxx}" cy="${myy}" r="72" fill="#ece4cb"/><g fill="#b9b098" opacity=".25"><circle cx="${mxx-22}" cy="${myy-14}" r="14"/><circle cx="${mxx+18}" cy="${myy+20}" r="10"/><circle cx="${mxx+26}" cy="${myy-24}" r="7"/><circle cx="${mxx-8}" cy="${myy+30}" r="6"/></g>`;
+      const tree = (() => { let d = ""; const br = (x, y, a, len, w, depth) => { const x2 = x + Math.cos(a)*len, y2 = y + Math.sin(a)*len; d += `<path d="M${f(x)} ${f(y)} Q ${f((x+x2)/2 + rnd(-len*.15, len*.15))} ${f((y+y2)/2 + rnd(-len*.1, len*.1))} ${f(x2)} ${f(y2)}" stroke-width="${f(w)}"/>`; if(depth <= 0) return; const n = depth > 4 ? 2 : 2 + (R() < .4 ? 1 : 0); for(let i = 0; i < n; i++) br(x2, y2, a + rnd(-0.75, 0.75) + (i - (n-1)/2)*0.35, len*rnd(.62, .8), w*0.66, depth - 1); };
+        br(110, H + 10, -1.45, 190, 26, 7); br(110, H - 120, -0.65, 120, 12, 5); return `<g stroke="#03050a" fill="none" stroke-linecap="round">${d}</g>`; })();
+      const crows = [[250, 300], [205, 352], [300, 262]].map(([x, y]) => `<path d="M${x} ${y} q 6 -9 14 -6 q 3 -6 9 -3 l -4 4 q 3 6 -5 9 l 4 9 l -3 0 l -3 -8 q -8 2 -12 -5 Z" fill="#03050a"/>`).join("");
+      const stones = (() => { let g = ""; for(let i = 0; i < 11; i++){ const x = 330 + i*55 + rnd(-12, 12), w = rnd(16, 26), h = rnd(24, 42), y = hz + 26 + rnd(0, 26), t = rnd(-8, 8); g += `<path d="M${f(x)} ${f(y)} v${f(-h)} a${f(w/2)} ${f(w/2)} 0 0 1 ${f(w)} 0 v${f(h)} Z" transform="rotate(${f(t)} ${f(x + w/2)} ${f(y)})"/>`; } return `<g fill="#0c121b">${g}</g>`; })();
+      const lantern = (x, y, r) => `${glow(x, y, r*3.2, "#ff9a3a", .35)}<ellipse cx="${x}" cy="${y}" rx="${r*1.15}" ry="${r}" fill="url(#${u}pk)"/><g stroke="#7a3510" stroke-width="1.4" fill="none" opacity=".7"><ellipse cx="${x}" cy="${y}" rx="${r*0.45}" ry="${r}"/><ellipse cx="${x}" cy="${y}" rx="${r*0.85}" ry="${r}"/></g><path d="M${x-2} ${y-r+1} q 2 -9 7 -11" stroke="#2c3a1e" stroke-width="3" fill="none"/>`;
+      body = `${stars(90, 380, .5)}${moon}${clouds(240, 5, "#0b1220", .7, 1.4)}${clouds(140, 3, "#1a2638", .5, 1.8)}
+        <path d="M0 ${hz} ${Array.from({length:41}, (_, i) => `L${i*25} ${f(hz - 6 - 9*Math.sin(i*25/150) - R()*7)}`).join(" ")} L${W} ${H} L0 ${H}Z" fill="#0d1520"/>
+        ${blobTrees(hz, "#080d16", 300, W+10, [580, 720])}${church(660, hz + 2, 1.1, "#080d16", true)}
+        <rect x="0" y="${hz+2}" width="${W}" height="${H-hz}" fill="url(#${u}l)"/>${stones}
+        <g filter="url(#${u}b2)"><rect x="-40" y="${hz+10}" width="${W+80}" height="40" fill="#8ea0b4" opacity=".16"/><rect x="-40" y="${hz+60}" width="${W+80}" height="30" fill="#8ea0b4" opacity=".1"/></g>
+        <path d="M560 ${H-70} L${W} ${H-84} L${W} ${H} L540 ${H} Z" fill="#141a20"/><path d="M560 ${H-70} L${W} ${H-84}" stroke="#2a323b" stroke-width="2"/>
+        ${lantern(760, H - 96, 24)}${lantern(842, H - 104, 19)}
+        ${tree}${crows}`;
+      break; }
+    case "christmas": {
+      hz = 540; sky = ["#0a1430", "#22406e", "#6f84a6"]; vig = .38;
+      const star = `${glow(780, 120, 110, "#fff3d0", .35)}<path d="M780 92 L784 116 L808 120 L784 124 L780 148 L776 124 L752 120 L776 116 Z" fill="#fffaf0"/><circle cx="780" cy="120" r="3.5" fill="#fff"/>`;
+      const houses = (() => { let g = "", win = "", snow = "", smoke = ""; let x = -20; while(x < W){ const tall = R() < .35, w = tall ? rnd(46, 70) : rnd(60, 120), h = tall ? rnd(58, 78) : rnd(30, 48), roof = rnd(12, tall ? 30 : 22), y = hz + 26 + 8*Math.sin(x/170) + rnd(-3, 3);
+          if(x > 380 && x < 500){ x += 130; continue; }
+          g += `<path d="M${f(x)} ${f(y)} v${f(-h)} l${f(w/2)} ${f(-roof)} l${f(w/2)} ${f(roof)} v${f(h)} Z"/>`;
+          snow += `<path d="M${f(x-2)} ${f(y-h+2)} l${f(w/2+2)} ${f(-roof-2)} l${f(w/2+2)} ${f(roof+2)}" stroke="#eef3f8" stroke-width="3.5" fill="none" stroke-linejoin="round"/>`;
+          if(R() < .7){ const cx = x + w*0.72; g += `<rect x="${f(cx)}" y="${f(y-h-roof*0.75)}" width="7" height="${f(roof*0.6)}"/>`; smoke += `<path d="M${f(cx+3)} ${f(y-h-roof*0.8)} q 10 -20 -2 -40 q -12 -18 6 -40" stroke="#c9d3e0" stroke-width="5" fill="none" opacity=".18"/>`; }
+          const cols = Math.max(1, Math.floor((w - 12) / 22)), rows = tall ? 2 : 1; for(let rI = 0; rI < rows; rI++) for(let c = 0; c < cols; c++){ if(R() < .62) win += `<rect x="${f(x + 10 + c*22)}" y="${f(y - h + 10 + rI*26)}" width="8" height="10" opacity="${(0.65+R()*0.35).toFixed(2)}"/>`; }
+          x += w + rnd(4, 18); }
+        return `<g fill="#0c1426">${g}</g><g fill="#ffcf7a">${win}</g>${snow}<g filter="url(#${u}b2)">${smoke}</g>`; })();
+      const tx = 440, ty = hz + 40;
+      const xtree = (() => { let g = `<rect x="${tx-5}" y="${ty-18}" width="10" height="20" fill="#120c08"/>`; [[0, 130, 70], [-50, 100, 56], [-92, 72, 42], [-126, 46, 28]].forEach(([dy, w, h]) => { g += `<path d="M${tx - w/2} ${ty - 14 + dy} L${tx} ${ty - 14 + dy - h - 26} L${tx + w/2} ${ty - 14 + dy} Z" fill="#0c1f18"/><path d="M${tx - w/2 + 4} ${ty - 16 + dy} L${tx} ${ty - 14 + dy - h - 22}" stroke="#eef3f8" stroke-width="2" opacity=".5"/>`; });
+        let lights = ""; for(let i = 0; i < 70; i++){ const t = R(), yy = ty - 20 - t*170, half = (1 - t)*62; lights += `<circle cx="${f(tx + rnd(-half, half))}" cy="${f(yy)}" r="${f(1.2 + R()*1.2)}"/>`; }
+        return `${glow(tx, ty - 90, 120, "#ffcf7a", .22)}${g}<g fill="#ffd98a">${lights}</g><path d="M${tx} ${ty-216} l4 10 l10 1 l-8 6 l3 10 l-9 -6 l-9 6 l3 -10 l-8 -6 l10 -1 Z" fill="#ffe7a8"/>`; })();
+      const flakes = (() => { let g = ""; for(let i = 0; i < 220; i++) g += `<circle cx="${f(R()*W)}" cy="${f(R()*H)}" r="${f(.7 + R()*2)}" opacity="${(0.4+R()*0.5).toFixed(2)}"/>`; return `<g fill="#ffffff">${g}</g>`; })();
+      body = `${stars(120, 320, .55)}${star}${clouds(300, 4, "#3a527b", .3, 1.8)}
+        <path d="M0 ${hz} ${Array.from({length:41}, (_, i) => `L${i*25} ${f(hz - 10 - 14*Math.sin(i*25/200) - R()*6)}`).join(" ")} L${W} ${H} L0 ${H}Z" fill="#33496b"/>
+        ${blobTrees(hz - 6, "#1a2944")}${church(820, hz + 18, 1.15, "#0c1426", true)}${houses}${xtree}
+        <rect x="0" y="${hz+26}" width="${W}" height="${H-hz-26}" fill="url(#${u}sn)"/>
+        <path d="M0 ${hz+80} Q 260 ${hz+60} 520 ${hz+96} T ${W} ${hz+84}" stroke="#a9b8cc" stroke-width="18" fill="none" opacity=".25" filter="url(#${u}b2)"/>
+        ${[150, 640, 900].map(lx => `${glow(lx, hz + 18, 60, "#ffcf7a", .35)}<path d="M${lx} ${hz+60} v-40 M${lx-6} ${hz+20} h12" stroke="#0c1426" stroke-width="3"/><circle cx="${lx}" cy="${hz+18}" r="4" fill="#ffe2a6"/>`).join("")}
+        ${glow(tx, hz + 60, 140, "#ffcf7a", .25, 0, 22)}
+        ${(() => { let g = ""; for(let i = 0; i < 16; i++){ const x = 20 + i*64, y = H - 70 + Math.sin(i/2)*6; g += `<path d="M${x} ${y} v-34" stroke="#2a3346" stroke-width="5"/><path d="M${x-4} ${y-34} h8" stroke="#f2f6fa" stroke-width="4" stroke-linecap="round"/>`; } return g + `<path d="M0 ${H-90} ${Array.from({length:17}, (_, i) => `L${i*64+20} ${f(H - 92 + Math.sin(i/2)*6)}`).join(" ")}" stroke="#2a3346" stroke-width="2.5" fill="none"/>`; })()}
+        ${flakes}`;
+      break; }
+    case "newyear": {
+      hz = 470; sky = ["#03060f", "#0c1630", "#1b2742"]; vig = .45;
+      const fw = `${trail(330, hz, 190)}${trail(600, hz, 140)}${trail(760, hz, 220)}${burst(330, 190, 110, "#ffd27a", 44)}${burst(600, 140, 130, "#e8f1ff", 50)}${burst(760, 220, 90, "#ff7ab0", 38)}${burst(470, 260, 70, "#9fd8ff", 32)}${burst(880, 120, 70, "#ffd27a", 30)}`;
+      const pierY = hz + 70, px0 = 180;
+      const pier = (() => { let legs = ""; for(let x = px0; x < W + 10; x += 14) legs += `M${x} ${pierY} v${f(24 + (x - px0)*0.03)}`; let lamps = ""; for(let x = px0 + 20; x < W; x += 46) lamps += `<circle cx="${x}" cy="${pierY - 6}" r="2"/>`;
+        return `<path d="${legs}" stroke="#05070c" stroke-width="2"/><rect x="${px0}" y="${pierY - 4}" width="${W - px0 + 10}" height="5" fill="#05070c"/><path d="M${px0-10} ${pierY-4} v-22 h30 v-8 h22 v30 Z M${px0+52} ${pierY-4} v-14 h26 v14 Z" fill="#05070c"/><g fill="#ffd59a">${lamps}<rect x="${px0-4}" y="${pierY-20}" width="4" height="5"/><rect x="${px0+6}" y="${pierY-20}" width="4" height="5"/><rect x="${px0+26}" y="${pierY-28}" width="4" height="5"/></g>`; })();
+      const ripples = (() => { let d = ""; for(let i = 0; i < 90; i++){ const y = hz + 8 + Math.pow(R(), 1.4)*(H - hz - 8), x = R()*W; d += `M${f(x)} ${f(y)} l${f(12 + R()*60*(y - hz)/(H - hz))} 0`; } return `<path d="${d}" stroke="#d8e4f2" stroke-width=".8" opacity=".22"/>`; })();
+      body = `${stars(120, 360, .5)}${fw}${clouds(380, 4, "#2a1f2e", .35, 1.6)}
+        <path d="M0 ${hz} L0 ${hz-8} ${Array.from({length:21}, (_, i) => `L${i*50} ${f(hz - 8 - R()*6)}`).join(" ")} L${W} ${hz} Z" fill="#070a12"/>
+        <rect x="0" y="${hz}" width="${W}" height="${H-hz}" fill="url(#${u}wa)"/>
+        <g transform="translate(0 ${2*hz}) scale(1 -1)" opacity=".3" filter="url(#${u}b2)">${fw}</g>${[[330, "#ffd27a"], [600, "#e8f1ff"], [760, "#ff7ab0"], [470, "#9fd8ff"]].map(([x, c]) => `<rect x="${x-14}" y="${hz+6}" width="28" height="${H-hz}" fill="${c}" opacity=".07" filter="url(#${u}b2)"/>`).join("")}
+        ${ripples}${pier}`;
+      break; }
+    case "easter": {
+      hz = 470; sky = ["#86a9c7", "#cfd6c9", "#f3dfb5"]; vig = .22;
+      const lambs = (() => { let g = ""; for(let i = 0; i < 9; i++){ const x = 120 + R()*760, y = hz + 30 + R()*40, s = 0.6 + (y - hz)/120; g += `<g transform="translate(${f(x)} ${f(y)}) scale(${f(s)})"><ellipse cx="0" cy="0" rx="9" ry="5.5" fill="#f4f1e8"/><ellipse cx="${R() < .5 ? -9 : 9}" cy="-2" rx="3.2" ry="2.6" fill="#3a3530"/><path d="M-5 4 v5 M4 4 v5" stroke="#3a3530" stroke-width="1.4"/></g>`; } return g; })();
+      const daffodil = (d, x, y) => { const r = 1.4 + 15 * Math.pow(d, 2); if(r < 2.6) return `<circle cx="${f(x)}" cy="${f(y)}" r="${f(r)}" fill="#efc23c" opacity="${(0.6+d*0.4).toFixed(2)}"/>`;
+        let pet = ""; for(let p = 0; p < 6; p++){ const a = p*Math.PI/3 + R()*0.2; pet += `${f(x + Math.cos(a)*r)} ${f(y + Math.sin(a)*r*0.8)} ${f(x + Math.cos(a + 0.52)*r*0.35)} ${f(y + Math.sin(a + 0.52)*r*0.35*0.8)} `; }
+        return `<path d="M${f(x)} ${f(y + r*0.3)} q ${f(rnd(-r*.4, r*.4))} ${f(r*2)} 0 ${f(r*4)}" stroke="#4f6b2e" stroke-width="${f(Math.max(.8, r*0.12))}" fill="none"/><polygon points="${pet}" fill="${R() < .5 ? "#f2c641" : "#f6d35a"}"/><circle cx="${f(x)}" cy="${f(y)}" r="${f(r*0.36)}" fill="#e39b1f"/><circle cx="${f(x)}" cy="${f(y)}" r="${f(r*0.18)}" fill="#c9781a"/>`; };
+      const blossom = (() => { let g = "", br = ""; const ox = W + 20, oy = -20; for(let i = 0; i < 5; i++){ const ex = ox - rnd(160, 340), ey = oy + rnd(40, 220); br += `<path d="M${ox} ${oy} Q ${f((ox+ex)/2)} ${f((oy+ey)/2 + rnd(-30,30))} ${f(ex)} ${f(ey)}" stroke="#3b2c26" stroke-width="${f(rnd(3,7))}" fill="none" stroke-linecap="round"/>`; for(let j = 0; j < 40; j++){ const t = R(); g += `<circle cx="${f(ox + (ex-ox)*t + rnd(-22,22))}" cy="${f(oy + (ey-oy)*t + rnd(-18,18))}" r="${f(2 + R()*3.5)}" fill="${R() < .55 ? "#fbeef2" : "#f2c7d3"}" opacity="${(0.75+R()*0.25).toFixed(2)}"/>`; } } return br + g; })();
+      const hedgeBlossom = (() => { let g = ""; for(let i = 0; i < 140; i++) g += `<circle cx="${f(R()*W)}" cy="${f(hz - 4 - R()*40)}" r="${f(1 + R()*2)}" fill="${R() < .6 ? "#f7eef0" : "#efd0da"}" opacity=".8"/>`; return g; })();
+      body = `${glow(260, hz - 70, 420, "#fff2cf", .8, 0, 260)}${glow(260, hz - 70, 70, "#fffbf0", .95)}${clouds(160, 6, "#f6f1e6", .45, 1.6)}
+        <path d="M0 ${hz} ${Array.from({length:41}, (_, i) => `L${i*25} ${f(hz - 8 - 12*Math.sin(i*25/180) - R()*6)}`).join(" ")} L${W} ${H} L0 ${H}Z" fill="#9aae86"/>
+        ${blobTrees(hz, "#5d7448", -10, W+10, [600, 720])}${hedgeBlossom}${church(660, hz + 4, 1, "#5a6352")}
+        <rect x="0" y="${hz+4}" width="${W}" height="${H-hz}" fill="url(#${u}l)"/>
+        <path d="M0 ${hz+90} Q 300 ${hz+70} 620 ${hz+100} T ${W} ${hz+92}" stroke="#4d6a33" stroke-width="3" fill="none" opacity=".5"/>
+        ${lambs}${field(240, daffodil)}${blossom}`;
+      break; }
+  }
+  const land = {remembrance:["#57513f", "#3b3a2c"], bonfire:["#15161c", "#0a0b10"], halloween:["#121b24", "#0a1018"], christmas:["#dfe7f0", "#c3cfdd"], newyear:["#0a0f1c", "#05070d"], easter:["#7f9b55", "#4f6d33"]}[kind];
+  const label = opts.label !== true ? "" : `<g><rect x="40" y="${H-92}" width="${f(24 + SEASON_LABEL[kind].length * 19)}" height="52" rx="4" fill="#0e1318" opacity=".55"/><text x="58" y="${H-57}" font-size="30" font-weight="600" letter-spacing="1.5" fill="#f4f6f7">${SEASON_LABEL[kind].toUpperCase()}</text></g>`;
+  return `<svg class="emap wxart seasonart" viewBox="0 0 ${W} ${H}" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Illustration: ${esc(SEASON_LABEL[kind])}">
+  <defs>
+    <linearGradient id="${u}s" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="${sky[0]}"/><stop offset=".62" stop-color="${sky[1]}"/><stop offset="1" stop-color="${sky[2]}"/></linearGradient>
+    <linearGradient id="${u}l" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="${land[0]}"/><stop offset="1" stop-color="${land[1]}"/></linearGradient>
+    <linearGradient id="${u}sn" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#cdd8e6"/><stop offset=".4" stop-color="#e6edf5"/><stop offset="1" stop-color="#b7c5d8"/></linearGradient>
+    <linearGradient id="${u}wa" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#121c33"/><stop offset="1" stop-color="#04060c"/></linearGradient>
+    <linearGradient id="${u}fl" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#fff2c4"/><stop offset=".35" stop-color="#ffb24a"/><stop offset=".75" stop-color="#e2461e"/><stop offset="1" stop-color="#7a1a0c" stop-opacity="0"/></linearGradient>
+    <radialGradient id="${u}pk" cx=".5" cy=".55" r=".6"><stop offset="0" stop-color="#ffd27a"/><stop offset=".55" stop-color="#e2731e"/><stop offset="1" stop-color="#7a3510"/></radialGradient>
+    <radialGradient id="${u}v" cx=".5" cy=".45" r=".78"><stop offset=".58" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity="${vig}"/></radialGradient>
+    <filter id="${u}b" filterUnits="userSpaceOnUse" x="-200" y="-200" width="1400" height="1200"><feGaussianBlur stdDeviation="18"/></filter>
+    <filter id="${u}b2" filterUnits="userSpaceOnUse" x="-200" y="-200" width="1400" height="1200"><feGaussianBlur stdDeviation="8"/></filter>
+    <filter id="${u}dof" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="1.6"/></filter>
+    <filter id="${u}g"><feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="2" seed="11"/><feColorMatrix values="0 0 0 0 .5  0 0 0 0 .5  0 0 0 0 .5  0 0 0 .5 0"/></filter>
+  </defs>
+  <rect width="${W}" height="${H}" fill="url(#${u}s)"/>
+  ${body}
+  <rect width="${W}" height="${H}" fill="url(#${u}v)"/>
+  <rect width="${W}" height="${H}" filter="url(#${u}g)" opacity=".08"/>
+  ${label}
+</svg>`;
+}
+function storyArt(s, opts){ return isWeatherArtStory(s) ? weatherArt(s, opts) : clubOf(s) ? clubArt(s, opts) : seasonKindOf(s) ? seasonArt(s, opts) : storyMap(s, opts); }
+function artCaption(s){ if(isWeatherArtStory(s)) return `Across Essex · ${WX_LABEL[wxKindOf(s)]}`; const c = clubOf(s); if(c) return CLUBS[c].nick ? `${c} · ${CLUBS[c].nick}` : c; const k = seasonKindOf(s); if(k) return `${s.place || "Essex"} · ${SEASON_LABEL[k]}`; return mapCaption(s); }
 function artKick(s){ return !isWeatherArtStory(s) && clubOf(s) ? "Club" : "Where"; }
 
 /* ============================================================
