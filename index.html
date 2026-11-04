@@ -2970,14 +2970,42 @@ function sportArt(s, opts){
   let obj = "", extraDefs = "";
   switch(kind){
     case "cricket": {
-      /* a red leather ball: a raised seam with stitching either side, tilted */
-      extraDefs = `<radialGradient id="${u}bf" cx=".36" cy=".32" r=".8"><stop offset="0" stop-color="#d8333a"/><stop offset=".55" stop-color="#a5161f"/><stop offset="1" stop-color="#5d0a10"/></radialGradient>`;
-      const rot = -28, stitches = (dx) => { let d = ""; for(let a = -80; a <= 80; a += 7){ const y = cy + r*Math.sin(a*Math.PI/180), w = Math.cos(a*Math.PI/180); d += `M${f(cx + dx*w - 7*w)} ${f(y)} h${f(14*w)}`; } return d; };
-      obj = `${sphere(`url(#${u}bf)`)}<g clip-path="url(#${u}c)" transform="rotate(${rot} ${cx} ${cy})">
-        <rect x="${cx - 16}" y="${cy - r - 10}" width="32" height="${2*r + 20}" fill="#7d0e15" opacity=".55"/>
-        <path d="M${cx - 15} ${cy - r} V${cy + r} M${cx + 15} ${cy - r} V${cy + r}" stroke="#4a070c" stroke-width="2.5" opacity=".7"/>
-        <path d="${stitches(-24)} ${stitches(24)}" stroke="#f3e6cf" stroke-width="3.2" stroke-linecap="round" opacity=".9"/>
-        <path d="M${cx - 3} ${cy - r} V${cy + r} M${cx + 3} ${cy - r} V${cy + r}" stroke="#e9d9bd" stroke-width="1.2" opacity=".45"/></g>${shade}`;
+      /* a red leather cricket ball modelled as a sphere: the seam is a great circle tilted towards
+         the viewer, a raised band with three rows of stitching either side, each stitch placed in
+         3D and faded as it turns away; a polished finish with a sharp highlight and rim light */
+      extraDefs = `<radialGradient id="${u}bf" cx=".34" cy=".3" r=".78"><stop offset="0" stop-color="#d63a3f"/><stop offset=".28" stop-color="#b3161f"/><stop offset=".68" stop-color="#7c0b12"/><stop offset="1" stop-color="#3a0306"/></radialGradient>
+        <radialGradient id="${u}rim" cx=".5" cy=".5" r=".5"><stop offset=".86" stop-color="#ff8a7a" stop-opacity="0"/><stop offset=".97" stop-color="#ff9a88" stop-opacity=".38"/><stop offset="1" stop-color="#ff9a88" stop-opacity="0"/></radialGradient>
+        <linearGradient id="${u}rimm" x1="0" y1="0" x2="1" y2="1"><stop offset=".55" stop-color="#fff" stop-opacity="0"/><stop offset="1" stop-color="#fff"/></linearGradient>
+        <mask id="${u}rm"><rect x="${cx - r}" y="${cy - r}" width="${2*r}" height="${2*r}" fill="url(#${u}rimm)"/></mask>
+        <filter id="${u}lt" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="2.2" numOctaves="3" seed="9"/><feColorMatrix values="0 0 0 0 .2  0 0 0 0 0  0 0 0 0 0  0 0 0 .9 -.35"/></filter>
+        <filter id="${u}sp" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="3"/></filter>`;
+      const A = 74 * Math.PI/180, B = -27 * Math.PI/180, cA = Math.cos(A), sA = Math.sin(A), cB = Math.cos(B), sB = Math.sin(B);
+      /* a point on the ball at latitude ph (from the seam plane) and longitude th, in screen space, with its depth */
+      const P = (ph, th) => { const x = Math.cos(ph)*Math.cos(th), y = Math.cos(ph)*Math.sin(th), z = Math.sin(ph);
+        const y1 = y*cA - z*sA, z1 = y*sA + z*cA, sx = x, sy = -y1; return [cx + r*(sx*cB - sy*sB), cy + r*(sx*sB + sy*cB), z1]; };
+      /* the seam's visible half runs where depth > 0; start the sweep at the deepest point so it is one run */
+      const th0 = -Math.PI/2, N = 180, run = (ph) => { const pts = []; for(let i = 0; i <= N; i++){ const t = th0 + i/N*2*Math.PI, q = P(ph, t); if(q[2] > -0.02) pts.push(q); } return pts; };
+      const line = pts => pts.map((q, i) => `${i ? "L" : "M"}${f(q[0])} ${f(q[1])}`).join(" ");
+      const W1 = 0.03, hiE = run(W1), loE = run(-W1);
+      const band = `${line(hiE)} ${loE.slice().reverse().map(q => `L${f(q[0])} ${f(q[1])}`).join(" ")} Z`;
+      let stitches = "", shadows = "";
+      [0.056, 0.098, 0.14].forEach((ph, row) => [1, -1].forEach(sd => {
+        for(let i = 0; i < 116; i++){ const t = th0 + (i + (row % 2) * .5)/116 * 2*Math.PI, a = P(sd*(ph - .011), t), b = P(sd*(ph + .011), t + .018), d = Math.min(a[2], b[2]);
+          if(d < .04) continue; const op = Math.min(1, .25 + d*1.3).toFixed(2), wd = (.9 + 2.1*d).toFixed(1);
+          stitches += `<path d="M${f(a[0])} ${f(a[1])} L${f(b[0])} ${f(b[1])}" stroke-width="${wd}" opacity="${op}"/>`;
+          shadows += `<path d="M${f(a[0] + 1.6)} ${f(a[1] + 2)} L${f(b[0] + 1.6)} ${f(b[1] + 2)}" stroke-width="${wd}" opacity="${(op*0.5).toFixed(2)}"/>`; } }));
+      /* the quarter seam: a fine line on one half of the ball, at right angles to the main seam */
+      const qs = (() => { const pts = []; for(let i = 0; i <= 60; i++){ const ph = 0.03 + i/60*(Math.PI/2 - 0.03), q = P(-ph, Math.PI/2); if(q[2] > 0) pts.push(q); } return line(pts); })();
+      obj = `${sphere(`url(#${u}bf)`)}<g clip-path="url(#${u}c)">
+        <rect x="${cx - r}" y="${cy - r}" width="${2*r}" height="${2*r}" filter="url(#${u}lt)" opacity=".55"/>
+        <path d="${qs}" stroke="#4a050a" stroke-width="2.2" fill="none" opacity=".55"/><path d="${qs}" stroke="#d8565a" stroke-width=".9" fill="none" opacity=".35" transform="translate(-1 -1)"/>
+        <path d="${band}" fill="#9a141c"/><path d="${band}" fill="none" stroke="#3d0408" stroke-width="2.4" opacity=".75"/>
+        <path d="${line(run(0.006))}" stroke="#e05a5c" stroke-width="1.6" fill="none" opacity=".45"/>
+        <path d="${[0.077, 0.119, -0.077, -0.119].map(ph => line(run(ph))).join(" ")}" stroke="#4a050a" stroke-width="1.4" fill="none" opacity=".55"/>
+        <g stroke="#2a0204" stroke-linecap="round">${shadows}</g><g stroke="#f4ead6" stroke-linecap="round">${stitches}</g>
+        <circle cx="${cx}" cy="${cy}" r="${r}" fill="url(#${u}sd)"/><circle cx="${cx}" cy="${cy}" r="${r}" fill="url(#${u}rim)" mask="url(#${u}rm)"/>
+        <ellipse cx="${cx - r*0.4}" cy="${cy - r*0.44}" rx="${r*0.36}" ry="${r*0.2}" transform="rotate(-38 ${cx - r*0.4} ${cy - r*0.44})" fill="#fff" opacity=".2" filter="url(#${u}sf)"/>
+        <ellipse cx="${cx - r*0.36}" cy="${cy - r*0.46}" rx="${r*0.1}" ry="${r*0.05}" transform="rotate(-38 ${cx - r*0.36} ${cy - r*0.46})" fill="#fff" opacity=".85" filter="url(#${u}sp)"/></g>`;
       break; }
     case "football": {
       /* a classic white ball with black pentagons, foreshortened on the sphere */
@@ -3054,19 +3082,26 @@ function sportArt(s, opts){
     }
   }
   const label = opts.label !== true ? "" : `<g><rect x="40" y="${H-92}" width="${f(24 + SPORT_LABEL[kind].length * 19)}" height="52" rx="4" fill="#0e1318" opacity=".55"/><text x="58" y="${H-57}" font-size="30" font-weight="600" letter-spacing="1.5" fill="#f4f6f7">${SPORT_LABEL[kind].toUpperCase()}</text></g>`;
-  return `<svg class="emap wxart sportart" viewBox="0 0 ${W} ${H}" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Illustration: ${esc(SPORT_LABEL[kind])}">
+  /* the background fills whatever frame the art sits in; the object is drawn in its own
+     1000 x 800 box that always fits whole ("meet"), scaled up to fill most of that box */
+  const K = {cycling:1.42, golf:1.5, rugby:1.72, racing:1.8, athletics:1.72, icehockey:1.9}[kind] || 1.95, oy = kind === "golf" ? 330 : 395;
+  return `<svg class="emap wxart sportart" width="100%" height="100%" role="img" aria-label="Illustration: ${esc(SPORT_LABEL[kind])}">
   <defs>
-    <radialGradient id="${u}bg" cx=".5" cy=".42" r=".75"><stop offset="0" stop-color="${BG[0]}"/><stop offset="1" stop-color="${BG[1]}"/></radialGradient>
-    <radialGradient id="${u}sd" cx=".38" cy=".34" r=".72"><stop offset=".55" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".38"/></radialGradient>
-    <filter id="${u}sh" filterUnits="userSpaceOnUse" x="0" y="0" width="1000" height="800"><feGaussianBlur stdDeviation="14"/></filter>
-    <filter id="${u}sf" filterUnits="userSpaceOnUse" x="0" y="0" width="1000" height="800"><feGaussianBlur stdDeviation="10"/></filter>
+    <radialGradient id="${u}bg" cx=".5" cy=".46" r=".8"><stop offset="0" stop-color="${BG[0]}"/><stop offset="1" stop-color="${BG[1]}"/></radialGradient>
     <filter id="${u}g"><feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="2" seed="7"/><feColorMatrix values="0 0 0 0 .5  0 0 0 0 .5  0 0 0 0 .5  0 0 0 .5 0"/></filter>
-    ${clip}${extraDefs}
   </defs>
-  <rect width="${W}" height="${H}" fill="url(#${u}bg)"/>
-  ${shadow}${obj}
-  <rect width="${W}" height="${H}" filter="url(#${u}g)" opacity=".06"/>
-  ${label}
+  <rect width="100%" height="100%" fill="url(#${u}bg)"/>
+  <svg viewBox="0 0 ${W} ${H}" preserveAspectRatio="xMidYMid meet" width="100%" height="100%" overflow="visible">
+    <defs>
+      <radialGradient id="${u}sd" cx=".38" cy=".34" r=".72"><stop offset=".55" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".38"/></radialGradient>
+      <filter id="${u}sh" filterUnits="userSpaceOnUse" x="-500" y="-500" width="2000" height="1800"><feGaussianBlur stdDeviation="14"/></filter>
+      <filter id="${u}sf" filterUnits="userSpaceOnUse" x="-500" y="-500" width="2000" height="1800"><feGaussianBlur stdDeviation="10"/></filter>
+      ${clip}${extraDefs}
+    </defs>
+    <g transform="translate(500 ${oy}) scale(${K}) translate(-500 -390)">${shadow}${obj}</g>
+    ${label}
+  </svg>
+  <rect width="100%" height="100%" filter="url(#${u}g)" opacity=".06"/>
 </svg>`;
 }
 /* the art shown for a story: weather scenes for county-wide weather, a sport object for every sport story, club colours (now unused for sport), occasion scenes, otherwise the map */
