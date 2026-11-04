@@ -647,7 +647,7 @@ h1,h2,h3,h4,.story h1,.lead h2,.card h3,.drow h4{letter-spacing:-.022em}
 .tb-wx .wsep{width:1px;align-self:stretch;background:var(--hair);margin:0 4px}
 
 /* ---------- lead package + latest rail ---------- */
-.fp-grid{display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:28px;align-items:start}
+.fp-grid{display:grid;grid-template-columns:minmax(0,1fr);gap:28px;align-items:start}
 .lead-pkg{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:0;background:var(--card);border:1px solid var(--hair);min-height:440px}
 .lp-text{padding:30px 32px 26px;display:flex;flex-direction:column;border-top:5px solid var(--c)}
 .lp-kick{display:flex;align-items:center;gap:10px;font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--c)}
@@ -1032,11 +1032,6 @@ table.tf{width:100%;border-collapse:collapse;font-size:13.5px;font-variant-numer
     <div class="todaybar" id="todayBar"></div>
     <div class="fp-grid">
       <article class="lead-pkg" id="leadPkg"></article>
-      <aside class="latest">
-        <div class="lh"><h3><i class="ld"></i>Latest</h3><span class="status" id="feedStatus"><i></i>Live edition</span></div>
-        <ol id="latestList"></ol>
-        <button class="latest-more" data-go="news">All the news ↓</button>
-      </aside>
     </div>
     <div class="seconds" id="seconds"></div>
   </div>
@@ -3188,6 +3183,7 @@ window.addEventListener("hashchange", route);
 function setFeed(state){
   feedState = state;
   const el = $("#feedStatus");
+  if(!el) return;
   el.classList.toggle("off", state !== "live");
   el.innerHTML = `<i></i>${state==="live" ? "Live edition" : state==="waiting" ? "Connecting to newsroom" : "Launch edition"}`;
 }
@@ -3387,7 +3383,8 @@ function showSlide(){ /* carousel retired */ }
 function setCaption(){}
 
 function renderTopList(){
-  /* the "Latest" rail: newest items from every section */
+  /* the "Latest" rail: newest items from every section (rail removed from the front page; kept harmless) */
+  if(!document.getElementById("latestList")) return;
   const pool = [];
   const add = (s, lab) => { if(s && s.headline && s.time && isFinite(new Date(s.time))) pool.push({s, lab, t: new Date(s.time).getTime()}); };
   ED.stories.filter(inArea).forEach(s => add(s, s.tag || "News"));
