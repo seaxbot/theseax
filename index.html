@@ -4221,6 +4221,11 @@ setTimeout(navOverflow, 0);
   }
   window.addEventListener("hashchange", count);
   window.addEventListener("load", function(){ setTimeout(count, 1500); });
+  var fl = document.querySelector("footer .flinks");
+  if(fl){
+    if(CFG.whatsappChannel) fl.insertAdjacentHTML("beforeend", ' · <a href="' + CFG.whatsappChannel + '" target="_blank" rel="noopener">WhatsApp channel</a>');
+    if(CFG.facebookPage) fl.insertAdjacentHTML("beforeend", ' · <a href="' + CFG.facebookPage + '" target="_blank" rel="noopener">Facebook</a>');
+  }
   var band = document.getElementById("nlBand");
   if(band && (CFG.newsletterForm || CFG.latestBriefing)){
     band.hidden = false;
