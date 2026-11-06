@@ -93,3 +93,4 @@ main.prose a{color:var(--red2)}
 }
 main.prose .share a{color:var(--ink)}
 main.prose .share .wa{color:#fff}
+.nl .nl-go a{display:inline-block;font:700 16px var(--sans);padding:13px 22px;border-radius:999px;background:var(--navy);color:#fff;text-decoration:none}

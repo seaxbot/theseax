@@ -175,6 +175,10 @@ def head(title, desc, canonical, og_image, og_type="website", extra=""):
 
 def newsletter_box():
     form = CFG.get("newsletterForm") or ""
+    link = CFG.get("newsletterLink") or ""
+    if link and not form:
+        return f"""<section class="nl"><div><h3>{E(CFG.get('newsletterName','Essex at 7'))}</h3><p>The morning briefing: the lead, the stories that matter, weather, travel and last night's results, free in your inbox every morning.</p></div>
+<div class="nl-go"><a href="{E(link)}" target="_blank" rel="noopener">Get it free by email</a></div></section>"""
     if not form:
         return ""
     field = CFG.get("newsletterField") or "email"
@@ -345,7 +349,7 @@ def about_page():
 <p>The Seax offers Essex businesses brand-safe space alongside local news, sport and what's on, from county-wide takeovers to sponsorship of a single town or section. Email <a href="mailto:{E(mail)}?subject=Advertising%20with%20The%20Seax">{E(mail)}</a> for rates.</p>
 
 <h2>Privacy</h2>
-<p>The Seax does not use advertising cookies or track you across other websites. {"We count visits with GoatCounter, a privacy-friendly service that uses no cookies and collects no personal data." if CFG.get("goatcounter") else "We may count visits with a privacy-friendly service that uses no cookies and collects no personal data."} If you sign up to our newsletter, your email address is used only to send it, and every email includes an unsubscribe link.</p>
+<p>The Seax does not use advertising cookies or track you across other websites. {"We count visits with GoatCounter, a privacy-friendly service that uses no cookies and collects no personal data." if CFG.get("goatcounter") else "We may count visits with a privacy-friendly service that uses no cookies and collects no personal data."} Our free morning newsletter is delivered by follow.it; if you sign up, your email address is used only to send it, and every email includes an unsubscribe link.</p>
 
 <h2>Why "The Seax"?</h2>
 <p>The seax is the short sword of the Saxons, and three seaxes appear on the arms of Essex: gules, three seaxes fesswise in pale argent, pommels and hilts or. Our badge follows that blazon.</p>
@@ -480,7 +484,7 @@ def rss(title, link, desc, self_url, items):
 def patch_index(latest_briefing):
     p = os.path.join(ROOT, "index.html")
     s = open(p, encoding="utf-8").read()
-    conf = {k: CFG.get(k, "") for k in ("site", "contactEmail", "goatcounter", "newsletterForm", "newsletterField", "newsletterName", "whatsappChannel", "facebookPage")}
+    conf = {k: CFG.get(k, "") for k in ("site", "contactEmail", "goatcounter", "newsletterForm", "newsletterField", "newsletterLink", "newsletterName", "whatsappChannel", "facebookPage")}
     conf["latestBriefing"] = latest_briefing or ""
     block = "<!--seax-config--><script>window.SEAX_CONFIG = " + json.dumps(conf, ensure_ascii=False) + ";</script>"
     if conf["goatcounter"]:

@@ -28,7 +28,7 @@
 <link rel="manifest" href="/manifest.webmanifest">
 <link rel="alternate" type="application/rss+xml" title="The Seax: latest Essex news" href="/feed.xml">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"NewsMediaOrganization","name":"The Seax","url":"https://theseax.com/","logo":"https://theseax.com/icons/icon-512.png","email":"theseaxessex@gmail.com","areaServed":"Essex, England","publishingPrinciples":"https://theseax.com/about/","correctionsPolicy":"https://theseax.com/about/#corrections","sameAs":["https://www.facebook.com/profile.php?id=61596409826403","https://whatsapp.com/channel/0029VbHuL8nBKfi870qIO307"]}</script>
-<!--seax-config--><script>window.SEAX_CONFIG = {"site": "https://theseax.com", "contactEmail": "theseaxessex@gmail.com", "goatcounter": "theseax", "newsletterForm": "https://buttondown.com/api/emails/embed-subscribe/theseax", "newsletterField": "email", "newsletterName": "Essex at 7", "whatsappChannel": "https://whatsapp.com/channel/0029VbHuL8nBKfi870qIO307", "facebookPage": "https://www.facebook.com/profile.php?id=61596409826403", "latestBriefing": "2026-11-06"};</script><script data-goatcounter="https://theseax.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script><!--/seax-config-->
+<!--seax-config--><script>window.SEAX_CONFIG = {"site": "https://theseax.com", "contactEmail": "theseaxessex@gmail.com", "goatcounter": "theseax", "newsletterForm": "", "newsletterField": "email", "newsletterLink": "https://follow.it/essex-at-7-the-seax-morning-briefing", "newsletterName": "Essex at 7", "whatsappChannel": "https://whatsapp.com/channel/0029VbHuL8nBKfi870qIO307", "facebookPage": "https://www.facebook.com/profile.php?id=61596409826403", "latestBriefing": "2026-11-06"};</script><script data-goatcounter="https://theseax.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script><!--/seax-config-->
 <script>window.SEAX_FEED_URL = "edition.json";</script>
 <style>
 :root{
@@ -4227,8 +4227,11 @@ setTimeout(navOverflow, 0);
     if(CFG.facebookPage) fl.insertAdjacentHTML("beforeend", ' · <a href="' + CFG.facebookPage + '" target="_blank" rel="noopener">Facebook</a>');
   }
   var band = document.getElementById("nlBand");
-  if(band && (CFG.newsletterForm || CFG.latestBriefing)){
+  if(band && (CFG.newsletterForm || CFG.newsletterLink || CFG.latestBriefing)){
     band.hidden = false;
+    if(CFG.newsletterLink && !CFG.newsletterForm){
+      document.getElementById("nlRead").insertAdjacentHTML("beforebegin", '<a class="nl-read" style="background:#fff;color:#c8102e" href="' + CFG.newsletterLink + '" target="_blank" rel="noopener">Get it free by email</a>');
+    }
     if(CFG.newsletterForm){
       var f = document.getElementById("nlForm"); f.hidden = false; f.action = CFG.newsletterForm;
       document.getElementById("nlEmail").name = CFG.newsletterField || "email";
