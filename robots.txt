@@ -2,5 +2,6 @@ User-agent: *
 Allow: /
 Disallow: /tools/
 Disallow: /data/
+Disallow: /ops/
 Sitemap: https://theseax.com/sitemap.xml
 Sitemap: https://theseax.com/news-sitemap.xml
