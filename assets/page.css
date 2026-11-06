@@ -91,3 +91,5 @@ main.prose a{color:var(--red2)}
   .brand b{font-size:25px}
   body{font-size:16.5px}
 }
+main.prose .share a{color:var(--ink)}
+main.prose .share .wa{color:#fff}
