@@ -16,6 +16,19 @@
 <link rel="canonical" href="https://theseax.com/">
 <meta name="theme-color" content="#c8102e">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
+<meta property="og:image" content="https://theseax.com/img/og/default.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="en_GB">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="The Seax · Essex news, sport and life, live">
+<meta name="twitter:description" content="Live Essex news, sport, weather, culture and what's on, updated through the day.">
+<meta name="twitter:image" content="https://theseax.com/img/og/default.png">
+<link rel="apple-touch-icon" href="/icons/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.webmanifest">
+<link rel="alternate" type="application/rss+xml" title="The Seax: latest Essex news" href="/feed.xml">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"NewsMediaOrganization","name":"The Seax","url":"https://theseax.com/","logo":"https://theseax.com/icons/icon-512.png","email":"theseaxessex@gmail.com","areaServed":"Essex, England","publishingPrinciples":"https://theseax.com/about/","correctionsPolicy":"https://theseax.com/about/#corrections"}</script>
+<!--seax-config--><script>window.SEAX_CONFIG = {"site": "https://theseax.com", "contactEmail": "theseaxessex@gmail.com", "goatcounter": "", "newsletterForm": "", "newsletterField": "", "newsletterName": "Essex at 7", "whatsappChannel": "", "facebookPage": "", "latestBriefing": ""};</script><!--/seax-config-->
 <script>window.SEAX_FEED_URL = "edition.json";</script>
 <style>
 :root{
@@ -922,6 +935,18 @@ table.tf{width:100%;border-collapse:collapse;font-size:13.5px;font-variant-numer
 .brand-text .tag{grid-column:1;grid-row:2;text-align:center}
 @media (max-width:860px){ .brand-text{column-gap:10px} }
 @media (max-width:520px){ .brand-text{column-gap:8px} }
+
+/* added: briefing band, footer links, share buttons */
+.nl-band{background:var(--red);color:#fff;margin-top:34px}
+.nl-band .wrap{display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;padding-top:22px;padding-bottom:22px}
+.nl-band h3{font:800 24px var(--serif);margin:0 0 2px}
+.nl-band p{margin:0;opacity:.92}
+.nl-acts{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.nl-band form{display:flex;gap:8px;flex-wrap:wrap}
+.nl-band input{font:16px var(--sans);padding:11px 14px;border-radius:999px;border:0;min-width:230px}
+.nl-band button,.nl-read{font:700 15px var(--sans);padding:11px 18px;border-radius:999px;border:0;background:var(--navy);color:#fff;text-decoration:none;cursor:pointer}
+footer .flinks a{text-decoration:underline}
+.sharebar .wa{background:#1f8f4e;border-color:#1f8f4e;color:#fff}
 </style>
 </head>
 <body>
@@ -1188,12 +1213,23 @@ table.tf{width:100%;border-collapse:collapse;font-size:13.5px;font-variant-numer
 </section>
 </div><!-- /front -->
 
+<section class="nl-band" id="nlBand" hidden>
+  <div class="wrap">
+    <div><h3>Essex at 7</h3><p>The morning briefing: the stories that matter, weather, travel and last night's results.</p></div>
+    <div class="nl-acts">
+      <form id="nlForm" method="post" target="_blank" hidden><label class="sr" for="nlEmail">Email address</label><input id="nlEmail" type="email" placeholder="Your email address" required><button>Sign me up</button></form>
+      <a id="nlRead" class="nl-read" href="/briefing/" hidden>Read today's briefing</a>
+    </div>
+  </div>
+</section>
+
 <footer>
   <div class="wrap">
     <div>
       <div class="fb">The Seax</div>
       <p>Named after the three seaxes on the arms of Essex. Headlines and summaries are written by The Seax, and every story links directly to the original reporting.</p>
       <p id="howUpdates"></p>
+      <p class="flinks"><a href="/about/">About The Seax</a> · <a href="/about/#corrections">Corrections</a> · <a href="mailto:theseaxessex@gmail.com">Contact us</a> · <a href="/briefing/">Morning briefing</a> · <a href="/feed.xml">RSS</a></p>
     </div>
     <div>
       <h5>Sources in this edition</h5>
@@ -1212,7 +1248,7 @@ table.tf{width:100%;border-collapse:collapse;font-size:13.5px;font-variant-numer
 <div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="mTitle">
   <div class="box">
     <h3 id="mTitle">Advertise with The Seax</h3>
-    <div style="color:var(--muted);font-size:14px">Tell us what you'd like to promote and we'll put together a plan. Your enquiry is prepared below for you to send.</div>
+    <div style="color:var(--muted);font-size:14px">Tell us what you'd like to promote and we'll put together a plan. We'll open an email to theseaxessex@gmail.com with your details filled in.</div>
     <form id="advForm">
       <div class="row2">
         <div><label for="fName">Your name</label><input id="fName" required></div>
@@ -1224,7 +1260,7 @@ table.tf{width:100%;border-collapse:collapse;font-size:13.5px;font-variant-numer
       </div>
       <label for="fMsg">Anything else</label><textarea id="fMsg" rows="3" placeholder="Dates, budget, campaign goals"></textarea>
       <div class="msg" id="fOut"></div>
-      <div class="acts"><button type="button" class="ghost" id="mClose">Close</button><button type="submit" class="cta" style="margin:0">Copy my enquiry</button></div>
+      <div class="acts"><button type="button" class="ghost" id="mClose">Close</button><button type="submit" class="cta" style="margin:0">Email my enquiry</button></div>
     </form>
   </div>
 </div>
@@ -3259,7 +3295,7 @@ const inArea = item => AREA === "all" || !item.areas || item.areas.includes("all
 const deskItems = () => { const seen = new Set(); return [...ED.official, ...ED.courts].filter(s => { const k = s.url || s.id; if(seen.has(k)) return false; seen.add(k); return true; }); };
 const allStories = () => [...ED.stories, ...ED.sport.stories, ...deskItems(), ...ED.community, ...(ED.features || [])];
 const byTime = (x,y) => new Date(y.time||0) - new Date(x.time||0);
-const storyHref = s => "#story-" + s.id;
+const storyHref = s => "/story/" + s.id + "/";
 const hostOf = u => { try{ return new URL(u).hostname.replace(/^www\./,""); }catch(_){ return ""; } };
 
 function renderChips(){
@@ -3606,7 +3642,7 @@ function renderStory(id){
     ${s.org && s.kind ? `<div class="official-flag k-${esc(s.kind)}" style="margin-top:0"><i></i>${OFFICIAL_KINDS.has(s.kind) ? "Public Services" : s.kind === "feature" ? "Feature" : "Community"} · ${esc(s.org)}</div>` : ""}
     <h1>${esc(s.headline)}</h1>
     <div class="smeta"><b>${esc(s.place||"Essex")}</b><span>·</span><span data-ago="${esc(s.time||"")}">${ago(s.time)}</span>${s.time?`<span>·</span><span>${fmt(new Date(s.time),{weekday:"long",day:"numeric",month:"long",hour:"2-digit",minute:"2-digit"})}</span>`:""}<span>·</span><span>Reported by ${esc(s.source)}</span><span>·</span><span>${Math.max(1, Math.round(((s.summary||"") + " " + (s.body||[]).join(" ") + " " + (s.points||[]).join(" ")).split(/\s+/).length / 200))} min read</span></div>
-    <div class="sharebar"><button data-copylink="${esc(s.id)}">Copy link</button><a href="${safeUrl(s.url)}" target="_blank" rel="noopener">Original report ↗</a></div>
+    <div class="sharebar"><button data-sharestory="${esc(s.id)}" class="native-share">Share</button><a class="wa" href="https://wa.me/?text=${encodeURIComponent(s.headline + " https://theseax.com/story/" + s.id + "/")}" target="_blank" rel="noopener">WhatsApp</a><button data-copylink="${esc(s.id)}">Copy link</button><a href="${safeUrl(s.url)}" target="_blank" rel="noopener">Original report ↗</a></div>
     <p class="standfirst">${esc(s.summary)}</p>
     ${Array.isArray(s.body) && s.body.length ? `<div class="sbody">${s.body.map(p=>`<p>${esc(p)}</p>`).join("")}</div>` : ""}
     ${(s.points||[]).length ? `<h2>Key points</h2><ul class="points">${s.points.map(p=>`<li>${esc(p)}</li>`).join("")}</ul>` : ""}
@@ -3696,8 +3732,10 @@ document.addEventListener("keydown", e => { if(e.key === "Escape") $("#modal").c
 $("#advForm").addEventListener("submit", async e => {
   e.preventDefault();
   const txt = `Advertising enquiry for The Seax\nName: ${$("#fName").value}\nBusiness: ${$("#fBiz").value}\nArea: ${$("#fArea").value}\nInterested in: ${$("#fFmt").value}\nNotes: ${$("#fMsg").value}`;
-  try{ await navigator.clipboard.writeText(txt); $("#fOut").textContent = "Copied. Paste it into an email to the publisher and we'll be in touch with rates."; }
-  catch(_){ $("#fOut").textContent = "Couldn't copy automatically. Select and copy this: " + txt.replace(/\n/g," · "); }
+  const to = (window.SEAX_CONFIG||{}).contactEmail || "theseaxessex@gmail.com";
+  location.href = "mailto:" + to + "?subject=" + encodeURIComponent("Advertising enquiry: " + $("#fBiz").value) + "&body=" + encodeURIComponent(txt);
+  $("#fOut").textContent = "Your email app should open with the enquiry ready to send to " + to + ". If it doesn't, email us there and we'll reply with rates.";
+  try{ await navigator.clipboard.writeText(txt); }catch(_){}
 });
 
 $("#srcQ").addEventListener("input", e => { SRCQ = e.target.value; renderSources(); });
@@ -3732,10 +3770,19 @@ setFeed("embedded"); route();
 (function(){
   const url = window.SEAX_FEED_URL;
   if(!url || typeof fetch !== "function") return;
-  let last = "";
+  let last = "", tag = "";
   async function pull(){
     try{
-      const r = await fetch(url + (url.includes("?") ? "&" : "?") + "t=" + Date.now(), {cache:"no-store"});
+      const bust = url + (url.includes("?") ? "&" : "?") + "t=" + Date.now();
+      if(tag){
+        try{
+          const h = await fetch(bust, {method:"HEAD", cache:"no-store"});
+          const t = h.ok ? (h.headers.get("etag") || h.headers.get("last-modified") || "") : "";
+          if(t && t === tag){ setFeed("live"); return; }
+        }catch(_){}
+      }
+      const r = await fetch(bust, {cache:"no-store"});
+      tag = r.headers.get("etag") || r.headers.get("last-modified") || "";
       if(!r.ok) throw new Error(r.status);
       const d = await r.json();
       if(d && typeof d === "object" && Array.isArray(d.stories)){
@@ -3973,7 +4020,7 @@ document.addEventListener("click", e => {
   if(!b) return;
   if(b.dataset.showall){ window[b.dataset.showall] = !window[b.dataset.showall]; afterRender(); }
   else if(b.dataset.copylink){
-    const url = location.href.split("#")[0] + "#story-" + b.dataset.copylink;
+    const url = ((window.SEAX_CONFIG||{}).site || "https://theseax.com") + "/story/" + b.dataset.copylink + "/";
     const done = ok => { b.textContent = ok ? "Link copied" : url; setTimeout(() => b.textContent = "Copy link", 2500); };
     try{ navigator.clipboard.writeText(url).then(() => done(true), () => done(false)); }catch(_){ done(false); }
   }
@@ -4143,6 +4190,47 @@ window.addEventListener("resize", navOverflow);
 document.addEventListener("scroll", e => { if(e.target && e.target.classList && e.target.classList.contains("nav-scroll")) navOverflow(); }, true);
 setTimeout(navOverflow, 0);
 
+</script>
+<script>
+/* added: story pages, native share, analytics for in-page story views, briefing band */
+(function(){
+  var CFG = window.SEAX_CONFIG || {};
+  var SITE = CFG.site || "https://theseax.com";
+  function known(id){ try{ return allStories().some(function(x){ return x.id === id; }); }catch(_){ return false; } }
+  document.addEventListener("click", function(e){
+    if(e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+    var a = e.target.closest('a[href^="/story/"]');
+    if(a){
+      var id = (a.getAttribute("href").split("/")[2] || "");
+      if(id && known(id)){ e.preventDefault(); location.hash = "story-" + id; }
+      return;
+    }
+    var b = e.target.closest("[data-sharestory]");
+    if(b && navigator.share){
+      var sid = b.getAttribute("data-sharestory"), st = null;
+      try{ st = allStories().find(function(x){ return x.id === sid; }); }catch(_){}
+      navigator.share({title: st ? st.headline : "The Seax", url: SITE + "/story/" + sid + "/"}).catch(function(){});
+    }
+  }, true);
+  if(!navigator.share){ var st = document.createElement("style"); st.textContent = ".native-share{display:none!important}"; document.head.appendChild(st); }
+  function count(){
+    var h = location.hash;
+    if(h.indexOf("#story-") === 0 && window.goatcounter && goatcounter.count){
+      goatcounter.count({path: "/story/" + h.slice(7) + "/", title: document.title});
+    }
+  }
+  window.addEventListener("hashchange", count);
+  window.addEventListener("load", function(){ setTimeout(count, 1500); });
+  var band = document.getElementById("nlBand");
+  if(band && (CFG.newsletterForm || CFG.latestBriefing)){
+    band.hidden = false;
+    if(CFG.newsletterForm){
+      var f = document.getElementById("nlForm"); f.hidden = false; f.action = CFG.newsletterForm;
+      document.getElementById("nlEmail").name = CFG.newsletterField || "email";
+    }
+    if(CFG.latestBriefing){ document.getElementById("nlRead").hidden = false; }
+  }
+})();
 </script>
 </body>
 </html>

@@ -1,0 +1,3 @@
+# Story ids listed here (one per line) are removed from the site at the next build:
+# their page is deleted and they leave the sitemap and archive.
+# Use this for corrections that require removal or legal requests.
