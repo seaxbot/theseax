@@ -4,8 +4,9 @@
   "tagline": "Essex News, Sport, Life.",
   "contactEmail": "theseaxessex@gmail.com",
   "goatcounter": "theseax",
-  "newsletterForm": "",
+  "newsletterForm": "https://buttondown.com/api/emails/embed-subscribe/theseax",
   "newsletterName": "Essex at 7",
   "whatsappChannel": "",
-  "facebookPage": ""
+  "facebookPage": "",
+  "newsletterField": "email"
 }
