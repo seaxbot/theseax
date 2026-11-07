@@ -94,3 +94,25 @@ main.prose a{color:var(--red2)}
 main.prose .share a{color:var(--ink)}
 main.prose .share .wa{color:#fff}
 .nl .nl-go a{display:inline-block;font:700 16px var(--sans);padding:13px 22px;border-radius:999px;background:var(--navy);color:#fff;text-decoration:none}
+
+/* Council Watch */
+.org.cw{display:flex;flex-wrap:wrap;gap:6px;align-items:center;color:var(--ink2)}
+.org.cw b{color:var(--navy)}
+.org.cw a{color:var(--navy);text-decoration:underline;text-underline-offset:2px}
+.cw-stage{display:inline-block;font:800 11px var(--sans);letter-spacing:.08em;text-transform:uppercase;padding:3px 8px;border-radius:999px;background:var(--paper2);color:var(--ink2)}
+.cw-decided{background:#1b2a44;color:#fff}.cw-upcoming,.cw-proposed{background:var(--gold);color:var(--ink)}
+.cw-docs li a b{font-weight:600}
+.cw-hub .cw-list{display:grid;gap:0;border-top:1px solid var(--line);margin-bottom:8px}
+.cw-row{display:grid;grid-template-columns:200px 1fr;gap:4px 18px;padding:14px 0;border-bottom:1px solid var(--line);text-decoration:none}
+.cw-row .cw-c{font:700 12px var(--sans);letter-spacing:.06em;text-transform:uppercase;color:var(--navy);padding-top:3px}
+.cw-row b{font:700 19px/1.25 var(--head)}
+.cw-row .cw-m{grid-column:2;color:var(--muted);font-size:14px}
+.cw-row:hover b{text-decoration:underline}
+.cw-meets,.cw-cover{list-style:none;padding:0;margin:0;border-top:1px solid var(--line)}
+.cw-meet{padding:12px 0;border-bottom:1px solid var(--line)}
+.cw-meet a{display:flex;gap:14px;text-decoration:none;align-items:baseline;flex-wrap:wrap}
+.cw-meet .cw-d{font:700 13px var(--sans);color:var(--red);min-width:150px}
+.cw-meet ul{margin:6px 0 0 164px;padding:0 0 0 16px;color:var(--ink2);font-size:15px}
+.cw-cover li{display:flex;justify-content:space-between;gap:12px;padding:9px 0;border-bottom:1px solid var(--line)}
+.cw-cover span{color:var(--muted);font-size:14px;text-align:right}
+@media (max-width:700px){.cw-row{grid-template-columns:1fr}.cw-row .cw-m{grid-column:1}.cw-meet ul{margin-left:0}}

@@ -52,9 +52,11 @@ TAG_ICON = {"police": "police", "crime": "police", "court": "court", "appeal": "
             "ambulance": "ambulance", "football": "football", "cricket": "cricket", "racing": "racing", "sport": "sport",
             "ice hockey": "sport", "rugby": "sport"}
 SECTION_LABEL = {"news": "News", "sport": "Sport", "official": "Public Services", "courts": "Courts",
-                 "community": "Community", "features": "Features"}
+                 "community": "Community", "features": "Features", "councilwatch": "Council Watch"}
 
 def icon_of(it, sec):
+    if sec == "councilwatch":
+        return "council"
     ic = str(it.get("icon") or "").lower()
     if ic in ICON_COLOUR:
         return ic
@@ -66,6 +68,8 @@ def icon_of(it, sec):
     return "news"
 
 def card_of(it, sec):
+    if sec == "councilwatch":
+        return "council"
     if sec == "features":
         return "feature"
     return CARD_FOR.get(icon_of(it, sec), "news")
@@ -169,7 +173,7 @@ def head(title, desc, canonical, og_image, og_type="website", extra=""):
   <a class="home" href="/">Front page</a>
 </div></header>
 <nav class="sec"><div class="wrap">
-  <a href="/#news">News</a><a href="/#sport">Sport</a><a href="/#desk">Public Services</a><a href="/#community">Community</a><a href="/#whatson">What's On</a><a href="/briefing/">Morning briefing</a><a href="/about/">About</a>
+  <a href="/#news">News</a><a href="/#sport">Sport</a><a href="/#desk">Public Services</a><a href="/council-watch/">Council Watch</a><a href="/#community">Community</a><a href="/#whatson">What's On</a><a href="/briefing/">Morning briefing</a><a href="/about/">About</a>
 </div></nav>
 """
 
@@ -223,7 +227,8 @@ def collect(ed):
     out = []
     for sec, items in [("news", ed.get("stories", [])), ("sport", (ed.get("sport") or {}).get("stories", [])),
                        ("official", ed.get("official", [])), ("courts", ed.get("courts", [])),
-                       ("community", ed.get("community", [])), ("features", ed.get("features", []))]:
+                       ("community", ed.get("community", [])), ("features", ed.get("features", [])),
+                       ("councilwatch", ed.get("councilwatch", []))]:
         for it in items or []:
             if isinstance(it, dict) and slug_ok(it.get("id")) and it.get("headline"):
                 out.append((sec, it))
@@ -244,7 +249,7 @@ def story_page(sec, it, more):
     src = it.get("source") or ""
     surl = safe_url(it.get("url"))
     also = [a for a in (it.get("also") or []) if isinstance(a, dict) and safe_url(a.get("url"))]
-    kicker = "Feature" if sec == "features" else (it.get("tag") or SECTION_LABEL.get(sec, "News"))
+    kicker = "Feature" if sec == "features" else "Council Watch" if sec == "councilwatch" else (it.get("tag") or SECTION_LABEL.get(sec, "News"))
     ld = {
         "@context": "https://schema.org", "@type": "NewsArticle",
         "headline": trunc(title, 110), "description": desc,
@@ -272,8 +277,10 @@ def story_page(sec, it, more):
         meta.append(f'<time datetime="{iso(t)}">{E(uk_long(t))}</time>')
     if up and t and up > t + timedelta(minutes=5):
         meta.append(f'<span>Updated <time datetime="{iso(up)}">{E(uk_long(up))}</time></span>')
-    if src:
+    if src and sec != "councilwatch":
         meta.append(f"<span>Reported by {E(src)}</span>")
+    if sec == "councilwatch":
+        meta.append("<span>Original reporting from council papers</span>")
     org = ""
     if it.get("org") and sec in ("official", "courts", "community"):
         org = f'<div class="org">{E(SECTION_LABEL[sec])} · {E(it["org"])}</div>'
@@ -281,6 +288,8 @@ def story_page(sec, it, more):
     if surl:
         readfull = f"""<div class="readfull"><div><div class="k">Read the full story</div><div class="src">{E(src or host(surl))}</div></div>
 <a class="go" href="{E(surl)}" target="_blank" rel="noopener">Open at {E(host(surl) or src)} ↗</a></div>"""
+    if sec == "councilwatch":
+        readfull = cw_record_box(it)
     also_html = ""
     if also:
         also_html = '<h2>Also reported by</h2><ul class="also">' + "".join(
@@ -293,7 +302,7 @@ def story_page(sec, it, more):
     return head(f"{title} · The Seax", desc, url, card, "article", extra) + f"""<main class="wrap story">
 <article style="--c:{colour}">
   <div class="kick"><span>{E(kicker)}</span><span>{E(place)}</span></div>
-  {org}
+  {org}{cw_badge(it) if sec == "councilwatch" else ""}
   <h1>{E(title)}</h1>
   {f'<p class="standfirst">{E(summary)}</p>' if summary else ''}
   <div class="meta">{' <span class="dot">·</span> '.join(meta)}</div>
@@ -302,7 +311,7 @@ def story_page(sec, it, more):
   {('<h2>Key points</h2><ul class="points">' + ''.join(f'<li>{E(p)}</li>' for p in points) + '</ul>') if points else ''}
   {readfull}
   {also_html}
-  <p class="note">This is a summary written by The Seax. The original reporting, quotes and images belong to {E(src or 'the outlet named above')}{' and the other outlets listed' if also else ''}. <a href="{E(corr)}">Spotted a mistake? Tell us</a>.</p>
+  {cw_note(corr) if sec == "councilwatch" else f'<p class="note">This is a summary written by The Seax. The original reporting, quotes and images belong to {E(src or "the outlet named above")}{" and the other outlets listed" if also else ""}. <a href="{E(corr)}">Spotted a mistake? Tell us</a>.</p>'}
 </article>
 <aside>
   <h3>More from Essex</h3>
@@ -314,6 +323,126 @@ def story_page(sec, it, more):
 {foot()}{SHARE_JS}
 </body></html>
 """
+
+
+# ---------- Council Watch ----------
+CW_STAGE = {"decided": "Decided", "upcoming": "Coming up", "proposed": "Proposed", "held": "Discussed", "update": "Update"}
+
+def cw_badge(it):
+    stage = CW_STAGE.get(str(it.get("stage") or "").lower(), "")
+    bits = [f'<a href="/council-watch/{E(it.get("council") or "")}/">{E(it.get("councilName") or "Essex council")}</a>' if it.get("council") else E(it.get("councilName") or "")]
+    if it.get("meeting"):
+        bits.append(E(it["meeting"]))
+    return (f'<div class="org cw"><b>Council Watch</b> · {" · ".join(b for b in bits if b)}'
+            + (f' <span class="cw-stage cw-{E(str(it.get("stage")).lower())}">{E(stage)}</span>' if stage else "") + "</div>")
+
+def cw_record_box(it):
+    docs = [d for d in (it.get("docs") or []) if isinstance(d, dict) and safe_url(d.get("url"))]
+    murl = safe_url(it.get("meetingUrl"))
+    if not docs and not murl:
+        return ""
+    rows = "".join(
+        f'<li><a href="{E(d["url"])}" target="_blank" rel="noopener"><b>{E(d.get("title") or "Council document")}</b>'
+        f'<span>{("page " + E(d["page"]) + " · ") if d.get("page") else ""}{E(host(d["url"]))} ↗</span></a></li>' for d in docs)
+    meet = (f'<li><a href="{E(murl)}" target="_blank" rel="noopener"><b>Meeting page: {E(it.get("meeting") or "agenda and minutes")}</b>'
+            f'<span>{E(host(murl))} ↗</span></a></li>') if murl else ""
+    return f'<h2>From the public record</h2><ul class="also cw-docs">{rows}{meet}</ul>'
+
+def cw_note(corr):
+    return ('<p class="note">Council Watch is original reporting by The Seax from public council papers: agendas, reports, decisions and minutes. '
+            'It is written with the help of AI from the documents linked above, and every fact comes from them. Councils sometimes change '
+            'decisions after a meeting, so check the minutes for the final word. '
+            f'<a href="{E(corr)}">Spotted a mistake? Tell us</a>. <a href="/council-watch/">How Council Watch works</a>.</p>')
+
+def cw_load(name):
+    p = os.path.join(ROOT, "data", "councilwatch", name)
+    try:
+        return json.load(open(p, encoding="utf-8"))
+    except Exception:
+        return {}
+
+def cw_councils(ed):
+    names = {}
+    for cid, rec in (cw_load("status.json").get("councils") or {}).items():
+        names[cid] = rec.get("name") or cid
+    for it in ed.get("councilwatch") or []:
+        if it.get("council"):
+            names.setdefault(it["council"], it.get("councilName") or it["council"])
+    return names
+
+def cw_card(sid, rec):
+    t = parse_t(rec.get("t"))
+    return (f'<a class="cw-row" href="/story/{E(sid)}/"><span class="cw-c">{E(rec.get("councilName") or "")}</span>'
+            f'<b>{E(rec["h"])}</b><span class="cw-m">{E(rec.get("place") or "")}{(" · " + E(uk_day(t))) if t else ""}</span></a>')
+
+def cw_meet_rows(meets):
+    out = []
+    for m in meets:
+        d = parse_t(m.get("date") + "T12:00:00Z") if m.get("date") else None
+        items = "".join(f"<li>{E(x)}</li>" for x in (m.get("items") or [])[:4])
+        out.append(f'<li class="cw-meet"><a href="{E(safe_url(m.get("url")) or "#")}" target="_blank" rel="noopener">'
+                   f'<span class="cw-d">{E(uk_day(d)) if d else ""}{(" · " + E(m["time"])) if m.get("time") else ""}</span>'
+                   f'<b>{E(m.get("councilName") or "")}: {E(m.get("committee") or "")}</b></a>{("<ul>" + items + "</ul>") if items else ""}</li>')
+    return "".join(out)
+
+def cw_pages(ed, archive):
+    """/council-watch/ hub and one page per council. Returns the list of (url, lastmod)."""
+    names = cw_councils(ed)
+    cal = (cw_load("calendar.json").get("meetings") or [])
+    status = cw_load("status.json").get("councils") or {}
+    live = {it["id"]: it for it in (ed.get("councilwatch") or []) if isinstance(it, dict) and it.get("id")}
+    recs = sorted([(sid, r) for sid, r in archive.items() if r.get("sec") == "councilwatch"],
+                  key=lambda kv: kv[1].get("t") or kv[1].get("first") or "", reverse=True)
+    for sid, r in recs:
+        if sid in live:
+            r["councilName"] = live[sid].get("councilName") or r.get("councilName")
+    pages = []
+    upcoming = [m for m in cal if m.get("date", "") >= NOW.astimezone(UK).date().isoformat()]
+    cover = []
+    for cid, nm in sorted(names.items(), key=lambda kv: kv[1]):
+        st = (status.get(cid) or {}).get("state", "")
+        how = {"ok": "papers read automatically", "quiet": "papers read automatically", "blocked": "checked by our desk (site limits automated reading)",
+               "unreachable": "checked by our desk", "manual": "checked by our desk", "refused": "checked by our desk (site asks automated readers to stay away)"}.get(st, "")
+        n = sum(1 for _, r in recs if r.get("council") == cid)
+        cover.append(f'<li><a href="/council-watch/{E(cid)}/">{E(nm)}</a><span>{E(how)}{(" · " + str(n) + " stories") if n else ""}</span></li>')
+    url = f"{SITE}/council-watch/"
+    desc = "Original reporting from every Essex council's public papers: what was decided, what is coming up, and what it means for you."
+    body = f"""<main class="wrap prose cw-hub">
+<div class="kick"><span>Council Watch</span><span>Essex</span></div>
+<h1>Council Watch</h1>
+<p class="standfirst">{E(desc)}</p>
+<h2>Latest from Council Watch</h2>
+<div class="cw-list">{"".join(cw_card(sid, r) for sid, r in recs[:40]) or '<p>The first Council Watch stories are on their way.</p>'}</div>
+<h2>Coming up at your councils</h2>
+<ul class="cw-meets">{cw_meet_rows(upcoming[:30]) or '<li>No upcoming meetings found yet.</li>'}</ul>
+<h2>Councils we watch</h2>
+<ul class="cw-cover">{"".join(cover)}</ul>
+<h2 id="how">How Council Watch works</h2>
+<p>Essex has fifteen principal councils: Essex County Council, Southend, Thurrock and twelve district, borough and city councils. Each publishes agendas, reports, decisions and minutes that few people have time to read. Council Watch reads them for you.</p>
+<p>Twice a day an automated collector visits each council's public meetings website, politely and within the rules each site publishes, and lists the meetings, agenda items and reports. It ranks items by how much they are likely to matter to residents: money, services, homes, planning, closures, consultations and decisions. Our desk then writes short stories from the most important papers, with the help of AI, and links every story to the exact documents and pages it comes from.</p>
+<p>Council Watch only reports what the council papers say. It does not report private or exempt business, and it does not name members of the public who appear in council papers. Where a council's website limits automated reading, our desk checks it by hand instead.</p>
+<p>Spotted a mistake, or work for an Essex council and want to point us at something? Email <a href="mailto:{E(CFG['contactEmail'])}">{E(CFG['contactEmail'])}</a>.</p>
+</main>"""
+    changed = write("council-watch/index.html", head("Council Watch: what Essex councils are deciding · The Seax", desc, url, "council") + body + newsletter_box() + foot() + "</body></html>\n")
+    pages.append((url, NOW.date().isoformat()))
+    for cid, nm in names.items():
+        mine = [(sid, r) for sid, r in recs if r.get("council") == cid]
+        meets = [m for m in upcoming if m.get("council") == cid]
+        u = f"{SITE}/council-watch/{cid}/"
+        d2 = f"What {nm} is deciding: Council Watch stories from its public papers, and its upcoming meetings."
+        page = f"""<main class="wrap prose cw-hub">
+<div class="kick"><span><a href="/council-watch/">Council Watch</a></span><span>{E(nm)}</span></div>
+<h1>{E(nm)}</h1>
+<p class="standfirst">{E(d2)}</p>
+<h2>Latest</h2>
+<div class="cw-list">{"".join(cw_card(sid, r) for sid, r in mine[:40]) or '<p>No Council Watch stories for this council yet.</p>'}</div>
+<h2>Coming up</h2>
+<ul class="cw-meets">{cw_meet_rows(meets[:20]) or '<li>No upcoming meetings found.</li>'}</ul>
+<p><a href="/council-watch/#how">How Council Watch works</a></p>
+</main>"""
+        changed += write(f"council-watch/{cid}/index.html", head(f"{nm}: Council Watch · The Seax", d2, u, "council") + page + newsletter_box() + foot() + "</body></html>\n")
+        pages.append((u, (mine[0][1].get("t") or NOW.isoformat())[:10] if mine else None))
+    return pages, changed
 
 # ---------- about ----------
 def photo_credits():
@@ -342,7 +471,9 @@ def about_page():
 <h2>How The Seax works</h2>
 <p>We watch hundreds of trusted sources across Essex and beyond: local newspapers and radio, hyperlocal and independent newsrooms, Essex Police, the fire and ambulance services, councils, the NHS, courts, charities, clubs and venues, plus national and specialist outlets when they report on Essex.</p>
 <p>The Seax is produced with the help of AI. Automated research tools gather the latest reports each hour, and AI writes our headlines, summaries and short story pages in our own words, following our editorial rules. Every story names the outlet that reported it and links directly to the original, so you can always read the full report and support the journalists who did the work.</p>
-<p>We do not copy articles, take photographs from other publishers, or publish anything we have not seen reported by a named source.</p>
+<p>We do not copy articles, take photographs from other publishers, or publish anything that is not reported by a named source or set out in a public document.</p>
+<h2 id="council-watch">Council Watch</h2>
+<p><a href="/council-watch/">Council Watch</a> is The Seax's own reporting. Twice a day we read the public meeting papers of Essex's councils (agendas, reports, decisions and minutes), politely and within each website's published rules, and write short stories about the decisions that matter to residents. Every Council Watch story links to the council documents, and the pages, it is based on. It is written with the help of AI from those documents only.</p>
 
 <h2>Our editorial rules</h2>
 <ul>
@@ -408,8 +539,11 @@ def briefing(ed, when):
         if sd == day or (e and sd <= day <= ed_ and (ed_ - sd).days <= 3):
             whats.append(ev)
     whats = whats[:5]
+    cw = sorted([c for c in (ed.get("councilwatch") or []) if isinstance(c, dict) and c.get("id") and c.get("headline")
+                 and (parse_t(c.get("time")) or when - timedelta(days=9)) >= when - timedelta(hours=40)],
+                key=lambda c: (-(c.get("weight") or 0), c.get("time") or ""))[:3]
     return {"date": day.isoformat(), "label": uk_day(when), "lead": lead, "stories": picked, "weather": today,
-            "warnings": w.get("warnings") or [], "travel": travel, "results": res[:8], "whats": whats}
+            "warnings": w.get("warnings") or [], "travel": travel, "results": res[:8], "whats": whats, "council": cw}
 
 def briefing_html_inner(b, email=False):
     """The briefing body. email=True gives inline-styled markup for RSS-to-email."""
@@ -431,6 +565,11 @@ def briefing_html_inner(b, email=False):
             out.append(
                 f'<div class="bs{" lead" if big else ""}"{S("margin:0 0 14px")}><a href="{u}"{S("color:#15161b;text-decoration:none;font:" + ("800 22px" if big else "700 17px") + " Arial,sans-serif")}>{E(s["headline"])}</a>'
                 f'<p{S("margin:4px 0 0;color:#3a3a40")}>{E(s.get("place") or "Essex")} · {E(trunc(s.get("summary"), 220))}</p></div>')
+    if b.get("council"):
+        out.append(f'<h2{S("font:700 18px Arial,sans-serif;margin:22px 0 6px")}>From Council Watch</h2>')
+        for c in b["council"]:
+            out.append(f'<div class="bs"{S("margin:0 0 12px")}><a href="{SITE}/story/{E(c["id"])}/"{S("color:#15161b;text-decoration:none;font:700 17px Arial,sans-serif")}>{E(c["headline"])}</a>'
+                       f'<p{S("margin:4px 0 0;color:#3a3a40")}>{E(c.get("councilName") or "")} · {E(trunc(c.get("summary"), 200))}</p></div>')
     if b["travel"]:
         out.append(f'<h2{S("font:700 18px Arial,sans-serif;margin:22px 0 6px")}>Travel</h2><ul>' + "".join(
             f'<li><a href="{E(safe_url(t.get("url")) or SITE + "/")}">{E(t.get("text"))}</a></li>' for t in b["travel"]) + "</ul>")
@@ -560,6 +699,8 @@ def main():
             "t": iso(t) if t else prev.get("t", ""), "u": iso(parse_t(it.get("updated"))) if it.get("updated") else prev.get("u", ""),
             "first": prev.get("first") or iso(NOW), "last": iso(NOW),
         }
+        if sec == "councilwatch":
+            archive[it["id"]].update({"council": it.get("council") or "", "councilName": it.get("councilName") or "", "cwKey": it.get("cwKey") or ""})
 
     # about page
     if write("about/index.html", about_page()):
@@ -569,7 +710,8 @@ def main():
     uk_now = NOW.astimezone(UK)
     day = uk_now.date().isoformat()
     mins = uk_now.hour * 60 + uk_now.minute
-    if (a.briefing_now or 390 <= mins < 720) and not os.path.exists(os.path.join(ROOT, "briefing", day, "index.html")):
+    no_brief = os.environ.get("SEAX_NO_BRIEFING") == "1"  # desks other than the newsroom never make the day's briefing
+    if not no_brief and (a.briefing_now or 390 <= mins < 720) and not os.path.exists(os.path.join(ROOT, "briefing", day, "index.html")):
         b = briefing(ed, NOW)
         write(f"briefing/{day}/index.html", briefing_page(b))
         bj_path = os.path.join(ROOT, "data", "briefings.json")
@@ -598,9 +740,13 @@ def main():
     # archive file
     changed += write("data/archive.json", json.dumps(archive, ensure_ascii=False, sort_keys=True, indent=0))
 
+    # Council Watch hub and council pages
+    cw_urls, cw_changed = cw_pages(ed, archive)
+    changed += cw_changed
+
     # RSS of latest stories
     feed_items = []
-    for sec, it in sorted([x for x in items if x[0] in ("news", "sport", "courts", "official", "community", "features")],
+    for sec, it in sorted([x for x in items if x[0] in ("news", "sport", "courts", "official", "community", "features", "councilwatch")],
                           key=lambda x: (parse_t(x[1].get("time")) or NOW - timedelta(days=30)), reverse=True)[:60]:
         u = f"{SITE}/story/{it['id']}/"
         feed_items.append({"title": it["headline"], "link": u, "date": parse_t(it.get("time")),
@@ -617,6 +763,8 @@ def main():
         urls.append((f"{SITE}/story/{sid}/", lastmod(rec), None, None))
     for x in briefs:
         urls.append((f"{SITE}/briefing/{x['date']}/", x["date"], None, None))
+    for u, lm in cw_urls:
+        urls.append((u, lm, "daily" if u.endswith("/council-watch/") else None, "0.7" if u.endswith("/council-watch/") else None))
     sm = ['<?xml version="1.0" encoding="UTF-8"?>', '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
     for loc, lm, cf, pr in urls:
         sm.append("<url><loc>" + E(loc) + "</loc>" + (f"<lastmod>{lm}</lastmod>" if lm else "") +

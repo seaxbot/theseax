@@ -640,6 +640,32 @@ h1,h2,h3,h4,.story h1,.lead h2,.card h3,.drow h4{letter-spacing:-.022em}
 :root{--hair:#e3dccb}
 /* section pillars (Guardian-style colour coding) */
 #news{--pillar:#c8102e} #around{--pillar:#0e1b30} #desk{--pillar:#1f4fbf} #community{--pillar:#1f7a78}
+#councilwatch{--pillar:#0e1b30}
+.cw-wrap{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr);gap:28px;margin-top:18px}
+.cw-intro{margin:6px 0 0;color:var(--muted);font-size:15px;max-width:760px}
+.cw-intro a{color:var(--ink);font-weight:700}
+.cw-cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.cw-card{display:flex;flex-direction:column;gap:8px;background:var(--card);border:1px solid var(--line);border-top:4px solid #0e1b30;border-radius:var(--r);padding:16px 18px;text-decoration:none;color:inherit}
+.cw-card:hover h3{text-decoration:underline}
+.cw-card .cw-top{display:flex;justify-content:space-between;gap:8px;align-items:center;font:700 11.5px var(--sans);letter-spacing:.06em;text-transform:uppercase;color:#0e1b30}
+.cw-card h3{font:800 20px/1.2 var(--head);margin:0;letter-spacing:-.01em}
+.cw-card p{margin:0;font-size:14.5px;color:var(--ink2)}
+.cw-card .cw-src{margin-top:auto;font-size:12.5px;color:var(--muted)}
+.cw-st{font:800 10.5px var(--sans);letter-spacing:.08em;padding:3px 8px;border-radius:99px;background:var(--paper2,#ede5d4);color:var(--ink)}
+.cw-st.decided{background:#0e1b30;color:#fff}.cw-st.upcoming,.cw-st.proposed{background:var(--gold,#d0a13a);color:#111}
+.cw-side{background:#0e1b30;color:#eef2f8;border-radius:var(--r);padding:18px 20px}
+.cw-side h3{margin:0 0 4px;font:800 20px var(--head);color:#fff}
+.cw-side .sub{font-size:13px;color:#b9c4d6}
+.cw-side ul{list-style:none;margin:12px 0 0;padding:0}
+.cw-side li{padding:10px 0;border-top:1px solid rgba(255,255,255,.14)}
+.cw-side li a{color:#fff;text-decoration:none;font-weight:700;font-size:15px}
+.cw-side li a:hover{text-decoration:underline}
+.cw-side li .d{display:block;font:700 11.5px var(--sans);letter-spacing:.06em;text-transform:uppercase;color:var(--gold,#d0a13a);margin-bottom:2px}
+.cw-side li .it{display:block;font-size:13px;color:#c9d2e0;margin-top:3px}
+.cw-side .all{display:inline-block;margin-top:12px;color:#fff;font-weight:700;font-size:14px}
+.cw-more{margin-top:14px}
+@media (max-width:900px){.cw-wrap{grid-template-columns:1fr}.cw-cards{grid-template-columns:1fr}}
+
 #sport{--pillar:#1f8a4c} #weather{--pillar:#2f6fa8} #whatson{--pillar:#c27c1a} #culture{--pillar:#5b3f8c}
 #features{--pillar:#9a5b2e} #escape{--pillar:#2c6e8f} #vital{--pillar:#b23a48} #specials{--pillar:#a8761a} #sources{--pillar:#55606e}
 .bh{border-top:4px solid var(--pillar,var(--ink));padding-top:14px;position:relative}
@@ -1000,6 +1026,7 @@ footer .flinks a{text-decoration:underline}
     <button data-go="sport">Sport</button>
     <button data-go="around">Around Essex</button>
     <button data-go="desk">Public Services</button>
+    <button data-go="councilwatch">Council Watch</button>
     <button data-go="community">Community</button>
     <button data-go="weather">Weather</button>
     <button data-go="webcams">Webcams</button>
@@ -1109,6 +1136,17 @@ footer .flinks a{text-decoration:underline}
         <div class="side-panel dark"><h3>Sources we watch</h3><p id="watchCount"></p><button class="src-jump" data-go="sources">Browse the full directory</button></div>
         <div class="ad" style="min-height:150px"><span class="k">Sponsor</span><div class="in"><strong style="font-size:18px">Sponsor Public Services</strong>A trusted, brand-safe home for public safety news.<br><button data-advert>Enquire</button></div></div>
       </aside>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="councilwatch">
+  <div class="wrap">
+    <div class="bh"><h2>Council Watch<small id="cwCount">What Essex councils are deciding, from their own papers</small></h2></div>
+    <p class="cw-intro">Original reporting from the agendas, reports and minutes of every Essex council. Every story links to the document and page it comes from. <a href="/council-watch/">How Council Watch works</a></p>
+    <div class="cw-wrap">
+      <div><div class="cw-cards" id="cwCards"></div><div class="more-news cw-more" id="cwMore"></div></div>
+      <aside class="cw-side"><h3>Coming up at your council</h3><span class="sub" id="cwSideSub">Meetings in the next fortnight and what is on the agenda</span><ul id="cwMeets"></ul><a class="all" href="/council-watch/">All councils and meetings →</a></aside>
     </div>
   </div>
 </section>
@@ -3398,11 +3436,12 @@ function normalise(d){
   o.culture = (Array.isArray(o.culture) && o.culture.length ? o.culture : EMBED.culture).filter(x => x && x.title && x.start);
   o.deals = (Array.isArray(o.deals) && o.deals.length ? o.deals : EMBED.deals).filter(x => x && x.title && x.url);
   o.features = (Array.isArray(o.features) ? o.features : (EMBED.features || [])).map(cleanStory).filter(Boolean);
+  o.councilwatch = (Array.isArray(o.councilwatch) ? o.councilwatch : []).map(cleanStory).filter(Boolean).map(s => { s.tag = s.tag || "Council Watch"; return s; });
   return o;
 }
 const inArea = item => AREA === "all" || !item.areas || item.areas.includes("all") || item.areas.includes(AREA);
 const deskItems = () => { const seen = new Set(); return [...ED.official, ...ED.courts].filter(s => { const k = s.url || s.id; if(seen.has(k)) return false; seen.add(k); return true; }); };
-const allStories = () => [...ED.stories, ...ED.sport.stories, ...deskItems(), ...ED.community, ...(ED.features || [])];
+const allStories = () => [...ED.stories, ...ED.sport.stories, ...deskItems(), ...ED.community, ...(ED.features || []), ...(ED.councilwatch || [])];
 const byTime = (x,y) => new Date(y.time||0) - new Date(x.time||0);
 const storyHref = s => "/story/" + s.id + "/";
 const hostOf = u => { try{ return new URL(u).hostname.replace(/^www\./,""); }catch(_){ return ""; } };
@@ -3792,8 +3831,45 @@ function updateLiveLine(){
   if($("#liveTxt")) $("#liveTxt").textContent = `LIVE · edition ${fmt(d,{hour:"2-digit",minute:"2-digit"})}`;
 }
 
+
+/* ---------- Council Watch: original reporting from council papers ---------- */
+let CW_CAL = [];
+const CW_STAGE = {decided:"Decided", upcoming:"Coming up", proposed:"Proposed", held:"Discussed", update:"Update"};
+function renderCouncilWatch(){
+  const sec = document.getElementById("councilwatch"); if(!sec) return;
+  const all = (ED.councilwatch || []).slice().sort(byTime);
+  const list = all.filter(inArea);
+  const areaName = (AREAS.find(a => a[0] === AREA) || [0, "Essex"])[1];
+  $("#cwCount").textContent = all.length ? (AREA === "all" ? `${all.length} stories from council papers` : `${list.length} for ${areaName}`) : "What Essex councils are deciding, from their own papers";
+  const card = s => `<a class="cw-card" href="${storyHref(s)}">
+      <span class="cw-top"><span>${esc(s.councilName || s.org || "Essex council")}</span>${s.stage && CW_STAGE[s.stage] ? `<span class="cw-st ${esc(s.stage)}">${CW_STAGE[s.stage]}</span>` : ""}</span>
+      <h3>${esc(s.headline)}</h3><p>${esc(s.summary)}</p>
+      <span class="cw-src">${esc(s.meeting || "")}${s.meeting ? " · " : ""}<span data-ago="${esc(s.time||"")}">${ago(s.time)}</span></span></a>`;
+  $("#cwCards").innerHTML = list.length ? list.slice(0, 4).map(card).join("")
+    : `<div class="empty" style="grid-column:1/-1">${all.length ? "No Council Watch stories for this area yet. Try All Essex." : "The first Council Watch stories are on their way. Meanwhile, see what is coming up at your council."}</div>`;
+  const rest = list.slice(4, 12);
+  $("#cwMore").innerHTML = rest.length ? `<h4 class="mn-h">More from Council Watch</h4><ol class="mn one">${rest.map(s => compactRow(s, s.councilName || "Council")).join("")}</ol>` : "";
+  const today = new Date(); today.setHours(0,0,0,0);
+  const soon = new Date(today.getTime() + 15*864e5);
+  const meets = CW_CAL.filter(m => { const d = new Date(m.date + "T12:00:00"); return d >= today && d <= soon; })
+    .filter(m => AREA === "all" || m.area === AREA || m.area === "all")
+    .sort((a,b) => (a.date + (a.time||"")).localeCompare(b.date + (b.time||"")));
+  const withItems = meets.filter(m => m.items && m.items.length);
+  const show = (withItems.length >= 4 ? withItems : meets).slice(0, 8);
+  $("#cwSideSub").textContent = AREA === "all" ? "Meetings in the next fortnight and what is on the agenda" : `Meetings for ${areaName} in the next fortnight`;
+  $("#cwMeets").innerHTML = show.length ? show.map(m => `<li><span class="d">${fmt(new Date(m.date + "T12:00:00"),{weekday:"short",day:"numeric",month:"short"})}${m.time ? " · " + esc(m.time) : ""}</span>
+      <a href="${safeUrl(m.url)}" target="_blank" rel="noopener">${esc(m.councilName)}: ${esc(m.committee)}</a>${m.items && m.items.length ? `<span class="it">${m.items.slice(0,2).map(esc).join(" · ")}</span>` : ""}</li>`).join("")
+    : `<li><span class="it">No meetings found for this area in the next fortnight.</span></li>`;
+}
+(function(){
+  if(typeof fetch !== "function") return;
+  const load = () => fetch("/data/councilwatch/calendar.json?t=" + Math.floor(Date.now()/36e5), {cache:"no-store"})
+    .then(r => r.ok ? r.json() : null).then(d => { if(d && Array.isArray(d.meetings)){ CW_CAL = d.meetings; try{ renderCouncilWatch(); }catch(_){} } }).catch(() => {});
+  if(document.readyState === "loading") document.addEventListener("DOMContentLoaded", load); else load();
+})();
+
 function renderAll(){
-  renderChips(); renderTicker(); buildHero(); renderTopList(); renderNews(); renderDesk(); renderCommunity(); renderSport(); renderTables(); renderWeather();
+  renderChips(); renderTicker(); buildHero(); renderTopList(); renderNews(); renderDesk(); renderCouncilWatch(); renderCommunity(); renderSport(); renderTables(); renderWeather();
   renderEvents(); renderCulture(); renderFeatures(); renderVital(); renderSpecials(); renderSources(); renderMeta(); afterRender(); updateLiveLine();
   if(location.hash.startsWith("#story-")) renderStory(location.hash.slice(7));
 }
@@ -3821,7 +3897,7 @@ document.addEventListener("click", e => {
   const t = e.target.closest("[data-area],[data-go],[data-slide],[data-evcat],[data-culcat],[data-srccat],[data-advert],[data-home],[data-desk],[data-deskall]");
   if(!t) return;
   if(t.hasAttribute("data-home")){ e.preventDefault(); if(location.hash) location.hash = ""; closeStory(); window.scrollTo({top:0}); }
-  else if(t.dataset.area){ AREA = t.dataset.area; try{ localStorage.setItem("seax-area", AREA); }catch(_){} renderChips(); buildHero(); renderTopList(); renderNews(); renderDesk(); renderCommunity(); renderSport(); renderTables(); renderEvents(); renderCulture(); renderFeatures(); renderSpecials(); renderSources(); afterRender(); }
+  else if(t.dataset.area){ AREA = t.dataset.area; try{ localStorage.setItem("seax-area", AREA); }catch(_){} renderChips(); buildHero(); renderTopList(); renderNews(); renderDesk(); renderCouncilWatch(); renderCommunity(); renderSport(); renderTables(); renderEvents(); renderCulture(); renderFeatures(); renderSpecials(); renderSources(); afterRender(); }
   else if(t.dataset.go){ if(document.body.classList.contains("reading")){ location.hash = ""; closeStory(); } const el = document.getElementById(t.dataset.go); if(el) setTimeout(()=>el.scrollIntoView({behavior:"smooth", block:"start"}), 30); }
   else if(t.dataset.slide){ showSlide(+t.dataset.slide); clearInterval(heroTimer); heroTimer = setInterval(() => showSlide(heroIdx+1), 9000); }
   else if(t.dataset.evcat){ EVCAT = t.dataset.evcat; renderEvents(); afterRender(); }
