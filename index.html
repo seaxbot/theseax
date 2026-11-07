@@ -3479,7 +3479,7 @@ function renderTicker(){
   else if(cdb === "Today") items.push({text:"Happy Bonfire Night, Essex. Find a display near you", href:"#whatson"});
   items.push({text:(now < st.set ? "Sunset in Chelmsford today at " : "Sunrise tomorrow at ") + fmt(now < st.set ? st.set : solar(new Date(now.getTime()+864e5)).rise, {hour:"2-digit", minute:"2-digit"}), href:"#weather"});
   const w = ED.weather; if(w && w.now) items.push({text:`${w.place||"Chelmsford"} now: ${w.now.temp}°C, ${String(w.now.desc||"").toLowerCase()}`, href:"#weather"});
-  const html = items.map(i => `<a href="${esc(i.href)}"${i.ext?' target="_blank" rel="noopener"':""}>${i.stamp?`<b class="tk-age${i.fresh?" new":""}">${esc(i.stamp)}</b>`:""}${esc(i.text)}${i.ext?" ↗":""}</a>`).join("");
+  const html = items.map(i => `<a href="${esc(i.href)}"${i.ext?' target="_blank" rel="noopener"':""}>${esc(i.text)}${i.ext?" ↗":""}</a>`).join("");
   const track = $("#track");
   if(track.dataset.html !== html){ track.innerHTML = html + html; track.dataset.html = html; }
   /* keep the speed steady so the scroll never jumps back to the start */
