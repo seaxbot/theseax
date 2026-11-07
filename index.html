@@ -148,6 +148,7 @@ section.block{padding:38px 0 8px;scroll-margin-top:60px}
 .thumb .tag.hot{background:var(--red);color:#fff}
 .card .cart{aspect-ratio:2.6/1;overflow:hidden;border-bottom:1px solid var(--line)}
 .card .cart svg{width:100%;height:100%;display:block}
+.card.wide .cart{aspect-ratio:3.2/1}
 .card .body{padding:16px 18px 18px;display:flex;flex-direction:column;flex:1}
 .card .meta{font-size:12px;color:var(--muted);display:flex;gap:6px;align-items:center;flex-wrap:wrap}
 .card .meta .place{font-weight:700;color:var(--teal)}
@@ -3487,7 +3488,7 @@ function renderTopList(){
 
 function cardHtml(s, wide, art){
   return `<a class="card tc${wide?" wide":""}" href="${storyHref(s)}" style="--c:${iconColour(s)}">
-    ${art && SPORT_PHOTO[sportKindOf(s)] ? `<div class="cart">${sportArt(s)}</div>` : art && clubOf(s) ? `<div class="cart">${clubArt(s,{aspect:2.6})}</div>` : ""}
+    ${art && SPORT_PHOTO[sportKindOf(s)] ? `<div class="cart">${sportArt(s)}</div>` : art && clubOf(s) ? `<div class="cart">${clubArt(s,{aspect:2.6})}</div>` : !sportKindOf(s) && !clubOf(s) && !isWeatherArtStory(s) && townKeyOf(s) ? `<div class="cart">${townArt(s,{credit:true})}</div>` : ""}
     <div class="body">
       <div class="kick"><span class="tg${s.breaking?" hot":""}">${s.breaking?"Breaking":esc(s.tag||"News")}</span></div>
       <div class="meta"><span class="place">${esc(s.place||"Essex")}</span><span>·</span><span data-ago="${esc(s.time||"")}">${ago(s.time)}</span></div>
