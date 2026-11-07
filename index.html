@@ -1250,11 +1250,15 @@ footer .flinks a{text-decoration:underline}
 <div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="mTitle">
   <div class="box">
     <h3 id="mTitle">Advertise with The Seax</h3>
-    <div style="color:var(--muted);font-size:14px">Tell us what you'd like to promote and we'll put together a plan. We'll open an email to theseaxessex@gmail.com with your details filled in.</div>
+    <div style="color:var(--muted);font-size:14px">Tell us what you'd like to promote and we'll put together a plan. Send it here and we'll reply by email with rates and availability.</div>
     <form id="advForm">
       <div class="row2">
         <div><label for="fName">Your name</label><input id="fName" required></div>
         <div><label for="fBiz">Business</label><input id="fBiz" required></div>
+      </div>
+      <div class="row2">
+        <div><label for="fEmail">Your email</label><input id="fEmail" type="email" required></div>
+        <div><label for="fPhone">Phone (optional)</label><input id="fPhone" type="tel"></div>
       </div>
       <div class="row2">
         <div><label for="fArea">Area</label><select id="fArea"></select></div>
@@ -1262,7 +1266,7 @@ footer .flinks a{text-decoration:underline}
       </div>
       <label for="fMsg">Anything else</label><textarea id="fMsg" rows="3" placeholder="Dates, budget, campaign goals"></textarea>
       <div class="msg" id="fOut"></div>
-      <div class="acts"><button type="button" class="ghost" id="mClose">Close</button><button type="submit" class="cta" style="margin:0">Email my enquiry</button></div>
+      <div class="acts"><button type="button" class="ghost" id="mClose">Close</button><button type="submit" class="cta" style="margin:0" id="fSend">Send my enquiry</button></div>
     </form>
   </div>
 </div>
@@ -3733,11 +3737,23 @@ $("#modal").addEventListener("click", e => { if(e.target.id === "modal") $("#mod
 document.addEventListener("keydown", e => { if(e.key === "Escape") $("#modal").classList.remove("on"); });
 $("#advForm").addEventListener("submit", async e => {
   e.preventDefault();
-  const txt = `Advertising enquiry for The Seax\nName: ${$("#fName").value}\nBusiness: ${$("#fBiz").value}\nArea: ${$("#fArea").value}\nInterested in: ${$("#fFmt").value}\nNotes: ${$("#fMsg").value}`;
   const to = (window.SEAX_CONFIG||{}).contactEmail || "theseaxessex@gmail.com";
-  location.href = "mailto:" + to + "?subject=" + encodeURIComponent("Advertising enquiry: " + $("#fBiz").value) + "&body=" + encodeURIComponent(txt);
-  $("#fOut").textContent = "Your email app should open with the enquiry ready to send to " + to + ". If it doesn't, email us there and we'll reply with rates.";
-  try{ await navigator.clipboard.writeText(txt); }catch(_){}
+  const v = id => $(id).value.trim();
+  const txt = `Advertising enquiry for The Seax\nName: ${v("#fName")}\nBusiness: ${v("#fBiz")}\nEmail: ${v("#fEmail")}\nPhone: ${v("#fPhone")}\nArea: ${v("#fArea")}\nInterested in: ${v("#fFmt")}\nNotes: ${v("#fMsg")}`;
+  const btn = $("#fSend"); btn.disabled = true; btn.textContent = "Sending...";
+  try{
+    const r = await fetch("https://formsubmit.co/ajax/" + to, {method:"POST", headers:{"Content-Type":"application/json","Accept":"application/json"},
+      body: JSON.stringify({_subject:"Advertising enquiry: " + v("#fBiz"), _template:"table", _captcha:"false", _replyto:v("#fEmail"),
+        Name:v("#fName"), Business:v("#fBiz"), Email:v("#fEmail"), Phone:v("#fPhone"), Area:v("#fArea"), "Interested in":v("#fFmt"), Notes:v("#fMsg"), Page:location.href})});
+    const j = await r.json().catch(() => ({}));
+    if(!r.ok || String(j.success) === "false") throw new Error(j.message || r.status);
+    $("#fOut").textContent = "Thank you. Your enquiry has been sent and we'll reply to " + v("#fEmail") + " soon.";
+    $("#advForm").reset(); btn.textContent = "Sent";
+  }catch(err){
+    btn.disabled = false; btn.textContent = "Send my enquiry";
+    location.href = "mailto:" + to + "?subject=" + encodeURIComponent("Advertising enquiry: " + v("#fBiz")) + "&body=" + encodeURIComponent(txt);
+    $("#fOut").textContent = "We couldn't send that automatically, so your email app should open with it ready to send. If it doesn't, please email " + to + ".";
+  }
 });
 
 $("#srcQ").addEventListener("input", e => { SRCQ = e.target.value; renderSources(); });

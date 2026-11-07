@@ -349,7 +349,7 @@ def about_page():
 <p>The Seax offers Essex businesses brand-safe space alongside local news, sport and what's on, from county-wide takeovers to sponsorship of a single town or section. Email <a href="mailto:{E(mail)}?subject=Advertising%20with%20The%20Seax">{E(mail)}</a> for rates.</p>
 
 <h2>Privacy</h2>
-<p>The Seax does not use advertising cookies or track you across other websites. {"We count visits with GoatCounter, a privacy-friendly service that uses no cookies and collects no personal data." if CFG.get("goatcounter") else "We may count visits with a privacy-friendly service that uses no cookies and collects no personal data."} Our free morning newsletter is delivered by follow.it; if you sign up, your email address is used only to send it, and every email includes an unsubscribe link.</p>
+<p>The Seax does not use advertising cookies or track you across other websites. {"We count visits with GoatCounter, a privacy-friendly service that uses no cookies and collects no personal data." if CFG.get("goatcounter") else "We may count visits with a privacy-friendly service that uses no cookies and collects no personal data."} Advertising enquiries sent through our form are delivered to our inbox by FormSubmit and used only to reply to you. Our free morning newsletter is delivered by follow.it; if you sign up, your email address is used only to send it, and every email includes an unsubscribe link.</p>
 
 <h2>Why "The Seax"?</h2>
 <p>The seax is the short sword of the Saxons, and three seaxes appear on the arms of Essex: gules, three seaxes fesswise in pale argent, pommels and hilts or. Our badge follows that blazon.</p>
