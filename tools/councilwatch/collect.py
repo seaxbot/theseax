@@ -213,6 +213,9 @@ def mg_meeting(cid, base, meet):
         packs.append({"title": clean(a.group(2)).split(" PDF")[0].strip(), "url": urljoin(meet["url"], html.unescape(a.group(1)))})
     items = []
     tbl = body[body.find('id="mgItemTable"'):] if 'id="mgItemTable"' in body else ""
+    cuts = [i for i in (tbl.find(m) for m in ("<footer", "</main>", 'id="footer', 'class="footer', "mgFooter", 'id="mgBottom')) if i > 0]
+    if cuts:
+        tbl = tbl[: min(cuts)]
     rows = re.split(r'<td\s+class="mgItemNumberCell"', tbl)[1:]
     for r in rows:
         num = clean(r[:300]).lstrip("> ").split("\n")[0].strip().rstrip(".")

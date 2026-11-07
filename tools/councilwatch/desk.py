@@ -71,6 +71,12 @@ def prep(inbox_dir, maximum):
                 "excerpt": (it.get("excerpt") or "")[:5000], "excerptOf": it.get("excerptOf", ""),
             })
     rows.sort(key=lambda r: -r["score"])
+    seen_items, uniq = set(), []
+    for r in rows:  # joint meetings list the same report twice
+        k = (r["council"], re.sub(r"\W+", "", r["item"].split(" ", 1)[-1].lower())[:80], r["meetingDate"])
+        if k not in seen_items:
+            seen_items.add(k); uniq.append(r)
+    rows = uniq
     # no more than 4 items from one council, so the whole county gets a look in
     per, out = {}, []
     for r in rows:
