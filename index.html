@@ -3949,7 +3949,8 @@ function frontScore(s, now){
   let r = 0;
   if(dayKey(new Date(t)) === dayKey(new Date(now))) r += 3;   /* today's news beats yesterday's */
   if(ageH < 3) r += 2; else if(ageH < 8) r += 1;
-  if(ageH > 24) r -= (ageH - 24) / 12;                          /* about 2 points a day after that */
+  if(ageH > 24) r -= (ageH - 24) / 6;                           /* about 4 points a day after that */
+  if(ageH > 36) r -= 1.5;                                       /* a day and a half old: off the top cards */
   if(s.breaking) r += 3;
   if(s.developing && ageH < 12) r += 1;
   return storyWeight(s) + r;
