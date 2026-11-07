@@ -3003,7 +3003,7 @@ function seasonArt(s, opts){
    sponsors or brand marks. A story may force an object with
    "sportArt": cricket|football|tennis|rugby|racing|icehockey|
    cycling|golf|athletics. Football, cricket, tennis, rugby,
-   cycling and ice hockey use the photographs in img/sport/ (see SPORT_PHOTO) instead.
+   cycling, ice hockey and golf use the photographs in img/sport/ (see SPORT_PHOTO) instead.
    ============================================================ */
 const SPORT_LABEL = {cricket:"Cricket", football:"Football", tennis:"Tennis", rugby:"Rugby", racing:"Racing", icehockey:"Ice hockey", cycling:"Cycling", golf:"Golf", athletics:"Sport"};
 function sportKindOf(s){
@@ -3032,7 +3032,8 @@ const SPORT_PHOTO = {
   tennis:{src:"/img/sport/tennis.jpg?v=1", ay:"YMin"},
   rugby:{src:"/img/sport/rugby.jpg?v=1", ay:"YMin"},
   cycling:{src:"/img/sport/cycling.jpg?v=1", ay:"YMid"},
-  icehockey:{src:"/img/sport/icehockey.jpg?v=1", ay:"YMid"}
+  icehockey:{src:"/img/sport/icehockey.jpg?v=1", ay:"YMid"},
+  golf:{src:"/img/sport/golf.jpg?v=1", ay:"YMid"}
 };
 function sportArt(s, opts){
   opts = opts || {};
