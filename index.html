@@ -3309,10 +3309,14 @@ function townArt(s, opts){
   return `<svg class="emap wxart townphoto" width="100%" height="100%" role="img" aria-label="Photo: ${esc(t.what)}" style="background:#cfd8dc"><image href="/img/places/${k}.jpg?v=1" x="0" y="0" width="100%" height="100%" preserveAspectRatio="xMidYMid slice"/>${opts && opts.credit ? `<text x="99%" y="94%" text-anchor="end" font-size="10" font-family="var(--sans), sans-serif" fill="#fff" stroke="rgba(0,0,0,.55)" stroke-width="2.5" paint-order="stroke">${esc(t.by)} · ${esc(t.lic === "Public domain" || t.lic === "CC0" ? "public domain" : t.lic)}</text>` : ""}</svg>`;
 }
 function townCredit(k){ const t = TOWN_PHOTO[k]; return t ? `${t.what}. Photo: ${t.by}, ${t.lic === "Public domain" || t.lic === "CC0" ? "public domain" : t.lic}` : ""; }
+/* road signs: stories about a named road show its sign (add more roads here with a sign image in /img/roads/) */
+const ROAD_SIGN = { a130: {re:/\bA\s?130\b/i, src:"/img/roads/a130.png?v=1", what:"A130 road sign", bg:"#086b17"} };
+function roadOf(s){ if(!s) return null; const t = `${s.headline||""} ${s.summary||""} ${s.place||""}`; for(const k in ROAD_SIGN){ if(ROAD_SIGN[k].re.test(t)) return k; } return null; }
+function roadArt(s){ const r = ROAD_SIGN[roadOf(s)]; return `<svg class="emap wxart roadsign" width="100%" height="100%" role="img" aria-label="${esc(r.what)}" style="background:${r.bg}"><image href="${r.src}" x="6%" y="6%" width="88%" height="88%" preserveAspectRatio="xMidYMid meet"/></svg>`; }
 /* the art shown for a story: weather scenes for county-wide weather, a sport object for every sport story, club colours (now unused for sport), occasion scenes, otherwise the map */
-function storyArt(s, opts){ opts = opts || {}; return isWeatherArtStory(s) ? weatherArt(s, opts) : sportKindOf(s) ? sportArt(s, opts) : clubOf(s) ? clubArt(s, opts) : seasonKindOf(s) ? seasonArt(s, opts) : !opts.map && townKeyOf(s) ? townArt(s, opts) : storyMap(s, opts); }
-function artCaption(s, noTown){ if(isWeatherArtStory(s)) return `Across Essex · ${WX_LABEL[wxKindOf(s)]}`; const c = clubOf(s), sk = sportKindOf(s); if(sk) return `${c || s.place || "Essex"} · ${SPORT_LABEL[sk]}`; if(c) return CLUBS[c].nick ? `${c} · ${CLUBS[c].nick}` : c; const k = seasonKindOf(s); if(k) return `${s.place || "Essex"} · ${SEASON_LABEL[k]}`; const tk = !noTown && townKeyOf(s); if(tk) return townCredit(tk); return mapCaption(s); }
-function artKick(s, noTown){ if(isWeatherArtStory(s)) return "Where"; if(sportKindOf(s)) return "Sport"; if(clubOf(s)) return "Club"; if(!noTown && !seasonKindOf(s) && townKeyOf(s)) return "Photo"; return "Where"; }
+function storyArt(s, opts){ opts = opts || {}; return isWeatherArtStory(s) ? weatherArt(s, opts) : sportKindOf(s) ? sportArt(s, opts) : !opts.map && roadOf(s) ? roadArt(s, opts) : clubOf(s) ? clubArt(s, opts) : seasonKindOf(s) ? seasonArt(s, opts) : !opts.map && townKeyOf(s) ? townArt(s, opts) : storyMap(s, opts); }
+function artCaption(s, noTown){ if(isWeatherArtStory(s)) return `Across Essex · ${WX_LABEL[wxKindOf(s)]}`; const c = clubOf(s), sk = sportKindOf(s); if(sk) return `${c || s.place || "Essex"} · ${SPORT_LABEL[sk]}`; if(!noTown && roadOf(s)) return `${s.place || "Essex"} · ${ROAD_SIGN[roadOf(s)].what}`; if(c) return CLUBS[c].nick ? `${c} · ${CLUBS[c].nick}` : c; const k = seasonKindOf(s); if(k) return `${s.place || "Essex"} · ${SEASON_LABEL[k]}`; const tk = !noTown && townKeyOf(s); if(tk) return townCredit(tk); return mapCaption(s); }
+function artKick(s, noTown){ if(isWeatherArtStory(s)) return "Where"; if(sportKindOf(s)) return "Sport"; if(!noTown && roadOf(s)) return "Road"; if(clubOf(s)) return "Club"; if(!noTown && !seasonKindOf(s) && townKeyOf(s)) return "Photo"; return "Where"; }
 
 /* ============================================================
    weather icons, sun and moon
@@ -3526,7 +3530,7 @@ function renderTopList(){
 
 function cardHtml(s, wide, art){
   return `<a class="card tc${wide?" wide":""}" href="${storyHref(s)}" style="--c:${iconColour(s)}">
-    ${art && SPORT_PHOTO[sportKindOf(s)] ? `<div class="cart">${sportArt(s)}</div>` : art && clubOf(s) ? `<div class="cart">${clubArt(s,{aspect:2.6})}</div>` : !sportKindOf(s) && !clubOf(s) && !isWeatherArtStory(s) && townKeyOf(s) ? `<div class="cart">${townArt(s,{credit:true})}</div>` : ""}
+    ${!sportKindOf(s) && !isWeatherArtStory(s) && roadOf(s) ? `<div class="cart">${roadArt(s)}</div>` : art && SPORT_PHOTO[sportKindOf(s)] ? `<div class="cart">${sportArt(s)}</div>` : art && clubOf(s) ? `<div class="cart">${clubArt(s,{aspect:2.6})}</div>` : !sportKindOf(s) && !clubOf(s) && !isWeatherArtStory(s) && townKeyOf(s) ? `<div class="cart">${townArt(s,{credit:true})}</div>` : ""}
     <div class="body">
       <div class="kick"><span class="tg${s.breaking?" hot":""}">${s.breaking?"Breaking":esc(s.tag||"News")}</span></div>
       <div class="meta"><span class="place">${esc(s.place||"Essex")}</span><span>·</span><span data-ago="${esc(s.time||"")}">${ago(s.time)}</span></div>
