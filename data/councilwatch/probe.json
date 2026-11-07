@@ -1,0 +1,478 @@
+{
+ "at": "2026-11-07T10:25:12.666615+00:00",
+ "councils": {
+  "basildon": [
+   {
+    "url": "https://www.basildon.gov.uk",
+    "status": 403,
+    "final": "https://www.basildon.gov.uk",
+    "title": "",
+    "abs": [],
+    "rel": []
+   },
+   {
+    "url": "https://www.basildonmeetings.info",
+    "status": 403,
+    "final": "https://www.basildonmeetings.info",
+    "title": "",
+    "abs": [],
+    "rel": []
+   },
+   {
+    "url": "https://basildon.moderngov.co.uk",
+    "status": 522,
+    "final": "https://basildon.moderngov.co.uk",
+    "title": "",
+    "abs": [],
+    "rel": []
+   }
+  ],
+  "braintree": [
+   {
+    "url": "https://www.braintree.gov.uk/council/committee-meetings-minutes",
+    "status": 404,
+    "final": "https://www.braintree.gov.uk/council/committee-meetings-minutes",
+    "title": "",
+    "abs": [],
+    "rel": []
+   },
+   {
+    "url": "https://braintree.moderngov.co.uk",
+    "status": 522,
+    "final": "https://braintree.moderngov.co.uk",
+    "title": "",
+    "abs": [],
+    "rel": []
+   },
+   {
+    "url": "https://www.braintree.gov.uk/meetings",
+    "status": 200,
+    "final": "https://www.braintree.gov.uk/meetings",
+    "title": "Meetings \u2013 Braintree District Council",
+    "abs": [],
+    "rel": []
+   }
+  ],
+  "brentwood": [
+   {
+    "url": "https://www.brentwood.gov.uk",
+    "status": 200,
+    "final": "https://www.brentwood.gov.uk",
+    "title": "Home | Brentwood Council",
+    "abs": [],
+    "rel": [],
+    "calendar": {
+     "status": 403,
+     "final": "https://www.brentwood.gov.uk/mgCalendarMonthView.aspx?M=11&Y=2026",
+     "rel": []
+    },
+    "webservice": {
+     "status": 404,
+     "head": ""
+    },
+    "robots": "#\n# robots.txt\n#\n# This file is to prevent the crawling and indexing of certain parts\n# of your site by web crawlers and spiders run by sites like Yahoo!\n# and Google. By telling these \"robots\" where not to go on your site,\n# you save bandwidth and server resources.\n#\n# This file will be ignored unless it is at the root of your host:\n# Used:    http://example.com/robots.txt\n# Ignored: http://example.com/site/robots.txt\n#\n# For more information about the robots.txt standard, see:\n# http://www.robotstxt.org/robotstxt.html\n\nUser-agent: *\n# CSS, JS, Images\nAllow: /core/*.css$\nAllow: /core/*.css?\nA"
+   },
+   {
+    "url": "https://brentwood.moderngov.co.uk",
+    "status": 403,
+    "final": "https://brentwood.moderngov.co.uk",
+    "title": "",
+    "abs": [],
+    "rel": []
+   },
+   {
+    "url": "https://democracy.brentwood.gov.uk",
+    "status": 0,
+    "final": "https://democracy.brentwood.gov.uk",
+    "title": "<urlopen error [Errno -2] Name or service not known>",
+    "abs": [],
+    "rel": []
+   }
+  ],
+  "castlepoint": [
+   {
+    "url": "https://www.castlepoint.gov.uk",
+    "status": 200,
+    "final": "https://www.castlepoint.gov.uk",
+    "title": "Home - Castle Point Borough Council",
+    "abs": [],
+    "rel": []
+   },
+   {
+    "url": "https://castlepoint.moderngov.co.uk",
+    "status": 522,
+    "final": "https://castlepoint.moderngov.co.uk",
+    "title": "",
+    "abs": [],
+    "rel": []
+   },
+   {
+    "url": "https://www.castlepoint.gov.uk/meetings",
+    "status": 404,
+    "final": "https://www.castlepoint.gov.uk/meetings",
+    "title": "",
+    "abs": [],
+    "rel": []
+   }
+  ],
+  "chelmsford": [
+   {
+    "url": "https://www.chelmsford.gov.uk/committee-meetings/",
+    "status": 200,
+    "final": "https://www.chelmsford.gov.uk/committee-meetings/",
+    "title": "Committee meetings",
+    "abs": [
+     "https://www.chelmsford.gov.uk/committee-meetings/",
+     "https://www.chelmsford.gov.uk/committee-meetings/audit-and-risk-committee-december-2026/",
+     "https://www.chelmsford.gov.uk/committee-meetings/audit-and-risk-committee-march-2027/",
+     "https://www.chelmsford.gov.uk/committee-meetings/cabinet-january-2027/",
+     "https://www.chelmsford.gov.uk/committee-meetings/cabinet-march-2027/",
+     "https://www.chelmsford.gov.uk/committee-meetings/cabinet-november-2026/",
+     "https://www.chelmsford.gov.uk/committee-meetings/chelmsford-policy-board-january-2027/",
+     "https://www.chelmsford.gov.uk/committee-meetings/chelmsford-policy-board-march-2027/",
+     "https://www.chelmsford.gov.uk/committee-meetings/full-council-december-2026/",
+     "https://www.chelmsford.gov.uk/committee-meetings/full-council-february-2027/",
+     "https://www.chelmsford.gov.uk/committee-meetings/governance-committee-january-2027/",
+     "https://www.chelmsford.gov.uk/committee-meetings/governance-committee-march-2027/"
+    ],
+    "rel": [
+     "https://www.chelmsford.gov.uk/committee-meetings/audit-and-risk-committee-december-2026/",
+     "https://www.chelmsford.gov.uk/committee-meetings/audit-and-risk-committee-march-2027/",
+     "https://www.chelmsford.gov.uk/committee-meetings/cabinet-january-2027/",
+     "https://www.chelmsford.gov.uk/committee-meetings/cabinet-march-2027/",
+     "https://www.chelmsford.gov.uk/committee-meetings/cabinet-november-2026/",
+     "https://www.chelmsford.gov.uk/committee-meetings/chelmsford-policy-board-january-2027/",
+     "https://www.chelmsford.gov.uk/committee-meetings/chelmsford-policy-board-march-2027/",
+     "https://www.chelmsford.gov.uk/committee-meetings/full-council-december-2026/",
+     "https://www.chelmsford.gov.uk/committee-meetings/full-council-february-2027/",
+     "https://www.chelmsford.gov.uk/committee-meetings/governance-committee-january-2027/",
+     "https://www.chelmsford.gov.uk/committee-meetings/governance-committee-march-2027/",
+     "https://www.chelmsford.gov.uk/committee-meetings/governance-committee-november-2026/"
+    ]
+   },
+   {
+    "url": "https://chelmsford.moderngov.co.uk",
+    "status": 522,
+    "final": "https://chelmsford.moderngov.co.uk",
+    "title": "",
+    "abs": [],
+    "rel": []
+   },
+   {
+    "url": "https://democracy.chelmsford.gov.uk",
+    "status": 0,
+    "final": "https://democracy.chelmsford.gov.uk",
+    "title": "<urlopen error [Errno -2] Name or service not known>",
+    "abs": [],
+    "rel": []
+   }
+  ],
+  "colchester": [
+   {
+    "url": "https://colchester.cmis.uk.com/colchester/",
+    "status": 200,
+    "final": "https://colchester.cmis.uk.com/colchester/",
+    "title": "CMIS > Committees",
+    "abs": [
+     "http://colchester.cmis.uk.com/colchester/UserRegistration/tabid/185/Default.aspx?returnurl=http%3a%2f%2fcolchester.cmis.uk.com%2fcolchester%2fCommittees.aspx",
+     "https://colchester.cmis.uk.com/colchester/Committees/tabid/62/ctl/ViewCMIS_CommitteeDetails/mid/381/id/10/Default.aspx",
+     "https://colchester.cmis.uk.com/colchester/Committees/tabid/62/ctl/ViewCMIS_CommitteeDetails/mid/381/id/11/Default.aspx",
+     "https://colchester.cmis.uk.com/colchester/Committees/tabid/62/ctl/ViewCMIS_CommitteeDetails/mid/381/id/12/Default.aspx",
+     "https://colchester.cmis.uk.com/colchester/Committees/tabid/62/ctl/ViewCMIS_CommitteeDetails/mid/381/id/13/Default.aspx",
+     "https://colchester.cmis.uk.com/colchester/Committees/tabid/62/ctl/ViewCMIS_CommitteeDetails/mid/381/id/14/Default.aspx",
+     "https://colchester.cmis.uk.com/colchester/Committees/tabid/62/ctl/ViewCMIS_CommitteeDetails/mid/381/id/15/Default.aspx",
+     "https://colchester.cmis.uk.com/colchester/Committees/tabid/62/ctl/ViewCMIS_CommitteeDetails/mid/381/id/16/Default.aspx",
+     "https://colchester.cmis.uk.com/colchester/Committees/tabid/62/ctl/ViewCMIS_CommitteeDetails/mid/381/id/21/Default.aspx",
+     "https://colchester.cmis.uk.com/colchester/Committees/tabid/62/ctl/ViewCMIS_CommitteeDetails/mid/381/id/28/Default.aspx",
+     "https://colchester.cmis.uk.com/colchester/Committees/tabid/62/ctl/ViewCMIS_CommitteeDetails/mid/381/id/29/Default.aspx",
+     "https://colchester.cmis.uk.com/colchester/Committees/tabid/62/ctl/ViewCMIS_CommitteeDetails/mid/381/id/30/Default.aspx"
+    ],
+    "rel": []
+   },
+   {
+    "url": "https://colchester.cmis.uk.com/colchester/CalendarofMeetings.aspx",
+    "status": 404,
+    "final": "https://colchester.cmis.uk.com/colchester/CalendarofMeetings.aspx",
+    "title": "",
+    "abs": [],
+    "rel": []
+   }
+  ],
+  "epping": [
+   {
+    "url": "https://www.eppingforestdc.gov.uk",
+    "status": 403,
+    "final": "https://www.eppingforestdc.gov.uk",
+    "title": "",
+    "abs": [],
+    "rel": []
+   },
+   {
+    "url": "https://rds.eppingforestdc.gov.uk",
+    "status": 200,
+    "final": "https://rds.eppingforestdc.gov.uk/uuCoverPage.aspx?bcr=1",
+    "title": "Find your councillor - Epping Forest District Council",
+    "abs": [
+     "https://rds.eppingforestdc.gov.uk/ieDocHome.aspx?bcr=1",
+     "https://rds.eppingforestdc.gov.uk/mgCalendarMonthView.aspx?GL=1&amp;bcr=1"
+    ],
+    "rel": [
+     "https://rds.eppingforestdc.gov.uk/ieDocHome.aspx?bcr=1",
+     "https://rds.eppingforestdc.gov.uk/mgCalendarMonthView.aspx?GL=1&amp;bcr=1",
+     "ieDocHome.aspx",
+     "ieDocHome.aspx?bcr=1&categories=12952"
+    ],
+    "calendar": {
+     "status": 200,
+     "final": "https://rds.eppingforestdc.gov.uk/uuCoverPage.aspx?bcr=1/mgCalendarMonthView.aspx?M=11&Y=2026",
+     "rel": [
+      "https://rds.eppingforestdc.gov.uk/ieDocHome.aspx?bcr=1",
+      "https://rds.eppingforestdc.gov.uk/mgCalendarMonthView.aspx?GL=1&amp;bcr=1",
+      "ieDocHome.aspx",
+      "ieDocHome.aspx?bcr=1&categories=12952"
+     ]
+    },
+    "webservice": {
+     "status": 200,
+     "head": "<!doctype html>\r\n<html lang=\"en-GB\">\r\n\r\n<head>\n<meta http-equiv='X-UA-Compatible' content='IE=edge, chrome=1' /><meta name=\"DC.title\"  content=\"Meetings, agenda, and minutes\"/>\r\n<meta name=\"DC.description\"  content=\"The home page for all information relating to decision making in the council\"/>\r\n<me"
+    },
+    "robots": "User-agent: SemrushBot\r\nUser-agent: AhrefsBot\r\nUser-agent: Baiduspider\r\nUser-agent: YandexBot\r\nUser-agent: Qwantify\r\nUser-agent: AionBot\r\nDisallow: /\r\n\r\nUser-agent: *\r\nDisallow: /*.asmx$"
+   },
+   {
+    "url": "https://eppingforestdc.moderngov.co.uk",
+    "status": 522,
+    "final": "https://eppingforestdc.moderngov.co.uk",
+    "title": "",
+    "abs": [],
+    "rel": []
+   }
+  ],
+  "harlow": [
+   {
+    "url": "https://www.harlow.gov.uk",
+    "status": 200,
+    "final": "https://www.harlow.gov.uk",
+    "title": "Welcome to Harlow Council | Harlow Council",
+    "abs": [],
+    "rel": []
+   },
+   {
+    "url": "https://moderngov.harlow.gov.uk",
+    "status": 0,
+    "final": "https://moderngov.harlow.gov.uk",
+    "title": "<urlopen error [Errno -2] Name or service not known>",
+    "abs": [],
+    "rel": []
+   },
+   {
+    "url": "https://harlow.moderngov.co.uk",
+    "status": 403,
+    "final": "https://harlow.moderngov.co.uk",
+    "title": "",
+    "abs": [],
+    "rel": []
+   }
+  ],
+  "maldon": [
+   {
+    "url": "https://democracy.maldon.gov.uk",
+    "status": 200,
+    "final": "https://democracy.maldon.gov.uk/uuCoverPage.aspx?bcr=1",
+    "title": "Meetings, agendas, and minutes :: Maldon District Council",
+    "abs": [],
+    "rel": [
+     "ieDocHome.aspx?Categories=",
+     "ieDocHome.aspx?bcr=1",
+     "ieDocHome.aspx?bcr=1&categories=12952",
+     "mgCalendarMonthView.aspx?GL=1&amp;bcr=1"
+    ],
+    "calendar": {
+     "status": 200,
+     "final": "https://democracy.maldon.gov.uk/uuCoverPage.aspx?bcr=1/mgCalendarMonthView.aspx?M=11&Y=2026",
+     "rel": [
+      "ieDocHome.aspx?Categories=",
+      "ieDocHome.aspx?bcr=1",
+      "ieDocHome.aspx?bcr=1&categories=12952",
+      "mgCalendarMonthView.aspx?GL=1&amp;bcr=1"
+     ]
+    },
+    "webservice": {
+     "status": 200,
+     "head": "<!DOCTYPE html>\n<!--[if lt IE 7]>       <html class=\"no-js lt-ie10 lt-ie9 lt-ie8 lt-ie7\" lang=\"en\"> <![endif]-->\n<!--[if IE 7]>          <html class=\"no-js lt-ie10 lt-ie9 lt-ie8\" lang=\"en\"> <![endif]-->\n<!--[if IE 8]>          <html class=\"no-js lt-ie10 lt-ie9\" lang=\"en\"> <![endif]-->\n<!--[if IE 9]>"
+    },
+    "robots": "# As a condition of accessing this website, you agree to abide by the following\n# content signals:\n\n# (a)  If a content-signal = yes, you may collect content for the corresponding\n#      use.\n# (b)  If a content-signal = no, you may not collect content for the\n#      corresponding use.\n# (c)  If the website operator does not include a content signal for a\n#      corresponding use, the website operator neither grants nor restricts\n#      permission via content signal with respect to the corresponding use.\n\n# The content signals and their meanings are:\n\n# search:   building a search index and pr"
+   }
+  ],
+  "rochford": [
+   {
+    "url": "https://www.rochford.gov.uk",
+    "status": 200,
+    "final": "https://www.rochford.gov.uk",
+    "title": "Rochford Council",
+    "abs": [],
+    "rel": [],
+    "calendar": {
+     "status": 403,
+     "final": "https://www.rochford.gov.uk/mgCalendarMonthView.aspx?M=11&Y=2026",
+     "rel": []
+    },
+    "webservice": {
+     "status": 404,
+     "head": ""
+    },
+    "robots": "#\n# robots.txt\n#\n# This file is to prevent the crawling and indexing of certain parts\n# of your site by web crawlers and spiders run by sites like Yahoo!\n# and Google. By telling these \"robots\" where not to go on your site,\n# you save bandwidth and server resources.\n#\n# This file will be ignored unless it is at the root of your host:\n# Used:    http://example.com/robots.txt\n# Ignored: http://example.com/site/robots.txt\n#\n# For more information about the robots.txt standard, see:\n# http://www.robotstxt.org/robotstxt.html\n\nUser-agent: *\n# CSS, JS, Images\nAllow: /core/*.css$\nAllow: /core/*.css?\nA"
+   },
+   {
+    "url": "https://rochford.moderngov.co.uk",
+    "status": 403,
+    "final": "https://rochford.moderngov.co.uk",
+    "title": "",
+    "abs": [],
+    "rel": []
+   },
+   {
+    "url": "https://democracy.rochford.gov.uk",
+    "status": 0,
+    "final": "https://democracy.rochford.gov.uk",
+    "title": "<urlopen error [Errno -2] Name or service not known>",
+    "abs": [],
+    "rel": []
+   }
+  ],
+  "tendring": [
+   {
+    "url": "https://www.tendringdc.gov.uk",
+    "status": 200,
+    "final": "https://www.tendringdc.gov.uk",
+    "title": "Tendring District Council | Welcome to the official website of Tendring District Council",
+    "abs": [],
+    "rel": []
+   },
+   {
+    "url": "https://tendring.moderngov.co.uk",
+    "status": 522,
+    "final": "https://tendring.moderngov.co.uk",
+    "title": "",
+    "abs": [],
+    "rel": []
+   },
+   {
+    "url": "https://tdcdemocracy.tendringdc.uk",
+    "status": 0,
+    "final": "https://tdcdemocracy.tendringdc.uk",
+    "title": "<urlopen error [Errno -2] Name or service not known>",
+    "abs": [],
+    "rel": []
+   }
+  ],
+  "uttlesford": [
+   {
+    "url": "https://www.uttlesford.gov.uk",
+    "status": 403,
+    "final": "https://www.uttlesford.gov.uk",
+    "title": "",
+    "abs": [],
+    "rel": []
+   },
+   {
+    "url": "https://uttlesford.moderngov.co.uk",
+    "status": 403,
+    "final": "https://uttlesford.moderngov.co.uk",
+    "title": "",
+    "abs": [],
+    "rel": []
+   },
+   {
+    "url": "https://democracy.uttlesford.gov.uk",
+    "status": 0,
+    "final": "https://democracy.uttlesford.gov.uk",
+    "title": "<urlopen error [Errno -2] Name or service not known>",
+    "abs": [],
+    "rel": []
+   }
+  ],
+  "southend": [
+   {
+    "url": "https://democracy.southend.gov.uk",
+    "status": 200,
+    "final": "https://democracy.southend.gov.uk/uuCoverPage.aspx?bcr=1",
+    "title": "Democracy \u2013 Southend-on-Sea City Council",
+    "abs": [
+     "https://democracy.southend.gov.uk/ieListDocuments.aspx?CId=588&MId=5061&Ver=4&Info=1"
+    ],
+    "rel": [
+     "ieDocHome.aspx?Categories=",
+     "ieDocHome.aspx?bcr=1",
+     "ieDocHome.aspx?bcr=1&categories=12952",
+     "mgCalendarMonthView.aspx?GL=1&amp;bcr=1"
+    ],
+    "calendar": {
+     "status": 200,
+     "final": "https://democracy.southend.gov.uk/uuCoverPage.aspx?bcr=1/mgCalendarMonthView.aspx?M=11&Y=2026",
+     "rel": [
+      "ieDocHome.aspx?Categories=",
+      "ieDocHome.aspx?bcr=1",
+      "ieDocHome.aspx?bcr=1&categories=12952",
+      "mgCalendarMonthView.aspx?GL=1&amp;bcr=1"
+     ]
+    },
+    "webservice": {
+     "status": 200,
+     "head": "<!DOCTYPE html>\n\n    <!--[if IE 9]>          <html class=\"lt-ie10 no-js\" lang=\"en\"> <![endif]-->\n    <!--[if gt IE 9]><!-->  <html class=\" no-js\" lang=\"en\"><!--<![endif]-->\n\n    <head>\n<meta http-equiv='X-UA-Compatible' content='IE=edge, chrome=1' /><meta name=\"DC.title\"  content=\"Democracy\"/>\r\n<met"
+    },
+    "robots": "User-agent: *\r\nDisallow: /*.asmx$\r\n\r\nUser-agent: AhrefsBot\r\nDisAllow: /"
+   }
+  ],
+  "thurrock": [
+   {
+    "url": "https://democracy.thurrock.gov.uk",
+    "status": 200,
+    "final": "https://democracy.thurrock.gov.uk/uuCoverPage.aspx?bcr=1",
+    "title": "Meetings, agendas, and minutes | Thurrock Council",
+    "abs": [],
+    "rel": [
+     "ieDocHome.aspx?bcr=1",
+     "ieDocHome.aspx?bcr=1&categories=12952",
+     "mgCalendarMonthView.aspx?GL=1&amp;bcr=1"
+    ],
+    "calendar": {
+     "status": 200,
+     "final": "https://democracy.thurrock.gov.uk/uuCoverPage.aspx?bcr=1/mgCalendarMonthView.aspx?M=11&Y=2026",
+     "rel": [
+      "ieDocHome.aspx?bcr=1",
+      "ieDocHome.aspx?bcr=1&categories=12952",
+      "mgCalendarMonthView.aspx?GL=1&amp;bcr=1"
+     ]
+    },
+    "webservice": {
+     "status": 200,
+     "head": "<!-- uuCoverPage.aspx?bcr=1%2fmgWebService.asmx%2fGetMeetings%3flFromDate%3d07%2f11%2f2026&lToDate=07%2f11%2f2026-->\n<!-- -->\n<!-- -->\n<!-- -->\n<!-- -->\n<!DOCTYPE html>\n<html>\n  <!-- Modern.gov Reverse CMS --><head>\n    <meta http-equiv='X-UA-Compatible' content='IE=edge, chrome=1' /><meta name=\"DC."
+    },
+    "robots": "User-agent: *\r\nDisallow: /*.asmx$\r\n\r\nUser-agent: meta-externalagent\r\nDisallow: /"
+   }
+  ],
+  "essex": [
+   {
+    "url": "https://cmis.essex.gov.uk/essexcmis5/CalendarofMeetings.aspx",
+    "status": 200,
+    "final": "https://cmis.essex.gov.uk/essexcmis5/CalendarofMeetings.aspx",
+    "title": "Meetings and Events",
+    "abs": [
+     "http://cmis.essex.gov.uk/essexcmis5/CalendarofMeetings.aspx",
+     "http://cmis.essex.gov.uk/essexcmis5/CommitteeandDemocracyrelatedDocuments.aspx",
+     "http://cmis.essex.gov.uk/essexcmis5/Committees.aspx",
+     "http://cmis.essex.gov.uk/essexcmis5/Committees/EssexParkingPartnership.aspx",
+     "http://cmis.essex.gov.uk/essexcmis5/CommitteesNoLongerActive.aspx",
+     "http://cmis.essex.gov.uk/essexcmis5/CouncillorSearch.aspx",
+     "http://cmis.essex.gov.uk/essexcmis5/Councillors.aspx",
+     "http://cmis.essex.gov.uk/essexcmis5/Decisions.aspx",
+     "http://cmis.essex.gov.uk/essexcmis5/DocumentSearch.aspx",
+     "http://cmis.essex.gov.uk/essexcmis5/Elections.aspx",
+     "http://cmis.essex.gov.uk/essexcmis5/EssexPolice,FireandCrimePanel.aspx",
+     "http://cmis.essex.gov.uk/essexcmis5/ForwardPlan.aspx"
+    ],
+    "rel": []
+   }
+  ]
+ }
+}
