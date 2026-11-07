@@ -1,0 +1,344 @@
+{
+ "basildon": {
+  "file": "/img/places/basildon.jpg",
+  "what": "The Basildon Centre",
+  "by": "Richard Kelly",
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:The_Basildon_Centre.jpg",
+  "commonsFile": "File:The_Basildon_Centre.jpg"
+ },
+ "benfleet": {
+  "file": "/img/places/benfleet.jpg",
+  "what": "St Mary's Church, South Benfleet",
+  "by": "JohnArmagh",
+  "license": "Public domain",
+  "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+  "source": "https://commons.wikimedia.org/wiki/File:StMary'sChurchBenfleet_SouthEast.JPG",
+  "commonsFile": "File:StMary'sChurchBenfleet_SouthEast.JPG"
+ },
+ "billericay": {
+  "file": "/img/places/billericay.jpg",
+  "what": "High Street, Billericay",
+  "by": "MadeInBasildon",
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Billericay_-_57-61,_High_Street_-_20210923130723.jpg",
+  "commonsFile": "File:Billericay_-_57-61,_High_Street_-_20210923130723.jpg"
+ },
+ "braintree": {
+  "file": "/img/places/braintree.jpg",
+  "what": "Braintree Town Hall",
+  "by": "Richard Kelly",
+  "license": "CC BY 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Braintree_Town_Hall.jpg",
+  "commonsFile": "File:Braintree_Town_Hall.jpg"
+ },
+ "brentwood": {
+  "file": "/img/places/brentwood.jpg",
+  "what": "Brentwood Cathedral",
+  "by": "Fr James Bradley",
+  "license": "CC BY 2.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Brentwood_Cathedral_exterior_2.jpg",
+  "commonsFile": "File:Brentwood_Cathedral_exterior_2.jpg"
+ },
+ "brightlingsea": {
+  "file": "/img/places/brightlingsea.jpg",
+  "what": "Western promenade, Brightlingsea",
+  "by": "Helen Steed",
+  "license": "CC BY-SA 2.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Western_promenade,_Brightlingsea_-_geograph.org.uk_-_7338080.jpg",
+  "commonsFile": "File:Western_promenade,_Brightlingsea_-_geograph.org.uk_-_7338080.jpg"
+ },
+ "burnham": {
+  "file": "/img/places/burnham.jpg",
+  "what": "Burnham-on-Crouch marina",
+  "by": "Robert Eva",
+  "license": "CC BY-SA 2.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Burnham_on_Crouch_marina_-_geograph.org.uk_-_5671413.jpg",
+  "commonsFile": "File:Burnham_on_Crouch_marina_-_geograph.org.uk_-_5671413.jpg"
+ },
+ "canvey": {
+  "file": "/img/places/canvey.jpg",
+  "what": "Canvey Island seafront",
+  "by": "Brian Chadwick",
+  "license": "CC BY-SA 2.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+  "source": "https://commons.wikimedia.org/wiki/File:The_approach_to_the_seafront_at_Canvey_Island_-_geograph.org.uk_-_1889960.jpg",
+  "commonsFile": "File:The_approach_to_the_seafront_at_Canvey_Island_-_geograph.org.uk_-_1889960.jpg"
+ },
+ "chelmsford": {
+  "file": "/img/places/chelmsford.jpg",
+  "what": "Chelmsford Cathedral",
+  "by": "Diliff",
+  "license": "CC BY-SA 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Chelmsford_Cathedral_Exterior,_Essex,_UK_-_Diliff.jpg",
+  "commonsFile": "File:Chelmsford_Cathedral_Exterior,_Essex,_UK_-_Diliff.jpg"
+ },
+ "chigwell": {
+  "file": "/img/places/chigwell.jpg",
+  "what": "Chigwell station",
+  "by": "Stacey Harris",
+  "license": "CC BY-SA 2.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Chigwell_underground_station_-_geograph.org.uk_-_2381964.jpg",
+  "commonsFile": "File:Chigwell_underground_station_-_geograph.org.uk_-_2381964.jpg"
+ },
+ "clacton": {
+  "file": "/img/places/clacton.jpg",
+  "what": "Clacton Pier",
+  "by": "Steve Daniels",
+  "license": "CC BY-SA 2.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Clacton_Pier_-_geograph.org.uk_-_5530161.jpg",
+  "commonsFile": "File:Clacton_Pier_-_geograph.org.uk_-_5530161.jpg"
+ },
+ "coggeshall": {
+  "file": "/img/places/coggeshall.jpg",
+  "what": "Grange Barn, Coggeshall",
+  "by": "Tim Heaton",
+  "license": "CC BY-SA 2.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Grange_Barn,_Coggeshall_-_geograph.org.uk_-_6649109.jpg",
+  "commonsFile": "File:Grange_Barn,_Coggeshall_-_geograph.org.uk_-_6649109.jpg"
+ },
+ "colchester": {
+  "file": "/img/places/colchester.jpg",
+  "what": "Colchester Castle",
+  "by": "Spudgun67",
+  "license": "CC0",
+  "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+  "source": "https://commons.wikimedia.org/wiki/File:Colchester_Castle_Castle_Park_Colchester_Essex_CO1_1TJ.jpg",
+  "commonsFile": "File:Colchester_Castle_Castle_Park_Colchester_Essex_CO1_1TJ.jpg"
+ },
+ "dunmow": {
+  "file": "/img/places/dunmow.jpg",
+  "what": "North Street, Great Dunmow",
+  "by": "Malc McDonald",
+  "license": "CC BY-SA 2.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+  "source": "https://commons.wikimedia.org/wiki/File:North_Street,_Great_Dunmow_-_geograph.org.uk_-_7333292.jpg",
+  "commonsFile": "File:North_Street,_Great_Dunmow_-_geograph.org.uk_-_7333292.jpg"
+ },
+ "epping": {
+  "file": "/img/places/epping.jpg",
+  "what": "Epping High Street",
+  "by": "Nigel Thompson",
+  "license": "CC BY-SA 2.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Epping_High_Street_-_geograph.org.uk_-_7463158.jpg",
+  "commonsFile": "File:Epping_High_Street_-_geograph.org.uk_-_7463158.jpg"
+ },
+ "frinton": {
+  "file": "/img/places/frinton.jpg",
+  "what": "Frinton-on-Sea beach",
+  "by": "Rhys Wynne",
+  "license": "CC BY-SA 2.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Frinton-on-sea_(274636193).jpg",
+  "commonsFile": "File:Frinton-on-sea_(274636193).jpg"
+ },
+ "grays": {
+  "file": "/img/places/grays.jpg",
+  "what": "Riverside gardens, Grays",
+  "by": "Robert Eva",
+  "license": "CC BY-SA 2.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Riverside_gardens_at_Grays_-_geograph.org.uk_-_5531644.jpg",
+  "commonsFile": "File:Riverside_gardens_at_Grays_-_geograph.org.uk_-_5531644.jpg"
+ },
+ "halstead": {
+  "file": "/img/places/halstead.jpg",
+  "what": "River Colne, Halstead",
+  "by": "Nick MacNeill",
+  "license": "CC BY-SA 2.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+  "source": "https://commons.wikimedia.org/wiki/File:River_Colne,_Halstead_-_geograph.org.uk_-_2512408.jpg",
+  "commonsFile": "File:River_Colne,_Halstead_-_geograph.org.uk_-_2512408.jpg"
+ },
+ "harlow": {
+  "file": "/img/places/harlow.jpg",
+  "what": "Water Gardens, Harlow",
+  "by": "FromMorningToMidnight",
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Harlow_-_Water_Gardens_-_20220823190714.jpg",
+  "commonsFile": "File:Harlow_-_Water_Gardens_-_20220823190714.jpg"
+ },
+ "harwich": {
+  "file": "/img/places/harwich.jpg",
+  "what": "Ha'penny Pier, Harwich",
+  "by": "Bob Jones",
+  "license": "CC BY-SA 2.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Ha'penny_Pier,_Harwich_-_geograph.org.uk_-_2565200.jpg",
+  "commonsFile": "File:Ha'penny_Pier,_Harwich_-_geograph.org.uk_-_2565200.jpg"
+ },
+ "leigh": {
+  "file": "/img/places/leigh.jpg",
+  "what": "Old Leigh, Leigh-on-Sea",
+  "by": "Chris Wood",
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Leigh-on-Sea_-_Old_Leigh_-_05.jpg",
+  "commonsFile": "File:Leigh-on-Sea_-_Old_Leigh_-_05.jpg"
+ },
+ "loughton": {
+  "file": "/img/places/loughton.jpg",
+  "what": "High Road, Loughton",
+  "by": "Peter Trimming",
+  "license": "CC BY-SA 2.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Loughton_-_geograph.org.uk_-_5041403.jpg",
+  "commonsFile": "File:Loughton_-_geograph.org.uk_-_5041403.jpg"
+ },
+ "maldon": {
+  "file": "/img/places/maldon.jpg",
+  "what": "Hythe Quay, Maldon",
+  "by": "ClemRutter",
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Hythe_Quay,_Maldon_3787.jpg",
+  "commonsFile": "File:Hythe_Quay,_Maldon_3787.jpg"
+ },
+ "mersea": {
+  "file": "/img/places/mersea.jpg",
+  "what": "Beach huts, West Mersea",
+  "by": "Robert Eva",
+  "license": "CC BY-SA 2.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Beach_Huts,_West_Mersea_-_geograph.org.uk_-_5291459.jpg",
+  "commonsFile": "File:Beach_Huts,_West_Mersea_-_geograph.org.uk_-_5291459.jpg"
+ },
+ "purfleet": {
+  "file": "/img/places/purfleet.jpg",
+  "what": "River Thames at Purfleet",
+  "by": "Richard Rogerson",
+  "license": "CC BY-SA 2.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Landing_Stage_on_the_River_Thames,_Purfleet_-_geograph.org.uk_-_6124336.jpg",
+  "commonsFile": "File:Landing_Stage_on_the_River_Thames,_Purfleet_-_geograph.org.uk_-_6124336.jpg"
+ },
+ "rayleigh": {
+  "file": "/img/places/rayleigh.jpg",
+  "what": "Rayleigh Windmill",
+  "by": "Jonathan Cardy",
+  "license": "CC BY-SA 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Rayleigh_Windmill_7.JPG",
+  "commonsFile": "File:Rayleigh_Windmill_7.JPG"
+ },
+ "rochford": {
+  "file": "/img/places/rochford.jpg",
+  "what": "Rochford Hall",
+  "by": "David Kemp",
+  "license": "CC BY-SA 2.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Rochford_Hall_-_geograph.org.uk_-_5817807.jpg",
+  "commonsFile": "File:Rochford_Hall_-_geograph.org.uk_-_5817807.jpg"
+ },
+ "saffronwalden": {
+  "file": "/img/places/saffronwalden.jpg",
+  "what": "Saffron Walden",
+  "by": "Peter Trimming",
+  "license": "CC BY-SA 2.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Saffron_Walden_-_geograph.org.uk_-_4412899.jpg",
+  "commonsFile": "File:Saffron_Walden_-_geograph.org.uk_-_4412899.jpg"
+ },
+ "shoebury": {
+  "file": "/img/places/shoebury.jpg",
+  "what": "East Beach, Shoeburyness",
+  "by": "Jim Osley",
+  "license": "CC BY-SA 2.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Shoeburyness_,_Groynes_-_geograph.org.uk_-_5857451.jpg",
+  "commonsFile": "File:Shoeburyness_,_Groynes_-_geograph.org.uk_-_5857451.jpg"
+ },
+ "southend": {
+  "file": "/img/places/southend.jpg",
+  "what": "Southend Pier",
+  "by": "Damian Dukarski",
+  "license": "CC BY-SA 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Southend_Pier_Autumn_2007_-_crop.jpg",
+  "commonsFile": "File:Southend_Pier_Autumn_2007_-_crop.jpg"
+ },
+ "stanford": {
+  "file": "/img/places/stanford.jpg",
+  "what": "St Margaret's Church, Stanford-le-Hope",
+  "by": "John Salmon",
+  "license": "CC BY-SA 2.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+  "source": "https://commons.wikimedia.org/wiki/File:St_Margaret_of_Antioch,_Stanford_le_Hope,_Essex_-_geograph.org.uk_-_1862988.jpg",
+  "commonsFile": "File:St_Margaret_of_Antioch,_Stanford_le_Hope,_Essex_-_geograph.org.uk_-_1862988.jpg"
+ },
+ "stansted": {
+  "file": "/img/places/stansted.jpg",
+  "what": "Stansted Mountfitchet windmill",
+  "by": "Christine Matthews",
+  "license": "CC BY-SA 2.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Windmill_at_Stansted_Mountfitchet_-_geograph.org.uk_-_5686287.jpg",
+  "commonsFile": "File:Windmill_at_Stansted_Mountfitchet_-_geograph.org.uk_-_5686287.jpg"
+ },
+ "swf": {
+  "file": "/img/places/swf.jpg",
+  "what": "South Woodham Ferrers from the air",
+  "by": "Terry Joyce",
+  "license": "CC BY-SA 2.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+  "source": "https://commons.wikimedia.org/wiki/File:South_Woodham_Ferrers_-_geograph.org.uk_-_2125855.jpg",
+  "commonsFile": "File:South_Woodham_Ferrers_-_geograph.org.uk_-_2125855.jpg"
+ },
+ "tilbury": {
+  "file": "/img/places/tilbury.jpg",
+  "what": "Tilbury Fort",
+  "by": "Hugh Llewelyn",
+  "license": "CC BY-SA 2.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Tilbury_Fort_-_48957435023.jpg",
+  "commonsFile": "File:Tilbury_Fort_-_48957435023.jpg"
+ },
+ "walthamabbey": {
+  "file": "/img/places/walthamabbey.jpg",
+  "what": "Waltham Abbey Church",
+  "by": "The wub",
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Waltham_Abbey_Church_from_southeast_2022-02-26.jpg",
+  "commonsFile": "File:Waltham_Abbey_Church_from_southeast_2022-02-26.jpg"
+ },
+ "walton": {
+  "file": "/img/places/walton.jpg",
+  "what": "The Naze Tower, Walton-on-the-Naze",
+  "by": "Michael Coppins",
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:The_Naze_Tower.jpg",
+  "commonsFile": "File:The_Naze_Tower.jpg"
+ },
+ "wickford": {
+  "file": "/img/places/wickford.jpg",
+  "what": "Wickford station",
+  "by": "Robert Eva",
+  "license": "CC BY-SA 2.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Wickford_station_footbridge_(geograph_5671926).jpg",
+  "commonsFile": "File:Wickford_station_footbridge_(geograph_5671926).jpg"
+ },
+ "witham": {
+  "file": "/img/places/witham.jpg",
+  "what": "Newland Street, Witham",
+  "by": "Christopher Hilton",
+  "license": "CC BY-SA 2.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Newland_Street,_Witham_-_geograph.org.uk_-_7167860.jpg",
+  "commonsFile": "File:Newland_Street,_Witham_-_geograph.org.uk_-_7167860.jpg"
+ }
+}

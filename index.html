@@ -3190,10 +3190,89 @@ function sportArt(s, opts){
   <rect width="100%" height="100%" filter="url(#${u}g)" opacity=".06"/>
 </svg>`;
 }
+/* ============================================================
+   Town photographs: one freely licensed photo per town, from
+   Wikimedia Commons (full credits in img/places/credits.json
+   and on the About page). Used as story art when a story's
+   place is one town (or two), never for police, crime, court,
+   fire, ambulance or tribute stories, which keep the map.
+   ============================================================ */
+const TOWN_PHOTO = {
+  basildon:{what:"The Basildon Centre", by:"Richard Kelly", lic:"CC BY-SA 4.0"},
+  benfleet:{what:"St Mary's Church, South Benfleet", by:"JohnArmagh", lic:"Public domain"},
+  billericay:{what:"High Street, Billericay", by:"MadeInBasildon", lic:"CC BY-SA 4.0"},
+  braintree:{what:"Braintree Town Hall", by:"Richard Kelly", lic:"CC BY 4.0"},
+  brentwood:{what:"Brentwood Cathedral", by:"Fr James Bradley", lic:"CC BY 2.0"},
+  brightlingsea:{what:"Western promenade, Brightlingsea", by:"Helen Steed", lic:"CC BY-SA 2.0"},
+  burnham:{what:"Burnham-on-Crouch marina", by:"Robert Eva", lic:"CC BY-SA 2.0"},
+  canvey:{what:"Canvey Island seafront", by:"Brian Chadwick", lic:"CC BY-SA 2.0"},
+  chelmsford:{what:"Chelmsford Cathedral", by:"Diliff", lic:"CC BY-SA 3.0"},
+  chigwell:{what:"Chigwell station", by:"Stacey Harris", lic:"CC BY-SA 2.0"},
+  clacton:{what:"Clacton Pier", by:"Steve Daniels", lic:"CC BY-SA 2.0"},
+  coggeshall:{what:"Grange Barn, Coggeshall", by:"Tim Heaton", lic:"CC BY-SA 2.0"},
+  colchester:{what:"Colchester Castle", by:"Spudgun67", lic:"CC0"},
+  dunmow:{what:"North Street, Great Dunmow", by:"Malc McDonald", lic:"CC BY-SA 2.0"},
+  epping:{what:"Epping High Street", by:"Nigel Thompson", lic:"CC BY-SA 2.0"},
+  frinton:{what:"Frinton-on-Sea beach", by:"Rhys Wynne", lic:"CC BY-SA 2.0"},
+  grays:{what:"Riverside gardens, Grays", by:"Robert Eva", lic:"CC BY-SA 2.0"},
+  halstead:{what:"River Colne, Halstead", by:"Nick MacNeill", lic:"CC BY-SA 2.0"},
+  harlow:{what:"Water Gardens, Harlow", by:"FromMorningToMidnight", lic:"CC BY-SA 4.0"},
+  harwich:{what:"Ha'penny Pier, Harwich", by:"Bob Jones", lic:"CC BY-SA 2.0"},
+  leigh:{what:"Old Leigh, Leigh-on-Sea", by:"Chris Wood", lic:"CC BY-SA 4.0"},
+  loughton:{what:"High Road, Loughton", by:"Peter Trimming", lic:"CC BY-SA 2.0"},
+  maldon:{what:"Hythe Quay, Maldon", by:"ClemRutter", lic:"CC BY-SA 4.0"},
+  mersea:{what:"Beach huts, West Mersea", by:"Robert Eva", lic:"CC BY-SA 2.0"},
+  purfleet:{what:"River Thames at Purfleet", by:"Richard Rogerson", lic:"CC BY-SA 2.0"},
+  rayleigh:{what:"Rayleigh Windmill", by:"Jonathan Cardy", lic:"CC BY-SA 3.0"},
+  rochford:{what:"Rochford Hall", by:"David Kemp", lic:"CC BY-SA 2.0"},
+  saffronwalden:{what:"Saffron Walden", by:"Peter Trimming", lic:"CC BY-SA 2.0"},
+  shoebury:{what:"East Beach, Shoeburyness", by:"Jim Osley", lic:"CC BY-SA 2.0"},
+  southend:{what:"Southend Pier", by:"Damian Dukarski", lic:"CC BY-SA 3.0"},
+  stanford:{what:"St Margaret's Church, Stanford-le-Hope", by:"John Salmon", lic:"CC BY-SA 2.0"},
+  stansted:{what:"Stansted Mountfitchet windmill", by:"Christine Matthews", lic:"CC BY-SA 2.0"},
+  swf:{what:"South Woodham Ferrers from the air", by:"Terry Joyce", lic:"CC BY-SA 2.0"},
+  tilbury:{what:"Tilbury Fort", by:"Hugh Llewelyn", lic:"CC BY-SA 2.0"},
+  walthamabbey:{what:"Waltham Abbey Church", by:"The wub", lic:"CC BY-SA 4.0"},
+  walton:{what:"The Naze Tower, Walton-on-the-Naze", by:"Michael Coppins", lic:"CC BY-SA 4.0"},
+  wickford:{what:"Wickford station", by:"Robert Eva", lic:"CC BY-SA 2.0"},
+  witham:{what:"Newland Street, Witham", by:"Christopher Hilton", lic:"CC BY-SA 2.0"}
+};
+const TOWN_ALIAS = [
+  [/^(chelmsford|moulsham|great baddow|broomfield|springfield|writtle|galleywood)$/, "chelmsford"],
+  [/^(colchester|stanway|lexden|highwoods)$/, "colchester"],
+  [/^(southend(-on-sea)?|westcliff(-on-sea)?|southchurch|prittlewell|thorpe bay)$/, "southend"],
+  [/^(leigh(-on-sea)?|old leigh)$/, "leigh"], [/^shoebury(ness)?$/, "shoebury"],
+  [/^(basildon|laindon|vange)$/, "basildon"], [/^billericay$/, "billericay"], [/^wickford$/, "wickford"],
+  [/^(brentwood|shenfield|hutton)$/, "brentwood"], [/^(grays|chafford hundred|thurrock|west thurrock)$/, "grays"],
+  [/^(tilbury|west tilbury|east tilbury)$/, "tilbury"], [/^purfleet(-on-thames)?$/, "purfleet"],
+  [/^(stanford[- ]le[- ]hope|corringham)$/, "stanford"], [/^(harlow|old harlow)$/, "harlow"], [/^epping$/, "epping"],
+  [/^(loughton|debden)$/, "loughton"], [/^chigwell$/, "chigwell"], [/^waltham abbey$/, "walthamabbey"],
+  [/^saffron walden$/, "saffronwalden"], [/^(great )?dunmow$/, "dunmow"], [/^stansted mountfitchet$/, "stansted"],
+  [/^braintree$/, "braintree"], [/^witham$/, "witham"], [/^halstead$/, "halstead"], [/^coggeshall$/, "coggeshall"],
+  [/^(maldon|heybridge)$/, "maldon"], [/^burnham([- ]on[- ]crouch)?$/, "burnham"], [/^south woodham ferrers$/, "swf"],
+  [/^rayleigh$/, "rayleigh"], [/^rochford$/, "rochford"], [/^canvey( island)?$/, "canvey"], [/^(south )?benfleet$/, "benfleet"],
+  [/^clacton(-on-sea)?$/, "clacton"], [/^frinton(-on-sea)?$/, "frinton"], [/^walton(-on-the-naze)?$/, "walton"],
+  [/^(harwich|dovercourt)$/, "harwich"], [/^brightlingsea$/, "brightlingsea"], [/^((west|east) )?mersea( island)?$/, "mersea"]
+];
+const TOWN_PHOTO_SKIP = ["police","crime","court","appeal","tribute","fire","ambulance"];
+function townKeyOf(s){
+  if(!s || TOWN_PHOTO_SKIP.includes(iconKey(s))) return null;
+  const parts = String(s.place || "").toLowerCase().split(/\s*(?:,|&|\/|\band\b)\s*/).map(x => x.replace(/\s+(town centre|district)$/, "").trim()).filter(Boolean);
+  const keys = [];
+  parts.forEach(p => { const hit = TOWN_ALIAS.find(([re]) => re.test(p)); if(hit && !keys.includes(hit[1])) keys.push(hit[1]); });
+  /* only when the first place named is one of our towns, and the story covers no more than two of them */
+  const first = parts.length && TOWN_ALIAS.find(([re]) => re.test(parts[0]));
+  return first && keys.length <= 2 && TOWN_PHOTO[first[1]] ? first[1] : null;
+}
+function townArt(s, opts){
+  const k = townKeyOf(s), t = TOWN_PHOTO[k];
+  return `<svg class="emap wxart townphoto" width="100%" height="100%" role="img" aria-label="Photo: ${esc(t.what)}" style="background:#cfd8dc"><image href="/img/places/${k}.jpg?v=1" x="0" y="0" width="100%" height="100%" preserveAspectRatio="xMidYMid slice"/>${opts && opts.credit ? `<text x="99%" y="94%" text-anchor="end" font-size="10" font-family="var(--sans), sans-serif" fill="#fff" stroke="rgba(0,0,0,.55)" stroke-width="2.5" paint-order="stroke">${esc(t.by)} · ${esc(t.lic === "Public domain" || t.lic === "CC0" ? "public domain" : t.lic)}</text>` : ""}</svg>`;
+}
+function townCredit(k){ const t = TOWN_PHOTO[k]; return t ? `${t.what}. Photo: ${t.by}, ${t.lic === "Public domain" || t.lic === "CC0" ? "public domain" : t.lic}` : ""; }
 /* the art shown for a story: weather scenes for county-wide weather, a sport object for every sport story, club colours (now unused for sport), occasion scenes, otherwise the map */
-function storyArt(s, opts){ return isWeatherArtStory(s) ? weatherArt(s, opts) : sportKindOf(s) ? sportArt(s, opts) : clubOf(s) ? clubArt(s, opts) : seasonKindOf(s) ? seasonArt(s, opts) : storyMap(s, opts); }
-function artCaption(s){ if(isWeatherArtStory(s)) return `Across Essex · ${WX_LABEL[wxKindOf(s)]}`; const c = clubOf(s), sk = sportKindOf(s); if(sk) return `${c || s.place || "Essex"} · ${SPORT_LABEL[sk]}`; if(c) return CLUBS[c].nick ? `${c} · ${CLUBS[c].nick}` : c; const k = seasonKindOf(s); if(k) return `${s.place || "Essex"} · ${SEASON_LABEL[k]}`; return mapCaption(s); }
-function artKick(s){ if(isWeatherArtStory(s)) return "Where"; if(sportKindOf(s)) return "Sport"; if(clubOf(s)) return "Club"; return "Where"; }
+function storyArt(s, opts){ opts = opts || {}; return isWeatherArtStory(s) ? weatherArt(s, opts) : sportKindOf(s) ? sportArt(s, opts) : clubOf(s) ? clubArt(s, opts) : seasonKindOf(s) ? seasonArt(s, opts) : !opts.map && townKeyOf(s) ? townArt(s, opts) : storyMap(s, opts); }
+function artCaption(s, noTown){ if(isWeatherArtStory(s)) return `Across Essex · ${WX_LABEL[wxKindOf(s)]}`; const c = clubOf(s), sk = sportKindOf(s); if(sk) return `${c || s.place || "Essex"} · ${SPORT_LABEL[sk]}`; if(c) return CLUBS[c].nick ? `${c} · ${CLUBS[c].nick}` : c; const k = seasonKindOf(s); if(k) return `${s.place || "Essex"} · ${SEASON_LABEL[k]}`; const tk = !noTown && townKeyOf(s); if(tk) return townCredit(tk); return mapCaption(s); }
+function artKick(s, noTown){ if(isWeatherArtStory(s)) return "Where"; if(sportKindOf(s)) return "Sport"; if(clubOf(s)) return "Club"; if(!noTown && !seasonKindOf(s) && townKeyOf(s)) return "Photo"; return "Where"; }
 
 /* ============================================================
    weather icons, sun and moon
@@ -3681,7 +3760,7 @@ function renderStory(id){
     <div class="note-copy">This page is a summary written by The Seax. The original reporting, quotes and images belong to ${esc(s.source)}${s.also.length?" and the other outlets listed":""}.</div>`;
   $("#storySide").innerHTML = `
     <div class="ad mpu"><span class="k">Advertisement · MPU 300×250</span><div class="in"><strong>Your brand, on every story</strong>Story pages are prime, brand-safe space.<br><button data-advert>Enquire</button></div></div>
-    <div class="side-box where" style="--c:${iconColour(s)}"><h4>${artKick(s) === "Club" ? "The club" : artKick(s) === "Sport" ? "The sport" : "Where it happened"}</h4><div class="wmap">${storyArt(s,{zoom:400,aspect:.82})}</div><div class="mcap">${esc(artCaption(s))}</div></div>
+    <div class="side-box where" style="--c:${iconColour(s)}"><h4>${artKick(s,1) === "Club" ? "The club" : artKick(s,1) === "Sport" ? "The sport" : "Where it happened"}</h4><div class="wmap">${storyArt(s,{zoom:400,aspect:.82,map:true})}</div><div class="mcap">${esc(artCaption(s,1))}</div></div>
     <div class="side-box"><h4>More from Essex</h4>${more.map(x=>`<a class="rel" href="${storyHref(x)}" style="--c:${iconColour(x)}"><i></i><b>${esc(x.headline)}</b></a>`).join("")}</div>`;
   document.body.classList.add("reading");
   document.title = s.headline + " · The Seax";
@@ -3912,9 +3991,9 @@ function buildHero(){
       ${pts.length ? `<ul class="lp-pts">${pts.map(p=>`<li>${esc(p)}</li>`).join("")}</ul>` : ""}
       <div class="lp-meta">${s.updated && new Date(s.updated) > new Date(s.time||0) ? `<span class="lp-upd">Updated ${esc(hhmm(s.updated))}</span><span>·</span>` : `<span data-ago="${esc(s.time||"")}">${ago(s.time)}</span><span>·</span>`}<span>${esc(s.source)}${s.also && s.also.length ? ` and ${s.also.length} more` : ""}</span><a class="lp-read" href="${storyHref(s)}">Read the story</a></div>
     </div>
-    <a class="lp-map" href="${storyHref(s)}" style="--c:${pillar(s)}" aria-label="${artKick(s) === "Club" ? "Club colours" : artKick(s) === "Sport" ? "Illustration" : "Map"}: ${esc(artCaption(s))}">${storyArt(s,{zoom:430,aspect:1.05})}<span class="mcap"><b>${artKick(s)}</b> ${esc(artCaption(s))}</span></a>`;
+    <a class="lp-map" href="${storyHref(s)}" style="--c:${pillar(s)}" aria-label="${artKick(s) === "Club" ? "Club colours" : artKick(s) === "Sport" ? "Illustration" : artKick(s) === "Photo" ? "Photo" : "Map"}: ${esc(artCaption(s))}">${storyArt(s,{zoom:430,aspect:1.05})}<span class="mcap"><b>${artKick(s)}</b> ${esc(artCaption(s))}</span></a>`;
   $("#seconds").innerHTML = seconds.map(x => `<a class="sec" href="${storyHref(x)}" style="--c:${pillar(x)}">
-      <div class="sec-map">${storyArt(x,{zoom:340,aspect:.24,label:false})}</div>
+      <div class="sec-map">${storyArt(x,{zoom:340,aspect:.24,label:false,credit:true})}</div>
       <div class="sec-body"><span class="kick2">${esc(x.tag||"News")}<em>${esc(x.place||"Essex")}</em></span>
       <h3>${esc(x.headline)}</h3><p>${esc(x.summary)}</p>
       <div class="m"><span data-ago="${esc(x.time||"")}">${ago(x.time)}</span> · ${esc(x.source)}</div></div></a>`).join("");

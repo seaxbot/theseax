@@ -316,6 +316,22 @@ def story_page(sec, it, more):
 """
 
 # ---------- about ----------
+def photo_credits():
+    """Credits for the town photographs in img/places (all from Wikimedia Commons)."""
+    try:
+        cr = json.load(open(os.path.join(ROOT, "img", "places", "credits.json"), encoding="utf-8"))
+    except Exception:
+        return ""
+    rows = []
+    for k in sorted(cr, key=lambda k: cr[k]["what"]):
+        c = cr[k]
+        lic = c["license"]
+        lic_html = f'<a href="{E(c["licenseUrl"])}" rel="license noopener">{E(lic)}</a>' if c.get("licenseUrl") else E(lic)
+        rows.append(f'<li>{E(c["what"])}: photo by {E(c["by"])}, {lic_html}, via <a href="{E(c["source"])}" rel="noopener">Wikimedia Commons</a></li>')
+    return ('<h2 id="photo-credits">Photo credits</h2>\n<p>Town photographs on The Seax come from Wikimedia Commons and are used under the licences shown. '
+            'They have been resized for the web and are shared under the same terms. Our map artwork is our own.</p>\n<ul class="credits">' + "".join(rows) + "</ul>\n")
+
+
 def about_page():
     mail = CFG["contactEmail"]
     url = f"{SITE}/about/"
@@ -351,6 +367,7 @@ def about_page():
 <h2>Privacy</h2>
 <p>The Seax does not use advertising cookies or track you across other websites. {"We count visits with GoatCounter, a privacy-friendly service that uses no cookies and collects no personal data." if CFG.get("goatcounter") else "We may count visits with a privacy-friendly service that uses no cookies and collects no personal data."} Advertising enquiries sent through our form are delivered to our inbox by FormSubmit and used only to reply to you. Our free morning newsletter is delivered by follow.it; if you sign up, your email address is used only to send it, and every email includes an unsubscribe link.</p>
 
+{photo_credits()}
 <h2>Why "The Seax"?</h2>
 <p>The seax is the short sword of the Saxons, and three seaxes appear on the arms of Essex: gules, three seaxes fesswise in pale argent, pommels and hilts or. Our badge follows that blazon.</p>
 </main>
