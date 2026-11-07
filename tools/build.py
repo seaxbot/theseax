@@ -404,7 +404,7 @@ def cw_pages(ed, archive):
         how = {"ok": "papers read automatically", "quiet": "papers read automatically", "blocked": "checked by our desk (site limits automated reading)",
                "unreachable": "checked by our desk", "manual": "checked by our desk", "refused": "checked by our desk (site asks automated readers to stay away)"}.get(st, "")
         n = sum(1 for _, r in recs if r.get("council") == cid)
-        cover.append(f'<li><a href="/council-watch/{E(cid)}/">{E(nm)}</a><span>{E(how)}{(" · " + str(n) + " stories") if n else ""}</span></li>')
+        cover.append(f'<li><a href="/council-watch/{E(cid)}/">{E(nm)}</a><span>{E(how)}{(" · " + str(n) + (" story" if n == 1 else " stories")) if n else ""}</span></li>')
     url = f"{SITE}/council-watch/"
     desc = "Original reporting from every Essex council's public papers: what was decided, what is coming up, and what it means for you."
     body = f"""<main class="wrap prose cw-hub">
@@ -690,6 +690,10 @@ def main():
         seen.add(it["id"])
         rel = [x for x in top if x[1]["id"] != it["id"] and set(x[1].get("areas") or []) & (set(it.get("areas") or []) - {"all"})][:3]
         more = rel + [x for x in top if x[1]["id"] != it["id"] and x not in rel][: 6 - len(rel)]
+        if sec == "councilwatch":  # other council stories first, and never lead with crime beside a council story
+            cws = [x for x in items if x[0] == "councilwatch" and x[1]["id"] != it["id"]][:4]
+            calm = [x for x in top if x[1]["id"] != it["id"] and str(x[1].get("tag") or "").lower() not in ("police", "court", "crime")]
+            more = cws + calm[: 6 - len(cws)]
         if write(f"story/{it['id']}/index.html", story_page(sec, it, more)):
             changed += 1
         t = parse_t(it.get("time"))

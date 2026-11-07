@@ -66,7 +66,7 @@ WEAK = [r"apologies for absence", r"declarations? of interest", r"minutes of (th
         r"questions? from (the )?public", r"public questions", r"members.? questions", r"questions? (from|to|by) (councillors|members)",
         r"minutes and decisions called in", r"reports? to council", r"\bitems?$", r"^\d{1,2} \w+ 20\d\d$", r"any other business",
         r"substitut", r"announcements", r"terms of reference", r"appointment of (vice|chair)", r"call.?in", r"forward plan", r"exclusion",
-        r"disclosures? of interest", r"minutes of the meeting", r"dates? of (future|next) meetings?", r"recommendations tracker", r"^minutes"]
+        r"disclosures? of interest", r"minutes of the meeting", r"application for (a|an) .*licen", r"determination of an application", r"dates? of (future|next) meetings?", r"recommendations tracker", r"^minutes"]
 MONEY = re.compile(r"£\s?\d[\d,\.]*\s?(m|bn|million|billion|k)?\b", re.I)
 
 def score_item(title, text, committee, has_report=False):
@@ -426,7 +426,8 @@ def main():
                    "url": meet["url"], "cancelled": det["cancelled"], "stage": "decided" if past and any(i["decided"] for i in items) else ("held" if past else "upcoming"),
                    "packs": det["packs"], "items": sorted([i for i in items if i["score"] > 0], key=lambda i: -i["score"])[:12],
                    "new": not prev, "changed": changed}
-            if not past and not det["cancelled"]:
+            private_hearing = re.search(r"(?i)licensing (sub|hearing|panel)|sub-committee.*licen|appeals|appointments|employment|standards hearing|co-parenting", meet["committee"])
+            if not past and not det["cancelled"] and not private_hearing:
                 cal.append({"council": cid, "councilName": name, "area": area, "committee": meet["committee"], "date": meet["date"], "time": meet["time"],
                             "url": meet["url"], "items": [i["title"] for i in rec["items"][:4] if i["score"] >= 4]})
             if changed or (NOW - datetime.fromisoformat(state["meetings"][key]["changed"])).days < 3:
