@@ -16,6 +16,9 @@ In the repository checkout run `git rev-parse HEAD` (note it as BASE) and read e
 - "Essex road closed A12 OR A127 OR A13 OR A120 OR M25 OR M11"
 - "Met Office weather warning Essex"
 - "Greater Anglia OR c2c disruption"
+- mode "standard": "NewsNow Essex news" (to get the page https://www.newsnow.co.uk/h/UK/England/Essex)
+
+Then, in the next turn, WebFetch the NewsNow Essex page if it appeared in those results (this counts as one of the 4 fetches), asking for every headline with its outlet and time. Use any headline timed after the edition's updatedAt as a lead for step 3. NewsNow links (c.newsnow.co.uk) are never item URLs and NewsNow is never cited as the source: confirm a lead from the original outlet or another readable source in step 4. If the page did not appear or the fetch is refused, carry on without it.
 
 ## 3. DECIDE: IS ANYTHING BIG?
 Only act on an Essex story FIRST REPORTED after the edition's updatedAt that is one of these:
