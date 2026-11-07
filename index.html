@@ -944,6 +944,7 @@ table.tf{width:100%;border-collapse:collapse;font-size:13.5px;font-variant-numer
 .nl-band p{margin:0;opacity:.92}
 .nl-acts{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
 .nl-band form{display:flex;gap:8px;flex-wrap:wrap}
+.nl-band [hidden]{display:none!important}
 .nl-band input{font:16px var(--sans);padding:11px 14px;border-radius:999px;border:0;min-width:230px}
 .nl-band button,.nl-read{font:700 15px var(--sans);padding:11px 18px;border-radius:999px;border:0;background:var(--navy);color:#fff;text-decoration:none;cursor:pointer}
 footer .flinks a{text-decoration:underline}
@@ -1218,7 +1219,6 @@ footer .flinks a{text-decoration:underline}
   <div class="wrap">
     <div><h3>Essex at 7</h3><p>The morning briefing: the stories that matter, weather, travel and last night's results.</p></div>
     <div class="nl-acts">
-      <form id="nlForm" method="post" target="_blank" hidden><label class="sr" for="nlEmail">Email address</label><input id="nlEmail" type="email" placeholder="Your email address" required><button>Sign me up</button></form>
       <a id="nlRead" class="nl-read" href="/briefing/" hidden>Read today's briefing</a>
     </div>
   </div>
@@ -4232,10 +4232,6 @@ setTimeout(navOverflow, 0);
     band.hidden = false;
     if(CFG.newsletterLink && !CFG.newsletterForm){
       document.getElementById("nlRead").insertAdjacentHTML("beforebegin", '<a class="nl-read" style="background:#fff;color:#c8102e" href="' + CFG.newsletterLink + '" target="_blank" rel="noopener">Get it free by email</a>');
-    }
-    if(CFG.newsletterForm){
-      var f = document.getElementById("nlForm"); f.hidden = false; f.action = CFG.newsletterForm;
-      document.getElementById("nlEmail").name = CFG.newsletterField || "email";
     }
     if(CFG.latestBriefing){ document.getElementById("nlRead").hidden = false; }
   }
