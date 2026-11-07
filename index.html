@@ -3002,7 +3002,8 @@ function seasonArt(s, opts){
    hockey clubs (those keep their club colour panels). No crests,
    sponsors or brand marks. A story may force an object with
    "sportArt": cricket|football|tennis|rugby|racing|icehockey|
-   cycling|golf|athletics.
+   cycling|golf|athletics. Football, cricket, tennis and rugby
+   use the photographs in img/sport/ (see SPORT_PHOTO) instead.
    ============================================================ */
 const SPORT_LABEL = {cricket:"Cricket", football:"Football", tennis:"Tennis", rugby:"Rugby", racing:"Racing", icehockey:"Ice hockey", cycling:"Cycling", golf:"Golf", athletics:"Sport"};
 function sportKindOf(s){
@@ -3022,9 +3023,20 @@ function sportKindOf(s){
   if(k === "football" || /football|\bfc\b|\bleague\b|\bunited\b|\bgoal/.test(t)) return "football";
   return "athletics";
 }
+/* photographs used instead of the drawn object for these sports. Each file is cropped so the
+   ball sits in the horizontal centre; "ay" keeps the ball in view when a wide frame trims
+   the top and bottom (YMin for balls in the upper third of the picture) */
+const SPORT_PHOTO = {
+  football:{src:"/img/sport/football.jpg?v=1", ay:"YMin"},
+  cricket:{src:"/img/sport/cricket.jpg?v=1", ay:"YMid"},
+  tennis:{src:"/img/sport/tennis.jpg?v=1", ay:"YMin"},
+  rugby:{src:"/img/sport/rugby.jpg?v=1", ay:"YMin"}
+};
 function sportArt(s, opts){
   opts = opts || {};
   const kind = sportKindOf(s) || "athletics", u = "sp" + (++WXUID);
+  const ph = SPORT_PHOTO[kind];
+  if(ph) return `<svg class="emap wxart sportart sportphoto" width="100%" height="100%" role="img" aria-label="Photo: ${esc(SPORT_LABEL[kind])}" style="background:#1b2a1e"><image href="${ph.src}" x="0" y="0" width="100%" height="100%" preserveAspectRatio="xMid${ph.ay} slice"/></svg>`;
   const W = 1000, H = 800, cx = 500, cy = 390, r = 150, f = n => (+n).toFixed(1);
   const BG = {cricket:["#f1e9d6","#cbbd9c"], football:["#2f6a3b","#123419"], tennis:["#2c4c7d","#121f3a"], rugby:["#ebe6dc","#b9b1a1"], racing:["#5b412e","#25180f"], icehockey:["#e4eef6","#a5b9cb"], cycling:["#f0d9a9","#c99a5c"], golf:["#4e8a3b","#234a1a"], athletics:["#24335a","#0d1427"]}[kind];
   const dark = ["football","tennis","racing","golf","athletics"].includes(kind);
@@ -3385,7 +3397,7 @@ function renderTopList(){
 
 function cardHtml(s, wide, art){
   return `<a class="card tc${wide?" wide":""}" href="${storyHref(s)}" style="--c:${iconColour(s)}">
-    ${art && clubOf(s) ? `<div class="cart">${clubArt(s,{aspect:2.6})}</div>` : ""}
+    ${art && SPORT_PHOTO[sportKindOf(s)] ? `<div class="cart">${sportArt(s)}</div>` : art && clubOf(s) ? `<div class="cart">${clubArt(s,{aspect:2.6})}</div>` : ""}
     <div class="body">
       <div class="kick"><span class="tg${s.breaking?" hot":""}">${s.breaking?"Breaking":esc(s.tag||"News")}</span></div>
       <div class="meta"><span class="place">${esc(s.place||"Essex")}</span><span>·</span><span data-ago="${esc(s.time||"")}">${ago(s.time)}</span></div>
