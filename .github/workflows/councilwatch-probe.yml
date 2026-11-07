@@ -10,15 +10,16 @@ concurrency: councilwatch
 jobs:
   probe:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 20
     steps:
       - uses: actions/checkout@v4
         with: { fetch-depth: 1 }
-      - run: python3 tools/councilwatch/probe.py
-      - name: Commit result
+      - run: python3 tools/councilwatch/probe.py /tmp/samples
+      - name: Save samples to the probe branch
         run: |
+          cd /tmp/samples
+          git init -q -b councilwatch-probe
           git config user.name "The Seax council watch"
           git config user.email "seaxbot@users.noreply.github.com"
-          git add data/councilwatch/probe.json
-          git commit -m "Council Watch probe" || exit 0
-          for i in 1 2 3 4; do git pull --rebase -q origin main && git push -q origin HEAD:main && break; sleep 5; done
+          git add -A && git commit -qm "Council Watch probe samples"
+          git push -qf "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" councilwatch-probe

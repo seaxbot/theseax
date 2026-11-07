@@ -1,58 +1,48 @@
 #!/usr/bin/env python3
-"""One-off probe: find how each Essex council publishes its meetings. Writes data/councilwatch/probe.json."""
-import json, os, re, ssl, urllib.request, urllib.error
+"""Probe round 2: save sample pages from each council's meeting system so readers can be written. Output: samples/ (data branch)."""
+import json, os, re, ssl, sys, urllib.request, urllib.error
 from datetime import datetime, timezone
-UA = "TheSeaxCouncilWatch/1.0 (+https://theseax.com/about/)"
-ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-SITES = {
- "basildon": ["https://www.basildon.gov.uk", "https://www.basildonmeetings.info", "https://basildon.moderngov.co.uk"],
- "braintree": ["https://www.braintree.gov.uk/council/committee-meetings-minutes", "https://braintree.moderngov.co.uk", "https://www.braintree.gov.uk/meetings"],
- "brentwood": ["https://www.brentwood.gov.uk", "https://brentwood.moderngov.co.uk", "https://democracy.brentwood.gov.uk"],
- "castlepoint": ["https://www.castlepoint.gov.uk", "https://castlepoint.moderngov.co.uk", "https://www.castlepoint.gov.uk/meetings"],
- "chelmsford": ["https://www.chelmsford.gov.uk/committee-meetings/", "https://chelmsford.moderngov.co.uk", "https://democracy.chelmsford.gov.uk"],
- "colchester": ["https://colchester.cmis.uk.com/colchester/", "https://colchester.cmis.uk.com/colchester/CalendarofMeetings.aspx"],
- "epping": ["https://www.eppingforestdc.gov.uk", "https://rds.eppingforestdc.gov.uk", "https://eppingforestdc.moderngov.co.uk"],
- "harlow": ["https://www.harlow.gov.uk", "https://moderngov.harlow.gov.uk", "https://harlow.moderngov.co.uk"],
- "maldon": ["https://democracy.maldon.gov.uk"],
- "rochford": ["https://www.rochford.gov.uk", "https://rochford.moderngov.co.uk", "https://democracy.rochford.gov.uk"],
- "tendring": ["https://www.tendringdc.gov.uk", "https://tendring.moderngov.co.uk", "https://tdcdemocracy.tendringdc.uk"],
- "uttlesford": ["https://www.uttlesford.gov.uk", "https://uttlesford.moderngov.co.uk", "https://democracy.uttlesford.gov.uk"],
- "southend": ["https://democracy.southend.gov.uk"],
- "thurrock": ["https://democracy.thurrock.gov.uk"],
- "essex": ["https://cmis.essex.gov.uk/essexcmis5/CalendarofMeetings.aspx"],
-}
-PAT = re.compile(r'https?://[a-z0-9.\-]+/[^"\'\s<>]*(?:mgCommitteeDetails|mgCalendar|ieListDocuments|ieDocHome|mgListCommittees|cmis|CalendarofMeetings|committee-meetings|/meetings)[^"\'\s<>]*', re.I)
-REL = re.compile(r'href="([^"]*(?:mgCalendar|ieListDocuments|mgCommitteeDetails|ViewMeetingPublic|Meeting/\d+|committee-meetings/[a-z0-9\-]+|ieDocHome)[^"]*)"', re.I)
-
-def get(u, n=400000):
-    req = urllib.request.Request(u, headers={"User-Agent": UA})
+from urllib.parse import urljoin
+OUT = sys.argv[1] if len(sys.argv) > 1 else "samples"
+os.makedirs(OUT, exist_ok=True)
+H = {"User-Agent": "TheSeaxCouncilWatch/1.0 (+https://theseax.com/about/; theseaxessex@gmail.com)",
+     "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8", "Accept-Language": "en-GB,en;q=0.9"}
+def get(u, n=1500000):
     try:
-        with urllib.request.urlopen(req, timeout=25, context=ssl.create_default_context()) as r:
+        with urllib.request.urlopen(urllib.request.Request(u, headers=H), timeout=30, context=ssl.create_default_context()) as r:
             return r.status, r.geturl(), r.read(n).decode("utf-8", "replace")
     except urllib.error.HTTPError as e:
         return e.code, u, ""
     except Exception as e:
-        return 0, u, str(e)[:200]
-
-out = {"at": datetime.now(timezone.utc).isoformat(), "councils": {}}
-now = datetime.now()
-for c, urls in SITES.items():
-    res = []
-    for u in urls:
-        st, final, body = get(u)
-        info = {"url": u, "status": st, "final": final, "title": (re.search(r"<title[^>]*>(.*?)</title>", body, re.S | re.I) or [None, ""])[1].strip()[:120] if st else body,
-                "abs": sorted(set(PAT.findall(body)))[:12], "rel": sorted(set(REL.findall(body)))[:12]}
-        if st == 200 and ("moderngov" in body.lower() or "mgCalendar" in body or "ieListDocuments" in body):
-            base = final.split("/mg")[0].split("/ie")[0].rstrip("/")
-            if base.endswith(".aspx"): base = base.rsplit("/", 1)[0]
-            s2, f2, b2 = get(f"{base}/mgCalendarMonthView.aspx?M={now.month}&Y={now.year}")
-            info["calendar"] = {"status": s2, "final": f2, "rel": sorted(set(REL.findall(b2)))[:15]}
-            s3, f3, b3 = get(f"{base}/mgWebService.asmx/GetMeetings?lFromDate={now:%d/%m/%Y}&lToDate={now:%d/%m/%Y}")
-            info["webservice"] = {"status": s3, "head": b3[:300]}
-            s4, f4, b4 = get(f"{base.split('/', 3)[0]}//{base.split('/')[2]}/robots.txt", 4000)
-            info["robots"] = b4[:600]
-        res.append(info)
-    out["councils"][c] = res
-os.makedirs(os.path.join(ROOT, "data", "councilwatch"), exist_ok=True)
-json.dump(out, open(os.path.join(ROOT, "data", "councilwatch", "probe.json"), "w"), indent=1)
-print(json.dumps({c: [(r["url"], r["status"]) for r in v] for c, v in out["councils"].items()}, indent=1))
+        return 0, u, repr(e)[:300]
+log = {}
+def save(name, u, follow=None, nfollow=1):
+    st, fin, body = get(u)
+    log[name] = {"url": u, "status": st, "final": fin, "len": len(body)}
+    open(f"{OUT}/{name}.html", "w").write(body)
+    if follow and st == 200:
+        links = []
+        for m in re.finditer(r'href=["\']([^"\']+)["\']', body):
+            h = m.group(1).replace("&amp;", "&")
+            if re.search(follow, h) and h not in links: links.append(h)
+        log[name]["links"] = links[:40]
+        for i, h in enumerate(links[:nfollow]):
+            save(f"{name}__{i}", urljoin(fin, h))
+MG = {"epping": "https://rds.eppingforestdc.gov.uk", "maldon": "https://democracy.maldon.gov.uk", "southend": "https://democracy.southend.gov.uk",
+      "thurrock": "https://democracy.thurrock.gov.uk", "tendring": "https://tdcdemocracy.tendringdc.gov.uk", "harlow": "https://moderngov.harlow.gov.uk",
+      "basildon": "https://www.basildonmeetings.info", "brentwood": "https://brentwood.moderngov.co.uk", "uttlesford": "https://uttlesford.moderngov.co.uk"}
+for c, b in MG.items():
+    save(f"mg_{c}_cal", f"{b}/mgCalendarMonthView.aspx?M=10&Y=2026&GL=1", follow=r"ieListDocuments\.aspx", nfollow=2)
+    save(f"mg_{c}_robots", f"{b}/robots.txt")
+    save(f"mg_{c}_new", f"{b}/mgWhatsNew.aspx?bcr=1")
+save("cmis_colchester_home", "https://colchester.cmis.uk.com/colchester/", follow=r"(?i)calendar|meetings", nfollow=2)
+save("cmis_essex_cal", "https://cmis.essex.gov.uk/essexcmis5/CalendarofMeetings.aspx", follow=r"(?i)ViewMeetingPublic|/Meeting/", nfollow=2)
+save("cmis_rochford_home", "https://rochford.cmis.uk.com/rochford", follow=r"(?i)calendar|ViewMeetingPublic", nfollow=2)
+save("cmis_essex_robots", "https://cmis.essex.gov.uk/robots.txt")
+save("chelmsford_list", "https://www.chelmsford.gov.uk/committee-meetings/", follow=r"committee-meetings/[a-z0-9\-]+-2026/?$", nfollow=2)
+save("chelmsford_robots", "https://www.chelmsford.gov.uk/robots.txt")
+save("braintree_list", "https://www.braintree.gov.uk/meetings", follow=r"/meetings/(meeting|committee)/", nfollow=2)
+save("braintree_robots", "https://www.braintree.gov.uk/robots.txt")
+save("castlepoint_home", "https://www.castlepoint.gov.uk", follow=r"(?i)meeting|agenda|committee|democra", nfollow=3)
+json.dump({"at": datetime.now(timezone.utc).isoformat(), "pages": log}, open(f"{OUT}/_log.json", "w"), indent=1)
+print(json.dumps({k: (v["status"], v["len"]) for k, v in log.items()}, indent=0))
