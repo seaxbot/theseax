@@ -1,0 +1,384 @@
+{
+ "at": "2026-11-07T10:30:34.735242+00:00",
+ "pages": {
+  "mg_epping_cal": {
+   "url": "https://rds.eppingforestdc.gov.uk/mgCalendarMonthView.aspx?M=10&Y=2026&GL=1",
+   "status": 200,
+   "final": "https://rds.eppingforestdc.gov.uk/mgCalendarMonthView.aspx?M=10&Y=2026&GL=1",
+   "len": 78688,
+   "links": [
+    "ieListDocuments.aspx?CId=859&MId=12661",
+    "ieListDocuments.aspx?CId=743&MId=12729",
+    "ieListDocuments.aspx?CId=428&MId=12624",
+    "ieListDocuments.aspx?CId=743&MId=12731",
+    "ieListDocuments.aspx?CId=319&MId=12639",
+    "ieListDocuments.aspx?CId=295&MId=12534",
+    "ieListDocuments.aspx?CId=875&MId=12608",
+    "ieListDocuments.aspx?CId=428&MId=12625",
+    "ieListDocuments.aspx?CId=296&MId=12581",
+    "ieListDocuments.aspx?CId=638&MId=12737"
+   ]
+  },
+  "mg_epping_cal__0": {
+   "url": "https://rds.eppingforestdc.gov.uk/ieListDocuments.aspx?CId=859&MId=12661",
+   "status": 200,
+   "final": "https://rds.eppingforestdc.gov.uk/ieListDocuments.aspx?CId=859&MId=12661",
+   "len": 78112
+  },
+  "mg_epping_cal__1": {
+   "url": "https://rds.eppingforestdc.gov.uk/ieListDocuments.aspx?CId=743&MId=12729",
+   "status": 200,
+   "final": "https://rds.eppingforestdc.gov.uk/ieListDocuments.aspx?CId=743&MId=12729",
+   "len": 65901
+  },
+  "mg_epping_robots": {
+   "url": "https://rds.eppingforestdc.gov.uk/robots.txt",
+   "status": 200,
+   "final": "https://rds.eppingforestdc.gov.uk/robots.txt",
+   "len": 186
+  },
+  "mg_epping_new": {
+   "url": "https://rds.eppingforestdc.gov.uk/mgWhatsNew.aspx?bcr=1",
+   "status": 200,
+   "final": "https://rds.eppingforestdc.gov.uk/mgWhatsNew.aspx?bcr=1",
+   "len": 69145
+  },
+  "mg_maldon_cal": {
+   "url": "https://democracy.maldon.gov.uk/mgCalendarMonthView.aspx?M=10&Y=2026&GL=1",
+   "status": 200,
+   "final": "https://democracy.maldon.gov.uk/mgCalendarMonthView.aspx?M=10&Y=2026&GL=1",
+   "len": 30581,
+   "links": [
+    "ieListDocuments.aspx?CId=277&MId=4901",
+    "ieListDocuments.aspx?CId=150&MId=4718",
+    "ieListDocuments.aspx?CId=155&MId=4719",
+    "ieListDocuments.aspx?CId=151&MId=4720",
+    "ieListDocuments.aspx?CId=277&MId=4910",
+    "ieListDocuments.aspx?CId=149&MId=4716",
+    "ieListDocuments.aspx?CId=130&MId=4717",
+    "ieListDocuments.aspx?CId=277&MId=4911"
+   ]
+  },
+  "mg_maldon_cal__0": {
+   "url": "https://democracy.maldon.gov.uk/ieListDocuments.aspx?CId=277&MId=4901",
+   "status": 200,
+   "final": "https://democracy.maldon.gov.uk/ieListDocuments.aspx?CId=277&MId=4901",
+   "len": 17947
+  },
+  "mg_maldon_cal__1": {
+   "url": "https://democracy.maldon.gov.uk/ieListDocuments.aspx?CId=150&MId=4718",
+   "status": 200,
+   "final": "https://democracy.maldon.gov.uk/ieListDocuments.aspx?CId=150&MId=4718",
+   "len": 18247
+  },
+  "mg_maldon_robots": {
+   "url": "https://democracy.maldon.gov.uk/robots.txt",
+   "status": 200,
+   "final": "https://democracy.maldon.gov.uk/robots.txt",
+   "len": 1248
+  },
+  "mg_maldon_new": {
+   "url": "https://democracy.maldon.gov.uk/mgWhatsNew.aspx?bcr=1",
+   "status": 200,
+   "final": "https://democracy.maldon.gov.uk/mgWhatsNew.aspx?bcr=1",
+   "len": 20788
+  },
+  "mg_southend_cal": {
+   "url": "https://democracy.southend.gov.uk/mgCalendarMonthView.aspx?M=10&Y=2026&GL=1",
+   "status": 200,
+   "final": "https://democracy.southend.gov.uk/mgCalendarMonthView.aspx?M=10&Y=2026&GL=1",
+   "len": 60518,
+   "links": [
+    "ieListDocuments.aspx?CId=131&MId=5173",
+    "ieListDocuments.aspx?CId=609&MId=5078",
+    "ieListDocuments.aspx?CId=130&MId=5040",
+    "ieListDocuments.aspx?CId=319&MId=5176",
+    "ieListDocuments.aspx?CId=607&MId=5170",
+    "ieListDocuments.aspx?CId=611&MId=5085",
+    "ieListDocuments.aspx?CId=138&MId=5175",
+    "ieListDocuments.aspx?CId=614&MId=5105",
+    "ieListDocuments.aspx?CId=610&MId=5091",
+    "ieListDocuments.aspx?CId=131&MId=5177",
+    "ieListDocuments.aspx?CId=130&MId=5178",
+    "ieListDocuments.aspx?CId=588&MId=5188"
+   ]
+  },
+  "mg_southend_cal__0": {
+   "url": "https://democracy.southend.gov.uk/ieListDocuments.aspx?CId=131&MId=5173",
+   "status": 200,
+   "final": "https://democracy.southend.gov.uk/ieListDocuments.aspx?CId=131&MId=5173",
+   "len": 80981
+  },
+  "mg_southend_cal__1": {
+   "url": "https://democracy.southend.gov.uk/ieListDocuments.aspx?CId=609&MId=5078",
+   "status": 200,
+   "final": "https://democracy.southend.gov.uk/ieListDocuments.aspx?CId=609&MId=5078",
+   "len": 67268
+  },
+  "mg_southend_robots": {
+   "url": "https://democracy.southend.gov.uk/robots.txt",
+   "status": 200,
+   "final": "https://democracy.southend.gov.uk/robots.txt",
+   "len": 71
+  },
+  "mg_southend_new": {
+   "url": "https://democracy.southend.gov.uk/mgWhatsNew.aspx?bcr=1",
+   "status": 200,
+   "final": "https://democracy.southend.gov.uk/mgWhatsNew.aspx?bcr=1",
+   "len": 53055
+  },
+  "mg_thurrock_cal": {
+   "url": "https://democracy.thurrock.gov.uk/mgCalendarMonthView.aspx?M=10&Y=2026&GL=1",
+   "status": 200,
+   "final": "https://democracy.thurrock.gov.uk/mgCalendarMonthView.aspx?M=10&Y=2026&GL=1",
+   "len": 25645,
+   "links": [
+    "ieListDocuments.aspx?CId=130&MId=7015",
+    "ieListDocuments.aspx?CId=130&MId=6985",
+    "ieListDocuments.aspx?CId=134&MId=6908",
+    "ieListDocuments.aspx?CId=293&MId=6961",
+    "ieListDocuments.aspx?CId=163&MId=6976",
+    "ieListDocuments.aspx?CId=136&MId=6942",
+    "ieListDocuments.aspx?CId=285&MId=7001",
+    "ieListDocuments.aspx?CId=129&MId=6924",
+    "ieListDocuments.aspx?CId=134&MId=6934",
+    "ieListDocuments.aspx?CId=131&MId=6943"
+   ]
+  },
+  "mg_thurrock_cal__0": {
+   "url": "https://democracy.thurrock.gov.uk/ieListDocuments.aspx?CId=130&MId=7015",
+   "status": 200,
+   "final": "https://democracy.thurrock.gov.uk/ieListDocuments.aspx?CId=130&MId=7015",
+   "len": 16035
+  },
+  "mg_thurrock_cal__1": {
+   "url": "https://democracy.thurrock.gov.uk/ieListDocuments.aspx?CId=130&MId=6985",
+   "status": 200,
+   "final": "https://democracy.thurrock.gov.uk/ieListDocuments.aspx?CId=130&MId=6985",
+   "len": 31404
+  },
+  "mg_thurrock_robots": {
+   "url": "https://democracy.thurrock.gov.uk/robots.txt",
+   "status": 200,
+   "final": "https://democracy.thurrock.gov.uk/robots.txt",
+   "len": 80
+  },
+  "mg_thurrock_new": {
+   "url": "https://democracy.thurrock.gov.uk/mgWhatsNew.aspx?bcr=1",
+   "status": 200,
+   "final": "https://democracy.thurrock.gov.uk/mgWhatsNew.aspx?bcr=1",
+   "len": 18585
+  },
+  "mg_tendring_cal": {
+   "url": "https://tdcdemocracy.tendringdc.gov.uk/mgCalendarMonthView.aspx?M=10&Y=2026&GL=1",
+   "status": 200,
+   "final": "https://tdcdemocracy.tendringdc.gov.uk/mgCalendarMonthView.aspx?M=10&Y=2026&GL=1",
+   "len": 47866,
+   "links": [
+    "ieListDocuments.aspx?CId=162&MId=2658",
+    "ieListDocuments.aspx?CId=328&MId=2949",
+    "ieListDocuments.aspx?CId=325&MId=2845",
+    "ieListDocuments.aspx?CId=135&MId=2928",
+    "ieListDocuments.aspx?CId=130&MId=2836",
+    "ieListDocuments.aspx?CId=162&MId=2947",
+    "ieListDocuments.aspx?CId=132&MId=2883",
+    "ieListDocuments.aspx?CId=160&MId=2857",
+    "ieListDocuments.aspx?CId=327&MId=2852",
+    "ieListDocuments.aspx?CId=134&MId=2821",
+    "ieListDocuments.aspx?CId=162&MId=2862"
+   ]
+  },
+  "mg_tendring_cal__0": {
+   "url": "https://tdcdemocracy.tendringdc.gov.uk/ieListDocuments.aspx?CId=162&MId=2658",
+   "status": 200,
+   "final": "https://tdcdemocracy.tendringdc.gov.uk/ieListDocuments.aspx?CId=162&MId=2658",
+   "len": 76611
+  },
+  "mg_tendring_cal__1": {
+   "url": "https://tdcdemocracy.tendringdc.gov.uk/ieListDocuments.aspx?CId=328&MId=2949",
+   "status": 200,
+   "final": "https://tdcdemocracy.tendringdc.gov.uk/ieListDocuments.aspx?CId=328&MId=2949",
+   "len": 43601
+  },
+  "mg_tendring_robots": {
+   "url": "https://tdcdemocracy.tendringdc.gov.uk/robots.txt",
+   "status": 404,
+   "final": "https://tdcdemocracy.tendringdc.gov.uk/robots.txt",
+   "len": 0
+  },
+  "mg_tendring_new": {
+   "url": "https://tdcdemocracy.tendringdc.gov.uk/mgWhatsNew.aspx?bcr=1",
+   "status": 200,
+   "final": "https://tdcdemocracy.tendringdc.gov.uk/mgWhatsNew.aspx?bcr=1",
+   "len": 47775
+  },
+  "mg_harlow_cal": {
+   "url": "https://moderngov.harlow.gov.uk/mgCalendarMonthView.aspx?M=10&Y=2026&GL=1",
+   "status": 0,
+   "final": "https://moderngov.harlow.gov.uk/mgCalendarMonthView.aspx?M=10&Y=2026&GL=1",
+   "len": 51
+  },
+  "mg_harlow_robots": {
+   "url": "https://moderngov.harlow.gov.uk/robots.txt",
+   "status": 0,
+   "final": "https://moderngov.harlow.gov.uk/robots.txt",
+   "len": 51
+  },
+  "mg_harlow_new": {
+   "url": "https://moderngov.harlow.gov.uk/mgWhatsNew.aspx?bcr=1",
+   "status": 0,
+   "final": "https://moderngov.harlow.gov.uk/mgWhatsNew.aspx?bcr=1",
+   "len": 51
+  },
+  "mg_basildon_cal": {
+   "url": "https://www.basildonmeetings.info/mgCalendarMonthView.aspx?M=10&Y=2026&GL=1",
+   "status": 403,
+   "final": "https://www.basildonmeetings.info/mgCalendarMonthView.aspx?M=10&Y=2026&GL=1",
+   "len": 0
+  },
+  "mg_basildon_robots": {
+   "url": "https://www.basildonmeetings.info/robots.txt",
+   "status": 200,
+   "final": "https://www.basildonmeetings.info/robots.txt",
+   "len": 3428
+  },
+  "mg_basildon_new": {
+   "url": "https://www.basildonmeetings.info/mgWhatsNew.aspx?bcr=1",
+   "status": 403,
+   "final": "https://www.basildonmeetings.info/mgWhatsNew.aspx?bcr=1",
+   "len": 0
+  },
+  "mg_brentwood_cal": {
+   "url": "https://brentwood.moderngov.co.uk/mgCalendarMonthView.aspx?M=10&Y=2026&GL=1",
+   "status": 403,
+   "final": "https://brentwood.moderngov.co.uk/mgCalendarMonthView.aspx?M=10&Y=2026&GL=1",
+   "len": 0
+  },
+  "mg_brentwood_robots": {
+   "url": "https://brentwood.moderngov.co.uk/robots.txt",
+   "status": 200,
+   "final": "https://brentwood.moderngov.co.uk/robots.txt",
+   "len": 2676
+  },
+  "mg_brentwood_new": {
+   "url": "https://brentwood.moderngov.co.uk/mgWhatsNew.aspx?bcr=1",
+   "status": 403,
+   "final": "https://brentwood.moderngov.co.uk/mgWhatsNew.aspx?bcr=1",
+   "len": 0
+  },
+  "mg_uttlesford_cal": {
+   "url": "https://uttlesford.moderngov.co.uk/mgCalendarMonthView.aspx?M=10&Y=2026&GL=1",
+   "status": 403,
+   "final": "https://uttlesford.moderngov.co.uk/mgCalendarMonthView.aspx?M=10&Y=2026&GL=1",
+   "len": 0
+  },
+  "mg_uttlesford_robots": {
+   "url": "https://uttlesford.moderngov.co.uk/robots.txt",
+   "status": 200,
+   "final": "https://uttlesford.moderngov.co.uk/robots.txt",
+   "len": 2676
+  },
+  "mg_uttlesford_new": {
+   "url": "https://uttlesford.moderngov.co.uk/mgWhatsNew.aspx?bcr=1",
+   "status": 403,
+   "final": "https://uttlesford.moderngov.co.uk/mgWhatsNew.aspx?bcr=1",
+   "len": 0
+  },
+  "cmis_colchester_home": {
+   "url": "https://colchester.cmis.uk.com/colchester/",
+   "status": 200,
+   "final": "https://colchester.cmis.uk.com/colchester/",
+   "len": 69251,
+   "links": [
+    "http://colchester.cmis.uk.com/colchester/MeetingCalendar.aspx"
+   ]
+  },
+  "cmis_colchester_home__0": {
+   "url": "http://colchester.cmis.uk.com/colchester/MeetingCalendar.aspx",
+   "status": 200,
+   "final": "https://colchester.cmis.uk.com/colchester/MeetingCalendar.aspx",
+   "len": 87689
+  },
+  "cmis_essex_cal": {
+   "url": "https://cmis.essex.gov.uk/essexcmis5/CalendarofMeetings.aspx",
+   "status": 200,
+   "final": "https://cmis.essex.gov.uk/essexcmis5/CalendarofMeetings.aspx",
+   "len": 65383,
+   "links": []
+  },
+  "cmis_rochford_home": {
+   "url": "https://rochford.cmis.uk.com/rochford",
+   "status": 0,
+   "final": "https://rochford.cmis.uk.com/rochford",
+   "len": 35
+  },
+  "cmis_essex_robots": {
+   "url": "https://cmis.essex.gov.uk/robots.txt",
+   "status": 200,
+   "final": "https://cmis.essex.gov.uk/robots.txt",
+   "len": 2622
+  },
+  "chelmsford_list": {
+   "url": "https://www.chelmsford.gov.uk/committee-meetings/",
+   "status": 200,
+   "final": "https://www.chelmsford.gov.uk/committee-meetings/",
+   "len": 88417,
+   "links": [
+    "https://www.chelmsford.gov.uk/committee-meetings/cabinet-november-2026/",
+    "https://www.chelmsford.gov.uk/committee-meetings/licensing-committee-12-november-2026/",
+    "https://www.chelmsford.gov.uk/committee-meetings/overview-and-scrutiny-committee-november-2026/",
+    "https://www.chelmsford.gov.uk/committee-meetings/governance-committee-november-2026/",
+    "https://www.chelmsford.gov.uk/committee-meetings/regulatory-committee-november-2026/",
+    "https://www.chelmsford.gov.uk/committee-meetings/planning-committee-december-2026/",
+    "https://www.chelmsford.gov.uk/committee-meetings/full-council-december-2026/",
+    "https://www.chelmsford.gov.uk/committee-meetings/audit-and-risk-committee-december-2026/"
+   ]
+  },
+  "chelmsford_list__0": {
+   "url": "https://www.chelmsford.gov.uk/committee-meetings/cabinet-november-2026/",
+   "status": 200,
+   "final": "https://www.chelmsford.gov.uk/committee-meetings/cabinet-november-2026/",
+   "len": 27829
+  },
+  "chelmsford_list__1": {
+   "url": "https://www.chelmsford.gov.uk/committee-meetings/licensing-committee-12-november-2026/",
+   "status": 200,
+   "final": "https://www.chelmsford.gov.uk/committee-meetings/licensing-committee-12-november-2026/",
+   "len": 25849
+  },
+  "chelmsford_robots": {
+   "url": "https://www.chelmsford.gov.uk/robots.txt",
+   "status": 200,
+   "final": "https://www.chelmsford.gov.uk/robots.txt",
+   "len": 291
+  },
+  "braintree_list": {
+   "url": "https://www.braintree.gov.uk/meetings",
+   "status": 200,
+   "final": "https://www.braintree.gov.uk/meetings",
+   "len": 31865,
+   "links": []
+  },
+  "braintree_robots": {
+   "url": "https://www.braintree.gov.uk/robots.txt",
+   "status": 404,
+   "final": "https://www.braintree.gov.uk/robots.txt",
+   "len": 0
+  },
+  "castlepoint_home": {
+   "url": "https://www.castlepoint.gov.uk",
+   "status": 200,
+   "final": "https://www.castlepoint.gov.uk",
+   "len": 127509,
+   "links": [
+    "https://www.castlepoint.gov.uk/w/changes-to-planning-committee-referrals-from-31-october?redirect=%2F"
+   ]
+  },
+  "castlepoint_home__0": {
+   "url": "https://www.castlepoint.gov.uk/w/changes-to-planning-committee-referrals-from-31-october?redirect=%2F",
+   "status": 200,
+   "final": "https://www.castlepoint.gov.uk/w/changes-to-planning-committee-referrals-from-31-october?redirect=%2F",
+   "len": 101226
+  }
+ }
+}
