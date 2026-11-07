@@ -1,0 +1,48 @@
+name: Council Watch collector
+# Reads Essex councils' public meeting papers and prepares the Council Watch inbox.
+# Runs twice a day (UTC), and on any change to the collector itself.
+on:
+  schedule:
+    - cron: "40 5 * * *"
+    - cron: "40 15 * * *"
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: [".github/workflows/councilwatch-collect.yml", "tools/councilwatch/collect.py"]
+permissions:
+  contents: write
+concurrency: councilwatch
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+        with: { fetch-depth: 1 }
+      - name: Get previous state
+        run: |
+          mkdir -p /tmp/cw
+          if git fetch -q --depth 1 origin councilwatch-data; then git archive FETCH_HEAD | tar -x -C /tmp/cw; else echo "no previous state"; fi
+      - name: Install pdftotext
+        run: sudo apt-get install -y -qq poppler-utils >/dev/null
+      - name: Collect
+        run: python3 tools/councilwatch/collect.py /tmp/cw
+      - name: Save inbox and state to the data branch
+        run: |
+          cd /tmp/cw && rm -rf .git
+          git init -q -b councilwatch-data
+          git config user.name "The Seax council watch"
+          git config user.email "seaxbot@users.noreply.github.com"
+          git add -A && git commit -qm "Council Watch data $(date -u +%FT%TZ)"
+          git push -qf "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" councilwatch-data
+      - name: Publish the meetings calendar to the site
+        run: |
+          mkdir -p data/councilwatch
+          cp /tmp/cw/calendar.json /tmp/cw/status.json data/councilwatch/
+          git config user.name "The Seax council watch"
+          git config user.email "seaxbot@users.noreply.github.com"
+          git add data/councilwatch
+          git diff --cached --quiet && exit 0
+          git commit -qm "Council Watch calendar"
+          for i in 1 2 3 4 5; do git pull -q --rebase origin main && git push -q origin HEAD:main && exit 0; sleep $((i*7)); done
+          exit 1
