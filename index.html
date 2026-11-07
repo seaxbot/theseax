@@ -884,6 +884,11 @@ body.srch-open{overflow:hidden}
 .lp-upd{color:var(--c,#b3121b);font-weight:700}
 /* Essex in the tables */
 .tbl-wrap{margin:-4px 0 22px}
+#sportStories{grid-template-columns:repeat(3,1fr);margin-bottom:30px}
+#sport .res-h{margin-bottom:10px}
+@media (max-width:1060px){ #sportStories{grid-template-columns:1fr 1fr} }
+@media (max-width:640px){ #sportStories{grid-template-columns:1fr} }
+@media (min-width:861px){ #sport #fixtures{max-height:560px;overflow-y:auto;padding-right:6px;overscroll-behavior:contain} }
 .tbl-wrap .sec-h{margin-bottom:10px;flex-wrap:wrap;row-gap:2px}
 .tbl-wrap .sec-h h3{white-space:nowrap}
 .tbl-strip{display:flex;gap:10px;overflow-x:auto;padding:2px 2px 10px;scroll-snap-type:x proximity;scrollbar-width:thin}
@@ -1065,16 +1070,17 @@ footer .flinks a{text-decoration:underline}
 <section class="block" id="sport">
   <div class="wrap">
     <div class="bh"><h2>Sport<small>Scores, results and fixtures from every level of Essex sport</small></h2></div>
-    <div class="score-strip" id="scoreStrip"></div>
+    <div class="grid" id="sportStories"></div>
     <div class="tbl-wrap" id="tblWrap" hidden>
       <div class="sec-h"><h3>Essex in the tables</h3><span class="sub" id="tblAsOf">Tap a club for the full table</span></div>
       <div class="tbl-strip" id="tblStrip" role="list"></div>
       <div class="tbl-full" id="tblFull" hidden></div>
     </div>
+    <div class="sec-h res-h"><h3>Latest results</h3><span class="sub">Tap a score for the match report</span></div>
+    <div class="score-strip" id="scoreStrip"></div>
     <div class="sport">
       <div>
         <div class="scores" id="scores"></div>
-        <div class="grid" id="sportStories" style="grid-template-columns:1fr 1fr;margin-top:18px"></div>
       </div>
       <div class="fixtures">
         <div class="sec-h"><h3>Coming up</h3><span class="sub">Countdowns update live</span></div>
@@ -4016,6 +4022,7 @@ function renderSport(){
   const done = m => Number.isFinite(m.hs) && Number.isFinite(m.as);
   const res = sp.results.slice().sort((a,b) => new Date(b.date) - new Date(a.date));
   const strip = document.getElementById("scoreStrip");
+  const resH = document.querySelector("#sport .res-h"); if(resH) resH.hidden = !res.length;
   if(strip) strip.innerHTML = res.length ? res.map(m => `<a class="chip-score" href="${safeUrl(m.url||"#")}" target="_blank" rel="noopener"><span class="cs-c">${esc(m.comp)}${m.date ? " · " + esc(fmt(new Date(m.date),{weekday:"short",day:"numeric"})) : ""}</span><span class="cs-r"><b>${esc(m.home)}</b><i>${done(m) ? m.hs : "-"}</i></span><span class="cs-r"><b>${esc(m.away)}</b><i>${done(m) ? m.as : "-"}</i></span><span class="cs-s">${esc(done(m) ? (m.status||"FT") : (m.status||"Live"))}</span></a>`).join("") : "";
   const groups = {};
   const dayOf = m => m.date ? fmt(new Date(m.date),{weekday:"short",day:"numeric",month:"short"}) : "";
