@@ -3008,14 +3008,14 @@ function seasonArt(s, opts){
    sponsors or brand marks. A story may force an object with
    "sportArt": cricket|football|tennis|rugby|racing|icehockey|
    cycling|golf|athletics. Football, cricket, tennis, rugby,
-   cycling, ice hockey, golf and racing use the photographs in img/sport/ (see SPORT_PHOTO) instead.
+   cycling, ice hockey, golf, racing and boxing use the photographs in img/sport/ (see SPORT_PHOTO) instead.
    ============================================================ */
-const SPORT_LABEL = {cricket:"Cricket", football:"Football", tennis:"Tennis", rugby:"Rugby", racing:"Racing", icehockey:"Ice hockey", cycling:"Cycling", golf:"Golf", athletics:"Sport"};
+const SPORT_LABEL = {cricket:"Cricket", football:"Football", tennis:"Tennis", rugby:"Rugby", racing:"Racing", icehockey:"Ice hockey", cycling:"Cycling", golf:"Golf", boxing:"Boxing", athletics:"Sport"};
 function sportKindOf(s){
   if(!s) return null;
   if(s.sportArt && SPORT_LABEL[String(s.sportArt).toLowerCase()]) return String(s.sportArt).toLowerCase();
   const k = iconKey(s), tag = String(s.tag || "").toLowerCase();
-  const sporty = ["football","racing","cricket","sport"].includes(k) || /^(football|racing|cricket|ice hockey|rugby|sport|athletics|cycling|tennis|golf)$/.test(tag);
+  const sporty = ["football","racing","cricket","sport"].includes(k) || /^(football|racing|cricket|ice hockey|rugby|sport|athletics|cycling|tennis|golf|boxing)$/.test(tag);
   if(!sporty) return null;
   const t = " " + tag + " " + String(s.headline || "").toLowerCase() + " " + String(s.summary || "").toLowerCase() + " ";
   if(k === "cricket" || /cricket|county championship|\bt20\b|\bwicket|\binnings\b/.test(t)) return "cricket";
@@ -3024,6 +3024,7 @@ function sportKindOf(s){
   if(/\brugby\b/.test(t)) return "rugby";
   if(/\btennis\b|wimbledon|\bwta\b|\batp\b/.test(t)) return "tennis";
   if(/\bgolf/.test(t)) return "golf";
+  if(/\bboxing\b|\bboxers?\b|\bbout\b|heavyweight|middleweight|welterweight|title fight/.test(t)) return "boxing";
   if(/cycling|cyclist|\bgiro\b|tour de france|velodrome|\bbike race/.test(t)) return "cycling";
   if(k === "football" || /football|\bfc\b|\bleague\b|\bunited\b|\bgoal/.test(t)) return "football";
   return "athletics";
@@ -3039,7 +3040,8 @@ const SPORT_PHOTO = {
   cycling:{src:"/img/sport/cycling.jpg?v=1", ay:"YMid"},
   icehockey:{src:"/img/sport/icehockey.jpg?v=1", ay:"YMid"},
   golf:{src:"/img/sport/golf.jpg?v=1", ay:"YMid"},
-  racing:{src:"/img/sport/racing.jpg?v=1", ay:"YMid"}
+  racing:{src:"/img/sport/racing.jpg?v=1", ay:"YMid"},
+  boxing:{src:"/img/sport/boxing.jpg?v=1", ay:"YMid"}
 };
 function sportArt(s, opts){
   opts = opts || {};
