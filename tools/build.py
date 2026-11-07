@@ -154,14 +154,14 @@ def head(title, desc, canonical, og_image, og_type="website", extra=""):
 <meta property="og:title" content="{E(title.replace(' · The Seax', ''))}">
 <meta property="og:description" content="{E(desc)}">
 <meta property="og:url" content="{E(canonical)}">
-<meta property="og:image" content="{SITE}/img/og/{og_image}.png">
+<meta property="og:image" content="{SITE}{og_image if og_image.startswith("/") else "/img/og/" + og_image + ".png"}">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="The Seax, Essex News, Sport, Life.">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="{E(title.replace(' · The Seax', ''))}">
 <meta name="twitter:description" content="{E(desc)}">
-<meta name="twitter:image" content="{SITE}/img/og/{og_image}.png">
+<meta name="twitter:image" content="{SITE}{og_image if og_image.startswith("/") else "/img/og/" + og_image + ".png"}">
 <meta name="theme-color" content="#c8102e">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png">
@@ -227,6 +227,22 @@ def share_bar(url, title):
   <a href="https://x.com/intent/post?url={quote(url, safe='')}&amp;text={quote(title)}" target="_blank" rel="noopener">X</a>
   <button data-share="copy" data-url="{E(url)}" data-title="{E(title)}">Copy link</button>
 </div>"""
+
+# ---------- stock photos (tools/photos.py) ----------
+try:
+    PHOTOS = json.load(open(os.path.join(ROOT, "data", "photos.json"), encoding="utf-8"))
+except Exception:
+    PHOTOS = {}
+
+def stock_figure(it, sec):
+    p = PHOTOS.get(it.get("id")) if sec != "sport" else None
+    if not p:
+        return ""
+    who = f'<a href="{E(p["creatorUrl"])}" target="_blank" rel="noopener">{E(p["creator"])}</a>' if safe_url(p.get("creatorUrl")) else E(p.get("creator"))
+    lic = f'<a href="{E(p["licenseUrl"])}" target="_blank" rel="noopener">{E(p["license"])}</a>' if safe_url(p.get("licenseUrl")) else E(p.get("license"))
+    src = f' via <a href="{E(p["source"])}" target="_blank" rel="noopener">{E(p.get("provider") or "source")}</a>' if safe_url(p.get("source")) else ""
+    return (f'<figure class="stock"><img src="{E(p["file"])}" width="{E(p.get("w") or 1200)}" height="{E(p.get("h") or 800)}" alt="{E("Stock photo: " + (p.get("title") or p.get("keyword") or ""))}" loading="eager">'
+            f'<figcaption><b>Stock photo</b>, not the scene of this story. {E(p.get("title") or "")}{" · " if p.get("title") else ""}{who}, {lic}{src}</figcaption></figure>')
 
 # ---------- story pages ----------
 def collect(ed):
@@ -305,7 +321,12 @@ def story_page(sec, it, more):
     more_html = "".join(
         f'<a class="rel" href="/story/{E(m["id"])}/" style="--c:{ICON_COLOUR.get(icon_of(m, s), "#3a3f4b")}"><i></i><b>{E(m["headline"])}</b><span>{E(m.get("place") or "Essex")}</span></a>'
         for s, m in more)
-    return head(f"{title} · The Seax", desc, url, card, "article", extra) + f"""<main class="wrap story">
+    fig = stock_figure(it, sec)
+    og_img = PHOTOS[sid]["file"] if fig and card not in [k for k, _ in ROAD_OG] else card
+    if fig:
+        ld["image"] = [SITE + og_img if og_img.startswith("/") else ld["image"][0]]
+        extra = extra.replace(f"{SITE}/img/og/{card}.png", ld["image"][0])
+    return head(f"{title} · The Seax", desc, url, og_img, "article", extra) + f"""<main class="wrap story">
 <article style="--c:{colour}">
   <div class="kick"><span>{E(kicker)}</span><span>{E(place)}</span></div>
   {org}{cw_badge(it) if sec == "councilwatch" else ""}
@@ -313,6 +334,7 @@ def story_page(sec, it, more):
   {f'<p class="standfirst">{E(summary)}</p>' if summary else ''}
   <div class="meta">{' <span class="dot">·</span> '.join(meta)}</div>
   {share_bar(url, title)}
+  {fig}
   {''.join(f'<p>{E(p)}</p>' for p in body if str(p).strip())}
   {('<h2>Key points</h2><ul class="points">' + ''.join(f'<li>{E(p)}</li>' for p in points) + '</ul>') if points else ''}
   {readfull}

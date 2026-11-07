@@ -18,7 +18,7 @@ import argparse, json, os, subprocess, sys, time
 from datetime import datetime, timezone
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-BOTS = {"The Seax newsroom", "The Seax sport desk", "The Seax council watch"}
+BOTS = {"The Seax newsroom", "The Seax sport desk", "The Seax council watch", "The Seax photo desk"}
 SPORT_KEYS = ("results", "fixtures", "tables")
 
 def git(*a, check=True):
