@@ -24,11 +24,15 @@ jobs:
           mkdir -p /tmp/cw
           if git fetch -q --depth 1 origin councilwatch-data; then git archive FETCH_HEAD | tar -x -C /tmp/cw; else echo "no previous state"; fi
       - name: Install pdftotext
-        run: sudo apt-get install -y -qq poppler-utils >/dev/null
+        run: (command -v pdftotext || (sudo apt-get update -qq && sudo apt-get install -y -qq poppler-utils)) > /dev/null 2>&1 || echo "pdftotext not available"
       - name: Collect
-        run: python3 tools/councilwatch/collect.py /tmp/cw
-      - name: Save inbox and state to the data branch
         run: |
+          set -o pipefail
+          python3 -u tools/councilwatch/collect.py /tmp/cw 2>&1 | tee /tmp/cw/run.log
+      - name: Save inbox, state and run log to the data branch
+        if: always()
+        run: |
+          mkdir -p /tmp/cw; [ -f /tmp/cw/run.log ] || echo "collector did not run" > /tmp/cw/run.log
           cd /tmp/cw && rm -rf .git
           git init -q -b councilwatch-data
           git config user.name "The Seax council watch"

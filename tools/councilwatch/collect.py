@@ -367,7 +367,14 @@ def main():
     status, inbox, cal = {}, [], []
     pdf_budget = MAX_PDF
     cands = []
+    t_run = time.time()
     for cid, name, area, system, base in COUNCILS:
+        t0 = time.time()
+        print(f"[{int(t0 - t_run)}s] {cid} ({system})", flush=True)
+        if t0 - t_run > 1500:
+            print("  run time budget used up; skipping the rest", flush=True)
+            status[cid] = {"name": name, "system": system, "base": base, "meetings": 0, "changed": 0, "state": "skipped", "note": "time budget"}
+            continue
         st = {"name": name, "system": system, "base": base, "meetings": 0, "changed": 0, "state": "ok", "note": ""}
         status[cid] = st
         if system not in ADAPT:
@@ -387,7 +394,11 @@ def main():
             st["note"] = err or "no meetings in window"
             continue
         st["meetings"] = len(meets)
+        print(f"  {len(meets)} meetings in window", flush=True)
         for meet in sorted(meets, key=lambda m: m["date"], reverse=True):
+            if time.time() - t0 > 180:
+                st["note"] = "per-council time cap reached"
+                break
             try:
                 det, err = reader(cid, base, meet)
             except Exception as e:
@@ -426,6 +437,7 @@ def main():
             it["excerpt"] = state["pdfs"][url].get("excerpt", "")
             it["pages"] = state["pdfs"][url].get("pages")
             continue
+        print(f"  pdf {cid} {url[-80:]}", flush=True)
         ex = pdf_excerpt(cid, url)
         pdf_budget -= 1
         if ex:
