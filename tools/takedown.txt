@@ -1,3 +1,7 @@
 # Story ids listed here (one per line) are removed from the site at the next build:
 # their page is deleted and they leave the sitemap and archive.
 # Use this for corrections that require removal or legal requests.
+cw-tendring-tendring-budgets-for-life-beyond-2028-as-the-government
+cw-thurrock-thurrock-s-special-needs-funding-gap-keeps-growing-as-tr
+cw-thurrock-thurrock-picked-as-one-of-seven-national-pilots-helping
+cw-southend-southend-s-fraud-investigators-have-brought-in-more-than

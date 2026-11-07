@@ -126,7 +126,12 @@ def publish(new_path):
             st = json.loads(json.dumps(st, ensure_ascii=False).replace(" — ", ", ").replace("—", ", "))
             body = [p for p in (st.get("body") or []) if str(p).strip()]
         council = st.get("council") or src.get("council")
-        sid = st.get("id") or f"cw-{council}-{slug(st['headline'], 56)}"
+        hs = slug(st["headline"], 70)
+        for w in (council, slug(st.get("councilName") or src.get("councilName") or "", 30)):
+            if w and hs.startswith(w + "-"):
+                hs = hs[len(w) + 1:]
+        hs = re.sub(r"^s-", "", hs)[:56].rstrip("-")
+        sid = st.get("id") or f"cw-{council}-{hs}"
         while sid in ids:
             sid += "-2"
         ids.add(sid)
