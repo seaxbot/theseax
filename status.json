@@ -1,0 +1,153 @@
+{
+ "at": "2026-11-07T16:15:08.758546+00:00",
+ "councils": {
+  "thurrock": {
+   "name": "Thurrock Council",
+   "system": "mg",
+   "base": "https://democracy.thurrock.gov.uk",
+   "meetings": 18,
+   "changed": 0,
+   "state": "ok",
+   "note": ""
+  },
+  "southend": {
+   "name": "Southend-on-Sea City Council",
+   "system": "mg",
+   "base": "https://democracy.southend.gov.uk",
+   "meetings": 18,
+   "changed": 0,
+   "state": "ok",
+   "note": ""
+  },
+  "epping": {
+   "name": "Epping Forest District Council",
+   "system": "mg",
+   "base": "https://rds.eppingforestdc.gov.uk",
+   "meetings": 15,
+   "changed": 0,
+   "state": "ok",
+   "note": ""
+  },
+  "maldon": {
+   "name": "Maldon District Council",
+   "system": "mg",
+   "base": "https://democracy.maldon.gov.uk",
+   "meetings": 16,
+   "changed": 0,
+   "state": "ok",
+   "note": ""
+  },
+  "tendring": {
+   "name": "Tendring District Council",
+   "system": "mg",
+   "base": "https://tdcdemocracy.tendringdc.gov.uk",
+   "meetings": 12,
+   "changed": 0,
+   "state": "ok",
+   "note": ""
+  },
+  "harlow": {
+   "name": "Harlow Council",
+   "system": "mg",
+   "base": "https://moderngov.harlow.gov.uk",
+   "meetings": 0,
+   "changed": 0,
+   "state": "unreachable",
+   "note": "calendar 0 URLError(gaierror(-2, 'Name or service not known'))"
+  },
+  "basildon": {
+   "name": "Basildon Council",
+   "system": "mg",
+   "base": "https://www.basildonmeetings.info",
+   "meetings": 0,
+   "changed": 0,
+   "state": "blocked",
+   "note": "calendar 403 HTTP Error 403: Forbidden"
+  },
+  "brentwood": {
+   "name": "Brentwood Borough Council",
+   "system": "mg",
+   "base": "https://brentwood.moderngov.co.uk",
+   "meetings": 0,
+   "changed": 0,
+   "state": "blocked",
+   "note": "calendar 403 HTTP Error 403: Forbidden"
+  },
+  "uttlesford": {
+   "name": "Uttlesford District Council",
+   "system": "mg",
+   "base": "https://uttlesford.moderngov.co.uk",
+   "meetings": 0,
+   "changed": 0,
+   "state": "blocked",
+   "note": "calendar 403 HTTP Error 403: Forbidden"
+  },
+  "essex": {
+   "name": "Essex County Council",
+   "system": "cmis",
+   "base": "https://cmis.essex.gov.uk/essexcmis5",
+   "meetings": 0,
+   "changed": 0,
+   "state": "refused",
+   "note": "robots.txt disallows"
+  },
+  "colchester": {
+   "name": "Colchester City Council",
+   "system": "cmis",
+   "base": "https://colchester.cmis.uk.com/colchester",
+   "meetings": 0,
+   "changed": 0,
+   "state": "refused",
+   "note": "robots.txt disallows"
+  },
+  "rochford": {
+   "name": "Rochford District Council",
+   "system": "cmis",
+   "base": "https://rochford.cmis.uk.com/rochford",
+   "meetings": 0,
+   "changed": 0,
+   "state": "unreachable",
+   "note": "committees 0 URLError(TimeoutError('timed out'))"
+  },
+  "chelmsford": {
+   "name": "Chelmsford City Council",
+   "system": "chelmsford",
+   "base": "https://www.chelmsford.gov.uk",
+   "meetings": 5,
+   "changed": 0,
+   "state": "ok",
+   "note": ""
+  },
+  "braintree": {
+   "name": "Braintree District Council",
+   "system": "none",
+   "base": "https://www.braintree.gov.uk",
+   "meetings": 0,
+   "changed": 0,
+   "state": "manual",
+   "note": "no machine-readable meetings system found; the desk checks it by search"
+  },
+  "castlepoint": {
+   "name": "Castle Point Borough Council",
+   "system": "none",
+   "base": "https://www.castlepoint.gov.uk",
+   "meetings": 0,
+   "changed": 0,
+   "state": "manual",
+   "note": "no machine-readable meetings system found; the desk checks it by search"
+  }
+ },
+ "requests": {
+  "thurrock": 25,
+  "southend": 30,
+  "epping": 19,
+  "maldon": 19,
+  "tendring": 15,
+  "harlow": 3,
+  "basildon": 3,
+  "brentwood": 3,
+  "uttlesford": 3,
+  "rochford": 1,
+  "chelmsford": 6
+ }
+}

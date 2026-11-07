@@ -1,0 +1,128 @@
+[0s] thurrock (mg)
+  18 meetings in window
+[26s] southend (mg)
+  18 meetings in window
+[54s] epping (mg)
+  15 meetings in window
+[80s] maldon (mg)
+  16 meetings in window
+[104s] tendring (mg)
+  12 meetings in window
+[136s] harlow (mg)
+[139s] basildon (mg)
+[141s] brentwood (mg)
+[144s] uttlesford (mg)
+[147s] essex (cmis)
+[147s] colchester (cmis)
+[148s] rochford (cmis)
+[208s] chelmsford (chelmsford)
+  5 meetings in window
+[215s] braintree (none)
+[215s] castlepoint (none)
+  pdf southend acy.southend.gov.uk/documents/s73172/Southend New Local Plan - Regulation 19.pdf
+  pdf thurrock tps://democracy.thurrock.gov.uk/documents/s55033/Q1 Financial Outturn 202627.pdf
+  pdf thurrock ments/s55035/Families First Partnership Childrens Social Care Transformation.pdf
+  pdf southend ts/s73007/Counter Fraud and Investigation Quarterly Update - Covering Report.pdf
+  pdf southend ov.uk/documents/s73024/Regulator of Social Housing Judgement Progress Report.pdf
+  pdf southend ocracy.southend.gov.uk/documents/s72994/CIPFA FM code update covering report.pdf
+  pdf thurrock https://democracy.thurrock.gov.uk/documents/s55031/IHA Update Cover Sheet.pdf
+  pdf southend .gov.uk/documents/s73351/Cabinet Report Better Queensway Housing plans Final.pdf
+  pdf southend .gov.uk/documents/s73352/Cabinet Report Better Queensway Housing plans Final.pdf
+  pdf southend cisions taken by or in consultation with Cabinet Members - for November 2026.pdf
+  pdf southend .gov.uk/documents/s73375/Cabinet Report Better Queensway Housing plans Final.pdf
+  pdf epping https://rds.eppingforestdc.gov.uk/documents/s130303/PH Rpt - CDC v3.pdf
+  pdf thurrock s://democracy.thurrock.gov.uk/documents/s55302/Health and Wellbeing Strategy.pdf
+  pdf southend 73402/16 November Cabinet - Petition response - Save Leigh North Street Pool.pdf
+{
+"thurrock": [
+"ok",
+18,
+0,
+""
+],
+"southend": [
+"ok",
+18,
+0,
+""
+],
+"epping": [
+"ok",
+15,
+0,
+""
+],
+"maldon": [
+"ok",
+16,
+0,
+""
+],
+"tendring": [
+"ok",
+12,
+0,
+""
+],
+"harlow": [
+"unreachable",
+0,
+0,
+"calendar 0 URLError(gaierror(-2, 'Name or service not known'))"
+],
+"basildon": [
+"blocked",
+0,
+0,
+"calendar 403 HTTP Error 403: Forbidden"
+],
+"brentwood": [
+"blocked",
+0,
+0,
+"calendar 403 HTTP Error 403: Forbidden"
+],
+"uttlesford": [
+"blocked",
+0,
+0,
+"calendar 403 HTTP Error 403: Forbidden"
+],
+"essex": [
+"refused",
+0,
+0,
+"robots.txt disallows"
+],
+"colchester": [
+"refused",
+0,
+0,
+"robots.txt disallows"
+],
+"rochford": [
+"unreachable",
+0,
+0,
+"committees 0 URLError(TimeoutError('timed out'))"
+],
+"chelmsford": [
+"ok",
+5,
+0,
+""
+],
+"braintree": [
+"manual",
+0,
+0,
+"no machine-readable meetings system found; the desk checks it by search"
+],
+"castlepoint": [
+"manual",
+0,
+0,
+"no machine-readable meetings system found; the desk checks it by search"
+]
+}
+inbox 84 meetings, calendar 41, pdf excerpts 14
