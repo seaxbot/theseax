@@ -3946,12 +3946,11 @@ function renderToday(){
     if(today && ukHour < 16) parts.push(`<span class="wk">Later</span>high <b>${esc(today.hi)}°C</b>${today.desc ? `, ${low(today.desc)}` : ""}${rain(today)}`);
     if(today && ukHour < 23) parts.push(`<span class="wk">Tonight</span>low <b>${esc(today.lo)}°C</b>`);
     if(tmrw) parts.push(`<span class="wk">Tomorrow</span><b>${esc(tmrw.hi)}°C</b> ${low(tmrw.desc)}${rain(tmrw)}`);
-    bits.push(`<a href="#weather" class="tb tb-wx"><span class="k">Weather</span>${parts.map(x => `<span class="wp">${x}</span>`).join('<span class="wsep" aria-hidden="true"></span>')}</a>`);
+    bits.push(`<a href="#weather" class="tb tb-wx">${parts.map(x => `<span class="wp">${x}</span>`).join('<span class="wsep" aria-hidden="true"></span>')}</a>`);
   }
-  bits.push(`<a href="#weather" class="tb"><span class="k">${now < st.set ? "Sunset" : "Sunrise"}</span><b>${fmt(now < st.set ? st.set : solar(new Date(now.getTime()+864e5)).rise,{hour:"2-digit",minute:"2-digit"})}</b></a>`);
   const warn = (w.warnings||[])[0];
   if(warn) bits.unshift(`<a href="#weather" class="tb warn"><span class="k">Warning</span><b>${esc(warn)}</b></a>`);
-  el.innerHTML = `<span class="tb-h">Today in Essex</span>${bits.join("")}`;
+  el.innerHTML = `<span class="tb-h">Weather</span>${bits.join("")}`;
 }
 
 /* ---------- news: tiered ---------- */
