@@ -3002,8 +3002,8 @@ function seasonArt(s, opts){
    hockey clubs (those keep their club colour panels). No crests,
    sponsors or brand marks. A story may force an object with
    "sportArt": cricket|football|tennis|rugby|racing|icehockey|
-   cycling|golf|athletics. Football, cricket, tennis, rugby and
-   cycling use the photographs in img/sport/ (see SPORT_PHOTO) instead.
+   cycling|golf|athletics. Football, cricket, tennis, rugby,
+   cycling and ice hockey use the photographs in img/sport/ (see SPORT_PHOTO) instead.
    ============================================================ */
 const SPORT_LABEL = {cricket:"Cricket", football:"Football", tennis:"Tennis", rugby:"Rugby", racing:"Racing", icehockey:"Ice hockey", cycling:"Cycling", golf:"Golf", athletics:"Sport"};
 function sportKindOf(s){
@@ -3031,7 +3031,8 @@ const SPORT_PHOTO = {
   cricket:{src:"/img/sport/cricket.jpg?v=1", ay:"YMid"},
   tennis:{src:"/img/sport/tennis.jpg?v=1", ay:"YMin"},
   rugby:{src:"/img/sport/rugby.jpg?v=1", ay:"YMin"},
-  cycling:{src:"/img/sport/cycling.jpg?v=1", ay:"YMid"}
+  cycling:{src:"/img/sport/cycling.jpg?v=1", ay:"YMid"},
+  icehockey:{src:"/img/sport/icehockey.jpg?v=1", ay:"YMid"}
 };
 function sportArt(s, opts){
   opts = opts || {};
