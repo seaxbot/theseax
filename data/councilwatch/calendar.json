@@ -1,19 +1,6 @@
 {
- "at": "2026-11-07T10:39:21.164748+00:00",
+ "at": "2026-11-07T10:49:11.666873+00:00",
  "meetings": [
-  {
-   "council": "maldon",
-   "councilName": "Maldon District Council",
-   "area": "maldon",
-   "committee": "Licensing Sub-Committee",
-   "date": "2026-11-09",
-   "time": "2.00 pm",
-   "url": "https://democracy.maldon.gov.uk/ieListDocuments.aspx?CId=156&MId=4931",
-   "items": [
-    "Application for a Dual Driver Licence",
-    "Disclosure of Interest"
-   ]
-  },
   {
    "council": "epping",
    "councilName": "Epping Forest District Council",
@@ -23,7 +10,6 @@
    "time": "7.00 pm",
    "url": "https://rds.eppingforestdc.gov.uk/ieListDocuments.aspx?CId=565&MId=12601",
    "items": [
-    "Exclusion of Public and Press",
     "Treasury Management Quarter 2 Report",
     "Internal Audit Monitoring Report",
     "Risk Management"
@@ -38,10 +24,10 @@
    "time": "5.00 pm",
    "url": "https://democracy.southend.gov.uk/ieListDocuments.aspx?CId=607&MId=5113",
    "items": [
-    "Enforcement Action",
     "26/00809/DOV - Land Between Barge Pier Road and Ness Road, Shoeburyness (Shoeburyness Ward)",
     "Appeals received and determined in the last quarter, Appeals currently pending",
-    "Reports on Planning Applications"
+    "Reports on Planning Applications",
+    "Contents List and Introduction"
    ]
   },
   {
@@ -53,18 +39,6 @@
    "time": "6.00 pm",
    "url": "https://rds.eppingforestdc.gov.uk/ieListDocuments.aspx?CId=743&MId=12541",
    "items": []
-  },
-  {
-   "council": "thurrock",
-   "councilName": "Thurrock Council",
-   "area": "south",
-   "committee": "Licensing Sub-Committee",
-   "date": "2026-11-11",
-   "time": "7.00 pm",
-   "url": "https://democracy.thurrock.gov.uk/ieListDocuments.aspx?CId=171&MId=7022",
-   "items": [
-    "Determination of an application for a new premises licence"
-   ]
   },
   {
    "council": "maldon",
@@ -86,9 +60,7 @@
    "date": "2026-11-12",
    "time": "",
    "url": "https://www.chelmsford.gov.uk/committee-meetings/licensing-committee-12-november-2026/",
-   "items": [
-    "Licensing Act 2003: Application for a Variation of a Premises Licence - New World Sound, Central Park, Chelmsford"
-   ]
+   "items": []
   },
   {
    "council": "southend",
@@ -123,10 +95,10 @@
    "time": "7.00 pm",
    "url": "https://democracy.thurrock.gov.uk/ieListDocuments.aspx?CId=524&MId=6991",
    "items": [
-    "Recommendations Tracker",
     "Health and Wellbeing Strategy",
     "Orsett Hospital: Service Resilience and Planning Update",
-    "Information for members of the public and councillors"
+    "Information for members of the public and councillors",
+    "Action Log"
    ]
   },
   {
@@ -153,8 +125,7 @@
    "time": "9.50 pm",
    "url": "https://democracy.southend.gov.uk/ieListDocuments.aspx?CId=609&MId=5079",
    "items": [
-    "Finance Performance Report 2026/27 to end of September 2026 (Period 6)",
-    "Minutes of the meeting held on Thursday 8 October 2026"
+    "Finance Performance Report 2026/27 to end of September 2026 (Period 6)"
    ]
   },
   {
@@ -198,19 +169,9 @@
    "items": [
     "Decisions taken by, or in consultation with, Cabinet Members",
     "Better Queensway – Decisions on housing design, delivery approach and procurement strategy",
-    "Better Queensway – Decisions on housing design, delivery approach and procurement strategy - Confidential Appendix",
-    "Petition response - Save Leigh North Street School Swimming Pool"
+    "Petition response - Save Leigh North Street School Swimming Pool",
+    "Financial Performance Report for September 2026 (Period 6)"
    ]
-  },
-  {
-   "council": "epping",
-   "councilName": "Epping Forest District Council",
-   "area": "epping",
-   "committee": "Licensing Sub Committee",
-   "date": "2026-11-17",
-   "time": "10.15 am",
-   "url": "https://rds.eppingforestdc.gov.uk/ieListDocuments.aspx?CId=428&MId=12627",
-   "items": []
   },
   {
    "council": "tendring",
@@ -303,16 +264,6 @@
    "items": []
   },
   {
-   "council": "thurrock",
-   "councilName": "Thurrock Council",
-   "area": "south",
-   "committee": "Licensing Sub-Committee",
-   "date": "2026-11-19",
-   "time": "7.00 pm",
-   "url": "https://democracy.thurrock.gov.uk/ieListDocuments.aspx?CId=171&MId=6963",
-   "items": []
-  },
-  {
    "council": "epping",
    "councilName": "Epping Forest District Council",
    "area": "epping",
@@ -370,16 +321,6 @@
    "date": "2026-11-24",
    "time": "7.30 pm",
    "url": "https://tdcdemocracy.tendringdc.gov.uk/ieListDocuments.aspx?CId=130&MId=2837",
-   "items": []
-  },
-  {
-   "council": "thurrock",
-   "councilName": "Thurrock Council",
-   "area": "south",
-   "committee": "Licensing Sub-Committee",
-   "date": "2026-11-25",
-   "time": "7.00 pm",
-   "url": "https://democracy.thurrock.gov.uk/ieListDocuments.aspx?CId=171&MId=7027",
    "items": []
   },
   {
@@ -460,26 +401,6 @@
    "date": "2026-11-26",
    "time": "7.30 pm",
    "url": "https://democracy.maldon.gov.uk/ieListDocuments.aspx?CId=285&MId=4727",
-   "items": []
-  },
-  {
-   "council": "southend",
-   "councilName": "Southend-on-Sea City Council",
-   "area": "southend",
-   "committee": "Appeals Committee",
-   "date": "2026-11-30",
-   "time": "10.00 am",
-   "url": "https://democracy.southend.gov.uk/ieListDocuments.aspx?CId=612&MId=5186",
-   "items": []
-  },
-  {
-   "council": "epping",
-   "councilName": "Epping Forest District Council",
-   "area": "epping",
-   "committee": "Licensing Sub Committee",
-   "date": "2026-12-01",
-   "time": "10.15 am",
-   "url": "https://rds.eppingforestdc.gov.uk/ieListDocuments.aspx?CId=428&MId=12628",
    "items": []
   },
   {
