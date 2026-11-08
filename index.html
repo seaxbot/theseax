@@ -3620,7 +3620,7 @@ function buildHero(){
         <h2><a href="${storyHref(s)}">${esc(s.headline)}</a></h2>
         <p>${esc(s.summary)}</p>
         ${s.points && s.points.length ? `<ul class="lp">${s.points.slice(0,2).map(p=>`<li>${esc(p)}</li>`).join("")}</ul>` : ""}
-        <div class="meta">${esc(s.place||"")} · <span data-ago="${esc(s.time||"")}">${ago(s.time)}</span> · ${esc(s.source)} <a class="read" href="${storyHref(s)}">Read the story →</a></div>
+        <div class="meta">${esc(s.place||"")} · <span data-ago="${esc(s.time||"")}">${ago(s.time)}</span> <a class="read" href="${storyHref(s)}">Read the story →</a></div>
       </div>
     </div>`).join("");
   $("#dots").innerHTML = heroList.map((s,i) => `<button class="${i===0?"on":""}" data-slide="${i}" aria-label="Story ${i+1}: ${esc(s.headline)}"></button>`).join("");
@@ -3641,7 +3641,7 @@ function renderTopList(){
   const shown = new Set(heroList.map(s => s.id));
   const others = ED.stories.filter(inArea).filter(s => !shown.has(s.id)).slice(0,5);
   const pick = others.length >= 3 ? others : ED.stories.filter(inArea).slice(1,6);
-  $("#topList").innerHTML = pick.map(s => `<li><div><h4><a href="${storyHref(s)}">${esc(s.headline)}</a></h4><div class="m">${esc(s.place||"")} · <span data-ago="${esc(s.time||"")}">${ago(s.time)}</span> · ${esc(s.source)}</div></div></li>`).join("") || `<li><div class="m">No other stories for this area yet.</div></li>`;
+  $("#topList").innerHTML = pick.map(s => `<li><div><h4><a href="${storyHref(s)}">${esc(s.headline)}</a></h4><div class="m">${esc(s.place||"")} · <span data-ago="${esc(s.time||"")}">${ago(s.time)}</span></div></div></li>`).join("") || `<li><div class="m">No other stories for this area yet.</div></li>`;
 }
 
 function cardHtml(s, wide, art){
@@ -3654,7 +3654,7 @@ function cardHtml(s, wide, art){
       <h3>${esc(s.headline)}</h3>
       <p>${esc(s.summary)}</p>
       ${wide && s.points && s.points.length ? `<ul class="cp">${s.points.slice(0,3).map(p=>`<li>${esc(p)}</li>`).join("")}</ul>` : ""}
-      <div class="src"><span>${esc(s.source)}${s.also && s.also.length ? ` +${s.also.length} more` : ""}</span><b>Read →</b></div>
+      <div class="src"><span></span><b>Read →</b></div>
     </div></a>`;
 }
 function renderNews(){
@@ -4162,14 +4162,14 @@ function buildHero(){
       <h2><a href="${storyHref(s)}">${esc(s.headline)}</a></h2>
       <p class="lp-stand">${esc(s.summary)}</p>
       ${pts.length ? `<ul class="lp-pts">${pts.map(p=>`<li>${esc(p)}</li>`).join("")}</ul>` : ""}
-      <div class="lp-meta">${s.updated && new Date(s.updated) > new Date(s.time||0) ? `<span class="lp-upd">Updated ${esc(hhmm(s.updated))}</span><span>·</span>` : `<span data-ago="${esc(s.time||"")}">${ago(s.time)}</span><span>·</span>`}<span>${esc(s.source)}${s.also && s.also.length ? ` and ${s.also.length} more` : ""}</span><a class="lp-read" href="${storyHref(s)}">Read the story</a></div>
+      <div class="lp-meta">${s.updated && new Date(s.updated) > new Date(s.time||0) ? `<span class="lp-upd">Updated ${esc(hhmm(s.updated))}</span>` : `<span data-ago="${esc(s.time||"")}">${ago(s.time)}</span>`}<a class="lp-read" href="${storyHref(s)}">Read the story</a></div>
     </div>
     <a class="lp-map" href="${storyHref(s)}" style="--c:${pillar(s)}" aria-label="${artKick(s) === "Club" ? "Club colours" : artKick(s) === "Sport" ? "Illustration" : artKick(s) === "Photo" ? "Photo" : "Map"}: ${esc(artCaption(s))}">${storyArt(s,{zoom:430,aspect:1.05})}<span class="mcap"><b>${artKick(s)}</b> ${esc(artCaption(s))}</span></a>`;
   $("#seconds").innerHTML = seconds.map(x => `<a class="sec" href="${storyHref(x)}" style="--c:${pillar(x)}">
       <div class="sec-map">${storyArt(x,{zoom:340,aspect:.24,label:false,credit:true})}</div>
       <div class="sec-body"><span class="kick2">${esc(x.tag||"News")}<em>${esc(x.place||"Essex")}</em></span>
       <h3>${esc(x.headline)}</h3><p>${esc(x.summary)}</p>
-      <div class="m"><span data-ago="${esc(x.time||"")}">${ago(x.time)}</span> · ${esc(x.source)}</div></div></a>`).join("");
+      <div class="m"><span data-ago="${esc(x.time||"")}">${ago(x.time)}</span></div></div></a>`).join("");
   renderToday();
 }
 function showSlide(){ /* carousel retired */ }
