@@ -3327,10 +3327,19 @@ const ROAD_SIGN = {
   a12:  {re:/\bA12\b/,  src:"/img/roads/a12.png?v=1",  what:"A12 road sign",  bg:"#0a6333"} };
 /* the road whose sign illustrates a story: the first road named in the headline, else in the summary, else in the place */
 function roadOf(s){ if(!s) return null; for(const t of [s.headline, s.summary, s.place]){ let best = null, at = Infinity; for(const k in ROAD_SIGN){ const m = ROAD_SIGN[k].re.exec(String(t||"")); if(m && m.index < at){ at = m.index; best = k; } } if(best) return best; } return null; }
+/* hospital stories use the owner's library photo of a hospital reception (same rule as tools/build.py is_hospital) */
+function isHospitalStory(s){
+  if(!s || sportKindOf(s)) return false;
+  const ic = iconKey(s);
+  if(["police","crime","court","appeal","tribute","fire"].includes(ic)) return false;
+  const rx = /\bhospitals?\b|\bA&E\b/i, h = String(s.headline || "");
+  return rx.test(h) || (ic === "health" && rx.test(h + " " + (s.summary || "")));
+}
+function hospitalArt(s){ return `<svg class="emap wxart townphoto" width="100%" height="100%" role="img" aria-label="Library photo: a hospital reception" style="background:#cfd8dc"><image href="/img/topics/hospital.jpg?v=1" x="0" y="0" width="100%" height="100%" preserveAspectRatio="xMidYMid slice"/></svg>`; }
 function roadArt(s){ const r = ROAD_SIGN[roadOf(s)]; return `<svg class="emap wxart roadsign" width="100%" height="100%" role="img" aria-label="${esc(r.what)}" style="background:${r.bg}"><image href="${r.src}" x="6%" y="6%" width="88%" height="88%" preserveAspectRatio="xMidYMid meet"/></svg>`; }
 /* the art shown for a story: weather scenes for county-wide weather, a sport object for every sport story, club colours (now unused for sport), occasion scenes, otherwise the map */
-function storyArt(s, opts){ opts = opts || {}; return isWeatherArtStory(s) ? weatherArt(s, opts) : sportKindOf(s) ? sportArt(s, opts) : !opts.map && roadOf(s) ? roadArt(s, opts) : !opts.map && stockOf(s) ? stockArt(s, opts) : clubOf(s) ? clubArt(s, opts) : seasonKindOf(s) ? seasonArt(s, opts) : !opts.map && townKeyOf(s) ? townArt(s, opts) : storyMap(s, opts); }
-function artCaption(s, noTown){ if(isWeatherArtStory(s)) return `Across Essex · ${WX_LABEL[wxKindOf(s)]}`; const c = clubOf(s), sk = sportKindOf(s); if(sk) return `${c || s.place || "Essex"} · ${SPORT_LABEL[sk]}`; if(!noTown && roadOf(s)) return `${s.place || "Essex"} · ${ROAD_SIGN[roadOf(s)].what}`; if(!noTown && stockOf(s)){ const p = stockOf(s); return `Stock photo: ${p.creator}, ${p.license}`; } if(c) return CLUBS[c].nick ? `${c} · ${CLUBS[c].nick}` : c; const k = seasonKindOf(s); if(k) return `${s.place || "Essex"} · ${SEASON_LABEL[k]}`; const tk = !noTown && townKeyOf(s); if(tk) return townCredit(tk); return mapCaption(s); }
+function storyArt(s, opts){ opts = opts || {}; return isWeatherArtStory(s) ? weatherArt(s, opts) : sportKindOf(s) ? sportArt(s, opts) : !opts.map && roadOf(s) ? roadArt(s, opts) : !opts.map && isHospitalStory(s) ? hospitalArt(s, opts) : !opts.map && stockOf(s) ? stockArt(s, opts) : clubOf(s) ? clubArt(s, opts) : seasonKindOf(s) ? seasonArt(s, opts) : !opts.map && townKeyOf(s) ? townArt(s, opts) : storyMap(s, opts); }
+function artCaption(s, noTown){ if(isWeatherArtStory(s)) return `Across Essex · ${WX_LABEL[wxKindOf(s)]}`; const c = clubOf(s), sk = sportKindOf(s); if(sk) return `${c || s.place || "Essex"} · ${SPORT_LABEL[sk]}`; if(!noTown && roadOf(s)) return `${s.place || "Essex"} · ${ROAD_SIGN[roadOf(s)].what}`; if(!noTown && isHospitalStory(s)) return `${s.place || "Essex"} · Library image`; if(!noTown && stockOf(s)){ const p = stockOf(s); return `Stock photo: ${p.creator}, ${p.license}`; } if(c) return CLUBS[c].nick ? `${c} · ${CLUBS[c].nick}` : c; const k = seasonKindOf(s); if(k) return `${s.place || "Essex"} · ${SEASON_LABEL[k]}`; const tk = !noTown && townKeyOf(s); if(tk) return townCredit(tk); return mapCaption(s); }
 function artKick(s, noTown){ if(isWeatherArtStory(s)) return "Where"; if(sportKindOf(s)) return "Sport"; if(!noTown && roadOf(s)) return "Road"; if(!noTown && stockOf(s)) return "Stock photo"; if(clubOf(s)) return "Club"; if(!noTown && !seasonKindOf(s) && townKeyOf(s)) return "Photo"; return "Where"; }
 
 /* ============================================================

@@ -78,10 +78,32 @@ def road_of(it):
             return min(hits)[1]
     return None
 
+# hospital stories share the owner's hospital photo (img/topics/hospital.jpg; share card img/og/hospital.jpg).
+# Same rule as the page: a health story that mentions a hospital or A&E, or any story (not police, crime,
+# court, appeal, tribute or fire) with a hospital or A&E in its headline.
+HOSPITAL_RX = re.compile(r"\bhospitals?\b|\bA&E\b", re.I)
+HOSPITAL_SKIP = {"police", "crime", "court", "appeal", "tribute", "fire"}
+OG_JPG = {"hospital"}
+
+def og_path(card):
+    return f"/img/og/{card}.jpg" if card in OG_JPG else f"/img/og/{card}.png"
+
+def is_hospital(it, sec):
+    if sec == "sport":
+        return False
+    ic = icon_of(it, sec)
+    if ic in HOSPITAL_SKIP:
+        return False
+    head_ = str(it.get("headline") or "")
+    both = head_ + " " + str(it.get("summary") or "")
+    return bool(HOSPITAL_RX.search(head_) or (ic == "health" and HOSPITAL_RX.search(both)))
+
 def card_of(it, sec):
     road = road_of(it)
     if sec != "sport" and road and os.path.exists(os.path.join(ROOT, "img", "og", road + ".png")):
         return road
+    if is_hospital(it, sec) and os.path.exists(os.path.join(ROOT, "img", "og", "hospital.jpg")):
+        return "hospital"
     if sec == "councilwatch":
         return "council"
     if sec == "features":
@@ -162,14 +184,14 @@ def head(title, desc, canonical, og_image, og_type="website", extra=""):
 <meta property="og:title" content="{E(title.replace(' · The Seax', ''))}">
 <meta property="og:description" content="{E(desc)}">
 <meta property="og:url" content="{E(canonical)}">
-<meta property="og:image" content="{SITE}{og_image if og_image.startswith("/") else "/img/og/" + og_image + ".png"}">
+<meta property="og:image" content="{SITE}{og_image if og_image.startswith("/") else og_path(og_image)}">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="The Seax, Essex News, Sport, Life.">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="{E(title.replace(' · The Seax', ''))}">
 <meta name="twitter:description" content="{E(desc)}">
-<meta name="twitter:image" content="{SITE}{og_image if og_image.startswith("/") else "/img/og/" + og_image + ".png"}">
+<meta name="twitter:image" content="{SITE}{og_image if og_image.startswith("/") else og_path(og_image)}">
 <meta name="theme-color" content="#c8102e">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png">
@@ -284,7 +306,7 @@ def story_page(sec, it, more):
         "@context": "https://schema.org", "@type": "NewsArticle",
         "headline": trunc(title, 110), "description": desc,
         "mainEntityOfPage": url, "url": url,
-        "image": [f"{SITE}/img/og/{card}.png"],
+        "image": [SITE + og_path(card)],
         "articleSection": SECTION_LABEL.get(sec, "News"),
         "author": {"@type": "Organization", "name": "The Seax", "url": SITE + "/"},
         "publisher": {"@type": "Organization", "name": "The Seax", "url": SITE + "/",
@@ -330,10 +352,10 @@ def story_page(sec, it, more):
         f'<a class="rel" href="/story/{E(m["id"])}/" style="--c:{ICON_COLOUR.get(icon_of(m, s), "#3a3f4b")}"><i></i><b>{E(m["headline"])}</b><span>{E(m.get("place") or "Essex")}</span></a>'
         for s, m in more)
     fig = stock_figure(it, sec)
-    og_img = PHOTOS[sid]["file"] if fig and card not in [k for k, _ in ROAD_OG] else card
+    og_img = PHOTOS[sid]["file"] if fig and card not in [k for k, _ in ROAD_OG] + ["hospital"] else card
     if fig:
         ld["image"] = [SITE + og_img if og_img.startswith("/") else ld["image"][0]]
-        extra = extra.replace(f"{SITE}/img/og/{card}.png", ld["image"][0])
+        extra = extra.replace(SITE + og_path(card), ld["image"][0])
     return head(f"{title} · The Seax", desc, url, og_img, "article", extra) + f"""<main class="wrap story">
 <article style="--c:{colour}">
   <div class="kick"><span>{E(kicker)}</span><span>{E(place)}</span></div>
