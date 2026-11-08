@@ -59,7 +59,10 @@ button{font:inherit;cursor:pointer}
 .topbar .sun{opacity:.85}
 
 /* masthead */
-.masthead{padding:26px 0 18px;border-bottom:1px solid var(--line);background:linear-gradient(var(--paper),var(--paper))}
+.masthead{padding:26px 0 0;background:linear-gradient(var(--paper),var(--paper))}
+.masthead .wrap{position:relative;z-index:1}
+.skyline{height:clamp(84px,9.4vw,140px);margin-top:clamp(0px,1vw,14px);background:url(/img/brand-skyline.svg) center bottom/auto 100% no-repeat;border-bottom:3px solid var(--navy)}
+@media (max-width:860px){.masthead{padding-top:18px}.skyline{margin-top:-6px}}
 .masthead .wrap{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:20px}
 .mh-left,.mh-right{font-size:13px;color:var(--muted)}
 .mh-right{text-align:right}
@@ -1020,6 +1023,7 @@ footer .flinks a{text-decoration:underline}
     </a>
     <div class="mh-right" id="mhRight"></div>
   </div>
+  <div class="skyline" role="img" aria-label="The Essex skyline at sunrise: the QEII Bridge, Chelmsford Cathedral, Southend Pier, a Thames sailing barge, Colchester Castle, the Naze Tower and beach huts"></div>
 </header>
 
 <nav class="main" aria-label="Sections">
