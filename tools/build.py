@@ -93,8 +93,12 @@ POLICE_TAG_SKIP = {"court", "tribute", "fire", "ambulance"}
 POLICE_POLICY_RX = re.compile(r"\b(commissioners?|PFCC|mergers?|mega[ -]force|budgets?|precept|council tax|HMICFRS|inspections?|inspectorate)\b", re.I)
 POLICE_PHOTOS = ["bluelights", "bluelights-2"]  # img/topics/<name>.jpg and share cards img/og/<name>.jpg, rotated like the page
 POLICE_PICK = {}
-OG_JPG = {"hospital", "bluelights", "bluelights-2", "fireengine"}
-LIBRARY_PHOTOS = POLICE_PHOTOS + ["fireengine"]  # owner's library photos shown on story pages
+OG_JPG = {"hospital", "bluelights", "bluelights-2", "fireengine", "countyhall"}
+LIBRARY_PHOTOS = POLICE_PHOTOS + ["fireengine", "countyhall"]  # owner's library photos shown on story pages
+LIBRARY_ALT = {"fireengine": "a fire engine", "countyhall": "County Hall, Chelmsford, home of Essex County Council"}
+# Essex County Council stories use the owner's photo of County Hall, Chelmsford (owner's rule, Nov 2026), ahead of
+# stock, town and map art. Road signs, police and fire photos still win. Same rule as the page's isCountyHallStory.
+ECC_RX = re.compile(r"\bEssex County Council\b|\bCounty Hall\b", re.I)
 
 def og_path(card):
     return f"/img/og/{card}.jpg" if card in OG_JPG else f"/img/og/{card}.png"
@@ -178,10 +182,25 @@ def is_fire(it, sec):
         return False
     return icon_of(it, sec) == "fire" or str(it.get("tag") or "").lower() == "fire"
 
+def is_county_hall(it, sec):
+    if sec == "sport" or is_police(it, sec) or is_fire(it, sec):
+        return False
+    if sec == "councilwatch":
+        return str(it.get("council") or "").lower() == "essex"
+    h = host(it.get("url"))
+    if h == "essex.gov.uk" or h.endswith(".essex.gov.uk"):
+        return True
+    if ECC_RX.search(" ".join(str(it.get(k) or "") for k in ("headline", "source", "org"))):
+        return True
+    return (icon_of(it, sec) == "council" or str(it.get("tag") or "").lower() in ("politics", "council")) and \
+        bool(ECC_RX.search(str(it.get("summary") or "")))
+
 def card_of(it, sec):
     road = road_of(it)
     if sec != "sport" and road and os.path.exists(os.path.join(ROOT, "img", "og", road + ".png")):
         return road
+    if is_county_hall(it, sec) and os.path.exists(os.path.join(ROOT, "img", "og", "countyhall.jpg")):
+        return "countyhall"
     if is_hospital(it, sec) and os.path.exists(os.path.join(ROOT, "img", "og", "hospital.jpg")):
         return "hospital"
     if is_police(it, sec) and os.path.exists(os.path.join(ROOT, "img", "og", police_photo(it) + ".jpg")):
@@ -435,11 +454,13 @@ def story_page(sec, it, more):
     more_html = "".join(
         f'<a class="rel" href="/story/{E(m["id"])}/" style="--c:{ICON_COLOUR.get(icon_of(m, s), "#3a3f4b")}"><i></i><b>{E(m["headline"])}</b><span>{E(m.get("place") or "Essex")}</span></a>'
         for s, m in more)
-    fig = stock_figure(it, sec)
+    fig = "" if card == "countyhall" else stock_figure(it, sec)
     if not fig and card in LIBRARY_PHOTOS:
+        cap = ("<b>County Hall, Chelmsford</b>, home of Essex County Council. Library image."
+               if card == "countyhall" else "<b>Library image</b>, not the scene of this story.")
         fig = (f'<figure class="stock"><img src="/img/topics/{card}.jpg?v=1" width="1200" height="655" '
-               f'alt="Library photo: {"a fire engine" if card == "fireengine" else "police car blue lights"}" loading="eager">'
-               '<figcaption><b>Library image</b>, not the scene of this story.</figcaption></figure>')
+               f'alt="Library photo: {LIBRARY_ALT.get(card, "police car blue lights")}" loading="eager">'
+               f'<figcaption>{cap}</figcaption></figure>')
     og_img = PHOTOS[sid]["file"] if fig and card not in [k for k, _ in ROAD_OG] + ["hospital"] + LIBRARY_PHOTOS else card
     if fig:
         ld["image"] = [SITE + og_img if og_img.startswith("/") else ld["image"][0]]
