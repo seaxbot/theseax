@@ -4113,8 +4113,11 @@ function frontScore(s, now){
   const t = newsTime(s); if(!t) return storyWeight(s) - 6;
   const ageH = Math.max(0, (now - t) / 36e5);
   let r = 0;
-  if(dayKey(new Date(t)) === dayKey(new Date(now))) r += 3;   /* today's news beats yesterday's */
-  if(ageH < 3) r += 2; else if(ageH < 8) r += 1;
+  /* freshness lifts a story in proportion to its weight, so a quiet day (weekends) cannot push a light story
+     (weight 3 or less) above more important news from the day before: full boost at weight 6+, a quarter at 3, none at 2 */
+  const lift = Math.max(0, Math.min(1, (storyWeight(s) - 2) / 4));
+  if(dayKey(new Date(t)) === dayKey(new Date(now))) r += 3 * lift;   /* today's news beats yesterday's */
+  if(ageH < 3) r += 2 * lift; else if(ageH < 8) r += 1 * lift;
   if(ageH > 24) r -= (ageH - 24) / 6;                           /* about 4 points a day after that */
   if(ageH > 36) r -= 1.5;                                       /* a day and a half old: off the top cards */
   if(s.breaking) r += 3;
