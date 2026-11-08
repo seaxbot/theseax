@@ -422,12 +422,14 @@ def story_page(sec, it, more):
   <div class="kick"><span>{E(kicker)}</span><span>{E(place)}</span></div>
   {org}{cw_badge(it) if sec == "councilwatch" else ""}
   <h1>{E(title)}</h1>
+  <!-- Article Start -->
   {f'<p class="standfirst">{E(summary)}</p>' if summary else ''}
   <div class="meta">{' <span class="dot">·</span> '.join(meta)}</div>
   {share_bar(url, title)}
   {fig}
   {''.join(f'<p>{E(p)}</p>' for p in body if str(p).strip())}
   {('<h2>Key points</h2><ul class="points">' + ''.join(f'<li>{E(p)}</li>' for p in points) + '</ul>') if points else ''}
+  <!-- Article End -->
   {readfull}
   {also_html}
   {cw_note(corr) if sec == "councilwatch" else f'<p class="note">This is a summary written by The Seax. The original reporting, quotes and images belong to {E(src or "the outlet named above")}{" and the other outlets listed" if also else ""}. <a href="{E(corr)}">Spotted a mistake? Tell us</a>.</p>'}
