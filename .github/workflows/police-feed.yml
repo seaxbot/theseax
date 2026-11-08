@@ -22,11 +22,18 @@ jobs:
           mkdir -p /tmp/pf && cd /tmp/pf
           url="https://www.essex.police.uk/news/essex/news/GetNewsRss/"
           ua="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0 Safari/537.36"
-          code=$(curl -sS -L --max-time 60 -A "$ua" -H "Accept: application/rss+xml,application/xml;q=0.9,*/*;q=0.8" \
-                 -H "Cache-Control: no-cache" -o feed.new "$url?_=$(date +%s)" -w "%{http_code}" || echo "000")
+          code=000
+          for u in "$url" "http://www.essex.police.uk/news/essex/news/GetNewsRss/"; do
+            code=$(curl -sS -L --compressed --http1.1 --max-time 60 -A "$ua" \
+                   -H "Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8" \
+                   -H "Accept-Language: en-GB,en;q=0.9" -H "Referer: https://www.essex.police.uk/news/essex/news/" \
+                   -H "Upgrade-Insecure-Requests: 1" -H "Sec-Fetch-Dest: document" -H "Sec-Fetch-Mode: navigate" \
+                   -H "Sec-Fetch-Site: same-origin" -o feed.new "$u" -w "%{http_code}" || echo "000")
+            echo "$u -> $code"; [ "$code" = "200" ] && break
+          done
           built=$(grep -o -m1 '<lastBuildDate>[^<]*' feed.new 2>/dev/null | sed 's/<lastBuildDate>//' || true)
           newest=$(grep -o -m1 '<pubDate>[^<]*' feed.new 2>/dev/null | sed 's/<pubDate>//' || true)
-          items=$(grep -c '<item>' feed.new 2>/dev/null || echo 0)
+          items=$(grep -o '<item>' feed.new 2>/dev/null | wc -l | tr -d ' ')
           echo "http=$code built=$built newest=$newest items=$items"
           ok=false
           if [ "$code" = "200" ] && grep -q '<rss' feed.new && [ "$items" -gt 0 ]; then ok=true; mv feed.new feed.xml; fi
