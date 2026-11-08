@@ -1036,7 +1036,6 @@ footer .flinks a{text-decoration:underline}
     <button data-go="webcams">Webcams</button>
     <button data-go="whatson">What's On</button>
     <button data-go="culture">Culture</button>
-    <button data-go="features">Features</button>
     <button data-go="vital">Vital Info</button>
         </div>
     <button class="adv" data-go="advertise">Advertise</button>
@@ -1199,13 +1198,6 @@ footer .flinks a{text-decoration:underline}
     <div class="bh"><h2>Culture<small>Panto, theatre, exhibitions and screenings across the county</small></h2><div class="tools" id="culTools"></div></div>
     <div class="culture" id="culture-grid"></div>
     <div class="show-all" id="culMore"></div>
-  </div>
-</section>
-
-<section class="block" id="features" hidden>
-  <div class="wrap">
-    <div class="bh"><h2>Features<small>Food, walks, homes and days out from Essex Life and the county's magazines</small></h2></div>
-    <div class="grid feat-grid" id="featGrid"></div>
   </div>
 </section>
 
@@ -3543,13 +3535,13 @@ function normalise(d){
   o.hearings = (Array.isArray(o.hearings) && o.hearings.length ? o.hearings : EMBED.hearings).filter(x => x && x.title && x.date);
   o.culture = (Array.isArray(o.culture) && o.culture.length ? o.culture : EMBED.culture).filter(x => x && x.title && x.start);
   o.deals = (Array.isArray(o.deals) && o.deals.length ? o.deals : EMBED.deals).filter(x => x && x.title && x.url);
-  o.features = (Array.isArray(o.features) ? o.features : (EMBED.features || [])).map(cleanStory).filter(Boolean);
+  o.features = [];
   o.councilwatch = (Array.isArray(o.councilwatch) ? o.councilwatch : []).map(cleanStory).filter(Boolean).map(s => { s.tag = s.tag || "Council Watch"; return s; });
   return o;
 }
 const inArea = item => AREA === "all" || !item.areas || item.areas.includes("all") || item.areas.includes(AREA);
 const deskItems = () => { const seen = new Set(); return [...ED.official, ...ED.courts].filter(s => { const k = s.url || s.id; if(seen.has(k)) return false; seen.add(k); return true; }); };
-const allStories = () => [...ED.stories, ...ED.sport.stories, ...deskItems(), ...ED.community, ...(ED.features || []), ...(ED.councilwatch || [])];
+const allStories = () => [...ED.stories, ...ED.sport.stories, ...deskItems(), ...ED.community, ...(ED.councilwatch || [])];
 const byTime = (x,y) => new Date(y.time||0) - new Date(x.time||0);
 const storyHref = s => "/story/" + s.id + "/";
 const hostOf = u => { try{ return new URL(u).hostname.replace(/^www\./,""); }catch(_){ return ""; } };
@@ -3825,19 +3817,6 @@ document.addEventListener("click", e => {
   renderTables();
 });
 
-function renderFeatures(){
-  const sec = document.getElementById("features"); if(!sec) return;
-  const list = (ED.features || []).filter(inArea);
-  sec.hidden = !(ED.features || []).length;
-  $("#featGrid").innerHTML = list.length ? list.slice(0,9).map(s => `<a class="card tc feat" href="${storyHref(s)}" style="--c:#9a5b2e">
-    <div class="body">
-      <div class="kick"><span class="tg">${esc(s.tag||"Feature")}</span></div>
-      <div class="meta"><span class="place">${esc(s.place||"Essex")}</span></div>
-      <h3>${esc(s.headline)}</h3>
-      <p>${esc(s.summary)}</p>
-      <div class="src"><span>${esc(s.source)}</span><b>Read →</b></div>
-    </div></a>`).join("") : `<div class="empty" style="grid-column:1/-1">No features for this area yet. Try All Essex.</div>`;
-}
 function renderCulture(){
   const now = new Date();
   const live = ED.culture.filter(c => new Date(c.end || c.start) >= new Date(now.getTime() - 3*36e5));
@@ -3976,7 +3955,7 @@ function renderCouncilWatch(){
 
 function renderAll(){
   renderChips(); renderTicker(); buildHero(); renderTopList(); renderNews(); renderDesk(); renderCouncilWatch(); renderCommunity(); renderSport(); renderTables(); renderWeather();
-  renderEvents(); renderCulture(); renderFeatures(); renderVital(); renderSpecials(); renderSources(); renderMeta(); afterRender(); updateLiveLine();
+  renderEvents(); renderCulture(); renderVital(); renderSpecials(); renderSources(); renderMeta(); afterRender(); updateLiveLine();
   if(location.hash.startsWith("#story-")) renderStory(location.hash.slice(7));
 }
 
@@ -4003,7 +3982,7 @@ document.addEventListener("click", e => {
   const t = e.target.closest("[data-area],[data-go],[data-slide],[data-evcat],[data-culcat],[data-srccat],[data-advert],[data-home],[data-desk],[data-deskall]");
   if(!t) return;
   if(t.hasAttribute("data-home")){ e.preventDefault(); if(location.hash) location.hash = ""; closeStory(); window.scrollTo({top:0}); }
-  else if(t.dataset.area){ AREA = t.dataset.area; try{ localStorage.setItem("seax-area", AREA); }catch(_){} renderChips(); buildHero(); renderTopList(); renderNews(); renderDesk(); renderCouncilWatch(); renderCommunity(); renderSport(); renderTables(); renderEvents(); renderCulture(); renderFeatures(); renderSpecials(); renderSources(); afterRender(); }
+  else if(t.dataset.area){ AREA = t.dataset.area; try{ localStorage.setItem("seax-area", AREA); }catch(_){} renderChips(); buildHero(); renderTopList(); renderNews(); renderDesk(); renderCouncilWatch(); renderCommunity(); renderSport(); renderTables(); renderEvents(); renderCulture(); renderSpecials(); renderSources(); afterRender(); }
   else if(t.dataset.go){ if(document.body.classList.contains("reading")){ location.hash = ""; closeStory(); } const el = document.getElementById(t.dataset.go); if(el) setTimeout(()=>el.scrollIntoView({behavior:"smooth", block:"start"}), 30); }
   else if(t.dataset.slide){ showSlide(+t.dataset.slide); clearInterval(heroTimer); heroTimer = setInterval(() => showSlide(heroIdx+1), 9000); }
   else if(t.dataset.evcat){ EVCAT = t.dataset.evcat; renderEvents(); afterRender(); }
@@ -4363,7 +4342,7 @@ document.addEventListener("click", e => {
 function srchTypes(){
   return [
     ["all", "Everything"], ["news", "News"], ["services", "Public Services"], ["community", "Community"],
-    ["sport", "Sport"], ["travel", "Travel"], ["whatson", "What's On"], ["culture", "Culture"], ["features", "Features"], ["deals", "Deals"], ["webcams", "Webcams"], ["sources", "Sources"]
+    ["sport", "Sport"], ["travel", "Travel"], ["whatson", "What's On"], ["culture", "Culture"], ["deals", "Deals"], ["webcams", "Webcams"], ["sources", "Sources"]
   ];
 }
 function srchNorm(t){ return String(t || "").toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "").replace(/[’']/g, ""); }
@@ -4375,7 +4354,6 @@ function srchIndex(){
   (ED.stories || []).forEach(s => story(s, "news", s.tag || "News"));
   deskItems().forEach(s => story(s, "services", s.tag || KIND_LABEL[s.kind] || "Public Services"));
   (ED.community || []).forEach(s => story(s, "community", s.org || "Community"));
-  (ED.features || []).forEach(s => story(s, "features", s.tag || "Feature"));
   (ED.sport && ED.sport.stories || []).forEach(s => story(s, "sport", s.tag || "Sport"));
   (ED.sport && ED.sport.results || []).forEach(r => idx.push({type:"sport", kick:(r.comp || "Result") + " · Result", title:`${r.home} ${r.hs ?? ""}-${r.as ?? ""} ${r.away}`, text:r.note || "", place:"", meta:r.status || "FT",
     time:r.date, href:r.url || "#sport", ext:!!r.url, c:"#1f8a4c", hay:[r.home, r.away, r.comp, r.note].join(" ")}));

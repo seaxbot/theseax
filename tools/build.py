@@ -336,8 +336,8 @@ def collect(ed):
     out = []
     for sec, items in [("news", ed.get("stories", [])), ("sport", (ed.get("sport") or {}).get("stories", [])),
                        ("official", ed.get("official", [])), ("courts", ed.get("courts", [])),
-                       ("community", ed.get("community", [])), ("features", ed.get("features", [])),
-                       ("councilwatch", ed.get("councilwatch", []))]:
+                       ("community", ed.get("community", [])),
+                       ("councilwatch", ed.get("councilwatch", []))]:  # features were removed in Nov 2026
         for it in items or []:
             if isinstance(it, dict) and slug_ok(it.get("id")) and it.get("headline"):
                 out.append((sec, it))
@@ -591,7 +591,7 @@ def about_page():
 
 <h2>How The Seax works</h2>
 <p>We watch hundreds of trusted sources across Essex and beyond: local newspapers and radio, hyperlocal and independent newsrooms, Essex Police, the fire and ambulance services, councils, the NHS, courts, charities, clubs and venues, plus national and specialist outlets when they report on Essex.</p>
-<p>The Seax is produced with the help of AI. Automated research tools gather the latest reports each hour, and AI writes our headlines, summaries and short story pages in our own words, following our editorial rules. Every story names the outlet that reported it and links directly to the original, so you can always read the full report and support the journalists who did the work.</p>
+<p>The Seax is produced with the help of AI. Automated research tools gather the latest reports each hour, and AI writes our headlines, summaries and short story pages in our own words, following our editorial rules. Every story names the outlet that reported it and links directly to the original, so you can always read the full report and support the journalists who did the work. When only one outlet has reported a story, our summary is deliberately short and points you to theirs.</p>
 <p>We do not copy articles, take photographs from other publishers, or publish anything that is not reported by a named source or set out in a public document.</p>
 <h2 id="council-watch">Council Watch</h2>
 <p><a href="/council-watch/">Council Watch</a> is The Seax's own reporting. Twice a day we read the public meeting papers of Essex's councils (agendas, reports, decisions and minutes), politely and within each website's published rules, and write short stories about the decisions that matter to residents. Every Council Watch story links to the council documents, and the pages, it is based on. It is written with the help of AI from those documents only.</p>
@@ -786,9 +786,22 @@ def main():
         open(a.preview_briefing, "w", encoding="utf-8").write(briefing_page(b).replace('href="/assets/page.css"', f'href="file://{ROOT}/assets/page.css"'))
         print("preview written"); return
 
+    # owner's source and copyright policy (tools/policy.py): no features, link-only outlets,
+    # single-source length cap, opt-outs. publish.py applies it to edition.json too.
+    sys.path.insert(0, os.path.join(ROOT, "tools"))
+    import policy
+    policy.apply(ed)
+
     changed = 0
     arch_path = os.path.join(ROOT, "data", "archive.json")
     archive = json.load(open(arch_path, encoding="utf-8")) if os.path.exists(arch_path) else {}
+
+    # features were removed (owner's decision, Nov 2026): delete any feature pages still online
+    for sid in [k for k, v in archive.items() if v.get("sec") == "features"]:
+        d = os.path.join(ROOT, "story", sid)
+        if os.path.isdir(d):
+            shutil.rmtree(d); changed += 1
+        archive.pop(sid, None)
 
     # takedowns: ids listed in tools/takedown.txt are removed everywhere
     tk = os.path.join(ROOT, "tools", "takedown.txt")
@@ -872,7 +885,7 @@ def main():
 
     # RSS of latest stories
     feed_items = []
-    for sec, it in sorted([x for x in items if x[0] in ("news", "sport", "courts", "official", "community", "features", "councilwatch")],
+    for sec, it in sorted([x for x in items if x[0] in ("news", "sport", "courts", "official", "community", "councilwatch")],
                           key=lambda x: (parse_t(x[1].get("time")) or NOW - timedelta(days=30)), reverse=True)[:60]:
         u = f"{SITE}/story/{it['id']}/"
         feed_items.append({"title": it["headline"], "link": u, "date": parse_t(it.get("time")),

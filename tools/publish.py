@@ -13,7 +13,9 @@ What it does, retrying up to 4 times if someone else pushes first:
      and the "councilwatch" list (the Council Watch desk owns it); also puts back any sport desk match report
      (desk "sport", under 72 hours old) that is missing from the newsroom's file, so a newsroom run that started
      before the sport desk pushed cannot wipe it
-  4. writes edition.json, runs tools/build.py (story pages, sitemaps, feeds, briefing), commits and pushes
+  4. applies the owner's source and copyright policy (tools/policy.py: no features, link-only outlets,
+     single-source length cap, opt-outs) to the whole edition
+  5. writes edition.json, runs tools/build.py (story pages, sitemaps, feeds, briefing), commits and pushes
 If the build fails, the edition is still published without the built pages.
 Prints PUSHED <hash> on success. Exit codes: 0 pushed, 2 bad input, 3 needs a manual merge, 4 push failed.
 """
@@ -21,7 +23,9 @@ import argparse, json, os, subprocess, sys, time
 from datetime import datetime, timezone, timedelta
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-BOTS = {"The Seax newsroom", "The Seax sport desk", "The Seax council watch", "The Seax photo desk"}
+sys.path.insert(0, os.path.join(ROOT, "tools"))
+import policy
+BOTS = {"The Seax newsroom", "The Seax sport desk", "The Seax council watch", "The Seax photo desk", "The Seax policy"}
 SPORT_KEYS = ("results", "fixtures", "tables")
 
 def git(*a, check=True):
@@ -138,6 +142,10 @@ def main():
                 out["sport"][k] = mine[k]
             out["sport"]["stories"] = merge_sport_stories(out["sport"], out.get("stories", []), mine.get("stories", []))
             out["updatedAt"] = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+        rep = policy.apply(out)
+        print("policy:", json.dumps({k: (v if isinstance(v, int) else len(v)) for k, v in rep.items()}))
+        if a.edition and (out.get("lead") or {}).get("id") not in {s.get("id") for s in out.get("stories", [])}:
+            print("bad edition: the lead story was removed by the source policy (opt-out outlet); choose another lead"); sys.exit(2)
         dump(out, os.path.join(ROOT, "edition.json"))
         built = subprocess.run([sys.executable, os.path.join(ROOT, "tools", "build.py")], capture_output=True, text=True)
         if built.returncode:

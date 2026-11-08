@@ -1,0 +1,31 @@
+{
+  "_about": "Owner's source policy (Nov 2026). linkOnly: outlets we only link to, with our own headline and one sentence, never a written-up story (Newsquest and Reach titles). exclude: outlets that asked us not to use their work at all; their items are dropped and their links removed. Add a domain here (no www.) to handle an opt-out request; it takes effect at the next publish. Applied by tools/policy.py.",
+  "linkOnly": [
+    "echo-news.co.uk",
+    "gazette-news.co.uk",
+    "basildonstandard.co.uk",
+    "braintreeandwithamtimes.co.uk",
+    "halsteadgazette.co.uk",
+    "maldonandburnhamstandard.co.uk",
+    "clactonandfrintongazette.co.uk",
+    "harwichandmanningtreestandard.co.uk",
+    "thurrockgazette.co.uk",
+    "eppingforestguardian.co.uk",
+    "guardian-series.co.uk",
+    "chelmsfordweeklynews.co.uk",
+    "eadt.co.uk",
+    "ipswichstar.co.uk",
+    "romfordrecorder.co.uk",
+    "ilfordrecorder.co.uk",
+    "saffronwaldenreporter.co.uk",
+    "dunmowbroadcast.co.uk",
+    "essexlive.news",
+    "mylondon.news",
+    "cambridge-news.co.uk",
+    "hertfordshiremercury.co.uk",
+    "mirror.co.uk",
+    "express.co.uk",
+    "dailystar.co.uk"
+  ],
+  "exclude": []
+}
