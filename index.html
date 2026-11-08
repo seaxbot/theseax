@@ -3864,8 +3864,12 @@ function renderStory(id){
     </div>
     ${s.also.length ? `<div class="also"><h2>Also reported by</h2>${s.also.map(a=>`<a href="${safeUrl(a.url)}" target="_blank" rel="noopener"><b>${esc(a.name)}</b><span>${esc(hostOf(a.url))} ↗</span></a>`).join("")}</div>` : ""}
     <div class="note-copy">This page is a summary written by The Seax. The original reporting, quotes and images belong to ${esc(s.source)}${s.also.length?" and the other outlets listed":""}.</div>`;
+  /* "Where it happened" only when the story happened somewhere: a named place or district.
+     County-wide stories (weather warnings, policy, all-Essex news) skip the box. Sport keeps its box. */
+  const sportBox = artKick(s,1) === "Club" || artKick(s,1) === "Sport";
+  const pinsHere = storyPins(s), placed = !isWeatherArtStory(s) && (pinsHere.length > 0 || storyDistricts(s, pinsHere).size > 0);
   $("#storySide").innerHTML = `
-    <div class="side-box where" style="--c:${iconColour(s)}"><h4>${artKick(s,1) === "Club" ? "The club" : artKick(s,1) === "Sport" ? "The sport" : "Where it happened"}</h4><div class="wmap">${storyArt(s,{zoom:400,aspect:.82,map:true})}</div><div class="mcap">${esc(artCaption(s,1))}</div></div>
+    ${sportBox || placed ? `<div class="side-box where" style="--c:${iconColour(s)}"><h4>${artKick(s,1) === "Club" ? "The club" : artKick(s,1) === "Sport" ? "The sport" : "Where it happened"}</h4><div class="wmap">${storyArt(s,{zoom:400,aspect:.82,map:true})}</div><div class="mcap">${esc(artCaption(s,1))}</div></div>` : ""}
     <div class="side-box"><h4>More from Essex</h4>${more.map(x=>`<a class="rel" href="${storyHref(x)}" style="--c:${iconColour(x)}"><i></i><b>${esc(x.headline)}</b></a>`).join("")}</div>`;
   document.body.classList.add("reading");
   document.title = s.headline + " · The Seax";
