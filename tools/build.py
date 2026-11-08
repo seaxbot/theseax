@@ -83,7 +83,12 @@ def road_of(it):
 # court, appeal, tribute or fire) with a hospital or A&E in its headline.
 HOSPITAL_RX = re.compile(r"\bhospitals?\b|\bA&E\b", re.I)
 HOSPITAL_SKIP = {"police", "crime", "court", "appeal", "tribute", "fire"}
-OG_JPG = {"hospital"}
+# police, crime and appeal stories share the owner's blue lights photo (img/topics/bluelights.jpg; share card
+# img/og/bluelights.jpg). Same rule as the page's isPoliceStory: icon police, crime or appeal, or tag Police unless
+# the icon is court, tribute, fire or ambulance.
+POLICE_ICONS = {"police", "crime", "appeal"}
+POLICE_TAG_SKIP = {"court", "tribute", "fire", "ambulance"}
+OG_JPG = {"hospital", "bluelights"}
 
 def og_path(card):
     return f"/img/og/{card}.jpg" if card in OG_JPG else f"/img/og/{card}.png"
@@ -98,12 +103,22 @@ def is_hospital(it, sec):
     both = head_ + " " + str(it.get("summary") or "")
     return bool(HOSPITAL_RX.search(head_) or (ic == "health" and HOSPITAL_RX.search(both)))
 
+def is_police(it, sec):
+    if sec == "sport":
+        return False
+    ic = icon_of(it, sec)
+    if ic in POLICE_ICONS:
+        return True
+    return str(it.get("tag") or "").lower() == "police" and ic not in POLICE_TAG_SKIP
+
 def card_of(it, sec):
     road = road_of(it)
     if sec != "sport" and road and os.path.exists(os.path.join(ROOT, "img", "og", road + ".png")):
         return road
     if is_hospital(it, sec) and os.path.exists(os.path.join(ROOT, "img", "og", "hospital.jpg")):
         return "hospital"
+    if is_police(it, sec) and os.path.exists(os.path.join(ROOT, "img", "og", "bluelights.jpg")):
+        return "bluelights"
     if sec == "councilwatch":
         return "council"
     if sec == "features":
@@ -352,7 +367,11 @@ def story_page(sec, it, more):
         f'<a class="rel" href="/story/{E(m["id"])}/" style="--c:{ICON_COLOUR.get(icon_of(m, s), "#3a3f4b")}"><i></i><b>{E(m["headline"])}</b><span>{E(m.get("place") or "Essex")}</span></a>'
         for s, m in more)
     fig = stock_figure(it, sec)
-    og_img = PHOTOS[sid]["file"] if fig and card not in [k for k, _ in ROAD_OG] + ["hospital"] else card
+    if not fig and card == "bluelights":
+        fig = ('<figure class="stock"><img src="/img/topics/bluelights.jpg?v=1" width="1200" height="655" '
+               'alt="Library photo: police car blue lights" loading="eager">'
+               '<figcaption><b>Library image</b>, not the scene of this story.</figcaption></figure>')
+    og_img = PHOTOS[sid]["file"] if fig and card not in [k for k, _ in ROAD_OG] + ["hospital", "bluelights"] else card
     if fig:
         ld["image"] = [SITE + og_img if og_img.startswith("/") else ld["image"][0]]
         extra = extra.replace(SITE + og_path(card), ld["image"][0])
