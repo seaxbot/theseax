@@ -1099,7 +1099,7 @@ footer .flinks a{text-decoration:underline}
     <div class="bh"><h2>Sport<small>Scores, results and fixtures from every level of Essex sport</small></h2></div>
     <div class="grid" id="sportStories"></div>
     <div class="tbl-wrap" id="tblWrap" hidden>
-      <div class="sec-h"><h3>Essex in the tables</h3><span class="sub" id="tblAsOf">Tap a club for the full table</span></div>
+      <div class="sec-h"><h3>Essex in the tables</h3></div>
       <div class="tbl-strip" id="tblStrip" role="list"></div>
       <div class="tbl-full" id="tblFull" hidden></div>
     </div>
@@ -3703,9 +3703,6 @@ function renderTables(){
     cards.push({t, ti, r, local});
   }));
   cards.sort((a,b) => (b.local - a.local) || (a.ti - b.ti) || (a.r.pos - b.r.pos));
-  const dates = tables.map(t => t.asOf).filter(Boolean).sort();
-  const asOf = dates.length ? fmt(new Date(dates[0] + "T12:00:00Z"), {day:"numeric", month:"short"}) : "";
-  $("#tblAsOf").textContent = `Tap a club for the full table${asOf ? ` · as of ${asOf}` : ""}`;
   $("#tblStrip").innerHTML = cards.map(({t, r, local}) => {
     const [zc, zl] = tblZone(t, r.pos), key = t.id + "|" + r.team, on = TBL_OPEN === key;
     return `<button class="tcard ${zc}${local ? " local" : ""}${on ? " on" : ""}" role="listitem" data-tblkey="${esc(key)}" aria-expanded="${on}">
