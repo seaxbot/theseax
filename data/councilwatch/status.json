@@ -1,5 +1,5 @@
 {
- "at": "2026-11-08T06:25:19.728434+00:00",
+ "at": "2026-11-08T16:14:43.045559+00:00",
  "councils": {
   "thurrock": {
    "name": "Thurrock Council",
@@ -44,7 +44,7 @@
    "meetings": 12,
    "changed": 0,
    "state": "ok",
-   "note": ""
+   "note": "per-council time cap reached"
   },
   "harlow": {
    "name": "Harlow Council",
@@ -142,7 +142,7 @@
   "southend": 30,
   "epping": 19,
   "maldon": 19,
-  "tendring": 15,
+  "tendring": 14,
   "harlow": 3,
   "basildon": 3,
   "brentwood": 3,
