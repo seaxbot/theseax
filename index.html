@@ -796,7 +796,7 @@ ol.mn .mm{font-size:12px;color:var(--muted)}
 .rt-row{display:grid;grid-template-columns:1fr 78px 1fr 34px;align-items:center;gap:10px;padding:9px 14px;border-top:1px solid var(--hair);text-decoration:none;color:var(--ink);font-size:14.5px}
 .rt-row:hover{background:#fbf6ea}
 .rt-row .h{text-align:right}
-.rt-row .w{font-weight:800}
+.rt-row .ex{font-weight:800}
 .rt-row .sc{text-align:center;font-weight:800;font-variant-numeric:tabular-nums;background:var(--paper2);border-radius:5px;padding:3px 0;font-size:15px}
 .rt-row .sc i{font-style:normal;margin:0 6px;color:var(--muted)}
 .rt-row .st{font-size:10.5px;font-weight:800;color:var(--muted);letter-spacing:.06em}
@@ -4185,6 +4185,22 @@ function renderCommunity(){
   $("#helpList").innerHTML = ED.getInvolved.map(g => `<li><a href="${safeUrl(g.url)}" target="_blank" rel="noopener"><span class="hk ${cls(g.kind||"")}">${esc(g.kind||"Info")}</span><div><b>${esc(g.title)}</b><span>${esc(g.org||"")}${g.when?` · ${esc(g.when)}`:""}</span></div></a></li>`).join("");
 }
 
+/* Essex clubs are shown in bold in Latest results. Clubs in the "Essex in the tables" lists count
+   automatically; this list adds the rest (ice hockey, cricket, rugby and other Essex clubs). */
+const ESSEX_CLUBS = ["Colchester United","Southend United","Billericay Town","Chelmsford City","Braintree Town",
+  "Aveley","Brentwood Town","Maldon & Tiptree","Stanway Rovers","Little Oakley","Concord Rangers","Witham Town",
+  "Bowers & Pitsea","Takeley","Tilbury","Canvey Island","Grays Athletic","Buckhurst Hill","Brightlingsea Regent",
+  "Heybridge Swifts","Harlow Town","Hullbridge Sports","Great Wakering Rovers","Coggeshall Town","Saffron Walden Town",
+  "Chelmsford Chieftains","Essex","Essex Eagles","Harlow","Westcliff","Chelmsford","Colchester","Southend Saxons",
+  "Brentwood","Basildon","Thurrock"];
+const clubKey = n => String(n||"").toLowerCase().replace(/\b(fc|afc|rfc|rufc|cc|ccc)\b/g,"").replace(/\band\b/g,"&").replace(/[^a-z&]+/g," ").trim();
+function isEssexClub(name){
+  const k = clubKey(name);
+  if(!k) return false;
+  const names = [...ESSEX_CLUBS, ...(ED.sport.tables||[]).flatMap(t => Object.keys(t.essex||{}))];
+  return names.some(n => clubKey(n) === k);
+}
+
 /* ---------- sport: strip + grouped table ---------- */
 function renderSport(){
   const sp = ED.sport;
@@ -4197,7 +4213,7 @@ function renderSport(){
   const dayOf = m => m.date ? fmt(new Date(m.date),{weekday:"short",day:"numeric",month:"short"}) : "";
   res.forEach(m => { const k = m.comp + "\u0001" + dayOf(m); (groups[k] = groups[k] || []).push(m); });
   $("#scores").innerHTML = Object.entries(groups).map(([k, ms]) => { const comp = ms[0].comp; return `<div class="rt"><h4>${esc(comp)}<span>${esc(dayOf(ms[0]))}</span></h4>
-    ${ms.map(m => `<a class="rt-row" href="${safeUrl(m.url||"#")}" target="_blank" rel="noopener" title="${esc(m.note||"")}"><span class="h${done(m) && m.hs > m.as ? " w" : ""}">${esc(m.home)}</span><span class="sc">${done(m) ? `${m.hs}<i>-</i>${m.as}` : esc(m.status||"v")}</span><span class="a${done(m) && m.as > m.hs ? " w" : ""}">${esc(m.away)}</span><span class="st">${esc(done(m) ? (m.status||"FT") : "")}</span></a>`).join("")}</div>`; }).join("");
+    ${ms.map(m => `<a class="rt-row" href="${safeUrl(m.url||"#")}" target="_blank" rel="noopener" title="${esc(m.note||"")}"><span class="h${isEssexClub(m.home) ? " ex" : ""}">${esc(m.home)}</span><span class="sc">${done(m) ? `${m.hs}<i>-</i>${m.as}` : esc(m.status||"v")}</span><span class="a${isEssexClub(m.away) ? " ex" : ""}">${esc(m.away)}</span><span class="st">${esc(done(m) ? (m.status||"FT") : "")}</span></a>`).join("")}</div>`; }).join("");
   $("#sportStories").innerHTML = sp.stories.filter(inArea).sort(byTime).slice(0,6).map(s => cardHtml(s, false, true)).join("");
   $("#fixtures").innerHTML = [...sp.fixtures].filter(f => new Date(f.date) >= new Date(Date.now() - 3*36e5)).sort((x,y) => new Date(x.date) - new Date(y.date)).map(f => {
     const d = new Date(f.date); const cd = countdown(f.date, f.allDay);
