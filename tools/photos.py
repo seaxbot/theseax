@@ -114,7 +114,7 @@ def main():
                 print(f"  image failed {r.get('url', '')[:80]}: {e}"); continue
             lic = (r.get("license") or "").lower()
             label = {"cc0": "CC0", "pdm": "Public domain"}.get(lic, f"CC {lic.upper()} {r.get('license_version') or ''}".strip())
-            photos[sid] = {"file": f"/img/stock/{sid}.jpg", "w": w, "h": h, "keyword": kw, "title": (r.get("title") or "")[:140],
+            photos[sid] = {"file": f"/img/stock/{sid}.jpg", "w": w, "h": h, "keyword": kw, "title": re.sub(r"<[^>]+>", "", r.get("title") or "").strip()[:140],
                            "creator": (r.get("creator") if r.get("creator") and r.get("creator").lower() != "unknown" else (r.get("source") or r.get("provider") or "Openverse"))[:80], "creatorUrl": r.get("creator_url") or "",
                            "license": label, "licenseUrl": r.get("license_url") or "", "source": r.get("foreign_landing_url") or "",
                            "provider": r.get("source") or r.get("provider") or "", "at": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")}
