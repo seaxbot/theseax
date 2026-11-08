@@ -10,7 +10,7 @@ FETCH RULES: only WebFetch a URL that appeared in a WebSearch result in this run
 In the repository checkout run `git rev-parse HEAD` (note it as BASE) and read edition.json with a short script: print updatedAt, lead.id, and every story headline. Do not read the whole file into the conversation.
 
 ## 2. SCAN (one turn, all searches together, mode "extended")
-- "Essex police news tonight"
+- "essex.police.uk news Essex Police latest" (Essex Police's own news page; its result text lists the latest headlines with publish times. Never WebFetch any essex.police.uk URL: the site refuses fetching. Follow ops/newsroom.md 2i: search a headline's key words plus "Essex Police" for the article's own result, write only what that result text states, or confirm through a readable outlet)
 - "Essex breaking news"
 - "Essex crash OR fire OR incident overnight"
 - "National Highways travel alert Essex A12 OR A120 OR A13 OR M11 OR M25" (National Highways East's official alerts; uktrafficupdates.uk and crashview.co.uk pages carry its live data with cleared times, see ops/newsroom.md 3e v)
