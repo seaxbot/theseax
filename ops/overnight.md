@@ -13,6 +13,7 @@ In the repository checkout run `git rev-parse HEAD` (note it as BASE) and read e
 - "Essex police news tonight"
 - "Essex breaking news"
 - "Essex crash OR fire OR incident overnight"
+- "National Highways travel alert Essex A12 OR A120 OR A13 OR M11 OR M25" (National Highways East's official alerts; uktrafficupdates.uk and crashview.co.uk pages carry its live data with cleared times, see ops/newsroom.md 3e v)
 - "Essex road closed A12 OR A127 OR A13 OR A120 OR M25 OR M11"
 - "Met Office weather warning Essex"
 - one search for the latest status of each "developing" story in the edition (reopened, cleared, update)
