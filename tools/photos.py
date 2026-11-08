@@ -22,7 +22,7 @@ SKIP_TAGS = {"police", "court", "crime", "appeal", "tribute", "health", "fire", 
 MAX_NEW = 12   # lookups per run
 CTX = ssl.create_default_context()
 
-def get(url, binary=False, limit=15_000_000):
+def get(url, binary=False, limit=80_000_000):
     req = urllib.request.Request(url, headers={"User-Agent": UA, "Accept": "application/json, image/*;q=0.9"})
     with urllib.request.urlopen(req, timeout=40, context=CTX) as r:
         data = r.read(limit)
@@ -61,6 +61,8 @@ def search(kw):
             continue
         if re.search(r"\b(people|person|man|woman|girl|boy|child|portrait|selfie|face|crowd)\b", title):
             continue  # never put identifiable people beside a news story
+        if re.search(r"\b(map|maps|chart|diagram|graph|infographic|logo|poster|screenshot|volunteers?|staff|employees?|workers?|students?|team)\b", title):
+            continue  # no maps, charts or graphics, and no groups of people
         words = [x for x in re.findall(r"[a-z]+", kw.lower()) if len(x) > 2]
         hits = sum(1 for x in words if x in title)
         good.append((hits, (w * h) if w and h else 0, r))
@@ -68,7 +70,8 @@ def search(kw):
     return [g[2] for g in good if g[0] > 0][:5]
 
 def save_image(url, path):
-    from PIL import Image
+    from PIL import Image, ImageFile
+    ImageFile.LOAD_TRUNCATED_IMAGES = True
     data = get(url, binary=True)
     im = Image.open(io.BytesIO(data)).convert("RGB")
     if im.width < 700:
