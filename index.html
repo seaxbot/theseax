@@ -4205,7 +4205,7 @@ window.addEventListener("load", fitLatest);
 window.addEventListener("resize", () => { clearTimeout(window.SEAX_FIT_T); window.SEAX_FIT_T = setTimeout(fitLatest, 120); });
 if(document.fonts && document.fonts.ready) document.fonts.ready.then(fitLatest);
 
-/* the weather strip shows a short warning ("Yellow fog warning · until 11am Mon"); the full Met Office wording is on hover */
+/* the weather strip shows a short warning ("Yellow warning of fog · until 11am Mon"); the full Met Office wording is on hover */
 function shortWarning(t){
   t = String(t || "");
   const m = /\b(yellow|amber|red)\b[^:]*?\bwarnings? (?:for|of) ([a-z ,&-]+?)\s*(?::|$|\bfrom\b|\buntil\b)/i.exec(t);
@@ -4215,7 +4215,7 @@ function shortWarning(t){
   if(!m) return `<b class="wfull">${esc(t)}</b>`;
   const lvl = m[1].slice(0,1).toUpperCase() + m[1].slice(1).toLowerCase();
   const kind = m[2].replace(/\s+\b(?:(?:now|still)\s+)?(?:in force|in place|remains?|continues?|is|are|issued|extended|across|for)\b.*$/i, "").trim().toLowerCase();
-  return `<b>${esc(lvl)} ${esc(kind)} warning</b>${until}`;
+  return `<b>${esc(lvl)} warning of ${esc(kind)}</b>${until}`;   /* the Met Office's own wording: "yellow warning of fog" */
 }
 function renderToday(){
   const el = document.getElementById("todayBar"); if(!el) return;
