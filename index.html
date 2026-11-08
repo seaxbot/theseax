@@ -3596,7 +3596,8 @@ function renderSport(){
       <div class="row"><div class="t">${esc(m.home)}</div><div class="n${done?"":" pend"}">${done ? `${m.hs} - ${m.as}` : esc(m.status||"Live")}</div><div class="t r">${esc(m.away)}</div></div>
       <p class="note">${done ? `<b style="color:var(--gold)">${esc(m.status||"FT")}</b> · ` : ""}${esc(m.note||"")} ${m.url?`<a href="${safeUrl(m.url)}" target="_blank" rel="noopener">Match report ↗</a>`:""}</p></div>`;
   }).join("");
-  $("#sportStories").innerHTML = sp.stories.filter(inArea).map(s => cardHtml(s)).join("");
+  const stT = s => Math.max(Date.parse(s.updated||"")||0, Date.parse(s.time||"")||0);
+  $("#sportStories").innerHTML = [...sp.stories].filter(inArea).sort((x,y) => stT(y) - stT(x)).map(s => cardHtml(s)).join("");
   $("#fixtures").innerHTML = [...sp.fixtures].filter(f => new Date(f.date) >= new Date(Date.now() - 3*36e5)).sort((x,y) => new Date(x.date) - new Date(y.date)).map(f => {
     const d = new Date(f.date); const cd = countdown(f.date, f.allDay);
     return `<a class="fx" href="${safeUrl(f.url)}" target="_blank" rel="noopener"><div class="d"><span>${fmt(d,{month:"short"})}</span><b>${fmt(d,{day:"numeric"})}</b><span>${fmt(d,{weekday:"short"})}</span></div>

@@ -2,20 +2,23 @@
 """Publish an edition to theseax.com safely. Run from inside the repository checkout.
 
 Newsroom:    python3 tools/publish.py --edition /tmp/edition.json --base <sha noted at the start of the run>
-Sport desk:  python3 tools/publish.py --sport /tmp/sport.json      (replaces only sport.results, sport.fixtures, sport.tables)
+Sport desk:  python3 tools/publish.py --sport /tmp/sport.json      (replaces sport.results, sport.fixtures, sport.tables;
+             merges the file's optional "stories" list into sport.stories by id)
 Council Watch desk: python3 tools/publish.py --councilwatch /tmp/cw.json   (replaces only the edition's "councilwatch" list)
 
 What it does, retrying up to 4 times if someone else pushes first:
   1. fetches origin/main and resets this checkout to it (only edition.json and built files ever change here)
   2. newsroom: refuses (exit 3) if a person, not a bot, changed edition.json since --base, unless --force
   3. newsroom: takes sport.results, sport.fixtures and sport.tables from the live file (the sport desk owns them),
-     and the "councilwatch" list (the Council Watch desk owns it)
+     and the "councilwatch" list (the Council Watch desk owns it); also puts back any sport desk match report
+     (desk "sport", under 72 hours old) that is missing from the newsroom's file, so a newsroom run that started
+     before the sport desk pushed cannot wipe it
   4. writes edition.json, runs tools/build.py (story pages, sitemaps, feeds, briefing), commits and pushes
 If the build fails, the edition is still published without the built pages.
 Prints PUSHED <hash> on success. Exit codes: 0 pushed, 2 bad input, 3 needs a manual merge, 4 push failed.
 """
 import argparse, json, os, subprocess, sys, time
-from datetime import datetime, timezone
+from datetime import datetime, timezone, timedelta
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 BOTS = {"The Seax newsroom", "The Seax sport desk", "The Seax council watch", "The Seax photo desk"}
@@ -34,6 +37,38 @@ def load(p):
 def dump(obj, p):
     with open(p, "w", encoding="utf-8") as f:
         json.dump(obj, f, ensure_ascii=False, separators=(",", ":"))
+
+def parse_t(v):
+    try:
+        return datetime.fromisoformat(str(v).replace("Z", "+00:00"))
+    except Exception:
+        return None
+
+def story_t(s):
+    ts = [t for t in (parse_t(s.get("updated")), parse_t(s.get("time"))) if t]
+    return max(ts) if ts else None
+
+def newest_first(stories):
+    floor = datetime(1970, 1, 1, tzinfo=timezone.utc)
+    return sorted(stories, key=lambda s: story_t(s) or floor, reverse=True)
+
+def merge_sport_stories(live_sport, live_stories, mine):
+    """Merge the sport desk's stories into the live sport.stories by id."""
+    cur = list(live_sport.get("stories") or [])
+    front_ids = {x.get("id") for x in live_stories or []}
+    pos = {x.get("id"): i for i, x in enumerate(cur)}
+    for st in mine:
+        if not isinstance(st, dict) or not st.get("id") or not st.get("headline"):
+            continue
+        if st["id"] in front_ids:
+            continue  # the newsroom has moved it to the front page; it owns it there
+        st = dict(st, desk="sport")
+        st.pop("img", None)
+        if st["id"] in pos:
+            cur[pos[st["id"]]] = st
+        else:
+            cur.append(st)
+    return newest_first(cur)
 
 def main():
     ap = argparse.ArgumentParser()
@@ -56,6 +91,8 @@ def main():
     elif a.sport:
         if not all(isinstance(mine.get(k), list) for k in SPORT_KEYS):
             print("bad sport file: needs results, fixtures and tables lists"); sys.exit(2)
+        if not isinstance(mine.get("stories", []), list):
+            print("bad sport file: stories must be a list"); sys.exit(2)
     else:
         if isinstance(mine, dict):
             mine = mine.get("councilwatch")
@@ -85,6 +122,12 @@ def main():
             for k in SPORT_KEYS:
                 out["sport"][k] = (live.get("sport") or {}).get(k, [])
             out["councilwatch"] = live.get("councilwatch", [])
+            # keep recent sport desk match reports the newsroom's copy did not have
+            have = {x.get("id") for x in out.get("stories", [])} | {x.get("id") for x in out["sport"].get("stories", [])}
+            cutoff = datetime.now(timezone.utc) - timedelta(hours=72)
+            back = [x for x in (live.get("sport") or {}).get("stories", [])
+                    if x.get("desk") == "sport" and x.get("id") not in have and (story_t(x) or cutoff) > cutoff]
+            out["sport"]["stories"] = newest_first(list(out["sport"].get("stories", [])) + back)
         elif a.councilwatch:
             out = live
             out["councilwatch"] = mine
@@ -93,6 +136,7 @@ def main():
             out.setdefault("sport", {})
             for k in SPORT_KEYS:
                 out["sport"][k] = mine[k]
+            out["sport"]["stories"] = merge_sport_stories(out["sport"], out.get("stories", []), mine.get("stories", []))
             out["updatedAt"] = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
         dump(out, os.path.join(ROOT, "edition.json"))
         built = subprocess.run([sys.executable, os.path.join(ROOT, "tools", "build.py")], capture_output=True, text=True)
