@@ -685,7 +685,9 @@ h1,h2,h3,h4,.story h1,.lead h2,.card h3,.drow h4{letter-spacing:-.022em}
 .tb b.r{color:#c8102e}.tb b.a{color:#a8650a}
 .tb.warn{background:#fdf3d7}.tb.warn .k{color:#8a5a00}
 .tb-wx .wk{font-size:10.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-right:5px}
-.tb-wx .wp{white-space:nowrap}
+.tb-wx .wp{white-space:nowrap;display:inline-flex;align-items:center}
+.tb-wx .wi{width:24px;height:24px;flex:none;margin-right:5px;display:inline-block}
+.tb-wx .wi svg{width:100%;height:100%;display:block}
 .tb-wx .wsep{width:1px;align-self:stretch;background:var(--hair);margin:0 4px}
 
 /* ---------- lead package + latest rail ---------- */
@@ -4170,10 +4172,13 @@ function renderToday(){
     const days = w.days || [], today = days.find(d => d.date === ukDate(now)), tmrw = days.find(d => d.date === ukDate(new Date(now.getTime()+864e5)));
     const low = s => esc(String(s||"").toLowerCase());
     const rain = d => Number.isFinite(+d.rain) && +d.rain >= 20 ? `, ${+d.rain}% rain` : "";
-    const parts = [`<span class="wk">Now</span><b>${esc(w.now.temp)}°C</b> ${low(w.now.desc)}`];
-    if(today && ukHour < 16) parts.push(`<span class="wk">Later</span>high <b>${esc(today.hi)}°C</b>${today.desc ? `, ${low(today.desc)}` : ""}${rain(today)}`);
-    if(today && ukHour < 23) parts.push(`<span class="wk">Tonight</span>low <b>${esc(today.lo)}°C</b>`);
-    if(tmrw) parts.push(`<span class="wk">Tomorrow</span><b>${esc(tmrw.hi)}°C</b> ${low(tmrw.desc)}${rain(tmrw)}`);
+    /* small icons for the light bar: the panel icons are drawn for a dark background, so darken their pale greys */
+    const ico = (kind, night) => kind ? `<span class="wi" aria-hidden="true">${wxIcon(kind, night).replace(/#e6ebf2/gi,"#a7b2c1").replace(/#cfd7e2/gi,"#8d99aa").replace(/#b9c3d1/gi,"#7f8da0").replace(/#9aa5b5/gi,"#66748a").replace(/#e8e2c8/gi,"#c2a85e")}</span>` : "";
+    const nightNow = now > st.set || now < st.rise;
+    const parts = [`<span class="wk">Now</span>${ico(w.now.icon, nightNow)}<b>${esc(w.now.temp)}°C</b>&nbsp;${low(w.now.desc)}`];
+    if(today && ukHour < 16) parts.push(`<span class="wk">Later</span>${ico(today.icon, false)}high&nbsp;<b>${esc(today.hi)}°C</b>${today.desc ? `,&nbsp;${low(today.desc)}` : ""}${rain(today)}`);
+    if(today && ukHour < 23) parts.push(`<span class="wk">Tonight</span>${ico(today.icon, true)}low&nbsp;<b>${esc(today.lo)}°C</b>`);
+    if(tmrw) parts.push(`<span class="wk">Tomorrow</span>${ico(tmrw.icon, false)}<b>${esc(tmrw.hi)}°C</b>&nbsp;${low(tmrw.desc)}${rain(tmrw)}`);
     bits.push(`<a href="#weather" class="tb tb-wx">${parts.map(x => `<span class="wp">${x}</span>`).join('<span class="wsep" aria-hidden="true"></span>')}</a>`);
   }
   const warn = (w.warnings||[])[0];
