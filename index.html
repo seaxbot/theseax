@@ -3338,7 +3338,7 @@ function townArt(s, opts){
 function townCredit(k){ const t = TOWN_PHOTO[k]; return t ? `${t.what}. Photo: ${t.by}, ${t.lic === "Public domain" || t.lic === "CC0" ? "public domain" : t.lic}` : ""; }
 /* stock photos for generic stories (Openverse, openly licensed), chosen by tools/photos.py; always labelled */
 let PHOTOS = {};
-function stockOf(s){ return s && s.id && PHOTOS[s.id] && !sportKindOf(s) ? PHOTOS[s.id] : null; }
+function stockOf(s){ return s && s.id && !s.noPhoto && PHOTOS[s.id] && !sportKindOf(s) ? PHOTOS[s.id] : null; }
 function stockArt(s, opts){ const p = stockOf(s); return `<svg class="emap wxart stockphoto" width="100%" height="100%" role="img" aria-label="Stock photo: ${esc(p.title || p.keyword || "")}" style="background:#cfd8dc"><image href="${esc(p.file)}?v=1" x="0" y="0" width="100%" height="100%" preserveAspectRatio="xMidYMid slice"/>${opts && opts.credit ? `<text x="99%" y="94%" text-anchor="end" font-size="10" font-family="var(--sans), sans-serif" fill="#fff" stroke="rgba(0,0,0,.55)" stroke-width="2.5" paint-order="stroke">Stock photo · ${esc(p.creator)} · ${esc(p.license)}</text>` : ""}</svg>`; }
 (function(){
   if(typeof fetch !== "function") return;

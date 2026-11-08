@@ -312,7 +312,7 @@ except Exception:
     PHOTOS = {}
 
 def stock_figure(it, sec):
-    p = PHOTOS.get(it.get("id")) if sec != "sport" else None
+    p = PHOTOS.get(it.get("id")) if sec != "sport" and not it.get("noPhoto") else None
     if not p:
         return ""
     who = f'<a href="{E(p["creatorUrl"])}" target="_blank" rel="noopener">{E(p["creator"])}</a>' if safe_url(p.get("creatorUrl")) else E(p.get("creator"))

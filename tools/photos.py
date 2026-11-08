@@ -20,6 +20,7 @@ SENSITIVE = re.compile(r"\b(police|court|crime|jail|jailed|sentenc|convict|charg
                        r"fatal|crash|collision|inquest|tribute|funeral|suicide|missing|(?<!wildlife )hospital|patient|cancer|disease|hit-and-run|appeal for witnesses)", re.I)
 SKIP_TAGS = {"police", "court", "crime", "appeal", "tribute", "health", "fire", "ambulance"}
 MAX_NEW = 12   # lookups per run
+SOURCES = {"flickr", "wikimedia", "stocksnap", "rawpixel", "nappy"}  # Openverse photo libraries we accept
 CTX = ssl.create_default_context()
 
 def get(url, binary=False, limit=80_000_000):
@@ -63,11 +64,15 @@ def search(kw):
             continue  # never put identifiable people beside a news story
         if re.search(r"\b(map|maps|chart|diagram|graph|infographic|logo|poster|screenshot|volunteers?|staff|employees?|workers?|students?|team)\b", title):
             continue  # no maps, charts or graphics, and no groups of people
+        if str(r.get("source") or "").lower() not in SOURCES:
+            continue  # photo libraries only: no museum objects, artworks or archive scans
         words = [x for x in re.findall(r"[a-z]+", kw.lower()) if len(x) > 2]
         hits = sum(1 for x in words if x in title)
+        if words and hits < len(words):
+            continue  # every word of the phrase must match; no photo is better than a wrong one
         good.append((hits, (w * h) if w and h else 0, r))
     good.sort(key=lambda t: (-t[0], -t[1]))
-    return [g[2] for g in good if g[0] > 0][:5]
+    return [g[2] for g in good][:5]
 
 def save_image(url, path):
     from PIL import Image, ImageFile
@@ -88,16 +93,25 @@ def main():
     pj = os.path.join(ROOT, "data", "photos.json")
     photos = load(pj, {})
     live_ids = set()
+    changed_rej = False
     want = {}
     for it in items(ed):
         live_ids.add(it["id"])
+        if it.get("noPhoto"):  # the newsroom rejected this story's photo: remove it and never look again
+            if it["id"] in photos:
+                f = os.path.join(ROOT, "img", "stock", f"{it['id']}.jpg")
+                if os.path.exists(f):
+                    os.remove(f)
+                photos.pop(it["id"]); changed_rej = True
+                print(f"removed rejected photo: {it['id']}")
+            continue
         kw = str(reqs.get(it["id"]) or it.get("photo") or "").strip()
         if kw and it["id"] not in photos:
             if sensitive(it) and it["id"] not in reqs:
                 print(f"skip (sensitive): {it['id']}")
                 continue
             want[it["id"]] = kw
-    changed, n = False, 0
+    changed, n = bool(changed_rej), 0
     for sid, kw in want.items():
         if n >= MAX_NEW:
             break
