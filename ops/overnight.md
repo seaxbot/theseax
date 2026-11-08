@@ -33,7 +33,7 @@ Anything smaller waits for the 06:35 newsroom. If nothing qualifies, go to step 
 ## 4. CONFIRM AND WRITE (only if something qualifies; at most 2 stories)
 Fetch the best source for each (Essex Police, Essex Fire, National Highways, the BBC via gateway978, Greatest Hits Radio Essex, a council or a national outlet), using the exact URL from the search results. Never publish from a headline alone.
 
-Before writing, read ONLY these parts of ops/newsroom.md with sed: the section headed "### 3b. CRIME, COURTS AND LEGAL SAFETY" and the "stories" line of the section headed "## 6. EDITION FORMAT". Follow them exactly (crime and court rules, no names of victims of sexual offences or of children, no suicide or self-harm stories).
+Social media posts by the public are tip-offs only: publish only what an official source or an established outlet you can read confirms. Before writing, read ONLY these parts of ops/newsroom.md with sed: the section headed "### 3b. CRIME, COURTS AND LEGAL SAFETY", the section headed "### 3d. SOCIAL MEDIA", and the "stories" line of the section headed "## 6. EDITION FORMAT". Follow them exactly (crime and court rules, no names of victims of sexual offences or of children, no suicide or self-harm stories).
 
 With a Python script, load edition.json, then:
 - add each new story to "stories" in the full story format: unique lowercase-hyphen id, tag, areas, specific "place", weight, icon, headline and summary in your own words, a "body" of exactly 3 short paragraphs written only from what you read, 3 or 4 points, source, exact url, "also" list, time; set "developing": true if it is still unfolding
