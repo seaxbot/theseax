@@ -3362,14 +3362,37 @@ function isHospitalStory(s){
   const rx = /\bhospitals?\b|\bA&E\b/i, h = String(s.headline || "");
   return rx.test(h) || (ic === "health" && rx.test(h + " " + (s.summary || "")));
 }
-/* police, crime and appeal stories use the owner's blue lights photo (same rule as tools/build.py is_police); court, tribute, fire and ambulance stories keep their own art */
+/* police, crime and appeal stories use the owner's blue lights photos (same rule as tools/build.py is_police); court, tribute, fire and ambulance
+   stories keep their own art, and so do stories about police policy and politics (commissioner, merger, budget, inspection), which keep the map */
+const POLICE_PHOTOS = ["/img/topics/bluelights.jpg?v=1", "/img/topics/bluelights-2.jpg?v=1"];
+const POLICE_POLICY_RX = /\b(commissioners?|PFCC|mergers?|mega[ -]force|budgets?|precept|council tax|HMICFRS|inspections?|inspectorate)\b/i;
 function isPoliceStory(s){
   if(!s || sportKindOf(s)) return false;
+  if(POLICE_POLICY_RX.test(String(s.headline || ""))) return false;
   const ic = iconKey(s);
   if(["police","crime","appeal"].includes(ic)) return true;
   return String(s.tag || "").toLowerCase() === "police" && !["court","tribute","fire","ambulance"].includes(ic);
 }
-function policeArt(s){ return `<svg class="emap wxart townphoto" width="100%" height="100%" role="img" aria-label="Library photo: police car blue lights" style="background:#0a1a3a"><image href="/img/topics/bluelights.jpg?v=1" x="0" y="0" width="100%" height="100%" preserveAspectRatio="xMidYMid slice"/></svg>`; }
+/* police photos rotate like the football photos: a variant from the story id, never the same as the police story just before it (newest first) */
+let POLICE_PICK = {ed: null, map: {}};
+function policePhotoSrc(s){
+  const n = POLICE_PHOTOS.length;
+  if(POLICE_PICK.ed !== ED){
+    POLICE_PICK = {ed: ED, map: {}};
+    const tm = x => Math.max(Date.parse(x.updated||"")||0, Date.parse(x.time||"")||0);
+    const list = [...(ED.stories || []), ...(ED.official || [])].filter(x => x && x.id).sort((a,b) => tm(b) - tm(a));
+    let prev = -1;
+    list.forEach(x => {
+      if(!isPoliceStory(x)) return;
+      let h = 0; for(const c of String(x.id)) h = (h * 31 + c.charCodeAt(0)) >>> 0;
+      let v = h % n; if(v === prev) v = (v + 1) % n;
+      POLICE_PICK.map[x.id] = v; prev = v;
+    });
+  }
+  const v = s && s.id in POLICE_PICK.map ? POLICE_PICK.map[s.id] : 0;
+  return POLICE_PHOTOS[v % n];
+}
+function policeArt(s){ return `<svg class="emap wxart townphoto" width="100%" height="100%" role="img" aria-label="Library photo: police car blue lights" style="background:#0a1a3a"><image href="${policePhotoSrc(s)}" x="0" y="0" width="100%" height="100%" preserveAspectRatio="xMidYMid slice"/></svg>`; }
 function hospitalArt(s){ return `<svg class="emap wxart townphoto" width="100%" height="100%" role="img" aria-label="Library photo: a hospital reception" style="background:#cfd8dc"><image href="/img/topics/hospital.jpg?v=1" x="0" y="0" width="100%" height="100%" preserveAspectRatio="xMidYMid slice"/></svg>`; }
 function roadArt(s){ const r = ROAD_SIGN[roadOf(s)]; return `<svg class="emap wxart roadsign" width="100%" height="100%" role="img" aria-label="${esc(r.what)}" style="background:${r.bg}"><image href="${r.src}" x="6%" y="6%" width="88%" height="88%" preserveAspectRatio="xMidYMid meet"/></svg>`; }
 /* the art shown for a story: weather scenes for county-wide weather, a sport object for every sport story, club colours (now unused for sport), occasion scenes, otherwise the map */
@@ -3589,7 +3612,7 @@ function renderTopList(){
 
 function cardHtml(s, wide, art){
   return `<a class="card tc${wide?" wide":""}" href="${storyHref(s)}" style="--c:${iconColour(s)}">
-    ${!sportKindOf(s) && !isWeatherArtStory(s) && roadOf(s) ? `<div class="cart">${roadArt(s)}</div>` : !isWeatherArtStory(s) && isHospitalStory(s) ? `<div class="cart">${hospitalArt(s)}</div>` : !isWeatherArtStory(s) && isPoliceStory(s) ? `<div class="cart">${policeArt(s)}</div>` : !sportKindOf(s) && !isWeatherArtStory(s) && stockOf(s) ? `<div class="cart">${stockArt(s,{credit:true})}</div>` : art && SPORT_PHOTO[sportKindOf(s)] ? `<div class="cart">${sportArt(s)}</div>` : art && clubOf(s) ? `<div class="cart">${clubArt(s,{aspect:2.6})}</div>` : !sportKindOf(s) && !clubOf(s) && !isWeatherArtStory(s) && townKeyOf(s) ? `<div class="cart">${townArt(s,{credit:true})}</div>` : ""}
+    ${!sportKindOf(s) && !isWeatherArtStory(s) && roadOf(s) ? `<div class="cart">${roadArt(s)}</div>` : !isWeatherArtStory(s) && isHospitalStory(s) ? `<div class="cart">${hospitalArt(s)}</div>` : !isWeatherArtStory(s) && isPoliceStory(s) ? `<div class="cart">${policeArt(s)}</div>` : !sportKindOf(s) && !isWeatherArtStory(s) && stockOf(s) ? `<div class="cart">${stockArt(s,{credit:true})}</div>` : art && SPORT_PHOTO[sportKindOf(s)] ? `<div class="cart">${sportArt(s)}</div>` : art && clubOf(s) ? `<div class="cart">${clubArt(s,{aspect:2.6})}</div>` : !sportKindOf(s) && !clubOf(s) && !isWeatherArtStory(s) && townKeyOf(s) ? `<div class="cart">${townArt(s,{credit:true})}</div>` : !sportKindOf(s) && ["police","crime","appeal"].includes(iconKey(s)) ? `<div class="cart">${storyMap(s,{aspect:wide ? 1/3.2 : 1/2.6, zoom:wide ? 820 : 760})}</div>` : ""}
     <div class="body">
       <div class="kick"><span class="tg${s.breaking?" hot":""}">${s.breaking?"Breaking":esc(s.tag||"News")}</span></div>
       <div class="meta"><span class="place">${esc(s.place||"Essex")}</span><span>·</span><span data-ago="${esc(s.time||"")}">${ago(s.time)}</span></div>

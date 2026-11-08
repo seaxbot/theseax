@@ -88,7 +88,11 @@ HOSPITAL_SKIP = {"police", "crime", "court", "appeal", "tribute", "fire"}
 # the icon is court, tribute, fire or ambulance.
 POLICE_ICONS = {"police", "crime", "appeal"}
 POLICE_TAG_SKIP = {"court", "tribute", "fire", "ambulance"}
-OG_JPG = {"hospital", "bluelights"}
+# stories about police policy and politics keep the map (same as the page's POLICE_POLICY_RX)
+POLICE_POLICY_RX = re.compile(r"\b(commissioners?|PFCC|mergers?|mega[ -]force|budgets?|precept|council tax|HMICFRS|inspections?|inspectorate)\b", re.I)
+POLICE_PHOTOS = ["bluelights", "bluelights-2"]  # img/topics/<name>.jpg and share cards img/og/<name>.jpg, rotated like the page
+POLICE_PICK = {}
+OG_JPG = {"hospital", "bluelights", "bluelights-2"}
 
 def og_path(card):
     return f"/img/og/{card}.jpg" if card in OG_JPG else f"/img/og/{card}.png"
@@ -106,10 +110,38 @@ def is_hospital(it, sec):
 def is_police(it, sec):
     if sec == "sport":
         return False
+    if POLICE_POLICY_RX.search(str(it.get("headline") or "")):
+        return False
     ic = icon_of(it, sec)
     if ic in POLICE_ICONS:
         return True
     return str(it.get("tag") or "").lower() == "police" and ic not in POLICE_TAG_SKIP
+
+def pick_police(ed):
+    """Same rotation as the page's policePhotoSrc: newest first across stories and official items, a variant
+    from the id's hash, never the same as the police story just before it."""
+    POLICE_PICK.clear()
+    def tm(x):
+        ts = [t.timestamp() for t in (parse_t(x.get("updated")), parse_t(x.get("time"))) if t]
+        return max(ts) if ts else 0
+    items = [(("news" if i < len(ed.get("stories") or []) else "official"), x)
+             for i, x in enumerate((ed.get("stories") or []) + (ed.get("official") or [])) if isinstance(x, dict) and x.get("id")]
+    items.sort(key=lambda p: -tm(p[1]))
+    n, prev = len(POLICE_PHOTOS), -1
+    for sec, x in items:
+        if not is_police(x, sec):
+            continue
+        h = 0
+        for c in str(x["id"]):
+            h = (h * 31 + ord(c)) & 0xFFFFFFFF
+        v = h % n
+        if v == prev:
+            v = (v + 1) % n
+        POLICE_PICK[x["id"]] = v
+        prev = v
+
+def police_photo(it):
+    return POLICE_PHOTOS[POLICE_PICK.get(it.get("id"), 0) % len(POLICE_PHOTOS)]
 
 def card_of(it, sec):
     road = road_of(it)
@@ -117,8 +149,8 @@ def card_of(it, sec):
         return road
     if is_hospital(it, sec) and os.path.exists(os.path.join(ROOT, "img", "og", "hospital.jpg")):
         return "hospital"
-    if is_police(it, sec) and os.path.exists(os.path.join(ROOT, "img", "og", "bluelights.jpg")):
-        return "bluelights"
+    if is_police(it, sec) and os.path.exists(os.path.join(ROOT, "img", "og", police_photo(it) + ".jpg")):
+        return police_photo(it)
     if sec == "councilwatch":
         return "council"
     if sec == "features":
@@ -367,11 +399,11 @@ def story_page(sec, it, more):
         f'<a class="rel" href="/story/{E(m["id"])}/" style="--c:{ICON_COLOUR.get(icon_of(m, s), "#3a3f4b")}"><i></i><b>{E(m["headline"])}</b><span>{E(m.get("place") or "Essex")}</span></a>'
         for s, m in more)
     fig = stock_figure(it, sec)
-    if not fig and card == "bluelights":
-        fig = ('<figure class="stock"><img src="/img/topics/bluelights.jpg?v=1" width="1200" height="655" '
+    if not fig and card in POLICE_PHOTOS:
+        fig = (f'<figure class="stock"><img src="/img/topics/{card}.jpg?v=1" width="1200" height="655" '
                'alt="Library photo: police car blue lights" loading="eager">'
                '<figcaption><b>Library image</b>, not the scene of this story.</figcaption></figure>')
-    og_img = PHOTOS[sid]["file"] if fig and card not in [k for k, _ in ROAD_OG] + ["hospital", "bluelights"] else card
+    og_img = PHOTOS[sid]["file"] if fig and card not in [k for k, _ in ROAD_OG] + ["hospital"] + POLICE_PHOTOS else card
     if fig:
         ld["image"] = [SITE + og_img if og_img.startswith("/") else ld["image"][0]]
         extra = extra.replace(SITE + og_path(card), ld["image"][0])
@@ -757,6 +789,7 @@ def main():
             shutil.rmtree(d); changed += 1
         archive.pop(sid, None)
 
+    pick_police(ed)
     items = [(s, it) for s, it in collect(ed) if it["id"] not in takedown]
     seen = set()
     top = sorted([(s, it) for s, it in items if s in ("news", "sport")],
