@@ -15,6 +15,7 @@ In the repository checkout run `git rev-parse HEAD` (note it as BASE) and read e
 - "Essex crash OR fire OR incident overnight"
 - "Essex road closed A12 OR A127 OR A13 OR A120 OR M25 OR M11"
 - "Met Office weather warning Essex"
+- one search for the latest status of each "developing" story in the edition (reopened, cleared, update)
 - "Greater Anglia OR c2c disruption"
 - mode "standard": "NewsNow Essex news" (to get the page https://www.newsnow.co.uk/h/UK/England/Essex)
 
@@ -42,7 +43,7 @@ With a Python script, load edition.json, then:
 - put its headline first in "ticker"
 - add road, rail or weather alerts to "travel" (level red or amber) or "weather.warnings" as the source states them
 - set updatedAt to now (ISO UTC), and write the result to /tmp/edition.json (ensure_ascii=False, separators=(",",":")), checking: it parses, lead and front ids exist in stories, no em dash, no newsnow.co.uk url
-Change nothing else in the edition.
+Exception: if a search shows that a road, rail or other live incident already in the edition has ended (for example a road has reopened), update that story's headline, summary, points and body to say so and remove its "developing" flag, as in ops/newsroom.md 3e; that alone justifies publishing. Change nothing else in the edition.
 
 ## 5. PUBLISH (only if you added something)
 In the checkout run: `python3 tools/publish.py --edition /tmp/edition.json --base <BASE>`
