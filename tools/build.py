@@ -208,6 +208,8 @@ def is_fog(it, sec):
     if str(it.get("wx") or "").lower() == "fog":
         return True
     head, summ = str(it.get("headline") or ""), str(it.get("summary") or "")
+    if any(rx.search(head) for _, rx in ROAD_OG):
+        return False  # fog on a named road (e.g. M25 lanes shut in fog) shows that road's sign (owner's rule)
     if FOG_RX.search(head) and not BRAIN_FOG_RX.search(head):
         return True
     weatherish = icon_of(it, sec) in ("weather", "environment") or str(it.get("tag") or "").lower() == "weather"
