@@ -69,7 +69,8 @@ def icon_of(it, sec):
 
 ROAD_OG = [("a130", re.compile(r"\bA130\b")), ("a127", re.compile(r"\bA127\b")),
            ("a13", re.compile(r"\bA13\b")), ("a12", re.compile(r"\bA12\b")),
-           ("a414", re.compile(r"\bA414\b")), ("m11", re.compile(r"\bM11\b"))]  # stories about these roads share their road sign
+           ("a414", re.compile(r"\bA414\b")), ("m11", re.compile(r"\bM11\b")),
+           ("m25", re.compile(r"\bM25\b"))]  # stories about these roads share their road sign
 
 def road_of(it):
     """The first road named in the headline, else the summary, else the place (same rule as the page)."""
@@ -93,9 +94,9 @@ POLICE_TAG_SKIP = {"court", "tribute", "fire", "ambulance"}
 POLICE_POLICY_RX = re.compile(r"\b(commissioners?|PFCC|mergers?|mega[ -]force|budgets?|precept|council tax|HMICFRS|inspections?|inspectorate)\b", re.I)
 POLICE_PHOTOS = ["bluelights", "bluelights-2"]  # img/topics/<name>.jpg and share cards img/og/<name>.jpg, rotated like the page
 POLICE_PICK = {}
-OG_JPG = {"hospital", "bluelights", "bluelights-2", "fireengine", "countyhall"}
-LIBRARY_PHOTOS = POLICE_PHOTOS + ["fireengine", "countyhall"]  # owner's library photos shown on story pages
-LIBRARY_ALT = {"fireengine": "a fire engine", "countyhall": "County Hall, Chelmsford, home of Essex County Council"}
+OG_JPG = {"hospital", "bluelights", "bluelights-2", "fireengine", "countyhall", "fog"}
+LIBRARY_PHOTOS = POLICE_PHOTOS + ["fireengine", "countyhall", "fog"]  # owner's library photos shown on story pages
+LIBRARY_ALT = {"fog": "fog over a footpath and flats at dusk", "fireengine": "a fire engine", "countyhall": "County Hall, Chelmsford, home of Essex County Council"}
 # Essex County Council stories use the owner's photo of County Hall, Chelmsford (owner's rule, Nov 2026), ahead of
 # stock, town and map art. Road signs, police and fire photos still win. Same rule as the page's isCountyHallStory.
 ECC_RX = re.compile(r"\bEssex County Council\b|\bCounty Hall\b", re.I)
@@ -195,7 +196,28 @@ def is_county_hall(it, sec):
     return (icon_of(it, sec) == "council" or str(it.get("tag") or "").lower() in ("politics", "council")) and \
         bool(ECC_RX.search(str(it.get("summary") or "")))
 
+# Fog stories use the owner's fog photo (owner's rule, Nov 2026) on story pages and share cards, ahead of road signs,
+# weather cards, stock, town and map art; sport, police and fire stories keep their own. Same rule as the page's isFogStory.
+FOG_RX = re.compile(r"\bfog(gy|s|bound)?\b|\bmist(y)?\b", re.I)
+BRAIN_FOG_RX = re.compile(r"brain[- ]fog", re.I)
+WX_BEFORE_FOG_RX = re.compile(r"\bflood(s|ing|ed)?\b|flood warning|flood alert|\bstorm|thunder|lightning|\bsnow|\bice\b|\bicy\b|frost|freez|gritt", re.I)
+
+def is_fog(it, sec):
+    if sec == "sport" or is_police(it, sec) or is_fire(it, sec):
+        return False
+    if str(it.get("wx") or "").lower() == "fog":
+        return True
+    head, summ = str(it.get("headline") or ""), str(it.get("summary") or "")
+    if FOG_RX.search(head) and not BRAIN_FOG_RX.search(head):
+        return True
+    weatherish = icon_of(it, sec) in ("weather", "environment") or str(it.get("tag") or "").lower() == "weather"
+    pts = " ".join(str(x) for x in (it.get("points") or []))
+    return weatherish and bool(FOG_RX.search(summ)) and not BRAIN_FOG_RX.search(summ) and \
+        not WX_BEFORE_FOG_RX.search(" ".join([head, summ, pts]))
+
 def card_of(it, sec):
+    if is_fog(it, sec) and os.path.exists(os.path.join(ROOT, "img", "og", "fog.jpg")):
+        return "fog"
     road = road_of(it)
     if sec != "sport" and road and os.path.exists(os.path.join(ROOT, "img", "og", road + ".png")):
         return road
@@ -454,10 +476,11 @@ def story_page(sec, it, more):
     more_html = "".join(
         f'<a class="rel" href="/story/{E(m["id"])}/" style="--c:{ICON_COLOUR.get(icon_of(m, s), "#3a3f4b")}"><i></i><b>{E(m["headline"])}</b><span>{E(m.get("place") or "Essex")}</span></a>'
         for s, m in more)
-    fig = "" if card == "countyhall" else stock_figure(it, sec)
+    fig = "" if card in ("countyhall", "fog") else stock_figure(it, sec)
     if not fig and card in LIBRARY_PHOTOS:
         cap = ("<b>County Hall, Chelmsford</b>, home of Essex County Council. Library image."
-               if card == "countyhall" else "<b>Library image</b>, not the scene of this story.")
+               if card == "countyhall" else "<b>Fog</b>. Library image, not the scene of this story."
+               if card == "fog" else "<b>Library image</b>, not the scene of this story.")
         fig = (f'<figure class="stock"><img src="/img/topics/{card}.jpg?v=1" width="1200" height="655" '
                f'alt="Library photo: {LIBRARY_ALT.get(card, "police car blue lights")}" loading="eager">'
                f'<figcaption>{cap}</figcaption></figure>')
