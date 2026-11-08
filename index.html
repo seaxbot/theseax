@@ -699,6 +699,21 @@ h1,h2,h3,h4,.story h1,.lead h2,.card h3,.drow h4{letter-spacing:-.022em}
 .tb-wx .wi svg{width:100%;height:100%;display:block}
 .tb-wx .wsep{width:1px;align-self:stretch;background:var(--hair);margin:0 4px}
 
+/* ---------- pinned story (data/pinned.json, shown only between its from and until times) ---------- */
+.pinned{margin:0 0 22px}
+.pin-card{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);background:var(--navy);color:#fff;text-decoration:none;min-height:300px;border-top:5px solid var(--red)}
+.pin-img{position:relative;min-height:220px;background:#0b1628}
+.pin-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+.pin-text{padding:30px 32px 28px;display:flex;flex-direction:column;justify-content:center;gap:12px}
+.pin-kick{display:flex;align-items:center;gap:9px;font-size:12px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:#f4c35a}
+.pin-kick i{width:9px;height:9px;border-radius:50%;background:#ef3349;box-shadow:0 0 0 4px rgba(239,51,73,.25)}
+.pin-card h2{margin:0;font-family:var(--serif);font-weight:800;font-size:clamp(26px,3vw,40px);line-height:1.05;letter-spacing:-.03em;text-wrap:balance}
+.pin-card p{margin:0;font-size:16.5px;line-height:1.5;color:#d6dbe5}
+.pin-go{margin-top:6px;align-self:flex-start;display:inline-flex;align-items:center;min-height:44px;padding:0 20px;border-radius:999px;background:#fff;color:var(--navy);font-weight:800;font-size:15px}
+.pin-card:hover .pin-go{background:#f4c35a}
+.pin-card:hover h2{text-decoration:underline;text-underline-offset:4px;text-decoration-thickness:2px}
+@media (max-width:860px){.pin-card{grid-template-columns:1fr}.pin-img{aspect-ratio:1200/655;min-height:0}.pin-text{padding:20px 18px 22px}}
+
 /* ---------- lead package + latest rail ---------- */
 .fp-grid{display:grid;grid-template-columns:minmax(0,1fr);gap:28px;align-items:start}
 .lead-pkg{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:0;background:var(--card);border:1px solid var(--hair);min-height:440px}
@@ -1088,6 +1103,7 @@ footer .flinks a{text-decoration:underline}
 <section class="frontpage">
   <div class="wrap">
     <div class="todaybar" id="todayBar"></div>
+    <div class="pinned" id="pinned" hidden></div>
     <div class="fp-grid">
       <article class="lead-pkg" id="leadPkg"></article>
     </div>
@@ -3957,6 +3973,19 @@ function renderCouncilWatch(){
   if(document.readyState === "loading") document.addEventListener("DOMContentLoaded", load); else load();
 })();
 
+/* pinned story: the owner's launch story sits above the lead between its from and until times (UTC); the newsroom never edits data/pinned.json */
+let PIN = null;
+function renderPinned(){
+  const el = document.getElementById("pinned"); if(!el) return;
+  const now = Date.now(), on = PIN && PIN.headline && PIN.url && now >= +new Date(PIN.from) && now < +new Date(PIN.until);
+  if(!on){ if(!el.hidden){ el.hidden = true; el.innerHTML = ""; } return; }
+  if(!el.hidden && el.dataset.id === PIN.id) return;
+  el.dataset.id = PIN.id; el.hidden = false;
+  el.innerHTML = `<a class="pin-card" href="${esc(PIN.url)}">
+    <div class="pin-img">${PIN.image ? `<img src="${esc(PIN.image)}" alt="${esc(PIN.alt || "")}" loading="eager">` : ""}</div>
+    <div class="pin-text"><div class="pin-kick"><i aria-hidden="true"></i>${esc(PIN.kicker || "The Seax")}</div><h2>${esc(PIN.headline)}</h2>${PIN.summary ? `<p>${esc(PIN.summary)}</p>` : ""}<span class="pin-go">Read the story →</span></div></a>`;
+}
+fetch("/data/pinned.json", { cache: "no-store" }).then(r => r.ok ? r.json() : null).then(p => { PIN = p; renderPinned(); }).catch(() => {});
 function renderAll(){
   renderChips(); renderTicker(); buildHero(); renderTopList(); renderNews(); renderDesk(); renderCouncilWatch(); renderCommunity(); renderSport(); renderTables(); renderWeather();
   renderEvents(); renderCulture(); renderVital(); renderSpecials(); renderSources(); renderMeta(); afterRender(); updateLiveLine();
@@ -3978,6 +4007,7 @@ function tickMinute(){
   const k = dayKey(n);
   if(k !== lastDay){ lastDay = k; renderAll(); }
   else { renderWeather(); renderTicker(); renderToday(); }
+  renderPinned();
 }
 setInterval(() => { tickSecond(); const m = new Date().getMinutes(); if(m !== lastMinute){ lastMinute = m; tickMinute(); } }, 1000);
 
@@ -4184,7 +4214,8 @@ function shortWarning(t){
   const until = u ? `<span class="wu">until ${esc(u[1].replace(/\s/g, "").toLowerCase())}${esc(day)}</span>` : "";
   if(!m) return `<b class="wfull">${esc(t)}</b>`;
   const lvl = m[1].slice(0,1).toUpperCase() + m[1].slice(1).toLowerCase();
-  return `<b>${esc(lvl)} ${esc(m[2].trim().toLowerCase())} warning</b>${until}`;
+  const kind = m[2].replace(/\s+\b(?:(?:now|still)\s+)?(?:in force|in place|remains?|continues?|is|are|issued|extended|across|for)\b.*$/i, "").trim().toLowerCase();
+  return `<b>${esc(lvl)} ${esc(kind)} warning</b>${until}`;
 }
 function renderToday(){
   const el = document.getElementById("todayBar"); if(!el) return;

@@ -143,8 +143,14 @@ document.getElementById("list").addEventListener("click", e => {
 document.getElementById("more").addEventListener("click", () => { shown += 10; render(); });
 document.getElementById("showDone").addEventListener("click", () => { showDone = !showDone; render(); });
 
-fetch("/edition.json", { cache: "no-store" }).then(r => r.json()).then(ed => {
+Promise.all([
+  fetch("/edition.json", { cache: "no-store" }).then(r => r.json()),
+  fetch("/data/pinned.json", { cache: "no-store" }).then(r => r.ok ? r.json() : null).catch(() => null)
+]).then(([ed, pin]) => {
   ranked = rank(ed);
+  const now = Date.now();
+  if(pin && pin.id && now >= +new Date(pin.from) && now < +new Date(pin.until))
+    ranked = [{ id: pin.id, headline: pin.headline, place: pin.place || "Essex", sec: "Pinned", time: pin.from }, ...ranked.filter(s => s.id !== pin.id)];
   /* forget ticks older than a week so the saved list stays small */
   const week = Date.now() - 7 * 864e5; Object.keys(posted).forEach(k => { if(posted[k] < week) delete posted[k]; }); save();
   render();
