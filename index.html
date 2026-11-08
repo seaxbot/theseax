@@ -688,7 +688,11 @@ h1,h2,h3,h4,.story h1,.lead h2,.card h3,.drow h4{letter-spacing:-.022em}
 .tb .k{font-size:10.5px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
 .tb b{color:var(--ink);font-weight:700;font-variant-numeric:tabular-nums}
 .tb b.r{color:#c8102e}.tb b.a{color:#a8650a}
-.tb.warn{background:#fdf3d7}.tb.warn .k{color:#8a5a00}
+.tb.warn{background:#fdf3d7;flex:none;gap:8px;white-space:nowrap}.tb.warn .k{color:#8a5a00}
+.tb.warn .wu{color:#6b4a06;font-size:12.5px}
+.tb.warn .wu::before{content:"·";margin-right:7px;color:#b98a2a}
+.tb.warn .wfull{max-width:340px;overflow:hidden;text-overflow:ellipsis}
+.wtri{width:0;height:0;border-left:7px solid transparent;border-right:7px solid transparent;border-bottom:12px solid #e0a10b;flex:none}
 .tb-wx .wk{font-size:10.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-right:5px}
 .tb-wx .wp{white-space:nowrap;display:inline-flex;align-items:center}
 .tb-wx .wi{width:24px;height:24px;flex:none;margin-right:5px;display:inline-block}
@@ -4171,6 +4175,17 @@ window.addEventListener("load", fitLatest);
 window.addEventListener("resize", () => { clearTimeout(window.SEAX_FIT_T); window.SEAX_FIT_T = setTimeout(fitLatest, 120); });
 if(document.fonts && document.fonts.ready) document.fonts.ready.then(fitLatest);
 
+/* the weather strip shows a short warning ("Yellow fog warning · until 11am Mon"); the full Met Office wording is on hover */
+function shortWarning(t){
+  t = String(t || "");
+  const m = /\b(yellow|amber|red)\b[^:]*?\bwarnings? (?:for|of) ([a-z ,&-]+?)\s*(?::|$|\bfrom\b|\buntil\b)/i.exec(t);
+  const u = /\b(?:to|until)\s+(\d{1,2}(?::\d{2}|\.\d{2})?\s?(?:am|pm)|midnight|midday|noon)\s+(?:on\s+)?(monday|tuesday|wednesday|thursday|friday|saturday|sunday)?/i.exec(t);
+  const day = u && u[2] ? " " + u[2].slice(0,1).toUpperCase() + u[2].slice(1,3).toLowerCase() : "";
+  const until = u ? `<span class="wu">until ${esc(u[1].replace(/\s/g, "").toLowerCase())}${esc(day)}</span>` : "";
+  if(!m) return `<b class="wfull">${esc(t)}</b>`;
+  const lvl = m[1].slice(0,1).toUpperCase() + m[1].slice(1).toLowerCase();
+  return `<b>${esc(lvl)} ${esc(m[2].trim().toLowerCase())} warning</b>${until}`;
+}
 function renderToday(){
   const el = document.getElementById("todayBar"); if(!el) return;
   const now = new Date(), st = solar(now), w = ED.weather || {};
@@ -4190,11 +4205,12 @@ function renderToday(){
     if(tmrw) parts.push(`<span class="wk">Tomorrow</span>${ico(tmrw.icon, false)}<b>${esc(tmrw.hi)}°C</b>&nbsp;${low(tmrw.desc)}${rain(tmrw)}`);
     const dayName = d => esc(new Intl.DateTimeFormat("en-GB",{weekday:"long",timeZone:"Europe/London"}).format(new Date(d.date + "T12:00:00Z")));
     const day2 = days.find(d => d.date === ukDate(new Date(now.getTime()+2*864e5)));
-    if(day2) parts.push(`<span class="wk">${dayName(day2)}</span>${ico(day2.icon, false)}<b>${esc(day2.hi)}°C</b>&nbsp;${low(day2.desc)}${rain(day2)}`);
+    /* with a weather warning showing, drop the day after tomorrow so the strip stays on one line */
+    if(day2 && !(w.warnings||[]).length) parts.push(`<span class="wk">${dayName(day2)}</span>${ico(day2.icon, false)}<b>${esc(day2.hi)}°C</b>&nbsp;${low(day2.desc)}${rain(day2)}`);
     bits.push(`<a href="#weather" class="tb tb-wx">${parts.map(x => `<span class="wp">${x}</span>`).join('<span class="wsep" aria-hidden="true"></span>')}</a>`);
   }
   const warn = (w.warnings||[])[0];
-  if(warn) bits.unshift(`<a href="#weather" class="tb warn"><span class="k">Warning</span><b>${esc(warn)}</b></a>`);
+  if(warn) bits.unshift(`<a href="#weather" class="tb warn" title="${esc(warn)}" aria-label="${esc(warn)}"><i class="wtri" aria-hidden="true"></i>${shortWarning(warn)}</a>`);
   el.innerHTML = `<span class="tb-h">Weather</span>${bits.join("")}`;
 }
 
