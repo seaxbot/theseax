@@ -3320,8 +3320,13 @@ function stockArt(s, opts){ const p = stockOf(s); return `<svg class="emap wxart
   if(document.readyState === "loading") document.addEventListener("DOMContentLoaded", load); else load();
 })();
 /* road signs: stories about a named road show its sign (add more roads here with a sign image in /img/roads/) */
-const ROAD_SIGN = { a130: {re:/\bA\s?130\b/i, src:"/img/roads/a130.png?v=1", what:"A130 road sign", bg:"#086b17"} };
-function roadOf(s){ if(!s) return null; const t = `${s.headline||""} ${s.summary||""} ${s.place||""}`; for(const k in ROAD_SIGN){ if(ROAD_SIGN[k].re.test(t)) return k; } return null; }
+const ROAD_SIGN = {
+  a130: {re:/\bA130\b/, src:"/img/roads/a130.png?v=1", what:"A130 road sign", bg:"#086b17"},
+  a127: {re:/\bA127\b/, src:"/img/roads/a127.png?v=1", what:"A127 road sign", bg:"#0c681d"},
+  a13:  {re:/\bA13\b/,  src:"/img/roads/a13.png?v=1",  what:"A13 road sign",  bg:"#066231"},
+  a12:  {re:/\bA12\b/,  src:"/img/roads/a12.png?v=1",  what:"A12 road sign",  bg:"#0a6333"} };
+/* the road whose sign illustrates a story: the first road named in the headline, else in the summary, else in the place */
+function roadOf(s){ if(!s) return null; for(const t of [s.headline, s.summary, s.place]){ let best = null, at = Infinity; for(const k in ROAD_SIGN){ const m = ROAD_SIGN[k].re.exec(String(t||"")); if(m && m.index < at){ at = m.index; best = k; } } if(best) return best; } return null; }
 function roadArt(s){ const r = ROAD_SIGN[roadOf(s)]; return `<svg class="emap wxart roadsign" width="100%" height="100%" role="img" aria-label="${esc(r.what)}" style="background:${r.bg}"><image href="${r.src}" x="6%" y="6%" width="88%" height="88%" preserveAspectRatio="xMidYMid meet"/></svg>`; }
 /* the art shown for a story: weather scenes for county-wide weather, a sport object for every sport story, club colours (now unused for sport), occasion scenes, otherwise the map */
 function storyArt(s, opts){ opts = opts || {}; return isWeatherArtStory(s) ? weatherArt(s, opts) : sportKindOf(s) ? sportArt(s, opts) : !opts.map && roadOf(s) ? roadArt(s, opts) : !opts.map && stockOf(s) ? stockArt(s, opts) : clubOf(s) ? clubArt(s, opts) : seasonKindOf(s) ? seasonArt(s, opts) : !opts.map && townKeyOf(s) ? townArt(s, opts) : storyMap(s, opts); }

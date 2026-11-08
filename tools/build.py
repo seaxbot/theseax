@@ -67,13 +67,21 @@ def icon_of(it, sec):
         return "sport"
     return "news"
 
-ROAD_OG = [("a130", re.compile(r"\bA\s?130\b", re.I))]  # stories about these roads share their road sign
+ROAD_OG = [("a130", re.compile(r"\bA130\b")), ("a127", re.compile(r"\bA127\b")),
+           ("a13", re.compile(r"\bA13\b")), ("a12", re.compile(r"\bA12\b"))]  # stories about these roads share their road sign
+
+def road_of(it):
+    """The first road named in the headline, else the summary, else the place (same rule as the page)."""
+    for t in (it.get("headline"), it.get("summary"), it.get("place")):
+        hits = [(m.start(), key) for key, rx in ROAD_OG for m in [rx.search(str(t or ""))] if m]
+        if hits:
+            return min(hits)[1]
+    return None
 
 def card_of(it, sec):
-    text = f"{it.get('headline') or ''} {it.get('summary') or ''} {it.get('place') or ''}"
-    for key, rx in ROAD_OG:
-        if sec != "sport" and rx.search(text) and os.path.exists(os.path.join(ROOT, "img", "og", key + ".png")):
-            return key
+    road = road_of(it)
+    if sec != "sport" and road and os.path.exists(os.path.join(ROOT, "img", "og", road + ".png")):
+        return road
     if sec == "councilwatch":
         return "council"
     if sec == "features":
