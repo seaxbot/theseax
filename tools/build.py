@@ -68,7 +68,8 @@ def icon_of(it, sec):
     return "news"
 
 ROAD_OG = [("a130", re.compile(r"\bA130\b")), ("a127", re.compile(r"\bA127\b")),
-           ("a13", re.compile(r"\bA13\b")), ("a12", re.compile(r"\bA12\b"))]  # stories about these roads share their road sign
+           ("a13", re.compile(r"\bA13\b")), ("a12", re.compile(r"\bA12\b")),
+           ("a414", re.compile(r"\bA414\b")), ("m11", re.compile(r"\bM11\b"))]  # stories about these roads share their road sign
 
 def road_of(it):
     """The first road named in the headline, else the summary, else the place (same rule as the page)."""

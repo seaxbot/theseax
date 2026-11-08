@@ -3365,7 +3365,9 @@ const ROAD_SIGN = {
   a130: {re:/\bA130\b/, src:"/img/roads/a130.png?v=1", what:"A130 road sign", bg:"#086b17"},
   a127: {re:/\bA127\b/, src:"/img/roads/a127.png?v=1", what:"A127 road sign", bg:"#0c681d"},
   a13:  {re:/\bA13\b/,  src:"/img/roads/a13.png?v=1",  what:"A13 road sign",  bg:"#066231"},
-  a12:  {re:/\bA12\b/,  src:"/img/roads/a12.png?v=1",  what:"A12 road sign",  bg:"#0a6333"} };
+  a12:  {re:/\bA12\b/,  src:"/img/roads/a12.png?v=1",  what:"A12 road sign",  bg:"#0a6333"},
+  a414: {re:/\bA414\b/, src:"/img/roads/a414.png?v=1", what:"A414 road sign", bg:"#0a6333"},
+  m11:  {re:/\bM11\b/,  src:"/img/roads/m11.png?v=1",  what:"M11 motorway sign", bg:"#00348c"} };
 /* the road whose sign illustrates a story: the first road named in the headline, else in the summary, else in the place */
 function roadOf(s){ if(!s) return null; for(const t of [s.headline, s.summary, s.place]){ let best = null, at = Infinity; for(const k in ROAD_SIGN){ const m = ROAD_SIGN[k].re.exec(String(t||"")); if(m && m.index < at){ at = m.index; best = k; } } if(best) return best; } return null; }
 /* hospital stories use the owner's library photo of a hospital reception (same rule as tools/build.py is_hospital) */
