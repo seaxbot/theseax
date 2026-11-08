@@ -35,7 +35,7 @@ def load(p, d):
         return d
 
 def items(ed):
-    for sec in ("stories", "community", "features", "councilwatch"):
+    for sec in ("stories", "community", "official", "features", "councilwatch"):
         for it in ed.get(sec) or []:
             if isinstance(it, dict) and it.get("id"):
                 yield it
