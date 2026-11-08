@@ -4182,9 +4182,8 @@ function renderToday(){
     if(today && ukHour < 23) parts.push(`<span class="wk">Tonight</span>${ico(today.icon, true)}low&nbsp;<b>${esc(today.lo)}°C</b>`);
     if(tmrw) parts.push(`<span class="wk">Tomorrow</span>${ico(tmrw.icon, false)}<b>${esc(tmrw.hi)}°C</b>&nbsp;${low(tmrw.desc)}${rain(tmrw)}`);
     const dayName = d => esc(new Intl.DateTimeFormat("en-GB",{weekday:"long",timeZone:"Europe/London"}).format(new Date(d.date + "T12:00:00Z")));
-    const day2 = days.find(d => d.date === ukDate(new Date(now.getTime()+2*864e5))), day3 = days.find(d => d.date === ukDate(new Date(now.getTime()+3*864e5)));
+    const day2 = days.find(d => d.date === ukDate(new Date(now.getTime()+2*864e5)));
     if(day2) parts.push(`<span class="wk">${dayName(day2)}</span>${ico(day2.icon, false)}<b>${esc(day2.hi)}°C</b>&nbsp;${low(day2.desc)}${rain(day2)}`);
-    if(day3) parts.push(`<span class="wk">${dayName(day3)}</span>${ico(day3.icon, false)}<b>${esc(day3.hi)}°C</b>&nbsp;${low(day3.desc)}${rain(day3)}`);
     bits.push(`<a href="#weather" class="tb tb-wx">${parts.map(x => `<span class="wp">${x}</span>`).join('<span class="wsep" aria-hidden="true"></span>')}</a>`);
   }
   const warn = (w.warnings||[])[0];
