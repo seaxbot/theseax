@@ -423,7 +423,9 @@ def story_page(sec, it, more):
     colour = ICON_COLOUR.get(icon, "#3a3f4b")
     card = card_of(it, sec)
     t = parse_t(it.get("time"))
-    up = parse_t(it.get("updated"))
+    # latest genuine update or headline change (owner's rule: a new headline moves the time shown)
+    ups = [u for u in (parse_t(it.get("updated")), parse_t(it.get("headlineAt"))) if u]
+    up = max(ups) if ups else None
     place = it.get("place") or "Essex"
     src = it.get("source") or ""
     surl = safe_url(it.get("url"))

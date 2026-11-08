@@ -3531,6 +3531,10 @@ function cleanStory(s){
   return o;
 }
 /* the time a story last genuinely moved: its publish time, or its "updated" time if later */
+/* the time shown on a story: when it was posted, or later if it has since been updated or its headline changed
+   (owner's rule, Nov 2026: a new headline moves the time shown). Ranking still uses newsTime, which ignores headline changes. */
+function lastUpd(s){ const b = +new Date(s.updated||0) || 0, c = +new Date(s.headlineAt||0) || 0, m = Math.max(b, c); return m ? new Date(m).toISOString() : ""; }
+function shownT(s){ const a = +new Date(s.time||0) || 0, u = +new Date(lastUpd(s)||0) || 0; return u > a ? lastUpd(s) : (s.time || ""); }
 function newsTime(s){ const a = +new Date(s.time||0) || 0, b = +new Date(s.updated||0) || 0; return Math.max(a, b); }
 function normalise(d){
   const o = Object.assign({}, EMBED, d || {});
@@ -3620,7 +3624,7 @@ function buildHero(){
         <h2><a href="${storyHref(s)}">${esc(s.headline)}</a></h2>
         <p>${esc(s.summary)}</p>
         ${s.points && s.points.length ? `<ul class="lp">${s.points.slice(0,2).map(p=>`<li>${esc(p)}</li>`).join("")}</ul>` : ""}
-        <div class="meta">${esc(s.place||"")} · <span data-ago="${esc(s.time||"")}">${ago(s.time)}</span> <a class="read" href="${storyHref(s)}">Read the story →</a></div>
+        <div class="meta">${esc(s.place||"")} · <span data-ago="${esc(shownT(s))}">${ago(shownT(s))}</span> <a class="read" href="${storyHref(s)}">Read the story →</a></div>
       </div>
     </div>`).join("");
   $("#dots").innerHTML = heroList.map((s,i) => `<button class="${i===0?"on":""}" data-slide="${i}" aria-label="Story ${i+1}: ${esc(s.headline)}"></button>`).join("");
@@ -3641,7 +3645,7 @@ function renderTopList(){
   const shown = new Set(heroList.map(s => s.id));
   const others = ED.stories.filter(inArea).filter(s => !shown.has(s.id)).slice(0,5);
   const pick = others.length >= 3 ? others : ED.stories.filter(inArea).slice(1,6);
-  $("#topList").innerHTML = pick.map(s => `<li><div><h4><a href="${storyHref(s)}">${esc(s.headline)}</a></h4><div class="m">${esc(s.place||"")} · <span data-ago="${esc(s.time||"")}">${ago(s.time)}</span></div></div></li>`).join("") || `<li><div class="m">No other stories for this area yet.</div></li>`;
+  $("#topList").innerHTML = pick.map(s => `<li><div><h4><a href="${storyHref(s)}">${esc(s.headline)}</a></h4><div class="m">${esc(s.place||"")} · <span data-ago="${esc(shownT(s))}">${ago(shownT(s))}</span></div></div></li>`).join("") || `<li><div class="m">No other stories for this area yet.</div></li>`;
 }
 
 function cardHtml(s, wide, art){
@@ -3649,7 +3653,7 @@ function cardHtml(s, wide, art){
     ${isFogRoadStory(s) ? `<div class="cart">${roadArt(s)}</div>` : isFogStory(s) ? `<div class="cart">${fogArt(s)}</div>` : !sportKindOf(s) && !isWeatherArtStory(s) && roadOf(s) ? `<div class="cart">${roadArt(s)}</div>` : !isWeatherArtStory(s) && isCountyHallStory(s) ? `<div class="cart">${countyHallArt(s)}</div>` : !isWeatherArtStory(s) && isHospitalStory(s) ? `<div class="cart">${hospitalArt(s)}</div>` : !isWeatherArtStory(s) && isPoliceStory(s) ? `<div class="cart">${policeArt(s)}</div>` : !isWeatherArtStory(s) && isFireStory(s) ? `<div class="cart">${fireArt(s)}</div>` : !sportKindOf(s) && !isWeatherArtStory(s) && stockOf(s) ? `<div class="cart">${stockArt(s,{credit:true})}</div>` : art && SPORT_PHOTO[sportKindOf(s)] && !clubColoursCard(s) ? `<div class="cart">${sportArt(s)}</div>` : art && clubOf(s) ? `<div class="cart">${clubArt(s,{aspect:2.6})}</div>` : !sportKindOf(s) && !clubOf(s) && !isWeatherArtStory(s) && townKeyOf(s) ? `<div class="cart">${townArt(s,{credit:true})}</div>` : !sportKindOf(s) && ["police","crime","appeal"].includes(iconKey(s)) ? `<div class="cart">${storyMap(s,{aspect:wide ? 1/3.2 : 1/2.6, zoom:wide ? 820 : 760})}</div>` : ""}
     <div class="body">
       <div class="kick"><span class="tg${s.breaking?" hot":""}">${s.breaking?"Breaking":esc(s.tag||"News")}</span></div>
-      <div class="meta"><span class="place">${esc(s.place||"Essex")}</span><span>·</span><span data-ago="${esc(s.time||"")}">${ago(s.time)}</span></div>
+      <div class="meta"><span class="place">${esc(s.place||"Essex")}</span><span>·</span><span data-ago="${esc(shownT(s))}">${ago(shownT(s))}</span></div>
       ${s.org && s.kind ? `<div class="org-line k-${esc(s.kind)}"><i></i>${esc(s.org)}</div>` : ""}
       <h3>${esc(s.headline)}</h3>
       <p>${esc(s.summary)}</p>
@@ -3675,7 +3679,7 @@ function renderDesk(){
   const shown = DESK_ALL ? list : list.slice(0, 10);
   $("#deskFeed").innerHTML = list.length ? shown.map(s => `<a class="drow" href="${storyHref(s)}">
       <span class="org k-${esc(s.kind)}"><i></i>${esc(s.org)}</span>
-      <div><h4>${esc(s.headline)}</h4><p>${esc(s.summary)}</p><div class="dm"><b>${esc(s.place||"Essex")}</b><span>·</span><span data-ago="${esc(s.time||"")}">${ago(s.time)}</span><span>·</span><span>${esc(s.tag||KIND_LABEL[s.kind]||"Public Services")}</span><span>·</span><span>${esc(hostOf(s.url))}</span></div></div>
+      <div><h4>${esc(s.headline)}</h4><p>${esc(s.summary)}</p><div class="dm"><b>${esc(s.place||"Essex")}</b><span>·</span><span data-ago="${esc(shownT(s))}">${ago(shownT(s))}</span><span>·</span><span>${esc(s.tag||KIND_LABEL[s.kind]||"Public Services")}</span><span>·</span><span>${esc(hostOf(s.url))}</span></div></div>
 </a>`).join("")
       + (list.length > shown.length ? `<button class="desk-more" data-deskall>Show all ${list.length} public service updates</button>` : "")
     : `<div class="empty">No official updates tagged for this area right now. Try All Essex.</div>`;
@@ -3891,7 +3895,7 @@ function renderStory(id){
     <div class="story-rule" style="--c:${iconColour(s)}"><span class="${s.breaking?"hot":""}">${s.breaking?"Breaking":esc(s.tag||"News")}</span><span>${esc(s.place||"Essex")}</span></div>
     ${s.org && s.kind ? `<div class="official-flag k-${esc(s.kind)}" style="margin-top:0"><i></i>${OFFICIAL_KINDS.has(s.kind) ? "Public Services" : s.kind === "feature" ? "Feature" : "Community"} · ${esc(s.org)}</div>` : ""}
     <h1>${esc(s.headline)}</h1>
-    <div class="smeta"><b>${esc(s.place||"Essex")}</b><span>·</span><span data-ago="${esc(s.time||"")}">${ago(s.time)}</span>${s.time?`<span>·</span><span>${fmt(new Date(s.time),{weekday:"long",day:"numeric",month:"long",hour:"2-digit",minute:"2-digit"})}</span>`:""}<span>·</span><span>Reported by ${esc(s.source)}</span><span>·</span><span>${Math.max(1, Math.round(((s.summary||"") + " " + (s.body||[]).join(" ") + " " + (s.points||[]).join(" ")).split(/\s+/).length / 200))} min read</span></div>
+    <div class="smeta"><b>${esc(s.place||"Essex")}</b><span>·</span><span data-ago="${esc(shownT(s))}">${ago(shownT(s))}</span>${s.time?`<span>·</span><span>${fmt(new Date(s.time),{weekday:"long",day:"numeric",month:"long",hour:"2-digit",minute:"2-digit"})}</span>`:""}<span>·</span><span>Reported by ${esc(s.source)}</span><span>·</span><span>${Math.max(1, Math.round(((s.summary||"") + " " + (s.body||[]).join(" ") + " " + (s.points||[]).join(" ")).split(/\s+/).length / 200))} min read</span></div>
     <div class="sharebar"><button data-sharestory="${esc(s.id)}" class="native-share">Share</button><a class="wa" href="https://wa.me/?text=${encodeURIComponent(s.headline + " https://theseax.com/story/" + s.id + "/")}" target="_blank" rel="noopener">WhatsApp</a><button data-copylink="${esc(s.id)}">Copy link</button><a href="${safeUrl(s.url)}" target="_blank" rel="noopener">Original report ↗</a></div>
     <p class="standfirst">${esc(s.summary)}</p>
     ${Array.isArray(s.body) && s.body.length ? `<div class="sbody">${s.body.map(p=>`<p>${esc(p)}</p>`).join("")}</div>` : ""}
@@ -3949,7 +3953,7 @@ function renderCouncilWatch(){
   const card = s => `<a class="cw-card" href="${storyHref(s)}">
       <span class="cw-top"><span>${esc(s.councilName || s.org || "Essex council")}</span>${s.stage && CW_STAGE[s.stage] ? `<span class="cw-st ${esc(s.stage)}">${CW_STAGE[s.stage]}</span>` : ""}</span>
       <h3>${esc(s.headline)}</h3><p>${esc(s.summary)}</p>
-      <span class="cw-src">${esc(s.meeting || "")}${s.meeting ? " · " : ""}<span data-ago="${esc(s.time||"")}">${ago(s.time)}</span></span></a>`;
+      <span class="cw-src">${esc(s.meeting || "")}${s.meeting ? " · " : ""}<span data-ago="${esc(shownT(s))}">${ago(shownT(s))}</span></span></a>`;
   $("#cwCards").innerHTML = list.length ? list.slice(0, 4).map(card).join("")
     : `<div class="empty" style="grid-column:1/-1">${all.length ? "No Council Watch stories for this area yet. Try All Essex." : "The first Council Watch stories are on their way. Meanwhile, see what is coming up at your council."}</div>`;
   const rest = list.slice(4, 12);
@@ -4162,14 +4166,14 @@ function buildHero(){
       <h2><a href="${storyHref(s)}">${esc(s.headline)}</a></h2>
       <p class="lp-stand">${esc(s.summary)}</p>
       ${pts.length ? `<ul class="lp-pts">${pts.map(p=>`<li>${esc(p)}</li>`).join("")}</ul>` : ""}
-      <div class="lp-meta">${s.updated && new Date(s.updated) > new Date(s.time||0) ? `<span class="lp-upd">Updated ${esc(hhmm(s.updated))}</span>` : `<span data-ago="${esc(s.time||"")}">${ago(s.time)}</span>`}<a class="lp-read" href="${storyHref(s)}">Read the story</a></div>
+      <div class="lp-meta">${lastUpd(s) && new Date(lastUpd(s)) > new Date(s.time||0) ? `<span class="lp-upd">Updated ${esc(hhmm(lastUpd(s)))}</span>` : `<span data-ago="${esc(shownT(s))}">${ago(shownT(s))}</span>`}<a class="lp-read" href="${storyHref(s)}">Read the story</a></div>
     </div>
     <a class="lp-map" href="${storyHref(s)}" style="--c:${pillar(s)}" aria-label="${artKick(s) === "Club" ? "Club colours" : artKick(s) === "Sport" ? "Illustration" : artKick(s) === "Photo" ? "Photo" : "Map"}: ${esc(artCaption(s))}">${storyArt(s,{zoom:430,aspect:1.05})}<span class="mcap"><b>${artKick(s)}</b> ${esc(artCaption(s))}</span></a>`;
   $("#seconds").innerHTML = seconds.map(x => `<a class="sec" href="${storyHref(x)}" style="--c:${pillar(x)}">
       <div class="sec-map">${storyArt(x,{zoom:340,aspect:.24,label:false,credit:true})}</div>
       <div class="sec-body"><span class="kick2">${esc(x.tag||"News")}<em>${esc(x.place||"Essex")}</em></span>
       <h3>${esc(x.headline)}</h3><p>${esc(x.summary)}</p>
-      <div class="m"><span data-ago="${esc(x.time||"")}">${ago(x.time)}</span></div></div></a>`).join("");
+      <div class="m"><span data-ago="${esc(shownT(x))}">${ago(shownT(x))}</span></div></div></a>`).join("");
   renderToday();
 }
 function showSlide(){ /* carousel retired */ }
@@ -4259,7 +4263,7 @@ function renderNews(){
   $("#moreNews").innerHTML = rest.length ? `<h4 class="mn-h">More Essex news</h4><ol class="mn" id="mnList">${rest.map(s => compactRow(s)).join("")}</ol><div class="show-all" id="mnMore"></div>` : "";
 }
 function compactRow(s, label){
-  return `<li style="--c:${pillar(s)}"><a href="${storyHref(s)}"><span class="mk">${esc(label || s.tag || "News")}</span><b>${esc(s.headline)}</b><span class="mm">${esc(s.place||"Essex")} · <span data-ago="${esc(s.time||"")}">${ago(s.time)}</span></span></a></li>`;
+  return `<li style="--c:${pillar(s)}"><a href="${storyHref(s)}"><span class="mk">${esc(label || s.tag || "News")}</span><b>${esc(s.headline)}</b><span class="mm">${esc(s.place||"Essex")} · <span data-ago="${esc(shownT(s))}">${ago(shownT(s))}</span></span></a></li>`;
 }
 
 /* ---------- Around Essex ---------- */
@@ -4271,7 +4275,7 @@ function renderAround(){
     const items = pool.filter(s => (s.areas||[]).includes(k)).sort(byTime).filter(s => { if(seen.has(s.headline)) return false; seen.add(s.headline); return true; });
     const top = items.slice(0, 4);
     return `<div class="ar${AREA===k?" on":""}"><div class="ar-h"><h4>${esc(name)}</h4><button data-area="${k}" class="ar-go">${items.length} stories</button></div>
-      ${top.length ? `<ul>${top.map(s => `<li style="--c:${pillar(s)}"><a href="${storyHref(s)}">${esc(s.headline)}</a><span>${esc(s.place||"")} · <span data-ago="${esc(s.time||"")}">${ago(s.time)}</span></span></li>`).join("")}</ul>` : `<p class="ar-none">No stories tagged here yet.</p>`}</div>`;
+      ${top.length ? `<ul>${top.map(s => `<li style="--c:${pillar(s)}"><a href="${storyHref(s)}">${esc(s.headline)}</a><span>${esc(s.place||"")} · <span data-ago="${esc(shownT(s))}">${ago(shownT(s))}</span></span></li>`).join("")}</ul>` : `<p class="ar-none">No stories tagged here yet.</p>`}</div>`;
   }).join("");
 }
 

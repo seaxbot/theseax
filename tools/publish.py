@@ -56,6 +56,39 @@ def newest_first(stories):
     floor = datetime(1970, 1, 1, tzinfo=timezone.utc)
     return sorted(stories, key=lambda s: story_t(s) or floor, reverse=True)
 
+def _items(ed):
+    """Every story-like item in an edition, across all sections."""
+    for k in ("stories", "official", "courts", "community", "councilwatch"):
+        for x in ed.get(k) or []:
+            if isinstance(x, dict) and x.get("id"):
+                yield x
+    for x in (ed.get("sport") or {}).get("stories") or []:
+        if isinstance(x, dict) and x.get("id"):
+            yield x
+
+
+def headline_snapshot(ed):
+    return {x["id"]: (" ".join(str(x.get("headline") or "").split()), x.get("headlineAt")) for x in _items(ed)}
+
+
+def stamp_headlines(out, prev):
+    """Owner's rule (Nov 2026): whenever a story's headline changes, the time shown on the site moves to the
+    time of the change. Stored as "headlineAt" (display only; the newsroom's freshness and lead rules ignore it)."""
+    now = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+    changed = 0
+    for x in _items(out):
+        old = prev.get(x["id"])
+        if not old:
+            continue  # a new story: its own "time" is when it was posted
+        head = " ".join(str(x.get("headline") or "").split())
+        if old[0] and head != old[0]:
+            x["headlineAt"] = now
+            changed += 1
+        elif old[1] and not x.get("headlineAt"):
+            x["headlineAt"] = old[1]
+    return changed
+
+
 def merge_sport_stories(live_sport, live_stories, mine):
     """Merge the sport desk's stories into the live sport.stories by id."""
     cur = list(live_sport.get("stories") or [])
@@ -120,6 +153,7 @@ def main():
                 sys.exit(3)
         git("reset", "--hard", "origin/main")
         live = load(os.path.join(ROOT, "edition.json"))
+        prev_heads = headline_snapshot(live)
         if a.edition:
             out = mine
             out.setdefault("sport", {})
@@ -142,6 +176,7 @@ def main():
                 out["sport"][k] = mine[k]
             out["sport"]["stories"] = merge_sport_stories(out["sport"], out.get("stories", []), mine.get("stories", []))
             out["updatedAt"] = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+        print("headlines changed:", stamp_headlines(out, prev_heads))
         rep = policy.apply(out)
         print("policy:", json.dumps({k: (v if isinstance(v, int) else len(v)) for k, v in rep.items()}))
         if a.edition and (out.get("lead") or {}).get("id") not in {s.get("id") for s in out.get("stories", [])}:
