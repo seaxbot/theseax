@@ -629,7 +629,6 @@ def about_page():
 <li>Crime and court reporting is limited to what police and courts have said. People who have been arrested or charged are presumed innocent, and we do not report anything that could prejudice a trial.</li>
 <li>We never name victims of sexual offences or identify children involved in criminal cases.</li>
 <li>We do not report suicide or self-harm, or individual inquests.</li>
-<li>Advertising is always clearly labelled and never affects what we report.</li>
 </ul>
 
 <h2 id="corrections">Corrections and complaints</h2>
@@ -637,14 +636,11 @@ def about_page():
 <p>If a story concerns you personally and you would like it reviewed or removed, contact us at the same address.</p>
 
 <h2>Contact</h2>
-<p>News tips, corrections, partnership ideas and advertising: <a href="mailto:{E(mail)}">{E(mail)}</a>.</p>
+<p>News tips, corrections and partnership ideas: <a href="mailto:{E(mail)}">{E(mail)}</a>.</p>
 <p>If you run an Essex newsroom, magazine or community site and would like to be featured, or would prefer we did not summarise your work, please get in touch and we will respond promptly.</p>
 
-<h2>Advertising</h2>
-<p>The Seax offers Essex businesses brand-safe space alongside local news, sport and what's on, from county-wide takeovers to sponsorship of a single town or section. Email <a href="mailto:{E(mail)}?subject=Advertising%20with%20The%20Seax">{E(mail)}</a> for rates.</p>
-
 <h2>Privacy</h2>
-<p>The Seax does not use advertising cookies or track you across other websites. {"We count visits with GoatCounter, a privacy-friendly service that uses no cookies and collects no personal data." if CFG.get("goatcounter") else "We may count visits with a privacy-friendly service that uses no cookies and collects no personal data."} Advertising enquiries sent through our form are delivered to our inbox by FormSubmit and used only to reply to you. Our free morning newsletter is delivered by follow.it; if you sign up, your email address is used only to send it, and every email includes an unsubscribe link.</p>
+<p>The Seax does not use advertising cookies or track you across other websites. {"We count visits with GoatCounter, a privacy-friendly service that uses no cookies and collects no personal data." if CFG.get("goatcounter") else "We may count visits with a privacy-friendly service that uses no cookies and collects no personal data."} Our free morning newsletter is delivered by follow.it; if you sign up, your email address is used only to send it, and every email includes an unsubscribe link.</p>
 
 {photo_credits()}
 <h2>Why "The Seax"?</h2>

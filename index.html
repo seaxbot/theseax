@@ -600,7 +600,7 @@ h1,h2,h3,h4,.story h1,.lead h2,.card h3,.drow h4{letter-spacing:-.022em}
 .deals li b{display:block;font-size:14px;line-height:1.25}
 .deals li span{display:block;font-size:12px;color:var(--muted);margin-top:2px}
 .deals li a:hover b{color:var(--red)}
-.specials{grid-template-columns:1.1fr 1.5fr 1fr 300px}
+.specials{grid-template-columns:1fr 1.4fr}  /* ad columns removed Nov 2026 */
 
 /* Sources directory */
 .src-intro{max-width:780px;color:var(--ink2);font-size:15px;margin:0 0 14px}
@@ -1038,7 +1038,6 @@ footer .flinks a{text-decoration:underline}
     <button data-go="culture">Culture</button>
     <button data-go="vital">Vital Info</button>
         </div>
-    <button class="adv" data-go="advertise">Advertise</button>
     <button class="srch-btn" data-srchopen aria-label="Search The Seax" title="Search (press /)"><svg viewBox="0 0 24 24" width="17" height="17" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5" fill="none" stroke="currentColor" stroke-width="2.4"/><path d="M15.5 15.5 21 21" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg><span>Search</span></button>
   </div>
 </nav>
@@ -1093,7 +1092,6 @@ footer .flinks a{text-decoration:underline}
     <div class="bh"><h2>News<small id="newsCount"></small></h2><div class="tools" id="newsTools"></div></div>
     <div class="grid news-grid" id="newsGrid"></div>
     <div class="more-news" id="moreNews"></div>
-    <div class="ad billboard"><span class="k">Advertisement · Billboard 970×250</span><div class="in"><strong>Put your business in front of Essex</strong>Premium billboard placement across every page of The Seax.<br><button data-advert>See formats and rates</button></div></div>
   </div>
 </section>
 
@@ -1114,7 +1112,6 @@ footer .flinks a{text-decoration:underline}
       <div class="fixtures">
         <div class="sec-h"><h3>Coming up</h3><span class="sub">Countdowns update live</span></div>
         <div id="fixtures"></div>
-        <div class="ad" style="min-height:120px;margin-top:14px"><span class="k">Sponsor</span><div class="in"><strong style="font-size:18px">Sponsor Essex Sport</strong>Your logo on every score and fixture.<br><button data-advert>Enquire</button></div></div>
       </div>
     </div>
   </div>
@@ -1136,7 +1133,6 @@ footer .flinks a{text-decoration:underline}
         <div class="side-panel"><div class="sec-h"><h3>Fire incident log</h3><span class="sub">Essex County Fire &amp; Rescue</span></div><ul class="inc" id="incidents"></ul><a class="more" href="https://www.essex-fire.gov.uk/incidents" target="_blank" rel="noopener">Full incident log ↗</a></div>
         <div class="side-panel"><div class="sec-h"><h3>Court diary</h3><span class="sub">Upcoming hearings</span></div><ul class="inc" id="hearings"></ul><a class="more" href="https://www.causealert.com/crown-court-listings" target="_blank" rel="noopener">Today's Crown Court lists ↗</a></div>
         <div class="side-panel dark"><h3>Sources we watch</h3><p id="watchCount"></p><button class="src-jump" data-go="sources">Browse the full directory</button></div>
-        <div class="ad" style="min-height:150px"><span class="k">Sponsor</span><div class="in"><strong style="font-size:18px">Sponsor Public Services</strong>A trusted, brand-safe home for public safety news.<br><button data-advert>Enquire</button></div></div>
       </aside>
     </div>
   </div>
@@ -1225,33 +1221,6 @@ footer .flinks a{text-decoration:underline}
   </div>
 </section>
 
-<section class="block" id="advertise">
-  <div class="wrap">
-    <div class="advert">
-      <div style="position:relative;z-index:1">
-        <h2>Reach Essex, <em>every minute</em> of the day.</h2>
-        <p>The Seax is a one-stop front page for the county: trusted local and national reporting on Essex, live sport, weather, what's on and the information people actually need. That makes it a natural home for brands that want to be seen by people across Essex's three cities and dozens of towns and villages.</p>
-        <ul>
-          <li>Greater Essex is home to more than 1.8 million people across Essex, Southend and Thurrock.</li>
-          <li>Target by area: every story and listing is tagged by district, so your ad can follow your customers.</li>
-          <li>Brand-safe placements next to verified, linked journalism from established outlets.</li>
-          <li>Seasonal takeovers built around the moments Essex cares about: Bonfire Night, Christmas lights, matchdays, summer on the coast.</li>
-        </ul>
-        <button class="cta" data-advert>Request the media pack</button>
-      </div>
-      <div class="formats">
-        <div class="fmt"><b>Masthead takeover</b><span>Own the top of the page for a day or a weekend.</span></div>
-        <div class="fmt"><b>Billboard 970×250</b><span>Premium placement between News and Sport.</span></div>
-        <div class="fmt"><b>MPU 300×250</b><span>Beside top stories, on every story page and in Specials.</span></div>
-        <div class="fmt"><b>Ticker sponsor</b><span>"Latest, brought to you by..." on every view.</span></div>
-        <div class="fmt"><b>Weather sponsor</b><span>Your name on the county forecast.</span></div>
-        <div class="fmt"><b>Featured listing</b><span>Promote your event or offer in What's On and Specials.</span></div>
-        <div class="fmt"><b>Section sponsor</b><span>Sport, Culture or Vital Info, yours for the month.</span></div>
-        <div class="fmt"><b>Area targeting</b><span>Show only to readers who pick your part of Essex.</span></div>
-      </div>
-    </div>
-  </div>
-</section>
 </div><!-- /front -->
 
 <section class="nl-band" id="nlBand" hidden>
@@ -1278,7 +1247,7 @@ footer .flinks a{text-decoration:underline}
     </div>
     <div>
       <h5>Sections</h5>
-      <p>News · Public Services · Community &amp; Charity · Sport · Weather · What's On · Vital Info · Specials · Advertise</p>
+      <p>News · Public Services · Community &amp; Charity · Sport · Weather · What's On · Vital Info · Specials</p>
       <h5 style="margin-top:16px">Badge</h5>
       <p>The badge follows the official blazon of the arms of Essex: gules, three seaxes fesswise in pale argent, pommels and hilts or.</p>
     </div>
@@ -1286,29 +1255,6 @@ footer .flinks a{text-decoration:underline}
   </div>
 </footer>
 
-<div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="mTitle">
-  <div class="box">
-    <h3 id="mTitle">Advertise with The Seax</h3>
-    <div style="color:var(--muted);font-size:14px">Tell us what you'd like to promote and we'll put together a plan. Send it here and we'll reply by email with rates and availability.</div>
-    <form id="advForm">
-      <div class="row2">
-        <div><label for="fName">Your name</label><input id="fName" required></div>
-        <div><label for="fBiz">Business</label><input id="fBiz" required></div>
-      </div>
-      <div class="row2">
-        <div><label for="fEmail">Your email</label><input id="fEmail" type="email" required></div>
-        <div><label for="fPhone">Phone (optional)</label><input id="fPhone" type="tel"></div>
-      </div>
-      <div class="row2">
-        <div><label for="fArea">Area</label><select id="fArea"></select></div>
-        <div><label for="fFmt">Interested in</label><select id="fFmt"><option>Masthead takeover</option><option>Billboard 970×250</option><option>MPU 300×250</option><option>Ticker sponsor</option><option>Weather sponsor</option><option>Featured listing</option><option>Section sponsor</option></select></div>
-      </div>
-      <label for="fMsg">Anything else</label><textarea id="fMsg" rows="3" placeholder="Dates, budget, campaign goals"></textarea>
-      <div class="msg" id="fOut"></div>
-      <div class="acts"><button type="button" class="ghost" id="mClose">Close</button><button type="submit" class="cta" style="margin:0" id="fSend">Send my enquiry</button></div>
-    </form>
-  </div>
-</div>
 
 <script>
 const $ = s => document.querySelector(s);
@@ -3714,8 +3660,7 @@ function renderWeather(){
   const w = ED.weather, now = new Date(), st = solar(now), night = now > st.set || now < st.rise;
   $("#wxPlace").textContent = `${w.place||"Chelmsford"} and across Essex`;
   const box = $("#wxNow"); box.classList.toggle("day", !night);
-  box.innerHTML = `<button class="spons" data-advert>Sponsor the forecast</button>
-    <div class="place">${esc(w.place||"Chelmsford")} · now</div>
+  box.innerHTML = `<div class="place">${esc(w.place||"Chelmsford")} · now</div>
     <div class="big">${wxIcon(w.now.icon, night)}<div><div class="temp">${esc(w.now.temp)}°</div><div class="desc">${esc(w.now.desc)}</div></div></div>
     <div class="facts"><div>Feels like<b>${esc(w.now.feels)}°C</b></div><div>Wind<b>${esc(w.now.wind||"")}</b></div><div>Chance of rain<b>${esc(w.now.rain||"")}</b></div><div>Updated<b>${ago(w.updatedAt)}</b></div></div>`;
   const today = dayKey(now);
@@ -3786,8 +3731,7 @@ function renderSpecials(){
       ${evergreen.map(([t,s])=>`<li><span style="color:#fff;font-size:14px">${esc(t)}</span><span>${s}</span></li>`).join("")}
     </ul></div>
     <div class="deals"><h4>Deals &amp; freebies</h4><ul>${ED.deals.filter(inArea).slice(0,8).map(d => `<li><a href="${safeUrl(d.url)}" target="_blank" rel="noopener"><span class="dt ${/free/i.test(d.tag||"")?"f":""}">${esc(d.tag||"Offer")}</span><div><b>${esc(d.title)}</b><span>${esc(d.detail||"")}${d.where?` · ${esc(d.where)}`:""}</span></div></a></li>`).join("") || `<li><span>No offers listed for this area yet.</span></li>`}</ul></div>
-    <div class="ad"><span class="k">Sponsored</span><div class="in"><strong>Your offer here</strong>Restaurants, retailers, attractions: reach Essex readers in their own town.<br><button data-advert>List an offer</button></div></div>
-    <div class="ad mpu"><span class="k">Advertisement · MPU 300×250</span><div class="in"><strong>Book this space</strong>Shown beside every edition.<br><button data-advert>Enquire</button></div></div>`;
+`;
 }
 
 /* ---------- Essex in the tables ---------- */
@@ -3904,7 +3848,6 @@ function renderStory(id){
     ${s.also.length ? `<div class="also"><h2>Also reported by</h2>${s.also.map(a=>`<a href="${safeUrl(a.url)}" target="_blank" rel="noopener"><b>${esc(a.name)}</b><span>${esc(hostOf(a.url))} ↗</span></a>`).join("")}</div>` : ""}
     <div class="note-copy">This page is a summary written by The Seax. The original reporting, quotes and images belong to ${esc(s.source)}${s.also.length?" and the other outlets listed":""}.</div>`;
   $("#storySide").innerHTML = `
-    <div class="ad mpu"><span class="k">Advertisement · MPU 300×250</span><div class="in"><strong>Your brand, on every story</strong>Story pages are prime, brand-safe space.<br><button data-advert>Enquire</button></div></div>
     <div class="side-box where" style="--c:${iconColour(s)}"><h4>${artKick(s,1) === "Club" ? "The club" : artKick(s,1) === "Sport" ? "The sport" : "Where it happened"}</h4><div class="wmap">${storyArt(s,{zoom:400,aspect:.82,map:true})}</div><div class="mcap">${esc(artCaption(s,1))}</div></div>
     <div class="side-box"><h4>More from Essex</h4>${more.map(x=>`<a class="rel" href="${storyHref(x)}" style="--c:${iconColour(x)}"><i></i><b>${esc(x.headline)}</b></a>`).join("")}</div>`;
   document.body.classList.add("reading");
@@ -3997,7 +3940,7 @@ setInterval(() => { tickSecond(); const m = new Date().getMinutes(); if(m !== la
 
 /* interactions */
 document.addEventListener("click", e => {
-  const t = e.target.closest("[data-area],[data-go],[data-slide],[data-evcat],[data-culcat],[data-srccat],[data-advert],[data-home],[data-desk],[data-deskall]");
+  const t = e.target.closest("[data-area],[data-go],[data-slide],[data-evcat],[data-culcat],[data-srccat],[data-home],[data-desk],[data-deskall]");
   if(!t) return;
   if(t.hasAttribute("data-home")){ e.preventDefault(); if(location.hash) location.hash = ""; closeStory(); window.scrollTo({top:0}); }
   else if(t.dataset.area){ AREA = t.dataset.area; try{ localStorage.setItem("seax-area", AREA); }catch(_){} renderChips(); buildHero(); renderTopList(); renderNews(); renderDesk(); renderCouncilWatch(); renderCommunity(); renderSport(); renderTables(); renderEvents(); renderCulture(); renderSpecials(); renderSources(); afterRender(); }
@@ -4008,36 +3951,7 @@ document.addEventListener("click", e => {
   else if(t.dataset.srccat){ SRCCAT = t.dataset.srccat; renderSources(); }
   else if(t.dataset.desk){ DESK = t.dataset.desk; DESK_ALL = false; renderDesk(); }
   else if(t.hasAttribute("data-deskall")){ DESK_ALL = true; renderDesk(); }
-  else if(t.hasAttribute("data-advert")){ e.preventDefault(); openModal(); }
 });
-function openModal(){
-  $("#fArea").innerHTML = AREAS.map(([k,v]) => `<option${k===AREA?" selected":""}>${esc(v)}</option>`).join("");
-  $("#fOut").textContent = ""; $("#modal").classList.add("on"); setTimeout(()=>$("#fName").focus(), 50);
-}
-$("#mClose").onclick = () => $("#modal").classList.remove("on");
-$("#modal").addEventListener("click", e => { if(e.target.id === "modal") $("#modal").classList.remove("on"); });
-document.addEventListener("keydown", e => { if(e.key === "Escape") $("#modal").classList.remove("on"); });
-$("#advForm").addEventListener("submit", async e => {
-  e.preventDefault();
-  const to = (window.SEAX_CONFIG||{}).contactEmail || "theseaxessex@gmail.com";
-  const v = id => $(id).value.trim();
-  const txt = `Advertising enquiry for The Seax\nName: ${v("#fName")}\nBusiness: ${v("#fBiz")}\nEmail: ${v("#fEmail")}\nPhone: ${v("#fPhone")}\nArea: ${v("#fArea")}\nInterested in: ${v("#fFmt")}\nNotes: ${v("#fMsg")}`;
-  const btn = $("#fSend"); btn.disabled = true; btn.textContent = "Sending...";
-  try{
-    const r = await fetch("https://formsubmit.co/ajax/" + to, {method:"POST", headers:{"Content-Type":"application/json","Accept":"application/json"},
-      body: JSON.stringify({_subject:"Advertising enquiry: " + v("#fBiz"), _template:"table", _captcha:"false", _replyto:v("#fEmail"),
-        Name:v("#fName"), Business:v("#fBiz"), Email:v("#fEmail"), Phone:v("#fPhone"), Area:v("#fArea"), "Interested in":v("#fFmt"), Notes:v("#fMsg"), Page:location.href})});
-    const j = await r.json().catch(() => ({}));
-    if(!r.ok || String(j.success) === "false") throw new Error(j.message || r.status);
-    $("#fOut").textContent = "Thank you. Your enquiry has been sent and we'll reply to " + v("#fEmail") + " soon.";
-    $("#advForm").reset(); btn.textContent = "Sent";
-  }catch(err){
-    btn.disabled = false; btn.textContent = "Send my enquiry";
-    location.href = "mailto:" + to + "?subject=" + encodeURIComponent("Advertising enquiry: " + v("#fBiz")) + "&body=" + encodeURIComponent(txt);
-    $("#fOut").textContent = "We couldn't send that automatically, so your email app should open with it ready to send. If it doesn't, please email " + to + ".";
-  }
-});
-
 $("#srcQ").addEventListener("input", e => { SRCQ = e.target.value; renderSources(); });
 
 /* boot */
