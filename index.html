@@ -4187,17 +4187,17 @@ function renderCommunity(){
 
 /* Essex clubs are shown in bold in Latest results. Clubs in the "Essex in the tables" lists count
    automatically; this list adds the rest (ice hockey, cricket, rugby and other Essex clubs). */
-const ESSEX_CLUBS = ["Colchester United","Southend United","Billericay Town","Chelmsford City","Braintree Town",
+function essexClubList(){ return ["Colchester United","Southend United","Billericay Town","Chelmsford City","Braintree Town",
   "Aveley","Brentwood Town","Maldon & Tiptree","Stanway Rovers","Little Oakley","Concord Rangers","Witham Town",
   "Bowers & Pitsea","Takeley","Tilbury","Canvey Island","Grays Athletic","Buckhurst Hill","Brightlingsea Regent",
   "Heybridge Swifts","Harlow Town","Hullbridge Sports","Great Wakering Rovers","Coggeshall Town","Saffron Walden Town",
   "Chelmsford Chieftains","Essex","Essex Eagles","Harlow","Westcliff","Chelmsford","Colchester","Southend Saxons",
-  "Brentwood","Basildon","Thurrock"];
-const clubKey = n => String(n||"").toLowerCase().replace(/\b(fc|afc|rfc|rufc|cc|ccc)\b/g,"").replace(/\band\b/g,"&").replace(/[^a-z&]+/g," ").trim();
+  "Brentwood","Basildon","Thurrock"]; }
+function clubKey(n){ return String(n||"").toLowerCase().replace(/\b(fc|afc|rfc|rufc|cc|ccc)\b/g,"").replace(/\band\b/g,"&").replace(/[^a-z&]+/g," ").trim(); }
 function isEssexClub(name){
   const k = clubKey(name);
   if(!k) return false;
-  const names = [...ESSEX_CLUBS, ...(ED.sport.tables||[]).flatMap(t => Object.keys(t.essex||{}))];
+  const names = [...essexClubList(), ...(ED.sport.tables||[]).flatMap(t => Object.keys(t.essex||{}))];
   return names.some(n => clubKey(n) === k);
 }
 
