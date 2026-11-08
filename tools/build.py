@@ -105,15 +105,42 @@ def is_hospital(it, sec):
     ic = icon_of(it, sec)
     if ic in HOSPITAL_SKIP:
         return False
+    if is_road_incident(it, sec):
+        return False
     head_ = str(it.get("headline") or "")
     both = head_ + " " + str(it.get("summary") or "")
     return bool(HOSPITAL_RX.search(head_) or (ic == "health" and HOSPITAL_RX.search(both)))
+
+# road crashes and emergency road closures always use the blue lights photo (owner's rule, Nov 2026); planned
+# closures (roadworks, parades, events) do not. Same rule as the page's isRoadIncident.
+ROAD_CRASH_RX = re.compile(r"\b(crash(es|ed)?|collisions?|collided|accidents?|smash(es|ed)?|overturned|jack-?knifed|pile-?up|hit by an? (car|van|lorry|vehicle|bus)|(pedestrian|cyclist|motorcyclist|biker|driver) (was |is |has been )?(seriously |critically |badly |fatally )?(hit|struck|killed|injured|hurt|dies|died))\b", re.I)
+ROAD_CLOSE_RX = re.compile(r"\b(closed|closures?|shut|blocked|reopen(s|ed)?|cordon(ed)?|diversions?|tailbacks?|queues?)\b", re.I)
+ROAD_PLANNED_RX = re.compile(r"\b(road ?works?|works|resurfacing|maintenance|repairs?|parades?|remembrance|festival|events?|marathon|race|fun ?run|carnival|market|lights switch-on)\b", re.I)
+ROAD_EMERGENCY_RX = re.compile(r"\b(police|emergency|incident|serious|ambulance|air ambulance|investigation)\b", re.I)
+
+def is_road_incident(it, sec):
+    if sec == "sport":
+        return False
+    ic, tag = icon_of(it, sec), str(it.get("tag") or "").lower()
+    if ic in {"court", "tribute", "fire", "health"}:
+        return False
+    h = str(it.get("headline") or "")
+    both = h + " " + str(it.get("summary") or "")
+    if ROAD_CRASH_RX.search(h):
+        return True
+    if not (ic == "transport" or tag in {"transport", "travel", "police"} or ic == "police"):
+        return False
+    if ROAD_CRASH_RX.search(both):
+        return True
+    return bool(ROAD_CLOSE_RX.search(h) and ROAD_EMERGENCY_RX.search(both) and not ROAD_PLANNED_RX.search(h))
 
 def is_police(it, sec):
     if sec == "sport":
         return False
     if POLICE_POLICY_RX.search(str(it.get("headline") or "")):
         return False
+    if is_road_incident(it, sec):
+        return True
     ic = icon_of(it, sec)
     if ic in POLICE_ICONS:
         return True

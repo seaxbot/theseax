@@ -3367,6 +3367,7 @@ function isHospitalStory(s){
   if(!s || sportKindOf(s)) return false;
   const ic = iconKey(s);
   if(["police","crime","court","appeal","tribute","fire"].includes(ic)) return false;
+  if(isRoadIncident(s)) return false;
   const rx = /\bhospitals?\b|\bA&E\b/i, h = String(s.headline || "");
   return rx.test(h) || (ic === "health" && rx.test(h + " " + (s.summary || "")));
 }
@@ -3374,9 +3375,26 @@ function isHospitalStory(s){
    stories keep their own art, and so do stories about police policy and politics (commissioner, merger, budget, inspection), which keep the map */
 const POLICE_PHOTOS = ["/img/topics/bluelights.jpg?v=1", "/img/topics/bluelights-2.jpg?v=1"];
 const POLICE_POLICY_RX = /\b(commissioners?|PFCC|mergers?|mega[ -]force|budgets?|precept|council tax|HMICFRS|inspections?|inspectorate)\b/i;
+/* road crashes and emergency road closures (owner's rule, Nov 2026): always the blue lights photo, never a town photo, whatever the icon or tag.
+   Planned closures (roadworks, resurfacing, parades, events) are not incidents. Same rule as tools/build.py is_road_incident */
+const ROAD_CRASH_RX = /\b(crash(es|ed)?|collisions?|collided|accidents?|smash(es|ed)?|overturned|jack-?knifed|pile-?up|hit by an? (car|van|lorry|vehicle|bus)|(pedestrian|cyclist|motorcyclist|biker|driver) (was |is |has been )?(seriously |critically |badly |fatally )?(hit|struck|killed|injured|hurt|dies|died))\b/i;
+const ROAD_CLOSE_RX = /\b(closed|closures?|shut|blocked|reopen(s|ed)?|cordon(ed)?|diversions?|tailbacks?|queues?)\b/i;
+const ROAD_PLANNED_RX = /\b(road ?works?|works|resurfacing|maintenance|repairs?|parades?|remembrance|festival|events?|marathon|race|fun ?run|carnival|market|lights switch-on)\b/i;
+const ROAD_EMERGENCY_RX = /\b(police|emergency|incident|serious|ambulance|air ambulance|investigation)\b/i;
+function isRoadIncident(s){
+  if(!s || sportKindOf(s)) return false;
+  const ic = iconKey(s), tag = String(s.tag || "").toLowerCase();
+  if(["court","tribute","fire","health"].includes(ic)) return false;
+  const h = String(s.headline || ""), both = h + " " + String(s.summary || "");
+  if(ROAD_CRASH_RX.test(h)) return true;
+  if(!(ic === "transport" || tag === "transport" || tag === "travel" || ic === "police" || tag === "police")) return false;
+  if(ROAD_CRASH_RX.test(both)) return true;
+  return ROAD_CLOSE_RX.test(h) && ROAD_EMERGENCY_RX.test(both) && !ROAD_PLANNED_RX.test(h);
+}
 function isPoliceStory(s){
   if(!s || sportKindOf(s)) return false;
   if(POLICE_POLICY_RX.test(String(s.headline || ""))) return false;
+  if(isRoadIncident(s)) return true;
   const ic = iconKey(s);
   if(["police","crime","appeal"].includes(ic)) return true;
   return String(s.tag || "").toLowerCase() === "police" && !["court","tribute","fire","ambulance"].includes(ic);
