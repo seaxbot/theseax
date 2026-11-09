@@ -1,0 +1,29 @@
+name: Facebook Page posts
+# Posts the most significant new story to The Seax Facebook Page, at most once an hour. See tools/fbpage.py.
+# Needs the repository secret FB_PAGE_TOKEN (a Page access token for The Seax). Without it, it does nothing.
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "55 * * * *"
+permissions:
+  contents: write
+concurrency: fb-page
+jobs:
+  post:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with: { fetch-depth: 1 }
+      - run: python3 -u tools/fbpage.py
+        env:
+          FB_PAGE_TOKEN: ${{ secrets.FB_PAGE_TOKEN }}
+      - name: Save what was posted
+        run: |
+          git config user.name "The Seax policy"
+          git config user.email "seaxbot@users.noreply.github.com"
+          git add data/fb-posted.json 2>/dev/null || true
+          git diff --cached --quiet && exit 0
+          git commit -qm "Facebook Page post"
+          for i in 1 2 3 4 5; do git pull -q --rebase origin main && git push -q origin HEAD:main && exit 0; sleep $((i*7)); done
+          exit 1
