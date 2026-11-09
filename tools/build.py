@@ -198,7 +198,8 @@ def is_county_hall(it, sec):
 
 # Harlow College stories use the owner's photo of the college entrance (owner's rule, Nov 2026), ahead of stock, town
 # and map art; road signs, police and fire photos still win, like County Hall. Same rule as the page's isHarlowCollegeStory.
-HCOL_RX = re.compile(r"\bHarlow College\b", re.I)
+HCOL_RX = re.compile(r"\bHarlow College\b")  # case-sensitive: "Harlow college" can mean another college in the town
+HCOL_NOT_RX = re.compile(r"\bGibberd\b", re.I)
 
 def is_harlow_college(it, sec):
     if sec in ("sport", "councilwatch") or is_police(it, sec) or is_fire(it, sec):
@@ -206,7 +207,8 @@ def is_harlow_college(it, sec):
     h = host(it.get("url"))
     if h == "harlow-college.ac.uk" or h.endswith(".harlow-college.ac.uk"):
         return True
-    return bool(HCOL_RX.search(" ".join(str(it.get(k) or "") for k in ("headline", "source", "org", "summary"))))
+    t = " ".join(str(it.get(k) or "") for k in ("headline", "source", "org", "summary"))
+    return bool(HCOL_RX.search(t) and not HCOL_NOT_RX.search(t))
 
 # Fog stories use the owner's fog photo (owner's rule, Nov 2026) on story pages and share cards, ahead of road signs,
 # weather cards, stock, town and map art; sport, police and fire stories keep their own. Same rule as the page's isFogStory.
@@ -343,6 +345,8 @@ def is_major_breaking(it, sec):
     return it.get("breaking") is True and w >= 9
 
 def card_of(it, sec):
+    if it.get("showMap") is True:  # owner's choice: map only, no photo (same rule as the page's isOwnerMap)
+        return CARD_FOR.get(icon_of(it, sec), "news")
     if is_zoo(it, sec):
         if not zoo_bad(it) and os.path.exists(os.path.join(ROOT, "img", "og", "zoo.jpg")):
             return "zoo"
@@ -650,7 +654,7 @@ def story_page(sec, it, more):
     more_html = "".join(
         f'<a class="rel" href="/story/{E(m["id"])}/" style="--c:{ICON_COLOUR.get(icon_of(m, s), "#3a3f4b")}"><i></i><b>{E(m["headline"])}</b><span>{E(m.get("place") or "Essex")}</span></a>'
         for s, m in more)
-    fig = "" if card in ("countyhall", "harlowcollege", "fog", "zoo", "gaswork", "remembrance", "food") or is_zoo(it, sec) or is_stansted(it, sec) or is_food(it, sec) else stock_figure(it, sec)
+    fig = "" if card in ("countyhall", "harlowcollege", "fog", "zoo", "gaswork", "remembrance", "food") or is_zoo(it, sec) or is_stansted(it, sec) or is_food(it, sec) or it.get("showMap") is True else stock_figure(it, sec)
     if not fig and card in LIBRARY_PHOTOS:
         cap = ("<b>County Hall, Chelmsford</b>, home of Essex County Council. Library image."
                if card == "countyhall" else "<b>Harlow College</b>. Library image."
