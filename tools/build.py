@@ -460,6 +460,29 @@ try:
 except Exception:
     PHOTOS = {}
 
+# Owner-supplied file photos of people named in a headline (data/portraits.json; owner's choice, Nov 2026). They
+# override every other picture on the card, story page and share card, with the photographer's credit and licence.
+try:
+    PORTRAITS = json.load(open(os.path.join(ROOT, "data", "portraits.json"), encoding="utf-8"))
+except Exception:
+    PORTRAITS = []
+
+def portrait_of(it):
+    h = str(it.get("headline") or "")
+    for p in PORTRAITS:
+        try:
+            if re.search(p["match"], h):
+                return p
+        except Exception:
+            pass
+    return None
+
+def portrait_figure(p):
+    lic = f'<a href="{E(p["licenseUrl"])}" target="_blank" rel="noopener license">{E(p["license"])}</a>' if safe_url(p.get("licenseUrl")) else E(p.get("license"))
+    src = f' via <a href="{E(p["source"])}" target="_blank" rel="noopener">{E(p.get("provider") or "source")}</a>' if safe_url(p.get("source")) else ""
+    return (f'<figure class="stock"><img src="{E(p["wide"])}?v=1" width="1200" height="655" alt="File photo of {E(p["name"])}" loading="eager">'
+            f'<figcaption><b>{E(p["name"])}</b>. File photo. Photo: {E(p["creator"])}{src}, {lic}, set on a blurred background.</figcaption></figure>')
+
 def stock_figure(it, sec):
     p = PHOTOS.get(it.get("id")) if sec != "sport" and not it.get("noPhoto") else None
     if not p:
@@ -561,6 +584,9 @@ def story_page(sec, it, more):
                f'alt="Library photo: {LIBRARY_ALT.get(card, "police car blue lights")}" loading="eager">'
                f'<figcaption>{cap}</figcaption></figure>')
     og_img = PHOTOS[sid]["file"] if fig and card not in [k for k, _ in ROAD_OG] + ["hospital"] + LIBRARY_PHOTOS else card
+    pt = portrait_of(it)
+    if pt:
+        fig, og_img = portrait_figure(pt), pt["og"]
     if fig:
         ld["image"] = [SITE + og_img if og_img.startswith("/") else ld["image"][0]]
         extra = extra.replace(SITE + og_path(card), ld["image"][0])
@@ -726,7 +752,7 @@ def photo_credits():
         lic_html = f'<a href="{E(c["licenseUrl"])}" rel="license noopener">{E(lic)}</a>' if c.get("licenseUrl") else E(lic)
         rows.append(f'<li>{E(c["what"])}: photo by {E(c["by"])}, {lic_html}, via <a href="{E(c["source"])}" rel="noopener">Wikimedia Commons</a></li>')
     return ('<h2 id="photo-credits">Photo credits</h2>\n<p>Town photographs on The Seax come from Wikimedia Commons and are used under the licences shown. '
-            'They have been resized for the web and are shared under the same terms. Our map artwork is our own.</p>\n<ul class="credits">' + "".join(rows) + '<li>London Stansted Airport library images: photos by London Stansted Airport</li>' + "</ul>\n")
+            'They have been resized for the web and are shared under the same terms. Our map artwork is our own.</p>\n<ul class="credits">' + "".join(rows) + '<li>London Stansted Airport library images: photos by London Stansted Airport</li>' + "".join(f'<li>{E(p["name"])} (file photo): photo by {E(p["creator"])}, <a href="{E(p["licenseUrl"])}" rel="license noopener">{E(p["license"])}</a>, via <a href="{E(p["source"])}" rel="noopener">{E(p.get("provider") or "source")}</a>; set on a blurred background and shared under the same licence</li>' for p in PORTRAITS) + "</ul>\n")
 
 
 def about_page():

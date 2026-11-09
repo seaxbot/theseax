@@ -1,0 +1,14 @@
+[
+  {
+    "match": "\\bRussell Brand\\b",
+    "name": "Russell Brand",
+    "wide": "/img/people/russell-brand-wide.jpg",
+    "og": "/img/people/russell-brand-og.jpg",
+    "creator": "Eva Rinaldi",
+    "provider": "Flickr",
+    "license": "CC BY-SA 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0/",
+    "source": "https://commons.wikimedia.org/w/index.php?curid=36978689",
+    "addedBy": "owner, 9 Nov 2026"
+  }
+]
