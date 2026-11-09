@@ -94,9 +94,9 @@ POLICE_TAG_SKIP = {"court", "tribute", "fire", "ambulance"}
 POLICE_POLICY_RX = re.compile(r"\b(commissioners?|PFCC|mergers?|mega[ -]force|budgets?|precept|council tax|HMICFRS|inspections?|inspectorate)\b", re.I)
 POLICE_PHOTOS = ["bluelights", "bluelights-2"]  # img/topics/<name>.jpg and share cards img/og/<name>.jpg, rotated like the page
 POLICE_PICK = {}
-OG_JPG = {"hospital", "bluelights", "bluelights-2", "fireengine", "countyhall", "fog"}
-LIBRARY_PHOTOS = POLICE_PHOTOS + ["fireengine", "countyhall", "fog"]  # owner's library photos shown on story pages
-LIBRARY_ALT = {"fog": "fog over a footpath and flats at dusk", "fireengine": "a fire engine", "countyhall": "County Hall, Chelmsford, home of Essex County Council"}
+OG_JPG = {"hospital", "bluelights", "bluelights-2", "fireengine", "countyhall", "fog", "zoo"}
+LIBRARY_PHOTOS = POLICE_PHOTOS + ["fireengine", "countyhall", "fog", "zoo"]  # owner's library photos shown on story pages
+LIBRARY_ALT = {"fog": "fog over a footpath and flats at dusk", "fireengine": "a fire engine", "countyhall": "County Hall, Chelmsford, home of Essex County Council", "zoo": "visitors watching elephants at Colchester Zoo"}
 # Essex County Council stories use the owner's photo of County Hall, Chelmsford (owner's rule, Nov 2026), ahead of
 # stock, town and map art. Road signs, police and fire photos still win. Same rule as the page's isCountyHallStory.
 ECC_RX = re.compile(r"\bEssex County Council\b|\bCounty Hall\b", re.I)
@@ -217,7 +217,28 @@ def is_fog(it, sec):
     return weatherish and bool(FOG_RX.search(summ)) and not BRAIN_FOG_RX.search(summ) and \
         not WX_BEFORE_FOG_RX.search(" ".join([head, summ, pts]))
 
+# Colchester Zoo stories use the owner's zoo photo when the story is positive or neutral, and the map (no photo) when it
+# is bad news (owner's rule, Nov 2026). Checked before every other photo rule. Same rule as the page's isZooStory.
+ZOO_RX = re.compile(r"\bColchester Zoo\b", re.I)
+ZOO_WORD_RX = re.compile(r"\bzoo\b", re.I)
+ZOO_BAD_RX = re.compile(r"\b(died|dies|die|death|deaths|dead|killed|kills?|put down|put to sleep|euthan\w*|escap\w*|attack\w*|bit(e|ten)|mauled|injur\w*|hurt|fire|blaze|closed|closes|closure|shut|fined|prosecut\w*|court|inquest|investigat\w*|critici[sz]\w*|condemn\w*|cruel\w*|neglect\w*|welfare concerns?|protest\w*|complain\w*|redundanc\w*|job cuts|loss(es)?|stolen|theft|tragic|tragedy|mourn\w*|sad news|grief|grieving|illness|disease|outbreak|bird flu|avian flu|crash\w*|collision|evacuat\w*|police|arrest\w*|warning)\b", re.I)
+
+def is_zoo(it, sec):
+    if sec == "sport":
+        return False
+    h = str(it.get("headline") or "")
+    if ZOO_RX.search(h) or "colchester-zoo" in host(it.get("url")):
+        return True
+    return bool(ZOO_WORD_RX.search(h) and ZOO_RX.search(" ".join(str(it.get(k) or "") for k in ("summary", "source", "org", "place"))))
+
+def zoo_bad(it):
+    return bool(ZOO_BAD_RX.search(str(it.get("headline") or "") + " " + str(it.get("summary") or "")))
+
 def card_of(it, sec):
+    if is_zoo(it, sec):
+        if not zoo_bad(it) and os.path.exists(os.path.join(ROOT, "img", "og", "zoo.jpg")):
+            return "zoo"
+        return CARD_FOR.get(icon_of(it, sec), "news")
     if is_fog(it, sec) and os.path.exists(os.path.join(ROOT, "img", "og", "fog.jpg")):
         return "fog"
     road = road_of(it)
@@ -480,10 +501,11 @@ def story_page(sec, it, more):
     more_html = "".join(
         f'<a class="rel" href="/story/{E(m["id"])}/" style="--c:{ICON_COLOUR.get(icon_of(m, s), "#3a3f4b")}"><i></i><b>{E(m["headline"])}</b><span>{E(m.get("place") or "Essex")}</span></a>'
         for s, m in more)
-    fig = "" if card in ("countyhall", "fog") else stock_figure(it, sec)
+    fig = "" if card in ("countyhall", "fog", "zoo") or is_zoo(it, sec) else stock_figure(it, sec)
     if not fig and card in LIBRARY_PHOTOS:
         cap = ("<b>County Hall, Chelmsford</b>, home of Essex County Council. Library image."
-               if card == "countyhall" else "<b>Fog</b>. Library image, not the scene of this story."
+               if card == "countyhall" else "<b>Colchester Zoo</b>. Library image, not the scene of this story."
+               if card == "zoo" else "<b>Fog</b>. Library image, not the scene of this story."
                if card == "fog" else "<b>Library image</b>, not the scene of this story.")
         fig = (f'<figure class="stock"><img src="/img/topics/{card}.jpg?v=1" width="1200" height="655" '
                f'alt="Library photo: {LIBRARY_ALT.get(card, "police car blue lights")}" loading="eager">'
