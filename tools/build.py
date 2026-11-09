@@ -94,9 +94,9 @@ POLICE_TAG_SKIP = {"court", "tribute", "fire", "ambulance"}
 POLICE_POLICY_RX = re.compile(r"\b(commissioners?|PFCC|mergers?|mega[ -]force|budgets?|precept|council tax|HMICFRS|inspections?|inspectorate)\b", re.I)
 POLICE_PHOTOS = ["bluelights", "bluelights-2"]  # img/topics/<name>.jpg and share cards img/og/<name>.jpg, rotated like the page
 POLICE_PICK = {}
-OG_JPG = {"hospital", "bluelights", "bluelights-2", "fireengine", "countyhall", "fog", "zoo"}
-LIBRARY_PHOTOS = POLICE_PHOTOS + ["fireengine", "countyhall", "fog", "zoo"]  # owner's library photos shown on story pages
-LIBRARY_ALT = {"fog": "fog over a footpath and flats at dusk", "fireengine": "a fire engine", "countyhall": "County Hall, Chelmsford, home of Essex County Council", "zoo": "visitors watching elephants at Colchester Zoo"}
+OG_JPG = {"hospital", "bluelights", "bluelights-2", "fireengine", "countyhall", "fog", "zoo", "stansted-1", "stansted-2", "stansted-3"}
+LIBRARY_PHOTOS = POLICE_PHOTOS + ["fireengine", "countyhall", "fog", "zoo", "stansted-1", "stansted-2", "stansted-3"]  # owner's library photos shown on story pages
+LIBRARY_ALT = {"fog": "fog over a footpath and flats at dusk", "fireengine": "a fire engine", "countyhall": "County Hall, Chelmsford, home of Essex County Council", "zoo": "visitors watching elephants at Colchester Zoo", "stansted-1": "check-in desks at London Stansted Airport", "stansted-2": "the terminal concourse at London Stansted Airport", "stansted-3": "a bus outside the terminal at London Stansted Airport"}
 # Essex County Council stories use the owner's photo of County Hall, Chelmsford (owner's rule, Nov 2026), ahead of
 # stock, town and map art. Road signs, police and fire photos still win. Same rule as the page's isCountyHallStory.
 ECC_RX = re.compile(r"\bEssex County Council\b|\bCounty Hall\b", re.I)
@@ -234,10 +234,42 @@ def is_zoo(it, sec):
 def zoo_bad(it):
     return bool(ZOO_BAD_RX.search(str(it.get("headline") or "") + " " + str(it.get("summary") or "")))
 
+# London Stansted Airport stories rotate the owner's three airport photos when the story is positive or neutral, and
+# show the map (no photo) when it is bad news (owner's rule, Nov 2026). Bad news is the zoo list plus airport trouble.
+# A headline naming a signed road (M11 etc.) keeps the road rules. Same rule as the page's isStanstedStory.
+STN_RX = re.compile(r"\bStansted\b(?!\s+Mountfitchet)", re.I)
+AIRPORT_WORD_RX = re.compile(r"\b(airport|airports|flights?|terminal|runway|airline)\b", re.I)
+STN_BAD_RX = re.compile(r"\b(delay(s|ed)?|cancel(l)?(ed|ations?)|chaos|disruption|disrupted|diverted|emergency landing|strikes?|walk-?outs?|stranded|outage|fault|security alert|bomb|suspicious|drones?|smuggl\w*|drugs|seized|jailed|charged|guilty|sentenced|noise complaints?|queues?)\b", re.I)
+STN_PHOTOS = ["stansted-1", "stansted-2", "stansted-3"]
+
+def is_stansted(it, sec):
+    if sec == "sport":
+        return False
+    h = str(it.get("headline") or "")
+    if any(rx.search(h) for _, rx in ROAD_OG):
+        return False
+    if STN_RX.search(h) or "stanstedairport" in host(it.get("url")):
+        return True
+    return bool(AIRPORT_WORD_RX.search(h) and STN_RX.search(" ".join(str(it.get(k) or "") for k in ("summary", "source", "org", "place"))))
+
+def stansted_bad(it):
+    t = str(it.get("headline") or "") + " " + str(it.get("summary") or "")
+    return bool(ZOO_BAD_RX.search(t) or STN_BAD_RX.search(t))
+
+def stansted_photo(it):
+    h = 0
+    for c in str(it.get("id") or ""):
+        h = (h * 31 + ord(c)) & 0xFFFFFFFF
+    return STN_PHOTOS[h % len(STN_PHOTOS)]
+
 def card_of(it, sec):
     if is_zoo(it, sec):
         if not zoo_bad(it) and os.path.exists(os.path.join(ROOT, "img", "og", "zoo.jpg")):
             return "zoo"
+        return CARD_FOR.get(icon_of(it, sec), "news")
+    if is_stansted(it, sec):
+        if not stansted_bad(it) and os.path.exists(os.path.join(ROOT, "img", "og", stansted_photo(it) + ".jpg")):
+            return stansted_photo(it)
         return CARD_FOR.get(icon_of(it, sec), "news")
     if is_fog(it, sec) and os.path.exists(os.path.join(ROOT, "img", "og", "fog.jpg")):
         return "fog"
@@ -501,11 +533,12 @@ def story_page(sec, it, more):
     more_html = "".join(
         f'<a class="rel" href="/story/{E(m["id"])}/" style="--c:{ICON_COLOUR.get(icon_of(m, s), "#3a3f4b")}"><i></i><b>{E(m["headline"])}</b><span>{E(m.get("place") or "Essex")}</span></a>'
         for s, m in more)
-    fig = "" if card in ("countyhall", "fog", "zoo") or is_zoo(it, sec) else stock_figure(it, sec)
+    fig = "" if card in ("countyhall", "fog", "zoo") or is_zoo(it, sec) or is_stansted(it, sec) else stock_figure(it, sec)
     if not fig and card in LIBRARY_PHOTOS:
         cap = ("<b>County Hall, Chelmsford</b>, home of Essex County Council. Library image."
                if card == "countyhall" else "<b>Colchester Zoo</b>. Library image, not the scene of this story."
-               if card == "zoo" else "<b>Fog</b>. Library image, not the scene of this story."
+               if card == "zoo" else "<b>London Stansted Airport</b>. Library image, not the scene of this story."
+               if card in STN_PHOTOS else "<b>Fog</b>. Library image, not the scene of this story."
                if card == "fog" else "<b>Library image</b>, not the scene of this story.")
         fig = (f'<figure class="stock"><img src="/img/topics/{card}.jpg?v=1" width="1200" height="655" '
                f'alt="Library photo: {LIBRARY_ALT.get(card, "police car blue lights")}" loading="eager">'
