@@ -3603,7 +3603,7 @@ function normalise(d){
   if(!Array.isArray(o.weather.days) || !o.weather.days.length) o.weather.days = EMBED.weather.days;
   o.weather.now = Object.assign({}, EMBED.weather.now, o.weather.now || {});
   o.travel = Array.isArray(o.travel) ? o.travel : EMBED.travel;
-  o.ticker = Array.isArray(o.ticker) ? o.ticker : EMBED.ticker;
+  o.ticker = (Array.isArray(o.ticker) ? o.ticker : EMBED.ticker).filter(t => typeof t !== "string" || warningLive(t));
   const kindOf = (s, dflt) => { s.kind = String(s.kind || dflt).toLowerCase(); if(!s.org) s.org = s.source; return s; };
   o.official = (Array.isArray(o.official) && o.official.length ? o.official : EMBED.official).map(cleanStory).filter(Boolean).map(s => kindOf(s, "council"));
   o.community = (Array.isArray(o.community) && o.community.length ? o.community : EMBED.community).map(cleanStory).filter(Boolean).map(s => kindOf(s, "community"));
@@ -3786,6 +3786,19 @@ function outlookTile(w, today){
   const thisWk = pick[0].date === today || wkd({date: today}) === 0;
   return `<div class="tile">${wxIcon(pick[0].icon,false)}<div><b>${thisWk ? "This weekend" : "Weekend outlook"}</b><span>${pick.map(d => `${d === sat ? "Sat" : "Sun"}: ${esc(d.desc).toLowerCase()}, ${esc(d.lo)} to ${esc(d.hi)}°C`).join(" · ")}</span></div></div>`;
 }
+/* a weather warning ("... until 11am on Monday 9 November") drops off the page once that time has passed
+   (owner's note, Nov 2026). Text without a parseable end time stays. UK time; year taken from today. */
+function warningEnd(t){
+  const m = /\buntil\s+(\d{1,2})(?:[:.](\d{2}))?\s*(am|pm)\b(?:\s+on)?(?:\s+[A-Za-z]+day)?\s+(\d{1,2})(?:st|nd|rd|th)?\s+(January|February|March|April|May|June|July|August|September|October|November|December)/i.exec(String(t || ""));
+  if(!m) return null;
+  let h = (+m[1]) % 12 + (m[3].toLowerCase() === "pm" ? 12 : 0);
+  const mon = ["january","february","march","april","may","june","july","august","september","october","november","december"].indexOf(m[5].toLowerCase());
+  const y = new Date().getUTCFullYear();
+  const guess = Date.UTC(y, mon, +m[4], h, +(m[2] || 0));
+  let off = 0; try{ const p = new Intl.DateTimeFormat("en-GB", {timeZone:"Europe/London", hour:"2-digit", hourCycle:"h23"}).formatToParts(new Date(guess)); off = ((+p.find(x => x.type === "hour").value) - new Date(guess).getUTCHours() + 24) % 24; }catch(_){}
+  return guess - off * 36e5;
+}
+function warningLive(t){ const e = warningEnd(t); return e === null || Date.now() < e; }
 function renderWeather(){
   const w = ED.weather, now = new Date(), st = solar(now), night = now > st.set || now < st.rise;
   $("#wxPlace").textContent = `${w.place||"Chelmsford"} and across Essex`;
@@ -3803,7 +3816,7 @@ function renderWeather(){
     <div class="tile">${wxIcon("sun",false)}<div><b>${fmt(st.rise,{hour:"2-digit",minute:"2-digit"})} · ${fmt(st.set,{hour:"2-digit",minute:"2-digit"})}</b><span>Sunrise and sunset · ${Math.floor(daylen)}h ${Math.round((daylen%1)*60)}m of daylight</span></div></div>
     <div class="tile">${moonSvg(mp.frac)}<div><b>${mp.name}</b><span>Moon is ${Math.round(mp.age)} days old</span></div></div>
     ${outlookTile(w, today)}`;
-  const warn = (w.warnings||[]).map(x=>`<b style="color:var(--red)">⚠ ${esc(x)}</b> `).join("");
+  const warn = (w.warnings||[]).filter(warningLive).map(x=>`<b style="color:var(--red)">⚠ ${esc(x)}</b> `).join("");
   $("#wxNote").innerHTML = `${warn}Forecast: ${esc(w.source||"")} · <a href="${safeUrl(w.url)}" target="_blank" rel="noopener">Full Met Office forecast ↗</a> · Sun and moon times are calculated live for Chelmsford.`;
   if($("#miniWx")) $("#miniWx").innerHTML = `${wxIcon(w.now.icon, night)}<b>${esc(w.now.temp)}°C</b><span>${esc(w.place||"Chelmsford")}</span>`;
   if($("#sunTop")) $("#sunTop").textContent = `☀ ${fmt(st.rise,{hour:"2-digit",minute:"2-digit"})}  ☾ ${fmt(st.set,{hour:"2-digit",minute:"2-digit"})}`;
