@@ -94,9 +94,9 @@ POLICE_TAG_SKIP = {"court", "tribute", "fire", "ambulance"}
 POLICE_POLICY_RX = re.compile(r"\b(commissioners?|PFCC|mergers?|mega[ -]force|budgets?|precept|council tax|HMICFRS|inspections?|inspectorate)\b", re.I)
 POLICE_PHOTOS = ["bluelights", "bluelights-2"]  # img/topics/<name>.jpg and share cards img/og/<name>.jpg, rotated like the page
 POLICE_PICK = {}
-OG_JPG = {"hospital", "bluelights", "bluelights-2", "fireengine", "countyhall", "fog", "zoo", "stansted-1", "stansted-2", "stansted-3", "gaswork", "remembrance", "food"}
-LIBRARY_PHOTOS = POLICE_PHOTOS + ["fireengine", "countyhall", "fog", "zoo", "stansted-1", "stansted-2", "stansted-3", "gaswork", "remembrance", "food"]  # owner's library photos shown on story pages
-LIBRARY_ALT = {"fog": "fog over a footpath and flats at dusk", "fireengine": "a fire engine", "countyhall": "County Hall, Chelmsford, home of Essex County Council", "zoo": "visitors watching elephants at Colchester Zoo", "stansted-1": "check-in desks at London Stansted Airport", "stansted-2": "the terminal concourse at London Stansted Airport", "stansted-3": "a bus outside the terminal at London Stansted Airport", "gaswork": "a worker fitting yellow gas pipe in a trench", "remembrance": "poppy wreaths laid at a war memorial", "food": "a plate of roast chicken, grains and roasted vegetables"}
+OG_JPG = {"hospital", "bluelights", "bluelights-2", "fireengine", "countyhall", "fog", "zoo", "stansted-1", "stansted-2", "stansted-3", "gaswork", "remembrance", "food", "harlowcollege"}
+LIBRARY_PHOTOS = POLICE_PHOTOS + ["fireengine", "countyhall", "fog", "zoo", "stansted-1", "stansted-2", "stansted-3", "gaswork", "remembrance", "food", "harlowcollege"]  # owner's library photos shown on story pages
+LIBRARY_ALT = {"fog": "fog over a footpath and flats at dusk", "fireengine": "a fire engine", "countyhall": "County Hall, Chelmsford, home of Essex County Council", "zoo": "visitors watching elephants at Colchester Zoo", "stansted-1": "check-in desks at London Stansted Airport", "stansted-2": "the terminal concourse at London Stansted Airport", "stansted-3": "a bus outside the terminal at London Stansted Airport", "gaswork": "a worker fitting yellow gas pipe in a trench", "remembrance": "poppy wreaths laid at a war memorial", "food": "a plate of roast chicken, grains and roasted vegetables", "harlowcollege": "the entrance to Harlow College"}
 # Essex County Council stories use the owner's photo of County Hall, Chelmsford (owner's rule, Nov 2026), ahead of
 # stock, town and map art. Road signs, police and fire photos still win. Same rule as the page's isCountyHallStory.
 ECC_RX = re.compile(r"\bEssex County Council\b|\bCounty Hall\b", re.I)
@@ -195,6 +195,18 @@ def is_county_hall(it, sec):
         return True
     return (icon_of(it, sec) == "council" or str(it.get("tag") or "").lower() in ("politics", "council")) and \
         bool(ECC_RX.search(str(it.get("summary") or "")))
+
+# Harlow College stories use the owner's photo of the college entrance (owner's rule, Nov 2026), ahead of stock, town
+# and map art; road signs, police and fire photos still win, like County Hall. Same rule as the page's isHarlowCollegeStory.
+HCOL_RX = re.compile(r"\bHarlow College\b", re.I)
+
+def is_harlow_college(it, sec):
+    if sec in ("sport", "councilwatch") or is_police(it, sec) or is_fire(it, sec):
+        return False
+    h = host(it.get("url"))
+    if h == "harlow-college.ac.uk" or h.endswith(".harlow-college.ac.uk"):
+        return True
+    return bool(HCOL_RX.search(" ".join(str(it.get(k) or "") for k in ("headline", "source", "org", "summary"))))
 
 # Fog stories use the owner's fog photo (owner's rule, Nov 2026) on story pages and share cards, ahead of road signs,
 # weather cards, stock, town and map art; sport, police and fire stories keep their own. Same rule as the page's isFogStory.
@@ -352,6 +364,8 @@ def card_of(it, sec):
     road = road_of(it)
     if sec != "sport" and road and os.path.exists(os.path.join(ROOT, "img", "og", road + ".png")):
         return road
+    if is_harlow_college(it, sec) and os.path.exists(os.path.join(ROOT, "img", "og", "harlowcollege.jpg")):
+        return "harlowcollege"
     if is_county_hall(it, sec) and os.path.exists(os.path.join(ROOT, "img", "og", "countyhall.jpg")):
         return "countyhall"
     if is_hospital(it, sec) and os.path.exists(os.path.join(ROOT, "img", "og", "hospital.jpg")):
@@ -636,10 +650,11 @@ def story_page(sec, it, more):
     more_html = "".join(
         f'<a class="rel" href="/story/{E(m["id"])}/" style="--c:{ICON_COLOUR.get(icon_of(m, s), "#3a3f4b")}"><i></i><b>{E(m["headline"])}</b><span>{E(m.get("place") or "Essex")}</span></a>'
         for s, m in more)
-    fig = "" if card in ("countyhall", "fog", "zoo", "gaswork", "remembrance", "food") or is_zoo(it, sec) or is_stansted(it, sec) or is_food(it, sec) else stock_figure(it, sec)
+    fig = "" if card in ("countyhall", "harlowcollege", "fog", "zoo", "gaswork", "remembrance", "food") or is_zoo(it, sec) or is_stansted(it, sec) or is_food(it, sec) else stock_figure(it, sec)
     if not fig and card in LIBRARY_PHOTOS:
         cap = ("<b>County Hall, Chelmsford</b>, home of Essex County Council. Library image."
-               if card == "countyhall" else "<b>Colchester Zoo</b>. Library image, not the scene of this story."
+               if card == "countyhall" else "<b>Harlow College</b>. Library image."
+               if card == "harlowcollege" else "<b>Colchester Zoo</b>. Library image, not the scene of this story."
                if card == "zoo" else "<b>London Stansted Airport</b>. Library image, not the scene of this story. Photo: London Stansted Airport."
                if card in STN_PHOTOS else "<b>Gas works</b>. Library image, not the scene of this story."
                if card == "gaswork" else "<b>Remembrance</b>. Library image, not the scene of this story."
