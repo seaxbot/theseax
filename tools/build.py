@@ -94,9 +94,9 @@ POLICE_TAG_SKIP = {"court", "tribute", "fire", "ambulance"}
 POLICE_POLICY_RX = re.compile(r"\b(commissioners?|PFCC|mergers?|mega[ -]force|budgets?|precept|council tax|HMICFRS|inspections?|inspectorate)\b", re.I)
 POLICE_PHOTOS = ["bluelights", "bluelights-2"]  # img/topics/<name>.jpg and share cards img/og/<name>.jpg, rotated like the page
 POLICE_PICK = {}
-OG_JPG = {"hospital", "bluelights", "bluelights-2", "fireengine", "countyhall", "fog", "zoo", "stansted-1", "stansted-2", "stansted-3", "gaswork", "remembrance"}
-LIBRARY_PHOTOS = POLICE_PHOTOS + ["fireengine", "countyhall", "fog", "zoo", "stansted-1", "stansted-2", "stansted-3", "gaswork", "remembrance"]  # owner's library photos shown on story pages
-LIBRARY_ALT = {"fog": "fog over a footpath and flats at dusk", "fireengine": "a fire engine", "countyhall": "County Hall, Chelmsford, home of Essex County Council", "zoo": "visitors watching elephants at Colchester Zoo", "stansted-1": "check-in desks at London Stansted Airport", "stansted-2": "the terminal concourse at London Stansted Airport", "stansted-3": "a bus outside the terminal at London Stansted Airport", "gaswork": "a worker fitting yellow gas pipe in a trench", "remembrance": "poppy wreaths laid at a war memorial"}
+OG_JPG = {"hospital", "bluelights", "bluelights-2", "fireengine", "countyhall", "fog", "zoo", "stansted-1", "stansted-2", "stansted-3", "gaswork", "remembrance", "food"}
+LIBRARY_PHOTOS = POLICE_PHOTOS + ["fireengine", "countyhall", "fog", "zoo", "stansted-1", "stansted-2", "stansted-3", "gaswork", "remembrance", "food"]  # owner's library photos shown on story pages
+LIBRARY_ALT = {"fog": "fog over a footpath and flats at dusk", "fireengine": "a fire engine", "countyhall": "County Hall, Chelmsford, home of Essex County Council", "zoo": "visitors watching elephants at Colchester Zoo", "stansted-1": "check-in desks at London Stansted Airport", "stansted-2": "the terminal concourse at London Stansted Airport", "stansted-3": "a bus outside the terminal at London Stansted Airport", "gaswork": "a worker fitting yellow gas pipe in a trench", "remembrance": "poppy wreaths laid at a war memorial", "food": "a plate of roast chicken, grains and roasted vegetables"}
 # Essex County Council stories use the owner's photo of County Hall, Chelmsford (owner's rule, Nov 2026), ahead of
 # stock, town and map art. Road signs, police and fire photos still win. Same rule as the page's isCountyHallStory.
 ECC_RX = re.compile(r"\bEssex County Council\b|\bCounty Hall\b", re.I)
@@ -262,6 +262,31 @@ def stansted_photo(it):
         h = (h * 31 + ord(c)) & 0xFFFFFFFF
     return STN_PHOTOS[h % len(STN_PHOTOS)]
 
+# Restaurant and food stories (restaurants, cafes, takeaways, pubs serving food, food festivals and markets, chefs)
+# use the owner's plated meal photo when the story is positive or neutral, and the map (no photo) when it is bad news
+# (owner's rule, Nov 2026). Colchester Zoo and Stansted stories keep their own photos, food banks and other food
+# charity stories are not food stories, and a headline naming a signed road keeps the road rules.
+# Same rule as the page's isFoodStory.
+FOOD_RX = re.compile(r"\b(restaurants?|caf[e\u00e9]s?|bistros?|brasseries?|eater(y|ies)|diners?|takeaways?|take-aways?|steakhouses?|gastro ?pubs?|carver(y|ies)|tea ?rooms?|coffee shops?|pizzerias?|pizza|burgers?|curry houses?|fish and chips|fish & chips|chippy|chip shops?|bakery|bakeries|patisser(ie|ies)|deli|delis|delicatessens?|food (and|&) drink|food (festivals?|fairs?|markets?|halls?|courts?|vans?|trucks?|awards?|businesses|outlets?|stalls?)|street food|foodies?|dining|diners|chefs?|menus?|michelin|brunch|afternoon tea|beefeater|toby carvery|nando'?s|wetherspoons?|harvester|table table)\b", re.I)
+FOOD_NOT_RX = re.compile(r"\bfood ?banks?\b|\bfood (poverty|parcels?|collections?|donations?|drives?|waste|insecurity|vouchers?|support|aid)\b|\bsoup kitchens?\b|\bpantr(y|ies)\b|\bschool (meals?|dinners?)\b|\bfree school meals?\b", re.I)
+FOOD_BAD_RX = re.compile(r"\b(zero[- ]star|0[- ]star|one[- ]star|1[- ]star|hygiene rating of (0|1|zero|one)|poor hygiene|unhygienic|rats?|mice|rodents?|cockroach\w*|maggots?|mould\w*|infest\w*|poison\w*|sickness|sick|vomit\w*|e\.? ?coli|salmonella|listeria|norovirus|allerg\w*|anaphyla\w*|administration|administrators|bust|collaps\w*|clos(e|es|ed|ing|ure|ures)|shut\w*|axed|scrapped|struggl\w*|robb\w*|burglar\w*|break-?ins?|raid\w*|stabb\w*|assault\w*|fights?|brawl\w*|vandal\w*|smash\w*|charged|jailed|guilty|sentenced|banned|revoked|suspended|licence review|rows?|anger|angry|fury|furious|objections?|objectors?|refused|rejected|noise|flood\w*|explo\w*|damage\w*|warn\w*|fears?|concerns?|illegal\w*|exploit\w*|modern slavery|immigration (raid|offences?)|unpaid|owed|debts?|scam\w*|fraud\w*|blaze|fire|flames)\b", re.I)
+FOOD_REOPEN_RX = re.compile(r"\bre-?open\w*|\bsaved\b|\brescued?\b|\bnew owners?\b|\btaken over\b|\btakeover\b|\bback in business\b", re.I)
+FOOD_CLOSE_RX = re.compile(r"\bclos(e|es|ed|ing|ure|ures)\b|\bshut\w*", re.I)
+
+def is_food(it, sec):
+    if sec == "sport" or is_zoo(it, sec) or is_stansted(it, sec):
+        return False
+    h = str(it.get("headline") or "")
+    if any(rx.search(h) for _, rx in ROAD_OG):
+        return False
+    return bool(FOOD_RX.search(h) and not FOOD_NOT_RX.search(h))
+
+def food_bad(it):
+    t = str(it.get("headline") or "") + " " + str(it.get("summary") or "")
+    if FOOD_REOPEN_RX.search(t):
+        t = FOOD_CLOSE_RX.sub(" ", t)  # "closed restaurant to reopen" is good news
+    return bool(ZOO_BAD_RX.search(t) or FOOD_BAD_RX.search(t))
+
 # Gas works stories (mains replacement, pipe repairs, gas network roadworks) use the owner's gas works photo
 # (owner's rule, Nov 2026). Not explosions, fires, evacuations or casualties: those keep the normal rules.
 # Same rule as the page's isGasWorkStory.
@@ -313,6 +338,10 @@ def card_of(it, sec):
     if is_stansted(it, sec):
         if not stansted_bad(it) and os.path.exists(os.path.join(ROOT, "img", "og", stansted_photo(it) + ".jpg")):
             return stansted_photo(it)
+        return CARD_FOR.get(icon_of(it, sec), "news")
+    if is_food(it, sec):
+        if not food_bad(it) and os.path.exists(os.path.join(ROOT, "img", "og", "food.jpg")):
+            return "food"
         return CARD_FOR.get(icon_of(it, sec), "news")
     if is_gaswork(it, sec) and os.path.exists(os.path.join(ROOT, "img", "og", "gaswork.jpg")):
         return "gaswork"
@@ -606,14 +635,15 @@ def story_page(sec, it, more):
     more_html = "".join(
         f'<a class="rel" href="/story/{E(m["id"])}/" style="--c:{ICON_COLOUR.get(icon_of(m, s), "#3a3f4b")}"><i></i><b>{E(m["headline"])}</b><span>{E(m.get("place") or "Essex")}</span></a>'
         for s, m in more)
-    fig = "" if card in ("countyhall", "fog", "zoo", "gaswork", "remembrance") or is_zoo(it, sec) or is_stansted(it, sec) else stock_figure(it, sec)
+    fig = "" if card in ("countyhall", "fog", "zoo", "gaswork", "remembrance", "food") or is_zoo(it, sec) or is_stansted(it, sec) or is_food(it, sec) else stock_figure(it, sec)
     if not fig and card in LIBRARY_PHOTOS:
         cap = ("<b>County Hall, Chelmsford</b>, home of Essex County Council. Library image."
                if card == "countyhall" else "<b>Colchester Zoo</b>. Library image, not the scene of this story."
                if card == "zoo" else "<b>London Stansted Airport</b>. Library image, not the scene of this story. Photo: London Stansted Airport."
                if card in STN_PHOTOS else "<b>Gas works</b>. Library image, not the scene of this story."
                if card == "gaswork" else "<b>Remembrance</b>. Library image, not the scene of this story."
-               if card == "remembrance" else "<b>Fog</b>. Library image, not the scene of this story."
+               if card == "remembrance" else "<b>Food and drink</b>. Library image, not the scene of this story."
+               if card == "food" else "<b>Fog</b>. Library image, not the scene of this story."
                if card == "fog" else "<b>Library image</b>, not the scene of this story.")
         fig = (f'<figure class="stock"><img src="/img/topics/{card}.jpg?v=1" width="1200" height="655" '
                f'alt="Library photo: {LIBRARY_ALT.get(card, "police car blue lights")}" loading="eager">'
