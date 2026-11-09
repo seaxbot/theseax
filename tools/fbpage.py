@@ -26,7 +26,7 @@ GRAPH = "https://graph.facebook.com/v21.0"
 STATE = os.path.join(ROOT, "data", "fb-posted.json")
 PAGE_NAME = "The Seax"
 WINDOW_H = 3
-GAP_MIN = 50
+GAP_MIN = 30  # wakes are hourly; this only stops double posts
 
 def load(p, d):
     try:
@@ -71,6 +71,9 @@ def candidates(ed, now):
             continue
         if not os.path.exists(os.path.join(ROOT, "story", it["id"], "index.html")):
             continue
+        if re.search(r"\b(ends?|ended|lifted|cleared|expired?)\b", str(it.get("headline") or ""), re.I) and \
+                re.search(r"\bwarning\b", str(it.get("headline") or ""), re.I):
+            continue  # a warning that is over is not worth a Facebook post
         w = float(it.get("weight") or 0)
         lead, onfront, brk = it["id"] == lead_id, it["id"] in front, bool(it.get("breaking"))
         if w < 5 and not (lead or onfront or brk):
