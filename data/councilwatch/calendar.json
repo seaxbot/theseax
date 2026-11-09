@@ -1,5 +1,5 @@
 {
- "at": "2026-11-09T06:38:07.936429+00:00",
+ "at": "2026-11-09T16:42:00.204321+00:00",
  "meetings": [
   {
    "council": "epping",
@@ -129,6 +129,21 @@
    ]
   },
   {
+   "council": "tendring",
+   "councilName": "Tendring District Council",
+   "area": "tendring",
+   "committee": "Cabinet",
+   "date": "2026-11-13",
+   "time": "10.30 am",
+   "url": "https://tdcdemocracy.tendringdc.gov.uk/ieListDocuments.aspx?CId=134&MId=2822",
+   "items": [
+    "Cabinet Members' Items - Report of the Housing & Planning Portfolio Holder - A.4 - Adoption of the Conservation Area Character Appraisals and Management Plans for St Osyth and Manningtree & Mistley",
+    "Cabinet Members' Items - Report of the Portfolio Holder for Corporate Finance & Governance - A.1 - Financial Performance Report 2026/27 - General Update at the end of September 2026",
+    "Cabinet Members' Items - Report of the Corporate Finance & Governance Portfolio Holder - A.2 - The Local Council Tax Support Scheme, Discretionary Council Tax Exemptions / Discounts / Premiums for 2027/28 and Annual Minimum Revenue Provision Policy Statement 2027/28",
+    "Cabinet Members' Items - Report of the Housing & Planning Portfolio Holder - A.3 - Annual Housing Improvement, Performance & Assurance Report 2025/26"
+   ]
+  },
+  {
    "council": "chelmsford",
    "councilName": "Chelmsford City Council",
    "area": "chelmsford",
@@ -159,6 +174,19 @@
    ]
   },
   {
+   "council": "tendring",
+   "councilName": "Tendring District Council",
+   "area": "tendring",
+   "committee": "Planning Policy and Local Plan Committee",
+   "date": "2026-11-17",
+   "time": "6.00 pm",
+   "url": "https://tdcdemocracy.tendringdc.gov.uk/ieListDocuments.aspx?CId=340&MId=2943",
+   "items": [
+    "Report of the Corporate Director (Planning & Community) - A.1 - Tendring District Local Plan Review: Final Submission to the Secretary of State following Regulation 19 Consultation",
+    "Public Speaking"
+   ]
+  },
+  {
    "council": "southend",
    "councilName": "Southend-on-Sea City Council",
    "area": "southend",
@@ -166,7 +194,9 @@
    "date": "2026-11-17",
    "time": "6.30 pm",
    "url": "https://democracy.southend.gov.uk/ieListDocuments.aspx?CId=131&MId=5180",
-   "items": []
+   "items": [
+    "Notices of Motion - Removal of the Leader of the Council and Election of a new Leader of the Council"
+   ]
   },
   {
    "council": "thurrock",
@@ -286,6 +316,16 @@
    "date": "2026-11-24",
    "time": "7.30 pm",
    "url": "https://democracy.maldon.gov.uk/ieListDocuments.aspx?CId=148&MId=4930",
+   "items": []
+  },
+  {
+   "council": "tendring",
+   "councilName": "Tendring District Council",
+   "area": "tendring",
+   "committee": "Council",
+   "date": "2026-11-24",
+   "time": "7.30 pm",
+   "url": "https://tdcdemocracy.tendringdc.gov.uk/ieListDocuments.aspx?CId=130&MId=2837",
    "items": []
   },
   {
