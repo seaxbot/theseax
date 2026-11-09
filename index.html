@@ -683,7 +683,7 @@ h1,h2,h3,h4,.story h1,.lead h2,.card h3,.drow h4{letter-spacing:-.022em}
 .todaybar{display:flex;align-items:stretch;gap:0;border-top:1px solid var(--ink);border-bottom:1px solid var(--hair);margin-bottom:18px;overflow-x:auto;scrollbar-width:none;white-space:nowrap}
 .todaybar::-webkit-scrollbar{display:none}
 /* wide screens: let the six weather parts wrap onto a second line rather than hide off the edge (phones swipe) */
-@media (min-width:760px){ .todaybar{flex-wrap:wrap;white-space:normal;overflow:visible} .tb-wx{flex-wrap:wrap;row-gap:4px;flex:1 1 0;min-width:0} }
+@media (min-width:760px){ .todaybar{flex-wrap:nowrap;overflow:hidden} .tb-wx{flex-wrap:nowrap;flex:1 1 0;min-width:0;overflow:hidden} }
 .tb-h{font-size:11px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;padding:10px 14px 10px 0;color:var(--ink);display:flex;align-items:center}
 .tb{display:flex;align-items:center;gap:7px;padding:10px 16px;border-left:1px solid var(--hair);font-size:13.5px;color:var(--ink2);text-decoration:none}
 .tb:hover{background:rgba(0,0,0,.03)}
@@ -4322,20 +4322,31 @@ function renderToday(){
     const ico = (kind, night) => kind ? `<span class="wi" aria-hidden="true">${wxIcon(kind, night).replace(/#e6ebf2/gi,"#a7b2c1").replace(/#cfd7e2/gi,"#8d99aa").replace(/#b9c3d1/gi,"#7f8da0").replace(/#9aa5b5/gi,"#66748a").replace(/#e8e2c8/gi,"#c2a85e")}</span>` : "";
     const nightNow = now > st.set || now < st.rise;
     const parts = [`<span class="wk">Now</span>${ico(w.now.icon, nightNow)}<b>${esc(w.now.temp)}°C</b>&nbsp;${low(w.now.desc)}`];
-    if(today && ukHour < 16) parts.push(`<span class="wk">Later</span>${ico(today.icon, false)}high&nbsp;<b>${esc(today.hi)}°C</b>${today.desc ? `,&nbsp;${low(today.desc)}` : ""}${rain(today)}`);
+    if(today && ukHour < 16) parts.push(`<span class="wk">Later</span>${ico(today.icon, false)}high&nbsp;<b>${esc(today.hi)}°C</b>${rain(today)}`);
     if(today && ukHour < 23) parts.push(`<span class="wk">Tonight</span>${ico(today.icon, true)}low&nbsp;<b>${esc(today.lo)}°C</b>`);
-    if(tmrw) parts.push(`<span class="wk">Tomorrow</span>${ico(tmrw.icon, false)}<b>${esc(tmrw.hi)}°C</b>&nbsp;${low(tmrw.desc)}${rain(tmrw)}`);
-    const dayName = d => esc(new Intl.DateTimeFormat("en-GB",{weekday:"long",timeZone:"Europe/London"}).format(new Date(d.date + "T12:00:00Z")));
+    if(tmrw) parts.push(`<span class="wk">Tomorrow</span>${ico(tmrw.icon, false)}<b>${esc(tmrw.hi)}°C</b>${rain(tmrw)}`);
+    const dayName = d => esc(new Intl.DateTimeFormat("en-GB",{weekday:"short",timeZone:"Europe/London"}).format(new Date(d.date + "T12:00:00Z")));
     const day2 = days.find(d => d.date === ukDate(new Date(now.getTime()+2*864e5)));
     /* with a weather warning showing, drop the day after tomorrow so the strip stays on one line */
-    if(day2 && !(w.warnings||[]).length) parts.push(`<span class="wk">${dayName(day2)}</span>${ico(day2.icon, false)}<b>${esc(day2.hi)}°C</b>&nbsp;${low(day2.desc)}${rain(day2)}`);
+    if(day2) parts.push(`<span class="wk">${dayName(day2)}</span>${ico(day2.icon, false)}<b>${esc(day2.hi)}°C</b>${rain(day2)}`);
     bits.push(`<a href="#weather" class="tb tb-wx">${parts.map(x => `<span class="wp">${x}</span>`).join('<span class="wsep" aria-hidden="true"></span>')}</a>`);
   }
-  const warn = (w.warnings||[])[0];
+  const warn = (w.warnings||[]).filter(warningLive)[0];
   if(warn) bits.unshift(`<a href="#weather" class="tb warn" title="${esc(warn)}" aria-label="${esc(warn)}"><i class="wtri" aria-hidden="true"></i>${shortWarning(warn)}</a>`);
   el.innerHTML = `<span class="tb-h">Weather</span>${bits.join("")}`;
+  /* one line only (owner's rule): on wide screens drop the furthest-ahead parts until the strip fits */
+  const strip = el.querySelector(".tb-wx");
+  if(strip && window.matchMedia && window.matchMedia("(min-width:760px)").matches){
+    let guard = 6;
+    while(guard-- > 0 && strip.scrollWidth > strip.clientWidth + 1){
+      const ps = strip.querySelectorAll(".wp"); if(ps.length <= 1) break;
+      const last = ps[ps.length - 1], sep = last.previousElementSibling;
+      last.remove(); if(sep && sep.classList.contains("wsep")) sep.remove();
+    }
+  }
 }
 
+{ let rt; window.addEventListener("resize", () => { clearTimeout(rt); rt = setTimeout(() => { try{ renderToday(); }catch(_){} }, 200); }); }
 /* ---------- news: tiered ---------- */
 function renderNews(){
   const all = ED.stories.filter(inArea).slice().sort(byTime);
