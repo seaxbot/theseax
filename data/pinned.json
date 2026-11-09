@@ -1,8 +1,9 @@
 {
- "_note": "Pinned at the top of the front page between 'from' and 'until' (UTC). Owner's launch story. The newsroom never edits this file.",
+ "_note": "Pinned at the top of the front page between 'from' and 'until' (UTC), then shown as a card in the News section until 'newsUntil'. Owner's launch story. The newsroom never edits this file.",
  "id": "the-seax-launches",
  "from": "2026-11-09T07:00:00Z",
  "until": "2026-11-10T00:00:00Z",
+ "newsUntil": "2026-11-10T12:00:00Z",
  "kicker": "Launch day",
  "place": "Essex",
  "headline": "A new way to see Essex: The Seax launches to bring the whole county together",

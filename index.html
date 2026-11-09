@@ -4120,9 +4120,29 @@ function renderPinned(){
     <div class="pin-img">${PIN.image ? `<img src="${esc(PIN.image)}" alt="${esc(PIN.alt || "")}" loading="eager">` : ""}</div>
     <div class="pin-text"><div class="pin-kick"><i aria-hidden="true"></i>${esc(PIN.kicker || "The Seax")}</div><h2>${esc(PIN.headline)}</h2>${PIN.summary ? `<p>${esc(PIN.summary)}</p>` : ""}<span class="pin-go">Read the story →</span></div></a>`;
 }
-fetch("/data/pinned.json", { cache: "no-store" }).then(r => r.ok ? r.json() : null).then(p => { PIN = p; renderPinned(); }).catch(() => {});
+/* after the pin ends, the launch story sits in the News section as the second card until newsUntil (owner's choice, Nov 2026) */
+function renderPinnedNews(){
+  const g = document.getElementById("newsGrid"); if(!g) return;
+  const now = Date.now(), on = PIN && PIN.headline && PIN.url && PIN.newsUntil && now >= +new Date(PIN.until) && now < +new Date(PIN.newsUntil);
+  const have = g.querySelector(".pin-news");
+  if(!on){ if(have) have.remove(); return; }
+  if(have) return;
+  const card = document.createElement("div");
+  card.innerHTML = `<a class="card tc pin-news" href="${esc(PIN.url)}" style="--c:#b3122a">
+    ${PIN.image ? `<div class="cart"><svg class="emap wxart townphoto" width="100%" height="100%" role="img" aria-label="${esc(PIN.alt || "")}" style="background:#f3e6d8"><image href="${esc(PIN.image)}" x="0" y="0" width="100%" height="100%" preserveAspectRatio="xMidYMid slice"/></svg></div>` : ""}
+    <div class="body">
+      <div class="kick"><span class="tg">The Seax</span></div>
+      <div class="meta"><span class="place">${esc(PIN.place || "Essex")}</span><span>·</span><span>${esc(PIN.kicker || "Launch day")}</span></div>
+      <h3>${esc(PIN.headline)}</h3>
+      ${PIN.summary ? `<p>${esc(PIN.summary)}</p>` : ""}
+      <div class="src"><span></span><b>Read →</b></div>
+    </div></a>`;
+  const first = g.querySelector(".card");
+  if(first) first.after(card.firstElementChild); else g.prepend(card.firstElementChild);
+}
+fetch("/data/pinned.json", { cache: "no-store" }).then(r => r.ok ? r.json() : null).then(p => { PIN = p; renderPinned(); renderPinnedNews(); }).catch(() => {});
 function renderAll(){
-  renderChips(); renderTicker(); buildHero(); renderTopList(); renderNews(); renderDesk(); renderCouncilWatch(); renderCommunity(); renderSport(); renderTables(); renderWeather();
+  renderChips(); renderTicker(); buildHero(); renderTopList(); renderNews(); renderPinnedNews(); renderDesk(); renderCouncilWatch(); renderCommunity(); renderSport(); renderTables(); renderWeather();
   renderEvents(); renderCulture(); renderVital(); renderSpecials(); renderSources(); renderMeta(); afterRender(); updateLiveLine();
   if(location.hash.startsWith("#story-")) renderStory(location.hash.slice(7));
 }
@@ -4142,7 +4162,7 @@ function tickMinute(){
   const k = dayKey(n);
   if(k !== lastDay){ lastDay = k; renderAll(); }
   else { renderWeather(); renderTicker(); renderToday(); }
-  renderPinned();
+  renderPinned(); renderPinnedNews();
 }
 setInterval(() => { tickSecond(); const m = new Date().getMinutes(); if(m !== lastMinute){ lastMinute = m; tickMinute(); } }, 1000);
 

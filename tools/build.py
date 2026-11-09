@@ -877,6 +877,10 @@ def about_page():
 <h2>Privacy</h2>
 <p>The Seax does not use advertising cookies or track you across other websites. {"We count visits with GoatCounter, a privacy-friendly service that uses no cookies and collects no personal data." if CFG.get("goatcounter") else "We may count visits with a privacy-friendly service that uses no cookies and collects no personal data."} Our free morning newsletter is delivered by follow.it; if you sign up, your email address is used only to send it, and every email includes an unsubscribe link.</p>
 
+<h2 id="launch">Our launch</h2>
+<p>The Seax went live at 7am on Monday 9 November 2026: a free website that brings Essex's news, sport, council decisions, community life and what's on together in one place, from Harlow to Harwich and Saffron Walden to Southend.</p>
+<p><a href="/story/the-seax-launches/">Read our launch story: A new way to see Essex</a></p>
+
 {photo_credits()}
 <h2>Why "The Seax"?</h2>
 <p>The seax is the short sword of the Saxons, and three seaxes appear on the arms of Essex: gules, three seaxes fesswise in pale argent, pommels and hilts or. Our badge follows that blazon.</p>
@@ -1155,7 +1159,8 @@ def main():
     def lastmod(rec):
         return (rec.get("u") or rec.get("t") or rec.get("last") or iso(NOW))[:10]
     urls = [(SITE + "/", NOW.date().isoformat(), "hourly", "1.0"), (SITE + "/about/", None, "monthly", "0.4"),
-            (SITE + "/briefing/", latest or None, "daily", "0.7")]
+            (SITE + "/briefing/", latest or None, "daily", "0.7"),
+            (SITE + "/story/the-seax-launches/", "2026-11-09", None, "0.5")]  # owner's launch story, kept findable
     for sid, rec in sorted(archive.items(), key=lambda kv: kv[1].get("t") or kv[1].get("first") or "", reverse=True):
         urls.append((f"{SITE}/story/{sid}/", lastmod(rec), None, None))
     for x in briefs:
