@@ -164,7 +164,9 @@ def main():
             print(json.dumps({"none": why})); return
         it, update = pick
         print(json.dumps({"id": it["id"], "headline": " ".join(str(it.get("headline") or "").split()), "update": update,
-                          "message": message(it, update), "link": f"{SITE}/story/{it['id']}/",
+                          "message": message(it, update),
+                          # an update gets a fresh link so Facebook reads the new headline instead of its cached preview
+                          "link": f"{SITE}/story/{it['id']}/" + (f"?u={now:%m%d%H%M}" if update else ""),
                           "commentsOff": legal_story(it)}, ensure_ascii=False)); return
     if "--record" in sys.argv:
         i = sys.argv.index("--record")
