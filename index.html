@@ -224,7 +224,9 @@ section.block{padding:38px 0 8px;scroll-margin-top:60px}
 .tile{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px;display:flex;gap:12px;align-items:center}
 .tile svg{width:42px;height:42px;flex:none}
 .tile b{display:block;font-size:15px}
-.tile span{font-size:12.5px;color:var(--muted)}
+.tile span{font-size:12.5px;color:var(--muted);display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.tile > div{min-width:0}
+.tile b{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .wx-note{font-size:12px;color:var(--muted);margin-top:10px}
 .wx-note a{text-decoration:underline}
 
@@ -3774,17 +3776,19 @@ function renderSport(){
 /* third weather tile: the outlook for a named occasion (Bonfire Night, Christmas, New Year) only while that day is
    in the forecast, otherwise the weekend ahead (owner's note, Nov 2026: never show a passed occasion) */
 const WX_OCCASIONS = [["10-31","Halloween"],["11-05","Bonfire Night"],["12-24","Christmas Eve"],["12-25","Christmas Day"],["12-26","Boxing Day"],["12-31","New Year's Eve"],["01-01","New Year's Day"]];
-function wxLine(d){ return `${esc(d.desc)}, ${esc(d.lo)} to ${esc(d.hi)}°C, ${Number(d.rain)<10?"looking dry":esc(d.rain)+"% chance of rain"}`; }
+function wxShort(d){ return `${esc(d.hi)}°/${esc(d.lo)}°`; }
+function wxRain(d){ return Number(d.rain) < 10 ? "dry" : `${esc(d.rain)}% rain`; }
 function outlookTile(w, today){
   const days = (w.days || []).filter(d => String(d.date) >= today);
   const occ = WX_OCCASIONS.map(([md, name]) => ({name, d: days.find(d => String(d.date).slice(5) === md)})).find(o => o.d);
-  if(occ) return `<div class="tile">${wxIcon(occ.d.icon,true)}<div><b>${occ.name} outlook</b><span>${wxLine(occ.d)}</span></div></div>`;
+  const one = 'style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis"';
+  if(occ) return `<div class="tile" title="${esc(occ.d.desc)}">${wxIcon(occ.d.icon,true)}<div style="min-width:0"><b ${one}>${occ.name}</b><span ${one}>${wxShort(occ.d)} · ${wxRain(occ.d)}</span></div></div>`;
   const wkd = d => new Date(d.date + "T12:00:00Z").getUTCDay();
   const sat = days.find(d => wkd(d) === 6), sun = days.find(d => wkd(d) === 0 && (!sat || d.date > sat.date));
   const pick = [sat, sun].filter(Boolean);
-  if(!pick.length){ const t = days[1] || days[0]; return t ? `<div class="tile">${wxIcon(t.icon,false)}<div><b>Tomorrow</b><span>${wxLine(t)}</span></div></div>` : ""; }
+  if(!pick.length){ const t = days[1] || days[0]; return t ? `<div class="tile" title="${esc(t.desc)}">${wxIcon(t.icon,false)}<div style="min-width:0"><b ${one}>Tomorrow</b><span ${one}>${wxShort(t)} · ${wxRain(t)}</span></div></div>` : ""; }
   const thisWk = pick[0].date === today || wkd({date: today}) === 0;
-  return `<div class="tile">${wxIcon(pick[0].icon,false)}<div><b>${thisWk ? "This weekend" : "Weekend outlook"}</b><span>${pick.map(d => `${d === sat ? "Sat" : "Sun"}: ${esc(d.desc).toLowerCase()}, ${esc(d.lo)} to ${esc(d.hi)}°C`).join(" · ")}</span></div></div>`;
+  return `<div class="tile" title="${pick.map(d => (d === sat ? "Sat: " : "Sun: ") + esc(d.desc)).join(" · ")}">${wxIcon(pick[0].icon,false)}<div style="min-width:0"><b ${one}>${thisWk ? "This weekend" : "Weekend"}</b><span ${one}>${pick.map(d => `${d === sat ? "Sat" : "Sun"} ${wxShort(d)}`).join(" · ")}</span></div></div>`;
 }
 /* a weather warning ("... until 11am on Monday 9 November") drops off the page once that time has passed
    (owner's note, Nov 2026). Text without a parseable end time stays. UK time; year taken from today. */
@@ -3813,7 +3817,7 @@ function renderWeather(){
   }).join("");
   const mp = moonPhase(now), daylen = (st.set - st.rise)/36e5;
   $("#wxExtra").innerHTML = `
-    <div class="tile">${wxIcon("sun",false)}<div><b>${fmt(st.rise,{hour:"2-digit",minute:"2-digit"})} · ${fmt(st.set,{hour:"2-digit",minute:"2-digit"})}</b><span>Sunrise and sunset · ${Math.floor(daylen)}h ${Math.round((daylen%1)*60)}m of daylight</span></div></div>
+    <div class="tile">${wxIcon("sun",false)}<div><b>${fmt(st.rise,{hour:"2-digit",minute:"2-digit"})} · ${fmt(st.set,{hour:"2-digit",minute:"2-digit"})}</b><span>${Math.floor(daylen)}h ${Math.round((daylen%1)*60)}m of daylight</span></div></div>
     <div class="tile">${moonSvg(mp.frac)}<div><b>${mp.name}</b><span>Moon is ${Math.round(mp.age)} days old</span></div></div>
     ${outlookTile(w, today)}`;
   const warn = (w.warnings||[]).filter(warningLive).map(x=>`<b style="color:var(--red)">⚠ ${esc(x)}</b> `).join("");
