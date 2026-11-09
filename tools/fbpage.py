@@ -80,6 +80,17 @@ def candidates(ed, now):
     out.sort(key=lambda x: -x[0])
     return out
 
+LEGAL_ICONS = {"police", "crime", "court", "appeal"}
+LEGAL_RX = re.compile(r"\b(police|court|crown court|magistrates|jury|trial|sentenc\w*|convicted|guilty|charged|arrest\w*|jailed|prison|custody|bail|remand\w*|inquest|murder|manslaughter|rape|assault|stabb\w*|fraud|investigation|appeal for (witnesses|information)|witnesses sought)\b", re.I)
+
+def legal_story(it):
+    """Court, police and crime stories: comments are turned off on the Facebook post (owner's rule, 9 Nov 2026)."""
+    icon = str(it.get("icon") or "").lower()
+    tag = str(it.get("tag") or "").lower()
+    if icon in LEGAL_ICONS or tag in {"court", "courts", "police", "crime", "appeal"} or it.get("kind") == "police":
+        return True
+    return bool(LEGAL_RX.search(f'{it.get("headline", "")} {it.get("summary", "")}'))
+
 def message(it, update):
     head = " ".join(str(it.get("headline") or "").split())
     summ = " ".join(str(it.get("summary") or "").split())
@@ -150,7 +161,8 @@ def main():
             print(json.dumps({"none": why})); return
         it, update = pick
         print(json.dumps({"id": it["id"], "headline": " ".join(str(it.get("headline") or "").split()), "update": update,
-                          "message": message(it, update), "link": f"{SITE}/story/{it['id']}/"}, ensure_ascii=False)); return
+                          "message": message(it, update), "link": f"{SITE}/story/{it['id']}/",
+                          "commentsOff": legal_story(it)}, ensure_ascii=False)); return
     if "--record" in sys.argv:
         i = sys.argv.index("--record")
         sid = sys.argv[i + 1]
