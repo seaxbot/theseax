@@ -13,7 +13,7 @@ Rules:
     lead, then the front-page picks, then weight and freshness. Stories below weight 5 are only posted if they
     are breaking, the lead or on the front.
   - Never posts the same story twice, except as an "Update:" when its headline has changed and it is breaking news, or the lead at least 4 hours after its first post;
-    qualifies (weight 6 or more, breaking or the lead), and then only once more.
+    and then only once more.
   - The post is the headline, the summary and the story link; Facebook shows the story's picture from the link.
 State: data/fb-posted.json. Use --dry-run to see what would be posted without posting.
 """
