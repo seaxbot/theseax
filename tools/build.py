@@ -595,8 +595,9 @@ def story_page(sec, it, more):
         "author": {"@type": "Organization", "name": "The Seax", "url": SITE + "/"},
         "publisher": {"@type": "Organization", "name": "The Seax", "url": SITE + "/",
                       "logo": {"@type": "ImageObject", "url": f"{SITE}/icons/icon-512.png", "width": 512, "height": 512}},
-        "contentLocation": {"@type": "Place", "name": f"{place}, Essex"},
     }
+    if not it.get("noWhere"):
+        ld["contentLocation"] = {"@type": "Place", "name": f"{place}, Essex"}
     if t:
         ld["datePublished"] = iso(t)
         ld["dateModified"] = iso(up or t)
