@@ -3,8 +3,8 @@ name: Facebook Page posts
 # Needs the repository secret FB_PAGE_TOKEN (a Page access token for The Seax). Without it, it does nothing.
 on:
   workflow_dispatch:
-  schedule:
-    - cron: "55 * * * *"
+  # schedule switched off 9 Nov 2026: James chose the browser route (Claude posts through Chrome). Re-add
+  #   schedule: [{cron: "55 * * * *"}]  if a Page token is ever added as FB_PAGE_TOKEN.
 permissions:
   contents: write
 concurrency: fb-page

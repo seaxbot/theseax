@@ -101,7 +101,56 @@ def graph(path, params=None, data=None):
     with urllib.request.urlopen(req, timeout=30) as r:
         return json.loads(r.read().decode())
 
+def choose(now, posts, ed, ignore_clock=False):
+    """The story to post now, or (None, reason)."""
+    uk = uk_now(now)
+    if not ignore_clock and (uk.hour >= 23 or uk.hour < 6 or (uk.hour == 6 and uk.minute < 30)):
+        return None, f"quiet hours ({uk:%H:%M} UK)"
+    last = parse_t(posts[-1]["at"]) if posts else None
+    if not ignore_clock and last and now - last < timedelta(minutes=GAP_MIN):
+        return None, f"last post {int((now - last).total_seconds() // 60)} min ago"
+    done = {}
+    for p in posts:
+        done.setdefault(p["id"], []).append(p)
+    for score, it, lead, brk in candidates(ed, now):
+        prev = done.get(it["id"])
+        if not prev:
+            return (it, False), ""
+        head = " ".join(str(it.get("headline") or "").split())
+        if len(prev) < 2 and head != prev[-1]["headline"] and (float(it.get("weight") or 0) >= 6 or lead or brk):
+            return (it, True), ""
+    return None, "nothing new and significant"
+
+def record(st, it_id, headline, update, fb_id, now):
+    posts = st.get("posts") or []
+    posts.append({"id": it_id, "headline": " ".join(str(headline or "").split()), "at": now.strftime("%Y-%m-%dT%H:%M:%SZ"),
+                  "update": bool(update), "fb": fb_id})
+    st["posts"] = posts[-500:]
+    os.makedirs(os.path.dirname(STATE), exist_ok=True)
+    json.dump(st, open(STATE, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
+
 def main():
+    # Browser route (owner's choice, 9 Nov 2026): Claude posts through Chrome as The Seax.
+    #   --choose            print JSON {"id","message","link","update","headline"} or {"none": reason}
+    #   --record ID [--update]   note that ID was posted now
+    if "--choose" in sys.argv:
+        now = datetime.now(timezone.utc)
+        st = load(STATE, {"posts": []})
+        pick, why = choose(now, st.get("posts") or [], load(os.path.join(ROOT, "edition.json"), {}))
+        if not pick:
+            print(json.dumps({"none": why})); return
+        it, update = pick
+        print(json.dumps({"id": it["id"], "headline": " ".join(str(it.get("headline") or "").split()), "update": update,
+                          "message": message(it, update), "link": f"{SITE}/story/{it['id']}/"}, ensure_ascii=False)); return
+    if "--record" in sys.argv:
+        i = sys.argv.index("--record")
+        sid = sys.argv[i + 1]
+        ed = load(os.path.join(ROOT, "edition.json"), {})
+        head = next((x.get("headline") for sec in ("stories", "official", "courts", "community") for x in ed.get(sec) or [] if isinstance(x, dict) and x.get("id") == sid),
+                    next((x.get("headline") for x in (ed.get("sport") or {}).get("stories") or [] if x.get("id") == sid), ""))
+        st = load(STATE, {"posts": []})
+        record(st, sid, head, "--update" in sys.argv, "browser", datetime.now(timezone.utc))
+        print("recorded", sid); return
     dry = "--dry-run" in sys.argv
     now = datetime.now(timezone.utc)
     st = load(STATE, {"posts": []})
