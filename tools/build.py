@@ -537,7 +537,7 @@ def story_page(sec, it, more):
     if not fig and card in LIBRARY_PHOTOS:
         cap = ("<b>County Hall, Chelmsford</b>, home of Essex County Council. Library image."
                if card == "countyhall" else "<b>Colchester Zoo</b>. Library image, not the scene of this story."
-               if card == "zoo" else "<b>London Stansted Airport</b>. Library image, not the scene of this story."
+               if card == "zoo" else "<b>London Stansted Airport</b>. Library image, not the scene of this story. Photo: London Stansted Airport."
                if card in STN_PHOTOS else "<b>Fog</b>. Library image, not the scene of this story."
                if card == "fog" else "<b>Library image</b>, not the scene of this story.")
         fig = (f'<figure class="stock"><img src="/img/topics/{card}.jpg?v=1" width="1200" height="655" '
@@ -709,7 +709,7 @@ def photo_credits():
         lic_html = f'<a href="{E(c["licenseUrl"])}" rel="license noopener">{E(lic)}</a>' if c.get("licenseUrl") else E(lic)
         rows.append(f'<li>{E(c["what"])}: photo by {E(c["by"])}, {lic_html}, via <a href="{E(c["source"])}" rel="noopener">Wikimedia Commons</a></li>')
     return ('<h2 id="photo-credits">Photo credits</h2>\n<p>Town photographs on The Seax come from Wikimedia Commons and are used under the licences shown. '
-            'They have been resized for the web and are shared under the same terms. Our map artwork is our own.</p>\n<ul class="credits">' + "".join(rows) + "</ul>\n")
+            'They have been resized for the web and are shared under the same terms. Our map artwork is our own.</p>\n<ul class="credits">' + "".join(rows) + '<li>London Stansted Airport library images: photos by London Stansted Airport</li>' + "</ul>\n")
 
 
 def about_page():
