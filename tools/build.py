@@ -292,6 +292,19 @@ def is_remembrance(it, sec):
     h = str(it.get("headline") or "")
     return bool(REM_RX.search(h) and not REM_SKIP_RX.search(h))
 
+# Major breaking news with no suitable photo shows the owner's Breaking News picture (owner's rule, Nov 2026):
+# img/topics/breaking.png on the page, img/og/breaking.png as the share card. Only a news story flagged breaking
+# with weight 9 or 10; every specific photo rule above it, and a stock photo, still win. Same rule as the page's
+# isBreakingArtStory.
+def is_major_breaking(it, sec):
+    if sec != "news":
+        return False
+    try:
+        w = float(it.get("weight") or 0)
+    except (TypeError, ValueError):
+        w = 0
+    return it.get("breaking") is True and w >= 9
+
 def card_of(it, sec):
     if is_zoo(it, sec):
         if not zoo_bad(it) and os.path.exists(os.path.join(ROOT, "img", "og", "zoo.jpg")):
@@ -318,6 +331,9 @@ def card_of(it, sec):
         return police_photo(it)
     if is_fire(it, sec) and os.path.exists(os.path.join(ROOT, "img", "og", "fireengine.jpg")):
         return "fireengine"
+    if is_major_breaking(it, sec) and not (PHOTOS.get(it.get("id")) and not it.get("noPhoto")) \
+            and os.path.exists(os.path.join(ROOT, "img", "og", "breaking.png")):
+        return "breaking"
     if sec == "councilwatch":
         return "council"
     if sec == "features":
@@ -602,7 +618,11 @@ def story_page(sec, it, more):
         fig = (f'<figure class="stock"><img src="/img/topics/{card}.jpg?v=1" width="1200" height="655" '
                f'alt="Library photo: {LIBRARY_ALT.get(card, "police car blue lights")}" loading="eager">'
                f'<figcaption>{cap}</figcaption></figure>')
-    og_img = PHOTOS[sid]["file"] if fig and card not in [k for k, _ in ROAD_OG] + ["hospital"] + LIBRARY_PHOTOS else card
+    if not fig and card == "breaking":
+        fig = ('<figure class="stock"><img src="/img/topics/breaking.png?v=1" width="1200" height="630" '
+               'alt="The Seax Breaking News graphic" loading="eager">'
+               '<figcaption><b>Breaking news</b>. No photo of this story yet.</figcaption></figure>')
+    og_img = PHOTOS[sid]["file"] if fig and card not in [k for k, _ in ROAD_OG] + ["hospital", "breaking"] + LIBRARY_PHOTOS else card
     pt = portrait_of(it)
     if pt:
         fig, og_img = portrait_figure(pt), pt["og"]

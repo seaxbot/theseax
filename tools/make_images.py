@@ -89,6 +89,67 @@ def card(key, label, colour):
     os.makedirs(os.path.join(ROOT, "img", "og"), exist_ok=True)
     im.save(os.path.join(ROOT, "img", "og", key + ".png"), optimize=True)
 
+def breaking():
+    """Breaking News picture (owner approved, Nov 2026): shown only on a major breaking story (breaking, weight 9+)
+    that has no suitable photo. Writes img/og/breaking.png (share card) and img/topics/breaking.png (page art)."""
+    W, H = 1200, 630
+    im = Image.new("RGB", (W, H), NAVY)
+    stripe = Image.new("RGBA", (W, H), (0, 0, 0, 0))
+    sd = ImageDraw.Draw(stripe)
+    for x in range(-H, W + H, 46):
+        sd.polygon([(x, 0), (x + 18, 0), (x + 18 - H, H), (x - H, H)], fill=(255, 255, 255, 9))
+    im.paste(stripe, (0, 0), stripe)
+    d = ImageDraw.Draw(im)
+    d.rectangle([0, 0, 28, H], fill=RED)
+    d.rectangle([28, H - 10, W, H], fill=GOLD)
+    sh = shield_png(300)
+    sx, sy = 100, (H - sh.height) // 2 - 6
+    im.paste(sh, (sx, sy), sh)
+    x = sx + sh.width + 56
+    ky = 150
+    d.ellipse([x, ky + 9, x + 18, ky + 27], fill=RED)
+    d.ellipse([x - 5, ky + 4, x + 23, ky + 32], outline=RED, width=2)
+    d.text((x + 36, ky), "THE SEAX  ·  ESSEX", font=font("Inter-Bold.otf", 30), fill=GOLD)
+    bf = font("InterDisplay-Black.otf", 124)
+    d.text((x - 4, 188), "BREAKING", font=bf, fill="#ffffff")
+    nw = d.textlength("NEWS", font=bf)
+    d.rectangle([x - 4, 336, x + nw + 40, 468], fill=RED)
+    d.text((x + 16, 332), "NEWS", font=bf, fill="#ffffff")
+    d.text((x, H - 76), "theseax.com", font=font("Inter-SemiBold.otf", 28), fill="#b9c4d8")
+    for sub in ("og", "topics"):
+        os.makedirs(os.path.join(ROOT, "img", sub), exist_ok=True)
+        im.save(os.path.join(ROOT, "img", sub, "breaking.png"), optimize=True)
+    # 4:3 version for the lead panel and other near-square spots (content kept inside the middle 780px of height,
+    # so the panel's slight crop on phones never cuts it)
+    PW, PH = 1200, 900
+    pn = Image.new("RGB", (PW, PH), NAVY)
+    stripe = Image.new("RGBA", (PW, PH), (0, 0, 0, 0))
+    sd = ImageDraw.Draw(stripe)
+    for x in range(-PH, PW + PH, 46):
+        sd.polygon([(x, 0), (x + 18, 0), (x + 18 - PH, PH), (x - PH, PH)], fill=(255, 255, 255, 9))
+    pn.paste(stripe, (0, 0), stripe)
+    d = ImageDraw.Draw(pn)
+    d.rectangle([0, PH - 12, PW, PH], fill=GOLD)
+    sh = shield_png(250)
+    pn.paste(sh, ((PW - sh.width) // 2, 80), sh)
+    kf = font("Inter-Bold.otf", 34)
+    kt = "THE SEAX  ·  ESSEX"
+    kw = d.textlength(kt, font=kf) + 40
+    kx, ky = (PW - kw) / 2, 362
+    d.ellipse([kx, ky + 10, kx + 20, ky + 30], fill=RED)
+    d.ellipse([kx - 5, ky + 5, kx + 25, ky + 35], outline=RED, width=2)
+    d.text((kx + 40, ky), kt, font=kf, fill=GOLD)
+    bf = font("InterDisplay-Black.otf", 140)
+    bw = d.textlength("BREAKING", font=bf)
+    d.text(((PW - bw) / 2, 408), "BREAKING", font=bf, fill="#ffffff")
+    nw = d.textlength("NEWS", font=bf)
+    nx = (PW - nw - 44) / 2
+    d.rectangle([nx, 578, nx + nw + 44, 726], fill=RED)
+    d.text((nx + 22, 574), "NEWS", font=bf, fill="#ffffff")
+    tf = font("Inter-SemiBold.otf", 30)
+    d.text(((PW - d.textlength("theseax.com", font=tf)) / 2, 770), "theseax.com", font=tf, fill="#b9c4d8")
+    pn.save(os.path.join(ROOT, "img", "topics", "breaking-panel.png"), optimize=True)
+
 def icons():
     os.makedirs(os.path.join(ROOT, "icons"), exist_ok=True)
     for size, name in [(180, "apple-touch-icon.png"), (192, "icon-192.png"), (512, "icon-512.png")]:
