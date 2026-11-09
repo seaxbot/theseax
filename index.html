@@ -3749,6 +3749,21 @@ function renderSport(){
   }).join("");
 }
 
+/* third weather tile: the outlook for a named occasion (Bonfire Night, Christmas, New Year) only while that day is
+   in the forecast, otherwise the weekend ahead (owner's note, Nov 2026: never show a passed occasion) */
+const WX_OCCASIONS = [["10-31","Halloween"],["11-05","Bonfire Night"],["12-24","Christmas Eve"],["12-25","Christmas Day"],["12-26","Boxing Day"],["12-31","New Year's Eve"],["01-01","New Year's Day"]];
+function wxLine(d){ return `${esc(d.desc)}, ${esc(d.lo)} to ${esc(d.hi)}°C, ${Number(d.rain)<10?"looking dry":esc(d.rain)+"% chance of rain"}`; }
+function outlookTile(w, today){
+  const days = (w.days || []).filter(d => String(d.date) >= today);
+  const occ = WX_OCCASIONS.map(([md, name]) => ({name, d: days.find(d => String(d.date).slice(5) === md)})).find(o => o.d);
+  if(occ) return `<div class="tile">${wxIcon(occ.d.icon,true)}<div><b>${occ.name} outlook</b><span>${wxLine(occ.d)}</span></div></div>`;
+  const wkd = d => new Date(d.date + "T12:00:00Z").getUTCDay();
+  const sat = days.find(d => wkd(d) === 6), sun = days.find(d => wkd(d) === 0 && (!sat || d.date > sat.date));
+  const pick = [sat, sun].filter(Boolean);
+  if(!pick.length){ const t = days[1] || days[0]; return t ? `<div class="tile">${wxIcon(t.icon,false)}<div><b>Tomorrow</b><span>${wxLine(t)}</span></div></div>` : ""; }
+  const thisWk = pick[0].date === today || wkd({date: today}) === 0;
+  return `<div class="tile">${wxIcon(pick[0].icon,false)}<div><b>${thisWk ? "This weekend" : "Weekend outlook"}</b><span>${pick.map(d => `${d === sat ? "Sat" : "Sun"}: ${esc(d.desc).toLowerCase()}, ${esc(d.lo)} to ${esc(d.hi)}°C`).join(" · ")}</span></div></div>`;
+}
 function renderWeather(){
   const w = ED.weather, now = new Date(), st = solar(now), night = now > st.set || now < st.rise;
   $("#wxPlace").textContent = `${w.place||"Chelmsford"} and across Essex`;
@@ -3762,11 +3777,10 @@ function renderWeather(){
     return `<div class="day${isT?" today":""}${bon?" bonfire":""}" title="${esc(d.desc)}"><div class="dn">${isT?"Today":fmt(dt,{weekday:"short"})}</div><div class="dd">${bon?"Bonfire Night":fmt(dt,{day:"numeric",month:"short"})}</div>${wxIcon(d.icon,false)}<div class="hi">${esc(d.hi)}°</div><div class="lo">${esc(d.lo)}°</div>${Number(d.rain)>=10?`<div class="rn">${esc(d.rain)}% rain</div>`:`<div class="rn" style="color:var(--muted);font-weight:500">Dry</div>`}</div>`;
   }).join("");
   const mp = moonPhase(now), daylen = (st.set - st.rise)/36e5;
-  const bonDay = w.days.find(d => String(d.date).slice(5) === "11-05");
   $("#wxExtra").innerHTML = `
     <div class="tile">${wxIcon("sun",false)}<div><b>${fmt(st.rise,{hour:"2-digit",minute:"2-digit"})} · ${fmt(st.set,{hour:"2-digit",minute:"2-digit"})}</b><span>Sunrise and sunset · ${Math.floor(daylen)}h ${Math.round((daylen%1)*60)}m of daylight</span></div></div>
     <div class="tile">${moonSvg(mp.frac)}<div><b>${mp.name}</b><span>Moon is ${Math.round(mp.age)} days old</span></div></div>
-    <div class="tile">${wxIcon(bonDay?bonDay.icon:"partly",true)}<div><b>Bonfire Night outlook</b><span>${bonDay ? `${esc(bonDay.desc)}, ${esc(bonDay.lo)} to ${esc(bonDay.hi)}°C, ${Number(bonDay.rain)<10?"looking dry":esc(bonDay.rain)+"% chance of rain"}` : "Forecast coming soon"}</span></div></div>`;
+    ${outlookTile(w, today)}`;
   const warn = (w.warnings||[]).map(x=>`<b style="color:var(--red)">⚠ ${esc(x)}</b> `).join("");
   $("#wxNote").innerHTML = `${warn}Forecast: ${esc(w.source||"")} · <a href="${safeUrl(w.url)}" target="_blank" rel="noopener">Full Met Office forecast ↗</a> · Sun and moon times are calculated live for Chelmsford.`;
   if($("#miniWx")) $("#miniWx").innerHTML = `${wxIcon(w.now.icon, night)}<b>${esc(w.now.temp)}°C</b><span>${esc(w.place||"Chelmsford")}</span>`;
