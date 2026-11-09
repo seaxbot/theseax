@@ -17,7 +17,7 @@ Rules:
   - The post is the headline, the summary and the story link; Facebook shows the story's picture from the link.
 State: data/fb-posted.json. Use --dry-run to see what would be posted without posting.
 """
-import json, os, sys, urllib.parse, urllib.request
+import json, os, re, sys, urllib.parse, urllib.request
 from datetime import datetime, timezone, timedelta
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -88,8 +88,17 @@ def message(it, update):
     lines = [first]
     if summ:
         lines += ["", summ]
-    if place:
-        lines += ["", f"📍 {place}"]
+    credit = ""
+    for p in load(os.path.join(ROOT, "data", "portraits.json"), []):
+        try:
+            if re.search(p["match"], head):
+                credit = f'Photo: {p["creator"]} via {p.get("provider") or "Wikimedia Commons"}, {p["license"]}'
+                break
+        except Exception:
+            pass
+    tail = " · ".join(x for x in (f"📍 {place}" if place else "", credit) if x)
+    if tail:
+        lines += ["", tail]
     return "\n".join(lines).replace("—", ",")  # house style: no em dashes
 
 def graph(path, params=None, data=None):
