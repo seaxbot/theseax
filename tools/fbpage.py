@@ -12,7 +12,7 @@ Rules:
   - Picks from stories changed in the last 3 hours that have a story page on the site: breaking first, then the
     lead, then the front-page picks, then weight and freshness. Stories below weight 5 are only posted if they
     are breaking, the lead or on the front.
-  - Never posts the same story twice, except as an "Update:" when its headline has changed and it still
+  - Never posts the same story twice, except as an "Update:" when its headline has changed and it is breaking news, or the lead at least 4 hours after its first post;
     qualifies (weight 6 or more, breaking or the lead), and then only once more.
   - The post is the headline, the summary and the story link; Facebook shows the story's picture from the link.
 State: data/fb-posted.json. Use --dry-run to see what would be posted without posting.
@@ -140,7 +140,9 @@ def choose(now, posts, ed, ignore_clock=False):
         if not prev:
             return (it, False), ""
         head = " ".join(str(it.get("headline") or "").split())
-        if len(prev) < 2 and head != prev[-1]["headline"] and (float(it.get("weight") or 0) >= 6 or lead or brk):
+        # an "Update:" only for breaking news, or the lead at least 4 hours after its first post (a reworded headline on a normal story is not worth a second post)
+        since = now - (parse_t(prev[-1]["at"]) or now)
+        if len(prev) < 2 and head != prev[-1]["headline"] and (brk or (lead and since >= timedelta(hours=4))):
             return (it, True), ""
     return None, "nothing new and significant"
 
