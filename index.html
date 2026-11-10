@@ -757,6 +757,14 @@ h1,h2,h3,h4,.story h1,.lead h2,.card h3,.drow h4{letter-spacing:-.022em}
 .latest-more:hover{background:var(--ink);color:#fff}
 
 .seconds{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:24px;border-top:1px solid var(--ink)}
+/* ---------- On this day in Essex: a fixed calendar in data/onthisday.json, no newsroom tokens ---------- */
+.otd{display:flex;align-items:baseline;gap:6px 14px;flex-wrap:wrap;margin-top:22px;padding:12px 0;border-top:1px solid var(--ink);border-bottom:1px solid var(--hair)}
+.otd-h{font-size:11px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--ink);white-space:nowrap}
+.otd-y{font-family:var(--serif);font-weight:900;font-size:24px;line-height:1;color:var(--red);font-variant-numeric:tabular-nums}
+.otd-y small{display:block;font-family:var(--sans);font-size:10.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-top:3px}
+.otd p{margin:0;flex:1 1 320px;font-size:15px;line-height:1.45;color:var(--ink2)}
+.otd p a{color:var(--muted);font-size:12.5px;white-space:nowrap;text-decoration:none;margin-left:4px}
+.otd p a:hover{color:var(--red)}
 .sec{display:block;padding:16px 20px 18px;border-right:1px solid var(--hair);text-decoration:none;color:inherit}
 .sec:first-child{padding-left:0}.sec:last-child{border-right:0;padding-right:0}
 .sec-map{height:118px;overflow:hidden;border:1px solid var(--hair);background:#dfe9ee;margin-bottom:12px;position:relative}
@@ -1111,6 +1119,7 @@ footer .flinks a{text-decoration:underline}
       <article class="lead-pkg" id="leadPkg"></article>
     </div>
     <div class="seconds" id="seconds"></div>
+    <aside class="otd" id="otd" hidden aria-label="On this day in Essex"></aside>
   </div>
 </section>
 
@@ -4546,6 +4555,23 @@ function renderToday(){
 }
 
 { let rt; window.addEventListener("resize", () => { clearTimeout(rt); rt = setTimeout(() => { try{ renderToday(); }catch(_){} }, 200); }); }
+/* ---------- On this day in Essex (data/onthisday.json, keyed MM-DD; several entries on one day take turns by year) ---------- */
+{
+  let OTD = null;
+  const draw = () => {
+    const el = document.getElementById("otd"); if(!el || !OTD) return;
+    const p = Object.fromEntries(new Intl.DateTimeFormat("en-GB",{timeZone:"Europe/London",year:"numeric",month:"2-digit",day:"2-digit"}).formatToParts(new Date()).map(x => [x.type, x.value]));
+    const list = OTD[`${p.month}-${p.day}`];
+    if(!Array.isArray(list) || !list.length){ el.hidden = true; el.innerHTML = ""; return; }
+    const yr = Number(p.year), e = list[yr % list.length], ago = yr - Number(e.y);
+    const agoTxt = ago > 0 ? `${ago} year${ago === 1 ? "" : "s"} ago` : "";
+    const src = e.src ? ` <a href="${esc(e.src)}"${/^https?:/.test(e.src) ? ' target="_blank" rel="noopener"' : ""}>${esc(e.srcName || "Source")}${/^https?:/.test(e.src) ? " ↗" : ""}</a>` : "";
+    el.innerHTML = `<span class="otd-h">On this day</span><span class="otd-y">${esc(e.y)}${agoTxt ? `<small>${agoTxt}</small>` : ""}</span><p>${esc(e.t)}${src}</p>`;
+    el.hidden = false;
+  };
+  fetch("/data/onthisday.json?d=" + Math.floor(Date.now()/864e5), {cache:"no-store"}).then(r => r.ok ? r.json() : null).then(d => { OTD = d; draw(); }).catch(() => {});
+  setInterval(draw, 30*60*1000);   /* rolls over at midnight without a reload */
+}
 /* ---------- news: tiered ---------- */
 function renderNews(){
   const all = ED.stories.filter(inArea).slice().sort(byTime);
