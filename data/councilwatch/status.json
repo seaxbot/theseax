@@ -1,12 +1,12 @@
 {
- "at": "2026-11-09T16:42:00.204321+00:00",
+ "at": "2026-11-10T06:30:36.062757+00:00",
  "councils": {
   "thurrock": {
    "name": "Thurrock Council",
    "system": "mg",
    "base": "https://democracy.thurrock.gov.uk",
-   "meetings": 18,
-   "changed": 0,
+   "meetings": 19,
+   "changed": 2,
    "state": "ok",
    "note": ""
   },
@@ -23,8 +23,8 @@
    "name": "Epping Forest District Council",
    "system": "mg",
    "base": "https://rds.eppingforestdc.gov.uk",
-   "meetings": 15,
-   "changed": 0,
+   "meetings": 16,
+   "changed": 2,
    "state": "ok",
    "note": ""
   },
@@ -42,9 +42,9 @@
    "system": "mg",
    "base": "https://tdcdemocracy.tendringdc.gov.uk",
    "meetings": 12,
-   "changed": 2,
+   "changed": 0,
    "state": "ok",
-   "note": ""
+   "note": "meeting 502"
   },
   "harlow": {
    "name": "Harlow Council",
@@ -113,8 +113,8 @@
    "name": "Chelmsford City Council",
    "system": "chelmsford",
    "base": "https://www.chelmsford.gov.uk",
-   "meetings": 5,
-   "changed": 0,
+   "meetings": 6,
+   "changed": 1,
    "state": "ok",
    "note": ""
   },
@@ -138,16 +138,16 @@
   }
  },
  "requests": {
-  "thurrock": 25,
-  "southend": 29,
-  "epping": 19,
-  "maldon": 19,
-  "tendring": 16,
+  "thurrock": 26,
+  "southend": 27,
+  "epping": 21,
+  "maldon": 21,
+  "tendring": 15,
   "harlow": 3,
   "basildon": 3,
   "brentwood": 3,
   "uttlesford": 3,
   "rochford": 1,
-  "chelmsford": 6
+  "chelmsford": 7
  }
 }

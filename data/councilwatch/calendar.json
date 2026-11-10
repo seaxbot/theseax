@@ -1,5 +1,5 @@
 {
- "at": "2026-11-09T16:42:00.204321+00:00",
+ "at": "2026-11-10T06:30:36.062757+00:00",
  "meetings": [
   {
    "council": "epping",
@@ -129,21 +129,6 @@
    ]
   },
   {
-   "council": "tendring",
-   "councilName": "Tendring District Council",
-   "area": "tendring",
-   "committee": "Cabinet",
-   "date": "2026-11-13",
-   "time": "10.30 am",
-   "url": "https://tdcdemocracy.tendringdc.gov.uk/ieListDocuments.aspx?CId=134&MId=2822",
-   "items": [
-    "Cabinet Members' Items - Report of the Housing & Planning Portfolio Holder - A.4 - Adoption of the Conservation Area Character Appraisals and Management Plans for St Osyth and Manningtree & Mistley",
-    "Cabinet Members' Items - Report of the Portfolio Holder for Corporate Finance & Governance - A.1 - Financial Performance Report 2026/27 - General Update at the end of September 2026",
-    "Cabinet Members' Items - Report of the Corporate Finance & Governance Portfolio Holder - A.2 - The Local Council Tax Support Scheme, Discretionary Council Tax Exemptions / Discounts / Premiums for 2027/28 and Annual Minimum Revenue Provision Policy Statement 2027/28",
-    "Cabinet Members' Items - Report of the Housing & Planning Portfolio Holder - A.3 - Annual Housing Improvement, Performance & Assurance Report 2025/26"
-   ]
-  },
-  {
    "council": "chelmsford",
    "councilName": "Chelmsford City Council",
    "area": "chelmsford",
@@ -174,19 +159,6 @@
    ]
   },
   {
-   "council": "tendring",
-   "councilName": "Tendring District Council",
-   "area": "tendring",
-   "committee": "Planning Policy and Local Plan Committee",
-   "date": "2026-11-17",
-   "time": "6.00 pm",
-   "url": "https://tdcdemocracy.tendringdc.gov.uk/ieListDocuments.aspx?CId=340&MId=2943",
-   "items": [
-    "Report of the Corporate Director (Planning & Community) - A.1 - Tendring District Local Plan Review: Final Submission to the Secretary of State following Regulation 19 Consultation",
-    "Public Speaking"
-   ]
-  },
-  {
    "council": "southend",
    "councilName": "Southend-on-Sea City Council",
    "area": "southend",
@@ -206,7 +178,9 @@
    "date": "2026-11-17",
    "time": "7.00 pm",
    "url": "https://democracy.thurrock.gov.uk/ieListDocuments.aspx?CId=378&MId=6993",
-   "items": []
+   "items": [
+    "Ethical Framework Update"
+   ]
   },
   {
    "council": "epping",
@@ -216,7 +190,12 @@
    "date": "2026-11-17",
    "time": "7.00 pm",
    "url": "https://rds.eppingforestdc.gov.uk/ieListDocuments.aspx?CId=395&MId=12648",
-   "items": []
+   "items": [
+    "Cabinet Business",
+    "Organisation Performance – Quarter 2 Outturn and Priority Projects Update",
+    "Homelessness & Rough Sleeping Strategy 2026-2031",
+    "Debt Collection and Recovery Policy"
+   ]
   },
   {
    "council": "chelmsford",
@@ -319,16 +298,6 @@
    "items": []
   },
   {
-   "council": "tendring",
-   "councilName": "Tendring District Council",
-   "area": "tendring",
-   "committee": "Council",
-   "date": "2026-11-24",
-   "time": "7.30 pm",
-   "url": "https://tdcdemocracy.tendringdc.gov.uk/ieListDocuments.aspx?CId=130&MId=2837",
-   "items": []
-  },
-  {
    "council": "thurrock",
    "councilName": "Thurrock Council",
    "area": "south",
@@ -346,16 +315,6 @@
    "date": "2026-11-25",
    "time": "7.00 pm",
    "url": "https://democracy.maldon.gov.uk/ieListDocuments.aspx?CId=390&MId=4937",
-   "items": []
-  },
-  {
-   "council": "tendring",
-   "councilName": "Tendring District Council",
-   "area": "tendring",
-   "committee": "Planning Committee",
-   "date": "2026-11-26",
-   "time": "5.00 pm",
-   "url": "https://tdcdemocracy.tendringdc.gov.uk/ieListDocuments.aspx?CId=162&MId=2863",
    "items": []
   },
   {
@@ -409,16 +368,6 @@
    "items": []
   },
   {
-   "council": "tendring",
-   "councilName": "Tendring District Council",
-   "area": "tendring",
-   "committee": "Resources and Services Overview and Scrutiny Committee",
-   "date": "2026-12-01",
-   "time": "7.30 pm",
-   "url": "https://tdcdemocracy.tendringdc.gov.uk/ieListDocuments.aspx?CId=326&MId=2877",
-   "items": []
-  },
-  {
    "council": "thurrock",
    "councilName": "Thurrock Council",
    "area": "south",
@@ -456,6 +405,46 @@
    "date": "2026-12-03",
    "time": "7.30 pm",
    "url": "https://democracy.maldon.gov.uk/ieListDocuments.aspx?CId=134&MId=4731",
+   "items": []
+  },
+  {
+   "council": "chelmsford",
+   "councilName": "Chelmsford City Council",
+   "area": "chelmsford",
+   "committee": "Planning committee",
+   "date": "2026-12-08",
+   "time": "",
+   "url": "https://www.chelmsford.gov.uk/committee-meetings/planning-committee-december-2026/",
+   "items": []
+  },
+  {
+   "council": "thurrock",
+   "councilName": "Thurrock Council",
+   "area": "south",
+   "committee": "Planning Committee",
+   "date": "2026-12-08",
+   "time": "6.00 pm",
+   "url": "https://democracy.thurrock.gov.uk/ieListDocuments.aspx?CId=136&MId=6953",
+   "items": []
+  },
+  {
+   "council": "southend",
+   "councilName": "Southend-on-Sea City Council",
+   "area": "southend",
+   "committee": "People Overview & Scrutiny Committee",
+   "date": "2026-12-08",
+   "time": "6.30 pm",
+   "url": "https://democracy.southend.gov.uk/ieListDocuments.aspx?CId=610&MId=5092",
+   "items": []
+  },
+  {
+   "council": "epping",
+   "councilName": "Epping Forest District Council",
+   "area": "epping",
+   "committee": "Communities Scrutiny Committee",
+   "date": "2026-12-08",
+   "time": "7.00 pm",
+   "url": "https://rds.eppingforestdc.gov.uk/ieListDocuments.aspx?CId=859&MId=12664",
    "items": []
   }
  ]
