@@ -1,5 +1,5 @@
-name: Stock photos
-# Finds openly licensed stock photos (Openverse) for stories that ask for one. See tools/photos.py.
+name: Stock and Commons photos
+# Finds openly licensed photos for stories that ask for one: Wikimedia Commons file photos of a named subject ("commons") and Openverse stock photos ("photo"). See tools/photos.py.
 on:
   workflow_dispatch:
   push:
