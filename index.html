@@ -4556,25 +4556,29 @@ function renderToday(){
     const ico = (kind, night) => kind ? `<span class="wi" aria-hidden="true">${wxIcon(kind, night).replace(/#e6ebf2/gi,"#a7b2c1").replace(/#cfd7e2/gi,"#8d99aa").replace(/#b9c3d1/gi,"#7f8da0").replace(/#9aa5b5/gi,"#66748a").replace(/#e8e2c8/gi,"#c2a85e")}</span>` : "";
     const nightNow = now > st.set || now < st.rise;
     const parts = [`<span class="wk">Now</span>${ico(w.now.icon, nightNow)}<b>${esc(w.now.temp)}°C</b>&nbsp;${low(w.now.desc)}`];
-    if(today && ukHour < 16) parts.push(`<span class="wk">Later</span>${ico(today.icon, false)}high&nbsp;<b>${esc(today.hi)}°C</b>${rain(today)}`);
-    if(today && ukHour < 23) parts.push(`<span class="wk">Tonight</span>${ico(today.icon, true)}low&nbsp;<b>${esc(today.lo)}°C</b>`);
+    if(today && ukHour < 16) parts.push(`<!--opt--><span class="wk">Later</span>${ico(today.icon, false)}high&nbsp;<b>${esc(today.hi)}°C</b>${rain(today)}`);
+    if(today && ukHour < 23) parts.push(`<!--opt--><span class="wk">Tonight</span>${ico(today.icon, true)}low&nbsp;<b>${esc(today.lo)}°C</b>`);
     if(tmrw) parts.push(`<span class="wk">Tomorrow</span>${ico(tmrw.icon, false)}<b>${esc(tmrw.hi)}°C</b>${rain(tmrw)}`);
     const dayName = d => esc(new Intl.DateTimeFormat("en-GB",{weekday:"short",timeZone:"Europe/London"}).format(new Date(d.date + "T12:00:00Z")));
-    const day2 = days.find(d => d.date === ukDate(new Date(now.getTime()+2*864e5)));
-    /* with a weather warning showing, drop the day after tomorrow so the strip stays on one line */
-    if(day2) parts.push(`<span class="wk">${dayName(day2)}</span>${ico(day2.icon, false)}<b>${esc(day2.hi)}°C</b>${rain(day2)}`);
-    bits.push(`<a href="#weather" class="tb tb-wx">${parts.map(x => `<span class="wp">${x}</span>`).join('<span class="wsep" aria-hidden="true"></span>')}</a>`);
+    /* five days in all (owner's choice, Nov 2026): now, tomorrow and the three days after */
+    for(let n = 2; n <= 4; n++){
+      const dn = days.find(d => d.date === ukDate(new Date(now.getTime()+n*864e5)));
+      if(dn) parts.push(`<span class="wk">${dayName(dn)}</span>${ico(dn.icon, false)}<b>${esc(dn.hi)}°C</b>${rain(dn)}`);
+    }
+    bits.push(`<a href="#weather" class="tb tb-wx">${parts.map(x => x.startsWith("<!--opt-->") ? `<span class="wp opt">${x.slice(10)}</span>` : `<span class="wp">${x}</span>`).join('<span class="wsep" aria-hidden="true"></span>')}</a>`);
   }
   const warn = (w.warnings||[]).filter(warningLive)[0];
   if(warn) bits.unshift(`<a href="#weather" class="tb warn" title="${esc(warn)}" aria-label="${esc(warn)}"><i class="wtri" aria-hidden="true"></i>${shortWarning(warn)}</a>`);
   el.innerHTML = `<span class="tb-h">Weather</span>${bits.join("")}`;
-  /* one line only (owner's rule): on wide screens drop the furthest-ahead parts until the strip fits */
+  /* one line only (owner's rule): on wide screens drop "Tonight" then "Later" first, so the five days stay; then the furthest-ahead day */
   const strip = el.querySelector(".tb-wx");
   if(strip && window.matchMedia && window.matchMedia("(min-width:760px)").matches){
     let guard = 6;
     while(guard-- > 0 && strip.scrollWidth > strip.clientWidth + 1){
       const ps = strip.querySelectorAll(".wp"); if(ps.length <= 1) break;
-      const last = ps[ps.length - 1], sep = last.previousElementSibling;
+      const opts = strip.querySelectorAll(".wp.opt");
+      const last = opts.length ? opts[opts.length - 1] : ps[ps.length - 1];
+      const sep = last.previousElementSibling;
       last.remove(); if(sep && sep.classList.contains("wsep")) sep.remove();
     }
   }
