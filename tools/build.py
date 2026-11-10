@@ -94,9 +94,9 @@ POLICE_TAG_SKIP = {"court", "tribute", "fire", "ambulance"}
 POLICE_POLICY_RX = re.compile(r"\b(commissioners?|PFCC|mergers?|mega[ -]force|budgets?|precept|council tax|HMICFRS|inspections?|inspectorate)\b", re.I)
 POLICE_PHOTOS = ["bluelights", "bluelights-2"]  # img/topics/<name>.jpg and share cards img/og/<name>.jpg, rotated like the page
 POLICE_PICK = {}
-OG_JPG = {"hospital", "bluelights", "bluelights-2", "fireengine", "countyhall", "fog", "zoo", "stansted-1", "stansted-2", "stansted-3", "gaswork", "remembrance", "food", "harlowcollege"}
-LIBRARY_PHOTOS = POLICE_PHOTOS + ["fireengine", "countyhall", "fog", "zoo", "stansted-1", "stansted-2", "stansted-3", "gaswork", "remembrance", "food", "harlowcollege"]  # owner's library photos shown on story pages
-LIBRARY_ALT = {"fog": "fog over a footpath and flats at dusk", "fireengine": "a fire engine", "countyhall": "County Hall, Chelmsford, home of Essex County Council", "zoo": "visitors watching elephants at Colchester Zoo", "stansted-1": "check-in desks at London Stansted Airport", "stansted-2": "the terminal concourse at London Stansted Airport", "stansted-3": "a bus outside the terminal at London Stansted Airport", "gaswork": "a worker fitting yellow gas pipe in a trench", "remembrance": "poppy wreaths laid at a war memorial", "food": "a plate of roast chicken, grains and roasted vegetables", "harlowcollege": "the entrance to Harlow College"}
+OG_JPG = {"hospital", "bluelights", "bluelights-2", "fireengine", "countyhall", "fog", "zoo", "stansted-1", "stansted-2", "stansted-3", "gaswork", "remembrance", "food", "harlowcollege", "christmas"}
+LIBRARY_PHOTOS = POLICE_PHOTOS + ["fireengine", "countyhall", "fog", "zoo", "stansted-1", "stansted-2", "stansted-3", "gaswork", "remembrance", "food", "harlowcollege", "christmas"]  # owner's library photos shown on story pages
+LIBRARY_ALT = {"fog": "fog over a footpath and flats at dusk", "fireengine": "a fire engine", "countyhall": "County Hall, Chelmsford, home of Essex County Council", "zoo": "visitors watching elephants at Colchester Zoo", "stansted-1": "check-in desks at London Stansted Airport", "stansted-2": "the terminal concourse at London Stansted Airport", "stansted-3": "a bus outside the terminal at London Stansted Airport", "gaswork": "a worker fitting yellow gas pipe in a trench", "remembrance": "poppy wreaths laid at a war memorial", "food": "a plate of roast chicken, grains and roasted vegetables", "harlowcollege": "the entrance to Harlow College", "christmas": "red Christmas baubles on a fir garland"}
 # Essex County Council stories use the owner's photo of County Hall, Chelmsford (owner's rule, Nov 2026), ahead of
 # stock, town and map art. Road signs, police and fire photos still win. Same rule as the page's isCountyHallStory.
 ECC_RX = re.compile(r"\bEssex County Council\b|\bCounty Hall\b", re.I)
@@ -331,6 +331,26 @@ def is_remembrance(it, sec):
     h = str(it.get("headline") or "")
     return bool(REM_RX.search(h) and not REM_SKIP_RX.search(h))
 
+# Christmas stories with no specific photo use the owner's baubles photo (owner's rule, Nov 2026). Same test as the
+# page's seasonKindOf(s) === "christmas" (the earlier occasions win, and the same story types are skipped); every
+# specific photo rule, a stock photo and the Breaking News picture win. Same rule as the page's isChristmasStory.
+XMAS_RX = re.compile(r"christmas|festive|santa|carol service|\bcarols\b|nativity|\badvent\b|lights switch[- ]on", re.I)
+XMAS_BEFORE_RX = re.compile(r"new year'?s? eve|new year celebrations|new year fireworks|hogmanay|new year'?s? day|bonfire|firework|guy fawkes|hallowe'?en|trick[- ]or[- ]treat|pumpkin", re.I)
+
+def is_christmas(it, sec):
+    if sec == "sport":
+        return False
+    season = str(it.get("season") or "").lower()
+    if season:
+        return season == "christmas"
+    ic, tag = icon_of(it, sec), str(it.get("tag") or "")
+    if ic in {"police", "crime", "court", "appeal", "fire", "ambulance", "tribute"} or re.search(r"police|court|crime|appeal|tribute|fire|ambulance", tag, re.I):
+        return False
+    h = str(it.get("headline") or "")
+    if REM_SKIP_RX.search(h) or REM_RX.search(h) or XMAS_BEFORE_RX.search(h):
+        return False
+    return bool(XMAS_RX.search(h))
+
 # Major breaking news with no suitable photo shows the owner's Breaking News picture (owner's rule, Nov 2026):
 # img/topics/breaking.png on the page, img/og/breaking.png as the share card. Only a news story flagged breaking
 # with weight 9 or 10; every specific photo rule above it, and a stock photo, still win. Same rule as the page's
@@ -381,6 +401,9 @@ def card_of(it, sec):
     if is_major_breaking(it, sec) and not (PHOTOS.get(it.get("id")) and not it.get("noPhoto")) \
             and os.path.exists(os.path.join(ROOT, "img", "og", "breaking.png")):
         return "breaking"
+    if is_christmas(it, sec) and not (PHOTOS.get(it.get("id")) and not it.get("noPhoto")) \
+            and os.path.exists(os.path.join(ROOT, "img", "og", "christmas.jpg")):
+        return "christmas"
     if sec == "councilwatch":
         return "council"
     if sec == "features":
@@ -662,7 +685,8 @@ def story_page(sec, it, more):
                if card == "zoo" else "<b>London Stansted Airport</b>. Library image, not the scene of this story. Photo: London Stansted Airport."
                if card in STN_PHOTOS else "<b>Gas works</b>. Library image, not the scene of this story."
                if card == "gaswork" else "<b>Remembrance</b>. Library image, not the scene of this story."
-               if card == "remembrance" else "<b>Food and drink</b>. Library image, not the scene of this story."
+               if card == "remembrance" else "<b>Christmas</b>. Library image, not the scene of this story."
+               if card == "christmas" else "<b>Food and drink</b>. Library image, not the scene of this story."
                if card == "food" else "<b>Fog</b>. Library image, not the scene of this story."
                if card == "fog" else "<b>Library image</b>, not the scene of this story.")
         fig = (f'<figure class="stock"><img src="/img/topics/{card}.jpg?v=1" width="1200" height="655" '
