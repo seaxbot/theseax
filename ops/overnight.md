@@ -47,7 +47,7 @@ With a Python script, load edition.json, then:
 Exception: if a search shows that a road, rail or other live incident already in the edition has ended (for example a road has reopened), update that story's headline, summary, points and body to say so and remove its "developing" flag, as in ops/newsroom.md 3e; that alone justifies publishing. Change nothing else in the edition.
 
 ## 5. PUBLISH (only if you added something)
-In the checkout run: `python3 tools/publish.py --edition /tmp/edition.json --base <BASE>`
+In the checkout run: `python3 tools/publish.py --edition /tmp/edition.json --base <BASE>` (if it stops with "REPEATS", exit 5, rewrite the listed stories so each fact appears once across headline, summary and key points, then rerun)
 It prints PUSHED on success. If it says NEEDS MERGE or fails, run it once more with --force; if it still fails, stop and log the error.
 Then load the artifact tools (ToolSearch "select:mcp__claude-artifacts__db_get,mcp__claude-artifacts__db_write") and write the repository's edition.json to path "live/edition" on artifact slug 770a8e57-0047-4ce9-baaf-91e672bafb42 (read the path first for its version and pass it as ifVersion).
 

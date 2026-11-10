@@ -17,7 +17,9 @@ What it does, retrying up to 4 times if someone else pushes first:
      single-source length cap, opt-outs) to the whole edition
   5. writes edition.json, runs tools/build.py (story pages, sitemaps, feeds, briefing), commits and pushes
 If the build fails, the edition is still published without the built pages.
-Prints PUSHED <hash> on success. Exit codes: 0 pushed, 2 bad input, 3 needs a manual merge, 4 push failed.
+  Before writing, newsroom and sport desk files are checked for front-page repetition (tools/repeats.py): a new or
+  rewritten story that repeats a fact across its headline, summary and key points is refused (exit 5) until fixed.
+Prints PUSHED <hash> on success. Exit codes: 0 pushed, 2 bad input, 3 needs a manual merge, 4 push failed, 5 repeats.
 """
 import argparse, json, os, subprocess, sys, time
 from datetime import datetime, timezone, timedelta
@@ -25,6 +27,7 @@ from datetime import datetime, timezone, timedelta
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.join(ROOT, "tools"))
 import policy
+import repeats
 BOTS = {"The Seax newsroom", "The Seax sport desk", "The Seax council watch", "The Seax photo desk", "The Seax policy"}
 SPORT_KEYS = ("results", "fixtures", "tables")
 
@@ -115,6 +118,7 @@ def main():
     ap.add_argument("--base", help="commit the newsroom started from (git rev-parse HEAD at the start of the run)")
     ap.add_argument("--force", action="store_true", help="publish even if a person edited edition.json since --base")
     ap.add_argument("--author", help="commit author name")
+    ap.add_argument("--repeats-ok", default="", help="comma-separated story ids whose repetition flag you checked and judged wrong")
     a = ap.parse_args()
     if sum(map(bool, (a.edition, a.sport, a.councilwatch))) != 1:
         sys.exit("give exactly one of --edition, --sport or --councilwatch")
@@ -181,6 +185,20 @@ def main():
         print("policy:", json.dumps({k: (v if isinstance(v, int) else len(v)) for k, v in rep.items()}))
         if a.edition and (out.get("lead") or {}).get("id") not in {s.get("id") for s in out.get("stories", [])}:
             print("bad edition: the lead story was removed by the source policy (opt-out outlet); choose another lead"); sys.exit(2)
+        if a.edition or a.sport:
+            secs = ("stories", "community", "official", "sport") if a.edition else ("sport",)
+            fresh, older = repeats.check(out, live, secs)
+            ok = {x.strip() for x in a.repeats_ok.split(",") if x.strip()}
+            fresh = [f for f in fresh if f[0] not in ok]
+            if fresh:
+                print("REPEATS: these new or rewritten stories repeat a fact across headline, summary and key points "
+                      "(the front page shows all three). Rewrite them so each fact appears once, then rerun:")
+                for sid, probs in fresh:
+                    print(f"  {sid}: " + "; ".join(probs))
+                sys.exit(5)
+            if older:
+                print(f"older stories with repeats ({len(older)}; tidy up to 10 per run): " +
+                      " | ".join(f"{sid}: {'; '.join(p)}" for sid, p in older[:10]))
         dump(out, os.path.join(ROOT, "edition.json"))
         built = subprocess.run([sys.executable, os.path.join(ROOT, "tools", "build.py")], capture_output=True, text=True)
         if built.returncode:
