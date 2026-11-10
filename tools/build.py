@@ -94,9 +94,9 @@ POLICE_TAG_SKIP = {"court", "tribute", "fire", "ambulance"}
 POLICE_POLICY_RX = re.compile(r"\b(commissioners?|PFCC|mergers?|mega[ -]force|budgets?|precept|council tax|HMICFRS|inspections?|inspectorate)\b", re.I)
 POLICE_PHOTOS = ["bluelights", "bluelights-2"]  # img/topics/<name>.jpg and share cards img/og/<name>.jpg, rotated like the page
 POLICE_PICK = {}
-OG_JPG = {"hospital", "bluelights", "bluelights-2", "fireengine", "countyhall", "fog", "zoo", "stansted-1", "stansted-2", "stansted-3", "gaswork", "datacentre", "remembrance", "food", "harlowcollege", "christmas"}
-LIBRARY_PHOTOS = POLICE_PHOTOS + ["fireengine", "countyhall", "fog", "zoo", "stansted-1", "stansted-2", "stansted-3", "gaswork", "datacentre", "remembrance", "food", "harlowcollege", "christmas"]  # owner's library photos shown on story pages
-LIBRARY_ALT = {"fog": "fog over a footpath and flats at dusk", "fireengine": "a fire engine", "countyhall": "County Hall, Chelmsford, home of Essex County Council", "zoo": "visitors watching elephants at Colchester Zoo", "stansted-1": "check-in desks at London Stansted Airport", "stansted-2": "the terminal concourse at London Stansted Airport", "stansted-3": "a bus outside the terminal at London Stansted Airport", "gaswork": "a worker fitting yellow gas pipe in a trench", "datacentre": "server racks in a data centre", "remembrance": "poppy wreaths laid at a war memorial", "food": "a plate of roast chicken, grains and roasted vegetables", "harlowcollege": "the entrance to Harlow College", "christmas": "red Christmas baubles on a fir garland"}
+OG_JPG = {"hospital", "bluelights", "bluelights-2", "fireengine", "countyhall", "fog", "zoo", "stansted-1", "stansted-2", "stansted-3", "gaswork", "datacentre", "remembrance", "food", "harlowcollege", "christmas", "c2c"}
+LIBRARY_PHOTOS = POLICE_PHOTOS + ["fireengine", "countyhall", "fog", "zoo", "stansted-1", "stansted-2", "stansted-3", "gaswork", "datacentre", "remembrance", "food", "harlowcollege", "christmas", "c2c"]  # owner's library photos shown on story pages
+LIBRARY_ALT = {"fog": "fog over a footpath and flats at dusk", "fireengine": "a fire engine", "countyhall": "County Hall, Chelmsford, home of Essex County Council", "zoo": "visitors watching elephants at Colchester Zoo", "stansted-1": "check-in desks at London Stansted Airport", "stansted-2": "the terminal concourse at London Stansted Airport", "stansted-3": "a bus outside the terminal at London Stansted Airport", "gaswork": "a worker fitting yellow gas pipe in a trench", "datacentre": "server racks in a data centre", "remembrance": "poppy wreaths laid at a war memorial", "food": "a plate of roast chicken, grains and roasted vegetables", "harlowcollege": "the entrance to Harlow College", "christmas": "red Christmas baubles on a fir garland", "c2c": "a c2c train in white and magenta livery near Ripple Lane, Barking"}
 # Essex County Council stories use the owner's photo of County Hall, Chelmsford (owner's rule, Nov 2026), ahead of
 # stock, town and map art. Road signs, police and fire photos still win. Same rule as the page's isCountyHallStory.
 ECC_RX = re.compile(r"\bEssex County Council\b|\bCounty Hall\b", re.I)
@@ -327,6 +327,31 @@ def is_datacentre(it, sec):
     h = str(it.get("headline") or "")
     return bool(DC_RX.search(h) and not DC_BAD_RX.search(h + " " + str(it.get("summary") or "")))
 
+# c2c stories use the owner's chosen photo of c2c train 357 040 at Ripple Lane (owner's rule, Nov 2026): kitmasterbloke,
+# CC BY 4.0, via Wikimedia Commons, so it is always credited. A story is a c2c story when its headline or org names c2c.
+# Derailments and very serious injuries (deaths, hit by a train, serious or critical injuries, crashes) do not use it:
+# they show the Breaking News picture when major breaking, otherwise the map. A story about services resuming or
+# reopening after a derailment is a service story and keeps the photo. Same rule as the page's isC2cStory/isC2cBad.
+C2C_RX = re.compile(r"\bc2c\b", re.I)
+C2C_BAD_RX = re.compile(r"\b(derail\w*|killed|died|dies|death|dead|fatal\w*|seriously (hurt|injured)|serious(ly)? injur\w*|critical\w*|life[- ](threatening|changing)|hit by (a |the )?train|struck by (a |the )?train|(train|rail) (crash|collision)|collided)\b", re.I)
+C2C_OK_RX = re.compile(r"\b(resum\w*|reopen\w*|re-open\w*|back|again|restored|return\w*|repairs?)\b", re.I)
+C2C_CREDIT = {"by": "kitmasterbloke", "license": "CC BY 4.0", "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+              "source": "https://commons.wikimedia.org/wiki/File:357_040_Ripple_Lane_151025.jpg"}
+
+def is_c2c(it, sec):
+    if sec == "sport":
+        return False
+    return bool(C2C_RX.search(str(it.get("headline") or "")) or C2C_RX.search(str(it.get("org") or "")))
+
+def c2c_bad(it):
+    h = str(it.get("headline") or "")
+    t = h + " " + str(it.get("summary") or "")
+    if not C2C_BAD_RX.search(t):
+        return False
+    # follow-ups about services coming back after a derailment keep the photo, unless someone was hurt or killed
+    hurt = re.search(r"\b(killed|died|dies|death|dead|fatal\w*|injur\w*|hurt|critical\w*|life[- ](threatening|changing)|hit by|struck by)\b", t, re.I)
+    return bool(hurt) or not C2C_OK_RX.search(h)
+
 # Remembrance stories use the owner's poppy wreath photo (owner's rule, Nov 2026). Same test as the page's
 # seasonKindOf(s) === "remembrance": not sport, police, court, crime, appeal, fire, ambulance or tribute stories.
 REM_RX = re.compile(r"remembrance|armistice|\bpoppy|\bpoppies|cenotaph|war memorial|two[- ]minute silence|royal british legion", re.I)
@@ -397,6 +422,12 @@ def card_of(it, sec):
         return "datacentre"
     if is_remembrance(it, sec) and os.path.exists(os.path.join(ROOT, "img", "og", "remembrance.jpg")):
         return "remembrance"
+    if is_c2c(it, sec):
+        if not c2c_bad(it) and os.path.exists(os.path.join(ROOT, "img", "og", "c2c.jpg")):
+            return "c2c"
+        if is_major_breaking(it, sec) and os.path.exists(os.path.join(ROOT, "img", "og", "breaking.png")):
+            return "breaking"
+        return CARD_FOR.get(icon_of(it, sec), "news")
     if is_fog(it, sec) and os.path.exists(os.path.join(ROOT, "img", "og", "fog.jpg")):
         return "fog"
     road = road_of(it)
@@ -691,7 +722,7 @@ def story_page(sec, it, more):
     more_html = "".join(
         f'<a class="rel" href="/story/{E(m["id"])}/" style="--c:{ICON_COLOUR.get(icon_of(m, s), "#3a3f4b")}"><i></i><b>{E(m["headline"])}</b><span>{E(m.get("place") or "Essex")}</span></a>'
         for s, m in more)
-    fig = "" if card in ("countyhall", "harlowcollege", "fog", "zoo", "gaswork", "datacentre", "remembrance", "food") or is_zoo(it, sec) or is_stansted(it, sec) or is_food(it, sec) or it.get("showMap") is True else stock_figure(it, sec)
+    fig = "" if card in ("countyhall", "harlowcollege", "fog", "zoo", "gaswork", "datacentre", "remembrance", "food", "c2c") or is_zoo(it, sec) or is_stansted(it, sec) or is_food(it, sec) or is_c2c(it, sec) or it.get("showMap") is True else stock_figure(it, sec)
     if not fig and card in LIBRARY_PHOTOS:
         cap = ("<b>County Hall, Chelmsford</b>, home of Essex County Council. Library image."
                if card == "countyhall" else "<b>Harlow College</b>. Library image."
@@ -701,7 +732,10 @@ def story_page(sec, it, more):
                if card == "gaswork" else "<b>Data centre</b>. Library image, not the scene of this story."
                if card == "datacentre" else "<b>Remembrance</b>. Library image, not the scene of this story."
                if card == "remembrance" else "<b>Christmas</b>. Library image, not the scene of this story."
-               if card == "christmas" else "<b>Food and drink</b>. Library image, not the scene of this story."
+               if card == "christmas" else ('<b>c2c train</b>. Library image, not the scene of this story. Photo: kitmasterbloke, '
+               f'<a href="{C2C_CREDIT["licenseUrl"]}" target="_blank" rel="noopener">CC BY 4.0</a>, via '
+               f'<a href="{C2C_CREDIT["source"]}" target="_blank" rel="noopener">Wikimedia Commons</a>, cropped.')
+               if card == "c2c" else "<b>Food and drink</b>. Library image, not the scene of this story."
                if card == "food" else "<b>Fog</b>. Library image, not the scene of this story."
                if card == "fog" else "<b>Library image</b>, not the scene of this story.")
         fig = (f'<figure class="stock"><img src="/img/topics/{card}.jpg?v=1" width="1200" height="655" '
@@ -880,7 +914,7 @@ def photo_credits():
         lic_html = f'<a href="{E(c["licenseUrl"])}" rel="license noopener">{E(lic)}</a>' if c.get("licenseUrl") else E(lic)
         rows.append(f'<li>{E(c["what"])}: photo by {E(c["by"])}, {lic_html}, via <a href="{E(c["source"])}" rel="noopener">Wikimedia Commons</a></li>')
     return ('<h2 id="photo-credits">Photo credits</h2>\n<p>Town photographs on The Seax come from Wikimedia Commons and are used under the licences shown. '
-            'They have been resized for the web and are shared under the same terms. Our map artwork is our own.</p>\n<ul class="credits">' + "".join(rows) + '<li>London Stansted Airport library images: photos by London Stansted Airport</li>' + "".join(f'<li>{E(p["name"])} (file photo): photo by {E(p["creator"])}, <a href="{E(p["licenseUrl"])}" rel="license noopener">{E(p["license"])}</a>, via <a href="{E(p["source"])}" rel="noopener">{E(p.get("provider") or "source")}</a>; set on a blurred background and shared under the same licence</li>' for p in PORTRAITS) + "</ul>\n")
+            'They have been resized for the web and are shared under the same terms. Our map artwork is our own.</p>\n<ul class="credits">' + "".join(rows) + '<li>London Stansted Airport library images: photos by London Stansted Airport</li>' + f'<li>c2c train 357 040 at Ripple Lane (used on c2c stories): photo by kitmasterbloke, <a href="{C2C_CREDIT["licenseUrl"]}" rel="license noopener">CC BY 4.0</a>, via <a href="{C2C_CREDIT["source"]}" rel="noopener">Wikimedia Commons</a>; cropped and resized</li>' + "".join(f'<li>{E(p["name"])} (file photo): photo by {E(p["creator"])}, <a href="{E(p["licenseUrl"])}" rel="license noopener">{E(p["license"])}</a>, via <a href="{E(p["source"])}" rel="noopener">{E(p.get("provider") or "source")}</a>; set on a blurred background and shared under the same licence</li>' for p in PORTRAITS) + "</ul>\n")
 
 
 def about_page():
