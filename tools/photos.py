@@ -4,7 +4,8 @@ from Openverse (all openly licensed; no API key needed).
 
 Runs on GitHub Actions after each edition is published. For every story that asks for a photo,
 either with a "photo" keyword in edition.json (set by the newsroom) or in data/photo-requests.json
-(set by the owner: {"story-id": "keyword"}), it:
+(set by the owner: {"story-id": "keyword"}, or {"story-id": "File:<exact Wikimedia Commons file name>"} to pin one
+Commons photo), it:
   1. refuses sensitive stories (crime, courts, deaths, crashes, health, tributes),
   2. searches Openverse for a wide, large image licensed for commercial use (CC0, public domain, CC BY, CC BY-SA),
   3. saves a 1200px copy to img/stock/<story-id>.jpg and the credit to data/photos.json.
@@ -133,6 +134,25 @@ def commons_search(kw):
     good.sort(key=lambda t: (-t[0], -t[1], -t[2]))
     return [g[3] for g in good][:5]
 
+def commons_file(name):
+    """One exact Commons file the owner chose (data/photo-requests.json value "File:..."), with its credit and licence."""
+    name = name if name.startswith("File:") else "File:" + name
+    q = urllib.parse.urlencode({"action": "query", "format": "json", "titles": name, "prop": "imageinfo",
+                                "iiprop": "url|size|mime|extmetadata", "iiurlwidth": 1200})
+    for pg in ((get(f"{COMMONS}?{q}").get("query") or {}).get("pages") or {}).values():
+        ii = (pg.get("imageinfo") or [{}])[0]
+        md = ii.get("extmetadata") or {}
+        meta = lambda k: _plain((md.get(k) or {}).get("value"))
+        if not ii:
+            continue
+        title = re.sub(r"^File:|\.[a-z]+$", "", pg.get("title") or "", flags=re.I).replace("_", " ")
+        return [{"url": ii.get("thumburl") or ii.get("url"),
+                 "title": re.sub(r"\s*-\s*geograph\.org\.uk\s*-\s*\d+\s*$", "", meta("ObjectName") or title),
+                 "creator": meta("Artist") or "Wikimedia Commons contributor", "creator_url": "",
+                 "license": meta("LicenseShortName"), "license_url": meta("LicenseUrl"),
+                 "foreign_landing_url": ii.get("descriptionurl") or "", "source": "Wikimedia Commons", "kind": "commons"}]
+    return []
+
 def save_image(url, path):
     from PIL import Image, ImageFile
     ImageFile.LOAD_TRUNCATED_IMAGES = True
@@ -177,6 +197,12 @@ def main():
             break
         n += 1
         cands = []
+        if kw.startswith("File:"):  # the owner pinned one exact Wikimedia Commons file to this story
+            try:
+                cands = [dict(r, _kw=kw[5:]) for r in commons_file(kw)]
+            except Exception as e:
+                print(f"commons file failed for {sid} ({kw}): {e}")
+            kw = ""
         if cm:
             try:
                 cands = [dict(r, _kw=cm) for r in commons_search(cm)]
