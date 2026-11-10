@@ -1,12 +1,12 @@
 {
- "at": "2026-11-10T06:30:36.062757+00:00",
+ "at": "2026-11-10T16:28:39.798873+00:00",
  "councils": {
   "thurrock": {
    "name": "Thurrock Council",
    "system": "mg",
    "base": "https://democracy.thurrock.gov.uk",
    "meetings": 19,
-   "changed": 2,
+   "changed": 0,
    "state": "ok",
    "note": ""
   },
@@ -14,7 +14,7 @@
    "name": "Southend-on-Sea City Council",
    "system": "mg",
    "base": "https://democracy.southend.gov.uk",
-   "meetings": 18,
+   "meetings": 19,
    "changed": 1,
    "state": "ok",
    "note": ""
@@ -24,7 +24,7 @@
    "system": "mg",
    "base": "https://rds.eppingforestdc.gov.uk",
    "meetings": 16,
-   "changed": 2,
+   "changed": 0,
    "state": "ok",
    "note": ""
   },
@@ -41,10 +41,10 @@
    "name": "Tendring District Council",
    "system": "mg",
    "base": "https://tdcdemocracy.tendringdc.gov.uk",
-   "meetings": 12,
+   "meetings": 0,
    "changed": 0,
-   "state": "ok",
-   "note": "meeting 502"
+   "state": "unreachable",
+   "note": "calendar 502 HTTP Error 502: Bad Gateway"
   },
   "harlow": {
    "name": "Harlow Council",
@@ -138,11 +138,11 @@
   }
  },
  "requests": {
-  "thurrock": 26,
-  "southend": 27,
-  "epping": 21,
-  "maldon": 21,
-  "tendring": 15,
+  "thurrock": 22,
+  "southend": 22,
+  "epping": 22,
+  "maldon": 19,
+  "tendring": 3,
   "harlow": 3,
   "basildon": 3,
   "brentwood": 3,
