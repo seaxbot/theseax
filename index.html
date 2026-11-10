@@ -1073,6 +1073,7 @@ footer .flinks a{text-decoration:underline}
     <div class="nav-scroll">
     <button data-go="top">Home</button>
     <button data-go="news">News</button>
+    <button data-go="history">History</button>
     <button data-go="sport">Sport</button>
     <button data-go="around">Around Essex</button>
     <button data-go="desk">Public Services</button>
@@ -1083,7 +1084,6 @@ footer .flinks a{text-decoration:underline}
     <button data-go="whatson">What's On</button>
     <button data-go="specials">Deals</button>
     <button data-go="culture">Culture</button>
-    <button data-go="history">History</button>
     <button data-go="vital">Vital Info</button>
         </div>
     <button class="srch-btn" data-srchopen aria-label="Search The Seax" title="Search (press /)"><svg viewBox="0 0 24 24" width="17" height="17" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5" fill="none" stroke="currentColor" stroke-width="2.4"/><path d="M15.5 15.5 21 21" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg><span>Search</span></button>
@@ -1142,6 +1142,13 @@ footer .flinks a{text-decoration:underline}
     <div class="bh"><h2>News<small id="newsCount"></small></h2><div class="tools" id="newsTools"></div></div>
     <div class="grid news-grid" id="newsGrid"></div>
     <div class="more-news" id="moreNews"></div>
+  </div>
+</section>
+
+<section class="block" id="history" hidden>
+  <div class="wrap">
+    <div class="bh"><h2>Essex History<small id="histSub">On this day, all month</small></h2></div>
+    <ol class="hist" id="histList"></ol>
   </div>
 </section>
 
@@ -1247,12 +1254,6 @@ footer .flinks a{text-decoration:underline}
   </div>
 </section>
 
-<section class="block" id="history" hidden>
-  <div class="wrap">
-    <div class="bh"><h2>Essex History<small id="histSub">On this day, all month</small></h2></div>
-    <ol class="hist" id="histList"></ol>
-  </div>
-</section>
 
 <section class="block" id="vital">
   <div class="wrap">
