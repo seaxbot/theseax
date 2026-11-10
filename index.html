@@ -671,7 +671,7 @@ h1,h2,h3,h4,.story h1,.lead h2,.card h3,.drow h4{letter-spacing:-.022em}
 .cw-more{margin-top:14px}
 @media (max-width:900px){.cw-wrap{grid-template-columns:1fr}.cw-cards{grid-template-columns:1fr}}
 
-#sport{--pillar:#1f8a4c} #weather{--pillar:#2f6fa8} #whatson{--pillar:#c27c1a} #culture{--pillar:#5b3f8c}
+#sport{--pillar:#1f8a4c} #weather{--pillar:#2f6fa8} #whatson{--pillar:#c27c1a} #culture{--pillar:#5b3f8c} #history{--pillar:#8a6a3b}
 #features{--pillar:#9a5b2e} #escape{--pillar:#2c6e8f} #vital{--pillar:#b23a48} #specials{--pillar:#a8761a} #sources{--pillar:#55606e}
 .bh{border-top:4px solid var(--pillar,var(--ink));padding-top:14px;position:relative}
 .bh h2{display:flex;align-items:baseline;flex-wrap:wrap;gap:0 4px;font-size:36px;letter-spacing:-.03em}
@@ -765,6 +765,19 @@ h1,h2,h3,h4,.story h1,.lead h2,.card h3,.drow h4{letter-spacing:-.022em}
 .otd p{margin:0;flex:1 1 320px;font-size:15px;line-height:1.45;color:var(--ink2)}
 .otd p a{color:var(--muted);font-size:12.5px;white-space:nowrap;text-decoration:none;margin-left:4px}
 .otd p a:hover{color:var(--red)}
+.otd p a.otd-more{color:var(--ink);font-weight:700}
+/* This month in Essex history: the whole month's calendar as a list */
+.hist{list-style:none;margin:18px 0 0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:0 36px}
+.hist li{display:grid;grid-template-columns:74px 1fr;gap:12px;padding:13px 0;border-bottom:1px solid var(--hair);align-items:baseline}
+.hist .d{font-family:var(--serif);font-weight:900;font-size:19px;line-height:1.1;color:var(--ink)}
+.hist .d small{display:block;font-family:var(--sans);font-size:12px;font-weight:700;color:var(--pillar);letter-spacing:.02em;margin-top:2px}
+.hist p{margin:0;font-size:14.5px;line-height:1.45;color:var(--ink2)}
+.hist p b{color:var(--ink)}
+.hist p a{color:var(--muted);font-size:12.5px;white-space:nowrap;text-decoration:none;margin-left:4px}
+.hist p a:hover{color:var(--red)}
+.hist li.today{background:#fbf3df;margin:0 -10px;padding:13px 10px;border-radius:4px}
+.hist li.today .d::after{content:"Today";display:inline-block;margin-left:6px;font-family:var(--sans);font-size:10px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;background:var(--red);color:#fff;padding:2px 6px;border-radius:3px;vertical-align:middle}
+@media (max-width:760px){ .hist{grid-template-columns:1fr} }
 .sec{display:block;padding:16px 20px 18px;border-right:1px solid var(--hair);text-decoration:none;color:inherit}
 .sec:first-child{padding-left:0}.sec:last-child{border-right:0;padding-right:0}
 .sec-map{height:118px;overflow:hidden;border:1px solid var(--hair);background:#dfe9ee;margin-bottom:12px;position:relative}
@@ -1070,6 +1083,7 @@ footer .flinks a{text-decoration:underline}
     <button data-go="whatson">What's On</button>
     <button data-go="specials">Deals</button>
     <button data-go="culture">Culture</button>
+    <button data-go="history">History</button>
     <button data-go="vital">Vital Info</button>
         </div>
     <button class="srch-btn" data-srchopen aria-label="Search The Seax" title="Search (press /)"><svg viewBox="0 0 24 24" width="17" height="17" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5" fill="none" stroke="currentColor" stroke-width="2.4"/><path d="M15.5 15.5 21 21" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg><span>Search</span></button>
@@ -1230,6 +1244,13 @@ footer .flinks a{text-decoration:underline}
     <div class="bh"><h2>Culture<small>Panto, theatre, exhibitions and screenings across the county</small></h2><div class="tools" id="culTools"></div></div>
     <div class="culture" id="culture-grid"></div>
     <div class="show-all" id="culMore"></div>
+  </div>
+</section>
+
+<section class="block" id="history" hidden>
+  <div class="wrap">
+    <div class="bh"><h2>Essex History<small id="histSub">On this day, all month</small></h2></div>
+    <ol class="hist" id="histList"></ol>
   </div>
 </section>
 
@@ -4566,11 +4587,27 @@ function renderToday(){
     const yr = Number(p.year), e = list[yr % list.length], ago = yr - Number(e.y);
     const agoTxt = ago > 0 ? `${ago} year${ago === 1 ? "" : "s"} ago` : "";
     const src = e.src ? ` <a href="${esc(e.src)}"${/^https?:/.test(e.src) ? ' target="_blank" rel="noopener"' : ""}>${esc(e.srcName || "Source")}${/^https?:/.test(e.src) ? " ↗" : ""}</a>` : "";
-    el.innerHTML = `<span class="otd-h">On this day</span><span class="otd-y">${esc(e.y)}${agoTxt ? `<small>${agoTxt}</small>` : ""}</span><p>${esc(e.t)}${src}</p>`;
+    el.innerHTML = `<span class="otd-h">On this day</span><span class="otd-y">${esc(e.y)}${agoTxt ? `<small>${agoTxt}</small>` : ""}</span><p>${esc(e.t)}${src} <a class="otd-more" href="#history">More this month →</a></p>`;
     el.hidden = false;
   };
-  fetch("/data/onthisday.json?d=" + Math.floor(Date.now()/864e5), {cache:"no-store"}).then(r => r.ok ? r.json() : null).then(d => { OTD = d; draw(); }).catch(() => {});
-  setInterval(draw, 30*60*1000);   /* rolls over at midnight without a reload */
+  const drawMonth = () => {
+    const sec = document.getElementById("history"), ol = document.getElementById("histList"); if(!sec || !ol || !OTD) return;
+    const p = Object.fromEntries(new Intl.DateTimeFormat("en-GB",{timeZone:"Europe/London",month:"2-digit",day:"2-digit"}).formatToParts(new Date()).map(x => [x.type, x.value]));
+    const monthName = new Intl.DateTimeFormat("en-GB",{timeZone:"Europe/London",month:"long"}).format(new Date());
+    const rows = Object.keys(OTD).filter(k => k.slice(0,2) === p.month).sort()
+      .flatMap(k => OTD[k].slice().sort((a,b) => a.y - b.y).map(e => ({k, e})));
+    if(!rows.length){ sec.hidden = true; return; }
+    const today = `${p.month}-${p.day}`;
+    ol.innerHTML = rows.map(({k, e}) => {
+      const ext = /^https?:/.test(e.src || "");
+      const src = e.src ? ` <a href="${esc(e.src)}"${ext ? ' target="_blank" rel="noopener"' : ""}>${esc(e.srcName || "Source")}${ext ? " ↗" : ""}</a>` : "";
+      return `<li${k === today ? ' class="today"' : ""}><span class="d">${Number(k.slice(3))} ${esc(monthName.slice(0,3))}<small>${esc(e.y)}</small></span><p>${esc(e.t)}${src}</p></li>`;
+    }).join("");
+    document.getElementById("histSub").textContent = `What happened in Essex this ${monthName}, year by year`;
+    sec.hidden = false;
+  };
+  fetch("/data/onthisday.json?d=" + Math.floor(Date.now()/864e5), {cache:"no-store"}).then(r => r.ok ? r.json() : null).then(d => { OTD = d; draw(); drawMonth(); }).catch(() => {});
+  setInterval(() => { draw(); drawMonth(); }, 30*60*1000);   /* rolls over at midnight without a reload */
 }
 /* ---------- news: tiered ---------- */
 function renderNews(){
