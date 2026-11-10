@@ -758,7 +758,8 @@ h1,h2,h3,h4,.story h1,.lead h2,.card h3,.drow h4{letter-spacing:-.022em}
 
 .seconds{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:24px;border-top:1px solid var(--ink)}
 /* ---------- On this day in Essex: a fixed calendar in data/onthisday.json, no newsroom tokens ---------- */
-.otd{display:flex;align-items:baseline;gap:6px 14px;flex-wrap:wrap;margin-top:22px;padding:12px 0;border-top:1px solid var(--ink);border-bottom:1px solid var(--hair)}
+.otd-wrap{padding-top:30px}
+.otd{display:flex;align-items:baseline;gap:6px 14px;flex-wrap:wrap;margin-top:0;padding:12px 0;border-top:1px solid var(--ink);border-bottom:1px solid var(--hair)}
 .otd-h{font-size:11px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--ink);white-space:nowrap}
 .otd-y{font-family:var(--serif);font-weight:900;font-size:24px;line-height:1;color:var(--red);font-variant-numeric:tabular-nums}
 .otd-y small{display:block;font-family:var(--sans);font-size:10.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-top:3px}
@@ -778,6 +779,8 @@ h1,h2,h3,h4,.story h1,.lead h2,.card h3,.drow h4{letter-spacing:-.022em}
 .hist li.today{background:#fbf3df;margin:0 -10px;padding:13px 10px;border-radius:4px}
 .hist li.today .d::after{content:"Today";display:inline-block;margin-left:6px;font-family:var(--sans);font-size:10px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;background:var(--red);color:#fff;padding:2px 6px;border-radius:3px;vertical-align:middle}
 @media (max-width:760px){ .hist{grid-template-columns:1fr} }
+.hist-hide{background:none;border:1px solid var(--ink);border-radius:99px;padding:6px 14px;font-weight:700;font-size:12.5px;cursor:pointer;color:var(--ink)}
+.hist-hide:hover{background:var(--ink);color:#fff}
 .sec{display:block;padding:16px 20px 18px;border-right:1px solid var(--hair);text-decoration:none;color:inherit}
 .sec:first-child{padding-left:0}.sec:last-child{border-right:0;padding-right:0}
 .sec-map{height:118px;overflow:hidden;border:1px solid var(--hair);background:#dfe9ee;margin-bottom:12px;position:relative}
@@ -1073,7 +1076,6 @@ footer .flinks a{text-decoration:underline}
     <div class="nav-scroll">
     <button data-go="top">Home</button>
     <button data-go="news">News</button>
-    <button data-go="history">History</button>
     <button data-go="sport">Sport</button>
     <button data-go="around">Around Essex</button>
     <button data-go="desk">Public Services</button>
@@ -1085,6 +1087,7 @@ footer .flinks a{text-decoration:underline}
     <button data-go="specials">Deals</button>
     <button data-go="culture">Culture</button>
     <button data-go="vital">Vital Info</button>
+    <button data-go="history">History</button>
         </div>
     <button class="srch-btn" data-srchopen aria-label="Search The Seax" title="Search (press /)"><svg viewBox="0 0 24 24" width="17" height="17" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5" fill="none" stroke="currentColor" stroke-width="2.4"/><path d="M15.5 15.5 21 21" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg><span>Search</span></button>
   </div>
@@ -1133,7 +1136,6 @@ footer .flinks a{text-decoration:underline}
       <article class="lead-pkg" id="leadPkg"></article>
     </div>
     <div class="seconds" id="seconds"></div>
-    <aside class="otd" id="otd" hidden aria-label="On this day in Essex"></aside>
   </div>
 </section>
 
@@ -1145,9 +1147,11 @@ footer .flinks a{text-decoration:underline}
   </div>
 </section>
 
+<div class="wrap otd-wrap"><aside class="otd" id="otd" hidden aria-label="On this day in Essex"></aside></div>
+
 <section class="block" id="history" hidden>
   <div class="wrap">
-    <div class="bh"><h2>Essex History<small id="histSub">On this day, all month</small></h2></div>
+    <div class="bh"><h2>Essex History<small id="histSub">On this day, all month</small></h2><div class="tools"><button class="hist-hide" id="histHide" type="button">Hide ✕</button></div></div>
     <ol class="hist" id="histList"></ol>
   </div>
 </section>
@@ -4605,8 +4609,17 @@ function renderToday(){
       return `<li${k === today ? ' class="today"' : ""}><span class="d">${Number(k.slice(3))} ${esc(monthName.slice(0,3))}<small>${esc(e.y)}</small></span><p>${esc(e.t)}${src}</p></li>`;
     }).join("");
     document.getElementById("histSub").textContent = `What happened in Essex this ${monthName}, year by year`;
-    sec.hidden = false;
+    sec.dataset.ready = "1";   /* shown only when a reader asks for it */
   };
+  /* runs in the capture phase, before the page's own scroll handlers, so the section is visible when they scroll to it */
+  document.addEventListener("click", ev => {
+    const t = ev.target.closest && ev.target.closest('[data-go="history"], a[href="#history"], #histHide');
+    if(!t) return;
+    const sec = document.getElementById("history"); if(!sec) return;
+    if(t.id === "histHide"){ sec.hidden = true; const o = document.getElementById("otd"); if(o && !o.hidden) o.scrollIntoView({block:"center"}); return; }
+    if(sec.dataset.ready) sec.hidden = false;
+    else { ev.preventDefault(); ev.stopImmediatePropagation(); const o = document.getElementById("otd"); if(o) o.scrollIntoView({behavior:"smooth", block:"center"}); }
+  }, true);
   fetch("/data/onthisday.json?d=" + Math.floor(Date.now()/864e5), {cache:"no-store"}).then(r => r.ok ? r.json() : null).then(d => { OTD = d; draw(); drawMonth(); }).catch(() => {});
   setInterval(() => { draw(); drawMonth(); }, 30*60*1000);   /* rolls over at midnight without a reload */
 }
