@@ -3658,7 +3658,8 @@ function normalise(d){
   o.official.forEach(s => { if(/court|jailed|sentenced|convicted|charged/i.test((s.tag||"") + " " + s.headline) && s.kind === "police" && /court/i.test(s.tag||"")) s.kind = "court"; });
   o.hearings = (Array.isArray(o.hearings) && o.hearings.length ? o.hearings : EMBED.hearings).filter(x => x && x.title && x.date);
   o.culture = (Array.isArray(o.culture) && o.culture.length ? o.culture : EMBED.culture).filter(x => x && x.title && x.start);
-  o.deals = (Array.isArray(o.deals) && o.deals.length ? o.deals : EMBED.deals).filter(x => x && x.title && x.url);
+  /* a deal with an "ends" date drops off the page by itself once that date has passed */
+  o.deals = (Array.isArray(o.deals) && o.deals.length ? o.deals : EMBED.deals).filter(x => x && x.title && x.url && !(x.ends && new Date(x.ends) < new Date()));
   o.features = [];
   o.councilwatch = (Array.isArray(o.councilwatch) ? o.councilwatch : []).map(cleanStory).filter(Boolean).map(s => { s.tag = s.tag || "Council Watch"; return s; });
   return o;
