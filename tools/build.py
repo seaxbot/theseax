@@ -94,9 +94,9 @@ POLICE_TAG_SKIP = {"court", "tribute", "fire", "ambulance"}
 POLICE_POLICY_RX = re.compile(r"\b(commissioners?|PFCC|mergers?|mega[ -]force|budgets?|precept|council tax|HMICFRS|inspections?|inspectorate)\b", re.I)
 POLICE_PHOTOS = ["bluelights", "bluelights-2"]  # img/topics/<name>.jpg and share cards img/og/<name>.jpg, rotated like the page
 POLICE_PICK = {}
-OG_JPG = {"hospital", "bluelights", "bluelights-2", "fireengine", "countyhall", "fog", "zoo", "stansted-1", "stansted-2", "stansted-3", "gaswork", "remembrance", "food", "harlowcollege", "christmas"}
-LIBRARY_PHOTOS = POLICE_PHOTOS + ["fireengine", "countyhall", "fog", "zoo", "stansted-1", "stansted-2", "stansted-3", "gaswork", "remembrance", "food", "harlowcollege", "christmas"]  # owner's library photos shown on story pages
-LIBRARY_ALT = {"fog": "fog over a footpath and flats at dusk", "fireengine": "a fire engine", "countyhall": "County Hall, Chelmsford, home of Essex County Council", "zoo": "visitors watching elephants at Colchester Zoo", "stansted-1": "check-in desks at London Stansted Airport", "stansted-2": "the terminal concourse at London Stansted Airport", "stansted-3": "a bus outside the terminal at London Stansted Airport", "gaswork": "a worker fitting yellow gas pipe in a trench", "remembrance": "poppy wreaths laid at a war memorial", "food": "a plate of roast chicken, grains and roasted vegetables", "harlowcollege": "the entrance to Harlow College", "christmas": "red Christmas baubles on a fir garland"}
+OG_JPG = {"hospital", "bluelights", "bluelights-2", "fireengine", "countyhall", "fog", "zoo", "stansted-1", "stansted-2", "stansted-3", "gaswork", "datacentre", "remembrance", "food", "harlowcollege", "christmas"}
+LIBRARY_PHOTOS = POLICE_PHOTOS + ["fireengine", "countyhall", "fog", "zoo", "stansted-1", "stansted-2", "stansted-3", "gaswork", "datacentre", "remembrance", "food", "harlowcollege", "christmas"]  # owner's library photos shown on story pages
+LIBRARY_ALT = {"fog": "fog over a footpath and flats at dusk", "fireengine": "a fire engine", "countyhall": "County Hall, Chelmsford, home of Essex County Council", "zoo": "visitors watching elephants at Colchester Zoo", "stansted-1": "check-in desks at London Stansted Airport", "stansted-2": "the terminal concourse at London Stansted Airport", "stansted-3": "a bus outside the terminal at London Stansted Airport", "gaswork": "a worker fitting yellow gas pipe in a trench", "datacentre": "server racks in a data centre", "remembrance": "poppy wreaths laid at a war memorial", "food": "a plate of roast chicken, grains and roasted vegetables", "harlowcollege": "the entrance to Harlow College", "christmas": "red Christmas baubles on a fir garland"}
 # Essex County Council stories use the owner's photo of County Hall, Chelmsford (owner's rule, Nov 2026), ahead of
 # stock, town and map art. Road signs, police and fire photos still win. Same rule as the page's isCountyHallStory.
 ECC_RX = re.compile(r"\bEssex County Council\b|\bCounty Hall\b", re.I)
@@ -315,6 +315,18 @@ def is_gaswork(it, sec):
     t = h + " " + str(it.get("summary") or "")
     return bool(GAS_HEAD_RX.search(h) and GAS_WORK_RX.search(t) and not GAS_BAD_RX.search(t))
 
+# Data centre stories (plans, objections, petitions, approvals) use the owner's data centre photo (owner's rule,
+# Nov 2026), ahead of County Hall, road signs, stock, town and map art. Fires, explosions, deaths, injuries and
+# court cases keep the normal rules. Same rule as the page's isDataCentreStory.
+DC_RX = re.compile(r"\bdata[- ]?cent(re|er)s?\b|\bhyperscale\b|\bserver farms?\b", re.I)
+DC_BAD_RX = re.compile(r"\b(explo\w*|blast|fire|blaze|flames|evacuat\w*|killed|died|dies|death|dead|injur\w*|arrest\w*|court|charged|jailed|sentenced)\b", re.I)
+
+def is_datacentre(it, sec):
+    if sec == "sport":
+        return False
+    h = str(it.get("headline") or "")
+    return bool(DC_RX.search(h) and not DC_BAD_RX.search(h + " " + str(it.get("summary") or "")))
+
 # Remembrance stories use the owner's poppy wreath photo (owner's rule, Nov 2026). Same test as the page's
 # seasonKindOf(s) === "remembrance": not sport, police, court, crime, appeal, fire, ambulance or tribute stories.
 REM_RX = re.compile(r"remembrance|armistice|\bpoppy|\bpoppies|cenotaph|war memorial|two[- ]minute silence|royal british legion", re.I)
@@ -381,6 +393,8 @@ def card_of(it, sec):
         return CARD_FOR.get(icon_of(it, sec), "news")
     if is_gaswork(it, sec) and os.path.exists(os.path.join(ROOT, "img", "og", "gaswork.jpg")):
         return "gaswork"
+    if is_datacentre(it, sec) and os.path.exists(os.path.join(ROOT, "img", "og", "datacentre.jpg")):
+        return "datacentre"
     if is_remembrance(it, sec) and os.path.exists(os.path.join(ROOT, "img", "og", "remembrance.jpg")):
         return "remembrance"
     if is_fog(it, sec) and os.path.exists(os.path.join(ROOT, "img", "og", "fog.jpg")):
@@ -677,14 +691,15 @@ def story_page(sec, it, more):
     more_html = "".join(
         f'<a class="rel" href="/story/{E(m["id"])}/" style="--c:{ICON_COLOUR.get(icon_of(m, s), "#3a3f4b")}"><i></i><b>{E(m["headline"])}</b><span>{E(m.get("place") or "Essex")}</span></a>'
         for s, m in more)
-    fig = "" if card in ("countyhall", "harlowcollege", "fog", "zoo", "gaswork", "remembrance", "food") or is_zoo(it, sec) or is_stansted(it, sec) or is_food(it, sec) or it.get("showMap") is True else stock_figure(it, sec)
+    fig = "" if card in ("countyhall", "harlowcollege", "fog", "zoo", "gaswork", "datacentre", "remembrance", "food") or is_zoo(it, sec) or is_stansted(it, sec) or is_food(it, sec) or it.get("showMap") is True else stock_figure(it, sec)
     if not fig and card in LIBRARY_PHOTOS:
         cap = ("<b>County Hall, Chelmsford</b>, home of Essex County Council. Library image."
                if card == "countyhall" else "<b>Harlow College</b>. Library image."
                if card == "harlowcollege" else "<b>Colchester Zoo</b>. Library image, not the scene of this story."
                if card == "zoo" else "<b>London Stansted Airport</b>. Library image, not the scene of this story. Photo: London Stansted Airport."
                if card in STN_PHOTOS else "<b>Gas works</b>. Library image, not the scene of this story."
-               if card == "gaswork" else "<b>Remembrance</b>. Library image, not the scene of this story."
+               if card == "gaswork" else "<b>Data centre</b>. Library image, not the scene of this story."
+               if card == "datacentre" else "<b>Remembrance</b>. Library image, not the scene of this story."
                if card == "remembrance" else "<b>Christmas</b>. Library image, not the scene of this story."
                if card == "christmas" else "<b>Food and drink</b>. Library image, not the scene of this story."
                if card == "food" else "<b>Fog</b>. Library image, not the scene of this story."
