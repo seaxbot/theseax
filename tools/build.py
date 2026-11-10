@@ -577,7 +577,9 @@ def foot():
         social.append(f'<a href="{E(CFG["whatsappChannel"])}">WhatsApp channel</a>')
     if CFG.get("facebookPage"):
         social.append(f'<a href="{E(CFG["facebookPage"])}">Facebook</a>')
+    local = " · ".join(f'<a href="/news/{sl}/">{E(nm)}</a>' for _k, sl, nm, *_ in AREA_PAGES)
     return f"""<footer class="foot"><div class="wrap">
+  <p class="area-links"><b>Local news:</b> <a href="/news/">All Essex</a> · {local}</p>
   <p><b>The Seax</b> brings together Essex news, sport and life from trusted local and national sources. Every story links to the original reporting.</p>
   <p><a href="/about/">About The Seax</a> · <a href="/about/#corrections">Corrections</a> · <a href="mailto:{E(mail)}">{E(mail)}</a> · <a href="/briefing/">Morning briefing</a> · <a href="/feed.xml">RSS</a>{' · ' + ' · '.join(social) if social else ''}</p>
 </div></footer>
@@ -677,7 +679,7 @@ def story_page(sec, it, more):
     kicker = "Feature" if sec == "features" else "Council Watch" if sec == "councilwatch" else (it.get("tag") or SECTION_LABEL.get(sec, "News"))
     ld = {
         "@context": "https://schema.org", "@type": "NewsArticle",
-        "headline": trunc(title, 110), "description": desc,
+        "headline": title, "description": desc,
         "mainEntityOfPage": url, "url": url,
         "image": [SITE + og_path(card)],
         "articleSection": SECTION_LABEL.get(sec, "News"),
@@ -783,6 +785,111 @@ def story_page(sec, it, more):
 </body></html>
 """
 
+
+# ---------- local news pages (SEO: one page per area, e.g. /news/chelmsford/) ----------
+# key matches the front page area picker; slug is the public URL; words find the area from a story's place
+AREA_PAGES = [
+    ("chelmsford", "chelmsford", "Chelmsford", "Chelmsford news", "the city and nearby places such as Great Baddow, Broomfield, Writtle and South Woodham Ferrers",
+     ["chelmsford", "great baddow", "broomfield", "writtle", "south woodham", "danbury", "boreham", "springfield", "galleywood", "chelmer village", "howe green"],
+     ["chelmsford"]),
+    ("colchester", "colchester", "Colchester", "Colchester news", "the city and nearby places such as Stanway, Wivenhoe, West Mersea and Tiptree",
+     ["colchester", "stanway", "wivenhoe", "mersea", "tiptree", "layer de la haye", "abberton", "mount bures", "dedham", "rowhedge", "marks tey"],
+     ["colchester"]),
+    ("southend", "southend", "Southend", "Southend news", "the city and nearby places such as Leigh-on-Sea, Westcliff, Shoeburyness and Rochford",
+     ["southend", "leigh-on-sea", "westcliff", "shoebury", "prittlewell", "thorpe bay", "rochford", "rayleigh", "hockley", "hullbridge", "great wakering"],
+     ["southend", "rochford"]),
+    ("south", "basildon-thurrock", "Basildon, Thurrock & Castle Point", "Basildon, Thurrock and Castle Point news", "Basildon, Billericay, Wickford, Grays, Tilbury, Purfleet, Stanford-le-Hope, Canvey Island and Benfleet",
+     ["basildon", "billericay", "wickford", "laindon", "pitsea", "crays hill", "thurrock", "grays", "tilbury", "purfleet", "stanford-le-hope", "corringham", "aveley", "south ockendon", "chafford", "lakeside", "fobbing", "canvey", "benfleet", "hadleigh", "thundersley", "castle point"],
+     ["basildon", "thurrock", "castlepoint"]),
+    ("brentwood", "brentwood", "Brentwood", "Brentwood news", "the town and nearby places such as Shenfield, Ingatestone, Hutton and Mountnessing",
+     ["brentwood", "shenfield", "ingatestone", "hutton", "mountnessing", "warley", "pilgrims hatch", "doddinghurst", "navestock"],
+     ["brentwood"]),
+    ("braintree", "braintree-witham", "Braintree & Witham", "Braintree and Witham news", "Braintree, Witham, Halstead, Great Notley, Coggeshall and nearby villages",
+     ["braintree", "witham", "halstead", "great notley", "coggeshall", "wethersfield", "kelvedon", "silver end", "rayne", "sible hedingham"],
+     ["braintree"]),
+    ("maldon", "maldon", "Maldon & Dengie", "Maldon news", "Maldon, Heybridge, Burnham-on-Crouch, Tollesbury and the Dengie peninsula",
+     ["maldon", "heybridge", "burnham-on-crouch", "dengie", "tollesbury", "latchingdon", "great totham", "southminster", "bradwell"],
+     ["maldon"]),
+    ("tendring", "clacton-tendring", "Clacton, Harwich & Tendring", "Clacton, Harwich and Tendring news", "Clacton-on-Sea, Harwich, Dovercourt, Frinton, Walton, Brightlingsea and the Tendring coast",
+     ["tendring", "clacton", "harwich", "dovercourt", "frinton", "walton", "brightlingsea", "st osyth", "jaywick", "manningtree", "kirby le soken", "holland-on-sea"],
+     ["tendring"]),
+    ("uttlesford", "saffron-walden-uttlesford", "Saffron Walden & Uttlesford", "Saffron Walden, Dunmow and Stansted news", "Saffron Walden, Great Dunmow, Stansted, Thaxted and the villages of Uttlesford",
+     ["uttlesford", "saffron walden", "dunmow", "stansted", "thaxted", "little canfield", "great bardfield", "takeley", "elsenham", "newport"],
+     ["uttlesford"]),
+    ("epping", "harlow-epping", "Harlow & Epping Forest", "Harlow and Epping news", "Harlow, Epping, Loughton, Waltham Abbey, Chigwell, Ongar and North Weald",
+     ["harlow", "epping", "loughton", "waltham abbey", "chigwell", "ongar", "north weald", "buckhurst hill", "theydon"],
+     ["harlow", "epping"]),
+]
+
+def areas_of(rec):
+    """Areas for an archive record: its own tags, or guessed from its place for older records."""
+    a = [x for x in (rec.get("a") or []) if x != "all"]
+    if a:
+        return a
+    pl = str(rec.get("place") or "").lower()
+    return [key for key, _sl, _n, _h, _d, words, _c in AREA_PAGES if any(w in pl for w in words)]
+
+def area_pages(archive):
+    """/news/ hub and one page per area. Returns the list of (url, lastmod) for the sitemap."""
+    recs = sorted([(sid, r) for sid, r in archive.items() if r.get("sec") in ("news", "sport", "official", "courts", "community", "councilwatch")],
+                  key=lambda kv: kv[1].get("t") or kv[1].get("first") or "", reverse=True)
+    def row(sid, r):
+        t = parse_t(r.get("t"))
+        lab = "Council Watch" if r.get("sec") == "councilwatch" else SECTION_LABEL.get(r.get("sec"), "News")
+        return (f'<a class="cw-row" href="/story/{E(sid)}/"><span class="cw-c">{E(lab)}</span>'
+                f'<b>{E(r["h"])}</b><span class="cw-m">{E(r.get("place") or "")}{(" · " + E(uk_day(t))) if t else ""}</span></a>')
+    def ld(name, url, items):
+        return ('<script type="application/ld+json">' + json.dumps({
+            "@context": "https://schema.org", "@graph": [
+                {"@type": "CollectionPage", "name": name, "url": url, "inLanguage": "en-GB",
+                 "isPartOf": {"@type": "WebSite", "name": "The Seax", "url": SITE + "/"},
+                 "mainEntity": {"@type": "ItemList", "itemListElement": [
+                     {"@type": "ListItem", "position": i + 1, "url": f"{SITE}/story/{sid}/"} for i, (sid, _r) in enumerate(items[:20])]}},
+                {"@type": "BreadcrumbList", "itemListElement": [
+                    {"@type": "ListItem", "position": 1, "name": "The Seax", "item": SITE + "/"},
+                    {"@type": "ListItem", "position": 2, "name": "Essex news", "item": SITE + "/news/"}] +
+                    ([{"@type": "ListItem", "position": 3, "name": name, "item": url}] if not url.endswith("/news/") else [])}]},
+            ensure_ascii=False).replace("</", "<\\/") + "</script>\n")
+    links = " · ".join(f'<a href="/news/{sl}/">{E(nm)}</a>' for _k, sl, nm, *_ in AREA_PAGES)
+    pages, changed = [], 0
+    hub_url = f"{SITE}/news/"
+    hub_desc = "The latest Essex news from every corner of the county: Chelmsford, Colchester, Southend, Basildon, Thurrock, Harlow, Clacton and more, updated through the day."
+    hub = f"""<main class="wrap prose cw-hub">
+<div class="kick"><span>Essex news</span><span>Every area</span></div>
+<h1>Essex news</h1>
+<p class="standfirst">{E(hub_desc)}</p>
+<h2>News by area</h2>
+<p class="area-links">{links}</p>
+<h2>Latest across Essex</h2>
+<div class="cw-list">{"".join(row(sid, r) for sid, r in recs[:40])}</div>
+<p><a href="/">Go to the live front page →</a></p>
+</main>"""
+    changed += write("news/index.html", head("Essex News Today: latest news from across Essex · The Seax", hub_desc, hub_url, "default",
+                                              extra=ld("Essex news", hub_url, recs)) + hub + newsletter_box() + foot() + "</body></html>\n")
+    pages.append((hub_url, (recs[0][1].get("t") or NOW.isoformat())[:10] if recs else None))
+    for key, sl, nm, heading, covers, _words, councils in AREA_PAGES:
+        mine = [(sid, r) for sid, r in recs if key in areas_of(r)]
+        u = f"{SITE}/news/{sl}/"
+        desc = f"The latest {heading} from The Seax, covering {covers}. Updated through the day, with every story linked to its original source."
+        cw = " · ".join(f'<a href="/council-watch/{c}/">Council Watch: what the council is deciding</a>' if len(councils) == 1 else
+                        f'<a href="/council-watch/{c}/">{E(c.title().replace("point", " Point"))} council</a>' for c in councils)
+        others = " · ".join(f'<a href="/news/{s2}/">{E(n2)}</a>' for _k2, s2, n2, *_ in AREA_PAGES if s2 != sl)
+        page = f"""<main class="wrap prose cw-hub">
+<div class="kick"><span><a href="/news/">Essex news</a></span><span>{E(nm)}</span></div>
+<h1>{E(heading[0].upper() + heading[1:])}</h1>
+<p class="standfirst">{E(desc)}</p>
+<div class="cw-list">{"".join(row(sid, r) for sid, r in mine[:40]) or '<p>No stories for this area yet. The latest from across Essex is on the <a href="/news/">Essex news</a> page.</p>'}</div>
+<h2>Council decisions</h2>
+<p>{cw}</p>
+<h2>Elsewhere in Essex</h2>
+<p class="area-links">{others}</p>
+<p><a href="/">Go to the live front page →</a></p>
+</main>"""
+        title = f"{heading[0].upper() + heading[1:]}: latest stories today · The Seax"
+        changed += write(f"news/{sl}/index.html", head(title, desc, u, "default", extra=ld(heading[0].upper() + heading[1:], u, mine)) +
+                         page + newsletter_box() + foot() + "</body></html>\n")
+        pages.append((u, (mine[0][1].get("t") or NOW.isoformat())[:10] if mine else None))
+    return pages, changed
 
 # ---------- Council Watch ----------
 CW_STAGE = {"decided": "Decided", "upcoming": "Coming up", "proposed": "Proposed", "held": "Discussed", "update": "Update"}
@@ -1176,6 +1283,11 @@ def main():
             "t": iso(t) if t else prev.get("t", ""), "u": iso(parse_t(it.get("updated"))) if it.get("updated") else prev.get("u", ""),
             "first": prev.get("first") or iso(NOW), "last": iso(NOW),
         }
+        ar = [x for x in (it.get("areas") or []) if isinstance(x, str) and x != "all"]
+        if ar:
+            archive[it["id"]]["a"] = ar
+        elif prev.get("a"):
+            archive[it["id"]]["a"] = prev["a"]
         if sec == "councilwatch":
             archive[it["id"]].update({"council": it.get("council") or "", "councilName": it.get("councilName") or "", "cwKey": it.get("cwKey") or ""})
 
@@ -1221,6 +1333,10 @@ def main():
     cw_urls, cw_changed = cw_pages(ed, archive)
     changed += cw_changed
 
+    # local news pages, one per area
+    area_urls, area_changed = area_pages(archive)
+    changed += area_changed
+
     # RSS of latest stories
     feed_items = []
     for sec, it in sorted([x for x in items if x[0] in ("news", "sport", "courts", "official", "community", "councilwatch")],
@@ -1241,6 +1357,8 @@ def main():
         urls.append((f"{SITE}/story/{sid}/", lastmod(rec), None, None))
     for x in briefs:
         urls.append((f"{SITE}/briefing/{x['date']}/", x["date"], None, None))
+    for u, lm in area_urls:
+        urls.append((u, lm, "hourly", "0.8"))
     for u, lm in cw_urls:
         urls.append((u, lm, "daily" if u.endswith("/council-watch/") else None, "0.7" if u.endswith("/council-watch/") else None))
     sm = ['<?xml version="1.0" encoding="UTF-8"?>', '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
