@@ -3882,7 +3882,11 @@ function renderEvents(){
   $("#events").innerHTML = list.length ? list.map(e => {
     const d = new Date(e.start); const cd = countdown(e.start, true); const on = e.end && new Date(e.start) <= now && new Date(e.end) >= now;
     const free = /^free\b/i.test(e.price||"");
-    return `<a class="ev" href="${safeUrl(e.url)}" target="_blank" rel="noopener"><div class="cal"><div class="mo">${fmt(d,{month:"short"}).toUpperCase()}</div><div class="dy">${fmt(d,{day:"numeric"})}</div><div class="wd">${fmt(d,{weekday:"short"})}</div></div>
+    /* an event that has already started shows its closing date, not a start date that has passed */
+    const de = on ? new Date(e.end) : null;
+    const cal = on ? `<div class="mo">UNTIL</div><div class="dy">${fmt(de,{day:"numeric"})}</div><div class="wd">${fmt(de,{month:"short"})}</div>`
+                   : `<div class="mo">${fmt(d,{month:"short"}).toUpperCase()}</div><div class="dy">${fmt(d,{day:"numeric"})}</div><div class="wd">${fmt(d,{weekday:"short"})}</div>`;
+    return `<a class="ev" href="${safeUrl(e.url)}" target="_blank" rel="noopener"><div class="cal">${cal}</div>
       <div><h4>${esc(e.title)}${on?`<span class="cd">On now</span>`:cd?`<span class="cd" data-cd="${esc(e.start)}" data-allday="1">${cd}</span>`:""}</h4><div class="where">${esc(e.where)}</div><p>${esc(e.blurb||"")}</p>
       <div class="tags"><span>${esc(e.cat||"Event")}</span>${e.time?`<span>${esc(e.time)}</span>`:""}${e.end?`<span>Until ${fmt(new Date(e.end),{day:"numeric",month:"short"})}</span>`:""}${e.price?`<span class="${free?"free":""}">${esc(e.price)}</span>`:""}</div></div></a>`;
   }).join("") : `<div class="empty" style="grid-column:1/-1">Nothing listed for this filter yet.</div>`;
