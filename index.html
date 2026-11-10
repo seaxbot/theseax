@@ -3690,6 +3690,8 @@ function renderTicker(){
     const words = [m.home, m.away].map(t => String(t||"").toLowerCase().split(/\s+/)[0]);
     const st2 = ED.sport.stories.find(x => words.every(w => w && (x.headline+" "+x.summary).toLowerCase().includes(w)));
     const t = new Date(m.date).getTime() + 2*36e5;
+    /* the match already has its own sport story in the ticker: don't show the score twice */
+    if(st2 && Math.abs(new Date(st2.time).getTime() - t) < 4*864e5) continue;
     pool.push({t, time: new Date(t).toISOString(), text:`FT: ${m.home} ${m.hs}-${m.as} ${m.away}`, href: st2 ? storyHref(st2) : safeUrl(m.url), ext: !st2});
   }
   const seen = new Set();
