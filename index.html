@@ -152,6 +152,12 @@ section.block{padding:38px 0 8px;scroll-margin-top:60px}
 .card .cart{aspect-ratio:2.6/1;overflow:hidden;border-bottom:1px solid var(--line)}
 .card .cart svg{width:100%;height:100%;display:block}
 .card.wide .cart{aspect-ratio:3.2/1}
+/* the story's picture (or map) in the body of the in-page story view (owner's rule, 11 Nov 2026: every story has a picture) */
+.sart{margin:16px 0 22px}
+.sart .sart-img{aspect-ratio:1.85/1;overflow:hidden;border-radius:10px;background:#d6e1e7}
+.sart .sart-img svg{width:100%;height:100%;display:block}
+.sart figcaption{font-size:13px;color:var(--muted);margin-top:6px;line-height:1.45}
+.sart figcaption b{color:var(--ink);margin-right:4px}
 .card .body{padding:16px 18px 18px;display:flex;flex-direction:column;flex:1}
 .card .meta{font-size:12px;color:var(--muted);display:flex;gap:6px;align-items:center;flex-wrap:wrap}
 .card .meta .place{font-weight:700;color:var(--teal)}
@@ -4273,6 +4279,7 @@ function renderStory(id){
     <h1>${esc(s.headline)}</h1>
     <div class="smeta"><b>${esc(s.place||"Essex")}</b><span>·</span><span data-ago="${esc(shownT(s))}">${ago(shownT(s))}</span>${s.time?`<span>·</span><span>${fmt(new Date(s.time),{weekday:"long",day:"numeric",month:"long",hour:"2-digit",minute:"2-digit"})}</span>`:""}<span>·</span><span>Reported by ${esc(s.source)}</span><span>·</span><span>${Math.max(1, Math.round(((s.summary||"") + " " + (s.body||[]).join(" ") + " " + (s.points||[]).join(" ")).split(/\s+/).length / 200))} min read</span></div>
     <div class="sharebar"><button data-sharestory="${esc(s.id)}" class="native-share">Share</button><a class="wa" href="https://wa.me/?text=${encodeURIComponent(s.headline + " https://theseax.com/story/" + s.id + "/")}" target="_blank" rel="noopener">WhatsApp</a><button data-copylink="${esc(s.id)}">Copy link</button><a href="${safeUrl(s.url)}" target="_blank" rel="noopener">Original report ↗</a></div>
+    <figure class="sart" style="--c:${iconColour(s)}"><div class="sart-img">${storyArt(s,{aspect:1/1.85, zoom:760, credit:true})}</div><figcaption><b>${esc(artKick(s))}</b>${esc(artCaption(s))}</figcaption></figure>
     <p class="standfirst">${esc(s.summary)}</p>
     ${Array.isArray(s.body) && s.body.length ? `<div class="sbody">${s.body.map(p=>`<p>${esc(p)}</p>`).join("")}</div>` : ""}
     ${(s.points||[]).length ? `<h2>Key points</h2><ul class="points">${s.points.map(p=>`<li>${esc(p)}</li>`).join("")}</ul>` : ""}
@@ -4286,7 +4293,7 @@ function renderStory(id){
      County-wide stories (weather warnings, policy, all-Essex news) skip the box. Sport keeps its box.
      "noWhere": true hides it for stories whose events happened outside Essex (owner's rule, Nov 2026). */
   const sportBox = artKick(s,1) === "Club" || artKick(s,1) === "Sport";
-  const pinsHere = storyPins(s), placed = !s.noWhere && !isWeatherArtStory(s) && (pinsHere.length > 0 || storyDistricts(s, pinsHere).size > 0);
+  const pinsHere = storyPins(s), placed = !s.noWhere && !isWeatherArtStory(s) && artKick(s) !== "Where" && (pinsHere.length > 0 || storyDistricts(s, pinsHere).size > 0);
   $("#storySide").innerHTML = `
     ${sportBox || placed ? `<div class="side-box where" style="--c:${iconColour(s)}">${sportBox ? `<h4>${artKick(s,1) === "Club" ? "The club" : "The sport"}</h4>` : ""}<div class="wmap">${storyArt(s,{zoom:400,aspect:.82,map:true})}</div><div class="mcap">${esc(artCaption(s,1))}</div></div>` : ""}
     <div class="side-box"><h4>More from Essex</h4>${more.map(x=>`<a class="rel" href="${storyHref(x)}" style="--c:${iconColour(x)}"><i></i><b>${esc(x.headline)}</b></a>`).join("")}</div>`;
