@@ -766,7 +766,7 @@ def portrait_figure(p):
     lic = f'<a href="{E(p["licenseUrl"])}" target="_blank" rel="noopener license">{E(p["license"])}</a>' if safe_url(p.get("licenseUrl")) else E(p.get("license"))
     src = f' via <a href="{E(p["source"])}" target="_blank" rel="noopener">{E(p.get("provider") or "source")}</a>' if safe_url(p.get("source")) else ""
     return (f'<figure class="stock"><img src="{E(p["wide"])}?v=1" width="1200" height="655" alt="{E(lab)} of {E(p["name"])}" loading="eager">'
-            f'<figcaption><b>{E(p["name"])}</b>. {E(lab)}{E(p.get("note") or "")}. {"Image" if p.get("label") else "Photo"}: {E(p["creator"])}{src}, {lic}, set on a blurred background.</figcaption></figure>')
+            f'<figcaption><b>{E(p["name"])}</b>. {E(lab)}{E(p.get("note") or "")}. {"Image" if p.get("label") else "Photo"}: {E(p["creator"])}{src}{", " + lic if p.get("license") else ""}{"" if p.get("label") else ", set on a blurred background"}.</figcaption></figure>')
 
 def stock_figure(it, sec):
     p = PHOTOS.get(it.get("id")) if sec != "sport" and not it.get("noPhoto") else None
