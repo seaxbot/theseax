@@ -25,9 +25,11 @@ API = "https://api.openverse.org/v1/images/"
 SENSITIVE = re.compile(r"\b(police|court|crime|jail|jailed|sentenc|convict|charged|arrest|murder|kill|killed|stab|rape|assault|abuse|death|died|dies|dead|"
                        r"fatal|crash|collision|inquest|tribute|funeral|suicide|missing|(?<!wildlife )hospital|patient|cancer|disease|hit-and-run|appeal for witnesses)", re.I)
 SKIP_TAGS = {"police", "court", "crime", "appeal", "tribute", "health", "fire", "ambulance"}
-# Bus stories always show the owner's bus photo (img/topics/bus.jpg), so no stock photo is looked up for them.
+# Bus stories always show the owner's bus photo (img/topics/bus.jpg), so no stock photo is looked up for them (nor for pool stories).
 # Same headline test as tools/build.py BUS_RX.
 BUS_RX = re.compile(r"\bbus(es|ses)?\b|\bpark (and|&) ride\b|\bFirst (Essex|Bus)\b|\bEnsign ?bus\b", re.I)
+# Swimming pool stories always show the owner's pool photo (img/topics/pool.jpg). Same headline test as tools/build.py POOL_RX.
+POOL_RX = re.compile(r"\bswimming (pools?|baths?)\b|\blidos?\b|\b(leisure|school|public|council|indoor|outdoor|learner|teaching|training|community|hydrotherapy|main) pools?\b|\bpools?\b.{0,40}\bswim\w*|\bswim\w*\b.{0,40}\bpools?\b", re.I)
 MAX_NEW = 12   # lookups per run
 # Overseas photos are never used (owner's rule, 11 Nov 2026, after a "bus stop" search put a Moldovan village bus
 # shelter on a Thurrock fares story). A photo whose title, tags, description or categories name another country, a US
@@ -262,13 +264,13 @@ def main():
                 photos.pop(it["id"]); changed_rej = True
                 print(f"removed rejected photo: {it['id']}")
             continue
-        if BUS_RX.search(str(it.get("headline") or "")) and it["id"] not in reqs:
+        if (BUS_RX.search(str(it.get("headline") or "")) or POOL_RX.search(str(it.get("headline") or ""))) and it["id"] not in reqs:
             if it["id"] in photos:  # bus stories use the owner's bus photo: drop any stock photo found earlier
                 f = os.path.join(ROOT, "img", "stock", f"{it['id']}.jpg")
                 if os.path.exists(f):
                     os.remove(f)
                 photos.pop(it["id"]); changed_rej = True
-                print(f"removed stock photo from bus story: {it['id']}")
+                print(f"removed stock photo from bus or pool story: {it['id']}")
             continue
         kw = str(reqs.get(it["id"]) or it.get("photo") or "").strip()
         cm = str(it.get("commons") or "").strip() if it["id"] not in reqs else ""
