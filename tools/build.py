@@ -762,10 +762,11 @@ def portrait_of(it):
     return None
 
 def portrait_figure(p):
+    lab = p.get("label") or "File photo"  # e.g. "Mock-up" for an artist's impression (owner's choice, 11 Nov 2026)
     lic = f'<a href="{E(p["licenseUrl"])}" target="_blank" rel="noopener license">{E(p["license"])}</a>' if safe_url(p.get("licenseUrl")) else E(p.get("license"))
     src = f' via <a href="{E(p["source"])}" target="_blank" rel="noopener">{E(p.get("provider") or "source")}</a>' if safe_url(p.get("source")) else ""
-    return (f'<figure class="stock"><img src="{E(p["wide"])}?v=1" width="1200" height="655" alt="File photo of {E(p["name"])}" loading="eager">'
-            f'<figcaption><b>{E(p["name"])}</b>. File photo. Photo: {E(p["creator"])}{src}, {lic}, set on a blurred background.</figcaption></figure>')
+    return (f'<figure class="stock"><img src="{E(p["wide"])}?v=1" width="1200" height="655" alt="{E(lab)} of {E(p["name"])}" loading="eager">'
+            f'<figcaption><b>{E(p["name"])}</b>. {E(lab)}{E(p.get("note") or "")}. {"Image" if p.get("label") else "Photo"}: {E(p["creator"])}{src}, {lic}, set on a blurred background.</figcaption></figure>')
 
 def stock_figure(it, sec):
     p = PHOTOS.get(it.get("id")) if sec != "sport" and not it.get("noPhoto") else None
