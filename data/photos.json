@@ -212,6 +212,21 @@
 "title": "NOIRLab HQ Server Racks (6V6A0404-CC)",
 "w": 1200
 },
+"southend-pier-festoon-lights-return-switch-on": {
+"at": "2026-11-11T21:42:40Z",
+"creator": "Chris Morgan",
+"creatorUrl": "",
+"file": "/img/stock/southend-pier-festoon-lights-return-switch-on.jpg",
+"h": 621,
+"keyword": "Southend Pier",
+"kind": "commons",
+"license": "CC BY-SA 2.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+"provider": "Wikimedia Commons",
+"source": "https://commons.wikimedia.org/wiki/File:Southend_Pier_Extension_and_pier_-_geograph.org.uk_-_4782016.jpg",
+"title": "Southend Pier Extension and pier",
+"w": 1200
+},
 "vange-python-found-in-water-meter-chamber": {
 "at": "2026-11-07T11:19:27Z",
 "creator": "rawpixel",
