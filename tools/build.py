@@ -26,6 +26,7 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 UK = ZoneInfo("Europe/London")
 CFG = json.load(open(os.path.join(ROOT, "tools", "site.json"), encoding="utf-8"))
 SITE = CFG["site"].rstrip("/")
+SAME_AS = [u for u in (CFG.get("facebookPage"), CFG.get("xAccount"), CFG.get("whatsappChannel")) if u]
 NOW = datetime.now(timezone.utc)
 
 E = lambda s: html.escape(str(s if s is not None else ""), quote=True)
@@ -1135,9 +1136,11 @@ def story_page(sec, it, more):
         "mainEntityOfPage": url, "url": url,
         "image": [SITE + og_path(card)],
         "articleSection": SECTION_LABEL.get(sec, "News"),
+        "inLanguage": "en-GB", "isAccessibleForFree": True,
         "author": {"@type": "Organization", "name": "The Seax", "url": SITE + "/"},
-        "publisher": {"@type": "Organization", "name": "The Seax", "url": SITE + "/",
-                      "logo": {"@type": "ImageObject", "url": f"{SITE}/icons/icon-512.png", "width": 512, "height": 512}},
+        "publisher": {"@type": "NewsMediaOrganization", "name": "The Seax", "url": SITE + "/",
+                      "logo": {"@type": "ImageObject", "url": f"{SITE}/icons/icon-512.png", "width": 512, "height": 512},
+                      "sameAs": SAME_AS},
     }
     if not it.get("noWhere"):
         ld["contentLocation"] = {"@type": "Place", "name": f"{place}, Essex"}

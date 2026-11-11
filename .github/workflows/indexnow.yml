@@ -1,0 +1,21 @@
+name: IndexNow
+# Pings Bing and the other IndexNow engines with every new or changed page, so stories reach
+# Bing (and through it ChatGPT search) within minutes instead of days. See tools/indexnow.py.
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ["edition.json", "index.html", "story/**", "news/**", "council-watch/**", "briefing/**", "about/**"]
+permissions:
+  contents: read
+concurrency: indexnow
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@v4
+        with: { fetch-depth: 30 }
+      - name: Wait for GitHub Pages to publish the new pages
+        run: sleep 120
+      - run: python3 -u tools/indexnow.py "${{ github.event.before }}" "${{ github.sha }}"
