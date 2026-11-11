@@ -30,6 +30,8 @@ SKIP_TAGS = {"police", "court", "crime", "appeal", "tribute", "health", "fire", 
 BUS_RX = re.compile(r"\bbus(es|ses)?\b|\bpark (and|&) ride\b|\bFirst (Essex|Bus)\b|\bEnsign ?bus\b", re.I)
 # Swimming pool stories always show the owner's pool photo (img/topics/pool.jpg). Same headline test as tools/build.py POOL_RX.
 POOL_RX = re.compile(r"\bswimming (pools?|baths?)\b|\blidos?\b|\b(leisure|school|public|council|indoor|outdoor|learner|teaching|training|community|hydrotherapy|main) pools?\b|\bpools?\b.{0,40}\bswim\w*|\bswim\w*\b.{0,40}\bpools?\b", re.I)
+# Homeless stories always show the owner's homeless photo (img/topics/homeless.jpg). Same headline test as tools/build.py HOMELESS_RX.
+HOMELESS_RX = re.compile(r"\bhomeless\w*\b|\brough[- ]sleep\w*\b|\bsleep\w* rough\b|\b(night|winter|homeless|emergency) shelters?\b|\bSWEP\b", re.I)
 MAX_NEW = 12   # lookups per run
 # Overseas photos are never used (owner's rule, 11 Nov 2026, after a "bus stop" search put a Moldovan village bus
 # shelter on a Thurrock fares story). A photo whose title, tags, description or categories name another country, a US
@@ -264,13 +266,13 @@ def main():
                 photos.pop(it["id"]); changed_rej = True
                 print(f"removed rejected photo: {it['id']}")
             continue
-        if (BUS_RX.search(str(it.get("headline") or "")) or POOL_RX.search(str(it.get("headline") or ""))) and it["id"] not in reqs:
+        if (BUS_RX.search(str(it.get("headline") or "")) or POOL_RX.search(str(it.get("headline") or "")) or HOMELESS_RX.search(str(it.get("headline") or ""))) and it["id"] not in reqs:
             if it["id"] in photos:  # bus stories use the owner's bus photo: drop any stock photo found earlier
                 f = os.path.join(ROOT, "img", "stock", f"{it['id']}.jpg")
                 if os.path.exists(f):
                     os.remove(f)
                 photos.pop(it["id"]); changed_rej = True
-                print(f"removed stock photo from bus or pool story: {it['id']}")
+                print(f"removed stock photo from bus, pool or homeless story: {it['id']}")
             continue
         kw = str(reqs.get(it["id"]) or it.get("photo") or "").strip()
         cm = str(it.get("commons") or "").strip() if it["id"] not in reqs else ""
