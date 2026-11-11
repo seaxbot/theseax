@@ -10,5 +10,17 @@
     "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0/",
     "source": "https://commons.wikimedia.org/w/index.php?curid=36978689",
     "addedBy": "owner, 9 Nov 2026"
+  },
+  {
+    "match": "\\bRoper twins\\b",
+    "name": "Emily and Abigail Roper",
+    "wide": "/img/people/roper-twins-wide.jpg",
+    "og": "/img/people/roper-twins-og.jpg",
+    "creator": "University of Essex",
+    "provider": "University of Essex",
+    "license": "used with credit",
+    "licenseUrl": "",
+    "source": "https://www.essex.ac.uk/news/2026/11/09/roper-twins-spring-back-to-essex-after-commonwealth-games-glory",
+    "addedBy": "owner, 11 Nov 2026"
   }
 ]
