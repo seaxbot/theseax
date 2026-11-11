@@ -4467,7 +4467,8 @@ function frontPicks(){
   const ranked = rankStories(list, now);
   let lead = null;
   const L = ED.lead || {};
-  if(L.id){ const c = list.find(s => s.id === L.id); if(c && now - newsTime(c) < 36*36e5) lead = c; }
+  /* an owner-chosen lead ("ownerUntil" on ED.lead) is shown whatever its age until that time (owner's rule, 11 Nov 2026) */
+  if(L.id){ const c = list.find(s => s.id === L.id); if(c && (now - newsTime(c) < 36*36e5 || now < (Date.parse(L.ownerUntil || "") || 0))) lead = c; }
   if(!lead) lead = ranked[0] || ED.stories[0];
   const rest = ranked.filter(s => s !== lead);
   const seconds = [];
