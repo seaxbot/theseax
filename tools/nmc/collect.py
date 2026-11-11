@@ -213,7 +213,7 @@ def parse_page(text, url, mon, yy):
             outcome = g("outcome").replace("\n", " ")
             rows.append({
                 "key": f"{pin or re.sub(r'[^a-z0-9]+', '-', name.lower())}-{start or day}".strip("-"),
-                "name": name, "pin": pin, "register": g("register").replace("\n", " "), "county": county,
+                "name": name, "pin": pin, "register": g("register").replace("\n", " ").strip(" ;"), "county": re.sub(r"\s*;\s*", "; ", county).strip(" ;"),
                 "venue": venue, "start": start, "end": end, "type": htype,
                 "typeName": "; ".join(TYPES[x] for x in re.findall(r"[A-Za-z]+", htype) if x in TYPES),
                 "allegation": g("allegation").replace("\n", " "), "outcome": outcome,
