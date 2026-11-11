@@ -726,6 +726,185 @@ def stock_figure(it, sec):
     return (f'<figure class="stock"><img src="{E(p["file"])}" width="{E(p.get("w") or 1200)}" height="{E(p.get("h") or 800)}" alt="{E("Stock photo: " + (p.get("title") or p.get("keyword") or ""))}" loading="eager">'
             f'<figcaption><b>Stock photo</b>, not the scene of this story. {E(p.get("title") or "")}{" · " if p.get("title") else ""}{who}, {lic}{src}</figcaption></figure>')
 
+
+# ---------- town and sport photos on story pages (owner's rule, 11 Nov 2026) ----------
+# Every story page shows the picture its front-page card shows, so social media share cards carry it too. When no
+# specific photo rule above applies, the page uses the same town photograph (img/places) or sport photograph
+# (img/sport) as the front page, with a 1200x630 share crop in img/og/place-<key>.jpg or img/og/sport-<file>.jpg.
+# Same rules as the page's townKeyOf, sportKindOf and sportPhotoSrc. Stories the front page draws as a map or as
+# artwork (courts, police, weather, bonfire and other drawn occasions) keep their branded share card.
+TOWN_PHOTO_SKIP = {"police", "crime", "court", "appeal", "tribute", "fire", "ambulance"}
+TOWN_ALIAS = [(re.compile(r), k) for r, k in [
+    (r"^(chelmsford|moulsham|great baddow|broomfield|springfield|writtle|galleywood)$", "chelmsford"),
+    (r"^(colchester|stanway|lexden|highwoods)$", "colchester"),
+    (r"^(southend(-on-sea)?|westcliff(-on-sea)?|southchurch|prittlewell|thorpe bay)$", "southend"),
+    (r"^(leigh(-on-sea)?|old leigh)$", "leigh"), (r"^shoebury(ness)?$", "shoebury"),
+    (r"^(basildon|laindon|vange)$", "basildon"), (r"^billericay$", "billericay"), (r"^wickford$", "wickford"),
+    (r"^(brentwood|shenfield|hutton)$", "brentwood"), (r"^(grays|chafford hundred|thurrock|west thurrock)$", "grays"),
+    (r"^(tilbury|west tilbury|east tilbury)$", "tilbury"), (r"^purfleet(-on-thames)?$", "purfleet"),
+    (r"^(stanford[- ]le[- ]hope|corringham)$", "stanford"), (r"^(harlow|old harlow)$", "harlow"), (r"^epping$", "epping"),
+    (r"^(loughton|debden)$", "loughton"), (r"^chigwell$", "chigwell"), (r"^waltham abbey$", "walthamabbey"),
+    (r"^saffron walden$", "saffronwalden"), (r"^(great )?dunmow$", "dunmow"), (r"^stansted mountfitchet$", "stansted"),
+    (r"^braintree$", "braintree"), (r"^witham$", "witham"), (r"^halstead$", "halstead"), (r"^coggeshall$", "coggeshall"),
+    (r"^(maldon|heybridge)$", "maldon"), (r"^burnham([- ]on[- ]crouch)?$", "burnham"), (r"^south woodham ferrers$", "swf"),
+    (r"^rayleigh$", "rayleigh"), (r"^rochford$", "rochford"), (r"^canvey( island)?$", "canvey"), (r"^(south )?benfleet$", "benfleet"),
+    (r"^clacton(-on-sea)?$", "clacton"), (r"^frinton(-on-sea)?$", "frinton"), (r"^walton(-on-the-naze)?$", "walton"),
+    (r"^(harwich|dovercourt)$", "harwich"), (r"^brightlingsea$", "brightlingsea"), (r"^((west|east) )?mersea( island)?$", "mersea")]]
+DRAWN_SEASON_RX = re.compile(r"new year'?s? eve|new year celebrations|new year fireworks|hogmanay|new year'?s? day|bonfire|firework|guy fawkes|hallowe'?en|trick[- ]or[- ]treat|pumpkin|\beaster\b", re.I)
+SPORT_PHOTO_FILES = {"football": ["football", "football-2", "football-3", "football-4"], "cricket": ["cricket"], "tennis": ["tennis"],
+                     "rugby": ["rugby"], "cycling": ["cycling"], "icehockey": ["icehockey"], "golf": ["golf"], "racing": ["racing"], "boxing": ["boxing"]}
+SPORT_NAME = {"football": "Football", "cricket": "Cricket", "tennis": "Tennis", "rugby": "Rugby", "cycling": "Cycling",
+              "icehockey": "Ice hockey", "golf": "Golf", "racing": "Racing", "boxing": "Boxing"}
+SPORT_PICK = {}
+try:
+    TOWN_CREDITS = json.load(open(os.path.join(ROOT, "img", "places", "credits.json"), encoding="utf-8"))
+except Exception:
+    TOWN_CREDITS = {}
+
+def jpeg_size(path, default=(1200, 800)):
+    """Width and height of a JPEG from its SOF marker (standard library only)."""
+    try:
+        with open(path, "rb") as f:
+            d = f.read(200000)
+        i = 2
+        while i < len(d) - 9:
+            if d[i] != 0xFF:
+                i += 1; continue
+            m = d[i + 1]
+            if m in (0xC0, 0xC1, 0xC2):
+                return (d[i + 7] << 8 | d[i + 8], d[i + 5] << 8 | d[i + 6])
+            i += 2 + (d[i + 2] << 8 | d[i + 3])
+    except Exception:
+        pass
+    return default
+
+def sport_kind(it, sec):
+    sa = str(it.get("sportArt") or "").lower()
+    if sa in SPORT_PHOTO_FILES or sa == "athletics":
+        return sa
+    k = str(it.get("icon") or "").lower() or icon_of(it, sec)
+    tag = str(it.get("tag") or "").lower()
+    if not (k in ("football", "racing", "cricket", "sport") or re.match(r"^(football|racing|cricket|ice hockey|rugby|sport|athletics|cycling|tennis|golf|boxing)$", tag)):
+        return None
+    t = f" {tag} {str(it.get('headline') or '').lower()} {str(it.get('summary') or '').lower()} "
+    if k == "cricket" or re.search(r"cricket|county championship|\bt20\b|\bwicket|\binnings\b", t): return "cricket"
+    if k == "racing" or re.search(r"\bracing\b|racecourse|race ?day|jockey|\btrainer\b|\bhorses?\b|\bfurlong", t): return "racing"
+    if re.search(r"ice hockey|chieftains|\bnihl\b", t): return "icehockey"
+    if re.search(r"\brugby\b", t): return "rugby"
+    if re.search(r"\btennis\b|wimbledon|\bwta\b|\batp\b", t): return "tennis"
+    if re.search(r"\bgolf", t): return "golf"
+    if re.search(r"\bboxing\b|\bboxers?\b|\bbout\b|heavyweight|middleweight|welterweight|title fight", t): return "boxing"
+    if re.search(r"cycling|cyclist|\bgiro\b|tour de france|velodrome|\bbike race", t): return "cycling"
+    if k == "football" or re.search(r"football|\bfc\b|\bleague\b|\bunited\b|\bgoal", t): return "football"
+    return "athletics"
+
+def js_hash(sid):
+    h = 0
+    for c in str(sid):
+        h = (h * 31 + ord(c)) & 0xFFFFFFFF
+    return h
+
+def _load_clubs():
+    """The page's CLUBS list (name and match pattern), read from index.html so the two never drift apart."""
+    try:
+        page = open(os.path.join(ROOT, "index.html"), encoding="utf-8").read()
+        i = page.index("const CLUBS = {"); j = page.index("};", i)
+        return [(n, re.compile(rx)) for n, rx in re.findall(r'^\s*"([^"]+)":\s*\{re:/(.*?)/[a-z]*,', page[i:j], re.M)]
+    except Exception:
+        return []
+CLUBS = _load_clubs()
+CLUB_NAMES = {n for n, _ in CLUBS}
+CLUB_CARDS = set()
+
+def club_of(it, sec):
+    if it.get("club") in CLUB_NAMES:
+        return it["club"]
+    k = str(it.get("icon") or "").lower() or icon_of(it, sec)
+    if not (k == "football" or re.search(r"football|ice hockey", str(it.get("tag") or ""), re.I)):
+        return None
+    for field in (it.get("headline"), it.get("summary")):
+        t = str(field or "").lower()
+        best, at = None, 10 ** 9
+        for name, rx in CLUBS:
+            m = rx.search(t)
+            if m and m.start() < at:
+                best, at = name, m.start()
+        if best:
+            return best
+    return None
+
+def pick_sport(ed):
+    """Rotate the football photos like the page: newest first, never the same photo twice in a row."""
+    SPORT_PICK.clear()
+    def tm(x):
+        return max((parse_t(x.get("updated")) or datetime.min.replace(tzinfo=timezone.utc)), (parse_t(x.get("time")) or datetime.min.replace(tzinfo=timezone.utc)))
+    lst = [("sport", x) for x in (ed.get("sport") or {}).get("stories", []) or [] if isinstance(x, dict) and x.get("id")] + \
+          [("news", x) for x in ed.get("stories", []) or [] if isinstance(x, dict) and x.get("id")]
+    CLUB_CARDS.clear()
+    clubbed = sorted([x for sec, x in lst if sec == "sport" and club_of(x, sec)], key=tm, reverse=True)
+    CLUB_CARDS.update(x["id"] for n, x in enumerate(clubbed) if n % 2 == 1)  # every other club story shows club colours
+    lst = [p for p in lst if p[1]["id"] not in CLUB_CARDS]
+    prev = {}
+    for sec, x in sorted(lst, key=lambda p: tm(p[1]), reverse=True):
+        k = sport_kind(x, sec)
+        files = SPORT_PHOTO_FILES.get(k) or []
+        if len(files) < 2:
+            continue
+        v = js_hash(x["id"]) % len(files)
+        if v == prev.get(k):
+            v = (v + 1) % len(files)
+        SPORT_PICK[x["id"]] = v
+        prev[k] = v
+
+def town_key(it, sec):
+    if sec == "sport" or icon_of(it, sec) in TOWN_PHOTO_SKIP or str(it.get("icon") or "").lower() in TOWN_PHOTO_SKIP:
+        return None
+    parts = [re.sub(r"\s+(town centre|district)$", "", x).strip() for x in re.split(r"\s*(?:,|&|/|\band\b)\s*", str(it.get("place") or "").lower())]
+    parts = [x for x in parts if x]
+    keys = []
+    for x in parts:
+        for rx, k in TOWN_ALIAS:
+            if rx.search(x):
+                if k not in keys:
+                    keys.append(k)
+                break
+    first = next((k for rx, k in TOWN_ALIAS if parts and rx.search(parts[0])), None)
+    return first if first and len(keys) <= 2 and first in TOWN_CREDITS else None
+
+def fallback_photo(it, sec, card):
+    """(figure html, share image path) for a story with no specific photo, or ("", "") to keep the branded card."""
+    if card == "hospital":
+        return ('<figure class="stock"><img src="/img/topics/hospital.jpg?v=1" width="1200" height="655" alt="Library photo: a hospital" loading="eager">'
+                '<figcaption><b>Hospital</b>. Library image, not the scene of this story.</figcaption></figure>', "/img/og/hospital.jpg")
+    if card not in set(CARD_FOR.values()) | {"news", "feature", "default"} or it.get("showMap") is True:
+        return "", ""
+    k = sport_kind(it, sec)
+    if k in SPORT_PHOTO_FILES:
+        files = SPORT_PHOTO_FILES[k]
+        f = files[SPORT_PICK.get(it.get("id"), 0) % len(files)]
+        if os.path.exists(os.path.join(ROOT, "img", "og", f"sport-{f}.jpg")):
+            w, h = jpeg_size(os.path.join(ROOT, "img", "sport", f + ".jpg"))
+            return (f'<figure class="stock"><img src="/img/sport/{f}.jpg?v=1" width="{w}" height="{h}" alt="Library photo: {E(SPORT_NAME[k].lower())}" loading="eager">'
+                    f'<figcaption><b>{E(SPORT_NAME[k])}</b>. Library image, not the scene of this story.</figcaption></figure>', f"/img/og/sport-{f}.jpg")
+        return "", ""
+    if k:  # athletics and other drawn sport art keep the branded card
+        return "", ""
+    ic = icon_of(it, sec)
+    if ic == "weather" or it.get("wx") or DRAWN_SEASON_RX.search(str(it.get("headline") or "")):
+        return "", ""
+    tk = town_key(it, sec)
+    cr = TOWN_CREDITS.get(tk) if tk else None
+    if not cr or not os.path.exists(os.path.join(ROOT, "img", "og", f"place-{tk}.jpg")):
+        return "", ""
+    lic = cr.get("license") or ""
+    licl = "public domain" if lic in ("Public domain", "CC0") else lic
+    lic_html = f'<a href="{E(cr["licenseUrl"])}" target="_blank" rel="noopener license">{E(licl)}</a>' if safe_url(cr.get("licenseUrl")) else E(licl)
+    via = f', via <a href="{E(cr["source"])}" target="_blank" rel="noopener">Wikimedia Commons</a>' if safe_url(cr.get("source")) else ""
+    w, h = jpeg_size(os.path.join(ROOT, "img", "places", tk + ".jpg"))
+    return (f'<figure class="stock"><img src="/img/places/{tk}.jpg?v=1" width="{w}" height="{h}" alt="File photo: {E(cr.get("what"))}" loading="eager">'
+            f'<figcaption><b>{E(cr.get("what"))}</b>. File photo, not the scene of this story. Photo: {E(cr.get("by"))}, {lic_html}{via}.</figcaption></figure>',
+            f"/img/og/place-{tk}.jpg")
+
 # ---------- story pages ----------
 def collect(ed):
     out = []
@@ -836,6 +1015,10 @@ def story_page(sec, it, more):
     pt = portrait_of(it)
     if pt:
         fig, og_img = portrait_figure(pt), pt["og"]
+    if not fig:
+        fig2, og2 = fallback_photo(it, sec, card)
+        if fig2:
+            fig, og_img = fig2, og2
     if fig:
         ld["image"] = [SITE + og_img if og_img.startswith("/") else ld["image"][0]]
         extra = extra.replace(SITE + og_path(card), ld["image"][0])
@@ -1342,6 +1525,7 @@ def main():
         archive.pop(sid, None)
 
     pick_police(ed)
+    pick_sport(ed)
     items = [(s, it) for s, it in collect(ed) if it["id"] not in takedown]
     seen = set()
     top = sorted([(s, it) for s, it in items if s in ("news", "sport")],
