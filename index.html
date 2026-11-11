@@ -789,7 +789,7 @@ h1,h2,h3,h4,.story h1,.lead h2,.card h3,.drow h4{letter-spacing:-.022em}
 .hist-hide:hover{background:var(--ink);color:#fff}
 .sec{display:block;padding:16px 20px 18px;border-right:1px solid var(--hair);text-decoration:none;color:inherit}
 .sec:first-child{padding-left:0}.sec:last-child{border-right:0;padding-right:0}
-.sec-map{height:118px;overflow:hidden;border:1px solid var(--hair);background:#dfe9ee;margin-bottom:12px;position:relative}
+.sec-map{aspect-ratio:2/1;overflow:hidden;border:1px solid var(--hair);background:#dfe9ee;margin-bottom:12px;position:relative}
 .sec-map svg{width:100%;height:100%;display:block}
 .kick2{display:flex;gap:8px;align-items:center;font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--c)}
 .kick2 em{font-style:normal;color:var(--muted);letter-spacing:.02em;text-transform:none;font-weight:600;font-size:12.5px}
@@ -4590,7 +4590,7 @@ function buildHero(){
     </div>
     <a class="lp-map" href="${storyHref(s)}" style="--c:${pillar(s)}" aria-label="${artKick(s) === "Club" ? "Club colours" : artKick(s) === "Sport" ? "Illustration" : artKick(s) === "Photo" ? "Photo" : artKick(s) === "Breaking" ? "Breaking news picture" : "Map"}: ${esc(artCaption(s))}">${storyArt(s,{zoom:430,aspect:1.05})}<span class="mcap"><b>${artKick(s)}</b> ${esc(artCaption(s))}</span></a>`;
   $("#seconds").innerHTML = seconds.map(x => `<a class="sec" href="${storyHref(x)}" style="--c:${pillar(x)}">
-      <div class="sec-map">${storyArt(x,{zoom:340,aspect:.24,label:false,credit:true})}</div>
+      <div class="sec-map">${storyArt(x,{zoom:340,aspect:.5,label:false,credit:true})}</div>
       <div class="sec-body"><span class="kick2">${esc(x.tag||"News")}<em>${esc(x.place||"Essex")}</em></span>
       <h3>${esc(x.headline)}</h3><p>${esc(x.summary)}</p>
       <div class="m"><span data-ago="${esc(shownT(x))}">${ago(shownT(x))}</span></div></div></a>`).join("");
