@@ -1,12 +1,12 @@
 {
- "at": "2026-11-10T16:28:39.798873+00:00",
+ "at": "2026-11-11T06:33:00.271234+00:00",
  "councils": {
   "thurrock": {
    "name": "Thurrock Council",
    "system": "mg",
    "base": "https://democracy.thurrock.gov.uk",
-   "meetings": 19,
-   "changed": 0,
+   "meetings": 20,
+   "changed": 2,
    "state": "ok",
    "note": ""
   },
@@ -23,7 +23,7 @@
    "name": "Epping Forest District Council",
    "system": "mg",
    "base": "https://rds.eppingforestdc.gov.uk",
-   "meetings": 16,
+   "meetings": 15,
    "changed": 0,
    "state": "ok",
    "note": ""
@@ -32,8 +32,8 @@
    "name": "Maldon District Council",
    "system": "mg",
    "base": "https://democracy.maldon.gov.uk",
-   "meetings": 16,
-   "changed": 0,
+   "meetings": 17,
+   "changed": 1,
    "state": "ok",
    "note": ""
   },
@@ -41,10 +41,10 @@
    "name": "Tendring District Council",
    "system": "mg",
    "base": "https://tdcdemocracy.tendringdc.gov.uk",
-   "meetings": 0,
-   "changed": 0,
-   "state": "unreachable",
-   "note": "calendar 502 HTTP Error 502: Bad Gateway"
+   "meetings": 13,
+   "changed": 2,
+   "state": "ok",
+   "note": "per-council time cap reached"
   },
   "harlow": {
    "name": "Harlow Council",
@@ -59,10 +59,10 @@
    "name": "Basildon Council",
    "system": "mg",
    "base": "https://www.basildonmeetings.info",
-   "meetings": 0,
-   "changed": 0,
-   "state": "blocked",
-   "note": "calendar 403 HTTP Error 403: Forbidden"
+   "meetings": 18,
+   "changed": 18,
+   "state": "ok",
+   "note": ""
   },
   "brentwood": {
    "name": "Brentwood Borough Council",
@@ -114,7 +114,7 @@
    "system": "chelmsford",
    "base": "https://www.chelmsford.gov.uk",
    "meetings": 6,
-   "changed": 1,
+   "changed": 2,
    "state": "ok",
    "note": ""
   },
@@ -138,13 +138,13 @@
   }
  },
  "requests": {
-  "thurrock": 22,
+  "thurrock": 26,
   "southend": 22,
-  "epping": 22,
-  "maldon": 19,
-  "tendring": 3,
+  "epping": 21,
+  "maldon": 20,
+  "tendring": 15,
   "harlow": 3,
-  "basildon": 3,
+  "basildon": 27,
   "brentwood": 3,
   "uttlesford": 3,
   "rochford": 1,
