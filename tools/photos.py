@@ -86,6 +86,20 @@ ABROAD = re.compile(r"\b(" + "|".join([
 COMMONS = "https://commons.wikimedia.org/w/api.php"
 COMMONS_OK = re.compile(r"^(cc0|public domain|pd|cc by(-sa)? \d(\.\d)?( [a-z]+)?|cc by(-sa)?)$", re.I)  # no NC/ND, no fair use
 SOURCES = {"flickr", "wikimedia", "stocksnap", "rawpixel", "nappy"}  # Openverse photo libraries we accept
+# Flickr and Wikimedia photos are usually of a real place somewhere in the world, and a title can hide the country
+# (a Japanese school pool came through titled only with its town). So a stock photo from those two libraries must
+# show it was taken in the UK: a UK country, region, county, big city or geograph.org.uk in its title, tags or link
+# (owner's rule, 11 Nov 2026). Studio stock libraries (StockSnap, rawpixel, nappy) are placeless and need no UK sign.
+PLACED_SOURCES = {"flickr", "wikimedia"}
+UK_RX = re.compile(r"\b(uk|u\.k|united kingdom|great britain|britain|british|england|english|scotland|scottish|wales|welsh|"
+                   r"northern ireland|geograph|essex|london|kent|suffolk|norfolk|hertfordshire|herts|cambridgeshire|surrey|"
+                   r"sussex|hampshire|berkshire|buckinghamshire|bedfordshire|oxfordshire|wiltshire|dorset|devon|cornwall|"
+                   r"somerset|gloucestershire|worcestershire|warwickshire|shropshire|staffordshire|derbyshire|"
+                   r"nottinghamshire|leicestershire|lincolnshire|northamptonshire|rutland|cheshire|lancashire|merseyside|"
+                   r"yorkshire|cumbria|northumberland|durham|tyne|chelmsford|colchester|southend|basildon|harlow|braintree|"
+                   r"brentwood|thurrock|grays|clacton|harwich|maldon|epping|saffron walden|rayleigh|billericay|witham|"
+                   r"manchester|birmingham|liverpool|leeds|sheffield|bristol|newcastle|nottingham|leicester|cambridge|"
+                   r"oxford|brighton|norwich|ipswich|edinburgh|glasgow|cardiff|belfast)\b", re.I)
 CTX = ssl.create_default_context()
 
 def get(url, binary=False, limit=80_000_000, tries=3):
@@ -140,6 +154,8 @@ def search(kw):
         everything = f'{r.get("title") or ""} {" ".join(t.get("name", "") for t in (r.get("tags") or []))} {r.get("foreign_landing_url") or ""}'
         if ABROAD.search(everything.replace("_", " ")):
             continue  # taken abroad: never put an overseas scene beside an Essex story
+        if str(r.get("source") or "").lower() in PLACED_SOURCES and not UK_RX.search(everything.replace("_", " ")):
+            continue  # a real place with no sign it is in the UK: no photo is better than an overseas one
         words = [x for x in re.findall(r"[a-z]+", kw.lower()) if len(x) > 2]
         hits = sum(1 for x in words if x in title)
         if words and hits < len(words):
