@@ -1,5 +1,5 @@
 {
- "at": "2026-11-11T06:33:00.271234+00:00",
+ "at": "2026-11-11T16:39:07.678997+00:00",
  "meetings": [
   {
    "council": "southend",
@@ -11,9 +11,9 @@
    "url": "https://democracy.southend.gov.uk/ieListDocuments.aspx?CId=607&MId=5113",
    "items": [
     "26/00809/DOV - Land Between Barge Pier Road and Ness Road, Shoeburyness (Shoeburyness Ward)",
+    "Supplementary Report",
     "Appeals received and determined in the last quarter, Appeals currently pending",
-    "Reports on Planning Applications",
-    "Contents List and Introduction"
+    "Reports on Planning Applications"
    ]
   },
   {
@@ -253,16 +253,6 @@
    ]
   },
   {
-   "council": "chelmsford",
-   "councilName": "Chelmsford City Council",
-   "area": "chelmsford",
-   "committee": "Regulatory committee",
-   "date": "2026-11-19",
-   "time": "",
-   "url": "https://www.chelmsford.gov.uk/committee-meetings/regulatory-committee-november-2026/",
-   "items": []
-  },
-  {
    "council": "thurrock",
    "councilName": "Thurrock Council",
    "area": "south",
@@ -309,13 +299,8 @@
    "committee": "Regeneration Scrutiny Committee",
    "date": "2026-11-24",
    "time": "7.00 p.m.",
-   "url": "https://www.basildonmeetings.info/ieListDocuments.aspx?CId=998&MId=9496",
-   "items": [
-    "TOWN CENTRE MASTERPLANS UPDATE: WICKFORD, PITSEA AND LAINDON",
-    "PUBILIC REALM: BASILDON TOWN CENTRE SAFETY IMPROVEMENTS",
-    "LOCAL PLAN",
-    "Basildon Town Centre Regeneration Delivery Plan (including Basildon Regeneration Partnership)"
-   ]
+   "url": "https://www.basildonmeetings.info/ieListDocuments.aspx?CId=998&MId=9627",
+   "items": []
   },
   {
    "council": "thurrock",
