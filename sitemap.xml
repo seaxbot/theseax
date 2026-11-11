@@ -2,8 +2,9 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url><loc>https://theseax.com/</loc><lastmod>2026-11-11</lastmod><changefreq>hourly</changefreq><priority>1.0</priority></url>
 <url><loc>https://theseax.com/about/</loc><changefreq>monthly</changefreq><priority>0.4</priority></url>
-<url><loc>https://theseax.com/briefing/</loc><lastmod>2026-11-10</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://theseax.com/briefing/</loc><lastmod>2026-11-11</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
 <url><loc>https://theseax.com/story/the-seax-launches/</loc><lastmod>2026-11-09</lastmod><priority>0.5</priority></url>
+<url><loc>https://theseax.com/story/thurrock-armistice-day-stifford-tilbury-2026/</loc><lastmod>2026-11-11</lastmod></url>
 <url><loc>https://theseax.com/story/s-colchester-ipswich-u21-efl-trophy-2026-11-10/</loc><lastmod>2026-11-10</lastmod></url>
 <url><loc>https://theseax.com/story/basildon-war-memorial-don-sheppard-vote/</loc><lastmod>2026-11-10</lastmod></url>
 <url><loc>https://theseax.com/story/c-basildon-community-together-fund-first-grants/</loc><lastmod>2026-11-10</lastmod></url>
@@ -272,18 +273,19 @@
 <url><loc>https://theseax.com/story/ct-rochford-westcliff-drugs-gun/</loc><lastmod>2026-10-23</lastmod></url>
 <url><loc>https://theseax.com/story/thurrock-local-plan-consultation-closes-midnight/</loc><lastmod>2026-10-21</lastmod></url>
 <url><loc>https://theseax.com/story/chelmsford-local-plan-examination-hearings-begin/</loc><lastmod>2026-10-06</lastmod></url>
-<url><loc>https://theseax.com/story/o-chelmsford-local-plan-hearings-10-november/</loc><lastmod>2026-10-06</lastmod></url>
 <url><loc>https://theseax.com/story/o-chelmsford-local-plan-examination-hearings/</loc><lastmod>2026-10-06</lastmod></url>
+<url><loc>https://theseax.com/story/o-chelmsford-local-plan-hearings-10-november/</loc><lastmod>2026-10-06</lastmod></url>
+<url><loc>https://theseax.com/briefing/2026-11-11/</loc><lastmod>2026-11-11</lastmod></url>
 <url><loc>https://theseax.com/briefing/2026-11-10/</loc><lastmod>2026-11-10</lastmod></url>
 <url><loc>https://theseax.com/briefing/2026-11-09/</loc><lastmod>2026-11-09</lastmod></url>
 <url><loc>https://theseax.com/briefing/2026-11-08/</loc><lastmod>2026-11-08</lastmod></url>
 <url><loc>https://theseax.com/briefing/2026-11-07/</loc><lastmod>2026-11-07</lastmod></url>
 <url><loc>https://theseax.com/briefing/2026-11-06/</loc><lastmod>2026-11-06</lastmod></url>
-<url><loc>https://theseax.com/news/</loc><lastmod>2026-11-10</lastmod><changefreq>hourly</changefreq><priority>0.8</priority></url>
+<url><loc>https://theseax.com/news/</loc><lastmod>2026-11-11</lastmod><changefreq>hourly</changefreq><priority>0.8</priority></url>
 <url><loc>https://theseax.com/news/chelmsford/</loc><lastmod>2026-11-10</lastmod><changefreq>hourly</changefreq><priority>0.8</priority></url>
 <url><loc>https://theseax.com/news/colchester/</loc><lastmod>2026-11-10</lastmod><changefreq>hourly</changefreq><priority>0.8</priority></url>
 <url><loc>https://theseax.com/news/southend/</loc><lastmod>2026-11-10</lastmod><changefreq>hourly</changefreq><priority>0.8</priority></url>
-<url><loc>https://theseax.com/news/basildon-thurrock/</loc><lastmod>2026-11-10</lastmod><changefreq>hourly</changefreq><priority>0.8</priority></url>
+<url><loc>https://theseax.com/news/basildon-thurrock/</loc><lastmod>2026-11-11</lastmod><changefreq>hourly</changefreq><priority>0.8</priority></url>
 <url><loc>https://theseax.com/news/brentwood/</loc><lastmod>2026-11-10</lastmod><changefreq>hourly</changefreq><priority>0.8</priority></url>
 <url><loc>https://theseax.com/news/braintree-witham/</loc><lastmod>2026-11-09</lastmod><changefreq>hourly</changefreq><priority>0.8</priority></url>
 <url><loc>https://theseax.com/news/maldon/</loc><lastmod>2026-11-10</lastmod><changefreq>hourly</changefreq><priority>0.8</priority></url>
