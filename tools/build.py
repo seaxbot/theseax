@@ -456,6 +456,8 @@ def is_pool(it, sec):
 # stories keep the sport photos and a headline naming a signed road keeps the sign. Deaths, injuries, police, abuse,
 # court cases and fires keep the normal rules. Same rule as the page's isHomelessStory.
 HOMELESS_RX = re.compile(r"\bhomeless\w*\b|\brough[- ]sleep\w*\b|\bsleep\w* rough\b|\b(night|winter|homeless|emergency) shelters?\b|\bSWEP\b", re.I)
+# Not for homeless families, temporary housing or council budget stories (owner's rule, 11 Nov 2026): rough sleeping and shelters only.
+HOMELESS_HOUSING_RX = re.compile(r"\b(famil(y|ies)|children|kids|temporary (housing|accommodation)|B&Bs?|bed and breakfasts?|overspend\w*|budgets?|deficits?|council tax|housing (costs?|bill|pressures?|waiting list))\b", re.I)
 HOMELESS_BAD_RX = re.compile(r"\b(drown\w*|crash\w*|collision\w*|killed|died|dies|death|dead|body|fatal\w*|injur\w*|hurt|seriously|critical\w*|stabb?\w*|assault\w*|attack\w*|abuse\w*|indecent|sexual\w*|rape\w*|murder\w*|arrest\w*|charged|jailed|sentenced|court|police|fire|blaze|flames|explo\w*|evacuat\w*)\b", re.I)
 
 def is_homeless(it, sec):
@@ -464,7 +466,7 @@ def is_homeless(it, sec):
     h = str(it.get("headline") or "")
     if any(rx.search(h) for _, rx in ROAD_OG):
         return False
-    return bool(HOMELESS_RX.search(h) and not HOMELESS_BAD_RX.search(h + " " + str(it.get("summary") or "")))
+    return bool(HOMELESS_RX.search(h) and not HOMELESS_HOUSING_RX.search(h) and not HOMELESS_BAD_RX.search(h + " " + str(it.get("summary") or "")))
 
 # Remembrance stories use the owner's poppy wreath photo (owner's rule, Nov 2026). Same test as the page's
 # seasonKindOf(s) === "remembrance": not sport, police, court, crime, appeal, fire, ambulance or tribute stories.

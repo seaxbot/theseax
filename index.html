@@ -3737,12 +3737,14 @@ function poolArt(s){ return `<svg class="emap wxart townphoto" width="100%" heig
    Sport stories keep the sport photos and a headline naming a signed road keeps the sign. Deaths, injuries, police,
    abuse, court cases and fires keep the normal rules. Same rule as tools/build.py is_homeless */
 const HOMELESS_RX = /\bhomeless\w*\b|\brough[- ]sleep\w*\b|\bsleep\w* rough\b|\b(night|winter|homeless|emergency) shelters?\b|\bSWEP\b/i;
+/* not for homeless families, temporary housing or council budget stories (owner's rule, 11 Nov 2026): rough sleeping and shelters only */
+const HOMELESS_HOUSING_RX = /\b(famil(y|ies)|children|kids|temporary (housing|accommodation)|B&Bs?|bed and breakfasts?|overspend\w*|budgets?|deficits?|council tax|housing (costs?|bill|pressures?|waiting list))\b/i;
 const HOMELESS_BAD_RX = /\b(drown\w*|crash\w*|collision\w*|killed|died|dies|death|dead|body|fatal\w*|injur\w*|hurt|seriously|critical\w*|stabb?\w*|assault\w*|attack\w*|abuse\w*|indecent|sexual\w*|rape\w*|murder\w*|arrest\w*|charged|jailed|sentenced|court|police|fire|blaze|flames|explo\w*|evacuat\w*)\b/i;
 function isHomelessStory(s){
   if(!s || sportKindOf(s) || isRemembranceStory(s)) return false;
   const h = String(s.headline || "");
   if(Object.keys(ROAD_SIGN).some(k => ROAD_SIGN[k].re.test(h))) return false;
-  return HOMELESS_RX.test(h) && !HOMELESS_BAD_RX.test(h + " " + String(s.summary || ""));
+  return HOMELESS_RX.test(h) && !HOMELESS_HOUSING_RX.test(h) && !HOMELESS_BAD_RX.test(h + " " + String(s.summary || ""));
 }
 function homelessArt(s){ return `<svg class="emap wxart townphoto" width="100%" height="100%" role="img" aria-label="Library photo: a man in a woolly hat sitting on a pavement, seen from behind" style="background:#4a4a48"><image href="/img/topics/homeless.jpg?v=1" x="0" y="0" width="100%" height="100%" preserveAspectRatio="xMidYMid slice"/></svg>`; }
 /* c2c stories use the owner's chosen photo of c2c train 357 040 at Ripple Lane (owner's rule, Nov 2026), always credited:
