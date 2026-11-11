@@ -940,6 +940,142 @@ def fallback_photo(it, sec, card):
             f'<figcaption><b>{E(cr.get("what"))}</b>. File photo, not the scene of this story. Photo: {E(cr.get("by"))}, {lic_html}{via}.</figcaption></figure>',
             f"/img/og/place-{tk}.jpg")
 
+# ---------- story page map (owner's rule, 11 Nov 2026: every story page has a picture) ----------
+# A story with no photo of any kind (no library, stock, town or sport photo, or the owner chose "map only") shows the
+# same Essex map its front-page card draws: the story's places pinned and their districts shaded, or the whole county
+# for county-wide stories. The map data (district outlines, places, reference towns) is read from index.html so the
+# two always match; this is a straight port of the page's storyPins, storyDistricts, storyMap and mapCaption.
+_MAP = None
+
+def _map_data():
+    global _MAP
+    if _MAP is None:
+        src = open(os.path.join(ROOT, "index.html"), encoding="utf-8").read()
+        grab = lambda n: re.search(r"^const " + n + r" = (.*?);\s*$", src, re.M).group(1)
+        ad = re.sub(r"([{,]\s*)([a-z_]+):", r'\1"\2":', grab("AREA_DISTRICTS"))
+        _MAP = {"M": json.loads(grab("ESSEX_MAP")), "P": json.loads(grab("ESSEX_PLACES")), "REF": json.loads(grab("REF_TOWNS")),
+                "AD": json.loads(ad)}
+        keys = sorted(_MAP["P"], key=len, reverse=True)
+        _MAP["RX"] = [(k, re.compile(r"(^|[^a-z])" + re.sub(r"[-\s]", r"[-\\s]", re.escape(k).replace("\\ ", " ").replace("\\-", "-")) + r"(?![a-z])", re.I)) for k in keys]
+    return _MAP
+
+def story_pins(it):
+    D = _map_data(); M = D["M"]
+    pins, seen = [], set()
+    def add(name, x, y, d):
+        key = (round(x), round(y))
+        if key not in seen:
+            seen.add(key); pins.append({"name": name, "x": x, "y": y, "d": d})
+    try:
+        lat, lon = float(it.get("lat")), float(it.get("lon"))
+        x, y = (lon - M["lon0"]) * M["kx"] * M["k"], (M["lat1"] - lat) * M["k"]
+        add(re.split(r"[,&]", str(it.get("place") or ""))[0].strip() or "Here", x, y, None)
+    except (TypeError, ValueError):
+        pass
+    def scan(txt):
+        t = " " + str(txt or "") + " "
+        for k, rx in D["RX"]:
+            if rx.search(t):
+                p = D["P"][k]; add(k, p[0], p[1], p[2]); t = rx.sub(" ", t, count=1)
+    for f in ("place", "headline", "summary"):
+        if not pins:
+            scan(it.get(f))
+    return pins[:3]
+
+def story_districts(it, pins):
+    D = _map_data()
+    lit = []
+    for p in pins:
+        if p["d"] and p["d"] not in lit:
+            lit.append(p["d"])
+    if not lit:
+        for a in it.get("areas") or []:
+            for d in D["AD"].get(a, []):
+                if d not in lit:
+                    lit.append(d)
+    return lit
+
+def map_caption(it):
+    pins = story_pins(it); lit = story_districts(it, pins)
+    if pins:
+        extra = f" · {lit[0]} district" if len(lit) == 1 and not any(p["name"].lower().startswith(re.split(r"[- ]", lit[0].lower())[0]) for p in pins) else ""
+        return " · ".join(p["name"] for p in pins) + extra
+    return " · ".join(lit) if lit else "Across Essex"
+
+def _mix(hex_c, pct, base="#fbf8f1"):
+    a = [int(hex_c[i:i + 2], 16) for i in (1, 3, 5)]; b = [int(base[i:i + 2], 16) for i in (1, 3, 5)]
+    return "#" + "".join(f"{round(x * pct + y * (1 - pct)):02x}" for x, y in zip(a, b))
+
+def story_map_svg(it, colour, aspect=0.5, zoom=760):
+    D = _map_data(); M = D["M"]
+    pins = story_pins(it); lit = story_districts(it, pins); countywide = not pins and not lit
+    if pins:
+        xs, ys = [p["x"] for p in pins], [p["y"] for p in pins]
+        dx, dy = max(xs) - min(xs), max(ys) - min(ys)
+        need = max(dx * 1.7 + 160, (dy * 1.7 + 160) / aspect)
+        fit = min(820, max(zoom, need))
+        if dx <= fit * .9 and dy <= fit * aspect * .85:
+            cx, cy, w = (min(xs) + max(xs)) / 2, (min(ys) + max(ys)) / 2, fit
+        else:
+            cx, cy, w = pins[0]["x"], pins[0]["y"], zoom
+    elif lit:
+        cs = [M["centroids"][d] for d in lit if d in M["centroids"]]
+        cx, cy = sum(c[0] for c in cs) / len(cs), sum(c[1] for c in cs) / len(cs)
+        w = max(zoom, 560 if len(lit) > 2 else 0)
+    else:
+        cx, cy, w = 520, 360, 1000  # county-wide: the whole county fits the wide story-page frame
+    w = min(w, 820) if not countywide else w; h = w * aspect
+    x0, y0 = max(0, min(M["w"] - w, cx - w / 2)), max(0, min(M["h"] - h, cy - h / 2))
+    fs, sw = w / 42, w / 520
+    font = "font-family:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif"
+    fills = {"lit": (_mix(colour, .78), "#fbf8f1"), "all": (_mix(colour, .16), "#a99f8b"), "ed": ("#fbf8f1", "#b9af9c")}
+    parts = []
+    for n, d in M["districts"].items():
+        f, st = fills["lit" if n in lit else "all" if countywide else "ed"]
+        parts.append(f'<path d="{d}" fill="{f}" stroke="{st}" stroke-width="{sw * 1.1:.2f}"/>')
+    pinned = {p["name"].lower() for p in pins}
+    refs = []
+    for t in D["REF"]:
+        if t.lower() in pinned or t not in D["P"]:
+            continue
+        x, y = D["P"][t][0], D["P"][t][1]
+        if any(((p["x"] - x) ** 2 + (p["y"] - y) ** 2) ** .5 < w / 9 for p in pins) or not (x0 <= x <= x0 + w and y0 <= y <= y0 + h):
+            continue
+        refs.append(f'<g><circle cx="{x}" cy="{y}" r="{fs * .22:.1f}" fill="#6d675c"/><text x="{x + fs * .45:.1f}" y="{y + fs * .32:.1f}" font-size="{fs * .78:.1f}" '
+                    f'fill="#5a554b" stroke="#fbf8f1" stroke-width="{fs * .12:.1f}" paint-order="stroke" style="{font};font-weight:600">{E(t)}</text></g>')
+    labels = []
+    for d in lit:
+        if d in M["centroids"] and not any(((p["x"] - M["centroids"][d][0]) ** 2 + (p["y"] - M["centroids"][d][1]) ** 2) ** .5 < w / 6 for p in pins):
+            x, y = M["centroids"][d]
+            labels.append(f'<text x="{x}" y="{y}" font-size="{fs * .8:.1f}" text-anchor="middle" fill="#fff" opacity=".9" style="{font};font-weight:800;letter-spacing:.12em">{E(d.upper())}</text>')
+    placed, pin_svg = [], []
+    for p in pins:
+        r, lw, lh = fs * .42, len(p["name"]) * fs * .56 + fs * 1.1, fs * 1.7
+        right = p["x"] + lw + fs < x0 + w
+        tries = [(p["x"] + r + fs * .5 if right else p["x"] - r - fs * .5 - lw, p["y"] - fs * .85),
+                 (p["x"] - r - fs * .5 - lw if right else p["x"] + r + fs * .5, p["y"] - fs * .85),
+                 (p["x"] - lw / 2, p["y"] - r - fs * .4 - lh), (p["x"] - lw / 2, p["y"] + r + fs * .4)]
+        hit = lambda t: any(t[0] < q[0] + q[2] and t[0] + lw > q[0] and t[1] < q[1] + q[3] and t[1] + lh > q[1] for q in placed)
+        lx, ly = next((t for t in tries if not hit(t)), tries[0]); placed.append((lx, ly, lw, lh))
+        pin_svg.append(f'<g><circle cx="{p["x"]}" cy="{p["y"]}" r="{r * 2.6:.1f}" fill="{colour}" opacity=".3"/>'
+                       f'<circle cx="{p["x"]}" cy="{p["y"]}" r="{r:.1f}" fill="#fff" stroke="#14171f" stroke-width="{sw * 2.6:.2f}"/>'
+                       f'<rect x="{lx:.1f}" y="{ly:.1f}" width="{lw:.1f}" height="{lh:.1f}" rx="{fs * .25:.1f}" fill="#14171f"/>'
+                       f'<text x="{lx + fs * .55:.1f}" y="{ly + fs * 1.18:.1f}" font-size="{fs * .95:.1f}" fill="#fff" style="{font};font-weight:700">{E(p["name"])}</text></g>')
+    cw = ""
+    if countywide:
+        c = M["centroids"]["Chelmsford"]
+        cw = (f'<text x="{c[0]}" y="{c[1] + fs * .3:.1f}" font-size="{fs * 2.2:.1f}" text-anchor="middle" fill="{colour}" opacity=".35" '
+              f'style="font-family:Georgia,serif;font-weight:900;letter-spacing:.2em">ESSEX</text>')
+    what = ", ".join(p["name"] for p in pins) or ", ".join(lit) or "the whole county"
+    return (f'<svg viewBox="{x0:.1f} {y0:.1f} {w:.1f} {h:.1f}" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Map of Essex showing {E(what)}" '
+            f'style="display:block;width:100%;height:auto;aspect-ratio:{1 / aspect:.3f};border-radius:10px;background:#d6e1e7">'
+            f'<rect x="-2000" y="-2000" width="{M["w"] + 4000}" height="{M["h"] + 4000}" fill="#d6e1e7"/><path d="{M["context"]}" fill="#e7e0d1"/>'
+            + "".join(parts) + "".join(labels) + "".join(refs) + cw + "".join(pin_svg) + "</svg>")
+
+def map_figure(it, colour):
+    return (f'<figure class="stock">{story_map_svg(it, colour)}'
+            f'<figcaption><b>Where</b>. {E(map_caption(it))}</figcaption></figure>')
+
 # ---------- story pages ----------
 def collect(ed):
     out = []
@@ -1056,7 +1192,10 @@ def story_page(sec, it, more):
         fig2, og2 = fallback_photo(it, sec, card)
         if fig2:
             fig, og_img = fig2, og2
-    if fig:
+    map_only = False
+    if not fig:  # no photo of any kind: show the front page's map (the share card stays the branded card)
+        fig, map_only = map_figure(it, colour), True
+    if fig and not map_only:
         ld["image"] = [SITE + og_img if og_img.startswith("/") else ld["image"][0]]
         extra = extra.replace(SITE + og_path(card), ld["image"][0])
     return head(f"{title} · The Seax", desc, url, og_img, "article", extra) + f"""<main class="wrap story">
