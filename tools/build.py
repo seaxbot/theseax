@@ -94,9 +94,9 @@ POLICE_TAG_SKIP = {"court", "tribute", "fire", "ambulance"}
 POLICE_POLICY_RX = re.compile(r"\b(commissioners?|PFCC|mergers?|mega[ -]force|budgets?|precept|council tax|HMICFRS|inspections?|inspectorate)\b", re.I)
 POLICE_PHOTOS = ["bluelights", "bluelights-2"]  # img/topics/<name>.jpg and share cards img/og/<name>.jpg, rotated like the page
 POLICE_PICK = {}
-OG_JPG = {"hospital", "bluelights", "bluelights-2", "fireengine", "countyhall", "fog", "zoo", "stansted-1", "stansted-2", "stansted-3", "gaswork", "datacentre", "remembrance", "food", "harlowcollege", "christmas", "c2c"}
-LIBRARY_PHOTOS = POLICE_PHOTOS + ["fireengine", "countyhall", "fog", "zoo", "stansted-1", "stansted-2", "stansted-3", "gaswork", "datacentre", "remembrance", "food", "harlowcollege", "christmas", "c2c"]  # owner's library photos shown on story pages
-LIBRARY_ALT = {"fog": "fog over a footpath and flats at dusk", "fireengine": "a fire engine", "countyhall": "County Hall, Chelmsford, home of Essex County Council", "zoo": "visitors watching elephants at Colchester Zoo", "stansted-1": "check-in desks at London Stansted Airport", "stansted-2": "the terminal concourse at London Stansted Airport", "stansted-3": "a bus outside the terminal at London Stansted Airport", "gaswork": "a worker fitting yellow gas pipe in a trench", "datacentre": "server racks in a data centre", "remembrance": "poppy wreaths laid at a war memorial", "food": "a plate of roast chicken, grains and roasted vegetables", "harlowcollege": "the entrance to Harlow College", "christmas": "red Christmas baubles on a fir garland", "c2c": "a c2c train in white and magenta livery near Ripple Lane, Barking"}
+OG_JPG = {"ambulance", "hospital", "bluelights", "bluelights-2", "fireengine", "countyhall", "fog", "zoo", "stansted-1", "stansted-2", "stansted-3", "gaswork", "datacentre", "remembrance", "food", "harlowcollege", "christmas", "c2c"}
+LIBRARY_PHOTOS = POLICE_PHOTOS + ["fireengine", "ambulance", "countyhall", "fog", "zoo", "stansted-1", "stansted-2", "stansted-3", "gaswork", "datacentre", "remembrance", "food", "harlowcollege", "christmas", "c2c"]  # owner's library photos shown on story pages
+LIBRARY_ALT = {"ambulance": "an ambulance with blue lights", "fog": "fog over a footpath and flats at dusk", "fireengine": "a fire engine", "countyhall": "County Hall, Chelmsford, home of Essex County Council", "zoo": "visitors watching elephants at Colchester Zoo", "stansted-1": "check-in desks at London Stansted Airport", "stansted-2": "the terminal concourse at London Stansted Airport", "stansted-3": "a bus outside the terminal at London Stansted Airport", "gaswork": "a worker fitting yellow gas pipe in a trench", "datacentre": "server racks in a data centre", "remembrance": "poppy wreaths laid at a war memorial", "food": "a plate of roast chicken, grains and roasted vegetables", "harlowcollege": "the entrance to Harlow College", "christmas": "red Christmas baubles on a fir garland", "c2c": "a c2c train in white and magenta livery near Ripple Lane, Barking"}
 # Essex County Council stories use the owner's photo of County Hall, Chelmsford (owner's rule, Nov 2026), ahead of
 # stock, town and map art. Road signs, police and fire photos still win. Same rule as the page's isCountyHallStory.
 ECC_RX = re.compile(r"\bEssex County Council\b|\bCounty Hall\b", re.I)
@@ -182,6 +182,20 @@ def is_fire(it, sec):
     if sec == "sport" or POLICE_POLICY_RX.search(str(it.get("headline") or "")):
         return False
     return icon_of(it, sec) == "fire" or str(it.get("tag") or "").lower() == "fire"
+
+# Ambulance stories use the owner's ambulance photo (owner's rule, 11 Nov 2026): icon or tag "ambulance", or a headline
+# naming an ambulance or paramedics. Road crashes keep the police photo; air ambulance (helicopter) stories keep their
+# usual art. Checked ahead of County Hall, hospital and stock art. Same rule as the page's isAmbulanceStory.
+AMB_RX = re.compile(r"\bambulances?\b|\bparamedics?\b|\bEEAST\b", re.I)
+AIR_AMB_RX = re.compile(r"\bair ambulance", re.I)
+
+def is_ambulance(it, sec):
+    if sec in ("sport", "councilwatch") or is_police(it, sec) or is_fire(it, sec):
+        return False
+    h = str(it.get("headline") or "")
+    if AIR_AMB_RX.search(h):
+        return False
+    return icon_of(it, sec) == "ambulance" or str(it.get("tag") or "").lower() == "ambulance" or bool(AMB_RX.search(h))
 
 def is_county_hall(it, sec):
     if sec == "sport" or is_police(it, sec) or is_fire(it, sec):
@@ -433,6 +447,8 @@ def card_of(it, sec):
     road = road_of(it)
     if sec != "sport" and road and os.path.exists(os.path.join(ROOT, "img", "og", road + ".png")):
         return road
+    if is_ambulance(it, sec) and os.path.exists(os.path.join(ROOT, "img", "og", "ambulance.jpg")):
+        return "ambulance"
     if is_harlow_college(it, sec) and os.path.exists(os.path.join(ROOT, "img", "og", "harlowcollege.jpg")):
         return "harlowcollege"
     if is_county_hall(it, sec) and os.path.exists(os.path.join(ROOT, "img", "og", "countyhall.jpg")):
