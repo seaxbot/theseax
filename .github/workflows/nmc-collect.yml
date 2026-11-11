@@ -1,0 +1,42 @@
+name: NMC Essex hearings collector
+# Reads the Nursing and Midwifery Council's public monthly hearings pages and keeps the Essex, Southend and
+# Thurrock cases, with the text of published reasons documents, on the branch "nmc-data" for the newsroom.
+# Owner's choice, 11 Nov 2026. Runs twice a day (UTC), and on any change to the collector itself.
+on:
+  schedule:
+    - cron: "20 6 * * *"
+    - cron: "20 16 * * *"
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: [".github/workflows/nmc-collect.yml", "tools/nmc/collect.py"]
+permissions:
+  contents: write
+concurrency: nmc
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with: { fetch-depth: 1 }
+      - name: Get previous state
+        run: |
+          mkdir -p /tmp/nmc
+          if git fetch -q --depth 1 origin nmc-data; then git archive FETCH_HEAD | tar -x -C /tmp/nmc; else echo "no previous state"; fi
+      - name: Install pdftotext
+        run: (command -v pdftotext || (sudo apt-get update -qq && sudo apt-get install -y -qq poppler-utils)) > /dev/null 2>&1 || echo "pdftotext not available"
+      - name: Collect
+        run: |
+          set -o pipefail
+          python3 -u tools/nmc/collect.py /tmp/nmc 2>&1 | tee /tmp/nmc/run.log
+      - name: Save to the data branch
+        if: always()
+        run: |
+          mkdir -p /tmp/nmc; [ -f /tmp/nmc/run.log ] || echo "collector did not run" > /tmp/nmc/run.log
+          cd /tmp/nmc && rm -rf .git
+          git init -q -b nmc-data
+          git config user.name "The Seax NMC collector"
+          git config user.email "seaxbot@users.noreply.github.com"
+          git add -A && git commit -qm "NMC Essex hearings $(date -u +%FT%TZ)"
+          git push -qf "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" nmc-data
