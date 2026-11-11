@@ -25,7 +25,64 @@ API = "https://api.openverse.org/v1/images/"
 SENSITIVE = re.compile(r"\b(police|court|crime|jail|jailed|sentenc|convict|charged|arrest|murder|kill|killed|stab|rape|assault|abuse|death|died|dies|dead|"
                        r"fatal|crash|collision|inquest|tribute|funeral|suicide|missing|(?<!wildlife )hospital|patient|cancer|disease|hit-and-run|appeal for witnesses)", re.I)
 SKIP_TAGS = {"police", "court", "crime", "appeal", "tribute", "health", "fire", "ambulance"}
+# Bus stories always show the owner's bus photo (img/topics/bus.jpg), so no stock photo is looked up for them.
+# Same headline test as tools/build.py BUS_RX.
+BUS_RX = re.compile(r"\bbus(es|ses)?\b|\bpark (and|&) ride\b|\bFirst (Essex|Bus)\b|\bEnsign ?bus\b", re.I)
 MAX_NEW = 12   # lookups per run
+# Overseas photos are never used (owner's rule, 11 Nov 2026, after a "bus stop" search put a Moldovan village bus
+# shelter on a Thurrock fares story). A photo whose title, tags, description or categories name another country, a US
+# state, or a major overseas city or region is rejected, so a generic phrase only ever gets a photo that could pass
+# for Essex. Words that are also everyday English (Turkey, Jordan, Chad, Georgia, Guinea, Victoria) are left out.
+# The check runs on new lookups only; owner-pinned files (data/photo-requests.json "File:...") are never second-guessed.
+ABROAD = re.compile(r"\b(" + "|".join([
+    # countries and territories
+    "afghanistan", "albania", "algeria", "andorra", "angola", "argentina", "armenia", "australia", "austria", "azerbaijan",
+    "bahamas", "bahrain", "bangladesh", "barbados", "belarus", "belgium", "belize", "benin", "bhutan", "bolivia", "bosnia",
+    "botswana", "brazil", "brasil", "brunei", "bulgaria", "burkina faso", "burundi", "cambodia", "cameroon", "canada",
+    "cape verde", "chile", "china", "colombia", "comoros", "congo", "costa rica", "croatia", "cuba", "cyprus", "czechia",
+    "czech republic", "denmark", "djibouti", "dominican republic", "ecuador", "egypt", "el salvador", "eritrea", "estonia",
+    "eswatini", "ethiopia", "fiji", "finland", "france", "gabon", "gambia", "germany", "deutschland", "ghana", "greece",
+    "guatemala", "guyana", "haiti", "honduras", "hungary", "iceland", "india", "indonesia", "iran", "iraq", "israel",
+    "italy", "italia", "ivory coast", "jamaica", "japan", "kazakhstan", "kenya", "kosovo", "kuwait", "kyrgyzstan", "laos",
+    "latvia", "lebanon", "lesotho", "liberia", "libya", "liechtenstein", "lithuania", "luxembourg", "madagascar", "malawi",
+    "malaysia", "maldives", "mali", "malta", "mauritania", "mauritius", "mexico", "moldova", "monaco", "mongolia",
+    "montenegro", "morocco", "mozambique", "myanmar", "burma", "namibia", "nepal", "netherlands", "nederland", "holland",
+    "new zealand", "nicaragua", "nigeria", "north korea", "north macedonia", "macedonia", "norway", "oman", "pakistan",
+    "palestine", "panama", "papua new guinea", "paraguay", "peru", "philippines", "poland", "polska", "portugal", "qatar",
+    "romania", "russia", "rwanda", "san marino", "saudi arabia", "senegal", "serbia", "seychelles", "sierra leone",
+    "singapore", "slovakia", "slovenia", "somalia", "south africa", "south korea", "korea", "south sudan", "spain",
+    "espana", "españa", "sri lanka", "sudan", "suriname", "sweden", "switzerland", "syria", "taiwan", "tajikistan",
+    "tanzania", "thailand", "timor", "togo", "trinidad", "tunisia", "türkiye", "turkmenistan", "uganda", "ukraine",
+    "united arab emirates", "uae", "uruguay", "usa", "u\\.s\\.a", "united states", "uzbekistan", "vanuatu", "venezuela",
+    "vietnam", "viet nam", "yemen", "zambia", "zimbabwe", "republica", "república", "republique", "république",
+    # US states
+    "alabama", "alaska", "arizona", "arkansas", "california", "colorado", "connecticut", "delaware", "florida", "hawaii",
+    "idaho", "illinois", "indiana", "iowa", "kansas", "kentucky", "louisiana", "maine", "maryland", "massachusetts",
+    "michigan", "minnesota", "mississippi", "missouri", "montana", "nebraska", "nevada", "new hampshire", "new jersey",
+    "new mexico", "new york", "north carolina", "north dakota", "ohio", "oklahoma", "oregon", "pennsylvania",
+    "rhode island", "south carolina", "south dakota", "tennessee", "texas", "utah", "vermont", "virginia",
+    "west virginia", "wisconsin", "wyoming", "washington,? d\\.?c", "washington state",
+    # overseas regions and big cities
+    "ontario", "quebec", "british columbia", "alberta", "toronto", "vancouver", "montreal", "ottawa", "new south wales",
+    "queensland", "sydney", "melbourne", "brisbane", "perth, wa", "auckland", "wellington, nz", "paris", "berlin",
+    "munich", "münchen", "hamburg", "frankfurt", "cologne", "köln", "rome", "roma", "milan", "milano", "venice", "naples",
+    "madrid", "barcelona", "seville", "valencia", "lisbon", "porto", "amsterdam", "rotterdam", "brussels", "antwerp",
+    "vienna", "wien", "prague", "praha", "budapest", "warsaw", "krakow", "kraków", "moscow", "st petersburg",
+    "saint petersburg", "kyiv", "kiev", "chisinau", "chișinău", "bucharest", "belgrade", "zagreb", "athens", "istanbul",
+    "ankara", "copenhagen", "stockholm", "oslo", "helsinki", "reykjavik", "zurich", "zürich", "geneva", "dubai",
+    "abu dhabi", "doha", "tel aviv", "jerusalem", "cairo", "nairobi", "lagos", "johannesburg", "cape town", "mumbai",
+    "delhi", "bangalore", "kolkata", "karachi", "lahore", "dhaka", "bangkok", "hanoi", "jakarta", "bali", "manila",
+    "kuala lumpur", "hong kong", "beijing", "shanghai", "tokyo", "osaka", "kyoto", "seoul", "taipei", "los angeles",
+    "san francisco", "chicago", "boston", "seattle", "las vegas", "miami", "new orleans", "manhattan", "brooklyn",
+    "rio de janeiro", "sao paulo", "são paulo", "buenos aires", "mexico city", "havana", "europe", "asia", "africa",
+    # nationalities that mark a photo as taken abroad ("Polish" and "Indian" are left out: everyday English and Essex
+    # businesses)
+    "american", "canadian", "mexican", "brazilian", "argentine", "australian", "french", "german", "italian", "spanish",
+    "portuguese", "dutch", "belgian", "swiss", "austrian", "swedish", "norwegian", "danish", "finnish", "icelandic",
+    "czech", "slovak", "hungarian", "romanian", "bulgarian", "croatian", "serbian", "greek", "turkish", "russian",
+    "ukrainian", "moldovan", "chinese", "japanese", "korean", "thai", "vietnamese", "filipino", "indonesian",
+    "malaysian", "israeli", "egyptian", "moroccan", "nigerian", "kenyan",
+]) + r")\b", re.I)
 COMMONS = "https://commons.wikimedia.org/w/api.php"
 COMMONS_OK = re.compile(r"^(cc0|public domain|pd|cc by(-sa)? \d(\.\d)?( [a-z]+)?|cc by(-sa)?)$", re.I)  # no NC/ND, no fair use
 SOURCES = {"flickr", "wikimedia", "stocksnap", "rawpixel", "nappy"}  # Openverse photo libraries we accept
@@ -80,6 +137,9 @@ def search(kw):
             continue  # no maps, charts or graphics, and no groups of people
         if str(r.get("source") or "").lower() not in SOURCES:
             continue  # photo libraries only: no museum objects, artworks or archive scans
+        everything = f'{r.get("title") or ""} {" ".join(t.get("name", "") for t in (r.get("tags") or []))} {r.get("foreign_landing_url") or ""}'
+        if ABROAD.search(everything.replace("_", " ")):
+            continue  # taken abroad: never put an overseas scene beside an Essex story
         words = [x for x in re.findall(r"[a-z]+", kw.lower()) if len(x) > 2]
         hits = sum(1 for x in words if x in title)
         if words and hits < len(words):
@@ -124,6 +184,8 @@ def commons_search(kw):
             continue  # nothing taken before 1990: the place must look as it does now
         if words and not all(x in text for x in words):
             continue  # every word of the phrase must match; no photo is better than a wrong one
+        if ABROAD.search(text):
+            continue  # taken abroad: never put an overseas scene beside an Essex story
         score = (2 if re.search(r"(quality|featured|valued) (images|pictures)", cats, re.I) else 0) + (1 if "geograph" in text else 0)
         yr = re.search(r"\b(20\d\d)\b", meta("DateTimeOriginal"))
         good.append((score, int(yr.group(1)) if yr else 2000, w * h, {
@@ -183,6 +245,14 @@ def main():
                     os.remove(f)
                 photos.pop(it["id"]); changed_rej = True
                 print(f"removed rejected photo: {it['id']}")
+            continue
+        if BUS_RX.search(str(it.get("headline") or "")) and it["id"] not in reqs:
+            if it["id"] in photos:  # bus stories use the owner's bus photo: drop any stock photo found earlier
+                f = os.path.join(ROOT, "img", "stock", f"{it['id']}.jpg")
+                if os.path.exists(f):
+                    os.remove(f)
+                photos.pop(it["id"]); changed_rej = True
+                print(f"removed stock photo from bus story: {it['id']}")
             continue
         kw = str(reqs.get(it["id"]) or it.get("photo") or "").strip()
         cm = str(it.get("commons") or "").strip() if it["id"] not in reqs else ""
