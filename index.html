@@ -706,7 +706,7 @@ h1,h2,h3,h4,.story h1,.lead h2,.card h3,.drow h4{letter-spacing:-.022em}
 .tb-wx .wi{width:24px;height:24px;flex:none;margin-right:5px;display:inline-block}
 .tb-wx .wi svg{width:100%;height:100%;display:block}
 .tb-wx .wsep{width:1px;align-self:stretch;background:var(--hair);margin:0 4px}
-/* shivery blue COLD on the weather bar icon when the temperature goes 2C or below (owner's choice, 12 Nov 2026) */
+/* shivery blue COLD on the weather bar icon when the temperature shown is under 2C (owner's choice, 12 Nov 2026) */
 .tb-wx .wi.cold{position:relative}
 .tb-wx .wi .coldtag{position:absolute;left:50%;bottom:-5px;transform:translateX(-50%);font-size:7.5px;line-height:1;font-weight:900;letter-spacing:.06em;color:#1769c4;background:#eaf4ff;border:1px solid #9cc8f2;border-radius:3px;padding:1px 2px;text-shadow:0 0 3px #bfe0ff;animation:shiver .9s ease-in-out infinite}
 @keyframes shiver{0%,100%{transform:translateX(-50%)}10%{transform:translateX(calc(-50% - 1px)) rotate(-2deg)}20%{transform:translateX(calc(-50% + 1px)) rotate(2deg)}30%{transform:translateX(calc(-50% - 1px)) rotate(-1deg)}40%{transform:translateX(calc(-50% + 1px))}50%{transform:translateX(-50%)}}
@@ -4677,18 +4677,18 @@ function renderToday(){
     const rain = d => Number.isFinite(+d.rain) && +d.rain >= 20 ? `, ${+d.rain}% rain` : "";
     /* small icons for the light bar: the panel icons are drawn for a dark background, so darken their pale greys */
     const ico = (kind, night, temp) => kind ? `<span class="wi${isCold(temp) ? " cold" : ""}" aria-hidden="true">${wxIcon(kind, night).replace(/#e6ebf2/gi,"#a7b2c1").replace(/#cfd7e2/gi,"#8d99aa").replace(/#b9c3d1/gi,"#7f8da0").replace(/#9aa5b5/gi,"#66748a").replace(/#e8e2c8/gi,"#c2a85e")}${isCold(temp) ? '<span class="coldtag">COLD</span>' : ""}</span>${isCold(temp) ? '<span class="sr-only" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)"> cold</span>' : ""}` : "";
-    /* COLD badge when the temperature goes 2C or below: now, tonight's low, or a day's low (owner's choice, 12 Nov 2026) */
-    function isCold(v){ return v !== undefined && v !== null && v !== "" && Number.isFinite(+v) && +v <= 2; }
+    /* COLD badge only when the temperature shown next to the icon is under 2C (owner's choice, 12 Nov 2026) */
+    function isCold(v){ return v !== undefined && v !== null && v !== "" && Number.isFinite(+v) && +v < 2; }
     const nightNow = now > st.set || now < st.rise;
     const parts = [`<span class="wk">Now</span>${ico(w.now.icon, nightNow, w.now.temp)}<b>${esc(w.now.temp)}°C</b>&nbsp;${low(w.now.desc)}`];
     if(today && ukHour < 16) parts.push(`<!--opt--><span class="wk">Later</span>${ico(today.icon, false, today.hi)}high&nbsp;<b>${esc(today.hi)}°C</b>${rain(today)}`);
     if(today && ukHour < 23) parts.push(`<!--opt--><span class="wk">Tonight</span>${ico(today.icon, true, today.lo)}low&nbsp;<b>${esc(today.lo)}°C</b>`);
-    if(tmrw) parts.push(`<span class="wk">Tomorrow</span>${ico(tmrw.icon, false, tmrw.lo)}<b>${esc(tmrw.hi)}°C</b>${rain(tmrw)}`);
+    if(tmrw) parts.push(`<span class="wk">Tomorrow</span>${ico(tmrw.icon, false, tmrw.hi)}<b>${esc(tmrw.hi)}°C</b>${rain(tmrw)}`);
     const dayName = d => esc(new Intl.DateTimeFormat("en-GB",{weekday:"short",timeZone:"Europe/London"}).format(new Date(d.date + "T12:00:00Z")));
     /* five days in all (owner's choice, Nov 2026): now, tomorrow and the three days after */
     for(let n = 2; n <= 4; n++){
       const dn = days.find(d => d.date === ukDate(new Date(now.getTime()+n*864e5)));
-      if(dn) parts.push(`<span class="wk">${dayName(dn)}</span>${ico(dn.icon, false, dn.lo)}<b>${esc(dn.hi)}°C</b>${rain(dn)}`);
+      if(dn) parts.push(`<span class="wk">${dayName(dn)}</span>${ico(dn.icon, false, dn.hi)}<b>${esc(dn.hi)}°C</b>${rain(dn)}`);
     }
     bits.push(`<a href="#weather" class="tb tb-wx">${parts.map(x => x.startsWith("<!--opt-->") ? `<span class="wp opt">${x.slice(10)}</span>` : `<span class="wp">${x}</span>`).join('<span class="wsep" aria-hidden="true"></span>')}</a>`);
   }
