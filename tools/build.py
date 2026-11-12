@@ -25,6 +25,13 @@ from urllib.parse import urlparse, quote
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 UK = ZoneInfo("Europe/London")
 CFG = json.load(open(os.path.join(ROOT, "tools", "site.json"), encoding="utf-8"))
+# Public email addresses on theseax.com (owner's choice, 12 Nov 2026); every one forwards to the newsroom inbox
+MAILS = {"info": "info@theseax.com", "news": "news@theseax.com", "sport": "sport@theseax.com", "events": "events@theseax.com",
+         "community": "community@theseax.com", "corrections": "corrections@theseax.com", "editor": "editor@theseax.com"}
+MAILS.update(CFG.get("emails") or {})
+def mlink(key, subject=""):
+    a = MAILS[key]
+    return f'<a href="mailto:{a}' + ("?subject=" + quote(subject) if subject else "") + f'">{a}</a>'
 SITE = CFG["site"].rstrip("/")
 SAME_AS = [u for u in (CFG.get("facebookPage"), CFG.get("xAccount"), CFG.get("whatsappChannel")) if u]
 NOW = datetime.now(timezone.utc)
@@ -744,7 +751,8 @@ def foot():
     return f"""<footer class="foot"><div class="wrap">
   <p class="area-links"><b>Local news:</b> <a href="/news/">All Essex</a> · {local}</p>
   <p><b>The Seax</b> brings together Essex news, sport and life from trusted local and national sources. Every story links to the original reporting.</p>
-  <p><a href="/about/">About The Seax</a> · <a href="/about/#corrections">Corrections</a> · <a href="mailto:{E(mail)}">{E(mail)}</a> · <a href="/briefing/">Morning briefing</a> · <a href="/feed.xml">RSS</a>{' · ' + ' · '.join(social) if social else ''}</p>
+  <p class="foot-mail"><b>Contact The Seax:</b> news tips {mlink("news")} · sport {mlink("sport")} · events {mlink("events")} · community and charity {mlink("community")} · corrections {mlink("corrections")} · everything else {mlink("info")}</p>
+  <p><a href="/about/">About The Seax</a> · <a href="/about/#corrections">Corrections</a> · <a href="/about/#contact">Contact us</a> · <a href="/briefing/">Morning briefing</a> · <a href="/feed.xml">RSS</a>{' · ' + ' · '.join(social) if social else ''}</p>
 </div></footer>
 """
 
@@ -1212,7 +1220,10 @@ def story_page(sec, it, more):
         also_html = '<h2>Also reported by</h2><ul class="also">' + "".join(
             f'<li><a href="{E(a["url"])}" target="_blank" rel="noopener"><b>{E(a.get("name") or host(a["url"]))}</b> <span>{E(host(a["url"]))} ↗</span></a></li>' for a in also) + "</ul>"
     mail = CFG["contactEmail"]
-    corr = f'mailto:{mail}?subject={quote("Correction: " + title)}&body={quote("Page: " + url)}'
+    corr = f'mailto:{MAILS["corrections"]}?subject={quote("Correction: " + title)}&body={quote("Page: " + url)}'
+    tipkey = "sport" if sec == "sport" else "community" if sec == "community" else "news"
+    tip = (f'<p class="tip">Know more about this story, or have one of your own? Email {mlink(tipkey, "About: " + title)}. '
+           f'Corrections to {mlink("corrections", "Correction: " + title)}.</p>')
     more_html = "".join(
         f'<a class="rel" href="/story/{E(m["id"])}/" style="--c:{ICON_COLOUR.get(icon_of(m, s), "#3a3f4b")}"><i></i><b>{E(m["headline"])}</b><span>{E(m.get("place") or "Essex")}</span></a>'
         for s, m in more)
@@ -1277,6 +1288,7 @@ def story_page(sec, it, more):
   {readfull}
   {also_html}
   {cw_note(corr) if sec == "councilwatch" else f'<p class="note">This is a summary written by The Seax. The original reporting, quotes and images belong to {E(src or "the outlet named above")}{" and the other outlets listed" if also else ""}. <a href="{E(corr)}">Spotted a mistake? Tell us</a>.</p>'}
+  {tip}
 </article>
 <aside>
   <h3>More from Essex</h3>
@@ -1491,7 +1503,7 @@ def cw_pages(ed, archive):
 <p>Essex has fifteen principal councils: Essex County Council, Southend, Thurrock and twelve district, borough and city councils. Each publishes agendas, reports, decisions and minutes that few people have time to read. Council Watch reads them for you.</p>
 <p>Twice a day an automated collector visits each council's public meetings website, politely and within the rules each site publishes, and lists the meetings, agenda items and reports. It ranks items by how much they are likely to matter to residents: money, services, homes, planning, closures, consultations and decisions. Our desk then writes short stories from the most important papers, with the help of AI, and links every story to the exact documents and pages it comes from.</p>
 <p>Council Watch only reports what the council papers say. It does not report private or exempt business, and it does not name members of the public who appear in council papers. Where a council's website limits automated reading, our desk checks it by hand instead.</p>
-<p>Spotted a mistake, or work for an Essex council and want to point us at something? Email <a href="mailto:{E(CFG['contactEmail'])}">{E(CFG['contactEmail'])}</a>.</p>
+<p>Spotted something in your council's papers, or work for an Essex council and want to point us at something? Email {mlink("news", "Council Watch")}. Corrections to {mlink("corrections", "Council Watch correction")}.</p>
 </main>"""
     changed = write("council-watch/index.html", head("Council Watch: what Essex councils are deciding · The Seax", desc, url, "council") + body + newsletter_box() + foot() + "</body></html>\n")
     pages.append((url, NOW.date().isoformat()))
@@ -1554,11 +1566,20 @@ def about_page():
 </ul>
 
 <h2 id="corrections">Corrections and complaints</h2>
-<p>We work hard to be accurate, but if we get something wrong we want to put it right quickly. Email <a href="mailto:{E(mail)}?subject=Correction">{E(mail)}</a> with a link to the page and what is wrong. We aim to review every correction request within 24 hours and will correct, clarify or remove content where it is inaccurate, unfair or should not have been published. Significant corrections are noted on the page.</p>
-<p>If a story concerns you personally and you would like it reviewed or removed, contact us at the same address.</p>
+<p>We work hard to be accurate, but if we get something wrong we want to put it right quickly. Email {mlink("corrections", "Correction")} with a link to the page and what is wrong. We aim to review every correction request within 24 hours and will correct, clarify or remove content where it is inaccurate, unfair or should not have been published. Significant corrections are noted on the page.</p>
+<p>If a story concerns you personally and you would like it reviewed or removed, or you want to make a complaint, email {mlink("editor", "Complaint")}.</p>
 
-<h2>Contact</h2>
-<p>News tips, corrections and partnership ideas: <a href="mailto:{E(mail)}">{E(mail)}</a>.</p>
+<h2 id="contact">Contact The Seax</h2>
+<p>We would love to hear from you. Pick the address that fits and it will reach the right desk:</p>
+<ul class="contacts">
+<li><b>News tips and stories:</b> {mlink("news")}</li>
+<li><b>Sport, results and club news:</b> {mlink("sport")}</li>
+<li><b>Events and what's on:</b> {mlink("events")} (send the date, time, place, price and a link)</li>
+<li><b>Charities, appeals and community groups:</b> {mlink("community")}</li>
+<li><b>Corrections:</b> {mlink("corrections")}</li>
+<li><b>Complaints and removal requests:</b> {mlink("editor")}</li>
+<li><b>Everything else, including partnerships:</b> {mlink("info")}</li>
+</ul>
 <p>If you run an Essex newsroom, magazine or community site and would like to be featured, or would prefer we did not summarise your work, please get in touch and we will respond promptly.</p>
 
 <h2>Privacy</h2>

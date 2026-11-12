@@ -124,3 +124,7 @@ figure.stock figcaption{font-size:13px;color:var(--muted);margin-top:6px;line-he
 figure.stock figcaption a{color:inherit}
 main.prose .kick a{color:inherit;text-decoration:none}
 .area-links a{white-space:nowrap}
+/* contact lines (owner's choice, 12 Nov 2026) */
+.tip{font-size:14px;color:var(--muted);margin-top:10px}
+.tip a,.foot-mail a{font-weight:700;white-space:nowrap}
+ul.contacts{padding-left:1.1em}ul.contacts li{margin:6px 0}

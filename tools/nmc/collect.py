@@ -18,7 +18,7 @@ from datetime import datetime, timezone, date
 from html.parser import HTMLParser
 from urllib.parse import urljoin, urlparse
 
-UA = "TheSeaxNewsDesk/1.0 (+https://theseax.com/about/; theseaxessex@gmail.com)"
+UA = "TheSeaxNewsDesk/1.0 (+https://theseax.com/about/; info@theseax.com)"
 HEAD = {"User-Agent": UA, "Accept": "text/html,application/xhtml+xml,application/pdf;q=0.9,*/*;q=0.8", "Accept-Language": "en-GB,en;q=0.9"}
 BASE = "https://www.nmc.org.uk"
 INDEX = BASE + "/concerns-nurses-midwives/hearings/hearings-sanctions/"

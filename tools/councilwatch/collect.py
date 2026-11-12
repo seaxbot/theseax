@@ -21,7 +21,7 @@ import hashlib, html, json, os, re, ssl, subprocess, sys, tempfile, time, urllib
 from datetime import datetime, timedelta, timezone
 from urllib.parse import urljoin, urlparse, quote
 
-UA = "TheSeaxCouncilWatch/1.0 (+https://theseax.com/about/; theseaxessex@gmail.com)"
+UA = "TheSeaxCouncilWatch/1.0 (+https://theseax.com/about/; info@theseax.com)"
 HEAD = {"User-Agent": UA, "Accept": "text/html,application/xhtml+xml,application/pdf;q=0.9,*/*;q=0.8", "Accept-Language": "en-GB,en;q=0.9"}
 NOW = datetime.now(timezone.utc)
 TODAY = NOW.date()

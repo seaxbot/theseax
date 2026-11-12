@@ -28,8 +28,8 @@
 <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png">
 <link rel="manifest" href="/manifest.webmanifest">
 <link rel="alternate" type="application/rss+xml" title="The Seax: latest Essex news" href="/feed.xml">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"NewsMediaOrganization","name":"The Seax","url":"https://theseax.com/","logo":"https://theseax.com/icons/icon-512.png","email":"theseaxessex@gmail.com","areaServed":"Essex, England","publishingPrinciples":"https://theseax.com/about/","correctionsPolicy":"https://theseax.com/about/#corrections","sameAs":["https://www.facebook.com/profile.php?id=61596409826403","https://x.com/theseaxessex","https://whatsapp.com/channel/0029VbHuL8nBKfi870qIO307"]}</script>
-<!--seax-config--><script>window.SEAX_CONFIG = {"site": "https://theseax.com", "contactEmail": "theseaxessex@gmail.com", "goatcounter": "theseax", "newsletterForm": "https://api.follow.it/subscription-form/N0lnWUp5VkdWOGJVVzdWaHBld1MxSVVEMUl6bTJOQVlGRjhXSSsxTjQwL1h3YWhJL01XamxxSWNCbGNUalM3MEo1NHAyTWpLSFdpMVJONTNnOS9VY1RoRXVCbUlCT0VpU1FDWmhUUW5FL1pEVkhwTURueVNGMkYramxTSEZFMXZ8T2p4L0ZWaGwrUHdRL0hRQ1NnM0ErcHJDRUhwd3hXMDgzOHI5V3paZE5tbz0=/8", "newsletterField": "email", "newsletterLink": "https://follow.it/essex-at-7-the-seax-morning-briefing?leanpub", "newsletterName": "Essex at 7", "whatsappChannel": "https://whatsapp.com/channel/0029VbHuL8nBKfi870qIO307", "facebookPage": "https://www.facebook.com/profile.php?id=61596409826403", "latestBriefing": "2026-11-12"};</script><script data-goatcounter="https://theseax.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script><!--/seax-config-->
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"NewsMediaOrganization","name":"The Seax","url":"https://theseax.com/","logo":"https://theseax.com/icons/icon-512.png","email":"info@theseax.com","contactPoint":[{"@type":"ContactPoint","contactType":"news tips","email":"news@theseax.com","areaServed":"Essex"},{"@type":"ContactPoint","contactType":"sport","email":"sport@theseax.com"},{"@type":"ContactPoint","contactType":"events","email":"events@theseax.com"},{"@type":"ContactPoint","contactType":"community and charity","email":"community@theseax.com"},{"@type":"ContactPoint","contactType":"corrections","email":"corrections@theseax.com"},{"@type":"ContactPoint","contactType":"complaints","email":"editor@theseax.com"}],"areaServed":"Essex, England","publishingPrinciples":"https://theseax.com/about/","correctionsPolicy":"https://theseax.com/about/#corrections","sameAs":["https://www.facebook.com/profile.php?id=61596409826403","https://x.com/theseaxessex","https://whatsapp.com/channel/0029VbHuL8nBKfi870qIO307"]}</script>
+<!--seax-config--><script>window.SEAX_CONFIG = {"site": "https://theseax.com", "contactEmail": "info@theseax.com", "goatcounter": "theseax", "newsletterForm": "https://api.follow.it/subscription-form/N0lnWUp5VkdWOGJVVzdWaHBld1MxSVVEMUl6bTJOQVlGRjhXSSsxTjQwL1h3YWhJL01XamxxSWNCbGNUalM3MEo1NHAyTWpLSFdpMVJONTNnOS9VY1RoRXVCbUlCT0VpU1FDWmhUUW5FL1pEVkhwTURueVNGMkYramxTSEZFMXZ8T2p4L0ZWaGwrUHdRL0hRQ1NnM0ErcHJDRUhwd3hXMDgzOHI5V3paZE5tbz0=/8", "newsletterField": "email", "newsletterLink": "https://follow.it/essex-at-7-the-seax-morning-briefing?leanpub", "newsletterName": "Essex at 7", "whatsappChannel": "https://whatsapp.com/channel/0029VbHuL8nBKfi870qIO307", "facebookPage": "https://www.facebook.com/profile.php?id=61596409826403", "latestBriefing": "2026-11-12"};</script><script data-goatcounter="https://theseax.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script><!--/seax-config-->
 <script>window.SEAX_FEED_URL = "edition.json";</script>
 <style>
 :root{
@@ -684,6 +684,10 @@ h1,h2,h3,h4,.story h1,.lead h2,.card h3,.drow h4{letter-spacing:-.022em}
 .bh h2::before{content:"";width:12px;height:12px;background:var(--pillar,var(--ink));border-radius:2px;margin-right:10px;align-self:center;flex:none}
 .block{padding-top:44px}
 
+/* contact addresses at the foot of sections (owner's choice, 12 Nov 2026) */
+.sec-mail{margin:14px 0 0;font-size:13.5px;color:var(--muted)}
+.sec-mail a{color:var(--ink);font-weight:700;text-decoration:underline;text-underline-offset:2px}
+.foot-mail a{white-space:nowrap}
 /* ---------- Today in Essex strip (FT markets-bar idea) ---------- */
 .frontpage{padding:18px 0 8px}
 .todaybar{display:flex;align-items:stretch;gap:0;border-top:1px solid var(--ink);border-bottom:1px solid var(--hair);margin-bottom:18px;overflow-x:auto;scrollbar-width:none;white-space:nowrap}
@@ -1158,6 +1162,7 @@ footer .flinks a{text-decoration:underline}
     <div class="bh"><h2>News<small id="newsCount"></small></h2><div class="tools" id="newsTools"></div></div>
     <div class="grid news-grid" id="newsGrid"></div>
     <div class="more-news" id="moreNews"></div>
+    <p class="sec-mail">Got a story for The Seax? Email <a href="mailto:news@theseax.com?subject=News%20tip">news@theseax.com</a></p>
   </div>
 </section>
 
@@ -1189,6 +1194,7 @@ footer .flinks a{text-decoration:underline}
         <div id="fixtures"></div>
       </div>
     </div>
+    <p class="sec-mail">Club news, results or a match report from your team? Email <a href="mailto:sport@theseax.com?subject=Sport">sport@theseax.com</a></p>
   </div>
 </section>
 
@@ -1221,6 +1227,7 @@ footer .flinks a{text-decoration:underline}
       <div><div class="cw-cards" id="cwCards"></div><div class="more-news cw-more" id="cwMore"></div></div>
       <aside class="cw-side"><h3>Coming up at your council</h3><span class="sub" id="cwSideSub">Meetings in the next fortnight and what is on the agenda</span><ul id="cwMeets"></ul><a class="all" href="/council-watch/">All councils and meetings →</a></aside>
     </div>
+    <p class="sec-mail">Spotted something in your council's papers? Email <a href="mailto:news@theseax.com?subject=Council%20Watch">news@theseax.com</a></p>
   </div>
 </section>
 
@@ -1231,6 +1238,7 @@ footer .flinks a{text-decoration:underline}
       <div><div class="grid comm-grid" id="commGrid"></div><div class="more-news comm-more" id="commMore"></div></div>
       <aside class="help"><div class="sec-h"><h3>Help and get help</h3><span class="sub">Volunteer, give, find support</span></div><ul id="helpList"></ul></aside>
     </div>
+    <p class="sec-mail">Charity, appeal or community group news? Email <a href="mailto:community@theseax.com?subject=Community%20news">community@theseax.com</a></p>
   </div>
 </section>
 
@@ -1261,6 +1269,7 @@ footer .flinks a{text-decoration:underline}
     <div class="bh"><h2>What's On<small>Fireworks, festivals, lights and live sport</small></h2><div class="tools" id="evTools"></div></div>
     <div class="events" id="events"></div>
     <div class="show-all" id="evMore"></div>
+    <p class="sec-mail">Running an event in Essex? Send us the date, time, place and price: <a href="mailto:events@theseax.com?subject=Event">events@theseax.com</a></p>
   </div>
 </section>
 
@@ -1269,6 +1278,7 @@ footer .flinks a{text-decoration:underline}
     <div class="bh"><h2>Culture<small>Panto, theatre, exhibitions and screenings across the county</small></h2><div class="tools" id="culTools"></div></div>
     <div class="culture" id="culture-grid"></div>
     <div class="show-all" id="culMore"></div>
+    <p class="sec-mail">Got a show, exhibition or screening coming up? Email <a href="mailto:events@theseax.com?subject=What%27s%20on">events@theseax.com</a></p>
   </div>
 </section>
 
@@ -1315,8 +1325,9 @@ footer .flinks a{text-decoration:underline}
       <div class="fb">The Seax</div>
       <p>Named after the three seaxes on the arms of Essex. Headlines and summaries are written by The Seax, and every story links directly to the original reporting.</p>
       <p id="howUpdates"></p>
+      <p class="flinks foot-mail"><b>Contact The Seax:</b> news tips <a href="mailto:news@theseax.com">news@theseax.com</a> · sport <a href="mailto:sport@theseax.com">sport@theseax.com</a> · events <a href="mailto:events@theseax.com">events@theseax.com</a> · community and charity <a href="mailto:community@theseax.com">community@theseax.com</a> · corrections <a href="mailto:corrections@theseax.com">corrections@theseax.com</a> · everything else <a href="mailto:info@theseax.com">info@theseax.com</a></p>
       <p class="flinks"><b>Local news:</b> <a href="/news/">All Essex</a> · <a href="/news/chelmsford/">Chelmsford</a> · <a href="/news/colchester/">Colchester</a> · <a href="/news/southend/">Southend</a> · <a href="/news/basildon-thurrock/">Basildon, Thurrock &amp; Castle Point</a> · <a href="/news/brentwood/">Brentwood</a> · <a href="/news/braintree-witham/">Braintree &amp; Witham</a> · <a href="/news/maldon/">Maldon &amp; Dengie</a> · <a href="/news/clacton-tendring/">Clacton, Harwich &amp; Tendring</a> · <a href="/news/saffron-walden-uttlesford/">Saffron Walden &amp; Uttlesford</a> · <a href="/news/harlow-epping/">Harlow &amp; Epping Forest</a></p>
-      <p class="flinks"><a href="/about/">About The Seax</a> · <a href="/about/#corrections">Corrections</a> · <a href="mailto:theseaxessex@gmail.com">Contact us</a> · <a href="/briefing/">Morning briefing</a> · <a href="/feed.xml">RSS</a></p>
+      <p class="flinks"><a href="/about/">About The Seax</a> · <a href="/about/#corrections">Corrections</a> · <a href="/about/#contact">Contact us</a> · <a href="/briefing/">Morning briefing</a> · <a href="/feed.xml">RSS</a></p>
     </div>
     <div>
       <h5>Sources in this edition</h5>

@@ -20,7 +20,7 @@ import io, json, os, re, ssl, sys, time, urllib.error, urllib.parse, urllib.requ
 from datetime import datetime, timezone
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-UA = "TheSeaxPhotoDesk/1.0 (+https://theseax.com/about/; theseaxessex@gmail.com)"
+UA = "TheSeaxPhotoDesk/1.0 (+https://theseax.com/about/; info@theseax.com)"
 API = "https://api.openverse.org/v1/images/"
 SENSITIVE = re.compile(r"\b(police|court|crime|jail|jailed|sentenc|convict|charged|arrest|murder|kill|killed|stab|rape|assault|abuse|death|died|dies|dead|"
                        r"fatal|crash|collision|inquest|tribute|funeral|suicide|missing|(?<!wildlife )hospital|patient|cancer|disease|hit-and-run|appeal for witnesses)", re.I)
