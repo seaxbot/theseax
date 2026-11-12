@@ -35,5 +35,18 @@
     "licenseUrl": "",
     "source": "",
     "addedBy": "owner, 11 Nov 2026"
+  },
+  {
+    "match": "^Frost|\\bfrosty?\\b|^Frosty",
+    "name": "Frosty morning",
+    "label": "Illustration",
+    "wide": "/img/people/frost-morning-wide.jpg",
+    "og": "/img/people/frost-morning-og.jpg",
+    "creator": "The Seax",
+    "provider": "",
+    "license": "",
+    "licenseUrl": "",
+    "source": "",
+    "addedBy": "owner, 12 Nov 2026 (frost story)"
   }
 ]
