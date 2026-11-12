@@ -84,7 +84,7 @@ def message(slot, items, now, ed=None):
         if slot == "morning":
             # owner's wording, 12 Nov 2026: greeting and weather first, then the stories
             wx = weather_line(ed, uk)
-            lines = ([f"☀️ Good morning Essex: weather today {wx[0]}"] + wx[1:] if wx else ["☀️ Good morning Essex!"]) + \
+            lines = ([f"Good morning Essex: weather today {wx[0]}"] + wx[1:] if wx else ["Good morning Essex!"]) + \
                     ["", f"Here are {len(items)} stories making news this morning across the county:", ""]
         for i, it in enumerate(items):
             lines += [f"{NUM[i]} {one(it)}", url(it), ""]
