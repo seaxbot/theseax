@@ -81,5 +81,18 @@
     "licenseUrl": "",
     "source": "",
     "addedBy": "owner, 12 Nov 2026 (air ambulance stories, not crashes or deaths)"
+  },
+  {
+    "match": "\\b[Ss]afer?[ -][Ss]leep\\w*\\b",
+    "name": "Safe sleep for babies",
+    "label": "Illustration",
+    "wide": "/img/people/safersleep-wide.jpg",
+    "og": "/img/people/safersleep-og.jpg",
+    "creator": "The Seax",
+    "provider": "",
+    "license": "",
+    "licenseUrl": "",
+    "source": "",
+    "addedBy": "owner, 12 Nov 2026 (safer sleep stories; shows the NHS safe sleep position)"
   }
 ]
