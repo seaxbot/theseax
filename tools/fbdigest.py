@@ -126,6 +126,14 @@ def main():
     now = datetime.now(timezone.utc)
     st = fbpage.load(fbpage.STATE, {"posts": []})
     posts = st.get("posts") or []
+    if slot == "check":  # confirm the token works and belongs to The Seax Page, without posting anything
+        token = os.environ.get("FB_PAGE_TOKEN", "").strip()
+        if not token:
+            print("CHECK: FB_PAGE_TOKEN is not set"); sys.exit(1)
+        who = fbpage.graph("me", {"fields": "id,name", "access_token": token})
+        ok = who.get("name") == fbpage.PAGE_NAME
+        print(f"CHECK: token belongs to {who.get('name')!r} ({'OK, The Seax Page' if ok else 'NOT The Seax Page'})")
+        sys.exit(0 if ok else 1)
     if slot == "auto":
         slot = due_slot(now, posts)
         if not slot:
