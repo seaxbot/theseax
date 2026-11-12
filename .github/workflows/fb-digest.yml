@@ -6,11 +6,15 @@ on:
   workflow_dispatch:
     inputs:
       slot: { description: "morning, lunch, commute, night or auto", default: "auto" }
+  push:
+    paths: ["ops/fb-digest-run.txt"]
+  # GitHub often starts scheduled runs 20 to 40 minutes late, so each slot has follow-up runs; the script posts each slot once a day
   schedule:
-    - cron: "15 6,7 * * *"
-    - cron: "30 11,12 * * *"
-    - cron: "0 16,17 * * *"
-    - cron: "0 20,21 * * *"
+    - cron: "15,35,55 6,7 * * *"
+    - cron: "30,50 11,12 * * *"
+    - cron: "10 12,13 * * *"
+    - cron: "0,20,40 16,17 * * *"
+    - cron: "0,20,40 20,21 * * *"
 permissions:
   contents: write
 concurrency: fb-page

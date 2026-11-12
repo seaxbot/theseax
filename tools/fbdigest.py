@@ -108,12 +108,12 @@ def weather_line(ed, uk):
     return out
 
 def due_slot(now, posts):
-    """The slot due now (up to 50 minutes late, as GitHub's scheduler can run late) and not yet posted today."""
+    """The slot due now (up to 100 minutes late, as GitHub's scheduler can run late) and not yet posted today."""
     uk = fbpage.uk_now(now)
     for name, cfg in SLOTS.items():
         h, m = cfg["at"]
         start = uk.replace(hour=h, minute=m, second=0, microsecond=0)
-        if start <= uk < start + timedelta(minutes=50) and not posted_today(posts, name, uk):
+        if start <= uk < start + timedelta(minutes=100) and not posted_today(posts, name, uk):
             return name
     return None
 
