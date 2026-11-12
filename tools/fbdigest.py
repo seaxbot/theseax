@@ -67,7 +67,7 @@ def pick(ed, now, slot):
     out.sort(key=lambda x: -x[0])
     return [it for _, it in out[:cfg["n"]]]
 
-def message(slot, items, now):
+def message(slot, items, now, ed=None):
     uk = fbpage.uk_now(now)
     day = DAYS[uk.weekday()]
     one = lambda it: " ".join(str(it.get("headline") or "").split())
@@ -81,10 +81,30 @@ def message(slot, items, now):
                "commute": f"🚆 Heading home? {len(items)} Essex stories for the journey:",
                "night": f"🌙 News at 9: the {len(items)} Essex stories you may have missed today"}[slot]
         lines = [top, ""]
+        if slot == "morning":
+            wx = weather_line(ed, uk)
+            if wx:
+                lines += wx + [""]
         for i, it in enumerate(items):
             lines += [f"{NUM[i]} {one(it)}", url(it), ""]
         lines += ["Every story, all day: theseax.com"]
     return "\n".join(lines).replace("—", ",")
+
+WX_EMOJI = {"sun": "☀️", "partly": "⛅", "cloud": "☁️", "rain": "🌧️", "shower": "🌦️", "fog": "🌫️", "wind": "💨", "storm": "⛈️"}
+
+def weather_line(ed, uk):
+    """Morning Essex opens with the weather today and tonight (owner's choice, 12 Nov 2026), from the edition's Met Office forecast."""
+    w = (ed or {}).get("weather") or {}
+    d = next((x for x in w.get("days") or [] if x.get("date") == f"{uk:%Y-%m-%d}"), None)
+    if not d:
+        return []
+    desc = str(d.get("desc") or "").strip().lower()
+    rain = f", {d.get('rain')}% chance of rain" if str(d.get("rain", "")).isdigit() and int(d["rain"]) >= 20 else ""
+    out = [f"{WX_EMOJI.get(d.get('icon'), '🌡️')} Weather today & tonight: {desc + ', ' if desc else ''}high of {d.get('hi')}C{rain}, "
+           f"falling to {d.get('lo')}C tonight{' 🥶' if isinstance(d.get('lo'), (int, float)) and d['lo'] < 2 else ''}."]
+    for warn in (w.get("warnings") or [])[:1]:
+        out.append(f"⚠️ {warn}")
+    return out
 
 def due_slot(now, posts):
     """The slot due now (up to 50 minutes late, as GitHub's scheduler can run late) and not yet posted today."""
@@ -115,7 +135,7 @@ def main():
     items = pick(ed, now, slot)
     if not items:
         print(json.dumps({"none": "no stories"}) if "--choose" in a else "no stories to post"); return
-    msg, link = message(slot, items, now), f"{SITE}/story/{items[0]['id']}/"
+    msg, link = message(slot, items, now, ed), f"{SITE}/story/{items[0]['id']}/"
     if "--choose" in a:
         print(json.dumps({"slot": slot, "message": msg, "link": link, "ids": [x["id"] for x in items]}, ensure_ascii=False)); return
     if "--dry-run" in a:
