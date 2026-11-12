@@ -1,39 +1,39 @@
 {
- "at": "2026-11-11T16:39:07.678997+00:00",
+ "at": "2026-11-12T06:35:51.616874+00:00",
  "councils": {
   "thurrock": {
    "name": "Thurrock Council",
    "system": "mg",
    "base": "https://democracy.thurrock.gov.uk",
-   "meetings": 20,
-   "changed": 2,
-   "state": "ok",
-   "note": ""
+   "meetings": 0,
+   "changed": 0,
+   "state": "unreachable",
+   "note": "calendar 504 HTTP Error 504: Gateway Time-out"
   },
   "southend": {
    "name": "Southend-on-Sea City Council",
    "system": "mg",
    "base": "https://democracy.southend.gov.uk",
-   "meetings": 19,
-   "changed": 2,
-   "state": "ok",
-   "note": ""
+   "meetings": 0,
+   "changed": 0,
+   "state": "unreachable",
+   "note": "calendar 504 HTTP Error 504: Gateway Time-out"
   },
   "epping": {
    "name": "Epping Forest District Council",
    "system": "mg",
    "base": "https://rds.eppingforestdc.gov.uk",
-   "meetings": 15,
+   "meetings": 0,
    "changed": 0,
-   "state": "ok",
-   "note": ""
+   "state": "unreachable",
+   "note": "calendar 504 HTTP Error 504: Gateway Time-out"
   },
   "maldon": {
    "name": "Maldon District Council",
    "system": "mg",
    "base": "https://democracy.maldon.gov.uk",
    "meetings": 17,
-   "changed": 2,
+   "changed": 1,
    "state": "ok",
    "note": ""
   },
@@ -41,7 +41,7 @@
    "name": "Tendring District Council",
    "system": "mg",
    "base": "https://tdcdemocracy.tendringdc.gov.uk",
-   "meetings": 13,
+   "meetings": 11,
    "changed": 0,
    "state": "ok",
    "note": ""
@@ -59,8 +59,8 @@
    "name": "Basildon Council",
    "system": "mg",
    "base": "https://www.basildonmeetings.info",
-   "meetings": 19,
-   "changed": 3,
+   "meetings": 21,
+   "changed": 2,
    "state": "ok",
    "note": ""
   },
@@ -114,7 +114,7 @@
    "system": "chelmsford",
    "base": "https://www.chelmsford.gov.uk",
    "meetings": 6,
-   "changed": 2,
+   "changed": 1,
    "state": "ok",
    "note": ""
   },
@@ -138,13 +138,13 @@
   }
  },
  "requests": {
-  "thurrock": 26,
-  "southend": 23,
-  "epping": 21,
+  "thurrock": 3,
+  "southend": 3,
+  "epping": 3,
   "maldon": 23,
-  "tendring": 16,
+  "tendring": 14,
   "harlow": 3,
-  "basildon": 22,
+  "basildon": 24,
   "brentwood": 3,
   "uttlesford": 3,
   "rochford": 1,
