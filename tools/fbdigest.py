@@ -101,7 +101,7 @@ def weather_line(ed, uk):
     desc = str(d.get("desc") or "").strip().lower()
     rain = f", {d.get('rain')}% chance of rain" if str(d.get("rain", "")).isdigit() and int(d["rain"]) >= 20 else ""
     out = [f"{WX_EMOJI.get(d.get('icon'), '🌡️')} Weather today & tonight: {desc + ', ' if desc else ''}high of {d.get('hi')}C{rain}, "
-           f"falling to {d.get('lo')}C tonight{' 🥶' if isinstance(d.get('lo'), (int, float)) and d['lo'] < 2 else ''}."]
+           f"falling to {d.get('lo')}C tonight.{' 🥶' if isinstance(d.get('lo'), (int, float)) and d['lo'] < 2 else ''}"]
     for warn in (w.get("warnings") or [])[:1]:
         out.append(f"⚠️ {warn}")
     return out
