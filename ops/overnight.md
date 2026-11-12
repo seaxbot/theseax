@@ -48,6 +48,7 @@ Exception: if a search shows that a road, rail or other live incident already in
 
 ## 5. PUBLISH (only if you added something)
 In the checkout run: `python3 tools/publish.py --edition /tmp/edition.json --base <BASE>` (if it stops with "REPEATS", exit 5, rewrite the listed stories so each fact appears once across headline, summary and key points, then rerun)
+- HOUSE STYLE (owner's rule, 12 Nov 2026): write like a world-class reporter, never like an AI. Paragraph 1 must not repeat the summary, paragraph 2 must not repeat paragraph 1, and the stock phrases listed in ops/newsroom.md 3a vi are banned. The publish script's REPEATS check (exit 5) now enforces this too: rewrite the listed story plainly and publish again.
 It prints PUSHED on success. If it says NEEDS MERGE or fails, run it once more with --force; if it still fails, stop and log the error.
 Then load the artifact tools (ToolSearch "select:mcp__claude-artifacts__db_get,mcp__claude-artifacts__db_write") and write the repository's edition.json to path "live/edition" on artifact slug 770a8e57-0047-4ce9-baaf-91e672bafb42 (read the path first for its version and pass it as ifVersion).
 
