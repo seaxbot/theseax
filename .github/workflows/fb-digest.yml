@@ -1,0 +1,35 @@
+name: Facebook Page round-ups
+# 07:15 top 5, 12:30 top story, 17:00 top 3, 21:00 News at 9 top 10 (UK time). See tools/fbdigest.py.
+# GitHub schedules run in UTC, so each slot is listed for both GMT and BST; the script posts only the slot due in UK time.
+# Needs the repository secret FB_PAGE_TOKEN (a Page access token for The Seax). Without it, it does nothing.
+on:
+  workflow_dispatch:
+    inputs:
+      slot: { description: "morning, lunch, commute, night or auto", default: "auto" }
+  schedule:
+    - cron: "15 6,7 * * *"
+    - cron: "30 11,12 * * *"
+    - cron: "0 16,17 * * *"
+    - cron: "0 20,21 * * *"
+permissions:
+  contents: write
+concurrency: fb-page
+jobs:
+  post:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with: { fetch-depth: 1 }
+      - run: python3 -u tools/fbdigest.py --slot "${{ github.event.inputs.slot || 'auto' }}"
+        env:
+          FB_PAGE_TOKEN: ${{ secrets.FB_PAGE_TOKEN }}
+      - name: Save what was posted
+        run: |
+          git config user.name "The Seax policy"
+          git config user.email "seaxbot@users.noreply.github.com"
+          git add data/fb-posted.json 2>/dev/null || true
+          git diff --cached --quiet && exit 0
+          git commit -qm "Facebook Page round-up"
+          for i in 1 2 3 4 5; do git pull -q --rebase origin main && git push -q origin HEAD:main && exit 0; sleep $((i*7)); done
+          exit 1
