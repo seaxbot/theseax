@@ -28,6 +28,9 @@ SKIP_TAGS = {"police", "court", "crime", "appeal", "tribute", "health", "fire", 
 # Bus stories always show the owner's bus photo (img/topics/bus.jpg), so no stock photo is looked up for them (nor for pool stories).
 # Same headline test as tools/build.py BUS_RX.
 BUS_RX = re.compile(r"\bbus(es|ses)?\b|\bpark (and|&) ride\b|\bFirst (Essex|Bus)\b|\bEnsign ?bus\b", re.I)
+# Greater Anglia and Liverpool Street stories always show the owner's own photos (img/topics/greateranglia.jpg,
+# img/topics/liverpoolst.jpg). Same headline test as tools/build.py LST_RX / GA_RX.
+RAIL_RX = re.compile(r"\bLiverpool Street\b|\bGreater Anglia\b", re.I)
 # Swimming pool stories always show the owner's pool photo (img/topics/pool.jpg). Same headline test as tools/build.py POOL_RX.
 POOL_RX = re.compile(r"\bswimming (pools?|baths?)\b|\blidos?\b|\b(leisure|school|public|council|indoor|outdoor|learner|teaching|training|community|hydrotherapy|main) pools?\b|\bpools?\b.{0,40}\bswim\w*|\bswim\w*\b.{0,40}\bpools?\b", re.I)
 # Homeless stories always show the owner's homeless photo (img/topics/homeless.jpg). Same headline test as tools/build.py HOMELESS_RX.
@@ -267,7 +270,7 @@ def main():
                 photos.pop(it["id"]); changed_rej = True
                 print(f"removed rejected photo: {it['id']}")
             continue
-        if (BUS_RX.search(str(it.get("headline") or "")) or POOL_RX.search(str(it.get("headline") or "")) or (HOMELESS_RX.search(str(it.get("headline") or "")) and not HOMELESS_HOUSING_RX.search(str(it.get("headline") or "")))) and it["id"] not in reqs:
+        if (RAIL_RX.search(str(it.get("headline") or "") + " " + str(it.get("org") or "")) or BUS_RX.search(str(it.get("headline") or "")) or POOL_RX.search(str(it.get("headline") or "")) or (HOMELESS_RX.search(str(it.get("headline") or "")) and not HOMELESS_HOUSING_RX.search(str(it.get("headline") or "")))) and it["id"] not in reqs:
             if it["id"] in photos:  # bus stories use the owner's bus photo: drop any stock photo found earlier
                 f = os.path.join(ROOT, "img", "stock", f"{it['id']}.jpg")
                 if os.path.exists(f):
