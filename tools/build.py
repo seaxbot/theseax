@@ -16,7 +16,7 @@ Writes, inside the repository:
 
 Uses only the Python standard library. Never touches edition.json.
 """
-import json, os, re, sys, html, shutil, argparse
+import time, json, os, re, sys, html, shutil, argparse
 from datetime import datetime, timedelta, timezone
 from zoneinfo import ZoneInfo
 from email.utils import format_datetime
@@ -786,6 +786,11 @@ def portrait_of(it):
     for p in PORTRAITS:
         try:
             if re.search(p["match"], h):
+                alts = p.get("alts") or []
+                if alts:  # alternate pictures hour by hour, in step with the page's portraitTurn (owner's choice, 12 Nov 2026)
+                    i = int(time.time() // 3600) % (len(alts) + 1)
+                    if i:
+                        return {**p, **alts[i - 1]}
                 return p
         except Exception:
             pass
