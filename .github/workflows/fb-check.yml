@@ -1,0 +1,30 @@
+name: Facebook token check
+# Confirms FB_PAGE_TOKEN works and belongs to The Seax Page, without posting. Runs when ops/fb-check.txt changes.
+on:
+  workflow_dispatch:
+  push:
+    paths: ["ops/fb-check.txt"]
+permissions:
+  contents: write
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - uses: actions/checkout@v4
+        with: { fetch-depth: 1 }
+      - run: |
+          set +e
+          out=$(python3 -u tools/fbdigest.py --slot check 2>&1); code=$?
+          echo "$out"
+          python3 - "$code" "$out" <<'PY'
+          import json, sys, datetime
+          json.dump({"at": datetime.datetime.utcnow().isoformat() + "Z", "ok": sys.argv[1] == "0", "result": sys.argv[2][-400:]},
+                    open("data/fb-check.json", "w"), indent=1)
+          PY
+        env:
+          FB_PAGE_TOKEN: ${{ secrets.FB_PAGE_TOKEN }}
+      - run: |
+          git config user.name "The Seax policy"; git config user.email "seaxbot@users.noreply.github.com"
+          git add data/fb-check.json; git commit -qm "Facebook token check" || exit 0
+          for i in 1 2 3 4 5; do git pull -q --rebase origin main && git push -q origin HEAD:main && exit 0; sleep $((i*5)); done
