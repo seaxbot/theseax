@@ -68,5 +68,18 @@
     "licenseUrl": "",
     "source": "",
     "addedBy": "owner, 12 Nov 2026 (all RSPCA stories)"
+  },
+  {
+    "match": "^(?!.*\\b([Cc]rash|[Cc]ollision|[Dd]ied|[Dd]ies|[Dd]eath|[Kk]illed|[Ff]atal|[Ss]tabb\\w*|[Ss]hot)\\b).*(\\b[Aa]ir [Aa]mbulance\\b|\\bEHAAT\\b)",
+    "name": "Essex & Herts Air Ambulance",
+    "label": "Photo",
+    "wide": "/img/people/airambulance-wide.jpg",
+    "og": "/img/people/airambulance-og.jpg",
+    "creator": "Essex & Herts Air Ambulance",
+    "provider": "",
+    "license": "",
+    "licenseUrl": "",
+    "source": "",
+    "addedBy": "owner, 12 Nov 2026 (air ambulance stories, not crashes or deaths)"
   }
 ]
