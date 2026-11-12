@@ -180,6 +180,30 @@ def main():
                 out["sport"][k] = mine[k]
             out["sport"]["stories"] = merge_sport_stories(out["sport"], out.get("stories", []), mine.get("stories", []))
             out["updatedAt"] = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+        # never list the same story twice (owner's note, 12 Nov 2026, after one charity story appeared twice in Community):
+        # within each list, keep the first copy of an id and drop later ones
+        dropped = []
+        for sec in ("stories", "official", "courts", "community", "councilwatch"):
+            seen, keep = set(), []
+            for x in out.get(sec) or []:
+                i = x.get("id") if isinstance(x, dict) else None
+                if i and i in seen:
+                    dropped.append(i); continue
+                if i: seen.add(i)
+                keep.append(x)
+            if sec in out: out[sec] = keep
+        sp = out.get("sport") or {}
+        if sp.get("stories"):
+            in_stories = {x.get("id") for x in out.get("stories") or []}
+            seen, keep = set(), []
+            for x in sp["stories"]:
+                i = x.get("id")
+                if i in seen or i in in_stories:
+                    dropped.append(i); continue
+                seen.add(i); keep.append(x)
+            sp["stories"] = keep
+        if dropped:
+            print("duplicates removed:", ", ".join(dropped))
         print("headlines changed:", stamp_headlines(out, prev_heads))
         rep = policy.apply(out)
         print("policy:", json.dumps({k: (v if isinstance(v, int) else len(v)) for k, v in rep.items()}))
