@@ -82,9 +82,10 @@ def message(slot, items, now, ed=None):
                "night": f"🌙 News at 9: the {len(items)} Essex stories you may have missed today"}[slot]
         lines = [top, ""]
         if slot == "morning":
+            # owner's wording, 12 Nov 2026: greeting and weather first, then the stories
             wx = weather_line(ed, uk)
-            if wx:
-                lines += wx + [""]
+            lines = ([f"☀️ Good morning Essex: weather today {wx[0]}"] + wx[1:] if wx else ["☀️ Good morning Essex!"]) + \
+                    ["", f"Here are {len(items)} stories making news this morning across the county:", ""]
         for i, it in enumerate(items):
             lines += [f"{NUM[i]} {one(it)}", url(it), ""]
         lines += ["Every story, all day: theseax.com"]
@@ -100,7 +101,7 @@ def weather_line(ed, uk):
         return []
     desc = str(d.get("desc") or "").strip().lower()
     rain = f", {d.get('rain')}% chance of rain" if str(d.get("rain", "")).isdigit() and int(d["rain"]) >= 20 else ""
-    out = [f"{WX_EMOJI.get(d.get('icon'), '🌡️')} Weather today & tonight: {desc + ', ' if desc else ''}high of {d.get('hi')}C{rain}, "
+    out = [f"{desc + ', ' if desc else ''}high of {d.get('hi')}C{rain}, "
            f"falling to {d.get('lo')}C tonight.{' 🥶' if isinstance(d.get('lo'), (int, float)) and d['lo'] < 2 else ''}"]
     for warn in (w.get("warnings") or [])[:1]:
         out.append(f"⚠️ {warn}")
