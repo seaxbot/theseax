@@ -1,32 +1,32 @@
 {
- "at": "2026-11-12T06:35:51.616874+00:00",
+ "at": "2026-11-12T16:38:39.089379+00:00",
  "councils": {
   "thurrock": {
    "name": "Thurrock Council",
    "system": "mg",
    "base": "https://democracy.thurrock.gov.uk",
-   "meetings": 0,
+   "meetings": 19,
    "changed": 0,
-   "state": "unreachable",
-   "note": "calendar 504 HTTP Error 504: Gateway Time-out"
+   "state": "ok",
+   "note": ""
   },
   "southend": {
    "name": "Southend-on-Sea City Council",
    "system": "mg",
    "base": "https://democracy.southend.gov.uk",
-   "meetings": 0,
-   "changed": 0,
-   "state": "unreachable",
-   "note": "calendar 504 HTTP Error 504: Gateway Time-out"
+   "meetings": 18,
+   "changed": 3,
+   "state": "ok",
+   "note": ""
   },
   "epping": {
    "name": "Epping Forest District Council",
    "system": "mg",
    "base": "https://rds.eppingforestdc.gov.uk",
-   "meetings": 0,
-   "changed": 0,
-   "state": "unreachable",
-   "note": "calendar 504 HTTP Error 504: Gateway Time-out"
+   "meetings": 16,
+   "changed": 1,
+   "state": "ok",
+   "note": ""
   },
   "maldon": {
    "name": "Maldon District Council",
@@ -41,10 +41,10 @@
    "name": "Tendring District Council",
    "system": "mg",
    "base": "https://tdcdemocracy.tendringdc.gov.uk",
-   "meetings": 11,
+   "meetings": 10,
    "changed": 0,
    "state": "ok",
-   "note": ""
+   "note": "per-council time cap reached"
   },
   "harlow": {
    "name": "Harlow Council",
@@ -60,7 +60,7 @@
    "system": "mg",
    "base": "https://www.basildonmeetings.info",
    "meetings": 21,
-   "changed": 2,
+   "changed": 1,
    "state": "ok",
    "note": ""
   },
@@ -138,13 +138,13 @@
   }
  },
  "requests": {
-  "thurrock": 3,
-  "southend": 3,
-  "epping": 3,
-  "maldon": 23,
-  "tendring": 14,
+  "thurrock": 25,
+  "southend": 23,
+  "epping": 22,
+  "maldon": 20,
+  "tendring": 6,
   "harlow": 3,
-  "basildon": 24,
+  "basildon": 27,
   "brentwood": 3,
   "uttlesford": 3,
   "rochford": 1,

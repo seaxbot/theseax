@@ -1,5 +1,5 @@
 {
- "at": "2026-11-12T06:35:51.616874+00:00",
+ "at": "2026-11-12T16:38:39.089379+00:00",
  "meetings": [
   {
    "council": "chelmsford",
@@ -10,6 +10,45 @@
    "time": "",
    "url": "https://www.chelmsford.gov.uk/committee-meetings/licensing-committee-12-november-2026/",
    "items": []
+  },
+  {
+   "council": "southend",
+   "councilName": "Southend-on-Sea City Council",
+   "area": "southend",
+   "committee": "Joint Scrutiny Meeting with Policy & Resources Overview and Scrutiny Committee, Place Overview & Scrutiny Committee",
+   "date": "2026-11-12",
+   "time": "6.30 pm",
+   "url": "https://democracy.southend.gov.uk/ieListDocuments.aspx?CId=611&MId=5184",
+   "items": [
+    "Better Queensway - Decisions on housing design, delivery approach and procurement strategy"
+   ]
+  },
+  {
+   "council": "southend",
+   "councilName": "Southend-on-Sea City Council",
+   "area": "southend",
+   "committee": "Joint Scrutiny Meeting with Place Overview and Scrutiny Committee, Policy and Resources Overview & Scrutiny Committee",
+   "date": "2026-11-12",
+   "time": "6.30 pm",
+   "url": "https://democracy.southend.gov.uk/ieListDocuments.aspx?CId=609&MId=5185",
+   "items": [
+    "Better Queensway - Decisions on housing design, delivery approach and procurement strategy"
+   ]
+  },
+  {
+   "council": "thurrock",
+   "councilName": "Thurrock Council",
+   "area": "south",
+   "committee": "Adult and Health Services Overview and Scrutiny Committee",
+   "date": "2026-11-12",
+   "time": "7.00 pm",
+   "url": "https://democracy.thurrock.gov.uk/ieListDocuments.aspx?CId=524&MId=6991",
+   "items": [
+    "Health and Wellbeing Strategy",
+    "Orsett Hospital: Service Resilience and Planning Update",
+    "Information for members of the public and councillors",
+    "Action Log"
+   ]
   },
   {
    "council": "maldon",
@@ -27,18 +66,15 @@
    ]
   },
   {
-   "council": "tendring",
-   "councilName": "Tendring District Council",
-   "area": "tendring",
-   "committee": "Cabinet",
-   "date": "2026-11-13",
-   "time": "10.30 am",
-   "url": "https://tdcdemocracy.tendringdc.gov.uk/ieListDocuments.aspx?CId=134&MId=2822",
+   "council": "southend",
+   "councilName": "Southend-on-Sea City Council",
+   "area": "southend",
+   "committee": "On the rise of the Joint Scrutiny Meeting (9.50pm indicative only), Policy and Resources Overview & Scrutiny Committee",
+   "date": "2026-11-12",
+   "time": "9.50 pm",
+   "url": "https://democracy.southend.gov.uk/ieListDocuments.aspx?CId=609&MId=5079",
    "items": [
-    "Cabinet Members' Items - Report of the Housing & Planning Portfolio Holder - A.4 - Adoption of the Conservation Area Character Appraisals and Management Plans for St Osyth and Manningtree & Mistley",
-    "Cabinet Members' Items - Report of the Portfolio Holder for Corporate Finance & Governance - A.1 - Financial Performance Report 2026/27 - General Update at the end of September 2026",
-    "Cabinet Members' Items - Report of the Corporate Finance & Governance Portfolio Holder - A.2 - The Local Council Tax Support Scheme, Discretionary Council Tax Exemptions / Discounts / Premiums for 2027/28 and Annual Minimum Revenue Provision Policy Statement 2027/28",
-    "Cabinet Members' Items - Report of the Housing & Planning Portfolio Holder - A.3 - Annual Housing Improvement, Performance & Assurance Report 2025/26"
+    "Finance Performance Report 2026/27 to end of September 2026 (Period 6)"
    ]
   },
   {
@@ -57,6 +93,21 @@
    ]
   },
   {
+   "council": "southend",
+   "councilName": "Southend-on-Sea City Council",
+   "area": "southend",
+   "committee": "Cabinet",
+   "date": "2026-11-16",
+   "time": "6.00 pm",
+   "url": "https://democracy.southend.gov.uk/ieListDocuments.aspx?CId=130&MId=5041",
+   "items": [
+    "Decisions taken by, or in consultation with, Cabinet Members",
+    "Better Queensway – Decisions on housing design, delivery approach and procurement strategy",
+    "Petition response - Save Leigh North Street School Swimming Pool",
+    "Financial Performance Report for September 2026 (Period 6)"
+   ]
+  },
+  {
    "council": "basildon",
    "councilName": "Basildon Council",
    "area": "south",
@@ -71,16 +122,15 @@
    ]
   },
   {
-   "council": "tendring",
-   "councilName": "Tendring District Council",
-   "area": "tendring",
-   "committee": "Planning Policy and Local Plan Committee",
+   "council": "southend",
+   "councilName": "Southend-on-Sea City Council",
+   "area": "southend",
+   "committee": "Extraordinary, The Council",
    "date": "2026-11-17",
-   "time": "6.00 pm",
-   "url": "https://tdcdemocracy.tendringdc.gov.uk/ieListDocuments.aspx?CId=340&MId=2943",
+   "time": "6.30 pm",
+   "url": "https://democracy.southend.gov.uk/ieListDocuments.aspx?CId=131&MId=5180",
    "items": [
-    "Report of the Corporate Director (Planning & Community) - A.1 - Tendring District Local Plan Review: Final Submission to the Secretary of State following Regulation 19 Consultation",
-    "Public Speaking"
+    "Notices of Motion - Removal of the Leader of the Council and Election of a new Leader of the Council"
    ]
   },
   {
@@ -96,6 +146,88 @@
    ]
   },
   {
+   "council": "thurrock",
+   "councilName": "Thurrock Council",
+   "area": "south",
+   "committee": "Standards Committee",
+   "date": "2026-11-17",
+   "time": "7.00 pm",
+   "url": "https://democracy.thurrock.gov.uk/ieListDocuments.aspx?CId=378&MId=6993",
+   "items": [
+    "Ethical Framework Update"
+   ]
+  },
+  {
+   "council": "epping",
+   "councilName": "Epping Forest District Council",
+   "area": "epping",
+   "committee": "Overview & Scrutiny Committee",
+   "date": "2026-11-17",
+   "time": "7.00 pm",
+   "url": "https://rds.eppingforestdc.gov.uk/ieListDocuments.aspx?CId=395&MId=12648",
+   "items": [
+    "Cabinet Business",
+    "Organisation Performance – Quarter 2 Outturn and Priority Projects Update",
+    "Homelessness & Rough Sleeping Strategy 2026-2031",
+    "Debt Collection and Recovery Policy"
+   ]
+  },
+  {
+   "council": "thurrock",
+   "councilName": "Thurrock Council",
+   "area": "south",
+   "committee": "Cabinet",
+   "date": "2026-11-18",
+   "time": "7.00 pm",
+   "url": "https://democracy.thurrock.gov.uk/ieListDocuments.aspx?CId=129&MId=6925",
+   "items": [
+    "Tilbury Library and 15A Civic Square Refurbishment",
+    "Local Council Tax Support Scheme 2027/28",
+    "Local Authority Housing Fund (LAHF- Round 3) Programme Review and Closure",
+    "Commissioning Report for Locality 2 Domiciliary Care and Wellbeing contract"
+   ]
+  },
+  {
+   "council": "thurrock",
+   "councilName": "Thurrock Council",
+   "area": "south",
+   "committee": "General Services Committee",
+   "date": "2026-11-19",
+   "time": "7.00 pm",
+   "url": "https://democracy.thurrock.gov.uk/ieListDocuments.aspx?CId=130&MId=7014",
+   "items": []
+  },
+  {
+   "council": "epping",
+   "councilName": "Epping Forest District Council",
+   "area": "epping",
+   "committee": "HGGT Joint Committee",
+   "date": "2026-11-23",
+   "time": "5.30 pm",
+   "url": "https://rds.eppingforestdc.gov.uk/ieListDocuments.aspx?CId=864&MId=12675",
+   "items": []
+  },
+  {
+   "council": "thurrock",
+   "councilName": "Thurrock Council",
+   "area": "south",
+   "committee": "This is the Rescheduled 5 October 2026 meeting, Audit Committee",
+   "date": "2026-11-23",
+   "time": "7.00 pm",
+   "url": "https://democracy.thurrock.gov.uk/ieListDocuments.aspx?CId=293&MId=7025",
+   "items": []
+  },
+  {
+   "council": "thurrock",
+   "councilName": "Thurrock Council",
+   "area": "south",
+   "committee": "Health and Wellbeing Board",
+   "date": "2026-11-24",
+   "time": "2.00 pm",
+   "url": "https://democracy.thurrock.gov.uk/ieListDocuments.aspx?CId=165&MId=6955",
+   "items": []
+  },
+  {
    "council": "basildon",
    "councilName": "Basildon Council",
    "area": "south",
@@ -103,6 +235,16 @@
    "date": "2026-11-24",
    "time": "7.00 p.m.",
    "url": "https://www.basildonmeetings.info/ieListDocuments.aspx?CId=998&MId=9627",
+   "items": []
+  },
+  {
+   "council": "thurrock",
+   "councilName": "Thurrock Council",
+   "area": "south",
+   "committee": "Budget - Rescheduled from the 5 November 2026, Corporate Overview and Scrutiny Committee",
+   "date": "2026-11-24",
+   "time": "7.00 pm",
+   "url": "https://democracy.thurrock.gov.uk/ieListDocuments.aspx?CId=163&MId=7021",
    "items": []
   },
   {
@@ -136,6 +278,16 @@
    "items": []
   },
   {
+   "council": "thurrock",
+   "councilName": "Thurrock Council",
+   "area": "south",
+   "committee": "MOVED - Rescheduled to the 14 December 2026, Licensing Committee",
+   "date": "2026-11-25",
+   "time": "7.00 pm",
+   "url": "https://democracy.thurrock.gov.uk/ieListDocuments.aspx?CId=169&MId=6945",
+   "items": []
+  },
+  {
    "council": "maldon",
    "councilName": "Maldon District Council",
    "area": "maldon",
@@ -156,6 +308,26 @@
    "items": []
   },
   {
+   "council": "southend",
+   "councilName": "Southend-on-Sea City Council",
+   "area": "southend",
+   "committee": "Extraordinary Meeting, The Council",
+   "date": "2026-11-26",
+   "time": "5.30 pm",
+   "url": "https://democracy.southend.gov.uk/ieListDocuments.aspx?CId=131&MId=5174",
+   "items": []
+  },
+  {
+   "council": "southend",
+   "councilName": "Southend-on-Sea City Council",
+   "area": "southend",
+   "committee": "The Council",
+   "date": "2026-11-26",
+   "time": "6.30 pm",
+   "url": "https://democracy.southend.gov.uk/ieListDocuments.aspx?CId=131&MId=5098",
+   "items": []
+  },
+  {
    "council": "basildon",
    "councilName": "Basildon Council",
    "area": "south",
@@ -163,6 +335,26 @@
    "date": "2026-11-26",
    "time": "7.00 p.m.",
    "url": "https://www.basildonmeetings.info/ieListDocuments.aspx?CId=297&MId=9505",
+   "items": []
+  },
+  {
+   "council": "thurrock",
+   "councilName": "Thurrock Council",
+   "area": "south",
+   "committee": "Place Overview and Scrutiny Committee",
+   "date": "2026-11-26",
+   "time": "7.00 pm",
+   "url": "https://democracy.thurrock.gov.uk/ieListDocuments.aspx?CId=488&MId=6970",
+   "items": []
+  },
+  {
+   "council": "epping",
+   "councilName": "Epping Forest District Council",
+   "area": "epping",
+   "committee": "Cabinet",
+   "date": "2026-11-26",
+   "time": "7.00 pm",
+   "url": "https://rds.eppingforestdc.gov.uk/ieListDocuments.aspx?CId=295&MId=12535",
    "items": []
   },
   {
@@ -206,6 +398,36 @@
    "items": []
   },
   {
+   "council": "thurrock",
+   "councilName": "Thurrock Council",
+   "area": "south",
+   "committee": "Cabinet",
+   "date": "2026-12-02",
+   "time": "7.00 pm",
+   "url": "https://democracy.thurrock.gov.uk/ieListDocuments.aspx?CId=129&MId=7012",
+   "items": []
+  },
+  {
+   "council": "southend",
+   "councilName": "Southend-on-Sea City Council",
+   "area": "southend",
+   "committee": "Place Overview & Scrutiny Committee",
+   "date": "2026-12-03",
+   "time": "6.30 pm",
+   "url": "https://democracy.southend.gov.uk/ieListDocuments.aspx?CId=611&MId=5086",
+   "items": []
+  },
+  {
+   "council": "thurrock",
+   "councilName": "Thurrock Council",
+   "area": "south",
+   "committee": "Corporate Overview and Scrutiny Committee",
+   "date": "2026-12-03",
+   "time": "7.00 pm",
+   "url": "https://democracy.thurrock.gov.uk/ieListDocuments.aspx?CId=163&MId=6978",
+   "items": []
+  },
+  {
    "council": "maldon",
    "councilName": "Maldon District Council",
    "area": "maldon",
@@ -226,6 +448,26 @@
    "items": []
   },
   {
+   "council": "thurrock",
+   "councilName": "Thurrock Council",
+   "area": "south",
+   "committee": "Planning Committee",
+   "date": "2026-12-08",
+   "time": "6.00 pm",
+   "url": "https://democracy.thurrock.gov.uk/ieListDocuments.aspx?CId=136&MId=6953",
+   "items": []
+  },
+  {
+   "council": "southend",
+   "councilName": "Southend-on-Sea City Council",
+   "area": "southend",
+   "committee": "People Overview & Scrutiny Committee",
+   "date": "2026-12-08",
+   "time": "6.30 pm",
+   "url": "https://democracy.southend.gov.uk/ieListDocuments.aspx?CId=610&MId=5092",
+   "items": []
+  },
+  {
    "council": "basildon",
    "councilName": "Basildon Council",
    "area": "south",
@@ -236,13 +478,13 @@
    "items": []
   },
   {
-   "council": "tendring",
-   "councilName": "Tendring District Council",
-   "area": "tendring",
-   "committee": "Community Leadership Overview and Scrutiny Committee",
+   "council": "epping",
+   "councilName": "Epping Forest District Council",
+   "area": "epping",
+   "committee": "Communities Scrutiny Committee",
    "date": "2026-12-08",
-   "time": "7.30 pm",
-   "url": "https://tdcdemocracy.tendringdc.gov.uk/ieListDocuments.aspx?CId=325&MId=2846",
+   "time": "7.00 pm",
+   "url": "https://rds.eppingforestdc.gov.uk/ieListDocuments.aspx?CId=859&MId=12664",
    "items": []
   },
   {
@@ -256,6 +498,16 @@
    "items": []
   },
   {
+   "council": "southend",
+   "councilName": "Southend-on-Sea City Council",
+   "area": "southend",
+   "committee": "Planning Committee",
+   "date": "2026-12-09",
+   "time": "5.00 pm",
+   "url": "https://democracy.southend.gov.uk/ieListDocuments.aspx?CId=607&MId=5114",
+   "items": []
+  },
+  {
    "council": "basildon",
    "councilName": "Basildon Council",
    "area": "south",
@@ -266,6 +518,26 @@
    "items": []
   },
   {
+   "council": "thurrock",
+   "councilName": "Thurrock Council",
+   "area": "south",
+   "committee": "Rescheduled 21 October 2026 Full Council Meeting, Council",
+   "date": "2026-12-09",
+   "time": "7.00 pm",
+   "url": "https://democracy.thurrock.gov.uk/ieListDocuments.aspx?CId=134&MId=7007",
+   "items": []
+  },
+  {
+   "council": "southend",
+   "councilName": "Southend-on-Sea City Council",
+   "area": "southend",
+   "committee": "Policy and Resources Overview & Scrutiny Committee",
+   "date": "2026-12-10",
+   "time": "6.30 pm",
+   "url": "https://democracy.southend.gov.uk/ieListDocuments.aspx?CId=609&MId=5080",
+   "items": []
+  },
+  {
    "council": "basildon",
    "councilName": "Basildon Council",
    "area": "south",
@@ -273,6 +545,16 @@
    "date": "2026-12-10",
    "time": "7.00 p.m.",
    "url": "https://www.basildonmeetings.info/ieListDocuments.aspx?CId=222&MId=9519",
+   "items": []
+  },
+  {
+   "council": "epping",
+   "councilName": "Epping Forest District Council",
+   "area": "epping",
+   "committee": "Council",
+   "date": "2026-12-10",
+   "time": "7.00 pm",
+   "url": "https://rds.eppingforestdc.gov.uk/ieListDocuments.aspx?CId=296&MId=12582",
    "items": []
   },
   {
