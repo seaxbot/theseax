@@ -128,3 +128,6 @@ main.prose .kick a{color:inherit;text-decoration:none}
 .tip{font-size:14px;color:var(--muted);margin-top:10px}
 .tip a,.foot-mail a{font-weight:700;white-space:nowrap}
 ul.contacts{padding-left:1.1em}ul.contacts li{margin:6px 0}
+ul.contact-cards{list-style:none;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:12px}
+ul.contact-cards li{border:1px solid var(--line);border-radius:10px;padding:14px 16px;display:flex;flex-direction:column;gap:4px}
+ul.contact-cards b{font-size:15px}ul.contact-cards span a{font-weight:700;font-size:16px}ul.contact-cards small{color:var(--muted);font-size:13.5px;line-height:1.45}

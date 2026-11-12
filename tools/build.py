@@ -724,7 +724,7 @@ def head(title, desc, canonical, og_image, og_type="website", extra=""):
   <a class="home" href="/">Front page</a>
 </div></header>
 <nav class="sec"><div class="wrap">
-  <a href="/#news">News</a><a href="/#sport">Sport</a><a href="/#desk">Public Services</a><a href="/council-watch/">Council Watch</a><a href="/#community">Community</a><a href="/#whatson">What's On</a><a href="/briefing/">Morning briefing</a><a href="/about/">About</a>
+  <a href="/#news">News</a><a href="/#sport">Sport</a><a href="/#desk">Public Services</a><a href="/council-watch/">Council Watch</a><a href="/#community">Community</a><a href="/#whatson">What's On</a><a href="/briefing/">Morning briefing</a><a href="/about/">About</a><a href="/contact/">Contact</a>
 </div></nav>
 """
 
@@ -752,7 +752,7 @@ def foot():
   <p class="area-links"><b>Local news:</b> <a href="/news/">All Essex</a> · {local}</p>
   <p><b>The Seax</b> brings together Essex news, sport and life from trusted local and national sources. Every story links to the original reporting.</p>
   <p class="foot-mail"><b>Contact The Seax:</b> news tips {mlink("news")} · sport {mlink("sport")} · events {mlink("events")} · community and charity {mlink("community")} · corrections {mlink("corrections")} · everything else {mlink("info")}</p>
-  <p><a href="/about/">About The Seax</a> · <a href="/about/#corrections">Corrections</a> · <a href="/about/#contact">Contact us</a> · <a href="/briefing/">Morning briefing</a> · <a href="/feed.xml">RSS</a>{' · ' + ' · '.join(social) if social else ''}</p>
+  <p><a href="/about/">About The Seax</a> · <a href="/about/#corrections">Corrections</a> · <a href="/contact/">Contact us</a> · <a href="/briefing/">Morning briefing</a> · <a href="/feed.xml">RSS</a>{' · ' + ' · '.join(social) if social else ''}</p>
 </div></footer>
 """
 
@@ -1543,6 +1543,41 @@ def photo_credits():
             'They have been resized for the web and are shared under the same terms. Our map artwork is our own.</p>\n<ul class="credits">' + "".join(rows) + '<li>London Stansted Airport library images: photos by London Stansted Airport</li>' + f'<li>c2c train 357 040 at Ripple Lane (used on c2c stories): photo by kitmasterbloke, <a href="{C2C_CREDIT["licenseUrl"]}" rel="license noopener">CC BY 4.0</a>, via <a href="{C2C_CREDIT["source"]}" rel="noopener">Wikimedia Commons</a>; cropped and resized</li>' + "".join(f'<li>{E(p["name"])} (file photo): photo by {E(p["creator"])}, <a href="{E(p["licenseUrl"])}" rel="license noopener">{E(p["license"])}</a>, via <a href="{E(p["source"])}" rel="noopener">{E(p.get("provider") or "source")}</a>; set on a blurred background and shared under the same licence</li>' for p in PORTRAITS) + "</ul>\n")
 
 
+def contact_page():
+    """Contact The Seax (owner's choice, 12 Nov 2026): every address, the social channels and the newsletter in one place."""
+    url = f"{SITE}/contact/"
+    rows = [("news", "News tips and stories", "Something happening in your town, street or village? Tell us what, where and when, and send a photo if you have one."),
+            ("sport", "Sport", "Results, match reports, club news and fixtures from every level of Essex sport."),
+            ("events", "Events and what's on", "Festivals, shows, markets, fun runs and fireworks. Send the date, time, place, price and a link."),
+            ("community", "Charities and community groups", "Appeals, fundraisers, volunteers wanted and good news from the groups that hold Essex together."),
+            ("corrections", "Corrections", "Spotted a mistake? Send the link to the page and what is wrong. We aim to look at every request within 24 hours."),
+            ("editor", "Complaints and removal requests", "If a story concerns you personally, or you want to make a complaint, write to the editorial team."),
+            ("info", "Everything else", "Partnerships, newsrooms and community sites that want to be featured, or anything not listed above.")]
+    cards = "".join(f'<li><b>{E(t)}</b><span>{mlink(k)}</span><small>{E(d)}</small></li>' for k, t, d in rows)
+    social = []
+    if CFG.get("facebookPage"):
+        social.append(f'<li><b>Facebook</b><span><a href="{E(CFG["facebookPage"])}" rel="noopener">The Seax on Facebook</a></span><small>Morning Essex at 7.15am, the lunchtime top story, the commute at 5pm and News at 9.</small></li>')
+    if CFG.get("whatsappChannel"):
+        social.append(f'<li><b>WhatsApp</b><span><a href="{E(CFG["whatsappChannel"])}" rel="noopener">The Seax WhatsApp channel</a></span><small>The big Essex stories, straight to your phone.</small></li>')
+    if CFG.get("xAccount"):
+        social.append(f'<li><b>X</b><span><a href="{E(CFG["xAccount"])}" rel="noopener">@theseaxessex</a></span><small>Headlines through the day.</small></li>')
+    if CFG.get("newsletterLink"):
+        social.append(f'<li><b>{E(CFG.get("newsletterName") or "Newsletter")}</b><span><a href="{E(CFG["newsletterLink"])}" rel="noopener">Sign up free</a></span><small>The morning briefing in your inbox before 7.</small></li>')
+    social.append('<li><b>RSS</b><span><a href="/feed.xml">theseax.com/feed.xml</a></span><small>Every story as it is published, for feed readers.</small></li>')
+    return head("Contact The Seax · The Seax", "How to contact The Seax: news tips, sport, events, community news, corrections and complaints, plus our social channels.", url, "default") + f"""<main class="wrap prose">
+<h1>Contact The Seax</h1>
+<p class="standfirst">We want to hear from you. Pick the address that fits and it reaches the right desk.</p>
+<ul class="contact-cards">{cards}</ul>
+<h2>Follow The Seax</h2>
+<ul class="contact-cards">{"".join(social)}</ul>
+<h2>Good to know</h2>
+<p>The Seax only publishes what we can check against an official source or a published report, so a tip may not appear straight away. We never publish anything about a person from a tip alone. For how we work and how we correct mistakes, see <a href="/about/">About The Seax</a>.</p>
+</main>
+{newsletter_box()}
+{foot()}
+</body></html>
+"""
+
 def about_page():
     mail = CFG["contactEmail"]
     url = f"{SITE}/about/"
@@ -1820,6 +1855,8 @@ def main():
     # about page
     if write("about/index.html", about_page()):
         changed += 1
+    if write("contact/index.html", contact_page()):
+        changed += 1
 
     # daily briefing
     uk_now = NOW.astimezone(UK)
@@ -1876,7 +1913,7 @@ def main():
     # sitemaps
     def lastmod(rec):
         return (rec.get("u") or rec.get("t") or rec.get("last") or iso(NOW))[:10]
-    urls = [(SITE + "/", NOW.date().isoformat(), "hourly", "1.0"), (SITE + "/about/", None, "monthly", "0.4"),
+    urls = [(SITE + "/", NOW.date().isoformat(), "hourly", "1.0"), (SITE + "/about/", None, "monthly", "0.4"), (SITE + "/contact/", None, "monthly", "0.4"),
             (SITE + "/briefing/", latest or None, "daily", "0.7"),
             (SITE + "/story/the-seax-launches/", "2026-11-09", None, "0.5")]  # owner's launch story, kept findable
     for sid, rec in sorted(archive.items(), key=lambda kv: kv[1].get("t") or kv[1].get("first") or "", reverse=True):
