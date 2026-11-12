@@ -77,7 +77,7 @@ def message(slot, items, now):
         summ = " ".join(str(it.get("summary") or "").split())
         lines = ["🥪 Lunchtime in Essex: the big story", "", one(it)] + (["", summ] if summ else []) + ["", f"Read more: {url(it)}"]
     else:
-        top = {"morning": f"☀️ Good morning, Essex. {len(items)} stories to start your {day}:",
+        top = {"morning": f"☀️ Morning Essex: {len(items)} stories to start your {day}",
                "commute": f"🚆 Heading home? {len(items)} Essex stories for the journey:",
                "night": f"🌙 News at 9: the {len(items)} Essex stories you may have missed today"}[slot]
         lines = [top, ""]
