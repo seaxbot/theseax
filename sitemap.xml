@@ -4,8 +4,12 @@
 <url><loc>https://theseax.com/about/</loc><changefreq>monthly</changefreq><priority>0.4</priority></url>
 <url><loc>https://theseax.com/briefing/</loc><lastmod>2026-11-12</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
 <url><loc>https://theseax.com/story/the-seax-launches/</loc><lastmod>2026-11-09</lastmod><priority>0.5</priority></url>
+<url><loc>https://theseax.com/story/ct-witham-man-jailed-hmp-chelmsford-package/</loc><lastmod>2026-11-12</lastmod></url>
+<url><loc>https://theseax.com/story/harlow-william-knight-missing-latton-common/</loc><lastmod>2026-11-12</lastmod></url>
+<url><loc>https://theseax.com/story/stansted-british-airways-cityflyer-withdrawal-april-2027/</loc><lastmod>2026-11-12</lastmod></url>
 <url><loc>https://theseax.com/story/c-harlow-rspca-stort-valley-10000-charityjob/</loc><lastmod>2026-11-12</lastmod></url>
 <url><loc>https://theseax.com/story/burnham-on-crouch-twins-yaremche-ukraine/</loc><lastmod>2026-11-12</lastmod></url>
+<url><loc>https://theseax.com/story/o-chelmsford-operation-limit-19-arrests/</loc><lastmod>2026-11-12</lastmod></url>
 <url><loc>https://theseax.com/story/colchester-bin-lorry-fire-batteries-november-2026/</loc><lastmod>2026-11-12</lastmod></url>
 <url><loc>https://theseax.com/story/clacton-coast-flood-warnings-high-tides/</loc><lastmod>2026-11-12</lastmod></url>
 <url><loc>https://theseax.com/story/tilbury-onside-youth-zone-2027-opening/</loc><lastmod>2026-11-12</lastmod></url>
@@ -24,6 +28,7 @@
 <url><loc>https://theseax.com/story/purfleet-chieftain-drive-council-home-rats-family-moved-out/</loc><lastmod>2026-11-11</lastmod></url>
 <url><loc>https://theseax.com/story/essex-frost-below-freezing-friday-night/</loc><lastmod>2026-11-12</lastmod></url>
 <url><loc>https://theseax.com/story/s-roper-twins-back-at-essex-commonwealth-bronze/</loc><lastmod>2026-11-11</lastmod></url>
+<url><loc>https://theseax.com/story/chelmsford-mp-goldman-broomfield-recovery-programme/</loc><lastmod>2026-11-11</lastmod></url>
 <url><loc>https://theseax.com/story/harlow-first-avenue-pedestrians-hit-car-appeal/</loc><lastmod>2026-11-11</lastmod></url>
 <url><loc>https://theseax.com/story/chelmsford-christmas-lights-switch-on-sunday-2026/</loc><lastmod>2026-11-11</lastmod></url>
 <url><loc>https://theseax.com/story/colchester-restaurant-national-curry-awards-2026/</loc><lastmod>2026-11-11</lastmod></url>
@@ -351,10 +356,10 @@
 <url><loc>https://theseax.com/news/southend/</loc><lastmod>2026-11-11</lastmod><changefreq>hourly</changefreq><priority>0.8</priority></url>
 <url><loc>https://theseax.com/news/basildon-thurrock/</loc><lastmod>2026-11-12</lastmod><changefreq>hourly</changefreq><priority>0.8</priority></url>
 <url><loc>https://theseax.com/news/brentwood/</loc><lastmod>2026-11-11</lastmod><changefreq>hourly</changefreq><priority>0.8</priority></url>
-<url><loc>https://theseax.com/news/braintree-witham/</loc><lastmod>2026-11-10</lastmod><changefreq>hourly</changefreq><priority>0.8</priority></url>
+<url><loc>https://theseax.com/news/braintree-witham/</loc><lastmod>2026-11-12</lastmod><changefreq>hourly</changefreq><priority>0.8</priority></url>
 <url><loc>https://theseax.com/news/maldon/</loc><lastmod>2026-11-12</lastmod><changefreq>hourly</changefreq><priority>0.8</priority></url>
 <url><loc>https://theseax.com/news/clacton-tendring/</loc><lastmod>2026-11-12</lastmod><changefreq>hourly</changefreq><priority>0.8</priority></url>
-<url><loc>https://theseax.com/news/saffron-walden-uttlesford/</loc><lastmod>2026-11-11</lastmod><changefreq>hourly</changefreq><priority>0.8</priority></url>
+<url><loc>https://theseax.com/news/saffron-walden-uttlesford/</loc><lastmod>2026-11-12</lastmod><changefreq>hourly</changefreq><priority>0.8</priority></url>
 <url><loc>https://theseax.com/news/harlow-epping/</loc><lastmod>2026-11-12</lastmod><changefreq>hourly</changefreq><priority>0.8</priority></url>
 <url><loc>https://theseax.com/council-watch/</loc><lastmod>2026-11-12</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
 <url><loc>https://theseax.com/council-watch/thurrock/</loc><lastmod>2026-11-09</lastmod></url>
