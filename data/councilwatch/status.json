@@ -1,5 +1,5 @@
 {
- "at": "2026-11-12T16:38:39.089379+00:00",
+ "at": "2026-11-12T20:00:42.928251+00:00",
  "councils": {
   "thurrock": {
    "name": "Thurrock Council",
@@ -15,7 +15,7 @@
    "system": "mg",
    "base": "https://democracy.southend.gov.uk",
    "meetings": 18,
-   "changed": 3,
+   "changed": 0,
    "state": "ok",
    "note": ""
   },
@@ -24,7 +24,7 @@
    "system": "mg",
    "base": "https://rds.eppingforestdc.gov.uk",
    "meetings": 16,
-   "changed": 1,
+   "changed": 0,
    "state": "ok",
    "note": ""
   },
@@ -33,7 +33,7 @@
    "system": "mg",
    "base": "https://democracy.maldon.gov.uk",
    "meetings": 17,
-   "changed": 1,
+   "changed": 0,
    "state": "ok",
    "note": ""
   },
@@ -41,7 +41,7 @@
    "name": "Tendring District Council",
    "system": "mg",
    "base": "https://tdcdemocracy.tendringdc.gov.uk",
-   "meetings": 10,
+   "meetings": 9,
    "changed": 0,
    "state": "ok",
    "note": "per-council time cap reached"
@@ -60,9 +60,9 @@
    "system": "mg",
    "base": "https://www.basildonmeetings.info",
    "meetings": 21,
-   "changed": 1,
+   "changed": 0,
    "state": "ok",
-   "note": ""
+   "note": "meeting 521"
   },
   "brentwood": {
    "name": "Brentwood Borough Council",
@@ -142,9 +142,9 @@
   "southend": 23,
   "epping": 22,
   "maldon": 20,
-  "tendring": 6,
+  "tendring": 10,
   "harlow": 3,
-  "basildon": 27,
+  "basildon": 24,
   "brentwood": 3,
   "uttlesford": 3,
   "rochford": 1,

@@ -1,5 +1,5 @@
 {
- "at": "2026-11-12T16:38:39.089379+00:00",
+ "at": "2026-11-12T20:00:42.928251+00:00",
  "meetings": [
   {
    "council": "chelmsford",
@@ -119,6 +119,19 @@
     "FINANCE UPDATE QUARTER 2 - 2026/27",
     "BEST VALUE, MODERNISATION AND ORGANISATION TRANSFORMATION PROGRAMME",
     "COUNCIL ASSETS"
+   ]
+  },
+  {
+   "council": "tendring",
+   "councilName": "Tendring District Council",
+   "area": "tendring",
+   "committee": "Planning Policy and Local Plan Committee",
+   "date": "2026-11-17",
+   "time": "6.00 pm",
+   "url": "https://tdcdemocracy.tendringdc.gov.uk/ieListDocuments.aspx?CId=340&MId=2943",
+   "items": [
+    "Report of the Corporate Director (Planning & Community) - A.1 - Tendring District Local Plan Review: Final Submission to the Secretary of State following Regulation 19 Consultation",
+    "Public Speaking"
    ]
   },
   {
@@ -485,6 +498,16 @@
    "date": "2026-12-08",
    "time": "7.00 pm",
    "url": "https://rds.eppingforestdc.gov.uk/ieListDocuments.aspx?CId=859&MId=12664",
+   "items": []
+  },
+  {
+   "council": "tendring",
+   "councilName": "Tendring District Council",
+   "area": "tendring",
+   "committee": "Community Leadership Overview and Scrutiny Committee",
+   "date": "2026-12-08",
+   "time": "7.30 pm",
+   "url": "https://tdcdemocracy.tendringdc.gov.uk/ieListDocuments.aspx?CId=325&MId=2846",
    "items": []
   },
   {
