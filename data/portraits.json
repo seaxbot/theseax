@@ -55,5 +55,18 @@
         "name": "Scraping a frosty windscreen"
       }
     ]
+  },
+  {
+    "match": "\\bRSPCA\\b",
+    "name": "RSPCA",
+    "label": "Logo",
+    "wide": "/img/people/rspca-wide.jpg",
+    "og": "/img/people/rspca-og.jpg",
+    "creator": "RSPCA",
+    "provider": "",
+    "license": "",
+    "licenseUrl": "",
+    "source": "",
+    "addedBy": "owner, 12 Nov 2026 (all RSPCA stories)"
   }
 ]
