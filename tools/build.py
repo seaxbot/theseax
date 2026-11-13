@@ -1597,7 +1597,8 @@ def about_page():
 <li>Facts only as the source states them. No invented quotes, figures, scores or details.</li>
 <li>Crime and court reporting is limited to what police and courts have said. People who have been arrested or charged are presumed innocent, and we do not report anything that could prejudice a trial.</li>
 <li>We never name victims of sexual offences or identify children involved in criminal cases.</li>
-<li>We do not report suicide or self-harm, or individual inquests.</li>
+<li>We do not report suicide or self-harm.</li>
+<li>We report inquests only where there is a clear public interest, from the Essex Coroner's published court list and official or established sources. We never speculate about how someone died and never name children.</li>
 </ul>
 
 <h2 id="corrections">Corrections and complaints</h2>

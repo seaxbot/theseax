@@ -16,7 +16,7 @@ Rules: identifies itself honestly, obeys robots.txt, waits between requests, sta
 import html, json, os, re, sys, time, urllib.request, urllib.robotparser
 from datetime import datetime, timezone, date, timedelta
 from html.parser import HTMLParser
-from urllib.parse import urljoin
+from urllib.parse import urljoin, quote
 
 UA = "TheSeaxNewsDesk/1.0 (+https://theseax.com/about/; info@theseax.com)"
 HEAD = {"User-Agent": UA, "Accept": "text/html,application/xhtml+xml", "Accept-Language": "en-GB,en;q=0.9"}
@@ -281,15 +281,28 @@ def main():
         if k not in seen:
             seen[k] = stamp
         c["firstSeen"] = seen[k]
+        sur = c["listedName"].split()[0] if c["listedName"] else ""
+        c["caseUrl"] = f"{LIST}?query={quote(sur.title())}" if sur else LIST
     # forget cases not seen for 60 days
     keep_after = (NOW - timedelta(days=60)).strftime("%Y-%m-%dT%H:%M:%SZ")
     seen = {k: v for k, v in seen.items() if k in cases or v >= keep_after}
     case_list = sorted(cases.values(), key=lambda c: (c["firstHearing"], c["name"]))
+    # check once that a surname search returns that person (the desk uses caseUrl as each story's official link)
+    check = ""
+    if case_list:
+        c0 = case_list[-1]
+        try:
+            got, _, _ = rows_from(f.get(c0["caseUrl"]), 0)
+            ok = any(r["name"] == c0["listedName"] for r in got)
+            check = f"{c0['caseUrl']} -> {len(got)} rows, {'finds' if ok else 'DOES NOT find'} {c0['listedName']}"
+        except Exception as e:
+            check = f"{c0['caseUrl']} -> error {e}"
+        log("case url check:", check)
     json.dump({"generated": stamp, "source": LIST, "pagesRead": pages, "lastPage": last_page,
                "rows": rows, "cases": case_list}, open(os.path.join(out_dir, "inquests.json"), "w"), ensure_ascii=False, indent=1)
     json.dump(seen, open(seen_p, "w"), indent=0)
     status = {"generated": stamp, "pagesRead": pages, "lastPage": last_page, "rows": len(rows), "cases": len(case_list),
-              "errors": errors[:20]}
+              "caseUrlCheck": check, "errors": errors[:20]}
     json.dump(status, open(os.path.join(out_dir, "status.json"), "w"), indent=1)
     log(json.dumps(status))
 
