@@ -23,6 +23,7 @@ leave it alone. Never use em dashes anywhere.
 ## 2. Update the story only if there is genuinely new information
 If nothing material has changed since the "Updated" time on the page, end without publishing.
 Otherwise edit the page in place (keep its template, layout, share buttons and the Downdetector figure):
+- Never call it a "second day" anywhere (owner's wish: for most Essex workers it only began after they had gone home on Thursday evening).
 - Rewrite the opening paragraph so it leads on the latest position; fold older detail lower down.
   Keep it tight: about 6 to 9 paragraphs at most. Write like a world-class journalist.
 - Copyright: paraphrase. At most one quote per source, under 15 words. Never copy a source headline.
