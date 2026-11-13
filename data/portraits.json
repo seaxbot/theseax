@@ -122,6 +122,19 @@
     "addedBy": "owner, 13 Nov 2026 (Jaxon Foster inquest story)"
   },
   {
+    "match": "Anglia Ruskin|\\bARU\\b",
+    "name": "Anglia Ruskin University sign",
+    "label": "Picture",
+    "wide": "/img/people/aru-chelmsford-wide.jpg",
+    "og": "/img/people/aru-chelmsford-og.jpg",
+    "creator": "The Seax",
+    "provider": "",
+    "license": "",
+    "licenseUrl": "",
+    "source": "",
+    "addedBy": "owner, 13 Nov 2026 (ARU voluntary redundancies story; used for all Anglia Ruskin stories)"
+  },
+  {
     "match": "\\b([Ii]nquests?|[Cc]oroners?)\\b|[Cc]oroner['’]s\\b|\\b[Pp]revention of future deaths\\b",
     "name": "HM Coroner's Service",
     "label": "Logo",
