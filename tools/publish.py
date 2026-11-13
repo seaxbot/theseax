@@ -7,6 +7,8 @@ Sport desk:  python3 tools/publish.py --sport /tmp/sport.json      (replaces spo
 Council Watch desk: python3 tools/publish.py --councilwatch /tmp/cw.json   (replaces only the edition's "councilwatch" list)
 Inquest desk: python3 tools/publish.py --inquests /tmp/inq.json   ({"items": [...]}; each item has "section": "stories" or
              "courts"; merged into that list by id and marked desk "inquest"; the newsroom keeps them for 72 hours)
+Scheduled owner stories: python3 tools/publish.py --items /tmp/x.json --desk owner   (same file format and merge, marked
+             desk "owner"; used by one-off scheduled tasks that publish a story the owner set up in advance)
 
 What it does, retrying up to 4 times if someone else pushes first:
   1. fetches origin/main and resets this checkout to it (only edition.json and built files ever change here)
@@ -30,7 +32,7 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.join(ROOT, "tools"))
 import policy
 import repeats
-BOTS = {"The Seax newsroom", "The Seax sport desk", "The Seax council watch", "The Seax inquest desk", "The Seax photo desk", "The Seax policy"}
+BOTS = {"The Seax newsroom", "The Seax sport desk", "The Seax council watch", "The Seax inquest desk", "The Seax scheduler", "The Seax photo desk", "The Seax policy"}
 SPORT_KEYS = ("results", "fixtures", "tables")
 
 def git(*a, check=True):
@@ -113,19 +115,20 @@ def merge_sport_stories(live_sport, live_stories, mine):
     return newest_first(cur)
 
 INQ_KEEP_H = 72
+KEEP_DESKS = {"inquest", "owner"}  # desk items the newsroom keeps for INQ_KEEP_H hours
 
-def merge_inquests(out, items):
+def merge_inquests(out, items, desk="inquest"):
     """Merge the inquest desk's items into stories or courts by id (replacing any copy in either list)."""
     n = 0
     for it in items:
         if it.get("remove"):
             for other in ("stories", "courts"):
-                out[other] = [x for x in out.get(other) or [] if not (x.get("id") == it["id"] and x.get("desk") == "inquest")]
+                out[other] = [x for x in out.get(other) or [] if not (x.get("id") == it["id"] and x.get("desk") == desk)]
             n += 1
             continue
         sec = it.get("section") if it.get("section") in ("stories", "courts") else "courts"
         it = {k: v for k, v in it.items() if k != "section"}
-        it["desk"] = "inquest"
+        it["desk"] = desk
         for other in ("stories", "courts"):
             out[other] = [x for x in out.get(other) or [] if x.get("id") != it["id"]]
         out.setdefault(sec, []).insert(0, it)
@@ -142,7 +145,7 @@ def keep_inquests(out, live):
     back = 0
     for sec in ("stories", "courts"):
         for x in live.get(sec) or []:
-            if x.get("desk") == "inquest" and x.get("id") not in have and (story_t(x) or cutoff) > cutoff:
+            if x.get("desk") in KEEP_DESKS and x.get("id") not in have and (story_t(x) or cutoff) > cutoff:
                 out.setdefault(sec, []).append(x); back += 1
         out[sec] = newest_first(out.get(sec) or [])
     return back
@@ -152,7 +155,8 @@ def main():
     ap.add_argument("--edition", help="full edition file from the newsroom")
     ap.add_argument("--sport", help="file with {results, fixtures, tables} from the sport desk")
     ap.add_argument("--councilwatch", help="file with the full Council Watch list (a JSON array, or {\"councilwatch\": [...]})")
-    ap.add_argument("--inquests", help="file with {\"items\": [...]} from the inquest desk")
+    ap.add_argument("--inquests", "--items", dest="inquests", help="file with {\"items\": [...]} from the inquest desk (or a scheduled owner story with --desk owner)")
+    ap.add_argument("--desk", default="inquest", choices=["inquest", "owner"], help="desk name stamped on --items")
     ap.add_argument("--base", help="commit the newsroom started from (git rev-parse HEAD at the start of the run)")
     ap.add_argument("--force", action="store_true", help="publish even if a person edited edition.json since --base")
     ap.add_argument("--author", help="commit author name")
@@ -184,7 +188,7 @@ def main():
         if not isinstance(mine, list) or not all(isinstance(x, dict) and x.get("id") and x.get("headline") for x in mine):
             print("bad council watch file: needs a list of items with id and headline"); sys.exit(2)
     author = a.author or ("The Seax newsroom" if a.edition else "The Seax sport desk" if a.sport else
-                          "The Seax inquest desk" if a.inquests else "The Seax council watch")
+                          ("The Seax scheduler" if a.desk == "owner" else "The Seax inquest desk") if a.inquests else "The Seax council watch")
 
     for attempt in range(1, 5):
         git("fetch", "--depth=60", "origin", "main")
@@ -220,7 +224,7 @@ def main():
                 print("inquest desk items kept:", kept)
         elif a.inquests:
             out = live
-            print("inquest items merged:", merge_inquests(out, mine))
+            print(f"{a.desk} items merged:", merge_inquests(out, mine, a.desk))
             out["updatedAt"] = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
         elif a.councilwatch:
             out = live
@@ -287,7 +291,7 @@ def main():
         git("add", "-A")
         if not git("status", "--porcelain"):
             print("NOTHING TO PUSH (identical to live)"); return
-        msg = ("Edition " if a.edition else "Sport desk " if a.sport else "Inquest desk " if a.inquests else "Council Watch ") + out.get("updatedAt", "")
+        msg = ("Edition " if a.edition else "Sport desk " if a.sport else ("Scheduled story " if a.desk == "owner" else "Inquest desk ") if a.inquests else "Council Watch ") + out.get("updatedAt", "")
         git("-c", f"user.name={author}", "-c", "user.email=seaxbot@users.noreply.github.com", "commit", "-q", "-m", msg)
         r = subprocess.run(["git", "-C", ROOT, "push", "origin", "HEAD:main"], capture_output=True, text=True)
         if r.returncode == 0:

@@ -1,0 +1,38 @@
+{
+ "publishAt": "2026-11-16T06:00:00Z",
+ "note": "Owner's request, 13 Nov 2026: publish on Monday morning 16 Nov, angle is the cabinet decision that day. Picture: owner-supplied (data/portraits.json, matched on 'Three Shells').",
+ "items": [
+  {
+   "section": "stories",
+   "id": "southend-three-shells-lagoon-cabinet-decision-day",
+   "tag": "Politics",
+   "icon": "council",
+   "areas": [
+    "southend"
+   ],
+   "place": "Southend-on-Sea",
+   "weight": 7,
+   "headline": "Southend cabinet decides today whether to tear out Three Shells Lagoon and restore the beach",
+   "summary": "Removing the fenced-off seafront lagoon near Southend Pier would cost about £800,000, a decade after it was built for nearly £2m.",
+   "body": [
+    "Southend-on-Sea City Council's cabinet will decide today, Monday 16 November, whether to remove Three Shells Lagoon on the seafront near Southend Pier and return the site to a natural beach. A report to the meeting recommends removal as the most practical long-term option after a technical assessment of the alternatives, and the BBC reports the work would cost about £800,000.",
+    "The lagoon opened in July 2016 at a cost of nearly £2m, most of it public money: £1.25m came from the government's Coastal Communities Fund and the council put in £600,000, while Adventure Island owner Philip Miller contributed £100,000. It has been fenced off for most of this year after a mother and daughter had to be rescued with ropes in March when they became stuck in waist-deep sand. The council has already spent £90,000 trying to tackle complaints of a bad smell and to improve drainage, and its report says seaweed and algae have built up in the water.",
+    "Cllr Matt Dent, cabinet member for business, culture, music and tourism, said: \"The lagoon has become a monstrosity that is no longer fit for purpose.\" Mr Miller, who says he offered other ways to fix it, blamed the council, telling the Local Democracy Reporting Service that a lack of maintenance \"is the real reason it has come to this stage\". Reform UK group leader Tony Cox called the scheme a white elephant that gave local government a bad name."
+   ],
+   "points": [
+    "Government and council money paid for most of the original build",
+    "The site has been closed since a sand rescue in March",
+    "The cabinet meeting is held in public"
+   ],
+   "source": "Southend-on-Sea City Council",
+   "url": "https://www.southend.gov.uk/news/article/3627/three-shells-lagoon-report-recommends-long-term-way-forward",
+   "also": [
+    {
+     "name": "BBC News",
+     "url": "https://www.yahoo.com/news/world/articles/demolition-plan-2m-white-elephant-065507759.html"
+    }
+   ],
+   "time": ""
+  }
+ ]
+}

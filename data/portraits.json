@@ -1,5 +1,18 @@
 [
   {
+    "match": "\\bThree Shells\\b",
+    "name": "Three Shells Lagoon and Southend Pier",
+    "label": "Illustration",
+    "wide": "/img/people/three-shells-wide.jpg",
+    "og": "/img/people/three-shells-og.jpg",
+    "creator": "The Seax",
+    "provider": "",
+    "license": "",
+    "licenseUrl": "",
+    "source": "",
+    "addedBy": "owner, 13 Nov 2026 (Three Shells Lagoon stories; owner-supplied picture)"
+  },
+  {
     "match": "\\bRussell Brand\\b",
     "name": "Russell Brand",
     "wide": "/img/people/russell-brand-wide.jpg",
