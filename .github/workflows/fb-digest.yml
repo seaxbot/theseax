@@ -6,8 +6,10 @@ on:
   workflow_dispatch:
     inputs:
       slot: { description: "morning, lunch, commute, night or auto", default: "auto" }
+  # Every newsroom edition also wakes this up, because GitHub's scheduler often skips runs altogether
+  # (13 Nov: no run between 16:50 and 17:30, so the 17:00 post never went). The script still posts each slot once, only in its window.
   push:
-    paths: ["ops/fb-digest-run.txt"]
+    paths: ["ops/fb-digest-run.txt", "edition.json"]
   # GitHub often starts scheduled runs 20 to 40 minutes late, so each slot has follow-up runs; the script posts each slot once a day
   schedule:
     - cron: "15,35,55 6,7 * * *"
