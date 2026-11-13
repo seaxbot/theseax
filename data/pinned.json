@@ -1,14 +1,14 @@
 {
- "_note": "Pinned at the top of the front page between 'from' and 'until' (UTC), then shown as a card in the News section until 'newsUntil'. Owner's launch story. The newsroom never edits this file.",
- "id": "the-seax-launches",
- "from": "2026-11-09T07:00:00Z",
- "until": "2026-11-10T00:00:00Z",
- "newsUntil": "2026-11-10T12:00:00Z",
- "kicker": "Launch day",
+ "_note": "Pinned at the top of the front page between 'from' and 'until' (UTC), then shown as a card in the News section until 'newsUntil'. Owner's story. The newsroom never edits this file.",
+ "id": "microsoft-outage-site-updates-slower",
+ "from": "2026-11-13T09:20:00Z",
+ "until": "2026-11-14T00:00:00Z",
+ "newsUntil": "2026-11-14T12:00:00Z",
+ "kicker": "Site notice: updates may be slower today",
  "place": "Essex",
- "headline": "A new way to see Essex: The Seax launches to bring the whole county together",
- "summary": "From breaking news and local sport to council decisions, community events and the stories shaping our towns, a new free online platform aims to put everything happening across Essex in one place.",
- "image": "/img/topics/launch.jpg?v=1",
- "alt": "The Seax: the Essex skyline at sunrise",
- "url": "/story/the-seax-launches/"
+ "headline": "Global Microsoft outage leaves Outlook and Teams down for a second day",
+ "summary": "Site updates on The Seax may be slower than usual today, as the disruption hits many of the councils, public services and newsrooms we rely on for news.",
+ "image": "/img/topics/microsoft-outage.png?v=1",
+ "alt": "Illustration: a laptop showing a broken cloud, with email and video-call icons crossed out",
+ "url": "/story/microsoft-outage-site-updates-slower/"
 }
