@@ -1,11 +1,11 @@
 {
- "at": "2026-11-12T20:00:42.928251+00:00",
+ "at": "2026-11-13T06:34:30.222231+00:00",
  "councils": {
   "thurrock": {
    "name": "Thurrock Council",
    "system": "mg",
    "base": "https://democracy.thurrock.gov.uk",
-   "meetings": 19,
+   "meetings": 18,
    "changed": 0,
    "state": "ok",
    "note": ""
@@ -23,7 +23,7 @@
    "name": "Epping Forest District Council",
    "system": "mg",
    "base": "https://rds.eppingforestdc.gov.uk",
-   "meetings": 16,
+   "meetings": 15,
    "changed": 0,
    "state": "ok",
    "note": ""
@@ -32,7 +32,7 @@
    "name": "Maldon District Council",
    "system": "mg",
    "base": "https://democracy.maldon.gov.uk",
-   "meetings": 17,
+   "meetings": 16,
    "changed": 0,
    "state": "ok",
    "note": ""
@@ -41,8 +41,8 @@
    "name": "Tendring District Council",
    "system": "mg",
    "base": "https://tdcdemocracy.tendringdc.gov.uk",
-   "meetings": 9,
-   "changed": 0,
+   "meetings": 11,
+   "changed": 1,
    "state": "ok",
    "note": "per-council time cap reached"
   },
@@ -62,7 +62,7 @@
    "meetings": 21,
    "changed": 0,
    "state": "ok",
-   "note": "meeting 521"
+   "note": ""
   },
   "brentwood": {
    "name": "Brentwood Borough Council",
@@ -113,7 +113,7 @@
    "name": "Chelmsford City Council",
    "system": "chelmsford",
    "base": "https://www.chelmsford.gov.uk",
-   "meetings": 6,
+   "meetings": 5,
    "changed": 1,
    "state": "ok",
    "note": ""
@@ -138,16 +138,16 @@
   }
  },
  "requests": {
-  "thurrock": 25,
+  "thurrock": 24,
   "southend": 23,
-  "epping": 22,
-  "maldon": 20,
-  "tendring": 10,
+  "epping": 18,
+  "maldon": 19,
+  "tendring": 8,
   "harlow": 3,
   "basildon": 24,
   "brentwood": 3,
   "uttlesford": 3,
   "rochford": 1,
-  "chelmsford": 7
+  "chelmsford": 6
  }
 }

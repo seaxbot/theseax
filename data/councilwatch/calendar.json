@@ -1,82 +1,6 @@
 {
- "at": "2026-11-12T20:00:42.928251+00:00",
+ "at": "2026-11-13T06:34:30.222231+00:00",
  "meetings": [
-  {
-   "council": "chelmsford",
-   "councilName": "Chelmsford City Council",
-   "area": "chelmsford",
-   "committee": "Licensing committee",
-   "date": "2026-11-12",
-   "time": "",
-   "url": "https://www.chelmsford.gov.uk/committee-meetings/licensing-committee-12-november-2026/",
-   "items": []
-  },
-  {
-   "council": "southend",
-   "councilName": "Southend-on-Sea City Council",
-   "area": "southend",
-   "committee": "Joint Scrutiny Meeting with Policy & Resources Overview and Scrutiny Committee, Place Overview & Scrutiny Committee",
-   "date": "2026-11-12",
-   "time": "6.30 pm",
-   "url": "https://democracy.southend.gov.uk/ieListDocuments.aspx?CId=611&MId=5184",
-   "items": [
-    "Better Queensway - Decisions on housing design, delivery approach and procurement strategy"
-   ]
-  },
-  {
-   "council": "southend",
-   "councilName": "Southend-on-Sea City Council",
-   "area": "southend",
-   "committee": "Joint Scrutiny Meeting with Place Overview and Scrutiny Committee, Policy and Resources Overview & Scrutiny Committee",
-   "date": "2026-11-12",
-   "time": "6.30 pm",
-   "url": "https://democracy.southend.gov.uk/ieListDocuments.aspx?CId=609&MId=5185",
-   "items": [
-    "Better Queensway - Decisions on housing design, delivery approach and procurement strategy"
-   ]
-  },
-  {
-   "council": "thurrock",
-   "councilName": "Thurrock Council",
-   "area": "south",
-   "committee": "Adult and Health Services Overview and Scrutiny Committee",
-   "date": "2026-11-12",
-   "time": "7.00 pm",
-   "url": "https://democracy.thurrock.gov.uk/ieListDocuments.aspx?CId=524&MId=6991",
-   "items": [
-    "Health and Wellbeing Strategy",
-    "Orsett Hospital: Service Resilience and Planning Update",
-    "Information for members of the public and councillors",
-    "Action Log"
-   ]
-  },
-  {
-   "council": "maldon",
-   "councilName": "Maldon District Council",
-   "area": "maldon",
-   "committee": "Performance, Governance and Audit Committee",
-   "date": "2026-11-12",
-   "time": "7.30 pm",
-   "url": "https://democracy.maldon.gov.uk/ieListDocuments.aspx?CId=284&MId=4724",
-   "items": [
-    "Reports from the External Auditor",
-    "Internal Audit Reports",
-    "Car Parking Final Report - October 2026",
-    "Final UK Shared and Rural England Prosperity Funds"
-   ]
-  },
-  {
-   "council": "southend",
-   "councilName": "Southend-on-Sea City Council",
-   "area": "southend",
-   "committee": "On the rise of the Joint Scrutiny Meeting (9.50pm indicative only), Policy and Resources Overview & Scrutiny Committee",
-   "date": "2026-11-12",
-   "time": "9.50 pm",
-   "url": "https://democracy.southend.gov.uk/ieListDocuments.aspx?CId=609&MId=5079",
-   "items": [
-    "Finance Performance Report 2026/27 to end of September 2026 (Period 6)"
-   ]
-  },
   {
    "council": "chelmsford",
    "councilName": "Chelmsford City Council",
@@ -119,19 +43,6 @@
     "FINANCE UPDATE QUARTER 2 - 2026/27",
     "BEST VALUE, MODERNISATION AND ORGANISATION TRANSFORMATION PROGRAMME",
     "COUNCIL ASSETS"
-   ]
-  },
-  {
-   "council": "tendring",
-   "councilName": "Tendring District Council",
-   "area": "tendring",
-   "committee": "Planning Policy and Local Plan Committee",
-   "date": "2026-11-17",
-   "time": "6.00 pm",
-   "url": "https://tdcdemocracy.tendringdc.gov.uk/ieListDocuments.aspx?CId=340&MId=2943",
-   "items": [
-    "Report of the Corporate Director (Planning & Community) - A.1 - Tendring District Local Plan Review: Final Submission to the Secretary of State following Regulation 19 Consultation",
-    "Public Speaking"
    ]
   },
   {
@@ -588,6 +499,16 @@
    "date": "2026-12-10",
    "time": "7.30 pm",
    "url": "https://democracy.maldon.gov.uk/ieListDocuments.aspx?CId=130&MId=4729",
+   "items": []
+  },
+  {
+   "council": "tendring",
+   "councilName": "Tendring District Council",
+   "area": "tendring",
+   "committee": "Cabinet",
+   "date": "2026-12-11",
+   "time": "10.30 am",
+   "url": "https://tdcdemocracy.tendringdc.gov.uk/ieListDocuments.aspx?CId=134&MId=2823",
    "items": []
   }
  ]
