@@ -2,10 +2,10 @@
   {
     "match": "\\bThree Shells\\b",
     "name": "Three Shells Lagoon and Southend Pier",
-    "label": "Illustration",
+    "label": "Photo file",
     "wide": "/img/people/three-shells-wide.jpg",
     "og": "/img/people/three-shells-og.jpg",
-    "creator": "The Seax",
+    "creator": "",
     "provider": "",
     "license": "",
     "licenseUrl": "",
