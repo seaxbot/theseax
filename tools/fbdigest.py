@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
 """Scheduled round-up posts for The Seax Facebook Page (owner's request, 12 Nov 2026).
 
-Four slots a day, UK time:
-  morning  07:15  top 5 stories to start the day
-  lunch    12:30  the top story
-  commute  17:00  top 3 stories for the journey home
-  night    21:00  News at 9: the top 10 stories of the day you may have missed
+Four slots a day, UK time (weekday / Saturday and Sunday):
+  morning  07:15 / 08:00  top 5 stories to start the day
+  lunch    12:30 / 12:00  the top story
+  commute  17:00 / 17:30  top 3 stories for the journey home
+  night    21:00 / 21:00  News at 9: the top 10 stories of the day you may have missed
 
 Runs on GitHub Actions (.github/workflows/fb-digest.yml) with the Page access token in the repository secret
 FB_PAGE_TOKEN, the same token tools/fbpage.py uses. Posts ONLY as The Seax Page: it asks Facebook who the token
@@ -25,10 +25,11 @@ import fbpage
 ROOT, SITE = fbpage.ROOT, fbpage.SITE
 DAYS = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
 SLOTS = {
-    "morning": {"at": (7, 15), "n": 5, "hours": 24},
-    "lunch":   {"at": (12, 30), "n": 1, "hours": 24},
-    "commute": {"at": (17, 0), "n": 3, "hours": 18},
-    "night":   {"at": (21, 0), "n": 10, "hours": 0},   # 0 = since midnight UK time today
+    # "weekend" = Saturday and Sunday time (owner's choice, 13 Nov 2026: 08:00, 12:00, 17:30, 21:00)
+    "morning": {"at": (7, 15), "weekend": (8, 0), "n": 5, "hours": 24},
+    "lunch":   {"at": (12, 30), "weekend": (12, 0), "n": 1, "hours": 24},
+    "commute": {"at": (17, 0), "weekend": (17, 30), "n": 3, "hours": 18},
+    "night":   {"at": (21, 0), "weekend": (21, 0), "n": 10, "hours": 0},   # 0 = since midnight UK time today
 }
 NUM = ["1️⃣", "2️⃣", "3️⃣", "4️⃣", "5️⃣", "6️⃣", "7️⃣", "8️⃣", "9️⃣", "🔟"]
 
@@ -111,7 +112,7 @@ def due_slot(now, posts):
     """The slot due now (up to 100 minutes late, as GitHub's scheduler can run late) and not yet posted today."""
     uk = fbpage.uk_now(now)
     for name, cfg in SLOTS.items():
-        h, m = cfg["at"]
+        h, m = cfg["weekend"] if uk.weekday() >= 5 and "weekend" in cfg else cfg["at"]
         start = uk.replace(hour=h, minute=m, second=0, microsecond=0)
         if start <= uk < start + timedelta(minutes=100) and not posted_today(posts, name, uk):
             return name

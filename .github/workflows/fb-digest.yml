@@ -16,6 +16,9 @@ on:
     - cron: "30,50 11,12 * * *"
     - cron: "10 12,13 * * *"
     - cron: "0,20,40 16,17 * * *"
+    # Weekends (Sat, Sun): 08:00 and 12:00 UK time; 17:30 and 21:00 are covered by the lines above and below
+    - cron: "5,25,45 7,8 * * 0,6"
+    - cron: "5,25,45 11,12 * * 0,6"
     - cron: "0,20,40 20,21 * * *"
 permissions:
   contents: write
