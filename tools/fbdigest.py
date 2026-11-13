@@ -71,22 +71,30 @@ def pick(ed, now, slot):
 def message(slot, items, now, ed=None):
     uk = fbpage.uk_now(now)
     day = DAYS[uk.weekday()]
+    wkend = uk.weekday() >= 5   # wording suits the day (owner's request, 13 Nov 2026)
     one = lambda it: " ".join(str(it.get("headline") or "").split())
     url = lambda it: f"{SITE}/story/{it['id']}/"
     if slot == "lunch":
         it = items[0]
         summ = " ".join(str(it.get("summary") or "").split())
-        lines = ["🥪 Lunchtime in Essex: the big story", "", one(it)] + (["", summ] if summ else []) + ["", f"Read more: {url(it)}"]
+        lines = [f"🥪 {day + ' lunchtime' if wkend else 'Lunchtime'} in Essex: the big story", "", one(it)] + (["", summ] if summ else []) + ["", f"Read more: {url(it)}"]
     else:
         top = {"morning": f"☀️ Morning Essex: {len(items)} stories to start your {day}",
-               "commute": f"🚆 Heading home? {len(items)} Essex stories for the journey:",
-               "night": f"🌙 News at 9: the {len(items)} Essex stories you may have missed today"}[slot]
+               "commute": {4: f"🚆 Heading home for the weekend? {len(items)} Essex stories for the journey:",
+                           5: f"🌆 Your Saturday evening catch-up: {len(items)} Essex stories from today",
+                           6: f"🌆 Your Sunday evening catch-up: {len(items)} Essex stories before the week ahead"}.get(
+                               uk.weekday(), f"🚆 Heading home? {len(items)} Essex stories for the journey:"),
+               "night": f"🌙 News at 9: the {len(items)} Essex stories you may have missed {'this ' + day if wkend else 'today'}"}[slot]
         lines = [top, ""]
         if slot == "morning":
             # owner's wording, 12 Nov 2026: greeting and weather first, then the stories
             wx = weather_line(ed, uk)
             lines = ([f"Good morning Essex: weather today {wx[0]}"] + wx[1:] if wx else ["Good morning Essex!"]) + \
-                    ["", f"Here are {len(items)} stories making news this morning across the county:", ""]
+                    ["", {0: f"Here are {len(items)} stories to start the week across the county:",
+                     4: f"Here are {len(items)} stories making news across the county this Friday morning:",
+                     5: f"Here are {len(items)} stories to start your Saturday across the county:",
+                     6: f"Here are {len(items)} stories for your Sunday morning across the county:"}.get(
+                         uk.weekday(), f"Here are {len(items)} stories making news this morning across the county:"), ""]
         for i, it in enumerate(items):
             lines += [f"{NUM[i]} {one(it)}", url(it), ""]
         lines += ["Every story, all day: theseax.com"]
