@@ -3940,6 +3940,89 @@ function cleanStory(s){
 function lastUpd(s){ const b = +new Date(s.updated||0) || 0, c = +new Date(s.headlineAt||0) || 0, m = Math.max(b, c); return m ? new Date(m).toISOString() : ""; }
 function shownT(s){ const a = +new Date(s.time||0) || 0, u = +new Date(lastUpd(s)||0) || 0; return u > a ? lastUpd(s) : (s.time || ""); }
 function newsTime(s){ const a = +new Date(s.time||0) || 0, b = +new Date(s.updated||0) || 0; return Math.max(a, b); }
+/* LIVE WEATHER (owner's request, 13 Nov 2026). The "now" reading used to be typed in by the newsroom and froze
+   for hours (always overnight). The page now fetches current Chelmsford conditions itself from Open-Meteo
+   (free, no key) on load and every 15 minutes, and lays them over the edition's weather. The Met Office
+   forecast days and warnings still come from the newsroom; Open-Meteo days only fill gaps (e.g. overnight,
+   when the edition has no entry for today yet). If the fetch fails, the edition's own figures show as before. */
+let LIVEWX = null;
+const LIVEWX_URL = "https://api.open-meteo.com/v1/forecast?latitude=51.7356&longitude=0.4685" +
+  "&current=temperature_2m,apparent_temperature,weather_code,wind_gusts_10m,wind_direction_10m,is_day" +
+  "&hourly=precipitation_probability&daily=weather_code,temperature_2m_max,temperature_2m_min,precipitation_probability_max" +
+  "&timezone=Europe%2FLondon&wind_speed_unit=mph&forecast_days=7";
+function wmoWx(code, day){
+  const c = +code;
+  if(c === 0) return [day ? "Sunny" : "Clear", "sun"];
+  if(c === 1) return [day ? "Mostly sunny" : "Mostly clear", "sun"];
+  if(c === 2) return ["Partly cloudy", "partly"];
+  if(c === 3) return ["Overcast", "cloud"];
+  if(c === 45) return ["Fog", "fog"];
+  if(c === 48) return ["Freezing fog", "fog"];
+  if(c >= 51 && c <= 55) return ["Drizzle", "rain"];
+  if(c === 56 || c === 57) return ["Freezing drizzle", "rain"];
+  if(c === 61) return ["Light rain", "rain"];
+  if(c === 63) return ["Rain", "rain"];
+  if(c === 65) return ["Heavy rain", "rain"];
+  if(c === 66 || c === 67) return ["Freezing rain", "rain"];
+  if(c === 71) return ["Light snow", "cloud"];
+  if(c === 73 || c === 77) return ["Snow", "cloud"];
+  if(c === 75) return ["Heavy snow", "cloud"];
+  if(c === 80) return ["Light showers", "shower"];
+  if(c === 81) return ["Showers", "shower"];
+  if(c === 82) return ["Heavy showers", "shower"];
+  if(c === 85 || c === 86) return ["Snow showers", "cloud"];
+  if(c === 95) return ["Thunderstorm", "storm"];
+  if(c === 96 || c === 99) return ["Thunderstorm with hail", "storm"];
+  return ["Cloudy", "cloud"];
+}
+function compass16(deg){ return ["N","NNE","NE","ENE","E","ESE","SE","SSE","S","SSW","SW","WSW","W","WNW","NW","NNW"][Math.round(((+deg % 360) + 360) % 360 / 22.5) % 16]; }
+function parseLiveWx(j){
+  const c = j && j.current; if(!c || !Number.isFinite(+c.temperature_2m)) return null;
+  const off = (+j.utc_offset_seconds || 0) * 1000;
+  const at = new Date(Date.parse(c.time + ":00Z") - off);
+  if(isNaN(at)) return null;
+  const [desc, icon0] = wmoWx(c.weather_code, +c.is_day === 1);
+  const gust = Math.round(+c.wind_gusts_10m || 0);
+  const icon = gust >= 45 && +c.weather_code <= 3 ? "wind" : icon0;
+  let rain = null;
+  const h = j.hourly || {}, hi = (h.time || []).indexOf(String(c.time).slice(0, 13) + ":00");
+  if(hi >= 0 && Number.isFinite(+(h.precipitation_probability || [])[hi])) rain = +h.precipitation_probability[hi];
+  const r0 = v => { const n = Math.round(+v); return n === 0 ? 0 : n; };
+  const now = { temp: r0(c.temperature_2m), feels: r0(c.apparent_temperature), desc, icon,
+    wind: `Gusts ${gust}mph ${compass16(c.wind_direction_10m)}`, rain: rain === null ? "" : rain < 5 ? "Under 5%" : rain + "%" };
+  const d = j.daily || {}, days = (d.time || []).map((t, i) => {
+    const [dd, di] = wmoWx(d.weather_code[i], true);
+    return { date: t, hi: r0(d.temperature_2m_max[i]), lo: r0(d.temperature_2m_min[i]), desc: dd, icon: di, rain: +d.precipitation_probability_max[i] || 0 };
+  }).filter(x => Number.isFinite(x.hi) && Number.isFinite(x.lo));
+  return { at: at.toISOString(), got: Date.now(), now, days };
+}
+function ukDayKey(d){ return new Intl.DateTimeFormat("en-CA",{timeZone:"Europe/London",year:"numeric",month:"2-digit",day:"2-digit"}).format(d); }
+function applyLiveWx(w){
+  if(!w) return w;
+  const today = ukDayKey(new Date());
+  /* days that have passed drop off; Met Office days stay first, Open-Meteo fills any missing days */
+  let days = (Array.isArray(w.days) ? w.days : []).filter(x => x && String(x.date) >= today);
+  if(LIVEWX && Date.now() - LIVEWX.got < 3 * 36e5){
+    w.now = Object.assign({}, LIVEWX.now); w.updatedAt = LIVEWX.at; w.live = true;
+    const have = new Set(days.map(x => x.date));
+    days = days.concat(LIVEWX.days.filter(x => x.date >= today && !have.has(x.date))).sort((a, b) => a.date < b.date ? -1 : 1);
+  }
+  if(days.length) w.days = days;
+  return w;
+}
+async function pullLiveWx(){
+  try{
+    const ctl = typeof AbortController === "function" ? new AbortController() : null;
+    const t = ctl ? setTimeout(() => ctl.abort(), 10000) : 0;
+    const r = await fetch(LIVEWX_URL, { cache: "no-store", signal: ctl ? ctl.signal : undefined });
+    clearTimeout(t);
+    if(!r.ok) return;
+    const p = parseLiveWx(await r.json());
+    if(!p) return;
+    LIVEWX = p;
+    if(ED && ED.weather){ applyLiveWx(ED.weather); renderWeather(); renderToday(); renderTicker(); }
+  }catch(_){}
+}
 function normalise(d){
   const o = Object.assign({}, EMBED, d || {});
   o.stories = (Array.isArray(o.stories) && o.stories.length ? o.stories : EMBED.stories).map(cleanStory).filter(Boolean);
@@ -3965,6 +4048,7 @@ function normalise(d){
   o.deals = (Array.isArray(o.deals) && o.deals.length ? o.deals : EMBED.deals).filter(x => x && x.title && x.url && !(x.ends && new Date(x.ends) < new Date()));
   o.features = [];
   o.councilwatch = (Array.isArray(o.councilwatch) ? o.councilwatch : []).map(cleanStory).filter(Boolean).map(s => { s.tag = s.tag || "Council Watch"; return s; });
+  o.weather = applyLiveWx(Object.assign({}, o.weather, { days: (o.weather.days || []).slice(), now: Object.assign({}, o.weather.now) }));
   return o;
 }
 const inArea = item => AREA === "all" || !item.areas || item.areas.includes("all") || item.areas.includes(AREA);
@@ -4158,7 +4242,7 @@ function renderWeather(){
   const box = $("#wxNow"); box.classList.toggle("day", !night);
   box.innerHTML = `<div class="place">${esc(w.place||"Chelmsford")} · now</div>
     <div class="big">${wxIcon(w.now.icon, night)}<div><div class="temp">${esc(w.now.temp)}°</div><div class="desc">${esc(w.now.desc)}</div></div></div>
-    <div class="facts"><div>Feels like<b>${esc(w.now.feels)}°C</b></div><div>Wind<b>${esc(w.now.wind||"")}</b></div><div>Chance of rain<b>${esc(w.now.rain||"")}</b></div><div>Updated<b>${ago(w.updatedAt)}</b></div></div>`;
+    <div class="facts"><div>Feels like<b>${esc(w.now.feels)}°C</b></div><div>Wind<b>${esc(w.now.wind||"")}</b></div><div>Chance of rain<b>${esc(w.now.rain||"")}</b></div><div>Updated<b title="${esc(ago(w.updatedAt))}">${w.live ? fmt(new Date(w.updatedAt),{hour:"2-digit",minute:"2-digit"}) : ago(w.updatedAt)}</b></div></div>`;
   const today = dayKey(now);
   $("#wxDays").innerHTML = w.days.slice(0,7).map(d => {
     const dt = new Date(d.date + "T12:00:00Z"); const isT = d.date === today; const bon = String(d.date).slice(5) === "11-05";
@@ -4170,7 +4254,7 @@ function renderWeather(){
     <div class="tile">${moonSvg(mp.frac)}<div><b>${mp.name}</b><span>Moon is ${Math.round(mp.age)} days old</span></div></div>
     ${outlookTile(w, today)}`;
   const warn = (w.warnings||[]).filter(warningLive).map(x=>`<b style="color:var(--red)">⚠ ${esc(x)}</b> `).join("");
-  $("#wxNote").innerHTML = `${warn}Forecast: ${esc(w.source||"")} · <a href="${safeUrl(w.url)}" target="_blank" rel="noopener">Full Met Office forecast ↗</a> · Sun and moon times are calculated live for Chelmsford.`;
+  $("#wxNote").innerHTML = `${warn}${w.live ? `Now: live, refreshed every 15 minutes (weather data by <a href="https://open-meteo.com/" target="_blank" rel="noopener">Open-Meteo.com</a>) · ` : ""}Forecast: ${esc(w.source||"")} · <a href="${safeUrl(w.url)}" target="_blank" rel="noopener">Full Met Office forecast ↗</a> · Sun and moon times are calculated live for Chelmsford.`;
   if($("#miniWx")) $("#miniWx").innerHTML = `${wxIcon(w.now.icon, night)}<b>${esc(w.now.temp)}°C</b><span>${esc(w.place||"Chelmsford")}</span>`;
   if($("#sunTop")) $("#sunTop").textContent = `☀ ${fmt(st.rise,{hour:"2-digit",minute:"2-digit"})}  ☾ ${fmt(st.set,{hour:"2-digit",minute:"2-digit"})}`;
 }
@@ -4498,6 +4582,11 @@ ED = normalise(EMBED);
 tickSecond(); renderWebcams(); renderAll(); lastDay = dayKey(new Date()); lastMinute = new Date().getMinutes();
 setFeed("embedded"); route();
 
+/* live weather: now, every 15 minutes, and when the tab comes back after a while */
+pullLiveWx();
+setInterval(pullLiveWx, 15 * 6e4);
+document.addEventListener("visibilitychange", () => { if(document.visibilityState === "visible" && (!LIVEWX || Date.now() - LIVEWX.got > 10 * 6e4)) pullLiveWx(); });
+
 /* live edition from the page's data store */
 (async () => {
   if(!window.claude || typeof window.claude.use !== "function") return;
@@ -4711,7 +4800,7 @@ function renderToday(){
       const dn = days.find(d => d.date === ukDate(new Date(now.getTime()+n*864e5)));
       if(dn) parts.push(`<span class="wk">${dayName(dn)}</span>${ico(dn.icon, false, dn.hi)}<b>${esc(dn.hi)}°C</b>${rain(dn)}`);
     }
-    bits.push(`<a href="#weather" class="tb tb-wx">${parts.map(x => x.startsWith("<!--opt-->") ? `<span class="wp opt">${x.slice(10)}</span>` : `<span class="wp">${x}</span>`).join('<span class="wsep" aria-hidden="true"></span>')}</a>`);
+    bits.push(`<a href="#weather" class="tb tb-wx"${w.live && w.updatedAt ? ` title="Now: live reading for ${esc(w.place||"Chelmsford")} at ${fmt(new Date(w.updatedAt),{hour:"2-digit",minute:"2-digit"})}"` : ""}>${parts.map(x => x.startsWith("<!--opt-->") ? `<span class="wp opt">${x.slice(10)}</span>` : `<span class="wp">${x}</span>`).join('<span class="wsep" aria-hidden="true"></span>')}</a>`);
   }
   const warn = (w.warnings||[]).filter(warningLive)[0];
   if(warn) bits.unshift(`<a href="#weather" class="tb warn" title="${esc(warn)}" aria-label="${esc(warn)}"><i class="wtri" aria-hidden="true"></i>${shortWarning(warn)}</a>`);
