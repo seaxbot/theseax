@@ -120,5 +120,18 @@
     "licenseUrl": "",
     "source": "",
     "addedBy": "owner, 13 Nov 2026 (Jaxon Foster inquest story)"
+  },
+  {
+    "match": "\\b([Ii]nquests?|[Cc]oroners?)\\b|[Cc]oroner['’]s\\b|\\b[Pp]revention of future deaths\\b",
+    "name": "HM Coroner's Service",
+    "label": "Logo",
+    "wide": "/img/people/coroner-wide.jpg",
+    "og": "/img/people/coroner-og.jpg",
+    "creator": "HM Coroner's Service",
+    "provider": "",
+    "license": "",
+    "licenseUrl": "",
+    "source": "",
+    "addedBy": "owner, 13 Nov 2026 (all inquest and coroner stories; listed after the Cyprus hotel entry so the Chelmsford toddler story keeps its hotel picture)"
   }
 ]
