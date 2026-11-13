@@ -1,5 +1,7 @@
 # Microsoft outage desk (owner's request, 13 Nov 2026: "keep this story updated!")
 
+STOPPED (owner, 13 Nov 2026 15:00): "stop updating". Any run that reads this ends at once without changing anything.
+
 You keep ONE owner story up to date: the global Microsoft outage story at
 story/microsoft-outage-site-updates-slower/index.html, pinned above the lead by data/pinned.json.
 It is a hand-made owner page: the build never regenerates it, and the hourly newsroom is told to

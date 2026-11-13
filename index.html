@@ -723,6 +723,11 @@ h1,h2,h3,h4,.story h1,.lead h2,.card h3,.drow h4{letter-spacing:-.022em}
 
 /* ---------- pinned story (data/pinned.json, shown only between its from and until times) ---------- */
 .pinned{margin:0 0 22px}
+.pin-notice{display:flex;align-items:center;flex-wrap:wrap;gap:10px 14px;padding:12px 18px;background:#fff6dc;border:1px solid #f0d27a;border-left:5px solid #e0a800;color:#3d2e00;text-decoration:none;font-size:15px}
+.pin-notice i{width:9px;height:9px;border-radius:50%;background:#e0a800;flex:none}
+.pin-notice b{font-weight:800}
+.pin-notice span{margin-left:auto;font-weight:700;text-decoration:underline;text-underline-offset:3px}
+.pin-notice:hover b{text-decoration:underline}
 .pin-card{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);background:var(--navy);color:#fff;text-decoration:none;min-height:300px;border-top:5px solid var(--red)}
 .pin-img{position:relative;min-height:220px;background:#0b1628}
 .pin-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
@@ -4511,6 +4516,7 @@ function renderPinned(){
   if(!on){ if(!el.hidden){ el.hidden = true; el.innerHTML = ""; } return; }
   if(!el.hidden && el.dataset.id === PIN.id) return;
   el.dataset.id = PIN.id; el.hidden = false;
+  if(PIN.style === "notice"){ el.innerHTML = `<a class="pin-notice" href="${esc(PIN.url)}"><i aria-hidden="true"></i><b>${esc(PIN.kicker || "Site notice")}</b><span>Read more →</span></a>`; return; }
   el.innerHTML = `<a class="pin-card" href="${esc(PIN.url)}">
     <div class="pin-img">${PIN.image ? `<img src="${esc(PIN.image)}" alt="${esc(PIN.alt || "")}" loading="eager">` : ""}</div>
     <div class="pin-text"><div class="pin-kick"><i aria-hidden="true"></i>${esc(PIN.kicker || "The Seax")}</div><h2>${esc(PIN.headline)}</h2>${PIN.summary ? `<p>${esc(PIN.summary)}</p>` : ""}<span class="pin-go">Read the story →</span></div></a>`;
@@ -4518,7 +4524,7 @@ function renderPinned(){
 /* after the pin ends, the launch story sits in the News section as the second card until newsUntil (owner's choice, Nov 2026) */
 function renderPinnedNews(){
   const g = document.getElementById("newsGrid"); if(!g) return;
-  const now = Date.now(), on = PIN && PIN.headline && PIN.url && PIN.newsUntil && now >= +new Date(PIN.until) && now < +new Date(PIN.newsUntil);
+  const now = Date.now(), on = PIN && PIN.style !== "notice" && PIN.headline && PIN.url && PIN.newsUntil && now >= +new Date(PIN.until) && now < +new Date(PIN.newsUntil);
   const have = g.querySelector(".pin-news");
   if(!on){ if(have) have.remove(); return; }
   if(have) return;
