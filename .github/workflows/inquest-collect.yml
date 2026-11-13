@@ -1,0 +1,40 @@
+name: Essex inquest list collector
+# Reads the Essex Coroner's public inquest list and saves it, grouped by case, to the branch "inquest-data" for the
+# inquest desk (ops/inquests.md). Owner's request, 13 Nov 2026. The coroner publishes the list each working day by
+# 5pm, so this runs early morning (before the desk's 07:50 UK run) and early evening (UTC), and on collector changes.
+on:
+  schedule:
+    - cron: "25 6 * * *"
+    - cron: "40 17 * * *"
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: [".github/workflows/inquest-collect.yml", "tools/inquests/collect.py"]
+permissions:
+  contents: write
+concurrency: inquests
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with: { fetch-depth: 1 }
+      - name: Get previous state
+        run: |
+          mkdir -p /tmp/inq
+          if git fetch -q --depth 1 origin inquest-data; then git archive FETCH_HEAD | tar -x -C /tmp/inq; else echo "no previous state"; fi
+      - name: Collect
+        run: |
+          set -o pipefail
+          python3 -u tools/inquests/collect.py /tmp/inq 2>&1 | tee /tmp/inq/run.log
+      - name: Save to the data branch
+        if: always()
+        run: |
+          mkdir -p /tmp/inq; [ -f /tmp/inq/run.log ] || echo "collector did not run" > /tmp/inq/run.log
+          cd /tmp/inq && rm -rf .git
+          git init -q -b inquest-data
+          git config user.name "The Seax inquest collector"
+          git config user.email "seaxbot@users.noreply.github.com"
+          git add -A && git commit -qm "Essex inquest list $(date -u +%FT%TZ)"
+          git push -qf "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" inquest-data
