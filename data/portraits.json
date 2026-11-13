@@ -94,5 +94,18 @@
     "licenseUrl": "",
     "source": "",
     "addedBy": "owner, 12 Nov 2026 (safer sleep stories; shows the NHS safe sleep position)"
+  },
+  {
+    "match": "[Mm]en['’]s mental health",
+    "name": "A man with his head in his hand at sunset",
+    "label": "Library photo",
+    "wide": "/img/people/mens-mental-health-wide.jpg",
+    "og": "/img/people/mens-mental-health-og.jpg",
+    "creator": "The Seax",
+    "provider": "",
+    "license": "",
+    "licenseUrl": "",
+    "source": "",
+    "addedBy": "owner, 13 Nov 2026 (men's mental health story)"
   }
 ]
