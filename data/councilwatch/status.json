@@ -1,5 +1,5 @@
 {
- "at": "2026-11-13T06:34:30.222231+00:00",
+ "at": "2026-11-13T16:31:38.629680+00:00",
  "councils": {
   "thurrock": {
    "name": "Thurrock Council",
@@ -24,7 +24,7 @@
    "system": "mg",
    "base": "https://rds.eppingforestdc.gov.uk",
    "meetings": 15,
-   "changed": 0,
+   "changed": 1,
    "state": "ok",
    "note": ""
   },
@@ -42,9 +42,9 @@
    "system": "mg",
    "base": "https://tdcdemocracy.tendringdc.gov.uk",
    "meetings": 11,
-   "changed": 1,
+   "changed": 3,
    "state": "ok",
-   "note": "per-council time cap reached"
+   "note": ""
   },
   "harlow": {
    "name": "Harlow Council",
@@ -114,7 +114,7 @@
    "system": "chelmsford",
    "base": "https://www.chelmsford.gov.uk",
    "meetings": 5,
-   "changed": 1,
+   "changed": 2,
    "state": "ok",
    "note": ""
   },
@@ -142,7 +142,7 @@
   "southend": 23,
   "epping": 18,
   "maldon": 19,
-  "tendring": 8,
+  "tendring": 19,
   "harlow": 3,
   "basildon": 24,
   "brentwood": 3,
