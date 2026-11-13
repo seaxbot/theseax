@@ -781,7 +781,7 @@ h1,h2,h3,h4,.story h1,.lead h2,.card h3,.drow h4{letter-spacing:-.022em}
 .latest-more{margin-top:10px;width:100%;background:none;border:1px solid var(--ink);border-radius:99px;padding:8px;font-weight:700;font-size:13px;cursor:pointer;color:var(--ink)}
 .latest-more:hover{background:var(--ink);color:#fff}
 
-.seconds{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:24px;border-top:1px solid var(--ink)}
+.seconds{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));column-gap:40px;row-gap:0;margin-top:24px;border-top:1px solid var(--ink)}
 /* ---------- On this day in Essex: a fixed calendar in data/onthisday.json, no newsroom tokens ---------- */
 .otd-wrap{padding-top:30px}
 .otd{display:flex;align-items:baseline;gap:6px 14px;flex-wrap:wrap;margin-top:0;padding:12px 0;border-top:1px solid var(--ink);border-bottom:1px solid var(--hair)}
@@ -806,8 +806,10 @@ h1,h2,h3,h4,.story h1,.lead h2,.card h3,.drow h4{letter-spacing:-.022em}
 @media (max-width:760px){ .hist{grid-template-columns:1fr} }
 .hist-hide{background:none;border:1px solid var(--ink);border-radius:99px;padding:6px 14px;font-weight:700;font-size:12.5px;cursor:pointer;color:var(--ink)}
 .hist-hide:hover{background:var(--ink);color:#fff}
-.sec{display:block;padding:16px 20px 18px;border-right:1px solid var(--hair);text-decoration:none;color:inherit}
-.sec:first-child{padding-left:0}.sec:last-child{border-right:0;padding-right:0}
+/* the three cards under the lead have identical widths (owner's fix, 13 Nov 2026: the middle picture sat shorter than
+   the other two because only the middle card had padding on both sides); the dividers sit in the gap instead */
+.sec{display:block;position:relative;padding:16px 0 18px;text-decoration:none;color:inherit;min-width:0}
+.sec:not(:last-child)::after{content:"";position:absolute;top:0;bottom:0;right:-20px;border-right:1px solid var(--hair)}
 .sec-map{aspect-ratio:2/1;overflow:hidden;border:1px solid var(--hair);background:#dfe9ee;margin-bottom:12px;position:relative}
 .sec-map svg{width:100%;height:100%;display:block}
 .kick2{display:flex;gap:8px;align-items:center;font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--c)}
@@ -901,6 +903,7 @@ ol.mn .mm{font-size:12px;color:var(--muted)}
   .lp-stand{font-size:16px}
   .seconds{grid-template-columns:1fr}
   .sec{padding:16px 0;border-right:0;border-bottom:1px solid var(--hair)}
+  .sec::after{display:none}
   ol.mn{columns:1}
   .around-grid{grid-template-columns:1fr 1fr}
   .bh h2{font-size:28px}
