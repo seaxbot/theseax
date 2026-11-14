@@ -3,7 +3,7 @@
 
 Turns a spoken script into the MP3 that the "Listen" player on the front page plays.
 The script is written twice a day, at 07:00 and 17:00 UK time, by the bulletin desk (see ops/bulletin.md).
-(Owner first asked for 09:00 on 14 Nov 2026, then the same day moved it to 07:00 and 17:00.)
+(Owner first asked for 09:00 on 14 Nov 2026, then the same day moved it to 07:00 and 17:00, with the Saturday evening one at 18:40 for the football scores.)
 
   python3 tools/bulletin.py --script /tmp/bulletin.txt --stories id1,id2,id3
   python3 tools/bulletin.py --script /tmp/bulletin.txt --dry-run     (render to /tmp only, change nothing)
