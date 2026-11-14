@@ -1699,7 +1699,19 @@ def about_page():
 </ul>
 <p>If you run an Essex newsroom, magazine or community site and would like to be featured, or would prefer we did not summarise your work, please get in touch and we will respond promptly.</p>
 
-<h2>Privacy</h2>
+<h2 id="alexa">The Seax on Alexa: terms of use</h2>
+<p>The Seax Essex News skill for Amazon Alexa plays our latest Essex News Bulletin as part of your Flash Briefing. By enabling it you agree to these terms.</p>
+<ul>
+<li><b>What it is:</b> a free, spoken summary of stories already published on theseax.com, updated twice a day. It is read by a computer-generated voice. For the full stories and sources, visit theseax.com.</li>
+<li><b>Accuracy:</b> we work hard to get things right, but the bulletin is provided as it is, for general information, and is not professional, legal, medical or financial advice. If you spot a mistake, email <a href="mailto:corrections@theseax.com">corrections@theseax.com</a>.</li>
+<li><b>Your data:</b> the skill does not ask for, collect or store any personal information, and has no account linking or purchases. Your voice requests are handled by Amazon under Amazon's own privacy notice.</li>
+<li><b>Use of the content:</b> the bulletin is for personal, non-commercial listening. Please do not rebroadcast, resell or republish it without our permission.</li>
+<li><b>Availability:</b> we may change, pause or withdraw the skill or a bulletin at any time.</li>
+<li><b>Amazon:</b> Amazon, Alexa and all related marks are trademarks of Amazon.com, Inc. or its affiliates. The Seax is independent and is not endorsed by Amazon.</li>
+<li><b>Law and contact:</b> these terms are governed by the law of England and Wales. Questions: <a href="mailto:info@theseax.com">info@theseax.com</a>.</li>
+</ul>
+
+<h2 id="privacy">Privacy</h2>
 <p>The Seax does not use advertising cookies or track you across other websites. {"We count visits with GoatCounter, a privacy-friendly service that uses no cookies and collects no personal data." if CFG.get("goatcounter") else "We may count visits with a privacy-friendly service that uses no cookies and collects no personal data."} Our free morning newsletter is delivered by follow.it; if you sign up, your email address is used only to send it, and every email includes an unsubscribe link.</p>
 
 <h2 id="launch">Our launch</h2>
