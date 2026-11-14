@@ -894,6 +894,15 @@ def jpeg_size(path, default=(1200, 800)):
         pass
     return default
 
+# Essex cricket stories (the county side: Essex CCC, Essex Eagles, Essex Women) use the owner's photo of an Essex match
+# instead of the cricket ball (owner's rule, 14 Nov 2026). Club cricket where "Essex" is only the league name keeps the
+# ball. Same rule as the page's isEssexCricket.
+ESSEX_CRICKET_LEAGUE_RX = re.compile(r"\bessex\s+(?:(?:premier|cricket|t20|sunday|women's|youth|county)\s+)*league\b", re.I)
+
+def is_essex_cricket(it):
+    t = ESSEX_CRICKET_LEAGUE_RX.sub(" ", " ".join(str(it.get(k) or "") for k in ("headline", "summary", "org", "source", "club")))
+    return bool(re.search(r"\bessex\b", t, re.I))
+
 def sport_kind(it, sec):
     sa = str(it.get("sportArt") or "").lower()
     if sa in SPORT_PHOTO_FILES or sa == "athletics":
@@ -998,6 +1007,8 @@ def fallback_photo(it, sec, card):
     if k in SPORT_PHOTO_FILES:
         files = SPORT_PHOTO_FILES[k]
         f = files[SPORT_PICK.get(it.get("id"), 0) % len(files)]
+        if k == "cricket" and is_essex_cricket(it) and os.path.exists(os.path.join(ROOT, "img", "og", "sport-cricket-essex.jpg")):
+            f = "cricket-essex"
         if os.path.exists(os.path.join(ROOT, "img", "og", f"sport-{f}.jpg")):
             w, h = jpeg_size(os.path.join(ROOT, "img", "sport", f + ".jpg"))
             return (f'<figure class="stock"><img src="/img/sport/{f}.jpg?v=1" width="{w}" height="{h}" alt="Library photo: {E(SPORT_NAME[k].lower())}" loading="eager">'

@@ -3251,7 +3251,17 @@ const SPORT_PHOTO = {
 /* Sports with several photos (alts) rotate them: each story gets a variant from its id, and a story never
    shares a variant with the story just before it (newest first, across sport and news stories). */
 let SPORT_PICK = {ed: null, map: {}};
+/* Essex cricket stories (the county side: Essex CCC, Essex Eagles, Essex Women) use the owner's photo of an Essex match
+   instead of the cricket ball (owner's rule, 14 Nov 2026). Club cricket stories where "Essex" is only the league name keep
+   the ball. Same rule as tools/build.py is_essex_cricket */
+const ESSEX_CRICKET_LEAGUE_RX = /\bessex\s+(?:(?:premier|cricket|t20|sunday|women's|youth|county)\s+)*league\b/gi;
+function isEssexCricket(s){
+  if(!s) return false;
+  const t = [s.headline, s.summary, s.org, s.source, s.club].join(" ").replace(ESSEX_CRICKET_LEAGUE_RX, " ");
+  return /\bessex\b/i.test(t);
+}
 function sportPhotoSrc(kind, s){
+  if(kind === "cricket" && isEssexCricket(s)) return "/img/sport/cricket-essex.jpg?v=1";
   const ph = SPORT_PHOTO[kind];
   if(!ph || !ph.alts || !ph.alts.length) return ph && ph.src;
   const all = [ph.src, ...ph.alts], n = all.length;
