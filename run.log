@@ -1,0 +1,17 @@
+page 1: 10 rows
+page 2: 10 rows
+page 3: 10 rows
+page 4: 10 rows
+page 5: 10 rows
+page 6: 10 rows
+page 7: 10 rows
+page 8: 10 rows
+page 9: 10 rows
+page 10: 10 rows
+page 11: 10 rows
+page 12: 10 rows
+page 13: 10 rows
+page 14: 10 rows
+page 15: 10 rows
+case url check: https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?query=Gormley -> 4 rows, finds GORMLEY George Joseph
+{"generated": "2026-11-14T07:27:28Z", "pagesRead": 15, "lastPage": 336, "rows": 139, "cases": 124, "caseUrlCheck": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?query=Gormley -> 4 rows, finds GORMLEY George Joseph", "errors": []}

@@ -1,0 +1,6104 @@
+{
+ "generated": "2026-11-14T07:27:28Z",
+ "source": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/",
+ "pagesRead": 15,
+ "lastPage": 336,
+ "rows": [
+  {
+   "hearingDate": "2026-11-20",
+   "hearingTime": "10:00",
+   "room": "Court Room 1",
+   "venue": "Seax House",
+   "hearingRaw": "20 November 2026 | 10:00 | Court Room 1, Seax House",
+   "name": "MALIK Muhammad Ahmad Mahmood",
+   "type": "Inquest Hearing",
+   "deathDate": "2023-01-08",
+   "deathRaw": "8 January 2023",
+   "age": "42 Years",
+   "place": "Wickford, Essex",
+   "conclusion": "",
+   "links": [],
+   "page": 1,
+   "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/",
+   "key": "malik-muhammad-ahmad-mahmood-2023-01-08"
+  },
+  {
+   "hearingDate": "2026-11-20",
+   "hearingTime": "10:00",
+   "room": "Court Room 2",
+   "venue": "Seax House",
+   "hearingRaw": "20 November 2026 | 10:00 | Court Room 2, Seax House",
+   "name": "EVANS Eric David",
+   "type": "Inquest Hearing",
+   "deathDate": "2025-07-26",
+   "deathRaw": "26 July 2025",
+   "age": "82 Years",
+   "place": "Westcliff-on-Sea, Essex",
+   "conclusion": "",
+   "links": [],
+   "page": 1,
+   "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/",
+   "key": "evans-eric-david-2025-07-26"
+  },
+  {
+   "hearingDate": "2026-11-20",
+   "hearingTime": "14:00",
+   "room": "Court Room 2",
+   "venue": "Seax House",
+   "hearingRaw": "20 November 2026 | 14:00 | Court Room 2, Seax House",
+   "name": "GORMLEY George Joseph",
+   "type": "Pre Inquest Review",
+   "deathDate": "2024-08-18",
+   "deathRaw": "18 August 2024",
+   "age": "32 Years",
+   "place": "Wickford, Essex",
+   "conclusion": "",
+   "links": [],
+   "page": 1,
+   "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/",
+   "key": "gormley-george-joseph-2024-08-18"
+  },
+  {
+   "hearingDate": "2026-11-20",
+   "hearingTime": "10:00",
+   "room": "Court Room 3",
+   "venue": "Library Hub",
+   "hearingRaw": "20 November 2026 | 10:00 | Court Room 3, Library Hub",
+   "name": "SMITH David",
+   "type": "Inquest Hearing",
+   "deathDate": "2024-10-10",
+   "deathRaw": "10 October 2024",
+   "age": "65 Years",
+   "place": "Colchester, Essex",
+   "conclusion": "",
+   "links": [],
+   "page": 1,
+   "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/",
+   "key": "smith-david-2024-10-10"
+  },
+  {
+   "hearingDate": "2026-11-19",
+   "hearingTime": "10:00",
+   "room": "Court Room 1",
+   "venue": "Seax House",
+   "hearingRaw": "19 November 2026 | 10:00 | Court Room 1, Seax House",
+   "name": "MALIK Muhammad Ahmad Mahmood",
+   "type": "Inquest Hearing",
+   "deathDate": "2023-01-08",
+   "deathRaw": "8 January 2023",
+   "age": "42 Years",
+   "place": "Wickford, Essex",
+   "conclusion": "",
+   "links": [],
+   "page": 1,
+   "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/",
+   "key": "malik-muhammad-ahmad-mahmood-2023-01-08"
+  },
+  {
+   "hearingDate": "2026-11-19",
+   "hearingTime": "10:00",
+   "room": "Court Room 2",
+   "venue": "Seax House",
+   "hearingRaw": "19 November 2026 | 10:00 | Court Room 2, Seax House",
+   "name": "EVANS Eric David",
+   "type": "Inquest Hearing",
+   "deathDate": "2025-07-26",
+   "deathRaw": "26 July 2025",
+   "age": "82 Years",
+   "place": "Westcliff-on-Sea, Essex",
+   "conclusion": "",
+   "links": [],
+   "page": 1,
+   "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/",
+   "key": "evans-eric-david-2025-07-26"
+  },
+  {
+   "hearingDate": "2026-11-18",
+   "hearingTime": "10:00",
+   "room": "Court Room 1",
+   "venue": "Seax House",
+   "hearingRaw": "18 November 2026 | 10:00 | Court Room 1, Seax House",
+   "name": "MALIK Muhammad Ahmad Mahmood",
+   "type": "Inquest Hearing",
+   "deathDate": "2023-01-08",
+   "deathRaw": "8 January 2023",
+   "age": "42 Years",
+   "place": "Wickford, Essex",
+   "conclusion": "",
+   "links": [],
+   "page": 1,
+   "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/",
+   "key": "malik-muhammad-ahmad-mahmood-2023-01-08"
+  },
+  {
+   "hearingDate": "2026-11-18",
+   "hearingTime": "10:00",
+   "room": "Court Room 2",
+   "venue": "Seax House",
+   "hearingRaw": "18 November 2026 | 10:00 | Court Room 2, Seax House",
+   "name": "YATES Holly Rose",
+   "type": "Inquest Hearing",
+   "deathDate": "2025-12-09",
+   "deathRaw": "9 December 2025",
+   "age": "6 Days",
+   "place": "London",
+   "conclusion": "",
+   "links": [],
+   "page": 1,
+   "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/",
+   "key": "yates-holly-rose-2025-12-09"
+  },
+  {
+   "hearingDate": "2026-11-18",
+   "hearingTime": "10:00",
+   "room": "Court Room 3",
+   "venue": "Library Hub",
+   "hearingRaw": "18 November 2026 | 10:00 | Court Room 3, Library Hub",
+   "name": "SOUSA Neuza Joze Rodrigues Abreu",
+   "type": "Inquest Hearing",
+   "deathDate": "2025-05-01",
+   "deathRaw": "1 May 2025",
+   "age": "23 Years",
+   "place": "Cambridge, Cambridgeshire",
+   "conclusion": "",
+   "links": [],
+   "page": 1,
+   "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/",
+   "key": "sousa-neuza-joze-rodrigues-abreu-2025-05-01"
+  },
+  {
+   "hearingDate": "2026-11-18",
+   "hearingTime": "09:30",
+   "room": "Court Room 2",
+   "venue": "Seax House",
+   "hearingRaw": "18 November 2026 | 09:30 | Court Room 2, Seax House",
+   "name": "WATKINS Max Alexander",
+   "type": "Opening",
+   "deathDate": "2026-11-04",
+   "deathRaw": "4 November 2026",
+   "age": "36 Years",
+   "place": "Chelmsford, Essex",
+   "conclusion": "",
+   "links": [],
+   "page": 1,
+   "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/",
+   "key": "watkins-max-alexander-2026-11-04"
+  },
+  {
+   "hearingDate": "2026-11-18",
+   "hearingTime": "09:30",
+   "room": "Court Room 2",
+   "venue": "Seax House",
+   "hearingRaw": "18 November 2026 | 09:30 | Court Room 2, Seax House",
+   "name": "THURLOW Eileen Florence",
+   "type": "Opening",
+   "deathDate": "2026-10-10",
+   "deathRaw": "10 October 2026",
+   "age": "80 Years",
+   "place": "Colchester, Essex",
+   "conclusion": "",
+   "links": [],
+   "page": 2,
+   "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=2",
+   "key": "thurlow-eileen-florence-2026-10-10"
+  },
+  {
+   "hearingDate": "2026-11-17",
+   "hearingTime": "10:00",
+   "room": "Court Room 3",
+   "venue": "Library Hub",
+   "hearingRaw": "17 November 2026 | 10:00 | Court Room 3, Library Hub",
+   "name": "SOUSA Neuza Joze Rodrigues Abreu",
+   "type": "Inquest Hearing",
+   "deathDate": "2025-05-01",
+   "deathRaw": "1 May 2025",
+   "age": "23 Years",
+   "place": "Cambridge, Cambridgeshire",
+   "conclusion": "",
+   "links": [],
+   "page": 2,
+   "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=2",
+   "key": "sousa-neuza-joze-rodrigues-abreu-2025-05-01"
+  },
+  {
+   "hearingDate": "2026-11-17",
+   "hearingTime": "10:00",
+   "room": "Court Room 1",
+   "venue": "Seax House",
+   "hearingRaw": "17 November 2026 | 10:00 | Court Room 1, Seax House",
+   "name": "MALIK Muhammad Ahmad Mahmood",
+   "type": "Inquest Hearing",
+   "deathDate": "2023-01-08",
+   "deathRaw": "8 January 2023",
+   "age": "42 Years",
+   "place": "Wickford, Essex",
+   "conclusion": "",
+   "links": [],
+   "page": 2,
+   "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=2",
+   "key": "malik-muhammad-ahmad-mahmood-2023-01-08"
+  },
+  {
+   "hearingDate": "2026-11-17",
+   "hearingTime": "10:00",
+   "room": "Court Room 2",
+   "venue": "Seax House",
+   "hearingRaw": "17 November 2026 | 10:00 | Court Room 2, Seax House",
+   "name": "BENNETT Robert David",
+   "type": "Inquest Hearing",
+   "deathDate": "2025-10-12",
+   "deathRaw": "12 October 2025",
+   "age": "64 Years",
+   "place": "Harlow, Essex",
+   "conclusion": "",
+   "links": [],
+   "page": 2,
+   "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=2",
+   "key": "bennett-robert-david-2025-10-12"
+  },
+  {
+   "hearingDate": "2026-11-16",
+   "hearingTime": "10:00",
+   "room": "Court Room 3",
+   "venue": "Library Hub",
+   "hearingRaw": "16 November 2026 | 10:00 | Court Room 3, Library Hub",
+   "name": "SOUSA Neuza Joze Rodrigues Abreu",
+   "type": "Inquest Hearing",
+   "deathDate": "2025-05-01",
+   "deathRaw": "1 May 2025",
+   "age": "23 Years",
+   "place": "Cambridge, Cambridgeshire",
+   "conclusion": "",
+   "links": [],
+   "page": 2,
+   "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=2",
+   "key": "sousa-neuza-joze-rodrigues-abreu-2025-05-01"
+  },
+  {
+   "hearingDate": "2026-11-16",
+   "hearingTime": "10:00",
+   "room": "Court Room 2",
+   "venue": "Seax House",
+   "hearingRaw": "16 November 2026 | 10:00 | Court Room 2, Seax House",
+   "name": "MILLER Jack Ellis",
+   "type": "Inquest Hearing",
+   "deathDate": "2025-12-25",
+   "deathRaw": "25 December 2025",
+   "age": "34 Years",
+   "place": "Shoeburyness, Essex",
+   "conclusion": "",
+   "links": [],
+   "page": 2,
+   "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=2",
+   "key": "miller-jack-ellis-2025-12-25"
+  },
+  {
+   "hearingDate": "2026-11-16",
+   "hearingTime": "10:00",
+   "room": "Court Room 1",
+   "venue": "Seax House",
+   "hearingRaw": "16 November 2026 | 10:00 | Court Room 1, Seax House",
+   "name": "MALIK Muhammad Ahmad Mahmood",
+   "type": "Inquest Hearing",
+   "deathDate": "2023-01-08",
+   "deathRaw": "8 January 2023",
+   "age": "42 Years",
+   "place": "Wickford, Essex",
+   "conclusion": "",
+   "links": [],
+   "page": 2,
+   "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=2",
+   "key": "malik-muhammad-ahmad-mahmood-2023-01-08"
+  },
+  {
+   "hearingDate": "2026-11-13",
+   "hearingTime": "10:00",
+   "room": "Court Room 2",
+   "venue": "Seax House",
+   "hearingRaw": "13 November 2026 | 10:00 | Court Room 2, Seax House",
+   "name": "MCCULLOUGH Derek Albert Philip",
+   "type": "Pre Inquest Review",
+   "deathDate": "2025-11-24",
+   "deathRaw": "24 November 2025",
+   "age": "64 Years",
+   "place": "Romford, Essex",
+   "conclusion": "",
+   "links": [],
+   "page": 2,
+   "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=2",
+   "key": "mccullough-derek-albert-philip-2025-11-24"
+  },
+  {
+   "hearingDate": "2026-11-13",
+   "hearingTime": "09:30",
+   "room": "Court Room 2",
+   "venue": "Seax House",
+   "hearingRaw": "13 November 2026 | 09:30 | Court Room 2, Seax House",
+   "name": "WATTS Margaret Mary",
+   "type": "Opening",
+   "deathDate": "2026-06-28",
+   "deathRaw": "28 June 2026",
+   "age": "75 Years",
+   "place": "Colchester, Essex",
+   "conclusion": "",
+   "links": [],
+   "page": 2,
+   "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=2",
+   "key": "watts-margaret-mary-2026-06-28"
+  },
+  {
+   "hearingDate": "2026-11-13",
+   "hearingTime": "09:30",
+   "room": "Court Room 2",
+   "venue": "Seax House",
+   "hearingRaw": "13 November 2026 | 09:30 | Court Room 2, Seax House",
+   "name": "PRIESTAFF Joseph Richard Stanley",
+   "type": "Opening",
+   "deathDate": "2026-10-18",
+   "deathRaw": "18 October 2026",
+   "age": "28 Years",
+   "place": "Chelmsford, Essex",
+   "conclusion": "",
+   "links": [],
+   "page": 2,
+   "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=2",
+   "key": "priestaff-joseph-richard-stanley-2026-10-18"
+  },
+  {
+   "hearingDate": "2026-11-13",
+   "hearingTime": "09:30",
+   "room": "Court Room 2",
+   "venue": "Seax House",
+   "hearingRaw": "13 November 2026 | 09:30 | Court Room 2, Seax House",
+   "name": "WEBSTER Fredrick Herbert",
+   "type": "Opening",
+   "deathDate": "2026-08-17",
+   "deathRaw": "17 August 2026",
+   "age": "82 Years",
+   "place": "Frinton-on-Sea, Essex",
+   "conclusion": "",
+   "links": [],
+   "page": 3,
+   "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=3",
+   "key": "webster-fredrick-herbert-2026-08-17"
+  },
+  {
+   "hearingDate": "2026-11-13",
+   "hearingTime": "09:30",
+   "room": "Court Room 2",
+   "venue": "Seax House",
+   "hearingRaw": "13 November 2026 | 09:30 | Court Room 2, Seax House",
+   "name": "FOSTER Jaxon David Patrick",
+   "type": "Opening",
+   "deathDate": "2026-07-12",
+   "deathRaw": "12 July 2026",
+   "age": "2 Years",
+   "place": "Cyprus",
+   "conclusion": "",
+   "links": [],
+   "page": 3,
+   "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=3",
+   "key": "foster-jaxon-david-patrick-2026-07-12"
+  },
+  {
+   "hearingDate": "2026-11-13",
+   "hearingTime": "09:30",
+   "room": "Court Room 2",
+   "venue": "Seax House",
+   "hearingRaw": "13 November 2026 | 09:30 | Court Room 2, Seax House",
+   "name": "FINCH Graham Reginald",
+   "type": "Opening",
+   "deathDate": "2026-10-13",
+   "deathRaw": "13 October 2026",
+   "age": "80 Years",
+   "place": "Colchester, Essex",
+   "conclusion": "",
+   "links": [],
+   "page": 3,
+   "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=3",
+   "key": "finch-graham-reginald-2026-10-13"
+  },
+  {
+   "hearingDate": "2026-11-13",
+   "hearingTime": "09:30",
+   "room": "Court Room 2",
+   "venue": "Seax House",
+   "hearingRaw": "13 November 2026 | 09:30 | Court Room 2, Seax House",
+   "name": "BROWN Rosemary June",
+   "type": "Opening",
+   "deathDate": "2026-10-21",
+   "deathRaw": "21 October 2026",
+   "age": "93 Years",
+   "place": "Chelmsford, Essex",
+   "conclusion": "",
+   "links": [],
+   "page": 3,
+   "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=3",
+   "key": "brown-rosemary-june-2026-10-21"
+  },
+  {
+   "hearingDate": "2026-11-13",
+   "hearingTime": "09:30",
+   "room": "Court Room 2",
+   "venue": "Seax House",
+   "hearingRaw": "13 November 2026 | 09:30 | Court Room 2, Seax House",
+   "name": "COOK Lesley",
+   "type": "Opening",
+   "deathDate": "2026-06-26",
+   "deathRaw": "26 June 2026",
+   "age": "70 Years",
+   "place": "Epping Forest, Essex",
+   "conclusion": "",
+   "links": [],
+   "page": 3,
+   "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=3",
+   "key": "cook-lesley-2026-06-26"
+  },
+  {
+   "hearingDate": "2026-11-13",
+   "hearingTime": "09:30",
+   "room": "Court Room 2",
+   "venue": "Seax House",
+   "hearingRaw": "13 November 2026 | 09:30 | Court Room 2, Seax House",
+   "name": "PATEL Dilesh",
+   "type": "Opening",
+   "deathDate": "2026-07-02",
+   "deathRaw": "2 July 2026",
+   "age": "46 Years",
+   "place": "Ongar, Essex",
+   "conclusion": "",
+   "links": [],
+   "page": 3,
+   "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=3",
+   "key": "patel-dilesh-2026-07-02"
+  },
+  {
+   "hearingDate": "2026-11-13",
+   "hearingTime": "09:30",
+   "room": "Court Room 2",
+   "venue": "Seax House",
+   "hearingRaw": "13 November 2026 | 09:30 | Court Room 2, Seax House",
+   "name": "ELLIS Michael Harvey",
+   "type": "Opening",
+   "deathDate": "2026-08-18",
+   "deathRaw": "18 August 2026",
+   "age": "20 Years",
+   "place": "London",
+   "conclusion": "",
+   "links": [],
+   "page": 3,
+   "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=3",
+   "key": "ellis-michael-harvey-2026-08-18"
+  },
+  {
+   "hearingDate": "2026-11-13",
+   "hearingTime": "09:30",
+   "room": "Court Room 2",
+   "venue": "Seax House",
+   "hearingRaw": "13 November 2026 | 09:30 | Court Room 2, Seax House",
+   "name": "MONTAGUE Fiona Mary",
+   "type": "Opening",
+   "deathDate": "2026-07-16",
+   "deathRaw": "16 July 2026",
+   "age": "55 Years",
+   "place": "Buckhurst Hill, Essex",
+   "conclusion": "",
+   "links": [],
+   "page": 3,
+   "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=3",
+   "key": "montague-fiona-mary-2026-07-16"
+  },
+  {
+   "hearingDate": "2026-11-13",
+   "hearingTime": "09:30",
+   "room": "Court Room 2",
+   "venue": "Seax House",
+   "hearingRaw": "13 November 2026 | 09:30 | Court Room 2, Seax House",
+   "name": "MAJEWSKA Claire Denise",
+   "type": "Opening",
+   "deathDate": "2026-10-12",
+   "deathRaw": "12 October 2026",
+   "age": "33 Years",
+   "place": "Colchester, Essex",
+   "conclusion": "",
+   "links": [],
+   "page": 3,
+   "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=3",
+   "key": "majewska-claire-denise-2026-10-12"
+  },
+  {
+   "hearingDate": "2026-11-13",
+   "hearingTime": "09:30",
+   "room": "Court Room 2",
+   "venue": "Seax House",
+   "hearingRaw": "13 November 2026 | 09:30 | Court Room 2, Seax House",
+   "name": "WALKER William Roy",
+   "type": "Opening",
+   "deathDate": "2026-10-20",
+   "deathRaw": "20 October 2026",
+   "age": "78 Years",
+   "place": "Hatfield Peverel, Essex",
+   "conclusion": "",
+   "links": [],
+   "page": 3,
+   "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=3",
+   "key": "walker-william-roy-2026-10-20"
+  },
+  {
+   "hearingDate": "2026-11-13",
+   "hearingTime": "09:30",
+   "room": "Court Room 2",
+   "venue": "Seax House",
+   "hearingRaw": "13 November 2026 | 09:30 | Court Room 2, Seax House",
+   "name": "HERBERT Charlene Marie",
+   "type": "Opening",
+   "deathDate": "2026-07-04",
+   "deathRaw": "4 July 2026",
+   "age": "41 Years",
+   "place": "Basildon, Essex",
+   "conclusion": "",
+   "links": [],
+   "page": 4,
+   "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=4",
+   "key": "herbert-charlene-marie-2026-07-04"
+  },
+  {
+   "hearingDate": "2026-11-13",
+   "hearingTime": "09:30",
+   "room": "Court Room 2",
+   "venue": "Seax House",
+   "hearingRaw": "13 November 2026 | 09:30 | Court Room 2, Seax House",
+   "name": "HARPER Peter Daniel",
+   "type": "Opening",
+   "deathDate": "2026-10-14",
+   "deathRaw": "14 October 2026",
+   "age": "62 Years",
+   "place": "Chelmsford, Essex",
+   "conclusion": "",
+   "links": [],
+   "page": 4,
+   "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=4",
+   "key": "harper-peter-daniel-2026-10-14"
+  },
+  {
+   "hearingDate": "2026-11-13",
+   "hearingTime": "09:30",
+   "room": "Court Room 2",
+   "venue": "Seax House",
+   "hearingRaw": "13 November 2026 | 09:30 | Court Room 2, Seax House",
+   "name": "PACKER David Edward",
+   "type": "Opening",
+   "deathDate": "2026-10-18",
+   "deathRaw": "18 October 2026",
+   "age": "65 Years",
+   "place": "Basildon, Essex",
+   "conclusion": "",
+   "links": [],
+   "page": 4,
+   "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=4",
+   "key": "packer-david-edward-2026-10-18"
+  },
+  {
+   "hearingDate": "2026-11-13",
+   "hearingTime": "09:30",
+   "room": "Court Room 2",
+   "venue": "Seax House",
+   "hearingRaw": "13 November 2026 | 09:30 | Court Room 2, Seax House",
+   "name": "WHYTE Joy Edwina",
+   "type": "Opening",
+   "deathDate": "2026-10-17",
+   "deathRaw": "17 October 2026",
+   "age": "94 Years",
+   "place": "Wickford, Essex",
+   "conclusion": "",
+   "links": [],
+   "page": 4,
+   "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=4",
+   "key": "whyte-joy-edwina-2026-10-17"
+  },
+  {
+   "hearingDate": "2026-11-13",
+   "hearingTime": "09:30",
+   "room": "Court Room 2",
+   "venue": "Seax House",
+   "hearingRaw": "13 November 2026 | 09:30 | Court Room 2, Seax House",
+   "name": "MASON Colin",
+   "type": "Opening",
+   "deathDate": "2025-12-30",
+   "deathRaw": "30 December 2025",
+   "age": "58 Years",
+   "place": "Brentwood, Essex",
+   "conclusion": "",
+   "links": [],
+   "page": 4,
+   "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=4",
+   "key": "mason-colin-2025-12-30"
+  },
+  {
+   "hearingDate": "2026-11-13",
+   "hearingTime": "09:30",
+   "room": "Court Room 2",
+   "venue": "Seax House",
+   "hearingRaw": "13 November 2026 | 09:30 | Court Room 2, Seax House",
+   "name": "GRAHAM Martin William",
+   "type": "Opening",
+   "deathDate": "2026-05-26",
+   "deathRaw": "26 May 2026",
+   "age": "62 Years",
+   "place": "Southend-on-Sea, Essex",
+   "conclusion": "",
+   "links": [],
+   "page": 4,
+   "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=4",
+   "key": "graham-martin-william-2026-05-26"
+  },
+  {
+   "hearingDate": "2026-11-13",
+   "hearingTime": "09:30",
+   "room": "Court Room 2",
+   "venue": "Seax House",
+   "hearingRaw": "13 November 2026 | 09:30 | Court Room 2, Seax House",
+   "name": "SAUNDERS Mary Agnes",
+   "type": "Opening",
+   "deathDate": "2026-10-21",
+   "deathRaw": "21 October 2026",
+   "age": "100 Years",
+   "place": "Westcliff-on-Sea, Essex",
+   "conclusion": "",
+   "links": [],
+   "page": 4,
+   "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=4",
+   "key": "saunders-mary-agnes-2026-10-21"
+  },
+  {
+   "hearingDate": "2026-11-13",
+   "hearingTime": "09:30",
+   "room": "Court Room 2",
+   "venue": "Seax House",
+   "hearingRaw": "13 November 2026 | 09:30 | Court Room 2, Seax House",
+   "name": "LINDGREN Sven Evert Magnus Hakan",
+   "type": "Opening",
+   "deathDate": "2026-07-02",
+   "deathRaw": "2 July 2026",
+   "age": "66 Years",
+   "place": "Brentwood, Essex",
+   "conclusion": "",
+   "links": [],
+   "page": 4,
+   "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=4",
+   "key": "lindgren-sven-evert-magnus-hakan-2026-07-02"
+  },
+  {
+   "hearingDate": "2026-11-13",
+   "hearingTime": "09:30",
+   "room": "Court Room 2",
+   "venue": "Seax House",
+   "hearingRaw": "13 November 2026 | 09:30 | Court Room 2, Seax House",
+   "name": "SINGER Mark Benjamin",
+   "type": "Opening",
+   "deathDate": "2026-10-27",
+   "deathRaw": "27 October 2026",
+   "age": "44 Years",
+   "place": "Southend-on-Sea, Essex",
+   "conclusion": "",
+   "links": [],
+   "page": 4,
+   "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=4",
+   "key": "singer-mark-benjamin-2026-10-27"
+  },
+  {
+   "hearingDate": "2026-11-13",
+   "hearingTime": "09:30",
+   "room": "Court Room 2",
+   "venue": "Seax House",
+   "hearingRaw": "13 November 2026 | 09:30 | Court Room 2, Seax House",
+   "name": "DOUGLAS Eileen Maud",
+   "type": "Opening",
+   "deathDate": "2026-10-23",
+   "deathRaw": "23 October 2026",
+   "age": "91 Years",
+   "place": "Chelmsford, Essex",
+   "conclusion": "",
+   "links": [],
+   "page": 4,
+   "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=4",
+   "key": "douglas-eileen-maud-2026-10-23"
+  },
+  {
+   "hearingDate": "2026-11-13",
+   "hearingTime": "09:30",
+   "room": "Court Room 2",
+   "venue": "Seax House",
+   "hearingRaw": "13 November 2026 | 09:30 | Court Room 2, Seax House",
+   "name": "HAMMOND Bryan Anthony",
+   "type": "Opening",
+   "deathDate": "2026-10-28",
+   "deathRaw": "28 October 2026",
+   "age": "85 Years",
+   "place": "Harlow, Essex",
+   "conclusion": "",
+   "links": [],
+   "page": 5,
+   "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=5",
+   "key": "hammond-bryan-anthony-2026-10-28"
+  },
+  {
+   "hearingDate": "2026-11-13",
+   "hearingTime": "09:30",
+   "room": "Court Room 2",
+   "venue": "Seax House",
+   "hearingRaw": "13 November 2026 | 09:30 | Court Room 2, Seax House",
+   "name": "WALSOM Lee Terrence",
+   "type": "Opening",
+   "deathDate": "2026-10-20",
+   "deathRaw": "20 October 2026",
+   "age": "62 Years",
+   "place": "Harlow, Essex",
+   "conclusion": "",
+   "links": [],
+   "page": 5,
+   "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=5",
+   "key": "walsom-lee-terrence-2026-10-20"
+  },
+  {
+   "hearingDate": "2026-11-13",
+   "hearingTime": "09:30",
+   "room": "Court Room 2",
+   "venue": "Seax House",
+   "hearingRaw": "13 November 2026 | 09:30 | Court Room 2, Seax House",
+   "name": "BALL Jean Ann",
+   "type": "Opening",
+   "deathDate": "2026-08-02",
+   "deathRaw": "2 August 2026",
+   "age": "73 Years",
+   "place": "Brentwood, Essex",
+   "conclusion": "",
+   "links": [],
+   "page": 5,
+   "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=5",
+   "key": "ball-jean-ann-2026-08-02"
+  },
+  {
+   "hearingDate": "2026-11-13",
+   "hearingTime": "09:30",
+   "room": "Court Room 2",
+   "venue": "Seax House",
+   "hearingRaw": "13 November 2026 | 09:30 | Court Room 2, Seax House",
+   "name": "HAGGAR Dilys",
+   "type": "Opening",
+   "deathDate": "2026-10-23",
+   "deathRaw": "23 October 2026",
+   "age": "86 Years",
+   "place": "Westcliff-on-Sea, Essex",
+   "conclusion": "",
+   "links": [],
+   "page": 5,
+   "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=5",
+   "key": "haggar-dilys-2026-10-23"
+  },
+  {
+   "hearingDate": "2026-11-13",
+   "hearingTime": "09:30",
+   "room": "Court Room 2",
+   "venue": "Seax House",
+   "hearingRaw": "13 November 2026 | 09:30 | Court Room 2, Seax House",
+   "name": "PRICE Steven Gregory",
+   "type": "Opening",
+   "deathDate": "2026-09-23",
+   "deathRaw": "23 September 2026",
+   "age": "76 Years",
+   "place": "Chelmsford, Essex",
+   "conclusion": "",
+   "links": [],
+   "page": 5,
+   "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=5",
+   "key": "price-steven-gregory-2026-09-23"
+  },
+  {
+   "hearingDate": "2026-11-13",
+   "hearingTime": "09:30",
+   "room": "Court Room 2",
+   "venue": "Seax House",
+   "hearingRaw": "13 November 2026 | 09:30 | Court Room 2, Seax House",
+   "name": "DAVIS Tracey Jan",
+   "type": "Opening",
+   "deathDate": "2026-10-24",
+   "deathRaw": "24 October 2026",
+   "age": "58 Years",
+   "place": "Colchester, Essex",
+   "conclusion": "",
+   "links": [],
+   "page": 5,
+   "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=5",
+   "key": "davis-tracey-jan-2026-10-24"
+  },
+  {
+   "hearingDate": "2026-11-13",
+   "hearingTime": "09:30",
+   "room": "Court Room 2",
+   "venue": "Seax House",
+   "hearingRaw": "13 November 2026 | 09:30 | Court Room 2, Seax House",
+   "name": "DEBRICK Ian",
+   "type": "Opening",
+   "deathDate": "2026-10-21",
+   "deathRaw": "21 October 2026",
+   "age": "79 Years",
+   "place": "Colchester, Essex",
+   "conclusion": "",
+   "links": [],
+   "page": 5,
+   "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=5",
+   "key": "debrick-ian-2026-10-21"
+  },
+  {
+   "hearingDate": "2026-11-12",
+   "hearingTime": "10:00",
+   "room": "Court Room 1",
+   "venue": "Seax House",
+   "hearingRaw": "12 November 2026 | 10:00 | Court Room 1, Seax House",
+   "name": "CANT Louise Anne",
+   "type": "Inquest Hearing",
+   "deathDate": "2025-11-09",
+   "deathRaw": "9 November 2025",
+   "age": "43 Years",
+   "place": "Rochford, Essex",
+   "conclusion": "Narrative Conclusion",
+   "links": [],
+   "page": 5,
+   "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=5",
+   "key": "cant-louise-anne-2025-11-09"
+  },
+  {
+   "hearingDate": "2026-11-11",
+   "hearingTime": "10:00",
+   "room": "Court Room 1",
+   "venue": "Seax House",
+   "hearingRaw": "11 November 2026 | 10:00 | Court Room 1, Seax House",
+   "name": "CANT Louise Anne",
+   "type": "Inquest Hearing",
+   "deathDate": "2025-11-09",
+   "deathRaw": "9 November 2025",
+   "age": "43 Years",
+   "place": "Rochford, Essex",
+   "conclusion": "Narrative Conclusion",
+   "links": [],
+   "page": 5,
+   "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=5",
+   "key": "cant-louise-anne-2025-11-09"
+  },
+  {
+   "hearingDate": "2026-11-10",
+   "hearingTime": "10:00",
+   "room": "Court Room 1",
+   "venue": "Seax House",
+   "hearingRaw": "10 November 2026 | 10:00 | Court Room 1, Seax House",
+   "name": "CANT Louise Anne",
+   "type": "Inquest Hearing",
+   "deathDate": "2025-11-09",
+   "deathRaw": "9 November 2025",
+   "age": "43 Years",
+   "place": "Rochford, Essex",
+   "conclusion": "Narrative Conclusion",
+   "links": [],
+   "page": 5,
+   "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=5",
+   "key": "cant-louise-anne-2025-11-09"
+  },
+  {
+   "hearingDate": "2026-11-10",
+   "hearingTime": "10:00",
+   "room": "Court Room 2",
+   "venue": "Seax House",
+   "hearingRaw": "10 November 2026 | 10:00 | Court Room 2, Seax House",
+   "name": "HIGGINS William James",
+   "type": "Inquest Hearing",
+   "deathDate": "2025-09-17",
+   "deathRaw": "17 September 2025",
+   "age": "85 Years",
+   "place": "Basildon, Essex",
+   "conclusion": "Narrative Conclusion",
+   "links": [],
+   "page": 6,
+   "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=6",
+   "key": "higgins-william-james-2025-09-17"
+  },
+  {
+   "hearingDate": "2026-11-09",
+   "hearingTime": "10:00",
+   "room": "Court Room 2",
+   "venue": "Seax House",
+   "hearingRaw": "9 November 2026 | 10:00 | Court Room 2, Seax House",
+   "name": "ROXX Gazzy",
+   "type": "Documentary",
+   "deathDate": "2026-02-08",
+   "deathRaw": "8 February 2026",
+   "age": "42 Years",
+   "place": "Harlow, Essex",
+   "conclusion": "Suicide",
+   "links": [],
+   "page": 6,
+   "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=6",
+   "key": "roxx-gazzy-2026-02-08"
+  },
+  {
+   "hearingDate": "2026-11-09",
+   "hearingTime": "10:00",
+   "room": "Court Room 1",
+   "venue": "Seax House",
+   "hearingRaw": "9 November 2026 | 10:00 | Court Room 1, Seax House",
+   "name": "CANT Louise Anne",
+   "type": "Inquest Hearing",
+   "deathDate": "2025-11-09",
+   "deathRaw": "9 November 2025",
+   "age": "43 Years",
+   "place": "Rochford, Essex",
+   "conclusion": "Narrative Conclusion",
+   "links": [],
+   "page": 6,
+   "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=6",
+   "key": "cant-louise-anne-2025-11-09"
+  },
+  {
+   "hearingDate": "2026-11-09",
+   "hearingTime": "11:30",
+   "room": "Court Room 2",
+   "venue": "Seax House",
+   "hearingRaw": "9 November 2026 | 11:30 | Court Room 2, Seax House",
+   "name": "MOORE Luke Patrick",
+   "type": "Pre Inquest Review",
+   "deathDate": "2026-02-13",
+   "deathRaw": "13 February 2026",
+   "age": "22 Years",
+   "place": "Benfleet, Essex",
+   "conclusion": "",
+   "links": [],
+   "page": 6,
+   "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=6",
+   "key": "moore-luke-patrick-2026-02-13"
+  },
+  {
+   "hearingDate": "2026-11-09",
+   "hearingTime": "10:00",
+   "room": "Court Room 3",
+   "venue": "Library Hub",
+   "hearingRaw": "9 November 2026 | 10:00 | Court Room 3, Library Hub",
+   "name": "HIGGINS William James",
+   "type": "Inquest Hearing",
+   "deathDate": "2025-09-17",
+   "deathRaw": "17 September 2025",
+   "age": "85 Years",
+   "place": "Basildon, Essex",
+   "conclusion": "Narrative Conclusion",
+   "links": [],
+   "page": 6,
+   "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=6",
+   "key": "higgins-william-james-2025-09-17"
+  },
+  {
+   "hearingDate": "2026-11-06",
+   "hearingTime": "12:30",
+   "room": "Court Room 1",
+   "venue": "Seax House",
+   "hearingRaw": "6 November 2026 | 12:30 | Court Room 1, Seax House",
+   "name": "COLLINS-JONES Katie Lauren",
+   "type": "Pre Inquest Review",
+   "deathDate": "2025-03-29",
+   "deathRaw": "29 March 2025",
+   "age": "21 Years",
+   "place": "Colchester, Essex",
+   "conclusion": "",
+   "links": [],
+   "page": 6,
+   "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=6",
+   "key": "collins-jones-katie-lauren-2025-03-29"
+  },
+  {
+   "hearingDate": "2026-11-06",
+   "hearingTime": "10:00",
+   "room": "Court Room 1",
+   "venue": "Seax House",
+   "hearingRaw": "6 November 2026 | 10:00 | Court Room 1, Seax House",
+   "name": "MOORE Romilly Rose",
+   "type": "Pre Inquest Review",
+   "deathDate": "2026-01-22",
+   "deathRaw": "22 January 2026",
+   "age": "Less than 1 day",
+   "place": "Colchester, Essex",
+   "conclusion": "",
+   "links": [],
+   "page": 6,
+   "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=6",
+   "key": "moore-romilly-rose-2026-01-22"
+  },
+  {
+   "hearingDate": "2026-11-06",
+   "hearingTime": "10:00",
+   "room": "Court Room 2",
+   "venue": "Seax House",
+   "hearingRaw": "6 November 2026 | 10:00 | Court Room 2, Seax House",
+   "name": "COLLIER Thomas Young",
+   "type": "Inquest Hearing",
+   "deathDate": "2026-01-12",
+   "deathRaw": "12 January 2026",
+   "age": "79 Years",
+   "place": "Chelmsford, Essex",
+   "conclusion": "Natural causes",
+   "links": [],
+   "page": 6,
+   "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=6",
+   "key": "collier-thomas-young-2026-01-12"
+  },
+  {
+   "hearingDate": "2026-11-06",
+   "hearingTime": "10:00",
+   "room": "Court Room 3",
+   "venue": "Library Hub",
+   "hearingRaw": "6 November 2026 | 10:00 | Court Room 3, Library Hub",
+   "name": "HARDY Olivia Ann",
+   "type": "Inquest Hearing",
+   "deathDate": "2026-02-22",
+   "deathRaw": "22 February 2026",
+   "age": "14 Years",
+   "place": "Harlow, Essex",
+   "conclusion": "Drug related",
+   "links": [],
+   "page": 6,
+   "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=6",
+   "key": "hardy-olivia-ann-2026-02-22"
+  },
+  {
+   "hearingDate": "2026-11-05",
+   "hearingTime": "09:30",
+   "room": "Court Room 1",
+   "venue": "Seax House",
+   "hearingRaw": "5 November 2026 | 09:30 | Court Room 1, Seax House",
+   "name": "SINNOTT Morgan Daisy",
+   "type": "Opening",
+   "deathDate": "2026-06-24",
+   "deathRaw": "24 June 2026",
+   "age": "28 Years",
+   "place": "Waltham Abbey, Essex",
+   "conclusion": "",
+   "links": [],
+   "page": 6,
+   "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=6",
+   "key": "sinnott-morgan-daisy-2026-06-24"
+  },
+  {
+   "hearingDate": "2026-11-05",
+   "hearingTime": "09:30",
+   "room": "Court Room 1",
+   "venue": "Seax House",
+   "hearingRaw": "5 November 2026 | 09:30 | Court Room 1, Seax House",
+   "name": "JACKSON Lee Andrew",
+   "type": "Opening",
+   "deathDate": "2026-10-14",
+   "deathRaw": "14 October 2026",
+   "age": "40 Years",
+   "place": "Clacton-on-Sea, Essex",
+   "conclusion": "",
+   "links": [],
+   "page": 7,
+   "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=7",
+   "key": "jackson-lee-andrew-2026-10-14"
+  },
+  {
+   "hearingDate": "2026-11-05",
+   "hearingTime": "14:00",
+   "room": "Court Room 2",
+   "venue": "Seax House",
+   "hearingRaw": "5 November 2026 | 14:00 | Court Room 2, Seax House",
+   "name": "NORTH Dean William",
+   "type": "Pre Inquest Review",
+   "deathDate": "2025-03-04",
+   "deathRaw": "4 March 2025",
+   "age": "62 Years",
+   "place": "Colchester, Essex",
+   "conclusion": "",
+   "links": [],
+   "page": 7,
+   "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=7",
+   "key": "north-dean-william-2025-03-04"
+  },
+  {
+   "hearingDate": "2026-11-05",
+   "hearingTime": "10:00",
+   "room": "Court Room 2",
+   "venue": "Seax House",
+   "hearingRaw": "5 November 2026 | 10:00 | Court Room 2, Seax House",
+   "name": "JERRAM Edward James",
+   "type": "Pre Inquest Review",
+   "deathDate": "2025-05-07",
+   "deathRaw": "7 May 2025",
+   "age": "26 Years",
+   "place": "Ongar, Essex",
+   "conclusion": "",
+   "links": [],
+   "page": 7,
+   "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=7",
+   "key": "jerram-edward-james-2025-05-07"
+  },
+  {
+   "hearingDate": "2026-11-05",
+   "hearingTime": "10:00",
+   "room": "Court Room 1",
+   "venue": "Seax House",
+   "hearingRaw": "5 November 2026 | 10:00 | Court Room 1, Seax House",
+   "name": "ESSA Yousef",
+   "type": "Inquest Hearing",
+   "deathDate": "2025-04-11",
+   "deathRaw": "11 April 2025",
+   "age": "17 Years",
+   "place": "Basildon, Essex",
+   "conclusion": "Narrative Conclusion",
+   "links": [],
+   "page": 7,
+   "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=7",
+   "key": "essa-yousef-2025-04-11"
+  },
+  {
+   "hearingDate": "2026-11-04",
+   "hearingTime": "09:30",
+   "room": "Court Room 1",
+   "venue": "Seax House",
+   "hearingRaw": "4 November 2026 | 09:30 | Court Room 1, Seax House",
+   "name": "STIFF Marian Elizabeth",
+   "type": "Opening",
+   "deathDate": "2026-10-11",
+   "deathRaw": "11 October 2026",
+   "age": "80 Years",
+   "place": "Walton on the Naze, Essex",
+   "conclusion": "",
+   "links": [],
+   "page": 7,
+   "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=7",
+   "key": "stiff-marian-elizabeth-2026-10-11"
+  },
+  {
+   "hearingDate": "2026-11-04",
+   "hearingTime": "09:30",
+   "room": "Court Room 1",
+   "venue": "Seax House",
+   "hearingRaw": "4 November 2026 | 09:30 | Court Room 1, Seax House",
+   "name": "LANGHAM Christine",
+   "type": "Opening",
+   "deathDate": "2026-10-15",
+   "deathRaw": "15 October 2026",
+   "age": "92 Years",
+   "place": "Chelmsford, Essex",
+   "conclusion": "",
+   "links": [],
+   "page": 7,
+   "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=7",
+   "key": "langham-christine-2026-10-15"
+  },
+  {
+   "hearingDate": "2026-11-04",
+   "hearingTime": "09:30",
+   "room": "Court Room 1",
+   "venue": "Seax House",
+   "hearingRaw": "4 November 2026 | 09:30 | Court Room 1, Seax House",
+   "name": "MOORE Andrew",
+   "type": "Opening",
+   "deathDate": "2026-08-23",
+   "deathRaw": "23 August 2026",
+   "age": "50 Years",
+   "place": "Clacton-on-Sea, Essex",
+   "conclusion": "",
+   "links": [],
+   "page": 7,
+   "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=7",
+   "key": "moore-andrew-2026-08-23"
+  },
+  {
+   "hearingDate": "2026-11-04",
+   "hearingTime": "09:30",
+   "room": "Court Room 1",
+   "venue": "Seax House",
+   "hearingRaw": "4 November 2026 | 09:30 | Court Room 1, Seax House",
+   "name": "COSH Peter Alan Frederick",
+   "type": "Opening",
+   "deathDate": "2026-10-06",
+   "deathRaw": "6 October 2026",
+   "age": "89 Years",
+   "place": "Westcliff-on-Sea, Essex",
+   "conclusion": "",
+   "links": [],
+   "page": 7,
+   "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=7",
+   "key": "cosh-peter-alan-frederick-2026-10-06"
+  },
+  {
+   "hearingDate": "2026-11-04",
+   "hearingTime": "09:30",
+   "room": "Court Room 1",
+   "venue": "Seax House",
+   "hearingRaw": "4 November 2026 | 09:30 | Court Room 1, Seax House",
+   "name": "PERRY Kenneth Edgar George",
+   "type": "Opening",
+   "deathDate": "2026-05-16",
+   "deathRaw": "16 May 2026",
+   "age": "91 Years",
+   "place": "Southend-on-Sea, Essex",
+   "conclusion": "",
+   "links": [],
+   "page": 7,
+   "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=7",
+   "key": "perry-kenneth-edgar-george-2026-05-16"
+  },
+  {
+   "hearingDate": "2026-11-04",
+   "hearingTime": "09:30",
+   "room": "Court Room 1",
+   "venue": "Seax House",
+   "hearingRaw": "4 November 2026 | 09:30 | Court Room 1, Seax House",
+   "name": "STAINES Margaret Lillian",
+   "type": "Opening",
+   "deathDate": "2026-10-12",
+   "deathRaw": "12 October 2026",
+   "age": "87 Years",
+   "place": "Westcliff-on-Sea, Essex",
+   "conclusion": "",
+   "links": [],
+   "page": 7,
+   "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=7",
+   "key": "staines-margaret-lillian-2026-10-12"
+  },
+  {
+   "hearingDate": "2026-11-04",
+   "hearingTime": "09:30",
+   "room": "Court Room 1",
+   "venue": "Seax House",
+   "hearingRaw": "4 November 2026 | 09:30 | Court Room 1, Seax House",
+   "name": "WHELLAMS Joan Patricia",
+   "type": "Opening",
+   "deathDate": "2026-10-17",
+   "deathRaw": "17 October 2026",
+   "age": "88 Years",
+   "place": "Harlow, Essex",
+   "conclusion": "",
+   "links": [],
+   "page": 8,
+   "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=8",
+   "key": "whellams-joan-patricia-2026-10-17"
+  },
+  {
+   "hearingDate": "2026-11-04",
+   "hearingTime": "09:30",
+   "room": "Court Room 1",
+   "venue": "Seax House",
+   "hearingRaw": "4 November 2026 | 09:30 | Court Room 1, Seax House",
+   "name": "SKINNER Denise Rosetta",
+   "type": "Opening",
+   "deathDate": "2026-10-10",
+   "deathRaw": "10 October 2026",
+   "age": "74 Years",
+   "place": "Benfleet, Essex",
+   "conclusion": "",
+   "links": [],
+   "page": 8,
+   "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=8",
+   "key": "skinner-denise-rosetta-2026-10-10"
+  },
+  {
+   "hearingDate": "2026-11-04",
+   "hearingTime": "09:30",
+   "room": "Court Room 1",
+   "venue": "Seax House",
+   "hearingRaw": "4 November 2026 | 09:30 | Court Room 1, Seax House",
+   "name": "DREW David Thomas",
+   "type": "Opening",
+   "deathDate": "2026-06-03",
+   "deathRaw": "3 June 2026",
+   "age": "82 Years",
+   "place": "Basildon, Essex",
+   "conclusion": "",
+   "links": [],
+   "page": 8,
+   "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=8",
+   "key": "drew-david-thomas-2026-06-03"
+  },
+  {
+   "hearingDate": "2026-11-04",
+   "hearingTime": "09:30",
+   "room": "Court Room 1",
+   "venue": "Seax House",
+   "hearingRaw": "4 November 2026 | 09:30 | Court Room 1, Seax House",
+   "name": "WIGGINS Harry",
+   "type": "Opening",
+   "deathDate": "2026-10-12",
+   "deathRaw": "12 October 2026",
+   "age": "83 Years",
+   "place": "Chelmsford, Essex",
+   "conclusion": "",
+   "links": [],
+   "page": 8,
+   "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=8",
+   "key": "wiggins-harry-2026-10-12"
+  },
+  {
+   "hearingDate": "2026-11-04",
+   "hearingTime": "09:30",
+   "room": "Court Room 1",
+   "venue": "Seax House",
+   "hearingRaw": "4 November 2026 | 09:30 | Court Room 1, Seax House",
+   "name": "BATTEN Angela",
+   "type": "Opening",
+   "deathDate": "2026-10-15",
+   "deathRaw": "15 October 2026",
+   "age": "80 Years",
+   "place": "Chelmsford, Essex",
+   "conclusion": "",
+   "links": [],
+   "page": 8,
+   "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=8",
+   "key": "batten-angela-2026-10-15"
+  },
+  {
+   "hearingDate": "2026-11-04",
+   "hearingTime": "09:30",
+   "room": "Court Room 1",
+   "venue": "Seax House",
+   "hearingRaw": "4 November 2026 | 09:30 | Court Room 1, Seax House",
+   "name": "SMITH Bessie Margaret",
+   "type": "Opening",
+   "deathDate": "2026-10-22",
+   "deathRaw": "22 October 2026",
+   "age": "93 Years",
+   "place": "Chelmsford, Essex",
+   "conclusion": "",
+   "links": [],
+   "page": 8,
+   "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=8",
+   "key": "smith-bessie-margaret-2026-10-22"
+  },
+  {
+   "hearingDate": "2026-11-04",
+   "hearingTime": "09:30",
+   "room": "Court Room 1",
+   "venue": "Seax House",
+   "hearingRaw": "4 November 2026 | 09:30 | Court Room 1, Seax House",
+   "name": "HOWELL Richard James",
+   "type": "Opening",
+   "deathDate": "2026-10-01",
+   "deathRaw": "1 October 2026",
+   "age": "83 Years",
+   "place": "Grays, Essex",
+   "conclusion": "",
+   "links": [],
+   "page": 8,
+   "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=8",
+   "key": "howell-richard-james-2026-10-01"
+  },
+  {
+   "hearingDate": "2026-11-04",
+   "hearingTime": "09:30",
+   "room": "Court Room 1",
+   "venue": "Seax House",
+   "hearingRaw": "4 November 2026 | 09:30 | Court Room 1, Seax House",
+   "name": "WOOD Patricia Olwen",
+   "type": "Opening",
+   "deathDate": "2026-10-22",
+   "deathRaw": "22 October 2026",
+   "age": "97 Years",
+   "place": "Harlow, Essex",
+   "conclusion": "",
+   "links": [],
+   "page": 8,
+   "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=8",
+   "key": "wood-patricia-olwen-2026-10-22"
+  },
+  {
+   "hearingDate": "2026-11-04",
+   "hearingTime": "12:50",
+   "room": "Court Room 1",
+   "venue": "Seax House",
+   "hearingRaw": "4 November 2026 | 12:50 | Court Room 1, Seax House",
+   "name": "DOUGLAS Bryce",
+   "type": "Opening Documentary",
+   "deathDate": "2026-10-09",
+   "deathRaw": "9 October 2026",
+   "age": "1 Hour",
+   "place": "Harlow, Essex",
+   "conclusion": "Narrative Conclusion",
+   "links": [],
+   "page": 8,
+   "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=8",
+   "key": "douglas-bryce-2026-10-09"
+  },
+  {
+   "hearingDate": "2026-11-04",
+   "hearingTime": "10:00",
+   "room": "Court Room 2",
+   "venue": "Seax House",
+   "hearingRaw": "4 November 2026 | 10:00 | Court Room 2, Seax House",
+   "name": "PUNCHER Valerie Anne",
+   "type": "Inquest Hearing",
+   "deathDate": "2025-08-07",
+   "deathRaw": "7 August 2025",
+   "age": "84 Years",
+   "place": "Westcliff-on-Sea, Essex",
+   "conclusion": "Narrative Conclusion",
+   "links": [],
+   "page": 8,
+   "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=8",
+   "key": "puncher-valerie-anne-2025-08-07"
+  },
+  {
+   "hearingDate": "2026-11-04",
+   "hearingTime": "13:00",
+   "room": "Court Room 1",
+   "venue": "Seax House",
+   "hearingRaw": "4 November 2026 | 13:00 | Court Room 1, Seax House",
+   "name": "GALLAGHER Robert John",
+   "type": "Inquest Hearing",
+   "deathDate": "2025-12-14",
+   "deathRaw": "14 December 2025",
+   "age": "59 Years",
+   "place": "Weeley, Essex",
+   "conclusion": "Suicide",
+   "links": [],
+   "page": 9,
+   "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=9",
+   "key": "gallagher-robert-john-2025-12-14"
+  },
+  {
+   "hearingDate": "2026-11-04",
+   "hearingTime": "09:30",
+   "room": "Court Room 1",
+   "venue": "Seax House",
+   "hearingRaw": "4 November 2026 | 09:30 | Court Room 1, Seax House",
+   "name": "EDWARDS Clive Robert",
+   "type": "Documentary",
+   "deathDate": "2025-12-31",
+   "deathRaw": "31 December 2025",
+   "age": "58 Years",
+   "place": "Ingatestone, Essex",
+   "conclusion": "Suicide",
+   "links": [],
+   "page": 9,
+   "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=9",
+   "key": "edwards-clive-robert-2025-12-31"
+  },
+  {
+   "hearingDate": "2026-11-03",
+   "hearingTime": "10:00",
+   "room": "Court Room 2",
+   "venue": "Seax House",
+   "hearingRaw": "3 November 2026 | 10:00 | Court Room 2, Seax House",
+   "name": "LOCKWOOD Coby John",
+   "type": "Pre Inquest Review",
+   "deathDate": "2026-02-10",
+   "deathRaw": "10 February 2026",
+   "age": "Less than 1 day",
+   "place": "Cambridge, Cambridgeshire",
+   "conclusion": "",
+   "links": [],
+   "page": 9,
+   "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=9",
+   "key": "lockwood-coby-john-2026-02-10"
+  },
+  {
+   "hearingDate": "2026-11-03",
+   "hearingTime": "14:00",
+   "room": "Court Room 2",
+   "venue": "Seax House",
+   "hearingRaw": "3 November 2026 | 14:00 | Court Room 2, Seax House",
+   "name": "BRAYBROOKE Carl Edward",
+   "type": "Pre Inquest Review",
+   "deathDate": "2026-05-06",
+   "deathRaw": "6 May 2026",
+   "age": "33 Years",
+   "place": "Dunmow, Essex",
+   "conclusion": "",
+   "links": [],
+   "page": 9,
+   "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=9",
+   "key": "braybrooke-carl-edward-2026-05-06"
+  },
+  {
+   "hearingDate": "2026-11-02",
+   "hearingTime": "10:00",
+   "room": "Court Room 2",
+   "venue": "Seax House",
+   "hearingRaw": "2 November 2026 | 10:00 | Court Room 2, Seax House",
+   "name": "CARTER Jake Michael",
+   "type": "Inquest Hearing",
+   "deathDate": "2026-03-26",
+   "deathRaw": "26 March 2026",
+   "age": "29 Years",
+   "place": "Chelmsford, Essex",
+   "conclusion": "Road Traffic Collision",
+   "links": [],
+   "page": 9,
+   "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=9",
+   "key": "carter-jake-michael-2026-03-26"
+  },
+  {
+   "hearingDate": "2026-11-02",
+   "hearingTime": "10:00",
+   "room": "Court Room 1",
+   "venue": "Seax House",
+   "hearingRaw": "2 November 2026 | 10:00 | Court Room 1, Seax House",
+   "name": "EVANS Michael James",
+   "type": "Inquest Hearing",
+   "deathDate": "2025-08-31",
+   "deathRaw": "31 August 2025",
+   "age": "67 Years",
+   "place": "Saffron Walden, Essex",
+   "conclusion": "Narrative Conclusion",
+   "links": [],
+   "page": 9,
+   "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=9",
+   "key": "evans-michael-james-2025-08-31"
+  },
+  {
+   "hearingDate": "2026-10-30",
+   "hearingTime": "10:00",
+   "room": "Court Room 2",
+   "venue": "Seax House",
+   "hearingRaw": "30 October 2026 | 10:00 | Court Room 2, Seax House",
+   "name": "JOHNSTON Cassi Juhnee",
+   "type": "Inquest Hearing",
+   "deathDate": "2025-04-20",
+   "deathRaw": "20 April 2025",
+   "age": "Less than 1 day",
+   "place": "Basildon, Essex",
+   "conclusion": "Narrative Conclusion",
+   "links": [],
+   "page": 9,
+   "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=9",
+   "key": "johnston-cassi-juhnee-2025-04-20"
+  },
+  {
+   "hearingDate": "2026-10-29",
+   "hearingTime": "10:00",
+   "room": "Court Room 2",
+   "venue": "Seax House",
+   "hearingRaw": "29 October 2026 | 10:00 | Court Room 2, Seax House",
+   "name": "RIVERS Neil Anthony",
+   "type": "Inquest Hearing",
+   "deathDate": "2025-08-18",
+   "deathRaw": "18 August 2025",
+   "age": "48 Years",
+   "place": "Basildon, Essex",
+   "conclusion": "",
+   "links": [],
+   "page": 9,
+   "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=9",
+   "key": "rivers-neil-anthony-2025-08-18"
+  },
+  {
+   "hearingDate": "2026-10-29",
+   "hearingTime": "10:00",
+   "room": "Court Room 3",
+   "venue": "Library Hub",
+   "hearingRaw": "29 October 2026 | 10:00 | Court Room 3, Library Hub",
+   "name": "CASANOVAS Carlos",
+   "type": "Opening",
+   "deathDate": "2026-08-08",
+   "deathRaw": "8 August 2026",
+   "age": "67 Years",
+   "place": "Colchester, Essex",
+   "conclusion": "",
+   "links": [],
+   "page": 9,
+   "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=9",
+   "key": "casanovas-carlos-2026-08-08"
+  },
+  {
+   "hearingDate": "2026-10-29",
+   "hearingTime": "10:00",
+   "room": "Court Room 3",
+   "venue": "Library Hub",
+   "hearingRaw": "29 October 2026 | 10:00 | Court Room 3, Library Hub",
+   "name": "HENDERSON Barry Steven",
+   "type": "Opening",
+   "deathDate": "2026-05-23",
+   "deathRaw": "23 May 2026",
+   "age": "47 Years",
+   "place": "Leytonstone, London",
+   "conclusion": "",
+   "links": [],
+   "page": 9,
+   "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=9",
+   "key": "henderson-barry-steven-2026-05-23"
+  },
+  {
+   "hearingDate": "2026-10-29",
+   "hearingTime": "10:00",
+   "room": "Court Room 3",
+   "venue": "Library Hub",
+   "hearingRaw": "29 October 2026 | 10:00 | Court Room 3, Library Hub",
+   "name": "MCGOWAN Steven Robert",
+   "type": "Opening",
+   "deathDate": "2026-09-26",
+   "deathRaw": "26 September 2026",
+   "age": "45 Years",
+   "place": "Westcliff-on-Sea, Essex",
+   "conclusion": "",
+   "links": [],
+   "page": 10,
+   "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=10",
+   "key": "mcgowan-steven-robert-2026-09-26"
+  },
+  {
+   "hearingDate": "2026-10-29",
+   "hearingTime": "10:00",
+   "room": "Court Room 3",
+   "venue": "Library Hub",
+   "hearingRaw": "29 October 2026 | 10:00 | Court Room 3, Library Hub",
+   "name": "MALCOLM Michael Allan",
+   "type": "Opening",
+   "deathDate": "2026-09-22",
+   "deathRaw": "22 September 2026",
+   "age": "80 Years",
+   "place": "Canvey Island, Essex",
+   "conclusion": "",
+   "links": [],
+   "page": 10,
+   "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=10",
+   "key": "malcolm-michael-allan-2026-09-22"
+  },
+  {
+   "hearingDate": "2026-10-29",
+   "hearingTime": "10:00",
+   "room": "Court Room 3",
+   "venue": "Library Hub",
+   "hearingRaw": "29 October 2026 | 10:00 | Court Room 3, Library Hub",
+   "name": "MCCARTHY David John",
+   "type": "Opening",
+   "deathDate": "2026-09-22",
+   "deathRaw": "22 September 2026",
+   "age": "50 Years",
+   "place": "Southend on Sea, Essex",
+   "conclusion": "",
+   "links": [],
+   "page": 10,
+   "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=10",
+   "key": "mccarthy-david-john-2026-09-22"
+  },
+  {
+   "hearingDate": "2026-10-29",
+   "hearingTime": "10:00",
+   "room": "Court Room 3",
+   "venue": "Library Hub",
+   "hearingRaw": "29 October 2026 | 10:00 | Court Room 3, Library Hub",
+   "name": "WITHERS Caroline Paula",
+   "type": "Opening",
+   "deathDate": "2026-09-23",
+   "deathRaw": "23 September 2026",
+   "age": "62 Years",
+   "place": "Colchester, Essex",
+   "conclusion": "",
+   "links": [],
+   "page": 10,
+   "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=10",
+   "key": "withers-caroline-paula-2026-09-23"
+  },
+  {
+   "hearingDate": "2026-10-29",
+   "hearingTime": "10:00",
+   "room": "Court Room 3",
+   "venue": "Library Hub",
+   "hearingRaw": "29 October 2026 | 10:00 | Court Room 3, Library Hub",
+   "name": "BASHAM Michael Vincent",
+   "type": "Opening",
+   "deathDate": "2026-07-03",
+   "deathRaw": "3 July 2026",
+   "age": "33 Years",
+   "place": "Chelmsford, Essex",
+   "conclusion": "",
+   "links": [],
+   "page": 10,
+   "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=10",
+   "key": "basham-michael-vincent-2026-07-03"
+  },
+  {
+   "hearingDate": "2026-10-29",
+   "hearingTime": "10:00",
+   "room": "Court Room 3",
+   "venue": "Library Hub",
+   "hearingRaw": "29 October 2026 | 10:00 | Court Room 3, Library Hub",
+   "name": "GRANT Robert James",
+   "type": "Opening",
+   "deathDate": "2026-10-05",
+   "deathRaw": "5 October 2026",
+   "age": "58 Years",
+   "place": "Colchester, Essex",
+   "conclusion": "",
+   "links": [],
+   "page": 10,
+   "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=10",
+   "key": "grant-robert-james-2026-10-05"
+  },
+  {
+   "hearingDate": "2026-10-29",
+   "hearingTime": "10:00",
+   "room": "Court Room 3",
+   "venue": "Library Hub",
+   "hearingRaw": "29 October 2026 | 10:00 | Court Room 3, Library Hub",
+   "name": "LANE Kenneth Roland",
+   "type": "Opening",
+   "deathDate": "2026-09-28",
+   "deathRaw": "28 September 2026",
+   "age": "67 Years",
+   "place": "San Diego",
+   "conclusion": "",
+   "links": [],
+   "page": 10,
+   "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=10",
+   "key": "lane-kenneth-roland-2026-09-28"
+  },
+  {
+   "hearingDate": "2026-10-29",
+   "hearingTime": "10:00",
+   "room": "Court Room 3",
+   "venue": "Library Hub",
+   "hearingRaw": "29 October 2026 | 10:00 | Court Room 3, Library Hub",
+   "name": "CLAY Judith Lyn",
+   "type": "Opening",
+   "deathDate": "2026-08-14",
+   "deathRaw": "14 August 2026",
+   "age": "80 Years",
+   "place": "Harlow, Essex",
+   "conclusion": "",
+   "links": [],
+   "page": 10,
+   "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=10",
+   "key": "clay-judith-lyn-2026-08-14"
+  },
+  {
+   "hearingDate": "2026-10-29",
+   "hearingTime": "10:00",
+   "room": "Court Room 3",
+   "venue": "Library Hub",
+   "hearingRaw": "29 October 2026 | 10:00 | Court Room 3, Library Hub",
+   "name": "O'DONOHUE Ciarán Pádraig",
+   "type": "Opening",
+   "deathDate": "2026-07-06",
+   "deathRaw": "6 July 2026",
+   "age": "32 Years",
+   "place": "Saffron Walden, Essex",
+   "conclusion": "",
+   "links": [],
+   "page": 10,
+   "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=10",
+   "key": "o-donohue-ciar-n-p-draig-2026-07-06"
+  },
+  {
+   "hearingDate": "2026-10-29",
+   "hearingTime": "10:00",
+   "room": "Court Room 3",
+   "venue": "Library Hub",
+   "hearingRaw": "29 October 2026 | 10:00 | Court Room 3, Library Hub",
+   "name": "FEASEY Patricia Helen",
+   "type": "Opening",
+   "deathDate": "2026-09-24",
+   "deathRaw": "24 September 2026",
+   "age": "78 Years",
+   "place": "Westcliff-on-Sea, Essex",
+   "conclusion": "",
+   "links": [],
+   "page": 10,
+   "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=10",
+   "key": "feasey-patricia-helen-2026-09-24"
+  },
+  {
+   "hearingDate": "2026-10-29",
+   "hearingTime": "10:00",
+   "room": "Court Room 3",
+   "venue": "Library Hub",
+   "hearingRaw": "29 October 2026 | 10:00 | Court Room 3, Library Hub",
+   "name": "SHARLAND Jennifer Ann",
+   "type": "Opening",
+   "deathDate": "2026-10-02",
+   "deathRaw": "2 October 2026",
+   "age": "84 Years",
+   "place": "Colchester, Essex",
+   "conclusion": "",
+   "links": [],
+   "page": 11,
+   "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=11",
+   "key": "sharland-jennifer-ann-2026-10-02"
+  },
+  {
+   "hearingDate": "2026-10-29",
+   "hearingTime": "10:00",
+   "room": "Court Room 3",
+   "venue": "Library Hub",
+   "hearingRaw": "29 October 2026 | 10:00 | Court Room 3, Library Hub",
+   "name": "NOTTAGE Margaret Ann",
+   "type": "Opening",
+   "deathDate": "2026-10-07",
+   "deathRaw": "7 October 2026",
+   "age": "81 Years",
+   "place": "Colchester, Essex",
+   "conclusion": "",
+   "links": [],
+   "page": 11,
+   "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=11",
+   "key": "nottage-margaret-ann-2026-10-07"
+  },
+  {
+   "hearingDate": "2026-10-29",
+   "hearingTime": "10:00",
+   "room": "Court Room 3",
+   "venue": "Library Hub",
+   "hearingRaw": "29 October 2026 | 10:00 | Court Room 3, Library Hub",
+   "name": "HARNOR Robert James",
+   "type": "Opening",
+   "deathDate": "2026-08-18",
+   "deathRaw": "18 August 2026",
+   "age": "63 Years",
+   "place": "Haslemere",
+   "conclusion": "",
+   "links": [],
+   "page": 11,
+   "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=11",
+   "key": "harnor-robert-james-2026-08-18"
+  },
+  {
+   "hearingDate": "2026-10-29",
+   "hearingTime": "10:00",
+   "room": "Court Room 3",
+   "venue": "Library Hub",
+   "hearingRaw": "29 October 2026 | 10:00 | Court Room 3, Library Hub",
+   "name": "HORNBLOW Stephen",
+   "type": "Opening",
+   "deathDate": "2026-10-14",
+   "deathRaw": "14 October 2026",
+   "age": "80 Years",
+   "place": "Harlow, Essex",
+   "conclusion": "",
+   "links": [],
+   "page": 11,
+   "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=11",
+   "key": "hornblow-stephen-2026-10-14"
+  },
+  {
+   "hearingDate": "2026-10-29",
+   "hearingTime": "10:00",
+   "room": "Court Room 3",
+   "venue": "Library Hub",
+   "hearingRaw": "29 October 2026 | 10:00 | Court Room 3, Library Hub",
+   "name": "BROWN Susan",
+   "type": "Opening",
+   "deathDate": "2026-09-17",
+   "deathRaw": "17 September 2026",
+   "age": "82 Years",
+   "place": "Colchester, Essex",
+   "conclusion": "",
+   "links": [],
+   "page": 11,
+   "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=11",
+   "key": "brown-susan-2026-09-17"
+  },
+  {
+   "hearingDate": "2026-10-29",
+   "hearingTime": "10:00",
+   "room": "Court Room 3",
+   "venue": "Library Hub",
+   "hearingRaw": "29 October 2026 | 10:00 | Court Room 3, Library Hub",
+   "name": "LINDSEY Robert John",
+   "type": "Opening",
+   "deathDate": "2026-09-28",
+   "deathRaw": "28 September 2026",
+   "age": "89 Years",
+   "place": "Harlow, Essex",
+   "conclusion": "",
+   "links": [],
+   "page": 11,
+   "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=11",
+   "key": "lindsey-robert-john-2026-09-28"
+  },
+  {
+   "hearingDate": "2026-10-29",
+   "hearingTime": "10:00",
+   "room": "Court Room 3",
+   "venue": "Library Hub",
+   "hearingRaw": "29 October 2026 | 10:00 | Court Room 3, Library Hub",
+   "name": "EDGELL John Edward",
+   "type": "Opening",
+   "deathDate": "2026-07-21",
+   "deathRaw": "21 July 2026",
+   "age": "85 Years",
+   "place": "Colchester, Essex",
+   "conclusion": "",
+   "links": [],
+   "page": 11,
+   "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=11",
+   "key": "edgell-john-edward-2026-07-21"
+  },
+  {
+   "hearingDate": "2026-10-29",
+   "hearingTime": "10:00",
+   "room": "Court Room 3",
+   "venue": "Library Hub",
+   "hearingRaw": "29 October 2026 | 10:00 | Court Room 3, Library Hub",
+   "name": "BARNETT Patrick Joseph",
+   "type": "Opening",
+   "deathDate": "2026-09-18",
+   "deathRaw": "18 September 2026",
+   "age": "78 Years",
+   "place": "Colchester, Essex",
+   "conclusion": "",
+   "links": [],
+   "page": 11,
+   "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=11",
+   "key": "barnett-patrick-joseph-2026-09-18"
+  },
+  {
+   "hearingDate": "2026-10-29",
+   "hearingTime": "10:00",
+   "room": "Court Room 3",
+   "venue": "Library Hub",
+   "hearingRaw": "29 October 2026 | 10:00 | Court Room 3, Library Hub",
+   "name": "WEEBER Pauline Dorothy",
+   "type": "Opening",
+   "deathDate": "2026-09-28",
+   "deathRaw": "28 September 2026",
+   "age": "85 Years",
+   "place": "Basildon, Essex",
+   "conclusion": "",
+   "links": [],
+   "page": 11,
+   "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=11",
+   "key": "weeber-pauline-dorothy-2026-09-28"
+  },
+  {
+   "hearingDate": "2026-10-29",
+   "hearingTime": "10:00",
+   "room": "Court Room 3",
+   "venue": "Library Hub",
+   "hearingRaw": "29 October 2026 | 10:00 | Court Room 3, Library Hub",
+   "name": "MARTIN Margaret Mary",
+   "type": "Opening",
+   "deathDate": "2026-10-04",
+   "deathRaw": "4 October 2026",
+   "age": "90 Years",
+   "place": "Chigwell, Essex",
+   "conclusion": "",
+   "links": [],
+   "page": 11,
+   "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=11",
+   "key": "martin-margaret-mary-2026-10-04"
+  },
+  {
+   "hearingDate": "2026-10-29",
+   "hearingTime": "10:00",
+   "room": "Court Room 3",
+   "venue": "Library Hub",
+   "hearingRaw": "29 October 2026 | 10:00 | Court Room 3, Library Hub",
+   "name": "BELL Joyce Florence",
+   "type": "Opening",
+   "deathDate": "2026-10-02",
+   "deathRaw": "2 October 2026",
+   "age": "94 Years",
+   "place": "Basildon, Essex",
+   "conclusion": "",
+   "links": [],
+   "page": 12,
+   "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=12",
+   "key": "bell-joyce-florence-2026-10-02"
+  },
+  {
+   "hearingDate": "2026-10-29",
+   "hearingTime": "10:00",
+   "room": "Court Room 3",
+   "venue": "Library Hub",
+   "hearingRaw": "29 October 2026 | 10:00 | Court Room 3, Library Hub",
+   "name": "BROWN Edward Bernard",
+   "type": "Opening",
+   "deathDate": "2026-10-08",
+   "deathRaw": "8 October 2026",
+   "age": "88 Years",
+   "place": "Harlow, Essex",
+   "conclusion": "",
+   "links": [],
+   "page": 12,
+   "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=12",
+   "key": "brown-edward-bernard-2026-10-08"
+  },
+  {
+   "hearingDate": "2026-10-29",
+   "hearingTime": "10:00",
+   "room": "Court Room 3",
+   "venue": "Library Hub",
+   "hearingRaw": "29 October 2026 | 10:00 | Court Room 3, Library Hub",
+   "name": "REDDEN Nancy Hazeldine",
+   "type": "Opening",
+   "deathDate": "2026-09-29",
+   "deathRaw": "29 September 2026",
+   "age": "97 Years",
+   "place": "Cambridge",
+   "conclusion": "",
+   "links": [],
+   "page": 12,
+   "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=12",
+   "key": "redden-nancy-hazeldine-2026-09-29"
+  },
+  {
+   "hearingDate": "2026-10-29",
+   "hearingTime": "10:00",
+   "room": "Court Room 3",
+   "venue": "Library Hub",
+   "hearingRaw": "29 October 2026 | 10:00 | Court Room 3, Library Hub",
+   "name": "SCHUBERT Thomas",
+   "type": "Opening",
+   "deathDate": "2026-08-11",
+   "deathRaw": "11 August 2026",
+   "age": "80 Years",
+   "place": "Grays, Essex",
+   "conclusion": "",
+   "links": [],
+   "page": 12,
+   "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=12",
+   "key": "schubert-thomas-2026-08-11"
+  },
+  {
+   "hearingDate": "2026-10-29",
+   "hearingTime": "10:00",
+   "room": "Court Room 3",
+   "venue": "Library Hub",
+   "hearingRaw": "29 October 2026 | 10:00 | Court Room 3, Library Hub",
+   "name": "KNOWLES Betty",
+   "type": "Opening",
+   "deathDate": "2026-09-19",
+   "deathRaw": "19 September 2026",
+   "age": "95 Years",
+   "place": "Ipswich, Suffolk",
+   "conclusion": "",
+   "links": [],
+   "page": 12,
+   "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=12",
+   "key": "knowles-betty-2026-09-19"
+  },
+  {
+   "hearingDate": "2026-10-29",
+   "hearingTime": "10:00",
+   "room": "Court Room 3",
+   "venue": "Library Hub",
+   "hearingRaw": "29 October 2026 | 10:00 | Court Room 3, Library Hub",
+   "name": "DUCKSBURY Valerie Joan",
+   "type": "Opening",
+   "deathDate": "2026-10-11",
+   "deathRaw": "11 October 2026",
+   "age": "84 Years",
+   "place": "Chelmsford, Essex",
+   "conclusion": "",
+   "links": [],
+   "page": 12,
+   "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=12",
+   "key": "ducksbury-valerie-joan-2026-10-11"
+  },
+  {
+   "hearingDate": "2026-10-29",
+   "hearingTime": "10:00",
+   "room": "Court Room 3",
+   "venue": "Library Hub",
+   "hearingRaw": "29 October 2026 | 10:00 | Court Room 3, Library Hub",
+   "name": "QUINN Rickie-Lee",
+   "type": "Opening",
+   "deathDate": "2026-08-01",
+   "deathRaw": "1 August 2026",
+   "age": "46 Years",
+   "place": "Walton-on-the-Naze, Essex",
+   "conclusion": "",
+   "links": [],
+   "page": 12,
+   "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=12",
+   "key": "quinn-rickie-lee-2026-08-01"
+  },
+  {
+   "hearingDate": "2026-10-29",
+   "hearingTime": "10:00",
+   "room": "Court Room 3",
+   "venue": "Library Hub",
+   "hearingRaw": "29 October 2026 | 10:00 | Court Room 3, Library Hub",
+   "name": "DUNN Graham Michael",
+   "type": "Opening",
+   "deathDate": "2026-06-13",
+   "deathRaw": "13 June 2026",
+   "age": "69 Years",
+   "place": "Colchester, Essex",
+   "conclusion": "",
+   "links": [],
+   "page": 12,
+   "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=12",
+   "key": "dunn-graham-michael-2026-06-13"
+  },
+  {
+   "hearingDate": "2026-10-29",
+   "hearingTime": "10:00",
+   "room": "Court Room 3",
+   "venue": "Library Hub",
+   "hearingRaw": "29 October 2026 | 10:00 | Court Room 3, Library Hub",
+   "name": "MATHEWS Paula Edith",
+   "type": "Opening",
+   "deathDate": "2026-10-11",
+   "deathRaw": "11 October 2026",
+   "age": "92 Years",
+   "place": "Colchester, Essex",
+   "conclusion": "",
+   "links": [],
+   "page": 12,
+   "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=12",
+   "key": "mathews-paula-edith-2026-10-11"
+  },
+  {
+   "hearingDate": "2026-10-29",
+   "hearingTime": "10:00",
+   "room": "Court Room 3",
+   "venue": "Library Hub",
+   "hearingRaw": "29 October 2026 | 10:00 | Court Room 3, Library Hub",
+   "name": "WOOD Terence Patrick",
+   "type": "Opening",
+   "deathDate": "2026-08-15",
+   "deathRaw": "15 August 2026",
+   "age": "65 Years",
+   "place": "Danbury, Essex",
+   "conclusion": "",
+   "links": [],
+   "page": 12,
+   "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=12",
+   "key": "wood-terence-patrick-2026-08-15"
+  },
+  {
+   "hearingDate": "2026-10-29",
+   "hearingTime": "10:00",
+   "room": "Court Room 3",
+   "venue": "Library Hub",
+   "hearingRaw": "29 October 2026 | 10:00 | Court Room 3, Library Hub",
+   "name": "STRINGER Iris Winifred",
+   "type": "Opening",
+   "deathDate": "2026-10-10",
+   "deathRaw": "10 October 2026",
+   "age": "93 Years",
+   "place": "Harlow, Essex",
+   "conclusion": "",
+   "links": [],
+   "page": 13,
+   "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=13",
+   "key": "stringer-iris-winifred-2026-10-10"
+  },
+  {
+   "hearingDate": "2026-10-29",
+   "hearingTime": "10:00",
+   "room": "Court Room 3",
+   "venue": "Library Hub",
+   "hearingRaw": "29 October 2026 | 10:00 | Court Room 3, Library Hub",
+   "name": "PRESTON David",
+   "type": "Opening",
+   "deathDate": "2026-07-29",
+   "deathRaw": "29 July 2026",
+   "age": "66 Years",
+   "place": "Colchester, Essex",
+   "conclusion": "",
+   "links": [],
+   "page": 13,
+   "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=13",
+   "key": "preston-david-2026-07-29"
+  },
+  {
+   "hearingDate": "2026-10-29",
+   "hearingTime": "10:00",
+   "room": "Court Room 3",
+   "venue": "Library Hub",
+   "hearingRaw": "29 October 2026 | 10:00 | Court Room 3, Library Hub",
+   "name": "PYNE Mark Leonard",
+   "type": "Opening",
+   "deathDate": "2026-10-07",
+   "deathRaw": "7 October 2026",
+   "age": "64 Years",
+   "place": "Leigh-on-Sea, Essex",
+   "conclusion": "",
+   "links": [],
+   "page": 13,
+   "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=13",
+   "key": "pyne-mark-leonard-2026-10-07"
+  },
+  {
+   "hearingDate": "2026-10-29",
+   "hearingTime": "10:00",
+   "room": "Court Room 3",
+   "venue": "Library Hub",
+   "hearingRaw": "29 October 2026 | 10:00 | Court Room 3, Library Hub",
+   "name": "FOSTER Malcolm Bruce William",
+   "type": "Opening",
+   "deathDate": "2026-08-21",
+   "deathRaw": "21 August 2026",
+   "age": "68 Years",
+   "place": "Basildon, Essex",
+   "conclusion": "",
+   "links": [],
+   "page": 13,
+   "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=13",
+   "key": "foster-malcolm-bruce-william-2026-08-21"
+  },
+  {
+   "hearingDate": "2026-10-29",
+   "hearingTime": "10:00",
+   "room": "Court Room 3",
+   "venue": "Library Hub",
+   "hearingRaw": "29 October 2026 | 10:00 | Court Room 3, Library Hub",
+   "name": "GREEN Peter James",
+   "type": "Opening",
+   "deathDate": "2026-10-05",
+   "deathRaw": "5 October 2026",
+   "age": "45 Years",
+   "place": "Great Chesterford, Essex",
+   "conclusion": "",
+   "links": [],
+   "page": 13,
+   "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=13",
+   "key": "green-peter-james-2026-10-05"
+  },
+  {
+   "hearingDate": "2026-10-29",
+   "hearingTime": "10:00",
+   "room": "Court Room 3",
+   "venue": "Library Hub",
+   "hearingRaw": "29 October 2026 | 10:00 | Court Room 3, Library Hub",
+   "name": "STILES Paul",
+   "type": "Opening",
+   "deathDate": "2026-08-17",
+   "deathRaw": "17 August 2026",
+   "age": "49 Years",
+   "place": "Basildon, Essex",
+   "conclusion": "",
+   "links": [],
+   "page": 13,
+   "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=13",
+   "key": "stiles-paul-2026-08-17"
+  },
+  {
+   "hearingDate": "2026-10-28",
+   "hearingTime": "10:00",
+   "room": "Court Room 2",
+   "venue": "Seax House",
+   "hearingRaw": "28 October 2026 | 10:00 | Court Room 2, Seax House",
+   "name": "BROWN Jake Neil Marcus",
+   "type": "Inquest Hearing",
+   "deathDate": "2024-12-12",
+   "deathRaw": "12 December 2024",
+   "age": "28 Years",
+   "place": "Upminster",
+   "conclusion": "Narrative Conclusion",
+   "links": [],
+   "page": 13,
+   "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=13",
+   "key": "brown-jake-neil-marcus-2024-12-12"
+  },
+  {
+   "hearingDate": "2026-10-28",
+   "hearingTime": "10:00",
+   "room": "Court Room 1",
+   "venue": "Seax House",
+   "hearingRaw": "28 October 2026 | 10:00 | Court Room 1, Seax House",
+   "name": "FLATT Colin Harold",
+   "type": "Inquest Hearing",
+   "deathDate": "2021-09-07",
+   "deathRaw": "7 September 2021",
+   "age": "81 Years",
+   "place": "Tolleshunt Knights, Essex",
+   "conclusion": "Narrative Conclusion",
+   "links": [],
+   "page": 13,
+   "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=13",
+   "key": "flatt-colin-harold-2021-09-07"
+  },
+  {
+   "hearingDate": "2026-10-28",
+   "hearingTime": "10:00",
+   "room": "Court Room 3",
+   "venue": "Library Hub",
+   "hearingRaw": "28 October 2026 | 10:00 | Court Room 3, Library Hub",
+   "name": "WOTTON Matthew George Henry",
+   "type": "Inquest Hearing",
+   "deathDate": "2025-04-06",
+   "deathRaw": "6 April 2025",
+   "age": "27 Years",
+   "place": "Manuden, Essex",
+   "conclusion": "Natural causes",
+   "links": [],
+   "page": 13,
+   "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=13",
+   "key": "wotton-matthew-george-henry-2025-04-06"
+  },
+  {
+   "hearingDate": "2026-10-27",
+   "hearingTime": "09:30",
+   "room": "Court Room 2",
+   "venue": "Seax House",
+   "hearingRaw": "27 October 2026 | 09:30 | Court Room 2, Seax House",
+   "name": "DAWSON Betty Mary",
+   "type": "Opening",
+   "deathDate": "2026-09-20",
+   "deathRaw": "20 September 2026",
+   "age": "99 Years",
+   "place": "Stansted Mountfichet, Essex",
+   "conclusion": "",
+   "links": [],
+   "page": 13,
+   "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=13",
+   "key": "dawson-betty-mary-2026-09-20"
+  },
+  {
+   "hearingDate": "2026-10-27",
+   "hearingTime": "11:30",
+   "room": "Court Room 3",
+   "venue": "Library Hub",
+   "hearingRaw": "27 October 2026 | 11:30 | Court Room 3, Library Hub",
+   "name": "OWUSU Benjamin Akwetey",
+   "type": "Pre Inquest Review",
+   "deathDate": "2025-07-17",
+   "deathRaw": "17 July 2025",
+   "age": "19 Years",
+   "place": "Basildon, Essex",
+   "conclusion": "",
+   "links": [],
+   "page": 14,
+   "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=14",
+   "key": "owusu-benjamin-akwetey-2025-07-17"
+  },
+  {
+   "hearingDate": "2026-10-27",
+   "hearingTime": "09:30",
+   "room": "Court Room 2",
+   "venue": "Seax House",
+   "hearingRaw": "27 October 2026 | 09:30 | Court Room 2, Seax House",
+   "name": "COMISKEY Margaret Marie",
+   "type": "Opening",
+   "deathDate": "2026-06-04",
+   "deathRaw": "4 June 2026",
+   "age": "50 Years",
+   "place": "Chelmsford, Essex",
+   "conclusion": "",
+   "links": [],
+   "page": 14,
+   "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=14",
+   "key": "comiskey-margaret-marie-2026-06-04"
+  },
+  {
+   "hearingDate": "2026-10-27",
+   "hearingTime": "09:30",
+   "room": "Court Room 2",
+   "venue": "Seax House",
+   "hearingRaw": "27 October 2026 | 09:30 | Court Room 2, Seax House",
+   "name": "HAMMOND Jean Margaret",
+   "type": "Opening",
+   "deathDate": "2026-09-28",
+   "deathRaw": "28 September 2026",
+   "age": "84 Years",
+   "place": "Chelmsford, Essex",
+   "conclusion": "",
+   "links": [],
+   "page": 14,
+   "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=14",
+   "key": "hammond-jean-margaret-2026-09-28"
+  },
+  {
+   "hearingDate": "2026-10-27",
+   "hearingTime": "09:30",
+   "room": "Court Room 2",
+   "venue": "Seax House",
+   "hearingRaw": "27 October 2026 | 09:30 | Court Room 2, Seax House",
+   "name": "PURKISS Rachael Elizabeth",
+   "type": "Opening",
+   "deathDate": "2026-09-24",
+   "deathRaw": "24 September 2026",
+   "age": "41 Years",
+   "place": "Romania",
+   "conclusion": "",
+   "links": [],
+   "page": 14,
+   "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=14",
+   "key": "purkiss-rachael-elizabeth-2026-09-24"
+  },
+  {
+   "hearingDate": "2026-10-27",
+   "hearingTime": "09:30",
+   "room": "Court Room 2",
+   "venue": "Seax House",
+   "hearingRaw": "27 October 2026 | 09:30 | Court Room 2, Seax House",
+   "name": "EVANS Linda",
+   "type": "Opening",
+   "deathDate": "2026-10-09",
+   "deathRaw": "9 October 2026",
+   "age": "73 Years",
+   "place": "Hadleigh, Essex",
+   "conclusion": "",
+   "links": [],
+   "page": 14,
+   "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=14",
+   "key": "evans-linda-2026-10-09"
+  },
+  {
+   "hearingDate": "2026-10-27",
+   "hearingTime": "10:00",
+   "room": "Court Room 2",
+   "venue": "Seax House",
+   "hearingRaw": "27 October 2026 | 10:00 | Court Room 2, Seax House",
+   "name": "BROWN Jake Neil Marcus",
+   "type": "Inquest Hearing",
+   "deathDate": "2024-12-12",
+   "deathRaw": "12 December 2024",
+   "age": "28 Years",
+   "place": "Upminster",
+   "conclusion": "Narrative Conclusion",
+   "links": [],
+   "page": 14,
+   "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=14",
+   "key": "brown-jake-neil-marcus-2024-12-12"
+  },
+  {
+   "hearingDate": "2026-10-27",
+   "hearingTime": "10:00",
+   "room": "Court Room 1",
+   "venue": "Seax House",
+   "hearingRaw": "27 October 2026 | 10:00 | Court Room 1, Seax House",
+   "name": "FLATT Colin Harold",
+   "type": "Inquest Hearing",
+   "deathDate": "2021-09-07",
+   "deathRaw": "7 September 2021",
+   "age": "81 Years",
+   "place": "Tolleshunt Knights, Essex",
+   "conclusion": "Narrative Conclusion",
+   "links": [],
+   "page": 14,
+   "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=14",
+   "key": "flatt-colin-harold-2021-09-07"
+  },
+  {
+   "hearingDate": "2026-10-26",
+   "hearingTime": "10:00",
+   "room": "Court Room 2",
+   "venue": "Seax House",
+   "hearingRaw": "26 October 2026 | 10:00 | Court Room 2, Seax House",
+   "name": "BROWN Jake Neil Marcus",
+   "type": "Inquest Hearing",
+   "deathDate": "2024-12-12",
+   "deathRaw": "12 December 2024",
+   "age": "28 Years",
+   "place": "Upminster",
+   "conclusion": "Narrative Conclusion",
+   "links": [],
+   "page": 14,
+   "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=14",
+   "key": "brown-jake-neil-marcus-2024-12-12"
+  },
+  {
+   "hearingDate": "2026-10-26",
+   "hearingTime": "10:00",
+   "room": "Court Room 1",
+   "venue": "Seax House",
+   "hearingRaw": "26 October 2026 | 10:00 | Court Room 1, Seax House",
+   "name": "FLATT Colin Harold",
+   "type": "Inquest Hearing",
+   "deathDate": "2021-09-07",
+   "deathRaw": "7 September 2021",
+   "age": "81 Years",
+   "place": "Tolleshunt Knights, Essex",
+   "conclusion": "Narrative Conclusion",
+   "links": [],
+   "page": 14,
+   "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=14",
+   "key": "flatt-colin-harold-2021-09-07"
+  }
+ ],
+ "cases": [
+  {
+   "key": "flatt-colin-harold-2021-09-07",
+   "listedName": "FLATT Colin Harold",
+   "name": "Colin Harold Flatt",
+   "age": "81 Years",
+   "deathDate": "2021-09-07",
+   "deathRaw": "7 September 2021",
+   "place": "Tolleshunt Knights, Essex",
+   "hearings": [
+    {
+     "date": "2026-10-26",
+     "time": "10:00",
+     "type": "Inquest Hearing",
+     "room": "Court Room 1",
+     "venue": "Seax House",
+     "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=14"
+    },
+    {
+     "date": "2026-10-27",
+     "time": "10:00",
+     "type": "Inquest Hearing",
+     "room": "Court Room 1",
+     "venue": "Seax House",
+     "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=14"
+    },
+    {
+     "date": "2026-10-28",
+     "time": "10:00",
+     "type": "Inquest Hearing",
+     "room": "Court Room 1",
+     "venue": "Seax House",
+     "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=13"
+    }
+   ],
+   "conclusion": "Narrative Conclusion",
+   "hearingDays": 3,
+   "types": [
+    "Inquest Hearing"
+   ],
+   "firstHearing": "2026-10-26",
+   "lastHearing": "2026-10-28",
+   "firstSeen": "2026-11-13T15:38:56Z",
+   "caseUrl": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?query=Flatt"
+  },
+  {
+   "key": "brown-jake-neil-marcus-2024-12-12",
+   "listedName": "BROWN Jake Neil Marcus",
+   "name": "Jake Neil Marcus Brown",
+   "age": "28 Years",
+   "deathDate": "2024-12-12",
+   "deathRaw": "12 December 2024",
+   "place": "Upminster",
+   "hearings": [
+    {
+     "date": "2026-10-26",
+     "time": "10:00",
+     "type": "Inquest Hearing",
+     "room": "Court Room 2",
+     "venue": "Seax House",
+     "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=14"
+    },
+    {
+     "date": "2026-10-27",
+     "time": "10:00",
+     "type": "Inquest Hearing",
+     "room": "Court Room 2",
+     "venue": "Seax House",
+     "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=14"
+    },
+    {
+     "date": "2026-10-28",
+     "time": "10:00",
+     "type": "Inquest Hearing",
+     "room": "Court Room 2",
+     "venue": "Seax House",
+     "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=13"
+    }
+   ],
+   "conclusion": "Narrative Conclusion",
+   "hearingDays": 3,
+   "types": [
+    "Inquest Hearing"
+   ],
+   "firstHearing": "2026-10-26",
+   "lastHearing": "2026-10-28",
+   "firstSeen": "2026-11-13T15:38:56Z",
+   "caseUrl": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?query=Brown"
+  },
+  {
+   "key": "owusu-benjamin-akwetey-2025-07-17",
+   "listedName": "OWUSU Benjamin Akwetey",
+   "name": "Benjamin Akwetey Owusu",
+   "age": "19 Years",
+   "deathDate": "2025-07-17",
+   "deathRaw": "17 July 2025",
+   "place": "Basildon, Essex",
+   "hearings": [
+    {
+     "date": "2026-10-27",
+     "time": "11:30",
+     "type": "Pre Inquest Review",
+     "room": "Court Room 3",
+     "venue": "Library Hub",
+     "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=14"
+    }
+   ],
+   "conclusion": "",
+   "hearingDays": 0,
+   "types": [
+    "Pre Inquest Review"
+   ],
+   "firstHearing": "2026-10-27",
+   "lastHearing": "2026-10-27",
+   "firstSeen": "2026-11-13T15:38:56Z",
+   "caseUrl": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?query=Owusu"
+  },
+  {
+   "key": "dawson-betty-mary-2026-09-20",
+   "listedName": "DAWSON Betty Mary",
+   "name": "Betty Mary Dawson",
+   "age": "99 Years",
+   "deathDate": "2026-09-20",
+   "deathRaw": "20 September 2026",
+   "place": "Stansted Mountfichet, Essex",
+   "hearings": [
+    {
+     "date": "2026-10-27",
+     "time": "09:30",
+     "type": "Opening",
+     "room": "Court Room 2",
+     "venue": "Seax House",
+     "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=13"
+    }
+   ],
+   "conclusion": "",
+   "hearingDays": 0,
+   "types": [
+    "Opening"
+   ],
+   "firstHearing": "2026-10-27",
+   "lastHearing": "2026-10-27",
+   "firstSeen": "2026-11-13T15:38:56Z",
+   "caseUrl": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?query=Dawson"
+  },
+  {
+   "key": "hammond-jean-margaret-2026-09-28",
+   "listedName": "HAMMOND Jean Margaret",
+   "name": "Jean Margaret Hammond",
+   "age": "84 Years",
+   "deathDate": "2026-09-28",
+   "deathRaw": "28 September 2026",
+   "place": "Chelmsford, Essex",
+   "hearings": [
+    {
+     "date": "2026-10-27",
+     "time": "09:30",
+     "type": "Opening",
+     "room": "Court Room 2",
+     "venue": "Seax House",
+     "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=14"
+    }
+   ],
+   "conclusion": "",
+   "hearingDays": 0,
+   "types": [
+    "Opening"
+   ],
+   "firstHearing": "2026-10-27",
+   "lastHearing": "2026-10-27",
+   "firstSeen": "2026-11-13T15:38:56Z",
+   "caseUrl": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?query=Hammond"
+  },
+  {
+   "key": "evans-linda-2026-10-09",
+   "listedName": "EVANS Linda",
+   "name": "Linda Evans",
+   "age": "73 Years",
+   "deathDate": "2026-10-09",
+   "deathRaw": "9 October 2026",
+   "place": "Hadleigh, Essex",
+   "hearings": [
+    {
+     "date": "2026-10-27",
+     "time": "09:30",
+     "type": "Opening",
+     "room": "Court Room 2",
+     "venue": "Seax House",
+     "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=14"
+    }
+   ],
+   "conclusion": "",
+   "hearingDays": 0,
+   "types": [
+    "Opening"
+   ],
+   "firstHearing": "2026-10-27",
+   "lastHearing": "2026-10-27",
+   "firstSeen": "2026-11-13T15:38:56Z",
+   "caseUrl": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?query=Evans"
+  },
+  {
+   "key": "comiskey-margaret-marie-2026-06-04",
+   "listedName": "COMISKEY Margaret Marie",
+   "name": "Margaret Marie Comiskey",
+   "age": "50 Years",
+   "deathDate": "2026-06-04",
+   "deathRaw": "4 June 2026",
+   "place": "Chelmsford, Essex",
+   "hearings": [
+    {
+     "date": "2026-10-27",
+     "time": "09:30",
+     "type": "Opening",
+     "room": "Court Room 2",
+     "venue": "Seax House",
+     "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=14"
+    }
+   ],
+   "conclusion": "",
+   "hearingDays": 0,
+   "types": [
+    "Opening"
+   ],
+   "firstHearing": "2026-10-27",
+   "lastHearing": "2026-10-27",
+   "firstSeen": "2026-11-13T15:38:56Z",
+   "caseUrl": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?query=Comiskey"
+  },
+  {
+   "key": "purkiss-rachael-elizabeth-2026-09-24",
+   "listedName": "PURKISS Rachael Elizabeth",
+   "name": "Rachael Elizabeth Purkiss",
+   "age": "41 Years",
+   "deathDate": "2026-09-24",
+   "deathRaw": "24 September 2026",
+   "place": "Romania",
+   "hearings": [
+    {
+     "date": "2026-10-27",
+     "time": "09:30",
+     "type": "Opening",
+     "room": "Court Room 2",
+     "venue": "Seax House",
+     "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=14"
+    }
+   ],
+   "conclusion": "",
+   "hearingDays": 0,
+   "types": [
+    "Opening"
+   ],
+   "firstHearing": "2026-10-27",
+   "lastHearing": "2026-10-27",
+   "firstSeen": "2026-11-13T15:38:56Z",
+   "caseUrl": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?query=Purkiss"
+  },
+  {
+   "key": "wotton-matthew-george-henry-2025-04-06",
+   "listedName": "WOTTON Matthew George Henry",
+   "name": "Matthew George Henry Wotton",
+   "age": "27 Years",
+   "deathDate": "2025-04-06",
+   "deathRaw": "6 April 2025",
+   "place": "Manuden, Essex",
+   "hearings": [
+    {
+     "date": "2026-10-28",
+     "time": "10:00",
+     "type": "Inquest Hearing",
+     "room": "Court Room 3",
+     "venue": "Library Hub",
+     "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=13"
+    }
+   ],
+   "conclusion": "Natural causes",
+   "hearingDays": 1,
+   "types": [
+    "Inquest Hearing"
+   ],
+   "firstHearing": "2026-10-28",
+   "lastHearing": "2026-10-28",
+   "firstSeen": "2026-11-13T15:38:56Z",
+   "caseUrl": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?query=Wotton"
+  },
+  {
+   "key": "henderson-barry-steven-2026-05-23",
+   "listedName": "HENDERSON Barry Steven",
+   "name": "Barry Steven Henderson",
+   "age": "47 Years",
+   "deathDate": "2026-05-23",
+   "deathRaw": "23 May 2026",
+   "place": "Leytonstone, London",
+   "hearings": [
+    {
+     "date": "2026-10-29",
+     "time": "10:00",
+     "type": "Opening",
+     "room": "Court Room 3",
+     "venue": "Library Hub",
+     "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=9"
+    }
+   ],
+   "conclusion": "",
+   "hearingDays": 0,
+   "types": [
+    "Opening"
+   ],
+   "firstHearing": "2026-10-29",
+   "lastHearing": "2026-10-29",
+   "firstSeen": "2026-11-13T15:38:56Z",
+   "caseUrl": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?query=Henderson"
+  },
+  {
+   "key": "knowles-betty-2026-09-19",
+   "listedName": "KNOWLES Betty",
+   "name": "Betty Knowles",
+   "age": "95 Years",
+   "deathDate": "2026-09-19",
+   "deathRaw": "19 September 2026",
+   "place": "Ipswich, Suffolk",
+   "hearings": [
+    {
+     "date": "2026-10-29",
+     "time": "10:00",
+     "type": "Opening",
+     "room": "Court Room 3",
+     "venue": "Library Hub",
+     "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=12"
+    }
+   ],
+   "conclusion": "",
+   "hearingDays": 0,
+   "types": [
+    "Opening"
+   ],
+   "firstHearing": "2026-10-29",
+   "lastHearing": "2026-10-29",
+   "firstSeen": "2026-11-13T15:38:56Z",
+   "caseUrl": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?query=Knowles"
+  },
+  {
+   "key": "casanovas-carlos-2026-08-08",
+   "listedName": "CASANOVAS Carlos",
+   "name": "Carlos Casanovas",
+   "age": "67 Years",
+   "deathDate": "2026-08-08",
+   "deathRaw": "8 August 2026",
+   "place": "Colchester, Essex",
+   "hearings": [
+    {
+     "date": "2026-10-29",
+     "time": "10:00",
+     "type": "Opening",
+     "room": "Court Room 3",
+     "venue": "Library Hub",
+     "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=9"
+    }
+   ],
+   "conclusion": "",
+   "hearingDays": 0,
+   "types": [
+    "Opening"
+   ],
+   "firstHearing": "2026-10-29",
+   "lastHearing": "2026-10-29",
+   "firstSeen": "2026-11-13T15:38:56Z",
+   "caseUrl": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?query=Casanovas"
+  },
+  {
+   "key": "withers-caroline-paula-2026-09-23",
+   "listedName": "WITHERS Caroline Paula",
+   "name": "Caroline Paula Withers",
+   "age": "62 Years",
+   "deathDate": "2026-09-23",
+   "deathRaw": "23 September 2026",
+   "place": "Colchester, Essex",
+   "hearings": [
+    {
+     "date": "2026-10-29",
+     "time": "10:00",
+     "type": "Opening",
+     "room": "Court Room 3",
+     "venue": "Library Hub",
+     "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=10"
+    }
+   ],
+   "conclusion": "",
+   "hearingDays": 0,
+   "types": [
+    "Opening"
+   ],
+   "firstHearing": "2026-10-29",
+   "lastHearing": "2026-10-29",
+   "firstSeen": "2026-11-13T15:38:56Z",
+   "caseUrl": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?query=Withers"
+  },
+  {
+   "key": "o-donohue-ciar-n-p-draig-2026-07-06",
+   "listedName": "O'DONOHUE Ciarán Pádraig",
+   "name": "Ciarán Pádraig O'Donohue",
+   "age": "32 Years",
+   "deathDate": "2026-07-06",
+   "deathRaw": "6 July 2026",
+   "place": "Saffron Walden, Essex",
+   "hearings": [
+    {
+     "date": "2026-10-29",
+     "time": "10:00",
+     "type": "Opening",
+     "room": "Court Room 3",
+     "venue": "Library Hub",
+     "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=10"
+    }
+   ],
+   "conclusion": "",
+   "hearingDays": 0,
+   "types": [
+    "Opening"
+   ],
+   "firstHearing": "2026-10-29",
+   "lastHearing": "2026-10-29",
+   "firstSeen": "2026-11-13T15:38:56Z",
+   "caseUrl": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?query=O%27Donohue"
+  },
+  {
+   "key": "mccarthy-david-john-2026-09-22",
+   "listedName": "MCCARTHY David John",
+   "name": "David John Mccarthy",
+   "age": "50 Years",
+   "deathDate": "2026-09-22",
+   "deathRaw": "22 September 2026",
+   "place": "Southend on Sea, Essex",
+   "hearings": [
+    {
+     "date": "2026-10-29",
+     "time": "10:00",
+     "type": "Opening",
+     "room": "Court Room 3",
+     "venue": "Library Hub",
+     "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=10"
+    }
+   ],
+   "conclusion": "",
+   "hearingDays": 0,
+   "types": [
+    "Opening"
+   ],
+   "firstHearing": "2026-10-29",
+   "lastHearing": "2026-10-29",
+   "firstSeen": "2026-11-13T15:38:56Z",
+   "caseUrl": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?query=Mccarthy"
+  },
+  {
+   "key": "preston-david-2026-07-29",
+   "listedName": "PRESTON David",
+   "name": "David Preston",
+   "age": "66 Years",
+   "deathDate": "2026-07-29",
+   "deathRaw": "29 July 2026",
+   "place": "Colchester, Essex",
+   "hearings": [
+    {
+     "date": "2026-10-29",
+     "time": "10:00",
+     "type": "Opening",
+     "room": "Court Room 3",
+     "venue": "Library Hub",
+     "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=13"
+    }
+   ],
+   "conclusion": "",
+   "hearingDays": 0,
+   "types": [
+    "Opening"
+   ],
+   "firstHearing": "2026-10-29",
+   "lastHearing": "2026-10-29",
+   "firstSeen": "2026-11-13T15:38:56Z",
+   "caseUrl": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?query=Preston"
+  },
+  {
+   "key": "brown-edward-bernard-2026-10-08",
+   "listedName": "BROWN Edward Bernard",
+   "name": "Edward Bernard Brown",
+   "age": "88 Years",
+   "deathDate": "2026-10-08",
+   "deathRaw": "8 October 2026",
+   "place": "Harlow, Essex",
+   "hearings": [
+    {
+     "date": "2026-10-29",
+     "time": "10:00",
+     "type": "Opening",
+     "room": "Court Room 3",
+     "venue": "Library Hub",
+     "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=12"
+    }
+   ],
+   "conclusion": "",
+   "hearingDays": 0,
+   "types": [
+    "Opening"
+   ],
+   "firstHearing": "2026-10-29",
+   "lastHearing": "2026-10-29",
+   "firstSeen": "2026-11-13T15:38:56Z",
+   "caseUrl": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?query=Brown"
+  },
+  {
+   "key": "dunn-graham-michael-2026-06-13",
+   "listedName": "DUNN Graham Michael",
+   "name": "Graham Michael Dunn",
+   "age": "69 Years",
+   "deathDate": "2026-06-13",
+   "deathRaw": "13 June 2026",
+   "place": "Colchester, Essex",
+   "hearings": [
+    {
+     "date": "2026-10-29",
+     "time": "10:00",
+     "type": "Opening",
+     "room": "Court Room 3",
+     "venue": "Library Hub",
+     "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=12"
+    }
+   ],
+   "conclusion": "",
+   "hearingDays": 0,
+   "types": [
+    "Opening"
+   ],
+   "firstHearing": "2026-10-29",
+   "lastHearing": "2026-10-29",
+   "firstSeen": "2026-11-13T15:38:56Z",
+   "caseUrl": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?query=Dunn"
+  },
+  {
+   "key": "stringer-iris-winifred-2026-10-10",
+   "listedName": "STRINGER Iris Winifred",
+   "name": "Iris Winifred Stringer",
+   "age": "93 Years",
+   "deathDate": "2026-10-10",
+   "deathRaw": "10 October 2026",
+   "place": "Harlow, Essex",
+   "hearings": [
+    {
+     "date": "2026-10-29",
+     "time": "10:00",
+     "type": "Opening",
+     "room": "Court Room 3",
+     "venue": "Library Hub",
+     "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=13"
+    }
+   ],
+   "conclusion": "",
+   "hearingDays": 0,
+   "types": [
+    "Opening"
+   ],
+   "firstHearing": "2026-10-29",
+   "lastHearing": "2026-10-29",
+   "firstSeen": "2026-11-13T15:38:56Z",
+   "caseUrl": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?query=Stringer"
+  },
+  {
+   "key": "sharland-jennifer-ann-2026-10-02",
+   "listedName": "SHARLAND Jennifer Ann",
+   "name": "Jennifer Ann Sharland",
+   "age": "84 Years",
+   "deathDate": "2026-10-02",
+   "deathRaw": "2 October 2026",
+   "place": "Colchester, Essex",
+   "hearings": [
+    {
+     "date": "2026-10-29",
+     "time": "10:00",
+     "type": "Opening",
+     "room": "Court Room 3",
+     "venue": "Library Hub",
+     "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=11"
+    }
+   ],
+   "conclusion": "",
+   "hearingDays": 0,
+   "types": [
+    "Opening"
+   ],
+   "firstHearing": "2026-10-29",
+   "lastHearing": "2026-10-29",
+   "firstSeen": "2026-11-13T15:38:56Z",
+   "caseUrl": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?query=Sharland"
+  },
+  {
+   "key": "edgell-john-edward-2026-07-21",
+   "listedName": "EDGELL John Edward",
+   "name": "John Edward Edgell",
+   "age": "85 Years",
+   "deathDate": "2026-07-21",
+   "deathRaw": "21 July 2026",
+   "place": "Colchester, Essex",
+   "hearings": [
+    {
+     "date": "2026-10-29",
+     "time": "10:00",
+     "type": "Opening",
+     "room": "Court Room 3",
+     "venue": "Library Hub",
+     "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=11"
+    }
+   ],
+   "conclusion": "",
+   "hearingDays": 0,
+   "types": [
+    "Opening"
+   ],
+   "firstHearing": "2026-10-29",
+   "lastHearing": "2026-10-29",
+   "firstSeen": "2026-11-13T15:38:56Z",
+   "caseUrl": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?query=Edgell"
+  },
+  {
+   "key": "bell-joyce-florence-2026-10-02",
+   "listedName": "BELL Joyce Florence",
+   "name": "Joyce Florence Bell",
+   "age": "94 Years",
+   "deathDate": "2026-10-02",
+   "deathRaw": "2 October 2026",
+   "place": "Basildon, Essex",
+   "hearings": [
+    {
+     "date": "2026-10-29",
+     "time": "10:00",
+     "type": "Opening",
+     "room": "Court Room 3",
+     "venue": "Library Hub",
+     "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=12"
+    }
+   ],
+   "conclusion": "",
+   "hearingDays": 0,
+   "types": [
+    "Opening"
+   ],
+   "firstHearing": "2026-10-29",
+   "lastHearing": "2026-10-29",
+   "firstSeen": "2026-11-13T15:38:56Z",
+   "caseUrl": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?query=Bell"
+  },
+  {
+   "key": "clay-judith-lyn-2026-08-14",
+   "listedName": "CLAY Judith Lyn",
+   "name": "Judith Lyn Clay",
+   "age": "80 Years",
+   "deathDate": "2026-08-14",
+   "deathRaw": "14 August 2026",
+   "place": "Harlow, Essex",
+   "hearings": [
+    {
+     "date": "2026-10-29",
+     "time": "10:00",
+     "type": "Opening",
+     "room": "Court Room 3",
+     "venue": "Library Hub",
+     "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=10"
+    }
+   ],
+   "conclusion": "",
+   "hearingDays": 0,
+   "types": [
+    "Opening"
+   ],
+   "firstHearing": "2026-10-29",
+   "lastHearing": "2026-10-29",
+   "firstSeen": "2026-11-13T15:38:56Z",
+   "caseUrl": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?query=Clay"
+  },
+  {
+   "key": "lane-kenneth-roland-2026-09-28",
+   "listedName": "LANE Kenneth Roland",
+   "name": "Kenneth Roland Lane",
+   "age": "67 Years",
+   "deathDate": "2026-09-28",
+   "deathRaw": "28 September 2026",
+   "place": "San Diego",
+   "hearings": [
+    {
+     "date": "2026-10-29",
+     "time": "10:00",
+     "type": "Opening",
+     "room": "Court Room 3",
+     "venue": "Library Hub",
+     "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=10"
+    }
+   ],
+   "conclusion": "",
+   "hearingDays": 0,
+   "types": [
+    "Opening"
+   ],
+   "firstHearing": "2026-10-29",
+   "lastHearing": "2026-10-29",
+   "firstSeen": "2026-11-13T15:38:56Z",
+   "caseUrl": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?query=Lane"
+  },
+  {
+   "key": "foster-malcolm-bruce-william-2026-08-21",
+   "listedName": "FOSTER Malcolm Bruce William",
+   "name": "Malcolm Bruce William Foster",
+   "age": "68 Years",
+   "deathDate": "2026-08-21",
+   "deathRaw": "21 August 2026",
+   "place": "Basildon, Essex",
+   "hearings": [
+    {
+     "date": "2026-10-29",
+     "time": "10:00",
+     "type": "Opening",
+     "room": "Court Room 3",
+     "venue": "Library Hub",
+     "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=13"
+    }
+   ],
+   "conclusion": "",
+   "hearingDays": 0,
+   "types": [
+    "Opening"
+   ],
+   "firstHearing": "2026-10-29",
+   "lastHearing": "2026-10-29",
+   "firstSeen": "2026-11-13T15:38:56Z",
+   "caseUrl": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?query=Foster"
+  },
+  {
+   "key": "nottage-margaret-ann-2026-10-07",
+   "listedName": "NOTTAGE Margaret Ann",
+   "name": "Margaret Ann Nottage",
+   "age": "81 Years",
+   "deathDate": "2026-10-07",
+   "deathRaw": "7 October 2026",
+   "place": "Colchester, Essex",
+   "hearings": [
+    {
+     "date": "2026-10-29",
+     "time": "10:00",
+     "type": "Opening",
+     "room": "Court Room 3",
+     "venue": "Library Hub",
+     "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=11"
+    }
+   ],
+   "conclusion": "",
+   "hearingDays": 0,
+   "types": [
+    "Opening"
+   ],
+   "firstHearing": "2026-10-29",
+   "lastHearing": "2026-10-29",
+   "firstSeen": "2026-11-13T15:38:56Z",
+   "caseUrl": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?query=Nottage"
+  },
+  {
+   "key": "martin-margaret-mary-2026-10-04",
+   "listedName": "MARTIN Margaret Mary",
+   "name": "Margaret Mary Martin",
+   "age": "90 Years",
+   "deathDate": "2026-10-04",
+   "deathRaw": "4 October 2026",
+   "place": "Chigwell, Essex",
+   "hearings": [
+    {
+     "date": "2026-10-29",
+     "time": "10:00",
+     "type": "Opening",
+     "room": "Court Room 3",
+     "venue": "Library Hub",
+     "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=11"
+    }
+   ],
+   "conclusion": "",
+   "hearingDays": 0,
+   "types": [
+    "Opening"
+   ],
+   "firstHearing": "2026-10-29",
+   "lastHearing": "2026-10-29",
+   "firstSeen": "2026-11-13T15:38:56Z",
+   "caseUrl": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?query=Martin"
+  },
+  {
+   "key": "pyne-mark-leonard-2026-10-07",
+   "listedName": "PYNE Mark Leonard",
+   "name": "Mark Leonard Pyne",
+   "age": "64 Years",
+   "deathDate": "2026-10-07",
+   "deathRaw": "7 October 2026",
+   "place": "Leigh-on-Sea, Essex",
+   "hearings": [
+    {
+     "date": "2026-10-29",
+     "time": "10:00",
+     "type": "Opening",
+     "room": "Court Room 3",
+     "venue": "Library Hub",
+     "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=13"
+    }
+   ],
+   "conclusion": "",
+   "hearingDays": 0,
+   "types": [
+    "Opening"
+   ],
+   "firstHearing": "2026-10-29",
+   "lastHearing": "2026-10-29",
+   "firstSeen": "2026-11-13T15:38:56Z",
+   "caseUrl": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?query=Pyne"
+  },
+  {
+   "key": "malcolm-michael-allan-2026-09-22",
+   "listedName": "MALCOLM Michael Allan",
+   "name": "Michael Allan Malcolm",
+   "age": "80 Years",
+   "deathDate": "2026-09-22",
+   "deathRaw": "22 September 2026",
+   "place": "Canvey Island, Essex",
+   "hearings": [
+    {
+     "date": "2026-10-29",
+     "time": "10:00",
+     "type": "Opening",
+     "room": "Court Room 3",
+     "venue": "Library Hub",
+     "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=10"
+    }
+   ],
+   "conclusion": "",
+   "hearingDays": 0,
+   "types": [
+    "Opening"
+   ],
+   "firstHearing": "2026-10-29",
+   "lastHearing": "2026-10-29",
+   "firstSeen": "2026-11-13T15:38:56Z",
+   "caseUrl": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?query=Malcolm"
+  },
+  {
+   "key": "basham-michael-vincent-2026-07-03",
+   "listedName": "BASHAM Michael Vincent",
+   "name": "Michael Vincent Basham",
+   "age": "33 Years",
+   "deathDate": "2026-07-03",
+   "deathRaw": "3 July 2026",
+   "place": "Chelmsford, Essex",
+   "hearings": [
+    {
+     "date": "2026-10-29",
+     "time": "10:00",
+     "type": "Opening",
+     "room": "Court Room 3",
+     "venue": "Library Hub",
+     "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=10"
+    }
+   ],
+   "conclusion": "",
+   "hearingDays": 0,
+   "types": [
+    "Opening"
+   ],
+   "firstHearing": "2026-10-29",
+   "lastHearing": "2026-10-29",
+   "firstSeen": "2026-11-13T15:38:56Z",
+   "caseUrl": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?query=Basham"
+  },
+  {
+   "key": "redden-nancy-hazeldine-2026-09-29",
+   "listedName": "REDDEN Nancy Hazeldine",
+   "name": "Nancy Hazeldine Redden",
+   "age": "97 Years",
+   "deathDate": "2026-09-29",
+   "deathRaw": "29 September 2026",
+   "place": "Cambridge",
+   "hearings": [
+    {
+     "date": "2026-10-29",
+     "time": "10:00",
+     "type": "Opening",
+     "room": "Court Room 3",
+     "venue": "Library Hub",
+     "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=12"
+    }
+   ],
+   "conclusion": "",
+   "hearingDays": 0,
+   "types": [
+    "Opening"
+   ],
+   "firstHearing": "2026-10-29",
+   "lastHearing": "2026-10-29",
+   "firstSeen": "2026-11-13T15:38:56Z",
+   "caseUrl": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?query=Redden"
+  },
+  {
+   "key": "rivers-neil-anthony-2025-08-18",
+   "listedName": "RIVERS Neil Anthony",
+   "name": "Neil Anthony Rivers",
+   "age": "48 Years",
+   "deathDate": "2025-08-18",
+   "deathRaw": "18 August 2025",
+   "place": "Basildon, Essex",
+   "hearings": [
+    {
+     "date": "2026-10-29",
+     "time": "10:00",
+     "type": "Inquest Hearing",
+     "room": "Court Room 2",
+     "venue": "Seax House",
+     "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=9"
+    }
+   ],
+   "conclusion": "",
+   "hearingDays": 1,
+   "types": [
+    "Inquest Hearing"
+   ],
+   "firstHearing": "2026-10-29",
+   "lastHearing": "2026-10-29",
+   "firstSeen": "2026-11-13T15:38:56Z",
+   "caseUrl": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?query=Rivers"
+  },
+  {
+   "key": "feasey-patricia-helen-2026-09-24",
+   "listedName": "FEASEY Patricia Helen",
+   "name": "Patricia Helen Feasey",
+   "age": "78 Years",
+   "deathDate": "2026-09-24",
+   "deathRaw": "24 September 2026",
+   "place": "Westcliff-on-Sea, Essex",
+   "hearings": [
+    {
+     "date": "2026-10-29",
+     "time": "10:00",
+     "type": "Opening",
+     "room": "Court Room 3",
+     "venue": "Library Hub",
+     "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=10"
+    }
+   ],
+   "conclusion": "",
+   "hearingDays": 0,
+   "types": [
+    "Opening"
+   ],
+   "firstHearing": "2026-10-29",
+   "lastHearing": "2026-10-29",
+   "firstSeen": "2026-11-13T15:38:56Z",
+   "caseUrl": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?query=Feasey"
+  },
+  {
+   "key": "barnett-patrick-joseph-2026-09-18",
+   "listedName": "BARNETT Patrick Joseph",
+   "name": "Patrick Joseph Barnett",
+   "age": "78 Years",
+   "deathDate": "2026-09-18",
+   "deathRaw": "18 September 2026",
+   "place": "Colchester, Essex",
+   "hearings": [
+    {
+     "date": "2026-10-29",
+     "time": "10:00",
+     "type": "Opening",
+     "room": "Court Room 3",
+     "venue": "Library Hub",
+     "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=11"
+    }
+   ],
+   "conclusion": "",
+   "hearingDays": 0,
+   "types": [
+    "Opening"
+   ],
+   "firstHearing": "2026-10-29",
+   "lastHearing": "2026-10-29",
+   "firstSeen": "2026-11-13T15:38:56Z",
+   "caseUrl": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?query=Barnett"
+  },
+  {
+   "key": "stiles-paul-2026-08-17",
+   "listedName": "STILES Paul",
+   "name": "Paul Stiles",
+   "age": "49 Years",
+   "deathDate": "2026-08-17",
+   "deathRaw": "17 August 2026",
+   "place": "Basildon, Essex",
+   "hearings": [
+    {
+     "date": "2026-10-29",
+     "time": "10:00",
+     "type": "Opening",
+     "room": "Court Room 3",
+     "venue": "Library Hub",
+     "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=13"
+    }
+   ],
+   "conclusion": "",
+   "hearingDays": 0,
+   "types": [
+    "Opening"
+   ],
+   "firstHearing": "2026-10-29",
+   "lastHearing": "2026-10-29",
+   "firstSeen": "2026-11-13T15:38:56Z",
+   "caseUrl": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?query=Stiles"
+  },
+  {
+   "key": "mathews-paula-edith-2026-10-11",
+   "listedName": "MATHEWS Paula Edith",
+   "name": "Paula Edith Mathews",
+   "age": "92 Years",
+   "deathDate": "2026-10-11",
+   "deathRaw": "11 October 2026",
+   "place": "Colchester, Essex",
+   "hearings": [
+    {
+     "date": "2026-10-29",
+     "time": "10:00",
+     "type": "Opening",
+     "room": "Court Room 3",
+     "venue": "Library Hub",
+     "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=12"
+    }
+   ],
+   "conclusion": "",
+   "hearingDays": 0,
+   "types": [
+    "Opening"
+   ],
+   "firstHearing": "2026-10-29",
+   "lastHearing": "2026-10-29",
+   "firstSeen": "2026-11-13T15:38:56Z",
+   "caseUrl": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?query=Mathews"
+  },
+  {
+   "key": "weeber-pauline-dorothy-2026-09-28",
+   "listedName": "WEEBER Pauline Dorothy",
+   "name": "Pauline Dorothy Weeber",
+   "age": "85 Years",
+   "deathDate": "2026-09-28",
+   "deathRaw": "28 September 2026",
+   "place": "Basildon, Essex",
+   "hearings": [
+    {
+     "date": "2026-10-29",
+     "time": "10:00",
+     "type": "Opening",
+     "room": "Court Room 3",
+     "venue": "Library Hub",
+     "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=11"
+    }
+   ],
+   "conclusion": "",
+   "hearingDays": 0,
+   "types": [
+    "Opening"
+   ],
+   "firstHearing": "2026-10-29",
+   "lastHearing": "2026-10-29",
+   "firstSeen": "2026-11-13T15:38:56Z",
+   "caseUrl": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?query=Weeber"
+  },
+  {
+   "key": "green-peter-james-2026-10-05",
+   "listedName": "GREEN Peter James",
+   "name": "Peter James Green",
+   "age": "45 Years",
+   "deathDate": "2026-10-05",
+   "deathRaw": "5 October 2026",
+   "place": "Great Chesterford, Essex",
+   "hearings": [
+    {
+     "date": "2026-10-29",
+     "time": "10:00",
+     "type": "Opening",
+     "room": "Court Room 3",
+     "venue": "Library Hub",
+     "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=13"
+    }
+   ],
+   "conclusion": "",
+   "hearingDays": 0,
+   "types": [
+    "Opening"
+   ],
+   "firstHearing": "2026-10-29",
+   "lastHearing": "2026-10-29",
+   "firstSeen": "2026-11-13T15:38:56Z",
+   "caseUrl": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?query=Green"
+  },
+  {
+   "key": "quinn-rickie-lee-2026-08-01",
+   "listedName": "QUINN Rickie-Lee",
+   "name": "Rickie-Lee Quinn",
+   "age": "46 Years",
+   "deathDate": "2026-08-01",
+   "deathRaw": "1 August 2026",
+   "place": "Walton-on-the-Naze, Essex",
+   "hearings": [
+    {
+     "date": "2026-10-29",
+     "time": "10:00",
+     "type": "Opening",
+     "room": "Court Room 3",
+     "venue": "Library Hub",
+     "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=12"
+    }
+   ],
+   "conclusion": "",
+   "hearingDays": 0,
+   "types": [
+    "Opening"
+   ],
+   "firstHearing": "2026-10-29",
+   "lastHearing": "2026-10-29",
+   "firstSeen": "2026-11-13T15:38:56Z",
+   "caseUrl": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?query=Quinn"
+  },
+  {
+   "key": "grant-robert-james-2026-10-05",
+   "listedName": "GRANT Robert James",
+   "name": "Robert James Grant",
+   "age": "58 Years",
+   "deathDate": "2026-10-05",
+   "deathRaw": "5 October 2026",
+   "place": "Colchester, Essex",
+   "hearings": [
+    {
+     "date": "2026-10-29",
+     "time": "10:00",
+     "type": "Opening",
+     "room": "Court Room 3",
+     "venue": "Library Hub",
+     "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=10"
+    }
+   ],
+   "conclusion": "",
+   "hearingDays": 0,
+   "types": [
+    "Opening"
+   ],
+   "firstHearing": "2026-10-29",
+   "lastHearing": "2026-10-29",
+   "firstSeen": "2026-11-13T15:38:56Z",
+   "caseUrl": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?query=Grant"
+  },
+  {
+   "key": "harnor-robert-james-2026-08-18",
+   "listedName": "HARNOR Robert James",
+   "name": "Robert James Harnor",
+   "age": "63 Years",
+   "deathDate": "2026-08-18",
+   "deathRaw": "18 August 2026",
+   "place": "Haslemere",
+   "hearings": [
+    {
+     "date": "2026-10-29",
+     "time": "10:00",
+     "type": "Opening",
+     "room": "Court Room 3",
+     "venue": "Library Hub",
+     "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=11"
+    }
+   ],
+   "conclusion": "",
+   "hearingDays": 0,
+   "types": [
+    "Opening"
+   ],
+   "firstHearing": "2026-10-29",
+   "lastHearing": "2026-10-29",
+   "firstSeen": "2026-11-13T15:38:56Z",
+   "caseUrl": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?query=Harnor"
+  },
+  {
+   "key": "lindsey-robert-john-2026-09-28",
+   "listedName": "LINDSEY Robert John",
+   "name": "Robert John Lindsey",
+   "age": "89 Years",
+   "deathDate": "2026-09-28",
+   "deathRaw": "28 September 2026",
+   "place": "Harlow, Essex",
+   "hearings": [
+    {
+     "date": "2026-10-29",
+     "time": "10:00",
+     "type": "Opening",
+     "room": "Court Room 3",
+     "venue": "Library Hub",
+     "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=11"
+    }
+   ],
+   "conclusion": "",
+   "hearingDays": 0,
+   "types": [
+    "Opening"
+   ],
+   "firstHearing": "2026-10-29",
+   "lastHearing": "2026-10-29",
+   "firstSeen": "2026-11-13T15:38:56Z",
+   "caseUrl": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?query=Lindsey"
+  },
+  {
+   "key": "hornblow-stephen-2026-10-14",
+   "listedName": "HORNBLOW Stephen",
+   "name": "Stephen Hornblow",
+   "age": "80 Years",
+   "deathDate": "2026-10-14",
+   "deathRaw": "14 October 2026",
+   "place": "Harlow, Essex",
+   "hearings": [
+    {
+     "date": "2026-10-29",
+     "time": "10:00",
+     "type": "Opening",
+     "room": "Court Room 3",
+     "venue": "Library Hub",
+     "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=11"
+    }
+   ],
+   "conclusion": "",
+   "hearingDays": 0,
+   "types": [
+    "Opening"
+   ],
+   "firstHearing": "2026-10-29",
+   "lastHearing": "2026-10-29",
+   "firstSeen": "2026-11-13T15:38:56Z",
+   "caseUrl": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?query=Hornblow"
+  },
+  {
+   "key": "mcgowan-steven-robert-2026-09-26",
+   "listedName": "MCGOWAN Steven Robert",
+   "name": "Steven Robert Mcgowan",
+   "age": "45 Years",
+   "deathDate": "2026-09-26",
+   "deathRaw": "26 September 2026",
+   "place": "Westcliff-on-Sea, Essex",
+   "hearings": [
+    {
+     "date": "2026-10-29",
+     "time": "10:00",
+     "type": "Opening",
+     "room": "Court Room 3",
+     "venue": "Library Hub",
+     "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=10"
+    }
+   ],
+   "conclusion": "",
+   "hearingDays": 0,
+   "types": [
+    "Opening"
+   ],
+   "firstHearing": "2026-10-29",
+   "lastHearing": "2026-10-29",
+   "firstSeen": "2026-11-13T15:38:56Z",
+   "caseUrl": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?query=Mcgowan"
+  },
+  {
+   "key": "brown-susan-2026-09-17",
+   "listedName": "BROWN Susan",
+   "name": "Susan Brown",
+   "age": "82 Years",
+   "deathDate": "2026-09-17",
+   "deathRaw": "17 September 2026",
+   "place": "Colchester, Essex",
+   "hearings": [
+    {
+     "date": "2026-10-29",
+     "time": "10:00",
+     "type": "Opening",
+     "room": "Court Room 3",
+     "venue": "Library Hub",
+     "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=11"
+    }
+   ],
+   "conclusion": "",
+   "hearingDays": 0,
+   "types": [
+    "Opening"
+   ],
+   "firstHearing": "2026-10-29",
+   "lastHearing": "2026-10-29",
+   "firstSeen": "2026-11-13T15:38:56Z",
+   "caseUrl": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?query=Brown"
+  },
+  {
+   "key": "wood-terence-patrick-2026-08-15",
+   "listedName": "WOOD Terence Patrick",
+   "name": "Terence Patrick Wood",
+   "age": "65 Years",
+   "deathDate": "2026-08-15",
+   "deathRaw": "15 August 2026",
+   "place": "Danbury, Essex",
+   "hearings": [
+    {
+     "date": "2026-10-29",
+     "time": "10:00",
+     "type": "Opening",
+     "room": "Court Room 3",
+     "venue": "Library Hub",
+     "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=12"
+    }
+   ],
+   "conclusion": "",
+   "hearingDays": 0,
+   "types": [
+    "Opening"
+   ],
+   "firstHearing": "2026-10-29",
+   "lastHearing": "2026-10-29",
+   "firstSeen": "2026-11-13T15:38:56Z",
+   "caseUrl": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?query=Wood"
+  },
+  {
+   "key": "schubert-thomas-2026-08-11",
+   "listedName": "SCHUBERT Thomas",
+   "name": "Thomas Schubert",
+   "age": "80 Years",
+   "deathDate": "2026-08-11",
+   "deathRaw": "11 August 2026",
+   "place": "Grays, Essex",
+   "hearings": [
+    {
+     "date": "2026-10-29",
+     "time": "10:00",
+     "type": "Opening",
+     "room": "Court Room 3",
+     "venue": "Library Hub",
+     "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=12"
+    }
+   ],
+   "conclusion": "",
+   "hearingDays": 0,
+   "types": [
+    "Opening"
+   ],
+   "firstHearing": "2026-10-29",
+   "lastHearing": "2026-10-29",
+   "firstSeen": "2026-11-13T15:38:56Z",
+   "caseUrl": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?query=Schubert"
+  },
+  {
+   "key": "ducksbury-valerie-joan-2026-10-11",
+   "listedName": "DUCKSBURY Valerie Joan",
+   "name": "Valerie Joan Ducksbury",
+   "age": "84 Years",
+   "deathDate": "2026-10-11",
+   "deathRaw": "11 October 2026",
+   "place": "Chelmsford, Essex",
+   "hearings": [
+    {
+     "date": "2026-10-29",
+     "time": "10:00",
+     "type": "Opening",
+     "room": "Court Room 3",
+     "venue": "Library Hub",
+     "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=12"
+    }
+   ],
+   "conclusion": "",
+   "hearingDays": 0,
+   "types": [
+    "Opening"
+   ],
+   "firstHearing": "2026-10-29",
+   "lastHearing": "2026-10-29",
+   "firstSeen": "2026-11-13T15:38:56Z",
+   "caseUrl": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?query=Ducksbury"
+  },
+  {
+   "key": "johnston-cassi-juhnee-2025-04-20",
+   "listedName": "JOHNSTON Cassi Juhnee",
+   "name": "Cassi Juhnee Johnston",
+   "age": "Less than 1 day",
+   "deathDate": "2025-04-20",
+   "deathRaw": "20 April 2025",
+   "place": "Basildon, Essex",
+   "hearings": [
+    {
+     "date": "2026-10-30",
+     "time": "10:00",
+     "type": "Inquest Hearing",
+     "room": "Court Room 2",
+     "venue": "Seax House",
+     "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=9"
+    }
+   ],
+   "conclusion": "Narrative Conclusion",
+   "hearingDays": 1,
+   "types": [
+    "Inquest Hearing"
+   ],
+   "firstHearing": "2026-10-30",
+   "lastHearing": "2026-10-30",
+   "firstSeen": "2026-11-13T15:38:56Z",
+   "caseUrl": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?query=Johnston"
+  },
+  {
+   "key": "carter-jake-michael-2026-03-26",
+   "listedName": "CARTER Jake Michael",
+   "name": "Jake Michael Carter",
+   "age": "29 Years",
+   "deathDate": "2026-03-26",
+   "deathRaw": "26 March 2026",
+   "place": "Chelmsford, Essex",
+   "hearings": [
+    {
+     "date": "2026-11-02",
+     "time": "10:00",
+     "type": "Inquest Hearing",
+     "room": "Court Room 2",
+     "venue": "Seax House",
+     "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=9"
+    }
+   ],
+   "conclusion": "Road Traffic Collision",
+   "hearingDays": 1,
+   "types": [
+    "Inquest Hearing"
+   ],
+   "firstHearing": "2026-11-02",
+   "lastHearing": "2026-11-02",
+   "firstSeen": "2026-11-13T15:38:56Z",
+   "caseUrl": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?query=Carter"
+  },
+  {
+   "key": "evans-michael-james-2025-08-31",
+   "listedName": "EVANS Michael James",
+   "name": "Michael James Evans",
+   "age": "67 Years",
+   "deathDate": "2025-08-31",
+   "deathRaw": "31 August 2025",
+   "place": "Saffron Walden, Essex",
+   "hearings": [
+    {
+     "date": "2026-11-02",
+     "time": "10:00",
+     "type": "Inquest Hearing",
+     "room": "Court Room 1",
+     "venue": "Seax House",
+     "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=9"
+    }
+   ],
+   "conclusion": "Narrative Conclusion",
+   "hearingDays": 1,
+   "types": [
+    "Inquest Hearing"
+   ],
+   "firstHearing": "2026-11-02",
+   "lastHearing": "2026-11-02",
+   "firstSeen": "2026-11-13T15:38:56Z",
+   "caseUrl": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?query=Evans"
+  },
+  {
+   "key": "braybrooke-carl-edward-2026-05-06",
+   "listedName": "BRAYBROOKE Carl Edward",
+   "name": "Carl Edward Braybrooke",
+   "age": "33 Years",
+   "deathDate": "2026-05-06",
+   "deathRaw": "6 May 2026",
+   "place": "Dunmow, Essex",
+   "hearings": [
+    {
+     "date": "2026-11-03",
+     "time": "14:00",
+     "type": "Pre Inquest Review",
+     "room": "Court Room 2",
+     "venue": "Seax House",
+     "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=9"
+    }
+   ],
+   "conclusion": "",
+   "hearingDays": 0,
+   "types": [
+    "Pre Inquest Review"
+   ],
+   "firstHearing": "2026-11-03",
+   "lastHearing": "2026-11-03",
+   "firstSeen": "2026-11-13T15:38:56Z",
+   "caseUrl": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?query=Braybrooke"
+  },
+  {
+   "key": "lockwood-coby-john-2026-02-10",
+   "listedName": "LOCKWOOD Coby John",
+   "name": "Coby John Lockwood",
+   "age": "Less than 1 day",
+   "deathDate": "2026-02-10",
+   "deathRaw": "10 February 2026",
+   "place": "Cambridge, Cambridgeshire",
+   "hearings": [
+    {
+     "date": "2026-11-03",
+     "time": "10:00",
+     "type": "Pre Inquest Review",
+     "room": "Court Room 2",
+     "venue": "Seax House",
+     "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=9"
+    }
+   ],
+   "conclusion": "",
+   "hearingDays": 0,
+   "types": [
+    "Pre Inquest Review"
+   ],
+   "firstHearing": "2026-11-03",
+   "lastHearing": "2026-11-03",
+   "firstSeen": "2026-11-13T15:38:56Z",
+   "caseUrl": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?query=Lockwood"
+  },
+  {
+   "key": "moore-andrew-2026-08-23",
+   "listedName": "MOORE Andrew",
+   "name": "Andrew Moore",
+   "age": "50 Years",
+   "deathDate": "2026-08-23",
+   "deathRaw": "23 August 2026",
+   "place": "Clacton-on-Sea, Essex",
+   "hearings": [
+    {
+     "date": "2026-11-04",
+     "time": "09:30",
+     "type": "Opening",
+     "room": "Court Room 1",
+     "venue": "Seax House",
+     "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=7"
+    }
+   ],
+   "conclusion": "",
+   "hearingDays": 0,
+   "types": [
+    "Opening"
+   ],
+   "firstHearing": "2026-11-04",
+   "lastHearing": "2026-11-04",
+   "firstSeen": "2026-11-13T15:38:56Z",
+   "caseUrl": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?query=Moore"
+  },
+  {
+   "key": "batten-angela-2026-10-15",
+   "listedName": "BATTEN Angela",
+   "name": "Angela Batten",
+   "age": "80 Years",
+   "deathDate": "2026-10-15",
+   "deathRaw": "15 October 2026",
+   "place": "Chelmsford, Essex",
+   "hearings": [
+    {
+     "date": "2026-11-04",
+     "time": "09:30",
+     "type": "Opening",
+     "room": "Court Room 1",
+     "venue": "Seax House",
+     "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=8"
+    }
+   ],
+   "conclusion": "",
+   "hearingDays": 0,
+   "types": [
+    "Opening"
+   ],
+   "firstHearing": "2026-11-04",
+   "lastHearing": "2026-11-04",
+   "firstSeen": "2026-11-13T15:38:56Z",
+   "caseUrl": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?query=Batten"
+  },
+  {
+   "key": "smith-bessie-margaret-2026-10-22",
+   "listedName": "SMITH Bessie Margaret",
+   "name": "Bessie Margaret Smith",
+   "age": "93 Years",
+   "deathDate": "2026-10-22",
+   "deathRaw": "22 October 2026",
+   "place": "Chelmsford, Essex",
+   "hearings": [
+    {
+     "date": "2026-11-04",
+     "time": "09:30",
+     "type": "Opening",
+     "room": "Court Room 1",
+     "venue": "Seax House",
+     "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=8"
+    }
+   ],
+   "conclusion": "",
+   "hearingDays": 0,
+   "types": [
+    "Opening"
+   ],
+   "firstHearing": "2026-11-04",
+   "lastHearing": "2026-11-04",
+   "firstSeen": "2026-11-13T15:38:56Z",
+   "caseUrl": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?query=Smith"
+  },
+  {
+   "key": "douglas-bryce-2026-10-09",
+   "listedName": "DOUGLAS Bryce",
+   "name": "Bryce Douglas",
+   "age": "1 Hour",
+   "deathDate": "2026-10-09",
+   "deathRaw": "9 October 2026",
+   "place": "Harlow, Essex",
+   "hearings": [
+    {
+     "date": "2026-11-04",
+     "time": "12:50",
+     "type": "Opening Documentary",
+     "room": "Court Room 1",
+     "venue": "Seax House",
+     "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=8"
+    }
+   ],
+   "conclusion": "Narrative Conclusion",
+   "hearingDays": 0,
+   "types": [
+    "Opening Documentary"
+   ],
+   "firstHearing": "2026-11-04",
+   "lastHearing": "2026-11-04",
+   "firstSeen": "2026-11-13T15:38:56Z",
+   "caseUrl": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?query=Douglas"
+  },
+  {
+   "key": "langham-christine-2026-10-15",
+   "listedName": "LANGHAM Christine",
+   "name": "Christine Langham",
+   "age": "92 Years",
+   "deathDate": "2026-10-15",
+   "deathRaw": "15 October 2026",
+   "place": "Chelmsford, Essex",
+   "hearings": [
+    {
+     "date": "2026-11-04",
+     "time": "09:30",
+     "type": "Opening",
+     "room": "Court Room 1",
+     "venue": "Seax House",
+     "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=7"
+    }
+   ],
+   "conclusion": "",
+   "hearingDays": 0,
+   "types": [
+    "Opening"
+   ],
+   "firstHearing": "2026-11-04",
+   "lastHearing": "2026-11-04",
+   "firstSeen": "2026-11-13T15:38:56Z",
+   "caseUrl": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?query=Langham"
+  },
+  {
+   "key": "edwards-clive-robert-2025-12-31",
+   "listedName": "EDWARDS Clive Robert",
+   "name": "Clive Robert Edwards",
+   "age": "58 Years",
+   "deathDate": "2025-12-31",
+   "deathRaw": "31 December 2025",
+   "place": "Ingatestone, Essex",
+   "hearings": [
+    {
+     "date": "2026-11-04",
+     "time": "09:30",
+     "type": "Documentary",
+     "room": "Court Room 1",
+     "venue": "Seax House",
+     "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=9"
+    }
+   ],
+   "conclusion": "Suicide",
+   "hearingDays": 0,
+   "types": [
+    "Documentary"
+   ],
+   "firstHearing": "2026-11-04",
+   "lastHearing": "2026-11-04",
+   "firstSeen": "2026-11-13T15:38:56Z",
+   "caseUrl": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?query=Edwards"
+  },
+  {
+   "key": "drew-david-thomas-2026-06-03",
+   "listedName": "DREW David Thomas",
+   "name": "David Thomas Drew",
+   "age": "82 Years",
+   "deathDate": "2026-06-03",
+   "deathRaw": "3 June 2026",
+   "place": "Basildon, Essex",
+   "hearings": [
+    {
+     "date": "2026-11-04",
+     "time": "09:30",
+     "type": "Opening",
+     "room": "Court Room 1",
+     "venue": "Seax House",
+     "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=8"
+    }
+   ],
+   "conclusion": "",
+   "hearingDays": 0,
+   "types": [
+    "Opening"
+   ],
+   "firstHearing": "2026-11-04",
+   "lastHearing": "2026-11-04",
+   "firstSeen": "2026-11-13T15:38:56Z",
+   "caseUrl": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?query=Drew"
+  },
+  {
+   "key": "skinner-denise-rosetta-2026-10-10",
+   "listedName": "SKINNER Denise Rosetta",
+   "name": "Denise Rosetta Skinner",
+   "age": "74 Years",
+   "deathDate": "2026-10-10",
+   "deathRaw": "10 October 2026",
+   "place": "Benfleet, Essex",
+   "hearings": [
+    {
+     "date": "2026-11-04",
+     "time": "09:30",
+     "type": "Opening",
+     "room": "Court Room 1",
+     "venue": "Seax House",
+     "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=8"
+    }
+   ],
+   "conclusion": "",
+   "hearingDays": 0,
+   "types": [
+    "Opening"
+   ],
+   "firstHearing": "2026-11-04",
+   "lastHearing": "2026-11-04",
+   "firstSeen": "2026-11-13T15:38:56Z",
+   "caseUrl": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?query=Skinner"
+  },
+  {
+   "key": "wiggins-harry-2026-10-12",
+   "listedName": "WIGGINS Harry",
+   "name": "Harry Wiggins",
+   "age": "83 Years",
+   "deathDate": "2026-10-12",
+   "deathRaw": "12 October 2026",
+   "place": "Chelmsford, Essex",
+   "hearings": [
+    {
+     "date": "2026-11-04",
+     "time": "09:30",
+     "type": "Opening",
+     "room": "Court Room 1",
+     "venue": "Seax House",
+     "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=8"
+    }
+   ],
+   "conclusion": "",
+   "hearingDays": 0,
+   "types": [
+    "Opening"
+   ],
+   "firstHearing": "2026-11-04",
+   "lastHearing": "2026-11-04",
+   "firstSeen": "2026-11-13T15:38:56Z",
+   "caseUrl": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?query=Wiggins"
+  },
+  {
+   "key": "whellams-joan-patricia-2026-10-17",
+   "listedName": "WHELLAMS Joan Patricia",
+   "name": "Joan Patricia Whellams",
+   "age": "88 Years",
+   "deathDate": "2026-10-17",
+   "deathRaw": "17 October 2026",
+   "place": "Harlow, Essex",
+   "hearings": [
+    {
+     "date": "2026-11-04",
+     "time": "09:30",
+     "type": "Opening",
+     "room": "Court Room 1",
+     "venue": "Seax House",
+     "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=8"
+    }
+   ],
+   "conclusion": "",
+   "hearingDays": 0,
+   "types": [
+    "Opening"
+   ],
+   "firstHearing": "2026-11-04",
+   "lastHearing": "2026-11-04",
+   "firstSeen": "2026-11-13T15:38:56Z",
+   "caseUrl": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?query=Whellams"
+  },
+  {
+   "key": "perry-kenneth-edgar-george-2026-05-16",
+   "listedName": "PERRY Kenneth Edgar George",
+   "name": "Kenneth Edgar George Perry",
+   "age": "91 Years",
+   "deathDate": "2026-05-16",
+   "deathRaw": "16 May 2026",
+   "place": "Southend-on-Sea, Essex",
+   "hearings": [
+    {
+     "date": "2026-11-04",
+     "time": "09:30",
+     "type": "Opening",
+     "room": "Court Room 1",
+     "venue": "Seax House",
+     "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=7"
+    }
+   ],
+   "conclusion": "",
+   "hearingDays": 0,
+   "types": [
+    "Opening"
+   ],
+   "firstHearing": "2026-11-04",
+   "lastHearing": "2026-11-04",
+   "firstSeen": "2026-11-13T15:38:56Z",
+   "caseUrl": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?query=Perry"
+  },
+  {
+   "key": "staines-margaret-lillian-2026-10-12",
+   "listedName": "STAINES Margaret Lillian",
+   "name": "Margaret Lillian Staines",
+   "age": "87 Years",
+   "deathDate": "2026-10-12",
+   "deathRaw": "12 October 2026",
+   "place": "Westcliff-on-Sea, Essex",
+   "hearings": [
+    {
+     "date": "2026-11-04",
+     "time": "09:30",
+     "type": "Opening",
+     "room": "Court Room 1",
+     "venue": "Seax House",
+     "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=7"
+    }
+   ],
+   "conclusion": "",
+   "hearingDays": 0,
+   "types": [
+    "Opening"
+   ],
+   "firstHearing": "2026-11-04",
+   "lastHearing": "2026-11-04",
+   "firstSeen": "2026-11-13T15:38:56Z",
+   "caseUrl": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?query=Staines"
+  },
+  {
+   "key": "stiff-marian-elizabeth-2026-10-11",
+   "listedName": "STIFF Marian Elizabeth",
+   "name": "Marian Elizabeth Stiff",
+   "age": "80 Years",
+   "deathDate": "2026-10-11",
+   "deathRaw": "11 October 2026",
+   "place": "Walton on the Naze, Essex",
+   "hearings": [
+    {
+     "date": "2026-11-04",
+     "time": "09:30",
+     "type": "Opening",
+     "room": "Court Room 1",
+     "venue": "Seax House",
+     "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=7"
+    }
+   ],
+   "conclusion": "",
+   "hearingDays": 0,
+   "types": [
+    "Opening"
+   ],
+   "firstHearing": "2026-11-04",
+   "lastHearing": "2026-11-04",
+   "firstSeen": "2026-11-13T15:38:56Z",
+   "caseUrl": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?query=Stiff"
+  },
+  {
+   "key": "wood-patricia-olwen-2026-10-22",
+   "listedName": "WOOD Patricia Olwen",
+   "name": "Patricia Olwen Wood",
+   "age": "97 Years",
+   "deathDate": "2026-10-22",
+   "deathRaw": "22 October 2026",
+   "place": "Harlow, Essex",
+   "hearings": [
+    {
+     "date": "2026-11-04",
+     "time": "09:30",
+     "type": "Opening",
+     "room": "Court Room 1",
+     "venue": "Seax House",
+     "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=8"
+    }
+   ],
+   "conclusion": "",
+   "hearingDays": 0,
+   "types": [
+    "Opening"
+   ],
+   "firstHearing": "2026-11-04",
+   "lastHearing": "2026-11-04",
+   "firstSeen": "2026-11-13T15:38:56Z",
+   "caseUrl": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?query=Wood"
+  },
+  {
+   "key": "cosh-peter-alan-frederick-2026-10-06",
+   "listedName": "COSH Peter Alan Frederick",
+   "name": "Peter Alan Frederick Cosh",
+   "age": "89 Years",
+   "deathDate": "2026-10-06",
+   "deathRaw": "6 October 2026",
+   "place": "Westcliff-on-Sea, Essex",
+   "hearings": [
+    {
+     "date": "2026-11-04",
+     "time": "09:30",
+     "type": "Opening",
+     "room": "Court Room 1",
+     "venue": "Seax House",
+     "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=7"
+    }
+   ],
+   "conclusion": "",
+   "hearingDays": 0,
+   "types": [
+    "Opening"
+   ],
+   "firstHearing": "2026-11-04",
+   "lastHearing": "2026-11-04",
+   "firstSeen": "2026-11-13T15:38:56Z",
+   "caseUrl": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?query=Cosh"
+  },
+  {
+   "key": "howell-richard-james-2026-10-01",
+   "listedName": "HOWELL Richard James",
+   "name": "Richard James Howell",
+   "age": "83 Years",
+   "deathDate": "2026-10-01",
+   "deathRaw": "1 October 2026",
+   "place": "Grays, Essex",
+   "hearings": [
+    {
+     "date": "2026-11-04",
+     "time": "09:30",
+     "type": "Opening",
+     "room": "Court Room 1",
+     "venue": "Seax House",
+     "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=8"
+    }
+   ],
+   "conclusion": "",
+   "hearingDays": 0,
+   "types": [
+    "Opening"
+   ],
+   "firstHearing": "2026-11-04",
+   "lastHearing": "2026-11-04",
+   "firstSeen": "2026-11-13T15:38:56Z",
+   "caseUrl": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?query=Howell"
+  },
+  {
+   "key": "gallagher-robert-john-2025-12-14",
+   "listedName": "GALLAGHER Robert John",
+   "name": "Robert John Gallagher",
+   "age": "59 Years",
+   "deathDate": "2025-12-14",
+   "deathRaw": "14 December 2025",
+   "place": "Weeley, Essex",
+   "hearings": [
+    {
+     "date": "2026-11-04",
+     "time": "13:00",
+     "type": "Inquest Hearing",
+     "room": "Court Room 1",
+     "venue": "Seax House",
+     "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=9"
+    }
+   ],
+   "conclusion": "Suicide",
+   "hearingDays": 1,
+   "types": [
+    "Inquest Hearing"
+   ],
+   "firstHearing": "2026-11-04",
+   "lastHearing": "2026-11-04",
+   "firstSeen": "2026-11-13T15:38:56Z",
+   "caseUrl": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?query=Gallagher"
+  },
+  {
+   "key": "puncher-valerie-anne-2025-08-07",
+   "listedName": "PUNCHER Valerie Anne",
+   "name": "Valerie Anne Puncher",
+   "age": "84 Years",
+   "deathDate": "2025-08-07",
+   "deathRaw": "7 August 2025",
+   "place": "Westcliff-on-Sea, Essex",
+   "hearings": [
+    {
+     "date": "2026-11-04",
+     "time": "10:00",
+     "type": "Inquest Hearing",
+     "room": "Court Room 2",
+     "venue": "Seax House",
+     "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=8"
+    }
+   ],
+   "conclusion": "Narrative Conclusion",
+   "hearingDays": 1,
+   "types": [
+    "Inquest Hearing"
+   ],
+   "firstHearing": "2026-11-04",
+   "lastHearing": "2026-11-04",
+   "firstSeen": "2026-11-13T15:38:56Z",
+   "caseUrl": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?query=Puncher"
+  },
+  {
+   "key": "north-dean-william-2025-03-04",
+   "listedName": "NORTH Dean William",
+   "name": "Dean William North",
+   "age": "62 Years",
+   "deathDate": "2025-03-04",
+   "deathRaw": "4 March 2025",
+   "place": "Colchester, Essex",
+   "hearings": [
+    {
+     "date": "2026-11-05",
+     "time": "14:00",
+     "type": "Pre Inquest Review",
+     "room": "Court Room 2",
+     "venue": "Seax House",
+     "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=7"
+    }
+   ],
+   "conclusion": "",
+   "hearingDays": 0,
+   "types": [
+    "Pre Inquest Review"
+   ],
+   "firstHearing": "2026-11-05",
+   "lastHearing": "2026-11-05",
+   "firstSeen": "2026-11-13T15:38:56Z",
+   "caseUrl": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?query=North"
+  },
+  {
+   "key": "jerram-edward-james-2025-05-07",
+   "listedName": "JERRAM Edward James",
+   "name": "Edward James Jerram",
+   "age": "26 Years",
+   "deathDate": "2025-05-07",
+   "deathRaw": "7 May 2025",
+   "place": "Ongar, Essex",
+   "hearings": [
+    {
+     "date": "2026-11-05",
+     "time": "10:00",
+     "type": "Pre Inquest Review",
+     "room": "Court Room 2",
+     "venue": "Seax House",
+     "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=7"
+    }
+   ],
+   "conclusion": "",
+   "hearingDays": 0,
+   "types": [
+    "Pre Inquest Review"
+   ],
+   "firstHearing": "2026-11-05",
+   "lastHearing": "2026-11-05",
+   "firstSeen": "2026-11-13T15:38:56Z",
+   "caseUrl": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?query=Jerram"
+  },
+  {
+   "key": "jackson-lee-andrew-2026-10-14",
+   "listedName": "JACKSON Lee Andrew",
+   "name": "Lee Andrew Jackson",
+   "age": "40 Years",
+   "deathDate": "2026-10-14",
+   "deathRaw": "14 October 2026",
+   "place": "Clacton-on-Sea, Essex",
+   "hearings": [
+    {
+     "date": "2026-11-05",
+     "time": "09:30",
+     "type": "Opening",
+     "room": "Court Room 1",
+     "venue": "Seax House",
+     "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=7"
+    }
+   ],
+   "conclusion": "",
+   "hearingDays": 0,
+   "types": [
+    "Opening"
+   ],
+   "firstHearing": "2026-11-05",
+   "lastHearing": "2026-11-05",
+   "firstSeen": "2026-11-13T15:38:56Z",
+   "caseUrl": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?query=Jackson"
+  },
+  {
+   "key": "sinnott-morgan-daisy-2026-06-24",
+   "listedName": "SINNOTT Morgan Daisy",
+   "name": "Morgan Daisy Sinnott",
+   "age": "28 Years",
+   "deathDate": "2026-06-24",
+   "deathRaw": "24 June 2026",
+   "place": "Waltham Abbey, Essex",
+   "hearings": [
+    {
+     "date": "2026-11-05",
+     "time": "09:30",
+     "type": "Opening",
+     "room": "Court Room 1",
+     "venue": "Seax House",
+     "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=6"
+    }
+   ],
+   "conclusion": "",
+   "hearingDays": 0,
+   "types": [
+    "Opening"
+   ],
+   "firstHearing": "2026-11-05",
+   "lastHearing": "2026-11-05",
+   "firstSeen": "2026-11-13T15:38:56Z",
+   "caseUrl": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?query=Sinnott"
+  },
+  {
+   "key": "essa-yousef-2025-04-11",
+   "listedName": "ESSA Yousef",
+   "name": "Yousef Essa",
+   "age": "17 Years",
+   "deathDate": "2025-04-11",
+   "deathRaw": "11 April 2025",
+   "place": "Basildon, Essex",
+   "hearings": [
+    {
+     "date": "2026-11-05",
+     "time": "10:00",
+     "type": "Inquest Hearing",
+     "room": "Court Room 1",
+     "venue": "Seax House",
+     "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=7"
+    }
+   ],
+   "conclusion": "Narrative Conclusion",
+   "hearingDays": 1,
+   "types": [
+    "Inquest Hearing"
+   ],
+   "firstHearing": "2026-11-05",
+   "lastHearing": "2026-11-05",
+   "firstSeen": "2026-11-13T15:38:56Z",
+   "caseUrl": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?query=Essa"
+  },
+  {
+   "key": "collins-jones-katie-lauren-2025-03-29",
+   "listedName": "COLLINS-JONES Katie Lauren",
+   "name": "Katie Lauren Collins-Jones",
+   "age": "21 Years",
+   "deathDate": "2025-03-29",
+   "deathRaw": "29 March 2025",
+   "place": "Colchester, Essex",
+   "hearings": [
+    {
+     "date": "2026-11-06",
+     "time": "12:30",
+     "type": "Pre Inquest Review",
+     "room": "Court Room 1",
+     "venue": "Seax House",
+     "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=6"
+    }
+   ],
+   "conclusion": "",
+   "hearingDays": 0,
+   "types": [
+    "Pre Inquest Review"
+   ],
+   "firstHearing": "2026-11-06",
+   "lastHearing": "2026-11-06",
+   "firstSeen": "2026-11-13T15:38:56Z",
+   "caseUrl": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?query=Collins-Jones"
+  },
+  {
+   "key": "hardy-olivia-ann-2026-02-22",
+   "listedName": "HARDY Olivia Ann",
+   "name": "Olivia Ann Hardy",
+   "age": "14 Years",
+   "deathDate": "2026-02-22",
+   "deathRaw": "22 February 2026",
+   "place": "Harlow, Essex",
+   "hearings": [
+    {
+     "date": "2026-11-06",
+     "time": "10:00",
+     "type": "Inquest Hearing",
+     "room": "Court Room 3",
+     "venue": "Library Hub",
+     "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=6"
+    }
+   ],
+   "conclusion": "Drug related",
+   "hearingDays": 1,
+   "types": [
+    "Inquest Hearing"
+   ],
+   "firstHearing": "2026-11-06",
+   "lastHearing": "2026-11-06",
+   "firstSeen": "2026-11-13T15:38:56Z",
+   "caseUrl": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?query=Hardy"
+  },
+  {
+   "key": "moore-romilly-rose-2026-01-22",
+   "listedName": "MOORE Romilly Rose",
+   "name": "Romilly Rose Moore",
+   "age": "Less than 1 day",
+   "deathDate": "2026-01-22",
+   "deathRaw": "22 January 2026",
+   "place": "Colchester, Essex",
+   "hearings": [
+    {
+     "date": "2026-11-06",
+     "time": "10:00",
+     "type": "Pre Inquest Review",
+     "room": "Court Room 1",
+     "venue": "Seax House",
+     "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=6"
+    }
+   ],
+   "conclusion": "",
+   "hearingDays": 0,
+   "types": [
+    "Pre Inquest Review"
+   ],
+   "firstHearing": "2026-11-06",
+   "lastHearing": "2026-11-06",
+   "firstSeen": "2026-11-13T15:38:56Z",
+   "caseUrl": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?query=Moore"
+  },
+  {
+   "key": "collier-thomas-young-2026-01-12",
+   "listedName": "COLLIER Thomas Young",
+   "name": "Thomas Young Collier",
+   "age": "79 Years",
+   "deathDate": "2026-01-12",
+   "deathRaw": "12 January 2026",
+   "place": "Chelmsford, Essex",
+   "hearings": [
+    {
+     "date": "2026-11-06",
+     "time": "10:00",
+     "type": "Inquest Hearing",
+     "room": "Court Room 2",
+     "venue": "Seax House",
+     "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=6"
+    }
+   ],
+   "conclusion": "Natural causes",
+   "hearingDays": 1,
+   "types": [
+    "Inquest Hearing"
+   ],
+   "firstHearing": "2026-11-06",
+   "lastHearing": "2026-11-06",
+   "firstSeen": "2026-11-13T15:38:56Z",
+   "caseUrl": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?query=Collier"
+  },
+  {
+   "key": "roxx-gazzy-2026-02-08",
+   "listedName": "ROXX Gazzy",
+   "name": "Gazzy Roxx",
+   "age": "42 Years",
+   "deathDate": "2026-02-08",
+   "deathRaw": "8 February 2026",
+   "place": "Harlow, Essex",
+   "hearings": [
+    {
+     "date": "2026-11-09",
+     "time": "10:00",
+     "type": "Documentary",
+     "room": "Court Room 2",
+     "venue": "Seax House",
+     "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=6"
+    }
+   ],
+   "conclusion": "Suicide",
+   "hearingDays": 0,
+   "types": [
+    "Documentary"
+   ],
+   "firstHearing": "2026-11-09",
+   "lastHearing": "2026-11-09",
+   "firstSeen": "2026-11-13T15:38:56Z",
+   "caseUrl": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?query=Roxx"
+  },
+  {
+   "key": "cant-louise-anne-2025-11-09",
+   "listedName": "CANT Louise Anne",
+   "name": "Louise Anne Cant",
+   "age": "43 Years",
+   "deathDate": "2025-11-09",
+   "deathRaw": "9 November 2025",
+   "place": "Rochford, Essex",
+   "hearings": [
+    {
+     "date": "2026-11-09",
+     "time": "10:00",
+     "type": "Inquest Hearing",
+     "room": "Court Room 1",
+     "venue": "Seax House",
+     "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=6"
+    },
+    {
+     "date": "2026-11-10",
+     "time": "10:00",
+     "type": "Inquest Hearing",
+     "room": "Court Room 1",
+     "venue": "Seax House",
+     "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=5"
+    },
+    {
+     "date": "2026-11-11",
+     "time": "10:00",
+     "type": "Inquest Hearing",
+     "room": "Court Room 1",
+     "venue": "Seax House",
+     "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=5"
+    },
+    {
+     "date": "2026-11-12",
+     "time": "10:00",
+     "type": "Inquest Hearing",
+     "room": "Court Room 1",
+     "venue": "Seax House",
+     "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=5"
+    }
+   ],
+   "conclusion": "Narrative Conclusion",
+   "hearingDays": 4,
+   "types": [
+    "Inquest Hearing"
+   ],
+   "firstHearing": "2026-11-09",
+   "lastHearing": "2026-11-12",
+   "firstSeen": "2026-11-13T15:38:56Z",
+   "caseUrl": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?query=Cant"
+  },
+  {
+   "key": "moore-luke-patrick-2026-02-13",
+   "listedName": "MOORE Luke Patrick",
+   "name": "Luke Patrick Moore",
+   "age": "22 Years",
+   "deathDate": "2026-02-13",
+   "deathRaw": "13 February 2026",
+   "place": "Benfleet, Essex",
+   "hearings": [
+    {
+     "date": "2026-11-09",
+     "time": "11:30",
+     "type": "Pre Inquest Review",
+     "room": "Court Room 2",
+     "venue": "Seax House",
+     "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=6"
+    }
+   ],
+   "conclusion": "",
+   "hearingDays": 0,
+   "types": [
+    "Pre Inquest Review"
+   ],
+   "firstHearing": "2026-11-09",
+   "lastHearing": "2026-11-09",
+   "firstSeen": "2026-11-13T15:38:56Z",
+   "caseUrl": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?query=Moore"
+  },
+  {
+   "key": "higgins-william-james-2025-09-17",
+   "listedName": "HIGGINS William James",
+   "name": "William James Higgins",
+   "age": "85 Years",
+   "deathDate": "2025-09-17",
+   "deathRaw": "17 September 2025",
+   "place": "Basildon, Essex",
+   "hearings": [
+    {
+     "date": "2026-11-09",
+     "time": "10:00",
+     "type": "Inquest Hearing",
+     "room": "Court Room 3",
+     "venue": "Library Hub",
+     "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=6"
+    },
+    {
+     "date": "2026-11-10",
+     "time": "10:00",
+     "type": "Inquest Hearing",
+     "room": "Court Room 2",
+     "venue": "Seax House",
+     "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=6"
+    }
+   ],
+   "conclusion": "Narrative Conclusion",
+   "hearingDays": 2,
+   "types": [
+    "Inquest Hearing"
+   ],
+   "firstHearing": "2026-11-09",
+   "lastHearing": "2026-11-10",
+   "firstSeen": "2026-11-13T15:38:56Z",
+   "caseUrl": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?query=Higgins"
+  },
+  {
+   "key": "hammond-bryan-anthony-2026-10-28",
+   "listedName": "HAMMOND Bryan Anthony",
+   "name": "Bryan Anthony Hammond",
+   "age": "85 Years",
+   "deathDate": "2026-10-28",
+   "deathRaw": "28 October 2026",
+   "place": "Harlow, Essex",
+   "hearings": [
+    {
+     "date": "2026-11-13",
+     "time": "09:30",
+     "type": "Opening",
+     "room": "Court Room 2",
+     "venue": "Seax House",
+     "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=5"
+    }
+   ],
+   "conclusion": "",
+   "hearingDays": 0,
+   "types": [
+    "Opening"
+   ],
+   "firstHearing": "2026-11-13",
+   "lastHearing": "2026-11-13",
+   "firstSeen": "2026-11-13T15:38:56Z",
+   "caseUrl": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?query=Hammond"
+  },
+  {
+   "key": "herbert-charlene-marie-2026-07-04",
+   "listedName": "HERBERT Charlene Marie",
+   "name": "Charlene Marie Herbert",
+   "age": "41 Years",
+   "deathDate": "2026-07-04",
+   "deathRaw": "4 July 2026",
+   "place": "Basildon, Essex",
+   "hearings": [
+    {
+     "date": "2026-11-13",
+     "time": "09:30",
+     "type": "Opening",
+     "room": "Court Room 2",
+     "venue": "Seax House",
+     "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=4"
+    }
+   ],
+   "conclusion": "",
+   "hearingDays": 0,
+   "types": [
+    "Opening"
+   ],
+   "firstHearing": "2026-11-13",
+   "lastHearing": "2026-11-13",
+   "firstSeen": "2026-11-13T15:38:56Z",
+   "caseUrl": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?query=Herbert"
+  },
+  {
+   "key": "majewska-claire-denise-2026-10-12",
+   "listedName": "MAJEWSKA Claire Denise",
+   "name": "Claire Denise Majewska",
+   "age": "33 Years",
+   "deathDate": "2026-10-12",
+   "deathRaw": "12 October 2026",
+   "place": "Colchester, Essex",
+   "hearings": [
+    {
+     "date": "2026-11-13",
+     "time": "09:30",
+     "type": "Opening",
+     "room": "Court Room 2",
+     "venue": "Seax House",
+     "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=3"
+    }
+   ],
+   "conclusion": "",
+   "hearingDays": 0,
+   "types": [
+    "Opening"
+   ],
+   "firstHearing": "2026-11-13",
+   "lastHearing": "2026-11-13",
+   "firstSeen": "2026-11-13T15:38:56Z",
+   "caseUrl": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?query=Majewska"
+  },
+  {
+   "key": "mason-colin-2025-12-30",
+   "listedName": "MASON Colin",
+   "name": "Colin Mason",
+   "age": "58 Years",
+   "deathDate": "2025-12-30",
+   "deathRaw": "30 December 2025",
+   "place": "Brentwood, Essex",
+   "hearings": [
+    {
+     "date": "2026-11-13",
+     "time": "09:30",
+     "type": "Opening",
+     "room": "Court Room 2",
+     "venue": "Seax House",
+     "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=4"
+    }
+   ],
+   "conclusion": "",
+   "hearingDays": 0,
+   "types": [
+    "Opening"
+   ],
+   "firstHearing": "2026-11-13",
+   "lastHearing": "2026-11-13",
+   "firstSeen": "2026-11-13T15:38:56Z",
+   "caseUrl": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?query=Mason"
+  },
+  {
+   "key": "packer-david-edward-2026-10-18",
+   "listedName": "PACKER David Edward",
+   "name": "David Edward Packer",
+   "age": "65 Years",
+   "deathDate": "2026-10-18",
+   "deathRaw": "18 October 2026",
+   "place": "Basildon, Essex",
+   "hearings": [
+    {
+     "date": "2026-11-13",
+     "time": "09:30",
+     "type": "Opening",
+     "room": "Court Room 2",
+     "venue": "Seax House",
+     "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=4"
+    }
+   ],
+   "conclusion": "",
+   "hearingDays": 0,
+   "types": [
+    "Opening"
+   ],
+   "firstHearing": "2026-11-13",
+   "lastHearing": "2026-11-13",
+   "firstSeen": "2026-11-13T15:38:56Z",
+   "caseUrl": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?query=Packer"
+  },
+  {
+   "key": "mccullough-derek-albert-philip-2025-11-24",
+   "listedName": "MCCULLOUGH Derek Albert Philip",
+   "name": "Derek Albert Philip Mccullough",
+   "age": "64 Years",
+   "deathDate": "2025-11-24",
+   "deathRaw": "24 November 2025",
+   "place": "Romford, Essex",
+   "hearings": [
+    {
+     "date": "2026-11-13",
+     "time": "10:00",
+     "type": "Pre Inquest Review",
+     "room": "Court Room 2",
+     "venue": "Seax House",
+     "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=2"
+    }
+   ],
+   "conclusion": "",
+   "hearingDays": 0,
+   "types": [
+    "Pre Inquest Review"
+   ],
+   "firstHearing": "2026-11-13",
+   "lastHearing": "2026-11-13",
+   "firstSeen": "2026-11-13T15:38:56Z",
+   "caseUrl": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?query=Mccullough"
+  },
+  {
+   "key": "patel-dilesh-2026-07-02",
+   "listedName": "PATEL Dilesh",
+   "name": "Dilesh Patel",
+   "age": "46 Years",
+   "deathDate": "2026-07-02",
+   "deathRaw": "2 July 2026",
+   "place": "Ongar, Essex",
+   "hearings": [
+    {
+     "date": "2026-11-13",
+     "time": "09:30",
+     "type": "Opening",
+     "room": "Court Room 2",
+     "venue": "Seax House",
+     "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=3"
+    }
+   ],
+   "conclusion": "",
+   "hearingDays": 0,
+   "types": [
+    "Opening"
+   ],
+   "firstHearing": "2026-11-13",
+   "lastHearing": "2026-11-13",
+   "firstSeen": "2026-11-13T15:38:56Z",
+   "caseUrl": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?query=Patel"
+  },
+  {
+   "key": "haggar-dilys-2026-10-23",
+   "listedName": "HAGGAR Dilys",
+   "name": "Dilys Haggar",
+   "age": "86 Years",
+   "deathDate": "2026-10-23",
+   "deathRaw": "23 October 2026",
+   "place": "Westcliff-on-Sea, Essex",
+   "hearings": [
+    {
+     "date": "2026-11-13",
+     "time": "09:30",
+     "type": "Opening",
+     "room": "Court Room 2",
+     "venue": "Seax House",
+     "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=5"
+    }
+   ],
+   "conclusion": "",
+   "hearingDays": 0,
+   "types": [
+    "Opening"
+   ],
+   "firstHearing": "2026-11-13",
+   "lastHearing": "2026-11-13",
+   "firstSeen": "2026-11-13T15:38:56Z",
+   "caseUrl": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?query=Haggar"
+  },
+  {
+   "key": "douglas-eileen-maud-2026-10-23",
+   "listedName": "DOUGLAS Eileen Maud",
+   "name": "Eileen Maud Douglas",
+   "age": "91 Years",
+   "deathDate": "2026-10-23",
+   "deathRaw": "23 October 2026",
+   "place": "Chelmsford, Essex",
+   "hearings": [
+    {
+     "date": "2026-11-13",
+     "time": "09:30",
+     "type": "Opening",
+     "room": "Court Room 2",
+     "venue": "Seax House",
+     "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=4"
+    }
+   ],
+   "conclusion": "",
+   "hearingDays": 0,
+   "types": [
+    "Opening"
+   ],
+   "firstHearing": "2026-11-13",
+   "lastHearing": "2026-11-13",
+   "firstSeen": "2026-11-13T15:38:56Z",
+   "caseUrl": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?query=Douglas"
+  },
+  {
+   "key": "montague-fiona-mary-2026-07-16",
+   "listedName": "MONTAGUE Fiona Mary",
+   "name": "Fiona Mary Montague",
+   "age": "55 Years",
+   "deathDate": "2026-07-16",
+   "deathRaw": "16 July 2026",
+   "place": "Buckhurst Hill, Essex",
+   "hearings": [
+    {
+     "date": "2026-11-13",
+     "time": "09:30",
+     "type": "Opening",
+     "room": "Court Room 2",
+     "venue": "Seax House",
+     "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=3"
+    }
+   ],
+   "conclusion": "",
+   "hearingDays": 0,
+   "types": [
+    "Opening"
+   ],
+   "firstHearing": "2026-11-13",
+   "lastHearing": "2026-11-13",
+   "firstSeen": "2026-11-13T15:38:56Z",
+   "caseUrl": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?query=Montague"
+  },
+  {
+   "key": "webster-fredrick-herbert-2026-08-17",
+   "listedName": "WEBSTER Fredrick Herbert",
+   "name": "Fredrick Herbert Webster",
+   "age": "82 Years",
+   "deathDate": "2026-08-17",
+   "deathRaw": "17 August 2026",
+   "place": "Frinton-on-Sea, Essex",
+   "hearings": [
+    {
+     "date": "2026-11-13",
+     "time": "09:30",
+     "type": "Opening",
+     "room": "Court Room 2",
+     "venue": "Seax House",
+     "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=3"
+    }
+   ],
+   "conclusion": "",
+   "hearingDays": 0,
+   "types": [
+    "Opening"
+   ],
+   "firstHearing": "2026-11-13",
+   "lastHearing": "2026-11-13",
+   "firstSeen": "2026-11-13T15:38:56Z",
+   "caseUrl": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?query=Webster"
+  },
+  {
+   "key": "finch-graham-reginald-2026-10-13",
+   "listedName": "FINCH Graham Reginald",
+   "name": "Graham Reginald Finch",
+   "age": "80 Years",
+   "deathDate": "2026-10-13",
+   "deathRaw": "13 October 2026",
+   "place": "Colchester, Essex",
+   "hearings": [
+    {
+     "date": "2026-11-13",
+     "time": "09:30",
+     "type": "Opening",
+     "room": "Court Room 2",
+     "venue": "Seax House",
+     "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=3"
+    }
+   ],
+   "conclusion": "",
+   "hearingDays": 0,
+   "types": [
+    "Opening"
+   ],
+   "firstHearing": "2026-11-13",
+   "lastHearing": "2026-11-13",
+   "firstSeen": "2026-11-13T15:38:56Z",
+   "caseUrl": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?query=Finch"
+  },
+  {
+   "key": "debrick-ian-2026-10-21",
+   "listedName": "DEBRICK Ian",
+   "name": "Ian Debrick",
+   "age": "79 Years",
+   "deathDate": "2026-10-21",
+   "deathRaw": "21 October 2026",
+   "place": "Colchester, Essex",
+   "hearings": [
+    {
+     "date": "2026-11-13",
+     "time": "09:30",
+     "type": "Opening",
+     "room": "Court Room 2",
+     "venue": "Seax House",
+     "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=5"
+    }
+   ],
+   "conclusion": "",
+   "hearingDays": 0,
+   "types": [
+    "Opening"
+   ],
+   "firstHearing": "2026-11-13",
+   "lastHearing": "2026-11-13",
+   "firstSeen": "2026-11-13T15:38:56Z",
+   "caseUrl": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?query=Debrick"
+  },
+  {
+   "key": "foster-jaxon-david-patrick-2026-07-12",
+   "listedName": "FOSTER Jaxon David Patrick",
+   "name": "Jaxon David Patrick Foster",
+   "age": "2 Years",
+   "deathDate": "2026-07-12",
+   "deathRaw": "12 July 2026",
+   "place": "Cyprus",
+   "hearings": [
+    {
+     "date": "2026-11-13",
+     "time": "09:30",
+     "type": "Opening",
+     "room": "Court Room 2",
+     "venue": "Seax House",
+     "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=3"
+    }
+   ],
+   "conclusion": "",
+   "hearingDays": 0,
+   "types": [
+    "Opening"
+   ],
+   "firstHearing": "2026-11-13",
+   "lastHearing": "2026-11-13",
+   "firstSeen": "2026-11-13T15:38:56Z",
+   "caseUrl": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?query=Foster"
+  },
+  {
+   "key": "ball-jean-ann-2026-08-02",
+   "listedName": "BALL Jean Ann",
+   "name": "Jean Ann Ball",
+   "age": "73 Years",
+   "deathDate": "2026-08-02",
+   "deathRaw": "2 August 2026",
+   "place": "Brentwood, Essex",
+   "hearings": [
+    {
+     "date": "2026-11-13",
+     "time": "09:30",
+     "type": "Opening",
+     "room": "Court Room 2",
+     "venue": "Seax House",
+     "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=5"
+    }
+   ],
+   "conclusion": "",
+   "hearingDays": 0,
+   "types": [
+    "Opening"
+   ],
+   "firstHearing": "2026-11-13",
+   "lastHearing": "2026-11-13",
+   "firstSeen": "2026-11-13T15:38:56Z",
+   "caseUrl": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?query=Ball"
+  },
+  {
+   "key": "priestaff-joseph-richard-stanley-2026-10-18",
+   "listedName": "PRIESTAFF Joseph Richard Stanley",
+   "name": "Joseph Richard Stanley Priestaff",
+   "age": "28 Years",
+   "deathDate": "2026-10-18",
+   "deathRaw": "18 October 2026",
+   "place": "Chelmsford, Essex",
+   "hearings": [
+    {
+     "date": "2026-11-13",
+     "time": "09:30",
+     "type": "Opening",
+     "room": "Court Room 2",
+     "venue": "Seax House",
+     "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=2"
+    }
+   ],
+   "conclusion": "",
+   "hearingDays": 0,
+   "types": [
+    "Opening"
+   ],
+   "firstHearing": "2026-11-13",
+   "lastHearing": "2026-11-13",
+   "firstSeen": "2026-11-13T15:38:56Z",
+   "caseUrl": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?query=Priestaff"
+  },
+  {
+   "key": "whyte-joy-edwina-2026-10-17",
+   "listedName": "WHYTE Joy Edwina",
+   "name": "Joy Edwina Whyte",
+   "age": "94 Years",
+   "deathDate": "2026-10-17",
+   "deathRaw": "17 October 2026",
+   "place": "Wickford, Essex",
+   "hearings": [
+    {
+     "date": "2026-11-13",
+     "time": "09:30",
+     "type": "Opening",
+     "room": "Court Room 2",
+     "venue": "Seax House",
+     "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=4"
+    }
+   ],
+   "conclusion": "",
+   "hearingDays": 0,
+   "types": [
+    "Opening"
+   ],
+   "firstHearing": "2026-11-13",
+   "lastHearing": "2026-11-13",
+   "firstSeen": "2026-11-13T15:38:56Z",
+   "caseUrl": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?query=Whyte"
+  },
+  {
+   "key": "walsom-lee-terrence-2026-10-20",
+   "listedName": "WALSOM Lee Terrence",
+   "name": "Lee Terrence Walsom",
+   "age": "62 Years",
+   "deathDate": "2026-10-20",
+   "deathRaw": "20 October 2026",
+   "place": "Harlow, Essex",
+   "hearings": [
+    {
+     "date": "2026-11-13",
+     "time": "09:30",
+     "type": "Opening",
+     "room": "Court Room 2",
+     "venue": "Seax House",
+     "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=5"
+    }
+   ],
+   "conclusion": "",
+   "hearingDays": 0,
+   "types": [
+    "Opening"
+   ],
+   "firstHearing": "2026-11-13",
+   "lastHearing": "2026-11-13",
+   "firstSeen": "2026-11-13T15:38:56Z",
+   "caseUrl": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?query=Walsom"
+  },
+  {
+   "key": "cook-lesley-2026-06-26",
+   "listedName": "COOK Lesley",
+   "name": "Lesley Cook",
+   "age": "70 Years",
+   "deathDate": "2026-06-26",
+   "deathRaw": "26 June 2026",
+   "place": "Epping Forest, Essex",
+   "hearings": [
+    {
+     "date": "2026-11-13",
+     "time": "09:30",
+     "type": "Opening",
+     "room": "Court Room 2",
+     "venue": "Seax House",
+     "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=3"
+    }
+   ],
+   "conclusion": "",
+   "hearingDays": 0,
+   "types": [
+    "Opening"
+   ],
+   "firstHearing": "2026-11-13",
+   "lastHearing": "2026-11-13",
+   "firstSeen": "2026-11-13T15:38:56Z",
+   "caseUrl": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?query=Cook"
+  },
+  {
+   "key": "watts-margaret-mary-2026-06-28",
+   "listedName": "WATTS Margaret Mary",
+   "name": "Margaret Mary Watts",
+   "age": "75 Years",
+   "deathDate": "2026-06-28",
+   "deathRaw": "28 June 2026",
+   "place": "Colchester, Essex",
+   "hearings": [
+    {
+     "date": "2026-11-13",
+     "time": "09:30",
+     "type": "Opening",
+     "room": "Court Room 2",
+     "venue": "Seax House",
+     "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=2"
+    }
+   ],
+   "conclusion": "",
+   "hearingDays": 0,
+   "types": [
+    "Opening"
+   ],
+   "firstHearing": "2026-11-13",
+   "lastHearing": "2026-11-13",
+   "firstSeen": "2026-11-13T15:38:56Z",
+   "caseUrl": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?query=Watts"
+  },
+  {
+   "key": "singer-mark-benjamin-2026-10-27",
+   "listedName": "SINGER Mark Benjamin",
+   "name": "Mark Benjamin Singer",
+   "age": "44 Years",
+   "deathDate": "2026-10-27",
+   "deathRaw": "27 October 2026",
+   "place": "Southend-on-Sea, Essex",
+   "hearings": [
+    {
+     "date": "2026-11-13",
+     "time": "09:30",
+     "type": "Opening",
+     "room": "Court Room 2",
+     "venue": "Seax House",
+     "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=4"
+    }
+   ],
+   "conclusion": "",
+   "hearingDays": 0,
+   "types": [
+    "Opening"
+   ],
+   "firstHearing": "2026-11-13",
+   "lastHearing": "2026-11-13",
+   "firstSeen": "2026-11-13T15:38:56Z",
+   "caseUrl": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?query=Singer"
+  },
+  {
+   "key": "graham-martin-william-2026-05-26",
+   "listedName": "GRAHAM Martin William",
+   "name": "Martin William Graham",
+   "age": "62 Years",
+   "deathDate": "2026-05-26",
+   "deathRaw": "26 May 2026",
+   "place": "Southend-on-Sea, Essex",
+   "hearings": [
+    {
+     "date": "2026-11-13",
+     "time": "09:30",
+     "type": "Opening",
+     "room": "Court Room 2",
+     "venue": "Seax House",
+     "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=4"
+    }
+   ],
+   "conclusion": "",
+   "hearingDays": 0,
+   "types": [
+    "Opening"
+   ],
+   "firstHearing": "2026-11-13",
+   "lastHearing": "2026-11-13",
+   "firstSeen": "2026-11-13T15:38:56Z",
+   "caseUrl": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?query=Graham"
+  },
+  {
+   "key": "saunders-mary-agnes-2026-10-21",
+   "listedName": "SAUNDERS Mary Agnes",
+   "name": "Mary Agnes Saunders",
+   "age": "100 Years",
+   "deathDate": "2026-10-21",
+   "deathRaw": "21 October 2026",
+   "place": "Westcliff-on-Sea, Essex",
+   "hearings": [
+    {
+     "date": "2026-11-13",
+     "time": "09:30",
+     "type": "Opening",
+     "room": "Court Room 2",
+     "venue": "Seax House",
+     "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=4"
+    }
+   ],
+   "conclusion": "",
+   "hearingDays": 0,
+   "types": [
+    "Opening"
+   ],
+   "firstHearing": "2026-11-13",
+   "lastHearing": "2026-11-13",
+   "firstSeen": "2026-11-13T15:38:56Z",
+   "caseUrl": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?query=Saunders"
+  },
+  {
+   "key": "ellis-michael-harvey-2026-08-18",
+   "listedName": "ELLIS Michael Harvey",
+   "name": "Michael Harvey Ellis",
+   "age": "20 Years",
+   "deathDate": "2026-08-18",
+   "deathRaw": "18 August 2026",
+   "place": "London",
+   "hearings": [
+    {
+     "date": "2026-11-13",
+     "time": "09:30",
+     "type": "Opening",
+     "room": "Court Room 2",
+     "venue": "Seax House",
+     "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=3"
+    }
+   ],
+   "conclusion": "",
+   "hearingDays": 0,
+   "types": [
+    "Opening"
+   ],
+   "firstHearing": "2026-11-13",
+   "lastHearing": "2026-11-13",
+   "firstSeen": "2026-11-13T15:38:56Z",
+   "caseUrl": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?query=Ellis"
+  },
+  {
+   "key": "harper-peter-daniel-2026-10-14",
+   "listedName": "HARPER Peter Daniel",
+   "name": "Peter Daniel Harper",
+   "age": "62 Years",
+   "deathDate": "2026-10-14",
+   "deathRaw": "14 October 2026",
+   "place": "Chelmsford, Essex",
+   "hearings": [
+    {
+     "date": "2026-11-13",
+     "time": "09:30",
+     "type": "Opening",
+     "room": "Court Room 2",
+     "venue": "Seax House",
+     "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=4"
+    }
+   ],
+   "conclusion": "",
+   "hearingDays": 0,
+   "types": [
+    "Opening"
+   ],
+   "firstHearing": "2026-11-13",
+   "lastHearing": "2026-11-13",
+   "firstSeen": "2026-11-13T15:38:56Z",
+   "caseUrl": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?query=Harper"
+  },
+  {
+   "key": "brown-rosemary-june-2026-10-21",
+   "listedName": "BROWN Rosemary June",
+   "name": "Rosemary June Brown",
+   "age": "93 Years",
+   "deathDate": "2026-10-21",
+   "deathRaw": "21 October 2026",
+   "place": "Chelmsford, Essex",
+   "hearings": [
+    {
+     "date": "2026-11-13",
+     "time": "09:30",
+     "type": "Opening",
+     "room": "Court Room 2",
+     "venue": "Seax House",
+     "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=3"
+    }
+   ],
+   "conclusion": "",
+   "hearingDays": 0,
+   "types": [
+    "Opening"
+   ],
+   "firstHearing": "2026-11-13",
+   "lastHearing": "2026-11-13",
+   "firstSeen": "2026-11-13T15:38:56Z",
+   "caseUrl": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?query=Brown"
+  },
+  {
+   "key": "price-steven-gregory-2026-09-23",
+   "listedName": "PRICE Steven Gregory",
+   "name": "Steven Gregory Price",
+   "age": "76 Years",
+   "deathDate": "2026-09-23",
+   "deathRaw": "23 September 2026",
+   "place": "Chelmsford, Essex",
+   "hearings": [
+    {
+     "date": "2026-11-13",
+     "time": "09:30",
+     "type": "Opening",
+     "room": "Court Room 2",
+     "venue": "Seax House",
+     "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=5"
+    }
+   ],
+   "conclusion": "",
+   "hearingDays": 0,
+   "types": [
+    "Opening"
+   ],
+   "firstHearing": "2026-11-13",
+   "lastHearing": "2026-11-13",
+   "firstSeen": "2026-11-13T15:38:56Z",
+   "caseUrl": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?query=Price"
+  },
+  {
+   "key": "lindgren-sven-evert-magnus-hakan-2026-07-02",
+   "listedName": "LINDGREN Sven Evert Magnus Hakan",
+   "name": "Sven Evert Magnus Hakan Lindgren",
+   "age": "66 Years",
+   "deathDate": "2026-07-02",
+   "deathRaw": "2 July 2026",
+   "place": "Brentwood, Essex",
+   "hearings": [
+    {
+     "date": "2026-11-13",
+     "time": "09:30",
+     "type": "Opening",
+     "room": "Court Room 2",
+     "venue": "Seax House",
+     "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=4"
+    }
+   ],
+   "conclusion": "",
+   "hearingDays": 0,
+   "types": [
+    "Opening"
+   ],
+   "firstHearing": "2026-11-13",
+   "lastHearing": "2026-11-13",
+   "firstSeen": "2026-11-13T15:38:56Z",
+   "caseUrl": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?query=Lindgren"
+  },
+  {
+   "key": "davis-tracey-jan-2026-10-24",
+   "listedName": "DAVIS Tracey Jan",
+   "name": "Tracey Jan Davis",
+   "age": "58 Years",
+   "deathDate": "2026-10-24",
+   "deathRaw": "24 October 2026",
+   "place": "Colchester, Essex",
+   "hearings": [
+    {
+     "date": "2026-11-13",
+     "time": "09:30",
+     "type": "Opening",
+     "room": "Court Room 2",
+     "venue": "Seax House",
+     "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=5"
+    }
+   ],
+   "conclusion": "",
+   "hearingDays": 0,
+   "types": [
+    "Opening"
+   ],
+   "firstHearing": "2026-11-13",
+   "lastHearing": "2026-11-13",
+   "firstSeen": "2026-11-13T15:38:56Z",
+   "caseUrl": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?query=Davis"
+  },
+  {
+   "key": "walker-william-roy-2026-10-20",
+   "listedName": "WALKER William Roy",
+   "name": "William Roy Walker",
+   "age": "78 Years",
+   "deathDate": "2026-10-20",
+   "deathRaw": "20 October 2026",
+   "place": "Hatfield Peverel, Essex",
+   "hearings": [
+    {
+     "date": "2026-11-13",
+     "time": "09:30",
+     "type": "Opening",
+     "room": "Court Room 2",
+     "venue": "Seax House",
+     "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=3"
+    }
+   ],
+   "conclusion": "",
+   "hearingDays": 0,
+   "types": [
+    "Opening"
+   ],
+   "firstHearing": "2026-11-13",
+   "lastHearing": "2026-11-13",
+   "firstSeen": "2026-11-13T15:38:56Z",
+   "caseUrl": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?query=Walker"
+  },
+  {
+   "key": "miller-jack-ellis-2025-12-25",
+   "listedName": "MILLER Jack Ellis",
+   "name": "Jack Ellis Miller",
+   "age": "34 Years",
+   "deathDate": "2025-12-25",
+   "deathRaw": "25 December 2025",
+   "place": "Shoeburyness, Essex",
+   "hearings": [
+    {
+     "date": "2026-11-16",
+     "time": "10:00",
+     "type": "Inquest Hearing",
+     "room": "Court Room 2",
+     "venue": "Seax House",
+     "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=2"
+    }
+   ],
+   "conclusion": "",
+   "hearingDays": 1,
+   "types": [
+    "Inquest Hearing"
+   ],
+   "firstHearing": "2026-11-16",
+   "lastHearing": "2026-11-16",
+   "firstSeen": "2026-11-13T15:38:56Z",
+   "caseUrl": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?query=Miller"
+  },
+  {
+   "key": "malik-muhammad-ahmad-mahmood-2023-01-08",
+   "listedName": "MALIK Muhammad Ahmad Mahmood",
+   "name": "Muhammad Ahmad Mahmood Malik",
+   "age": "42 Years",
+   "deathDate": "2023-01-08",
+   "deathRaw": "8 January 2023",
+   "place": "Wickford, Essex",
+   "hearings": [
+    {
+     "date": "2026-11-16",
+     "time": "10:00",
+     "type": "Inquest Hearing",
+     "room": "Court Room 1",
+     "venue": "Seax House",
+     "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=2"
+    },
+    {
+     "date": "2026-11-17",
+     "time": "10:00",
+     "type": "Inquest Hearing",
+     "room": "Court Room 1",
+     "venue": "Seax House",
+     "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=2"
+    },
+    {
+     "date": "2026-11-18",
+     "time": "10:00",
+     "type": "Inquest Hearing",
+     "room": "Court Room 1",
+     "venue": "Seax House",
+     "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/"
+    },
+    {
+     "date": "2026-11-19",
+     "time": "10:00",
+     "type": "Inquest Hearing",
+     "room": "Court Room 1",
+     "venue": "Seax House",
+     "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/"
+    },
+    {
+     "date": "2026-11-20",
+     "time": "10:00",
+     "type": "Inquest Hearing",
+     "room": "Court Room 1",
+     "venue": "Seax House",
+     "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/"
+    }
+   ],
+   "conclusion": "",
+   "hearingDays": 5,
+   "types": [
+    "Inquest Hearing"
+   ],
+   "firstHearing": "2026-11-16",
+   "lastHearing": "2026-11-20",
+   "firstSeen": "2026-11-13T15:38:56Z",
+   "caseUrl": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?query=Malik"
+  },
+  {
+   "key": "sousa-neuza-joze-rodrigues-abreu-2025-05-01",
+   "listedName": "SOUSA Neuza Joze Rodrigues Abreu",
+   "name": "Neuza Joze Rodrigues Abreu Sousa",
+   "age": "23 Years",
+   "deathDate": "2025-05-01",
+   "deathRaw": "1 May 2025",
+   "place": "Cambridge, Cambridgeshire",
+   "hearings": [
+    {
+     "date": "2026-11-16",
+     "time": "10:00",
+     "type": "Inquest Hearing",
+     "room": "Court Room 3",
+     "venue": "Library Hub",
+     "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=2"
+    },
+    {
+     "date": "2026-11-17",
+     "time": "10:00",
+     "type": "Inquest Hearing",
+     "room": "Court Room 3",
+     "venue": "Library Hub",
+     "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=2"
+    },
+    {
+     "date": "2026-11-18",
+     "time": "10:00",
+     "type": "Inquest Hearing",
+     "room": "Court Room 3",
+     "venue": "Library Hub",
+     "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/"
+    }
+   ],
+   "conclusion": "",
+   "hearingDays": 3,
+   "types": [
+    "Inquest Hearing"
+   ],
+   "firstHearing": "2026-11-16",
+   "lastHearing": "2026-11-18",
+   "firstSeen": "2026-11-13T15:38:56Z",
+   "caseUrl": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?query=Sousa"
+  },
+  {
+   "key": "bennett-robert-david-2025-10-12",
+   "listedName": "BENNETT Robert David",
+   "name": "Robert David Bennett",
+   "age": "64 Years",
+   "deathDate": "2025-10-12",
+   "deathRaw": "12 October 2025",
+   "place": "Harlow, Essex",
+   "hearings": [
+    {
+     "date": "2026-11-17",
+     "time": "10:00",
+     "type": "Inquest Hearing",
+     "room": "Court Room 2",
+     "venue": "Seax House",
+     "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=2"
+    }
+   ],
+   "conclusion": "",
+   "hearingDays": 1,
+   "types": [
+    "Inquest Hearing"
+   ],
+   "firstHearing": "2026-11-17",
+   "lastHearing": "2026-11-17",
+   "firstSeen": "2026-11-13T15:38:56Z",
+   "caseUrl": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?query=Bennett"
+  },
+  {
+   "key": "thurlow-eileen-florence-2026-10-10",
+   "listedName": "THURLOW Eileen Florence",
+   "name": "Eileen Florence Thurlow",
+   "age": "80 Years",
+   "deathDate": "2026-10-10",
+   "deathRaw": "10 October 2026",
+   "place": "Colchester, Essex",
+   "hearings": [
+    {
+     "date": "2026-11-18",
+     "time": "09:30",
+     "type": "Opening",
+     "room": "Court Room 2",
+     "venue": "Seax House",
+     "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?page=2"
+    }
+   ],
+   "conclusion": "",
+   "hearingDays": 0,
+   "types": [
+    "Opening"
+   ],
+   "firstHearing": "2026-11-18",
+   "lastHearing": "2026-11-18",
+   "firstSeen": "2026-11-13T18:25:23Z",
+   "caseUrl": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?query=Thurlow"
+  },
+  {
+   "key": "yates-holly-rose-2025-12-09",
+   "listedName": "YATES Holly Rose",
+   "name": "Holly Rose Yates",
+   "age": "6 Days",
+   "deathDate": "2025-12-09",
+   "deathRaw": "9 December 2025",
+   "place": "London",
+   "hearings": [
+    {
+     "date": "2026-11-18",
+     "time": "10:00",
+     "type": "Inquest Hearing",
+     "room": "Court Room 2",
+     "venue": "Seax House",
+     "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/"
+    }
+   ],
+   "conclusion": "",
+   "hearingDays": 1,
+   "types": [
+    "Inquest Hearing"
+   ],
+   "firstHearing": "2026-11-18",
+   "lastHearing": "2026-11-18",
+   "firstSeen": "2026-11-13T15:38:56Z",
+   "caseUrl": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?query=Yates"
+  },
+  {
+   "key": "watkins-max-alexander-2026-11-04",
+   "listedName": "WATKINS Max Alexander",
+   "name": "Max Alexander Watkins",
+   "age": "36 Years",
+   "deathDate": "2026-11-04",
+   "deathRaw": "4 November 2026",
+   "place": "Chelmsford, Essex",
+   "hearings": [
+    {
+     "date": "2026-11-18",
+     "time": "09:30",
+     "type": "Opening",
+     "room": "Court Room 2",
+     "venue": "Seax House",
+     "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/"
+    }
+   ],
+   "conclusion": "",
+   "hearingDays": 0,
+   "types": [
+    "Opening"
+   ],
+   "firstHearing": "2026-11-18",
+   "lastHearing": "2026-11-18",
+   "firstSeen": "2026-11-13T18:25:23Z",
+   "caseUrl": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?query=Watkins"
+  },
+  {
+   "key": "evans-eric-david-2025-07-26",
+   "listedName": "EVANS Eric David",
+   "name": "Eric David Evans",
+   "age": "82 Years",
+   "deathDate": "2025-07-26",
+   "deathRaw": "26 July 2025",
+   "place": "Westcliff-on-Sea, Essex",
+   "hearings": [
+    {
+     "date": "2026-11-19",
+     "time": "10:00",
+     "type": "Inquest Hearing",
+     "room": "Court Room 2",
+     "venue": "Seax House",
+     "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/"
+    },
+    {
+     "date": "2026-11-20",
+     "time": "10:00",
+     "type": "Inquest Hearing",
+     "room": "Court Room 2",
+     "venue": "Seax House",
+     "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/"
+    }
+   ],
+   "conclusion": "",
+   "hearingDays": 2,
+   "types": [
+    "Inquest Hearing"
+   ],
+   "firstHearing": "2026-11-19",
+   "lastHearing": "2026-11-20",
+   "firstSeen": "2026-11-13T15:38:56Z",
+   "caseUrl": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?query=Evans"
+  },
+  {
+   "key": "smith-david-2024-10-10",
+   "listedName": "SMITH David",
+   "name": "David Smith",
+   "age": "65 Years",
+   "deathDate": "2024-10-10",
+   "deathRaw": "10 October 2024",
+   "place": "Colchester, Essex",
+   "hearings": [
+    {
+     "date": "2026-11-20",
+     "time": "10:00",
+     "type": "Inquest Hearing",
+     "room": "Court Room 3",
+     "venue": "Library Hub",
+     "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/"
+    }
+   ],
+   "conclusion": "",
+   "hearingDays": 1,
+   "types": [
+    "Inquest Hearing"
+   ],
+   "firstHearing": "2026-11-20",
+   "lastHearing": "2026-11-20",
+   "firstSeen": "2026-11-13T15:38:56Z",
+   "caseUrl": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?query=Smith"
+  },
+  {
+   "key": "gormley-george-joseph-2024-08-18",
+   "listedName": "GORMLEY George Joseph",
+   "name": "George Joseph Gormley",
+   "age": "32 Years",
+   "deathDate": "2024-08-18",
+   "deathRaw": "18 August 2024",
+   "place": "Wickford, Essex",
+   "hearings": [
+    {
+     "date": "2026-11-20",
+     "time": "14:00",
+     "type": "Pre Inquest Review",
+     "room": "Court Room 2",
+     "venue": "Seax House",
+     "url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/"
+    }
+   ],
+   "conclusion": "",
+   "hearingDays": 0,
+   "types": [
+    "Pre Inquest Review"
+   ],
+   "firstHearing": "2026-11-20",
+   "lastHearing": "2026-11-20",
+   "firstSeen": "2026-11-13T15:38:56Z",
+   "caseUrl": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?query=Gormley"
+  }
+ ]
+}
