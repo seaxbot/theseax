@@ -1,6 +1,6 @@
 {
  "publishAt": "2026-11-15T07:20:00Z",
- "note": "Owner's request, 14 Nov 2026: publish Sunday morning 15 Nov. Angle is the charity's appeal for more women in HEMS, NOT the North Weald careers event (it has passed and must not be advertised: no event date, booking, waiting list or contact email). Picture: owner-supplied EHAAT photo (data/portraits.json, matched on 'Air Ambulance ... women' in the headline).",
+ "note": "Owner's request, 14 Nov 2026: publish Sunday morning 15 Nov. Angle is the charity's appeal for more women in HEMS, NOT the North Weald careers event, which has passed: the owner asked (14 Nov) for it to be referenced as context only (150+ women attended), never advertised (no booking, joining the waiting list or contact email). Picture: owner-supplied EHAAT photo (data/portraits.json, matched on 'Air Ambulance ... women' in the headline).",
  "items": [
   {
    "section": "stories",
@@ -15,17 +15,22 @@
    "headline": "Essex & Herts Air Ambulance calls on more women doctors and paramedics to join its helicopter crews",
    "summary": "Women are still a minority in helicopter emergency medicine across the UK, and the charity's flight doctor Kate Jackson has a simple message for anyone who doubts she belongs: apply.",
    "body": [
+    "The call follows a careers event at the charity's North Weald airbase earlier this month that drew more than 150 women, who heard from women already working on the helicopters about roles ranging from clinical work to research and education.",
     "Dr Jackson said women had for years been told the work was not meant for them: that the equipment was too heavy, the hours too demanding and the pressure too great. They came anyway, she said, because the job calls for calm under pressure, sharp judgement and compassion at the roadside.",
     "The job is not finished, she added. Crews still need flight suits that fit, rotas that respect people's lives outside work and leaders women can see themselves in. Her advice to paramedics and doctors unsure whether they are ready is to ask for a mentor, insist on flexible rotas and \"take your seat in the aircraft\"."
    ],
    "points": [
     "Across the UK, about 1 in 5 HEMS doctors and 1 in 4 HEMS paramedics are women",
-    "At Essex & Herts Air Ambulance, 35% of doctors and 36% of paramedics are women, and the charity wants to go further",
-    "Roles span clinical work, research and education"
+    "At Essex & Herts Air Ambulance, 35% of doctors and 36% of paramedics are women, and the charity wants to go further"
    ],
    "source": "Essex & Herts Air Ambulance",
    "url": "https://ehaat.org/",
-   "also": [],
+   "also": [
+    {
+     "name": "Your Thurrock",
+     "url": "https://yourthurrock.com/2026/11/10/essex-and-herts-air-ambulance-encourages-more-women-into-emergency-medicine"
+    }
+   ],
    "time": ""
   }
  ]
