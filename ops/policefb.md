@@ -1,0 +1,49 @@
+# Essex Police Facebook desk
+
+Owner's request, 14 Nov 2026: "Essex Police facebook page is an excellent source of news for The Seax so ensure we keep looking at that and write up anything and source the pics on anything they post there with credit for the site, if it meets our editorial."
+
+Essex Police's official Facebook page (https://www.facebook.com/EssexPoliceUK, 325K followers, verified) often carries appeals, missing people, CCTV and wanted images, sentencing results, operations and figures before or alongside the force's website, and with the force's own pictures. It is an OFFICIAL source (newsroom.md 3d i). This desk reads it and turns every post that meets the site's editorial rules into a Seax story, with the force's own picture credited "Picture: Essex Police".
+
+The hourly newsroom cannot read facebook.com (cloud tools are refused there) and must never try. Only this desk reads the page, through Claude in Chrome on the owner's computer, signed in as The Seax Page. Never comment, react, share, follow, message or post anything on Facebook; read only. Never use Facebook's search or open other pages, profiles or groups.
+
+Never use em dashes. Every rule in ops/newsroom.md applies (editorial rules, 3b crime and court legal safety, 3d social media, the writing standard, item format, district balance). Where this file differs, this file wins for Essex Police Facebook posts only.
+
+## 1. Read the page
+- Open a NEW Chrome tab (tabs_context_mcp, then tabs_create_mcp) at https://www.facebook.com/EssexPoliceUK . If Chrome or the extension cannot be reached, or the page shows a login wall, end the run and report it in the summary (no retries beyond one).
+- Load posts by scrolling with javascript_tool (window.scrollBy in a loop with pauses), clicking every "See more" button, then reading post text from elements matching [data-ad-rendering-role="story_message"], [data-ad-preview="message"], [data-ad-comet-preview="message"]. Return results in small chunks (the tool truncates long output; never return URLs with query strings, they are blocked).
+- Post dates on the feed are obfuscated. Get each candidate's date and time from its photo viewer (open the post's photo; the right-hand panel shows e.g. "12 November at 16:05") or from the post's own page.
+- Work back until you reach posts older than 72 hours. Also look at https://www.facebook.com/EssexPoliceUK/photos (newest first) to spot picture posts.
+
+## 2. Choose posts (editorial filter)
+Write up a post when it is Essex news posted in the last 72 hours (newsroom.md freshness rules, plus the owner's rule not to run old news late) and not already covered. Worth a story: missing people (highest priority), appeals for witnesses or information, CCTV and wanted appeals, arrests, charges, convictions and sentences, serious incidents and road closures, crashes, operations and their results, seizures, dispersal orders and closure orders, county-wide figures with a real news line (for example "202 shop theft charges in a fortnight"), new teams, kit or funding, inspection results.
+
+Skip: generic campaign and awareness posts (hashtag campaigns such as #Reflect, "follow us on our other channels", WhatsApp channel promotion, "check with us first"), crime prevention tips, recruitment, Remembrance and ceremonial posts unless the newsroom would cover them, reposts of other pages' posts (shared posts), reels and videos with no news line, and anything about another force's area with no Essex angle.
+
+Duplicates: before writing, grep edition.json, data/archive.json and data/scheduled/ for the same names, places and figures. If the newsroom already has the story (usually from the Essex Police website or the Dispatch newsletter), do NOT write a second one; instead (a) add any genuinely new fact from the post to that story only if the newsroom rules allow it and set "updated", and (b) give it the post's picture (step 3) if the story has no owner photo yet. Owner stories already set up (for example the Simon Mahoney appeal) keep their own picture; never add another.
+
+Missing people: if a later post says the person has been found, update the existing story at once (headline saying they have been found, drop the description and call to action, set "updated") and REMOVE their picture (delete the data/portraits.json entry and the image files). Police ask media to remove images once someone is found. If police report a death, follow the newsroom's rules and never speculate on a cause.
+
+Writing: Essex Police is an official source (3g ii), so a full body is fine, written ONLY from what the post states, in our own words, attributed ("Essex Police said"). At most one short quote under 15 words. Item "url": the matching essex.police.uk article if a search result this run gives its exact URL; otherwise the Facebook post's own permalink (facebook.com/EssexPoliceUK/posts/... or the photo.php?fbid=... link, without tracking parameters). Credit "Essex Police" as source. Full 3b rules: charged people are presumed innocent; report only what police state; never identify victims of sexual offences or children (other than a missing child the police are appealing to find); no speculation. Never quote or use comments under posts.
+
+## 3. Pictures (owner's rule, 14 Nov 2026)
+The owner wants the force's own pictures on these stories, credited to Essex Police. This is an owner-approved exception to newsroom.md 3d iii and 3g vii, for pictures Essex Police itself posted on its own page only.
+
+Use: appeal photos of missing people, CCTV and "do you recognise" stills, wanted pictures, custody photos released by the force after a conviction or sentence, pictures of seized drugs, weapons, cash or vehicles, operation and officer photos, and scene photos the force posted.
+
+Never use: pictures in posts shared from other pages or people; text-only graphics and posters (use the site's normal image rules instead); video frames; anything showing a recognisable victim, a child (other than in a police appeal to find a missing child), injured people, bodies or a graphic crash scene; custody photos of anyone only charged and awaiting trial, or a CCTV appeal picture of someone police say has since been arrested or charged (contempt risk: identification may be an issue at trial). When police say a wanted or CCTV appeal person has been identified, arrested or charged, remove the picture from the story.
+
+How to save a picture (Facebook's image server needs a separate site permission, so stay on facebook.com):
+1. Open the photo in the viewer (click it in the post, or open https://www.facebook.com/photo.php?fbid=<id> ).
+2. With javascript_tool, overlay the largest image on a black full-screen layer: find the image with the largest naturalWidth*naturalHeight, create a fixed div (inset 0, z-index 2147483647, background #000, flex centred) holding a new img with the same src, max-width 100vw, max-height 100vh, object-fit contain.
+3. Take a screenshot with save_to_disk true and scale 1. The tool result gives the saved file path in this workspace.
+4. With Python (PIL), crop to the bounding box of non-black pixels, then make /img/people/<story-slug>-wide.jpg at 1200x655 and /img/people/<story-slug>-og.jpg at 1200x630 (centre crop; keep faces in frame; for several appeal photos, combine them side by side as the Simon Mahoney picture does). JPEG quality 85.
+5. Add an entry to data/portraits.json (owner-approved for this desk), in the same shape as the Simon Mahoney entry: "match" a regex on a distinctive part of the headline (a full name, or a phrase the headline must keep), "name" a caption of what the picture shows, "label": "Picture", "wide" and "og" paths, "creator": "Essex Police", "provider": "Essex Police", "license": "", "licenseUrl": "", "source": the item url, "addedBy": "Essex Police Facebook desk, <date> (owner's rule: Essex Police pictures from its Facebook page)". Do not duplicate an existing entry. Make sure the story's headline matches the regex, and never add "photo" or "commons" fields to these stories.
+6. Close the overlay and every tab you opened before finishing.
+
+## 4. Publish
+Write {"items": [...]} to /tmp/policefb.json (time = the post's time in UTC; "updated" for updates) and run:
+SEAX_NO_BRIEFING=1 python3 tools/publish.py --items /tmp/policefb.json --desk owner
+Add the new image files and data/portraits.json to git first if publish.py does not commit them (check git status after; if they are left over, commit them with message "Essex Police Facebook desk pictures" and push). If it prints REPEATS, drop or fix the repeated items, or add --repeats-ok <id> only when you have checked the flag is wrong. At most 4 new stories per run, missing people and appeals first.
+
+## 5. Summary
+One short paragraph: posts read (newest post time), stories published (headlines), pictures added or removed, existing stories updated, posts skipped and why (a few words each), and PUSHED with the commit hash. Start with "ALERT:" if Chrome, the extension or Facebook could not be reached, or a found or charged person's picture could not be removed.
