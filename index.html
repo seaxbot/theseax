@@ -1061,36 +1061,27 @@ table.tf{width:100%;border-collapse:collapse;font-size:13.5px;font-variant-numer
 .nl-band button,.nl-read{font:700 15px var(--sans);padding:11px 18px;border-radius:999px;border:0;background:var(--navy);color:#fff;text-decoration:none;cursor:pointer}
 footer .flinks a{text-decoration:underline}
 .sharebar .wa{background:#1f8f4e;border-color:#1f8f4e;color:#fff}
-/* ---------- Listen: the daily audio bulletin (owner's request, 14 Nov 2026; made at 09:00 by tools/bulletin.py) ---------- */
-.bulletin{display:flex;align-items:center;gap:14px;margin:0 0 18px;padding:10px 18px 10px 10px;border-radius:999px;background:linear-gradient(100deg,var(--navy) 0%,var(--navy2) 100%);color:#fff;box-shadow:0 6px 18px -10px rgba(14,27,48,.55)}
+/* ---------- Listen: the daily audio bulletin (owner's request, 14 Nov 2026; made at 09:00 by tools/bulletin.py).
+   A compact pill at the end of the My Essex chips, after Epping & Harlow (owner's choice, 14 Nov 2026) ---------- */
+.bulletin{display:inline-flex;align-items:center;gap:9px;height:34px;padding:0 13px 0 4px;border-radius:99px;background:linear-gradient(100deg,var(--navy) 0%,var(--navy2) 100%);color:#fff;box-shadow:0 4px 12px -7px rgba(14,27,48,.6);margin-left:4px}
 .bulletin[hidden]{display:none}
-.bl-play{flex:none;position:relative;width:48px;height:48px;border-radius:50%;border:0;background:var(--red);color:#fff;display:grid;place-items:center;cursor:pointer;transition:transform .15s,background .15s}
-.bl-play:hover{background:#e0153a;transform:scale(1.05)}
-.bl-play:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
-.bl-play svg{width:20px;height:20px;display:block}
+.bl-play{flex:none;position:relative;width:27px;height:27px;border-radius:50%;border:0;padding:0;background:var(--red);color:#fff;display:grid;place-items:center;cursor:pointer;transition:transform .15s,background .15s}
+.bl-play:hover{background:#e0153a;transform:scale(1.07)}
+.bl-play:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+.bl-play svg{width:13px;height:13px;display:block}
 .bl-play .i-pause,.bulletin.playing .bl-play .i-play{display:none}
 .bulletin.playing .bl-play .i-pause{display:block}
-.bulletin:not(.started) .bl-play::after{content:"";position:absolute;inset:-5px;border-radius:50%;border:2px solid rgba(200,16,46,.7);animation:blPulse 2.4s ease-out infinite}
-@keyframes blPulse{0%{transform:scale(.9);opacity:1}70%,100%{transform:scale(1.25);opacity:0}}
+.bulletin:not(.started) .bl-play::after{content:"";position:absolute;inset:-4px;border-radius:50%;border:2px solid rgba(224,21,58,.75);animation:blPulse 2.4s ease-out infinite}
+@keyframes blPulse{0%{transform:scale(.9);opacity:1}70%,100%{transform:scale(1.3);opacity:0}}
 @media (prefers-reduced-motion:reduce){.bulletin .bl-play::after{animation:none!important;display:none}}
-.bl-txt{flex:none;display:flex;flex-direction:column;line-height:1.2;min-width:0}
-.bl-txt>*{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.bl-k{font-size:10.5px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--gold)}
-.bl-k .sh{display:none}
-@media (max-width:640px){.bl-k .sh{display:inline}}
-.bl-k i{font-style:normal;color:rgba(255,255,255,.55);font-weight:700;letter-spacing:.08em}
-.bl-txt b{font-size:15.5px;font-weight:800;letter-spacing:-.01em}
-.bl-wave{flex:1 1 auto;min-width:0;height:34px;display:flex;align-items:center;justify-content:space-between;gap:2px;cursor:pointer;overflow:hidden;padding:0 4px}
-.bl-wave span{flex:0 1 4px;min-width:2px;border-radius:2px;background:rgba(255,255,255,.26);transition:background .2s}
+.bl-txt{flex:none;display:flex;align-items:baseline;gap:6px;white-space:nowrap;font-size:13px;line-height:1}
+.bl-k{font-size:10.5px;font-weight:800;letter-spacing:.13em;text-transform:uppercase;color:var(--gold)}
+.bl-txt b{font-weight:700}
+.bl-wave{flex:none;width:96px;height:20px;display:flex;align-items:center;justify-content:space-between;gap:1px;cursor:pointer}
+.bl-wave span{flex:0 0 2px;border-radius:2px;background:rgba(255,255,255,.3);transition:background .2s}
 .bl-wave span.on{background:var(--gold)}
-.bl-t{flex:none;font:600 12.5px var(--mono);color:rgba(255,255,255,.75);font-variant-numeric:tabular-nums;min-width:86px;text-align:right}
-@media (max-width:640px){
-  .bulletin{flex-wrap:wrap;border-radius:18px;padding:10px 14px 10px 10px;gap:6px 12px}
-  .bl-txt{flex:1 1 0}
-  .bl-k .lg{display:none}
-  .bl-wave{order:3;flex:1 1 100%;height:26px;padding:0 2px}
-  .bl-t{min-width:0}
-}
+.bl-t{flex:none;font:600 11.5px var(--mono);color:rgba(255,255,255,.78);font-variant-numeric:tabular-nums}
+@media (max-width:640px){ .bl-wave{width:80px} .bulletin{margin-left:0} }
 </style>
 </head>
 <body>
@@ -1184,22 +1175,23 @@ footer .flinks a{text-decoration:underline}
 <!-- ============ FRONT PAGE ============ -->
 <div class="front">
 <div class="areas" id="top">
-  <div class="wrap" id="areaChips"><span class="lbl">My Essex</span></div>
+  <div class="wrap" id="areaChips"><span class="lbl">My Essex</span>
+    <div class="bulletin" id="bulletin" hidden title="Listen to today's two-minute Essex News Bulletin">
+      <button class="bl-play" id="blPlay" type="button" aria-label="Play today's Essex News Bulletin">
+        <svg class="i-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13a1 1 0 0 0 1.5.86l10.6-6.5a1 1 0 0 0 0-1.72L9.5 4.64A1 1 0 0 0 8 5.5z" fill="currentColor"/></svg>
+        <svg class="i-pause" viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="5" width="4.2" height="14" rx="1.2" fill="currentColor"/><rect x="13.8" y="5" width="4.2" height="14" rx="1.2" fill="currentColor"/></svg>
+      </button>
+      <span class="bl-txt"><span class="bl-k">Listen</span><b id="blTitle">Today's bulletin</b></span>
+      <span class="bl-wave" id="blWave" role="slider" tabindex="0" aria-label="Bulletin position" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"></span>
+      <span class="bl-t" id="blTime">2:00</span>
+      <audio id="blAudio" preload="none"></audio>
+    </div>
+  </div>
 </div>
 
 <section class="frontpage">
   <div class="wrap">
     <div class="todaybar" id="todayBar"></div>
-    <div class="bulletin" id="bulletin" hidden>
-      <button class="bl-play" id="blPlay" type="button" aria-label="Play today's Essex News Bulletin">
-        <svg class="i-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13a1 1 0 0 0 1.5.86l10.6-6.5a1 1 0 0 0 0-1.72L9.5 4.64A1 1 0 0 0 8 5.5z" fill="currentColor"/></svg>
-        <svg class="i-pause" viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="5" width="4.2" height="14" rx="1.2" fill="currentColor"/><rect x="13.8" y="5" width="4.2" height="14" rx="1.2" fill="currentColor"/></svg>
-      </button>
-      <div class="bl-txt"><span class="bl-k" id="blKick">Listen</span><b id="blTitle">Today's Essex News Bulletin</b></div>
-      <div class="bl-wave" id="blWave" role="slider" tabindex="0" aria-label="Bulletin position" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"></div>
-      <span class="bl-t" id="blTime">2:00</span>
-      <audio id="blAudio" preload="none"></audio>
-    </div>
     <div class="pinned" id="pinned" hidden></div>
     <div class="fp-grid">
       <article class="lead-pkg" id="leadPkg"></article>
@@ -4107,7 +4099,9 @@ const storyHref = s => "/story/" + s.id + "/";
 const hostOf = u => { try{ return new URL(u).hostname.replace(/^www\./,""); }catch(_){ return ""; } };
 
 function renderChips(){
-  $("#areaChips").innerHTML = `<span class="lbl">My Essex</span>` + AREAS.map(([k,v]) => `<button class="chip${k===AREA?" on":""}" data-area="${k}">${esc(v)}</button>`).join("");
+  const row = $("#areaChips"), bl = document.getElementById("bulletin");   /* the Listen pill lives at the end of this row (owner's choice) */
+  row.innerHTML = `<span class="lbl">My Essex</span>` + AREAS.map(([k,v]) => `<button class="chip${k===AREA?" on":""}" data-area="${k}">${esc(v)}</button>`).join("");
+  if(bl) row.appendChild(bl);
 }
 
 function renderTicker(){
@@ -4957,7 +4951,7 @@ function renderToday(){
     const d = au.duration || (B && B.duration) || 0, p = d ? au.currentTime / d : 0;
     const n = Math.round(p * bars.length);
     bars.forEach((b, i) => b.classList.toggle("on", i < n));
-    tm.textContent = (au.currentTime > 0 || !au.paused) ? mmss(au.currentTime) + " / " + mmss(d) : mmss(d);
+    tm.textContent = (au.currentTime > 0 || !au.paused) ? mmss(au.currentTime) : mmss(d);   /* elapsed while playing, running time when idle */
     wave.setAttribute("aria-valuenow", String(Math.round(p * 100)));
   }
   function show(b){
@@ -4969,12 +4963,13 @@ function renderToday(){
     const wasPlaying = !au.paused; if(wasPlaying) return;  /* don't swap the file under a listener */
     B = b;
     const nice = new Intl.DateTimeFormat("en-GB",{weekday:"long",day:"numeric",month:"long",timeZone:"Europe/London"}).format(new Date(b.date + "T12:00:00Z"));
-    document.getElementById("blTitle").textContent = fresh ? "Today's Essex News Bulletin" : "Essex News Bulletin";
-    const short = new Intl.DateTimeFormat("en-GB",{weekday:"short",day:"numeric",month:"short",timeZone:"Europe/London"}).format(new Date(b.date + "T12:00:00Z"));
-    document.getElementById("blKick").innerHTML = `Listen <i>· <span class="lg">${esc(nice)}</span><span class="sh">${esc(short)}</span> · ${Math.max(1, Math.round((b.duration||120)/60))} min</i>`;
+    const wk = new Intl.DateTimeFormat("en-GB",{weekday:"long",timeZone:"Europe/London"}).format(new Date(b.date + "T12:00:00Z"));
+    document.getElementById("blTitle").textContent = fresh ? "Today's bulletin" : wk + "'s bulletin";
+    box.title = `Listen to the ${Math.max(1, Math.round((b.duration||120)/60))}-minute Essex News Bulletin for ${nice}`;
     btn.setAttribute("aria-label", `Play the Essex News Bulletin for ${nice}`);
     au.src = b.file + "?v=" + encodeURIComponent(b.madeAt || b.date);
-    const pk = Array.isArray(b.peaks) && b.peaks.length ? b.peaks : Array.from({length:60}, (_, i) => .35 + .5*Math.abs(Math.sin(i*1.7)));
+    const raw = Array.isArray(b.peaks) && b.peaks.length ? b.peaks : Array.from({length:72}, (_, i) => .35 + .5*Math.abs(Math.sin(i*1.7)));
+    const N = 26, pk = Array.from({length:N}, (_, i) => { const sl = raw.slice(Math.floor(i*raw.length/N), Math.floor((i+1)*raw.length/N)); return sl.length ? Math.max(...sl) : .3; });
     wave.innerHTML = pk.map(v => `<span style="height:${Math.round(18 + 82*Math.min(1, Math.max(.08, +v||.1)))}%"></span>`).join("");
     bars = Array.from(wave.children);
     box.hidden = false; paint();
@@ -4988,7 +4983,7 @@ function renderToday(){
   au.addEventListener("play", () => {
     box.classList.add("playing","started"); btn.setAttribute("aria-label","Pause the bulletin");
     if("mediaSession" in navigator && B){
-      try{ navigator.mediaSession.metadata = new MediaMetadata({title: document.getElementById("blTitle").textContent, artist: "The Seax", album: "Essex News, Sport, Life.", artwork: [{src:"/icons/icon-512.png", sizes:"512x512", type:"image/png"}]}); }catch(_){}
+      try{ navigator.mediaSession.metadata = new MediaMetadata({title: "Essex News Bulletin", artist: "The Seax", album: "Essex News, Sport, Life.", artwork: [{src:"/icons/icon-512.png", sizes:"512x512", type:"image/png"}]}); }catch(_){}
     }
   });
   au.addEventListener("pause", () => { box.classList.remove("playing"); btn.setAttribute("aria-label","Play the bulletin"); });
