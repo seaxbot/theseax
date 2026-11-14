@@ -1,5 +1,18 @@
 [
  {
+  "match": "\\bSimon Mahoney\\b",
+  "name": "Simon Mahoney: family photo (left) and CCTV pictures from shops in Chelmsford on Friday 13 November",
+  "label": "Picture",
+  "wide": "/img/people/simon-mahoney-wide.jpg",
+  "og": "/img/people/simon-mahoney-og.jpg",
+  "creator": "Essex Police",
+  "provider": "Essex Police",
+  "license": "",
+  "licenseUrl": "",
+  "source": "https://www.essex.police.uk/news/essex/news/",
+  "addedBy": "owner, 14 Nov 2026 (Simon Mahoney missing appeal, published Sun 15 Nov; Essex Police appeal pictures)"
+ },
+ {
   "match": "\\bAir Ambulance\\b.*\\bwomen\\b",
   "name": "Essex & Herts Air Ambulance doctors and paramedics, with flight doctor Kate Jackson (right), at the airbase",
   "label": "Picture",

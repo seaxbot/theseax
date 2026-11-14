@@ -1,0 +1,36 @@
+{
+ "publishAt": "2026-11-15T06:05:00Z",
+ "note": "Owner's request, 14 Nov 2026: publish Sunday morning 15 Nov from Essex Police's appeal (Facebook, 14 Nov). Picture: Essex Police's three appeal photos combined into one (data/portraits.json, matched on 'Simon Mahoney' in the headline). Do NOT publish if Essex Police have said he has been found.",
+ "items": [
+  {
+   "section": "stories",
+   "id": "wickford-simon-mahoney-missing-cctv-chelmsford-east-grinstead",
+   "tag": "Appeal",
+   "icon": "appeal",
+   "areas": [
+    "south",
+    "chelmsford"
+   ],
+   "place": "Wickford",
+   "weight": 6,
+   "developing": true,
+   "headline": "New CCTV pictures released in search for missing Wickford man Simon Mahoney",
+   "summary": "Police think the 54-year-old may have taken a train through London to East Grinstead in West Sussex, and say they are extremely concerned for him.",
+   "body": [
+    "Essex Police have released CCTV pictures of Simon Mahoney taken in shops in Chelmsford on Friday 13 November, as the search for the missing Wickford man widens beyond the county.",
+    "Officers believe he may have travelled by train to London and then on to East Grinstead, West Sussex, and they are working with other police forces to trace him. They say they are extremely concerned for his welfare and want to find him as quickly as possible.",
+    "Simon is 6ft tall, of medium build and has brown hair. In the CCTV pictures he is wearing glasses and a dark jacket with pale reflective bands around the cuffs.",
+    "Anyone who has seen him, or knows where he is, should contact Essex Police straight away on 101, or 999 in an emergency."
+   ],
+   "points": [
+    "He is 6ft tall, of medium build, with brown hair",
+    "Police are working with other forces to trace him",
+    "Call 101, or 999 in an emergency"
+   ],
+   "source": "Essex Police",
+   "url": "https://www.essex.police.uk/news/essex/news/",
+   "also": [],
+   "time": ""
+  }
+ ]
+}
