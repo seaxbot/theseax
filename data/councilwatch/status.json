@@ -1,5 +1,5 @@
 {
- "at": "2026-11-14T06:26:42.620568+00:00",
+ "at": "2026-11-14T16:17:02.558157+00:00",
  "councils": {
   "thurrock": {
    "name": "Thurrock Council",
@@ -24,7 +24,7 @@
    "system": "mg",
    "base": "https://rds.eppingforestdc.gov.uk",
    "meetings": 15,
-   "changed": 1,
+   "changed": 0,
    "state": "ok",
    "note": ""
   },
@@ -138,7 +138,7 @@
   }
  },
  "requests": {
-  "thurrock": 24,
+  "thurrock": 21,
   "southend": 23,
   "epping": 21,
   "maldon": 19,
