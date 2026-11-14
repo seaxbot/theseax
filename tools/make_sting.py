@@ -133,6 +133,22 @@ def reverb(x, wet=0.25):
     return x * (1 - wet) + filt(out, 6000) / 2 * wet
 
 
+def limit(x, threshold, release=0.08):
+    """Transparent peak limiter: turns the volume down smoothly around peaks instead of clipping them,
+    so loud moments stay clean (no distortion)."""
+    from scipy.ndimage import maximum_filter1d
+    look = int(0.004 * SR)
+    peak = maximum_filter1d(np.abs(x), size=2 * look + 1)   # looks a few ms ahead and behind
+    want = np.minimum(1.0, threshold / (peak + 1e-9))
+    g = np.empty_like(want)
+    r = np.exp(-1 / (release * SR))
+    cur = 1.0
+    for k, w in enumerate(want):                    # instant down, slow back up
+        cur = w if w < cur else w + (cur - w) * r
+        g[k] = cur
+    return x * g
+
+
 def place(buf, sig, at, gain=1.0):
     sig = np.asarray(sig, dtype=float).copy()
     f = min(len(sig) // 4, int(0.015 * SR))
@@ -157,7 +173,10 @@ def beat(out, bpm, beats, clap_on=(1, 3), hats=True):
             place(out, hat(0.03), k * b + 3 * b / 4, 0.2)
 
 
-def finish(out, tail=0.6, hit=None):
+def finish(out, tail=0.6, hit=None, clean_from=None):
+    """Fades, then saturation: punchy (driven) for the beat, switching to a clean, lightly limited copy
+    from clean_from (default: just after the hit) so the build-up, hit and tail do not distort.
+    Owner, 14 Nov 2026: "watch out for over modding on the tail", then "that last crescendo is still over modding"."""
     if hit is not None:                              # keep the build-up below the final hit so the hit lands
         i = int(hit * SR)
         out[:i] *= 0.6
@@ -165,16 +184,14 @@ def finish(out, tail=0.6, hit=None):
     n = int(tail * SR)
     out[-n:] *= np.linspace(1, 0, n) ** 2
     out = filt(out, 30, "high")
-    driven = np.tanh(out * 1.4)                      # punchy build-up, as the owner liked it
+    driven = np.tanh(out * 1.4)
     if hit is not None:
-        # after the hit, switch to a lightly limited copy so the ringing tail is not squashed or distorted
-        # (owner, 14 Nov 2026: "watch out for over modding on the tail")
-        clean = out / np.max(np.abs(out))
-        clean = np.tanh(clean * 1.1) / np.tanh(1.1)
-        i, w = int(hit * SR), int(0.25 * SR)
-        rms = lambda x: np.sqrt(np.mean(x[i:i + w] ** 2)) + 1e-9
-        clean *= rms(driven) / rms(clean)
-        x = np.clip((np.arange(len(out)) - (i + int(0.05 * SR))) / (0.15 * SR), 0, 1)
+        start = clean_from if clean_from is not None else hit + 0.05
+        clean = limit(out / np.max(np.abs(out)), 0.6)   # turned down at the peaks, never clipped
+        i, w = int(start * SR), int(0.3 * SR)
+        rms = lambda x: np.sqrt(np.mean(x[max(i - w, 0):i] ** 2)) + 1e-9
+        clean *= rms(driven) / rms(clean)            # same loudness at the switch, so it is seamless
+        x = np.clip((np.arange(len(out)) - i) / (0.1 * SR), 0, 1)
         driven = driven * (1 - x) + clean * x
     return driven / np.max(np.abs(driven)) * 0.89
 
@@ -257,12 +274,13 @@ def headlines():
             place(out, bleep(hz(n), b / 4 * 0.8), start + i * b / 4, 0.35)
     for k in range(12):
         place(out, sub(38 if k < 8 else 41, b / 2 * 0.9, 0.08), k * b / 2, 0.5)
-    place(out, whoosh(1.5 * b), hit - 1.5 * b, 0.6)
-    place(out, kick(0.8), hit, 1.0)
-    place(out, boom(), hit, 0.8)
-    chord = stab([50, 57, 62, 65, 69, 76], 1.6, 0.5, spread=0.002)   # little detune, so the tail does not warble
-    place(out, reverb(np.concatenate([chord, np.zeros(int(0.4 * SR))]), wet=0.18), hit, 1.1)
-    return finish(out, hit=hit)
+    place(out, whoosh(1.5 * b), hit - 1.5 * b, 0.45)
+    place(out, kick(0.8), hit, 0.65)
+    place(out, boom(), hit, 0.5)
+    chord = stab([50, 57, 62, 65, 69, 76], 1.6, 0.5, bright=3800, spread=0.002)  # softer attack, little detune
+    place(out, reverb(np.concatenate([chord, np.zeros(int(0.4 * SR))]), wet=0.18), hit, 0.85)
+    # clean from the start of the crescendo (the riser), not just after the hit
+    return finish(out, hit=hit, clean_from=hit - 1.5 * b - 0.05)
 
 
 STYLES = {"morse": morse, "sounder": sounder, "headlines": headlines}
