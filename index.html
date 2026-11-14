@@ -4544,9 +4544,26 @@ function renderPinnedNews(){
   const first = g.querySelector(".card");
   if(first) first.after(card.firstElementChild); else g.prepend(card.firstElementChild);
 }
+/* Saturday fixtures round-up (owner's choice, 14 Nov 2026): the sport desk's "who's playing where" story for today
+   (sport.stories id s-essex-fixtures-YYYY-MM-DD) also shows as the second card in the News section until 3pm UK time,
+   then drops out of News and stays in Sport */
+function renderFixturesNews(){
+  const g = document.getElementById("newsGrid"); if(!g) return;
+  const now = new Date(), id = "s-essex-fixtures-" + ukDayKey(now);
+  const ukHour = Number(new Intl.DateTimeFormat("en-GB",{timeZone:"Europe/London",hour:"2-digit",hourCycle:"h23"}).format(now));
+  const s = ukHour < 15 && typeof ED !== "undefined" && ED && ED.sport ? (ED.sport.stories||[]).find(x => x && x.id === id && x.headline) : null;
+  const have = g.querySelector('[data-fx]');
+  if(!s){ if(have) have.remove(); return; }
+  if(have && have.dataset.fx === id) return;
+  if(have) have.remove();
+  const box = document.createElement("div"); box.innerHTML = cardHtml(s, false, true);
+  const card = box.firstElementChild; if(!card) return; card.dataset.fx = id;
+  const first = g.querySelector(".card");
+  if(first) first.after(card); else g.prepend(card);
+}
 fetch("/data/pinned.json", { cache: "no-store" }).then(r => r.ok ? r.json() : null).then(p => { PIN = p; renderPinned(); renderPinnedNews(); }).catch(() => {});
 function renderAll(){
-  renderChips(); renderTicker(); buildHero(); renderTopList(); renderNews(); renderPinnedNews(); renderDesk(); renderCouncilWatch(); renderCommunity(); renderSport(); renderTables(); renderWeather();
+  renderChips(); renderTicker(); buildHero(); renderTopList(); renderNews(); renderPinnedNews(); renderFixturesNews(); renderDesk(); renderCouncilWatch(); renderCommunity(); renderSport(); renderTables(); renderWeather();
   renderEvents(); renderCulture(); renderVital(); renderSpecials(); renderSources(); renderMeta(); afterRender(); updateLiveLine();
   if(location.hash.startsWith("#story-")) renderStory(location.hash.slice(7));
 }
@@ -4566,7 +4583,7 @@ function tickMinute(){
   const k = dayKey(n);
   if(k !== lastDay){ lastDay = k; renderAll(); }
   else { renderWeather(); renderTicker(); renderToday(); }
-  renderPinned(); renderPinnedNews();
+  renderPinned(); renderPinnedNews(); renderFixturesNews();
 }
 setInterval(() => { tickSecond(); const m = new Date().getMinutes(); if(m !== lastMinute){ lastMinute = m; tickMinute(); } }, 1000);
 
