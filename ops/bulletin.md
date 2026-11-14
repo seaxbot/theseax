@@ -62,7 +62,7 @@ python3 tools/bulletin.py --script /tmp/bulletin.txt --slot <am or pm> --stories
 
 The first run in a fresh environment downloads the voice model (about 350 MB from GitHub) and installs `kokoro-onnx`; allow up to 10 minutes and a generous command timeout (run it in the background if your tool limits commands to 2 minutes, and wait for it). It prints the duration.
 - Over 2:40: cut the weakest story and run it again. Under 1:50: add one more story and run it again.
-- It writes `audio/bulletin-<date>-<slot>.mp3`, deletes older bulletin files and writes `data/bulletin.json`. Do not edit those by hand.
+- It writes `audio/bulletin-<date>-<slot>.mp3`, deletes older bulletin files and writes `data/bulletin.json` and `audio/alexa.json` (the Alexa Flash Briefing feed, owner's request 14 Nov 2026; smart speakers play whatever it points to, so every bulletin must be published this way). Do not edit those by hand.
 
 ## 5. Publish
 

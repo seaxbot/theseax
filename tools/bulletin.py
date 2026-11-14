@@ -16,6 +16,10 @@ The owner's house style for the audio:
 Writes:
   audio/bulletin-YYYY-MM-DD-am.mp3 or -pm.mp3   (older bulletins are deleted, so the repository does not keep piling up files)
   data/bulletin.json              what the player reads: date, slot (am/pm), file, duration, waveform peaks, story ids
+  audio/alexa.json                the Alexa Flash Briefing feed (owner's request, 14 Nov 2026): the latest bulletin as one
+                                  audio item, in Amazon's JSON feed format. The owner's Flash Briefing skill points at
+                                  https://theseax.com/audio/alexa.json . Loudness is set to Amazon's spec (-14 LUFS, true peak under -2 dB).
+  python3 tools/bulletin.py --alexa-only     (rewrite audio/alexa.json from data/bulletin.json, no new recording)
 Needs: pip packages kokoro-onnx and soundfile (installed automatically if missing), ffmpeg (or imageio-ffmpeg),
 and the Kokoro model files, downloaded once from GitHub into ~/.cache/seax-tts.
 """
@@ -120,8 +124,33 @@ def peaks(ff, mp3, n=72):
     return [round(max(0.08, (x / top) ** 0.7), 2) for x in vals]
 
 
+SITE = "https://theseax.com"
+UKDAYS = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
+
+
+def write_alexa(meta):
+    """Alexa Flash Briefing feed: one audio item for the latest bulletin (Amazon ignores items over 7 days old)."""
+    import uuid
+    d = datetime.strptime(meta["date"], "%Y-%m-%d")
+    when = f'{UKDAYS[d.weekday()]} {"morning" if meta["slot"] == "am" else "evening"}, {d.day} {d.strftime("%B")}'
+    item = {
+        "uid": "urn:uuid:" + str(uuid.uuid5(uuid.NAMESPACE_URL, SITE + meta["file"] + "#" + meta["madeAt"])),
+        "updateDate": meta["madeAt"],
+        "titleText": f"The Seax Essex News Bulletin, {when}",
+        "mainText": "",
+        "streamUrl": SITE + meta["file"],
+        "redirectionUrl": SITE + "/",
+    }
+    with open(os.path.join(ROOT, "audio", "alexa.json"), "w", encoding="utf-8") as fh:
+        json.dump([item], fh, ensure_ascii=False, indent=1)
+    print("WROTE audio/alexa.json")
+
+
 def main():
     ap = argparse.ArgumentParser()
+    if "--alexa-only" in sys.argv:
+        write_alexa(json.load(open(os.path.join(ROOT, "data", "bulletin.json"), encoding="utf-8")))
+        return
     ap.add_argument("--script", required=True)
     ap.add_argument("--stories", default="", help="comma-separated ids of the stories read out, in order")
     ap.add_argument("--date", default="", help="UK date YYYY-MM-DD (default: today)")
@@ -146,10 +175,10 @@ def main():
     os.makedirs(os.path.dirname(out), exist_ok=True)
     chime = ["-i", CHIME] if os.path.exists(CHIME) else []
     if chime:
-        fc = "[1]loudnorm=I=-16:TP=-1.5,aresample=24000,apad=pad_dur=0.6[v];[0]aresample=24000[c0];[2]aresample=24000[c1];[c0][v][c1]concat=n=3:v=0:a=1[a]"
+        fc = "[1]loudnorm=I=-14:TP=-2.5,aresample=24000,apad=pad_dur=0.6[v];[0]aresample=24000[c0];[2]aresample=24000[c1];[c0][v][c1]concat=n=3:v=0:a=1,loudnorm=I=-14:TP=-3.5[a]"
         cmd = [ff, "-y", "-v", "error", *chime, "-i", tmp_wav, *chime, "-filter_complex", fc, "-map", "[a]"]
     else:
-        cmd = [ff, "-y", "-v", "error", "-i", tmp_wav, "-af", "loudnorm=I=-16:TP=-1.5"]
+        cmd = [ff, "-y", "-v", "error", "-i", tmp_wav, "-af", "loudnorm=I=-14:TP=-3.5"]
     # 64 kbps mono: clear for speech and about 1 MB a day
     subprocess.run(cmd + ["-ar", "44100", "-ac", "1", "-b:a", "64k", out], check=True)
     probe = shutil.which("ffprobe")
@@ -184,6 +213,7 @@ def main():
     with open(os.path.join(ROOT, "data", "bulletin.json"), "w", encoding="utf-8") as fh:
         json.dump(meta, fh, ensure_ascii=False, indent=1)
     print("WROTE", rel, "and data/bulletin.json")
+    write_alexa(meta)
 
 
 if __name__ == "__main__":
