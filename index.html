@@ -4165,7 +4165,8 @@ function renderTicker(){
   for(const m of ED.sport.results){
     if(!Number.isFinite(m.hs) || !Number.isFinite(m.as)) continue;
     const words = [m.home, m.away].map(t => String(t||"").toLowerCase().split(/\s+/)[0]);
-    const st2 = ED.sport.stories.find(x => !/^s-essex-fixtures-/.test(x.id||"") && words.every(w => w && (x.headline+" "+x.summary).toLowerCase().includes(w)));
+    /* only a report written after kick-off counts: previews and signing stories that name the opponents do not */
+    const st2 = ED.sport.stories.find(x => !/^s-essex-fixtures-/.test(x.id||"") && new Date(x.time).getTime() >= new Date(m.date).getTime() && words.every(w => w && (x.headline+" "+x.summary).toLowerCase().includes(w)));
     const t = new Date(m.date).getTime() + 2*36e5;
     /* the match already has its own sport story in the ticker: don't show the score twice */
     if(st2 && Math.abs(new Date(st2.time).getTime() - t) < 4*864e5) continue;
