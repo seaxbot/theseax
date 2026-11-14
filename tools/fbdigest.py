@@ -74,6 +74,15 @@ def message(slot, items, now, ed=None):
     wkend = uk.weekday() >= 5   # wording suits the day (owner's request, 13 Nov 2026)
     one = lambda it: " ".join(str(it.get("headline") or "").split())
     url = lambda it: f"{SITE}/story/{it['id']}/"
+    # Saturday fixtures round-up (owner's request, 14 Nov 2026): the 08:00 Saturday post links the sport desk's
+    # "who's playing where" story on its own line, so it is not repeated in the numbered list
+    fx = None
+    if slot == "morning" and uk.weekday() == 5:
+        fid = f"s-essex-fixtures-{uk:%Y-%m-%d}"
+        fx = next((x for x in ((ed or {}).get("sport") or {}).get("stories") or [] if isinstance(x, dict) and x.get("id") == fid), None)
+        if fx and not os.path.exists(os.path.join(ROOT, "story", fid, "index.html")):
+            fx = None
+        items = [it for it in items if it.get("id") != fid]
     if slot == "lunch":
         it = items[0]
         summ = " ".join(str(it.get("summary") or "").split())
@@ -97,6 +106,8 @@ def message(slot, items, now, ed=None):
                          uk.weekday(), f"Here are {len(items)} stories making news this morning across the county:"), ""]
         for i, it in enumerate(items):
             lines += [f"{NUM[i]} {one(it)}", url(it), ""]
+        if fx:
+            lines += ["⚽ Who's playing where today: every Essex fixture and kick-off time", url(fx), ""]
         lines += ["Every story, all day: theseax.com"]
     return "\n".join(lines).replace("—", ",")
 
