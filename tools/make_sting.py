@@ -3,13 +3,13 @@
 
 History (owner's requests, 14 Nov 2026): first a soft chime; then "more pulsy, with a beat";
 then "a BBC News type beat"; then "no, think news!". All of these are original sounds, never a copy of a real theme.
-Styles (pick with --style). The owner chose "morse" (14 Nov 2026); it is the default and is what chime.wav holds.
+Styles (pick with --style). The owner chose "headlines" (14 Nov 2026); it is the default and is what chime.wav holds.
   morse     Morse code spelling N-E-W-S over a driving beat, then three synth-brass stabs
   sounder   a local-radio news sounder: computer data bleeps over a beat, then "dun, dun, DUN" stabs
   headlines punchy TV-headlines bed: a one-note synth pulse, big drums, rising bleeps, a final hit
 Mono, 24 kHz, about 3 to 4 seconds.
 
-  python3 tools/make_sting.py --style morse                (rewrites assets/audio/chime.wav)
+  python3 tools/make_sting.py                              (headlines; rewrites assets/audio/chime.wav)
   python3 tools/make_sting.py --style sounder --out /tmp/sting.wav
 """
 import argparse, os
@@ -94,9 +94,9 @@ def bleep(freq, length):
     return x * e * 0.5
 
 
-def stab(notes, length=0.35, decay=0.12, bright=5000):
+def stab(notes, length=0.35, decay=0.12, bright=5000, spread=0.005):
     """Synth-brass chord stab with a bright attack that closes quickly."""
-    x = sum(saw(n, length, voices=3, spread=0.005) for n in notes) / len(notes)
+    x = sum(saw(n, length, voices=3, spread=spread) for n in notes) / len(notes)
     t = tt(length)
     b, d = filt(x, bright), filt(x, 900)
     m = np.exp(-t / 0.06)
@@ -107,6 +107,13 @@ def stab(notes, length=0.35, decay=0.12, bright=5000):
 def sub(note, length, decay=0.2):
     t = tt(length)
     return np.tanh(1.5 * np.sin(2 * np.pi * hz(note) * t)) * env(len(t), 0.004, decay)
+
+
+def boom(length=1.6, decay=0.45):
+    """Clean low boom: a pure sine that drops in pitch, with no distortion."""
+    t = tt(length)
+    f = 38 + 50 * np.exp(-t / 0.06)
+    return np.sin(2 * np.pi * np.cumsum(f) / SR) * env(len(t), 0.003, decay)
 
 
 def whoosh(length):
@@ -158,8 +165,18 @@ def finish(out, tail=0.6, hit=None):
     n = int(tail * SR)
     out[-n:] *= np.linspace(1, 0, n) ** 2
     out = filt(out, 30, "high")
-    out = np.tanh(out * 1.4)
-    return out / np.max(np.abs(out)) * 0.89
+    driven = np.tanh(out * 1.4)                      # punchy build-up, as the owner liked it
+    if hit is not None:
+        # after the hit, switch to a lightly limited copy so the ringing tail is not squashed or distorted
+        # (owner, 14 Nov 2026: "watch out for over modding on the tail")
+        clean = out / np.max(np.abs(out))
+        clean = np.tanh(clean * 1.1) / np.tanh(1.1)
+        i, w = int(hit * SR), int(0.25 * SR)
+        rms = lambda x: np.sqrt(np.mean(x[i:i + w] ** 2)) + 1e-9
+        clean *= rms(driven) / rms(clean)
+        x = np.clip((np.arange(len(out)) - (i + int(0.05 * SR))) / (0.15 * SR), 0, 1)
+        driven = driven * (1 - x) + clean * x
+    return driven / np.max(np.abs(driven)) * 0.89
 
 
 # ---- the three styles ----
@@ -242,8 +259,9 @@ def headlines():
         place(out, sub(38 if k < 8 else 41, b / 2 * 0.9, 0.08), k * b / 2, 0.5)
     place(out, whoosh(1.5 * b), hit - 1.5 * b, 0.6)
     place(out, kick(0.8), hit, 1.0)
-    place(out, sub(26, 1.6, 0.5), hit, 1.0)
-    place(out, reverb(np.concatenate([stab([50, 57, 62, 65, 69, 76], 1.6, 0.6), np.zeros(int(0.4 * SR))])), hit, 1.2)
+    place(out, boom(), hit, 0.8)
+    chord = stab([50, 57, 62, 65, 69, 76], 1.6, 0.5, spread=0.002)   # little detune, so the tail does not warble
+    place(out, reverb(np.concatenate([chord, np.zeros(int(0.4 * SR))]), wet=0.18), hit, 1.1)
     return finish(out, hit=hit)
 
 
@@ -252,7 +270,7 @@ STYLES = {"morse": morse, "sounder": sounder, "headlines": headlines}
 
 def main():
     p = argparse.ArgumentParser()
-    p.add_argument("--style", choices=sorted(STYLES), default="morse")
+    p.add_argument("--style", choices=sorted(STYLES), default="headlines")
     p.add_argument("--out", default=os.path.join(ROOT, "assets", "audio", "chime.wav"))
     a = p.parse_args()
     sig = STYLES[a.style]()
