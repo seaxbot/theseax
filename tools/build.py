@@ -854,7 +854,7 @@ TOWN_ALIAS = [(re.compile(r), k) for r, k in [
     (r"^(chelmsford|moulsham|great baddow|broomfield|springfield|writtle|galleywood)$", "chelmsford"),
     (r"^(colchester|stanway|lexden|highwoods)$", "colchester"),
     (r"^(southend(-on-sea)?|westcliff(-on-sea)?|southchurch|prittlewell|thorpe bay)$", "southend"),
-    (r"^(leigh(-on-sea)?|old leigh)$", "leigh"), (r"^shoebury(ness)?$", "shoebury"),
+    (r"^(leigh(-on-sea)?|old leigh)$", "leigh"), (r"^(shoebury(ness)?|foulness( island)?)$", "shoebury"),
     (r"^(basildon|laindon|vange)$", "basildon"), (r"^billericay$", "billericay"), (r"^wickford$", "wickford"),
     (r"^(brentwood|shenfield|hutton)$", "brentwood"), (r"^(grays|chafford hundred|thurrock|west thurrock)$", "grays"),
     (r"^(tilbury|west tilbury|east tilbury)$", "tilbury"), (r"^purfleet(-on-thames)?$", "purfleet"),
@@ -1012,6 +1012,11 @@ def fallback_photo(it, sec, card):
     cr = TOWN_CREDITS.get(tk) if tk else None
     if not cr or not os.path.exists(os.path.join(ROOT, "img", "og", f"place-{tk}.jpg")):
         return "", ""
+    if cr.get("own"):  # the owner's own photo (Shoeburyness and Foulness, owner's rule, 14 Nov 2026): no credit line
+        w, h = jpeg_size(os.path.join(ROOT, "img", "places", tk + ".jpg"))
+        return (f'<figure class="stock"><img src="/img/places/{tk}.jpg?v=1" width="{w}" height="{h}" alt="Library photo: {E(cr.get("what"))}" loading="eager">'
+                f'<figcaption><b>{E(cr.get("what"))}</b>. Library image, not the scene of this story.</figcaption></figure>',
+                f"/img/og/place-{tk}.jpg")
     lic = cr.get("license") or ""
     licl = "public domain" if lic in ("Public domain", "CC0") else lic
     lic_html = f'<a href="{E(cr["licenseUrl"])}" target="_blank" rel="noopener license">{E(licl)}</a>' if safe_url(cr.get("licenseUrl")) else E(licl)
@@ -1552,6 +1557,8 @@ def photo_credits():
     rows = []
     for k in sorted(cr, key=lambda k: cr[k]["what"]):
         c = cr[k]
+        if c.get("own"):  # the owner's own photos need no credit
+            continue
         lic = c["license"]
         lic_html = f'<a href="{E(c["licenseUrl"])}" rel="license noopener">{E(lic)}</a>' if c.get("licenseUrl") else E(lic)
         rows.append(f'<li>{E(c["what"])}: photo by {E(c["by"])}, {lic_html}, via <a href="{E(c["source"])}" rel="noopener">Wikimedia Commons</a></li>')

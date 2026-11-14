@@ -3470,7 +3470,7 @@ const TOWN_PHOTO = {
   rayleigh:{what:"Rayleigh Windmill", by:"Jonathan Cardy", lic:"CC BY-SA 3.0"},
   rochford:{what:"Rochford Hall", by:"David Kemp", lic:"CC BY-SA 2.0"},
   saffronwalden:{what:"Saffron Walden", by:"Peter Trimming", lic:"CC BY-SA 2.0"},
-  shoebury:{what:"East Beach, Shoeburyness", by:"Jim Osley", lic:"CC BY-SA 2.0"},
+  shoebury:{what:"Sunset over the Thames at Shoeburyness", own:true},  /* owner's own photo for Shoeburyness and Foulness stories (14 Nov 2026) */
   southend:{what:"Southend Pier", by:"Damian Dukarski", lic:"CC BY-SA 3.0"},
   stanford:{what:"St Margaret's Church, Stanford-le-Hope", by:"John Salmon", lic:"CC BY-SA 2.0"},
   stansted:{what:"Stansted Mountfitchet windmill", by:"Christine Matthews", lic:"CC BY-SA 2.0"},
@@ -3485,7 +3485,7 @@ const TOWN_ALIAS = [
   [/^(chelmsford|moulsham|great baddow|broomfield|springfield|writtle|galleywood)$/, "chelmsford"],
   [/^(colchester|stanway|lexden|highwoods)$/, "colchester"],
   [/^(southend(-on-sea)?|westcliff(-on-sea)?|southchurch|prittlewell|thorpe bay)$/, "southend"],
-  [/^(leigh(-on-sea)?|old leigh)$/, "leigh"], [/^shoebury(ness)?$/, "shoebury"],
+  [/^(leigh(-on-sea)?|old leigh)$/, "leigh"], [/^(shoebury(ness)?|foulness( island)?)$/, "shoebury"],
   [/^(basildon|laindon|vange)$/, "basildon"], [/^billericay$/, "billericay"], [/^wickford$/, "wickford"],
   [/^(brentwood|shenfield|hutton)$/, "brentwood"], [/^(grays|chafford hundred|thurrock|west thurrock)$/, "grays"],
   [/^(tilbury|west tilbury|east tilbury)$/, "tilbury"], [/^purfleet(-on-thames)?$/, "purfleet"],
@@ -3510,9 +3510,9 @@ function townKeyOf(s){
 }
 function townArt(s, opts){
   const k = townKeyOf(s), t = TOWN_PHOTO[k];
-  return `<svg class="emap wxart townphoto" width="100%" height="100%" role="img" aria-label="Photo: ${esc(t.what)}" style="background:#cfd8dc"><image href="/img/places/${k}.jpg?v=1" x="0" y="0" width="100%" height="100%" preserveAspectRatio="xMidYMid slice"/>${opts && opts.credit ? `<text x="99%" y="94%" text-anchor="end" font-size="10" font-family="var(--sans), sans-serif" fill="#fff" stroke="rgba(0,0,0,.55)" stroke-width="2.5" paint-order="stroke">${esc(t.by)} · ${esc(t.lic === "Public domain" || t.lic === "CC0" ? "public domain" : t.lic)}</text>` : ""}</svg>`;
+  return `<svg class="emap wxart townphoto" width="100%" height="100%" role="img" aria-label="Photo: ${esc(t.what)}" style="background:#cfd8dc"><image href="/img/places/${k}.jpg?v=1" x="0" y="0" width="100%" height="100%" preserveAspectRatio="xMidYMid slice"/>${opts && opts.credit && !t.own ? `<text x="99%" y="94%" text-anchor="end" font-size="10" font-family="var(--sans), sans-serif" fill="#fff" stroke="rgba(0,0,0,.55)" stroke-width="2.5" paint-order="stroke">${esc(t.by)} · ${esc(t.lic === "Public domain" || t.lic === "CC0" ? "public domain" : t.lic)}</text>` : ""}</svg>`;
 }
-function townCredit(k){ const t = TOWN_PHOTO[k]; return t ? `${t.what}. Photo: ${t.by}, ${t.lic === "Public domain" || t.lic === "CC0" ? "public domain" : t.lic}` : ""; }
+function townCredit(k){ const t = TOWN_PHOTO[k]; if(t && t.own) return `${t.what} · Library image`; return t ? `${t.what}. Photo: ${t.by}, ${t.lic === "Public domain" || t.lic === "CC0" ? "public domain" : t.lic}` : ""; }
 /* stock photos for generic stories (Openverse) and Wikimedia Commons file photos of a story's named subject, all openly
    licensed, chosen by tools/photos.py; always labelled and credited */
 let PHOTOS = {};

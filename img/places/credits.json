@@ -253,12 +253,8 @@
  },
  "shoebury": {
   "file": "/img/places/shoebury.jpg",
-  "what": "East Beach, Shoeburyness",
-  "by": "Jim Osley",
-  "license": "CC BY-SA 2.0",
-  "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
-  "source": "https://commons.wikimedia.org/wiki/File:Shoeburyness_,_Groynes_-_geograph.org.uk_-_5857451.jpg",
-  "commonsFile": "File:Shoeburyness_,_Groynes_-_geograph.org.uk_-_5857451.jpg"
+  "what": "Sunset over the Thames at Shoeburyness",
+  "own": true
  },
  "southend": {
   "file": "/img/places/southend.jpg",
