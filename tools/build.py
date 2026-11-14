@@ -840,9 +840,11 @@ except Exception:
 
 def portrait_of(it):
     h = str(it.get("headline") or "")
+    sid = it.get("id")
     for p in PORTRAITS:
         try:
-            if re.search(p["match"], h):
+            # an entry may name its story by "id" (official bodies' own pictures, Nov 2026), so a rewritten headline keeps it
+            if (sid and sid in (p.get("ids") or [])) or (p.get("match") and re.search(p["match"], h)):
                 alts = p.get("alts") or []
                 if alts:  # alternate pictures hour by hour, in step with the page's portraitTurn (owner's choice, 12 Nov 2026)
                     i = int(time.time() // 3600) % (len(alts) + 1)
