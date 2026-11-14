@@ -1,0 +1,58 @@
+{
+ "at": "2026-11-14T07:27:54+00:00",
+ "source": "https://www.nmc.org.uk/concerns-nurses-midwives/hearings/hearings-sanctions/",
+ "rows": [
+  {
+   "key": "kuzniar-monika-07h0058c-2026-11-18",
+   "name": "KUZNIAR, Monika 07H0058C",
+   "pin": "",
+   "register": "Adult Nurse",
+   "county": "Essex",
+   "venue": "NMC, Virtual Hearing 18 Nov - 19 Nov",
+   "start": "2026-11-18",
+   "end": "2026-11-19",
+   "type": "FTPCSH",
+   "typeName": "Fitness to Practise Committee substantive hearing",
+   "allegation": "Misconduct",
+   "outcome": "",
+   "kind": "upcoming",
+   "reasonsUrl": "",
+   "page": "https://www.nmc.org.uk/concerns-nurses-midwives/hearings/hearings-sanctions/hearings-november-2026/"
+  },
+  {
+   "key": "webb-natalie-faye-10f1258e-2026-11-02",
+   "name": "WEBB, Natalie Faye 10F1258E",
+   "pin": "",
+   "register": "Adult Nurse",
+   "county": "Essex; Greater London",
+   "venue": "NMC, 2 Stratford Place, Montfichet Road, London, E20 1EJ 02 Nov - 04 Nov Stratford Hearing Room 12",
+   "start": "2026-11-02",
+   "end": "2026-11-04",
+   "type": "FTPCSH",
+   "typeName": "Fitness to Practise Committee substantive hearing",
+   "allegation": "Misconduct",
+   "outcome": "",
+   "kind": "upcoming",
+   "reasonsUrl": "",
+   "page": "https://www.nmc.org.uk/concerns-nurses-midwives/hearings/hearings-sanctions/hearings-november-2026/"
+  },
+  {
+   "key": "gleeson-hannah-speirs-corinne-12e0330e-2026-10-27",
+   "name": "GLEESON, Hannah Speirs Corinne 12E0330E",
+   "pin": "",
+   "register": "Learning Disab.",
+   "county": "Essex",
+   "venue": "NMC, Virtual Hearing 27 Oct - 29 Oct",
+   "start": "2026-10-27",
+   "end": "2026-10-29",
+   "type": "FTPCSM",
+   "typeName": "Fitness to Practise Committee substantive meeting",
+   "allegation": "See reasons",
+   "outcome": "Suspension order for Nine months and Interim suspension order for 18 months",
+   "kind": "outcome",
+   "reasonsUrl": "https://www.nmc.org.uk/globalassets/sitedocuments/ftpoutcomes/2026/october-2026/reasons-gleeson-ftpcsm-97901-20261029.pdf",
+   "page": "https://www.nmc.org.uk/concerns-nurses-midwives/hearings/hearings-sanctions/hearings-october-2026/",
+   "reasonsFile": "reasons/gleeson-hannah-speirs-corinne-12e0330e-2026-10-27.txt"
+  }
+ ]
+}
