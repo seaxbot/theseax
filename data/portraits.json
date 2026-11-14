@@ -227,7 +227,7 @@
  },
  {
   "ids": [
-   "rayleigh-mother-type-1-diabetes-warning-signs-world-diabetes-day"
+   "rayleigh-zara-type-1-diabetes-4ts-awareness"
   ],
   "name": "Zara in hospital in August 2025",
   "label": "Picture",
@@ -239,5 +239,20 @@
   "licenseUrl": "",
   "source": "https://www.essex.icb.nhs.uk/news/like-a-catastrophic-plane-crash-mother-tells-story-of-nearly-losing-daughter-to-undiagnosed-diabetes/",
   "addedBy": "owner, 14 Nov 2026 (Rayleigh type 1 diabetes story, republished Sun 15 Nov; NHS Essex picture from its own article)"
+ },
+ {
+  "ids": [
+   "essex-police-202-shop-theft-charges-fortnight"
+  ],
+  "name": "Essex Police picture used with its shop theft figures",
+  "label": "Picture",
+  "wide": "/img/people/essex-shop-theft-charges-wide.jpg",
+  "og": "/img/people/essex-shop-theft-charges-og.jpg",
+  "creator": "Essex Police",
+  "provider": "Essex Police",
+  "license": "",
+  "licenseUrl": "",
+  "source": "https://www.facebook.com/photo.php?fbid=1468059302126437",
+  "addedBy": "owner, 14 Nov 2026 (202 shop theft charges story, published Sun 15 Nov afternoon; Essex Police picture from its Facebook post of 12 Nov)"
  }
 ]

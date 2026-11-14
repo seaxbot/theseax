@@ -1,10 +1,10 @@
 {
  "publishAt": "2026-11-15T06:50:00Z",
- "note": "Owner's request, 14 Nov 2026: rewrite the Rayleigh type 1 diabetes story from NHS Essex's own fuller article (World Diabetes Day, 14 Nov) and publish it Sunday morning 15 Nov, with the NHS Essex picture of Zara in hospital (data/portraits.json, matched by this story's id). Same id as the existing Your Thurrock-sourced story, so it replaces it rather than duplicating it. Zara and Mandy are named because the family told their story publicly through NHS Essex; no surnames, no email address.",
+ "note": "Owner's request, 14 Nov 2026: a FRESH story (new id, awareness-led headline) from NHS Essex's World Diabetes Day article, with the NHS Essex picture of Zara in hospital (data/portraits.json, matched by id). It replaces the older Your Thurrock-sourced story rayleigh-mother-type-1-diabetes-warning-signs-world-diabetes-day, which the newsroom drops at its next run (ops/newsroom.md 2i-NHS). Zara and Mandy are named because the family told their story publicly through NHS Essex; no surnames, no email address.",
  "items": [
   {
    "section": "stories",
-   "id": "rayleigh-mother-type-1-diabetes-warning-signs-world-diabetes-day",
+   "id": "rayleigh-zara-type-1-diabetes-4ts-awareness",
    "tag": "Health",
    "icon": "health",
    "areas": [
@@ -12,17 +12,17 @@
    ],
    "place": "Rayleigh",
    "weight": 5,
-   "headline": "Rayleigh mother was told to say her goodbyes before doctors found her daughter's type 1 diabetes",
-   "summary": "Mandy hopes no other family goes through what hers did after Zara, then 13, was rushed to Southend Hospital with a life-threatening complication nobody had seen coming.",
+   "headline": "Learn the 4Ts: Rayleigh mother shares her daughter's intensive care ordeal so parents spot type 1 diabetes sooner",
+   "summary": "Mandy was told to prepare for the worst when Zara, then 13, reached Southend Hospital. Months of warning signs had gone unnoticed.",
    "body": [
-    "Zara had felt worn out on a family trip in August 2025. Back home she was sick and struggling to breathe, and at Southend Hospital she was diagnosed with type 1 diabetes and diabetic ketoacidosis (DKA), a dangerous build-up that happens when the body runs short of insulin. Her mother says staff got a defibrillator ready in case her heart stopped, then told her to call the family in and prepare for the worst.",
-    "Looking back, the signs had crept up for months: stomach and back pains, tiredness, a thirst that never went away, frequent trips to the toilet and dizzy spells. Mandy says she had never heard of the 4Ts and still carries guilt for missing them, calling the ordeal \"a catastrophic plane crash rather than a managed emergency landing\". Zara spent a week in hospital and now lives like any other teenager, using a glucose monitor and an insulin pump.",
-    "Dr Deepa Shanmugasundaram, a GP and clinical lead at NHS Essex, said symptoms can develop quickly. Children who show them should be seen the same day through their GP or NHS 111, and anyone with those signs plus severe stomach pain, rapid breathing, vomiting or confusion needs 999 or A&E straight away. Mandy now runs a monthly meet-up in Rayleigh for families of children with type 1 diabetes."
+    "A Rayleigh mother who was told to prepare for the worst at her daughter's hospital bedside is urging every parent to learn the 4Ts of type 1 diabetes: toilet, thirsty, tired and thinner. Mandy has told Zara's story through NHS Essex in the hope that other families catch the signs before a child becomes dangerously ill.",
+    "Zara had felt worn out on a family trip in August 2025. Back home she was sick and struggling to breathe, and at Southend Hospital she was diagnosed with type 1 diabetes and diabetic ketoacidosis (DKA), a life-threatening condition that develops when the body runs short of insulin. Mandy says staff got a defibrillator ready in case her heart stopped and told her to call the family in. Looking back, the signs had crept up for months: stomach and back pains, constant tiredness and thirst, frequent trips to the toilet and dizzy spells. Mandy says she had never heard of the 4Ts and likens what followed to \"a catastrophic plane crash rather than a managed emergency landing\".",
+    "Zara spent a week in hospital and now lives like any other teenager, using a glucose monitor and an insulin pump. Dr Deepa Shanmugasundaram, a GP and clinical lead at NHS Essex, said symptoms can develop quickly. Mandy has since started a monthly meet-up in Rayleigh where families of children with type 1 diabetes can share experiences and tips."
    ],
    "points": [
-    "The 4Ts of type 1 diabetes: toilet, thirsty, tired, thinner",
-    "Family meet-ups: second weekend of each month, 11.30am, Manzano Lounge, High Street, Rayleigh",
-    "Told for World Diabetes Day on Saturday 14 November"
+    "Child with the signs? Get a same-day check through your GP or NHS 111",
+    "Severe stomach pain, rapid breathing, vomiting or confusion: call 999 or go to A&E",
+    "Family meet-ups: second weekend of each month, 11.30am, Manzano Lounge, High Street, Rayleigh"
    ],
    "source": "NHS Essex",
    "url": "https://www.essex.icb.nhs.uk/news/like-a-catastrophic-plane-crash-mother-tells-story-of-nearly-losing-daughter-to-undiagnosed-diabetes/",

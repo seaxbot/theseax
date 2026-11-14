@@ -1,0 +1,32 @@
+{
+ "publishAt": "2026-11-15T14:05:00Z",
+ "note": "Owner's request, 14 Nov 2026: publish Sunday afternoon 15 Nov ('it's ok' to run despite the post being from Thursday 12 Nov). Source: Essex Police's Facebook post of 12 Nov 2026, 16:05. Picture: the Essex Police picture from that post (data/portraits.json, matched by id).",
+ "items": [
+  {
+   "section": "stories",
+   "id": "essex-police-202-shop-theft-charges-fortnight",
+   "tag": "Police",
+   "icon": "police",
+   "areas": [
+    "all"
+   ],
+   "place": "Essex",
+   "weight": 4,
+   "headline": "Essex Police secure more than 200 shop theft charges in a fortnight as retailers report more",
+   "summary": "Fifty people were charged in two weeks across the county, many of them in court the next day.",
+   "body": [
+    "Officers secured more than 202 shop theft charges against 50 people in a fortnight, Essex Police said on Thursday. Many of those charged went before magistrates the following day, and some were convicted and sentenced straight away.",
+    "Sergeant Christian Denning, of the force's Business Crime Team, put the quick results down to shops reporting more thefts, good-quality CCTV and witness statements, and fast investigations by officers.",
+    "The force said many shoplifters steal to pay for drug or alcohol addictions. People arrested for shop theft and similar crimes can be tested for Class A drugs in custody, and those who test positive are referred to treatment, while officers work with partner agencies on health and housing to cut repeat offending."
+   ],
+   "points": [
+    "Business Crime Team works with shops on prevention and security",
+    "Drug tests in custody, with referrals to treatment"
+   ],
+   "source": "Essex Police",
+   "url": "https://www.facebook.com/photo.php?fbid=1468059302126437",
+   "also": [],
+   "time": ""
+  }
+ ]
+}
