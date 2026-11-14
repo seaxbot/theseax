@@ -172,5 +172,18 @@
     "licenseUrl": "",
     "source": "",
     "addedBy": "owner, 14 Nov 2026 (Chelmsford Christmas lights switch-on story; council-supplied picture)"
+  },
+  {
+    "match": "[Dd]ispersal order covers central Southend",
+    "name": "Southend dispersal order zone, 14 November 2026",
+    "label": "Map",
+    "wide": "/img/people/southend-dispersal-map-wide.jpg",
+    "og": "/img/people/southend-dispersal-map-og.jpg",
+    "creator": "Essex Police",
+    "provider": "",
+    "license": "",
+    "licenseUrl": "",
+    "source": "",
+    "addedBy": "owner, 14 Nov 2026 (Southend dispersal order story; Essex Police map)"
   }
 ]
