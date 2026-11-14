@@ -102,6 +102,10 @@ def merge_sport_stories(live_sport, live_stories, mine):
     front_ids = {x.get("id") for x in live_stories or []}
     pos = {x.get("id"): i for i, x in enumerate(cur)}
     for st in mine:
+        if isinstance(st, dict) and st.get("id") and st.get("remove"):
+            cur = [x for x in cur if x.get("id") != st["id"]]  # owner-requested removal (also list the id in tools/takedown.txt)
+            pos = {x.get("id"): i for i, x in enumerate(cur)}
+            continue
         if not isinstance(st, dict) or not st.get("id") or not st.get("headline"):
             continue
         if st["id"] in front_ids:
