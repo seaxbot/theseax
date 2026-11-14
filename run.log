@@ -1,0 +1,123 @@
+[0s] thurrock (mg)
+  18 meetings in window
+[25s] southend (mg)
+  18 meetings in window
+[52s] epping (mg)
+  15 meetings in window
+[76s] maldon (mg)
+  16 meetings in window
+[99s] tendring (mg)
+  10 meetings in window
+[139s] harlow (mg)
+[143s] basildon (mg)
+  21 meetings in window
+[209s] brentwood (mg)
+[212s] uttlesford (mg)
+[215s] essex (cmis)
+[215s] colchester (cmis)
+[216s] rochford (cmis)
+[276s] chelmsford (chelmsford)
+  5 meetings in window
+[283s] braintree (none)
+[283s] castlepoint (none)
+  pdf southend acy.southend.gov.uk/documents/s73172/Southend New Local Plan - Regulation 19.pdf
+  pdf thurrock k.gov.uk/documents/s55428/Tilbury Library and 15A Civic Square Refurbishment.pdf
+  pdf epping 695/Printed plan Forward Plan - 01 November 2026 to 28 February 2027 Cabinet.pdf
+  pdf thurrock acy.thurrock.gov.uk/documents/s55411/Local Council Tax Support Scheme 202728.pdf
+  pdf thurrock cal Authority Housing Fund LAHF- Round 3 Programme Review and Closure Report.pdf
+  pdf southend https://democracy.southend.gov.uk/documents/s73328/Report.pdf
+  pdf epping rds.eppingforestdc.gov.uk/documents/s130724/OS Report Q2 171126 V4_JGEdit v1.pdf
+  pdf epping s.eppingforestdc.gov.uk/documents/s130717/homelessness cover sheet - amended.pdf
+{
+"thurrock": [
+"ok",
+18,
+0,
+""
+],
+"southend": [
+"ok",
+18,
+0,
+""
+],
+"epping": [
+"ok",
+15,
+1,
+""
+],
+"maldon": [
+"ok",
+16,
+0,
+""
+],
+"tendring": [
+"ok",
+10,
+0,
+""
+],
+"harlow": [
+"unreachable",
+0,
+0,
+"calendar 0 URLError(gaierror(-2, 'Name or service not known'))"
+],
+"basildon": [
+"ok",
+21,
+0,
+""
+],
+"brentwood": [
+"blocked",
+0,
+0,
+"calendar 403 HTTP Error 403: Forbidden"
+],
+"uttlesford": [
+"blocked",
+0,
+0,
+"calendar 403 HTTP Error 403: Forbidden"
+],
+"essex": [
+"refused",
+0,
+0,
+"robots.txt disallows"
+],
+"colchester": [
+"refused",
+0,
+0,
+"robots.txt disallows"
+],
+"rochford": [
+"unreachable",
+0,
+0,
+"committees 0 URLError(TimeoutError('timed out'))"
+],
+"chelmsford": [
+"ok",
+5,
+2,
+""
+],
+"braintree": [
+"manual",
+0,
+0,
+"no machine-readable meetings system found; the desk checks it by search"
+],
+"castlepoint": [
+"manual",
+0,
+0,
+"no machine-readable meetings system found; the desk checks it by search"
+]
+}
+inbox 44 meetings, calendar 49, pdf excerpts 8
