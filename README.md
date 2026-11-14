@@ -7,3 +7,5 @@ Live Essex news, sport, weather, culture and what's on.
 - Hosted on GitHub Pages, which republishes automatically whenever this repository changes. To use your own domain, add it under Settings > Pages > Custom domain.
 
 - Stock photos for generic stories come from Openverse via tools/photos.py (see ops/newsroom.md, STOCK PHOTOS).
+
+- The daily audio bulletin ("Listen" on the front page) is written at 09:00 UK by the bulletin desk (ops/bulletin.md) and rendered by tools/bulletin.py into audio/ and data/bulletin.json.
