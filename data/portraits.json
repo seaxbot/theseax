@@ -159,5 +159,18 @@
     "licenseUrl": "",
     "source": "",
     "addedBy": "owner, 13 Nov 2026 (all inquest and coroner stories; listed after the Cyprus hotel entry so the Chelmsford toddler story keeps its hotel picture)"
+  },
+  {
+    "match": "Chelmsford['’]?s? Christmas lights",
+    "name": "Chelmsford city centre Christmas lights",
+    "label": "Picture",
+    "wide": "/img/people/chelmsford-christmas-lights-wide.jpg",
+    "og": "/img/people/chelmsford-christmas-lights-og.jpg",
+    "creator": "Chelmsford City Council",
+    "provider": "",
+    "license": "",
+    "licenseUrl": "",
+    "source": "",
+    "addedBy": "owner, 14 Nov 2026 (Chelmsford Christmas lights switch-on story; council-supplied picture)"
   }
 ]
