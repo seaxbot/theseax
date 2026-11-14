@@ -102,9 +102,9 @@ POLICE_TAG_SKIP = {"court", "tribute", "fire", "ambulance"}
 POLICE_POLICY_RX = re.compile(r"\b(commissioners?|PFCC|mergers?|mega[ -]force|budgets?|precept|council tax|HMICFRS|inspections?|inspectorate)\b", re.I)
 POLICE_PHOTOS = ["bluelights", "bluelights-2"]  # img/topics/<name>.jpg and share cards img/og/<name>.jpg, rotated like the page
 POLICE_PICK = {}
-OG_JPG = {"ambulance", "tiptree", "tiptree-2", "statefayre", "christmas-2", "hospital", "bluelights", "bluelights-2", "fireengine", "countyhall", "fog", "zoo", "stansted-1", "stansted-2", "stansted-3", "gaswork", "datacentre", "remembrance", "food", "harlowcollege", "christmas", "c2c", "mersea-1", "mersea-2", "mersea-3", "bus", "pool", "homeless", "greateranglia", "liverpoolst"}
-LIBRARY_PHOTOS = POLICE_PHOTOS + ["fireengine", "ambulance", "tiptree", "tiptree-2", "statefayre", "christmas-2", "countyhall", "fog", "zoo", "stansted-1", "stansted-2", "stansted-3", "gaswork", "datacentre", "remembrance", "food", "harlowcollege", "christmas", "c2c", "mersea-1", "mersea-2", "mersea-3", "bus", "pool", "homeless", "greateranglia", "liverpoolst"]  # owner's library photos shown on story pages
-LIBRARY_ALT = {"greateranglia": "the front of a Greater Anglia train in white, red and yellow livery at London Liverpool Street", "liverpoolst": "the departures board and busy concourse at London Liverpool Street station", "ambulance": "an ambulance with blue lights", "statefayre": "the State Fayre 2027 festival logo over a crowd at Hylands Park", "tiptree": "the Wilkin & Sons Tiptree sign", "tiptree-2": "the Wilkin & Sons Tiptree sign", "christmas-2": "a lit Christmas tree", "fog": "fog over a footpath and flats at dusk", "fireengine": "a fire engine", "countyhall": "County Hall, Chelmsford, home of Essex County Council", "zoo": "visitors watching elephants at Colchester Zoo", "stansted-1": "check-in desks at London Stansted Airport", "stansted-2": "the terminal concourse at London Stansted Airport", "stansted-3": "a bus outside the terminal at London Stansted Airport", "gaswork": "a worker fitting yellow gas pipe in a trench", "datacentre": "server racks in a data centre", "remembrance": "poppy wreaths laid at a war memorial", "food": "a plate of roast chicken, grains and roasted vegetables", "harlowcollege": "the entrance to Harlow College", "christmas": "red Christmas baubles on a fir garland", "c2c": "a c2c train in white and magenta livery near Ripple Lane, Barking", "mersea-1": "pastel beach huts on the sand at West Mersea", "mersea-2": "a long row of pastel beach huts on West Mersea beach", "mersea-3": "the sandy beach and the Blackwater estuary at West Mersea", "bus": "inside a bus, with a red stop button on a yellow pole", "homeless": "a man in a woolly hat sitting on a pavement, seen from behind", "pool": "an indoor swimming pool with lane ropes and steps"}
+OG_JPG = {"ambulance", "tiptree", "tiptree-2", "statefayre", "christmas-2", "hospital", "bluelights", "bluelights-2", "fireengine", "countyhall", "fog", "zoo", "stansted-1", "stansted-2", "stansted-3", "gaswork", "datacentre", "remembrance", "food", "harlowcollege", "colchestercastle", "christmas", "c2c", "mersea-1", "mersea-2", "mersea-3", "bus", "pool", "homeless", "greateranglia", "liverpoolst"}
+LIBRARY_PHOTOS = POLICE_PHOTOS + ["fireengine", "ambulance", "tiptree", "tiptree-2", "statefayre", "christmas-2", "countyhall", "fog", "zoo", "stansted-1", "stansted-2", "stansted-3", "gaswork", "datacentre", "remembrance", "food", "harlowcollege", "colchestercastle", "christmas", "c2c", "mersea-1", "mersea-2", "mersea-3", "bus", "pool", "homeless", "greateranglia", "liverpoolst"]  # owner's library photos shown on story pages
+LIBRARY_ALT = {"greateranglia": "the front of a Greater Anglia train in white, red and yellow livery at London Liverpool Street", "liverpoolst": "the departures board and busy concourse at London Liverpool Street station", "ambulance": "an ambulance with blue lights", "statefayre": "the State Fayre 2027 festival logo over a crowd at Hylands Park", "tiptree": "the Wilkin & Sons Tiptree sign", "tiptree-2": "the Wilkin & Sons Tiptree sign", "christmas-2": "a lit Christmas tree", "fog": "fog over a footpath and flats at dusk", "fireengine": "a fire engine", "countyhall": "County Hall, Chelmsford, home of Essex County Council", "zoo": "visitors watching elephants at Colchester Zoo", "stansted-1": "check-in desks at London Stansted Airport", "stansted-2": "the terminal concourse at London Stansted Airport", "stansted-3": "a bus outside the terminal at London Stansted Airport", "gaswork": "a worker fitting yellow gas pipe in a trench", "datacentre": "server racks in a data centre", "remembrance": "poppy wreaths laid at a war memorial", "food": "a plate of roast chicken, grains and roasted vegetables", "harlowcollege": "the entrance to Harlow College", "colchestercastle": "Colchester Castle, the Norman keep, in sunshine", "christmas": "red Christmas baubles on a fir garland", "c2c": "a c2c train in white and magenta livery near Ripple Lane, Barking", "mersea-1": "pastel beach huts on the sand at West Mersea", "mersea-2": "a long row of pastel beach huts on West Mersea beach", "mersea-3": "the sandy beach and the Blackwater estuary at West Mersea", "bus": "inside a bus, with a red stop button on a yellow pole", "homeless": "a man in a woolly hat sitting on a pavement, seen from behind", "pool": "an indoor swimming pool with lane ropes and steps"}
 # Essex County Council stories use the owner's photo of County Hall, Chelmsford (owner's rule, Nov 2026), ahead of
 # stock, town and map art. Road signs, police and fire photos still win. Same rule as the page's isCountyHallStory.
 ECC_RX = re.compile(r"\bEssex County Council\b|\bCounty Hall\b", re.I)
@@ -260,6 +260,19 @@ def is_harlow_college(it, sec):
         return True
     t = " ".join(str(it.get(k) or "") for k in ("headline", "source", "org", "summary"))
     return bool(HCOL_RX.search(t) and not HCOL_NOT_RX.search(t))
+
+# Colchester Castle stories use the owner's photo of the castle (owner's rule, 14 Nov 2026), ahead of Commons, stock,
+# town and map art; road signs, police and fire photos still win, as for Harlow College. Same rule as the page's
+# isColchesterCastleStory.
+CCAS_RX = re.compile(r"\bColchester Castle\b", re.I)
+
+def is_colchester_castle(it, sec):
+    if sec in ("sport", "councilwatch") or is_police(it, sec) or is_fire(it, sec):
+        return False
+    if CCAS_RX.search(str(it.get("commons") or "")):
+        return True
+    t = " ".join(str(it.get(k) or "") for k in ("headline", "source", "org", "summary", "place"))
+    return bool(CCAS_RX.search(t))
 
 # Fog stories use the owner's fog photo (owner's rule, Nov 2026) on story pages and share cards, ahead of road signs,
 # weather cards, stock, town and map art; sport, police and fire stories keep their own. Same rule as the page's isFogStory.
@@ -605,6 +618,8 @@ def card_of(it, sec):
         return "statefayre"
     if is_harlow_college(it, sec) and os.path.exists(os.path.join(ROOT, "img", "og", "harlowcollege.jpg")):
         return "harlowcollege"
+    if is_colchester_castle(it, sec) and os.path.exists(os.path.join(ROOT, "img", "og", "colchestercastle.jpg")):
+        return "colchestercastle"
     if is_county_hall(it, sec) and os.path.exists(os.path.join(ROOT, "img", "og", "countyhall.jpg")):
         return "countyhall"
     if is_hospital(it, sec) and os.path.exists(os.path.join(ROOT, "img", "og", "hospital.jpg")):
@@ -1227,11 +1242,12 @@ def story_page(sec, it, more):
     more_html = "".join(
         f'<a class="rel" href="/story/{E(m["id"])}/" style="--c:{ICON_COLOUR.get(icon_of(m, s), "#3a3f4b")}"><i></i><b>{E(m["headline"])}</b><span>{E(m.get("place") or "Essex")}</span></a>'
         for s, m in more)
-    fig = "" if card in ("countyhall", "tiptree", "tiptree-2", "statefayre", "harlowcollege", "fog", "zoo", "gaswork", "datacentre", "remembrance", "food", "c2c", "bus", "pool", "homeless", "greateranglia", "liverpoolst") or is_zoo(it, sec) or is_stansted(it, sec) or is_mersea(it, sec) or is_food(it, sec) or is_c2c(it, sec) or it.get("showMap") is True else stock_figure(it, sec)
+    fig = "" if card in ("countyhall", "tiptree", "tiptree-2", "statefayre", "harlowcollege", "colchestercastle", "fog", "zoo", "gaswork", "datacentre", "remembrance", "food", "c2c", "bus", "pool", "homeless", "greateranglia", "liverpoolst") or is_zoo(it, sec) or is_stansted(it, sec) or is_mersea(it, sec) or is_food(it, sec) or is_c2c(it, sec) or it.get("showMap") is True else stock_figure(it, sec)
     if not fig and card in LIBRARY_PHOTOS:
         cap = ("<b>County Hall, Chelmsford</b>, home of Essex County Council. Library image."
                if card == "countyhall" else "<b>Harlow College</b>. Library image."
-               if card == "harlowcollege" else "<b>Colchester Zoo</b>. Library image, not the scene of this story."
+               if card == "harlowcollege" else "<b>Colchester Castle</b>. Library image."
+               if card == "colchestercastle" else "<b>Colchester Zoo</b>. Library image, not the scene of this story."
                if card == "zoo" else "<b>London Stansted Airport</b>. Library image, not the scene of this story. Photo: London Stansted Airport."
                if card in STN_PHOTOS else "<b>West Mersea</b>. Library image, not the scene of this story."
                if card in MERSEA_PHOTOS else "<b>Gas works</b>. Library image, not the scene of this story."
