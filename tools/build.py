@@ -819,6 +819,17 @@ def portrait_of(it):
             pass
     return None
 
+def portrait_credit(p):
+    """About page credit line for an entry in data/portraits.json. Labelled owner-supplied pictures get a plain
+    "picture by" credit with no licence wording (owner's choice, 14 Nov 2026); file photos keep the full licence line."""
+    if p.get("label"):
+        if not p.get("creator"):
+            return ""
+        via = f', via <a href="{E(p["source"])}" rel="noopener">{E(p.get("provider") or "source")}</a>' if safe_url(p.get("source")) and (p.get("provider") or "") != p.get("creator") else ""
+        return f'<li>{E(p["name"])}: picture by {E(p["creator"])}{via}</li>'
+    return (f'<li>{E(p["name"])} (file photo): photo by {E(p["creator"])}, <a href="{E(p["licenseUrl"])}" rel="license noopener">{E(p["license"])}</a>, '
+            f'via <a href="{E(p["source"])}" rel="noopener">{E(p.get("provider") or "source")}</a>; set on a blurred background and shared under the same licence</li>')
+
 def portrait_figure(p):
     lab = p.get("label") or "File photo"  # e.g. "Mock-up" for an artist's impression (owner's choice, 11 Nov 2026)
     lic = f'<a href="{E(p["licenseUrl"])}" target="_blank" rel="noopener license">{E(p["license"])}</a>' if safe_url(p.get("licenseUrl")) else E(p.get("license"))
@@ -1574,7 +1585,7 @@ def photo_credits():
         lic_html = f'<a href="{E(c["licenseUrl"])}" rel="license noopener">{E(lic)}</a>' if c.get("licenseUrl") else E(lic)
         rows.append(f'<li>{E(c["what"])}: photo by {E(c["by"])}, {lic_html}, via <a href="{E(c["source"])}" rel="noopener">Wikimedia Commons</a></li>')
     return ('<h2 id="photo-credits">Photo credits</h2>\n<p>Town photographs on The Seax come from Wikimedia Commons and are used under the licences shown. '
-            'They have been resized for the web and are shared under the same terms. Our map artwork is our own.</p>\n<ul class="credits">' + "".join(rows) + '<li>London Stansted Airport library images: photos by London Stansted Airport</li>' + f'<li>c2c train 357 040 at Ripple Lane (used on c2c stories): photo by kitmasterbloke, <a href="{C2C_CREDIT["licenseUrl"]}" rel="license noopener">CC BY 4.0</a>, via <a href="{C2C_CREDIT["source"]}" rel="noopener">Wikimedia Commons</a>; cropped and resized</li>' + "".join(f'<li>{E(p["name"])} (file photo): photo by {E(p["creator"])}, <a href="{E(p["licenseUrl"])}" rel="license noopener">{E(p["license"])}</a>, via <a href="{E(p["source"])}" rel="noopener">{E(p.get("provider") or "source")}</a>; set on a blurred background and shared under the same licence</li>' for p in PORTRAITS) + "</ul>\n")
+            'They have been resized for the web and are shared under the same terms. Our map artwork is our own.</p>\n<ul class="credits">' + "".join(rows) + '<li>London Stansted Airport library images: photos by London Stansted Airport</li>' + f'<li>c2c train 357 040 at Ripple Lane (used on c2c stories): photo by kitmasterbloke, <a href="{C2C_CREDIT["licenseUrl"]}" rel="license noopener">CC BY 4.0</a>, via <a href="{C2C_CREDIT["source"]}" rel="noopener">Wikimedia Commons</a>; cropped and resized</li>' + "".join(portrait_credit(p) for p in PORTRAITS) + "</ul>\n")
 
 
 def contact_page():
