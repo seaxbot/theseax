@@ -2,7 +2,8 @@
 """The Seax daily audio bulletin (owner's request, 14 Nov 2026).
 
 Turns a spoken script into the MP3 that the "Listen" player on the front page plays.
-The script is written each morning at 09:00 UK time by the bulletin desk (see ops/bulletin.md).
+The script is written twice a day, at 07:00 and 17:00 UK time, by the bulletin desk (see ops/bulletin.md).
+(Owner first asked for 09:00 on 14 Nov 2026, then the same day moved it to 07:00 and 17:00.)
 
   python3 tools/bulletin.py --script /tmp/bulletin.txt --stories id1,id2,id3
   python3 tools/bulletin.py --script /tmp/bulletin.txt --dry-run     (render to /tmp only, change nothing)
@@ -13,8 +14,8 @@ The owner's house style for the audio:
   - exactly 1.5 seconds of silence between paragraphs (owner's choice)
   - a soft chime (assets/audio/chime.wav) at the start and the end
 Writes:
-  audio/bulletin-YYYY-MM-DD.mp3   (older bulletins are deleted, so the repository does not grow by a file a day)
-  data/bulletin.json              what the player reads: date, file, duration, waveform peaks, story ids
+  audio/bulletin-YYYY-MM-DD-am.mp3 or -pm.mp3   (older bulletins are deleted, so the repository does not keep piling up files)
+  data/bulletin.json              what the player reads: date, slot (am/pm), file, duration, waveform peaks, story ids
 Needs: pip packages kokoro-onnx and soundfile (installed automatically if missing), ffmpeg (or imageio-ffmpeg),
 and the Kokoro model files, downloaded once from GitHub into ~/.cache/seax-tts.
 """
@@ -124,11 +125,13 @@ def main():
     ap.add_argument("--script", required=True)
     ap.add_argument("--stories", default="", help="comma-separated ids of the stories read out, in order")
     ap.add_argument("--date", default="", help="UK date YYYY-MM-DD (default: today)")
+    ap.add_argument("--slot", choices=["am", "pm", "auto"], default="auto", help="morning (07:00) or evening (17:00) bulletin; auto = by UK time now")
     ap.add_argument("--dry-run", action="store_true")
     a = ap.parse_args()
 
     now = datetime.now(timezone.utc)
     date = a.date or now.astimezone(UK).strftime("%Y-%m-%d")
+    slot = a.slot if a.slot != "auto" else ("am" if now.astimezone(UK).hour < 12 else "pm")
     paras = paragraphs(open(a.script, encoding="utf-8").read())
     if len(paras) < 3:
         raise SystemExit("script too short: need the welcome, some stories and a sign-off, separated by blank lines")
@@ -138,7 +141,7 @@ def main():
     ff = ffmpeg_bin()
     tmp_wav = "/tmp/seax-bulletin-voice.wav"
     render(paras, tmp_wav)
-    rel = f"audio/bulletin-{date}.mp3"
+    rel = f"audio/bulletin-{date}-{slot}.mp3"
     out = "/tmp/" + os.path.basename(rel) if a.dry_run else os.path.join(ROOT, rel)
     os.makedirs(os.path.dirname(out), exist_ok=True)
     chime = ["-i", CHIME] if os.path.exists(CHIME) else []
@@ -169,10 +172,11 @@ def main():
             os.remove(os.path.join(ROOT, "audio", f))
     meta = {
         "date": date,
+        "slot": slot,
         "file": "/" + rel,
         "duration": round(dur, 1),
         "madeAt": now.strftime("%Y-%m-%dT%H:%M:%SZ"),
-        "title": "Today's Essex News Bulletin",
+        "title": "Essex News Bulletin, " + ("morning" if slot == "am" else "evening"),
         "voice": VOICE,
         "stories": [s.strip() for s in a.stories.split(",") if s.strip()],
         "peaks": peaks(ff, out),

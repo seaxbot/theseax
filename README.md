@@ -8,4 +8,4 @@ Live Essex news, sport, weather, culture and what's on.
 
 - Stock photos for generic stories come from Openverse via tools/photos.py (see ops/newsroom.md, STOCK PHOTOS).
 
-- The daily audio bulletin ("Listen" on the front page) is written at 09:00 UK by the bulletin desk (ops/bulletin.md) and rendered by tools/bulletin.py into audio/ and data/bulletin.json.
+- The daily audio bulletin ("Listen" on the front page) is written at 07:00 and 17:00 UK by the bulletin desk (ops/bulletin.md) and rendered by tools/bulletin.py into audio/ and data/bulletin.json.

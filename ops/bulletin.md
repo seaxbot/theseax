@@ -1,23 +1,26 @@
-# The Seax audio bulletin desk (09:00 UK time, every day)
+# The Seax audio bulletin desk (07:00 and 17:00 UK time, every day)
 
-The owner asked (14 Nov 2026) for a two-minute spoken news bulletin of the site's main stories, updated every morning at 09:00 and played from the "Listen" button at the top of the front page. You write the script; `tools/bulletin.py` turns it into the MP3 in the owner's chosen voice and updates `data/bulletin.json`, which the player reads.
+The owner asked (14 Nov 2026) for a two-minute spoken news bulletin of the site's main stories, played from the "Listen" button in the My Essex row at the top of the front page. It is updated twice a day (owner's choice, 14 Nov 2026): the **morning bulletin at 07:00** and the **evening bulletin at 17:00** UK time. You write the script; `tools/bulletin.py` turns it into the MP3 in the owner's chosen voice and updates `data/bulletin.json`, which the player reads.
 
-This run is fully automated. Nobody will answer questions. Never use em dashes. Do no web research: the bulletin only ever reads out what The Seax has already published. Your push must be done by 09:30, before the 09:35 newsroom.
+This run is fully automated. Nobody will answer questions. Never use em dashes. Do no web research: the bulletin only ever reads out what The Seax has already published. Your push must be done by 07:30 (morning) or 17:30 (evening), before the newsroom run at :35.
 
-## 1. Check it is not already done
+## 1. Which bulletin, and is it already done?
 
-`python3 -c "import json;print(json.load(open('data/bulletin.json')).get('date'))"` . If it prints today's UK date, stop: today's bulletin exists.
+Before 12:00 UK time this is the **morning** bulletin (slot `am`); from 12:00 it is the **evening** bulletin (slot `pm`).
+`python3 -c "import json;d=json.load(open('data/bulletin.json'));print(d.get('date'),d.get('slot'))"` . If it prints today's UK date and this slot, stop: this bulletin exists.
 
 ## 2. Pick the stories (from edition.json only)
 
 Read `edition.json` with Python, not by eye. In this order:
 
 1. The lead (`lead.id`), then the `front` picks.
-2. Then the strongest other stories from `stories` (and `official`, `courts`, `community` if they hold news), by `weight` and freshness, published or updated since 09:00 yesterday. Prefer the last 12 hours when there is enough.
+2. Then the strongest other stories from `stories` (and `official`, `courts`, `community` if they hold news), by `weight` and freshness.
+   - Morning: published or updated since 17:00 yesterday, overnight and early news first; fill from yesterday's big stories only if the morning is thin.
+   - Evening: published or updated since 07:00 today, so a listener who heard the morning bulletin gets something new. Today's lead may repeat if it is still the lead, told with today's latest. Fill from the morning only if the day is thin.
 3. Aim for **five to seven news stories**, with a spread of districts (not all Southend, not all Chelmsford) and a spread of subjects (not all crime). Skip `linkOnly` items.
-4. Sport: one paragraph. Essex results since yesterday morning from `sport.results` (Essex clubs only: Colchester United, Southend United, Chelmsford City, Braintree Town, Billericay Town, Essex cricket, Essex rugby clubs and the rest), or today's big fixtures from `sport.fixtures` if there are no results worth reading. Only scores and fixtures that are in the edition.
+4. Sport: one paragraph. Morning: results since yesterday afternoon, then today's big fixtures. Evening: today's results first (from `sport.results`; on a Saturday most 3pm games will have finished by 17:00, so read the final scores that are in the edition), then tonight's fixtures. Essex results from `sport.results` (Essex clubs only: Colchester United, Southend United, Chelmsford City, Braintree Town, Billericay Town, Essex cricket, Essex rugby clubs and the rest), or today's big fixtures from `sport.fixtures` if there are no results worth reading. Only scores and fixtures that are in the edition.
 5. Optionally one light "and finally" item (What's On, community, a festive or quirky story).
-6. Weather: today from `weather.days[0]` (and `weather.warnings` if a warning is live). Tonight's low, and a word about tomorrow.
+6. Weather (and `weather.warnings` if a warning is live): morning, today's high from `weather.days[0]` and tonight's low; evening, tonight's low and tomorrow from `weather.days[1]`.
 
 Never read a story that is not on the site. Never add a fact that is not in the published story.
 
@@ -27,7 +30,7 @@ Save it to `/tmp/bulletin.txt`: plain text, **one paragraph per story, a blank l
 
 **Fixed opening (owner's wording), as the first paragraph:**
 `Hello and welcome to today's Essex News Bulletin from the See-Ax. It's <Weekday>, the <ordinal day in words> of <Month>.`
-For example: `It's Sunday, the fifteenth of November.`
+For example: `It's Sunday, the fifteenth of November.` Use the owner's opening for both bulletins. In the evening you may add "evening": `It's Sunday evening, the fifteenth of November.`
 
 **Fixed sign-off, as the last paragraph:**
 `That's all for now. For the full stories, head to the See-Ax dot com.`
@@ -52,21 +55,21 @@ For example: `It's Sunday, the fifteenth of November.`
 ## 4. Make the audio
 
 ```
-python3 tools/bulletin.py --script /tmp/bulletin.txt --stories <story ids read out, in order, comma-separated>
+python3 tools/bulletin.py --script /tmp/bulletin.txt --slot <am or pm> --stories <story ids read out, in order, comma-separated>
 ```
 
 The first run in a fresh environment downloads the voice model (about 350 MB from GitHub) and installs `kokoro-onnx`; allow up to 10 minutes and a generous command timeout (run it in the background if your tool limits commands to 2 minutes, and wait for it). It prints the duration.
 - Over 2:40: cut the weakest story and run it again. Under 1:50: add one more story and run it again.
-- It writes `audio/bulletin-<date>.mp3`, deletes older bulletin files and writes `data/bulletin.json`. Do not edit those by hand.
+- It writes `audio/bulletin-<date>-<slot>.mp3`, deletes older bulletin files and writes `data/bulletin.json`. Do not edit those by hand.
 
 ## 5. Publish
 
 ```
 git add -A audio data/bulletin.json
-git commit -m "Audio bulletin <date>"
+git commit -m "Audio bulletin <date> <morning or evening>"
 for i in 1 2 3 4 5; do git pull -q --rebase origin main && git push -q origin HEAD:main && break; sleep $((i*7)); done
 ```
 
 ## 6. Summary
 
-One line: `Bulletin <date>: <duration>, <n> stories (<short list>), PUSHED <commit hash>` or what went wrong.
+One line: `Bulletin <date> <morning or evening>: <duration>, <n> stories (<short list>), PUSHED <commit hash>` or what went wrong.
