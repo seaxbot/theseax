@@ -179,8 +179,8 @@ def main():
         cmd = [ff, "-y", "-v", "error", *chime, "-i", tmp_wav, *chime, "-filter_complex", fc, "-map", "[a]"]
     else:
         cmd = [ff, "-y", "-v", "error", "-i", tmp_wav, "-af", "loudnorm=I=-14:TP=-3.5"]
-    # 64 kbps mono: clear for speech and about 1 MB a day
-    subprocess.run(cmd + ["-ar", "44100", "-ac", "1", "-b:a", "64k", out], check=True)
+    # 256 kbps mono, 44.1 kHz: Amazon's Alexa Flash Briefing spec (owner's choice, 14 Nov 2026; about 4.5 MB a bulletin)
+    subprocess.run(cmd + ["-ar", "44100", "-ac", "1", "-b:a", "256k", out], check=True)
     probe = shutil.which("ffprobe")
     if probe:
         dur = float(subprocess.run([probe, "-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", out],
