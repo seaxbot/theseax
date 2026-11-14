@@ -1,5 +1,18 @@
 [
   {
+    "match": "Fatima Whitbread",
+    "name": "Fatima Whitbread MBE (left) at Brentwood's Freedom of the Borough presentation",
+    "label": "Picture",
+    "wide": "/img/people/fatima-whitbread-brentwood-wide.jpg",
+    "og": "/img/people/fatima-whitbread-brentwood-og.jpg",
+    "creator": "",
+    "provider": "",
+    "license": "",
+    "licenseUrl": "",
+    "source": "",
+    "addedBy": "owner, 14 Nov 2026 (Fatima Whitbread Freedom of Brentwood story; owner-supplied picture)"
+  },
+  {
     "match": "\\bThree Shells\\b",
     "name": "Three Shells Lagoon and Southend Pier",
     "label": "Photo file",
