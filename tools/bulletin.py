@@ -12,7 +12,7 @@ Script format: plain text, one story per paragraph, paragraphs separated by a bl
 The owner's house style for the audio:
   - voice: Kokoro "bm_george" (British male) at speed 1.12 (owner chose the male v3 voice, 14 Nov 2026)
   - exactly 1.5 seconds of silence between paragraphs (owner's choice)
-  - a short pulsy sting with a beat (assets/audio/chime.wav, made by tools/make_sting.py) at the start and the end (owner asked for more of a beat, 14 Nov 2026)
+  - a news-style sting (assets/audio/chime.wav, made by tools/make_sting.py) at the start and the end (owner asked for a BBC News type beat, 14 Nov 2026)
 Writes:
   audio/bulletin-YYYY-MM-DD-am.mp3 or -pm.mp3   (older bulletins are deleted, so the repository does not keep piling up files)
   data/bulletin.json              what the player reads: date, slot (am/pm), file, duration, waveform peaks, story ids

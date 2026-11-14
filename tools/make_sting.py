@@ -1,9 +1,11 @@
 #!/usr/bin/env python3
 """Makes the bulletin's opening and closing sting, assets/audio/chime.wav.
 
-The owner asked (14 Nov 2026) for the sting to be more pulsy, with a beat, in place of the first soft chime.
-It keeps the old chime's C, E, G notes, now over one bar of four-on-the-floor at 122 bpm,
-then ends on a C major chord that rings out. Mono, 24 kHz, about 3 seconds.
+History (owner's requests, 14 Nov 2026): first a soft chime; then "more pulsy, with a beat";
+then "a bit kid like, let's try a BBC News type beat". This is the third: an original news-ident
+in that serious broadcast style, not a copy of any real theme. A ticking 16th-note pulse,
+driving low strings in D minor, timpani hits and a riser, landing on a big low boom and a brass
+chord that rings out, with a quiet high synth pulse on 16ths. Mono, 24 kHz, about 4 seconds.
 
   python3 tools/make_sting.py            (rewrites assets/audio/chime.wav)
   python3 tools/make_sting.py --out /tmp/sting.wav
@@ -11,64 +13,127 @@ then ends on a C major chord that rings out. Mono, 24 kHz, about 3 seconds.
 import argparse, os
 import numpy as np
 import soundfile as sf
+from scipy.signal import butter, lfilter
 
 SR = 24000
-BPM = 122
+BPM = 118
 BEAT = 60 / BPM
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+RNG = np.random.default_rng(7)
 
 
 def hz(note):  # MIDI note number to frequency
     return 440.0 * 2 ** ((note - 69) / 12)
 
 
+def tt(length):
+    return np.arange(int(length * SR)) / SR
+
+
 def env(n, attack, decay):
     t = np.arange(n) / SR
-    a = np.minimum(t / max(attack, 1e-4), 1.0)
-    return a * np.exp(-t / decay)
+    return np.minimum(t / max(attack, 1e-4), 1.0) * np.exp(-t / decay)
 
 
-def kick(length=0.35):
+def lowpass(x, cutoff, order=2):
+    b, a = butter(order, cutoff / (SR / 2), "low")
+    return lfilter(b, a, x)
+
+
+def highpass(x, cutoff, order=2):
+    b, a = butter(order, cutoff / (SR / 2), "high")
+    return lfilter(b, a, x)
+
+
+def saw(note, length, voices=3, spread=0.006, top=9000):
+    """Band-limited, slightly detuned sawtooth: the raw material for strings and brass."""
+    t = tt(length)
+    out = np.zeros(len(t))
+    for v in range(voices):
+        f = hz(note) * (1 + spread * (v - (voices - 1) / 2))
+        ph = RNG.uniform(0, 2 * np.pi)
+        k = 1
+        while f * k < top:
+            out += np.sin(2 * np.pi * f * k * t + ph * k) / k
+            k += 1
+    return out / voices
+
+
+def tick(accent=False):
+    """A tight, high tick, like a newsroom clock, on every 16th."""
+    t = tt(0.025)
+    f = 3200 if accent else 2600
+    return np.sin(2 * np.pi * f * t) * np.exp(-t / (0.006 if accent else 0.004)) * (1.0 if accent else 0.55)
+
+
+def timpani(note=38, length=0.9, gain=1.0):
+    t = tt(length)
+    f = hz(note) * (1 + 0.04 * np.exp(-t / 0.05))
+    body = np.sin(2 * np.pi * np.cumsum(f) / SR) + 0.4 * np.sin(2 * np.pi * np.cumsum(f * 1.5) / SR)
+    skin = highpass(RNG.standard_normal(len(t)), 300) * np.exp(-t / 0.02) * 0.3
+    return np.tanh(1.3 * (body * np.exp(-t / 0.35) + skin)) * gain
+
+
+def boom(length=2.2):
+    """Deep cinematic hit: falling sub plus a burst of filtered noise."""
+    t = tt(length)
+    f = 34 + 60 * np.exp(-t / 0.08)
+    sub = np.sin(2 * np.pi * np.cumsum(f) / SR) * np.exp(-t / 0.7)
+    hitn = lowpass(RNG.standard_normal(len(t)), 1800) * np.exp(-t / 0.12) * 0.5
+    return np.tanh(1.5 * (sub + hitn))
+
+
+def string_stab(note, length):
+    """Short, punchy low-string 8th note."""
+    x = saw(note, length) + 0.6 * saw(note + 12, length)
+    x = lowpass(x, 1400)
+    n = len(x)
+    return x * env(n, 0.008, 0.09) * 0.5
+
+
+def brass(notes, length=2.0):
+    """A held brass-and-strings chord that swells slightly, then rings away."""
     n = int(length * SR)
+    x = np.zeros(n)
+    for note in notes:
+        x += saw(note, length, voices=4, spread=0.004)
     t = np.arange(n) / SR
-    f = 48 + 110 * np.exp(-t / 0.035)               # pitch drops from about 160 Hz to 48 Hz
-    body = np.sin(2 * np.pi * np.cumsum(f) / SR) * np.exp(-t / 0.16)
-    click = np.random.default_rng(1).standard_normal(n) * np.exp(-t / 0.004) * 0.25
-    return np.tanh(1.6 * (body + click))
+    # brighter at the attack, darker as it decays: blend two filtered copies
+    bright, dark = lowpass(x, 4200), lowpass(x, 1200)
+    mix = np.exp(-t / 0.25)
+    x = bright * mix + dark * (1 - mix)
+    return x * np.minimum(t / 0.012, 1.0) * np.exp(-t / 0.9) / len(notes) * 0.9
 
 
-def hat(length=0.06, seed=0):
-    n = int(length * SR)
-    noise = np.random.default_rng(seed).standard_normal(n)
-    noise = np.diff(np.concatenate([[0], noise]))    # crude high-pass
-    return noise * env(n, 0.001, 0.014) * 0.35
+def riser(length):
+    """Rising noise swell (a reversed cymbal feel) leading into the hit."""
+    t = tt(length)
+    noise = RNG.standard_normal(len(t))
+    swell = (t / length) ** 3
+    return highpass(noise, 2500) * swell * 0.35
 
 
-def pluck(note, length=0.32, bright=1.0, decay=0.18):
-    n = int(length * SR)
-    t = np.arange(n) / SR
-    f = hz(note)
-    # a little detuned saw-ish tone from a few harmonics, which decays darker over time
-    tone = np.zeros(n)
-    for k in range(1, 7):
-        if f * k > 10000:  # stay well under the 12 kHz limit at 24 kHz
-            break
-        tone += np.sin(2 * np.pi * f * k * t * (1 + 0.0015 * (k % 2))) / k * np.exp(-t * k * 6 / bright)
-    return tone * env(n, 0.003, decay) * 0.5
-
-
-def bass(note, length, decay=0.11):
-    n = int(length * SR)
-    t = np.arange(n) / SR
-    f = hz(note)
-    tone = np.sin(2 * np.pi * f * t) + 0.35 * np.sin(2 * np.pi * 2 * f * t) + 0.12 * np.sin(2 * np.pi * 3 * f * t)
-    return np.tanh(1.4 * tone) * env(n, 0.004, decay) * 0.55
+def reverb(x, wet=0.22):
+    """Small Schroeder reverb so the final chord sounds like it is in a room, not a toy."""
+    out = np.zeros(len(x))
+    for d, g in ((0.0297, 0.80), (0.0371, 0.78), (0.0411, 0.76), (0.0437, 0.74)):
+        k = int(d * SR)
+        a = np.zeros(k + 1); a[0] = 1; a[k] = -g
+        out += lfilter([1.0], a, x)
+    for d, g in ((0.005, 0.7), (0.0017, 0.7)):
+        k = int(d * SR)
+        b = np.zeros(k + 1); b[0] = -g; b[k] = 1
+        a = np.zeros(k + 1); a[0] = 1; a[k] = -g
+        out = lfilter(b, a, out)
+    out = lowpass(out, 5000)
+    return x * (1 - wet) + out / 4 * wet * 2
 
 
 def place(buf, sig, at, gain=1.0):
-    sig = sig.copy()
+    sig = np.asarray(sig, dtype=float).copy()
     f = min(len(sig) // 4, int(0.02 * SR))           # short fade-out so no sound ends with a click
-    sig[-f:] *= np.linspace(1, 0, f)
+    if f:
+        sig[-f:] *= np.linspace(1, 0, f)
     i = int(at * SR)
     j = min(len(buf), i + len(sig))
     buf[i:j] += sig[: j - i] * gain
@@ -76,38 +141,53 @@ def place(buf, sig, at, gain=1.0):
 
 def make():
     bar = 4 * BEAT
-    total = bar + 1.25
+    hit = bar + BEAT / 2                              # lands on the "and" after the bar, for urgency
+    total = hit + 2.0
     out = np.zeros(int(total * SR))
     eighth, sixteenth = BEAT / 2, BEAT / 4
 
-    for b in range(4):                                # four-on-the-floor kick
-        place(out, kick(), b * BEAT, 0.9)
-    place(out, kick(0.6), bar, 1.0)                   # final hit with the chord
-    for b in range(4):                                # off-beat hats, plus a 16th pickup into the last beat
-        place(out, hat(seed=b), b * BEAT + eighth, 0.8)
-    place(out, hat(seed=9), 3 * BEAT + 3 * sixteenth, 0.5)
+    # ticking clock on every 16th, accent on each beat, stopping just before the hit
+    i = 0
+    while i * sixteenth < hit - 0.01:
+        place(out, tick(i % 4 == 0), i * sixteenth, 0.55)
+        i += 1
 
-    # pulsing bass on 8ths, ducked under each kick (C2, then up to G2 for the last two 8ths)
-    for i in range(8):
-        note = 36 if i < 6 else 43
-        place(out, bass(note, eighth * 0.95), i * eighth + 0.012, 0.85 if i % 2 else 0.6)
-    place(out, bass(36, 1.0, decay=0.35), bar + 0.01, 0.9)
+    # driving low strings on 8ths in D minor: D D D D | Bb Bb C C, getting louder
+    line = [38, 38, 38, 38, 34, 34, 36, 36, 37]
+    for k, note in enumerate(line):
+        place(out, string_stab(note, eighth * 0.9), k * eighth, 0.55 + 0.05 * k)
 
-    # the old chime's motif as a 16th-note arpeggio, rising across the bar: C E G C | E G C E ...
-    arp = [72, 76, 79, 84, 76, 79, 84, 88, 79, 84, 88, 91, 84, 88, 91, 96]
-    for i, note in enumerate(arp):
-        place(out, pluck(note, bright=0.8 + i / 20), i * sixteenth, 0.38 + 0.2 * (i % 4 == 0))
+    # timpani on beats 1 and 3, then a quick roll into the hit
+    place(out, timpani(38), 0, 0.7)
+    place(out, timpani(34), 2 * BEAT, 0.7)
+    for k, at in enumerate(np.arange(3 * BEAT, hit - 0.02, sixteenth / 1.5)):
+        place(out, timpani(33, 0.25), at, 0.2 + 0.05 * k)
 
-    # closing C major chord that rings out
-    for note in (60, 64, 67, 72, 76, 79):
-        place(out, pluck(note, length=1.25, bright=4.0, decay=0.45), bar, 0.3)
+    # high synth pulse on 16ths for urgency: A, A, D, A over each beat, rising to Bb and C as the strings move
+    pulse = [69, 69, 74, 69] * 2 + [70, 70, 74, 70, 72, 72, 76, 72, 73, 73, 76]
+    for k, note in enumerate(pulse):
+        x = lowpass(saw(note, sixteenth * 0.8, voices=2, top=7000), 3500)
+        place(out, x * env(len(x), 0.003, 0.05), k * sixteenth, 0.16 + 0.006 * k)
 
-    # gentle fade in over the first few ms and a fade at the tail
+    # riser over the last beat and a half
+    place(out, riser(hit - 2.5 * BEAT), 2.5 * BEAT, 0.55)
+
+    pre = out.copy()                                  # keep the build-up below the hit
+    out *= 0
+    out += pre * 0.62
+
+    # the hit: boom, timpani and a D minor brass chord with an added ninth
+    place(out, boom(), hit, 1.0)
+    place(out, timpani(26, 1.4), hit, 0.8)
+    chord = reverb(np.concatenate([brass([50, 57, 62, 65, 69, 76], 2.0), np.zeros(int(0.3 * SR))]))
+    place(out, chord, hit, 1.2)
+
     fade_in = int(0.004 * SR)
     out[:fade_in] *= np.linspace(0, 1, fade_in)
-    tail = int(0.5 * SR)
+    tail = int(0.7 * SR)
     out[-tail:] *= np.linspace(1, 0, tail) ** 2
-    out = np.tanh(out * 1.2)                          # glue it together
+    out = highpass(out, 28)                           # no sub rumble below hearing
+    out = np.tanh(out * 1.3)
     return out / np.max(np.abs(out)) * 0.89
 
 
