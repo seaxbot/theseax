@@ -103,28 +103,33 @@
    "headline": "Good morning Essex: weather today 🌦️ light showers, high of 11C, 50% chance of rain, falling to 4C tonight.",
    "at": "2026-11-15T08:08:08Z",
    "update": false,
-   "fb": "1393645400503465_122102047731546994"
+   "fb": "1393645400503465_122102047731546994",
+   "lead": "wickford-simon-mahoney-missing-cctv-chelmsford-east-grinstead"
   },
   {
    "id": "digest-lunch-2026-11-15",
    "headline": "🥪 Sunday lunchtime in Essex: the big story",
    "at": "2026-11-15T12:07:25Z",
    "update": false,
-   "fb": "1393645400503465_122102193423546994"
+   "fb": "1393645400503465_122102193423546994",
+   "lead": "wickford-simon-mahoney-missing-cctv-chelmsford-east-grinstead"
   },
   {
    "id": "digest-commute-2026-11-15",
    "headline": "🌆 Your Sunday evening catch-up: 3 Essex stories before the week ahead",
    "at": "2026-11-15T17:46:26Z",
    "update": false,
-   "fb": "1393645400503465_122102411931546994"
+   "fb": "1393645400503465_122102411931546994",
+   "lead": "wickford-simon-mahoney-missing-cctv-chelmsford-east-grinstead"
   },
   {
    "id": "digest-night-2026-11-15",
    "headline": "🌙 News at 9: the 10 Essex stories you may have missed this Sunday",
    "at": "2026-11-15T21:16:44Z",
    "update": false,
-   "fb": "1393645400503465_122102538345546994"
+   "fb": "1393645400503465_122102538345546994",
+   "lead": "maldon-salt-german-rock-salt-sea-salt-observer",
+   "image": "https://theseax.com/img/stock/maldon-salt-german-rock-salt-sea-salt-observer-ai-illustration.jpg"
   }
  ]
 }

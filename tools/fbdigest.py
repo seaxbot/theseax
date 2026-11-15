@@ -14,6 +14,7 @@ belongs to and stops unless the answer is the Page named "The Seax" (owner's har
   python3 tools/fbdigest.py --slot auto       post whichever slot is due now (within 50 minutes of its time), once a day
   python3 tools/fbdigest.py --slot night --dry-run   print the post without posting
   python3 tools/fbdigest.py --slot lunch --choose    print JSON {message, link} for posting another way (e.g. the browser)
+Every round-up leads with a different story and picture from the earlier ones that day (owner's rule, 15 Nov 2026).
 State: data/fb-posted.json (shared with tools/fbpage.py, so the hourly poster waits after a round-up).
 """
 import json, os, re, sys
@@ -37,7 +38,7 @@ def latest_t(it):
     ts = [t for t in (fbpage.parse_t(it.get("time")), fbpage.parse_t(it.get("updated")), fbpage.parse_t(it.get("headlineAt"))) if t]
     return max(ts) if ts else None
 
-def pick(ed, now, slot):
+def pick(ed, now, slot, full=False):
     """Top stories for the slot: the lead, then the front-page picks, then the rest by weight and freshness."""
     cfg = SLOTS[slot]
     uk = fbpage.uk_now(now)
@@ -66,7 +67,81 @@ def pick(ed, now, slot):
                + (200 if it.get("breaking") else 0) + w * 20 - (now - t).total_seconds() / 1800
         out.append((rank, it))
     out.sort(key=lambda x: -x[0])
-    return [it for _, it in out[:cfg["n"]]]
+    ranked = [it for _, it in out]
+    return ranked if full else ranked[:cfg["n"]]
+
+# ---------- a different lead every post (owner's rule, 15 Nov 2026) ----------
+# Three round-ups on 15 Nov led with the same story and the same picture. Every round-up must now lead with a
+# different story from the earlier round-ups that day (and from the one before it, so the morning post does not
+# repeat last night's). The picture on the post must be different too. A story only keeps the lead twice when it
+# is major breaking news (breaking, weight 9 or 10) or nothing else is available, and then the post goes out
+# with the story's map instead of its photo.
+def og_image_of(sid):
+    try:
+        m = re.search(r'property="og:image" content="([^"]+)"', open(os.path.join(ROOT, "story", sid, "index.html"), encoding="utf-8").read())
+        return m.group(1).split("?")[0] if m else ""
+    except OSError:
+        return ""
+
+def used_leads(posts, uk):
+    """Lead story ids and pictures of today's round-ups, plus the round-up before this one whatever the day."""
+    digests = [p for p in posts if str(p.get("id", "")).startswith("digest-")]
+    mine = [p for p in digests if str(p.get("id", "")).endswith(f"{uk:%Y-%m-%d}")] + digests[-1:]
+    return {p["lead"] for p in mine if p.get("lead")}, {p["image"] for p in mine if p.get("image") and p["image"] != "map"}
+
+def major_breaking(it):
+    try:
+        return it.get("breaking") is True and float(it.get("weight") or 0) >= 9
+    except (TypeError, ValueError):
+        return False
+
+def order_for_lead(ranked, n, ids, imgs):
+    """Returns (items, use_map). The first item is the post's lead and link."""
+    if not ranked:
+        return [], False
+    top = ranked[0]
+    if top["id"] not in ids and og_image_of(top["id"]) not in imgs:
+        return ranked[:n], False                      # the top story has not led today: nothing to change
+    if top["id"] in ids and major_breaking(top):
+        return ranked[:n], True                       # a major story keeps the lead, with the map as its picture
+    fresh = next((it for it in ranked if it["id"] not in ids and og_image_of(it["id"]) not in imgs), None)
+    if fresh:
+        return ([fresh] + [it for it in ranked if it is not fresh])[:n], False
+    other = next((it for it in ranked if it["id"] not in ids), None)
+    if other:                                          # a different story, but its photo has already been used today
+        return ([other] + [it for it in ranked if it is not other])[:n], True
+    return ranked[:n], True                           # nothing else to lead with: same story, map picture
+
+def map_png(it):
+    """The story's Essex map (the same one its page draws) as a PNG for a photo post. None if it cannot be made."""
+    import subprocess, shutil, tempfile
+    try:
+        import build
+        svg = build.story_map_svg(it, "#c8102e", aspect=0.525)
+        svg = svg.replace("<svg ", '<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" ', 1)
+        if not shutil.which("rsvg-convert"):          # GitHub's runners do not always have it
+            subprocess.run("sudo apt-get install -y -qq librsvg2-bin >/dev/null 2>&1", shell=True, timeout=150)
+        d = tempfile.mkdtemp()
+        open(os.path.join(d, "m.svg"), "w", encoding="utf-8").write(svg)
+        subprocess.run(["rsvg-convert", "-w", "1200", "-h", "630", "-o", os.path.join(d, "m.png"), os.path.join(d, "m.svg")], check=True, timeout=60)
+        data = open(os.path.join(d, "m.png"), "rb").read()
+        return data if len(data) > 5000 else None
+    except Exception as e:
+        print("map picture failed:", str(e)[:200])
+        return None
+
+def photo_post(page_id, token, msg, png):
+    """A photo post on the Page: the picture with the round-up text as its caption."""
+    import urllib.request, uuid
+    b = uuid.uuid4().hex
+    body = b""
+    for k, v in (("caption", msg), ("access_token", token)):
+        body += f'--{b}\r\nContent-Disposition: form-data; name="{k}"\r\n\r\n'.encode() + v.encode("utf-8") + b"\r\n"
+    body += f'--{b}\r\nContent-Disposition: form-data; name="source"; filename="essex-map.png"\r\nContent-Type: image/png\r\n\r\n'.encode() + png + f"\r\n--{b}--\r\n".encode()
+    req = urllib.request.Request(f"{fbpage.GRAPH}/{page_id}/photos", data=body,
+                                 headers={"Content-Type": f"multipart/form-data; boundary={b}", "User-Agent": "TheSeaxPagePoster/1.0"})
+    with urllib.request.urlopen(req, timeout=60) as r:
+        return json.loads(r.read().decode())
 
 def message(slot, items, now, ed=None):
     uk = fbpage.uk_now(now)
@@ -161,15 +236,16 @@ def main():
     if slot not in SLOTS:
         print(f"unknown slot {slot}"); sys.exit(2)
     ed = fbpage.load(os.path.join(ROOT, "edition.json"), {})
-    items = pick(ed, now, slot)
+    uk = fbpage.uk_now(now)
+    ids, imgs = used_leads(posts, uk)
+    items, use_map = order_for_lead(pick(ed, now, slot, full=True), SLOTS[slot]["n"], ids, imgs)
     if not items:
         print(json.dumps({"none": "no stories"}) if "--choose" in a else "no stories to post"); return
     msg, link = message(slot, items, now, ed), f"{SITE}/story/{items[0]['id']}/"
     if "--choose" in a:
-        print(json.dumps({"slot": slot, "message": msg, "link": link, "ids": [x["id"] for x in items]}, ensure_ascii=False)); return
+        print(json.dumps({"slot": slot, "message": msg, "link": link, "ids": [x["id"] for x in items], "map": use_map}, ensure_ascii=False)); return
     if "--dry-run" in a:
-        print(msg + "\n\n[link card: " + link + "]"); return
-    uk = fbpage.uk_now(now)
+        print(msg + "\n\n[" + ("map picture, story: " if use_map else "link card: ") + link + "]"); return
     if posted_today(posts, slot, uk):
         print(f"{slot} round-up already posted today"); return
     token = os.environ.get("FB_PAGE_TOKEN", "").strip()
@@ -178,9 +254,20 @@ def main():
     who = fbpage.graph("me", {"fields": "id,name", "access_token": token})
     if who.get("name") != fbpage.PAGE_NAME:
         print(f"STOP: the token belongs to {who.get('name')!r}, not the {fbpage.PAGE_NAME} Page. Nothing posted."); sys.exit(1)
-    res = fbpage.graph(f"{who['id']}/feed", data={"message": msg, "link": link, "access_token": token})
-    fbpage.record(st, f"digest-{slot}-{uk:%Y-%m-%d}", msg.split("\n")[0], False, res.get("id"), now)
-    print("POSTED", slot, res.get("id"))
+    res, image = None, og_image_of(items[0]["id"])
+    if use_map:
+        png = map_png(items[0])
+        if png:
+            try:
+                res, image = photo_post(who["id"], token, msg, png), "map"
+            except Exception as e:
+                print("map photo post failed, posting the link instead:", str(e)[:200])
+    if not res:
+        res = fbpage.graph(f"{who['id']}/feed", data={"message": msg, "link": link, "access_token": token})
+    fbpage.record(st, f"digest-{slot}-{uk:%Y-%m-%d}", msg.split("\n")[0], False, res.get("post_id") or res.get("id"), now)
+    st["posts"][-1].update({"lead": items[0]["id"], "image": image})   # so later round-ups lead with something else
+    json.dump(st, open(fbpage.STATE, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
+    print("POSTED", slot, res.get("post_id") or res.get("id"), "lead:", items[0]["id"], "picture:", image)
 
 if __name__ == "__main__":
     main()
