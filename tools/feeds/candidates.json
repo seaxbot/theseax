@@ -1,0 +1,5399 @@
+[
+{
+"group": "news",
+"area": "all",
+"name": "BBC News Essex",
+"url": "https://www.bbc.co.uk/news/england/essex",
+"new": false
+},
+{
+"group": "news",
+"area": "all",
+"name": "BBC Look East",
+"url": "https://www.bbc.co.uk/news/england/look_east",
+"new": false
+},
+{
+"group": "news",
+"area": "all",
+"name": "ITV News Anglia",
+"url": "https://www.itv.com/news/anglia",
+"new": false
+},
+{
+"group": "news",
+"area": "all",
+"name": "Essex Live",
+"url": "https://www.essexlive.news",
+"new": false
+},
+{
+"group": "news",
+"area": "southend",
+"name": "Echo (south Essex)",
+"url": "https://www.echo-news.co.uk",
+"new": false
+},
+{
+"group": "news",
+"area": "south",
+"name": "Basildon Standard",
+"url": "https://www.basildonstandard.co.uk",
+"new": false
+},
+{
+"group": "news",
+"area": "colchester",
+"name": "Daily Gazette (Colchester)",
+"url": "https://www.gazette-news.co.uk",
+"new": false
+},
+{
+"group": "news",
+"area": "colchester",
+"name": "Essex County Standard",
+"url": "https://www.essexcountystandard.co.uk",
+"new": false
+},
+{
+"group": "news",
+"area": "chelmsford",
+"name": "Chelmsford Weekly News",
+"url": "https://www.chelmsfordweeklynews.co.uk",
+"new": false
+},
+{
+"group": "news",
+"area": "chelmsford",
+"name": "Chelmsford City News",
+"url": "https://www.chelmsfordcitynews.co.uk",
+"new": false
+},
+{
+"group": "news",
+"area": "braintree",
+"name": "Braintree & Witham Times",
+"url": "https://www.braintreeandwithamtimes.co.uk",
+"new": false
+},
+{
+"group": "news",
+"area": "braintree",
+"name": "Halstead Gazette",
+"url": "https://www.halsteadgazette.co.uk",
+"new": false
+},
+{
+"group": "news",
+"area": "maldon",
+"name": "Maldon & Burnham Standard",
+"url": "https://www.maldonandburnhamstandard.co.uk",
+"new": false
+},
+{
+"group": "news",
+"area": "tendring",
+"name": "Harwich & Manningtree Standard",
+"url": "https://www.harwichandmanningtreestandard.co.uk",
+"new": false
+},
+{
+"group": "news",
+"area": "tendring",
+"name": "Clacton Gazette",
+"url": "https://www.clactonandfrintongazette.co.uk",
+"new": false
+},
+{
+"group": "news",
+"area": "epping",
+"name": "Epping Forest Guardian",
+"url": "https://www.eppingforestguardian.co.uk",
+"new": false
+},
+{
+"group": "news",
+"area": "epping",
+"name": "Harlow Star",
+"url": "https://www.harlowstar.co.uk",
+"new": false
+},
+{
+"group": "news",
+"area": "uttlesford",
+"name": "Saffron Walden Reporter",
+"url": "https://www.saffronwaldenreporter.co.uk",
+"new": false
+},
+{
+"group": "news",
+"area": "uttlesford",
+"name": "Dunmow Broadcast",
+"url": "https://www.dunmowbroadcast.co.uk",
+"new": false
+},
+{
+"group": "news",
+"area": "uttlesford",
+"name": "Bishop's Stortford Independent",
+"url": "https://www.bishopsstortfordindependent.co.uk",
+"new": false
+},
+{
+"group": "news",
+"area": "south",
+"name": "Thurrock Gazette",
+"url": "https://www.thurrockgazette.co.uk",
+"new": false
+},
+{
+"group": "news",
+"area": "brentwood",
+"name": "Brentwood Live",
+"url": "https://www.brentwoodlive.co.uk",
+"new": false
+},
+{
+"group": "news",
+"area": "brentwood",
+"name": "Romford Recorder",
+"url": "https://www.romfordrecorder.co.uk",
+"new": false
+},
+{
+"group": "news",
+"area": "south",
+"name": "Yellow Advertiser",
+"url": "https://www.yellowad.co.uk",
+"new": false
+},
+{
+"group": "news",
+"area": "colchester",
+"name": "East Anglian Daily Times",
+"url": "https://www.eadt.co.uk",
+"new": false
+},
+{
+"group": "news",
+"area": "all",
+"name": "Essex County News",
+"url": "https://www.essexcountynews.co.uk",
+"new": false
+},
+{
+"group": "news",
+"area": "all",
+"name": "Local Government Lawyer (Essex planning)",
+"url": "https://www.localgovernmentlawyer.co.uk",
+"new": false
+},
+{
+"group": "news",
+"area": "chelmsford",
+"name": "Essex Chronicle (published on Essex Live)",
+"url": "https://www.essexlive.news/all-about/chelmsford",
+"new": false
+},
+{
+"group": "news",
+"area": "epping",
+"name": "Hertfordshire Mercury / Herts & Essex Observer (Harlow & Stortford borders)",
+"url": "https://www.hertfordshiremercury.co.uk/",
+"new": false
+},
+{
+"group": "news",
+"area": "uttlesford",
+"name": "Cambridge Independent (Saffron Walden & Stansted)",
+"url": "https://www.cambridgeindependent.co.uk/",
+"new": false
+},
+{
+"group": "news",
+"area": "uttlesford",
+"name": "Cambridge News (Saffron Walden & Stansted)",
+"url": "https://www.cambridge-news.co.uk/",
+"new": false
+},
+{
+"group": "news",
+"area": "tendring",
+"name": "Ipswich Star (north Essex borders)",
+"url": "https://www.ipswichstar.co.uk/",
+"new": false
+},
+{
+"group": "news",
+"area": "braintree",
+"name": "Suffolk News: Suffolk Free Press & Haverhill Echo (Halstead & Uttlesford borders)",
+"url": "https://www.suffolknews.co.uk/",
+"new": false
+},
+{
+"group": "news",
+"area": "south",
+"name": "Kent Online (Dartford Crossing & Lower Thames Crossing)",
+"url": "https://www.kentonline.co.uk/",
+"new": false
+},
+{
+"group": "news",
+"area": "brentwood",
+"name": "MyLondon (Essex borders)",
+"url": "https://www.mylondon.news/",
+"new": false
+},
+{
+"group": "national",
+"area": "all",
+"name": "BBC News",
+"url": "https://www.bbc.co.uk/news",
+"new": false
+},
+{
+"group": "national",
+"area": "all",
+"name": "The Guardian",
+"url": "https://www.theguardian.com/uk",
+"new": false
+},
+{
+"group": "national",
+"area": "all",
+"name": "The Observer",
+"url": "https://observer.co.uk/",
+"new": false
+},
+{
+"group": "national",
+"area": "all",
+"name": "The Times & Sunday Times",
+"url": "https://www.thetimes.com/",
+"new": false
+},
+{
+"group": "national",
+"area": "all",
+"name": "The Telegraph",
+"url": "https://www.telegraph.co.uk/",
+"new": false
+},
+{
+"group": "national",
+"area": "all",
+"name": "Financial Times",
+"url": "https://www.ft.com/",
+"new": false
+},
+{
+"group": "national",
+"area": "all",
+"name": "The Independent",
+"url": "https://www.independent.co.uk/",
+"new": false
+},
+{
+"group": "national",
+"area": "all",
+"name": "The i Paper",
+"url": "https://inews.co.uk/",
+"new": false
+},
+{
+"group": "national",
+"area": "all",
+"name": "Daily Mail & Mail on Sunday",
+"url": "https://www.dailymail.co.uk/news/index.html",
+"new": false
+},
+{
+"group": "national",
+"area": "all",
+"name": "Daily Mirror",
+"url": "https://www.mirror.co.uk/news/",
+"new": false
+},
+{
+"group": "national",
+"area": "all",
+"name": "Daily Express",
+"url": "https://www.express.co.uk/news",
+"new": false
+},
+{
+"group": "national",
+"area": "all",
+"name": "The Sun",
+"url": "https://www.thesun.co.uk/news/",
+"new": false
+},
+{
+"group": "national",
+"area": "all",
+"name": "Daily Star",
+"url": "https://www.dailystar.co.uk/news/",
+"new": false
+},
+{
+"group": "national",
+"area": "all",
+"name": "Metro",
+"url": "https://metro.co.uk/news/",
+"new": false
+},
+{
+"group": "national",
+"area": "all",
+"name": "The Standard (London)",
+"url": "https://www.standard.co.uk/news",
+"new": false
+},
+{
+"group": "national",
+"area": "all",
+"name": "The New European",
+"url": "https://www.theneweuropean.co.uk/",
+"new": false
+},
+{
+"group": "national",
+"area": "all",
+"name": "The Spectator",
+"url": "https://www.spectator.co.uk/",
+"new": false
+},
+{
+"group": "national",
+"area": "all",
+"name": "New Statesman",
+"url": "https://www.newstatesman.com/",
+"new": false
+},
+{
+"group": "national",
+"area": "all",
+"name": "The Economist (Britain)",
+"url": "https://www.economist.com/britain",
+"new": false
+},
+{
+"group": "national",
+"area": "all",
+"name": "Private Eye",
+"url": "https://www.private-eye.co.uk/",
+"new": false
+},
+{
+"group": "broadcast",
+"area": "all",
+"name": "Sky News",
+"url": "https://news.sky.com/uk",
+"new": false
+},
+{
+"group": "broadcast",
+"area": "all",
+"name": "ITV News",
+"url": "https://www.itv.com/news",
+"new": false
+},
+{
+"group": "broadcast",
+"area": "all",
+"name": "Channel 4 News",
+"url": "https://www.channel4.com/news/",
+"new": false
+},
+{
+"group": "broadcast",
+"area": "all",
+"name": "LBC News",
+"url": "https://www.lbc.co.uk/news/",
+"new": false
+},
+{
+"group": "broadcast",
+"area": "all",
+"name": "GB News",
+"url": "https://www.gbnews.com/news",
+"new": false
+},
+{
+"group": "broadcast",
+"area": "all",
+"name": "BBC Radio 4 Today",
+"url": "https://www.bbc.co.uk/programmes/b006qj9z",
+"new": false
+},
+{
+"group": "broadcast",
+"area": "all",
+"name": "PA Media (via Yahoo News UK)",
+"url": "https://uk.news.yahoo.com/",
+"new": false
+},
+{
+"group": "broadcast",
+"area": "all",
+"name": "MSN UK News",
+"url": "https://www.msn.com/en-gb/news",
+"new": false
+},
+{
+"group": "broadcast",
+"area": "all",
+"name": "Reuters UK",
+"url": "https://www.reuters.com/world/uk/",
+"new": false
+},
+{
+"group": "broadcast",
+"area": "all",
+"name": "Associated Press",
+"url": "https://apnews.com/",
+"new": false
+},
+{
+"group": "broadcast",
+"area": "all",
+"name": "AFP",
+"url": "https://www.afp.com/en",
+"new": false
+},
+{
+"group": "broadcast",
+"area": "all",
+"name": "Bloomberg UK",
+"url": "https://www.bloomberg.com/uk",
+"new": false
+},
+{
+"group": "broadcast",
+"area": "all",
+"name": "ITV News London (south and west Essex)",
+"url": "https://www.itv.com/news/london",
+"new": false
+},
+{
+"group": "broadcast",
+"area": "brentwood",
+"name": "BBC London News (Essex borders)",
+"url": "https://www.bbc.co.uk/news/england/london",
+"new": false
+},
+{
+"group": "digital",
+"area": "all",
+"name": "HuffPost UK",
+"url": "https://www.huffingtonpost.co.uk/",
+"new": false
+},
+{
+"group": "digital",
+"area": "all",
+"name": "Politico Europe (London Playbook)",
+"url": "https://www.politico.eu/newsletter/london-playbook/",
+"new": false
+},
+{
+"group": "digital",
+"area": "all",
+"name": "Byline Times",
+"url": "https://bylinetimes.com/",
+"new": false
+},
+{
+"group": "digital",
+"area": "all",
+"name": "Guido Fawkes",
+"url": "https://order-order.com/",
+"new": false
+},
+{
+"group": "digital",
+"area": "all",
+"name": "Tortoise",
+"url": "https://www.tortoisemedia.com/",
+"new": false
+},
+{
+"group": "digital",
+"area": "all",
+"name": "The Bureau of Investigative Journalism",
+"url": "https://www.thebureauinvestigates.com/",
+"new": false
+},
+{
+"group": "digital",
+"area": "all",
+"name": "The Conversation UK",
+"url": "https://theconversation.com/uk",
+"new": false
+},
+{
+"group": "digital",
+"area": "all",
+"name": "openDemocracy",
+"url": "https://www.opendemocracy.net/en/",
+"new": false
+},
+{
+"group": "digital",
+"area": "all",
+"name": "UnHerd",
+"url": "https://unherd.com/",
+"new": false
+},
+{
+"group": "digital",
+"area": "all",
+"name": "LADbible",
+"url": "https://www.ladbible.com/news",
+"new": false
+},
+{
+"group": "digital",
+"area": "all",
+"name": "UNILAD",
+"url": "https://www.unilad.com/news",
+"new": false
+},
+{
+"group": "digital",
+"area": "all",
+"name": "Press Gazette",
+"url": "https://pressgazette.co.uk/",
+"new": false
+},
+{
+"group": "international",
+"area": "all",
+"name": "BBC World",
+"url": "https://www.bbc.co.uk/news/world",
+"new": false
+},
+{
+"group": "international",
+"area": "all",
+"name": "Al Jazeera English",
+"url": "https://www.aljazeera.com/",
+"new": false
+},
+{
+"group": "international",
+"area": "all",
+"name": "CNN",
+"url": "https://edition.cnn.com/",
+"new": false
+},
+{
+"group": "international",
+"area": "all",
+"name": "The New York Times",
+"url": "https://www.nytimes.com/",
+"new": false
+},
+{
+"group": "international",
+"area": "all",
+"name": "The Washington Post",
+"url": "https://www.washingtonpost.com/",
+"new": false
+},
+{
+"group": "international",
+"area": "all",
+"name": "Deutsche Welle",
+"url": "https://www.dw.com/en/",
+"new": false
+},
+{
+"group": "international",
+"area": "all",
+"name": "France 24",
+"url": "https://www.france24.com/en/",
+"new": false
+},
+{
+"group": "international",
+"area": "all",
+"name": "Euronews",
+"url": "https://www.euronews.com/",
+"new": false
+},
+{
+"group": "international",
+"area": "all",
+"name": "The Irish Times",
+"url": "https://www.irishtimes.com/",
+"new": false
+},
+{
+"group": "international",
+"area": "all",
+"name": "ABC News (Australia)",
+"url": "https://www.abc.net.au/news",
+"new": false
+},
+{
+"group": "international",
+"area": "all",
+"name": "CBC News",
+"url": "https://www.cbc.ca/news",
+"new": false
+},
+{
+"group": "international",
+"area": "all",
+"name": "Politico Europe",
+"url": "https://www.politico.eu/",
+"new": false
+},
+{
+"group": "hyperlocal",
+"area": "epping",
+"name": "Your Harlow",
+"url": "https://www.yourharlow.com",
+"new": false
+},
+{
+"group": "hyperlocal",
+"area": "epping",
+"name": "Harlow Online",
+"url": "https://harlowonline.co.uk/news/",
+"new": false
+},
+{
+"group": "hyperlocal",
+"area": "south",
+"name": "Your Thurrock",
+"url": "https://www.yourthurrock.com",
+"new": false
+},
+{
+"group": "hyperlocal",
+"area": "south",
+"name": "Thurrock Nub News",
+"url": "https://thurrock.nub.news",
+"new": false
+},
+{
+"group": "hyperlocal",
+"area": "maldon",
+"name": "Maldon Nub News",
+"url": "https://maldon.nub.news",
+"new": false
+},
+{
+"group": "hyperlocal",
+"area": "south",
+"name": "Basildon & Billericay Nub News",
+"url": "https://basildon.nub.news",
+"new": false
+},
+{
+"group": "hyperlocal",
+"area": "maldon",
+"name": "Burnham & Dengie Nub News",
+"url": "https://burnhamanddengie.nub.news",
+"new": false
+},
+{
+"group": "hyperlocal",
+"area": "southend",
+"name": "Your Southend",
+"url": "https://www.yoursouthend.co.uk",
+"new": false
+},
+{
+"group": "hyperlocal",
+"area": "southend",
+"name": "Leigh-on-Sea News",
+"url": "https://leigh-on-sea.news",
+"new": false
+},
+{
+"group": "hyperlocal",
+"area": "southend",
+"name": "Leigh-on-Sea.com community guide",
+"url": "https://www.leigh-on-sea.com",
+"new": false
+},
+{
+"group": "hyperlocal",
+"area": "southend",
+"name": "Oracle Publications (Southend)",
+"url": "https://oraclepublications.co.uk",
+"new": false
+},
+{
+"group": "hyperlocal",
+"area": "brentwood",
+"name": "Brentwood Online",
+"url": "https://brentwoodonline.co.uk",
+"new": false
+},
+{
+"group": "hyperlocal",
+"area": "all",
+"name": "Essex Insider (newsletter)",
+"url": "https://essexinsider.beehiiv.com",
+"new": false
+},
+{
+"group": "hyperlocal",
+"area": "all",
+"name": "Essex Portal",
+"url": "https://www.essexportal.co.uk",
+"new": false
+},
+{
+"group": "hyperlocal",
+"area": "all",
+"name": "Essex Police Dispatch (newsletter)",
+"url": "https://essexpoliceuk.substack.com",
+"new": false
+},
+{
+"group": "hyperlocal",
+"area": "all",
+"name": "Infrastructure Now (local round-ups)",
+"url": "https://www.infrastructure-now.co.uk",
+"new": false
+},
+{
+"group": "hyperlocal",
+"area": "all",
+"name": "Travel Wise Way (Essex travel news)",
+"url": "https://www.travelwiseway.com",
+"new": false
+},
+{
+"group": "hyperlocal",
+"area": "brentwood",
+"name": "London Now (Essex borders)",
+"url": "https://www.london-now.co.uk",
+"new": false
+},
+{
+"group": "hyperlocal",
+"area": "all",
+"name": "Essex News & Investigations",
+"url": "https://www.essexnewsandinvestigations.com/",
+"new": false
+},
+{
+"group": "hyperlocal",
+"area": "all",
+"name": "East Anglia Bylines (independent regional news)",
+"url": "https://eastangliabylines.co.uk/",
+"new": false
+},
+{
+"group": "hyperlocal",
+"area": "southend",
+"name": "Southend Today",
+"url": "https://southendtoday.co.uk/",
+"new": false
+},
+{
+"group": "hyperlocal",
+"area": "colchester",
+"name": "The Colchester Post",
+"url": "https://colchesterpost.co.uk/",
+"new": false
+},
+{
+"group": "hyperlocal",
+"area": "south",
+"name": "Basildon Today",
+"url": "https://basildontoday.co.uk/news/",
+"new": false
+},
+{
+"group": "hyperlocal",
+"area": "braintree",
+"name": "BraintreePages",
+"url": "https://braintreepages.co.uk/",
+"new": false
+},
+{
+"group": "hyperlocal",
+"area": "southend",
+"name": "SouthendonseaPages",
+"url": "https://southendonseapages.co.uk/",
+"new": false
+},
+{
+"group": "hyperlocal",
+"area": "southend",
+"name": "Sarfend (Southend information and forum)",
+"url": "https://sarfend.co.uk/",
+"new": false
+},
+{
+"group": "hyperlocal",
+"area": "chelmsford",
+"name": "Chelmsford City Hub",
+"url": "https://chelmsfordcityhub.co.uk/",
+"new": false
+},
+{
+"group": "hyperlocal",
+"area": "south",
+"name": "Basildon Hive (weekly newsletter)",
+"url": "https://news.basildonhive.co.uk/",
+"new": false
+},
+{
+"group": "hyperlocal",
+"area": "brentwood",
+"name": "The Brentwood Brief (weekly newsletter)",
+"url": "https://thebrentwoodbrief.beehiiv.com/",
+"new": false
+},
+{
+"group": "hyperlocal",
+"area": "chelmsford",
+"name": "The Chelmsford Brief (daily newsletter)",
+"url": "https://thechelmsfordbrief.co.uk/",
+"new": false
+},
+{
+"group": "hyperlocal",
+"area": "south",
+"name": "BillericayEssex.co.uk (community guide)",
+"url": "https://www.billericayessex.co.uk/",
+"new": false
+},
+{
+"group": "hyperlocal",
+"area": "epping",
+"name": "Everything Epping Forest (news service and EEF999 incident updates)",
+"url": "https://cutt.ly/bio/EEFNEWS",
+"new": false
+},
+{
+"group": "hyperlocal",
+"area": "tendring",
+"name": "Brightlingsea Info (independent town news)",
+"url": "https://brightlingsea.info/",
+"new": false
+},
+{
+"group": "hyperlocal",
+"area": "colchester",
+"name": "Rebel (University of Essex student media)",
+"url": "https://www.rebelessex.com/",
+"new": false
+},
+{
+"group": "magazines",
+"area": "chelmsford",
+"name": "Moulsham Times",
+"url": "https://www.moulshamtimes.com/",
+"new": false
+},
+{
+"group": "magazines",
+"area": "chelmsford",
+"name": "The City Times (Chelmsford, Maldon, South Woodham)",
+"url": "https://www.chelmsfordthecitytimes.co.uk/",
+"new": false
+},
+{
+"group": "magazines",
+"area": "chelmsford",
+"name": "Chelmsford Magazine",
+"url": "https://chelmsfordmagazine.co.uk/",
+"new": false
+},
+{
+"group": "magazines",
+"area": "epping",
+"name": "Harlow Magazine",
+"url": "https://harlowmagazine.com/",
+"new": false
+},
+{
+"group": "magazines",
+"area": "epping",
+"name": "North Weald Village Life (Essex Publications)",
+"url": "https://www.essexpublications.co.uk/readers-section/",
+"new": false
+},
+{
+"group": "magazines",
+"area": "epping",
+"name": "Epping Town Life (Essex Publications)",
+"url": "https://www.essexpublications.co.uk/magazines/",
+"new": false
+},
+{
+"group": "magazines",
+"area": "epping",
+"name": "Ongar Local Life (Essex Publications)",
+"url": "https://www.essexpublications.co.uk/",
+"new": false
+},
+{
+"group": "magazines",
+"area": "all",
+"name": "Essex Magazine",
+"url": "https://www.essexmagazine.co.uk/",
+"new": false
+},
+{
+"group": "magazines",
+"area": "all",
+"name": "Essex Living (Newsquest)",
+"url": "https://www.gazette-news.co.uk/essexliving/",
+"new": false
+},
+{
+"group": "magazines",
+"area": "all",
+"name": "CommunityAd Essex magazines (all titles)",
+"url": "https://www.communityad.co.uk/books/",
+"new": false
+},
+{
+"group": "magazines",
+"area": "south",
+"name": "CommunityAd Exclusives (Billericay & Brentwood)",
+"url": "https://www.communityad.co.uk/exclusives-area/billericay-brentwood/",
+"new": false
+},
+{
+"group": "magazines",
+"area": "south",
+"name": "Billericay Town News (CommunityAd)",
+"url": "https://www.communityad.co.uk/books/billericay-town-news-magazine/",
+"new": false
+},
+{
+"group": "magazines",
+"area": "brentwood",
+"name": "Billericay & Brentwood CommunityAd",
+"url": "https://www.communityad.co.uk/books/the-billericay-brentwood-communityad-magazine/",
+"new": false
+},
+{
+"group": "magazines",
+"area": "south",
+"name": "Wickford Town News (CommunityAd)",
+"url": "https://www.communityad.co.uk/wickford-town-news-magazine/",
+"new": false
+},
+{
+"group": "magazines",
+"area": "braintree",
+"name": "Braintree CommunityAd",
+"url": "https://www.communityad.co.uk/books/",
+"new": false
+},
+{
+"group": "magazines",
+"area": "braintree",
+"name": "Witham CommunityAd",
+"url": "https://www.communityad.co.uk/books/witham-communityad-magazine/",
+"new": false
+},
+{
+"group": "magazines",
+"area": "braintree",
+"name": "Coggeshall Parish Council News (CommunityAd)",
+"url": "https://www.communityad.co.uk/books/",
+"new": false
+},
+{
+"group": "magazines",
+"area": "braintree",
+"name": "Kelvedon News (CommunityAd)",
+"url": "https://www.communityad.co.uk/books/kelvedon-parish-council-magazine/",
+"new": false
+},
+{
+"group": "magazines",
+"area": "chelmsford",
+"name": "Broomfield Times (CommunityAd)",
+"url": "https://www.communityad.co.uk/books/broomfield-parish-council-magazine/",
+"new": false
+},
+{
+"group": "magazines",
+"area": "chelmsford",
+"name": "Great Baddow Times (CommunityAd)",
+"url": "https://www.communityad.co.uk/books/great-baddow-times-parish-council-magazine/",
+"new": false
+},
+{
+"group": "magazines",
+"area": "chelmsford",
+"name": "Springfield Pump (Springfield, Chelmer & Chelmsford Garden Parish News)",
+"url": "https://www.communityad.co.uk/books/",
+"new": false
+},
+{
+"group": "magazines",
+"area": "chelmsford",
+"name": "Galleywood Grapevine",
+"url": "https://www.galleywoodparishcouncil.gov.uk/our-community/grapevine-publication",
+"new": false
+},
+{
+"group": "magazines",
+"area": "brentwood",
+"name": "Ingatestone, Fryerning & Mountnessing Parish News (KAS Publishing)",
+"url": "https://issuu.com/kaspublishing",
+"new": false
+},
+{
+"group": "magazines",
+"area": "chelmsford",
+"name": "Rettendon & Battlesbridge Newsletter",
+"url": "https://e-voice.org.uk/retbatnews/",
+"new": false
+},
+{
+"group": "magazines",
+"area": "uttlesford",
+"name": "The Parish News (Berden & Manuden)",
+"url": "https://berden.org.uk/useful-links/",
+"new": false
+},
+{
+"group": "magazines",
+"area": "colchester",
+"name": "Simply Magazine (Colchester, Brightlingsea & Wivenhoe)",
+"url": "https://issuu.com/simplycolchester",
+"new": false
+},
+{
+"group": "magazines",
+"area": "epping",
+"name": "Talk About Epping (Epping Town Council magazine)",
+"url": "https://issuu.com/eppingtowncouncil",
+"new": false
+},
+{
+"group": "magazines",
+"area": "chelmsford",
+"name": "Margaretting News (parish magazine)",
+"url": "https://e-voice.org.uk/margaretting/",
+"new": false
+},
+{
+"group": "radio",
+"area": "all",
+"name": "BBC Essex",
+"url": "https://www.bbc.co.uk/sounds/play/live:bbc_radio_essex",
+"new": false
+},
+{
+"group": "radio",
+"area": "all",
+"name": "BBC Essex via Gateway 97.8",
+"url": "https://www.gateway978.com/bbc-essex",
+"new": false
+},
+{
+"group": "radio",
+"area": "south",
+"name": "Gateway 97.8 (Basildon)",
+"url": "https://www.gateway978.com",
+"new": false
+},
+{
+"group": "radio",
+"area": "all",
+"name": "Greatest Hits Radio Essex",
+"url": "https://www.hellorayo.co.uk/greatest-hits/essex/",
+"new": false
+},
+{
+"group": "radio",
+"area": "all",
+"name": "Hits Radio Essex",
+"url": "https://www.hellorayo.co.uk/hits-radio/essex/",
+"new": false
+},
+{
+"group": "radio",
+"area": "all",
+"name": "Heart Essex",
+"url": "https://www.heart.co.uk/essex/",
+"new": false
+},
+{
+"group": "radio",
+"area": "all",
+"name": "Radio Essex",
+"url": "https://www.radioessex.com",
+"new": false
+},
+{
+"group": "radio",
+"area": "brentwood",
+"name": "Phoenix FM (Brentwood & Billericay)",
+"url": "https://phoenixfm.com",
+"new": false
+},
+{
+"group": "radio",
+"area": "chelmsford",
+"name": "Chelmsford Community Radio 104.4",
+"url": "https://www.chelmsfordcommunityradio.com",
+"new": false
+},
+{
+"group": "radio",
+"area": "all",
+"name": "East London & Essex Digital",
+"url": "https://eled.uk",
+"new": false
+},
+{
+"group": "radio",
+"area": "maldon",
+"name": "Caroline Coastal FM (Maldon district)",
+"url": "https://www.carolinecoastal.co.uk/",
+"new": false
+},
+{
+"group": "radio",
+"area": "colchester",
+"name": "Colne Radio 106.6 (Wivenhoe)",
+"url": "https://colneradio.net/",
+"new": false
+},
+{
+"group": "radio",
+"area": "southend",
+"name": "Digital City Radio (Southend)",
+"url": "https://www.digitalcityradio.com/",
+"new": false
+},
+{
+"group": "radio",
+"area": "colchester",
+"name": "BFBS Colchester (Colchester Garrison)",
+"url": "https://www.bfbs.com/",
+"new": false
+},
+{
+"group": "radio",
+"area": "all",
+"name": "Cyndicut Radio (Essex & East London DAB)",
+"url": "http://www.cyndicut.net/",
+"new": false
+},
+{
+"group": "radio",
+"area": "south",
+"name": "Bedrock Radio (community and health radio)",
+"url": "https://www.bedrockradio.org.uk/",
+"new": false
+},
+{
+"group": "radio",
+"area": "tendring",
+"name": "Essex Radio (Tendring, online community station)",
+"url": "https://essex.radio/",
+"new": false
+},
+{
+"group": "radio",
+"area": "chelmsford",
+"name": "Chelmsford Talking Newspaper (weekly spoken news)",
+"url": "https://e-voice.org.uk/chelmsfordtalkingnewspaper/",
+"new": false
+},
+{
+"group": "radio",
+"area": "colchester",
+"name": "Actual Radio (Colchester & north-east Essex)",
+"url": "https://www.actualradio.com/",
+"new": false
+},
+{
+"group": "emergency",
+"area": "all",
+"name": "Essex Police news",
+"url": "https://www.essex.police.uk/news/essex/news/",
+"new": false
+},
+{
+"group": "emergency",
+"area": "all",
+"name": "Essex Police court & convicted",
+"url": "https://www.essex.police.uk/news/essex/news/?newsCategory=Court+and+Convicted",
+"new": false
+},
+{
+"group": "emergency",
+"area": "all",
+"name": "Essex County Fire & Rescue news",
+"url": "https://www.essex-fire.gov.uk/news",
+"new": false
+},
+{
+"group": "emergency",
+"area": "all",
+"name": "Essex Fire incident log",
+"url": "https://www.essex-fire.gov.uk/incidents",
+"new": false
+},
+{
+"group": "emergency",
+"area": "all",
+"name": "East of England Ambulance Service",
+"url": "https://www.eastamb.nhs.uk/newsroom",
+"new": false
+},
+{
+"group": "emergency",
+"area": "all",
+"name": "Essex & Herts Air Ambulance",
+"url": "https://ehaat.org/",
+"new": false
+},
+{
+"group": "emergency",
+"area": "all",
+"name": "Police, Fire & Crime Commissioner",
+"url": "https://essex.pfcc.police.uk/",
+"new": false
+},
+{
+"group": "emergency",
+"area": "all",
+"name": "Safer Essex Roads Partnership",
+"url": "https://saferessexroads.org/",
+"new": false
+},
+{
+"group": "emergency",
+"area": "all",
+"name": "HM Coastguard (Thames & Essex)",
+"url": "https://www.gov.uk/government/organisations/maritime-and-coastguard-agency",
+"new": false
+},
+{
+"group": "emergency",
+"area": "tendring",
+"name": "RNLI (Southend, Clacton, Walton lifeboats)",
+"url": "https://rnli.org",
+"new": false
+},
+{
+"group": "emergency",
+"area": "all",
+"name": "Essex Search & Rescue",
+"url": "https://www.essexsar.org.uk",
+"new": false
+},
+{
+"group": "emergency",
+"area": "all",
+"name": "British Transport Police",
+"url": "https://www.btp.police.uk/news",
+"new": false
+},
+{
+"group": "emergency",
+"area": "brentwood",
+"name": "Metropolitan Police (Essex borders)",
+"url": "https://news.met.police.uk",
+"new": false
+},
+{
+"group": "emergency",
+"area": "all",
+"name": "Essex Police: your area news",
+"url": "https://www.essex.police.uk/area/your-area/essex/",
+"new": false
+},
+{
+"group": "emergency",
+"area": "all",
+"name": "Police.uk crime maps (Essex)",
+"url": "https://www.police.uk/pu/your-area/essex-police/",
+"new": false
+},
+{
+"group": "emergency",
+"area": "all",
+"name": "Essex Resilience Forum (Essex Prepared)",
+"url": "https://www.essexprepared.co.uk/",
+"new": false
+},
+{
+"group": "emergency",
+"area": "all",
+"name": "Essex Violence & Vulnerability Unit",
+"url": "https://www.essexvvu.co.uk/",
+"new": false
+},
+{
+"group": "emergency",
+"area": "all",
+"name": "Essex Police weekly news bulletins",
+"url": "https://content.govdelivery.com/accounts/UKORGESSPO/bulletins",
+"new": false
+},
+{
+"group": "emergency",
+"area": "epping",
+"name": "Hertfordshire Police (Harlow & Stortford borders)",
+"url": "https://www.herts.police.uk/news/",
+"new": false
+},
+{
+"group": "emergency",
+"area": "south",
+"name": "Kent Police (Dartford Crossing)",
+"url": "https://www.kent.police.uk/news/",
+"new": false
+},
+{
+"group": "emergency",
+"area": "tendring",
+"name": "Suffolk Police (Stour valley & A12/A14 borders)",
+"url": "https://www.suffolk.police.uk/news/",
+"new": false
+},
+{
+"group": "emergency",
+"area": "all",
+"name": "IOPC (police conduct investigations)",
+"url": "https://www.policeconduct.gov.uk/",
+"new": false
+},
+{
+"group": "emergency",
+"area": "all",
+"name": "Misconduct999 (police misconduct hearings and outcomes)",
+"url": "https://misconduct999.com/east/essex-police/",
+"new": false
+},
+{
+"group": "emergency",
+"area": "all",
+"name": "HMICFRS (police and fire inspections)",
+"url": "https://hmicfrs.justiceinspectorates.gov.uk/",
+"new": false
+},
+{
+"group": "councils",
+"area": "all",
+"name": "Essex County Council",
+"url": "https://www.essex.gov.uk/news",
+"new": false
+},
+{
+"group": "councils",
+"area": "southend",
+"name": "Southend-on-Sea City Council",
+"url": "https://www.southend.gov.uk/news",
+"new": false
+},
+{
+"group": "councils",
+"area": "south",
+"name": "Thurrock Council",
+"url": "https://www.thurrock.gov.uk/news",
+"new": false
+},
+{
+"group": "councils",
+"area": "south",
+"name": "Basildon Council",
+"url": "https://basildon.gov.uk/article/7000/News",
+"new": false
+},
+{
+"group": "councils",
+"area": "braintree",
+"name": "Braintree District Council",
+"url": "https://www.braintree.gov.uk/news",
+"new": false
+},
+{
+"group": "councils",
+"area": "brentwood",
+"name": "Brentwood Borough Council",
+"url": "https://www.brentwood.gov.uk/news",
+"new": false
+},
+{
+"group": "councils",
+"area": "south",
+"name": "Castle Point Borough Council",
+"url": "https://www.castlepoint.gov.uk/news1",
+"new": false
+},
+{
+"group": "councils",
+"area": "chelmsford",
+"name": "Chelmsford City Council (CityLife)",
+"url": "https://citylife.chelmsford.gov.uk/news",
+"new": false
+},
+{
+"group": "councils",
+"area": "colchester",
+"name": "Colchester City Council",
+"url": "https://www.new.colchester.gov.uk/news",
+"new": false
+},
+{
+"group": "councils",
+"area": "epping",
+"name": "Epping Forest District Council",
+"url": "https://www.eppingforestdc.gov.uk/category/news/",
+"new": false
+},
+{
+"group": "councils",
+"area": "epping",
+"name": "Harlow Council",
+"url": "https://www.harlow.gov.uk/news",
+"new": false
+},
+{
+"group": "councils",
+"area": "maldon",
+"name": "Maldon District Council",
+"url": "https://www.maldon.gov.uk/news",
+"new": false
+},
+{
+"group": "councils",
+"area": "south",
+"name": "Rochford District Council",
+"url": "https://www.rochford.gov.uk/news",
+"new": false
+},
+{
+"group": "councils",
+"area": "tendring",
+"name": "Tendring District Council",
+"url": "https://www.tendringdc.gov.uk/news-and-events/news",
+"new": false
+},
+{
+"group": "councils",
+"area": "uttlesford",
+"name": "Uttlesford District Council",
+"url": "https://www.uttlesford.gov.uk/news",
+"new": false
+},
+{
+"group": "councils",
+"area": "all",
+"name": "Essex Highways",
+"url": "https://www.essexhighways.org",
+"new": false
+},
+{
+"group": "councils",
+"area": "all",
+"name": "Essex consultations",
+"url": "https://consultations.essex.gov.uk",
+"new": false
+},
+{
+"group": "councils",
+"area": "southend",
+"name": "Your Say Southend",
+"url": "https://yoursay.southend.gov.uk",
+"new": false
+},
+{
+"group": "councils",
+"area": "all",
+"name": "Essex County Council meetings & decisions",
+"url": "https://cmis.essex.gov.uk/essexcmis5/Committees.aspx",
+"new": false
+},
+{
+"group": "councils",
+"area": "all",
+"name": "Your Essex newsletter (Essex County Council)",
+"url": "https://pages.news.essex.gov.uk/pages/subscribe",
+"new": false
+},
+{
+"group": "councils",
+"area": "all",
+"name": "Local government reorganisation (GOV.UK)",
+"url": "https://www.gov.uk/government/collections/essex-southend-on-sea-and-thurrock-local-government-reorganisation",
+"new": false
+},
+{
+"group": "councils",
+"area": "all",
+"name": "Local government reorganisation (Essex County Council)",
+"url": "https://www.essex.gov.uk/about-council/plans-and-strategies/our-vision-essex/local-government-reorganisation-lgr",
+"new": false
+},
+{
+"group": "councils",
+"area": "all",
+"name": "Greater Essex devolution and combined authority",
+"url": "https://www.essex.gov.uk/devolution",
+"new": false
+},
+{
+"group": "councils",
+"area": "all",
+"name": "Love Essex (Essex Waste Partnership news)",
+"url": "https://www.loveessex.org/news",
+"new": false
+},
+{
+"group": "parish",
+"area": "all",
+"name": "Essex Association of Local Councils",
+"url": "https://www.ealc.gov.uk/",
+"new": false
+},
+{
+"group": "parish",
+"area": "uttlesford",
+"name": "Saffron Walden Town Council",
+"url": "https://saffronwalden.gov.uk/",
+"new": false
+},
+{
+"group": "parish",
+"area": "epping",
+"name": "Loughton Town Council",
+"url": "https://www.loughton-tc.gov.uk/",
+"new": false
+},
+{
+"group": "parish",
+"area": "epping",
+"name": "Waltham Abbey Town Council",
+"url": "https://www.walthamabbey-tc.gov.uk/",
+"new": false
+},
+{
+"group": "parish",
+"area": "south",
+"name": "Canvey Island Town Council",
+"url": "https://www.canveyisland-tc.gov.uk/",
+"new": false
+},
+{
+"group": "parish",
+"area": "south",
+"name": "Rayleigh Town Council",
+"url": "https://www.rayleightowncouncil.gov.uk/",
+"new": false
+},
+{
+"group": "parish",
+"area": "tendring",
+"name": "Harwich Town Council",
+"url": "https://www.harwichtowncouncil.gov.uk/",
+"new": false
+},
+{
+"group": "parish",
+"area": "chelmsford",
+"name": "Galleywood Parish Council",
+"url": "https://www.galleywoodparishcouncil.gov.uk/",
+"new": false
+},
+{
+"group": "parish",
+"area": "braintree",
+"name": "Castle Hedingham Parish Council",
+"url": "https://castlehedingham-pc.gov.uk/",
+"new": false
+},
+{
+"group": "parish",
+"area": "uttlesford",
+"name": "Felsted Parish Council",
+"url": "https://felsted-pc.gov.uk/",
+"new": false
+},
+{
+"group": "parish",
+"area": "epping",
+"name": "All Epping Forest town & parish councils",
+"url": "https://rds.eppingforestdc.gov.uk/mgParishCouncilDetails.aspx",
+"new": false
+},
+{
+"group": "parish",
+"area": "uttlesford",
+"name": "All Uttlesford town & parish councils",
+"url": "https://www.uttlesford.gov.uk/article/5143/Parish-and-town-councils",
+"new": false
+},
+{
+"group": "parish",
+"area": "colchester",
+"name": "All Colchester parish councils",
+"url": "https://www.new.colchester.gov.uk/parish-and-town-councils/essex-association-local-councils",
+"new": false
+},
+{
+"group": "parish",
+"area": "south",
+"name": "All Basildon town & parish councils",
+"url": "https://basildon.gov.uk/article/520/Borough-Town-Parish-and-Village-Councils",
+"new": false
+},
+{
+"group": "parish",
+"area": "colchester",
+"name": "Wivenhoe Town Council news",
+"url": "https://wivenhoe.gov.uk/news",
+"new": false
+},
+{
+"group": "parish",
+"area": "tendring",
+"name": "Brightlingsea Town Council news",
+"url": "https://brightlingseatowncouncil.gov.uk/news/",
+"new": false
+},
+{
+"group": "parish",
+"area": "colchester",
+"name": "West Mersea Town Council news",
+"url": "https://www.westmerseatowncouncil.gov.uk/Your-Council-News",
+"new": false
+},
+{
+"group": "parish",
+"area": "maldon",
+"name": "Burnham-on-Crouch Town Council notices",
+"url": "https://burnhamoncrouchtowncouncil.gov.uk/",
+"new": false
+},
+{
+"group": "parish",
+"area": "south",
+"name": "Rochford Parish Council news",
+"url": "https://www.rochfordparishcouncil.gov.uk/news-and-events/",
+"new": false
+},
+{
+"group": "parish",
+"area": "tendring",
+"name": "Lawford Parish Council notices",
+"url": "https://www.lawfordparishcouncil.gov.uk/",
+"new": false
+},
+{
+"group": "courts",
+"area": "chelmsford",
+"name": "Chelmsford Crown Court",
+"url": "https://www.find-court-tribunal.service.gov.uk/courts/chelmsford-crown-court",
+"new": false
+},
+{
+"group": "courts",
+"area": "south",
+"name": "Basildon Crown Court",
+"url": "https://www.find-court-tribunal.service.gov.uk/courts/basildon-crown-court",
+"new": false
+},
+{
+"group": "courts",
+"area": "southend",
+"name": "Southend Crown Court",
+"url": "https://www.find-court-tribunal.service.gov.uk/courts/southend-crown-court",
+"new": false
+},
+{
+"group": "courts",
+"area": "all",
+"name": "Find a court or tribunal (all Essex courts)",
+"url": "https://www.find-court-tribunal.service.gov.uk",
+"new": false
+},
+{
+"group": "courts",
+"area": "all",
+"name": "Crown Court daily listings (CauseAlert)",
+"url": "https://www.causealert.com/crown-court-listings",
+"new": false
+},
+{
+"group": "courts",
+"area": "all",
+"name": "CourtServe daily lists",
+"url": "https://www.courtserve.net",
+"new": false
+},
+{
+"group": "courts",
+"area": "all",
+"name": "Sentencing remarks (Judiciary)",
+"url": "https://www.judiciary.uk/judgments/",
+"new": false
+},
+{
+"group": "courts",
+"area": "all",
+"name": "Find Case Law (National Archives)",
+"url": "https://caselaw.nationalarchives.gov.uk",
+"new": false
+},
+{
+"group": "courts",
+"area": "all",
+"name": "CPS East of England",
+"url": "https://www.cps.gov.uk/east-england/news",
+"new": false
+},
+{
+"group": "courts",
+"area": "all",
+"name": "Essex Coroner inquest schedule",
+"url": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/",
+"new": false
+},
+{
+"group": "courts",
+"area": "chelmsford",
+"name": "HM Inspectorate of Prisons (HMP Chelmsford)",
+"url": "https://hmiprisons.justiceinspectorates.gov.uk/",
+"new": false
+},
+{
+"group": "courts",
+"area": "all",
+"name": "The Gazette (insolvency and statutory notices)",
+"url": "https://www.thegazette.co.uk/",
+"new": false
+},
+{
+"group": "planning",
+"area": "all",
+"name": "Public Notice Portal (Essex planning, roads, licensing)",
+"url": "https://publicnoticeportal.uk/",
+"new": false
+},
+{
+"group": "planning",
+"area": "all",
+"name": "Essex County Council planning applications",
+"url": "https://planning.essex.gov.uk/",
+"new": false
+},
+{
+"group": "planning",
+"area": "all",
+"name": "Planning Inspectorate appeals",
+"url": "https://acp.planninginspectorate.gov.uk/",
+"new": false
+},
+{
+"group": "planning",
+"area": "all",
+"name": "National infrastructure projects (Planning Inspectorate)",
+"url": "https://national-infrastructure-consenting.planninginspectorate.gov.uk/",
+"new": false
+},
+{
+"group": "planning",
+"area": "all",
+"name": "Planning Portal",
+"url": "https://www.planningportal.co.uk/",
+"new": false
+},
+{
+"group": "planning",
+"area": "south",
+"name": "Basildon planning search",
+"url": "https://www.basildon.gov.uk/eplanning",
+"new": false
+},
+{
+"group": "planning",
+"area": "braintree",
+"name": "Braintree planning search",
+"url": "https://www.braintree.gov.uk/pa3",
+"new": false
+},
+{
+"group": "planning",
+"area": "brentwood",
+"name": "Brentwood planning search",
+"url": "https://publicaccess.brentwood.gov.uk/online-applications/",
+"new": false
+},
+{
+"group": "planning",
+"area": "south",
+"name": "Castle Point planning applications",
+"url": "https://www.castlepoint.gov.uk/planning-applications",
+"new": false
+},
+{
+"group": "planning",
+"area": "chelmsford",
+"name": "Chelmsford planning search",
+"url": "https://publicaccess.chelmsford.gov.uk/online-applications/",
+"new": false
+},
+{
+"group": "planning",
+"area": "colchester",
+"name": "Colchester planning search",
+"url": "https://www.colchester.gov.uk/planning-search",
+"new": false
+},
+{
+"group": "planning",
+"area": "epping",
+"name": "Epping Forest planning search",
+"url": "https://eppingforestdcpr.force.com/pr/s/",
+"new": false
+},
+{
+"group": "planning",
+"area": "maldon",
+"name": "Maldon planning search",
+"url": "https://publicaccess.maldon.gov.uk/online-applications/",
+"new": false
+},
+{
+"group": "planning",
+"area": "tendring",
+"name": "Tendring planning search",
+"url": "https://idox.tendringdc.gov.uk/online-applications/",
+"new": false
+},
+{
+"group": "planning",
+"area": "southend",
+"name": "Southend weekly planning list",
+"url": "https://www.southend.gov.uk/downloads/download/263/weekly-list-of-planning-applications-registered",
+"new": false
+},
+{
+"group": "planning",
+"area": "all",
+"name": "HM Land Registry",
+"url": "https://www.gov.uk/government/organisations/land-registry",
+"new": false
+},
+{
+"group": "planning",
+"area": "all",
+"name": "Price Paid Data (property sales)",
+"url": "https://www.gov.uk/government/statistical-data-sets/price-paid-data-downloads",
+"new": false
+},
+{
+"group": "planning",
+"area": "epping",
+"name": "Harlow planning search",
+"url": "https://www.harlow.gov.uk/search-and-comment-planning-applications",
+"new": false
+},
+{
+"group": "planning",
+"area": "south",
+"name": "Thurrock planning records",
+"url": "https://www.thurrock.gov.uk/search-planning-records",
+"new": false
+},
+{
+"group": "planning",
+"area": "uttlesford",
+"name": "Uttlesford planning search",
+"url": "https://www.uttlesford.gov.uk/planning-applications",
+"new": false
+},
+{
+"group": "planning",
+"area": "all",
+"name": "Essex major infrastructure projects (NSIPs)",
+"url": "https://www.essex.gov.uk/nationally-significant-infrastructure-projects-nsips-affecting-essex",
+"new": false
+},
+{
+"group": "planning",
+"area": "all",
+"name": "Norwich to Tilbury pylons (National Grid)",
+"url": "https://www.nationalgrid.com/electricity-transmission/network-and-infrastructure/infrastructure-projects/norwich-to-tilbury",
+"new": false
+},
+{
+"group": "planning",
+"area": "tendring",
+"name": "North Falls offshore wind farm (Tendring landfall)",
+"url": "https://www.northfallsoffshore.com/",
+"new": false
+},
+{
+"group": "planning",
+"area": "tendring",
+"name": "Five Estuaries offshore wind farm (Tendring landfall)",
+"url": "https://fiveestuaries.co.uk/",
+"new": false
+},
+{
+"group": "health",
+"area": "all",
+"name": "Mid and South Essex NHS Trust",
+"url": "https://www.mse.nhs.uk",
+"new": false
+},
+{
+"group": "health",
+"area": "colchester",
+"name": "East Suffolk & North Essex NHS (Colchester Hospital)",
+"url": "https://www.esneft.nhs.uk",
+"new": false
+},
+{
+"group": "health",
+"area": "epping",
+"name": "Princess Alexandra Hospital, Harlow",
+"url": "https://www.pah.nhs.uk",
+"new": false
+},
+{
+"group": "health",
+"area": "all",
+"name": "Essex Partnership University NHS Trust",
+"url": "https://eput.nhs.uk",
+"new": false
+},
+{
+"group": "health",
+"area": "all",
+"name": "NHS Essex ICB",
+"url": "https://www.essex.icb.nhs.uk",
+"new": false
+},
+{
+"group": "health",
+"area": "all",
+"name": "Healthwatch Essex",
+"url": "https://www.healthwatchessex.org.uk",
+"new": false
+},
+{
+"group": "health",
+"area": "southend",
+"name": "Healthwatch Southend",
+"url": "https://www.healthwatchsouthend.co.uk",
+"new": false
+},
+{
+"group": "health",
+"area": "south",
+"name": "Healthwatch Thurrock",
+"url": "https://www.healthwatchthurrock.org",
+"new": false
+},
+{
+"group": "health",
+"area": "all",
+"name": "NHS 111",
+"url": "https://111.nhs.uk",
+"new": false
+},
+{
+"group": "health",
+"area": "all",
+"name": "NHS England East of England news",
+"url": "https://www.england.nhs.uk/east-of-england/category/news/",
+"new": false
+},
+{
+"group": "health",
+"area": "all",
+"name": "Essex County Council public health",
+"url": "https://www.essex.gov.uk/health-and-wellbeing-services",
+"new": false
+},
+{
+"group": "health",
+"area": "all",
+"name": "CQC inspection reports",
+"url": "https://www.cqc.org.uk/",
+"new": false
+},
+{
+"group": "transport",
+"area": "all",
+"name": "Greater Anglia",
+"url": "https://www.greateranglia.co.uk",
+"new": false
+},
+{
+"group": "transport",
+"area": "south",
+"name": "c2c",
+"url": "https://www.c2c-online.co.uk/media-centre/latest-news/",
+"new": false
+},
+{
+"group": "transport",
+"area": "brentwood",
+"name": "Elizabeth line & TfL (Shenfield)",
+"url": "https://tfl.gov.uk/status-updates/major-works-and-events",
+"new": false
+},
+{
+"group": "transport",
+"area": "all",
+"name": "National Rail live departures",
+"url": "https://www.nationalrail.co.uk",
+"new": false
+},
+{
+"group": "transport",
+"area": "all",
+"name": "National Highways (A12, A120, M11, M25)",
+"url": "https://nationalhighways.co.uk",
+"new": false
+},
+{
+"group": "transport",
+"area": "all",
+"name": "Traffic England",
+"url": "https://www.trafficengland.com",
+"new": false
+},
+{
+"group": "transport",
+"area": "all",
+"name": "one.network roadworks map",
+"url": "https://one.network",
+"new": false
+},
+{
+"group": "transport",
+"area": "south",
+"name": "Dartford Crossing",
+"url": "https://www.gov.uk/pay-dartford-crossing-charge",
+"new": false
+},
+{
+"group": "transport",
+"area": "all",
+"name": "First Essex buses",
+"url": "https://www.firstbus.co.uk/essex",
+"new": false
+},
+{
+"group": "transport",
+"area": "southend",
+"name": "Arriva buses",
+"url": "https://www.arrivabus.co.uk",
+"new": false
+},
+{
+"group": "transport",
+"area": "all",
+"name": "Stephensons of Essex",
+"url": "https://www.stephensonsofessex.com",
+"new": false
+},
+{
+"group": "transport",
+"area": "uttlesford",
+"name": "London Stansted Airport",
+"url": "https://www.stanstedairport.com",
+"new": false
+},
+{
+"group": "transport",
+"area": "southend",
+"name": "London Southend Airport",
+"url": "https://www.southendairport.com",
+"new": false
+},
+{
+"group": "transport",
+"area": "south",
+"name": "Port of Tilbury (Forth Ports)",
+"url": "https://www.forthports.co.uk",
+"new": false
+},
+{
+"group": "transport",
+"area": "south",
+"name": "DP World London Gateway",
+"url": "https://www.londongateway.com",
+"new": false
+},
+{
+"group": "transport",
+"area": "tendring",
+"name": "Harwich International (Stena Line)",
+"url": "https://www.stenaline.co.uk",
+"new": false
+},
+{
+"group": "transport",
+"area": "south",
+"name": "Lower Thames Crossing",
+"url": "https://www.lowerthamescrossing.co.uk",
+"new": false
+},
+{
+"group": "transport",
+"area": "all",
+"name": "Travel Essex news (Essex County Council)",
+"url": "https://www.travelessex.co.uk/news",
+"new": false
+},
+{
+"group": "transport",
+"area": "all",
+"name": "Essex Highways: track the gritters",
+"url": "https://essexhighways.org/track-the-gritting-lorries",
+"new": false
+},
+{
+"group": "transport",
+"area": "braintree",
+"name": "Konectbuses / Central Connect (north and mid Essex buses)",
+"url": "https://www.konectbuses.co.uk/",
+"new": false
+},
+{
+"group": "transport",
+"area": "south",
+"name": "Ensignbus (Thurrock & Basildon)",
+"url": "https://www.ensignbus.com/",
+"new": false
+},
+{
+"group": "transport",
+"area": "all",
+"name": "Bustimes.org (Essex bus routes and changes)",
+"url": "https://bustimes.org/",
+"new": false
+},
+{
+"group": "transport",
+"area": "uttlesford",
+"name": "London Stansted media centre",
+"url": "https://mediacentre.stanstedairport.com/",
+"new": false
+},
+{
+"group": "environment",
+"area": "all",
+"name": "Met Office Chelmsford forecast",
+"url": "https://weather.metoffice.gov.uk/forecast/u10q6cgzm",
+"new": false
+},
+{
+"group": "environment",
+"area": "all",
+"name": "Environment Agency flood warnings",
+"url": "https://check-for-flooding.service.gov.uk",
+"new": false
+},
+{
+"group": "environment",
+"area": "all",
+"name": "UK Power Networks power cuts",
+"url": "https://www.ukpowernetworks.co.uk/power-cut/map",
+"new": false
+},
+{
+"group": "environment",
+"area": "all",
+"name": "Anglian Water in your area",
+"url": "https://www.anglianwater.co.uk/in-my-area/",
+"new": false
+},
+{
+"group": "environment",
+"area": "all",
+"name": "Essex & Suffolk Water",
+"url": "https://www.eswater.co.uk",
+"new": false
+},
+{
+"group": "environment",
+"area": "all",
+"name": "Cadent gas",
+"url": "https://cadentgas.com",
+"new": false
+},
+{
+"group": "environment",
+"area": "southend",
+"name": "Port of London Authority (tides)",
+"url": "https://www.pla.co.uk",
+"new": false
+},
+{
+"group": "environment",
+"area": "tendring",
+"name": "Harwich Haven Authority",
+"url": "https://www.hha.co.uk",
+"new": false
+},
+{
+"group": "environment",
+"area": "all",
+"name": "Essex Wildlife Trust news",
+"url": "https://www.essexwt.org.uk/our-work/latest-news",
+"new": false
+},
+{
+"group": "environment",
+"area": "all",
+"name": "Essex country parks (Visit Parks)",
+"url": "https://www.visitparks.co.uk",
+"new": false
+},
+{
+"group": "environment",
+"area": "all",
+"name": "Environment Agency flood warnings (live)",
+"url": "https://flood-warning-information.service.gov.uk/warnings",
+"new": false
+},
+{
+"group": "environment",
+"area": "all",
+"name": "Essex Birdwatching Society",
+"url": "https://www.ebws.org.uk/",
+"new": false
+},
+{
+"group": "environment",
+"area": "south",
+"name": "RSPB South Essex Marshes",
+"url": "https://community.rspb.org.uk/placestovisit/southessexmarshes/",
+"new": false
+},
+{
+"group": "environment",
+"area": "all",
+"name": "Essex Field Club (natural history)",
+"url": "https://www.essexfieldclub.org.uk/",
+"new": false
+},
+{
+"group": "environment",
+"area": "epping",
+"name": "Affinity Water (west Essex supply)",
+"url": "https://www.affinitywater.co.uk/",
+"new": false
+},
+{
+"group": "environment",
+"area": "epping",
+"name": "Thames Water (Loughton & Chigwell area)",
+"url": "https://www.thameswater.co.uk/",
+"new": false
+},
+{
+"group": "sport",
+"area": "colchester",
+"name": "Colchester United",
+"url": "https://www.cu-fc.com",
+"new": false
+},
+{
+"group": "sport",
+"area": "southend",
+"name": "Southend United",
+"url": "https://www.southendunited.co.uk",
+"new": false
+},
+{
+"group": "sport",
+"area": "chelmsford",
+"name": "Chelmsford City FC",
+"url": "https://chelmsfordcityfc.com/",
+"new": false
+},
+{
+"group": "sport",
+"area": "brentwood",
+"name": "Brentwood Town FC",
+"url": "https://www.brentwoodtownfc.co.uk/",
+"new": false
+},
+{
+"group": "sport",
+"area": "south",
+"name": "Concord Rangers",
+"url": "https://www.concordrangers-fc.co.uk",
+"new": false
+},
+{
+"group": "sport",
+"area": "south",
+"name": "Canvey Island FC",
+"url": "https://www.canveyislandfc.com",
+"new": false
+},
+{
+"group": "sport",
+"area": "south",
+"name": "Billericay Town (results)",
+"url": "https://www.footballwebpages.co.uk/billericay-town",
+"new": false
+},
+{
+"group": "sport",
+"area": "braintree",
+"name": "Braintree Town (results)",
+"url": "https://www.footballwebpages.co.uk/braintree-town",
+"new": false
+},
+{
+"group": "sport",
+"area": "brentwood",
+"name": "Dagenham & Redbridge",
+"url": "https://www.daggers.co.uk",
+"new": false
+},
+{
+"group": "sport",
+"area": "south",
+"name": "Hashtag United",
+"url": "https://www.hashtagunited.co.uk",
+"new": false
+},
+{
+"group": "sport",
+"area": "all",
+"name": "Isthmian League (Essex clubs)",
+"url": "https://www.isthmian.co.uk",
+"new": false
+},
+{
+"group": "sport",
+"area": "all",
+"name": "Essex Senior League",
+"url": "https://www.essexseniorleague.co.uk",
+"new": false
+},
+{
+"group": "sport",
+"area": "all",
+"name": "Essex County FA",
+"url": "https://www.essexfa.com",
+"new": false
+},
+{
+"group": "sport",
+"area": "all",
+"name": "Football Web Pages (non-league)",
+"url": "https://www.footballwebpages.co.uk",
+"new": false
+},
+{
+"group": "sport",
+"area": "chelmsford",
+"name": "Essex County Cricket Club",
+"url": "https://essexcricket.org.uk",
+"new": false
+},
+{
+"group": "sport",
+"area": "chelmsford",
+"name": "Chelmsford Chieftains",
+"url": "https://www.chelmsfordchieftains.com/MatchReports",
+"new": false
+},
+{
+"group": "sport",
+"area": "chelmsford",
+"name": "Chelmsford City Racecourse",
+"url": "https://www.chelmsfordcityracecourse.com",
+"new": false
+},
+{
+"group": "sport",
+"area": "all",
+"name": "Active Essex",
+"url": "https://www.activeessex.org",
+"new": false
+},
+{
+"group": "sport",
+"area": "south",
+"name": "Gateway 97.8 local sport",
+"url": "https://www.gateway978.com/news/local/local-sport/",
+"new": false
+},
+{
+"group": "sport",
+"area": "all",
+"name": "BBC Sport non-league",
+"url": "https://www.bbc.co.uk/sport/football/national-league",
+"new": false
+},
+{
+"group": "sport",
+"area": "south",
+"name": "Aveley FC",
+"url": "https://www.pitchero.com/clubs/aveley/",
+"new": false
+},
+{
+"group": "sport",
+"area": "all",
+"name": "Isthmian League North (most Essex clubs)",
+"url": "https://www.footballwebpages.co.uk/isthmian-football-league-north-division",
+"new": false
+},
+{
+"group": "sport",
+"area": "all",
+"name": "Non League Matters (division tables)",
+"url": "https://www.nonleaguematters.co.uk/",
+"new": false
+},
+{
+"group": "sport",
+"area": "all",
+"name": "Up The Pyramid (non-league news)",
+"url": "https://www.upthepyramid.co.uk/",
+"new": false
+},
+{
+"group": "sport",
+"area": "all",
+"name": "Sky Sports (League Two & National League tables)",
+"url": "https://www.skysports.com/football/tables",
+"new": false
+},
+{
+"group": "sport",
+"area": "all",
+"name": "FA Full-Time (grassroots league tables)",
+"url": "https://fulltime.thefa.com/",
+"new": false
+},
+{
+"group": "sport",
+"area": "colchester",
+"name": "Essex & Suffolk Border League",
+"url": "https://esblfootball.com/",
+"new": false
+},
+{
+"group": "sport",
+"area": "all",
+"name": "Women's Football East (Essex women's football)",
+"url": "https://womensfootballeast.com/",
+"new": false
+},
+{
+"group": "sport",
+"area": "south",
+"name": "Billericay Town Women",
+"url": "https://www.btfcwomen.co.uk/",
+"new": false
+},
+{
+"group": "sport",
+"area": "all",
+"name": "Essex Cricket League (Hamro Foundation)",
+"url": "https://essexcl.play-cricket.com/home",
+"new": false
+},
+{
+"group": "sport",
+"area": "all",
+"name": "England Rugby fixtures & results (Essex clubs)",
+"url": "https://www.englandrugby.com/fixtures-and-results",
+"new": false
+},
+{
+"group": "sport",
+"area": "southend",
+"name": "Southend Saxons (Southend RFC)",
+"url": "https://www.southendrugby.com/",
+"new": false
+},
+{
+"group": "sport",
+"area": "southend",
+"name": "Westcliff RFC",
+"url": "https://www.westcliffrfc.co.uk/",
+"new": false
+},
+{
+"group": "sport",
+"area": "brentwood",
+"name": "Matchroom Boxing (Brentwood-based promoter)",
+"url": "https://www.matchroomboxing.com/",
+"new": false
+},
+{
+"group": "culture",
+"area": "colchester",
+"name": "Mercury Theatre, Colchester",
+"url": "https://www.mercurytheatre.co.uk",
+"new": false
+},
+{
+"group": "culture",
+"area": "colchester",
+"name": "Colchester Arts Centre",
+"url": "https://www.colchesterartscentre.com",
+"new": false
+},
+{
+"group": "culture",
+"area": "colchester",
+"name": "Firstsite, Colchester",
+"url": "https://firstsite.uk",
+"new": false
+},
+{
+"group": "culture",
+"area": "colchester",
+"name": "Colchester Museums",
+"url": "https://colchester.cimuseums.org.uk/",
+"new": false
+},
+{
+"group": "culture",
+"area": "chelmsford",
+"name": "Chelmsford Theatre",
+"url": "https://www.chelmsfordtheatre.co.uk",
+"new": false
+},
+{
+"group": "culture",
+"area": "southend",
+"name": "Southend Theatres (Cliffs Pavilion & Palace)",
+"url": "https://trafalgartickets.com/cliffs-pavilion-southend/en-GB/southend-theatres",
+"new": false
+},
+{
+"group": "culture",
+"area": "southend",
+"name": "Southend Museums & Beecroft Art Gallery",
+"url": "https://www.southendmuseums.co.uk",
+"new": false
+},
+{
+"group": "culture",
+"area": "southend",
+"name": "Focal Point Gallery",
+"url": "https://www.focalpoint.org.uk",
+"new": false
+},
+{
+"group": "culture",
+"area": "southend",
+"name": "Chinnerys, Southend",
+"url": "https://www.chinnerys.co.uk",
+"new": false
+},
+{
+"group": "culture",
+"area": "south",
+"name": "Towngate Theatre, Basildon",
+"url": "https://www.towngatetheatre.co.uk",
+"new": false
+},
+{
+"group": "culture",
+"area": "south",
+"name": "Thameside Theatre, Grays (Thurrock Council)",
+"url": "https://www.thurrock.gov.uk",
+"new": false
+},
+{
+"group": "culture",
+"area": "brentwood",
+"name": "Brentwood Theatre",
+"url": "https://www.brentwood-theatre.org",
+"new": false
+},
+{
+"group": "culture",
+"area": "epping",
+"name": "Harlow Playhouse",
+"url": "https://www.harlowplayhouse.co.uk",
+"new": false
+},
+{
+"group": "culture",
+"area": "tendring",
+"name": "Princes Theatre, Clacton",
+"url": "https://www.princestheatre.co.uk",
+"new": false
+},
+{
+"group": "culture",
+"area": "uttlesford",
+"name": "Saffron Hall",
+"url": "https://saffronhall.com",
+"new": false
+},
+{
+"group": "culture",
+"area": "epping",
+"name": "Royal Gunpowder Mills",
+"url": "https://www.royalgunpowdermills.com",
+"new": false
+},
+{
+"group": "culture",
+"area": "all",
+"name": "Essex Book Festival",
+"url": "https://www.essexbookfestival.org.uk",
+"new": false
+},
+{
+"group": "culture",
+"area": "all",
+"name": "Essex Record Office",
+"url": "https://www.essexrecordoffice.co.uk",
+"new": false
+},
+{
+"group": "culture",
+"area": "all",
+"name": "ArtRabbit (Essex exhibitions)",
+"url": "https://www.artrabbit.com/all-listings/united-kingdom/colchester",
+"new": false
+},
+{
+"group": "culture",
+"area": "all",
+"name": "Big Panto Guide: Essex",
+"url": "https://www.bigpantoguide.co.uk/essex.php",
+"new": false
+},
+{
+"group": "culture",
+"area": "all",
+"name": "Essex Archives Online",
+"url": "https://www.essexarchivesonline.co.uk/",
+"new": false
+},
+{
+"group": "culture",
+"area": "all",
+"name": "Essex Heritage Trust",
+"url": "https://www.essexheritagetrust.co.uk/",
+"new": false
+},
+{
+"group": "culture",
+"area": "chelmsford",
+"name": "Museum of Chelmsford",
+"url": "https://www.chelmsford.gov.uk/museums/",
+"new": false
+},
+{
+"group": "culture",
+"area": "chelmsford",
+"name": "Hylands Estate",
+"url": "https://www.hylandsestate.co.uk/",
+"new": false
+},
+{
+"group": "culture",
+"area": "brentwood",
+"name": "Queen's Theatre Hornchurch",
+"url": "https://www.queens-theatre.co.uk/",
+"new": false
+},
+{
+"group": "culture",
+"area": "tendring",
+"name": "West Cliff Theatre, Clacton",
+"url": "https://westcliffclacton.co.uk/",
+"new": false
+},
+{
+"group": "culture",
+"area": "brentwood",
+"name": "The Brentwood Centre (what's on)",
+"url": "https://www.ents24.com/brentwood-events/the-brentwood-centre",
+"new": false
+},
+{
+"group": "culture",
+"area": "chelmsford",
+"name": "Hot Box Live, Chelmsford",
+"url": "https://list.co.uk/venues/the-hot-box-1661",
+"new": false
+},
+{
+"group": "culture",
+"area": "colchester",
+"name": "Charter Hall & Colchester Castle Summer Series (Amphora Events)",
+"url": "https://colchester-events.co.uk/",
+"new": false
+},
+{
+"group": "culture",
+"area": "uttlesford",
+"name": "Saffron Walden Museum",
+"url": "https://www.saffronwaldenmuseum.org/news-and-events/",
+"new": false
+},
+{
+"group": "culture",
+"area": "all",
+"name": "Theatre Weekly (regional theatre news)",
+"url": "https://theatreweekly.com/",
+"new": false
+},
+{
+"group": "culture",
+"area": "all",
+"name": "BroadwayWorld UK (regional theatre news)",
+"url": "https://www.broadwayworld.com/uk-regional/",
+"new": false
+},
+{
+"group": "events",
+"area": "all",
+"name": "Visit Essex",
+"url": "https://www.visitessex.com",
+"new": false
+},
+{
+"group": "events",
+"area": "all",
+"name": "Essex Tourist Guide events",
+"url": "https://www.essextouristguide.co.uk/essex-events-calendar",
+"new": false
+},
+{
+"group": "events",
+"area": "southend",
+"name": "Visit Southend",
+"url": "https://www.visitsouthend.co.uk",
+"new": false
+},
+{
+"group": "events",
+"area": "colchester",
+"name": "Visit Colchester",
+"url": "https://www.visitcolchester.com",
+"new": false
+},
+{
+"group": "events",
+"area": "all",
+"name": "Ents24 Essex",
+"url": "https://www.ents24.com/whatson/chelmsford",
+"new": false
+},
+{
+"group": "events",
+"area": "all",
+"name": "Skiddle (Essex gigs & clubs)",
+"url": "https://www.skiddle.com/whats-on/events/Chelmsford/",
+"new": false
+},
+{
+"group": "events",
+"area": "all",
+"name": "Eventbrite Essex",
+"url": "https://www.eventbrite.co.uk/d/united-kingdom--essex/events/",
+"new": false
+},
+{
+"group": "events",
+"area": "southend",
+"name": "EventsList Southend",
+"url": "https://eventslist.co.uk/southend-on-sea/exhibitions",
+"new": false
+},
+{
+"group": "events",
+"area": "all",
+"name": "UK Theatre Web (Essex)",
+"url": "https://www.uktw.co.uk/V37",
+"new": false
+},
+{
+"group": "events",
+"area": "all",
+"name": "East Anglia Family Fun",
+"url": "https://eastangliafamilyfun.co.uk",
+"new": false
+},
+{
+"group": "events",
+"area": "brentwood",
+"name": "Mums Guide To Romford & Essex",
+"url": "https://www.mumsguideto.co.uk/romford/",
+"new": false
+},
+{
+"group": "events",
+"area": "all",
+"name": "Heritage Open Days",
+"url": "https://www.heritageopendays.org.uk",
+"new": false
+},
+{
+"group": "events",
+"area": "all",
+"name": "Essex Wildlife Trust events",
+"url": "https://www.essexwt.org.uk/events",
+"new": false
+},
+{
+"group": "events",
+"area": "all",
+"name": "National Trust (Essex places)",
+"url": "https://www.nationaltrust.org.uk",
+"new": false
+},
+{
+"group": "events",
+"area": "all",
+"name": "English Heritage (Essex sites)",
+"url": "https://www.english-heritage.org.uk",
+"new": false
+},
+{
+"group": "events",
+"area": "all",
+"name": "Explore Essex: country parks and record office events",
+"url": "https://www.explore-essex.com/events",
+"new": false
+},
+{
+"group": "events",
+"area": "south",
+"name": "Basildon & Billericay Nub News what's on",
+"url": "https://basildon.nub.news/whats-on",
+"new": false
+},
+{
+"group": "events",
+"area": "all",
+"name": "Primary Times Essex (family what's on)",
+"url": "https://www.primarytimes.co.uk/essex/listings/",
+"new": false
+},
+{
+"group": "events",
+"area": "chelmsford",
+"name": "Chelmsford For You (city centre BID events)",
+"url": "https://chelmsfordforyou.co.uk/",
+"new": false
+},
+{
+"group": "events",
+"area": "uttlesford",
+"name": "Visit Saffron Walden",
+"url": "https://www.visitsaffronwalden.gov.uk/",
+"new": false
+},
+{
+"group": "events",
+"area": "uttlesford",
+"name": "Discover Uttlesford",
+"url": "https://www.discoveruttlesford.co.uk/",
+"new": false
+},
+{
+"group": "events",
+"area": "tendring",
+"name": "Visit Brightlingsea",
+"url": "https://www.visitbrightlingsea.co.uk/",
+"new": false
+},
+{
+"group": "events",
+"area": "colchester",
+"name": "Colchester Zoo",
+"url": "https://www.colchester-zoo.com/",
+"new": false
+},
+{
+"group": "events",
+"area": "southend",
+"name": "Adventure Island, Southend",
+"url": "https://www.adventureisland.co.uk/",
+"new": false
+},
+{
+"group": "events",
+"area": "tendring",
+"name": "Clacton Pier",
+"url": "https://www.clactonpier.co.uk/",
+"new": false
+},
+{
+"group": "events",
+"area": "chelmsford",
+"name": "RHS Garden Hyde Hall",
+"url": "https://www.rhs.org.uk/gardens/hyde-hall",
+"new": false
+},
+{
+"group": "reviews",
+"area": "all",
+"name": "Muddy Stilettos Essex",
+"url": "https://essex.muddystilettos.co.uk",
+"new": false
+},
+{
+"group": "reviews",
+"area": "all",
+"name": "Tripadvisor: Essex",
+"url": "https://www.tripadvisor.co.uk/Tourism-g186225-Essex_England-Vacations.html",
+"new": false
+},
+{
+"group": "reviews",
+"area": "all",
+"name": "CAMRA pubs in Essex",
+"url": "https://www1.camra.org.uk",
+"new": false
+},
+{
+"group": "reviews",
+"area": "all",
+"name": "Food hygiene ratings (FSA)",
+"url": "https://ratings.food.gov.uk",
+"new": false
+},
+{
+"group": "reviews",
+"area": "all",
+"name": "DesignMyNight Essex",
+"url": "https://www.designmynight.com/essex",
+"new": false
+},
+{
+"group": "reviews",
+"area": "all",
+"name": "Art Fund: Essex museums",
+"url": "https://www.artfund.org/explore/museums-and-galleries",
+"new": false
+},
+{
+"group": "reviews",
+"area": "all",
+"name": "Visit Essex food & drink",
+"url": "https://www.visitessex.com/food-and-drink",
+"new": false
+},
+{
+"group": "reviews",
+"area": "all",
+"name": "Essex Life magazine (Great British Life)",
+"url": "https://www.greatbritishlife.co.uk/magazines/essex/",
+"new": false
+},
+{
+"group": "reviews",
+"area": "all",
+"name": "Essex Life: walks",
+"url": "https://www.greatbritishlife.co.uk/magazines/essex/sections/walks/",
+"new": false
+},
+{
+"group": "reviews",
+"area": "all",
+"name": "Essex Life: what's on",
+"url": "https://www.greatbritishlife.co.uk/magazines/essex/sections/whats-on/",
+"new": false
+},
+{
+"group": "reviews",
+"area": "all",
+"name": "Absolutely Essex: what's on",
+"url": "https://absolutelymagazines.com/whats-on-essex/",
+"new": false
+},
+{
+"group": "deals",
+"area": "all",
+"name": "Wowcher Essex",
+"url": "https://www.wowcher.co.uk/deals/essex",
+"new": false
+},
+{
+"group": "deals",
+"area": "all",
+"name": "Days Out Guide (2for1 by rail)",
+"url": "https://www.daysoutguide.co.uk",
+"new": false
+},
+{
+"group": "deals",
+"area": "all",
+"name": "Tesco Clubcard rewards (days out)",
+"url": "https://www.tesco.com/clubcard/rewards",
+"new": false
+},
+{
+"group": "deals",
+"area": "all",
+"name": "Essex Libraries events (free)",
+"url": "https://libraries.essex.gov.uk",
+"new": false
+},
+{
+"group": "deals",
+"area": "colchester",
+"name": "Colchester Castle & Hollytrees joint ticket",
+"url": "https://colchester.cimuseums.org.uk/",
+"new": false
+},
+{
+"group": "deals",
+"area": "all",
+"name": "Essex Short Breaks (free tickets)",
+"url": "https://shortbreaks.essex.gov.uk",
+"new": false
+},
+{
+"group": "deals",
+"area": "all",
+"name": "Blue Light Card",
+"url": "https://www.bluelightcard.co.uk",
+"new": false
+},
+{
+"group": "community",
+"area": "all",
+"name": "Essex Community Foundation",
+"url": "https://www.essexcommunityfoundation.org.uk/",
+"new": false
+},
+{
+"group": "community",
+"area": "all",
+"name": "Volunteer Essex",
+"url": "https://www.volunteeressex.org/",
+"new": false
+},
+{
+"group": "community",
+"area": "south",
+"name": "Basildon, Billericay & Wickford CVS",
+"url": "http://www.bbwcvs.org.uk/",
+"new": false
+},
+{
+"group": "community",
+"area": "colchester",
+"name": "Community 360 (Braintree & Colchester)",
+"url": "https://www.community360.org.uk",
+"new": false
+},
+{
+"group": "community",
+"area": "brentwood",
+"name": "Brentwood CVS",
+"url": "https://www.brentwoodcvs.org.uk/",
+"new": false
+},
+{
+"group": "community",
+"area": "south",
+"name": "Castle Point AVS",
+"url": "http://www.castlepointavs.org.uk/",
+"new": false
+},
+{
+"group": "community",
+"area": "chelmsford",
+"name": "Chelmsford CVS",
+"url": "https://chelmsfordcvs.org.uk/",
+"new": false
+},
+{
+"group": "community",
+"area": "epping",
+"name": "Voluntary Action Epping Forest",
+"url": "http://www.vaef.org.uk/",
+"new": false
+},
+{
+"group": "community",
+"area": "epping",
+"name": "Rainbow Services, Harlow",
+"url": "https://rainbowservices.org.uk/",
+"new": false
+},
+{
+"group": "community",
+"area": "maldon",
+"name": "Maldon & District CVS",
+"url": "https://www.maldoncvs.org.uk/",
+"new": false
+},
+{
+"group": "community",
+"area": "south",
+"name": "Rayleigh, Rochford & District AVS",
+"url": "https://www.rravs.org.uk/",
+"new": false
+},
+{
+"group": "community",
+"area": "southend",
+"name": "SAVS Southend",
+"url": "https://www.savs-southend.org/",
+"new": false
+},
+{
+"group": "community",
+"area": "tendring",
+"name": "CVS Tendring",
+"url": "https://www.cvstendring.org.uk/",
+"new": false
+},
+{
+"group": "community",
+"area": "south",
+"name": "Thurrock CVS",
+"url": "https://www.thurrockcvs.org/",
+"new": false
+},
+{
+"group": "community",
+"area": "all",
+"name": "Essex Council for Voluntary Youth Services",
+"url": "https://www.ecvys.org.uk",
+"new": false
+},
+{
+"group": "community",
+"area": "southend",
+"name": "Havens Hospices",
+"url": "https://www.havenshospices.org.uk/latest-news",
+"new": false
+},
+{
+"group": "community",
+"area": "colchester",
+"name": "St Helena Hospice",
+"url": "https://www.sthelena.org.uk/",
+"new": false
+},
+{
+"group": "community",
+"area": "chelmsford",
+"name": "Farleigh Hospice",
+"url": "https://farleighhospice.org/news-listing/",
+"new": false
+},
+{
+"group": "community",
+"area": "south",
+"name": "St Luke's Hospice, Basildon",
+"url": "https://www.stlukeshospice.org.uk",
+"new": false
+},
+{
+"group": "community",
+"area": "epping",
+"name": "St Clare Hospice, Harlow",
+"url": "https://www.stclarehospice.org.uk",
+"new": false
+},
+{
+"group": "community",
+"area": "all",
+"name": "SECE Mind",
+"url": "https://www.secemind.org.uk/",
+"new": false
+},
+{
+"group": "community",
+"area": "southend",
+"name": "Southend Foodbank",
+"url": "https://southend.foodbank.org.uk/",
+"new": false
+},
+{
+"group": "community",
+"area": "southend",
+"name": "Southend Volunteer Hub",
+"url": "https://www.southendvolunteerhub.org.uk/",
+"new": false
+},
+{
+"group": "community",
+"area": "all",
+"name": "Diocese of Chelmsford",
+"url": "https://www.chelmsford.anglican.org",
+"new": false
+},
+{
+"group": "community",
+"area": "all",
+"name": "Diocese of Brentwood",
+"url": "https://www.dioceseofbrentwood.org",
+"new": false
+},
+{
+"group": "community",
+"area": "all",
+"name": "E-Portal-Essex (voluntary sector hub)",
+"url": "https://www.e-portal-essex.co.uk/",
+"new": false
+},
+{
+"group": "community",
+"area": "all",
+"name": "Essex Alliance (voluntary sector voice and newsletter)",
+"url": "https://www.essex.gov.uk/leisure-culture-and-local-heritage/voluntary-and-community-sector-support/specialist-support",
+"new": false
+},
+{
+"group": "feeds",
+"area": "southend",
+"name": "Southend-on-Sea City Council news feed",
+"url": "https://www.southend.gov.uk/rss/news",
+"new": false
+},
+{
+"group": "feeds",
+"area": "braintree",
+"name": "Braintree District Council news feed",
+"url": "https://www.braintree.gov.uk/rss/news",
+"new": false
+},
+{
+"group": "feeds",
+"area": "maldon",
+"name": "Maldon District Council news feed",
+"url": "https://www.maldon.gov.uk/rss/206002/news",
+"new": false
+},
+{
+"group": "feeds",
+"area": "all",
+"name": "Essex Police news feed",
+"url": "https://www.essex.police.uk/news/essex/news/GetNewsRss/",
+"new": false
+},
+{
+"group": "feeds",
+"area": "epping",
+"name": "Your Harlow feed",
+"url": "https://www.yourharlow.com/feed/",
+"new": false
+},
+{
+"group": "feeds",
+"area": "uttlesford",
+"name": "Saffron Walden Town Council feed",
+"url": "https://saffronwalden.gov.uk/feed/",
+"new": false
+},
+{
+"group": "feeds",
+"area": "tendring",
+"name": "Harwich Town Council feed",
+"url": "https://www.harwichtowncouncil.gov.uk/feed/",
+"new": false
+},
+{
+"group": "feeds",
+"area": "all",
+"name": "Essex Community Foundation feed",
+"url": "https://www.essexcommunityfoundation.org.uk/feed/",
+"new": false
+},
+{
+"group": "feeds",
+"area": "southend",
+"name": "SAVS Community Builders newsletter feed",
+"url": "https://savscommunitybuilders.substack.com/feed",
+"new": false
+},
+{
+"group": "feeds",
+"area": "all",
+"name": "BBC News Essex RSS",
+"url": "https://feeds.bbci.co.uk/news/england/essex/rss.xml",
+"new": false
+},
+{
+"group": "feeds",
+"area": "all",
+"name": "Environment Agency flood warnings feed",
+"url": "https://environment.data.gov.uk/cap/flood-alerts.atom",
+"new": false
+},
+{
+"group": "feeds",
+"area": "all",
+"name": "Google News: all Essex",
+"url": "https://news.google.com/rss/search?q=Essex&hl=en-GB&gl=GB&ceid=GB:en",
+"new": false
+},
+{
+"group": "feeds",
+"area": "chelmsford",
+"name": "Google News: Chelmsford & mid Essex",
+"url": "https://news.google.com/rss/search?q=Chelmsford%20OR%20Maldon%20OR%20Witham&hl=en-GB&gl=GB&ceid=GB:en",
+"new": false
+},
+{
+"group": "feeds",
+"area": "colchester",
+"name": "Google News: Colchester & north Essex",
+"url": "https://news.google.com/rss/search?q=Colchester%20OR%20Clacton%20OR%20Harwich&hl=en-GB&gl=GB&ceid=GB:en",
+"new": false
+},
+{
+"group": "feeds",
+"area": "south",
+"name": "Google News: south Essex",
+"url": "https://news.google.com/rss/search?q=Southend%20OR%20Basildon%20OR%20Thurrock&hl=en-GB&gl=GB&ceid=GB:en",
+"new": false
+},
+{
+"group": "feeds",
+"area": "all",
+"name": "Google News: Essex crime & policing",
+"url": "https://news.google.com/rss/search?q=%22Essex%20Police%22&hl=en-GB&gl=GB&ceid=GB:en",
+"new": false
+},
+{
+"group": "feeds",
+"area": "all",
+"name": "Google News: Essex planning & housing",
+"url": "https://news.google.com/rss/search?q=Essex%20planning%20homes&hl=en-GB&gl=GB&ceid=GB:en",
+"new": false
+},
+{
+"group": "feeds",
+"area": "all",
+"name": "Google News: Essex business",
+"url": "https://news.google.com/rss/search?q=Essex%20business%20jobs&hl=en-GB&gl=GB&ceid=GB:en",
+"new": false
+},
+{
+"group": "feeds",
+"area": "all",
+"name": "NewsNow: Essex (headline aggregator, leads only)",
+"url": "https://www.newsnow.co.uk/h/UK/England/Essex",
+"new": false
+},
+{
+"group": "feeds",
+"area": "uttlesford",
+"name": "London Stansted media centre feed",
+"url": "https://mediacentre.stanstedairport.com/feed/en",
+"new": false
+},
+{
+"group": "business",
+"area": "all",
+"name": "Essex Chambers of Commerce",
+"url": "https://www.essexchambers.co.uk",
+"new": false
+},
+{
+"group": "business",
+"area": "south",
+"name": "Thames Freeport",
+"url": "https://www.thamesfreeport.com",
+"new": false
+},
+{
+"group": "business",
+"area": "colchester",
+"name": "University of Essex news",
+"url": "https://www.essex.ac.uk/news",
+"new": false
+},
+{
+"group": "business",
+"area": "chelmsford",
+"name": "Anglia Ruskin University news",
+"url": "https://www.aru.ac.uk/news",
+"new": false
+},
+{
+"group": "business",
+"area": "southend",
+"name": "Southend Business Partnership news",
+"url": "https://www.businessonsea.co.uk/news-events/",
+"new": false
+},
+{
+"group": "business",
+"area": "all",
+"name": "Business Wire Essex",
+"url": "https://www.businesswire-essex.co.uk",
+"new": false
+},
+{
+"group": "business",
+"area": "all",
+"name": "Essex Film Office stories",
+"url": "https://essexfilmoffice.co.uk/spotlights/",
+"new": false
+},
+{
+"group": "business",
+"area": "all",
+"name": "Essex Growth Agency",
+"url": "https://www.essexgrowthagency.co.uk/",
+"new": false
+},
+{
+"group": "business",
+"area": "all",
+"name": "Extraordinary Essex (investment news)",
+"url": "https://www.extraordinaryessex.co.uk/news/",
+"new": false
+},
+{
+"group": "business",
+"area": "all",
+"name": "Ambitious Essex Growth Hub",
+"url": "https://www.ambitiousessex.co.uk/",
+"new": false
+},
+{
+"group": "business",
+"area": "all",
+"name": "Grapevine & BusinessTime (Essex Chambers)",
+"url": "https://grapevinemagazine.co.uk/",
+"new": false
+},
+{
+"group": "business",
+"area": "all",
+"name": "Federation of Small Businesses",
+"url": "https://www.fsb.org.uk/",
+"new": false
+},
+{
+"group": "business",
+"area": "all",
+"name": "Companies House",
+"url": "https://find-and-update.company-information.service.gov.uk/",
+"new": false
+},
+{
+"group": "business",
+"area": "south",
+"name": "Thames Estuary Growth Board",
+"url": "https://thamesestuary.org.uk/",
+"new": false
+},
+{
+"group": "trade",
+"area": "all",
+"name": "Local Government Chronicle",
+"url": "https://www.lgcplus.com/",
+"new": false
+},
+{
+"group": "trade",
+"area": "all",
+"name": "LocalGov",
+"url": "https://www.localgov.co.uk/",
+"new": false
+},
+{
+"group": "trade",
+"area": "all",
+"name": "Planning Resource",
+"url": "https://www.planningresource.co.uk/",
+"new": false
+},
+{
+"group": "trade",
+"area": "all",
+"name": "Construction Enquirer",
+"url": "https://www.constructionenquirer.com/",
+"new": false
+},
+{
+"group": "trade",
+"area": "all",
+"name": "New Civil Engineer",
+"url": "https://www.newcivilengineer.com/",
+"new": false
+},
+{
+"group": "trade",
+"area": "all",
+"name": "RailAdvent",
+"url": "https://www.railadvent.co.uk/",
+"new": false
+},
+{
+"group": "trade",
+"area": "all",
+"name": "Rail Technology Magazine",
+"url": "https://www.railtechnologymagazine.com/",
+"new": false
+},
+{
+"group": "trade",
+"area": "all",
+"name": "Port Technology",
+"url": "https://www.porttechnology.org/",
+"new": false
+},
+{
+"group": "trade",
+"area": "all",
+"name": "Insider Media",
+"url": "https://www.insidermedia.com/",
+"new": false
+},
+{
+"group": "trade",
+"area": "all",
+"name": "BusinessLive",
+"url": "https://www.business-live.co.uk/",
+"new": false
+},
+{
+"group": "trade",
+"area": "all",
+"name": "HSJ (Health Service Journal)",
+"url": "https://www.hsj.co.uk/",
+"new": false
+},
+{
+"group": "trade",
+"area": "all",
+"name": "Nursing Times",
+"url": "https://www.nursingtimes.net/",
+"new": false
+},
+{
+"group": "trade",
+"area": "all",
+"name": "Schools Week",
+"url": "https://schoolsweek.co.uk/",
+"new": false
+},
+{
+"group": "trade",
+"area": "all",
+"name": "Tes",
+"url": "https://www.tes.com/magazine/news",
+"new": false
+},
+{
+"group": "trade",
+"area": "all",
+"name": "Farmers Weekly",
+"url": "https://www.fwi.co.uk/",
+"new": false
+},
+{
+"group": "trade",
+"area": "all",
+"name": "Third Sector",
+"url": "https://www.thirdsector.co.uk/",
+"new": false
+},
+{
+"group": "trade",
+"area": "all",
+"name": "Civil Society",
+"url": "https://www.civilsociety.co.uk/",
+"new": false
+},
+{
+"group": "trade",
+"area": "all",
+"name": "The Non-League Paper",
+"url": "https://thenonleaguefootballpaper.com/",
+"new": false
+},
+{
+"group": "trade",
+"area": "all",
+"name": "ESPNcricinfo",
+"url": "https://www.espncricinfo.com/",
+"new": false
+},
+{
+"group": "trade",
+"area": "all",
+"name": "routeone (bus and coach industry news)",
+"url": "https://www.route-one.net/",
+"new": false
+},
+{
+"group": "trade",
+"area": "all",
+"name": "RadioToday (Essex radio industry news)",
+"url": "https://radiotoday.co.uk/",
+"new": false
+},
+{
+"group": "trade",
+"area": "all",
+"name": "HoldTheFrontPage (Essex newspaper industry news)",
+"url": "https://www.holdthefrontpage.co.uk/",
+"new": false
+},
+{
+"group": "trade",
+"area": "all",
+"name": "The MJ (local government management)",
+"url": "https://www.themj.co.uk/",
+"new": false
+},
+{
+"group": "data",
+"area": "all",
+"name": "ONS (population, jobs and prices)",
+"url": "https://www.ons.gov.uk/",
+"new": false
+},
+{
+"group": "data",
+"area": "all",
+"name": "Essex Open Data (Essex County Council)",
+"url": "https://data.essex.gov.uk/",
+"new": false
+},
+{
+"group": "data",
+"area": "all",
+"name": "Hansard (MPs, debates and questions)",
+"url": "https://hansard.parliament.uk/",
+"new": false
+},
+{
+"group": "data",
+"area": "all",
+"name": "GOV.UK open consultations",
+"url": "https://www.gov.uk/search/policy-papers-and-consultations?content_store_document_type=open_consultations",
+"new": false
+},
+{
+"group": "data",
+"area": "all",
+"name": "Who Can I Vote For? (Democracy Club elections and by-elections)",
+"url": "https://whocanivotefor.co.uk/",
+"new": false
+},
+{
+"group": "data",
+"area": "all",
+"name": "Pollcheck (Essex council make-up and results)",
+"url": "https://www.pollcheck.co.uk/councils/essex",
+"new": false
+},
+{
+"group": "data",
+"area": "all",
+"name": "Local Councils (by-election tracker)",
+"url": "https://www.localcouncils.co.uk/",
+"new": false
+},
+{
+"group": "data",
+"area": "all",
+"name": "Open Council Network (council meeting summaries, leads only)",
+"url": "https://opencouncil.network/",
+"new": false
+},
+{
+"group": "data",
+"area": "all",
+"name": "UK Parliament: Essex MPs",
+"url": "https://members.parliament.uk/members/commons",
+"new": false
+},
+{
+"group": "data",
+"area": "all",
+"name": "Local Government Ombudsman decisions",
+"url": "https://www.lgo.org.uk/decisions",
+"new": false
+},
+{
+"group": "data",
+"area": "all",
+"name": "WhatDoTheyKnow (FOI requests to Essex bodies)",
+"url": "https://www.whatdotheyknow.com/",
+"new": false
+},
+{
+"group": "data",
+"area": "all",
+"name": "Ofsted reports",
+"url": "https://reports.ofsted.gov.uk/",
+"new": false
+},
+{
+"group": "data",
+"area": "all",
+"name": "HSE press releases (prosecutions)",
+"url": "https://press.hse.gov.uk/",
+"new": false
+},
+{
+"group": "data",
+"area": "all",
+"name": "Charity Commission register",
+"url": "https://register-of-charities.charitycommission.gov.uk/",
+"new": false
+},
+{
+"group": "data",
+"area": "all",
+"name": "Contracts Finder (council contracts)",
+"url": "https://www.contractsfinder.service.gov.uk/",
+"new": false
+},
+{
+"group": "hyperlocal",
+"area": "all",
+"name": "Essex TV",
+"url": "https://essex-tv.co.uk",
+"new": true
+},
+{
+"group": "hyperlocal",
+"area": "colchester",
+"name": "Colchester Nub News",
+"url": "https://colchester.nub.news",
+"new": true
+},
+{
+"group": "hyperlocal",
+"area": "chelmsford",
+"name": "Chelmsford Nub News",
+"url": "https://chelmsford.nub.news",
+"new": true
+},
+{
+"group": "hyperlocal",
+"area": "brentwood",
+"name": "Brentwood Nub News",
+"url": "https://brentwood.nub.news",
+"new": true
+},
+{
+"group": "hyperlocal",
+"area": "southend",
+"name": "Southend Nub News",
+"url": "https://southend.nub.news",
+"new": true
+},
+{
+"group": "hyperlocal",
+"area": "braintree",
+"name": "Braintree Nub News",
+"url": "https://braintree.nub.news",
+"new": true
+},
+{
+"group": "hyperlocal",
+"area": "braintree",
+"name": "Witham Nub News",
+"url": "https://witham.nub.news",
+"new": true
+},
+{
+"group": "hyperlocal",
+"area": "tendring",
+"name": "Clacton Nub News",
+"url": "https://clacton.nub.news",
+"new": true
+},
+{
+"group": "hyperlocal",
+"area": "tendring",
+"name": "Harwich Nub News",
+"url": "https://harwich.nub.news",
+"new": true
+},
+{
+"group": "hyperlocal",
+"area": "uttlesford",
+"name": "Saffron Walden Nub News",
+"url": "https://saffronwalden.nub.news",
+"new": true
+},
+{
+"group": "hyperlocal",
+"area": "epping",
+"name": "Epping Nub News",
+"url": "https://epping.nub.news",
+"new": true
+},
+{
+"group": "hyperlocal",
+"area": "epping",
+"name": "Loughton Nub News",
+"url": "https://loughton.nub.news",
+"new": true
+},
+{
+"group": "hyperlocal",
+"area": "epping",
+"name": "Harlow Nub News",
+"url": "https://harlow.nub.news",
+"new": true
+},
+{
+"group": "hyperlocal",
+"area": "south",
+"name": "Rayleigh Nub News",
+"url": "https://rayleigh.nub.news",
+"new": true
+},
+{
+"group": "hyperlocal",
+"area": "south",
+"name": "Canvey Nub News",
+"url": "https://canvey.nub.news",
+"new": true
+},
+{
+"group": "hyperlocal",
+"area": "south",
+"name": "Wickford Nub News",
+"url": "https://wickford.nub.news",
+"new": true
+},
+{
+"group": "hyperlocal",
+"area": "south",
+"name": "Billericay Nub News",
+"url": "https://billericay.nub.news",
+"new": true
+},
+{
+"group": "hyperlocal",
+"area": "south",
+"name": "Stanford-le-Hope Nub News",
+"url": "https://stanford-le-hope.nub.news",
+"new": true
+},
+{
+"group": "hyperlocal",
+"area": "south",
+"name": "Grays Nub News",
+"url": "https://grays.nub.news",
+"new": true
+},
+{
+"group": "hyperlocal",
+"area": "maldon",
+"name": "Heybridge Nub News",
+"url": "https://heybridge.nub.news",
+"new": true
+},
+{
+"group": "hyperlocal",
+"area": "colchester",
+"name": "Mersea Life",
+"url": "https://www.mersealife.co.uk",
+"new": true
+},
+{
+"group": "hyperlocal",
+"area": "colchester",
+"name": "Mersea Island Courier",
+"url": "https://www.merseaislandcourier.co.uk",
+"new": true
+},
+{
+"group": "hyperlocal",
+"area": "colchester",
+"name": "Wivenhoe Forum",
+"url": "https://www.wivenhoeforum.co.uk",
+"new": true
+},
+{
+"group": "hyperlocal",
+"area": "uttlesford",
+"name": "Walden Local",
+"url": "https://www.waldenlocal.co.uk",
+"new": true
+},
+{
+"group": "hyperlocal",
+"area": "uttlesford",
+"name": "Stansted News",
+"url": "https://www.stanstednews.com",
+"new": true
+},
+{
+"group": "hyperlocal",
+"area": "southend",
+"name": "South East Essex Alliance update",
+"url": "https://southeastessexalliance.substack.com",
+"new": true
+},
+{
+"group": "hyperlocal",
+"area": "southend",
+"name": "Livewell Southend news",
+"url": "https://www.livewellsouthend.com/news",
+"new": true
+},
+{
+"group": "community",
+"area": "all",
+"name": "Essex Jewish News",
+"url": "https://essexjewishnews.co.uk",
+"new": true
+},
+{
+"group": "politics",
+"area": "uttlesford",
+"name": "Residents for Uttlesford",
+"url": "https://www.residents4u.org",
+"new": true
+},
+{
+"group": "politics",
+"area": "epping",
+"name": "Loughton Residents Association",
+"url": "https://www.loughtonresidents.co.uk",
+"new": true
+},
+{
+"group": "politics",
+"area": "south",
+"name": "Thames Crossing Action Group",
+"url": "https://www.thamescrossingactiongroup.com",
+"new": true
+},
+{
+"group": "politics",
+"area": "all",
+"name": "Essex Suffolk Norfolk Pylons action group",
+"url": "https://www.pylonseastanglia.co.uk",
+"new": true
+},
+{
+"group": "politics",
+"area": "uttlesford",
+"name": "Stansted Airport Watch",
+"url": "https://stanstedairportwatch.com",
+"new": true
+},
+{
+"group": "politics",
+"area": "all",
+"name": "CPRE Essex",
+"url": "https://www.cpreessex.org.uk",
+"new": true
+},
+{
+"group": "politics",
+"area": "maldon",
+"name": "Blackwater Against New Nuclear Group",
+"url": "https://www.banng.info",
+"new": true
+},
+{
+"group": "politics",
+"area": "colchester",
+"name": "CAUSE (north Essex garden communities)",
+"url": "https://www.cause4livingessex.com",
+"new": true
+},
+{
+"group": "politics",
+"area": "all",
+"name": "Essex LGR Hub",
+"url": "https://www.essexlgrhub.org",
+"new": true
+},
+{
+"group": "politics",
+"area": "all",
+"name": "Essex Climate Action Commission",
+"url": "https://www.essexclimate.org.uk",
+"new": true
+},
+{
+"group": "politics",
+"area": "south",
+"name": "Rebecca Harris MP (Castle Point)",
+"url": "https://www.rebeccaharris.org",
+"new": true
+},
+{
+"group": "politics",
+"area": "uttlesford",
+"name": "Kemi Badenoch MP (North West Essex)",
+"url": "https://www.kemibadenoch.org.uk",
+"new": true
+},
+{
+"group": "politics",
+"area": "brentwood",
+"name": "Alex Burghart MP (Brentwood and Ongar)",
+"url": "https://www.alexburghart.org.uk",
+"new": true
+},
+{
+"group": "politics",
+"area": "tendring",
+"name": "Bernard Jenkin MP (Harwich and North Essex)",
+"url": "https://www.bernardjenkin.com",
+"new": true
+},
+{
+"group": "politics",
+"area": "maldon",
+"name": "John Whittingdale MP (Maldon)",
+"url": "https://www.johnwhittingdale.org.uk",
+"new": true
+},
+{
+"group": "politics",
+"area": "south",
+"name": "Mark Francois MP (Rayleigh and Wickford)",
+"url": "https://www.markfrancois.com",
+"new": true
+},
+{
+"group": "politics",
+"area": "braintree",
+"name": "Priti Patel MP (Witham)",
+"url": "https://www.priti4witham.com",
+"new": true
+},
+{
+"group": "politics",
+"area": "braintree",
+"name": "James Cleverly MP (Braintree)",
+"url": "https://www.jamescleverly.com",
+"new": true
+},
+{
+"group": "politics",
+"area": "south",
+"name": "Richard Holden MP (Basildon and Billericay)",
+"url": "https://www.richardholden.org.uk",
+"new": true
+},
+{
+"group": "politics",
+"area": "chelmsford",
+"name": "Marie Goldman MP (Chelmsford)",
+"url": "https://www.mariegoldman.org.uk",
+"new": true
+},
+{
+"group": "politics",
+"area": "colchester",
+"name": "Pam Cox MP (Colchester)",
+"url": "https://www.pamcox.org.uk",
+"new": true
+},
+{
+"group": "politics",
+"area": "epping",
+"name": "Neil Hudson MP (Epping Forest)",
+"url": "https://www.neilhudson.org.uk",
+"new": true
+},
+{
+"group": "politics",
+"area": "epping",
+"name": "Chris Vince MP (Harlow)",
+"url": "https://www.chrisvince.org.uk",
+"new": true
+},
+{
+"group": "politics",
+"area": "south",
+"name": "Jen Craft MP (Thurrock)",
+"url": "https://www.jencraft.org.uk",
+"new": true
+},
+{
+"group": "politics",
+"area": "southend",
+"name": "Bayo Alaba MP (Southend East and Rochford)",
+"url": "https://www.bayoalaba.org.uk",
+"new": true
+},
+{
+"group": "politics",
+"area": "southend",
+"name": "David Burton-Sampson MP (Southend West and Leigh)",
+"url": "https://www.davidburtonsampson.org.uk",
+"new": true
+},
+{
+"group": "politics",
+"area": "all",
+"name": "Unison Eastern",
+"url": "https://eastern.unison.org.uk",
+"new": true
+},
+{
+"group": "politics",
+"area": "all",
+"name": "RMT union news",
+"url": "https://www.rmt.org.uk/news/",
+"new": true
+},
+{
+"group": "politics",
+"area": "all",
+"name": "ASLEF news",
+"url": "https://aslef.org.uk/news",
+"new": true
+},
+{
+"group": "politics",
+"area": "all",
+"name": "Fire Brigades Union news",
+"url": "https://www.fbu.org.uk/news",
+"new": true
+},
+{
+"group": "politics",
+"area": "all",
+"name": "Essex Police Federation",
+"url": "https://www.polfed.org/essex/",
+"new": true
+},
+{
+"group": "courts",
+"area": "all",
+"name": "Lampard Inquiry (Essex mental health deaths)",
+"url": "https://lampardinquiry.org.uk",
+"new": true
+},
+{
+"group": "courts",
+"area": "all",
+"name": "Prevention of Future Deaths reports (Judiciary)",
+"url": "https://www.judiciary.uk/prevention-of-future-death-reports/",
+"new": true
+},
+{
+"group": "courts",
+"area": "all",
+"name": "Prisons and Probation Ombudsman",
+"url": "https://ppo.gov.uk",
+"new": true
+},
+{
+"group": "courts",
+"area": "chelmsford",
+"name": "Independent Monitoring Boards (HMP Chelmsford)",
+"url": "https://imb.org.uk",
+"new": true
+},
+{
+"group": "courts",
+"area": "all",
+"name": "Housing Ombudsman decisions and news",
+"url": "https://www.housing-ombudsman.org.uk",
+"new": true
+},
+{
+"group": "courts",
+"area": "all",
+"name": "Information Commissioner's Office",
+"url": "https://ico.org.uk/about-the-ico/media-centre/",
+"new": true
+},
+{
+"group": "courts",
+"area": "all",
+"name": "Advertising Standards Authority rulings",
+"url": "https://www.asa.org.uk/codes-and-rulings/rulings.html",
+"new": true
+},
+{
+"group": "courts",
+"area": "all",
+"name": "Medical Practitioners Tribunal Service",
+"url": "https://www.mpts-uk.org",
+"new": true
+},
+{
+"group": "courts",
+"area": "all",
+"name": "Health and Care Professions Tribunal Service",
+"url": "https://www.hcpts-uk.org",
+"new": true
+},
+{
+"group": "courts",
+"area": "all",
+"name": "Social Work England hearings",
+"url": "https://www.socialworkengland.org.uk",
+"new": true
+},
+{
+"group": "courts",
+"area": "all",
+"name": "INQUEST (deaths in state care)",
+"url": "https://www.inquest.org.uk",
+"new": true
+},
+{
+"group": "courts",
+"area": "all",
+"name": "Court News UK",
+"url": "https://courtnewsuk.co.uk",
+"new": true
+},
+{
+"group": "courts",
+"area": "all",
+"name": "Law Gazette",
+"url": "https://www.lawgazette.co.uk",
+"new": true
+},
+{
+"group": "courts",
+"area": "all",
+"name": "Crown Prosecution Service news",
+"url": "https://www.cps.gov.uk/news",
+"new": true
+},
+{
+"group": "emergency",
+"area": "all",
+"name": "National Crime Agency",
+"url": "https://www.nationalcrimeagency.gov.uk/news",
+"new": true
+},
+{
+"group": "emergency",
+"area": "all",
+"name": "Eastern Region Special Operations Unit",
+"url": "https://www.ersou.police.uk",
+"new": true
+},
+{
+"group": "emergency",
+"area": "all",
+"name": "Crimestoppers news",
+"url": "https://crimestoppers-uk.org/news-campaigns/news",
+"new": true
+},
+{
+"group": "emergency",
+"area": "all",
+"name": "RNLI news",
+"url": "https://rnli.org/news-and-media",
+"new": true
+},
+{
+"group": "emergency",
+"area": "all",
+"name": "Essex Neighbourhood Watch",
+"url": "https://www.essexnhw.org.uk",
+"new": true
+},
+{
+"group": "transport",
+"area": "all",
+"name": "Network Rail media centre (Anglia)",
+"url": "https://www.networkrailmediacentre.co.uk",
+"new": true
+},
+{
+"group": "transport",
+"area": "all",
+"name": "Greater Anglia news desk",
+"url": "https://www.greateranglia.co.uk/about-us/news-desk/news-articles",
+"new": true
+},
+{
+"group": "transport",
+"area": "all",
+"name": "National Highways press",
+"url": "https://nationalhighways.co.uk/press/",
+"new": true
+},
+{
+"group": "transport",
+"area": "all",
+"name": "TfL press releases",
+"url": "https://tfl.gov.uk/info-for/media/press-releases",
+"new": true
+},
+{
+"group": "transport",
+"area": "all",
+"name": "Transport East",
+"url": "https://www.transporteast.gov.uk",
+"new": true
+},
+{
+"group": "transport",
+"area": "uttlesford",
+"name": "Stansted Express",
+"url": "https://www.stanstedexpress.com",
+"new": true
+},
+{
+"group": "transport",
+"area": "braintree",
+"name": "Hedingham and Chambers buses",
+"url": "https://www.hedinghamandchambers.co.uk",
+"new": true
+},
+{
+"group": "environment",
+"area": "all",
+"name": "Met Office weather warnings (East of England)",
+"url": "https://www.metoffice.gov.uk/weather/warnings-and-advice/uk-warnings",
+"new": true
+},
+{
+"group": "environment",
+"area": "epping",
+"name": "Epping Forest Heritage Trust",
+"url": "https://efht.org.uk",
+"new": true
+},
+{
+"group": "environment",
+"area": "epping",
+"name": "Lee Valley Regional Park",
+"url": "https://www.leevalleypark.org.uk",
+"new": true
+},
+{
+"group": "environment",
+"area": "colchester",
+"name": "Dedham Vale National Landscape",
+"url": "https://dedhamvale-nl.org.uk",
+"new": true
+},
+{
+"group": "environment",
+"area": "south",
+"name": "South Essex Wildlife Hospital",
+"url": "https://southessexwildlife.org",
+"new": true
+},
+{
+"group": "business",
+"area": "tendring",
+"name": "Freeport East (Harwich)",
+"url": "https://www.freeporteast.com",
+"new": true
+},
+{
+"group": "business",
+"area": "south",
+"name": "South Essex Councils",
+"url": "https://www.southessex.org.uk",
+"new": true
+},
+{
+"group": "business",
+"area": "all",
+"name": "Invest Essex",
+"url": "https://www.investessex.co.uk",
+"new": true
+},
+{
+"group": "business",
+"area": "colchester",
+"name": "Our Colchester (BID)",
+"url": "https://www.ourcolchester.co.uk",
+"new": true
+},
+{
+"group": "business",
+"area": "southend",
+"name": "Southend City BID",
+"url": "https://www.southendbid.com",
+"new": true
+},
+{
+"group": "business",
+"area": "all",
+"name": "Business Time in Essex",
+"url": "https://www.businesstimeinessex.co.uk",
+"new": true
+},
+{
+"group": "business",
+"area": "all",
+"name": "Business Weekly (East of England)",
+"url": "https://www.businessweekly.co.uk",
+"new": true
+},
+{
+"group": "business",
+"area": "chelmsford",
+"name": "Chelmsford College news",
+"url": "https://www.chelmsford.ac.uk",
+"new": true
+},
+{
+"group": "business",
+"area": "south",
+"name": "South Essex College news",
+"url": "https://www.southessex.ac.uk",
+"new": true
+},
+{
+"group": "business",
+"area": "colchester",
+"name": "Colchester Institute news",
+"url": "https://www.colchester.ac.uk",
+"new": true
+},
+{
+"group": "business",
+"area": "epping",
+"name": "Harlow College news",
+"url": "https://www.harlow-college.ac.uk",
+"new": true
+},
+{
+"group": "business",
+"area": "south",
+"name": "USP College news",
+"url": "https://www.usp.ac.uk",
+"new": true
+},
+{
+"group": "planning",
+"area": "epping",
+"name": "Harlow and Gilston Garden Town",
+"url": "https://hggt.co.uk",
+"new": true
+},
+{
+"group": "planning",
+"area": "colchester",
+"name": "Tendring Colchester Borders Garden Community",
+"url": "https://www.tcbgardencommunity.co.uk",
+"new": true
+},
+{
+"group": "planning",
+"area": "maldon",
+"name": "Bradwell B",
+"url": "https://bradwellb.co.uk",
+"new": true
+},
+{
+"group": "planning",
+"area": "chelmsford",
+"name": "CHP (Chelmer Housing Partnership)",
+"url": "https://www.chp.org.uk",
+"new": true
+},
+{
+"group": "planning",
+"area": "braintree",
+"name": "Eastlight Community Homes",
+"url": "https://www.eastlighthomes.co.uk",
+"new": true
+},
+{
+"group": "planning",
+"area": "southend",
+"name": "Estuary Housing Association",
+"url": "https://www.estuary.co.uk",
+"new": true
+},
+{
+"group": "planning",
+"area": "southend",
+"name": "South Essex Homes",
+"url": "https://www.southessexhomes.co.uk",
+"new": true
+},
+{
+"group": "planning",
+"area": "colchester",
+"name": "Colchester Borough Homes",
+"url": "https://www.cbhomes.org.uk",
+"new": true
+},
+{
+"group": "planning",
+"area": "all",
+"name": "PlanIt planning applications (all Essex councils)",
+"url": "https://www.planit.org.uk",
+"new": true
+},
+{
+"group": "health",
+"area": "all",
+"name": "NELFT NHS Foundation Trust",
+"url": "https://www.nelft.nhs.uk",
+"new": true
+},
+{
+"group": "health",
+"area": "all",
+"name": "Provide Community",
+"url": "https://www.provide.org.uk",
+"new": true
+},
+{
+"group": "health",
+"area": "all",
+"name": "ECL (Essex Cares)",
+"url": "https://www.ecl.org",
+"new": true
+},
+{
+"group": "culture",
+"area": "colchester",
+"name": "Colchester Archaeological Trust",
+"url": "https://www.thecolchesterarchaeologist.co.uk",
+"new": true
+},
+{
+"group": "culture",
+"area": "colchester",
+"name": "Headgate Theatre, Colchester",
+"url": "https://www.headgatetheatre.co.uk",
+"new": true
+},
+{
+"group": "culture",
+"area": "tendring",
+"name": "Electric Palace, Harwich",
+"url": "https://www.electricpalace.com",
+"new": true
+},
+{
+"group": "culture",
+"area": "tendring",
+"name": "Frinton Summer Theatre",
+"url": "https://www.frintonsummertheatre.org",
+"new": true
+},
+{
+"group": "culture",
+"area": "tendring",
+"name": "The Harwich Society",
+"url": "https://www.harwich-society.co.uk",
+"new": true
+},
+{
+"group": "culture",
+"area": "braintree",
+"name": "Witham Public Hall",
+"url": "https://www.withampublichall.co.uk",
+"new": true
+},
+{
+"group": "culture",
+"area": "braintree",
+"name": "Braintree Arts Theatre",
+"url": "https://www.braintreeartstheatre.com",
+"new": true
+},
+{
+"group": "culture",
+"area": "braintree",
+"name": "Braintree Museum",
+"url": "https://www.braintreemuseum.co.uk",
+"new": true
+},
+{
+"group": "culture",
+"area": "braintree",
+"name": "Hedingham Castle",
+"url": "https://www.hedinghamcastle.co.uk",
+"new": true
+},
+{
+"group": "culture",
+"area": "maldon",
+"name": "Stow Maries Great War Aerodrome",
+"url": "https://www.stowmaries.org.uk",
+"new": true
+},
+{
+"group": "culture",
+"area": "maldon",
+"name": "Combined Military Services Museum, Maldon",
+"url": "https://www.cmsm.co.uk",
+"new": true
+},
+{
+"group": "culture",
+"area": "colchester",
+"name": "Layer Marney Tower",
+"url": "https://www.layermarneytower.co.uk",
+"new": true
+},
+{
+"group": "culture",
+"area": "brentwood",
+"name": "Ingatestone Hall",
+"url": "https://www.ingatestonehall.com",
+"new": true
+},
+{
+"group": "culture",
+"area": "colchester",
+"name": "Roman River Music",
+"url": "https://www.romanrivermusic.org.uk",
+"new": true
+},
+{
+"group": "culture",
+"area": "uttlesford",
+"name": "Thaxted Festival",
+"url": "https://www.thaxtedfestival.org.uk",
+"new": true
+},
+{
+"group": "culture",
+"area": "uttlesford",
+"name": "Saffron Screen",
+"url": "https://www.saffronscreen.com",
+"new": true
+},
+{
+"group": "culture",
+"area": "southend",
+"name": "Metal Southend",
+"url": "https://www.metalculture.com",
+"new": true
+},
+{
+"group": "culture",
+"area": "south",
+"name": "Creative Estuary",
+"url": "https://www.creativeestuary.com",
+"new": true
+},
+{
+"group": "culture",
+"area": "all",
+"name": "Essex Cultural Diversity Project",
+"url": "https://essexcdp.com",
+"new": true
+},
+{
+"group": "culture",
+"area": "all",
+"name": "Essex Society for Archaeology and History",
+"url": "https://www.esah1852.org.uk",
+"new": true
+},
+{
+"group": "culture",
+"area": "chelmsford",
+"name": "Chelmsford Cathedral",
+"url": "https://www.chelmsfordcathedral.org.uk",
+"new": true
+},
+{
+"group": "events",
+"area": "southend",
+"name": "Leigh Folk Festival",
+"url": "https://www.leighfolkfestival.com",
+"new": true
+},
+{
+"group": "events",
+"area": "southend",
+"name": "Leigh Art Trail",
+"url": "https://www.leigharttrail.com",
+"new": true
+},
+{
+"group": "events",
+"area": "maldon",
+"name": "Maldon Mud Race",
+"url": "https://www.maldonmudrace.com",
+"new": true
+},
+{
+"group": "events",
+"area": "tendring",
+"name": "Tendring Show",
+"url": "https://www.tendringshow.co.uk",
+"new": true
+},
+{
+"group": "events",
+"area": "tendring",
+"name": "Clacton Airshow",
+"url": "https://www.clactonairshow.com",
+"new": true
+},
+{
+"group": "events",
+"area": "all",
+"name": "Essex Young Farmers",
+"url": "https://www.essexyoungfarmers.com",
+"new": true
+},
+{
+"group": "community",
+"area": "all",
+"name": "Citizens Advice Essex",
+"url": "https://citizensadviceessex.org.uk",
+"new": true
+},
+{
+"group": "community",
+"area": "all",
+"name": "Age UK Essex",
+"url": "https://www.ageuk.org.uk/essex/",
+"new": true
+},
+{
+"group": "community",
+"area": "epping",
+"name": "Mind in West Essex",
+"url": "https://www.mindinwestessex.org.uk",
+"new": true
+},
+{
+"group": "community",
+"area": "colchester",
+"name": "Mid and North East Essex Mind",
+"url": "https://www.mnessexmind.org",
+"new": true
+},
+{
+"group": "community",
+"area": "all",
+"name": "Open Road",
+"url": "https://www.openroad.org.uk",
+"new": true
+},
+{
+"group": "community",
+"area": "chelmsford",
+"name": "CHESS Homeless",
+"url": "https://www.chesshomeless.org",
+"new": true
+},
+{
+"group": "community",
+"area": "southend",
+"name": "HARP Southend",
+"url": "https://www.harpsouthend.org.uk",
+"new": true
+},
+{
+"group": "community",
+"area": "chelmsford",
+"name": "Sanctus, Chelmsford",
+"url": "https://www.sanctus-home.com",
+"new": true
+},
+{
+"group": "community",
+"area": "all",
+"name": "Kids Inspire",
+"url": "https://www.kidsinspire.org.uk",
+"new": true
+},
+{
+"group": "community",
+"area": "chelmsford",
+"name": "The Wilderness Foundation UK",
+"url": "https://wildernessfoundation.org.uk",
+"new": true
+},
+{
+"group": "community",
+"area": "all",
+"name": "Helen Rollason Cancer Charity",
+"url": "https://www.helenrollason.org.uk",
+"new": true
+},
+{
+"group": "community",
+"area": "all",
+"name": "Action for Family Carers",
+"url": "https://affc.org.uk",
+"new": true
+},
+{
+"group": "community",
+"area": "uttlesford",
+"name": "Support 4 Sight",
+"url": "https://www.support4sight.org.uk",
+"new": true
+},
+{
+"group": "community",
+"area": "epping",
+"name": "Remus Horse Sanctuary",
+"url": "https://www.remussanctuary.org",
+"new": true
+},
+{
+"group": "community",
+"area": "brentwood",
+"name": "Hopefield Animal Sanctuary",
+"url": "https://www.hopefield.org.uk",
+"new": true
+},
+{
+"group": "community",
+"area": "all",
+"name": "Essex Freemasons",
+"url": "https://www.essexfreemasons.org",
+"new": true
+},
+{
+"group": "community",
+"area": "all",
+"name": "Essex Scouts",
+"url": "https://www.essexscouts.org.uk",
+"new": true
+},
+{
+"group": "community",
+"area": "colchester",
+"name": "Colchester Foodbank",
+"url": "https://colchester.foodbank.org.uk",
+"new": true
+},
+{
+"group": "community",
+"area": "chelmsford",
+"name": "Chelmsford Foodbank",
+"url": "https://chelmsford.foodbank.org.uk",
+"new": true
+},
+{
+"group": "community",
+"area": "south",
+"name": "Basildon Foodbank",
+"url": "https://basildon.foodbank.org.uk",
+"new": true
+},
+{
+"group": "community",
+"area": "epping",
+"name": "Harlow Foodbank",
+"url": "https://harlow.foodbank.org.uk",
+"new": true
+},
+{
+"group": "sport",
+"area": "maldon",
+"name": "Maldon and Tiptree FC",
+"url": "https://www.maldontiptreefc.co.uk",
+"new": true
+},
+{
+"group": "sport",
+"area": "braintree",
+"name": "Witham Town FC",
+"url": "https://www.withamtownfc.co.uk",
+"new": true
+},
+{
+"group": "sport",
+"area": "maldon",
+"name": "Heybridge Swifts FC",
+"url": "https://www.heybridgeswifts.com",
+"new": true
+},
+{
+"group": "sport",
+"area": "south",
+"name": "Grays Athletic FC",
+"url": "https://www.graysathletic.co.uk",
+"new": true
+},
+{
+"group": "sport",
+"area": "south",
+"name": "Tilbury FC",
+"url": "https://www.tilburyfc.co.uk",
+"new": true
+},
+{
+"group": "sport",
+"area": "epping",
+"name": "Harlow Town FC",
+"url": "https://www.harlowtownfc.co.uk",
+"new": true
+},
+{
+"group": "sport",
+"area": "tendring",
+"name": "FC Clacton",
+"url": "https://www.fcclacton.com",
+"new": true
+},
+{
+"group": "sport",
+"area": "south",
+"name": "Billericay Town FC",
+"url": "https://www.billericaytownfc.co.uk",
+"new": true
+},
+{
+"group": "sport",
+"area": "all",
+"name": "Eastern Counties Football League",
+"url": "https://www.thurlownunnleague.co.uk",
+"new": true
+},
+{
+"group": "sport",
+"area": "all",
+"name": "Essex Golf Union",
+"url": "https://www.essexgolfunion.org",
+"new": true
+},
+{
+"group": "sport",
+"area": "colchester",
+"name": "Colchester Rugby Club",
+"url": "https://www.colchesterrugby.co.uk",
+"new": true
+},
+{
+"group": "sport",
+"area": "colchester",
+"name": "Essex Rebels basketball",
+"url": "https://www.essexrebels.co.uk",
+"new": true
+},
+{
+"group": "parish",
+"area": "southend",
+"name": "Leigh-on-Sea Town Council",
+"url": "https://www.leighonseatowncouncil.gov.uk",
+"new": true
+},
+{
+"group": "parish",
+"area": "south",
+"name": "Billericay Town Council",
+"url": "https://www.billericaytowncouncil.gov.uk",
+"new": true
+},
+{
+"group": "parish",
+"area": "braintree",
+"name": "Witham Town Council",
+"url": "https://www.witham.gov.uk",
+"new": true
+},
+{
+"group": "parish",
+"area": "braintree",
+"name": "Halstead Town Council",
+"url": "https://www.halsteadtowncouncil.gov.uk",
+"new": true
+},
+{
+"group": "parish",
+"area": "maldon",
+"name": "Maldon Town Council",
+"url": "https://www.maldontowncouncil.gov.uk",
+"new": true
+},
+{
+"group": "parish",
+"area": "chelmsford",
+"name": "South Woodham Ferrers Town Council",
+"url": "https://www.southwoodhamferrerstc.gov.uk",
+"new": true
+},
+{
+"group": "parish",
+"area": "uttlesford",
+"name": "Great Dunmow Town Council",
+"url": "https://www.greatdunmow-tc.gov.uk",
+"new": true
+},
+{
+"group": "parish",
+"area": "epping",
+"name": "Epping Town Council",
+"url": "https://www.eppingtowncouncil.gov.uk",
+"new": true
+},
+{
+"group": "parish",
+"area": "epping",
+"name": "Ongar Town Council",
+"url": "https://www.ongartowncouncil.gov.uk",
+"new": true
+},
+{
+"group": "parish",
+"area": "epping",
+"name": "Chigwell Parish Council",
+"url": "https://www.chigwellparishcouncil.gov.uk",
+"new": true
+},
+{
+"group": "parish",
+"area": "epping",
+"name": "Buckhurst Hill Parish Council",
+"url": "https://www.buckhursthillpc.gov.uk",
+"new": true
+},
+{
+"group": "parish",
+"area": "colchester",
+"name": "Tiptree Parish Council",
+"url": "https://www.tiptreeparishcouncil.gov.uk",
+"new": true
+},
+{
+"group": "parish",
+"area": "braintree",
+"name": "Coggeshall Parish Council",
+"url": "https://www.coggeshall-pc.gov.uk",
+"new": true
+},
+{
+"group": "parish",
+"area": "chelmsford",
+"name": "Danbury Parish Council",
+"url": "https://www.danbury-essex.gov.uk",
+"new": true
+},
+{
+"group": "parish",
+"area": "chelmsford",
+"name": "Writtle Parish Council",
+"url": "https://www.writtle-pc.gov.uk",
+"new": true
+},
+{
+"group": "parish",
+"area": "chelmsford",
+"name": "Great Baddow Parish Council",
+"url": "https://www.greatbaddowparishcouncil.gov.uk",
+"new": true
+},
+{
+"group": "parish",
+"area": "brentwood",
+"name": "Ingatestone and Fryerning Parish Council",
+"url": "https://www.ingatestone-fryerningpc.gov.uk",
+"new": true
+},
+{
+"group": "parish",
+"area": "tendring",
+"name": "Frinton and Walton Town Council",
+"url": "https://www.frintonandwalton-tc.gov.uk",
+"new": true
+},
+{
+"group": "parish",
+"area": "tendring",
+"name": "Manningtree Town Council",
+"url": "https://www.manningtreetowncouncil.gov.uk",
+"new": true
+},
+{
+"group": "feed",
+"area": "all",
+"name": "BBC News England RSS",
+"url": "https://feeds.bbci.co.uk/news/england/rss.xml",
+"new": true,
+"kind": "feed"
+},
+{
+"group": "feed",
+"area": "all",
+"name": "The Guardian: Essex",
+"url": "https://www.theguardian.com/uk-news/essex/rss",
+"new": true,
+"kind": "feed"
+},
+{
+"group": "feed",
+"area": "all",
+"name": "The Guardian: UK news",
+"url": "https://www.theguardian.com/uk-news/rss",
+"new": true,
+"kind": "feed"
+},
+{
+"group": "feed",
+"area": "all",
+"name": "The Observer",
+"url": "https://observer.co.uk/feed",
+"new": true,
+"kind": "feed"
+},
+{
+"group": "feed",
+"area": "all",
+"name": "Sky News UK",
+"url": "https://feeds.skynews.com/feeds/rss/uk.xml",
+"new": true,
+"kind": "feed"
+},
+{
+"group": "feed",
+"area": "all",
+"name": "The Independent UK news",
+"url": "https://www.independent.co.uk/news/uk/rss",
+"new": true,
+"kind": "feed"
+},
+{
+"group": "feed",
+"area": "all",
+"name": "The Telegraph news",
+"url": "https://www.telegraph.co.uk/news/rss.xml",
+"new": true,
+"kind": "feed"
+},
+{
+"group": "feed",
+"area": "all",
+"name": "Daily Mail news",
+"url": "https://www.dailymail.co.uk/news/index.rss",
+"new": true,
+"kind": "feed"
+},
+{
+"group": "feed",
+"area": "all",
+"name": "The Standard news",
+"url": "https://www.standard.co.uk/news/rss",
+"new": true,
+"kind": "feed"
+},
+{
+"group": "feed",
+"area": "all",
+"name": "Metro news",
+"url": "https://metro.co.uk/news/feed/",
+"new": true,
+"kind": "feed"
+},
+{
+"group": "feed",
+"area": "all",
+"name": "The i Paper",
+"url": "https://inews.co.uk/feed",
+"new": true,
+"kind": "feed"
+},
+{
+"group": "feed",
+"area": "all",
+"name": "The Sun news",
+"url": "https://www.thesun.co.uk/news/feed/",
+"new": true,
+"kind": "feed"
+},
+{
+"group": "feed",
+"area": "all",
+"name": "GOV.UK news mentioning Essex",
+"url": "https://www.gov.uk/search/news-and-communications.atom?keywords=Essex",
+"new": true,
+"kind": "feed"
+},
+{
+"group": "feed",
+"area": "all",
+"name": "GOV.UK news mentioning Southend",
+"url": "https://www.gov.uk/search/news-and-communications.atom?keywords=Southend",
+"new": true,
+"kind": "feed"
+},
+{
+"group": "feed",
+"area": "all",
+"name": "GOV.UK news mentioning Thurrock",
+"url": "https://www.gov.uk/search/news-and-communications.atom?keywords=Thurrock",
+"new": true,
+"kind": "feed"
+},
+{
+"group": "feed",
+"area": "all",
+"name": "GOV.UK news mentioning Colchester",
+"url": "https://www.gov.uk/search/news-and-communications.atom?keywords=Colchester",
+"new": true,
+"kind": "feed"
+},
+{
+"group": "feed",
+"area": "all",
+"name": "GOV.UK news mentioning Chelmsford",
+"url": "https://www.gov.uk/search/news-and-communications.atom?keywords=Chelmsford",
+"new": true,
+"kind": "feed"
+},
+{
+"group": "feed",
+"area": "all",
+"name": "GOV.UK news mentioning Basildon",
+"url": "https://www.gov.uk/search/news-and-communications.atom?keywords=Basildon",
+"new": true,
+"kind": "feed"
+},
+{
+"group": "feed",
+"area": "all",
+"name": "GOV.UK news mentioning Harlow",
+"url": "https://www.gov.uk/search/news-and-communications.atom?keywords=Harlow",
+"new": true,
+"kind": "feed"
+},
+{
+"group": "feed",
+"area": "all",
+"name": "GOV.UK news mentioning Stansted",
+"url": "https://www.gov.uk/search/news-and-communications.atom?keywords=Stansted",
+"new": true,
+"kind": "feed"
+},
+{
+"group": "feed",
+"area": "all",
+"name": "GOV.UK everything mentioning Essex (newest)",
+"url": "https://www.gov.uk/search/all.atom?keywords=Essex&order=updated-newest",
+"new": true,
+"kind": "feed"
+},
+{
+"group": "feed",
+"area": "all",
+"name": "Employment tribunal decisions mentioning Essex",
+"url": "https://www.gov.uk/employment-tribunal-decisions.atom?keywords=Essex",
+"new": true,
+"kind": "feed"
+},
+{
+"group": "feed",
+"area": "all",
+"name": "Teacher misconduct decisions",
+"url": "https://www.gov.uk/search/all.atom?keywords=%22prohibition+order%22+Essex&order=updated-newest",
+"new": true,
+"kind": "feed"
+},
+{
+"group": "feed",
+"area": "all",
+"name": "Accident investigation reports (rail, air, marine) mentioning Essex",
+"url": "https://www.gov.uk/search/all.atom?keywords=Essex&organisations%5B%5D=rail-accident-investigation-branch&organisations%5B%5D=air-accidents-investigation-branch&organisations%5B%5D=marine-accident-investigation-branch&order=updated-newest",
+"new": true,
+"kind": "feed"
+},
+{
+"group": "feed",
+"area": "all",
+"name": "Environment Agency news mentioning Essex",
+"url": "https://www.gov.uk/search/news-and-communications.atom?keywords=Essex&organisations%5B%5D=environment-agency",
+"new": true,
+"kind": "feed"
+},
+{
+"group": "feed",
+"area": "all",
+"name": "Insolvency Service news mentioning Essex",
+"url": "https://www.gov.uk/search/news-and-communications.atom?keywords=Essex&organisations%5B%5D=insolvency-service",
+"new": true,
+"kind": "feed"
+},
+{
+"group": "feed",
+"area": "all",
+"name": "Prevention of Future Deaths reports feed",
+"url": "https://www.judiciary.uk/feed/?post_type=pfd",
+"new": true,
+"kind": "feed"
+},
+{
+"group": "feed",
+"area": "all",
+"name": "HSE press releases",
+"url": "https://press.hse.gov.uk/feed/",
+"new": true,
+"kind": "feed"
+},
+{
+"group": "feed",
+"area": "all",
+"name": "Met Office warnings: East of England",
+"url": "https://www.metoffice.gov.uk/public/data/PWSCache/WarningsRSS/Region/ee",
+"new": true,
+"kind": "feed"
+},
+{
+"group": "feed",
+"area": "all",
+"name": "Environment Agency flood warnings: Essex (live data)",
+"url": "https://environment.data.gov.uk/flood-monitoring/id/floods?county=Essex",
+"new": true,
+"kind": "feed"
+},
+{
+"group": "feed",
+"area": "all",
+"name": "Google News: Essex (last day)",
+"url": "https://news.google.com/rss/search?q=Essex+when:1d&hl=en-GB&gl=GB&ceid=GB:en",
+"new": true,
+"kind": "feed"
+},
+{
+"group": "feed",
+"area": "all",
+"name": "Bing News: Essex",
+"url": "https://www.bing.com/news/search?q=Essex+news&format=rss",
+"new": true,
+"kind": "feed"
+},
+{
+"group": "feed",
+"area": "all",
+"name": "Reddit r/Essex new posts",
+"url": "https://www.reddit.com/r/Essex/new/.rss",
+"new": true,
+"kind": "feed"
+},
+{
+"group": "feed",
+"area": "all",
+"name": "Essex Police Dispatch (Substack feed)",
+"url": "https://essexpoliceuk.substack.com/feed",
+"new": true,
+"kind": "feed"
+},
+{
+"group": "feed",
+"area": "all",
+"name": "PlanIt: recent Essex applications",
+"url": "https://www.planit.org.uk/api/applics/rss?auth=Chelmsford&recent=7&pg_sz=20",
+"new": true,
+"kind": "feed"
+}
+]

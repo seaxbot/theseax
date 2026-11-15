@@ -1,0 +1,29 @@
+name: Source probe
+# Tests every source in tools/feeds/candidates.json for a live site and a readable feed, and saves the results to
+# the branch "probe-data". Owner's request, 15 Nov 2026. Runs only by hand or when the probe or its list changes.
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ["tools/feeds/probe.py", "tools/feeds/candidates.json"]
+permissions:
+  contents: write
+concurrency: probe
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with: { fetch-depth: 1 }
+      - run: python3 -u tools/feeds/probe.py /tmp/probe 2>&1 | tee /tmp/probe-run.log
+      - name: Save to the data branch
+        if: always()
+        run: |
+          mkdir -p /tmp/probe; cp /tmp/probe-run.log /tmp/probe/run.log 2>/dev/null || true
+          cd /tmp/probe && rm -rf .git
+          git init -q -b probe-data
+          git config user.name "The Seax source probe"
+          git config user.email "seaxbot@users.noreply.github.com"
+          git add -A && git commit -qm "Source probe $(date -u +%FT%TZ)"
+          git push -qf "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" probe-data
