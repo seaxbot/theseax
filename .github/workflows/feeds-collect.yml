@@ -1,5 +1,5 @@
 name: Newsroom feed collector
-# Every hour, reads NewsNow's Essex latest page and the NHS Essex news page and saves the
+# Every hour, reads NewsNow's Essex latest page and every feed in tools/feeds/feeds.json and saves the
 # headlines to the branch "feed-data" for the newsroom (ops/newsroom.md, 2-F). Owner's go-ahead, 15 Nov 2026, after the
 # newsroom's own attempts to open these pages kept being refused. GitHub often starts scheduled runs late or skips
 # them, so there are two starts an hour ahead of the newsroom's :35 run.
@@ -10,14 +10,14 @@ on:
   workflow_dispatch:
   push:
     branches: [main]
-    paths: [".github/workflows/feeds-collect.yml", "tools/feeds/collect.py"]
+    paths: [".github/workflows/feeds-collect.yml", "tools/feeds/collect.py", "tools/feeds/feeds.json"]
 permissions:
   contents: write
 concurrency: feeds
 jobs:
   collect:
     runs-on: ubuntu-latest
-    timeout-minutes: 5
+    timeout-minutes: 12
     steps:
       - uses: actions/checkout@v4
         with: { fetch-depth: 1 }
