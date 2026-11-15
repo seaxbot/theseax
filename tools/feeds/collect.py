@@ -229,7 +229,10 @@ def read_feed(feed, state):
     except Exception as e:
         return None, f"{type(e).__name__}: {str(e)[:120]}", False
     items = []
+    skip = re.compile(feed["skip"]) if feed.get("skip") else None
     for r in raw[:60]:
+        if skip and skip.search(r["title"]):
+            continue
         blob = r["title"] + " " + r["body"][:1500]
         if feed.get("filter") == "essex" and (not ESSEX_RX.search(blob) or (NOT_UK_RX.search(blob) and not re.search(r"\b(UK|England|Britain|British|council|NHS)\b", blob))):
             continue
@@ -240,7 +243,7 @@ def read_feed(feed, state):
         if feed["kind"] == "O":
             it["text"] = r["body"][:ORG_TEXT]
         else:
-            it["summary"] = r["body"][:MEDIA_SUMMARY]
+            it["summary"] = " ".join(r["body"][:MEDIA_SUMMARY].split())
         items.append(it)
     return items, "", False
 
@@ -332,7 +335,13 @@ def main():
     old = (NOW - timedelta(days=7)).strftime(ISO)
     state["seen"] = {k: v for k, v in seen.items() if v == "" or v >= old}
     cut72 = (NOW - timedelta(hours=72)).strftime(ISO)
-    recent = sorted((i for i in items.values() if i.get("at", "") >= cut72), key=lambda i: i["at"], reverse=True)
+    recent, titles = [], set()
+    for i in sorted((i for i in items.values() if i.get("at", "") >= cut72), key=lambda i: i["at"]):
+        t = re.sub(r"[^a-z0-9]+", " ", i["title"].lower()).strip()   # the same story syndicated across sister titles: keep the first
+        if t in titles:
+            continue
+        titles.add(t); recent.append(i)
+    recent.reverse()
     json.dump({"at": now, "items": {i["id"]: i for i in recent}}, open(os.path.join(out, "items.json"), "w", encoding="utf-8"), ensure_ascii=False)
     norm = lambda u: u.split("?")[0].rstrip("/").replace("http://", "https://").replace("://www.", "://")
 
@@ -351,12 +360,14 @@ def main():
             rows = [i for i in recent if i["kind"] == kind and i["at"] >= cut and norm(i["url"]) not in used]
             counts[kind] = len(rows)
             text += ["", f"== {label}", f"   {len(rows)} items not yet on the site. Times are UTC.", ""]
-            for i in rows[:150 if hours > 6 else 90]:
+            for i in rows[:(60 if kind == "L" else 120) if hours > 6 else (40 if kind == "L" else 80)]:
                 extra = "  [POLITICAL SOURCE: report as their claim]" if i.get("political") else ""
-                text.append(f"{i['id']} | {i['at'][5:16].replace('T', ' ')} | {i['source'][:34]:<34} | {i['title']}{extra}")
+                tag = " [sport desk]" if i.get("group") == "sport" else ""
+                text.append(f"{i['id']} | {i['at'][5:16].replace('T', ' ')} | {i['source'][:30]:<30} | {i['title']}{tag}{extra}")
                 if kind != "O" and i.get("summary"):
-                    text.append(f"         {i['summary'][:200]}")
-                text.append(f"         {i['url']}")
+                    text.append(f"         {i['summary'][:170]}")
+                if kind != "L":
+                    text.append(f"         {i['url']}")
         open(os.path.join(out, name), "w", encoding="utf-8").write("\n".join(text) + "\n")
         return counts
     c4 = write("latest.txt", 4, 80)
