@@ -1,0 +1,41 @@
+name: Newsroom feed collector
+# Every hour, reads NewsNow's Essex latest page, the Essex Police news feed and the NHS Essex news page and saves the
+# headlines to the branch "feed-data" for the newsroom (ops/newsroom.md, 2-F). Owner's go-ahead, 15 Nov 2026, after the
+# newsroom's own attempts to open these pages kept being refused. GitHub often starts scheduled runs late or skips
+# them, so there are two starts an hour ahead of the newsroom's :35 run.
+on:
+  schedule:
+    - cron: "2,17 5-23 * * *"
+    - cron: "17 0,3 * * *"
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: [".github/workflows/feeds-collect.yml", "tools/feeds/collect.py"]
+permissions:
+  contents: write
+concurrency: feeds
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with: { fetch-depth: 1 }
+      - name: Get previous state
+        run: |
+          mkdir -p /tmp/feeds
+          if git fetch -q --depth 1 origin feed-data; then git archive FETCH_HEAD | tar -x -C /tmp/feeds; else echo "no previous state"; fi
+      - name: Collect
+        run: |
+          set -o pipefail
+          python3 -u tools/feeds/collect.py /tmp/feeds 2>&1 | tee /tmp/feeds/run.log
+      - name: Save to the data branch
+        if: always()
+        run: |
+          mkdir -p /tmp/feeds; [ -f /tmp/feeds/run.log ] || echo "collector did not run" > /tmp/feeds/run.log
+          cd /tmp/feeds && rm -rf .git
+          git init -q -b feed-data
+          git config user.name "The Seax feed collector"
+          git config user.email "seaxbot@users.noreply.github.com"
+          git add -A && git commit -qm "Feeds $(date -u +%FT%TZ)"
+          git push -qf "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" feed-data
