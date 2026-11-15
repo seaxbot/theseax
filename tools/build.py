@@ -905,6 +905,8 @@ def stock_figure(it, sec):
     who = f'<a href="{E(p["creatorUrl"])}" target="_blank" rel="noopener">{E(p["creator"])}</a>' if safe_url(p.get("creatorUrl")) else E(p.get("creator"))
     lic = f'<a href="{E(p["licenseUrl"])}" target="_blank" rel="noopener">{E(p["license"])}</a>' if safe_url(p.get("licenseUrl")) else E(p.get("license"))
     src = f' via <a href="{E(p["source"])}" target="_blank" rel="noopener">{E(p.get("provider") or "source")}</a>' if safe_url(p.get("source")) else ""
+    if p.get("kind") == "owner" and not p.get("creator") and p.get("noCaption") is True:  # owner's choice (15 Nov 2026): no label, caption or credit at all
+        return (f'<figure class="stock"><img src="{E(p["file"])}" width="{E(p.get("w") or 1200)}" height="{E(p.get("h") or 800)}" alt="{E(p.get("title") or "")}" loading="eager"></figure>')
     if p.get("kind") == "owner" and not p.get("creator"):  # owner's picture with no credit: caption is its "label" in small type (e.g. "AI illustration"), else just "File photo"
         return (f'<figure class="stock"><img src="{E(p["file"])}" width="{E(p.get("w") or 1200)}" height="{E(p.get("h") or 800)}" alt="{E((p.get("label") or "File photo") + (": " + p["title"] if p.get("title") else ""))}" loading="eager">'
                 f'<figcaption>{"<small>" + E(p["label"]) + "</small>" if p.get("label") else "<b>File photo</b>"}</figcaption></figure>')
