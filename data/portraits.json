@@ -254,5 +254,18 @@
   "licenseUrl": "",
   "source": "https://www.facebook.com/photo.php?fbid=1468059302126437",
   "addedBy": "owner, 14 Nov 2026 (202 shop theft charges story, published Sun 15 Nov afternoon; Essex Police picture from its Facebook post of 12 Nov)"
+ },
+ {
+  "match": "^(?!.*\\b(?:[Dd]ead|[Bb]ody|[Dd]ied|[Dd]eath|[Kk]illed|[Rr]emains|[Ff]atal\\w*)\\b).*\\b(?:[Ff]ound|[Ll]ocated|[Tt]raced)\\b.*\\b(?:[Ss]afe|[Ss]afely|[Uu]nharmed)\\b",
+  "name": "Essex Police officer with body-worn camera",
+  "label": "Picture",
+  "wide": "/img/people/found-safe-wide.jpg",
+  "og": "/img/people/found-safe-og.jpg",
+  "creator": "Essex Police",
+  "provider": "Essex Police",
+  "license": "",
+  "licenseUrl": "",
+  "source": "https://www.facebook.com/EssexPoliceUK",
+  "addedBy": "owner, 15 Nov 2026 (picture for missing people found safe; from Essex Police's Simon Mahoney found post)"
  }
 ]
