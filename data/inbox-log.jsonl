@@ -1,1 +1,2 @@
 {"at":"2026-11-15T22:06:33Z","stage":"started"}
+{"at":"2026-11-15T22:07:11Z","stage":"inbox","unhandled":61,"error":"mcp__Gmail__create_label: The Gmail connector is missing a permission that this action needs; the Seax handled label does not exist so threads cannot be labelled"}
