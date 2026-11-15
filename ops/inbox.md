@@ -29,7 +29,7 @@ If the push is refused because someone else pushed first, run `git pull -q --reb
 
 ## B. After the Gmail search (step 3 of your instructions)
 
-Append a second line with `"stage":"inbox"`, `"unhandled": <number of unlabelled threads found>` and, if a Gmail
+Append a second line with `"stage":"inbox"`, `"unhandled": <number of unhandled threads found>` and, if a Gmail
 tool failed, `"error": "<the tool name and a few words, no email content>"`. If the Gmail tools cannot be loaded or every call
 fails, write that line, push it, and end the run with "ALERT: Gmail not reachable, inbox not read".
 
@@ -118,4 +118,4 @@ existing format, run python3 tools/build.py, commit and push. Add new picture fi
 Write the section C log line, then end with a short summary, starting "ALERT:" if anything needs the owner
 (complaints, removal requests, ad or partnership enquiries, tips worth chasing, a correction you could not settle,
 a subscription to confirm). Then: stories published (headlines), What's On listings added, the commit hash, emails
-labelled handled, and anything left for the next run.
+recorded as handled, and anything left for the next run.
