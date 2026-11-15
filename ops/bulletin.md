@@ -32,7 +32,7 @@ Save it to `/tmp/bulletin.txt`: plain text, **one paragraph per story, a blank l
 
 **Fixed opening (owner's wording), as the first paragraph:**
 `Hello and welcome to today's Essex News Bulletin from the See-Ax. It's <Weekday>, the <ordinal day in words> of <Month>.`
-For example: `It's Sunday, the fifteenth of November.` Use the owner's opening for both bulletins. In the evening you may add "evening": `It's Sunday evening, the fifteenth of November.`
+For example: `It's Sunday, the fifteenth of November.` Use the owner's opening for both bulletins. **Never say "morning" or "evening" for the bulletin itself** (owner's rule, 15 Nov 2026): no "It's Sunday evening", no "this evening's bulletin", no "good morning". Where the bulletin needs to name itself, it is the "latest bulletin". (Saying when a story happened, such as "a crash this morning on the A12", is fine.) The site's Listen button and the Alexa title also say "Latest bulletin".
 
 **Fixed sign-off, as the last paragraph:**
 `That's all for now. For the full stories, head to the See-Ax dot com.`

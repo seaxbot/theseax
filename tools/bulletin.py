@@ -132,11 +132,11 @@ def write_alexa(meta):
     """Alexa Flash Briefing feed: one audio item for the latest bulletin (Amazon ignores items over 7 days old)."""
     import uuid
     d = datetime.strptime(meta["date"], "%Y-%m-%d")
-    when = f'{UKDAYS[d.weekday()]} {"morning" if meta["slot"] == "am" else "evening"}, {d.day} {d.strftime("%B")}'
+    when = f'{UKDAYS[d.weekday()]} {d.day} {d.strftime("%B")}'   # owner's rule (15 Nov 2026): no "morning"/"evening"
     item = {
         "uid": "urn:uuid:" + str(uuid.uuid5(uuid.NAMESPACE_URL, SITE + meta["file"] + "#" + meta["madeAt"])),
         "updateDate": meta["madeAt"],
-        "titleText": f"The Seax Essex News Bulletin, {when}",
+        "titleText": f"The Seax latest Essex News Bulletin, {when}",
         "mainText": "",
         "streamUrl": SITE + meta["file"],
         "redirectionUrl": SITE + "/",
@@ -205,7 +205,7 @@ def main():
         "file": "/" + rel,
         "duration": round(dur, 1),
         "madeAt": now.strftime("%Y-%m-%dT%H:%M:%SZ"),
-        "title": "Essex News Bulletin, " + ("morning" if slot == "am" else "evening"),
+        "title": "Latest Essex News Bulletin",
         "voice": VOICE,
         "stories": [s.strip() for s in a.stories.split(",") if s.strip()],
         "peaks": peaks(ff, out),

@@ -1181,7 +1181,7 @@ footer .flinks a{text-decoration:underline}
         <svg class="i-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13a1 1 0 0 0 1.5.86l10.6-6.5a1 1 0 0 0 0-1.72L9.5 4.64A1 1 0 0 0 8 5.5z" fill="currentColor"/></svg>
         <svg class="i-pause" viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="5" width="4.2" height="14" rx="1.2" fill="currentColor"/><rect x="13.8" y="5" width="4.2" height="14" rx="1.2" fill="currentColor"/></svg>
       </button>
-      <span class="bl-txt"><span class="bl-k">Listen</span><b id="blTitle">Today's bulletin</b></span>
+      <span class="bl-txt"><span class="bl-k">Listen</span><b id="blTitle">Latest bulletin</b></span>
       <span class="bl-wave" id="blWave" role="slider" tabindex="0" aria-label="Bulletin position" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"></span>
       <span class="bl-t" id="blTime">2:00</span>
       <audio id="blAudio" preload="none"></audio>
@@ -5030,9 +5030,9 @@ function renderToday(){
     B = b;
     const nice = new Intl.DateTimeFormat("en-GB",{weekday:"long",day:"numeric",month:"long",timeZone:"Europe/London"}).format(new Date(b.date + "T12:00:00Z"));
     const wk = new Intl.DateTimeFormat("en-GB",{weekday:"long",timeZone:"Europe/London"}).format(new Date(b.date + "T12:00:00Z"));
-    const part = b.slot === "pm" ? "evening" : b.slot === "am" ? "morning" : "";
-    document.getElementById("blTitle").textContent = fresh ? (part ? part[0].toUpperCase() + part.slice(1) + " bulletin" : "Today's bulletin") : wk + (part ? " " + part : "'s") + " bulletin";
-    box.title = `Listen to the ${Math.max(1, Math.round((b.duration||120)/60))}-minute Essex News Bulletin for ${nice}${part ? ", " + part : ""}`;
+    /* owner's rule (15 Nov 2026): always "Latest bulletin", never morning or evening */
+    document.getElementById("blTitle").textContent = "Latest bulletin";
+    box.title = `Listen to the latest ${Math.max(1, Math.round((b.duration||120)/60))}-minute Essex News Bulletin, ${nice}`;
     btn.setAttribute("aria-label", `Play the Essex News Bulletin for ${nice}`);
     au.src = b.file + "?v=" + encodeURIComponent(b.madeAt || b.date);
     const raw = Array.isArray(b.peaks) && b.peaks.length ? b.peaks : Array.from({length:72}, (_, i) => .35 + .5*Math.abs(Math.sin(i*1.7)));
