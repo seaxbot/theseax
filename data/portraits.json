@@ -303,5 +303,18 @@
   "source": "",
   "addedBy": "owner, 15 Nov 2026 (use for all Great Baddow Hoard stories; credit: Museum of Chelmsford)",
   "match": "\\b[Bb]addow [Hh]oard\\b"
+ },
+ {
+  "match": "\\bMuseum of Chelmsford\\b|\\bChelmsford(?: City)? [Mm]useum\\b",
+  "name": "The welcome desk at the Museum of Chelmsford in Oaklands Park",
+  "label": "Picture",
+  "wide": "/img/people/museum-of-chelmsford-wide.jpg",
+  "og": "/img/people/museum-of-chelmsford-og.jpg",
+  "creator": "",
+  "provider": "",
+  "license": "",
+  "licenseUrl": "",
+  "source": "",
+  "addedBy": "owner, 15 Nov 2026 (use for Museum of Chelmsford stories; not the schools hoard box story, which keeps its pupils picture, and Great Baddow Hoard stories keep the coins picture because their entries come first; credit not yet given by the owner)"
  }
 ]
