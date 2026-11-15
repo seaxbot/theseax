@@ -1,6 +1,6 @@
 [
  {
-  "match": "\\bSimon Mahoney\\b",
+  "match": "^(?!.*\\b[Ff]ound\\b).*\\bSimon Mahoney\\b",
   "name": "Simon Mahoney: family photo (left) and CCTV pictures from shops in Chelmsford on Friday 13 November",
   "label": "Picture",
   "wide": "/img/people/simon-mahoney-wide.jpg",
@@ -10,7 +10,7 @@
   "license": "",
   "licenseUrl": "",
   "source": "https://www.essex.police.uk/news/essex/news/",
-  "addedBy": "owner, 14 Nov 2026 (Simon Mahoney missing appeal, published Sun 15 Nov; Essex Police appeal pictures)"
+  "addedBy": "owner, 14 Nov 2026 (Simon Mahoney missing appeal, published Sun 15 Nov; Essex Police appeal pictures); not used once he was found (appeal pictures withdrawn, 15 Nov 2026)"
  },
  {
   "match": "\\bAir Ambulance\\b.*\\bwomen\\b",
