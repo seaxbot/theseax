@@ -58,8 +58,8 @@
 "url": "https://www.chelmsfordcitynews.co.uk/news/rss/",
 "group": "news",
 "area": "chelmsford",
-"kind": "L",
-"filter": "essex",
+"kind": "M",
+"filter": "none",
 "id": 7
 },
 {
@@ -148,8 +148,8 @@
 "url": "https://www.brentwoodlive.co.uk/news/rss/",
 "group": "news",
 "area": "brentwood",
-"kind": "L",
-"filter": "essex",
+"kind": "M",
+"filter": "none",
 "id": 17
 },
 {
@@ -175,8 +175,8 @@
 "url": "https://www.essexcountynews.co.uk/news/rss/",
 "group": "news",
 "area": "all",
-"kind": "L",
-"filter": "essex",
+"kind": "M",
+"filter": "none",
 "id": 20
 },
 {
@@ -427,7 +427,7 @@
 "url": "https://www.london-now.co.uk/news/rss/",
 "group": "hyperlocal",
 "area": "brentwood",
-"kind": "L",
+"kind": "M",
 "filter": "essex",
 "id": 48
 },
@@ -1139,7 +1139,7 @@
 "url": "https://www.greatbritishlife.co.uk/magazines/essex/rss/",
 "group": "reviews",
 "area": "all",
-"kind": "L",
+"kind": "M",
 "filter": "essex",
 "id": 127
 },
