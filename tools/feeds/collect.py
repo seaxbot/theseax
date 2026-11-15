@@ -274,6 +274,8 @@ def main():
     os.makedirs(out, exist_ok=True)
     now = NOW.strftime(ISO)
     state = load(os.path.join(out, "state.json"), {})
+    if state.get("v") != 3:   # the item format or the filters changed: read every feed afresh once
+        state["cache"], state["http"], state["v"] = {}, {}, 3
     seen = state.setdefault("seen", {}); known = set(state.get("known") or [])
     feeds = load(os.path.join(HERE, "feeds.json"), [])
     status = {"at": now, "newsnow": (load(os.path.join(out, "status.json"), {}).get("newsnow") or {})}
