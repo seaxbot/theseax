@@ -1,5 +1,5 @@
 name: Newsroom feed collector
-# Every hour, reads NewsNow's Essex latest page, the Essex Police news feed and the NHS Essex news page and saves the
+# Every hour, reads NewsNow's Essex latest page and the NHS Essex news page and saves the
 # headlines to the branch "feed-data" for the newsroom (ops/newsroom.md, 2-F). Owner's go-ahead, 15 Nov 2026, after the
 # newsroom's own attempts to open these pages kept being refused. GitHub often starts scheduled runs late or skips
 # them, so there are two starts an hour ahead of the newsroom's :35 run.

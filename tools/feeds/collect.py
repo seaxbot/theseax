@@ -4,10 +4,10 @@
 The newsroom's unattended runs are often refused when they try to open the three pages the owner asked to be read on
 every run, so stories on them were being missed (15 Nov: the Maldon Salt story sat on NewsNow from 13:02). This
 collector runs on GitHub Actions every hour, reads the pages itself and saves the headlines to the branch
-"feed-data", where every newsroom run reads them at no cost.
+"feed-data", where every newsroom run reads them at no cost. Essex Police's website refuses GitHub's servers (HTTP 403,
+tested 15 Nov 2026), so its news stays with the newsroom's police desk (2i) and the Essex Police Facebook desk.
 
   newsnow   https://www.newsnow.co.uk/h/UK/England/Essex?type=ln   NewsNow's Essex page, latest first (headlines only)
-  police    https://www.essex.police.uk/news/essex/news/GetNewsRss/ Essex Police news feed
   nhs       https://www.essex.icb.nhs.uk/news/                      NHS Essex news listing
 
 Outputs (written to OUT, default ./feeds-out):
@@ -30,7 +30,6 @@ NOW = datetime.now(timezone.utc)
 ISO = "%Y-%m-%dT%H:%M:%SZ"
 FEEDS = {
     "newsnow": "https://www.newsnow.co.uk/h/UK/England/Essex?type=ln",
-    "police": "https://www.essex.police.uk/news/essex/news/GetNewsRss/",
     "nhs": "https://www.essex.icb.nhs.uk/news/",
 }
 
@@ -108,6 +107,21 @@ def newsnow(page, base):
         if not src:
             src = TIME_RX.split(after)[0].strip(" -|·,")[:60]
         items.append({"title": t, "url": l["href"], "source": src, "time": l.get("dt") or (m.group(1) if m else "")})
+    # the page ends with boxes of headlines from other NewsNow topics; the Essex list is the big group sharing one link code
+    codes = [i["url"].split("?", 1)[-1] for i in items if "?" in i["url"]]
+    if codes:
+        top = max(set(codes), key=codes.count)
+        items = [i for i in items if i["url"].endswith("?" + top)]
+    # the page shows clock times only (UK time), newest first: when the clock jumps forward, the list has moved back a day
+    day, prev = 0, None
+    for i in items:
+        m = re.match(r"^(\d{1,2}):(\d{2})$", i["time"])
+        if m:
+            mins = int(m.group(1)) * 60 + int(m.group(2))
+            if prev is not None and mins > prev + 5:
+                day += 1
+            prev = mins
+        i["day"] = ["today", "yesterday"][day] if day < 2 else f"{day} days ago"
     return items
 
 def police(page, base):
@@ -135,7 +149,7 @@ def nhs(page, base):
         items.append({"title": l["text"], "url": l["href"], "source": "NHS Essex", "time": m.group(1) if m else ""})
     return items
 
-PARSE = {"newsnow": newsnow, "police": police, "nhs": nhs}
+PARSE = {"newsnow": newsnow, "nhs": nhs}
 
 def load(p, d):
     try:
@@ -183,7 +197,8 @@ def main():
         json.dump(doc, open(os.path.join(out, name + ".json"), "w", encoding="utf-8"), ensure_ascii=False, indent=1)
         text += [f"== {name}: {url}", f"   {'read ' + doc['fetchedAt'] if doc['ok'] else 'NOT READ THIS HOUR (' + err + '); items below are from ' + (doc['fetchedAt'] or 'never')}", ""]
         for it in doc["items"][:80]:
-            text.append(f"{'NEW ' if it in new and doc['ok'] else '    '}{it.get('time', '')[:20]:<20} | {it.get('source', '')[:32]:<32} | {it['title']} | {it['url']}")
+            when = (it.get("time", "") + (" " + it["day"] if it.get("day") else ""))[:22]
+            text.append(f"{'NEW ' if it in new and doc['ok'] else '    '}{when:<22} | {it.get('source', '')[:32]:<32} | {it['title']} | {it['url']}")
         text.append("")
         print(name, "ok" if doc["ok"] else "FAILED: " + err, len(doc["items"]), "items,", st["new"], "new")
     old = (NOW - timedelta(days=7)).strftime(ISO)
