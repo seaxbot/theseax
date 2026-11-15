@@ -905,6 +905,9 @@ def stock_figure(it, sec):
     who = f'<a href="{E(p["creatorUrl"])}" target="_blank" rel="noopener">{E(p["creator"])}</a>' if safe_url(p.get("creatorUrl")) else E(p.get("creator"))
     lic = f'<a href="{E(p["licenseUrl"])}" target="_blank" rel="noopener">{E(p["license"])}</a>' if safe_url(p.get("licenseUrl")) else E(p.get("license"))
     src = f' via <a href="{E(p["source"])}" target="_blank" rel="noopener">{E(p.get("provider") or "source")}</a>' if safe_url(p.get("source")) else ""
+    if p.get("kind") == "owner" and not p.get("creator"):  # owner's picture with no credit: caption is just "File photo"
+        return (f'<figure class="stock"><img src="{E(p["file"])}" width="{E(p.get("w") or 1200)}" height="{E(p.get("h") or 800)}" alt="File photo" loading="eager">'
+                f'<figcaption><b>File photo</b></figcaption></figure>')
     if p.get("kind") in ("commons", "owner"):  # Wikimedia Commons file photo, or a picture the owner supplied for this story (kind "owner"), of the story's own subject (owner's rule, Nov 2026)
         return (f'<figure class="stock"><img src="{E(p["file"])}" width="{E(p.get("w") or 1200)}" height="{E(p.get("h") or 800)}" alt="{E("File photo: " + (p.get("title") or p.get("keyword") or ""))}" loading="eager">'
                 f'<figcaption><b>File photo</b>{": " + E(p.get("title")) if p.get("title") else ""}. Photo: {who}, {lic}{src}</figcaption></figure>')
