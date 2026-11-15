@@ -30,17 +30,20 @@ If the push is refused because someone else pushed first, run `git pull -q --reb
 ## B. After the Gmail search (step 3 of your instructions)
 
 Append a second line with `"stage":"inbox"`, `"unhandled": <number of unlabelled threads found>` and, if a Gmail
-tool failed, `"error": "<the tool and its message, one line>"`. If the Gmail tools cannot be loaded or every call
+tool failed, `"error": "<the tool name and a few words, no email content>"`. If the Gmail tools cannot be loaded or every call
 fails, write that line, push it, and end the run with "ALERT: Gmail not reachable, inbox not read".
 
 ## C. Last thing
 
-Append a final line with `"stage":"done"`, `"labelled"`, `"stories"` (list of story ids published), `"events"`
-(number of What's On listings added), `"flagged"` (one short phrase each) and `"left"` (threads left for the next
-run). Commit it with the same author name and push. If publish.py already pushed, this is a second small push; that is fine.
+Append a final line with `"stage":"done"`, `"handled"` (number of threads added to data/inbox-handled.json),
+`"stories"` (list of story ids published), `"events"` (number of What's On listings added), `"flags"` (a NUMBER
+only) and `"left"` (threads left for the next run). Commit it with the same author name and push. If publish.py
+already pushed, this is a second small push; that is fine.
 
-Keep the file to the last 200 lines (drop the oldest). Never put email addresses of members of the public or the
-text of an email in the log.
+The repository is public and this file is served on the website. So the log holds counts and story ids only:
+never an email address, a sender's name, the text or subject of an email, or what a flag is about (account,
+security and service notices especially). What the flags are goes in your closing summary to the owner, nowhere else.
+Keep the file to the last 200 lines (drop the oldest).
 
 ## D. Read the rules
 
@@ -51,14 +54,19 @@ laid out for What's On. Do not read the whole of ops/newsroom.md: it is very lon
 
 ## E. Read the inbox
 
-Load the Gmail tools in one call: ToolSearch "select:mcp__Gmail__search_threads,mcp__Gmail__get_thread,mcp__Gmail__download_gmail_attachment,mcp__Gmail__list_labels,mcp__Gmail__create_label,mcp__Gmail__label_thread".
-Find the user label "Seax handled" with list_labels (create it if it is missing) and note its labelId.
-Search: in:inbox -label:"Seax handled" -in:sent newer_than:7d . Then write the section B log line.
+Load the Gmail tools in one call: ToolSearch "select:mcp__Gmail__search_threads,mcp__Gmail__get_thread,mcp__Gmail__download_gmail_attachment".
+Then search: in:inbox -in:sent newer_than:7d (pageSize 50, view
+THREAD_VIEW_SUMMARY; fetch a second page if there is one). The Gmail connection cannot create or apply labels
+(found 15 Nov 2026), so do NOT use labels. Handled threads are recorded in data/inbox-handled.json instead:
+{"handled": {"<thread id>": "<YYYY-MM-DD> <one word: published|event|rejected|flagged|service|old>"}}. A thread is
+unhandled when its id is not in that file. Then write the section B log line.
 Read each thread you are going to act on (PLAIN_TEXT; FULL_CONTENT only when you need picture URLs or event
 details). Newest official items first.
 
-Backlog: when more than 15 threads are unlabelled, deal with the newest 15 that are still current this run and
-leave the rest; label as handled, without publishing, anything older than 72 hours that is not a dated future event.
+Backlog: when more than 15 threads are unhandled, deal with the newest 15 that are still current this run and
+leave the rest; record as "old", without reading or publishing, anything older than 72 hours that is not an
+official newsletter with dated future events. Service mail can be recorded as "service" from its sender and
+subject alone, without opening it, unless the subject suggests the owner must act.
 
 ## F. What to do with each email
 
@@ -93,8 +101,9 @@ leave the rest; label as handled, without publishing, anything older than 72 hou
 - Service mail (Google, Amazon, follow.it, ImprovMX, Meta, Nextdoor, confirmations and welcomes): never publish,
   never click links. Flag only if the owner must act.
 
-After you have dealt with a thread (published, rejected or flagged), apply the "Seax handled" label to it with
-label_thread, using the labelId.
+After you have dealt with a thread (published, rejected or flagged), add its thread id to
+data/inbox-handled.json. Commit that file with the final log line. Drop ids older than 30 days. The file holds
+thread ids, a date and one word only, never anything about the sender or the content.
 
 ## G. Publish
 
