@@ -1369,8 +1369,12 @@ def story_page(sec, it, more):
                '<figcaption><b>Breaking news</b>. No photo of this story yet.</figcaption></figure>')
     og_img = PHOTOS[sid]["file"] if fig and card not in [k for k, _ in ROAD_OG] + ["hospital", "breaking"] + LIBRARY_PHOTOS else card
     pt = portrait_of(it)
+    fig_more = ""
     if pt:
         fig, og_img = portrait_figure(pt), pt["og"]
+        # an entry may carry further pictures for the same story ("more"), shown after the story text (owner's request, 15 Nov 2026)
+        fig_more = "".join(portrait_figure({**m, "label": m.get("label") or "Picture"}).replace(' loading="eager"', ' loading="lazy"')
+                           for m in (pt.get("more") or []) if isinstance(m, dict) and m.get("wide"))
     if not fig:
         fig2, og2 = fallback_photo(it, sec, card)
         if fig2:
@@ -1391,7 +1395,7 @@ def story_page(sec, it, more):
   <div class="meta">{' <span class="dot">·</span> '.join(meta)}</div>
   {share_bar(url, title)}
   {fig}
-  {''.join(f'<p>{E(p)}</p>' for p in body if str(p).strip())}
+  {''.join(f'<p>{E(p)}</p>' for p in body if str(p).strip())}{fig_more}
   {('<h2>Key points</h2><ul class="points">' + ''.join(f'<li>{E(p)}</li>' for p in points) + '</ul>') if points else ''}
   <!-- Article End -->
   {readfull}

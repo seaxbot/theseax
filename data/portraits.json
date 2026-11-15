@@ -272,6 +272,26 @@
   "ids": [
    "museum-of-chelmsford-baddow-discover-box-schools"
   ],
+  "name": "Pupils see the Great Baddow Hoard at the Museum of Chelmsford",
+  "label": "Picture",
+  "wide": "/img/people/great-baddow-hoard-pupils-wide.jpg",
+  "og": "/img/people/great-baddow-hoard-pupils-og.jpg",
+  "creator": "Museum of Chelmsford",
+  "provider": "Museum of Chelmsford",
+  "license": "",
+  "licenseUrl": "",
+  "source": "",
+  "more": [
+   {
+    "name": "The Great Baddow Hoard of Iron Age gold coins",
+    "label": "Picture",
+    "wide": "/img/people/great-baddow-hoard-wide.jpg",
+    "creator": "Museum of Chelmsford"
+   }
+  ],
+  "addedBy": "owner, 15 Nov 2026 (schools box story only; museum's own picture, owner says permission has been sought for the children's faces; the coins picture follows the story text)"
+ },
+ {
   "name": "The Great Baddow Hoard of Iron Age gold coins",
   "label": "Picture",
   "wide": "/img/people/great-baddow-hoard-wide.jpg",
@@ -281,6 +301,7 @@
   "license": "",
   "licenseUrl": "",
   "source": "",
-  "addedBy": "owner, 15 Nov 2026 (Great Baddow Hoard schools box story; credit: Museum of Chelmsford)"
+  "addedBy": "owner, 15 Nov 2026 (use for all Great Baddow Hoard stories; credit: Museum of Chelmsford)",
+  "match": "\\b[Bb]addow [Hh]oard\\b"
  }
 ]
