@@ -343,9 +343,9 @@ def main():
     arch = load(os.path.join(ROOT, "data", "archive.json"), {})
     for sid in list(photos):
         if sid not in live_ids and sid not in arch:
-            p = os.path.join(ROOT, "img", "stock", f"{sid}.jpg")
-            if os.path.exists(p):
-                os.remove(p)
+            for p in {os.path.join(ROOT, "img", "stock", f"{sid}.jpg"), os.path.join(ROOT, (photos[sid].get("file") or "").lstrip("/"))}:
+                if p.endswith(".jpg") and os.path.exists(p):
+                    os.remove(p)
             photos.pop(sid); changed = True
     if changed:
         json.dump(photos, open(pj, "w", encoding="utf-8"), ensure_ascii=False, indent=0, sort_keys=True)
