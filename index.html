@@ -720,13 +720,11 @@ h1,h2,h3,h4,.story h1,.lead h2,.card h3,.drow h4{letter-spacing:-.022em}
 .tb-wx .wi .hottag{position:absolute;left:50%;bottom:-5px;transform:translateX(-50%);font-size:7.5px;line-height:1;font-weight:900;letter-spacing:.08em;color:#c8102e;background:#fff0e8;border:1px solid #f2a07a;border-radius:3px;padding:1px 3px;text-shadow:0 0 3px #ffb37a;animation:sizzle 1.1s ease-in-out infinite}
 @keyframes sizzle{0%,100%{transform:translateX(-50%) translateY(0);text-shadow:0 0 3px #ffb37a;color:#c8102e}25%{transform:translateX(-50%) translateY(-1px) skewX(-3deg);text-shadow:0 -1px 4px #ff7a2e,0 0 6px #ffd27a;color:#e0301e}50%{transform:translateX(-50%) translateY(0) skewX(2deg);text-shadow:0 0 2px #ffb37a;color:#b80d24}75%{transform:translateX(-50%) translateY(-1px) skewX(-1deg);text-shadow:0 -2px 5px #ff5a1e,0 0 7px #ffd27a;color:#e0301e}}
 /* little blowing-wind symbol on the weather bar icon when strong winds are forecast (owner's choice, 16 Nov 2026) */
-.tb-wx .wi.windy{position:relative}
-.tb-wx .wi .windtag{position:absolute;right:-9px;top:-4px;width:15px;height:10px;display:block;background:#fff;border-radius:4px;box-shadow:0 0 0 1px #c9d6e6}
-.tb-wx .wi .windtag svg{display:block;width:15px;height:10px;fill:none;stroke:#2f6db3;stroke-width:2;stroke-linecap:round}
-.tb-wx .wi .windtag path{stroke-dasharray:24;animation:gust 1.6s ease-in-out infinite}
-.tb-wx .wi .windtag .g2{animation-delay:.25s}.tb-wx .wi .windtag .g3{animation-delay:.5s}
-@keyframes gust{0%{stroke-dashoffset:24;opacity:.2}45%{stroke-dashoffset:0;opacity:1}100%{stroke-dashoffset:-24;opacity:.2}}
-@media (prefers-reduced-motion:reduce){.tb-wx .wi .coldtag,.tb-wx .wi .hottag,.tb-wx .wi .windtag path{animation:none}}
+.tb-wx .wi.windy{position:relative;margin-right:27px}
+.tb-wx .wi .windtag{position:absolute;right:-21px;top:50%;margin-top:-6px;width:17px;height:12px;display:block;background:#eef5ff;border-radius:4px;box-shadow:0 0 0 1px #9cc0e8;overflow:hidden}
+.tb-wx .wi .windtag svg{display:block;width:17px;height:12px;fill:none;stroke:#1f5fa8;stroke-width:2.4;stroke-linecap:round;animation:blow 1.4s ease-in-out infinite}
+@keyframes blow{0%,100%{transform:translateX(-1.5px);opacity:.75}50%{transform:translateX(1.5px);opacity:1}}
+@media (prefers-reduced-motion:reduce){.tb-wx .wi .coldtag,.tb-wx .wi .hottag,.tb-wx .wi .windtag svg{animation:none}}
 
 /* ---------- pinned story (data/pinned.json, shown only between its from and until times) ---------- */
 .pinned{margin:0 0 22px}
@@ -4191,7 +4189,7 @@ function newsTime(s){ const a = +new Date(s.time||0) || 0, b = +new Date(s.updat
    when the edition has no entry for today yet). If the fetch fails, the edition's own figures show as before. */
 let LIVEWX = null;
 /* small gusting-wind badge for the weather bar icon (owner's choice, 16 Nov 2026) */
-const WINDTAG = '<span class="windtag"><svg viewBox="0 0 24 16" width="15" height="10"><path class="g1" d="M2 5h12a3 3 0 1 0-3-3"/><path class="g2" d="M2 9h17a3 3 0 1 1-3 3"/><path class="g3" d="M4 13h7"/></svg></span>';
+const WINDTAG = '<span class="windtag"><svg viewBox="0 0 24 16" width="17" height="12"><path class="g1" d="M2 5h12a3 3 0 1 0-3-3"/><path class="g2" d="M2 9h17a3 3 0 1 1-3 3"/><path class="g3" d="M4 13h7"/></svg></span>';
 const LIVEWX_URL = "https://api.open-meteo.com/v1/forecast?latitude=51.7356&longitude=0.4685" +
   "&current=temperature_2m,apparent_temperature,weather_code,wind_speed_10m,wind_gusts_10m,wind_direction_10m,is_day" +
   "&hourly=precipitation_probability&daily=weather_code,temperature_2m_max,temperature_2m_min,precipitation_probability_max,wind_speed_10m_max,wind_gusts_10m_max" +
