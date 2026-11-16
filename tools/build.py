@@ -786,7 +786,7 @@ def head(title, desc, canonical, og_image, og_type="website", extra=""):
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@500..900&family=Inter:opsz,wght@14..32,400..700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/page.css">
+<link rel="stylesheet" href="/assets/page.css?v=20261116b">
 {extra}{analytics()}
 </head>
 <body>
@@ -1385,6 +1385,18 @@ def story_page(sec, it, more):
     if fig and not map_only:
         ld["image"] = [SITE + og_img if og_img.startswith("/") else ld["image"][0]]
         extra = extra.replace(SITE + og_path(card), ld["image"][0])
+    # owner's timed BREAKING badge on the story picture (field "flashUntil", ISO; owner, 16 Nov 2026)
+    fu = it.get("flashUntil")
+    if fu and fig.startswith('<figure class="stock">'):
+        try:
+            live = datetime.fromisoformat(str(fu).replace("Z", "+00:00")) > datetime.now(timezone.utc)
+        except Exception:
+            live = False
+        if live:
+            fig = (f'<figure class="stock flashfig" data-flash-until="{E(fu)}"><span class="flash"><i></i>Breaking</span>'
+                   + fig[len('<figure class="stock">'):]
+                   + '<script>(function(){var f=document.querySelector(".flashfig");if(!f)return;var u=Date.parse(f.dataset.flashUntil);'
+                   'function c(){if(Date.now()>=u){var b=f.querySelector(".flash");if(b)b.remove();return true}}if(!c())setInterval(c,60000)})();</script>')
     return head(f"{title} · The Seax", desc, url, og_img, "article", extra) + f"""<main class="wrap story">
 <article style="--c:{colour}">
   <div class="kick"><span>{E(kicker)}</span><span>{E(place)}</span></div>
@@ -1916,7 +1928,7 @@ def main():
     ed = json.load(open(os.path.join(ROOT, "edition.json"), encoding="utf-8"))
     if a.preview_briefing:
         b = briefing(ed, NOW)
-        open(a.preview_briefing, "w", encoding="utf-8").write(briefing_page(b).replace('href="/assets/page.css"', f'href="file://{ROOT}/assets/page.css"'))
+        open(a.preview_briefing, "w", encoding="utf-8").write(briefing_page(b).replace('href="/assets/page.css?v=20261116b"', f'href="file://{ROOT}/assets/page.css"'))
         print("preview written"); return
 
     # owner's source and copyright policy (tools/policy.py): no features, link-only outlets,
