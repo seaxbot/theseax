@@ -10,7 +10,9 @@ on:
   workflow_dispatch:
   push:
     branches: [main]
-    paths: [".github/workflows/feeds-collect.yml", "tools/feeds/collect.py", "tools/feeds/feeds.json"]
+    # edition.json is here because GitHub skipped most of the scheduled starts on the first night (15 to 16 Nov): every
+    # edition any desk publishes now also starts a collection, so the next newsroom run always has a fresh list.
+    paths: [".github/workflows/feeds-collect.yml", "tools/feeds/collect.py", "tools/feeds/feeds.json", "edition.json"]
 permissions:
   contents: write
 concurrency: feeds
