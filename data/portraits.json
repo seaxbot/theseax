@@ -352,5 +352,20 @@
   "licenseUrl": "",
   "source": "",
   "addedBy": "owner, 15 Nov 2026 (use for Museum of Chelmsford stories; not the schools hoard box story, which keeps its pupils picture, and Great Baddow Hoard stories keep the coins picture because their entries come first; credit: Museum of Chelmsford; owner is fine with the visitors and staff being recognisable)"
+ },
+ {
+  "ids": [
+   "o-maldon-jack-russell-rosie-rabbit-hole-rescue"
+  ],
+  "name": "Rosie with two of the firefighters who dug her out",
+  "label": "Picture",
+  "wide": "/img/people/o-maldon-jack-russell-rosie-rabbit-hole-rescue-wide.jpg",
+  "og": "/img/people/o-maldon-jack-russell-rosie-rabbit-hole-rescue-og.jpg",
+  "creator": "Essex County Fire and Rescue Service",
+  "provider": "Essex County Fire and Rescue Service",
+  "license": "",
+  "licenseUrl": "",
+  "source": "https://www.essex-fire.gov.uk/incidents/dog-rescued-maldon-2026-11-16-14-50",
+  "addedBy": "owner, 16 Nov 2026 (Essex Fire's own picture from its incident page, supplied by the owner as a screenshot; credited)"
  }
 ]
