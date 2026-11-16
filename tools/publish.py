@@ -32,6 +32,7 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.join(ROOT, "tools"))
 import policy
 import repeats
+import diary
 BOTS = {"The Seax newsroom", "The Seax sport desk", "The Seax council watch", "The Seax inquest desk", "The Seax scheduler", "The Seax photo desk", "The Seax policy"}
 SPORT_KEYS = ("results", "fixtures", "tables")
 
@@ -264,6 +265,14 @@ def main():
             sp["stories"] = keep
         if dropped:
             print("duplicates removed:", ", ".join(dropped))
+        # news diary (owner's rule, 16 Nov 2026): kept from the live edition whatever a desk sends, merged by id
+        # with any entries the desk adds, past entries pruned (tools/diary.py)
+        sent = mine.get("diary") if isinstance(mine, dict) and isinstance(mine.get("diary"), list) else []
+        out["diary"] = diary.merge(live.get("diary") or [], sent)
+        dprobs = diary.problems(out["diary"])
+        if dprobs:
+            print("DIARY WARNINGS (fix next run):", " | ".join(dprobs[:8]))
+        print("diary:", len(out["diary"]), "entries")
         print("headlines changed:", stamp_headlines(out, prev_heads))
         rep = policy.apply(out)
         print("policy:", json.dumps({k: (v if isinstance(v, int) else len(v)) for k, v in rep.items()}))
