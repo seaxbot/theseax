@@ -14,6 +14,9 @@ before story pages are built, so the rules hold even if a desk forgets them:
      with no second outlet in "also"), or its main source is a link-only outlet, its body is cut
      to at most MAX_WORDS words in total (whole paragraphs and sentences, from the top) and at
      most 3 key points, so it never retells the original article.
+     Emergency services' own social media accounts (Essex Police, fire, ambulance, coastguard,
+     RNLI, air ambulance and the like) count as official sources, so their stories are never
+     capped (owner's rule, 16 Nov 2026).
 
 Council Watch items are our own reporting from public council papers and are left alone.
 Run directly to check a file:  python3 tools/policy.py edition.json
@@ -53,6 +56,33 @@ def host(u):
 
 def on(h, domains):
     return bool(h) and any(h == d or h.endswith("." + d) for d in domains)
+
+
+# Emergency services' own social media accounts are official sources too (owner's rule, 16 Nov 2026:
+# "On direct Essex Police sourced stories you can go over 100 words ... Same with fire and ambulance
+# and coastguard and other emergency service official accounts"). No word cap on these.
+SOCIAL_HOSTS = {"facebook.com", "m.facebook.com", "x.com", "twitter.com", "instagram.com", "threads.net"}
+OFFICIAL_SOCIAL = {"essexpoliceuk", "essexpolice", "ecfrs", "essexfire", "essexfirerescue",
+                   "essexcountyfireandrescueservice", "eastenglandamb", "eeastnhs", "eeastambulance",
+                   "hmcoastguard", "maritimecoastguardagency", "mcga_uk", "rnli", "ehaat",
+                   "essexhertsairambulance", "btp", "britishtransportpolice"}
+EMERGENCY_SOURCE = re.compile(r"\b(police|fire|ambulance|coastguard|rnli|lifeboat|air ambulance|"
+                              r"mountain rescue|search and rescue)\b", re.I)
+
+
+def official_social(url, source=""):
+    """True when the url is a post or page of an emergency service's own social media account."""
+    h = host(url)
+    if h not in SOCIAL_HOSTS:
+        return False
+    try:
+        first = (urlparse(str(url)).path.strip("/").split("/") or [""])[0].lower()
+    except Exception:
+        first = ""
+    if first in OFFICIAL_SOCIAL:
+        return True
+    # photo.php, posts and permalinks carry no account name: go by the credited source
+    return bool(EMERGENCY_SOURCE.search(str(source or "")))
 
 
 def official(h):
@@ -123,7 +153,8 @@ def apply(ed, pol=None):
                 if it.get("summary"):
                     it["summary"] = cap_words(re.split(r"(?<=[.!?])\s+", str(it["summary"]).strip())[0], 40)
                 it["linkOnly"] = True
-            elif (len(hosts) <= 1 and not official(main)) or on(main, pol["linkOnly"]):
+            elif (len(hosts) <= 1 and not official(main) and not official_social(it.get("url"), it.get("source"))) \
+                    or on(main, pol["linkOnly"]):
                 body = [str(p).strip() for p in (it.get("body") if isinstance(it.get("body"), list) else []) if str(p).strip()]
                 pts = it.get("points") if isinstance(it.get("points"), list) else []
                 new = cap_body(body)
