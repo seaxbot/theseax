@@ -54,19 +54,6 @@
   ]
  },
  {
-  "match": "^(?!.*\\b([Ff]ound|[Ll]ocated|[Tt]raced)\\b).*\\bPatrick Francisco\\b",
-  "name": "Patrick Francisco, 83, missing from Grays since Monday afternoon",
-  "label": "Picture",
-  "wide": "/img/people/patrick-francisco-wide.jpg",
-  "og": "/img/people/patrick-francisco-og.jpg",
-  "creator": "Essex Police",
-  "provider": "Essex Police",
-  "license": "",
-  "licenseUrl": "",
-  "source": "https://www.facebook.com/EssexPoliceUK",
-  "addedBy": "owner, 16 Nov 2026 (Essex Police Facebook missing person appeal; owner supplied the post; remove once he is found)"
- },
- {
   "match": "^(?!.*\\b([Ff]ound|[Ll]ocated|[Tt]raced)\\b).*\\bHannah Steer\\b",
   "name": "Hannah Steer, 15, missing from Clacton since Sunday night",
   "label": "Picture",
@@ -357,6 +344,21 @@
   "licenseUrl": "",
   "source": "https://www.facebook.com/photo.php?fbid=1468059302126437",
   "addedBy": "owner, 14 Nov 2026 (202 shop theft charges story, published Sun 15 Nov afternoon; Essex Police picture from its Facebook post of 12 Nov)"
+ },
+ {
+  "ids": [
+   "grays-patrick-francisco-83-missing-appeal"
+  ],
+  "name": "Essex Police officer with body-worn camera",
+  "label": "Picture",
+  "wide": "/img/people/found-safe-wide.jpg",
+  "og": "/img/people/found-safe-og.jpg",
+  "creator": "Essex Police",
+  "provider": "Essex Police",
+  "license": "",
+  "licenseUrl": "",
+  "source": "https://www.facebook.com/EssexPoliceUK",
+  "addedBy": "owner, 16 Nov 2026 (Patrick Francisco found; police said 'good news' but not 'safe', so matched by id rather than a 'found safe' headline)"
  },
  {
   "match": "^(?!.*\\b(?:[Dd]ead|[Bb]ody|[Dd]ied|[Dd]eath|[Kk]illed|[Rr]emains|[Ff]atal\\w*)\\b).*\\b(?:[Ff]ound|[Ll]ocated|[Tt]raced)\\b.*\\b(?:[Ss]afe|[Ss]afely|[Uu]nharmed)\\b",
