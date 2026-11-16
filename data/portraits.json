@@ -1,5 +1,18 @@
 [
  {
+  "match": "^(?!.*\\b([Ff]ound|[Ll]ocated|[Tt]raced)\\b).*\\bPatrick Francisco\\b",
+  "name": "Patrick Francisco, 83, missing from Grays since Monday afternoon",
+  "label": "Picture",
+  "wide": "/img/people/patrick-francisco-wide.jpg",
+  "og": "/img/people/patrick-francisco-og.jpg",
+  "creator": "Essex Police",
+  "provider": "Essex Police",
+  "license": "",
+  "licenseUrl": "",
+  "source": "https://www.facebook.com/EssexPoliceUK",
+  "addedBy": "owner, 16 Nov 2026 (Essex Police Facebook missing person appeal; owner supplied the post; remove once he is found)"
+ },
+ {
   "match": "^(?!.*\\b([Ff]ound|[Ll]ocated|[Tt]raced)\\b).*\\bHannah Steer\\b",
   "name": "Hannah Steer, 15, missing from Clacton since Sunday night",
   "label": "Picture",
