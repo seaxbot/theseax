@@ -449,5 +449,18 @@
   "licenseUrl": "",
   "source": "",
   "addedBy": "owner, 16 Nov 2026 (owner-supplied wet and windy picture; the newsroom adds the ids of later county-wide wet and windy weather stories, see newsroom rule b0o)"
+ },
+ {
+  "match": "^(?!.*\\b(?:[Dd]ead|[Dd]ied|[Dd]eath|[Kk]illed|[Ff]ire|[Bb]laze|[Ee]lectrocuted)\\b).*(?:\\b[Pp]ower (?:cuts?|outages?|failures?|faults?|loss|back|restored|returns?|supply|supplies)\\b|\\b(?:without|lost|losing|no) (?:power|electricity)\\b|\\b[Bb]lackouts?\\b|\\bUK Power Networks\\b|\\b[Ee]lectricity (?:cuts?|outages?|failures?|faults?|supply|back|restored)\\b)",
+  "name": "Engineers working on a street electricity cabinet",
+  "label": "Library image",
+  "wide": "/img/people/power-cut-wide.jpg",
+  "og": "/img/people/power-cut-og.jpg",
+  "creator": "",
+  "provider": "",
+  "license": "",
+  "licenseUrl": "",
+  "source": "",
+  "addedBy": "owner, 16 Nov 2026 (owner-supplied picture for all power cut and power failure stories; not stories involving a death or a fire)"
  }
 ]
