@@ -367,5 +367,20 @@
   "licenseUrl": "",
   "source": "https://www.essex-fire.gov.uk/incidents/dog-rescued-maldon-2026-11-16-14-50",
   "addedBy": "owner, 16 Nov 2026 (Essex Fire's own picture from its incident page, supplied by the owner as a screenshot; credited)"
+ },
+ {
+  "ids": [
+   "chelmsford-heavy-rain-gusts-tuesday-17-november-forecast"
+  ],
+  "name": "A walker hooded against wind and rain",
+  "label": "Library image",
+  "wide": "/img/people/wet-windy-wide.jpg",
+  "og": "/img/people/wet-windy-og.jpg",
+  "creator": "",
+  "provider": "",
+  "license": "",
+  "licenseUrl": "",
+  "source": "",
+  "addedBy": "owner, 16 Nov 2026 (owner-supplied wet and windy picture; the newsroom adds the ids of later county-wide wet and windy weather stories, see newsroom rule b0o)"
  }
 ]
