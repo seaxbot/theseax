@@ -1,5 +1,20 @@
 [
  {
+  "ids": [
+   "chelmsford-army-and-navy-public-inquiry-compulsory-purchase-24-november"
+  ],
+  "name": "How the new Army and Navy junction in Chelmsford could look",
+  "label": "Artist's impression",
+  "wide": "/img/people/army-navy-junction-wide.jpg",
+  "og": "/img/people/army-navy-junction-og.jpg",
+  "creator": "Essex Highways",
+  "provider": "Essex Highways",
+  "license": "",
+  "licenseUrl": "",
+  "source": "",
+  "addedBy": "owner, 16 Nov 2026 (Army and Navy roundabout scheme visualisation; credit: Essex Highways)"
+ },
+ {
   "match": "^(?!.*\\b([Ff]ound|[Ll]ocated|[Tt]raced)\\b).*\\bPatrick Francisco\\b",
   "name": "Patrick Francisco, 83, missing from Grays since Monday afternoon",
   "label": "Picture",
