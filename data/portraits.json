@@ -1,5 +1,18 @@
 [
  {
+  "match": "^(?!.*\\b([Ff]ound|[Ll]ocated|[Tt]raced)\\b).*\\bHannah Steer\\b",
+  "name": "Hannah Steer, 15, missing from Clacton since Sunday night",
+  "label": "Picture",
+  "wide": "/img/people/hannah-steer-wide.jpg",
+  "og": "/img/people/hannah-steer-og.jpg",
+  "creator": "Essex Police",
+  "provider": "Essex Police",
+  "license": "",
+  "licenseUrl": "",
+  "source": "https://www.facebook.com/EssexPoliceUK",
+  "addedBy": "owner, 16 Nov 2026 (Essex Police Facebook missing person appeal; owner approved the picture; remove it once she is found)"
+ },
+ {
   "ids": [
    "southend-east-station-unidentified-man-new-image-locate-international"
   ],
