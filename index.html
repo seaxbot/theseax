@@ -1061,7 +1061,7 @@ table.tf{width:100%;border-collapse:collapse;font-size:13.5px;font-variant-numer
 .nl-band button,.nl-read{font:700 15px var(--sans);padding:11px 18px;border-radius:999px;border:0;background:var(--navy);color:#fff;text-decoration:none;cursor:pointer}
 footer .flinks a{text-decoration:underline}
 .sharebar .wa{background:#1f8f4e;border-color:#1f8f4e;color:#fff}
-/* ---------- Listen: the audio bulletin (owner's request, 14 Nov 2026; made at 07:00 and 17:00 UK by tools/bulletin.py).
+/* ---------- Listen: the audio bulletin (owner's request, 14 Nov 2026; made at 07:00, 12:30 and 17:00 UK by tools/bulletin.py).
    A compact pill at the end of the My Essex chips, after Epping & Harlow (owner's choice, 14 Nov 2026) ---------- */
 .bulletin{display:inline-flex;align-items:center;gap:9px;height:34px;padding:0 13px 0 4px;border-radius:99px;background:linear-gradient(100deg,var(--navy) 0%,var(--navy2) 100%);color:#fff;box-shadow:0 4px 12px -7px rgba(14,27,48,.6);margin-left:4px}
 .bulletin[hidden]{display:none}
@@ -5140,7 +5140,7 @@ function renderToday(){
   fetch("/data/onthisday.json?d=" + Math.floor(Date.now()/864e5), {cache:"no-store"}).then(r => r.ok ? r.json() : null).then(d => { OTD = d; draw(); drawMonth(); }).catch(() => {});
   setInterval(() => { draw(); drawMonth(); }, 30*60*1000);   /* rolls over at midnight without a reload */
 }
-/* ---------- Listen: the audio bulletin (data/bulletin.json, made at 07:00 and 17:00 UK by tools/bulletin.py) ---------- */
+/* ---------- Listen: the audio bulletin (data/bulletin.json, made at 07:00, 12:30 and 17:00 UK by tools/bulletin.py) ---------- */
 {
   const box = document.getElementById("bulletin"), au = document.getElementById("blAudio");
   const btn = document.getElementById("blPlay"), wave = document.getElementById("blWave"), tm = document.getElementById("blTime");
@@ -5198,7 +5198,7 @@ function renderToday(){
     else if(e.key === " " || e.key === "Enter"){ e.preventDefault(); btn.click(); }
   });
   const load = () => fetch("/data/bulletin.json?h=" + Math.floor(Date.now()/9e5), {cache:"no-store"}).then(r => r.ok ? r.json() : null).then(show).catch(() => {});
-  load(); setInterval(load, 15*60*1000);   /* picks up the 07:00 and 17:00 bulletins without a reload */
+  load(); setInterval(load, 15*60*1000);   /* picks up the 07:00, 12:30 and 17:00 bulletins without a reload */
 }
 /* ---------- news: tiered ---------- */
 function renderNews(){
