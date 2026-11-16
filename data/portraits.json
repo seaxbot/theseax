@@ -1,5 +1,28 @@
 [
  {
+  "ids": [
+   "southend-east-station-unidentified-man-new-image-locate-international"
+  ],
+  "name": "How 'Southend Station Man' may have looked as a younger man, about 20 years before his death",
+  "label": "Forensic artist's impression",
+  "wide": "/img/people/southend-station-man-younger-wide.jpg",
+  "og": "/img/people/southend-station-man-younger-og.jpg",
+  "creator": "Locate International",
+  "provider": "Locate International",
+  "license": "",
+  "licenseUrl": "",
+  "source": "",
+  "more": [
+   {
+    "name": "An earlier depiction of 'Southend Station Man' at about the age he died in November 2000",
+    "label": "Forensic artist's impression",
+    "wide": "/img/people/southend-station-man-older-wide.jpg",
+    "creator": "Locate International"
+   }
+  ],
+  "addedBy": "owner, 16 Nov 2026 (Southend East station unidentified man appeal; the younger image is the main picture, the older depiction follows the story text; credit: Locate International)"
+ },
+ {
   "match": "^(?!.*\\b[Ff]ound\\b).*\\bSimon Mahoney\\b",
   "name": "Simon Mahoney: family photo (left) and CCTV pictures from shops in Chelmsford on Friday 13 November",
   "label": "Picture",
