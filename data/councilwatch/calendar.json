@@ -1,5 +1,5 @@
 {
- "at": "2026-11-16T07:15:25.346736+00:00",
+ "at": "2026-11-16T16:56:08.615095+00:00",
  "meetings": [
   {
    "council": "chelmsford",
@@ -43,19 +43,6 @@
     "FINANCE UPDATE QUARTER 2 - 2026/27",
     "BEST VALUE, MODERNISATION AND ORGANISATION TRANSFORMATION PROGRAMME",
     "COUNCIL ASSETS"
-   ]
-  },
-  {
-   "council": "tendring",
-   "councilName": "Tendring District Council",
-   "area": "tendring",
-   "committee": "Planning Policy and Local Plan Committee",
-   "date": "2026-11-17",
-   "time": "6.00 pm",
-   "url": "https://tdcdemocracy.tendringdc.gov.uk/ieListDocuments.aspx?CId=340&MId=2943",
-   "items": [
-    "Report of the Corporate Director (Planning & Community) - A.1 - Tendring District Local Plan Review: Final Submission to the Secretary of State following Regulation 19 Consultation",
-    "Public Speaking"
    ]
   },
   {
@@ -177,7 +164,11 @@
    "date": "2026-11-24",
    "time": "7.00 p.m.",
    "url": "https://www.basildonmeetings.info/ieListDocuments.aspx?CId=998&MId=9627",
-   "items": []
+   "items": [
+    "TOWN CENTRE MASTERPLANS UPDATE: WICKFORD, PITSEA AND LAINDON",
+    "PUBILIC REALM: BASILDON TOWN CENTRE SAFETY IMPROVEMENTS",
+    "Basildon Town Centre Regeneration Delivery Plan"
+   ]
   },
   {
    "council": "thurrock",
@@ -197,27 +188,9 @@
    "date": "2026-11-24",
    "time": "7.30 pm",
    "url": "https://democracy.maldon.gov.uk/ieListDocuments.aspx?CId=148&MId=4930",
-   "items": []
-  },
-  {
-   "council": "tendring",
-   "councilName": "Tendring District Council",
-   "area": "tendring",
-   "committee": "Council",
-   "date": "2026-11-24",
-   "time": "7.30 pm",
-   "url": "https://tdcdemocracy.tendringdc.gov.uk/ieListDocuments.aspx?CId=130&MId=2837",
-   "items": []
-  },
-  {
-   "council": "basildon",
-   "councilName": "Basildon Council",
-   "area": "south",
-   "committee": "Housing Scrutiny Committee",
-   "date": "2026-11-25",
-   "time": "7.00 p.m.",
-   "url": "https://www.basildonmeetings.info/ieListDocuments.aspx?CId=991&MId=9566",
-   "items": []
+   "items": [
+    "Outstanding Code of Conduct Complaint"
+   ]
   },
   {
    "council": "thurrock",
@@ -376,7 +349,7 @@
    "council": "maldon",
    "councilName": "Maldon District Council",
    "area": "maldon",
-   "committee": "PROVISIONAL - Overview and Scrutiny Committee",
+   "committee": "Overview and Scrutiny Committee",
    "date": "2026-12-03",
    "time": "7.30 pm",
    "url": "https://democracy.maldon.gov.uk/ieListDocuments.aspx?CId=134&MId=4731",
@@ -460,16 +433,6 @@
    "date": "2026-12-09",
    "time": "5.00 pm",
    "url": "https://democracy.southend.gov.uk/ieListDocuments.aspx?CId=607&MId=5114",
-   "items": []
-  },
-  {
-   "council": "basildon",
-   "councilName": "Basildon Council",
-   "area": "south",
-   "committee": "Standards and Privileges Committee",
-   "date": "2026-12-09",
-   "time": "7.00 p.m.",
-   "url": "https://www.basildonmeetings.info/ieListDocuments.aspx?CId=1000&MId=9524",
    "items": []
   },
   {
