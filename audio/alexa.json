@@ -1,10 +1,10 @@
 [
  {
-  "uid": "urn:uuid:268a89aa-fbb6-5f17-9c87-7a5752d0895d",
-  "updateDate": "2026-11-16T07:04:35Z",
+  "uid": "urn:uuid:b2f0248c-0269-55a6-be25-d1f7655326bd",
+  "updateDate": "2026-11-16T17:03:21Z",
   "titleText": "The Seax latest Essex News Bulletin, Monday 16 November",
   "mainText": "",
-  "streamUrl": "https://theseax.com/audio/bulletin-2026-11-16-am.mp3",
+  "streamUrl": "https://theseax.com/audio/bulletin-2026-11-16-pm.mp3",
   "redirectionUrl": "https://theseax.com/"
  }
 ]
