@@ -4160,7 +4160,9 @@ let feedState = "embedded";
 function cleanStory(s){
   if(!s || typeof s !== "object" || !s.headline) return null;
   const o = Object.assign({}, s);
-  o.id = String(o.id || o.headline).toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"").slice(0,60) || "story";
+  /* keep a story's own id whole, so it matches its built page (/story/<id>/), picture rules and the lead/front picks;
+     only an id made from a headline is cut to 60 characters (fix, 16 Nov 2026: long ids lost their pictures and links) */
+  o.id = (o.id ? String(o.id).toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"") : String(o.headline || "").toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"").slice(0,60)) || "story";
   o.points = Array.isArray(o.points) ? o.points.filter(p => typeof p === "string") : [];
   o.also = Array.isArray(o.also) ? o.also.filter(a => a && a.url) : [];
   o.areas = Array.isArray(o.areas) ? o.areas : ["all"];
@@ -4647,7 +4649,8 @@ function renderMeta(){
 
 /* ============ story page ============ */
 function renderStory(id){
-  const s = allStories().find(x => x.id === id);
+  /* an old link may carry an id cut to 60 characters (before the 16 Nov 2026 fix): fall back to the story it starts */
+  const s = allStories().find(x => x.id === id) || (id && id.length === 60 ? allStories().find(x => x.id.startsWith(id)) : null);
   if(!s){ closeStory(); return; }
   const host = hostOf(s.url);
   const related = allStories().filter(x => x.id !== s.id && (x.areas||[]).some(a => (s.areas||[]).includes(a) && a !== "all")).slice(0,3);
@@ -4661,6 +4664,8 @@ function renderStory(id){
     <figure class="sart" style="--c:${iconColour(s)}"><div class="sart-img">${storyArt(s,{aspect:1/1.85, zoom:760, credit:true})}</div>${artCaption(s) ? `<figcaption>${artKick(s) ? `<b>${esc(artKick(s))}</b>${esc(artCaption(s))}` : `<small style="font-size:.8em;font-weight:400;opacity:.8">${esc(artCaption(s))}</small>`}</figcaption>` : ""}</figure>
     <p class="standfirst">${esc(s.summary)}</p>
     ${Array.isArray(s.body) && s.body.length ? `<div class="sbody">${s.body.map(p=>`<p>${esc(p)}</p>`).join("")}</div>` : ""}
+    ${(() => { const pt = portraitOf(s); const m = pt && Array.isArray(pt.more) ? pt.more.filter(x => x && x.wide) : []; /* further pictures after the text, as on the built story page (16 Nov 2026) */
+      return m.map(x => `<figure class="sart"><div class="sart-img"><img src="${esc(x.wide)}?v=1" alt="${esc(x.name || "")}" loading="lazy" style="display:block;width:100%;height:auto"></div><figcaption><b>${esc(x.label || "Picture")}</b>${x.creator ? ": " + esc(x.creator) : ""}</figcaption></figure>`).join(""); })()}
     ${(s.points||[]).length ? `<h2>Key points</h2><ul class="points">${s.points.map(p=>`<li>${esc(p)}</li>`).join("")}</ul>` : ""}
     <div class="readfull">
       <div><div class="k">${OFFICIAL_KINDS.has(s.kind) && hostOf(s.url).match(/police\.uk|gov\.uk|nhs\.uk/) ? "Read the official statement" : "Read the full story"}</div><div class="src">${esc(s.source)}</div><div class="u">${esc(s.url)}</div></div>
