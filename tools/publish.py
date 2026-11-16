@@ -8,6 +8,7 @@ Council Watch desk: python3 tools/publish.py --councilwatch /tmp/cw.json   (repl
 Inquest desk: python3 tools/publish.py --inquests /tmp/inq.json   ({"items": [...]}; each item has "section": "stories" or
              "courts"; merged into that list by id and marked desk "inquest"; the newsroom keeps them for 72 hours)
 Scheduled owner stories: python3 tools/publish.py --items /tmp/x.json --desk owner   (same file format and merge, marked
+             Any of these files may also carry a top-level "diary" list: merged by id into the news diary (tools/diary.py)
              desk "owner"; used by one-off scheduled tasks that publish a story the owner set up in advance)
 
 What it does, retrying up to 4 times if someone else pushes first:
@@ -170,6 +171,7 @@ def main():
     if sum(map(bool, (a.edition, a.sport, a.councilwatch, a.inquests))) != 1:
         sys.exit("give exactly one of --edition, --sport, --councilwatch or --inquests")
     mine = load(a.edition or a.sport or a.councilwatch or a.inquests)
+    sent_diary = mine.get("diary") if isinstance(mine, dict) and isinstance(mine.get("diary"), list) else []
     if a.edition:
         if not isinstance(mine.get("stories"), list) or not mine.get("updatedAt"):
             print("bad edition: needs stories and updatedAt"); sys.exit(2)
@@ -267,8 +269,7 @@ def main():
             print("duplicates removed:", ", ".join(dropped))
         # news diary (owner's rule, 16 Nov 2026): kept from the live edition whatever a desk sends, merged by id
         # with any entries the desk adds, past entries pruned (tools/diary.py)
-        sent = mine.get("diary") if isinstance(mine, dict) and isinstance(mine.get("diary"), list) else []
-        out["diary"] = diary.merge(live.get("diary") or [], sent)
+        out["diary"] = diary.merge(live.get("diary") or [], sent_diary)
         dprobs = diary.problems(out["diary"])
         if dprobs:
             print("DIARY WARNINGS (fix next run):", " | ".join(dprobs[:8]))
