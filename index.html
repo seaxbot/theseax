@@ -719,7 +719,14 @@ h1,h2,h3,h4,.story h1,.lead h2,.card h3,.drow h4{letter-spacing:-.022em}
 .tb-wx .wi.hot{position:relative}
 .tb-wx .wi .hottag{position:absolute;left:50%;bottom:-5px;transform:translateX(-50%);font-size:7.5px;line-height:1;font-weight:900;letter-spacing:.08em;color:#c8102e;background:#fff0e8;border:1px solid #f2a07a;border-radius:3px;padding:1px 3px;text-shadow:0 0 3px #ffb37a;animation:sizzle 1.1s ease-in-out infinite}
 @keyframes sizzle{0%,100%{transform:translateX(-50%) translateY(0);text-shadow:0 0 3px #ffb37a;color:#c8102e}25%{transform:translateX(-50%) translateY(-1px) skewX(-3deg);text-shadow:0 -1px 4px #ff7a2e,0 0 6px #ffd27a;color:#e0301e}50%{transform:translateX(-50%) translateY(0) skewX(2deg);text-shadow:0 0 2px #ffb37a;color:#b80d24}75%{transform:translateX(-50%) translateY(-1px) skewX(-1deg);text-shadow:0 -2px 5px #ff5a1e,0 0 7px #ffd27a;color:#e0301e}}
-@media (prefers-reduced-motion:reduce){.tb-wx .wi .coldtag,.tb-wx .wi .hottag{animation:none}}
+/* little blowing-wind symbol on the weather bar icon when strong winds are forecast (owner's choice, 16 Nov 2026) */
+.tb-wx .wi.windy{position:relative}
+.tb-wx .wi .windtag{position:absolute;right:-9px;top:-4px;width:15px;height:10px;display:block;background:#fff;border-radius:4px;box-shadow:0 0 0 1px #c9d6e6}
+.tb-wx .wi .windtag svg{display:block;width:15px;height:10px;fill:none;stroke:#2f6db3;stroke-width:2;stroke-linecap:round}
+.tb-wx .wi .windtag path{stroke-dasharray:24;animation:gust 1.6s ease-in-out infinite}
+.tb-wx .wi .windtag .g2{animation-delay:.25s}.tb-wx .wi .windtag .g3{animation-delay:.5s}
+@keyframes gust{0%{stroke-dashoffset:24;opacity:.2}45%{stroke-dashoffset:0;opacity:1}100%{stroke-dashoffset:-24;opacity:.2}}
+@media (prefers-reduced-motion:reduce){.tb-wx .wi .coldtag,.tb-wx .wi .hottag,.tb-wx .wi .windtag path{animation:none}}
 
 /* ---------- pinned story (data/pinned.json, shown only between its from and until times) ---------- */
 .pinned{margin:0 0 22px}
@@ -4183,9 +4190,11 @@ function newsTime(s){ const a = +new Date(s.time||0) || 0, b = +new Date(s.updat
    forecast days and warnings still come from the newsroom; Open-Meteo days only fill gaps (e.g. overnight,
    when the edition has no entry for today yet). If the fetch fails, the edition's own figures show as before. */
 let LIVEWX = null;
+/* small gusting-wind badge for the weather bar icon (owner's choice, 16 Nov 2026) */
+const WINDTAG = '<span class="windtag"><svg viewBox="0 0 24 16" width="15" height="10"><path class="g1" d="M2 5h12a3 3 0 1 0-3-3"/><path class="g2" d="M2 9h17a3 3 0 1 1-3 3"/><path class="g3" d="M4 13h7"/></svg></span>';
 const LIVEWX_URL = "https://api.open-meteo.com/v1/forecast?latitude=51.7356&longitude=0.4685" +
-  "&current=temperature_2m,apparent_temperature,weather_code,wind_gusts_10m,wind_direction_10m,is_day" +
-  "&hourly=precipitation_probability&daily=weather_code,temperature_2m_max,temperature_2m_min,precipitation_probability_max" +
+  "&current=temperature_2m,apparent_temperature,weather_code,wind_speed_10m,wind_gusts_10m,wind_direction_10m,is_day" +
+  "&hourly=precipitation_probability&daily=weather_code,temperature_2m_max,temperature_2m_min,precipitation_probability_max,wind_speed_10m_max,wind_gusts_10m_max" +
   "&timezone=Europe%2FLondon&wind_speed_unit=mph&forecast_days=7";
 function wmoWx(code, day){
   const c = +code;
@@ -4226,10 +4235,11 @@ function parseLiveWx(j){
   if(hi >= 0 && Number.isFinite(+(h.precipitation_probability || [])[hi])) rain = +h.precipitation_probability[hi];
   const r0 = v => { const n = Math.round(+v); return n === 0 ? 0 : n; };
   const now = { temp: r0(c.temperature_2m), feels: r0(c.apparent_temperature), desc, icon,
-    wind: `Gusts ${gust}mph ${compass16(c.wind_direction_10m)}`, rain: rain === null ? "" : rain < 5 ? "Under 5%" : rain + "%" };
+    speed: Math.round(+c.wind_speed_10m || 0), gust, wind: `Gusts ${gust}mph ${compass16(c.wind_direction_10m)}`, rain: rain === null ? "" : rain < 5 ? "Under 5%" : rain + "%" };
   const d = j.daily || {}, days = (d.time || []).map((t, i) => {
     const [dd, di] = wmoWx(d.weather_code[i], true);
-    return { date: t, hi: r0(d.temperature_2m_max[i]), lo: r0(d.temperature_2m_min[i]), desc: dd, icon: di, rain: +d.precipitation_probability_max[i] || 0 };
+    return { date: t, hi: r0(d.temperature_2m_max[i]), lo: r0(d.temperature_2m_min[i]), desc: dd, icon: di, rain: +d.precipitation_probability_max[i] || 0,
+      wind: Math.round(+(d.wind_speed_10m_max || [])[i] || 0), gust: Math.round(+(d.wind_gusts_10m_max || [])[i] || 0) };
   }).filter(x => Number.isFinite(x.hi) && Number.isFinite(x.lo));
   return { at: at.toISOString(), got: Date.now(), now, days };
 }
@@ -4242,6 +4252,8 @@ function applyLiveWx(w){
   if(LIVEWX && Date.now() - LIVEWX.got < 3 * 36e5){
     w.now = Object.assign({}, LIVEWX.now); w.updatedAt = LIVEWX.at; w.live = true;
     const have = new Set(days.map(x => x.date));
+    /* daily wind for the windy symbol (owner's choice, 16 Nov 2026): Met Office days take Open-Meteo's wind where they have none */
+    days = days.map(x => { const o = LIVEWX.days.find(y => y.date === x.date); return o && x.wind === undefined && x.gust === undefined ? Object.assign({}, x, { wind: o.wind, gust: o.gust }) : x; });
     days = days.concat(LIVEWX.days.filter(x => x.date >= today && !have.has(x.date))).sort((a, b) => a.date < b.date ? -1 : 1);
   }
   if(days.length) w.days = days;
@@ -5066,21 +5078,24 @@ function renderToday(){
     const low = s => esc(String(s||"").toLowerCase());
     const rain = d => Number.isFinite(+d.rain) && +d.rain >= 20 ? `, ${+d.rain}% rain` : "";
     /* small icons for the light bar: the panel icons are drawn for a dark background, so darken their pale greys */
-    const ico = (kind, night, temp) => kind ? `<span class="wi${isCold(temp) ? " cold" : isHot(temp) ? " hot" : ""}" aria-hidden="true">${wxIcon(kind, night).replace(/#e6ebf2/gi,"#a7b2c1").replace(/#cfd7e2/gi,"#8d99aa").replace(/#b9c3d1/gi,"#7f8da0").replace(/#9aa5b5/gi,"#66748a").replace(/#e8e2c8/gi,"#c2a85e")}${isCold(temp) ? '<span class="coldtag">COLD</span>' : isHot(temp) ? '<span class="hottag">HOT</span>' : ""}</span>${isCold(temp) ? '<span class="sr-only" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)"> cold</span>' : isHot(temp) ? '<span class="sr-only" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)"> hot</span>' : ""}` : "";
+    const ico = (kind, night, temp, windy) => kind ? `<span class="wi${isCold(temp) ? " cold" : isHot(temp) ? " hot" : ""}${windy ? " windy" : ""}" aria-hidden="true">${wxIcon(kind, night).replace(/#e6ebf2/gi,"#a7b2c1").replace(/#cfd7e2/gi,"#8d99aa").replace(/#b9c3d1/gi,"#7f8da0").replace(/#9aa5b5/gi,"#66748a").replace(/#e8e2c8/gi,"#c2a85e")}${windy ? WINDTAG : ""}${isCold(temp) ? '<span class="coldtag">COLD</span>' : isHot(temp) ? '<span class="hottag">HOT</span>' : ""}</span>${isCold(temp) ? '<span class="sr-only" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)"> cold</span>' : isHot(temp) ? '<span class="sr-only" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)"> hot</span>' : ""}${windy ? '<span class="sr-only" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)"> windy</span>' : ""}` : "";
     /* COLD badge only when the temperature shown next to the icon is under 2C (owner's choice, 12 Nov 2026) */
     function isCold(v){ return v !== undefined && v !== null && v !== "" && Number.isFinite(+v) && +v < 2; }
     /* red HOT badge with a sizzle when the temperature shown is over 24C (owner's choice, 12 Nov 2026) */
     function isHot(v){ return v !== undefined && v !== null && v !== "" && Number.isFinite(+v) && +v > 24; }
+    /* little blowing-wind symbol when strong winds are forecast (owner's choice, 16 Nov 2026): average wind over 20mph,
+       gusts of 40mph or more, or the newsroom's "windy" flag from the Met Office forecast */
+    function isWindy(d){ return !!d && (d.windy === true || (Number.isFinite(+d.wind) && +d.wind > 20) || (Number.isFinite(+d.speed) && +d.speed > 20) || (Number.isFinite(+d.gust) && +d.gust >= 40)); }
     const nightNow = now > st.set || now < st.rise;
-    const parts = [`<span class="wk">Now</span>${ico(w.now.icon, nightNow, w.now.temp)}<b>${esc(w.now.temp)}°C</b>&nbsp;${low(w.now.desc)}`];
-    if(today && ukHour < 16) parts.push(`<!--opt--><span class="wk">Later</span>${ico(today.icon, false, today.hi)}high&nbsp;<b>${esc(today.hi)}°C</b>${rain(today)}`);
-    if(today && ukHour < 23) parts.push(`<!--opt--><span class="wk">Tonight</span>${ico(today.icon, true, today.lo)}low&nbsp;<b>${esc(today.lo)}°C</b>`);
-    if(tmrw) parts.push(`<span class="wk">Tomorrow</span>${ico(tmrw.icon, false, tmrw.hi)}<b>${esc(tmrw.hi)}°C</b>${rain(tmrw)}`);
+    const parts = [`<span class="wk">Now</span>${ico(w.now.icon, nightNow, w.now.temp, isWindy(w.now))}<b>${esc(w.now.temp)}°C</b>&nbsp;${low(w.now.desc)}`];
+    if(today && ukHour < 16) parts.push(`<!--opt--><span class="wk">Later</span>${ico(today.icon, false, today.hi, isWindy(today))}high&nbsp;<b>${esc(today.hi)}°C</b>${rain(today)}`);
+    if(today && ukHour < 23) parts.push(`<!--opt--><span class="wk">Tonight</span>${ico(today.icon, true, today.lo, isWindy(today))}low&nbsp;<b>${esc(today.lo)}°C</b>`);
+    if(tmrw) parts.push(`<span class="wk">Tomorrow</span>${ico(tmrw.icon, false, tmrw.hi, isWindy(tmrw))}<b>${esc(tmrw.hi)}°C</b>${rain(tmrw)}`);
     const dayName = d => esc(new Intl.DateTimeFormat("en-GB",{weekday:"short",timeZone:"Europe/London"}).format(new Date(d.date + "T12:00:00Z")));
     /* five days in all (owner's choice, Nov 2026): now, tomorrow and the three days after */
     for(let n = 2; n <= 4; n++){
       const dn = days.find(d => d.date === ukDate(new Date(now.getTime()+n*864e5)));
-      if(dn) parts.push(`<span class="wk">${dayName(dn)}</span>${ico(dn.icon, false, dn.hi)}<b>${esc(dn.hi)}°C</b>${rain(dn)}`);
+      if(dn) parts.push(`<span class="wk">${dayName(dn)}</span>${ico(dn.icon, false, dn.hi, isWindy(dn))}<b>${esc(dn.hi)}°C</b>${rain(dn)}`);
     }
     bits.push(`<a href="#weather" class="tb tb-wx"${w.live && w.updatedAt ? ` title="Now: live reading for ${esc(w.place||"Chelmsford")} at ${fmt(new Date(w.updatedAt),{hour:"2-digit",minute:"2-digit"})}"` : ""}>${parts.map(x => x.startsWith("<!--opt-->") ? `<span class="wp opt">${x.slice(10)}</span>` : `<span class="wp">${x}</span>`).join('<span class="wsep" aria-hidden="true"></span>')}</a>`);
   }
