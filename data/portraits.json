@@ -1,6 +1,29 @@
 [
  {
   "ids": [
+   "colchester-university-of-essex-haider-raza-ai-skin-cancer-50-future-innovators"
+  ],
+  "name": "Dr Haider Raza",
+  "label": "Picture",
+  "wide": "/img/people/haider-raza-wide.jpg",
+  "og": "/img/people/haider-raza-og.jpg",
+  "creator": "University of Essex",
+  "provider": "University of Essex",
+  "license": "",
+  "licenseUrl": "",
+  "source": "",
+  "more": [
+   {
+    "name": "Dr Haider Raza on Universities UK's 50 Future Innovators list",
+    "label": "Picture",
+    "wide": "/img/people/haider-raza-uuk-wide.jpg",
+    "creator": "Universities UK"
+   }
+  ],
+  "addedBy": "owner, 17 Nov 2026 (University of Essex picture of Dr Haider Raza, credit: University of Essex; the Universities UK 50 Future Innovators card goes in the story body)"
+ },
+ {
+  "ids": [
    "lloyd-scott-diving-suit-marathon-fundraiser-dies"
   ],
   "match": "\\bLloyd Scott\\b",
