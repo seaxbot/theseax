@@ -893,6 +893,8 @@ def portrait_figure(p):
     lab = p.get("label") or "File photo"  # e.g. "Mock-up" for an artist's impression (owner's choice, 11 Nov 2026)
     lic = f'<a href="{E(p["licenseUrl"])}" target="_blank" rel="noopener license">{E(p["license"])}</a>' if safe_url(p.get("licenseUrl")) else E(p.get("license"))
     src = f' via <a href="{E(p["source"])}" target="_blank" rel="noopener">{E(p.get("provider") or "source")}</a>' if safe_url(p.get("source")) else ""
+    if p.get("noCaption"):  # no caption or credit at all (owner's choice, 17 Nov 2026)
+        return (f'<figure class="stock"><img src="{E(p["wide"])}?v=1" width="1200" height="655" alt="{E(p["name"])}" loading="eager"></figure>')
     if p.get("label"):  # short caption for labelled images such as a mock-up (owner's choice, 11 Nov 2026)
         return (f'<figure class="stock"><img src="{E(p["wide"])}?v=1" width="1200" height="655" alt="{E(lab)}: {E(p["name"])}" loading="eager">'
                 f'<figcaption><b>{E(lab)}</b>{(": " + E(p["creator"])) if p.get("creator") else ""}</figcaption></figure>')
