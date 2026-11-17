@@ -52,7 +52,8 @@ For example: `It's Sunday, the fifteenth of November.` Use only these names for 
 - No brackets, no abbreviations a reader would not say aloud (NHS, FA, A12, M25 are fine), no web addresses except the sign-off, no headline-style phrasing ("Man, 19, charged...").
 - Avoid quoting; paraphrase. At most one very short quote in the whole bulletin.
 - Never use em dashes. Never use song lyrics, poems or catchphrases from songs.
-- Say the site's name as "See-Ax" (the tool also fixes "Seax" automatically). If an Essex place name or surname is likely to be misread, respell it for the ear (for example "Wivenhoe" is fine; "Thorpe-le-Soken" is fine; check anything unusual).
+- Say the site's name as "See-Ax" (the tool also fixes "Seax" automatically).
+- **Place names (owner's request, 17 Nov 2026):** Essex places the voice used to get wrong (Loughton, Maldon, Witham, Wivenhoe, Mersea, Colne, Billericay, Coggeshall, Saffron Walden, Totham, Tolleshunt, Theydon, Shoeburyness, Foulness, Canvey, Woodham Ferrers, Abridge and more) are fixed by sound from `tools/pronounce.json`. Write them with their **normal spelling** and never respell them, or the fix will not find them. Before making the audio, run `python3 tools/bulletin.py --check-names /tmp/bulletin.txt`, which prints how every paragraph will be voiced; if any other place name or surname looks wrong there, respell that one word for the ear in the script (or, if it is an Essex place that will come up again, add it to `tools/pronounce.json` with a source, in the same format).
 
 **Legal and editorial rules (the same as ops/newsroom.md):**
 - Crime and court stories: only what the published story says, in the same terms ("has been charged with", "has been jailed for", "denies"). Never add colour, never speculate, never imply guilt before a verdict. If in doubt, leave the story out.

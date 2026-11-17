@@ -8,6 +8,7 @@ The script is written three times a day, at 07:00, 12:30 and 17:00 UK time, by t
 
   python3 tools/bulletin.py --script /tmp/bulletin.txt --stories id1,id2,id3
   python3 tools/bulletin.py --script /tmp/bulletin.txt --dry-run     (render to /tmp only, change nothing)
+  python3 tools/bulletin.py --check-names /tmp/bulletin.txt           (print how the script will be voiced, no audio)
 
 Script format: plain text, one story per paragraph, paragraphs separated by a blank line.
 The owner's house style for the audio:
@@ -36,6 +37,7 @@ MODEL_URL = "https://github.com/thewh1teagle/kokoro-onnx/releases/download/model
 MODEL_FILES = {"kokoro-v1.0.onnx": 300_000_000, "voices-v1.0.bin": 25_000_000}
 CHIME = os.path.join(ROOT, "assets", "audio", "chime.wav")
 # Words the voice gets wrong. The site's name is said "See-Ax" (owner, 14 Nov 2026), never "seeks".
+# Essex place names it gets wrong are fixed by sound, from tools/pronounce.json (owner, 17 Nov 2026).
 SAY = [(r"\bthe\s+seax\.com\b", "the See-Ax dot com"), (r"\btheseax\.com\b", "the See-Ax dot com"), (r"\bSeax\b", "See-Ax")]
 
 
@@ -81,6 +83,54 @@ def ffmpeg_bin():
     return imageio_ffmpeg.get_ffmpeg_exe()
 
 
+def load_lexicon():
+    """Essex place names the voice gets wrong (tools/pronounce.json, owner's request 17 Nov 2026): name -> sounds."""
+    try:
+        d = json.load(open(os.path.join(ROOT, "tools", "pronounce.json"), encoding="utf-8"))
+        return {k: v["ipa"] for k, v in d.get("names", {}).items()}
+    except Exception as e:
+        print("WARNING: could not read tools/pronounce.json:", e, flush=True)
+        return {}
+
+
+def to_phonemes(tok, text, lex):
+    """The paragraph as voice sounds, with every dictionary place name swapped for its correct sounds.
+    Returns None when the paragraph has no dictionary name (the voice then reads the text as before).
+    The whole paragraph is voiced first, so the rhythm of the sentence stays natural, then the voice's own
+    (wrong) sounds for each name are replaced. If a name cannot be found that way, the text is voiced
+    in pieces around the names instead."""
+    if not lex:
+        return None
+    names = sorted(lex, key=len, reverse=True)
+    rx = re.compile(r"\b(" + "|".join(re.escape(n) for n in names) + r")('s|’s)?\b", re.I)
+    found = [(m.group(1), bool(m.group(2))) for m in rx.finditer(text)]
+    if not found:
+        return None
+    low = {n.lower(): n for n in names}
+    ph = tok.phonemize(text, "en-gb")
+    ok = True
+    for name, poss in sorted(set(found), key=lambda x: -len(x[0])):
+        good = lex[low[name.lower()]] + ("z" if poss else "")
+        bad = tok.phonemize(name + ("'s" if poss else ""), "en-gb")
+        hit = re.compile(r"(?<![^\s,.;:!?])" + re.escape(bad) + r"(?![^\s,.;:!?])")
+        if hit.search(ph):
+            ph = hit.sub(good, ph)
+        else:
+            ok = False
+    if ok:
+        return ph
+    out, pos = [], 0
+    for m in rx.finditer(text):
+        chunk = text[pos:m.start()]
+        if chunk.strip():
+            out.append(tok.phonemize(chunk, "en-gb"))
+        out.append(lex[low[m.group(1).lower()]] + ("z" if m.group(2) else ""))
+        pos = m.end()
+    if text[pos:].strip():
+        out.append(tok.phonemize(text[pos:], "en-gb"))
+    return re.sub(r"\s+([,.;:!?])", r"\1", " ".join(p for p in out if p))
+
+
 def paragraphs(text):
     text = text.replace("—", ", ").replace("–", " to ")
     for pat, rep in SAY:
@@ -95,9 +145,14 @@ def render(paras, out_wav):
     from kokoro_onnx import Kokoro
     m, v = model_files()
     k = Kokoro(m, v)
+    lex = load_lexicon()
     chunks, sr = [], 24000
     for i, p in enumerate(paras):
-        s, sr = k.create(p, voice=VOICE, speed=SPEED, lang="en-gb")
+        ph = to_phonemes(k.tokenizer, p, lex)
+        if ph:
+            s, sr = k.create(ph, voice=VOICE, speed=SPEED, lang="en-gb", is_phonemes=True)
+        else:
+            s, sr = k.create(p, voice=VOICE, speed=SPEED, lang="en-gb")
         idx = np.where(np.abs(s) > 0.01)[0]
         if len(idx):   # trim the model's own lead-in and tail so every gap is exactly GAP seconds
             s = s[max(idx[0] - int(0.03 * sr), 0): idx[-1] + int(0.08 * sr)]
@@ -152,6 +207,15 @@ def write_alexa(meta):
 
 def main():
     ap = argparse.ArgumentParser()
+    if "--check-names" in sys.argv:
+        # print how each paragraph will be voiced, marking the dictionary names (no audio made)
+        need("kokoro-onnx", "kokoro_onnx")
+        from kokoro_onnx.tokenizer import Tokenizer
+        tok, lex = Tokenizer(), load_lexicon()
+        src = sys.argv[sys.argv.index("--check-names") + 1]
+        for p in paragraphs(open(src, encoding="utf-8").read()):
+            print(to_phonemes(tok, p, lex) or tok.phonemize(p, "en-gb"), "\n")
+        return
     if "--alexa-only" in sys.argv:
         write_alexa(json.load(open(os.path.join(ROOT, "data", "bulletin.json"), encoding="utf-8")))
         return
