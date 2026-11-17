@@ -1,48 +1,17 @@
 {
- "at": "2026-11-16T16:56:08.615095+00:00",
+ "at": "2026-11-17T06:37:25.286394+00:00",
  "meetings": [
   {
-   "council": "chelmsford",
-   "councilName": "Chelmsford City Council",
-   "area": "chelmsford",
-   "committee": "Overview and scrutiny committee",
-   "date": "2026-11-16",
-   "time": "",
-   "url": "https://www.chelmsford.gov.uk/committee-meetings/overview-and-scrutiny-committee-november-2026/",
-   "items": [
-    "Planning Application Consultation Portal - Inform and Debate",
-    "Report on Decisions Taken Under Delegation to the Chief Executive",
-    "Decisions Called-In",
-    "Issues affecting the supply of Affordable Housing in Chelmsford - Inform and Debate"
-   ]
-  },
-  {
-   "council": "southend",
-   "councilName": "Southend-on-Sea City Council",
-   "area": "southend",
-   "committee": "Cabinet",
-   "date": "2026-11-16",
+   "council": "tendring",
+   "councilName": "Tendring District Council",
+   "area": "tendring",
+   "committee": "Planning Policy and Local Plan Committee",
+   "date": "2026-11-17",
    "time": "6.00 pm",
-   "url": "https://democracy.southend.gov.uk/ieListDocuments.aspx?CId=130&MId=5041",
+   "url": "https://tdcdemocracy.tendringdc.gov.uk/ieListDocuments.aspx?CId=340&MId=2943",
    "items": [
-    "Decisions taken by, or in consultation with, Cabinet Members",
-    "Better Queensway – Decisions on housing design, delivery approach and procurement strategy",
-    "Petition response - Save Leigh North Street School Swimming Pool",
-    "Financial Performance Report for September 2026 (Period 6)"
-   ]
-  },
-  {
-   "council": "basildon",
-   "councilName": "Basildon Council",
-   "area": "south",
-   "committee": "Finance, Procurement and Efficiency Scrutiny Committee",
-   "date": "2026-11-16",
-   "time": "7.00 p.m.",
-   "url": "https://www.basildonmeetings.info/ieListDocuments.aspx?CId=997&MId=9623",
-   "items": [
-    "FINANCE UPDATE QUARTER 2 - 2026/27",
-    "BEST VALUE, MODERNISATION AND ORGANISATION TRANSFORMATION PROGRAMME",
-    "COUNCIL ASSETS"
+    "Report of the Corporate Director (Planning & Community) - A.1 - Tendring District Local Plan Review: Final Submission to the Secretary of State following Regulation 19 Consultation",
+    "Public Speaking"
    ]
   },
   {
@@ -154,7 +123,12 @@
    "date": "2026-11-24",
    "time": "2.00 pm",
    "url": "https://democracy.thurrock.gov.uk/ieListDocuments.aspx?CId=165&MId=6955",
-   "items": []
+   "items": [
+    "Thames Freeport Update",
+    "Information for members of the public and councillors",
+    "Joint Strategic Needs Assessment Update",
+    "Thurrock Safeguarding Adults Board Strategic Plan 2026-30"
+   ]
   },
   {
    "council": "basildon",
@@ -178,7 +152,11 @@
    "date": "2026-11-24",
    "time": "7.00 pm",
    "url": "https://democracy.thurrock.gov.uk/ieListDocuments.aspx?CId=163&MId=7021",
-   "items": []
+   "items": [
+    "Budget Savings Proposals 2027/28 to 2028/29",
+    "Information for members of the public and councillors",
+    "Action Log"
+   ]
   },
   {
    "council": "maldon",
@@ -191,6 +169,31 @@
    "items": [
     "Outstanding Code of Conduct Complaint"
    ]
+  },
+  {
+   "council": "tendring",
+   "councilName": "Tendring District Council",
+   "area": "tendring",
+   "committee": "Council",
+   "date": "2026-11-24",
+   "time": "7.30 pm",
+   "url": "https://tdcdemocracy.tendringdc.gov.uk/ieListDocuments.aspx?CId=130&MId=2837",
+   "items": [
+    "Urgent Cabinet or Portfolio Holder Decisions",
+    "Reference from the Planning Policy & Local Plan Committee - A.3 - Tendring District Local Plan Review: Final Submission to the Secretary of State following Regulation 19 Consultation",
+    "Petitions to Council",
+    "Reference from the Cabinet - A.1 - Discretionary Council Tax Exemptions / Discounts / Premiums for 2027/28 and Annual Minimum Revenue Provision Policy Statement 2027/28"
+   ]
+  },
+  {
+   "council": "basildon",
+   "councilName": "Basildon Council",
+   "area": "south",
+   "committee": "Housing Scrutiny Committee",
+   "date": "2026-11-25",
+   "time": "7.00 p.m.",
+   "url": "https://www.basildonmeetings.info/ieListDocuments.aspx?CId=991&MId=9566",
+   "items": []
   },
   {
    "council": "thurrock",
@@ -283,16 +286,6 @@
    "date": "2026-11-26",
    "time": "7.30 pm",
    "url": "https://democracy.maldon.gov.uk/ieListDocuments.aspx?CId=285&MId=4727",
-   "items": []
-  },
-  {
-   "council": "basildon",
-   "councilName": "Basildon Council",
-   "area": "south",
-   "committee": "General Purposes",
-   "date": "2026-11-30",
-   "time": "7.00 p.m.",
-   "url": "https://www.basildonmeetings.info/ieListDocuments.aspx?CId=995&MId=9526",
    "items": []
   },
   {
@@ -436,6 +429,16 @@
    "items": []
   },
   {
+   "council": "basildon",
+   "councilName": "Basildon Council",
+   "area": "south",
+   "committee": "Standards and Privileges Committee",
+   "date": "2026-12-09",
+   "time": "7.00 p.m.",
+   "url": "https://www.basildonmeetings.info/ieListDocuments.aspx?CId=1000&MId=9524",
+   "items": []
+  },
+  {
    "council": "thurrock",
    "councilName": "Thurrock Council",
    "area": "south",
@@ -523,6 +526,46 @@
    "date": "2026-12-14",
    "time": "7.00 pm",
    "url": "https://rds.eppingforestdc.gov.uk/ieListDocuments.aspx?CId=295&MId=12536",
+   "items": []
+  },
+  {
+   "council": "southend",
+   "councilName": "Southend-on-Sea City Council",
+   "area": "southend",
+   "committee": "Health & Wellbeing Board",
+   "date": "2026-12-15",
+   "time": "2.00 pm",
+   "url": "https://democracy.southend.gov.uk/ieListDocuments.aspx?CId=144&MId=5131",
+   "items": []
+  },
+  {
+   "council": "tendring",
+   "councilName": "Tendring District Council",
+   "area": "tendring",
+   "committee": "Planning Committee",
+   "date": "2026-12-15",
+   "time": "5.00 pm",
+   "url": "https://tdcdemocracy.tendringdc.gov.uk/ieListDocuments.aspx?CId=162&MId=2864",
+   "items": []
+  },
+  {
+   "council": "thurrock",
+   "councilName": "Thurrock Council",
+   "area": "south",
+   "committee": "Audit Committee",
+   "date": "2026-12-15",
+   "time": "7.00 pm",
+   "url": "https://democracy.thurrock.gov.uk/ieListDocuments.aspx?CId=293&MId=6962",
+   "items": []
+  },
+  {
+   "council": "basildon",
+   "councilName": "Basildon Council",
+   "area": "south",
+   "committee": "Council",
+   "date": "2026-12-15",
+   "time": "7.30 p.m.",
+   "url": "https://www.basildonmeetings.info/ieListDocuments.aspx?CId=216&MId=9601",
    "items": []
   }
  ]

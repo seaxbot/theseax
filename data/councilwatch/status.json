@@ -1,12 +1,12 @@
 {
- "at": "2026-11-16T16:56:08.615095+00:00",
+ "at": "2026-11-17T06:37:25.286394+00:00",
  "councils": {
   "thurrock": {
    "name": "Thurrock Council",
    "system": "mg",
    "base": "https://democracy.thurrock.gov.uk",
-   "meetings": 19,
-   "changed": 0,
+   "meetings": 21,
+   "changed": 4,
    "state": "ok",
    "note": ""
   },
@@ -14,8 +14,8 @@
    "name": "Southend-on-Sea City Council",
    "system": "mg",
    "base": "https://democracy.southend.gov.uk",
-   "meetings": 19,
-   "changed": 0,
+   "meetings": 20,
+   "changed": 1,
    "state": "ok",
    "note": ""
   },
@@ -23,8 +23,8 @@
    "name": "Epping Forest District Council",
    "system": "mg",
    "base": "https://rds.eppingforestdc.gov.uk",
-   "meetings": 16,
-   "changed": 2,
+   "meetings": 17,
+   "changed": 3,
    "state": "ok",
    "note": ""
   },
@@ -33,7 +33,7 @@
    "system": "mg",
    "base": "https://democracy.maldon.gov.uk",
    "meetings": 16,
-   "changed": 1,
+   "changed": 0,
    "state": "ok",
    "note": ""
   },
@@ -41,10 +41,10 @@
    "name": "Tendring District Council",
    "system": "mg",
    "base": "https://tdcdemocracy.tendringdc.gov.uk",
-   "meetings": 10,
-   "changed": 0,
+   "meetings": 11,
+   "changed": 3,
    "state": "ok",
-   "note": "per-council time cap reached"
+   "note": ""
   },
   "harlow": {
    "name": "Harlow Council",
@@ -59,8 +59,8 @@
    "name": "Basildon Council",
    "system": "mg",
    "base": "https://www.basildonmeetings.info",
-   "meetings": 21,
-   "changed": 2,
+   "meetings": 20,
+   "changed": 1,
    "state": "ok",
    "note": "meeting 521"
   },
@@ -113,7 +113,7 @@
    "name": "Chelmsford City Council",
    "system": "chelmsford",
    "base": "https://www.chelmsford.gov.uk",
-   "meetings": 5,
+   "meetings": 4,
    "changed": 2,
    "state": "ok",
    "note": ""
@@ -138,16 +138,16 @@
   }
  },
  "requests": {
-  "thurrock": 22,
-  "southend": 22,
-  "epping": 22,
+  "thurrock": 25,
+  "southend": 23,
+  "epping": 24,
   "maldon": 19,
-  "tendring": 7,
+  "tendring": 15,
   "harlow": 3,
-  "basildon": 24,
+  "basildon": 23,
   "brentwood": 3,
   "uttlesford": 3,
   "rochford": 1,
-  "chelmsford": 6
+  "chelmsford": 5
  }
 }
