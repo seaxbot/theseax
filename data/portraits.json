@@ -1,6 +1,29 @@
 [
  {
   "ids": [
+   "a12-southbound-closed-margaretting-ingatestone-road-surface-breaking-up"
+  ],
+  "name": "The broken carriageway on the southbound A12 near Ingatestone",
+  "label": "Picture",
+  "wide": "/img/people/a12-breakup-wide.jpg",
+  "og": "/img/people/a12-breakup-og.jpg",
+  "creator": "Essex Police",
+  "provider": "Essex Police",
+  "license": "",
+  "licenseUrl": "",
+  "source": "",
+  "more": [
+   {
+    "name": "Cones around the damaged southbound carriageway",
+    "label": "Picture",
+    "wide": "/img/people/a12-breakup-2-wide.jpg",
+    "creator": "Essex Police"
+   }
+  ],
+  "addedBy": "owner, 17 Nov 2026 (Essex Police Brentwood Facebook pictures of the A12 southbound surface breaking up, used with credit under the owner's Essex Police Facebook rule)"
+ },
+ {
+  "ids": [
    "thurrock-liam-kavanagh-bbc-bucharest-solar-investments-council-collapse"
   ],
   "name": "Chasing Mr Sunshine, the BBC's investigation",
