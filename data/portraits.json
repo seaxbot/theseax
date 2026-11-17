@@ -1,6 +1,22 @@
 [
  {
   "ids": [
+   "chelmsford-central-park-radwan-shakur-murder-trial"
+  ],
+  "match": "\\bRadwan Shakur\\b",
+  "name": "Radwan Shakur, 21, who died in Central Park, Chelmsford, in June",
+  "label": "Radwan Shakur",
+  "wide": "/img/people/radwan-shakur-wide.jpg",
+  "og": "/img/people/radwan-shakur-og.jpg",
+  "creator": "",
+  "provider": "",
+  "license": "",
+  "licenseUrl": "",
+  "source": "",
+  "addedBy": "owner, 17 Nov 2026 (photo of Radwan Shakur for the Central Park murder trial story and every later Radwan Shakur story)"
+ },
+ {
+  "ids": [
    "colchester-university-of-essex-haider-raza-ai-skin-cancer-50-future-innovators"
   ],
   "name": "Dr Haider Raza",
