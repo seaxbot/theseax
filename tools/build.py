@@ -822,6 +822,7 @@ def foot():
     local = " · ".join(f'<a href="/news/{sl}/">{E(nm)}</a>' for _k, sl, nm, *_ in AREA_PAGES)
     return f"""<footer class="foot"><div class="wrap">
   <p class="area-links"><b>Local news:</b> <a href="/news/">All Essex</a> · {local}</p>
+  <p class="area-links"><b>Topics:</b> {topic_links()}</p>
   <p><b>The Seax</b> brings together Essex news, sport and life from trusted local and national sources. Every story links to the original reporting.</p>
   <p class="foot-mail"><b>Contact The Seax:</b> news tips {mlink("news")} · sport {mlink("sport")} · events {mlink("events")} · community and charity {mlink("community")} · corrections {mlink("corrections")} · everything else {mlink("info")}</p>
   <p><a href="/about/">About The Seax</a> · <a href="/about/#corrections">Corrections</a> · <a href="/contact/">Contact us</a> · <a href="/briefing/">Morning briefing</a> · <a href="/feed.xml">RSS</a>{' · ' + ' · '.join(social) if social else ''}</p>
@@ -1504,7 +1505,9 @@ def area_pages(archive):
 <p class="standfirst">{E(hub_desc)}</p>
 <h2>News by area</h2>
 <p class="area-links">{links}</p>
-<h2>Latest across Essex</h2>
+<h2>News by topic</h2>
+<p class="area-links">{topic_links()}</p>
+{("<h2>News by town</h2>" + chr(10) + '<p class="area-links">' + place_links("town") + "</p>" + chr(10)) if place_links("town") else ""}{("<h2>Roads</h2>" + chr(10) + '<p class="area-links">' + place_links("road") + "</p>" + chr(10)) if place_links("road") else ""}<h2>Latest across Essex</h2>
 <div class="cw-list">{"".join(row(sid, r) for sid, r in recs[:40])}</div>
 <p><a href="/">Go to the live front page →</a></p>
 </main>"""
@@ -1533,6 +1536,176 @@ def area_pages(archive):
         changed += write(f"news/{sl}/index.html", head(title, desc, u, "default", extra=ld(heading[0].upper() + heading[1:], u, mine)) +
                          page + newsletter_box() + foot() + "</body></html>\n")
         pages.append((u, (mine[0][1].get("t") or NOW.isoformat())[:10] if mine else None))
+    return pages, changed
+
+# ---------- topic pages (search landing pages: traffic, crime, health, sport and so on) ----------
+# (slug, nav name, h1, cards that belong, sections that belong, description)
+TOPIC_PAGES = [
+    ("traffic-travel", "Traffic & travel", "Essex traffic and travel news",
+     ("a12", "a13", "a127", "a130", "a414", "m25", "m11", "transport", "bus", "c2c", "greateranglia", "liverpoolst", "gaswork", "stansted"), (),
+     "Essex traffic and travel news: crashes, closures and roadworks on the A12, A127, A13, A130 and M25, plus c2c and Greater Anglia trains, buses and Stansted Airport."),
+    ("crime", "Crime & courts", "Essex crime, police and court news",
+     ("court", "police", "bluelights"), ("courts",),
+     "Essex crime news: Essex Police appeals and incidents, and cases from Chelmsford, Basildon and Southend courts."),
+    ("health", "Health", "Essex health and NHS news",
+     ("health", "hospital", "ambulance", "dental"), (),
+     "Essex health news: Broomfield, Basildon, Southend, Colchester and Princess Alexandra hospitals, NHS Essex, GPs, dentists and the ambulance service."),
+    ("business", "Business & property", "Essex business and property news",
+     ("business", "property", "datacentre", "food"), (),
+     "Essex business and property news: shop and restaurant openings and closures, employers, jobs, housing schemes and planning decisions."),
+    ("education", "Education", "Essex schools and education news",
+     ("education",), (),
+     "Essex education news: schools, colleges, Ofsted reports, the University of Essex and Anglia Ruskin University."),
+    ("weather", "Weather", "Essex weather news",
+     ("weather", "fog"), (),
+     "Essex weather news: Met Office warnings, flooding, fog, snow and heat, and what the forecast means for roads and rail in Essex."),
+    ("sport", "Sport", "Essex sport news",
+     ("football", "cricket", "sport", "racing", "rugby", "tennis", "golf", "cycling", "icehockey"), ("sport",),
+     "Essex sport news: Southend United, Colchester United, Chelmsford City, Braintree Town, Billericay Town and non-league football, plus Essex cricket, results and fixtures."),
+]
+
+def topic_of(rec):
+    card = re.sub(r"-\d+$", "", str(rec.get("card") or ""))
+    return [sl for sl, _n, _h, cards, secs, _d in TOPIC_PAGES if card in cards or rec.get("sec") in secs]
+
+def topic_links(skip=""):
+    return " · ".join(f'<a href="/news/{sl}/">{E(nm)}</a>' for sl, nm, *_ in TOPIC_PAGES if sl != skip)
+
+def topic_pages(archive):
+    """One page per topic under /news/. Returns the list of (url, lastmod) for the sitemap."""
+    recs = sorted([(sid, r) for sid, r in archive.items() if r.get("sec") in ("news", "sport", "official", "courts", "community", "councilwatch")],
+                  key=lambda kv: kv[1].get("t") or kv[1].get("first") or "", reverse=True)
+    pages, changed = [], 0
+    areas = " · ".join(f'<a href="/news/{sl}/">{E(nm)}</a>' for _k, sl, nm, *_ in AREA_PAGES)
+    for sl, nm, heading, _cards, _secs, desc in TOPIC_PAGES:
+        mine = [(sid, r) for sid, r in recs if sl in topic_of(r)]
+        u = f"{SITE}/news/{sl}/"
+        rows = []
+        for sid, r in mine[:60]:
+            t = parse_t(r.get("t"))
+            rows.append(f'<a class="cw-row" href="/story/{E(sid)}/"><span class="cw-c">{E(r.get("place") or "Essex")}</span>'
+                        f'<b>{E(r["h"])}</b><span class="cw-m">{E(uk_day(t)) if t else ""}</span></a>')
+        ld = ('<script type="application/ld+json">' + json.dumps({
+            "@context": "https://schema.org", "@graph": [
+                {"@type": "CollectionPage", "name": heading, "url": u, "description": desc, "inLanguage": "en-GB",
+                 "isPartOf": {"@type": "WebSite", "name": "The Seax", "url": SITE + "/"},
+                 "mainEntity": {"@type": "ItemList", "itemListElement": [
+                     {"@type": "ListItem", "position": i + 1, "url": f"{SITE}/story/{sid}/"} for i, (sid, _r) in enumerate(mine[:20])]}},
+                {"@type": "BreadcrumbList", "itemListElement": [
+                    {"@type": "ListItem", "position": 1, "name": "The Seax", "item": SITE + "/"},
+                    {"@type": "ListItem", "position": 2, "name": "Essex news", "item": SITE + "/news/"},
+                    {"@type": "ListItem", "position": 3, "name": heading, "item": u}]}]},
+            ensure_ascii=False).replace("</", "<\\/") + "</script>\n")
+        page = f"""<main class="wrap prose cw-hub">
+<div class="kick"><span><a href="/news/">Essex news</a></span><span>{E(nm)}</span></div>
+<h1>{E(heading)}</h1>
+<p class="standfirst">{E(desc)} Updated through the day by The Seax.</p>
+<div class="cw-list">{"".join(rows) or '<p>No stories on this topic yet. The latest from across Essex is on the <a href="/news/">Essex news</a> page.</p>'}</div>
+{("<h2>By road</h2>" + chr(10) + '<p class="area-links">' + place_links("road") + "</p>" + chr(10)) if sl == "traffic-travel" and place_links("road") else ""}<h2>More topics</h2>
+<p class="area-links">{topic_links(sl)}</p>
+<h2>News by area</h2>
+<p class="area-links">{areas}</p>
+<p><a href="/">Go to the live front page →</a></p>
+</main>"""
+        changed += write(f"news/{sl}/index.html", head(f"{heading}: latest today · The Seax", desc, u, "default", extra=ld) +
+                         page + newsletter_box() + foot() + "</body></html>\n")
+        pages.append((u, (mine[0][1].get("t") or NOW.isoformat())[:10] if mine else None))
+    return pages, changed
+
+# ---------- town and road pages (only built once a place has enough stories to be worth a page) ----------
+# towns that do not already have an area page of their own; (slug, name, extra words that also count)
+TOWN_PAGES = [
+    ("basildon", "Basildon", ("pitsea", "laindon", "vange")), ("billericay", "Billericay", ()), ("wickford", "Wickford", ()),
+    ("grays", "Grays", ("chafford hundred",)), ("tilbury", "Tilbury", ()), ("thurrock", "Thurrock", ("purfleet", "south ockendon", "aveley", "stanford-le-hope", "corringham", "chadwell st mary")),
+    ("canvey-island", "Canvey Island", ("canvey",)), ("benfleet", "Benfleet", ("thundersley", "hadleigh")),
+    ("rayleigh", "Rayleigh", ()), ("rochford", "Rochford", ("hockley", "hullbridge")), ("leigh-on-sea", "Leigh-on-Sea", ("leigh",)),
+    ("shoeburyness", "Shoeburyness", ("shoebury",)), ("braintree", "Braintree", ("great notley",)), ("witham", "Witham", ()),
+    ("halstead", "Halstead", ()), ("harlow", "Harlow", ()), ("epping", "Epping", ("theydon",)), ("loughton", "Loughton", ("buckhurst hill", "chigwell")),
+    ("waltham-abbey", "Waltham Abbey", ()), ("ongar", "Ongar", ()), ("clacton", "Clacton", ("jaywick", "holland-on-sea")),
+    ("harwich", "Harwich", ("dovercourt",)), ("frinton-walton", "Frinton and Walton", ("frinton", "walton-on-the-naze", "walton on the naze")),
+    ("brightlingsea", "Brightlingsea", ()), ("saffron-walden", "Saffron Walden", ()), ("great-dunmow", "Great Dunmow", ("dunmow",)),
+    ("stansted", "Stansted", ()), ("burnham-on-crouch", "Burnham-on-Crouch", ("burnham",)), ("south-woodham-ferrers", "South Woodham Ferrers", ("south woodham",)),
+    ("tiptree", "Tiptree", ()), ("west-mersea", "West Mersea", ("mersea",)), ("wivenhoe", "Wivenhoe", ()), ("shenfield", "Shenfield", ()),
+    ("ingatestone", "Ingatestone", ()), ("great-baddow", "Great Baddow", ()), ("writtle", "Writtle", ()),
+]
+ROAD_PAGES = ["A12", "A127", "A13", "A130", "A120", "A414", "A133", "M25", "M11"]
+PLACE_MIN = 4   # stories needed before a town or road gets its own page
+
+def _place_groups(recs):
+    """{slug: (kind, name, [(sid, rec)])} for every town and road with enough stories."""
+    out = {}
+    for sl, nm, extra in TOWN_PAGES:
+        pats = [re.compile(r"\b" + re.escape(w) + r"\b", re.I) for w in (nm,) + tuple(extra)]
+        mine = [(sid, r) for sid, r in recs if any(p.search(str(r.get("place") or "") + " | " + r["h"]) for p in pats)]
+        if len(mine) >= PLACE_MIN:
+            out[sl] = ("town", nm, mine)
+    for rd in ROAD_PAGES:
+        pat = re.compile(r"\b" + rd + r"\b")
+        mine = [(sid, r) for sid, r in recs if pat.search(r["h"]) or pat.search(str(r.get("place") or ""))]
+        if len(mine) >= PLACE_MIN:
+            out[rd.lower()] = ("road", rd, mine)
+    return out
+
+_PLACE_CACHE = {}
+def place_links(kind, skip=""):
+    return " · ".join(f'<a href="/news/{sl}/">{E(nm)}</a>' for sl, (k, nm, _m) in _PLACE_CACHE.items() if k == kind and sl != skip)
+
+def place_pages(archive):
+    """Town and road pages under /news/. Returns the list of (url, lastmod) for the sitemap."""
+    recs = sorted([(sid, r) for sid, r in archive.items() if r.get("sec") in ("news", "sport", "official", "courts", "community", "councilwatch")],
+                  key=lambda kv: kv[1].get("t") or kv[1].get("first") or "", reverse=True)
+    taken = {sl for _k, sl, *_ in AREA_PAGES} | {sl for sl, *_ in TOPIC_PAGES}
+    _PLACE_CACHE.clear()
+    _PLACE_CACHE.update({sl: v for sl, v in _place_groups(recs).items() if sl not in taken})
+    pages, changed = [], 0
+    areas = " · ".join(f'<a href="/news/{sl}/">{E(nm)}</a>' for _k, sl, nm, *_ in AREA_PAGES)
+    for sl, (kind, nm, mine) in _PLACE_CACHE.items():
+        u = f"{SITE}/news/{sl}/"
+        if kind == "road":
+            heading = f"{nm} traffic and travel news"
+            desc = f"The latest {nm} news in Essex: crashes, closures, delays and roadworks on the {nm}, updated through the day by The Seax."
+            crumb, crumb_u = "Traffic & travel", "/news/traffic-travel/"
+        else:
+            heading = f"{nm} news"
+            desc = f"The latest {nm} news from The Seax: crime, council decisions, roads, schools, business and sport in {nm}, updated through the day."
+            crumb, crumb_u = "Essex news", "/news/"
+        rows = []
+        for sid, r in mine[:60]:
+            t = parse_t(r.get("t"))
+            lab = "Council Watch" if r.get("sec") == "councilwatch" else SECTION_LABEL.get(r.get("sec"), "News")
+            rows.append(f'<a class="cw-row" href="/story/{E(sid)}/"><span class="cw-c">{E(lab)}</span>'
+                        f'<b>{E(r["h"])}</b><span class="cw-m">{E(r.get("place") or "")}{(" · " + E(uk_day(t))) if t else ""}</span></a>')
+        ld = ('<script type="application/ld+json">' + json.dumps({
+            "@context": "https://schema.org", "@graph": [
+                {"@type": "CollectionPage", "name": heading, "url": u, "description": desc, "inLanguage": "en-GB",
+                 "isPartOf": {"@type": "WebSite", "name": "The Seax", "url": SITE + "/"},
+                 "mainEntity": {"@type": "ItemList", "itemListElement": [
+                     {"@type": "ListItem", "position": i + 1, "url": f"{SITE}/story/{sid}/"} for i, (sid, _r) in enumerate(mine[:20])]}},
+                {"@type": "BreadcrumbList", "itemListElement": [
+                    {"@type": "ListItem", "position": 1, "name": "The Seax", "item": SITE + "/"},
+                    {"@type": "ListItem", "position": 2, "name": crumb, "item": SITE + crumb_u},
+                    {"@type": "ListItem", "position": 3, "name": heading, "item": u}]}]},
+            ensure_ascii=False).replace("</", "<\\/") + "</script>\n")
+        page = f"""<main class="wrap prose cw-hub">
+<div class="kick"><span><a href="{crumb_u}">{E(crumb)}</a></span><span>{E(nm)}</span></div>
+<h1>{E(heading)}</h1>
+<p class="standfirst">{E(desc)}</p>
+<div class="cw-list">{"".join(rows)}</div>
+<h2>{"Other Essex roads" if kind == "road" else "Other Essex towns"}</h2>
+<p class="area-links">{place_links(kind, sl)}</p>
+<h2>News by area</h2>
+<p class="area-links">{areas}</p>
+<p><a href="/">Go to the live front page →</a></p>
+</main>"""
+        changed += write(f"news/{sl}/index.html", head(f"{heading}: latest today · The Seax", desc, u, "default", extra=ld) +
+                         page + newsletter_box() + foot() + "</body></html>\n")
+        pages.append((u, (mine[0][1].get("t") or NOW.isoformat())[:10]))
+    # a place that has dropped below the bar loses its page rather than going stale
+    known = {sl for sl, *_ in TOWN_PAGES} | {r.lower() for r in ROAD_PAGES}
+    for sl in known - set(_PLACE_CACHE) - taken:
+        d = os.path.join(ROOT, "news", sl)
+        if os.path.isdir(d):
+            shutil.rmtree(d); changed += 1
     return pages, changed
 
 # ---------- Council Watch ----------
@@ -1906,7 +2079,7 @@ def rss(title, link, desc, self_url, items):
     return "\n".join(out)
 
 # ---------- index.html config block ----------
-def patch_index(latest_briefing):
+def patch_index(latest_briefing, ed=None):
     p = os.path.join(ROOT, "index.html")
     s = open(p, encoding="utf-8").read()
     conf = {k: CFG.get(k, "") for k in ("site", "contactEmail", "goatcounter", "newsletterForm", "newsletterField", "newsletterLink", "newsletterName", "whatsappChannel", "facebookPage")}
@@ -1916,6 +2089,15 @@ def patch_index(latest_briefing):
         block += analytics()
     block += "<!--/seax-config-->"
     new = re.sub(r"<!--seax-config-->.*?<!--/seax-config-->", lambda m: block, s, count=1, flags=re.S)
+    # the latest headlines as plain links inside the news grid, so search engines, social previews and
+    # AI crawlers that do not run the page's script still find every story. The page replaces them on load.
+    if ed is not None:
+        cards = []
+        for it in [x for x in (ed.get("stories") or []) if isinstance(x, dict) and x.get("id") and x.get("headline")][:40]:
+            cards.append(f'<a class="card" href="/story/{E(it["id"])}/"><div class="body"><div class="meta"><span class="place">{E(it.get("place") or "Essex")}</span></div>'
+                         f'<h3>{E(it["headline"])}</h3><p>{E(it.get("summary") or "")}</p></div></a>')
+        static = "<!--seax-static-->" + "".join(cards) + "<!--/seax-static-->"
+        new = re.sub(r"<!--seax-static-->.*?<!--/seax-static-->", lambda m: static, new, count=1, flags=re.S)
     if new != s:
         open(p, "w", encoding="utf-8").write(new)
         return True
@@ -2040,8 +2222,16 @@ def main():
     changed += cw_changed
 
     # local news pages, one per area
+    # town and road pages (built first so the hub and topic pages can link to them)
+    place_urls, place_changed = place_pages(archive)
+    changed += place_changed
+
     area_urls, area_changed = area_pages(archive)
     changed += area_changed
+
+    # topic pages (traffic, crime, health and so on)
+    topic_urls, topic_changed = topic_pages(archive)
+    changed += topic_changed
 
     # RSS of latest stories
     feed_items = []
@@ -2063,7 +2253,7 @@ def main():
         urls.append((f"{SITE}/story/{sid}/", lastmod(rec), None, None))
     for x in briefs:
         urls.append((f"{SITE}/briefing/{x['date']}/", x["date"], None, None))
-    for u, lm in area_urls:
+    for u, lm in area_urls + topic_urls + place_urls:
         urls.append((u, lm, "hourly", "0.8"))
     for u, lm in cw_urls:
         urls.append((u, lm, "daily" if u.endswith("/council-watch/") else None, "0.7" if u.endswith("/council-watch/") else None))
@@ -2084,7 +2274,7 @@ def main():
     ns.append("</urlset>\n")
     changed += write("news-sitemap.xml", "\n".join(ns))
 
-    changed += bool(patch_index(latest))
+    changed += bool(patch_index(latest, ed))
     print(f"build: {len(seen)} story pages from this edition, {len(archive)} in archive, {len(briefs)} briefings, {changed} files changed")
 
 if __name__ == "__main__":
