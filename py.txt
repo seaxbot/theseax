@@ -1,0 +1,11 @@
+robots 200 text/plain
+news 200 text/html; charset=utf-8 140248
+feedlinks []
+news/rss ERR <HTTPError 404: 'Not Found'> 0 
+news/feed ERR <HTTPError 404: 'Not Found'> 0 
+rss ERR <HTTPError 404: 'Not Found'> 0 
+feed ERR <HTTPError 404: 'Not Found'> 0 
+news.rss ERR <HTTPError 404: 'Not Found'> 0 
+news/rss.xml ERR <HTTPError 404: 'Not Found'> 0 
+rss.xml ERR <HTTPError 404: 'Not Found'> 0 
+api/news ERR <HTTPError 404: 'Not Found'> 0 
