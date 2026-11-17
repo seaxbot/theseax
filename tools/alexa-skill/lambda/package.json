@@ -1,0 +1,7 @@
+{
+  "name": "essex-news-the-seax",
+  "version": "1.0.0",
+  "description": "Essex News from The Seax: plays the latest audio bulletin",
+  "main": "index.js",
+  "dependencies": {}
+}

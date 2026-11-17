@@ -1,0 +1,49 @@
+{
+  "interactionModel": {
+    "languageModel": {
+      "invocationName": "essex news",
+      "intents": [
+        {
+          "name": "PlayBulletinIntent",
+          "slots": [],
+          "samples": [
+            "play the news",
+            "play the bulletin",
+            "play the latest bulletin",
+            "play the latest news",
+            "play the headlines",
+            "for the news",
+            "for the latest",
+            "for the latest news",
+            "for the headlines",
+            "for the bulletin",
+            "what's the news",
+            "what's happening in essex",
+            "what's the latest",
+            "give me the headlines",
+            "give me the news",
+            "read the news",
+            "the latest bulletin",
+            "the headlines"
+          ]
+        },
+        { "name": "AMAZON.PauseIntent", "samples": [] },
+        { "name": "AMAZON.ResumeIntent", "samples": [] },
+        { "name": "AMAZON.StartOverIntent", "samples": [] },
+        { "name": "AMAZON.StopIntent", "samples": [] },
+        { "name": "AMAZON.CancelIntent", "samples": [] },
+        { "name": "AMAZON.HelpIntent", "samples": [] },
+        { "name": "AMAZON.NextIntent", "samples": [] },
+        { "name": "AMAZON.PreviousIntent", "samples": [] },
+        { "name": "AMAZON.LoopOnIntent", "samples": [] },
+        { "name": "AMAZON.LoopOffIntent", "samples": [] },
+        { "name": "AMAZON.ShuffleOnIntent", "samples": [] },
+        { "name": "AMAZON.ShuffleOffIntent", "samples": [] },
+        { "name": "AMAZON.RepeatIntent", "samples": [] },
+        { "name": "AMAZON.NavigateHomeIntent", "samples": [] },
+        { "name": "AMAZON.FallbackIntent", "samples": [] }
+      ],
+      "types": []
+    }
+  }
+}
