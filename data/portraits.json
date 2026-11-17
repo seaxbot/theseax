@@ -1,6 +1,21 @@
 [
  {
   "ids": [
+   "lloyd-scott-diving-suit-marathon-fundraiser-dies"
+  ],
+  "match": "\\bLloyd Scott\\b",
+  "name": "Lloyd Scott in 2009",
+  "wide": "/img/people/lloyd-scott-wide.jpg",
+  "og": "/img/people/lloyd-scott-og.jpg",
+  "creator": "Lewser",
+  "provider": "Wikipedia",
+  "license": "CC BY 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/3.0/",
+  "source": "https://en.wikipedia.org/wiki/File:LloydScott.jpg",
+  "addedBy": "owner, 17 Nov 2026 (supplied from Lloyd Scott's Wikipedia page for the tribute story; credit Lewser, CC BY 3.0)"
+ },
+ {
+  "ids": [
    "a12-southbound-closed-margaretting-ingatestone-road-surface-breaking-up"
   ],
   "name": "The broken carriageway on the southbound A12 near Ingatestone",
