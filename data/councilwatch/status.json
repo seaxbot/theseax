@@ -1,39 +1,39 @@
 {
- "at": "2026-11-17T06:37:25.286394+00:00",
+ "at": "2026-11-17T16:38:27.290043+00:00",
  "councils": {
   "thurrock": {
    "name": "Thurrock Council",
    "system": "mg",
    "base": "https://democracy.thurrock.gov.uk",
-   "meetings": 21,
-   "changed": 4,
-   "state": "ok",
-   "note": ""
+   "meetings": 0,
+   "changed": 0,
+   "state": "blocked",
+   "note": "calendar 403 HTTP Error 403: Forbidden"
   },
   "southend": {
    "name": "Southend-on-Sea City Council",
    "system": "mg",
    "base": "https://democracy.southend.gov.uk",
-   "meetings": 20,
-   "changed": 1,
-   "state": "ok",
-   "note": ""
+   "meetings": 0,
+   "changed": 0,
+   "state": "blocked",
+   "note": "calendar 403 HTTP Error 403: Forbidden"
   },
   "epping": {
    "name": "Epping Forest District Council",
    "system": "mg",
    "base": "https://rds.eppingforestdc.gov.uk",
-   "meetings": 17,
-   "changed": 3,
-   "state": "ok",
-   "note": ""
+   "meetings": 0,
+   "changed": 0,
+   "state": "blocked",
+   "note": "calendar 403 HTTP Error 403: Forbidden"
   },
   "maldon": {
    "name": "Maldon District Council",
    "system": "mg",
    "base": "https://democracy.maldon.gov.uk",
    "meetings": 16,
-   "changed": 0,
+   "changed": 1,
    "state": "ok",
    "note": ""
   },
@@ -42,9 +42,9 @@
    "system": "mg",
    "base": "https://tdcdemocracy.tendringdc.gov.uk",
    "meetings": 11,
-   "changed": 3,
+   "changed": 0,
    "state": "ok",
-   "note": ""
+   "note": "per-council time cap reached"
   },
   "harlow": {
    "name": "Harlow Council",
@@ -60,9 +60,9 @@
    "system": "mg",
    "base": "https://www.basildonmeetings.info",
    "meetings": 20,
-   "changed": 1,
+   "changed": 3,
    "state": "ok",
-   "note": "meeting 521"
+   "note": ""
   },
   "brentwood": {
    "name": "Brentwood Borough Council",
@@ -138,13 +138,13 @@
   }
  },
  "requests": {
-  "thurrock": 25,
-  "southend": 23,
-  "epping": 24,
-  "maldon": 19,
-  "tendring": 15,
+  "thurrock": 3,
+  "southend": 3,
+  "epping": 3,
+  "maldon": 20,
+  "tendring": 9,
   "harlow": 3,
-  "basildon": 23,
+  "basildon": 25,
   "brentwood": 3,
   "uttlesford": 3,
   "rochford": 1,
