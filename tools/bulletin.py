@@ -3,7 +3,7 @@
 
 Turns a spoken script into the MP3 that the "Listen" player on the front page plays.
 The script is written three times a day, at 07:00, 12:30 and 17:00 UK time, by the bulletin desk (see ops/bulletin.md).
-(Owner added the 12:30 midday bulletin on 16 Nov 2026, slot "mid".)
+(Owner added the 12:30 midday bulletin on 16 Nov 2026, slot "mid", and the 23:00 overnight bulletin on 17 Nov 2026, slot "night".)
 (Owner first asked for 09:00 on 14 Nov 2026, then the same day moved it to 07:00 and 17:00, with the Saturday evening one at 18:40 for the football scores.)
 
   python3 tools/bulletin.py --script /tmp/bulletin.txt --stories id1,id2,id3
@@ -16,7 +16,7 @@ The owner's house style for the audio:
   - a news sting in the "headlines" style: synth pulse, drums, rising bleeps and a final hit (assets/audio/chime.wav, made by tools/make_sting.py), at the start and the end (owner chose it, 14 Nov 2026)
 Writes:
   audio/bulletin-YYYY-MM-DD-am/-mid/-pm.mp3  (older bulletins are deleted, so the repository does not keep piling up files)
-  data/bulletin.json              what the player reads: date, slot (am/mid/pm), file, duration, waveform peaks, story ids
+  data/bulletin.json              what the player reads: date, slot (am/mid/pm/night), file, duration, waveform peaks, story ids
   audio/alexa.json                the Alexa Flash Briefing feed (owner's request, 14 Nov 2026): the latest bulletin as one
                                   audio item, in Amazon's JSON feed format. The owner's Flash Briefing skill points at
                                   https://theseax.com/audio/alexa.json . Loudness is set to Amazon's spec (-14 LUFS, true peak under -2 dB).
@@ -133,11 +133,14 @@ def write_alexa(meta):
     """Alexa Flash Briefing feed: one audio item for the latest bulletin (Amazon ignores items over 7 days old)."""
     import uuid
     d = datetime.strptime(meta["date"], "%Y-%m-%d")
-    when = f'{UKDAYS[d.weekday()]} {d.day} {d.strftime("%B")}'   # owner's rule (15 Nov 2026): no "morning"/"evening"
+    when = f'{UKDAYS[d.weekday()]} {d.day} {d.strftime("%B")}'
+    # owner's names (17 Nov 2026): morning, afternoon, evening and overnight; the overnight one carries no date
+    name = {"am": "morning update", "mid": "afternoon update", "pm": "evening update"}.get(meta.get("slot"))
+    title = f"The Seax overnight bulletin" if meta.get("slot") == "night" else f"The Seax {name or 'latest bulletin'}, {when}"
     item = {
         "uid": "urn:uuid:" + str(uuid.uuid5(uuid.NAMESPACE_URL, SITE + meta["file"] + "#" + meta["madeAt"])),
         "updateDate": meta["madeAt"],
-        "titleText": f"The Seax latest Essex News Bulletin, {when}",
+        "titleText": title,
         "mainText": "",
         "streamUrl": SITE + meta["file"],
         "redirectionUrl": SITE + "/",
@@ -155,14 +158,14 @@ def main():
     ap.add_argument("--script", required=True)
     ap.add_argument("--stories", default="", help="comma-separated ids of the stories read out, in order")
     ap.add_argument("--date", default="", help="UK date YYYY-MM-DD (default: today)")
-    ap.add_argument("--slot", choices=["am", "mid", "pm", "auto"], default="auto", help="morning (07:00), midday (12:30) or evening (17:00, Sat 18:40) bulletin; auto = by UK time now")
+    ap.add_argument("--slot", choices=["am", "mid", "pm", "night", "auto"], default="auto", help="morning (07:00), afternoon (12:30), evening (17:00, Sat 18:40) or overnight (23:00) bulletin; auto = by UK time now")
     ap.add_argument("--dry-run", action="store_true")
     a = ap.parse_args()
 
     now = datetime.now(timezone.utc)
     date = a.date or now.astimezone(UK).strftime("%Y-%m-%d")
     uk_h = now.astimezone(UK).hour
-    slot = a.slot if a.slot != "auto" else ("am" if uk_h < 11 else "mid" if uk_h < 15 else "pm")
+    slot = a.slot if a.slot != "auto" else ("am" if 4 <= uk_h < 11 else "mid" if 11 <= uk_h < 15 else "pm" if 15 <= uk_h < 21 else "night")
     paras = paragraphs(open(a.script, encoding="utf-8").read())
     if len(paras) < 3:
         raise SystemExit("script too short: need the welcome, some stories and a sign-off, separated by blank lines")
