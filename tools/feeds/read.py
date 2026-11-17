@@ -12,4 +12,6 @@ for i in a:
     if not it:
         print(f"{i}: not found (older than 3 days, or a wrong id)\n"); continue
     print(f"=== {i} | {it['source']} | {it.get('time') or it.get('at')}\n{it['title']}\n{it['url']}\n")
+    if it.get("image"):
+        print(f"Picture (the source's own; request it through data/source-photos.json): {it['image']}\n")
     print((it.get("text") or it.get("summary") or "(no text in the feed: confirm through a search)") + "\n")

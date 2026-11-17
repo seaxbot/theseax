@@ -215,7 +215,13 @@ def parse_page(text, feed):
         if not title or url in seen:
             continue
         seen.add(url)
-        out.append({"title": title, "url": url, "time": when(d.get("datePublished") or ""), "body": ""})
+        img = d.get("image")
+        img = img.get("url") if isinstance(img, dict) else img if isinstance(img, str) else ""
+        if not img:   # featured cards carry the picture only in the card itself
+            m2 = re.search(r'<img[^>]+(?:data-src|src)="([^"]+)"', inner)
+            img = m2.group(1).split("?")[0] if m2 else ""
+        out.append({"title": title, "url": url, "time": when(d.get("datePublished") or ""), "body": "",
+                    "image": urljoin(feed["url"], html.unescape(img)) if img else ""})
     return out
 
 def article_text(url):
@@ -317,6 +323,8 @@ def read_feed(feed, state):
             it["political"] = True
         if feed["kind"] == "O":
             it["text"] = r["body"][:ORG_TEXT]
+            if r.get("image"):
+                it["image"] = r["image"]
         else:
             it["summary"] = " ".join(r["body"][:MEDIA_SUMMARY].split())
         items.append(it)
@@ -349,8 +357,8 @@ def main():
     os.makedirs(out, exist_ok=True)
     now = NOW.strftime(ISO)
     state = load(os.path.join(out, "state.json"), {})
-    if state.get("v") != 3:   # the item format or the filters changed: read every feed afresh once
-        state["cache"], state["http"], state["v"] = {}, {}, 3
+    if state.get("v") != 4:   # the item format or the filters changed: read every feed afresh once
+        state["cache"], state["http"], state["v"] = {}, {}, 4
     seen = state.setdefault("seen", {}); known = set(state.get("known") or [])
     feeds = load(os.path.join(HERE, "feeds.json"), [])
     status = {"at": now, "newsnow": (load(os.path.join(out, "status.json"), {}).get("newsnow") or {})}

@@ -16,13 +16,14 @@ story page, share card and Facebook post all show it with the credit, whatever t
 near the top; "centre" crops from the middle. A request whose value is {"remove": true} deletes the picture again
 (for example when a missing person is found). Standard library plus Pillow.
 """
-import io, json, os, re, sys, urllib.parse, urllib.request
+import glob, io, json, os, re, ssl, sys, urllib.parse, urllib.request
 from datetime import datetime, timezone
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 UA = "TheSeaxPhotoDesk/1.0 (+https://theseax.com/about/; info@theseax.com)"
 # Official sources only. Add hosts here when the owner approves a new source of pictures.
-ALLOWED = ("essex.icb.nhs.uk", "nhs.uk", "essex.police.uk", "essex-fire.gov.uk", "gov.uk")
+ALLOWED = ("essex.icb.nhs.uk", "nhs.uk", "essex.police.uk", "essex-fire.gov.uk", "gov.uk",
+           "essex.ac.uk")   # University of Essex: owner approved, 17 Nov 2026 ("I expected the pics to be already uploaded with credit")
 REQ = os.path.join(ROOT, "data", "source-photos.json")
 POR = os.path.join(ROOT, "data", "portraits.json")
 SIZES = {"wide": (1200, 655), "og": (1200, 630)}
@@ -37,9 +38,17 @@ def allowed(url):
     return u.scheme == "https" and any(h == a or h.endswith("." + a) for a in ALLOWED)
 
 
+# www.essex.ac.uk uses Let's Encrypt's newer "Y" chain, not yet trusted by the runner: trust the intermediates kept in
+# tools/feeds/certs/ as anchors (hostname and expiry are still checked), as the feed collector does.
+CTX = ssl.create_default_context()
+for _pem in sorted(glob.glob(os.path.join(ROOT, "tools", "feeds", "certs", "*.pem"))):
+    CTX.load_verify_locations(_pem)
+CTX.verify_flags |= ssl.VERIFY_X509_PARTIAL_CHAIN
+
+
 def fetch(url):
     req = urllib.request.Request(url, headers={"User-Agent": UA, "Accept": "image/*"})
-    with urllib.request.urlopen(req, timeout=40) as r:
+    with urllib.request.urlopen(req, timeout=40, context=CTX) as r:
         return r.read(25_000_000)
 
 
