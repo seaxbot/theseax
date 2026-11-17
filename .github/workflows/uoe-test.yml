@@ -11,28 +11,29 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 8
     steps:
+      - uses: actions/checkout@v4
+        with: { fetch-depth: 1 }
       - name: Probe
         run: |
-          mkdir -p /tmp/o && cd /tmp/o
-          UA="TheSeaxNewsDesk/1.0 (+https://theseax.com/about/; info@theseax.com)"
-          (curl -sS -m 20 -A "$UA" https://www.essex.ac.uk/robots.txt -o robots.txt -w "%{http_code}\n" || true) > robots.code 2>&1
-          (curl -sS -m 20 -A "$UA" -D news.headers https://www.essex.ac.uk/news -o news.html -w "%{http_code}\n" || true) > news.code 2>&1
-          for p in news/rss news/feed news/rss.xml rss rss.xml feed news.rss api/news; do
-            f=$(echo "$p" | tr / _)
-            echo "$p $(curl -sS -m 15 -A "$UA" -o "try_$f" -w '%{http_code} %{content_type}' https://www.essex.ac.uk/$p 2>&1)" >> tries.txt
-          done
-          echo | openssl s_client -connect www.essex.ac.uk:443 -servername www.essex.ac.uk -showcerts > certs.txt 2>&1 || true
-          python3 - <<'PY' > py.txt 2>&1
-          import urllib.request, ssl
+          mkdir -p /tmp/o
+          python3 - <<'PY' > /tmp/o/py.txt 2>&1
+          import ssl, urllib.request, re
           UA = "TheSeaxNewsDesk/1.0 (+https://theseax.com/about/; info@theseax.com)"
-          try:
-              r = urllib.request.urlopen(urllib.request.Request("https://www.essex.ac.uk/news", headers={"User-Agent": UA}), timeout=20)
-              print("python ok", r.status, len(r.read()))
-          except Exception as e:
-              print("python error", repr(e))
+          ctx = ssl.create_default_context()
+          ctx.load_verify_locations("tools/feeds/certs/letsencrypt-yr2.pem")
+          ctx.verify_flags |= ssl.VERIFY_X509_PARTIAL_CHAIN
+          def get(u):
+              try:
+                  r = urllib.request.urlopen(urllib.request.Request(u, headers={"User-Agent": UA}), timeout=20, context=ctx)
+                  return r.status, r.headers.get("content-type"), r.read().decode("utf-8", "replace")
+              except Exception as e:
+                  return "ERR", repr(e), ""
+          st, ct, body = get("https://www.essex.ac.uk/robots.txt"); print("robots", st, ct); open("/tmp/o/robots.txt", "w").write(body)
+          st, ct, body = get("https://www.essex.ac.uk/news"); print("news", st, ct, len(body)); open("/tmp/o/news.html", "w").write(body)
+          print("feedlinks", re.findall(r"<link[^>]+(?:rss|atom)[^>]*>", body))
+          for p in ["news/rss", "news/feed", "rss", "feed", "news.rss", "news/rss.xml", "rss.xml", "api/news"]:
+              st, ct, b = get("https://www.essex.ac.uk/" + p); print(p, st, ct, len(b), b[:120].replace(chr(10), " "))
           PY
-          grep -o '<link[^>]*\(rss\|atom\)[^>]*>' news.html > feedlinks.txt || true
-          ls -la > ls.txt
       - name: Save
         if: always()
         run: |
