@@ -1,0 +1,40 @@
+name: One-off University of Essex news test
+# Temporary (17 Nov 2026): checks whether GitHub's servers can read essex.ac.uk news for the feed collector. Delete after use.
+on:
+  push:
+    branches: [main]
+    paths: [".github/workflows/uoe-test.yml"]
+permissions:
+  contents: write
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - name: Probe
+        run: |
+          mkdir -p /tmp/o && cd /tmp/o
+          UA="TheSeaxNewsDesk/1.0 (+https://theseax.com/about/; info@theseax.com)"
+          (curl -sS -m 20 -A "$UA" https://www.essex.ac.uk/robots.txt -o robots.txt -w "%{http_code}\n" || true) > robots.code 2>&1
+          (curl -sS -m 20 -A "$UA" -D news.headers https://www.essex.ac.uk/news -o news.html -w "%{http_code}\n" || true) > news.code 2>&1
+          for p in news/rss news/feed news/rss.xml rss rss.xml feed news.rss api/news; do
+            f=$(echo "$p" | tr / _)
+            echo "$p $(curl -sS -m 15 -A "$UA" -o "try_$f" -w '%{http_code} %{content_type}' https://www.essex.ac.uk/$p 2>&1)" >> tries.txt
+          done
+          echo | openssl s_client -connect www.essex.ac.uk:443 -servername www.essex.ac.uk -showcerts > certs.txt 2>&1 || true
+          python3 - <<'PY' > py.txt 2>&1
+          import urllib.request, ssl
+          UA = "TheSeaxNewsDesk/1.0 (+https://theseax.com/about/; info@theseax.com)"
+          try:
+              r = urllib.request.urlopen(urllib.request.Request("https://www.essex.ac.uk/news", headers={"User-Agent": UA}), timeout=20)
+              print("python ok", r.status, len(r.read()))
+          except Exception as e:
+              print("python error", repr(e))
+          PY
+          grep -o '<link[^>]*\(rss\|atom\)[^>]*>' news.html > feedlinks.txt || true
+          ls -la > ls.txt
+      - name: Save
+        if: always()
+        run: |
+          cd /tmp/o && git init -q -b uoe-test && git config user.name "The Seax feed collector" && git config user.email "seaxbot@users.noreply.github.com"
+          git add -A && git commit -qm "UoE test" && git push -qf "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" uoe-test
