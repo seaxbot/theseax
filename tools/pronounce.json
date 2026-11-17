@@ -1,42 +1,180 @@
 {
  "_about": "Essex place names the bulletin voice gets wrong, with the sounds to use instead (owner's request, 17 Nov 2026). tools/bulletin.py swaps these in automatically, so the bulletin script spells place names normally. About 420 Essex towns, villages, districts, rivers and islands were run through the voice; only the ones it says wrongly are listed here. 'ipa' is in the voice's own notation (espeak-style, stress mark before the vowel). 'say' is a plain guide for people. 'source' says where the pronunciation comes from: 'engine error' means the voice misread an ordinary spelling (wrong stress or a common word misread), not a local quirk. To add a name: give it the same three fields; matching is whole-word and ignores case, and a possessive 's is handled.",
  "names": {
-  "Loughton":      {"ipa": "lˈaʊtən",          "say": "LOW-tən (LOW as in cow)", "source": "Wikipedia /ˈlaʊtən/"},
-  "Maldon":        {"ipa": "mˈɔːldən",         "say": "MAWL-dən",              "source": "Wikipedia /ˈmɔːldən/"},
-  "Witham":        {"ipa": "wˈɪtəm",           "say": "WIT-əm",                "source": "Wikipedia /ˈwɪtəm/"},
-  "Wivenhoe":      {"ipa": "wˈɪvənhˌəʊ",       "say": "WIV-ən-hoh",            "source": "Wikipedia /ˈwɪvənhoʊ/"},
-  "Mersea":        {"ipa": "mˈɜːzi",           "say": "MER-zee",               "source": "Wikipedia /ˈmɜːrzi/"},
-  "Colne":         {"ipa": "kˈəʊn",            "say": "KOHN",                  "source": "Wikipedia (River Colne) /koʊn/; covers Earls, White and Wakes Colne and Colne Engaine"},
-  "Billericay":    {"ipa": "bˌɪləɹˈɪki",       "say": "bil-ə-RIK-ee",          "source": "Wikipedia /ˌbɪləˈrɪki/"},
-  "Alresford":     {"ipa": "ˈɒlsfəd",          "say": "OLS-fəd",               "source": "Wikipedia (Alresford, Essex) /ˈɒlsfərd/"},
-  "Coggeshall":    {"ipa": "kˈɒɡɪʃəl",         "say": "KOG-ish-əl",            "source": "Wikipedia /ˈkɒɡɪʃəl/ (also /ˈkɒksəl/)"},
-  "Nazeing":       {"ipa": "nˈeɪzɪŋ",          "say": "NAYZ-ing",              "source": "Wikipedia /ˈneɪzɪŋ/"},
-  "Beauchamp":     {"ipa": "bˈiːtʃəm",         "say": "BEECH-əm",              "source": "Wikipedia (Beauchamp Roding) /ˈbiːtʃəm/"},
-  "Waltham":       {"ipa": "wˈɔːlθəm",         "say": "WAWL-thəm",             "source": "Wikipedia (Waltham Abbey) /ˈwɔːlθəm/"},
-  "Tolleshunt":    {"ipa": "tˈəʊlzhʌnt",       "say": "TOHLZ-hunt",            "source": "Wikipedia (Tolleshunt D'Arcy) /ˌtoʊlzhʌnt ˈdɑːrsi/"},
-  "Shoeburyness":  {"ipa": "ʃˌuːbɹinˈɛs",      "say": "shoo-bree-NESS",        "source": "Wikipedia /ˌʃuːbriˈnɛs/"},
-  "Foulness":      {"ipa": "faʊlnˈɛs",         "say": "fowl-NESS",             "source": "Wikipedia /faʊlˈnɛs/"},
-  "Theydon":       {"ipa": "θˈeɪdən",          "say": "THAY-dən",              "source": "Wikipedia (Theydon Bois) /ˌθeɪdən ˈbɔɪz/"},
-  "Totham":        {"ipa": "tˈɒtəm",           "say": "TOT-əm",                "source": "English Place-Name Society historical forms 'Tottam' (1552); covers Great and Little Totham"},
-  "Abridge":       {"ipa": "ˈeɪbɹɪdʒ",         "say": "AY-bridge",             "source": "English Place-Name Society historical forms 'Aybrydge' (1541), 'Aybridge' (1641)"},
-  "Osea":          {"ipa": "ˈəʊsi",            "say": "OH-see",                "source": "Wikipedia: formerly also spelt 'Osey'"},
-  "Canvey":        {"ipa": "kˈanvi",           "say": "KAN-vee",               "source": "engine error (said 'Can-vay')"},
-  "Ingatestone":   {"ipa": "ˈɪŋɡeɪtstˌəʊn",    "say": "ING-gate-stone",        "source": "engine error (stress on 'gate')"},
-  "Dovercourt":    {"ipa": "dˈəʊvəkˌɔːt",      "say": "DOH-və-cort",           "source": "engine error (said 'Duvver')"},
-  "Mistley":       {"ipa": "mˈɪstli",          "say": "MIST-lee",              "source": "engine error (dropped the t)"},
-  "Coopersale":    {"ipa": "kˈuːpəsˌeɪl",      "say": "KOO-pə-sale",           "source": "engine error (said 'Co-opper')"},
-  "Chappel":       {"ipa": "tʃˈapəl",          "say": "CHAP-əl",               "source": "engine error (stress on the end)"},
-  "Rawreth":       {"ipa": "ɹˈɔːɹəθ",          "say": "RAW-rəth",              "source": "engine error (said 'Row-er-eth')"},
-  "Walden":        {"ipa": "wˈɔːldən",         "say": "WAWL-dən",              "source": "standard dictionary pronunciation of Walden /ˈwɔːldən/"},
-  "Ferrers":       {"ipa": "fˈɛɹəz",           "say": "FERR-əz",               "source": "engine error (said 'Furrers'); the Ferrers surname is /ˈfɛrəz/"},
-  "Bicknacre":     {"ipa": "bˈɪkneɪkə",        "say": "BICK-nay-kə",           "source": "engine error (said 'Bike-nacker')"},
-  "Birchanger":    {"ipa": "bˈɜːtʃaŋə",        "say": "BIRCH-hang-ə",          "source": "engine error (said 'Birch-ain-jer'); the name is Birch + hanger"},
-  "Inworth":       {"ipa": "ˈɪnwəθ",           "say": "IN-wəth",               "source": "engine error (stress on the end)"},
-  "Beaulieu":      {"ipa": "bjˈuːli",          "say": "BEW-lee",               "source": "Wikipedia (Beaulieu) /ˈbjuːli/; Chelmsford's Beaulieu Park"}
- },
- "checkWithOwner": {
-  "Aveley":        {"ipa": "ˈeɪvli",           "say": "AYV-lee",               "note": "voice says 'AV-eh-lee'; no written source found, not applied until confirmed"},
-  "Canewdon":      {"ipa": "kənjˈuːdən",       "say": "kə-NEW-dən",            "note": "voice says 'Cane-w-don'; no written source found, not applied until confirmed"},
-  "Mountnessing":  {"ipa": "maʊntnˈɛsɪŋ",      "say": "mount-NESS-ing",        "note": "voice says 'MOUNT-nə-sing'; no written source found, not applied until confirmed"}
+  "Loughton": {
+   "ipa": "lˈaʊtən",
+   "say": "LOW-tən (LOW as in cow)",
+   "source": "Wikipedia /ˈlaʊtən/"
+  },
+  "Maldon": {
+   "ipa": "mˈɔːldən",
+   "say": "MAWL-dən",
+   "source": "Wikipedia /ˈmɔːldən/"
+  },
+  "Witham": {
+   "ipa": "wˈɪtəm",
+   "say": "WIT-əm",
+   "source": "Wikipedia /ˈwɪtəm/"
+  },
+  "Wivenhoe": {
+   "ipa": "wˈɪvənhˌəʊ",
+   "say": "WIV-ən-hoh",
+   "source": "Wikipedia /ˈwɪvənhoʊ/"
+  },
+  "Mersea": {
+   "ipa": "mˈɜːzi",
+   "say": "MER-zee",
+   "source": "Wikipedia /ˈmɜːrzi/"
+  },
+  "Colne": {
+   "ipa": "kˈəʊn",
+   "say": "KOHN",
+   "source": "Wikipedia (River Colne) /koʊn/; covers Earls, White and Wakes Colne and Colne Engaine"
+  },
+  "Billericay": {
+   "ipa": "bˌɪləɹˈɪki",
+   "say": "bil-ə-RIK-ee",
+   "source": "Wikipedia /ˌbɪləˈrɪki/"
+  },
+  "Alresford": {
+   "ipa": "ˈɒlsfəd",
+   "say": "OLS-fəd",
+   "source": "Wikipedia (Alresford, Essex) /ˈɒlsfərd/"
+  },
+  "Coggeshall": {
+   "ipa": "kˈɒɡɪʃəl",
+   "say": "KOG-ish-əl",
+   "source": "Wikipedia /ˈkɒɡɪʃəl/ (also /ˈkɒksəl/)"
+  },
+  "Nazeing": {
+   "ipa": "nˈeɪzɪŋ",
+   "say": "NAYZ-ing",
+   "source": "Wikipedia /ˈneɪzɪŋ/"
+  },
+  "Beauchamp": {
+   "ipa": "bˈiːtʃəm",
+   "say": "BEECH-əm",
+   "source": "Wikipedia (Beauchamp Roding) /ˈbiːtʃəm/"
+  },
+  "Waltham": {
+   "ipa": "wˈɔːlθəm",
+   "say": "WAWL-thəm",
+   "source": "Wikipedia (Waltham Abbey) /ˈwɔːlθəm/"
+  },
+  "Tolleshunt": {
+   "ipa": "tˈəʊlzhʌnt",
+   "say": "TOHLZ-hunt",
+   "source": "Wikipedia (Tolleshunt D'Arcy) /ˌtoʊlzhʌnt ˈdɑːrsi/"
+  },
+  "Shoeburyness": {
+   "ipa": "ʃˌuːbɹinˈɛs",
+   "say": "shoo-bree-NESS",
+   "source": "Wikipedia /ˌʃuːbriˈnɛs/"
+  },
+  "Foulness": {
+   "ipa": "faʊlnˈɛs",
+   "say": "fowl-NESS",
+   "source": "Wikipedia /faʊlˈnɛs/"
+  },
+  "Theydon": {
+   "ipa": "θˈeɪdən",
+   "say": "THAY-dən",
+   "source": "Wikipedia (Theydon Bois) /ˌθeɪdən ˈbɔɪz/"
+  },
+  "Totham": {
+   "ipa": "tˈɒtəm",
+   "say": "TOT-əm",
+   "source": "English Place-Name Society historical forms 'Tottam' (1552); covers Great and Little Totham"
+  },
+  "Abridge": {
+   "ipa": "ˈeɪbɹɪdʒ",
+   "say": "AY-bridge",
+   "source": "English Place-Name Society historical forms 'Aybrydge' (1541), 'Aybridge' (1641)"
+  },
+  "Osea": {
+   "ipa": "ˈəʊsi",
+   "say": "OH-see",
+   "source": "Wikipedia: formerly also spelt 'Osey'"
+  },
+  "Canvey": {
+   "ipa": "kˈanvi",
+   "say": "KAN-vee",
+   "source": "engine error (said 'Can-vay')"
+  },
+  "Ingatestone": {
+   "ipa": "ˈɪŋɡeɪtstˌəʊn",
+   "say": "ING-gate-stone",
+   "source": "engine error (stress on 'gate')"
+  },
+  "Dovercourt": {
+   "ipa": "dˈəʊvəkˌɔːt",
+   "say": "DOH-və-cort",
+   "source": "engine error (said 'Duvver')"
+  },
+  "Mistley": {
+   "ipa": "mˈɪstli",
+   "say": "MIST-lee",
+   "source": "engine error (dropped the t)"
+  },
+  "Coopersale": {
+   "ipa": "kˈuːpəsˌeɪl",
+   "say": "KOO-pə-sale",
+   "source": "engine error (said 'Co-opper')"
+  },
+  "Chappel": {
+   "ipa": "tʃˈapəl",
+   "say": "CHAP-əl",
+   "source": "engine error (stress on the end)"
+  },
+  "Rawreth": {
+   "ipa": "ɹˈɔːɹəθ",
+   "say": "RAW-rəth",
+   "source": "engine error (said 'Row-er-eth')"
+  },
+  "Walden": {
+   "ipa": "wˈɔːldən",
+   "say": "WAWL-dən",
+   "source": "standard dictionary pronunciation of Walden /ˈwɔːldən/"
+  },
+  "Ferrers": {
+   "ipa": "fˈɛɹəz",
+   "say": "FERR-əz",
+   "source": "engine error (said 'Furrers'); the Ferrers surname is /ˈfɛrəz/"
+  },
+  "Bicknacre": {
+   "ipa": "bˈɪkneɪkə",
+   "say": "BICK-nay-kə",
+   "source": "engine error (said 'Bike-nacker')"
+  },
+  "Birchanger": {
+   "ipa": "bˈɜːtʃaŋə",
+   "say": "BIRCH-hang-ə",
+   "source": "engine error (said 'Birch-ain-jer'); the name is Birch + hanger"
+  },
+  "Inworth": {
+   "ipa": "ˈɪnwəθ",
+   "say": "IN-wəth",
+   "source": "engine error (stress on the end)"
+  },
+  "Beaulieu": {
+   "ipa": "bjˈuːli",
+   "say": "BEW-lee",
+   "source": "Wikipedia (Beaulieu) /ˈbjuːli/; Chelmsford's Beaulieu Park"
+  },
+  "Aveley": {
+   "ipa": "ˈeɪvli",
+   "say": "AYV-lee",
+   "source": "owner confirmed (17 Nov 2026)"
+  },
+  "Canewdon": {
+   "ipa": "kənjˈuːdən",
+   "say": "kə-NEW-dən",
+   "source": "owner confirmed (17 Nov 2026)"
+  },
+  "Mountnessing": {
+   "ipa": "maʊntnˈɛsɪŋ",
+   "say": "mount-NESS-ing",
+   "source": "owner confirmed (17 Nov 2026)"
+  }
  }
 }
