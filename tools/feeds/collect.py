@@ -14,6 +14,11 @@ reads them at no cost.
               kind M = a news outlet: headline, link and a short summary only, as a lead
               kind L = a link-only outlet under the owner's source policy (Newsquest, Reach): lead only
               filter "essex" = keep only items that mention an Essex place (national, regional and trade sources)
+              "page": "ld" = the source has no feed, so its news listing page is read instead: every link to an
+                       article that carries schema.org NewsArticle data (headline, date). For kind O pages, up to
+                       PAGE_TEXT_MAX new articles a run from the last 3 days are opened once each for their text,
+                       obeying robots.txt (owner's request, 17 Nov 2026, after the newsroom missed a University of
+                       Essex story: the university has no feed and its site refuses the newsroom's own fetches)
 
 Outputs (written to OUT, default ./feeds-out):
   latest.txt    what is new in the last 4 hours, for every run: NewsNow, then feed items by kind, one line each
@@ -22,10 +27,10 @@ Outputs (written to OUT, default ./feeds-out):
   newsnow.json  the NewsNow list;  status.json  what was read and what failed;  state.json  bookkeeping
 Rules: identifies itself honestly, obeys robots.txt, one request per feed per run (and none when the site says the
 feed has not changed), standard library only. It never downloads articles. On a failed read the previous items are
-kept. Essex Police's website refuses GitHub's servers (HTTP 403, tested 15 Nov 2026), so its news stays with the
+kept (an organisation's own article page is opened only for "page" sources, above). Essex Police's website refuses GitHub's servers (HTTP 403, tested 15 Nov 2026), so its news stays with the
 newsroom's police desk (2i) and the Essex Police Facebook desk.
 """
-import hashlib, html, json, os, re, sys, threading, time, urllib.error, urllib.request, urllib.robotparser
+import glob, hashlib, html, json, os, re, ssl, sys, threading, time, urllib.error, urllib.request, urllib.robotparser
 import xml.etree.ElementTree as ET
 from concurrent.futures import ThreadPoolExecutor
 from datetime import datetime, timezone, timedelta
@@ -51,6 +56,16 @@ PLACES = ("Essex|Southend|Chelmsford|Colchester|Basildon|Thurrock|Harlow|Braintr
 ESSEX_RX = re.compile(r"\b(" + PLACES + r")\b")
 NOT_UK_RX = re.compile(r"Essex County|New Jersey|Massachusetts|Connecticut|Vermont|Ontario|Tennessee|Maryland|Iowa|\bN\.?J\.?\b|\bMass\.")
 MEDIA_SUMMARY, ORG_TEXT = 280, 4000
+PAGE_TEXT_MAX = 6
+
+# Some sites (www.essex.ac.uk, 17 Nov 2026) use Let's Encrypt's newer "Y" chain, whose ISRG Root YR is not yet in the
+# runner's trust store. tools/feeds/certs/ holds those Let's Encrypt intermediates (valid to 2028), trusted as anchors;
+# hostnames and expiry are still checked as normal. Applies to every request, robots.txt included.
+CTX = ssl.create_default_context()
+for _pem in sorted(glob.glob(os.path.join(os.path.dirname(os.path.abspath(__file__)), "certs", "*.pem"))):
+    CTX.load_verify_locations(_pem)
+CTX.verify_flags |= ssl.VERIFY_X509_PARTIAL_CHAIN
+urllib.request.install_opener(urllib.request.build_opener(urllib.request.HTTPSHandler(context=CTX)))
 ROBOTS, LOCK = {}, threading.Lock()
 
 def load(p, d):
@@ -173,8 +188,48 @@ def newsnow(page, base):
     return items
 
 # ---------- feeds ----------
+LD_CARD = re.compile(r'(?is)<a\b[^>]*href="([^"#]+)"[^>]*>(.*?)</a>')
+DATED_URL = re.compile(r"/news/(20\d\d)/(\d\d)/(\d\d)/[a-z0-9-]+/?$")
+LD_JSON = re.compile(r'(?s)\{"@type"\s*:\s*"(?:News)?Article".*?\}(?=\s*</script>)')
+
+def parse_page(text, feed):
+    """A news listing page with schema.org NewsArticle data in each card (University of Essex)."""
+    out, seen = [], set()
+    for m in LD_CARD.finditer(text):
+        href, inner = m.group(1), m.group(2)
+        j = LD_JSON.search(inner); d = {}
+        if j:
+            try:
+                d = json.loads(j.group(0))
+            except Exception:
+                pass
+        dated = DATED_URL.search(href)
+        if not d and not dated:
+            continue
+        if not d.get("datePublished") and dated:   # cards without the data (the page's featured story): date from the address
+            d["datePublished"] = "-".join(dated.groups())
+        url = urljoin(feed["url"], html.unescape(href))
+        title = " ".join(clean(d.get("headline") or inner).split())
+        if len(title) < 15 or len(title) > 220:
+            continue
+        if not title or url in seen:
+            continue
+        seen.add(url)
+        out.append({"title": title, "url": url, "time": when(d.get("datePublished") or ""), "body": ""})
+    return out
+
+def article_text(url):
+    """The readable paragraphs of an organisation's own article page."""
+    page = get(url)[0]
+    page = re.sub(r"(?is)<(script|style|nav|header|footer|form|aside)\b.*?</\1>", " ", page)
+    paras = [clean(p) for p in re.findall(r"(?is)<p\b[^>]*>(.*?)</p>", page)]
+    paras = [" ".join(p.split()) for p in paras if len(p) > 40 and "cookie" not in p.lower()]
+    return "\n".join(dict.fromkeys(paras))[:ORG_TEXT]
+
 def parse_feed(text, feed):
-    """Items of an RSS, Atom or JSON feed as {title, url, time, body}."""
+    """Items of an RSS, Atom or JSON feed (or a listing page) as {title, url, time, body}."""
+    if feed.get("page") == "ld":
+        return parse_page(text, feed)
     t = text.lstrip(); out = []
     if feed.get("json"):
         for i in (json.loads(t).get("items") or []):   # Environment Agency flood warnings
@@ -228,6 +283,26 @@ def read_feed(feed, state):
         return None, f"HTTP {e.code}", False
     except Exception as e:
         return None, f"{type(e).__name__}: {str(e)[:120]}", False
+    if feed.get("page") == "ld" and feed["kind"] == "O":
+        with LOCK:
+            texts = state.setdefault("pagetext", {})
+        cut = (NOW - timedelta(days=3)).strftime(ISO); opened = 0
+        for r in raw:
+            u = r["url"]
+            if u in texts:
+                r["body"] = texts[u]
+            elif r["time"] >= cut and opened < PAGE_TEXT_MAX and allowed(u, state):
+                opened += 1
+                try:
+                    r["body"] = article_text(u); time.sleep(0.5)
+                except Exception:
+                    continue
+                with LOCK:
+                    texts[u] = r["body"]
+        with LOCK:
+            keep = {r["url"] for r in raw}
+            for u in [u for u in texts if u not in keep and u.startswith(feed["url"])]:
+                texts.pop(u, None)
     items = []
     skip = re.compile(feed["skip"]) if feed.get("skip") else None
     for r in raw[:60]:

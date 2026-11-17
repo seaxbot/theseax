@@ -1787,5 +1787,15 @@
 "kind": "M",
 "filter": "essex",
 "id": 198
+},
+{
+"name": "University of Essex news",
+"url": "https://www.essex.ac.uk/news",
+"group": "business",
+"area": "colchester",
+"kind": "O",
+"filter": "none",
+"page": "ld",
+"id": 199
 }
 ]
