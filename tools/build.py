@@ -1922,9 +1922,9 @@ def about_page():
 <p>If you run an Essex newsroom, magazine or community site and would like to be featured, or would prefer we did not summarise your work, please get in touch and we will respond promptly.</p>
 
 <h2 id="alexa">The Seax on Alexa: terms of use</h2>
-<p>The Seax Essex News skill for Amazon Alexa plays our latest Essex News Bulletin as part of your Flash Briefing. By enabling it you agree to these terms.</p>
+<p>The Seax has two skills for Amazon Alexa: Essex News, which plays our latest Essex news bulletin as part of your Flash Briefing, and Essex News from The Seax, which plays it when you say "Alexa, open Essex News". By enabling either skill you agree to these terms.</p>
 <ul>
-<li><b>What it is:</b> a free, spoken summary of stories already published on theseax.com, updated three times a day. It is read by a computer-generated voice. For the full stories and sources, visit theseax.com.</li>
+<li><b>What it is:</b> a free, spoken summary of stories already published on theseax.com, updated four times a day. It is read by a computer-generated voice. For the full stories and sources, visit theseax.com.</li>
 <li><b>Accuracy:</b> we work hard to get things right, but the bulletin is provided as it is, for general information, and is not professional, legal, medical or financial advice. If you spot a mistake, email <a href="mailto:corrections@theseax.com">corrections@theseax.com</a>.</li>
 <li><b>Your data:</b> the skill does not ask for, collect or store any personal information, and has no account linking or purchases. Your voice requests are handled by Amazon under Amazon's own privacy notice.</li>
 <li><b>Use of the content:</b> the bulletin is for personal, non-commercial listening. Please do not rebroadcast, resell or republish it without our permission.</li>
