@@ -110,7 +110,7 @@ thread ids, a date and one word only, never anything about the sender or the con
 Stories: write {"items":[...]} to /tmp/inbox-items.json (each item has "section": "stories" or "courts", and "time"
 set to now) and run: SEAX_NO_BRIEFING=1 python3 tools/publish.py --items /tmp/inbox-items.json --desk owner
 (the script has no "inbox" desk name; "owner" is correct). It prints PUSHED <hash> on success. If it prints REPEATS,
-fix or drop those items and run again. What's On: add the listings to the "events" list in edition.json in the
+fix or drop those items and run again. If it prints "REPEAT STORY" (exit 6), that story has already run on The Seax (ops/newsroom.md 2c iii-b, NO REPEAT STORIES, owner's rule 18 Nov 2026): drop it, or only if the source has a genuine new development, lead the story on it and add "followUp": "<earlier id>" and "newAngle": "<the new development in one sentence>", then rerun. What's On: add the listings to the "events" list in edition.json in the
 existing format, run python3 tools/build.py, commit and push. Add new picture files to git.
 
 ## H. Finish

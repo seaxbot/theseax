@@ -24,7 +24,11 @@ What it does, retrying up to 4 times if someone else pushes first:
 If the build fails, the edition is still published without the built pages.
   Before writing, newsroom and sport desk files are checked for front-page repetition (tools/repeats.py): a new or
   rewritten story that repeats a fact across its headline, summary and key points is refused (exit 5) until fixed.
-Prints PUSHED <hash> on success. Exit codes: 0 pushed, 2 bad input, 3 needs a manual merge, 4 push failed, 5 repeats.
+  Every desk's new stories are also checked against everything the site has run in the last 21 days (tools/dupes.py,
+  owner's rule 18 Nov 2026): a story the site has already run is refused (exit 6) unless it is a declared follow-up
+  with a new development ("followUp" + "newAngle").
+Prints PUSHED <hash> on success. Exit codes: 0 pushed, 2 bad input, 3 needs a manual merge, 4 push failed, 5 repeats,
+6 repeat story.
 """
 import argparse, json, os, subprocess, sys, time
 from datetime import datetime, timezone, timedelta
@@ -33,6 +37,7 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.join(ROOT, "tools"))
 import policy
 import repeats
+import dupes
 import diary
 BOTS = {"The Seax newsroom", "The Seax sport desk", "The Seax council watch", "The Seax inquest desk", "The Seax scheduler", "The Seax photo desk", "The Seax policy"}
 SPORT_KEYS = ("results", "fixtures", "tables")
@@ -166,6 +171,7 @@ def main():
     ap.add_argument("--base", help="commit the newsroom started from (git rev-parse HEAD at the start of the run)")
     ap.add_argument("--force", action="store_true", help="publish even if a person edited edition.json since --base")
     ap.add_argument("--author", help="commit author name")
+    ap.add_argument("--dupes-ok", default="", help="comma-separated new story ids flagged as a repeat story that you checked and judged a different story (not a follow-up)")
     ap.add_argument("--repeats-ok", default="", help="comma-separated story ids whose repetition flag you checked and judged wrong")
     a = ap.parse_args()
     if sum(map(bool, (a.edition, a.sport, a.councilwatch, a.inquests))) != 1:
@@ -293,6 +299,22 @@ def main():
             if older:
                 print(f"older stories with repeats ({len(older)}; tidy up to 10 per run): " +
                       " | ".join(f"{sid}: {'; '.join(p)}" for sid, p in older[:10]))
+        # repeat stories (owner's rule, 18 Nov 2026, after Fatima Whitbread's Freewoman of Brentwood honour ran on
+        # 14 Nov and again under a new id on 18 Nov): nothing the site has already run goes up again as a new story
+        # unless it is a declared follow-up with a new development (tools/dupes.py)
+        arch_p = os.path.join(ROOT, "data", "archive.json")
+        archive = load(arch_p) if os.path.exists(arch_p) else {}
+        dok = {x.strip() for x in a.dupes_ok.split(",") if x.strip()}
+        reps = [d for d in dupes.check(out, live, archive) if d[0] not in dok]
+        if reps:
+            print("REPEAT STORY: these new stories repeat something The Seax has already run (owner's rule, 18 Nov 2026). "
+                  "Drop each one, or if it carries a genuine new development, update the earlier story instead (same id, "
+                  "if it is still in the edition), or give the new story \"followUp\": \"<earlier id>\" and \"newAngle\": "
+                  "\"<the new development in one sentence>\" and lead its headline and first paragraph with that new development. "
+                  "Then rerun:")
+            for sid, h, oid, oh, ot, shared in reps:
+                print(f"  {sid}: \"{h}\"\n      already ran as {oid} (first {str(ot)[:10]}): \"{oh}\"")
+            sys.exit(6)
         dump(out, os.path.join(ROOT, "edition.json"))
         built = subprocess.run([sys.executable, os.path.join(ROOT, "tools", "build.py")], capture_output=True, text=True)
         if built.returncode:

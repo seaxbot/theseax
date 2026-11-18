@@ -41,7 +41,7 @@ Write the stories as a JSON array to /tmp/cw_new.json (use a short Python script
 - Money: write £540,000 not £0.540m, and £3.7m for larger sums where the papers give £3.669m only if rounding does not change the meaning; give the exact figure in points.
 
 ## 5. PUBLISH
-Run `python3 tools/councilwatch/desk.py publish /tmp/cw_new.json`. It fills the council, meeting and document fields from the shortlist, keeps the last 21 days of Council Watch stories, publishes to the website with tools/publish.py --councilwatch (never use git push yourself and never edit edition.json directly), and prints PUSHED and PUBLISHED lines. If it prints NOTE lines, fix the stories and run it again. If it prints "NOTHING NEW TO PUBLISH", that is fine.
+Run `python3 tools/councilwatch/desk.py publish /tmp/cw_new.json`. It fills the council, meeting and document fields from the shortlist, keeps the last 21 days of Council Watch stories, publishes to the website with tools/publish.py --councilwatch (never use git push yourself and never edit edition.json directly), and prints PUSHED and PUBLISHED lines. If it prints NOTE lines, fix the stories and run it again. If it prints "NOTHING NEW TO PUBLISH", that is fine. If it prints "REPEAT STORY" (exit 6), that story has already run on The Seax (ops/newsroom.md 2c iii-b, NO REPEAT STORIES, owner's rule 18 Nov 2026): drop it from /tmp/cw_new.json, or only if the source has a genuine new development, lead the story on it and add "followUp": "<earlier id>" and "newAngle": "<the new development in one sentence>", then rerun.
 
 ## 6. FINISH
 End with one line: how many stories were published (with their ids), how many shortlist items there were, and which councils were checked by search.
