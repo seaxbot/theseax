@@ -261,7 +261,12 @@ def main():
         if not ok:
             log(f"{mon} {yy}: no page found")
     # keep earlier Essex rows for 120 days so finished cases stay findable
+    fresh_starts = {(r.get("pin") or "", r.get("start") or "") for r in rows.values()}
     for k, r in prev.items():
+        if not r.get("pin"):  # rows saved before bare PINs were read: recover the PIN, drop the duplicate
+            pm = re.search(r"\b(\d{2}[A-Z]\d{4}[A-Z])\s*$", (r.get("name") or "").strip())
+            if pm and (pm.group(1), r.get("start") or "") in fresh_starts:
+                continue
         if k not in rows:
             try:
                 if (NOW.date() - date.fromisoformat(r["start"])).days <= 120:
