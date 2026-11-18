@@ -40,7 +40,27 @@ def repeats(it):
         w = words(p)
         if len(w) >= 2 and sum(x in top for x in w) / len(w) >= 0.75:
             probs.append(f'point {i + 1} only repeats the headline or summary: "{p}"')
-    return probs + body_problems(it)
+    return probs + headline_problems(h) + body_problems(it)
+
+# Headlines (owner's rule, 18 Nov 2026; ops/newsroom.md 3a vii): short, front-loaded, plain.
+HEADLINE_MAX = 80
+HEAD_LABEL = re.compile(r"^\s*(update[sd]?|breaking( news)?|watch|live|exclusive)\b\s*[:\-|]?", re.I)
+HEAD_SPEAK = re.compile(r"\b(slam(s|med)?|blast(s|ed)?|probe[sd]?|axe[sd]?|shock|fury|horror)\b", re.I)
+
+def headline_problems(h):
+    h = str(h or "").strip()
+    probs = []
+    if len(h) > HEADLINE_MAX:
+        probs.append(f"headline is {len(h)} characters (limit {HEADLINE_MAX}): cut it to one idea, place first, and move the rest to the summary")
+    m = HEAD_LABEL.match(h)
+    if m:
+        probs.append(f'headline starts with the label "{m.group(1)}": lead with the news instead (the site has its own badges)')
+    if "—" in h:
+        probs.append("headline has an em dash")
+    m = HEAD_SPEAK.search(h)
+    if m:
+        probs.append(f'headline uses tabloid headline-speak "{m.group(0)}": use a plain, exact verb')
+    return probs
 
 # Story page copy (owner's rule, 12 Nov 2026: "write like a world class journalist; no story should sound written by AI").
 # The page reads headline, standfirst (summary), then the body, so the first paragraph must move the story on from the

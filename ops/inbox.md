@@ -72,7 +72,7 @@ subject alone, without opening it, unless the subject suggests the owner must ac
 
 - Official senders (councils, Essex Police including its Dispatch newsletter, Essex County Fire and Rescue, NHS
   bodies, Explore Essex, National Highways, Essex & Suffolk Water and similar public bodies), whatever address they
-  wrote to: these are sources. Write any newsworthy, current Essex item as a Seax story in your own words, short and
+  wrote to: these are sources. Write any newsworthy, current Essex item as a Seax story in your own words (headlines follow ops/newsroom.md 3a vii (HEADLINES): plain, front-loaded with the Essex place, active present tense, one idea, 50 to 70 characters and never over 80), short and
   accurate, applying every newsroom rule. Crime and court items get full careful court reporting under 3b, never a
   quick summary; no story may name a child. Credit the body as source. Skip adverts, discount codes, campaign filler
   and anything already covered: grep edition.json and data/archive.json for the same event first.

@@ -286,7 +286,7 @@ def main():
             fresh = [f for f in fresh if f[0] not in ok]
             if fresh:
                 print("REPEATS: these new or rewritten stories repeat a fact across headline, summary and key points "
-                      "(the front page shows all three). Rewrite them so each fact appears once, then rerun:")
+                      "(the front page shows all three), or break the headline rules (ops/newsroom.md 3a vii). Fix them, then rerun:")
                 for sid, probs in fresh:
                     print(f"  {sid}: " + "; ".join(probs))
                 sys.exit(5)
