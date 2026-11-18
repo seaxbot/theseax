@@ -1,6 +1,22 @@
 [
  {
   "ids": [
+   "shoeburyness-eagle-way-blake-branch-tribute-two-bailed"
+  ],
+  "match": "\\bBlake Branch\\b",
+  "name": "Blake Branch, who died aged 17 months in Shoeburyness in October",
+  "label": "Picture",
+  "wide": "/img/people/blake-branch-wide.jpg",
+  "og": "/img/people/blake-branch-og.jpg",
+  "creator": "Essex Police",
+  "provider": "Essex Police",
+  "license": "",
+  "licenseUrl": "",
+  "source": "https://www.essex.police.uk/news/essex/news/news/2026/november/family-tribute-to-beautiful-blake/",
+  "addedBy": "owner, 18 Nov 2026 (family picture released by Essex Police with the tribute; owner supplied a screenshot of the release; for the Blake Branch story and later Blake Branch stories)"
+ },
+ {
+  "ids": [
    "loughton-nscale-ai-data-centre-deadline-no-power-microsoft-gone"
   ],
   "name": "A cartoon of an engineer working among server racks in a data centre",
