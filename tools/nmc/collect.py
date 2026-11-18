@@ -202,9 +202,10 @@ def parse_page(text, url, mon, yy):
             if not ESSEX_RX.search(county):
                 continue
             name_pin = g("name")
-            pm = re.search(r"\(([0-9A-Z]{6,10})\)", name_pin)
+            # The PIN comes either in brackets or (from Nov 2026) bare at the end: "KUZNIAR, Monika 07H0058C".
+            pm = re.search(r"\(([0-9A-Z]{6,10})\)", name_pin) or re.search(r"\b(\d{2}[A-Z]\d{4}[A-Z])\s*$", name_pin.strip())
             pin = pm.group(1) if pm else ""
-            name = clean(re.sub(r"\([0-9A-Z]{6,10}\)", "", name_pin)).replace("\n", " ")
+            name = clean(name_pin.replace(pm.group(0), "") if pm else name_pin).replace("\n", " ").strip()
             oc = r[col["outcome"]]
             docs = [urljoin(url, h) for h in oc["links"]]
             venue = g("venue").replace("\n", " ")
