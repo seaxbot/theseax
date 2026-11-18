@@ -4660,6 +4660,20 @@ function renderMeta(){
 }
 
 /* ============ story page ============ */
+/* Embedded YouTube video (story field "video", the 11-character id; owner's request, 18 Nov 2026, Harlow Council's
+   GTA 6 spoof). The story's picture shows with a play button; tapping it swaps in the youtube-nocookie player. */
+function videoId(s){ const v = String((s && s.video) || ""); return /^[A-Za-z0-9_-]{11}$/.test(v) ? v : ""; }
+function playVid(el){
+  const f = document.createElement("iframe");
+  f.src = "https://www.youtube-nocookie.com/embed/" + el.dataset.vid + "?autoplay=1&rel=0&playsinline=1";
+  f.title = el.getAttribute("aria-label") || "Video";
+  f.allow = "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; web-share";
+  f.referrerPolicy = "strict-origin-when-cross-origin"; f.allowFullscreen = true;
+  f.style.cssText = "display:block;width:100%;aspect-ratio:16/9;height:auto;border:0";
+  el.replaceWith(f);
+}
+document.addEventListener("click", e => { const v = e.target.closest && e.target.closest(".svid"); if(v){ e.preventDefault(); playVid(v); } });
+document.addEventListener("keydown", e => { if((e.key === "Enter" || e.key === " ") && e.target.classList && e.target.classList.contains("svid")){ e.preventDefault(); playVid(e.target); } });
 function renderStory(id){
   /* an old link may carry an id cut to 60 characters (before the 16 Nov 2026 fix): fall back to the story it starts */
   const s = allStories().find(x => x.id === id) || (id && id.length === 60 ? allStories().find(x => x.id.startsWith(id)) : null);
@@ -4673,7 +4687,7 @@ function renderStory(id){
     <h1>${esc(s.headline)}</h1>
     <div class="smeta"><b>${esc(s.place||"Essex")}</b><span>·</span><span data-ago="${esc(shownT(s))}">${ago(shownT(s))}</span>${s.time?`<span>·</span><span>${fmt(new Date(s.time),{weekday:"long",day:"numeric",month:"long",hour:"2-digit",minute:"2-digit"})}</span>`:""}<span>·</span><span>Reported by ${esc(s.source)}</span><span>·</span><span>${Math.max(1, Math.round(((s.summary||"") + " " + (s.body||[]).join(" ") + " " + (s.points||[]).join(" ")).split(/\s+/).length / 200))} min read</span></div>
     <div class="sharebar"><button data-sharestory="${esc(s.id)}" class="native-share">Share</button><a class="wa" href="https://wa.me/?text=${encodeURIComponent(s.headline + " https://theseax.com/story/" + s.id + "/")}" target="_blank" rel="noopener">WhatsApp</a><button data-copylink="${esc(s.id)}">Copy link</button><a href="${safeUrl(s.url)}" target="_blank" rel="noopener">Original report ↗</a></div>
-    <figure class="sart" style="--c:${iconColour(s)}"><div class="sart-img">${storyArt(s,{aspect:1/1.85, zoom:760, credit:true})}</div>${artCaption(s) ? `<figcaption>${artKick(s) ? `<b>${esc(artKick(s))}</b>${esc(artCaption(s))}` : `<small style="font-size:.8em;font-weight:400;opacity:.8">${esc(artCaption(s))}</small>`}</figcaption>` : ""}</figure>
+    ${videoId(s) ? `<figure class="sart" style="--c:${iconColour(s)}"><div class="sart-img svid" data-vid="${videoId(s)}" role="button" tabindex="0" aria-label="Play video: ${esc(s.videoTitle||s.headline)}" style="position:relative;cursor:pointer">${storyArt(s,{aspect:1/1.85, zoom:760, credit:false})}<span aria-hidden="true" style="position:absolute;left:50%;top:50%;width:76px;height:54px;margin:-27px 0 0 -38px;background:rgba(204,0,0,.92);border-radius:14px;box-shadow:0 2px 12px rgba(0,0,0,.4);z-index:2"><span style="position:absolute;left:30px;top:15px;border-style:solid;border-width:12px 0 12px 20px;border-color:transparent transparent transparent #fff"></span></span></div><figcaption><b>Video</b>: ${esc(s.videoTitle||"Watch the video")}${s.videoBy ? ". " + esc(s.videoBy) : ""}. <a href="https://www.youtube.com/watch?v=${videoId(s)}" target="_blank" rel="noopener">Watch on YouTube ↗</a></figcaption></figure>` : `<figure class="sart" style="--c:${iconColour(s)}"><div class="sart-img">${storyArt(s,{aspect:1/1.85, zoom:760, credit:true})}</div>${artCaption(s) ? `<figcaption>${artKick(s) ? `<b>${esc(artKick(s))}</b>${esc(artCaption(s))}` : `<small style="font-size:.8em;font-weight:400;opacity:.8">${esc(artCaption(s))}</small>`}</figcaption>` : ""}</figure>`}
     <p class="standfirst">${esc(s.summary)}</p>
     ${Array.isArray(s.body) && s.body.length ? `<div class="sbody">${s.body.map(p=>`<p>${esc(p)}</p>`).join("")}</div>` : ""}
     ${(() => { const pt = portraitOf(s); const m = pt && Array.isArray(pt.more) ? pt.more.filter(x => x && x.wide) : []; /* further pictures after the text, as on the built story page (16 Nov 2026) */
