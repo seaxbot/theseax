@@ -1,6 +1,21 @@
 [
  {
   "ids": [
+   "loughton-nscale-ai-data-centre-deadline-no-power-microsoft-gone"
+  ],
+  "name": "A cartoon of an engineer working among server racks in a data centre",
+  "label": "Illustration",
+  "wide": "/img/people/nscale-loughton-illustration-wide.jpg",
+  "og": "/img/people/nscale-loughton-illustration-og.jpg",
+  "creator": "",
+  "provider": "",
+  "license": "",
+  "licenseUrl": "",
+  "source": "",
+  "addedBy": "owner, 18 Nov 2026 (owner's own illustration for the Loughton Nscale data centre feature only, because it is a feature and he wanted something more fun; every other data centre story keeps the server racks photo)"
+ },
+ {
+  "ids": [
    "chelmsford-central-park-radwan-shakur-murder-trial"
   ],
   "match": "\\bRadwan Shakur\\b",
