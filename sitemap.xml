@@ -5,6 +5,7 @@
 <url><loc>https://theseax.com/contact/</loc><changefreq>monthly</changefreq><priority>0.4</priority></url>
 <url><loc>https://theseax.com/briefing/</loc><lastmod>2026-11-17</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
 <url><loc>https://theseax.com/story/the-seax-launches/</loc><lastmod>2026-11-09</lastmod><priority>0.5</priority></url>
+<url><loc>https://theseax.com/story/loughton-nscale-ai-data-centre-deadline-no-power-microsoft-gone/</loc><lastmod>2026-11-18</lastmod></url>
 <url><loc>https://theseax.com/story/braintree-witham-rail-replacement-buses-21-22-november/</loc><lastmod>2026-11-17</lastmod></url>
 <url><loc>https://theseax.com/story/marks-tey-car-boot-sale-cancelled-until-2027/</loc><lastmod>2026-11-17</lastmod></url>
 <url><loc>https://theseax.com/story/s-southend-jack-stone-grays-athletic-loan/</loc><lastmod>2026-11-17</lastmod></url>
@@ -561,7 +562,7 @@
 <url><loc>https://theseax.com/briefing/2026-11-08/</loc><lastmod>2026-11-08</lastmod></url>
 <url><loc>https://theseax.com/briefing/2026-11-07/</loc><lastmod>2026-11-07</lastmod></url>
 <url><loc>https://theseax.com/briefing/2026-11-06/</loc><lastmod>2026-11-06</lastmod></url>
-<url><loc>https://theseax.com/news/</loc><lastmod>2026-11-17</lastmod><changefreq>hourly</changefreq><priority>0.8</priority></url>
+<url><loc>https://theseax.com/news/</loc><lastmod>2026-11-18</lastmod><changefreq>hourly</changefreq><priority>0.8</priority></url>
 <url><loc>https://theseax.com/news/chelmsford/</loc><lastmod>2026-11-17</lastmod><changefreq>hourly</changefreq><priority>0.8</priority></url>
 <url><loc>https://theseax.com/news/colchester/</loc><lastmod>2026-11-17</lastmod><changefreq>hourly</changefreq><priority>0.8</priority></url>
 <url><loc>https://theseax.com/news/southend/</loc><lastmod>2026-11-17</lastmod><changefreq>hourly</changefreq><priority>0.8</priority></url>
@@ -571,11 +572,11 @@
 <url><loc>https://theseax.com/news/maldon/</loc><lastmod>2026-11-17</lastmod><changefreq>hourly</changefreq><priority>0.8</priority></url>
 <url><loc>https://theseax.com/news/clacton-tendring/</loc><lastmod>2026-11-17</lastmod><changefreq>hourly</changefreq><priority>0.8</priority></url>
 <url><loc>https://theseax.com/news/saffron-walden-uttlesford/</loc><lastmod>2026-11-17</lastmod><changefreq>hourly</changefreq><priority>0.8</priority></url>
-<url><loc>https://theseax.com/news/harlow-epping/</loc><lastmod>2026-11-17</lastmod><changefreq>hourly</changefreq><priority>0.8</priority></url>
+<url><loc>https://theseax.com/news/harlow-epping/</loc><lastmod>2026-11-18</lastmod><changefreq>hourly</changefreq><priority>0.8</priority></url>
 <url><loc>https://theseax.com/news/traffic-travel/</loc><lastmod>2026-11-17</lastmod><changefreq>hourly</changefreq><priority>0.8</priority></url>
 <url><loc>https://theseax.com/news/crime/</loc><lastmod>2026-11-17</lastmod><changefreq>hourly</changefreq><priority>0.8</priority></url>
 <url><loc>https://theseax.com/news/health/</loc><lastmod>2026-11-17</lastmod><changefreq>hourly</changefreq><priority>0.8</priority></url>
-<url><loc>https://theseax.com/news/business/</loc><lastmod>2026-11-17</lastmod><changefreq>hourly</changefreq><priority>0.8</priority></url>
+<url><loc>https://theseax.com/news/business/</loc><lastmod>2026-11-18</lastmod><changefreq>hourly</changefreq><priority>0.8</priority></url>
 <url><loc>https://theseax.com/news/education/</loc><lastmod>2026-11-17</lastmod><changefreq>hourly</changefreq><priority>0.8</priority></url>
 <url><loc>https://theseax.com/news/weather/</loc><lastmod>2026-11-16</lastmod><changefreq>hourly</changefreq><priority>0.8</priority></url>
 <url><loc>https://theseax.com/news/sport/</loc><lastmod>2026-11-17</lastmod><changefreq>hourly</changefreq><priority>0.8</priority></url>
@@ -594,7 +595,7 @@
 <url><loc>https://theseax.com/news/witham/</loc><lastmod>2026-11-17</lastmod><changefreq>hourly</changefreq><priority>0.8</priority></url>
 <url><loc>https://theseax.com/news/harlow/</loc><lastmod>2026-11-17</lastmod><changefreq>hourly</changefreq><priority>0.8</priority></url>
 <url><loc>https://theseax.com/news/epping/</loc><lastmod>2026-11-17</lastmod><changefreq>hourly</changefreq><priority>0.8</priority></url>
-<url><loc>https://theseax.com/news/loughton/</loc><lastmod>2026-11-13</lastmod><changefreq>hourly</changefreq><priority>0.8</priority></url>
+<url><loc>https://theseax.com/news/loughton/</loc><lastmod>2026-11-18</lastmod><changefreq>hourly</changefreq><priority>0.8</priority></url>
 <url><loc>https://theseax.com/news/waltham-abbey/</loc><lastmod>2026-11-15</lastmod><changefreq>hourly</changefreq><priority>0.8</priority></url>
 <url><loc>https://theseax.com/news/clacton/</loc><lastmod>2026-11-17</lastmod><changefreq>hourly</changefreq><priority>0.8</priority></url>
 <url><loc>https://theseax.com/news/harwich/</loc><lastmod>2026-11-17</lastmod><changefreq>hourly</changefreq><priority>0.8</priority></url>
