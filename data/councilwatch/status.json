@@ -1,5 +1,5 @@
 {
- "at": "2026-11-18T06:36:30.015247+00:00",
+ "at": "2026-11-18T16:40:04.708414+00:00",
  "councils": {
   "thurrock": {
    "name": "Thurrock Council",
@@ -33,7 +33,7 @@
    "system": "mg",
    "base": "https://democracy.maldon.gov.uk",
    "meetings": 18,
-   "changed": 2,
+   "changed": 1,
    "state": "ok",
    "note": ""
   },
@@ -42,7 +42,7 @@
    "system": "mg",
    "base": "https://tdcdemocracy.tendringdc.gov.uk",
    "meetings": 10,
-   "changed": 0,
+   "changed": 1,
    "state": "ok",
    "note": ""
   },
@@ -60,7 +60,7 @@
    "system": "mg",
    "base": "https://www.basildonmeetings.info",
    "meetings": 20,
-   "changed": 0,
+   "changed": 1,
    "state": "ok",
    "note": ""
   },
@@ -114,7 +114,7 @@
    "system": "chelmsford",
    "base": "https://www.chelmsford.gov.uk",
    "meetings": 5,
-   "changed": 3,
+   "changed": 2,
    "state": "ok",
    "note": ""
   },
@@ -141,10 +141,10 @@
   "thurrock": 3,
   "southend": 3,
   "epping": 3,
-  "maldon": 21,
+  "maldon": 24,
   "tendring": 13,
   "harlow": 3,
-  "basildon": 23,
+  "basildon": 24,
   "brentwood": 3,
   "uttlesford": 3,
   "rochford": 1,
