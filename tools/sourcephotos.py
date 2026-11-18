@@ -23,7 +23,8 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 UA = "TheSeaxPhotoDesk/1.0 (+https://theseax.com/about/; info@theseax.com)"
 # Official sources only. Add hosts here when the owner approves a new source of pictures.
 ALLOWED = ("essex.icb.nhs.uk", "nhs.uk", "essex.police.uk", "essex-fire.gov.uk", "gov.uk",
-           "essex.ac.uk")   # University of Essex: owner approved, 17 Nov 2026 ("I expected the pics to be already uploaded with credit")
+           "essex.ac.uk",   # University of Essex: owner approved, 17 Nov 2026 ("I expected the pics to be already uploaded with credit")
+           "img.youtube.com", "i.ytimg.com")   # stills of videos the owner asks to embed (owner, 18 Nov 2026: Harlow Council's GTA video)
 REQ = os.path.join(ROOT, "data", "source-photos.json")
 POR = os.path.join(ROOT, "data", "portraits.json")
 SIZES = {"wide": (1200, 655), "og": (1200, 630)}

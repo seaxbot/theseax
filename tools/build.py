@@ -1263,6 +1263,22 @@ def collect(ed):
                 out.append((sec, it))
     return out
 
+def video_figure(it):
+    """Embedded YouTube video for a story (field "video": the 11-character YouTube id; optional "videoTitle" and
+    "videoBy" for the caption). Owner's request, 18 Nov 2026 (Harlow Council's GTA 6 spoof). Uses the privacy-enhanced
+    youtube-nocookie player, loaded lazily, shown after the story text; the story's picture stays at the top."""
+    vid = str(it.get("video") or "")
+    if not re.fullmatch(r"[A-Za-z0-9_-]{11}", vid):
+        return ""
+    t = str(it.get("videoTitle") or "Watch the video")
+    by = str(it.get("videoBy") or "")
+    return (f'<figure class="stock video"><iframe src="https://www.youtube-nocookie.com/embed/{vid}?rel=0" title="{E(t)}" '
+            'style="display:block;width:100%;aspect-ratio:16/9;height:auto;border:0" loading="lazy" '
+            'allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; web-share" '
+            'referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>'
+            f'<figcaption><b>{E(t)}</b>{". Video: " + E(by) if by else ""}. '
+            f'<a href="https://www.youtube.com/watch?v={vid}" target="_blank" rel="noopener">Watch on YouTube ↗</a></figcaption></figure>')
+
 def story_page(sec, it, more):
     sid = it["id"]
     url = f"{SITE}/story/{sid}/"
@@ -1411,7 +1427,7 @@ def story_page(sec, it, more):
   <div class="meta">{' <span class="dot">·</span> '.join(meta)}</div>
   {share_bar(url, title)}
   {fig}
-  {''.join(f'<p>{E(p)}</p>' for p in body if str(p).strip())}{fig_more}
+  {''.join(f'<p>{E(p)}</p>' for p in body if str(p).strip())}{video_figure(it)}{fig_more}
   {('<h2>Key points</h2><ul class="points">' + ''.join(f'<li>{E(p)}</li>' for p in points) + '</ul>') if points else ''}
   <!-- Article End -->
   {readfull}
