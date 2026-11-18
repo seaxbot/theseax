@@ -1263,21 +1263,40 @@ def collect(ed):
                 out.append((sec, it))
     return out
 
-def video_figure(it):
-    """Embedded YouTube video for a story (field "video": the 11-character YouTube id; optional "videoTitle" and
-    "videoBy" for the caption). Owner's request, 18 Nov 2026 (Harlow Council's GTA 6 spoof). Uses the privacy-enhanced
-    youtube-nocookie player, loaded lazily, shown after the story text; the story's picture stays at the top."""
+def video_id(it):
     vid = str(it.get("video") or "")
-    if not re.fullmatch(r"[A-Za-z0-9_-]{11}", vid):
-        return ""
+    return vid if re.fullmatch(r"[A-Za-z0-9_-]{11}", vid) else ""
+
+def video_figure(it, fig):
+    """Embedded YouTube video at the top of a story page (field "video": the 11-character YouTube id; optional
+    "videoTitle" and "videoBy" for the caption). Owner's request, 18 Nov 2026 (Harlow Council's GTA 6 spoof): the video
+    is the story's main item. It shows the story's picture with a play button (so the picture stays in the page for
+    share previews); tapping it swaps in the privacy-enhanced youtube-nocookie player. Without JavaScript the picture
+    links to the video on YouTube."""
+    vid = video_id(it)
     t = str(it.get("videoTitle") or "Watch the video")
     by = str(it.get("videoBy") or "")
-    return (f'<figure class="stock video"><iframe src="https://www.youtube-nocookie.com/embed/{vid}?rel=0" title="{E(t)}" '
-            'style="display:block;width:100%;aspect-ratio:16/9;height:auto;border:0" loading="lazy" '
-            'allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; web-share" '
-            'referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>'
-            f'<figcaption><b>{E(t)}</b>{". Video: " + E(by) if by else ""}. '
-            f'<a href="https://www.youtube.com/watch?v={vid}" target="_blank" rel="noopener">Watch on YouTube ↗</a></figcaption></figure>')
+    yt = f"https://www.youtube.com/watch?v={vid}"
+    m = re.search(r'<img src="([^"]+)"[^>]*alt="([^"]*)"', fig or "")
+    poster = (f'<img src="{m.group(1)}" width="1200" height="655" alt="{m.group(2)}" loading="eager" '
+              'style="width:100%;aspect-ratio:16/9;height:auto;max-height:none;object-fit:cover;display:block;border-radius:10px">'
+              if m else f'<img src="https://i.ytimg.com/vi/{vid}/hqdefault.jpg" width="1200" height="675" alt="{E(t)}" loading="eager" '
+              'style="width:100%;aspect-ratio:16/9;height:auto;max-height:none;object-fit:cover;display:block;border-radius:10px">')
+    cap = f'<b>Video</b>: {E(t)}{". " + E(by) if by else ""}. <a href="{yt}" target="_blank" rel="noopener">Watch on YouTube ↗</a>'
+    return (f'<figure class="stock video"><a class="vplay" href="{yt}" target="_blank" rel="noopener" data-vid="{vid}" '
+            f'aria-label="Play video: {E(t)}" style="position:relative;display:block;border-radius:10px;overflow:hidden">{poster}'
+            '<span aria-hidden="true" style="position:absolute;left:50%;top:50%;width:76px;height:54px;margin:-27px 0 0 -38px;'
+            'background:rgba(204,0,0,.92);border-radius:14px;box-shadow:0 2px 12px rgba(0,0,0,.4)">'
+            '<span style="position:absolute;left:30px;top:15px;border-style:solid;border-width:12px 0 12px 20px;'
+            'border-color:transparent transparent transparent #fff"></span></span></a>'
+            f'<figcaption>{cap}</figcaption></figure>'
+            '<script>(function(){var a=document.querySelector(".vplay");if(!a)return;a.addEventListener("click",function(e){'
+            'e.preventDefault();var f=document.createElement("iframe");'
+            'f.src="https://www.youtube-nocookie.com/embed/"+a.dataset.vid+"?autoplay=1&rel=0&playsinline=1";'
+            'f.title=a.getAttribute("aria-label");f.allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; web-share";'
+            'f.referrerPolicy="strict-origin-when-cross-origin";f.allowFullscreen=true;'
+            'f.style.cssText="display:block;width:100%;aspect-ratio:16/9;height:auto;border:0;border-radius:10px";'
+            'a.replaceWith(f)})})();</script>')
 
 def story_page(sec, it, more):
     sid = it["id"]
@@ -1417,6 +1436,14 @@ def story_page(sec, it, more):
                    + fig[len('<figure class="stock">'):]
                    + '<script>(function(){var f=document.querySelector(".flashfig");if(!f)return;var u=Date.parse(f.dataset.flashUntil);'
                    'function c(){if(Date.now()>=u){var b=f.querySelector(".flash");if(b)b.remove();return true}}if(!c())setInterval(c,60000)})();</script>')
+    if video_id(it):  # the video leads the page (owner's request, 18 Nov 2026)
+        fig = video_figure(it, fig)
+        vo = {"@context": "https://schema.org", "@type": "VideoObject", "name": str(it.get("videoTitle") or title),
+              "description": desc, "thumbnailUrl": [SITE + og_img if og_img.startswith("/") else f"https://i.ytimg.com/vi/{video_id(it)}/hqdefault.jpg"],
+              "embedUrl": f"https://www.youtube-nocookie.com/embed/{video_id(it)}", "contentUrl": f"https://www.youtube.com/watch?v={video_id(it)}"}
+        if t:
+            vo["uploadDate"] = iso(t)
+        extra += '<script type="application/ld+json">' + json.dumps(vo, ensure_ascii=False).replace("</", "<\\/") + "</script>\n"
     return head(f"{title} · The Seax", desc, url, og_img, "article", extra) + f"""<main class="wrap story">
 <article style="--c:{colour}">
   <div class="kick"><span>{E(kicker)}</span><span>{E(place)}</span></div>
@@ -1427,7 +1454,7 @@ def story_page(sec, it, more):
   <div class="meta">{' <span class="dot">·</span> '.join(meta)}</div>
   {share_bar(url, title)}
   {fig}
-  {''.join(f'<p>{E(p)}</p>' for p in body if str(p).strip())}{video_figure(it)}{fig_more}
+  {''.join(f'<p>{E(p)}</p>' for p in body if str(p).strip())}{fig_more}
   {('<h2>Key points</h2><ul class="points">' + ''.join(f'<li>{E(p)}</li>' for p in points) + '</ul>') if points else ''}
   <!-- Article End -->
   {readfull}
