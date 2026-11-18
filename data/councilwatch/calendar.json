@@ -1,18 +1,6 @@
 {
- "at": "2026-11-17T16:38:27.290043+00:00",
+ "at": "2026-11-18T06:36:30.015247+00:00",
  "meetings": [
-  {
-   "council": "basildon",
-   "councilName": "Basildon Council",
-   "area": "south",
-   "committee": "Council",
-   "date": "2026-11-17",
-   "time": "7.00 p.m.",
-   "url": "https://www.basildonmeetings.info/ieListDocuments.aspx?CId=216&MId=9621",
-   "items": [
-    "NOTICE OF MOTION:"
-   ]
-  },
   {
    "council": "basildon",
    "councilName": "Basildon Council",
@@ -252,6 +240,26 @@
    "date": "2026-12-15",
    "time": "7.30 p.m.",
    "url": "https://www.basildonmeetings.info/ieListDocuments.aspx?CId=216&MId=9601",
+   "items": []
+  },
+  {
+   "council": "chelmsford",
+   "councilName": "Chelmsford City Council",
+   "area": "chelmsford",
+   "committee": "Audit and risk committee",
+   "date": "2026-12-16",
+   "time": "",
+   "url": "https://www.chelmsford.gov.uk/committee-meetings/audit-and-risk-committee-december-2026/",
+   "items": []
+  },
+  {
+   "council": "maldon",
+   "councilName": "Maldon District Council",
+   "area": "maldon",
+   "committee": "Planning Committee",
+   "date": "2026-12-16",
+   "time": "7.00 pm",
+   "url": "https://democracy.maldon.gov.uk/ieListDocuments.aspx?CId=390&MId=4938",
    "items": []
   }
  ]
