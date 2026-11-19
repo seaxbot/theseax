@@ -1,5 +1,5 @@
 {
- "at": "2026-11-18T16:40:04.708414+00:00",
+ "at": "2026-11-19T06:32:47.969017+00:00",
  "meetings": [
   {
    "council": "basildon",
@@ -269,6 +269,16 @@
    "date": "2026-12-16",
    "time": "7.00 pm",
    "url": "https://democracy.maldon.gov.uk/ieListDocuments.aspx?CId=390&MId=4938",
+   "items": []
+  },
+  {
+   "council": "basildon",
+   "councilName": "Basildon Council",
+   "area": "south",
+   "committee": "Cabinet",
+   "date": "2026-12-17",
+   "time": "7.00 p.m.",
+   "url": "https://www.basildonmeetings.info/ieListDocuments.aspx?CId=297&MId=9506",
    "items": []
   }
  ]
