@@ -706,5 +706,20 @@
   "licenseUrl": "https://creativecommons.org/licenses/by/3.0/",
   "source": "https://members.parliament.uk/member/4366/portrait",
   "addedBy": "owner, 19 Nov 2026 (his official Parliament portrait, supplied for all James Cleverly stories; cropped; credit UK Parliament, CC BY 3.0)"
+ },
+ {
+  "ids": [
+   "pitsea-ben-banham-gunpowder-jailed-chatgpt"
+  ],
+  "name": "Ben Banham, filmed on an Essex Police officer's body-worn camera in Pitsea",
+  "label": "Picture",
+  "wide": "/img/people/pitsea-ben-banham-bodycam-wide.jpg",
+  "og": "/img/people/pitsea-ben-banham-bodycam-og.jpg",
+  "creator": "Essex Police",
+  "provider": "Essex Police",
+  "license": "",
+  "licenseUrl": "",
+  "source": "",
+  "addedBy": "owner, 19 Nov 2026 (Pitsea gunpowder story; Essex Police body-worn camera still supplied by the owner)"
  }
 ]
