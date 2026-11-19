@@ -1,5 +1,5 @@
 {
- "at": "2026-11-19T06:32:47.969017+00:00",
+ "at": "2026-11-19T16:40:36.085834+00:00",
  "councils": {
   "thurrock": {
    "name": "Thurrock Council",
@@ -41,8 +41,8 @@
    "name": "Tendring District Council",
    "system": "mg",
    "base": "https://tdcdemocracy.tendringdc.gov.uk",
-   "meetings": 10,
-   "changed": 0,
+   "meetings": 11,
+   "changed": 2,
    "state": "ok",
    "note": ""
   },
@@ -60,7 +60,7 @@
    "system": "mg",
    "base": "https://www.basildonmeetings.info",
    "meetings": 20,
-   "changed": 1,
+   "changed": 0,
    "state": "ok",
    "note": ""
   },
@@ -142,7 +142,7 @@
   "southend": 3,
   "epping": 3,
   "maldon": 20,
-  "tendring": 13,
+  "tendring": 14,
   "harlow": 3,
   "basildon": 23,
   "brentwood": 3,

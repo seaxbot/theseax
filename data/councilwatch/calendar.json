@@ -1,5 +1,5 @@
 {
- "at": "2026-11-19T06:32:47.969017+00:00",
+ "at": "2026-11-19T16:40:36.085834+00:00",
  "meetings": [
   {
    "council": "basildon",
@@ -152,6 +152,16 @@
    "items": []
   },
   {
+   "council": "tendring",
+   "councilName": "Tendring District Council",
+   "area": "tendring",
+   "committee": "Premises / Personal Licences Sub-Committee",
+   "date": "2026-12-07",
+   "time": "10.30 am",
+   "url": "https://tdcdemocracy.tendringdc.gov.uk/ieListDocuments.aspx?CId=329&MId=2951",
+   "items": []
+  },
+  {
    "council": "chelmsford",
    "councilName": "Chelmsford City Council",
    "area": "chelmsford",
@@ -219,16 +229,6 @@
    "date": "2026-12-10",
    "time": "7.30 pm",
    "url": "https://democracy.maldon.gov.uk/ieListDocuments.aspx?CId=130&MId=4729",
-   "items": []
-  },
-  {
-   "council": "tendring",
-   "councilName": "Tendring District Council",
-   "area": "tendring",
-   "committee": "Cabinet",
-   "date": "2026-12-11",
-   "time": "10.30 am",
-   "url": "https://tdcdemocracy.tendringdc.gov.uk/ieListDocuments.aspx?CId=134&MId=2823",
    "items": []
   },
   {
