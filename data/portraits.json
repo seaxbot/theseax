@@ -1,6 +1,21 @@
 [
  {
   "ids": [
+   "colchester-university-of-essex-army-personnel-student-accommodation"
+  ],
+  "name": "A student bedroom at the University of Essex's Colchester campus",
+  "label": "Picture",
+  "wide": "/img/people/uoe-colchester-room-wide.jpg",
+  "og": "/img/people/uoe-colchester-room-og.jpg",
+  "creator": "University of Essex",
+  "provider": "University of Essex",
+  "license": "",
+  "licenseUrl": "",
+  "source": "",
+  "addedBy": "owner, 19 Nov 2026 (University of Essex picture of a student bedroom, for the MoD staff in spare Colchester rooms story; credit: University of Essex)"
+ },
+ {
+  "ids": [
    "shoeburyness-eagle-way-blake-branch-tribute-two-bailed"
   ],
   "match": "\\bBlake Branch\\b",
@@ -633,5 +648,18 @@
   "licenseUrl": "",
   "source": "https://www.youtube.com/watch?v=8llZ_mjYlkE",
   "addedBy": "photo desk 18 Nov 2026 (owner's rule: official bodies' own pictures, credited)"
+ },
+ {
+  "match": "\\bCleverly\\b",
+  "name": "Sir James Cleverly, MP for Braintree",
+  "label": "Official portrait",
+  "wide": "/img/people/james-cleverly-wide.jpg",
+  "og": "/img/people/james-cleverly-og.jpg",
+  "creator": "UK Parliament, CC BY 3.0",
+  "provider": "UK Parliament",
+  "license": "CC BY 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/3.0/",
+  "source": "https://members.parliament.uk/member/4366/portrait",
+  "addedBy": "owner, 19 Nov 2026 (his official Parliament portrait, supplied for all James Cleverly stories; cropped; credit UK Parliament, CC BY 3.0)"
  }
 ]
