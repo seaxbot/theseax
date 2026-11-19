@@ -1,6 +1,21 @@
 [
  {
   "ids": [
+   "colchester-university-of-essex-highly-cited-researchers-lawson-pekrun"
+  ],
+  "name": "Professors Reinhard Pekrun and Tracy Lawson, Highly Cited Researchers 2026",
+  "label": "Picture",
+  "wide": "/img/people/uoe-highly-cited-lawson-pekrun-wide.jpg",
+  "og": "/img/people/uoe-highly-cited-lawson-pekrun-og.jpg",
+  "creator": "University of Essex",
+  "provider": "University of Essex",
+  "license": "",
+  "licenseUrl": "",
+  "source": "https://www.essex.ac.uk/news/2026/11/18/two-scientists-named-among-the-most-influential-researchers-in-the-world",
+  "addedBy": "owner, 19 Nov 2026 (University of Essex picture for the Highly Cited Researchers story, which he rated a good story and wanted moved up; credit: University of Essex)"
+ },
+ {
+  "ids": [
    "s-luc-benkenstein-leaves-essex-durham"
   ],
   "name": "Luc Benkenstein",
