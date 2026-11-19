@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-<url><loc>https://theseax.com/</loc><lastmod>2026-11-18</lastmod><changefreq>hourly</changefreq><priority>1.0</priority></url>
+<url><loc>https://theseax.com/</loc><lastmod>2026-11-19</lastmod><changefreq>hourly</changefreq><priority>1.0</priority></url>
 <url><loc>https://theseax.com/about/</loc><changefreq>monthly</changefreq><priority>0.4</priority></url>
 <url><loc>https://theseax.com/contact/</loc><changefreq>monthly</changefreq><priority>0.4</priority></url>
 <url><loc>https://theseax.com/briefing/</loc><lastmod>2026-11-18</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
 <url><loc>https://theseax.com/story/the-seax-launches/</loc><lastmod>2026-11-09</lastmod><priority>0.5</priority></url>
+<url><loc>https://theseax.com/story/chelmsford-weather-1c-friday-night-heavy-rain-sunday-22-november/</loc><lastmod>2026-11-19</lastmod></url>
 <url><loc>https://theseax.com/story/southend-council-leadership-challenge-fails-two-votes/</loc><lastmod>2026-11-18</lastmod></url>
 <url><loc>https://theseax.com/story/s-burgess-hill-brentwood-2026-11-17/</loc><lastmod>2026-11-18</lastmod></url>
 <url><loc>https://theseax.com/story/ct-church-langley-man-suspended-sentence-incite-children/</loc><lastmod>2026-11-18</lastmod></url>
@@ -610,8 +611,8 @@
 <url><loc>https://theseax.com/briefing/2026-11-08/</loc><lastmod>2026-11-08</lastmod></url>
 <url><loc>https://theseax.com/briefing/2026-11-07/</loc><lastmod>2026-11-07</lastmod></url>
 <url><loc>https://theseax.com/briefing/2026-11-06/</loc><lastmod>2026-11-06</lastmod></url>
-<url><loc>https://theseax.com/news/</loc><lastmod>2026-11-18</lastmod><changefreq>hourly</changefreq><priority>0.8</priority></url>
-<url><loc>https://theseax.com/news/chelmsford/</loc><lastmod>2026-11-18</lastmod><changefreq>hourly</changefreq><priority>0.8</priority></url>
+<url><loc>https://theseax.com/news/</loc><lastmod>2026-11-19</lastmod><changefreq>hourly</changefreq><priority>0.8</priority></url>
+<url><loc>https://theseax.com/news/chelmsford/</loc><lastmod>2026-11-19</lastmod><changefreq>hourly</changefreq><priority>0.8</priority></url>
 <url><loc>https://theseax.com/news/colchester/</loc><lastmod>2026-11-18</lastmod><changefreq>hourly</changefreq><priority>0.8</priority></url>
 <url><loc>https://theseax.com/news/southend/</loc><lastmod>2026-11-18</lastmod><changefreq>hourly</changefreq><priority>0.8</priority></url>
 <url><loc>https://theseax.com/news/basildon-thurrock/</loc><lastmod>2026-11-18</lastmod><changefreq>hourly</changefreq><priority>0.8</priority></url>
@@ -626,7 +627,7 @@
 <url><loc>https://theseax.com/news/health/</loc><lastmod>2026-11-18</lastmod><changefreq>hourly</changefreq><priority>0.8</priority></url>
 <url><loc>https://theseax.com/news/business/</loc><lastmod>2026-11-18</lastmod><changefreq>hourly</changefreq><priority>0.8</priority></url>
 <url><loc>https://theseax.com/news/education/</loc><lastmod>2026-11-18</lastmod><changefreq>hourly</changefreq><priority>0.8</priority></url>
-<url><loc>https://theseax.com/news/weather/</loc><lastmod>2026-11-16</lastmod><changefreq>hourly</changefreq><priority>0.8</priority></url>
+<url><loc>https://theseax.com/news/weather/</loc><lastmod>2026-11-19</lastmod><changefreq>hourly</changefreq><priority>0.8</priority></url>
 <url><loc>https://theseax.com/news/sport/</loc><lastmod>2026-11-18</lastmod><changefreq>hourly</changefreq><priority>0.8</priority></url>
 <url><loc>https://theseax.com/news/basildon/</loc><lastmod>2026-11-18</lastmod><changefreq>hourly</changefreq><priority>0.8</priority></url>
 <url><loc>https://theseax.com/news/billericay/</loc><lastmod>2026-11-18</lastmod><changefreq>hourly</changefreq><priority>0.8</priority></url>
@@ -651,7 +652,7 @@
 <url><loc>https://theseax.com/news/great-dunmow/</loc><lastmod>2026-11-17</lastmod><changefreq>hourly</changefreq><priority>0.8</priority></url>
 <url><loc>https://theseax.com/news/stansted/</loc><lastmod>2026-11-18</lastmod><changefreq>hourly</changefreq><priority>0.8</priority></url>
 <url><loc>https://theseax.com/news/burnham-on-crouch/</loc><lastmod>2026-11-12</lastmod><changefreq>hourly</changefreq><priority>0.8</priority></url>
-<url><loc>https://theseax.com/council-watch/</loc><lastmod>2026-11-18</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://theseax.com/council-watch/</loc><lastmod>2026-11-19</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
 <url><loc>https://theseax.com/council-watch/thurrock/</loc><lastmod>2026-11-09</lastmod></url>
 <url><loc>https://theseax.com/council-watch/southend/</loc><lastmod>2026-11-10</lastmod></url>
 <url><loc>https://theseax.com/council-watch/epping/</loc><lastmod>2026-11-09</lastmod></url>
