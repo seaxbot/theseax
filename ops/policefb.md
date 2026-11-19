@@ -6,7 +6,7 @@ Essex Police's official Facebook page (https://www.facebook.com/EssexPoliceUK, 3
 
 The hourly newsroom cannot read facebook.com (cloud tools are refused there) and must never try. Only this desk reads the page, through Claude in Chrome on the owner's computer, signed in as The Seax Page. Never comment, react, share, follow, message or post anything on Facebook; read only. Never use Facebook's search or open other pages, profiles or groups.
 
-Never use em dashes. Every rule in ops/newsroom.md applies (editorial rules, 3b crime and court legal safety, 3d social media, the writing standard, the 3a vii HEADLINES rule, item format, district balance). Where this file differs, this file wins for Essex Police Facebook posts only.
+Never use em dashes. Every rule in ops/newsroom.md applies (editorial rules, 3b crime and court legal safety, 3d social media, the writing standard, the 3a vii HEADLINES rule, item format, district balance). Where this file differs, this file wins for Essex Police Facebook posts only. Every line of copy (headline, summary, body, points, captions) also follows ops/newsroom.md 3a viii (PLAIN ENGLISH): one idea per sentence, short sentences that make sense on one read, everyday words, active voice, no officialese.
 
 ## 1. Read the page
 - Open a NEW Chrome tab (tabs_context_mcp, then tabs_create_mcp) at https://www.facebook.com/EssexPoliceUK . If Chrome or the extension cannot be reached, or the page shows a login wall, end the run and report it in the summary (no retries beyond one).

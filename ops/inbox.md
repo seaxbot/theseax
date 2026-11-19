@@ -119,3 +119,5 @@ Write the section C log line, then end with a short summary, starting "ALERT:" i
 (complaints, removal requests, ad or partnership enquiries, tips worth chasing, a correction you could not settle,
 a subscription to confirm). Then: stories published (headlines), What's On listings added, the commit hash, emails
 recorded as handled, and anything left for the next run.
+
+- PLAIN ENGLISH (owner's rule, hard, 19 Nov 2026). Every line of copy (headline, summary, body, points, captions) also follows ops/newsroom.md 3a viii (PLAIN ENGLISH): one idea per sentence, short sentences that make sense on one read, everyday words, active voice, no officialese.
