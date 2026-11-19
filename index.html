@@ -725,7 +725,11 @@ h1,h2,h3,h4,.story h1,.lead h2,.card h3,.drow h4{letter-spacing:-.022em}
 .tb-wx .wi .windtag{position:absolute;right:-21px;top:50%;margin-top:-6px;width:17px;height:12px;display:block;background:#eef5ff;border-radius:4px;box-shadow:0 0 0 1px #9cc0e8;overflow:hidden}
 .tb-wx .wi .windtag svg{display:block;width:17px;height:12px;fill:none;stroke:#1f5fa8;stroke-width:2.4;stroke-linecap:round;animation:blow 1.4s ease-in-out infinite}
 @keyframes blow{0%,100%{transform:translateX(-1.5px);opacity:.75}50%{transform:translateX(1.5px);opacity:1}}
-@media (prefers-reduced-motion:reduce){.tb-wx .wi .coldtag,.tb-wx .wi .hottag,.tb-wx .wi .windtag svg{animation:none}}
+/* little misty MIST (or FOG) tag on top of the weather bar icon when the Met Office says mist or fog (owner's choice, 19 Nov 2026); sits above the icon so it never clashes with COLD or HOT underneath */
+.tb-wx .wi.misty{position:relative}
+.tb-wx .wi .misttag{position:absolute;left:50%;top:-6px;transform:translateX(-50%);font-size:7.5px;line-height:1;font-weight:900;letter-spacing:.08em;color:#5d6875;background:#f1f3f5;border:1px solid #c3cad2;border-radius:3px;padding:1px 3px;text-shadow:0 0 3px #fff,0 0 5px #c9d0d8;animation:drift 3.2s ease-in-out infinite}
+@keyframes drift{0%,100%{transform:translateX(calc(-50% - 1.5px));opacity:.6;filter:blur(.3px)}50%{transform:translateX(calc(-50% + 1.5px));opacity:1;filter:blur(0)}}
+@media (prefers-reduced-motion:reduce){.tb-wx .wi .coldtag,.tb-wx .wi .hottag,.tb-wx .wi .windtag svg,.tb-wx .wi .misttag{animation:none}}
 
 /* ---------- pinned story (data/pinned.json, shown only between its from and until times) ---------- */
 .pinned{margin:0 0 22px}
@@ -5091,24 +5095,26 @@ function renderToday(){
     const low = s => esc(String(s||"").toLowerCase());
     const rain = d => Number.isFinite(+d.rain) && +d.rain >= 20 ? `, ${+d.rain}% rain` : "";
     /* small icons for the light bar: the panel icons are drawn for a dark background, so darken their pale greys */
-    const ico = (kind, night, temp, windy) => kind ? `<span class="wi${isCold(temp) ? " cold" : isHot(temp) ? " hot" : ""}${windy ? " windy" : ""}" aria-hidden="true">${wxIcon(kind, night).replace(/#e6ebf2/gi,"#a7b2c1").replace(/#cfd7e2/gi,"#8d99aa").replace(/#b9c3d1/gi,"#7f8da0").replace(/#9aa5b5/gi,"#66748a").replace(/#e8e2c8/gi,"#c2a85e")}${windy ? WINDTAG : ""}${isCold(temp) ? '<span class="coldtag">COLD</span>' : isHot(temp) ? '<span class="hottag">HOT</span>' : ""}</span>${isCold(temp) ? '<span class="sr-only" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)"> cold</span>' : isHot(temp) ? '<span class="sr-only" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)"> hot</span>' : ""}${windy ? '<span class="sr-only" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)"> windy</span>' : ""}` : "";
+    const ico = (kind, night, temp, windy, desc) => kind ? `<span class="wi${isCold(temp) ? " cold" : isHot(temp) ? " hot" : ""}${windy ? " windy" : ""}${mistWord(desc) ? " misty" : ""}" aria-hidden="true">${wxIcon(kind, night).replace(/#e6ebf2/gi,"#a7b2c1").replace(/#cfd7e2/gi,"#8d99aa").replace(/#b9c3d1/gi,"#7f8da0").replace(/#9aa5b5/gi,"#66748a").replace(/#e8e2c8/gi,"#c2a85e")}${windy ? WINDTAG : ""}${mistWord(desc) ? `<span class="misttag">${mistWord(desc)}</span>` : ""}${isCold(temp) ? '<span class="coldtag">COLD</span>' : isHot(temp) ? '<span class="hottag">HOT</span>' : ""}</span>${isCold(temp) ? '<span class="sr-only" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)"> cold</span>' : isHot(temp) ? '<span class="sr-only" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)"> hot</span>' : ""}${windy ? '<span class="sr-only" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)"> windy</span>' : ""}${mistWord(desc) ? `<span class="sr-only" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)"> ${mistWord(desc).toLowerCase()}</span>` : ""}` : "";
     /* COLD badge only when the temperature shown next to the icon is under 2C (owner's choice, 12 Nov 2026) */
     function isCold(v){ return v !== undefined && v !== null && v !== "" && Number.isFinite(+v) && +v < 2; }
     /* red HOT badge with a sizzle when the temperature shown is over 24C (owner's choice, 12 Nov 2026) */
     function isHot(v){ return v !== undefined && v !== null && v !== "" && Number.isFinite(+v) && +v > 24; }
     /* little blowing-wind symbol when strong winds are forecast (owner's choice, 16 Nov 2026): average wind over 20mph,
        gusts of 40mph or more, or the newsroom's "windy" flag from the Met Office forecast */
+    /* MIST tag when the Met Office forecast says mist, FOG when it says fog (owner's choice, 19 Nov 2026) */
+    function mistWord(desc){ const s = String(desc || ""); return /\bfog/i.test(s) ? "FOG" : /\bmist/i.test(s) ? "MIST" : ""; }
     function isWindy(d){ return !!d && (d.windy === true || (Number.isFinite(+d.wind) && +d.wind > 20) || (Number.isFinite(+d.speed) && +d.speed > 20) || (Number.isFinite(+d.gust) && +d.gust >= 40)); }
     const nightNow = now > st.set || now < st.rise;
-    const parts = [`<span class="wk">Now</span>${ico(w.now.icon, nightNow, w.now.temp, isWindy(w.now))}<b>${esc(w.now.temp)}°C</b>&nbsp;${low(w.now.desc)}`];
-    if(today && ukHour < 16) parts.push(`<!--opt--><span class="wk">Later</span>${ico(today.icon, false, today.hi, isWindy(today))}high&nbsp;<b>${esc(today.hi)}°C</b>${rain(today)}`);
-    if(today && ukHour < 23) parts.push(`<!--opt--><span class="wk">Tonight</span>${ico(today.icon, true, today.lo, isWindy(today))}low&nbsp;<b>${esc(today.lo)}°C</b>`);
-    if(tmrw) parts.push(`<span class="wk">Tomorrow</span>${ico(tmrw.icon, false, tmrw.hi, isWindy(tmrw))}<b>${esc(tmrw.hi)}°C</b>${rain(tmrw)}`);
+    const parts = [`<span class="wk">Now</span>${ico(w.now.icon, nightNow, w.now.temp, isWindy(w.now), w.now.desc)}<b>${esc(w.now.temp)}°C</b>&nbsp;${low(w.now.desc)}`];
+    if(today && ukHour < 16) parts.push(`<!--opt--><span class="wk">Later</span>${ico(today.icon, false, today.hi, isWindy(today), today.desc)}high&nbsp;<b>${esc(today.hi)}°C</b>${rain(today)}`);
+    if(today && ukHour < 23) parts.push(`<!--opt--><span class="wk">Tonight</span>${ico(today.icon, true, today.lo, isWindy(today), today.desc)}low&nbsp;<b>${esc(today.lo)}°C</b>`);
+    if(tmrw) parts.push(`<span class="wk">Tomorrow</span>${ico(tmrw.icon, false, tmrw.hi, isWindy(tmrw), tmrw.desc)}<b>${esc(tmrw.hi)}°C</b>${rain(tmrw)}`);
     const dayName = d => esc(new Intl.DateTimeFormat("en-GB",{weekday:"short",timeZone:"Europe/London"}).format(new Date(d.date + "T12:00:00Z")));
     /* five days in all (owner's choice, Nov 2026): now, tomorrow and the three days after */
     for(let n = 2; n <= 4; n++){
       const dn = days.find(d => d.date === ukDate(new Date(now.getTime()+n*864e5)));
-      if(dn) parts.push(`<span class="wk">${dayName(dn)}</span>${ico(dn.icon, false, dn.hi, isWindy(dn))}<b>${esc(dn.hi)}°C</b>${rain(dn)}`);
+      if(dn) parts.push(`<span class="wk">${dayName(dn)}</span>${ico(dn.icon, false, dn.hi, isWindy(dn), dn.desc)}<b>${esc(dn.hi)}°C</b>${rain(dn)}`);
     }
     bits.push(`<a href="#weather" class="tb tb-wx"${w.live && w.updatedAt ? ` title="Now: live reading for ${esc(w.place||"Chelmsford")} at ${fmt(new Date(w.updatedAt),{hour:"2-digit",minute:"2-digit"})}"` : ""}>${parts.map(x => x.startsWith("<!--opt-->") ? `<span class="wp opt">${x.slice(10)}</span>` : `<span class="wp">${x}</span>`).join('<span class="wsep" aria-hidden="true"></span>')}</a>`);
   }
