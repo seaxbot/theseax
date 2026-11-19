@@ -1,6 +1,21 @@
 [
  {
   "ids": [
+   "s-luc-benkenstein-leaves-essex-durham"
+  ],
+  "name": "Luc Benkenstein",
+  "label": "Picture",
+  "wide": "/img/people/luc-benkenstein-wide.jpg",
+  "og": "/img/people/luc-benkenstein-og.jpg",
+  "creator": "Essex Cricket",
+  "provider": "Essex Cricket",
+  "license": "",
+  "licenseUrl": "",
+  "source": "",
+  "addedBy": "owner, 19 Nov 2026 (Essex Cricket picture of Luc Benkenstein from its farewell post, with the 'Benky, thank you' text cropped off; credit: Essex Cricket)"
+ },
+ {
+  "ids": [
    "essex-police-county-lines-week-17-arrests-zombie-knife"
   ],
   "name": "Essex Police officers at a door during the county lines week of action",
