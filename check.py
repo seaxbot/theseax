@@ -23,17 +23,17 @@ for h in hoods:
     time.sleep(0.1)
 out["hoods"] = len(polys)
 for month in ["2026-09", "2026-08", "2025-09"]:
-    ids, cats, raw, per = {}, {}, 0, {}
+    ids, cats, raw, per, perc = {}, {}, 0, {}, {}
     for hid, (name, poly, npts) in polys.items():
         cs = get("https://data.police.uk/api/crimes-street/all-crime", data=urllib.parse.urlencode({"poly": poly, "date": month}).encode())
-        raw += len(cs); per[name] = len(cs)
+        raw += len(cs); per[name] = len(cs); hc = perc.setdefault(name, {})
         for c in cs:
-            ids[c["id"]] = c["category"]
+            ids[c["id"]] = c["category"]; hc[c["category"]] = hc.get(c["category"], 0) + 1
         time.sleep(0.1)
     for cat in ids.values():
         cats[cat] = cats.get(cat, 0) + 1
     nl = get(f"https://data.police.uk/api/crimes-no-location?category=all-crime&force=essex&date={month}")
     out[month] = {"rawSum": raw, "unique": len(ids), "noLocation": len(nl),
-                  "cats": dict(sorted(cats.items(), key=lambda kv: -kv[1])), "perHood": per}
+                  "cats": dict(sorted(cats.items(), key=lambda kv: -kv[1])), "perHood": per, "perHoodCats": perc}
     print(month, raw, len(ids), len(nl), flush=True)
 json.dump(out, open("result.json", "w"), indent=1)
