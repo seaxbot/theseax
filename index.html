@@ -4828,7 +4828,15 @@ function pinNewsCard(){
 function fixturesNewsStory(){
   const now = new Date(), id = "s-essex-fixtures-" + ukDayKey(now);
   const ukHour = Number(new Intl.DateTimeFormat("en-GB",{timeZone:"Europe/London",hour:"2-digit",hourCycle:"h23"}).format(now));
-  return ukHour < 15 && typeof ED !== "undefined" && ED && ED.sport ? (ED.sport.stories||[]).find(x => x && x.id === id && x.headline) || null : null;
+  if(typeof ED === "undefined" || !ED || !ED.sport) return null;
+  const st = ED.sport.stories || [];
+  const fx = ukHour < 15 ? st.find(x => x && x.id === id && x.headline) : null;
+  if(fx) return fx;
+  /* match-day previews for Southend United and Colchester United (owner's rule, 20 Nov 2026): the preview takes the same
+     second card in News from the morning until kick-off; ids are "s-preview-...-<UK date>" with "kickoff" as ISO time */
+  const key = ukDayKey(now);
+  return st.filter(x => x && x.headline && /^s-preview-/.test(x.id||"") && (x.id||"").endsWith(key) && x.kickoff && now < new Date(x.kickoff))
+           .sort((a,b) => new Date(a.kickoff) - new Date(b.kickoff))[0] || null;
 }
 /* The News grid is a fixed block: one wide lead card plus four cards, i.e. two full rows of three.
    Extra cards (launch story, Saturday fixtures) take a slot from the ranked stories rather than adding one,
