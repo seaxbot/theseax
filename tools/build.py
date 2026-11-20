@@ -1367,16 +1367,22 @@ def body_with_charts(it, body):
     return "".join(out)
 
 
+OWN_ICON_DATA = '<svg class="obico" viewBox="0 0 16 16" width="15" height="15" aria-hidden="true"><rect class="ob1" x="1" y="5" width="3.4" height="10" rx=".7"/><rect class="ob2" x="6.3" y="1" width="3.4" height="14" rx=".7"/><rect class="ob3" x="11.6" y="7" width="3.4" height="8" rx=".7"/></svg>'
+OWN_ICON_INV = '<svg class="obico obinv" viewBox="0 0 16 16" width="15" height="15" aria-hidden="true"><g class="obglass"><circle cx="6.5" cy="6.5" r="4.4" fill="none" stroke="#fff" stroke-width="2"/><path d="M9.8 9.8 14.5 14.5" stroke="#fff" stroke-width="2.4" stroke-linecap="round"/></g></svg>'
+OWN_CSS = '.ownban b{position:relative;overflow:hidden;display:inline-flex;align-items:center;gap:7px}.ownban b::after{content:"";position:absolute;top:0;bottom:0;left:-60%;width:40%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.28),transparent);animation:obsheen 4.5s ease-in-out infinite}.obico{flex:none;overflow:visible}.obico rect{fill:#fff;transform-box:fill-box;transform-origin:50% 100%;animation:obgrow 2.4s ease-in-out infinite}.obico .ob2{fill:#ff4d5e;animation-delay:.25s}.obico .ob3{animation-delay:.5s}.obinv .obglass{transform-box:view-box;transform-origin:50% 50%;animation:obsearch 3s ease-in-out infinite}@keyframes obgrow{0%,100%{transform:scaleY(.35)}45%,75%{transform:scaleY(1)}}@keyframes obsheen{0%,55%{left:-60%}100%{left:130%}}@keyframes obsearch{0%,100%{transform:translate(-1px,0) rotate(-8deg)}25%{transform:translate(1.5px,-1px) rotate(4deg)}50%{transform:translate(1px,1.5px) rotate(8deg)}75%{transform:translate(-1.5px,.5px) rotate(-2deg)}}@media (prefers-reduced-motion:reduce){.obico rect,.obinv .obglass,.ownban b::after{animation:none}.obico rect{transform:none}}'
+
+
 def own_banner(it):
     """Banner for The Seax's own journalism (owner, 20 Nov 2026): "Seax Analysis" on our data stories, "Seax Investigates"
-    on other original reporting. Styled inline so it needs no change to the shared stylesheet."""
+    on other original reporting, with a small moving icon to mark it out (bars growing; a magnifying glass searching),
+    still for readers who ask for reduced motion. Styled inline so it needs no change to the shared stylesheet."""
     if not it.get("original"):
         return ""
     inv = it.get("original") != "data"
-    return ('<div style="display:inline-flex;margin:0 0 12px;font-family:inherit;line-height:1;border-radius:3px;overflow:hidden">'
+    return ('<style>' + OWN_CSS + '</style><div class="ownban" style="display:inline-flex;margin:0 0 12px;font-family:inherit;line-height:1;border-radius:3px;overflow:hidden">'
             '<b style="background:#111;color:#fff;font-size:12px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;'
-            'padding:7px 10px 7px 12px;border-left:5px solid #c8102e">' + ("Seax Investigates" if inv else "Seax Analysis") + '</b>'
-            '<span style="background:#f1efe9;color:#333;font-size:12px;font-weight:600;padding:7px 10px">'
+            'padding:7px 10px 7px 12px;border-left:5px solid #c8102e">' + (OWN_ICON_INV if inv else OWN_ICON_DATA) + ("Seax Investigates" if inv else "Seax Analysis") + '</b>'
+            '<span style="background:#f1efe9;color:#333;font-size:12px;font-weight:600;padding:7px 10px;display:inline-flex;align-items:center">'
             + ("Original reporting" if inv else "Original data journalism") + '</span></div>')
 
 
