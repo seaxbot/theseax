@@ -365,7 +365,8 @@
    ],
    "status": "on",
    "perWeek": 3,
-   "note": "Rule: no spam or repetitive posting."
+   "note": "Rule: no spam or repetitive posting.",
+   "approval": "admin approval"
   },
   {
    "id": "colchester.community",
@@ -1569,10 +1570,10 @@
     "holland-on-sea",
     "tendring"
    ],
-   "status": "hold",
-   "perWeek": 0,
+   "status": "on",
+   "perWeek": 3,
    "joined": "2026-11-20",
-   "note": "No post box for The Seax Page (checked 20 Nov 2026): the group may not allow Pages to post. Recheck later."
+   "note": "Membership approved 20 Nov 2026 (no post box until then)."
   },
   {
    "id": "canveyisland",
