@@ -77,7 +77,8 @@ def _overlap(a, b):
     return len(A & B) / max(1, min(len(A), len(B))) if A and B else 0.0
 
 def body_problems(it):
-    body = [p for p in it.get("body") or [] if isinstance(p, str) and p.strip()]
+    # subheadings ("## ...", owner's long-story format, 20 Nov 2026) are not paragraphs
+    body = [p for p in it.get("body") or [] if isinstance(p, str) and p.strip() and not p.startswith("## ")]
     probs = []
     if body and _overlap(it.get("summary") or "", body[0]) >= 0.5:
         probs.append("paragraph 1 repeats the summary: open it with what the summary leaves out")

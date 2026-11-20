@@ -786,7 +786,7 @@ def head(title, desc, canonical, og_image, og_type="website", extra=""):
 <link rel="alternate" type="application/rss+xml" title="The Seax: latest Essex news" href="/feed.xml">
 <link rel="preload" href="/assets/fonts/inter-latin-opsz-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/assets/fonts.css?v=1">
-<link rel="stylesheet" href="/assets/page.css?v=20261120a">
+<link rel="stylesheet" href="/assets/page.css?v=20261120b">
 {extra}{analytics()}
 </head>
 <body>
@@ -1361,7 +1361,8 @@ def body_with_charts(it, body):
                and str(w.get("src") or "").startswith("/data/")]
     out = []
     for i, p in enumerate(paras):
-        out.append(f"<p>{E(p)}</p>")
+        # a paragraph starting "## " is a subheading, for long stories (owner, 20 Nov 2026: Brentwood School review)
+        out.append(f'<h2 class="bsub" style="font-size:1.25em;line-height:1.25;margin:1.6em 0 .4em">{E(p[3:].strip())}</h2>' if p.startswith("## ") else f"<p>{E(p)}</p>")
         for c in charts:
             if int(c.get("after", len(paras) - 1)) == i or (i == len(paras) - 1 and int(c.get("after", 0)) >= len(paras)):
                 out.append(f'<figure class="stock chart"><img src="{E(c["src"])}?v=1" width="{E(c.get("w") or 1200)}" '
@@ -2440,7 +2441,7 @@ def main():
     ed = json.load(open(os.path.join(ROOT, "edition.json"), encoding="utf-8"))
     if a.preview_briefing:
         b = briefing(ed, NOW)
-        open(a.preview_briefing, "w", encoding="utf-8").write(briefing_page(b).replace('href="/assets/page.css?v=20261120a"', f'href="file://{ROOT}/assets/page.css"'))
+        open(a.preview_briefing, "w", encoding="utf-8").write(briefing_page(b).replace('href="/assets/page.css?v=20261120b"', f'href="file://{ROOT}/assets/page.css"'))
         print("preview written"); return
 
     # owner's source and copyright policy (tools/policy.py): no features, link-only outlets,
