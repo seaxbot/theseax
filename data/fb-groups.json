@@ -1547,6 +1547,203 @@
    "status": "off",
    "perWeek": 0,
    "note": "Junior football only; The Seax covers senior clubs."
+  },
+  {
+   "id": "231743330573420",
+   "key": "clacton-on-sea-community-hub-3420",
+   "name": "Clacton on sea community hub",
+   "members": 14800,
+   "postsMonth": null,
+   "privacy": "Public",
+   "kind": "town",
+   "match": [
+    "clacton",
+    "jaywick",
+    "holland-on-sea",
+    "tendring"
+   ],
+   "status": "on",
+   "perWeek": 3,
+   "joined": "2026-11-20"
+  },
+  {
+   "id": "canveyisland",
+   "key": "canvey-island-land",
+   "name": "Canvey Island",
+   "members": 42300,
+   "postsMonth": null,
+   "privacy": "Public",
+   "kind": "town",
+   "match": [
+    "canvey",
+    "benfleet",
+    "castle point"
+   ],
+   "status": "on",
+   "perWeek": 3,
+   "joined": "2026-11-20"
+  },
+  {
+   "id": "728128481422466",
+   "key": "rayleigh-life-2466",
+   "name": "Rayleigh Life",
+   "members": 13100,
+   "postsMonth": null,
+   "privacy": "Public",
+   "kind": "town",
+   "match": [
+    "rayleigh",
+    "hullbridge"
+   ],
+   "status": "on",
+   "perWeek": 3,
+   "joined": "2026-11-20",
+   "note": "Rules: no duplicate posts, no selling."
+  },
+  {
+   "id": "billericaylocal",
+   "key": "billericay-local-news-events-ocal",
+   "name": "Billericay local news events and free advertising",
+   "members": 12700,
+   "postsMonth": null,
+   "privacy": "Public",
+   "kind": "town",
+   "match": [
+    "billericay",
+    "great burstead",
+    "stock"
+   ],
+   "status": "on",
+   "perWeek": 3,
+   "joined": "2026-11-20"
+  },
+  {
+   "id": "720179751895522",
+   "key": "wickford-connected-5522",
+   "name": "Wickford Connected",
+   "members": 29000,
+   "postsMonth": null,
+   "privacy": "Public",
+   "kind": "town",
+   "match": [
+    "wickford",
+    "runwell",
+    "shotgate"
+   ],
+   "status": "caution",
+   "perWeek": 2,
+   "joined": "2026-11-20",
+   "note": "Rules: Wickford-first advertising policy, shared-content guidelines, no spam."
+  },
+  {
+   "id": "4784521311592919",
+   "key": "saffron-walden-community-unc-2919",
+   "name": "Saffron Walden Community (uncensored)",
+   "members": 21300,
+   "postsMonth": null,
+   "privacy": "Public",
+   "kind": "town",
+   "match": [
+    "saffron walden",
+    "uttlesford",
+    "stansted",
+    "thaxted",
+    "newport",
+    "henham"
+   ],
+   "status": "on",
+   "perWeek": 3,
+   "joined": "2026-11-20"
+  },
+  {
+   "id": "461226308085384",
+   "key": "great-dunmow-community-hub-5384",
+   "name": "Great Dunmow Community Hub",
+   "members": 22400,
+   "postsMonth": null,
+   "privacy": "Public",
+   "kind": "town",
+   "match": [
+    "dunmow",
+    "takeley",
+    "felsted",
+    "little canfield"
+   ],
+   "status": "caution",
+   "perWeek": 2,
+   "joined": "2026-11-20",
+   "note": "Rule: no promotions or spam."
+  },
+  {
+   "id": "9051485514921970",
+   "key": "braintree-community-hub-no-s-1970",
+   "name": "Braintree Community Hub (No Silencing People)",
+   "members": 29200,
+   "postsMonth": null,
+   "privacy": "Public",
+   "kind": "town",
+   "match": [
+    "braintree",
+    "bocking",
+    "great notley",
+    "black notley"
+   ],
+   "status": "on",
+   "perWeek": 3,
+   "joined": "2026-11-20"
+  },
+  {
+   "id": "walthamabbeycommunitycharityevents",
+   "key": "waltham-abbey-community-grou-ents",
+   "name": "Waltham Abbey Community Group",
+   "members": 28400,
+   "postsMonth": null,
+   "privacy": "Public",
+   "kind": "town",
+   "match": [
+    "waltham abbey",
+    "nazeing"
+   ],
+   "status": "caution",
+   "perWeek": 2,
+   "joined": "2026-11-20",
+   "note": "Rules: do not spam with irrelevant posts or links; rules on business posts."
+  },
+  {
+   "id": "371844019936074",
+   "key": "its-all-happening-in-burnham-6074",
+   "name": "It's All Happening In Burnham On Crouch, Essex",
+   "members": 4000,
+   "postsMonth": null,
+   "privacy": "Public",
+   "kind": "town",
+   "match": [
+    "burnham-on-crouch",
+    "burnham",
+    "southminster",
+    "dengie"
+   ],
+   "status": "on",
+   "perWeek": 2,
+   "joined": "2026-11-20"
+  },
+  {
+   "id": "192923094627747",
+   "key": "whats-on-halstead-7747",
+   "name": "Whats On Halstead",
+   "members": 7600,
+   "postsMonth": null,
+   "privacy": "Public",
+   "kind": "town",
+   "match": [
+    "halstead",
+    "earls colne",
+    "sible hedingham",
+    "gosfield"
+   ],
+   "status": "on",
+   "perWeek": 2,
+   "joined": "2026-11-20"
   }
  ],
  "ownersChecked": "2026-11-20: 'Group by' banner read on all ready and strict-rules groups."
