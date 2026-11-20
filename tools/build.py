@@ -900,7 +900,7 @@ def portrait_figure(p):
         return (f'<figure class="stock"><img src="{E(p["wide"])}?v=1" width="1200" height="655" alt="{E(p["name"])}" loading="eager"></figure>')
     if p.get("label"):  # short caption for labelled images such as a mock-up (owner's choice, 11 Nov 2026)
         return (f'<figure class="stock"><img src="{E(p["wide"])}?v=1" width="1200" height="655" alt="{E(lab)}: {E(p["name"])}" loading="eager">'
-                f'<figcaption><b>{E(lab)}</b>{(": " + E(p["creator"])) if p.get("creator") else ""}</figcaption></figure>')
+                f'<figcaption>{(E(p["caption"]) + ". ") if p.get("caption") else ""}<b>{E(lab)}</b>{(": " + E(p["creator"])) if p.get("creator") else ""}</figcaption></figure>')
     return (f'<figure class="stock"><img src="{E(p["wide"])}?v=1" width="1200" height="655" alt="{E(lab)} of {E(p["name"])}" loading="eager">'
             f'<figcaption><b>{E(p["name"])}</b>. {E(lab)}{E(p.get("note") or "")}. {"Image" if p.get("label") else "Photo"}: {E(p["creator"])}{src}{", " + lic if p.get("license") else ""}{"" if p.get("label") else ", set on a blurred background"}.</figcaption></figure>')
 
