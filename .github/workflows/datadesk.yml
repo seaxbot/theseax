@@ -1,0 +1,39 @@
+name: Data desk
+# Once a day, reads official open data for Essex (food hygiene ratings, public contract awards, Parliament petitions)
+# and saves a digest to the branch "data-desk" for the newsroom (ops/newsroom.md, DATA DESK). Owner's go-ahead,
+# 20 Nov 2026. Uses no newsroom tokens.
+on:
+  schedule:
+    - cron: "40 4 * * *"
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: [".github/workflows/datadesk.yml", "tools/datadesk/collect.py"]
+permissions:
+  contents: write
+concurrency: datadesk
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with: { fetch-depth: 1 }
+      - name: Get previous state
+        run: |
+          mkdir -p /tmp/dd
+          if git fetch -q --depth 1 origin data-desk; then git archive FETCH_HEAD | tar -x -C /tmp/dd; else echo "no previous state"; fi
+      - name: Collect
+        run: |
+          set -o pipefail
+          python3 -u tools/datadesk/collect.py /tmp/dd 2>&1 | tee /tmp/dd/run.log
+      - name: Save to the data branch
+        if: always()
+        run: |
+          mkdir -p /tmp/dd; [ -f /tmp/dd/run.log ] || echo "data desk did not run" > /tmp/dd/run.log
+          cd /tmp/dd && rm -rf .git
+          git init -q -b data-desk
+          git config user.name "The Seax data desk"
+          git config user.email "seaxbot@users.noreply.github.com"
+          git add -A && git commit -qm "Data desk $(date -u +%FT%TZ)"
+          git push -qf "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" data-desk
