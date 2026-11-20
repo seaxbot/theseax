@@ -4098,7 +4098,7 @@
 "group": "politics",
 "area": "chelmsford",
 "name": "Marie Goldman MP (Chelmsford)",
-"url": "https://www.mariegoldman.org.uk",
+"url": "https://libdems.org.uk/mps/chelmsford",
 "new": true
 },
 {
@@ -4126,7 +4126,7 @@
 "group": "politics",
 "area": "south",
 "name": "Jen Craft MP (Thurrock)",
-"url": "https://www.jencraft.org.uk",
+"url": "https://www.jencraft4thurrock.com",
 "new": true
 },
 {
@@ -5395,5 +5395,131 @@
 "url": "https://www.planit.org.uk/api/applics/rss?auth=Chelmsford&recent=7&pg_sz=20",
 "new": true,
 "kind": "feed"
+},
+{
+"group": "politics",
+"area": "south",
+"name": "Richard Holden MP (Basildon and Billericay) in Parliament",
+"url": "https://www.theyworkforyou.com/mp/25893/richard_holden/basildon_and_billericay",
+"new": true
+},
+{
+"group": "politics",
+"area": "braintree",
+"name": "James Cleverly MP (Braintree) in Parliament",
+"url": "https://www.theyworkforyou.com/mp/25376/james_cleverly/braintree",
+"new": true
+},
+{
+"group": "politics",
+"area": "brentwood",
+"name": "Alex Burghart MP (Brentwood and Ongar) in Parliament",
+"url": "https://www.theyworkforyou.com/mp/25659/alex_burghart/brentwood_and_ongar",
+"new": true
+},
+{
+"group": "politics",
+"area": "south",
+"name": "Rebecca Harris MP (Castle Point) in Parliament",
+"url": "https://www.theyworkforyou.com/mp/24731/rebecca_harris/castle_point",
+"new": true
+},
+{
+"group": "politics",
+"area": "chelmsford",
+"name": "Marie Goldman MP (Chelmsford) in Parliament",
+"url": "https://www.theyworkforyou.com/mp/26338/marie_goldman/chelmsford",
+"new": true
+},
+{
+"group": "politics",
+"area": "tendring",
+"name": "Nigel Farage MP (Clacton) in Parliament",
+"url": "https://www.theyworkforyou.com/mp/26352/nigel_farage/clacton",
+"new": true
+},
+{
+"group": "politics",
+"area": "colchester",
+"name": "Pam Cox MP (Colchester) in Parliament",
+"url": "https://www.theyworkforyou.com/mp/26324/pam_cox/colchester",
+"new": true
+},
+{
+"group": "politics",
+"area": "epping",
+"name": "Neil Hudson MP (Epping Forest) in Parliament",
+"url": "https://www.theyworkforyou.com/mp/25875/neil_hudson/epping_forest",
+"new": true
+},
+{
+"group": "politics",
+"area": "epping",
+"name": "Chris Vince MP (Harlow) in Parliament",
+"url": "https://www.theyworkforyou.com/mp/26350/christopher_vince/harlow",
+"new": true
+},
+{
+"group": "politics",
+"area": "tendring",
+"name": "Bernard Jenkin MP (Harwich and North Essex) in Parliament",
+"url": "https://www.theyworkforyou.com/mp/10312/bernard_jenkin/harwich_and_north_essex",
+"new": true
+},
+{
+"group": "politics",
+"area": "maldon",
+"name": "John Whittingdale MP (Maldon) in Parliament",
+"url": "https://www.theyworkforyou.com/mp/10632/john_whittingdale/maldon",
+"new": true
+},
+{
+"group": "politics",
+"area": "uttlesford",
+"name": "Kemi Badenoch MP (North West Essex) in Parliament",
+"url": "https://www.theyworkforyou.com/mp/25693/kemi_badenoch/north_west_essex",
+"new": true
+},
+{
+"group": "politics",
+"area": "south",
+"name": "Mark Francois MP (Rayleigh and Wickford) in Parliament",
+"url": "https://www.theyworkforyou.com/mp/10901/mark_francois/rayleigh_and_wickford",
+"new": true
+},
+{
+"group": "politics",
+"area": "south",
+"name": "James McMurdock MP (South Basildon and East Thurrock) in Parliament",
+"url": "https://www.theyworkforyou.com/mp/26636/james_mcmurdock/south_basildon_and_east_thurrock",
+"new": true
+},
+{
+"group": "politics",
+"area": "southend",
+"name": "Bayo Alaba MP (Southend East and Rochford) in Parliament",
+"url": "https://www.theyworkforyou.com/mp/26422/bayo_alaba/southend_east_and_rochford",
+"new": true
+},
+{
+"group": "politics",
+"area": "southend",
+"name": "David Burton-Sampson MP (Southend West and Leigh) in Parliament",
+"url": "https://www.theyworkforyou.com/mp/26442/david_burton-sampson/southend_west_and_leigh",
+"new": true
+},
+{
+"group": "politics",
+"area": "south",
+"name": "Jen Craft MP (Thurrock) in Parliament",
+"url": "https://www.theyworkforyou.com/mp/26341/jennifer_craft/thurrock",
+"new": true
+},
+{
+"group": "politics",
+"area": "braintree",
+"name": "Priti Patel MP (Witham) in Parliament",
+"url": "https://www.theyworkforyou.com/mp/24778/priti_patel/witham",
+"new": true
 }
 ]
