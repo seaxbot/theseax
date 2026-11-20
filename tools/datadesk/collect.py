@@ -519,8 +519,22 @@ def digest(data):
     return "\n".join(L)
 
 
+def gazette_probe():
+    """One-off look at The Gazette's data feeds (20 Nov 2026), to see whether corporate insolvency notices can be read."""
+    for u in ("https://www.thegazette.co.uk/insolvency/notice/data.json?text=essex&results-page-size=10",
+              "https://www.thegazette.co.uk/all-notices/notice/data.json?text=chelmsford&results-page-size=10&noticetypes=2443"):
+        try:
+            req = urllib.request.Request(u, headers={"User-Agent": UA, "Accept": "application/json"})
+            with urllib.request.urlopen(req, timeout=40) as r:
+                raw = r.read(200000).decode("utf-8", "replace")
+            print("GAZETTE OK", u, len(raw)); print(raw[:2500])
+        except Exception as e:
+            print("GAZETTE FAIL", u, type(e).__name__, str(e)[:200])
+
+
 def main():
     os.makedirs(OUT, exist_ok=True)
+    gazette_probe()
     state = load("state.json", {})
     data = load("data.json", {})
     for name, fn in (("food", food), ("contracts", contracts), ("petitions", petitions), ("prices", prices), ("crime", crime)):
