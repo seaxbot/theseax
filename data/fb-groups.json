@@ -142,7 +142,8 @@
    ],
    "status": "on",
    "perWeek": 4,
-   "owner": "Southend Gossip"
+   "owner": "Southend Gossip",
+   "approval": "admin approval"
   },
   {
    "id": "1625927480836147",
@@ -314,8 +315,9 @@
     "hawkwell",
     "great wakering"
    ],
-   "status": "on",
-   "perWeek": 3
+   "status": "hold",
+   "perWeek": 0,
+   "note": "No post box for The Seax Page (checked 20 Nov 2026): the group may not allow Pages to post. Recheck later."
   },
   {
    "id": "Crimewatch.SouthendAreasUK",
@@ -809,7 +811,8 @@
     "grays"
    ],
    "status": "on",
-   "perWeek": 3
+   "perWeek": 3,
+   "approval": "instant"
   },
   {
    "id": "1650013182202197",
@@ -1032,8 +1035,9 @@
     "hutton",
     "ingatestone"
    ],
-   "status": "on",
-   "perWeek": 2
+   "status": "hold",
+   "perWeek": 0,
+   "note": "No post box for The Seax Page (checked 20 Nov 2026): the group may not allow Pages to post. Recheck later."
   },
   {
    "id": "1704854934028458",
@@ -1272,8 +1276,9 @@
    "privacy": "Public",
    "kind": "county",
    "match": [],
-   "status": "on",
-   "perWeek": 3
+   "status": "hold",
+   "perWeek": 0,
+   "note": "No post box for The Seax Page (checked 20 Nov 2026): the group may not allow Pages to post. Recheck later."
   },
   {
    "id": "746567689237990",
@@ -1562,9 +1567,10 @@
     "holland-on-sea",
     "tendring"
    ],
-   "status": "on",
-   "perWeek": 3,
-   "joined": "2026-11-20"
+   "status": "hold",
+   "perWeek": 0,
+   "joined": "2026-11-20",
+   "note": "No post box for The Seax Page (checked 20 Nov 2026): the group may not allow Pages to post. Recheck later."
   },
   {
    "id": "canveyisland",
@@ -1746,5 +1752,6 @@
    "joined": "2026-11-20"
   }
  ],
- "ownersChecked": "2026-11-20: 'Group by' banner read on all ready and strict-rules groups."
+ "ownersChecked": "2026-11-20: 'Group by' banner read on all ready and strict-rules groups.",
+ "postBoxChecked": "2026-11-20: every ready and strict-rules group opened as The Seax; four had no post box."
 }
