@@ -2289,7 +2289,7 @@ def patch_index(latest_briefing, ed=None):
             oc = "".join(f'<a class="card" href="/story/{E(x["id"])}/"><div class="body"><div class="meta"><span class="place">{E(k)}</span> '
                          f'<span class="when">{E(x.get("councilName") or x.get("place") or "Essex")}</span></div>'
                          f'<h3>{E(x["headline"])}</h3><p>{E(trunc(str(x.get("summary") or ""), 170))}</p></div></a>' for k, x in own)
-            only = ('<section class="block" id="onlyseax"><div class="wrap"><div class="bh"><h2>Only on The Seax<small>Our own reporting from council papers and official data</small></h2>'
+            only = ('<style>@media(max-width:700px){#onlyseax .tools{display:none}}</style><section class="block" id="onlyseax"><div class="wrap"><div class="bh"><h2>Only on The Seax<small>Our own reporting from council papers and official data</small></h2>'
                     '<div class="tools"><a href="/council-watch/">All Council Watch →</a></div></div><div class="grid news-grid">' + oc + '</div></div></section>\n')
         block2 = "<!--seax-only-->" + only + "<!--/seax-only-->"
         if "<!--seax-only-->" in new:

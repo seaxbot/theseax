@@ -484,6 +484,17 @@ def digest(data):
             L.append("  Most new Essex signatures since the last run:")
             for x in movers[:5]:
                 L.append(f"  - +{x['essexSinceLastRun']:,} | {x['action'][:120]} | {x['url']}")
+    ins = data.get("insolvency") or {}
+    L.append("== COMPANY INSOLVENCY NOTICES MENTIONING ESSEX (The Gazette, last 8 days; companies only) ==")
+    if ins.get("error"):
+        L.append("  could not be read this run: " + ins["error"])
+    else:
+        ns = ins.get("notices") or []
+        L.append(f"  New notices: {len(ns)}. LEADS ONLY: read ops/newsroom.md 2k vi before using any of them.")
+        order = {"2410": 0, "2452": 1, "2450": 2, "2411": 3, "2443": 4, "2431": 5, "2432": 5}
+        for r in sorted(ns, key=lambda r: order.get(r["code"], 9))[:40]:
+            L.append(f"  - {r['type']} | {r['company']} | published {uk_date(r['published']) if r['published'] else '?'} | {r['text'][:200]} | {r['url']}")
+    L.append("")
     cr = data.get("crime") or {}
     L.append("== RECORDED CRIME BY NEIGHBOURHOOD (data.police.uk street-level crime, Essex Police) ==")
     if cr.get("error"):
@@ -519,25 +530,64 @@ def digest(data):
     return "\n".join(L)
 
 
-def gazette_probe():
-    """One-off look at The Gazette's data feeds (20 Nov 2026), to see whether corporate insolvency notices can be read."""
-    for u in ("https://www.thegazette.co.uk/insolvency/notice/data.json?text=essex&results-page-size=10",
-              "https://www.thegazette.co.uk/all-notices/notice/data.json?text=chelmsford&results-page-size=10&noticetypes=2443"):
-        try:
-            req = urllib.request.Request(u, headers={"User-Agent": UA, "Accept": "application/json"})
-            with urllib.request.urlopen(req, timeout=40) as r:
-                raw = r.read(200000).decode("utf-8", "replace")
-            print("GAZETTE OK", u, len(raw)); print(raw[:2500])
-        except Exception as e:
-            print("GAZETTE FAIL", u, type(e).__name__, str(e)[:200])
+GAZETTE_TYPES = {"2410": "Appointment of administrators", "2411": "Appointment of administrative receivers", "2421": "Appointment of receivers",
+                 "2431": "Resolution for voluntary winding-up", "2432": "Resolution for winding-up", "2441": "Meetings of creditors",
+                 "2443": "Appointment of liquidators", "2445": "Notices to creditors", "2450": "Petition to wind up a company",
+                 "2452": "Winding-up order"}
+
+
+def insolvency(state):
+    """Corporate insolvency notices mentioning Essex in The Gazette, the official public record (Open Government Licence),
+    for the last 8 days. Companies only: personal insolvency (codes 25xx) is never collected."""
+    since = (NOW - timedelta(days=8)).strftime("%Y-%m-%d")
+    seen = state.setdefault("gazetteSeen", {})
+    rows, pages, sample = [], 0, ""
+    url = "https://www.thegazette.co.uk/insolvency/notice/data.json?" + urllib.parse.urlencode(
+        {"text": "essex", "start-publish-date": since, "results-page-size": 100, "sort-by": "latest-date"})
+    while url and pages < 6:
+        d = get(url, timeout=60); pages += 1
+        ents = d.get("entry") or []
+        if isinstance(ents, dict):
+            ents = [ents]
+        if pages == 1:
+            print("insolvency: total", d.get("f:total"), "first entry keys", sorted((ents[0] if ents else {}).keys()))
+            sample = json.dumps(ents[0])[:1500] if ents else ""
+            print(sample)
+        for e in ents:
+            code = str(e.get("f:notice-code") or "")
+            if not code.startswith("24"):
+                continue
+            nid = str(e.get("id") or "").rsplit("/", 1)[-1]
+            pub = day(e.get("published") or e.get("updated"))
+            if not nid or nid in seen or (pub and pub < since):
+                continue
+            seen[nid] = NOW.strftime(ISO)
+            content = e.get("content")
+            if isinstance(content, dict):
+                content = content.get("$") or content.get("#text") or content.get("div") or ""
+            text = re.sub(r"\s+", " ", re.sub(r"<[^>]+>", " ", html_unescape(str(content or "")))).strip()
+            rows.append({"company": str(e.get("title") or "").strip(), "code": code, "type": GAZETTE_TYPES.get(code, "Corporate insolvency notice " + code),
+                         "published": pub, "text": text[:420], "url": "https://www.thegazette.co.uk/notice/" + nid})
+        nxt = [l.get("@href") for l in (d.get("link") or []) if isinstance(l, dict) and l.get("@rel") == "next"]
+        url = nxt[0] if nxt and ents else None
+        if url and "start-publish-date" not in url:
+            url += "&" + urllib.parse.urlencode({"start-publish-date": since, "results-page-size": 100, "sort-by": "latest-date"})
+        time.sleep(0.5)
+    cut = (NOW - timedelta(days=60)).strftime(ISO)
+    state["gazetteSeen"] = {k: v for k, v in seen.items() if v >= cut}
+    return {"notices": rows, "pages": pages}
+
+
+def html_unescape(t):
+    import html as _h
+    return _h.unescape(t)
 
 
 def main():
     os.makedirs(OUT, exist_ok=True)
-    gazette_probe()
     state = load("state.json", {})
     data = load("data.json", {})
-    for name, fn in (("food", food), ("contracts", contracts), ("petitions", petitions), ("prices", prices), ("crime", crime)):
+    for name, fn in (("food", food), ("contracts", contracts), ("petitions", petitions), ("prices", prices), ("crime", crime), ("insolvency", insolvency)):
         if ONLY and name not in ONLY:
             continue
         try:
