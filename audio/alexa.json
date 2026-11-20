@@ -1,10 +1,10 @@
 [
  {
-  "uid": "urn:uuid:f53ffd75-80ce-558d-90a4-95d989b4a6c3",
-  "updateDate": "2026-11-20T07:03:03Z",
-  "titleText": "The Seax morning update, Friday 20 November",
+  "uid": "urn:uuid:5decd4a7-48fb-5d18-a677-590b6eaa76db",
+  "updateDate": "2026-11-20T12:28:05Z",
+  "titleText": "The Seax afternoon update, Friday 20 November",
   "mainText": "",
-  "streamUrl": "https://theseax.com/audio/bulletin-2026-11-20-am.mp3",
+  "streamUrl": "https://theseax.com/audio/bulletin-2026-11-20-mid.mp3",
   "redirectionUrl": "https://theseax.com/"
  }
 ]
