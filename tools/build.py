@@ -1372,7 +1372,7 @@ def body_with_charts(it, body, opening=""):
             if int(c.get("after", len(paras) - 1)) == i or (i == len(paras) - 1 and int(c.get("after", 0)) >= len(paras)):
                 out.append(f'<figure class="stock chart"><img src="{E(c["src"])}?v=1" width="{E(c.get("w") or 1200)}" '
                            f'height="{E(c.get("h") or 700)}" alt="{E(c.get("alt") or "")}" loading="lazy">'
-                           f'<figcaption><b>Chart</b>. {E(c.get("caption") or "")}</figcaption></figure>')
+                           + (f'<figcaption>{E(c.get("caption") or "")}</figcaption></figure>' if c.get("kind") == "photo" else f'<figcaption><b>Chart</b>. {E(c.get("caption") or "")}</figcaption></figure>'))
         for w in widgets:
             if int(w.get("after", len(paras) - 1)) == i or (i == len(paras) - 1 and int(w.get("after", 0)) >= len(paras)):
                 out.append(f'<div class="seax-lookup" id="check" data-src="{E(w["src"])}"><noscript>Turn on JavaScript to look up your neighbourhood.</noscript></div>')
