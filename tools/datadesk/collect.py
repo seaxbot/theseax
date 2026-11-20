@@ -484,6 +484,19 @@ def digest(data):
             L.append("  Most new Essex signatures since the last run:")
             for x in movers[:5]:
                 L.append(f"  - +{x['essexSinceLastRun']:,} | {x['action'][:120]} | {x['url']}")
+    el = data.get("elections") or {}
+    L.append("== ELECTIONS AND BY-ELECTIONS IN ESSEX, NEXT 75 DAYS (Democracy Club) ==")
+    if el.get("error"):
+        L.append("  could not be read this run: " + el["error"])
+    else:
+        bs = el.get("ballots") or []
+        L.append(f"  Ballots found: {len(bs)}")
+        for r in bs[:40]:
+            flag = " ** NEW **" if r.get("new") else (" ** CANDIDATES NOW CONFIRMED **" if r.get("candidatesNew") else "")
+            cs = "; ".join(f"{c['name']} ({c['party']})" for c in r["candidates"]) if r["candidates"] else "candidates not yet published"
+            L.append(f"  - {uk_date(r['date'])} | {r['election']} | {r['seat']}{' (by-election)' if r['byElection'] else ''}{flag} | "
+                     f"{'official list' if r['candidatesLocked'] else 'list not yet final'}: {cs} | {r['url']}")
+    L.append("")
     ins = data.get("insolvency") or {}
     L.append("== COMPANY INSOLVENCY NOTICES MENTIONING ESSEX (The Gazette, last 8 days; companies only) ==")
     if ins.get("error"):
@@ -578,6 +591,49 @@ def insolvency(state):
     return {"notices": rows, "pages": pages}
 
 
+ELECTION_RX = re.compile(r"^(local|parl|mayor|pcc|europarl)\.(essex|greater-essex|basildon|braintree|brentwood|castle-point|chelmsford|colchester|epping-forest|harlow|"
+                         r"maldon|rochford|southend-on-sea|southend|tendring|thurrock|uttlesford|basildon-and-billericay|brentwood-and-ongar|clacton|"
+                         r"harwich-and-north-essex|north-west-essex|rayleigh-and-wickford|south-basildon-and-east-thurrock|southend-east-and-rochford|"
+                         r"southend-west-and-leigh|witham)\b")
+
+
+def elections(state):
+    """Elections and by-elections coming up in Essex, with candidates once published (Democracy Club, CC BY 4.0)."""
+    start = NOW.strftime("%Y-%m-%d"); end = (NOW + timedelta(days=75)).strftime("%Y-%m-%d")
+    url = "https://candidates.democracyclub.org.uk/api/next/ballots/?" + urllib.parse.urlencode(
+        {"election_date_range_after": start, "election_date_range_before": end, "page_size": 200})
+    rows, pages, total = [], 0, 0
+    while url and pages < 15:
+        d = get(url, timeout=60); pages += 1
+        res = d.get("results") or []
+        if pages == 1:
+            print("elections: count", d.get("count"), "first keys", sorted((res[0] if res else {}).keys()))
+        for b in res:
+            total += 1
+            bid = str(b.get("ballot_paper_id") or "")
+            if not ELECTION_RX.match(bid) or b.get("cancelled"):
+                continue
+            el = b.get("election") or {}
+            post = b.get("post") or {}
+            cands = []
+            for c in (b.get("candidacies") or []):
+                per = c.get("person") or {}; par = c.get("party") or {}
+                cands.append({"name": str(per.get("name") or "").strip(), "party": str(c.get("party_name") or par.get("name") or "").strip()})
+            rows.append({"id": bid, "date": day(el.get("election_date") or bid.rsplit(".", 1)[-1]), "election": str(el.get("name") or "").strip(),
+                         "seat": str(post.get("label") or "").strip(), "byElection": ".by." in bid, "seats": b.get("winner_count"),
+                         "candidatesLocked": bool(b.get("candidates_locked")), "candidates": sorted(cands, key=lambda c: c["name"].split()[-1] if c["name"] else ""),
+                         "url": "https://whocanivotefor.co.uk/elections/" + bid + "/"})
+        url = d.get("next")
+        time.sleep(0.4)
+    rows.sort(key=lambda r: r["date"])
+    known = state.setdefault("electionsSeen", {})
+    for r in rows:
+        r["new"] = r["id"] not in known
+        r["candidatesNew"] = r["candidatesLocked"] and not (known.get(r["id"]) or {}).get("locked")
+        known[r["id"]] = {"locked": r["candidatesLocked"], "at": NOW.strftime("%Y-%m-%d")}
+    return {"ballots": rows, "scanned": total}
+
+
 def html_unescape(t):
     import html as _h
     return _h.unescape(t)
@@ -587,7 +643,7 @@ def main():
     os.makedirs(OUT, exist_ok=True)
     state = load("state.json", {})
     data = load("data.json", {})
-    for name, fn in (("food", food), ("contracts", contracts), ("petitions", petitions), ("prices", prices), ("crime", crime), ("insolvency", insolvency)):
+    for name, fn in (("food", food), ("contracts", contracts), ("petitions", petitions), ("prices", prices), ("crime", crime), ("insolvency", insolvency), ("elections", elections)):
         if ONLY and name not in ONLY:
             continue
         try:
