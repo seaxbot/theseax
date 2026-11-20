@@ -1350,7 +1350,7 @@ def is_thin(it, sec):
     return not any(str(p).strip() for p in body) and len([p for p in points if str(p).strip()]) < 2
 
 
-def body_with_charts(it, body):
+def body_with_charts(it, body, opening=""):
     """Story paragraphs, with any charts the story carries placed after the paragraph named by "after" (0 = after the
     first). A chart is {"src", "alt", "caption", "after", "w", "h"}: our own data graphics (owner's request, 20 Nov 2026:
     "This story needs visualisations to make it clear")."""
@@ -1359,7 +1359,10 @@ def body_with_charts(it, body):
     # interactive look-ups (owner, 20 Nov 2026: "a selector [so] people could select any one of their 56 neighbourhoods")
     widgets = [w for w in (it.get("widgets") or []) if isinstance(w, dict) and w.get("type") == "crime-lookup"
                and str(w.get("src") or "").startswith("/data/")]
-    out = []
+    # No separate summary block under the headline (owner, 20 Nov 2026: "just get straight into it"): the summary is the
+    # story's opening line, in ordinary body text after the picture. Skipped if the first paragraph already says it.
+    op = " ".join(str(opening or "").split())
+    out = [f"<p>{E(op)}</p>"] if op and not (paras and " ".join(paras[0].split()).startswith(op)) else []
     for i, p in enumerate(paras):
         # a paragraph starting "## " is a subheading, for long stories (owner, 20 Nov 2026: Brentwood School review)
         out.append(f'<h2 class="bsub" style="font-size:1.25em;line-height:1.25;margin:1.6em 0 .4em">{E(p[3:].strip())}</h2>' if p.startswith("## ") else f"<p>{E(p)}</p>")
@@ -1561,11 +1564,10 @@ def story_page(sec, it, more):
   {org}{cw_badge(it) if sec == "councilwatch" else ""}
   <h1>{E(title)}</h1>
   <!-- Article Start -->
-  {f'<p class="standfirst">{E(summary)}</p>' if summary else ''}
   <div class="meta">{' <span class="dot">·</span> '.join(meta)}</div>
   {share_bar(url, title)}
   {fig}
-  {body_with_charts(it, body)}{fig_more}
+  {body_with_charts(it, body, opening=summary)}{fig_more}
   {('<h2>Key points</h2><ul class="points">' + ''.join(f'<li>{E(p)}</li>' for p in points) + '</ul>') if points else ''}
   <!-- Article End -->
   {story_extras(it, sec)[0]}{story_extras(it, sec)[1]}
