@@ -6053,7 +6053,7 @@
    "icon": "police",
    "original": "data",
    "headline": "Essex anti-social behaviour reports up 76% as robbery falls 19%",
-   "summary": "A Seax analysis of police.uk data shows anti-social behaviour reports rose in 50 of Essex Police's 56 neighbourhood areas, with Basildon recording the most.",
+   "summary": "The Seax analysis of police.uk data shows anti-social behaviour reports rose in 50 of Essex Police's 56 neighbourhood areas in September 2026 compared with September 2025, with Basildon recording the most.",
    "body": [
     "Police in Essex logged 2,042 reports of anti-social behaviour in September 2026, up from 1,162 in September 2025, according to the street-level records published on police.uk. Recorded crime rose more slowly, to 12,530 from 11,563. Both figures were lower than in August.",
     "Some of the rise in anti-social behaviour may come from changes in how police record it, rather than from more incidents. The figures do not show how much.",
@@ -6106,10 +6106,10 @@
     }
    ],
    "verified": {
-    "at": "2026-11-20T17:18:30Z",
-    "sig": "4a5fd4ed5808b1f1",
+    "at": "2026-11-20T17:35:44Z",
+    "sig": "3ee616fdaad7a01c",
     "checks": {
-     "figures": "Owner asked, 20 Nov 17:18, for the bullets to say the changes are year on year. Reworded only; figures recomputed in code from data/crime/essex-2026-09.json: crime 11,563 to 12,530 (+8.4%), violence and sexual offences 5,045 to 5,800 (+15.0%), shoplifting 1,037 to 1,265 (+22.0%), each September 2025 against September 2026. Earlier check: Owner's new headline, 20 Nov 16:15: 76% recomputed from 1,162 and 2,042 and 19% from robbery 132 and 107 in code; robbery checked as the largest percentage fall of any category; new point 'Recorded crime up 8% to 12,530' recomputed from 11,563 and 12,530 (13 categories sum exactly to both totals). Body unchanged since the 15:55 check against the charts' checked data.",
+     "figures": "Owner's reworded summary, 20 Nov 17:35: rechecked in code that ASB rose in 50 of 56 neighbourhoods September 2025 to September 2026 and that Basildon had the most in September 2026. Earlier check: Owner asked, 20 Nov 17:18, for the bullets to say the changes are year on year. Reworded only; figures recomputed in code from data/crime/essex-2026-09.json: crime 11,563 to 12,530 (+8.4%), violence and sexual offences 5,045 to 5,800 (+15.0%), shoplifting 1,037 to 1,265 (+22.0%), each September 2025 against September 2026. Earlier check: Owner's new headline, 20 Nov 16:15: 76% recomputed from 1,162 and 2,042 and 19% from robbery 132 and 107 in code; robbery checked as the largest percentage fall of any category; new point 'Recorded crime up 8% to 12,530' recomputed from 11,563 and 12,530 (13 categories sum exactly to both totals). Body unchanged since the 15:55 check against the charts' checked data.",
      "independent": "Category counts are the chart data the data desk checked against its raw police.uk recount; all 14 category changes were recomputed and ranked, confirming robbery's 19% fall is the biggest and anti-social behaviour's 76% rise the biggest; the 13 crime categories add up exactly to both county totals.",
      "readback": "Read as a reader: the headline gives both directions (the biggest rise and the biggest fall) and is exactly true; recorded crime's 8% rise is now in the points; headline, summary and points do not repeat (repeat checker clean); 63 characters; no em dashes."
     }
