@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Facebook groups queue · The Seax</title>
+<meta name="theme-color" content="#c8102e">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/icons/apple-touch-icon.png">
+<link rel="preload" href="/assets/fonts/inter-latin-opsz-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/fonts.css?v=1">
+<style>
+:root{--paper:#f6f1e6;--card:#fffdf8;--ink:#15161b;--ink2:#3d3f47;--muted:#6d675c;--hair:#e2dccf;--red:#c8102e;--navy:#0e1b30;--green:#1d7a46}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:Inter,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+.wrap{max-width:760px;margin:0 auto;padding:22px 16px 60px}
+header{display:flex;align-items:center;gap:12px;padding-bottom:16px;border-bottom:3px solid var(--navy)}
+header img{width:40px;height:47px}
+header h1{margin:0;font-family:"Schibsted Grotesk",Inter,sans-serif;font-weight:900;font-size:30px;letter-spacing:-.03em;line-height:1}
+header h1 span{color:var(--red)}
+header p{margin:3px 0 0;font-size:14px;color:var(--muted)}
+.how{margin:18px 0 6px;font-size:15px;line-height:1.5;color:var(--ink2)}
+.bar{display:flex;flex-wrap:wrap;gap:8px 16px;align-items:center;justify-content:space-between;margin:14px 0 10px;font-size:13.5px;color:var(--muted)}
+.bar b{color:var(--ink)}
+.linkbtn{background:none;border:0;padding:6px 0;font:inherit;color:var(--red);font-weight:700;cursor:pointer;text-decoration:underline;text-underline-offset:3px}
+ol{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:12px}
+li{background:var(--card);border:1px solid var(--hair);border-left:5px solid var(--red);border-radius:6px;padding:14px 16px;display:grid;grid-template-columns:auto 1fr;gap:4px 14px}
+li.done{border-left-color:var(--green);opacity:.62}
+.n{grid-row:span 3;font-family:"Schibsted Grotesk",sans-serif;font-weight:900;font-size:26px;color:var(--red);line-height:1;min-width:26px}
+li.done .n{color:var(--green)}
+.meta{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.meta em{font-style:normal;color:var(--red)}
+h2{margin:0;font-family:"Schibsted Grotesk",sans-serif;font-weight:800;font-size:19px;line-height:1.2;letter-spacing:-.01em}
+h2 a{color:inherit;text-decoration:none}
+h2 a:hover{text-decoration:underline}
+.acts{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:8px}
+.post{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 18px;border-radius:999px;background:var(--ink);color:#fff;font-weight:700;font-size:15px;text-decoration:none}
+.post:hover{background:#000}
+.post svg{width:16px;height:16px;fill:currentColor}
+li.done .post{background:var(--green)}
+.small{min-height:44px;padding:0 14px;border-radius:999px;border:1.5px solid var(--hair);background:#fff;color:var(--ink2);font:600 14px Inter,sans-serif;cursor:pointer}
+.small:hover{border-color:#cfc6b3}
+.empty,.err{padding:22px;background:var(--card);border:1px solid var(--hair);border-radius:6px;color:var(--ink2)}
+.foot{margin-top:22px;font-size:13px;color:var(--muted);line-height:1.5}
+
+.story{background:var(--card);border:1px solid var(--hair);border-left:5px solid var(--red);border-radius:6px;padding:14px 16px;margin:0 0 14px}
+.story h2{margin:4px 0 10px}
+.grp{border-top:1px solid var(--hair);padding:12px 0 4px}
+.grp.done{opacity:.55}
+.gname{font-weight:700;font-size:15px}
+.gmeta{font-size:12.5px;color:var(--muted);margin:2px 0 6px}
+.warn{display:inline-block;background:#fff4d6;border:1px solid #ecd9a0;border-radius:4px;padding:1px 6px;font-size:12px;color:#6b5200;margin-left:4px}
+textarea{width:100%;min-height:118px;border:1px solid var(--hair);border-radius:6px;padding:10px;font:14px/1.45 Inter,system-ui,sans-serif;color:var(--ink);background:#fff;resize:vertical}
+.fb{background:#1877f2}.fb:hover{background:#0f63d6}
+.grp.done .fb{background:var(--green)}
+details{margin-top:22px;font-size:13.5px;color:var(--ink2)}
+details summary{cursor:pointer;font-weight:700;color:var(--ink)}
+table{width:100%;border-collapse:collapse;margin-top:8px}
+td,th{text-align:left;padding:6px 8px 6px 0;border-bottom:1px solid var(--hair);vertical-align:top;font-size:13px}
+th{font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <img src="/favicon.svg" alt="">
+    <div><h1>The <span>Seax</span> in groups</h1><p>Today's local stories, matched to the Facebook groups that want them</p></div>
+  </header>
+
+  <p class="how">Each story is matched to a few groups in its own town. Tap <b>Copy and open group</b>: the wording is copied and the group opens. Paste, check you are posting as <b>The Seax</b>, add the picture if no preview appears, then press Post. Groups rest for a day after each post and each has a weekly limit, so the list stays small on purpose.</p>
+
+  <div class="bar" id="bar" hidden>
+    <span id="count"></span>
+    <span><button class="linkbtn" id="showDone" type="button">Show posted</button></span>
+  </div>
+  <div id="list" aria-live="polite"></div>
+
+  <details id="all"><summary>All groups and their rules</summary><div id="table"></div></details>
+  <p class="foot">Uses the live edition and the group list in data/fb-groups.json (checked <span id="checked"></span>). Ticks are saved on this device only. Court stories are never queued for groups. Links carry a tag for each group, so the analytics show which groups send readers.</p>
+</div>
+
+<script>
+const SITE = "https://theseax.com";
+const KEY = "seax-fbg-log";
+const HOUR = 36e5, DAY = 864e5;
+const PRI = { town: 0, crime: 0, politics: 1, events: 1, county: 2, sport: 3 };   /* local groups first */
+let log = load(), showDone = false, ed = null, cfg = null, plan = [];
+
+function load(){ try { const v = JSON.parse(localStorage.getItem(KEY) || "[]"); return Array.isArray(v) ? v : []; } catch(e){ return []; } }
+function save(){ try { localStorage.setItem(KEY, JSON.stringify(log)); } catch(e){} }
+function esc(s){ return String(s == null ? "" : s).replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c])); }
+function newsTime(s){ return Math.max(+new Date(s.time || 0) || 0, +new Date(s.updated || 0) || 0); }
+function ago(t){
+  const m = Math.round((Date.now() - t) / 60000);
+  if(!t || m < 0) return ""; if(m < 60) return m + " min ago";
+  const h = Math.round(m / 60); return h < 24 ? h + " hr ago" : Math.round(h / 24) + " days ago";
+}
+function k(n){ return n >= 1000 ? (n / 1000).toFixed(n >= 10000 ? 0 : 1) + "K" : String(n); }
+function list(v){ if(Array.isArray(v)) return v; try { return JSON.parse(String(v || "[]").replace(/'/g, '"')); } catch(e){ return []; } }
+function startOfDay(){ const d = new Date(); d.setHours(0, 0, 0, 0); return +d; }
+
+/* every group-safe story from the last day, ranked like the front page */
+function stories(){
+  const all = new Map();
+  const add = (s, sec) => { if(s && s.id && s.headline && s.tag !== "Court" && !all.has(s.id)) all.set(s.id, Object.assign({ sec }, s)); };
+  (ed.stories || []).forEach(s => add(s, "News"));
+  (ed.official || []).forEach(s => add(s, "Public services"));
+  (ed.councilwatch || []).forEach(s => add(s, "Council Watch"));
+  (ed.community || []).forEach(s => add(s, "Community"));
+  ((ed.sport || {}).stories || []).forEach(s => add(s, "Sport"));
+  const order = [ (ed.lead || {}).id, ...(ed.front || []) ].filter(Boolean);
+  const maxAge = (cfg.limits.storyMaxAgeHours || 24) * HOUR, now = Date.now();
+  return [...all.values()].filter(s => now - newsTime(s) < maxAge).map(s => {
+    const i = order.indexOf(s.id); s.pos = i < 0 ? 999 : i; return s;
+  }).sort((a, b) => a.pos - b.pos || (+b.weight || 0) - (+a.weight || 0) || newsTime(b) - newsTime(a));
+}
+
+function fits(g, s){
+  if(g.status !== "on" && g.status !== "caution") return false;
+  if(g.days && !g.days.includes(new Date().getDay())) return false;
+  if(g.onlyTags && !g.onlyTags.includes(s.tag)) return false;
+  if(g.avoidTags && g.avoidTags.includes(s.tag)) return false;
+  if(s.sec === "Sport" && g.kind !== "town") return false;
+  const text = (" " + (s.place || "") + " " + s.headline + " ").toLowerCase();
+  const local = (g.match || []).some(m => text.includes(m));
+  if(g.kind === "county") return s.pos < 3 && s.sec !== "Sport";
+  if(g.kind === "politics") return true;
+  if(g.kind === "events") return (g.match || []).length ? local : true;
+  return local;                                   /* town and crime groups need a place match */
+}
+function groupOpen(g){
+  const now = Date.now(), all = log.filter(e => e.g === g.key), mine = all.filter(e => e.s !== "skip");
+  if(all.some(e => e.s === "skip" && e.t >= startOfDay())) return false;
+  const last = Math.max(0, ...mine.map(e => e.t));
+  if(now - last < (cfg.limits.minHoursBetweenSameGroup || 20) * HOUR) return false;
+  return mine.filter(e => now - e.t < 7 * DAY).length < (g.perWeek || 1);
+}
+function lastPost(g){ return Math.max(0, ...log.filter(e => e.g === g.key && e.s !== "skip").map(e => e.t)); }
+
+/* a few groups per story, least recently used first, inside the daily limit */
+function build(){
+  const today = log.filter(e => e.t >= startOfDay() && e.s !== "skip");
+  let left = (cfg.limits.perDay || 12) - today.length;
+  const used = new Set(), out = [];
+  for(const s of stories()){
+    if(left <= 0) break;
+    const already = today.filter(e => e.s === s.id).length;
+    let room = Math.min((cfg.limits.perStory || 3) - already, left);
+    if(room <= 0) continue;
+    const gs = cfg.groups.filter(g => !used.has(g.key) && fits(g, s) && groupOpen(g) && !log.some(e => e.g === g.key && e.s === s.id))
+      .sort((a, b) => PRI[a.kind] - PRI[b.kind] || lastPost(a) - lastPost(b) || b.members - a.members)
+      .filter((g, i, arr) => g.kind !== "county" || arr.findIndex(x => x.kind === "county") === i)   /* one county-wide group per story */
+      .slice(0, room);
+    if(!gs.length) continue;
+    gs.forEach(g => used.add(g.key)); left -= gs.length;
+    out.push({ s, gs });
+  }
+  return out;
+}
+
+function link(s, g){ return `${SITE}/story/${s.id}/?ref=fbg-${g.key}`; }
+function caption(s, g, i){
+  const sum = String(s.summary || "").trim(), pts = list(s.points).slice(0, 2).map(p => String(p).replace(/\.$/, ""));
+  const place = String(s.place || "").split(",")[0].trim();
+  const v = [
+    () => `${s.headline}\n\n${sum}\n\n${link(s, g)}`,
+    () => `${place && place !== "Essex" ? place + ": " : ""}${sum}\n\nFull story from The Seax: ${link(s, g)}`,
+    () => `${sum}${pts.length ? "\n\n" + pts.map(p => "• " + p).join("\n") : ""}\n\nMore: ${link(s, g)}`
+  ];
+  return v[i % v.length]();
+}
+
+function render(){
+  plan = build();
+  const el = document.getElementById("list");
+  const today = log.filter(e => e.t >= startOfDay() && e.s !== "skip");
+  const todo = plan.reduce((n, p) => n + p.gs.length, 0);
+  document.getElementById("bar").hidden = false;
+  document.getElementById("count").innerHTML = `<b>${todo}</b> to post · <b>${today.length}</b> of ${cfg.limits.perDay} posted today`;
+  document.getElementById("showDone").textContent = showDone ? "Hide posted" : "Show posted";
+  let html = "";
+  if(showDone && today.length){
+    html += `<div class="story" style="border-left-color:var(--green)"><span class="meta">Posted today</span>` + today.map(e => {
+      const g = cfg.groups.find(x => x.key === e.g) || { name: e.g };
+      return `<div class="grp done" data-g="${esc(e.g)}" data-s="${esc(e.s)}"><div class="gname">${esc(g.name)}</div><div class="gmeta">${esc(e.h || e.s)} · ${ago(e.t)}</div><div class="acts"><button class="small" type="button" data-act="undo">Mark not posted</button></div></div>`;
+    }).join("") + `</div>`;
+  }
+  if(!plan.length) html += `<div class="empty" style="border-left:5px solid var(--green)">Nothing to post right now. Either today's limit is reached or no fresh story matches a group that is ready for another post.</div>`;
+  html += plan.map(({ s, gs }) => `<div class="story">
+      <span class="meta"><em>${esc(s.sec)}</em> · ${esc(s.place || "Essex")}${newsTime(s) ? " · " + ago(newsTime(s)) : ""}</span>
+      <h2><a href="${SITE}/story/${esc(s.id)}/" target="_blank" rel="noopener">${esc(s.headline)}</a></h2>
+      ${gs.map((g, i) => `<div class="grp" data-g="${esc(g.key)}" data-s="${esc(s.id)}">
+        <div class="gname">${esc(g.name)}${g.status === "caution" ? `<span class="warn">Strict rules</span>` : ""}</div>
+        <div class="gmeta">${k(g.members)} members · ${esc(g.privacy)}${g.note ? " · " + esc(g.note) : ""}</div>
+        <textarea aria-label="Post wording for ${esc(g.name)}">${esc(caption(s, g, i))}</textarea>
+        <div class="acts">
+          <a class="post fb" href="https://www.facebook.com/groups/${esc(g.id)}" target="_blank" rel="noopener" data-act="post">Copy and open group</a>
+          <button class="small" type="button" data-act="skip">Skip this group today</button>
+        </div>
+      </div>`).join("")}
+    </div>`).join("");
+  el.innerHTML = html;
+}
+
+function table(){
+  const rank = { on: 0, caution: 1, hold: 2, off: 3 }, label = { on: "Ready", caution: "Strict rules", hold: "On hold", off: "Not used" };
+  const rows = cfg.groups.slice().sort((a, b) => rank[a.status] - rank[b.status] || b.members - a.members);
+  document.getElementById("table").innerHTML = `<table><tr><th>Group</th><th class="num">Members</th><th>Status</th><th>Limit</th><th>Notes</th></tr>` + rows.map(g =>
+    `<tr><td><a href="https://www.facebook.com/groups/${esc(g.id)}" target="_blank" rel="noopener">${esc(g.name)}</a></td><td class="num">${k(g.members)}</td><td>${label[g.status]}</td><td>${g.perWeek ? g.perWeek + " a week" : ""}</td><td>${esc(g.note || "")}</td></tr>`).join("") + `</table>`;
+  document.getElementById("checked").textContent = cfg.checked;
+}
+
+document.getElementById("list").addEventListener("click", e => {
+  const el = e.target.closest("[data-act]"); if(!el) return;
+  const row = el.closest(".grp"), g = row.dataset.g, s = row.dataset.s;
+  if(el.dataset.act === "post"){
+    const ta = row.querySelector("textarea"), text = ta.value;
+    try { navigator.clipboard.writeText(text).catch(() => { ta.select(); document.execCommand("copy"); }); } catch(_) { ta.select(); try { document.execCommand("copy"); } catch(__){} }
+    const st = plan.map(p => p.s).find(x => x.id === s);
+    log.push({ g, s, t: Date.now(), h: st ? st.headline : "" }); save(); setTimeout(render, 600);
+  }
+  if(el.dataset.act === "skip"){ log.push({ g, s: "skip", t: Date.now(), h: "Skipped" }); save(); render(); }
+  if(el.dataset.act === "undo"){ const i = log.findIndex(x => x.g === g && x.s === s && x.t >= startOfDay()); if(i >= 0) log.splice(i, 1); save(); render(); }
+});
+document.getElementById("showDone").addEventListener("click", () => { showDone = !showDone; render(); });
+
+Promise.all([
+  fetch("/edition.json", { cache: "no-store" }).then(r => r.json()),
+  fetch("/data/fb-groups.json", { cache: "no-store" }).then(r => r.json())
+]).then(([e, c]) => {
+  ed = e; cfg = c;
+  const old = Date.now() - 14 * DAY; log = log.filter(x => x.t > old); save();
+  table(); render();
+}).catch(() => {
+  document.getElementById("list").innerHTML = `<div class="err">Could not load today's stories. Check your connection and refresh.</div>`;
+});
+</script>
+</body>
+</html>

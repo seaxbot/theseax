@@ -1,0 +1,1538 @@
+{
+ "checked": "2026-11-20",
+ "postAs": "The Seax (Facebook Page)",
+ "limits": {
+  "perDay": 12,
+  "perStory": 3,
+  "perGroupPerDay": 1,
+  "minHoursBetweenSameGroup": 20,
+  "storyMaxAgeHours": 24
+ },
+ "notChecked": "Whether each group holds posts for admin approval.",
+ "groups": [
+  {
+   "id": "714311515362043",
+   "key": "chelmsford-community-uk-2043",
+   "name": "Chelmsford Community (UK)",
+   "members": 112500,
+   "postsMonth": 2996,
+   "privacy": "Public",
+   "kind": "town",
+   "match": [
+    "chelmsford",
+    "great baddow",
+    "springfield",
+    "writtle",
+    "broomfield",
+    "galleywood",
+    "moulsham"
+   ],
+   "status": "caution",
+   "perWeek": 2,
+   "note": "Rules: no political posts, business promotion Mondays only, no spam. Post Mondays.",
+   "avoidTags": [
+    "Politics",
+    "Council",
+    "Council Watch"
+   ],
+   "days": [
+    1
+   ]
+  },
+  {
+   "id": "675762093643332",
+   "key": "chelmsford-community-uk-3332",
+   "name": "Chelmsford Community (UK)",
+   "members": 21100,
+   "postsMonth": 4005,
+   "privacy": "Public",
+   "kind": "town",
+   "match": [
+    "chelmsford",
+    "great baddow",
+    "springfield",
+    "writtle",
+    "broomfield",
+    "galleywood"
+   ],
+   "status": "on",
+   "perWeek": 4,
+   "note": "Rule: no AI posters. Real photo only."
+  },
+  {
+   "id": "1779517199310030",
+   "key": "chelmsford-community-group-e-0030",
+   "name": "Chelmsford Community Group | Essex Central UK",
+   "members": 5900,
+   "postsMonth": 1647,
+   "privacy": "Public",
+   "kind": "town",
+   "match": [
+    "chelmsford",
+    "great baddow",
+    "writtle",
+    "broomfield"
+   ],
+   "status": "on",
+   "perWeek": 3
+  },
+  {
+   "id": "4505572166393645",
+   "key": "chelmsford-community-uk-3645",
+   "name": "Chelmsford Community (UK)",
+   "members": 7000,
+   "postsMonth": 831,
+   "privacy": "Public",
+   "kind": "town",
+   "match": [
+    "chelmsford",
+    "great baddow",
+    "writtle"
+   ],
+   "status": "on",
+   "perWeek": 3
+  },
+  {
+   "id": "1641478769808655",
+   "key": "chelmsford-community-group-e-8655",
+   "name": "Chelmsford Community Group Essex",
+   "members": 6300,
+   "postsMonth": 707,
+   "privacy": "Public",
+   "kind": "town",
+   "match": [
+    "chelmsford",
+    "great baddow",
+    "sandon"
+   ],
+   "status": "on",
+   "perWeek": 3
+  },
+  {
+   "id": "859993927516358",
+   "key": "hatfield-peverel-essex-heart-6358",
+   "name": "Hatfield Peverel, Essex Heart of the Village Community Page",
+   "members": 13800,
+   "postsMonth": 601,
+   "privacy": "Public",
+   "kind": "town",
+   "match": [
+    "hatfield peverel",
+    "boreham"
+   ],
+   "status": "caution",
+   "perWeek": 1,
+   "note": "Rule: once weekly posting."
+  },
+  {
+   "id": "247965605609185",
+   "key": "the-original-city-of-southen-9185",
+   "name": "The original City of Southend On Sea Group (UK)",
+   "members": 47300,
+   "postsMonth": 1867,
+   "privacy": "Public",
+   "kind": "town",
+   "match": [
+    "southend",
+    "leigh-on-sea",
+    "westcliff",
+    "shoebury",
+    "thorpe bay"
+   ],
+   "status": "on",
+   "perWeek": 4
+  },
+  {
+   "id": "1625927480836147",
+   "key": "we-love-southend-6147",
+   "name": "WE LOVE SOUTHEND!",
+   "members": 79200,
+   "postsMonth": 547,
+   "privacy": "Public",
+   "kind": "town",
+   "match": [
+    "southend",
+    "leigh-on-sea",
+    "westcliff",
+    "shoebury"
+   ],
+   "status": "on",
+   "perWeek": 3
+  },
+  {
+   "id": "210071846236048",
+   "key": "southend-city-discussion-gro-6048",
+   "name": "Southend City Discussion Group",
+   "members": 35600,
+   "postsMonth": 126,
+   "privacy": "Public",
+   "kind": "town",
+   "match": [
+    "southend",
+    "leigh-on-sea",
+    "westcliff"
+   ],
+   "status": "on",
+   "perWeek": 2
+  },
+  {
+   "id": "welovesouthendonsea",
+   "key": "we-love-southendonsea-nsea",
+   "name": "We Love Southend-on-Sea",
+   "members": 11700,
+   "postsMonth": 3008,
+   "privacy": "Public",
+   "kind": "town",
+   "match": [
+    "southend",
+    "leigh-on-sea",
+    "westcliff",
+    "shoebury"
+   ],
+   "status": "on",
+   "perWeek": 4,
+   "note": "Rule: one post per day per business."
+  },
+  {
+   "id": "1428282664973912",
+   "key": "your-southend-3912",
+   "name": "Your Southend",
+   "members": 10500,
+   "postsMonth": 2292,
+   "privacy": "Public",
+   "kind": "town",
+   "match": [
+    "southend",
+    "leigh-on-sea",
+    "westcliff",
+    "shoebury"
+   ],
+   "status": "on",
+   "perWeek": 4
+  },
+  {
+   "id": "361117071553387",
+   "key": "our-southend-3387",
+   "name": "Our Southend",
+   "members": 10000,
+   "postsMonth": 1348,
+   "privacy": "Private",
+   "kind": "town",
+   "match": [
+    "southend",
+    "leigh-on-sea",
+    "westcliff",
+    "shoebury"
+   ],
+   "status": "on",
+   "perWeek": 3
+  },
+  {
+   "id": "406770896143550",
+   "key": "southchurch-community-group-3550",
+   "name": "Southchurch Community Group",
+   "members": 9700,
+   "postsMonth": 677,
+   "privacy": "Public",
+   "kind": "town",
+   "match": [
+    "southchurch",
+    "thorpe bay",
+    "southend"
+   ],
+   "status": "caution",
+   "perWeek": 1,
+   "note": "Rule: no promotions or spam."
+  },
+  {
+   "id": "1434816056759026",
+   "key": "southend-community-9026",
+   "name": "Southend Community",
+   "members": 1900,
+   "postsMonth": 117,
+   "privacy": "Public",
+   "kind": "town",
+   "match": [
+    "southend"
+   ],
+   "status": "on",
+   "perWeek": 2
+  },
+  {
+   "id": "67337231118",
+   "key": "eastwood-and-st-laurence-ess-1118",
+   "name": "Eastwood & St Laurence - Essex",
+   "members": 16700,
+   "postsMonth": 277,
+   "privacy": "Public",
+   "kind": "town",
+   "match": [
+    "eastwood",
+    "southend airport",
+    "leigh-on-sea",
+    "rayleigh"
+   ],
+   "status": "caution",
+   "perWeek": 1,
+   "note": "Rule: no promotions or spam."
+  },
+  {
+   "id": "1014342272384539",
+   "key": "essex-4539",
+   "name": "Essex",
+   "members": 14100,
+   "postsMonth": 1022,
+   "privacy": "Public",
+   "kind": "town",
+   "match": [
+    "southend",
+    "leigh-on-sea",
+    "westcliff"
+   ],
+   "status": "caution",
+   "perWeek": 1,
+   "note": "Despite the name, rules say Southend area only; no promotions or spam."
+  },
+  {
+   "id": "Rochfordcommunity",
+   "key": "rochford-community-nity",
+   "name": "Rochford Community",
+   "members": 12600,
+   "postsMonth": 186,
+   "privacy": "Public",
+   "kind": "town",
+   "match": [
+    "rochford",
+    "rayleigh",
+    "hockley",
+    "hullbridge",
+    "hawkwell",
+    "great wakering"
+   ],
+   "status": "on",
+   "perWeek": 3
+  },
+  {
+   "id": "Crimewatch.SouthendAreasUK",
+   "key": "crimewatch-southend-and-loca-asuk",
+   "name": "Crimewatch Southend & Local Areas, Essex UK",
+   "members": 20200,
+   "postsMonth": 42,
+   "privacy": "Public",
+   "kind": "crime",
+   "match": [
+    "southend",
+    "leigh-on-sea",
+    "westcliff",
+    "shoebury",
+    "rochford",
+    "rayleigh",
+    "canvey",
+    "benfleet",
+    "hadleigh",
+    "thundersley"
+   ],
+   "status": "on",
+   "perWeek": 3,
+   "note": "Police appeals, missing people and fire only.",
+   "onlyTags": [
+    "Police",
+    "Appeal",
+    "Crime",
+    "Fire"
+   ]
+  },
+  {
+   "id": "133106515620754",
+   "key": "colchester-community-0754",
+   "name": "Colchester Community",
+   "members": 31900,
+   "postsMonth": 1446,
+   "privacy": "Public",
+   "kind": "town",
+   "match": [
+    "colchester",
+    "wivenhoe",
+    "stanway",
+    "mersea"
+   ],
+   "status": "on",
+   "perWeek": 3,
+   "note": "Rule: no spam or repetitive posting."
+  },
+  {
+   "id": "colchester.community",
+   "key": "colchester-community-group-u-nity",
+   "name": "Colchester Community Group (UK)",
+   "members": 131300,
+   "postsMonth": 1505,
+   "privacy": "Public",
+   "kind": "town",
+   "match": [
+    "colchester"
+   ],
+   "status": "off",
+   "perWeek": 0,
+   "note": "Rule: no newspaper links or screenshots. Do not post."
+  },
+  {
+   "id": "436450800973794",
+   "key": "colchester-community-page-3794",
+   "name": "Colchester community page",
+   "members": 9700,
+   "postsMonth": 245,
+   "privacy": "Public",
+   "kind": "town",
+   "match": [
+    "colchester",
+    "wivenhoe",
+    "stanway"
+   ],
+   "status": "on",
+   "perWeek": 3
+  },
+  {
+   "id": "1274665553071832",
+   "key": "colchester-community-group-1832",
+   "name": "Colchester Community group",
+   "members": 924,
+   "postsMonth": 417,
+   "privacy": "Public",
+   "kind": "town",
+   "match": [
+    "colchester"
+   ],
+   "status": "on",
+   "perWeek": 2
+  },
+  {
+   "id": "1676609492555409",
+   "key": "colchester-essex-5409",
+   "name": "Colchester (Essex)",
+   "members": 1300,
+   "postsMonth": 452,
+   "privacy": "Public",
+   "kind": "town",
+   "match": [
+    "colchester"
+   ],
+   "status": "on",
+   "perWeek": 2
+  },
+  {
+   "id": "colchesteressex",
+   "key": "colchester-ssex",
+   "name": "COLCHESTER",
+   "members": 1900,
+   "postsMonth": 301,
+   "privacy": "Private",
+   "kind": "town",
+   "match": [
+    "colchester"
+   ],
+   "status": "hold",
+   "perWeek": 0,
+   "note": "Join request still pending."
+  },
+  {
+   "id": "212413265934187",
+   "key": "colchester-whats-on-4187",
+   "name": "Colchester What's On",
+   "members": 7400,
+   "postsMonth": 1248,
+   "privacy": "Public",
+   "kind": "events",
+   "match": [
+    "colchester",
+    "wivenhoe",
+    "mersea",
+    "stanway"
+   ],
+   "status": "on",
+   "perWeek": 3,
+   "onlyTags": [
+    "What's On"
+   ]
+  },
+  {
+   "id": "656074891127949",
+   "key": "all-about-kids-colchester-an-7949",
+   "name": "All about kids - Colchester (and the surrounding areas)",
+   "members": 25900,
+   "postsMonth": 797,
+   "privacy": "Public",
+   "kind": "events",
+   "match": [
+    "colchester",
+    "wivenhoe",
+    "mersea",
+    "stanway",
+    "tiptree"
+   ],
+   "status": "caution",
+   "perWeek": 1,
+   "note": "Rules: limited weekly shares, family friendly, no spam. Family events only.",
+   "onlyTags": [
+    "What's On"
+   ]
+  },
+  {
+   "id": "231332603693076",
+   "key": "events-in-the-tendring-colch-3076",
+   "name": "Events In The Tendring / Colchester Area",
+   "members": 7600,
+   "postsMonth": 1227,
+   "privacy": "Public",
+   "kind": "events",
+   "match": [
+    "colchester",
+    "clacton",
+    "tendring",
+    "harwich",
+    "frinton",
+    "walton",
+    "brightlingsea",
+    "jaywick",
+    "manningtree",
+    "wivenhoe"
+   ],
+   "status": "on",
+   "perWeek": 3,
+   "note": "Rules: event details required, no political content.",
+   "onlyTags": [
+    "What's On"
+   ]
+  },
+  {
+   "id": "376916136892213",
+   "key": "layer-de-la-haye-voice-and-n-2213",
+   "name": "Layer De La Haye Voice & Noticeboard Essex",
+   "members": 3100,
+   "postsMonth": 260,
+   "privacy": "Public",
+   "kind": "town",
+   "match": [
+    "layer de la haye",
+    "layer",
+    "abberton",
+    "birch"
+   ],
+   "status": "on",
+   "perWeek": 2
+  },
+  {
+   "id": "401840213879172",
+   "key": "boxted-great-horkesley-littl-9172",
+   "name": "Boxted Great Horkesley Little Horkesley Boxted Cross Langham Essex",
+   "members": 4900,
+   "postsMonth": 144,
+   "privacy": "Private",
+   "kind": "town",
+   "match": [
+    "boxted",
+    "horkesley",
+    "langham"
+   ],
+   "status": "caution",
+   "perWeek": 1,
+   "note": "Rule: posts about these villages only."
+  },
+  {
+   "id": "1594374547484999",
+   "key": "tiptree-essex-4999",
+   "name": "Tiptree (essex)",
+   "members": 7800,
+   "postsMonth": 1019,
+   "privacy": "Public",
+   "kind": "town",
+   "match": [
+    "tiptree"
+   ],
+   "status": "on",
+   "perWeek": 2
+  },
+  {
+   "id": "456910506274914",
+   "key": "coggeshall-essex-4914",
+   "name": "Coggeshall essex",
+   "members": 2200,
+   "postsMonth": 888,
+   "privacy": "Public",
+   "kind": "town",
+   "match": [
+    "coggeshall"
+   ],
+   "status": "on",
+   "perWeek": 2
+  },
+  {
+   "id": "397895663748825",
+   "key": "it-all-happens-in-harwich-es-8825",
+   "name": "It All Happens In Harwich, Essex",
+   "members": 24700,
+   "postsMonth": 3068,
+   "privacy": "Public",
+   "kind": "town",
+   "match": [
+    "harwich",
+    "dovercourt",
+    "parkeston"
+   ],
+   "status": "on",
+   "perWeek": 3,
+   "note": "Rules: local relevance, no spamming."
+  },
+  {
+   "id": "348813442508581",
+   "key": "the-basildon-discussion-page-8581",
+   "name": "The Basildon Discussion Page",
+   "members": 52700,
+   "postsMonth": 1178,
+   "privacy": "Public",
+   "kind": "town",
+   "match": [
+    "basildon",
+    "pitsea",
+    "laindon",
+    "vange",
+    "wickford",
+    "billericay"
+   ],
+   "status": "caution",
+   "perWeek": 2,
+   "note": "Rules: business advertising Fridays only, no promotions or spam.",
+   "days": [
+    5
+   ]
+  },
+  {
+   "id": "433631860755388",
+   "key": "langdon-hills-official-group-5388",
+   "name": "LANGDON HILLS OFFICIAL GROUP",
+   "members": 36800,
+   "postsMonth": 1570,
+   "privacy": "Public",
+   "kind": "town",
+   "match": [
+    "langdon hills",
+    "laindon",
+    "basildon"
+   ],
+   "status": "on",
+   "perWeek": 3
+  },
+  {
+   "id": "196202630394637",
+   "key": "laindon-and-basildon-4637",
+   "name": "Laindon and Basildon",
+   "members": 23600,
+   "postsMonth": 4372,
+   "privacy": "Public",
+   "kind": "town",
+   "match": [
+    "laindon",
+    "basildon",
+    "pitsea",
+    "vange"
+   ],
+   "status": "on",
+   "perWeek": 4
+  },
+  {
+   "id": "555060564639519",
+   "key": "basildon-community-sticking-9519",
+   "name": "Basildon Community Sticking Together!!!",
+   "members": 5300,
+   "postsMonth": 1877,
+   "privacy": "Public",
+   "kind": "town",
+   "match": [
+    "basildon",
+    "pitsea",
+    "laindon",
+    "vange"
+   ],
+   "status": "on",
+   "perWeek": 3
+  },
+  {
+   "id": "3289065801164630",
+   "key": "basildon-and-surroundings-ar-4630",
+   "name": "Basildon & surroundings area crimewatch page essex United Kingdom",
+   "members": 12800,
+   "postsMonth": 489,
+   "privacy": "Public",
+   "kind": "crime",
+   "match": [
+    "basildon",
+    "pitsea",
+    "laindon",
+    "vange",
+    "wickford",
+    "billericay"
+   ],
+   "status": "on",
+   "perWeek": 3,
+   "note": "Police appeals, missing people and fire only.",
+   "onlyTags": [
+    "Police",
+    "Appeal",
+    "Crime",
+    "Fire"
+   ]
+  },
+  {
+   "id": "424355903408797",
+   "key": "wickford-and-basildon-update-8797",
+   "name": "Wickford & Basildon Updates",
+   "members": 429,
+   "postsMonth": 134,
+   "privacy": "Public",
+   "kind": "town",
+   "match": [
+    "wickford",
+    "basildon"
+   ],
+   "status": "on",
+   "perWeek": 2
+  },
+  {
+   "id": "1632782690572648",
+   "key": "basildon-news-2648",
+   "name": "BASILDON NEWS",
+   "members": 230,
+   "postsMonth": 92,
+   "privacy": "Public",
+   "kind": "town",
+   "match": [
+    "basildon",
+    "pitsea",
+    "laindon"
+   ],
+   "status": "on",
+   "perWeek": 2
+  },
+  {
+   "id": "766642600060914",
+   "key": "stanfordlehopebasildon-local-0914",
+   "name": "Stanford-Le-Hope/Basildon locals community",
+   "members": 9000,
+   "postsMonth": 1,
+   "privacy": "Public",
+   "kind": "town",
+   "match": [
+    "stanford-le-hope"
+   ],
+   "status": "off",
+   "perWeek": 0,
+   "note": "Dead: one post in the last month."
+  },
+  {
+   "id": "2091386304457834",
+   "key": "all-about-thurrock-7834",
+   "name": "All about Thurrock",
+   "members": 8700,
+   "postsMonth": 108,
+   "privacy": "Public",
+   "kind": "town",
+   "match": [
+    "thurrock",
+    "grays",
+    "tilbury",
+    "purfleet",
+    "ockendon",
+    "chafford",
+    "stanford-le-hope",
+    "corringham"
+   ],
+   "status": "on",
+   "perWeek": 3
+  },
+  {
+   "id": "1601081196881282",
+   "key": "our-thurrock-community-1282",
+   "name": "Our Thurrock Community",
+   "members": 5500,
+   "postsMonth": 999,
+   "privacy": "Private",
+   "kind": "town",
+   "match": [
+    "thurrock",
+    "grays",
+    "tilbury",
+    "purfleet",
+    "ockendon",
+    "chafford",
+    "stanford-le-hope",
+    "corringham"
+   ],
+   "status": "on",
+   "perWeek": 3
+  },
+  {
+   "id": "299484843504522",
+   "key": "west-thurrock-4522",
+   "name": "West Thurrock",
+   "members": 5100,
+   "postsMonth": 1033,
+   "privacy": "Private",
+   "kind": "town",
+   "match": [
+    "west thurrock",
+    "lakeside",
+    "purfleet",
+    "chafford"
+   ],
+   "status": "on",
+   "perWeek": 3
+  },
+  {
+   "id": "1488274811502316",
+   "key": "little-thurrock-community-fo-2316",
+   "name": "Little Thurrock Community Forum",
+   "members": 3600,
+   "postsMonth": 724,
+   "privacy": "Private",
+   "kind": "town",
+   "match": [
+    "little thurrock",
+    "grays"
+   ],
+   "status": "on",
+   "perWeek": 3
+  },
+  {
+   "id": "1650013182202197",
+   "key": "east-tilbury-community-group-2197",
+   "name": "East Tilbury Community Group",
+   "members": 5500,
+   "postsMonth": 174,
+   "privacy": "Public",
+   "kind": "town",
+   "match": [
+    "east tilbury",
+    "tilbury",
+    "linford"
+   ],
+   "status": "on",
+   "perWeek": 2
+  },
+  {
+   "id": "313066010782255",
+   "key": "whats-on-in-thurrock-2255",
+   "name": "What's On In Thurrock",
+   "members": 7800,
+   "postsMonth": 834,
+   "privacy": "Public",
+   "kind": "events",
+   "match": [
+    "thurrock",
+    "grays",
+    "tilbury",
+    "purfleet",
+    "ockendon",
+    "lakeside"
+   ],
+   "status": "on",
+   "perWeek": 3,
+   "onlyTags": [
+    "What's On"
+   ]
+  },
+  {
+   "id": "418139844950033",
+   "key": "all-things-thurrock-0033",
+   "name": "All things Thurrock",
+   "members": 9400,
+   "postsMonth": 5,
+   "privacy": "Public",
+   "kind": "town",
+   "match": [
+    "thurrock",
+    "grays"
+   ],
+   "status": "off",
+   "perWeek": 0,
+   "note": "Dead: five posts in the last month."
+  },
+  {
+   "id": "westthurrocksouthstiffordgrayschaffordhundred",
+   "key": "west-thurrock-south-stifford-dred",
+   "name": "West Thurrock, South Stifford, Grays & Chafford Hundred Community Group",
+   "members": 4300,
+   "postsMonth": 0,
+   "privacy": "Public",
+   "kind": "town",
+   "match": [
+    "thurrock",
+    "grays"
+   ],
+   "status": "off",
+   "perWeek": 0,
+   "note": "Dead: no recent posts."
+  },
+  {
+   "id": "127133293633",
+   "key": "thurrock-3633",
+   "name": "Thurrock",
+   "members": 1400,
+   "postsMonth": 26,
+   "privacy": "Public",
+   "kind": "town",
+   "match": [
+    "thurrock",
+    "grays"
+   ],
+   "status": "off",
+   "perWeek": 0,
+   "note": "Near dead."
+  },
+  {
+   "id": "246167538737740",
+   "key": "grays-thurrock-community-pag-7740",
+   "name": "Grays Thurrock Community Page",
+   "members": 816,
+   "postsMonth": 13,
+   "privacy": "Public",
+   "kind": "town",
+   "match": [
+    "thurrock",
+    "grays"
+   ],
+   "status": "off",
+   "perWeek": 0,
+   "note": "Near dead."
+  },
+  {
+   "id": "1257029679400120",
+   "key": "thurrock-social-group-0120",
+   "name": "Thurrock Social Group",
+   "members": 780,
+   "postsMonth": 27,
+   "privacy": "Public",
+   "kind": "town",
+   "match": [
+    "thurrock",
+    "grays"
+   ],
+   "status": "off",
+   "perWeek": 0,
+   "note": "Small, and rules bar promotions."
+  },
+  {
+   "id": "1457094431245482",
+   "key": "brentwood-locals-uk-5482",
+   "name": "Brentwood locals UK",
+   "members": 9900,
+   "postsMonth": 921,
+   "privacy": "Private",
+   "kind": "town",
+   "match": [
+    "brentwood",
+    "shenfield",
+    "hutton",
+    "ingatestone",
+    "warley"
+   ],
+   "status": "on",
+   "perWeek": 3
+  },
+  {
+   "id": "whatsgoingoninbrentwood",
+   "key": "whats-going-on-in-brentwood-wood",
+   "name": "What's going on in Brentwood? (Essex UK)",
+   "members": 9000,
+   "postsMonth": 1427,
+   "privacy": "Public",
+   "kind": "town",
+   "match": [
+    "brentwood",
+    "shenfield",
+    "hutton",
+    "ingatestone",
+    "warley"
+   ],
+   "status": "on",
+   "perWeek": 3,
+   "note": "Rule: no unrelated promotions or spam."
+  },
+  {
+   "id": "867793228471219",
+   "key": "brentwood-neighborhood-1219",
+   "name": "Brentwood Neighborhood",
+   "members": 3000,
+   "postsMonth": 1093,
+   "privacy": "Public",
+   "kind": "town",
+   "match": [
+    "brentwood",
+    "shenfield",
+    "hutton"
+   ],
+   "status": "on",
+   "perWeek": 3
+  },
+  {
+   "id": "1534989386774009",
+   "key": "brentwood-and-billericay-com-4009",
+   "name": "Brentwood & Billericay Community Hub",
+   "members": 3700,
+   "postsMonth": 570,
+   "privacy": "Public",
+   "kind": "town",
+   "match": [
+    "brentwood",
+    "billericay",
+    "shenfield",
+    "hutton"
+   ],
+   "status": "on",
+   "perWeek": 3
+  },
+  {
+   "id": "1725656447726209",
+   "key": "kelvedon-hatch-and-the-brent-6209",
+   "name": "Kelvedon Hatch & the Brentwood Parishes",
+   "members": 2500,
+   "postsMonth": 590,
+   "privacy": "Private",
+   "kind": "town",
+   "match": [
+    "kelvedon hatch",
+    "doddinghurst",
+    "blackmore",
+    "navestock",
+    "coxtie green",
+    "brentwood"
+   ],
+   "status": "on",
+   "perWeek": 2
+  },
+  {
+   "id": "1792412990992701",
+   "key": "all-things-brentwood-shenfie-2701",
+   "name": "All Things Brentwood, Shenfield And All Villages Around",
+   "members": 2500,
+   "postsMonth": 114,
+   "privacy": "Public",
+   "kind": "town",
+   "match": [
+    "brentwood",
+    "shenfield",
+    "hutton",
+    "ingatestone"
+   ],
+   "status": "on",
+   "perWeek": 2
+  },
+  {
+   "id": "1704854934028458",
+   "key": "brentwood-community-8458",
+   "name": "Brentwood Community",
+   "members": 770,
+   "postsMonth": 559,
+   "privacy": "Public",
+   "kind": "town",
+   "match": [
+    "brentwood",
+    "shenfield"
+   ],
+   "status": "on",
+   "perWeek": 2
+  },
+  {
+   "id": "718175172239011",
+   "key": "navestock-and-brentwood-peop-9011",
+   "name": "Navestock & Brentwood People",
+   "members": 344,
+   "postsMonth": 164,
+   "privacy": "Public",
+   "kind": "town",
+   "match": [
+    "navestock",
+    "brentwood"
+   ],
+   "status": "on",
+   "perWeek": 1
+  },
+  {
+   "id": "brentwoodevent",
+   "key": "brentwood-events-essex-uk-vent",
+   "name": "Brentwood Events (Essex UK)",
+   "members": 6200,
+   "postsMonth": 176,
+   "privacy": "Public",
+   "kind": "events",
+   "match": [
+    "brentwood",
+    "shenfield",
+    "hutton",
+    "ingatestone"
+   ],
+   "status": "caution",
+   "perWeek": 1,
+   "note": "Rules: Brentwood events only, no promotions or spam.",
+   "onlyTags": [
+    "What's On"
+   ]
+  },
+  {
+   "id": "shenfieldhuttonbrentwoodcommunitygroup",
+   "key": "shenfield-hutton-and-brentwo-roup",
+   "name": "Shenfield, Hutton & Brentwood Community Group",
+   "members": 7100,
+   "postsMonth": 3,
+   "privacy": "Public",
+   "kind": "town",
+   "match": [
+    "shenfield"
+   ],
+   "status": "off",
+   "perWeek": 0,
+   "note": "Dead: three posts in the last month."
+  },
+  {
+   "id": "brentwoodcommunitygroup",
+   "key": "brentwood-community-roup",
+   "name": "Brentwood Community",
+   "members": 125,
+   "postsMonth": 3,
+   "privacy": "Public",
+   "kind": "town",
+   "match": [
+    "brentwood"
+   ],
+   "status": "off",
+   "perWeek": 0,
+   "note": "Tiny and dead."
+  },
+  {
+   "id": "1236677473201839",
+   "key": "harlow-community-1839",
+   "name": "Harlow Community",
+   "members": 28200,
+   "postsMonth": 6318,
+   "privacy": "Public",
+   "kind": "town",
+   "match": [
+    "harlow",
+    "old harlow",
+    "church langley"
+   ],
+   "status": "on",
+   "perWeek": 4
+  },
+  {
+   "id": "248249947433360",
+   "key": "spotted-in-harlow-3360",
+   "name": "spotted in Harlow",
+   "members": 19700,
+   "postsMonth": 2330,
+   "privacy": "Public",
+   "kind": "town",
+   "match": [
+    "harlow"
+   ],
+   "status": "on",
+   "perWeek": 3
+  },
+  {
+   "id": "1630877540468742",
+   "key": "everything-harlow-8742",
+   "name": "Everything Harlow",
+   "members": 7500,
+   "postsMonth": 10,
+   "privacy": "Public",
+   "kind": "town",
+   "match": [
+    "harlow"
+   ],
+   "status": "off",
+   "perWeek": 0,
+   "note": "Near dead: ten posts in the last month."
+  },
+  {
+   "id": "711763725511187",
+   "key": "epping-community-group-essex-1187",
+   "name": "Epping Community Group (Essex UK)",
+   "members": 40200,
+   "postsMonth": 456,
+   "privacy": "Public",
+   "kind": "town",
+   "match": [
+    "epping",
+    "theydon bois",
+    "north weald",
+    "thornwood"
+   ],
+   "status": "caution",
+   "perWeek": 1,
+   "note": "Strict rules: no business ads, some profiles declined automatically."
+  },
+  {
+   "id": "1611232452714761",
+   "key": "loughton-essex-group-4761",
+   "name": "Loughton Essex Group",
+   "members": 3300,
+   "postsMonth": 811,
+   "privacy": "Public",
+   "kind": "town",
+   "match": [
+    "loughton",
+    "buckhurst hill",
+    "debden",
+    "chigwell"
+   ],
+   "status": "on",
+   "perWeek": 2
+  },
+  {
+   "id": "1515586085464675",
+   "key": "maldon-essex-local-4675",
+   "name": "Maldon Essex Local",
+   "members": 38500,
+   "postsMonth": 6337,
+   "privacy": "Public",
+   "kind": "town",
+   "match": [
+    "maldon",
+    "heybridge",
+    "burnham-on-crouch",
+    "southminster",
+    "tollesbury",
+    "mayland"
+   ],
+   "status": "on",
+   "perWeek": 4
+  },
+  {
+   "id": "126875950685557",
+   "key": "braintree-essex-england-5557",
+   "name": "Braintree (Essex, England)",
+   "members": 31300,
+   "postsMonth": 58,
+   "privacy": "Public",
+   "kind": "town",
+   "match": [
+    "braintree"
+   ],
+   "status": "off",
+   "perWeek": 0,
+   "note": "Rule 7: no pages can join the group. Do not post as the Page."
+  },
+  {
+   "id": "rayne.essex",
+   "key": "rayne-essex-ssex",
+   "name": "Rayne Essex",
+   "members": 10500,
+   "postsMonth": 334,
+   "privacy": "Public",
+   "kind": "town",
+   "match": [
+    "rayne"
+   ],
+   "status": "caution",
+   "perWeek": 1,
+   "note": "Rule: no business adverts."
+  },
+  {
+   "id": "579901979736566",
+   "key": "witham-and-silver-end-commun-6566",
+   "name": "Witham and Silver End communities (Essex)",
+   "members": 16700,
+   "postsMonth": 975,
+   "privacy": "Public",
+   "kind": "town",
+   "match": [
+    "witham",
+    "silver end",
+    "rivenhall",
+    "kelvedon"
+   ],
+   "status": "caution",
+   "perWeek": 2,
+   "note": "Rule: no promotions or spam."
+  },
+  {
+   "id": "bnnlessex",
+   "key": "essex-community-page-ssex",
+   "name": "Essex Community Page",
+   "members": 12500,
+   "postsMonth": 1313,
+   "privacy": "Public",
+   "kind": "county",
+   "match": [],
+   "status": "on",
+   "perWeek": 3
+  },
+  {
+   "id": "746567689237990",
+   "key": "essex-connected-7990",
+   "name": "Essex Connected",
+   "members": 16700,
+   "postsMonth": 746,
+   "privacy": "Public",
+   "kind": "county",
+   "match": [],
+   "status": "caution",
+   "perWeek": 2,
+   "note": "Has an advertising policy and shared-content guidelines."
+  },
+  {
+   "id": "1269965971002437",
+   "key": "essex-uk-community-2437",
+   "name": "Essex UK Community",
+   "members": 2200,
+   "postsMonth": 916,
+   "privacy": "Public",
+   "kind": "county",
+   "match": [],
+   "status": "on",
+   "perWeek": 3
+  },
+  {
+   "id": "essexcommunity",
+   "key": "essex-community-group-est200-nity",
+   "name": "Essex Community Group (Est.2008)",
+   "members": 9800,
+   "postsMonth": 2967,
+   "privacy": "Public",
+   "kind": "county",
+   "match": [],
+   "status": "hold",
+   "perWeek": 0,
+   "note": "Rule: no accounts under 12 weeks old. The Seax Page is too new until February 2027."
+  },
+  {
+   "id": "essexpoliticsplanningdemocracynews",
+   "key": "essex-politics-planning-and-news",
+   "name": "Essex politics, planning and local democracy news",
+   "members": 4600,
+   "postsMonth": 679,
+   "privacy": "Public",
+   "kind": "politics",
+   "match": [],
+   "status": "on",
+   "perWeek": 7,
+   "note": "Council, planning and politics stories, including Council Watch.",
+   "onlyTags": [
+    "Politics",
+    "Council",
+    "Council Watch",
+    "Property"
+   ]
+  },
+  {
+   "id": "927583790732618",
+   "key": "whats-on-essex-2618",
+   "name": "What's On Essex",
+   "members": 17100,
+   "postsMonth": 3217,
+   "privacy": "Public",
+   "kind": "events",
+   "match": [],
+   "status": "on",
+   "perWeek": 3,
+   "onlyTags": [
+    "What's On"
+   ]
+  },
+  {
+   "id": "whatsonessex",
+   "key": "whats-on-in-essex-ssex",
+   "name": "Whats on in Essex",
+   "members": 12400,
+   "postsMonth": 2824,
+   "privacy": "Public",
+   "kind": "events",
+   "match": [],
+   "status": "caution",
+   "perWeek": 2,
+   "note": "Rule: no promotions or spam.",
+   "onlyTags": [
+    "What's On"
+   ]
+  },
+  {
+   "id": "707216346151104",
+   "key": "essex-events-and-days-out-1104",
+   "name": "Essex Events & Days Out",
+   "members": 26200,
+   "postsMonth": 2003,
+   "privacy": "Public",
+   "kind": "events",
+   "match": [],
+   "status": "on",
+   "perWeek": 3,
+   "onlyTags": [
+    "What's On"
+   ]
+  },
+  {
+   "id": "1375177216056969",
+   "key": "events-in-essex-6969",
+   "name": "Events in Essex",
+   "members": 28100,
+   "postsMonth": 1534,
+   "privacy": "Public",
+   "kind": "events",
+   "match": [],
+   "status": "on",
+   "perWeek": 2,
+   "note": "Rule: events only.",
+   "onlyTags": [
+    "What's On"
+   ]
+  },
+  {
+   "id": "529353564715395",
+   "key": "essex-events-and-entertainme-5395",
+   "name": "Essex Events & Entertainment",
+   "members": 4200,
+   "postsMonth": 435,
+   "privacy": "Public",
+   "kind": "events",
+   "match": [],
+   "status": "on",
+   "perWeek": 2,
+   "note": "Rule: no repeated content more than twice.",
+   "onlyTags": [
+    "What's On"
+   ]
+  },
+  {
+   "id": "1139244607960178",
+   "key": "essex-fetes-fairs-and-festiv-0178",
+   "name": "Essex Fetes, Fairs & Festivals Hub",
+   "members": 5600,
+   "postsMonth": 1180,
+   "privacy": "Public",
+   "kind": "events",
+   "match": [],
+   "status": "on",
+   "perWeek": 2,
+   "onlyTags": [
+    "What's On"
+   ]
+  },
+  {
+   "id": "2036371933811769",
+   "key": "events-fetes-and-fairs-essex-1769",
+   "name": "Events, Fetes & Fairs (Essex Edition)",
+   "members": 2900,
+   "postsMonth": 433,
+   "privacy": "Public",
+   "kind": "events",
+   "match": [],
+   "status": "on",
+   "perWeek": 2,
+   "onlyTags": [
+    "What's On"
+   ]
+  },
+  {
+   "id": "338085867050125",
+   "key": "essex-east-anglia-events-pag-0125",
+   "name": "Essex East Anglia Events Page",
+   "members": 3300,
+   "postsMonth": 407,
+   "privacy": "Public",
+   "kind": "events",
+   "match": [],
+   "status": "on",
+   "perWeek": 2,
+   "onlyTags": [
+    "What's On"
+   ]
+  },
+  {
+   "id": "484083721792909",
+   "key": "what-where-when-essex-and-su-2909",
+   "name": "What, Where, When... Essex & Surrounding!",
+   "members": 2800,
+   "postsMonth": 393,
+   "privacy": "Public",
+   "kind": "events",
+   "match": [],
+   "status": "on",
+   "perWeek": 2,
+   "onlyTags": [
+    "What's On"
+   ]
+  },
+  {
+   "id": "1000497183412030",
+   "key": "essex-fetes-fairs-and-events-2030",
+   "name": "Essex Fetes, Fairs And Events",
+   "members": 39600,
+   "postsMonth": 36,
+   "privacy": "Public",
+   "kind": "events",
+   "match": [],
+   "status": "caution",
+   "perWeek": 1,
+   "note": "Heavily moderated: rules on sharing, no sales, no paid online events.",
+   "onlyTags": [
+    "What's On"
+   ]
+  },
+  {
+   "id": "810MumsDaysOut",
+   "key": "galsthings-to-do-essex-and-b-sout",
+   "name": "Gals...Things To Do (Essex & Beyond)",
+   "members": 34400,
+   "postsMonth": 82,
+   "privacy": "Public",
+   "kind": "events",
+   "match": [],
+   "status": "caution",
+   "perWeek": 1,
+   "note": "Quiet group; days out only.",
+   "onlyTags": [
+    "What's On"
+   ]
+  },
+  {
+   "id": "1593444257341079",
+   "key": "christmas-crafts-gifts-and-m-1079",
+   "name": "CHRISTMAS - crafts gifts & markets, LONDON & ESSEX",
+   "members": 3500,
+   "postsMonth": 876,
+   "privacy": "Public",
+   "kind": "events",
+   "match": [],
+   "status": "caution",
+   "perWeek": 1,
+   "note": "Christmas markets and craft events only; seasonal.",
+   "onlyTags": [
+    "What's On"
+   ]
+  },
+  {
+   "id": "1925031114179106",
+   "key": "essex-wellbeing-events-9106",
+   "name": "Essex Wellbeing Events",
+   "members": 8300,
+   "postsMonth": 1151,
+   "privacy": "Public",
+   "kind": "events",
+   "match": [],
+   "status": "off",
+   "perWeek": 0,
+   "note": "Wellbeing event promoters only."
+  },
+  {
+   "id": "1888488331429720",
+   "key": "essex-junior-football-9720",
+   "name": "Essex Junior Football",
+   "members": 38100,
+   "postsMonth": 1793,
+   "privacy": "Public",
+   "kind": "sport",
+   "match": [],
+   "status": "off",
+   "perWeek": 0,
+   "note": "Junior football only; The Seax covers senior clubs."
+  }
+ ]
+}
