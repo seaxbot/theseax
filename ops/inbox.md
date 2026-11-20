@@ -79,9 +79,25 @@ subject alone, without opening it, unless the subject suggests the owner must ac
 - What's On: every future Essex event in an official newsletter's events section, and every events@ email, goes
   into the site's events list in its own format, in your own words, when it has a date, time and place (price if
   given). Public events only. Skip events already listed.
-- Pictures: use the picture the sender supplied if it fits the owner's image rules. Download attachments with
-  download_gmail_attachment, or try once to curl a picture on the sender's own or its mailing service's server;
-  credit "Picture: <body name>". If that fails, a story follows the normal image rules and a listing goes up without.
+- PICTURES (owner's rule, hard, 20 Nov 2026: "When you're getting stories from emails please do use their pics").
+  Every story you write from an email MUST carry the sender's own picture when the email has one, credited
+  "Picture: <body name>". It beats every library, stock, town, map and topic photo. Read the thread with
+  FULL_CONTENT to find pictures. Skip only logos, text graphics, posters, banners, social icons, tracking pixels,
+  anything under 500px wide, and anything showing injured people, crash scenes or casualties. Never add "photo" or
+  "commons" fields to a story that has an email picture. When there are several, use the one showing the story.
+  i) Attachment: download it with download_gmail_attachment, then run
+     python3 tools/sourcephotos.py --file <downloaded path> --id <story id> --creator "<body name>" --name "<short
+     plain caption from the email's own caption or text; never invent names>" [--source <the body's page for the
+     story, if any>] [--anchor top for portrait shots where heads would be cut]
+     It crops the card and share pictures and pins them to the story id in data/portraits.json. Add the new
+     img/people files and data/portraits.json to git with the story. Never commit the raw attachment.
+  ii) Picture inside the email body (an image URL on the sender's site or its mailing service): add a request to
+     data/source-photos.json keyed by the story id: {"url": <exact image URL>, "via": "email", "senderDomain":
+     <domain of the address it came from, e.g. tendringdc.gov.uk>, "creator": "<body name>", "name": <caption>,
+     "source": <the body's page or "">, "anchor": "centre"}. The photo desk downloads it on GitHub a few minutes
+     after you push. Strip tracking parameters from the URL only if the picture still loads without them.
+  iii) If neither works, say so in the run summary ("picture not used: <why>") and the story follows the normal
+     image rules. A What's On listing goes up without a picture.
 - Links: never publish newsletter tracking or redirect links (anything with a subscriber ID). Use the body's own
   official page if a quick search finds it; otherwise leave the link out.
 - Other news outlets' alerts (Everything Epping Forest, Misconduct999, The Chelmsford Brief and similar): leads

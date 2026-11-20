@@ -25,18 +25,30 @@ UA = "TheSeaxPhotoDesk/1.0 (+https://theseax.com/about/; info@theseax.com)"
 ALLOWED = ("essex.icb.nhs.uk", "nhs.uk", "essex.police.uk", "essex-fire.gov.uk", "gov.uk",
            "essex.ac.uk",   # University of Essex: owner approved, 17 Nov 2026 ("I expected the pics to be already uploaded with credit")
            "img.youtube.com", "i.ytimg.com")   # stills of videos the owner asks to embed (owner, 18 Nov 2026: Harlow Council's GTA video)
+# Mailing services that host the pictures inside press-release and newsletter emails. Accepted only for requests
+# marked "via": "email" (owner's rule, 20 Nov 2026: "When you're getting stories from emails please do use their pics").
+MAIL_HOSTS = ("content.govdelivery.com", "govdelivery.com", "mcusercontent.com", "gallery.mailchimp.com",
+              "list-manage.com", "createsend1.com", "createsend.com", "ctctcdn.com", "constantcontact.com",
+              "sendgrid.net", "dotdigital.com", "dmtrk.net", "mailerlite.com", "mlcdn.com", "sendinblue.com",
+              "brevo.com", "hubspotusercontent-eu1.net", "hubspotusercontent-na1.net", "hubspot.net",
+              "beehiiv.com", "substackcdn.com", "squarespace-cdn.com", "wixstatic.com", "wp.com")
 REQ = os.path.join(ROOT, "data", "source-photos.json")
 POR = os.path.join(ROOT, "data", "portraits.json")
 SIZES = {"wide": (1200, 655), "og": (1200, 630)}
 
 
-def allowed(url):
+def allowed(url, r=None):
     try:
         u = urllib.parse.urlparse(url)
     except Exception:
         return False
     h = (u.hostname or "").lower()
-    return u.scheme == "https" and any(h == a or h.endswith("." + a) for a in ALLOWED)
+    ok = ALLOWED
+    if r and r.get("via") == "email":
+        # a sender's own site (the domain of the address it emailed from) or its mailing service
+        sd = str(r.get("senderDomain") or "").lower().strip(".")
+        ok = ALLOWED + MAIL_HOSTS + ((sd,) if re.fullmatch(r"[a-z0-9-]+(\.[a-z0-9-]+)+", sd) else ())
+    return u.scheme == "https" and any(h == a or h.endswith("." + a) for a in ok)
 
 
 # www.essex.ac.uk uses Let's Encrypt's newer "Y" chain, not yet trusted by the runner: trust the intermediates kept in
@@ -99,7 +111,7 @@ def main():
         if mine and all(os.path.exists(ROOT + str(p.get("wide") or "")) for p in mine):
             continue  # already done (an owner-made picture for the same story counts)
         url = str(r.get("url") or "")
-        if not allowed(url):
+        if not allowed(url, r):
             print("refused host", sid, url[:80])
             continue
         try:
@@ -126,5 +138,39 @@ def main():
     return 0
 
 
+def local(argv):
+    """Inbox desk: an email attachment already downloaded. Crops it and pins it to the story by id, at once.
+    python3 tools/sourcephotos.py --file PATH --id STORY_ID --creator "Body name" --name "caption"
+                                  [--source URL] [--anchor top|centre]"""
+    import argparse
+    from PIL import Image, ImageOps
+    a = argparse.ArgumentParser()
+    for k in ("--file", "--id", "--creator", "--name"):
+        a.add_argument(k, required=True)
+    a.add_argument("--source", default="")
+    a.add_argument("--anchor", default="centre", choices=("top", "centre"))
+    o = a.parse_args(argv)
+    if not re.fullmatch(r"[a-z0-9-]{3,120}", o.id):
+        sys.exit("bad story id")
+    im = ImageOps.exif_transpose(Image.open(o.file)).convert("RGB")
+    if im.size[0] < 500:
+        sys.exit(f"too small {im.size}: not used")
+    wide, og = f"/img/people/{o.id}-wide.jpg", f"/img/people/{o.id}-og.jpg"
+    for k, f in (("wide", wide), ("og", og)):
+        crop(im, SIZES[k], o.anchor).save(ROOT + f, quality=86)
+    try:
+        por = json.load(open(POR, encoding="utf-8"))
+    except Exception:
+        por = []
+    por = [p for p in por if o.id not in (p.get("ids") or [])]
+    creator = o.creator.strip()[:60]
+    por.append({"ids": [o.id], "name": o.name.strip()[:160] or creator, "label": "Picture", "wide": wide, "og": og,
+                "creator": creator, "provider": creator, "license": "", "licenseUrl": "", "source": o.source[:300],
+                "addedBy": f"inbox desk {datetime.now(timezone.utc):%d %b %Y} (owner's rule, 20 Nov 2026: use the pictures emailed with stories, credited)"})
+    json.dump(por, open(POR, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
+    print("added", o.id, im.size, wide, og)
+    return 0
+
+
 if __name__ == "__main__":
-    sys.exit(main())
+    sys.exit(local(sys.argv[1:]) if "--file" in sys.argv else main())
