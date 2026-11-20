@@ -5959,7 +5959,8 @@
    "id": "brentwood-school-safeguarding-review-british-fencing-own-review",
    "tag": "Education",
    "areas": [
-    "brentwood"
+    "brentwood",
+    "wickford"
    ],
    "place": "Brentwood",
    "weight": 9,
@@ -5977,6 +5978,7 @@
     "The review also heard what it called credible accounts of abuse by other staff in the 1960s and 1970s, including harsh physical punishment, and of abuse by pupils. It says the staff named in those accounts have died or cannot be traced.",
     "In a foreword, the chairman of governors, Lord Black of Brentwood, who was a pupil at the school in the 1970s and early 1980s, offers a \"deep, sincere and unreserved apology\" to everyone abused in the school's past. He says the governors have accepted the report and all its recommendations, which include the school publicly acknowledging the harm caused and that it failed to detect abuse during the 1980s, 1990s and 2000s. The review says safeguarding at the school today is strong and well resourced, after checks in 2022 and 2025.",
     "British Fencing said on Friday 20 November that it would commission its own independent safeguarding review into the role, if any, of the sport's governing body and its predecessor, the Amateur Fencing Association. According to the review, Stafford Bull also coached the England under-20 fencing team, and a former pupil asked the school in 2017 whether the sport's authorities had been told in 1997.",
+    "Outside the school, Stafford Bull coached at Wickford Fencing Club from 1979 to 1987, according to the club's history page, which lists him among its previous coaches. As a Brentwood pupil he fenced for the school, finishing third in the boys' senior sabre at the 1974 Public Schools' Fencing Championships. The review makes no findings about his time at the Wickford club.",
     "Brentwood School says victim-survivors can contact the headmaster or the chairman of governors in confidence. British Fencing has a form for reporting a safeguarding concern on its website. Adults affected by abuse in childhood can call the NSPCC on 0808 800 5000, and Samaritans is available any time on 116 123."
    ],
    "points": [
@@ -5990,18 +5992,22 @@
     {
      "name": "British Fencing statement",
      "url": "https://www.britishfencing.com/bf-statement-on-the-brentwood-school-independent-safeguarding-review/"
+    },
+    {
+     "name": "Wickford Fencing Club history",
+     "url": "https://www.wickfordfencingclub.co.uk/history.html"
     }
    ],
    "time": "2026-11-20T17:30:00Z",
    "singleSource": false,
    "original": "report",
-   "updated": "2026-11-20T18:58:47Z",
+   "updated": "2026-11-20T19:10:32Z",
    "verified": {
-    "at": "2026-11-20T18:59:36Z",
-    "sig": "a73ff07689442c1b",
+    "at": "2026-11-20T19:10:32Z",
+    "sig": "e56ee31ec6239ba5",
     "checks": {
      "figures": "Every date and number checked against the 59-page report read in full on screen (Google Drive copy linked from brentwoodschool.co.uk/senior/safeguarding): appointment c.1982 (para 226), police report of 3 pupils' concerns, suspension and dismissal 22 April 1997 (paras 225, 236-239), death 5 May 1997 (para 243), contacts 2008/2017/2024 (para 247), Pickthall allegations 2007/2009/2014 (para 288c), reviews 2022 and 2025 (para 289), Lord Black's foreword dated November 2026; 12-year sentence in November 2024 from CPS and PA reports.",
-     "independent": "Second source for each strand: British Fencing's own statement of 20 Nov 2026 (coach named, its own review, AFA); CPS and PA coverage for Pickthall's conviction and sentence; the school's safeguarding page for the report and the contact route. Findings about Stafford Bull are attributed to the review and stated as balance of probability, as the review does; he died in 1997 and was never tried.",
+     "independent": "Added 19:15 from the owner's tip: Wickford Fencing Club's own history page lists 'Gareth Stafford-Bull 1979 to 1987' under previous coaches (fetched); the 1974 Public Schools' Fencing Championships results (francisfencing.org.uk) list STAFFORD-BULL Gareth, Brentwood, third in the boys' senior sabre. Story says the review makes no findings about Wickford. Earlier: Second source for each strand: British Fencing's own statement of 20 Nov 2026 (coach named, its own review, AFA); CPS and PA coverage for Pickthall's conviction and sentence; the school's safeguarding page for the report and the contact route. Findings about Stafford Bull are attributed to the review and stated as balance of probability, as the review does; he died in 1997 and was never tried.",
      "readback": "Read back the story against the report's own words: quotes 'an industrial scale' (para 245) and 'deep, sincere and unreserved apology' (foreword) are exact; 'incontrovertible' (para 238), 'quite contradictory' (para 250) and 'inadequate and lacked empathy' (para 290b) paraphrased faithfully; no victim identified; suicide not detailed beyond the review's wording, with support lines added."
     }
    },
