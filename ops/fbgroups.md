@@ -26,12 +26,12 @@ Owner's instructions (20 Nov 2026): post Seax stories into the relevant Essex gr
 2. Time-bound information people can act on: events this weekend, consultations closing soon, service changes, bin and transport changes, health services (NHS Essex), council decisions affecting a town.
 3. Strong local interest: a town's own news, Southend United and Colchester United match previews on match days, results the morning after.
 - A story must still be live on theseax.com (not in tools/takedown.txt) and be under 12 hours old (under 6 hours for safety and disruption items, which go first). Stories from the previous day only if still current (e.g. a road still closed).
-- Groups that hold posts for admin approval get time-sensitive items only in the 07:41 or 09:51 run, so approval can land in time (a match preview posted at 11:15 is no use if approved after kick-off).
+- Groups that hold posts for admin approval get time-sensitive items only in the 07:41 or 09:41 run, so approval can land in time (a match preview posted at 11:15 is no use if approved after kick-off).
 - Never post: court stories (Court tag), anything about a person charged but not yet convicted, inquests, stories involving children's welfare, anything the legal gate holds, sponsored or deals content, and the same story into overlapping groups of one town in one day (rotate them).
 - Match the group: town and crime groups only get stories from their own area; events groups only events; the politics group only council, planning and politics; county groups only the day's biggest Essex story.
 
 ## Automated runs
-Scheduled task "Seax Facebook groups desk", every day at 07:41, 09:51, 12:41, 17:21 and 19:11 UK time (clear of the Essex Police Facebook desk, which uses Chrome at :05 past 8, 12, 16 and 20), needs the owner's computer awake with Chrome open. Each run:
+Scheduled task "Seax Facebook groups desk", every day at 07:41, 09:41, 12:41, 17:41 and 18:41 UK time (clear of the Essex Police Facebook desk, which uses Chrome at :05 past 8, 12, 16 and 20), needs the owner's computer awake with Chrome open. Each run:
 1. Get the repo (seaxbot/theseax) and read this file, data/fb-groups.json and data/fb-group-log.json. If "paused" is true, stop and report why.
 2. In Chrome, open facebook.com/notifications. For each "An admin declined your post" or "removed your post": open it, read the reason, mark the post's result, and set that group to "off" with the reason in "note" (one decline is enough). Mark pending posts that have since appeared as "live". A group that holds posts and leaves one pending for over 48 hours drops to perWeek 1.
 3. Read edition.json from the freshly pulled repo (the shell cannot reach theseax.com; Chrome can, at theseax.com/groups/) and choose up to 3 posts by the rules above, counting today's posts in the log against the daily 12.
