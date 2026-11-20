@@ -692,7 +692,7 @@ h1,h2,h3,h4,.story h1,.lead h2,.card h3,.drow h4{letter-spacing:-.022em}
 .foot-mail a{white-space:nowrap}
 /* ---------- Today in Essex strip (FT markets-bar idea) ---------- */
 .frontpage{padding:18px 0 8px}
-.todaybar{display:flex;align-items:stretch;gap:0;border-top:1px solid var(--ink);border-bottom:1px solid var(--hair);margin-bottom:18px;overflow-x:auto;scrollbar-width:none;white-space:nowrap}
+.todaybar{position:relative;display:flex;align-items:stretch;gap:0;border-top:1px solid var(--ink);border-bottom:1px solid var(--hair);margin-bottom:18px;overflow-x:auto;scrollbar-width:none;white-space:nowrap}
 .todaybar::-webkit-scrollbar{display:none}
 /* wide screens: let the six weather parts wrap onto a second line rather than hide off the edge (phones swipe) */
 @media (min-width:760px){ .todaybar{flex-wrap:nowrap;overflow:hidden} .tb-wx{flex-wrap:nowrap;flex:1 1 0;min-width:0;overflow:hidden} }
