@@ -174,10 +174,10 @@
     "leigh-on-sea",
     "westcliff"
    ],
-   "status": "hold",
-   "perWeek": 0,
+   "status": "caution",
+   "perWeek": 2,
    "owner": "Your Southend",
-   "note": "Run by Your Southend, another news outlet. Owner to decide."
+   "note": "Run by Your Southend, another news outlet. Owner chose to post and see what happens (20 Nov 2026)."
   },
   {
    "id": "welovesouthendonsea",
@@ -452,13 +452,13 @@
     "mersea",
     "stanway"
    ],
-   "status": "hold",
-   "perWeek": 0,
+   "status": "caution",
+   "perWeek": 2,
    "onlyTags": [
     "What's On"
    ],
    "owner": "Actual Radio",
-   "note": "Run by Actual Radio, another news outlet. Owner to decide."
+   "note": "Run by Actual Radio, another news outlet. Owner chose to post and see what happens (20 Nov 2026)."
   },
   {
    "id": "656074891127949",
@@ -1320,9 +1320,9 @@
    "privacy": "Public",
    "kind": "politics",
    "match": [],
-   "status": "hold",
-   "perWeek": 0,
-   "note": "Run by the Echo (Newsquest), a rival newsroom. Owner to decide.",
+   "status": "caution",
+   "perWeek": 3,
+   "note": "Run by Echo Essex, another news outlet. Owner chose to post and see what happens (20 Nov 2026).",
    "onlyTags": [
     "Politics",
     "Council",
