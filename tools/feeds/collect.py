@@ -227,31 +227,29 @@ def parse_page(text, feed):
                     "image": urljoin(feed["url"], html.unescape(img)) if img else ""})
     return out
 
-EHAAT_CARD = re.compile(r'(?is)<div class="row mission">(.*?)<a href="[^"]*" class="view-it')
 
 def parse_missions(text, feed):
     """Essex & Herts Air Ambulance mission reports (owner's request, 20 Nov 2026). The charity has no feed: its listing page
     shows one card per mission with the type, the date it was logged (DD.MM.YYYY), the place and a one-line summary.
-    Reports are logged in batches, often a few days after the mission, and the full report adds little; the card is enough."""
+    Reports are logged in batches, often a few days after the mission, and the full report adds little; the card is enough.
+    Matched loosely (a heading link to /missions/..., the paragraph after it, the type and date just before it)."""
     out, seen = [], set()
-    for m in EHAAT_CARD.finditer(text):
-        card = m.group(1)
-        a = re.search(r'(?is)<h4>\s*<a href="([^"]+)"[^>]*>(.*?)</a>', card)
-        if not a:
-            continue
-        url, place = html.unescape(a.group(1)), " ".join(clean(a.group(2)).split())
-        kind = re.search(r'(?is)class="mission-type"[^>]*>(.*?)</span>', card)
-        kind = " ".join(clean(kind.group(1)).split()) if kind else "Mission"
-        d = re.search(r'(\d\d)\.(\d\d)\.(20\d\d)', card)
-        summary = re.search(r'(?is)</h4>\s*<p>(.*?)</p>', card)
-        summary = " ".join(clean(summary.group(1)).split()) if summary else ""
+    for m in re.finditer(r'(?is)<h\d[^>]*>\s*<a[^>]+href=["\']([^"\']*/missions/[^"\']+)["\'][^>]*>(.*?)</a>\s*</h\d>\s*(?:<p[^>]*>(.*?)</p>)?', text):
+        url, place = html.unescape(m.group(1)), " ".join(clean(m.group(2)).split())
+        before = text[max(0, m.start() - 700):m.start()]
+        kind = re.findall(r'(?is)mission-type[^>]*>(.*?)</span>', before)
+        kind = " ".join(clean(kind[-1]).split()) if kind else "Mission"
+        d = re.findall(r'(\d\d)\.(\d\d)\.(20\d\d)', before)
+        d = d[-1] if d else None
+        summary = " ".join(clean(m.group(3) or "").split())
         if not place or url in seen:
             continue
         seen.add(url)
         # the charity's own name contains "Essex", so the summary is not used for the Essex filter: the place decides
         out.append({"title": f"Air ambulance mission: {place} ({kind})", "url": urljoin(feed["url"], url),
-                    "time": when(f"{d.group(3)}-{d.group(2)}-{d.group(1)}") if d else "", "body": summary,
-                    "place": place})
+                    "time": when(f"{d[2]}-{d[1]}-{d[0]}") if d else "", "body": summary, "place": place})
+    if not out:   # say what came back, so a changed or blocked page shows in status.json instead of silently giving nothing
+        raise ValueError("no mission cards found; page starts: " + " ".join(clean(text[:4000]).split())[:160])
     return out
 
 def article_text(url):
