@@ -754,8 +754,8 @@ h1,h2,h3,h4,.story h1,.lead h2,.card h3,.drow h4{letter-spacing:-.022em}
 .fp-grid{display:grid;grid-template-columns:minmax(0,1fr);gap:28px;align-items:start}
 .lead-pkg{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:0;background:var(--card);border:1px solid var(--hair);min-height:440px}
 .lp-text{padding:30px 32px 26px;display:flex;flex-direction:column;border-top:5px solid var(--c)}
-.ownban b{position:relative;overflow:hidden;display:inline-flex;align-items:center;gap:7px}.ownban b::after{content:"";position:absolute;top:0;bottom:0;left:-60%;width:40%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.28),transparent);animation:obsheen 4.5s ease-in-out infinite}.obico{flex:none;overflow:visible}.obico rect{fill:#fff;transform-box:fill-box;transform-origin:50% 100%;animation:obgrow 2.4s ease-in-out infinite}.obico .ob2{fill:#ff4d5e;animation-delay:.25s}.obico .ob3{animation-delay:.5s}.obinv .obglass{transform-box:view-box;transform-origin:50% 50%;animation:obsearch 3s ease-in-out infinite}@keyframes obgrow{0%,100%{transform:scaleY(.35)}45%,75%{transform:scaleY(1)}}@keyframes obsheen{0%,55%{left:-60%}100%{left:130%}}@keyframes obsearch{0%,100%{transform:translate(-1px,0) rotate(-8deg)}25%{transform:translate(1.5px,-1px) rotate(4deg)}50%{transform:translate(1px,1.5px) rotate(8deg)}75%{transform:translate(-1.5px,.5px) rotate(-2deg)}}@media (prefers-reduced-motion:reduce){.obico rect,.obinv .obglass,.ownban b::after{animation:none}.obico rect{transform:none}}
-.ownban{display:inline-flex;align-items:stretch;margin:0 0 10px;font-family:var(--sans),sans-serif;line-height:1;border-radius:3px;overflow:hidden;box-shadow:0 1px 0 rgba(0,0,0,.06)}.ownban b{background:#111;color:#fff;font-size:12px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;padding:7px 10px 7px 12px;border-left:5px solid var(--red)}.ownban em{background:#f1efe9;color:#333;font-style:normal;font-size:12px;font-weight:600;padding:7px 10px}.ownban.sm{margin:0 0 6px}.ownban.sm b{font-size:10.5px;padding:5px 8px 5px 9px;border-left-width:4px}.ownban.sm em{display:none}
+.ownban b{position:relative;overflow:hidden;display:inline-flex;align-items:center;gap:7px}.ownban b::after{content:"";position:absolute;top:0;bottom:0;left:-60%;width:40%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.55),transparent);animation:obsheen 4.5s ease-in-out infinite}.obico{flex:none;overflow:visible}.obico rect{fill:#1c1400;transform-box:fill-box;transform-origin:50% 100%;animation:obgrow 2.4s ease-in-out infinite}.obico .ob2{fill:#c8102e;animation-delay:.25s}.obico .ob3{animation-delay:.5s}.obinv .obglass{transform-box:view-box;transform-origin:50% 50%;animation:obsearch 3s ease-in-out infinite}@keyframes obgrow{0%,100%{transform:scaleY(.35)}45%,75%{transform:scaleY(1)}}@keyframes obsheen{0%,55%{left:-60%}100%{left:130%}}@keyframes obsearch{0%,100%{transform:translate(-1px,0) rotate(-8deg)}25%{transform:translate(1.5px,-1px) rotate(4deg)}50%{transform:translate(1px,1.5px) rotate(8deg)}75%{transform:translate(-1.5px,.5px) rotate(-2deg)}}@media (prefers-reduced-motion:reduce){.obico rect,.obinv .obglass,.ownban b::after{animation:none}.obico rect{transform:none}}
+.ownban{display:inline-flex;align-items:stretch;margin:0 0 10px;font-family:var(--sans),sans-serif;line-height:1;border-radius:3px;overflow:hidden;box-shadow:0 1px 0 rgba(0,0,0,.06)}.ownban b{background:linear-gradient(180deg,#f7cf5a 0%,#e9b33c 55%,#d79f2b 100%);color:#1c1400;font-size:12px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;padding:7px 10px 7px 12px;border-left:5px solid #a8781a}.ownban em{background:#fbf3dc;color:#4a3b10;font-style:normal;font-size:12px;font-weight:600;padding:7px 10px}.ownban.sm{margin:0 0 6px}.ownban.sm b{font-size:10.5px;padding:5px 8px 5px 9px;border-left-width:4px}.ownban.sm em{display:none}
 .lp-kick{display:flex;align-items:center;gap:10px;font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--c)}
 .lp-kick em{font-style:normal;color:var(--muted);letter-spacing:.02em;text-transform:none;font-weight:600;font-size:13px}
 .lp-kick .hotdot{width:9px;height:9px;border-radius:50%;background:var(--red);display:inline-block;animation:liveDot 1s steps(1,end) infinite}
@@ -1117,7 +1117,7 @@ footer .flinks a{text-decoration:underline}
           </g>
         </defs>
         <path d="M6 6 H114 V68 C114 106 86 127 60 136 C34 127 6 106 6 68 Z" fill="url(#shg)" stroke="#d0a13a" stroke-width="3.5"/>
-        <path d="M12 12 H108 V68 C108 101 83 120 60 129" fill="none" stroke="#fff" stroke-opacity=".12" stroke-width="2"/>
+        <path d="M12 12 H108 V68 C108 101 83 120 60 129" fill="none" stroke="#1c1400" stroke-opacity=".12" stroke-width="2"/>
         <use href="#seax" transform="translate(11 38) scale(.95)"/>
         <use href="#seax" transform="translate(11 70) scale(.95)"/>
         <use href="#seax" transform="translate(17.5 102) scale(.83)"/>
@@ -3163,7 +3163,7 @@ function clubArt(s, opts){
   <defs>
     <filter id="${u}b" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="26"/></filter>
     <filter id="${u}g" filterUnits="userSpaceOnUse" x="0" y="0" width="${W}" height="${H}"><feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="2" seed="${Math.floor(R() * 99)}"/><feColorMatrix type="saturate" values="0"/></filter>
-    <pattern id="${u}w" width="6" height="6" patternUnits="userSpaceOnUse"><path d="M0 1.5H6M0 4.5H6" stroke="#000" stroke-opacity=".07" stroke-width="1"/><path d="M1.5 0V6M4.5 0V6" stroke="#fff" stroke-opacity=".05" stroke-width="1"/></pattern>
+    <pattern id="${u}w" width="6" height="6" patternUnits="userSpaceOnUse"><path d="M0 1.5H6M0 4.5H6" stroke="#000" stroke-opacity=".07" stroke-width="1"/><path d="M1.5 0V6M4.5 0V6" stroke="#1c1400" stroke-opacity=".05" stroke-width="1"/></pattern>
     <linearGradient id="${u}l" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".16"/><stop offset=".45" stop-color="#fff" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".42"/></linearGradient>
     <radialGradient id="${u}v" cx=".55" cy=".45" r=".8"><stop offset=".55" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".38"/></radialGradient>
   </defs>
@@ -3171,7 +3171,7 @@ function clubArt(s, opts){
   ${pat}
   ${folds}
   <path d="${seam}" fill="none" stroke="#000" stroke-opacity=".22" stroke-width="3"/>
-  <path d="${seam}" fill="none" stroke="#fff" stroke-opacity=".28" stroke-width="1.6" stroke-dasharray="7 6" transform="translate(-9,4)"/>
+  <path d="${seam}" fill="none" stroke="#1c1400" stroke-opacity=".28" stroke-width="1.6" stroke-dasharray="7 6" transform="translate(-9,4)"/>
   <rect width="${W}" height="${H}" fill="url(#${u}w)"/>
   <rect width="${W}" height="${H}" fill="url(#${u}l)"/>
   <rect width="${W}" height="${H}" fill="url(#${u}v)"/>
@@ -5050,7 +5050,7 @@ function frontPicks(){
 /* owner's timed BREAKING badge on a story picture: story field "flashUntil" (ISO); shown until then (owner, 16 Nov 2026) */
 function flashOn(s){ const u = s && s.flashUntil ? Date.parse(s.flashUntil) : NaN; return !isNaN(u) && Date.now() < u; }
 /* banner for The Seax's own journalism (owner, 20 Nov 2026): "Seax Analysis" on our data stories, "Seax Investigates" on other original reporting */
-const OB_DATA = '<svg class="obico" viewBox="0 0 16 16" width="15" height="15" aria-hidden="true"><rect class="ob1" x="1" y="5" width="3.4" height="10" rx=".7"/><rect class="ob2" x="6.3" y="1" width="3.4" height="14" rx=".7"/><rect class="ob3" x="11.6" y="7" width="3.4" height="8" rx=".7"/></svg>', OB_INV = '<svg class="obico obinv" viewBox="0 0 16 16" width="15" height="15" aria-hidden="true"><g class="obglass"><circle cx="6.5" cy="6.5" r="4.4" fill="none" stroke="#fff" stroke-width="2"/><path d="M9.8 9.8 14.5 14.5" stroke="#fff" stroke-width="2.4" stroke-linecap="round"/></g></svg>';
+const OB_DATA = '<svg class="obico" viewBox="0 0 16 16" width="15" height="15" aria-hidden="true"><rect class="ob1" x="1" y="5" width="3.4" height="10" rx=".7"/><rect class="ob2" x="6.3" y="1" width="3.4" height="14" rx=".7"/><rect class="ob3" x="11.6" y="7" width="3.4" height="8" rx=".7"/></svg>', OB_INV = '<svg class="obico obinv" viewBox="0 0 16 16" width="15" height="15" aria-hidden="true"><g class="obglass"><circle cx="6.5" cy="6.5" r="4.4" fill="none" stroke="#1c1400" stroke-width="2"/><path d="M9.8 9.8 14.5 14.5" stroke="#1c1400" stroke-width="2.4" stroke-linecap="round"/></g></svg>';
 function ownBanner(s, cls){ if(!s || !s.original) return ""; const inv = s.original !== "data"; return `<span class="ownban${cls ? " " + cls : ""}"><b>${inv ? OB_INV : OB_DATA}${inv ? "Seax Investigates" : "Seax Analysis"}</b><em>${inv ? "Original reporting" : "Original data journalism"}</em></span>`; }
 function flashBadge(s){ return flashOn(s) ? '<span class="flash"><i></i>Breaking</span>' : ""; }
 function leadKicker(s){
