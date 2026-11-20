@@ -95,20 +95,33 @@ def major_breaking(it):
     except (TypeError, ValueError):
         return False
 
+# Owner's rule (20 Nov 2026): every Facebook post must carry a real picture, never just the static Seax topic card
+# (the plain branded cards for News, Court, Environment and so on). A story whose only picture is one of those cards
+# can still lead a round-up, but then the post is a photo post with the story's Essex map, as for a repeated lead.
+STATIC_OG = {"default", "news", "community", "council", "court", "business", "education", "environment", "feature", "fire", "football",
+             "health", "history", "police", "property", "racing", "cricket", "sport", "transport", "weather", "whatson", "briefing", "breaking"}
+
+def real_picture(sid):
+    img = og_image_of(sid)
+    m = re.search(r"/img/og/([a-z0-9-]+)\.png$", img)
+    return bool(img) and not (m and m.group(1) in STATIC_OG)
+
 def order_for_lead(ranked, n, ids, imgs):
     """Returns (items, use_map). The first item is the post's lead and link."""
     if not ranked:
         return [], False
     top = ranked[0]
-    if top["id"] not in ids and og_image_of(top["id"]) not in imgs:
-        return ranked[:n], False                      # the top story has not led today: nothing to change
+    ok = lambda it: it["id"] not in ids and og_image_of(it["id"]) not in imgs and real_picture(it["id"])
     if top["id"] in ids and major_breaking(top):
         return ranked[:n], True                       # a major story keeps the lead, with the map as its picture
-    fresh = next((it for it in ranked if it["id"] not in ids and og_image_of(it["id"]) not in imgs), None)
+    if ok(top):
+        return ranked[:n], False                      # the top story has not led today and has a real picture
+    # look a little way down for a story with its own picture, without promoting a minor story far above its rank
+    fresh = next((it for it in ranked[:max(5, min(n, 8))] if ok(it)), None)
     if fresh:
         return ([fresh] + [it for it in ranked if it is not fresh])[:n], False
     other = next((it for it in ranked if it["id"] not in ids), None)
-    if other:                                          # a different story, but its photo has already been used today
+    if other:                                          # a different story with no fresh picture of its own: post its map
         return ([other] + [it for it in ranked if it is not other])[:n], True
     return ranked[:n], True                           # nothing else to lead with: same story, map picture
 
