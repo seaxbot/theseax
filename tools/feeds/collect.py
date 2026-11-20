@@ -19,6 +19,9 @@ reads them at no cost.
                        PAGE_TEXT_MAX new articles a run from the last 3 days are opened once each for their text,
                        obeying robots.txt (owner's request, 17 Nov 2026, after the newsroom missed a University of
                        Essex story: the university has no feed and its site refuses the newsroom's own fetches)
+              "page": "ehaat" = the Essex & Herts Air Ambulance mission reports listing (owner's request, 20 Nov
+                       2026): one item per mission card (type, date logged, place, one-line summary); the place alone
+                       is the item's Essex test, so the newsroom decides which missions are in Essex
 
 Outputs (written to OUT, default ./feeds-out):
   latest.txt    what is new in the last 4 hours, for every run: NewsNow, then feed items by kind, one line each
@@ -224,6 +227,33 @@ def parse_page(text, feed):
                     "image": urljoin(feed["url"], html.unescape(img)) if img else ""})
     return out
 
+EHAAT_CARD = re.compile(r'(?is)<div class="row mission">(.*?)<a href="[^"]*" class="view-it')
+
+def parse_missions(text, feed):
+    """Essex & Herts Air Ambulance mission reports (owner's request, 20 Nov 2026). The charity has no feed: its listing page
+    shows one card per mission with the type, the date it was logged (DD.MM.YYYY), the place and a one-line summary.
+    Reports are logged in batches, often a few days after the mission, and the full report adds little; the card is enough."""
+    out, seen = [], set()
+    for m in EHAAT_CARD.finditer(text):
+        card = m.group(1)
+        a = re.search(r'(?is)<h4>\s*<a href="([^"]+)"[^>]*>(.*?)</a>', card)
+        if not a:
+            continue
+        url, place = html.unescape(a.group(1)), " ".join(clean(a.group(2)).split())
+        kind = re.search(r'(?is)class="mission-type"[^>]*>(.*?)</span>', card)
+        kind = " ".join(clean(kind.group(1)).split()) if kind else "Mission"
+        d = re.search(r'(\d\d)\.(\d\d)\.(20\d\d)', card)
+        summary = re.search(r'(?is)</h4>\s*<p>(.*?)</p>', card)
+        summary = " ".join(clean(summary.group(1)).split()) if summary else ""
+        if not place or url in seen:
+            continue
+        seen.add(url)
+        # the charity's own name contains "Essex", so the summary is not used for the Essex filter: the place decides
+        out.append({"title": f"Air ambulance mission: {place} ({kind})", "url": urljoin(feed["url"], url),
+                    "time": when(f"{d.group(3)}-{d.group(2)}-{d.group(1)}") if d else "", "body": summary,
+                    "place": place})
+    return out
+
 def article_text(url):
     """The readable paragraphs of an organisation's own article page."""
     page = get(url)[0]
@@ -236,6 +266,8 @@ def parse_feed(text, feed):
     """Items of an RSS, Atom or JSON feed (or a listing page) as {title, url, time, body}."""
     if feed.get("page") == "ld":
         return parse_page(text, feed)
+    if feed.get("page") == "ehaat":
+        return parse_missions(text, feed)
     t = text.lstrip(); out = []
     if feed.get("json"):
         for i in (json.loads(t).get("items") or []):   # Environment Agency flood warnings
@@ -314,7 +346,7 @@ def read_feed(feed, state):
     for r in raw[:60]:
         if skip and skip.search(r["title"]):
             continue
-        blob = r["title"] + " " + r["body"][:1500]
+        blob = r["place"] if r.get("place") else r["title"] + " " + r["body"][:1500]
         if feed.get("filter") == "essex" and (not ESSEX_RX.search(blob) or (NOT_UK_RX.search(blob) and not re.search(r"\b(UK|England|Britain|British|council|NHS)\b", blob))):
             continue
         it = {"id": feed["kind"] + hashlib.sha1(r["url"].encode()).hexdigest()[:5], "title": r["title"][:220], "url": r["url"],
