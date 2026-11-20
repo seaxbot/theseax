@@ -784,9 +784,8 @@ def head(title, desc, canonical, og_image, og_type="website", extra=""):
 <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png">
 <link rel="manifest" href="/manifest.webmanifest">
 <link rel="alternate" type="application/rss+xml" title="The Seax: latest Essex news" href="/feed.xml">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@500..900&family=Inter:opsz,wght@14..32,400..700&display=swap" rel="stylesheet">
+<link rel="preload" href="/assets/fonts/inter-latin-opsz-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/fonts.css?v=1">
 <link rel="stylesheet" href="/assets/page.css?v=20261120a">
 {extra}{analytics()}
 </head>
@@ -2274,6 +2273,29 @@ def patch_index(latest_briefing, ed=None):
                          f'<h3>{E(it["headline"])}</h3><p>{E(it.get("summary") or "")}</p></div></a>')
         static = "<!--seax-static-->" + "".join(cards) + "<!--/seax-static-->"
         new = re.sub(r"<!--seax-static-->.*?<!--/seax-static-->", lambda m: static, new, count=1, flags=re.S)
+        # "Only on The Seax" (20 Nov 2026): the newest pieces of our own reporting (Council Watch, and stories the
+        # desks mark "original": true: data desk analysis, FOI disclosures, weekly pieces), as plain links above News
+        own = [("Council Watch", x) for x in (ed.get("councilwatch") or []) if isinstance(x, dict) and x.get("id") and x.get("headline")]
+        own += [("Essex Numbers" if x.get("original") == "data" else "The Seax", x) for x in (ed.get("stories") or []) if isinstance(x, dict) and x.get("original") and x.get("id")]
+        own.sort(key=lambda kx: str(kx[1].get("updated") or kx[1].get("time") or ""), reverse=True)
+        seen_src, pick = set(), []
+        for k, x in own:   # one per council or desk, so the row is not three stories from one place
+            key = x.get("councilName") or k
+            if key not in seen_src:
+                seen_src.add(key); pick.append((k, x))
+        own = (pick + [o for o in own if o not in pick])[:3]
+        only = ""
+        if len(own) >= 3:
+            oc = "".join(f'<a class="card" href="/story/{E(x["id"])}/"><div class="body"><div class="meta"><span class="place">{E(k)}</span> '
+                         f'<span class="when">{E(x.get("councilName") or x.get("place") or "Essex")}</span></div>'
+                         f'<h3>{E(x["headline"])}</h3><p>{E(trunc(str(x.get("summary") or ""), 170))}</p></div></a>' for k, x in own)
+            only = ('<section class="block" id="onlyseax"><div class="wrap"><div class="bh"><h2>Only on The Seax<small>Our own reporting from council papers and official data</small></h2>'
+                    '<div class="tools"><a href="/council-watch/">All Council Watch →</a></div></div><div class="grid news-grid">' + oc + '</div></div></section>\n')
+        block2 = "<!--seax-only-->" + only + "<!--/seax-only-->"
+        if "<!--seax-only-->" in new:
+            new = re.sub(r"<!--seax-only-->.*?<!--/seax-only-->", lambda m: block2, new, count=1, flags=re.S)
+        else:
+            new = new.replace('<section class="block" id="news">', block2 + '\n<section class="block" id="news">', 1)
     if new != s:
         open(p, "w", encoding="utf-8").write(new)
         return True

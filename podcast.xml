@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+<channel>
+<title>The Seax: Essex News Bulletin</title>
+<link>https://theseax.com/</link>
+<atom:link href="https://theseax.com/podcast.xml" rel="self" type="application/rss+xml"/>
+<language>en-gb</language>
+<description>Essex news in two minutes from The Seax: the county's main stories, sport and weather, four times a day. Produced with AI from the reporting on theseax.com.</description>
+<itunes:summary>Essex news in two minutes from The Seax: the county's main stories, sport and weather, four times a day. Produced with AI from the reporting on theseax.com.</itunes:summary>
+<itunes:author>The Seax</itunes:author>
+<itunes:owner><itunes:name>The Seax</itunes:name><itunes:email>info@theseax.com</itunes:email></itunes:owner>
+<itunes:image href="https://theseax.com/img/podcast-cover.jpg"/>
+<image><url>https://theseax.com/img/podcast-cover.jpg</url><title>The Seax: Essex News Bulletin</title><link>https://theseax.com/</link></image>
+<itunes:category text="News"><itunes:category text="Daily News"/></itunes:category>
+<itunes:explicit>false</itunes:explicit>
+<itunes:type>episodic</itunes:type>
+<copyright>The Seax</copyright>
+<item>
+<title>Overnight bulletin: Thursday 19 November 2026</title>
+<description>The latest Essex news bulletin from The Seax. Full stories at theseax.com.</description>
+<link>https://theseax.com/</link>
+<guid isPermaLink="false">https://theseax.com/audio/bulletin-2026-11-19-night.mp3#2026-11-19T23:01:49Z</guid>
+<pubDate>Thu, 19 Nov 2026 23:01:49 +0000</pubDate>
+<enclosure url="https://theseax.com/audio/bulletin-2026-11-19-night.mp3" length="4249017" type="audio/mpeg"/>
+<itunes:duration>133</itunes:duration>
+<itunes:explicit>false</itunes:explicit>
+</item>
+</channel>
+</rss>

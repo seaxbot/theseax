@@ -73,7 +73,7 @@ The first run in a fresh environment downloads the voice model (about 350 MB fro
 ## 5. Publish
 
 ```
-git add -A audio data/bulletin.json
+git add -A audio data/bulletin.json data/podcast.json podcast.xml
 git commit -m "Audio bulletin <date> <morning, afternoon, evening or overnight>"
 for i in 1 2 3 4 5; do git pull -q --rebase origin main && git push -q origin HEAD:main && break; sleep $((i*7)); done
 ```

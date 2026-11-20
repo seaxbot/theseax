@@ -205,6 +205,57 @@ def write_alexa(meta):
     print("WROTE audio/alexa.json")
 
 
+def write_podcast(meta):
+    """Podcast feed (podcast.xml) for Apple Podcasts, Spotify and other apps: the bulletins still on the site, newest first."""
+    from email.utils import format_datetime
+    from xml.sax.saxutils import escape as X
+    lp = os.path.join(ROOT, "data", "podcast.json")
+    eps = json.load(open(lp, encoding="utf-8")) if os.path.exists(lp) else []
+    d = datetime.strptime(meta["date"], "%Y-%m-%d")
+    when = f'{UKDAYS[d.weekday()]} {d.day} {d.strftime("%B %Y")}'
+    name = {"am": "Morning update", "mid": "Afternoon update", "pm": "Evening update", "night": "Overnight bulletin"}.get(meta.get("slot"), "Latest bulletin")
+    fp = os.path.join(ROOT, meta["file"].lstrip("/"))
+    eps = [e for e in eps if e.get("file") != meta["file"]]
+    eps.insert(0, {"file": meta["file"], "title": f"{name}: {when}", "madeAt": meta["madeAt"], "duration": int(round(meta.get("duration") or 0)),
+                   "bytes": os.path.getsize(fp) if os.path.exists(fp) else 0})
+    eps = [e for e in eps if os.path.exists(os.path.join(ROOT, e["file"].lstrip("/")))][:8]
+    with open(lp, "w", encoding="utf-8") as fh:
+        json.dump(eps, fh, ensure_ascii=False, indent=1)
+    desc = "Essex news in two minutes from The Seax: the county's main stories, sport and weather, four times a day. Produced with AI from the reporting on theseax.com."
+    out = [f"""<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+<channel>
+<title>The Seax: Essex News Bulletin</title>
+<link>{SITE}/</link>
+<atom:link href="{SITE}/podcast.xml" rel="self" type="application/rss+xml"/>
+<language>en-gb</language>
+<description>{X(desc)}</description>
+<itunes:summary>{X(desc)}</itunes:summary>
+<itunes:author>The Seax</itunes:author>
+<itunes:owner><itunes:name>The Seax</itunes:name><itunes:email>info@theseax.com</itunes:email></itunes:owner>
+<itunes:image href="{SITE}/img/podcast-cover.jpg"/>
+<image><url>{SITE}/img/podcast-cover.jpg</url><title>The Seax: Essex News Bulletin</title><link>{SITE}/</link></image>
+<itunes:category text="News"><itunes:category text="Daily News"/></itunes:category>
+<itunes:explicit>false</itunes:explicit>
+<itunes:type>episodic</itunes:type>
+<copyright>The Seax</copyright>"""]
+    for e in eps:
+        t = datetime.strptime(e["madeAt"], "%Y-%m-%dT%H:%M:%SZ").replace(tzinfo=timezone.utc)
+        out.append(f"""<item>
+<title>{X(e["title"])}</title>
+<description>{X("The latest Essex news bulletin from The Seax. Full stories at theseax.com.")}</description>
+<link>{SITE}/</link>
+<guid isPermaLink="false">{X(SITE + e["file"] + "#" + e["madeAt"])}</guid>
+<pubDate>{format_datetime(t)}</pubDate>
+<enclosure url="{SITE}{e["file"]}" length="{e["bytes"]}" type="audio/mpeg"/>
+<itunes:duration>{e["duration"]}</itunes:duration>
+<itunes:explicit>false</itunes:explicit>
+</item>""")
+    out.append("</channel>\n</rss>\n")
+    with open(os.path.join(ROOT, "podcast.xml"), "w", encoding="utf-8") as fh:
+        fh.write("\n".join(out))
+
+
 def main():
     ap = argparse.ArgumentParser()
     if "--check-names" in sys.argv:
@@ -265,9 +316,12 @@ def main():
         print("DRY RUN, wrote", out)
         return
 
-    for f in os.listdir(os.path.join(ROOT, "audio")):
-        if f.startswith("bulletin-") and f.endswith(".mp3") and f != os.path.basename(rel):
-            os.remove(os.path.join(ROOT, "audio", f))
+    # keep the newest 8 bulletins (two days) so the podcast feed has recent episodes; older ones are deleted so the
+    # repository does not keep piling up files (podcast feed added 20 Nov 2026)
+    olds = sorted([f for f in os.listdir(os.path.join(ROOT, "audio")) if f.startswith("bulletin-") and f.endswith(".mp3") and f != os.path.basename(rel)],
+                  key=lambda f: os.path.getmtime(os.path.join(ROOT, "audio", f)), reverse=True)
+    for f in olds[7:]:
+        os.remove(os.path.join(ROOT, "audio", f))
     meta = {
         "date": date,
         "slot": slot,
@@ -283,6 +337,10 @@ def main():
         json.dump(meta, fh, ensure_ascii=False, indent=1)
     print("WROTE", rel, "and data/bulletin.json")
     write_alexa(meta)
+    try:
+        write_podcast(meta)
+    except Exception as e:  # the podcast feed must never stop a bulletin
+        print("podcast feed not written:", type(e).__name__, e, flush=True)
 
 
 if __name__ == "__main__":
