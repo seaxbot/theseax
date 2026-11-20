@@ -2519,7 +2519,6 @@
  ],
  "features": [],
  "front": [
-  "s-southend-boreham-wood-2026-11-20-live",
   "essex-recorded-crime-september-2026-police-data",
   "chelmsford-weather-1c-friday-night-heavy-rain-sunday-22-november",
   "braintree-raf-wethersfield-dispersal-order-21-23-november"
@@ -3645,7 +3644,7 @@
     ],
     "place": "Southend-on-Sea",
     "desk": "sport",
-    "weight": 6,
+    "weight": 8,
     "headline": "Shrimpers lose five-goal table-top thriller",
     "summary": "Tyreece Simpson and Rico Richards struck two minutes apart to stir Roots Hall, but the National League's unbeaten pace-setters survived the final 23 minutes.",
     "body": [
@@ -3653,7 +3652,8 @@
      "Oliver Bainbridge opened the scoring on 19 minutes and Ben Whitfield added a second on 29, both set up by Regan Booty. Zak Brunt made it 3-0 four minutes later from Whitfield's pass.",
      "Southend made three changes at half-time, sending on Maxwell McKnight, Tyreece Simpson and Anthony Hartigan for Leon Chambers-Parillon, Omari Patrick and Zavier Massiah-Edwards. Simpson headed in on 65 minutes, set up by McKnight, and two minutes later Rico Richards, on for Oliver Coker just before the hour, made it 3-2 with a shot from Promise Omochere's pass.",
      "Southend could not find an equaliser in the remaining 23 minutes and four minutes of added time. They were shown six yellow cards, to Omochere, Daniel Cox, Ben Goodliffe, Simpson, Hartigan and Darren Oldaker.",
-     "The win keeps Boreham Wood unbeaten in the National League this season. Southend had sold more than 9,700 tickets for the Friday night game."
+     "Head coach Kieron Dyer was back in the dugout after a one-match touchline ban, and more than 10,000 fans had been expected for the game, which was shown live on DAZN.",
+     "The win keeps Boreham Wood unbeaten in the National League this season."
     ],
     "points": [
      "Regan Booty set up two of Boreham Wood's goals",
@@ -3669,7 +3669,7 @@
      }
     ],
     "time": "2026-11-20T22:15:28Z",
-    "updated": "2026-11-20T22:28:33Z"
+    "updated": "2026-11-20T22:32:00Z"
    },
    {
     "id": "s-luc-benkenstein-leaves-essex-durham",
@@ -6016,53 +6016,40 @@
  },
  "stories": [
   {
-   "id": "s-southend-boreham-wood-2026-11-20-live",
-   "desk": "sport",
+   "id": "s-southend-boreham-wood-2026-11-20",
    "tag": "Football",
    "icon": "football",
    "areas": [
     "southend"
    ],
    "place": "Southend-on-Sea",
+   "desk": "sport",
    "weight": 8,
-   "time": "2026-11-20T20:35:09Z",
-   "headline": "Shrimpers fighting back in table-topping thriller at Roots Hall",
-   "summary": "Southend United have pulled two goals back against National League leaders Boreham Wood and trail 3-2 after 70 minutes.",
+   "headline": "Shrimpers lose five-goal table-top thriller",
+   "summary": "Tyreece Simpson and Rico Richards struck two minutes apart to stir Roots Hall, but the National League's unbeaten pace-setters survived the final 23 minutes.",
    "body": [
-    "Tyreece Simpson and Rico Richards scored two minutes apart midway through the second half. Simpson struck on 65 minutes from Maxwell McKnight's pass, and Richards made it 3-2 on 67 minutes, set up by Promise Omochere. Simpson was booked moments later.",
-    "Boreham Wood had led 3-0 at half-time through Oliver Bainbridge on 19 minutes, Ben Whitfield on 29 and Zak Brunt on 33. Whitfield went off on 70 minutes, replaced by Lewis Richardson.",
-    "More than 10,000 fans were expected at Roots Hall for the game, which is live on DAZN. The Seax will have the full-time result tonight.",
-    "Head coach Kieron Dyer was back in the dugout after a one-match touchline ban. Goalkeeping coach Anssi Jaakkola is still serving a six-match ban, and Jack Stone is on a month's loan at Grays Athletic.",
-    "Southend's 2-1 win over Aldershot Town last Saturday ended a run of four games without a win in all competitions, for a side rebuilt with 15 summer signings in Dyer's first job as a manager. Boreham Wood, managed by Luke Garrard, drew 2-2 at Yeovil Town last weekend.",
-    "Recent history favours the visitors. Boreham Wood won 2-0 at Roots Hall in February, after a 1-1 draw between the sides in September 2025. Before kick-off, Southend had scored 40 league goals this season and Boreham Wood 46, the two highest totals in the division."
+    "Southend United lost 3-2 to National League leaders Boreham Wood at Roots Hall on Friday night, after the visitors scored three times in 14 first-half minutes.",
+    "Oliver Bainbridge opened the scoring on 19 minutes and Ben Whitfield added a second on 29, both set up by Regan Booty. Zak Brunt made it 3-0 four minutes later from Whitfield's pass.",
+    "Southend made three changes at half-time, sending on Maxwell McKnight, Tyreece Simpson and Anthony Hartigan for Leon Chambers-Parillon, Omari Patrick and Zavier Massiah-Edwards. Simpson headed in on 65 minutes, set up by McKnight, and two minutes later Rico Richards, on for Oliver Coker just before the hour, made it 3-2 with a shot from Promise Omochere's pass.",
+    "Southend could not find an equaliser in the remaining 23 minutes and four minutes of added time. They were shown six yellow cards, to Omochere, Daniel Cox, Ben Goodliffe, Simpson, Hartigan and Darren Oldaker.",
+    "Head coach Kieron Dyer was back in the dugout after a one-match touchline ban, and more than 10,000 fans had been expected for the game, which was shown live on DAZN.",
+    "The win keeps Boreham Wood unbeaten in the National League this season."
    ],
    "points": [
-    "Simpson and Richards on target",
-    "Live on DAZN",
-    "Full-time result to follow tonight"
+    "Regan Booty set up two of Boreham Wood's goals",
+    "Southend made three changes at half-time",
+    "Six Southend players were booked"
    ],
-   "source": "The Seax (half-time score)",
-   "url": "https://www.southendunited.co.uk/",
+   "source": "Sky Sports live commentary",
+   "url": "https://www.skysports.com/football/southend-united-vs-boreham-wood/566555",
    "also": [
     {
-     "name": "Boreham Wood FC match preview",
-     "url": "https://www.borehamwoodfootballclub.co.uk/match-preview-southend-united-a-3/"
-    },
-    {
-     "name": "DAZN: National League weekend preview",
-     "url": "https://www.dazn.com/en-GB/news/football/national-league-games-this-weekend-southend-boreham-wood-yeovil-forest-green/gjlq4go4azz91tj562clcqhgk"
-    },
-    {
-     "name": "Southend United: pre-match interviews",
-     "url": "https://www.southendunited.co.uk/news/2026/november/19/pre-match--leon-chambers-parillon-looks-ahead-to-boreham-wood-clash/"
-    },
-    {
-     "name": "Aldershot Town: match report",
-     "url": "https://www.theshots.co.uk/match-report-southend-united-away/"
+     "name": "Sofascore match centre",
+     "url": "https://www.sofascore.com/football/match/boreham-wood-southend-united/ZbsrEo"
     }
    ],
-   "headlineAt": "2026-11-20T21:18:08Z",
-   "updated": "2026-11-20T21:18:02Z"
+   "time": "2026-11-20T22:15:28Z",
+   "updated": "2026-11-20T22:32:00Z"
   },
   {
    "id": "brentwood-school-safeguarding-review-british-fencing-own-review",
@@ -8961,7 +8948,7 @@
  ],
  "ticker": [
   "Brentwood School coach Gareth Stafford Bull likely abused pupils, review finds",
-  "Shrimpers fighting back in table-topping thriller at Roots Hall",
+  "Shrimpers lose five-goal table-top thriller",
   "Frosty Friday night for Essex with lows of -1C, then a bright Saturday",
   "Essex anti-social behaviour reports up 76% as robbery falls 19%",
   "Essex speed checks catch 4,035 drivers in October, one at 114mph",
