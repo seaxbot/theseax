@@ -1,6 +1,20 @@
 [
  {
   "ids": [
+   "thurrock-a282-four-vehicle-crash-dartford-crossing"
+  ],
+  "name": "The Queen Elizabeth II Bridge at the Dartford Crossing",
+  "wide": "/img/people/qeii-bridge-wide.jpg",
+  "og": "/img/people/qeii-bridge-og.jpg",
+  "creator": "Caledonianl",
+  "provider": "Wikimedia Commons",
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+  "source": "https://commons.wikimedia.org/wiki/File:Queen_Elizabeth_II_Bridge.jpg",
+  "addedBy": "owner, 20 Nov 2026 (A282 crash story; owner's choice over the police-photo rule for this story)"
+ },
+ {
+  "ids": [
    "essex-nhs-online-gp-consultations-204-surgeries-procurement"
   ],
   "name": "A patient on a video call with a nurse at home",
