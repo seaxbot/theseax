@@ -246,8 +246,11 @@ def parse_missions(text, feed):
             continue
         seen.add(url)
         # the charity's own name contains "Essex", so the summary is not used for the Essex filter: the place decides
-        out.append({"title": f"Air ambulance mission: {place} ({kind})", "url": urljoin(feed["url"], url),
-                    "time": when(f"{d[2]}-{d[1]}-{d[0]}") if d else "", "body": summary, "place": place})
+        # no "time": the charity logs missions days late, so an item counts from when the collector first sees it;
+        # the charity's own logged date goes in the title instead
+        logged = f", logged {d[0]}.{d[1]}.{d[2]}" if d else ""
+        out.append({"title": f"Air ambulance mission: {place} ({kind}{logged})", "url": urljoin(feed["url"], url),
+                    "time": "", "body": summary, "place": place})
     if not out:   # say what came back, so a changed or blocked page shows in status.json instead of silently giving nothing
         raise ValueError("no mission cards found; page starts: " + " ".join(clean(text[:4000]).split())[:160])
     return out
