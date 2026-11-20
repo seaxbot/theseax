@@ -87,7 +87,7 @@
     if (!box || box.getAttribute("data-mounted")) return;
     box.setAttribute("data-mounted", "1"); addCss();
     var src = box.getAttribute("data-src");
-    box.innerHTML = "<h3>Look up your neighbourhood</h3>" +
+    box.innerHTML = "<h3>Crime checker: look up your neighbourhood</h3>" +
       '<p class="sl-intro">Choose any of the 56 Essex Police neighbourhood areas to see its police records by type, against a year earlier.</p>' +
       '<select aria-label="Choose a neighbourhood"><option value="">Loading the 56 neighbourhoods…</option></select><div class="sl-out" aria-live="polite"></div>';
     var sel = box.querySelector("select");
@@ -100,6 +100,7 @@
       });
       var last = ""; try { last = localStorage.getItem("seax-hood") || ""; } catch (e) {}
       if (last && D.hoods[last]) { sel.value = last; render(box, D, last); }
+      if (location.hash === "#check") setTimeout(function () { box.scrollIntoView({ block: "start" }); }, 60);
     }).catch(function () {
       sel.innerHTML = '<option value="">Could not load the figures. Please refresh the page.</option>';
     });

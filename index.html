@@ -767,6 +767,12 @@ h1,h2,h3,h4,.story h1,.lead h2,.card h3,.drow h4{letter-spacing:-.022em}
 .lp-pts li{position:relative;padding-left:18px;font-size:14.5px;line-height:1.4;color:var(--ink)}
 .lp-pts li::before{content:"";position:absolute;left:0;top:7px;width:8px;height:8px;background:var(--c);border-radius:1px}
 .lp-meta{margin-top:auto;display:flex;flex-wrap:wrap;gap:6px;align-items:center;font-size:13px;color:var(--muted)}
+.lp-check{margin:14px 0 4px;padding:12px 14px;border:1px solid #a8781a;border-radius:8px;background:linear-gradient(180deg,#fdf5df,#f9ebc2);display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+.lp-check .lpc-t{flex:1 1 240px;min-width:0}
+.lp-check b{display:flex;align-items:center;gap:6px;font-size:15px;color:#1c1400;letter-spacing:.01em}
+.lp-check b svg{width:18px;height:18px;flex:none}
+.lp-check span{display:block;font-size:13.5px;color:#4a3b10;margin-top:2px;line-height:1.35}
+.lp-check select{flex:1 1 200px;font:inherit;font-size:15px;font-weight:600;padding:10px 12px;border:2px solid #d79f2b;border-radius:6px;background:#fff;color:#111;cursor:pointer;max-width:100%}
 .lp-read{margin-left:auto;background:var(--ink);color:#fff;font-weight:700;font-size:13px;padding:8px 14px;border-radius:99px;text-decoration:none}
 .lp-read:hover{background:var(--c)}
 .lp-map{position:relative;display:block;border-left:1px solid var(--hair);overflow:hidden;background:#dfe9ee}
@@ -5054,7 +5060,22 @@ function flashOn(s){ const u = s && s.flashUntil ? Date.parse(s.flashUntil) : Na
 /* banner for The Seax's own journalism (owner, 20 Nov 2026): "Seax Analysis" on our data stories, "Seax Investigates" on other original reporting */
 const OB_DATA = '<svg class="obico" viewBox="0 0 16 16" width="15" height="15" aria-hidden="true"><rect class="ob1" x="1" y="5" width="3.4" height="10" rx=".7"/><rect class="ob2" x="6.3" y="1" width="3.4" height="14" rx=".7"/><rect class="ob3" x="11.6" y="7" width="3.4" height="8" rx=".7"/></svg>', OB_INV = '<svg class="obico obinv" viewBox="0 0 16 16" width="15" height="15" aria-hidden="true"><g class="obglass"><circle cx="6.5" cy="6.5" r="4.4" fill="none" stroke="#1c1400" stroke-width="2"/><path d="M9.8 9.8 14.5 14.5" stroke="#1c1400" stroke-width="2.4" stroke-linecap="round"/></g></svg>';
 /* neighbourhood look-up in our data stories (owner, 20 Nov 2026): load its script once, then mount any new boxes */
-function seaxNeedLookup(){ setTimeout(() => { if(window.SeaxLookup){ window.SeaxLookup.mountAll(); return; } if(document.getElementById("seax-lookup-js")) return; const sc = document.createElement("script"); sc.id = "seax-lookup-js"; sc.src = "/js/crime-lookup.js?v=1"; sc.defer = true; document.head.appendChild(sc); }, 0); }
+function seaxNeedLookup(){ setTimeout(() => { if(window.SeaxLookup){ window.SeaxLookup.mountAll(); return; } if(document.getElementById("seax-lookup-js")) return; const sc = document.createElement("script"); sc.id = "seax-lookup-js"; sc.src = "/js/crime-lookup.js?v=2"; sc.defer = true; document.head.appendChild(sc); }, 0); }
+/* "Check your neighbourhood" on the splash (owner, 20 Nov 2026): a dropdown of the 56 areas right on the front page;
+   choosing one opens the story at its crime checker with that area already picked */
+function leadChecker(s){
+  const w = (Array.isArray(s.widgets) ? s.widgets : []).find(x => x && x.type === "crime-lookup" && /^\/data\//.test(String(x.src||"")));
+  if(!w) return "";
+  setTimeout(() => {
+    const sel = document.getElementById("lpCheckSel"); if(!sel || sel.dataset.ok) return; sel.dataset.ok = "1";
+    fetch(w.src, {cache:"no-cache"}).then(r => r.json()).then(D => {
+      const names = Object.keys(D.hoods||{}).sort((a,b) => a.localeCompare(b,"en-GB"));
+      sel.innerHTML = `<option value="">Choose your area (${names.length})</option>` + names.map(h => `<option value="${esc(h)}">${esc(h)}</option>`).join("");
+    }).catch(() => { sel.innerHTML = '<option value="">Open the story to use the checker</option>'; });
+    sel.addEventListener("change", () => { if(!sel.value) return; try{ localStorage.setItem("seax-hood", sel.value); }catch(e){} location.href = storyHref(s) + "#check"; });
+  }, 0);
+  return `<div class="lp-check"><div class="lpc-t"><b>${OB_DATA}Crime checker</b><span>How is your neighbourhood doing? See the September figures for any of Essex's 56 police areas.</span></div><select id="lpCheckSel" aria-label="Check your neighbourhood"><option value="">Loading the 56 areas…</option></select></div>`;
+}
 function ownBanner(s, cls){ if(!s || !s.original) return ""; const inv = s.original !== "data"; return `<span class="ownban${cls ? " " + cls : ""}"><b>${inv ? OB_INV : OB_DATA}${inv ? "Seax Investigates" : "Seax Analysis"}</b><em>${inv ? "Original reporting" : "Original data journalism"}</em></span>`; }
 function flashBadge(s){ return flashOn(s) ? '<span class="flash"><i></i>Breaking</span>' : ""; }
 function leadKicker(s){
@@ -5075,6 +5096,7 @@ function buildHero(){
       <h2><a href="${storyHref(s)}">${esc(s.headline)}</a></h2>
       <p class="lp-stand">${esc(s.summary)}</p>
       ${pts.length ? `<ul class="lp-pts">${pts.map(p=>`<li>${esc(p)}</li>`).join("")}</ul>` : ""}
+      ${leadChecker(s)}
       <div class="lp-meta">${lastUpd(s) && new Date(lastUpd(s)) > new Date(s.time||0) ? `<span class="lp-upd">Updated ${esc(hhmm(lastUpd(s)))}</span>` : `<span data-ago="${esc(shownT(s))}">${ago(shownT(s))}</span>`}<a class="lp-read" href="${storyHref(s)}">Read the story</a></div>
     </div>
     <a class="lp-map" href="${storyHref(s)}" style="--c:${pillar(s)}" aria-label="${artKick(s) === "Club" ? "Club colours" : artKick(s) === "Sport" ? "Illustration" : artKick(s) === "Photo" ? "Photo" : artKick(s) === "Breaking" ? "Breaking news picture" : artCaption(s) ? "Map" : "Picture"}: ${esc(artCaption(s) || s.headline || "")}">${flashBadge(s)}${storyArt(s,{zoom:430,aspect:1.05})}${artCaption(s) ? `<span class="mcap"${artKick(s) ? "" : ' style="font-size:10.5px;font-weight:400;padding:3px 7px;opacity:.85"'}>${artKick(s) ? `<b>${artKick(s)}</b> ` : ""}${esc(artCaption(s))}</span>` : ""}</a>`;

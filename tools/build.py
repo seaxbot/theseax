@@ -1369,9 +1369,9 @@ def body_with_charts(it, body):
                            f'<figcaption><b>Chart</b>. {E(c.get("caption") or "")}</figcaption></figure>')
         for w in widgets:
             if int(w.get("after", len(paras) - 1)) == i or (i == len(paras) - 1 and int(w.get("after", 0)) >= len(paras)):
-                out.append(f'<div class="seax-lookup" data-src="{E(w["src"])}"><noscript>Turn on JavaScript to look up your neighbourhood.</noscript></div>')
+                out.append(f'<div class="seax-lookup" id="check" data-src="{E(w["src"])}"><noscript>Turn on JavaScript to look up your neighbourhood.</noscript></div>')
     if widgets:
-        out.append('<script src="/js/crime-lookup.js?v=1" defer></script>')
+        out.append('<script src="/js/crime-lookup.js?v=2" defer></script>')
     return "".join(out)
 
 
