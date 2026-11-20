@@ -25,7 +25,12 @@ UA = "TheSeaxNewsDesk/1.0 (+https://theseax.com/about/; info@theseax.com)"
 NOW = datetime.now(timezone.utc)
 ISO = "%Y-%m-%dT%H:%M:%SZ"
 OUT = sys.argv[1] if len(sys.argv) > 1 else "datadesk-out"
-ONLY = set(sys.argv[2:])  # optional: run only these parts
+ONLY = set(sys.argv[2:])
+# An item stays "new" in the digest for this long after the desk first saw it. The collector runs more often than the
+# newsroom reads it (once a day at 12:35), so "new since the last run" lost every lead to the next run (found 20 Nov 2026).
+FRESH_HOURS = 40
+FRESH_CUT = (NOW - timedelta(hours=FRESH_HOURS)).strftime(ISO)
+MONTHLY_FRESH_CUT = (NOW - timedelta(hours=72)).strftime(ISO)  # optional: run only these parts
 
 COUNCILS = ["Basildon", "Braintree", "Brentwood", "Castle Point", "Chelmsford", "Colchester", "Epping Forest", "Harlow",
             "Maldon", "Rochford", "Southend-On-Sea", "Tendring", "Thurrock", "Uttlesford"]
@@ -117,9 +122,10 @@ def food(state):
             fid = str(e.get("FHRSID") or "")
             rd = day(e.get("RatingDate"))
             key = f"{fid}:{rd}:{e.get('RatingValue')}"
-            if not fid or key in seen:
+            if not fid:
                 continue
-            seen[key] = NOW.strftime(ISO)
+            if seen.setdefault(key, NOW.strftime(ISO)) < FRESH_CUT:
+                continue
             if first_run or rd < cut:      # the first run only learns what is already there
                 continue
             addr = ", ".join(str(e.get(k) or "").strip() for k in ("AddressLine1", "AddressLine2", "AddressLine3", "AddressLine4") if str(e.get(k) or "").strip())
@@ -241,9 +247,8 @@ def contracts(state):
         if not (local_buyer or local_work):
             continue
         key = (r["ocid"] or r["id"]) + "|" + "|".join(r["suppliers"])[:80]
-        if key in seen:
+        if seen.setdefault(key, NOW.strftime(ISO)) < FRESH_CUT:
             continue
-        seen[key] = NOW.strftime(ISO)
         r["why"] = "Essex buyer" if local_buyer else "work in Essex"
         keep.append(r)
     keep.sort(key=lambda r: -(float(r["value"]) if isinstance(r["value"], (int, float)) else 0))
@@ -302,7 +307,14 @@ HPI_REGIONS = [("Basildon", "basildon"), ("Braintree", "braintree"), ("Brentwood
 
 
 def hpi(slug, month):
-    d = get(f"https://landregistry.data.gov.uk/data/ukhpi/region/{slug}/month/{month}.json", timeout=40)
+    d = None
+    for attempt in range(3):   # the service sometimes answers 403 or 5xx for a moment
+        try:
+            d = get(f"https://landregistry.data.gov.uk/data/ukhpi/region/{slug}/month/{month}.json", timeout=40); break
+        except urllib.error.HTTPError as e:
+            if e.code == 404 or attempt == 2:
+                raise
+            time.sleep(6 + attempt * 10)
     t = (d.get("result") or {}).get("primaryTopic") or {}
     if not isinstance(t, dict) or t.get("averagePrice") in (None, ""):
         return None
@@ -341,8 +353,10 @@ def prices(state):
         if r:
             rows.append(dict(r, area=name, slug=slug))
         time.sleep(0.3)
-    is_new = state.get("hpiMonth") != month
+    if state.get("hpiMonth") != month or not state.get("hpiMonthAt"):
+        state["hpiMonthAt"] = NOW.strftime(ISO)
     state["hpiMonth"] = month
+    is_new = state["hpiMonthAt"] >= MONTHLY_FRESH_CUT
     return {"month": month, "new": is_new, "rows": rows, "url": "https://landregistry.data.gov.uk/app/ukhpi"}
 
 
@@ -375,9 +389,12 @@ def crime(state):
         return {"error": "no last-updated date"}
     store = state.setdefault("crime", {})          # {month: {hood id: {"n": total, "cats": {...}}}}
     names = state.setdefault("crimeHoods", {})
-    is_new = state.get("crimeMonth") != last
+    fetch_new = state.get("crimeMonth") != last
+    if fetch_new or not state.get("crimeMonthAt"):
+        state["crimeMonthAt"] = NOW.strftime(ISO)
+    is_new = state["crimeMonthAt"] >= MONTHLY_FRESH_CUT
     months = [last, _months_back(last, 1), _months_back(last, 12)]
-    if is_new or any(m not in store for m in months):
+    if fetch_new or any(m not in store for m in months):
         hoods = get("https://data.police.uk/api/essex/neighbourhoods")
         print("crime: neighbourhoods", len(hoods), [h.get("name") for h in hoods[:12]])
         polys, failed = {}, 0
@@ -438,7 +455,7 @@ def digest(data):
         if f.get("firstRun"):
             L.append("  First run: the desk has recorded every current 0 and 1 rating and will list only NEW ones from tomorrow.")
         new = f.get("new") or []
-        L.append(f"  Newly published ratings of 0 or 1 (inspected in the last 45 days): {len(new)}")
+        L.append(f"  Ratings of 0 or 1 first seen by the desk in the last {FRESH_HOURS} hours (inspected in the last 45 days): {len(new)}")
         for r in new[:40]:
             flags = (" [address withheld: do not use]" if r["addressWithheld"] else "") + (" [new rating pending: do not use]" if r["newRatingPending"] else "")
             L.append(f"  - RATING {r['rating']} | {r['name']} | {r['type']} | {r['address']} {r['postcode']} | {r['council']} | inspected {uk_date(r['inspected'])}{flags} | {r['url']}")
@@ -505,7 +522,7 @@ def digest(data):
         except Exception:
             mm = cr.get("month")
         chg = lambda a, b: (f"{100 * (a - b) / b:+.0f}%" if isinstance(a, int) and isinstance(b, int) and b >= 30 else "n/a")
-        L.append(f"  Newest month published: {mm}" + ("  ** NEW SINCE THE LAST RUN: worth a story **" if cr.get("new") else "  (already seen)"))
+        L.append(f"  Newest month published: {mm}" + ("  ** NEW IN THE LAST 3 DAYS: worth a story if none has been written (check data/archive.json) **" if cr.get("new") else "  (already seen)"))
         L.append(f"  All Essex Police neighbourhoods: {cr.get('total'):,} crimes and anti-social behaviour incidents | month before {cr.get('totalPrev') or 0:,} | same month a year earlier {cr.get('totalYearAgo') or 0:,}")
         for r in cr["rows"][:60]:
             L.append(f"  - {r['area']}: {r['n']:,} | vs month before {chg(r['n'], r['prev'])} | vs a year earlier {chg(r['n'], r['yearAgo'])} | violence {r['violence']}, anti-social behaviour {r['asb']}, shoplifting {r['shoplifting']}, burglary {r['burglary']}, vehicle crime {r['vehicle']}")
@@ -520,7 +537,7 @@ def digest(data):
             mm = datetime.strptime(h["month"], "%Y-%m").strftime("%B %Y")
         except Exception:
             mm = h.get("month")
-        L.append(f"  Newest month published: {mm}" + ("  ** NEW SINCE THE LAST RUN: worth a story **" if h.get("new") else "  (already seen: no story unless one was never written)"))
+        L.append(f"  Newest month published: {mm}" + ("  ** NEW IN THE LAST 3 DAYS: worth a story if none has been written (check data/archive.json) **" if h.get("new") else "  (already seen: no story unless one was never written)"))
         gbp = lambda v: ("£" + f"{v:,.0f}") if isinstance(v, (int, float)) else "n/a"
         pct = lambda v: (f"{v:+.1f}%") if isinstance(v, (int, float)) else "n/a"
         for r in sorted(h["rows"], key=lambda r: (r["area"] in ("England", "Essex (county council area)"), r.get("annual") if isinstance(r.get("annual"), (int, float)) else 0)):
@@ -559,9 +576,10 @@ def insolvency(state):
                 continue
             nid = str(e.get("id") or "").rsplit("/", 1)[-1]
             pub = day(e.get("published") or e.get("updated"))
-            if not nid or nid in seen or (pub and pub < since):
+            if not nid or (pub and pub < since):
                 continue
-            seen[nid] = NOW.strftime(ISO)
+            if seen.setdefault(nid, NOW.strftime(ISO)) < FRESH_CUT:
+                continue
             content = e.get("content")
             if isinstance(content, dict):
                 content = content.get("$") or content.get("#text") or content.get("div") or ""
@@ -640,7 +658,11 @@ def main():
             print(name, "ok")
         except Exception as e:
             print(name, "FAILED", type(e).__name__, str(e)[:300])
-            data[name] = {"error": f"{type(e).__name__}: {str(e)[:200]}"}
+            old = data.get(name) if isinstance(data.get(name), dict) else None
+            if old and not old.get("error"):
+                old["stale"] = f"not refreshed this run ({type(e).__name__}); figures are from an earlier run today or yesterday"
+            else:
+                data[name] = {"error": f"{type(e).__name__}: {str(e)[:200]}"}
     data["at"] = NOW.strftime(ISO)
     save("data.json", data); save("state.json", state)
     txt = digest(data)
