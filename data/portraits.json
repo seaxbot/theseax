@@ -1,6 +1,21 @@
 [
  {
   "ids": [
+   "brentwood-school-safeguarding-review-british-fencing-own-review"
+  ],
+  "name": "Brentwood School",
+  "label": "Picture",
+  "wide": "/img/people/brentwood-school-tower-wide.jpg",
+  "og": "/img/people/brentwood-school-tower-og.jpg",
+  "creator": "Brentwood School",
+  "provider": "",
+  "license": "",
+  "licenseUrl": "",
+  "source": "",
+  "addedBy": "owner, 20 Nov 2026 18:50 (British Fencing / Brentwood School review story); pupils cropped out because the story is about historical abuse"
+ },
+ {
+  "ids": [
    "chelmsford-broomfield-hospital-nuclear-medicine-4-3m-scanners"
   ],
   "name": "Julie Smith, Brian Peters and Michael French open the new nuclear medicine suite at Broomfield Hospital",
