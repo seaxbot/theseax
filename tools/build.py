@@ -1350,6 +1350,30 @@ def is_thin(it, sec):
     return not any(str(p).strip() for p in body) and len([p for p in points if str(p).strip()]) < 2
 
 
+def body_with_charts(it, body):
+    """Story paragraphs, with any charts the story carries placed after the paragraph named by "after" (0 = after the
+    first). A chart is {"src", "alt", "caption", "after", "w", "h"}: our own data graphics (owner's request, 20 Nov 2026:
+    "This story needs visualisations to make it clear")."""
+    paras = [str(p) for p in body if str(p).strip()]
+    charts = [c for c in (it.get("charts") or []) if isinstance(c, dict) and str(c.get("src") or "").startswith("/img/")]
+    out = []
+    for i, p in enumerate(paras):
+        out.append(f"<p>{E(p)}</p>")
+        for c in charts:
+            if int(c.get("after", len(paras) - 1)) == i or (i == len(paras) - 1 and int(c.get("after", 0)) >= len(paras)):
+                out.append(f'<figure class="stock chart"><img src="{E(c["src"])}?v=1" width="{E(c.get("w") or 1200)}" '
+                           f'height="{E(c.get("h") or 700)}" alt="{E(c.get("alt") or "")}" loading="lazy">'
+                           f'<figcaption><b>Chart</b>. {E(c.get("caption") or "")}</figcaption></figure>')
+    return "".join(out)
+
+
+def original_note(it, src, corr):
+    """Footer for The Seax's own reporting: it is not a summary of someone else's work."""
+    what = "analysis" if it.get("original") == "data" else "reporting"
+    return (f'<p class="note">This is original {what} by The Seax{" of " + E(src) + " figures" if what == "analysis" and src else ""}. '
+            f'{"Every figure was checked three times before publication. " if isinstance(it.get("verified"), dict) else ""}<a href="{E(corr)}">Spotted a mistake? Tell us</a>.</p>')
+
+
 def story_page(sec, it, more):
     sid = it["id"]
     url = f"{SITE}/story/{sid}/"
@@ -1368,6 +1392,8 @@ def story_page(sec, it, more):
     surl = safe_url(it.get("url"))
     also = [a for a in (it.get("also") or []) if isinstance(a, dict) and safe_url(a.get("url"))]
     kicker = "Feature" if sec == "features" else "Council Watch" if sec == "councilwatch" else (it.get("tag") or SECTION_LABEL.get(sec, "News"))
+    if it.get("original") == "data":  # The Seax's own data analysis carries the same label as on the front page (owner, 20 Nov 2026)
+        kicker = "Essex Numbers"
     ld = {
         "@context": "https://schema.org", "@type": "NewsArticle",
         "headline": title, "description": desc,
@@ -1511,14 +1537,14 @@ def story_page(sec, it, more):
   <div class="meta">{' <span class="dot">·</span> '.join(meta)}</div>
   {share_bar(url, title)}
   {fig}
-  {''.join(f'<p>{E(p)}</p>' for p in body if str(p).strip())}{fig_more}
+  {body_with_charts(it, body)}{fig_more}
   {('<h2>Key points</h2><ul class="points">' + ''.join(f'<li>{E(p)}</li>' for p in points) + '</ul>') if points else ''}
   <!-- Article End -->
   {story_extras(it, sec)[0]}{story_extras(it, sec)[1]}
   {'<p class="pointer">The Seax has not reported this story itself. This page points you to the outlet that did.</p>' if is_thin(it, sec) and surl else ''}
   {readfull}
   {also_html}
-  {cw_note(corr) if sec == "councilwatch" else f'<p class="note">This is a summary written by The Seax. The original reporting, quotes and images belong to {E(src or "the outlet named above")}{" and the other outlets listed" if also else ""}. <a href="{E(corr)}">Spotted a mistake? Tell us</a>.</p>'}
+  {cw_note(corr) if sec == "councilwatch" else original_note(it, src, corr) if it.get("original") else f'<p class="note">This is a summary written by The Seax. The original reporting, quotes and images belong to {E(src or "the outlet named above")}{" and the other outlets listed" if also else ""}. <a href="{E(corr)}">Spotted a mistake? Tell us</a>.</p>'}
   {tip}
 </article>
 <aside>
