@@ -38,6 +38,7 @@ sys.path.insert(0, os.path.join(ROOT, "tools"))
 import policy
 import repeats
 import dupes
+import legal
 import diary
 BOTS = {"The Seax newsroom", "The Seax sport desk", "The Seax council watch", "The Seax inquest desk", "The Seax scheduler", "The Seax photo desk", "The Seax policy"}
 SPORT_KEYS = ("results", "fixtures", "tables")
@@ -172,6 +173,7 @@ def main():
     ap.add_argument("--force", action="store_true", help="publish even if a person edited edition.json since --base")
     ap.add_argument("--author", help="commit author name")
     ap.add_argument("--dupes-ok", default="", help="comma-separated new story ids flagged as a repeat story that you checked and judged a different story (not a follow-up)")
+    ap.add_argument("--legal-ok", default="", help="OWNER ONLY: comma-separated story ids the owner has decided to publish despite a legal gate hold")
     ap.add_argument("--repeats-ok", default="", help="comma-separated story ids whose repetition flag you checked and judged wrong")
     a = ap.parse_args()
     if sum(map(bool, (a.edition, a.sport, a.councilwatch, a.inquests))) != 1:
@@ -315,6 +317,36 @@ def main():
             for sid, h, oid, oh, ot, shared in reps:
                 print(f"  {sid}: \"{h}\"\n      already ran as {oid} (first {str(ot)[:10]}): \"{oh}\"")
             sys.exit(6)
+        # legal gate (owner's go-ahead, 20 Nov 2026; tools/legal.py): a new or rewritten crime, court or inquest story
+        # that fails a rule is held back from this edition; everything else publishes. Never exits: a held story must
+        # not stop the news.
+        lok = {x.strip() for x in a.legal_ok.split(",") if x.strip()}
+        try:
+            held, warned = legal.check(out, live, lok)
+        except Exception as e:  # the gate must never break publishing
+            held, warned = [], []
+            print("legal gate error (nothing held):", type(e).__name__, str(e)[:200])
+        if held:
+            hold_ids = {h[1] for h in held}
+            for sec in legal.SECTIONS:
+                if isinstance(out.get(sec), list):
+                    out[sec] = [it for it in out[sec] if not (isinstance(it, dict) and it.get("id") in hold_ids)]
+            if isinstance(out.get("front"), list):
+                out["front"] = [i for i in out["front"] if i not in hold_ids]
+            if isinstance(out.get("lead"), dict) and out["lead"].get("id") in hold_ids:
+                rest = [it for it in (out.get("stories") or []) if isinstance(it, dict) and it.get("id") not in (out.get("front") or [])]
+                rest.sort(key=lambda it: -(it.get("weight") or 0))
+                if rest:
+                    out["lead"] = dict(out["lead"], id=rest[0]["id"])
+            print("LEGAL HOLD: these stories were NOT published (tools/legal.py). Fix each as the reason says and send it "
+                  "again in your next edition; never reword just to get past the check:")
+            for sec, sid, h, probs in held:
+                print(f"  {sid}: \"{h}\"")
+                for pr in probs:
+                    print("      " + pr)
+        if warned:
+            print("legal gate: already-live stories that would fail if rewritten (" + str(len(warned)) + "): " +
+                  " | ".join(f"{sid}: {probs[0][:90]}" for _s, sid, _h, probs in warned[:6]))
         dump(out, os.path.join(ROOT, "edition.json"))
         built = subprocess.run([sys.executable, os.path.join(ROOT, "tools", "build.py")], capture_output=True, text=True)
         if built.returncode:

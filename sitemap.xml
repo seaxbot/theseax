@@ -3,6 +3,8 @@
 <url><loc>https://theseax.com/</loc><lastmod>2026-11-20</lastmod><changefreq>hourly</changefreq><priority>1.0</priority></url>
 <url><loc>https://theseax.com/about/</loc><changefreq>monthly</changefreq><priority>0.4</priority></url>
 <url><loc>https://theseax.com/contact/</loc><changefreq>monthly</changefreq><priority>0.4</priority></url>
+<url><loc>https://theseax.com/standards/</loc><changefreq>monthly</changefreq><priority>0.4</priority></url>
+<url><loc>https://theseax.com/corrections/</loc><changefreq>weekly</changefreq><priority>0.3</priority></url>
 <url><loc>https://theseax.com/briefing/</loc><lastmod>2026-11-19</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
 <url><loc>https://theseax.com/story/the-seax-launches/</loc><lastmod>2026-11-09</lastmod><priority>0.5</priority></url>
 <url><loc>https://theseax.com/story/grays-towers-road-scrapyard-fire-20-firefighters/</loc><lastmod>2026-11-19</lastmod></url>
@@ -646,6 +648,10 @@
 <url><loc>https://theseax.com/news/great-dunmow/</loc><lastmod>2026-11-17</lastmod><changefreq>hourly</changefreq><priority>0.8</priority></url>
 <url><loc>https://theseax.com/news/stansted/</loc><lastmod>2026-11-19</lastmod><changefreq>hourly</changefreq><priority>0.8</priority></url>
 <url><loc>https://theseax.com/news/burnham-on-crouch/</loc><lastmod>2026-11-19</lastmod><changefreq>hourly</changefreq><priority>0.8</priority></url>
+<url><loc>https://theseax.com/news/data-centres/</loc><lastmod>2026-11-18</lastmod><changefreq>hourly</changefreq><priority>0.8</priority></url>
+<url><loc>https://theseax.com/news/new-homes/</loc><lastmod>2026-11-19</lastmod><changefreq>hourly</changefreq><priority>0.8</priority></url>
+<url><loc>https://theseax.com/news/asylum-accommodation/</loc><lastmod>2026-11-18</lastmod><changefreq>hourly</changefreq><priority>0.8</priority></url>
+<url><loc>https://theseax.com/news/university-of-essex/</loc><lastmod>2026-11-19</lastmod><changefreq>hourly</changefreq><priority>0.8</priority></url>
 <url><loc>https://theseax.com/council-watch/</loc><lastmod>2026-11-20</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
 <url><loc>https://theseax.com/council-watch/thurrock/</loc><lastmod>2026-11-09</lastmod></url>
 <url><loc>https://theseax.com/council-watch/southend/</loc><lastmod>2026-11-10</lastmod></url>

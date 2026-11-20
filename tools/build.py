@@ -787,10 +787,11 @@ def head(title, desc, canonical, og_image, og_type="website", extra=""):
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@500..900&family=Inter:opsz,wght@14..32,400..700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/page.css?v=20261116b">
+<link rel="stylesheet" href="/assets/page.css?v=20261120a">
 {extra}{analytics()}
 </head>
 <body>
+<a class="skip" href="#content">Skip to content</a>
 <header class="mast"><div class="wrap">
   <a class="brand" href="/" aria-label="The Seax front page">{SHIELD}<span><b>The <em>Seax</em></b><small>Essex News, Sport, Life.</small></span></a>
   <a class="home" href="/">Front page</a>
@@ -798,6 +799,7 @@ def head(title, desc, canonical, og_image, og_type="website", extra=""):
 <nav class="sec"><div class="wrap">
   <a href="/#news">News</a><a href="/#sport">Sport</a><a href="/#desk">Public Services</a><a href="/council-watch/">Council Watch</a><a href="/#community">Community</a><a href="/#whatson">What's On</a><a href="/briefing/">Morning briefing</a><a href="/about/">About</a><a href="/contact/">Contact</a>
 </div></nav>
+<span id="content"></span>
 """
 
 def newsletter_box():
@@ -823,9 +825,10 @@ def foot():
     return f"""<footer class="foot"><div class="wrap">
   <p class="area-links"><b>Local news:</b> <a href="/news/">All Essex</a> · {local}</p>
   <p class="area-links"><b>Topics:</b> {topic_links()}</p>
+  {('<p class="area-links"><b>Running stories:</b> ' + place_links("issue") + '</p>') if place_links("issue") else ''}
   <p><b>The Seax</b> brings together Essex news, sport and life from trusted local and national sources. Every story links to the original reporting.</p>
   <p class="foot-mail"><b>Contact The Seax:</b> news tips {mlink("news")} · sport {mlink("sport")} · events {mlink("events")} · community and charity {mlink("community")} · corrections {mlink("corrections")} · everything else {mlink("info")}</p>
-  <p><a href="/about/">About The Seax</a> · <a href="/about/#corrections">Corrections</a> · <a href="/contact/">Contact us</a> · <a href="/briefing/">Morning briefing</a> · <a href="/feed.xml">RSS</a>{' · ' + ' · '.join(social) if social else ''}</p>
+  <p><a href="/about/">About The Seax</a> · <a href="/standards/">Editorial standards</a> · <a href="/corrections/">Corrections</a> · <a href="/contact/">Contact us</a> · <a href="/briefing/">Morning briefing</a> · <a href="/feed.xml">RSS</a>{' · ' + ' · '.join(social) if social else ''}</p>
 </div></footer>
 """
 
@@ -1298,6 +1301,34 @@ def video_figure(it, fig):
             'f.style.cssText="display:block;width:100%;aspect-ratio:16/9;height:auto;border:0;border-radius:10px";'
             'a.replaceWith(f)})})();</script>')
 
+STORY_CTX = {"archive": {}, "diary": {}}
+
+
+def story_extras(it, sec):
+    """(what happens next, earlier on this story) blocks for a story page; empty strings when there is nothing to show."""
+    nxt = ""
+    ds = sorted(STORY_CTX["diary"].get(it.get("id"), []), key=lambda d: str(d.get("date")))[:3]
+    if ds:
+        rows = []
+        for d in ds:
+            try:
+                dt = datetime.strptime(str(d["date"])[:10], "%Y-%m-%d")
+                lab = f"{dt.strftime('%A')} {dt.day} {dt.strftime('%B')}" + (f", {d['time']}" if d.get("time") else "")
+            except Exception:
+                continue
+            rows.append(f"<li><b>{E(lab)}:</b> {E(str(d.get('what') or '').strip())}</li>")
+        if rows:
+            nxt = '<div class="next"><h2>What happens next</h2><ul>' + "".join(rows) + "</ul></div>"
+    earlier = ""
+    fid = str(it.get("followUp") or "")
+    prev = STORY_CTX["archive"].get(fid)
+    if fid and prev and fid != it.get("id") and os.path.exists(os.path.join(ROOT, "story", fid, "index.html")):
+        t0 = parse_t(prev.get("t") or prev.get("first"))
+        earlier = (f'<p class="earlier"><b>Earlier on this story:</b> <a href="/story/{E(fid)}/">{E(prev.get("h") or "")}</a>'
+                   f'{(" (" + E(uk_day(t0)) + ")") if t0 else ""}</p>')
+    return nxt, earlier
+
+
 def is_thin(it, sec):
     """True for a story page with nothing of its own beyond a sentence and a link out: no body and fewer than two
     key points (link-only and summary-only stories, bare listings)."""
@@ -1472,6 +1503,8 @@ def story_page(sec, it, more):
   {''.join(f'<p>{E(p)}</p>' for p in body if str(p).strip())}{fig_more}
   {('<h2>Key points</h2><ul class="points">' + ''.join(f'<li>{E(p)}</li>' for p in points) + '</ul>') if points else ''}
   <!-- Article End -->
+  {story_extras(it, sec)[0]}{story_extras(it, sec)[1]}
+  {'<p class="pointer">The Seax has not reported this story itself. This page points you to the outlet that did.</p>' if is_thin(it, sec) and surl else ''}
   {readfull}
   {also_html}
   {cw_note(corr) if sec == "councilwatch" else f'<p class="note">This is a summary written by The Seax. The original reporting, quotes and images belong to {E(src or "the outlet named above")}{" and the other outlets listed" if also else ""}. <a href="{E(corr)}">Spotted a mistake? Tell us</a>.</p>'}
@@ -1686,6 +1719,22 @@ TOWN_PAGES = [
     ("tiptree", "Tiptree", ()), ("west-mersea", "West Mersea", ("mersea",)), ("wivenhoe", "Wivenhoe", ()), ("shenfield", "Shenfield", ()),
     ("ingatestone", "Ingatestone", ()), ("great-baddow", "Great Baddow", ()), ("writtle", "Writtle", ()),
 ]
+# Running stories (20 Nov 2026): one page per long-running Essex issue, listing every story The Seax has run on it,
+# newest first. Matched on the headline only, and built only when there are enough stories (PLACE_MIN), so there is
+# never an empty or padded page. The standfirst states only what the page is, never facts about the issue.
+ISSUE_PAGES = [  # slug, name, headline pattern, phrase for "every story on ..."
+    ("lower-thames-crossing", "Lower Thames Crossing", r"lower thames crossing", "the Lower Thames Crossing"),
+    ("council-reorganisation", "Council reorganisation and devolution", r"reorganisation|\bunitar(y|ies)\b|devolution|\bLGR\b|mayoral (strategic )?authority|greater essex", "the reorganisation of Essex councils and devolution"),
+    ("pylons", "Norwich to Tilbury pylons", r"pylon|norwich to tilbury", "the Norwich to Tilbury pylons"),
+    ("data-centres", "Data centres", r"data cent(re|er)", "data centre plans in Essex"),
+    ("army-and-navy", "Army and Navy roundabout", r"army (and|&) navy", "Chelmsford's Army and Navy roundabout"),
+    ("water-and-reservoirs", "Water and reservoirs", r"reservoir|hosepipe|drought|water (shortage|supply)|essex (&|and) suffolk water", "Essex's water supply and reservoirs"),
+    ("new-homes", "New homes and planning", r"\b\d[\d,]* (new )?homes\b|garden (community|village|town)|local plan\b|green belt", "new homes and major planning decisions in Essex"),
+    ("southend-airport", "Southend Airport", r"southend airport", "London Southend Airport"),
+    ("asylum-accommodation", "Asylum accommodation", r"asylum|wethersfield|bell hotel", "asylum accommodation in Essex"),
+    ("university-of-essex", "University of Essex", r"university of essex", "the University of Essex"),
+]
+ISSUE_PHRASE = {sl: ph for sl, _n, _r, ph in ISSUE_PAGES}
 ROAD_PAGES = ["A12", "A127", "A13", "A130", "A120", "A414", "A133", "M25", "M11"]
 PLACE_MIN = 4   # stories needed before a town or road gets its own page
 
@@ -1702,6 +1751,11 @@ def _place_groups(recs):
         mine = [(sid, r) for sid, r in recs if pat.search(r["h"]) or pat.search(str(r.get("place") or ""))]
         if len(mine) >= PLACE_MIN:
             out[rd.lower()] = ("road", rd, mine)
+    for sl, nm, rx, _ph in ISSUE_PAGES:
+        pat = re.compile(rx, re.I)
+        mine = [(sid, r) for sid, r in recs if pat.search(r["h"])]
+        if len(mine) >= PLACE_MIN:
+            out[sl] = ("issue", nm, mine)
     return out
 
 _PLACE_CACHE = {}
@@ -1723,6 +1777,10 @@ def place_pages(archive):
             heading = f"{nm} traffic and travel news"
             desc = f"The latest {nm} news in Essex: crashes, closures, delays and roadworks on the {nm}, updated through the day by The Seax."
             crumb, crumb_u = "Traffic & travel", "/news/traffic-travel/"
+        elif kind == "issue":
+            heading = f"{nm}: every story"
+            desc = f"Every story The Seax has published on {ISSUE_PHRASE.get(sl, nm)}, newest first, with links to the original sources."
+            crumb, crumb_u = "Essex news", "/news/"
         else:
             heading = f"{nm} news"
             desc = f"The latest {nm} news from The Seax: crime, council decisions, roads, schools, business and sport in {nm}, updated through the day."
@@ -1749,7 +1807,7 @@ def place_pages(archive):
 <h1>{E(heading)}</h1>
 <p class="standfirst">{E(desc)}</p>
 <div class="cw-list">{"".join(rows)}</div>
-<h2>{"Other Essex roads" if kind == "road" else "Other Essex towns"}</h2>
+<h2>{"Other Essex roads" if kind == "road" else "Other running stories" if kind == "issue" else "Other Essex towns"}</h2>
 <p class="area-links">{place_links(kind, sl)}</p>
 <h2>News by area</h2>
 <p class="area-links">{areas}</p>
@@ -1759,7 +1817,7 @@ def place_pages(archive):
                          page + newsletter_box() + foot() + "</body></html>\n")
         pages.append((u, (mine[0][1].get("t") or NOW.isoformat())[:10]))
     # a place that has dropped below the bar loses its page rather than going stale
-    known = {sl for sl, *_ in TOWN_PAGES} | {r.lower() for r in ROAD_PAGES}
+    known = {sl for sl, *_ in TOWN_PAGES} | {r.lower() for r in ROAD_PAGES} | {sl for sl, *_ in ISSUE_PAGES}
     for sl in known - set(_PLACE_CACHE) - taken:
         d = os.path.join(ROOT, "news", sl)
         if os.path.isdir(d):
@@ -1902,6 +1960,65 @@ def photo_credits():
         rows.append(f'<li>{E(c["what"])}: photo by {E(c["by"])}, {lic_html}, via <a href="{E(c["source"])}" rel="noopener">Wikimedia Commons</a></li>')
     return ('<h2 id="photo-credits">Photo credits</h2>\n<p>Town photographs on The Seax come from Wikimedia Commons and are used under the licences shown. '
             'They have been resized for the web and are shared under the same terms. Our map artwork is our own.</p>\n<ul class="credits">' + "".join(rows) + '<li>London Stansted Airport library images: photos by London Stansted Airport</li>' + f'<li>c2c train 357 040 at Ripple Lane (used on c2c stories): photo by kitmasterbloke, <a href="{C2C_CREDIT["licenseUrl"]}" rel="license noopener">CC BY 4.0</a>, via <a href="{C2C_CREDIT["source"]}" rel="noopener">Wikimedia Commons</a>; cropped and resized</li>' + "".join(portrait_credit(p) for p in PORTRAITS) + "</ul>\n")
+
+
+def standards_page():
+    url = f"{SITE}/standards/"
+    return head("Editorial standards · The Seax", "How The Seax sources, writes, checks and corrects its reporting, and how it uses AI.", url, "default") + f"""<main class="wrap prose">
+<h1>Editorial standards</h1>
+<p class="standfirst">The rules every story on The Seax is written to, and what to do if we fall short of them.</p>
+
+<h2>How our reporting is produced</h2>
+<p>The Seax is produced with AI. Automated tools read hundreds of Essex sources through the day, and AI writes our headlines, summaries and stories in our own words under the written rules on this page. No story is written from memory: every fact must come from a source read at the time of writing, and every story links to that source.</p>
+<p>Some pages only point to another outlet's report, in one sentence with a link. Those pages say so plainly. Stories marked Council Watch are our own reporting from councils' public meeting papers. Stories described as analysis by The Seax are our own work on official open data, and always link to the data.</p>
+
+<h2>Sources</h2>
+<ul>
+<li>We prefer primary documents and official sources: council papers, police, fire and ambulance statements, courts, the NHS, regulators and government data.</li>
+<li>We credit the outlet that reported a story first and link to it. We do not copy other publishers' sentences, quotes or pictures.</li>
+<li>Social media is a tip-off, never a source, unless it is the official account of a public body.</li>
+<li>Claims by politicians, unions, campaign groups and businesses are reported as their claims, with attribution.</li>
+<li>We say what is not yet known.</li>
+</ul>
+
+<h2>Crime, courts and inquests</h2>
+<ul>
+<li>We report charges and court cases only from official sources or outlets that attended or reported them in full. A person charged is presumed innocent, and we do not report background that could prejudice a trial.</li>
+<li>We never identify the complainant in a sexual offence case.</li>
+<li>We do not name children in crime or inquest stories, except where an official body has named them, for example in a missing person appeal.</li>
+<li>We do not report the method of a suicide, and we report deaths with care for the family.</li>
+<li>Every crime, court and inquest story passes an automatic check against these rules before it is published. A story that fails is held back.</li>
+</ul>
+
+<h2>Data</h2>
+<p>When we publish figures we give the source, the date of the data and a link, say how we worked out anything we calculated, and say what the figures cannot show. A food hygiene rating, a contract award or a petition count is reported as the official record states it, on the date stated.</p>
+
+<h2>Fairness and independence</h2>
+<p>The Seax is independent of any political party, council, company or campaign. Every party and every MP is treated the same way. Where a story makes a serious claim about a person or organisation, we include their published response where there is one.</p>
+
+<h2>Corrections and complaints</h2>
+<p>If we get something wrong, email {mlink("corrections", "Correction")} with a link to the page and what is wrong. We aim to review every request within 24 hours, correct the story, and record significant corrections in our public <a href="/corrections/">corrections log</a>. If you are named in a story and believe it is unfair or out of date, use the same address. More about how the site works is on the <a href="/about/">About page</a>.</p>
+</main>
+""" + foot() + "</body></html>\n"
+
+
+def corrections_page(log):
+    url = f"{SITE}/corrections/"
+    rows = ""
+    for c in sorted(log, key=lambda c: str(c.get("at") or ""), reverse=True)[:200]:
+        t = parse_t(c.get("at"))
+        sid = str(c.get("storyId") or "")
+        link = f'<a href="/story/{E(sid)}/">{E(c.get("headline") or sid)}</a>' if sid and os.path.exists(os.path.join(ROOT, "story", sid, "index.html")) else E(c.get("headline") or "")
+        rows += f"<tr><td>{E(uk_day(t)) if t else ''}</td><td>{link}</td><td>{E(c.get('text') or '')}</td></tr>"
+    body = (f'<table class="log-table"><thead><tr><th>Date</th><th>Story</th><th>What we corrected</th></tr></thead><tbody>{rows}</tbody></table>' if rows
+            else "<p>No corrections have been recorded since this log began on Friday 20 November 2026.</p>")
+    return head("Corrections log · The Seax", "Every significant correction The Seax has made to its reporting, newest first.", url, "default") + f"""<main class="wrap prose">
+<h1>Corrections log</h1>
+<p class="standfirst">Significant corrections to stories on The Seax, newest first. The log began on 20 November 2026.</p>
+{body}
+<p>Spotted a mistake? Email {mlink("corrections", "Correction")} with a link to the page and what is wrong. Our <a href="/standards/">editorial standards</a> explain how we work.</p>
+</main>
+""" + foot() + "</body></html>\n"
 
 
 def contact_page():
@@ -2152,7 +2269,8 @@ def patch_index(latest_briefing, ed=None):
     if ed is not None:
         cards = []
         for it in [x for x in (ed.get("stories") or []) if isinstance(x, dict) and x.get("id") and x.get("headline")][:40]:
-            cards.append(f'<a class="card" href="/story/{E(it["id"])}/"><div class="body"><div class="meta"><span class="place">{E(it.get("place") or "Essex")}</span></div>'
+            cards.append(f'<a class="card" href="/story/{E(it["id"])}/"><div class="body"><div class="meta"><span class="place">{E(it.get("place") or "Essex")}</span>'
+                         f'{(" <span class=\"when\">" + E(uk_long(parse_t(it.get("time")))) + "</span>") if parse_t(it.get("time")) else ""}</div>'
                          f'<h3>{E(it["headline"])}</h3><p>{E(it.get("summary") or "")}</p></div></a>')
         static = "<!--seax-static-->" + "".join(cards) + "<!--/seax-static-->"
         new = re.sub(r"<!--seax-static-->.*?<!--/seax-static-->", lambda m: static, new, count=1, flags=re.S)
@@ -2171,7 +2289,7 @@ def main():
     ed = json.load(open(os.path.join(ROOT, "edition.json"), encoding="utf-8"))
     if a.preview_briefing:
         b = briefing(ed, NOW)
-        open(a.preview_briefing, "w", encoding="utf-8").write(briefing_page(b).replace('href="/assets/page.css?v=20261116b"', f'href="file://{ROOT}/assets/page.css"'))
+        open(a.preview_briefing, "w", encoding="utf-8").write(briefing_page(b).replace('href="/assets/page.css?v=20261120a"', f'href="file://{ROOT}/assets/page.css"'))
         print("preview written"); return
 
     # owner's source and copyright policy (tools/policy.py): no features, link-only outlets,
@@ -2183,6 +2301,19 @@ def main():
     changed = 0
     arch_path = os.path.join(ROOT, "data", "archive.json")
     archive = json.load(open(arch_path, encoding="utf-8")) if os.path.exists(arch_path) else {}
+    # story pages are written before the place pages: prime the running-story links for their footers, and give the
+    # story page builder the diary and the archive ("What happens next", "Earlier on this story")
+    try:
+        _recs = sorted([(sid, r) for sid, r in archive.items() if r.get("sec") in ("news", "sport", "official", "courts", "community", "councilwatch")],
+                       key=lambda kv: kv[1].get("t") or kv[1].get("first") or "", reverse=True)
+        _PLACE_CACHE.update(_place_groups(_recs))
+    except Exception:
+        pass
+    STORY_CTX["archive"] = archive
+    today = NOW.astimezone(UK).date().isoformat()
+    for d in (ed.get("diary") or []):
+        if isinstance(d, dict) and d.get("storyId") and d.get("status") != "dropped" and str(d.get("date") or "") >= today and d.get("kind") != "court":
+            STORY_CTX["diary"].setdefault(d["storyId"], []).append(d)
 
     # features were removed (owner's decision, Nov 2026): delete any feature pages still online
     for sid in [k for k, v in archive.items() if v.get("sec") == "features"]:
@@ -2239,6 +2370,19 @@ def main():
 
     # about page
     if write("about/index.html", about_page()):
+        changed += 1
+    if write("standards/index.html", standards_page()):
+        changed += 1
+    # corrections log: the edition's "corrections" list (ops/newsroom.md, CORRECTIONS LOG) is merged into a permanent file
+    clog_p = os.path.join(ROOT, "data", "corrections.json")
+    clog = json.load(open(clog_p, encoding="utf-8")) if os.path.exists(clog_p) else []
+    seen_c = {(str(c.get("at")), str(c.get("storyId"))) for c in clog}
+    for c in (ed.get("corrections") or []):
+        if isinstance(c, dict) and c.get("at") and c.get("text") and (str(c.get("at")), str(c.get("storyId"))) not in seen_c:
+            clog.append({"at": str(c["at"]), "storyId": str(c.get("storyId") or ""), "headline": str(c.get("headline") or ""), "text": str(c["text"])[:600]})
+    if write("data/corrections.json", json.dumps(clog, ensure_ascii=False, indent=0)):
+        changed += 1
+    if write("corrections/index.html", corrections_page(clog)):
         changed += 1
     if write("contact/index.html", contact_page()):
         changed += 1
@@ -2307,6 +2451,7 @@ def main():
     def lastmod(rec):
         return (rec.get("u") or rec.get("t") or rec.get("last") or iso(NOW))[:10]
     urls = [(SITE + "/", NOW.date().isoformat(), "hourly", "1.0"), (SITE + "/about/", None, "monthly", "0.4"), (SITE + "/contact/", None, "monthly", "0.4"),
+            (SITE + "/standards/", None, "monthly", "0.4"), (SITE + "/corrections/", None, "weekly", "0.3"),
             (SITE + "/briefing/", latest or None, "daily", "0.7"),
             (SITE + "/story/the-seax-launches/", "2026-11-09", None, "0.5")]  # owner's launch story, kept findable
     for sid, rec in sorted(archive.items(), key=lambda kv: kv[1].get("t") or kv[1].get("first") or "", reverse=True):
