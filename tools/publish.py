@@ -30,7 +30,7 @@ If the build fails, the edition is still published without the built pages.
 Prints PUSHED <hash> on success. Exit codes: 0 pushed, 2 bad input, 3 needs a manual merge, 4 push failed, 5 repeats,
 6 repeat story.
 """
-import argparse, json, os, subprocess, sys, time
+import argparse, json, os, re, subprocess, sys, time
 from datetime import datetime, timezone, timedelta
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -84,6 +84,24 @@ def _items(ed):
 
 def headline_snapshot(ed):
     return {x["id"]: (" ".join(str(x.get("headline") or "").split()), x.get("headlineAt")) for x in _items(ed)}
+
+
+PLUS_RX = re.compile(r"(\d[\d,.]*(?:k|m|bn)?)-plus\b", re.I)
+
+
+def plus_headlines(out):
+    """Owner's rule (20 Nov 2026): headlines write a figure with "+", never "-plus" ("9,700+ tickets", not "9,700-plus")."""
+    n = 0
+    for x in _items(out):
+        h = str(x.get("headline") or "")
+        new = PLUS_RX.sub(r"\1+", h)
+        if new != h:
+            x["headline"] = new
+            n += 1
+    for x in (out.get("lead") or {}).get("history") or []:
+        if isinstance(x, dict) and isinstance(x.get("headline"), str):
+            x["headline"] = PLUS_RX.sub(r"\1+", x["headline"])
+    return n
 
 
 def stamp_headlines(out, prev):
@@ -282,6 +300,7 @@ def main():
         if dprobs:
             print("DIARY WARNINGS (fix next run):", " | ".join(dprobs[:8]))
         print("diary:", len(out["diary"]), "entries")
+        print("plus to +:", plus_headlines(out))
         print("headlines changed:", stamp_headlines(out, prev_heads))
         rep = policy.apply(out)
         print("policy:", json.dumps({k: (v if isinstance(v, int) else len(v)) for k, v in rep.items()}))
