@@ -10,6 +10,7 @@ when the figures are news. Every figure in the digest carries the link to its of
              Government Licence): premises newly rated 0 or 1, and each council's share of premises rated 0 to 2
   contracts  Contract awards published by Essex public bodies on Find a Tender and Contracts Finder (OCDS, Open
              Government Licence): who bought what, from whom, for how much
+  prices     UK House Price Index for the 14 Essex council areas (HM Land Registry and ONS, Open Government Licence)
   petitions  The UK Parliament petitions with the most signatures (petition.parliament.uk, Open Parliament
              Licence): which ones Essex constituencies sign far more, or far less, than the country as a whole
 
@@ -293,6 +294,58 @@ def petitions(state):
     return {"petitions": out}
 
 
+# ---------------------------------------------------------------- house prices
+HPI_REGIONS = [("Basildon", "basildon"), ("Braintree", "braintree"), ("Brentwood", "brentwood"), ("Castle Point", "castle-point"),
+               ("Chelmsford", "chelmsford"), ("Colchester", "colchester"), ("Epping Forest", "epping-forest"), ("Harlow", "harlow"),
+               ("Maldon", "maldon"), ("Rochford", "rochford"), ("Southend-on-Sea", "southend-on-sea"), ("Tendring", "tendring"),
+               ("Thurrock", "thurrock"), ("Uttlesford", "uttlesford"), ("Essex (county council area)", "essex"), ("England", "england")]
+
+
+def hpi(slug, month):
+    d = get(f"https://landregistry.data.gov.uk/data/ukhpi/region/{slug}/month/{month}.json", timeout=40)
+    t = (d.get("result") or {}).get("primaryTopic") or {}
+    if not isinstance(t, dict) or t.get("averagePrice") in (None, ""):
+        return None
+    num = lambda k: (float(t[k]) if isinstance(t.get(k), (int, float, str)) and str(t.get(k)).strip() not in ("",) else None)
+    try:
+        return {"price": num("averagePrice"), "annual": num("percentageAnnualChange"), "monthly": num("percentageChange"),
+                "detached": num("averagePriceDetached"), "flat": num("averagePriceFlatMaisonette"), "firstTime": num("averagePriceFirstTimeBuyer")}
+    except Exception:
+        return None
+
+
+def prices(state):
+    """UK House Price Index (HM Land Registry and ONS, Open Government Licence): the newest month published."""
+    month = None
+    y, m = NOW.year, NOW.month
+    for _ in range(6):
+        m -= 1
+        if m == 0:
+            y, m = y - 1, 12
+        cand = f"{y}-{m:02d}"
+        try:
+            if hpi("chelmsford", cand):
+                month = cand; break
+        except urllib.error.HTTPError as e:
+            if e.code != 404:
+                raise
+        time.sleep(0.3)
+    if not month:
+        return {"error": "no recent month found"}
+    rows = []
+    for name, slug in HPI_REGIONS:
+        try:
+            r = hpi(slug, month)
+        except Exception as e:
+            print("prices: failed", slug, e); r = None
+        if r:
+            rows.append(dict(r, area=name, slug=slug))
+        time.sleep(0.3)
+    is_new = state.get("hpiMonth") != month
+    state["hpiMonth"] = month
+    return {"month": month, "new": is_new, "rows": rows, "url": "https://landregistry.data.gov.uk/app/ukhpi"}
+
+
 # ---------------------------------------------------------------- digest
 def digest(data):
     L = [f"THE SEAX DATA DESK  |  collected {NOW.strftime('%A %d %B %Y, %H:%M')} UTC",
@@ -351,6 +404,21 @@ def digest(data):
             L.append("  Most new Essex signatures since the last run:")
             for x in movers[:5]:
                 L.append(f"  - +{x['essexSinceLastRun']:,} | {x['action'][:120]} | {x['url']}")
+    h = data.get("prices") or {}
+    L.append("== HOUSE PRICES (UK House Price Index, HM Land Registry and ONS) ==")
+    if h.get("error"):
+        L.append("  could not be read this run: " + h["error"])
+    elif h.get("rows"):
+        try:
+            mm = datetime.strptime(h["month"], "%Y-%m").strftime("%B %Y")
+        except Exception:
+            mm = h.get("month")
+        L.append(f"  Newest month published: {mm}" + ("  ** NEW SINCE THE LAST RUN: worth a story **" if h.get("new") else "  (already seen: no story unless one was never written)"))
+        gbp = lambda v: ("£" + f"{v:,.0f}") if isinstance(v, (int, float)) else "n/a"
+        pct = lambda v: (f"{v:+.1f}%") if isinstance(v, (int, float)) else "n/a"
+        for r in sorted(h["rows"], key=lambda r: (r["area"] in ("England", "Essex (county council area)"), r.get("annual") if isinstance(r.get("annual"), (int, float)) else 0)):
+            L.append(f"  - {r['area']}: average {gbp(r['price'])} | change in a year {pct(r['annual'])} | in a month {pct(r['monthly'])} | first-time buyers {gbp(r.get('firstTime'))} | flats {gbp(r.get('flat'))} | detached {gbp(r.get('detached'))}")
+        L.append("  Source page: " + str(h.get("url")))
     L.append("")
     return "\n".join(L)
 
@@ -359,7 +427,7 @@ def main():
     os.makedirs(OUT, exist_ok=True)
     state = load("state.json", {})
     data = load("data.json", {})
-    for name, fn in (("food", food), ("contracts", contracts), ("petitions", petitions)):
+    for name, fn in (("food", food), ("contracts", contracts), ("petitions", petitions), ("prices", prices)):
         if ONLY and name not in ONLY:
             continue
         try:
