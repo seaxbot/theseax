@@ -39,6 +39,7 @@ import policy
 import repeats
 import dupes
 import legal
+import verify
 import diary
 BOTS = {"The Seax newsroom", "The Seax sport desk", "The Seax council watch", "The Seax inquest desk", "The Seax scheduler", "The Seax photo desk", "The Seax policy"}
 SPORT_KEYS = ("results", "fixtures", "tables")
@@ -368,6 +369,49 @@ def main():
         if warned:
             print("legal gate: already-live stories that would fail if rewritten (" + str(len(warned)) + "): " +
                   " | ".join(f"{sid}: {probs[0][:90]}" for _s, sid, _h, probs in warned[:6]))
+        # TRIPLE CHECK (owner's rule, 20 Nov 2026: "Make sure triple checks are done before publishing on The Seax original
+        # reporting!"; tools/verify.py). A new original or Council Watch story without a valid triple-check stamp for its
+        # final words is held back; a rewrite of a live one without it keeps the live, already-checked version.
+        if a.edition or a.inquests or a.councilwatch:
+            try:
+                unver = verify.gate(out, live, councilwatch_only=bool(a.councilwatch))
+            except Exception as e:  # the gate must never break publishing
+                unver = []
+                print("triple check gate error (nothing held):", type(e).__name__, str(e)[:200])
+            if unver:
+                bad_ids = {sid for sid, _ in unver}
+                live_ix = {}
+                for sec in ("stories", "community", "official", "courts", "councilwatch"):
+                    for it in live.get(sec) or []:
+                        if isinstance(it, dict):
+                            live_ix.setdefault((sec, it.get("id")), it)
+                removed = set()
+                for sec in ("stories", "community", "official", "courts", "councilwatch"):
+                    if not isinstance(out.get(sec), list):
+                        continue
+                    keep = []
+                    for it in out[sec]:
+                        if isinstance(it, dict) and it.get("id") in bad_ids:
+                            old = live_ix.get((sec, it.get("id")))
+                            if old is not None:
+                                keep.append(old)
+                            else:
+                                removed.add(it.get("id"))
+                            continue
+                        keep.append(it)
+                    out[sec] = keep
+                if isinstance(out.get("front"), list):
+                    out["front"] = [i for i in out["front"] if i not in removed]
+                if isinstance(out.get("lead"), dict) and out["lead"].get("id") in removed:
+                    rest = [it for it in (out.get("stories") or []) if isinstance(it, dict) and it.get("id") not in (out.get("front") or [])]
+                    rest.sort(key=lambda it: -(it.get("weight") or 0))
+                    if rest:
+                        out["lead"] = dict(out["lead"], id=rest[0]["id"])
+                print("UNVERIFIED HOLD: these original-reporting stories were NOT published (new ones held back, rewrites "
+                      "kept at their live version) because they have no valid triple check (tools/verify.py, owner's rule "
+                      "20 Nov 2026). Do all three checks on the final words, stamp with tools/verify.py, and send them again:")
+                for sid, why in unver:
+                    print(f"  {sid}: {why}")
         # takedowns (owner's rule): ids in tools/takedown.txt never go back into the edition, whichever desk sends them
         tkp = os.path.join(ROOT, "tools", "takedown.txt")
         if os.path.exists(tkp):

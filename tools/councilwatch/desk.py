@@ -152,6 +152,8 @@ def publish(new_path):
             "source": st.get("councilName") or src.get("councilName") or "Essex council papers", "org": st.get("councilName") or src.get("councilName"),
             "weight": max(1, min(10, int(st.get("weight") or 5))), "time": st.get("time") or NOW.strftime("%Y-%m-%dT%H:%M:%SZ"),
         })
+        if isinstance(st.get("verified"), dict):   # triple check stamp (tools/verify.py), checked by publish.py
+            out[-1]["verified"] = st["verified"]
     cut = (NOW - timedelta(days=KEEP_DAYS)).strftime("%Y-%m-%dT%H:%M:%SZ")
     keep = [it for it in live if (it.get("time") or "") >= cut and it.get("cwKey") not in {o["cwKey"] for o in out}]
     merged = sorted(out + keep, key=lambda x: x.get("time") or "", reverse=True)[:MAX_LIVE]

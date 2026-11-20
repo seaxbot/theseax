@@ -389,6 +389,11 @@ def crime(state):
         return {"error": "no last-updated date"}
     store = state.setdefault("crime", {})          # {month: {hood id: {"n": total, "cats": {...}}}}
     names = state.setdefault("crimeHoods", {})
+    # Method v2 (20 Nov 2026, after an independent recount of the September 2026 figures): full neighbourhood boundaries
+    # (no thinning), every crime counted once across neighbourhoods, and crimes with no location counted separately.
+    if state.get("crimeMethod") != "full-v2":
+        store.clear(); state["crimeMethod"] = "full-v2"
+    nolo = state.setdefault("crimeNoLocation", {})
     fetch_new = state.get("crimeMonth") != last
     if fetch_new or not state.get("crimeMonthAt"):
         state["crimeMonthAt"] = NOW.strftime(ISO)
@@ -404,14 +409,12 @@ def crime(state):
                 b = get(f"https://data.police.uk/api/essex/{hid}/boundary", timeout=40)
             except Exception as e:
                 failed += 1; continue
-            step = max(1, len(b) // 120)
-            pts = b[::step]
-            polys[hid] = ":".join(f"{float(p['latitude']):.4f},{float(p['longitude']):.4f}" for p in pts)
+            polys[hid] = ":".join(f"{p['latitude']},{p['longitude']}" for p in b)
             time.sleep(0.08)
         for mth in months:
             if mth in store and len(store[mth]) >= len(polys) * 0.9:
                 continue
-            got = {}
+            got, seen_ids = {}, set()
             for hid, poly in polys.items():
                 try:
                     cs = _crimes(poly, mth)
@@ -420,14 +423,23 @@ def crime(state):
                 if cs is None:
                     continue
                 cats = {}
+                fresh = [c for c in cs if c.get("id") not in seen_ids]
+                seen_ids.update(c.get("id") for c in cs)
+                cs = fresh
                 for c in cs:
                     cats[c.get("category") or "other"] = cats.get(c.get("category") or "other", 0) + 1
                 got[hid] = {"n": len(cs), "cats": cats}
                 time.sleep(0.08)
             store[mth] = got
-            print("crime:", mth, "areas read", len(got), "of", len(polys), "boundaries failed", failed)
+            try:
+                nolo[mth] = len(get(f"https://data.police.uk/api/crimes-no-location?category=all-crime&force=essex&date={mth}"))
+            except Exception:
+                nolo.pop(mth, None)
+            print("crime:", mth, "areas read", len(got), "of", len(polys), "boundaries failed", failed, "no location", nolo.get(mth))
         for old in [k for k in store if k not in months]:
             del store[old]
+        for old in [k for k in nolo if k not in months]:
+            del nolo[old]
     state["crimeMonth"] = last
     cur, prev, yago = store.get(months[0], {}), store.get(months[1], {}), store.get(months[2], {})
     rows = []
@@ -440,7 +452,8 @@ def crime(state):
     rows.sort(key=lambda r: -r["n"])
     tot = lambda d: sum(x["n"] for x in d.values()) if d else None
     return {"month": last, "new": is_new, "rows": rows, "total": tot(cur), "totalPrev": tot(prev), "totalYearAgo": tot(yago),
-            "months": months, "url": "https://www.police.uk/pu/your-area/essex-police/"}
+            "months": months, "noLocation": [nolo.get(m) for m in months], "method": "full boundaries, each crime counted once",
+            "url": "https://www.police.uk/pu/your-area/essex-police/"}
 
 
 # ---------------------------------------------------------------- digest
@@ -524,6 +537,7 @@ def digest(data):
         chg = lambda a, b: (f"{100 * (a - b) / b:+.0f}%" if isinstance(a, int) and isinstance(b, int) and b >= 30 else "n/a")
         L.append(f"  Newest month published: {mm}" + ("  ** NEW IN THE LAST 3 DAYS: worth a story if none has been written (check data/archive.json) **" if cr.get("new") else "  (already seen)"))
         L.append(f"  All Essex Police neighbourhoods: {cr.get('total'):,} crimes and anti-social behaviour incidents | month before {cr.get('totalPrev') or 0:,} | same month a year earlier {cr.get('totalYearAgo') or 0:,}")
+        L.append(f"  Method: {cr.get('method') or 'thinned boundaries'}. Crimes with no location (not in the totals), this month / month before / a year earlier: {cr.get('noLocation')}. Figures are counts of police.uk records; TRIPLE CHECK every figure before publishing (ops/newsroom.md).")
         for r in cr["rows"][:60]:
             L.append(f"  - {r['area']}: {r['n']:,} | vs month before {chg(r['n'], r['prev'])} | vs a year earlier {chg(r['n'], r['yearAgo'])} | violence {r['violence']}, anti-social behaviour {r['asb']}, shoplifting {r['shoplifting']}, burglary {r['burglary']}, vehicle crime {r['vehicle']}")
         L.append("  Source: " + str(cr.get("url")))
