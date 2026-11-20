@@ -4105,7 +4105,7 @@
 "group": "politics",
 "area": "colchester",
 "name": "Pam Cox MP (Colchester)",
-"url": "https://www.pamcox.org.uk",
+"url": "https://www.pamcox.co.uk",
 "new": true
 },
 {
@@ -4113,13 +4113,6 @@
 "area": "epping",
 "name": "Neil Hudson MP (Epping Forest)",
 "url": "https://www.neilhudson.org.uk",
-"new": true
-},
-{
-"group": "politics",
-"area": "epping",
-"name": "Chris Vince MP (Harlow)",
-"url": "https://www.chrisvince.org.uk",
 "new": true
 },
 {
@@ -4132,15 +4125,8 @@
 {
 "group": "politics",
 "area": "southend",
-"name": "Bayo Alaba MP (Southend East and Rochford)",
-"url": "https://www.bayoalaba.org.uk",
-"new": true
-},
-{
-"group": "politics",
-"area": "southend",
 "name": "David Burton-Sampson MP (Southend West and Leigh)",
-"url": "https://www.davidburtonsampson.org.uk",
+"url": "https://davidburtonsampson.co.uk",
 "new": true
 },
 {

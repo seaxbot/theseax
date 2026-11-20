@@ -1797,5 +1797,185 @@
 "filter": "none",
 "page": "ld",
 "id": 199
+},
+{
+"name": "Richard Holden MP (Basildon and Billericay) in Parliament",
+"url": "https://www.theyworkforyou.com/rss/mp/25893.rdf",
+"group": "politics",
+"area": "south",
+"kind": "O",
+"filter": "essex",
+"political": true,
+"id": 200
+},
+{
+"name": "James Cleverly MP (Braintree) in Parliament",
+"url": "https://www.theyworkforyou.com/rss/mp/25376.rdf",
+"group": "politics",
+"area": "braintree",
+"kind": "O",
+"filter": "essex",
+"political": true,
+"id": 201
+},
+{
+"name": "Alex Burghart MP (Brentwood and Ongar) in Parliament",
+"url": "https://www.theyworkforyou.com/rss/mp/25659.rdf",
+"group": "politics",
+"area": "brentwood",
+"kind": "O",
+"filter": "essex",
+"political": true,
+"id": 202
+},
+{
+"name": "Rebecca Harris MP (Castle Point) in Parliament",
+"url": "https://www.theyworkforyou.com/rss/mp/24731.rdf",
+"group": "politics",
+"area": "south",
+"kind": "O",
+"filter": "essex",
+"political": true,
+"id": 203
+},
+{
+"name": "Marie Goldman MP (Chelmsford) in Parliament",
+"url": "https://www.theyworkforyou.com/rss/mp/26338.rdf",
+"group": "politics",
+"area": "chelmsford",
+"kind": "O",
+"filter": "essex",
+"political": true,
+"id": 204
+},
+{
+"name": "Nigel Farage MP (Clacton) in Parliament",
+"url": "https://www.theyworkforyou.com/rss/mp/26352.rdf",
+"group": "politics",
+"area": "tendring",
+"kind": "O",
+"filter": "essex",
+"political": true,
+"id": 205
+},
+{
+"name": "Pam Cox MP (Colchester) in Parliament",
+"url": "https://www.theyworkforyou.com/rss/mp/26324.rdf",
+"group": "politics",
+"area": "colchester",
+"kind": "O",
+"filter": "essex",
+"political": true,
+"id": 206
+},
+{
+"name": "Neil Hudson MP (Epping Forest) in Parliament",
+"url": "https://www.theyworkforyou.com/rss/mp/25875.rdf",
+"group": "politics",
+"area": "epping",
+"kind": "O",
+"filter": "essex",
+"political": true,
+"id": 207
+},
+{
+"name": "Chris Vince MP (Harlow) in Parliament",
+"url": "https://www.theyworkforyou.com/rss/mp/26350.rdf",
+"group": "politics",
+"area": "epping",
+"kind": "O",
+"filter": "essex",
+"political": true,
+"id": 208
+},
+{
+"name": "Bernard Jenkin MP (Harwich and North Essex) in Parliament",
+"url": "https://www.theyworkforyou.com/rss/mp/10312.rdf",
+"group": "politics",
+"area": "tendring",
+"kind": "O",
+"filter": "essex",
+"political": true,
+"id": 209
+},
+{
+"name": "John Whittingdale MP (Maldon) in Parliament",
+"url": "https://www.theyworkforyou.com/rss/mp/10632.rdf",
+"group": "politics",
+"area": "maldon",
+"kind": "O",
+"filter": "essex",
+"political": true,
+"id": 210
+},
+{
+"name": "Kemi Badenoch MP (North West Essex) in Parliament",
+"url": "https://www.theyworkforyou.com/rss/mp/25693.rdf",
+"group": "politics",
+"area": "uttlesford",
+"kind": "O",
+"filter": "essex",
+"political": true,
+"id": 211
+},
+{
+"name": "Mark Francois MP (Rayleigh and Wickford) in Parliament",
+"url": "https://www.theyworkforyou.com/rss/mp/10901.rdf",
+"group": "politics",
+"area": "south",
+"kind": "O",
+"filter": "essex",
+"political": true,
+"id": 212
+},
+{
+"name": "James McMurdock MP (South Basildon and East Thurrock) in Parliament",
+"url": "https://www.theyworkforyou.com/rss/mp/26636.rdf",
+"group": "politics",
+"area": "south",
+"kind": "O",
+"filter": "essex",
+"political": true,
+"id": 213
+},
+{
+"name": "Bayo Alaba MP (Southend East and Rochford) in Parliament",
+"url": "https://www.theyworkforyou.com/rss/mp/26422.rdf",
+"group": "politics",
+"area": "southend",
+"kind": "O",
+"filter": "essex",
+"political": true,
+"id": 214
+},
+{
+"name": "David Burton-Sampson MP (Southend West and Leigh) in Parliament",
+"url": "https://www.theyworkforyou.com/rss/mp/26442.rdf",
+"group": "politics",
+"area": "southend",
+"kind": "O",
+"filter": "essex",
+"political": true,
+"id": 215
+},
+{
+"name": "Jen Craft MP (Thurrock) in Parliament",
+"url": "https://www.theyworkforyou.com/rss/mp/26341.rdf",
+"group": "politics",
+"area": "south",
+"kind": "O",
+"filter": "essex",
+"political": true,
+"id": 216
+},
+{
+"name": "Priti Patel MP (Witham) in Parliament",
+"url": "https://www.theyworkforyou.com/rss/mp/24778.rdf",
+"group": "politics",
+"area": "braintree",
+"kind": "O",
+"filter": "essex",
+"political": true,
+"id": 217
 }
 ]
