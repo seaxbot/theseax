@@ -2174,6 +2174,9 @@ def about_page():
 <p><a href="/story/the-seax-launches/">Read our launch story: A new way to see Essex</a></p>
 
 {photo_credits()}
+<h2>Who publishes The Seax</h2>
+<p>The Seax is published by The Seax, an independent Essex news site that is not part of any newspaper group, political party, council or company. You can reach the publisher at {mlink("info", "The Seax")}, the newsroom at {mlink("news", "The Seax")}, and send corrections and complaints to {mlink("corrections", "Correction")}. Our <a href="/standards/">editorial standards</a> and <a href="/corrections/">corrections log</a> are public.</p>
+
 <h2>Why "The Seax"?</h2>
 <p>The seax is the short sword of the Saxons, and three seaxes appear on the arms of Essex: gules, three seaxes fesswise in pale argent, pommels and hilts or. Our badge follows that blazon.</p>
 </main>
@@ -2351,10 +2354,12 @@ def patch_index(latest_briefing, ed=None):
             only = ('<style>@media(max-width:700px){#onlyseax .tools{display:none}}</style><section class="block" id="onlyseax"><div class="wrap"><div class="bh"><h2>Only on The Seax<small>Our own reporting from council papers and official data</small></h2>'
                     '<div class="tools"><a href="/council-watch/">All Council Watch →</a></div></div><div class="grid news-grid">' + oc + '</div></div></section>\n')
         block2 = "<!--seax-only-->" + only + "<!--/seax-only-->"
-        if "<!--seax-only-->" in new:
-            new = re.sub(r"<!--seax-only-->.*?<!--/seax-only-->", lambda m: block2, new, count=1, flags=re.S)
-        else:
-            new = new.replace('<section class="block" id="news">', block2 + '\n<section class="block" id="news">', 1)
+        # owner's choice (20 Nov 2026): the row sits BELOW News, so it is placed just before the section after News
+        new = re.sub(r"<!--seax-only-->.*?<!--/seax-only-->\n?", "", new, count=1, flags=re.S)
+        m_news = new.find('<section class="block" id="news">')
+        m_next = new.find('<section class="block', m_news + 10) if m_news >= 0 else -1
+        if m_next >= 0:
+            new = new[:m_next] + block2 + "\n" + new[m_next:]
     if new != s:
         open(p, "w", encoding="utf-8").write(new)
         return True
