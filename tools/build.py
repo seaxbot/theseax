@@ -1363,6 +1363,8 @@ def body_with_charts(it, body, opening=""):
     # story's opening line, in ordinary body text after the picture. Skipped if the first paragraph already says it.
     op = " ".join(str(opening or "").split())
     out = [f"<p>{E(op)}</p>"] if op and not (paras and " ".join(paras[0].split()).startswith(op)) else []
+    if str(it.get("warning") or "").strip():  # content warning at the top (owner, 20 Nov 2026: Brentwood School review)
+        out.insert(0, f'<p class="cwarn" role="note" style="background:#fdf1f1;border-left:5px solid #c8102e;padding:12px 14px;border-radius:6px;font-size:.95em;margin:0 0 1.2em"><b>Warning:</b> {E(str(it["warning"]).strip())}</p>')
     for i, p in enumerate(paras):
         # a paragraph starting "## " is a subheading, for long stories (owner, 20 Nov 2026: Brentwood School review)
         out.append(f'<h2 class="bsub" style="font-size:1.25em;line-height:1.25;margin:1.6em 0 .4em">{E(p[3:].strip())}</h2>' if p.startswith("## ") else f"<p>{E(p)}</p>")
