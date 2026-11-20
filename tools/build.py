@@ -1356,6 +1356,9 @@ def body_with_charts(it, body):
     "This story needs visualisations to make it clear")."""
     paras = [str(p) for p in body if str(p).strip()]
     charts = [c for c in (it.get("charts") or []) if isinstance(c, dict) and str(c.get("src") or "").startswith("/img/")]
+    # interactive look-ups (owner, 20 Nov 2026: "a selector [so] people could select any one of their 56 neighbourhoods")
+    widgets = [w for w in (it.get("widgets") or []) if isinstance(w, dict) and w.get("type") == "crime-lookup"
+               and str(w.get("src") or "").startswith("/data/")]
     out = []
     for i, p in enumerate(paras):
         out.append(f"<p>{E(p)}</p>")
@@ -1364,6 +1367,11 @@ def body_with_charts(it, body):
                 out.append(f'<figure class="stock chart"><img src="{E(c["src"])}?v=1" width="{E(c.get("w") or 1200)}" '
                            f'height="{E(c.get("h") or 700)}" alt="{E(c.get("alt") or "")}" loading="lazy">'
                            f'<figcaption><b>Chart</b>. {E(c.get("caption") or "")}</figcaption></figure>')
+        for w in widgets:
+            if int(w.get("after", len(paras) - 1)) == i or (i == len(paras) - 1 and int(w.get("after", 0)) >= len(paras)):
+                out.append(f'<div class="seax-lookup" data-src="{E(w["src"])}"><noscript>Turn on JavaScript to look up your neighbourhood.</noscript></div>')
+    if widgets:
+        out.append('<script src="/js/crime-lookup.js?v=1" defer></script>')
     return "".join(out)
 
 
