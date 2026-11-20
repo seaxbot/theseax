@@ -1,0 +1,37 @@
+name: GoatCounter stats
+# Reads The Seax's visitor figures (read-only key in the GOATCOUNTER_TOKEN secret, owner 20 Nov 2026) and saves them
+# to the "stats-data" branch for the desks: most-read stories and where readers came from (e.g. which Facebook groups).
+on:
+  schedule:
+    - cron: "23 6,12,18,22 * * *"
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: [".github/workflows/goatcounter.yml", "tools/stats/goatcounter.py"]
+permissions:
+  contents: write
+concurrency: goatcounter
+jobs:
+  stats:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with: { fetch-depth: 1 }
+      - name: Read GoatCounter
+        env:
+          GOATCOUNTER_TOKEN: ${{ secrets.GOATCOUNTER_TOKEN }}
+        run: |
+          mkdir -p /tmp/stats
+          set -o pipefail
+          python3 -u tools/stats/goatcounter.py /tmp/stats 2>&1 | tee /tmp/stats/run.log
+      - name: Save to the data branch
+        if: always()
+        run: |
+          mkdir -p /tmp/stats; [ -f /tmp/stats/run.log ] || echo "did not run" > /tmp/stats/run.log
+          cd /tmp/stats && rm -rf .git
+          git init -q -b stats-data
+          git config user.name "The Seax stats"
+          git config user.email "seaxbot@users.noreply.github.com"
+          git add -A && git commit -qm "Stats $(date -u +%FT%TZ)"
+          git push -qf "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" stats-data
