@@ -796,7 +796,7 @@ def head(title, desc, canonical, og_image, og_type="website", extra=""):
   <a class="home" href="/">Front page</a>
 </div></header>
 <nav class="sec"><div class="wrap">
-  <a href="/#news">News</a><a href="/#sport">Sport</a><a href="/#desk">Public Services</a><a href="/council-watch/">Council Watch</a><a href="/#community">Community</a><a href="/#whatson">What's On</a><a href="/briefing/">Morning briefing</a><a href="/about/">About</a><a href="/contact/">Contact</a>
+  <a href="/#news">News</a><a href="/#sport">Sport</a><a href="/#desk">Public Services</a><a href="/council-watch/">Council Watch</a><a href="/#community">Community</a><a href="/whats-on/">What's On</a><a href="/briefing/">Morning briefing</a><a href="/about/">About</a><a href="/contact/">Contact</a>
 </div></nav>
 <span id="content"></span>
 """
@@ -827,7 +827,7 @@ def foot():
   {('<p class="area-links"><b>Running stories:</b> ' + place_links("issue") + '</p>') if place_links("issue") else ''}
   <p><b>The Seax</b> brings together Essex news, sport and life from trusted local and national sources. Every story links to the original reporting.</p>
   <p class="foot-mail"><b>Contact The Seax:</b> news tips {mlink("news")} · sport {mlink("sport")} · events {mlink("events")} · community and charity {mlink("community")} · corrections {mlink("corrections")} · everything else {mlink("info")}</p>
-  <p><a href="/about/">About The Seax</a> · <a href="/standards/">Editorial standards</a> · <a href="/corrections/">Corrections</a> · <a href="/contact/">Contact us</a> · <a href="/briefing/">Morning briefing</a> · <a href="/feed.xml">RSS</a>{' · ' + ' · '.join(social) if social else ''}</p>
+  <p><a href="/about/">About The Seax</a> · <a href="/whats-on/">What's on</a> · <a href="/podcast.xml">Podcast feed</a> · <a href="/standards/">Editorial standards</a> · <a href="/corrections/">Corrections</a> · <a href="/contact/">Contact us</a> · <a href="/briefing/">Morning briefing</a> · <a href="/feed.xml">RSS</a>{' · ' + ' · '.join(social) if social else ''}</p>
 </div></footer>
 """
 
@@ -1961,6 +1961,65 @@ def photo_credits():
             'They have been resized for the web and are shared under the same terms. Our map artwork is our own.</p>\n<ul class="credits">' + "".join(rows) + '<li>London Stansted Airport library images: photos by London Stansted Airport</li>' + f'<li>c2c train 357 040 at Ripple Lane (used on c2c stories): photo by kitmasterbloke, <a href="{C2C_CREDIT["licenseUrl"]}" rel="license noopener">CC BY 4.0</a>, via <a href="{C2C_CREDIT["source"]}" rel="noopener">Wikimedia Commons</a>; cropped and resized</li>' + "".join(portrait_credit(p) for p in PORTRAITS) + "</ul>\n")
 
 
+def whatson_page(ed):
+    """/whats-on/: every event and culture listing in the edition as a plain page, soonest first, grouped by when (20 Nov 2026).
+    The front page shows these only through its script; this page is for readers arriving from search and for crawlers."""
+    url = f"{SITE}/whats-on/"
+    today = NOW.astimezone(UK).date()
+    items = []
+    for kind, lst in (("event", ed.get("events") or []), ("culture", ed.get("culture") or [])):
+        for e in lst:
+            if not isinstance(e, dict) or not e.get("title") or not safe_url(e.get("url")):
+                continue
+            st, en = parse_t(e.get("start")), parse_t(e.get("end"))
+            if not st:
+                continue
+            sd = st.astimezone(UK).date(); edd = (en.astimezone(UK).date() if en else sd)
+            if edd < today:
+                continue
+            items.append((max(sd, today), sd, edd, e))
+    items.sort(key=lambda x: (x[0], x[2], str(x[3].get("title"))))
+    days_to_sat = (5 - today.weekday()) % 7
+    sat = today + timedelta(days=days_to_sat); sun = sat + timedelta(days=1)
+    if today.weekday() == 6:
+        sat = sun = today
+    groups = [("Today", []), ("This weekend", []), ("In the next seven days", []), ("Coming up", [])]
+    for eff, sd, edd, e in items:
+        on = lambda d: sd <= d <= edd
+        if on(today):
+            groups[0][1].append((sd, edd, e))
+        if (on(sat) or on(sun)) and not (today in (sat, sun) and on(today)):
+            groups[1][1].append((sd, edd, e))
+        if not on(today) and today < sd <= today + timedelta(days=7) and not (on(sat) or on(sun)):
+            groups[2][1].append((sd, edd, e))
+        if sd > today + timedelta(days=7):
+            groups[3][1].append((sd, edd, e))
+    fmt = lambda d: f"{d.strftime('%a')} {d.day} {d.strftime('%b')}"
+    def row(sd, edd, e):
+        when = fmt(sd) if sd == edd else (f"Until {fmt(edd)}" if sd <= today else f"{fmt(sd)} to {fmt(edd)}")
+        place = ", ".join(x for x in (str(e.get("venue") or "").strip(), str(e.get("where") or "").strip()) if x)
+        bits = [x for x in (str(e.get("time") or "").strip(), str(e.get("price") or "").strip()) if x]
+        return (f'<a class="cw-row" href="{E(safe_url(e.get("url")))}" target="_blank" rel="noopener"><span class="cw-c">{E(e.get("cat") or "Event")}</span>'
+                f'<b>{E(e["title"])}</b><span class="cw-m">{E(when)} · {E(place)}{(" · " + E(" · ".join(bits))) if bits else ""}</span>'
+                f'<span class="cw-m">{E(e.get("blurb") or "")}</span></a>')
+    html_groups = "".join(f"<h2>{E(name)}</h2><div class=\"cw-list\">{''.join(row(*r) for r in rows[:60])}</div>" for name, rows in groups if rows)
+    n = len(items)
+    desc = f"What's on in Essex: {n} events, shows, exhibitions and family days out across the county, today, this weekend and in the weeks ahead, with times, prices and booking links."
+    ld = ('<script type="application/ld+json">' + json.dumps({"@context": "https://schema.org", "@graph": [
+        {"@type": "CollectionPage", "name": "What's on in Essex", "url": url, "description": desc, "inLanguage": "en-GB",
+         "isPartOf": {"@type": "WebSite", "name": "The Seax", "url": SITE + "/"}},
+        {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "The Seax", "item": SITE + "/"},
+                                                         {"@type": "ListItem", "position": 2, "name": "What's on in Essex", "item": url}]}]},
+        ensure_ascii=False).replace("</", "<\\/") + "</script>\n")
+    return head("What's on in Essex this weekend and beyond · The Seax", desc, url, "default", extra=ld) + f"""<main class="wrap prose cw-hub">
+<div class="kick"><span><a href="/">The Seax</a></span><span>What's On</span></div>
+<h1>What's on in Essex</h1>
+<p class="standfirst">Events, shows, exhibitions and days out across the county, soonest first. Each listing links to the organiser or venue. To list an event, email {mlink("events", "Event listing")}.</p>
+{html_groups or "<p>No listings at the moment. Check back soon.</p>"}
+<p><a href="/">Go to the live front page →</a></p>
+</main>""" + newsletter_box() + foot() + "</body></html>\n"
+
+
 def standards_page():
     url = f"{SITE}/standards/"
     return head("Editorial standards · The Seax", "How The Seax sources, writes, checks and corrects its reporting, and how it uses AI.", url, "default") + f"""<main class="wrap prose">
@@ -2393,6 +2452,11 @@ def main():
     # about page
     if write("about/index.html", about_page()):
         changed += 1
+    try:
+        if write("whats-on/index.html", whatson_page(ed)):
+            changed += 1
+    except Exception as e:  # a listings page must never stop the build
+        print("whats-on page not built:", type(e).__name__, e)
     if write("standards/index.html", standards_page()):
         changed += 1
     # corrections log: the edition's "corrections" list (ops/newsroom.md, CORRECTIONS LOG) is merged into a permanent file
@@ -2473,7 +2537,7 @@ def main():
     def lastmod(rec):
         return (rec.get("u") or rec.get("t") or rec.get("last") or iso(NOW))[:10]
     urls = [(SITE + "/", NOW.date().isoformat(), "hourly", "1.0"), (SITE + "/about/", None, "monthly", "0.4"), (SITE + "/contact/", None, "monthly", "0.4"),
-            (SITE + "/standards/", None, "monthly", "0.4"), (SITE + "/corrections/", None, "weekly", "0.3"),
+            (SITE + "/whats-on/", NOW.date().isoformat(), "daily", "0.8"), (SITE + "/standards/", None, "monthly", "0.4"), (SITE + "/corrections/", None, "weekly", "0.3"),
             (SITE + "/briefing/", latest or None, "daily", "0.7"),
             (SITE + "/story/the-seax-launches/", "2026-11-09", None, "0.5")]  # owner's launch story, kept findable
     for sid, rec in sorted(archive.items(), key=lambda kv: kv[1].get("t") or kv[1].get("first") or "", reverse=True):
