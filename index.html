@@ -5079,7 +5079,7 @@ function leadChecker(s){
 function ownBanner(s, cls){ if(!s || !s.original) return ""; const inv = s.original !== "data"; return `<span class="ownban${cls ? " " + cls : ""}"><b>${inv ? OB_INV : OB_DATA}${inv ? "Seax Investigates" : "Seax Analysis"}</b><em>${s.exclusive ? "Exclusive" : inv ? "Original reporting" : "Original data journalism"}</em></span>`; }
 function flashBadge(s){ return flashOn(s) ? '<span class="flash"><i></i>Breaking</span>' : ""; }
 function leadKicker(s){
-  if(s.breaking && s.exclusive) return '<i class="hotdot"></i>Breaking exclusive'; /* owner, 20 Nov 2026: our own scoops say so */
+  /* owner, 20 Nov 2026: our own scoops say just EXCLUSIVE, with the red dot, even when breaking */
   if(s.exclusive) return '<i class="hotdot"></i>Exclusive';
   if(s.breaking) return '<i class="hotdot"></i>Breaking';
   if(s.developing) return '<i class="hotdot"></i>Developing';

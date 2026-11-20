@@ -1418,7 +1418,7 @@ def story_page(sec, it, more):
     src = it.get("source") or ""
     surl = safe_url(it.get("url"))
     also = [a for a in (it.get("also") or []) if isinstance(a, dict) and safe_url(a.get("url"))]
-    kicker = "Breaking exclusive" if (it.get("exclusive") and it.get("breaking")) else "Exclusive" if it.get("exclusive") else "Feature" if sec == "features" else "Council Watch" if sec == "councilwatch" else (it.get("tag") or SECTION_LABEL.get(sec, "News"))
+    kicker = "Exclusive" if it.get("exclusive") else "Feature" if sec == "features" else "Council Watch" if sec == "councilwatch" else (it.get("tag") or SECTION_LABEL.get(sec, "News"))
     if it.get("original") == "data":  # The Seax's own data analysis carries the same label as on the front page (owner, 20 Nov 2026)
         kicker = "Essex Numbers"
     ld = {
