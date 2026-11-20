@@ -983,6 +983,14 @@ def is_essex_cricket(it):
     t = ESSEX_CRICKET_LEAGUE_RX.sub(" ", " ".join(str(it.get(k) or "") for k in ("headline", "summary", "org", "source", "club")))
     return bool(re.search(r"\bessex\b", t, re.I))
 
+# Southend United stories always show the owner's photo of the club crest on a wall at the ground (owner's rule,
+# 20 Nov 2026) instead of the football photos and the club colours card. Same rule as the page's isSouthendUnited.
+def is_southend_united(it, sec="sport"):
+    if club_of(it, sec) != "Southend United":
+        return False
+    t = " ".join(str(it.get(k) or "") for k in ("headline", "summary"))
+    return not re.search(r"\bsouthend manor\b", t, re.I) or bool(re.search(r"\bsouthend united\b|\bshrimpers\b", t, re.I))
+
 def sport_kind(it, sec):
     sa = str(it.get("sportArt") or "").lower()
     if sa in SPORT_PHOTO_FILES or sa == "athletics":
@@ -1046,9 +1054,9 @@ def pick_sport(ed):
     lst = [("sport", x) for x in (ed.get("sport") or {}).get("stories", []) or [] if isinstance(x, dict) and x.get("id")] + \
           [("news", x) for x in ed.get("stories", []) or [] if isinstance(x, dict) and x.get("id")]
     CLUB_CARDS.clear()
-    clubbed = sorted([x for sec, x in lst if sec == "sport" and club_of(x, sec)], key=tm, reverse=True)
+    clubbed = sorted([x for sec, x in lst if sec == "sport" and club_of(x, sec) and not is_southend_united(x, sec)], key=tm, reverse=True)
     CLUB_CARDS.update(x["id"] for n, x in enumerate(clubbed) if n % 2 == 1)  # every other club story shows club colours
-    lst = [p for p in lst if p[1]["id"] not in CLUB_CARDS]
+    lst = [p for p in lst if p[1]["id"] not in CLUB_CARDS and not is_southend_united(p[1], p[0])]
     prev = {}
     for sec, x in sorted(lst, key=lambda p: tm(p[1]), reverse=True):
         k = sport_kind(x, sec)
@@ -1089,6 +1097,10 @@ def fallback_photo(it, sec, card):
         f = files[SPORT_PICK.get(it.get("id"), 0) % len(files)]
         if k == "cricket" and is_essex_cricket(it) and os.path.exists(os.path.join(ROOT, "img", "og", "sport-cricket-essex.jpg")):
             f = "cricket-essex"
+        if k == "football" and is_southend_united(it, sec) and os.path.exists(os.path.join(ROOT, "img", "og", "sport-southend.jpg")):
+            w, h = jpeg_size(os.path.join(ROOT, "img", "sport", "southend.jpg"))
+            return (f'<figure class="stock"><img src="/img/sport/southend.jpg?v=1" width="{w}" height="{h}" alt="Library photo: the Southend United crest" loading="eager">'
+                    f'<figcaption><b>Southend United</b>. Library image, not the scene of this story.</figcaption></figure>', "/img/og/sport-southend.jpg")
         if os.path.exists(os.path.join(ROOT, "img", "og", f"sport-{f}.jpg")):
             w, h = jpeg_size(os.path.join(ROOT, "img", "sport", f + ".jpg"))
             return (f'<figure class="stock"><img src="/img/sport/{f}.jpg?v=1" width="{w}" height="{h}" alt="Library photo: {E(SPORT_NAME[k].lower())}" loading="eager">'
