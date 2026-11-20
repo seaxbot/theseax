@@ -484,19 +484,6 @@ def digest(data):
             L.append("  Most new Essex signatures since the last run:")
             for x in movers[:5]:
                 L.append(f"  - +{x['essexSinceLastRun']:,} | {x['action'][:120]} | {x['url']}")
-    el = data.get("elections") or {}
-    L.append("== ELECTIONS AND BY-ELECTIONS IN ESSEX, NEXT 75 DAYS (Democracy Club) ==")
-    if el.get("error"):
-        L.append("  could not be read this run: " + el["error"])
-    else:
-        bs = el.get("ballots") or []
-        L.append(f"  Ballots found: {len(bs)}")
-        for r in bs[:40]:
-            flag = " ** NEW **" if r.get("new") else (" ** CANDIDATES NOW CONFIRMED **" if r.get("candidatesNew") else "")
-            cs = "; ".join(f"{c['name']} ({c['party']})" for c in r["candidates"]) if r["candidates"] else "candidates not yet published"
-            L.append(f"  - {uk_date(r['date'])} | {r['election']} | {r['seat']}{' (by-election)' if r['byElection'] else ''}{flag} | "
-                     f"{'official list' if r['candidatesLocked'] else 'list not yet final'}: {cs} | {r['url']}")
-    L.append("")
     ins = data.get("insolvency") or {}
     L.append("== COMPANY INSOLVENCY NOTICES MENTIONING ESSEX (The Gazette, last 8 days; companies only) ==")
     if ins.get("error"):
@@ -553,7 +540,7 @@ def insolvency(state):
     """Corporate insolvency notices mentioning Essex in The Gazette, the official public record (Open Government Licence),
     for the last 8 days. Companies only: personal insolvency (codes 25xx) is never collected."""
     since = (NOW - timedelta(days=8)).strftime("%Y-%m-%d")
-    seen = state.setdefault("gazetteSeen", {})
+    seen = state.setdefault("gazetteSeenV2", {})
     rows, pages, sample = [], 0, ""
     url = "https://www.thegazette.co.uk/insolvency/notice/data.json?" + urllib.parse.urlencode(
         {"text": "essex", "start-publish-date": since, "results-page-size": 100, "sort-by": "latest-date"})
@@ -587,7 +574,7 @@ def insolvency(state):
             url += "&" + urllib.parse.urlencode({"start-publish-date": since, "results-page-size": 100, "sort-by": "latest-date"})
         time.sleep(0.5)
     cut = (NOW - timedelta(days=60)).strftime(ISO)
-    state["gazetteSeen"] = {k: v for k, v in seen.items() if v >= cut}
+    state["gazetteSeenV2"] = {k: v for k, v in seen.items() if v >= cut}
     return {"notices": rows, "pages": pages}
 
 
@@ -643,7 +630,9 @@ def main():
     os.makedirs(OUT, exist_ok=True)
     state = load("state.json", {})
     data = load("data.json", {})
-    for name, fn in (("food", food), ("contracts", contracts), ("petitions", petitions), ("prices", prices), ("crime", crime), ("insolvency", insolvency), ("elections", elections)):
+    for name, fn in (("food", food), ("contracts", contracts), ("petitions", petitions), ("prices", prices), ("crime", crime), ("insolvency", insolvency)):
+        # elections(): Democracy Club's API answered 401 on 20 Nov 2026 (it needs a free API key); the function is kept
+        # for when the owner adds one as the secret DEMOCRACY_CLUB_KEY
         if ONLY and name not in ONLY:
             continue
         try:
