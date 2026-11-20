@@ -646,7 +646,8 @@
     "vange"
    ],
    "status": "on",
-   "perWeek": 4
+   "perWeek": 4,
+   "approval": "instant"
   },
   {
    "id": "555060564639519",

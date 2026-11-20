@@ -19,6 +19,8 @@ Owner's instructions (20 Nov 2026): post Seax stories into the relevant Essex gr
 - At most 3 groups per story, at most one county-wide group per story.
 - One post per group per day, at least 20 hours apart; never the same story twice in a group; never more than the group's perWeek.
 - Never identical wording in two groups. Write each post fresh from the story: plain English, the useful fact first, no hype, no hashtags, no emoji, no "click here". End with the tagged link.
+- Every fact in a post must be in the story itself. Never add a quote, a reason or a claim ("X says it shows...") the story does not carry.
+- The owner's computer is a Mac: to clear a composer use cmd+a then Backspace (ctrl+a does nothing). Facebook keeps unsent drafts and restores them when the composer reopens, so before typing check the composer is empty; if it is not, clear it first. Read the whole draft in a screenshot before pressing Post.
 - Every post must show the story's real picture as the link preview. If the preview does not load or shows no picture, close the composer without posting and skip that post.
 
 ## What to post (in this order)
