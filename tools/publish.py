@@ -347,6 +347,18 @@ def main():
         if warned:
             print("legal gate: already-live stories that would fail if rewritten (" + str(len(warned)) + "): " +
                   " | ".join(f"{sid}: {probs[0][:90]}" for _s, sid, _h, probs in warned[:6]))
+        # takedowns (owner's rule): ids in tools/takedown.txt never go back into the edition, whichever desk sends them
+        tkp = os.path.join(ROOT, "tools", "takedown.txt")
+        if os.path.exists(tkp):
+            with open(tkp, encoding="utf-8") as f:
+                tkn = {l.strip() for l in f if l.strip() and not l.startswith("#")}
+            for sec in ("stories", "official", "community", "courts", "councilwatch"):
+                if isinstance(out.get(sec), list):
+                    out[sec] = [it for it in out[sec] if not (isinstance(it, dict) and it.get("id") in tkn)]
+            if isinstance(out.get("sport"), dict) and isinstance(out["sport"].get("stories"), list):
+                out["sport"]["stories"] = [it for it in out["sport"]["stories"] if it.get("id") not in tkn]
+            if isinstance(out.get("front"), list):
+                out["front"] = [i for i in out["front"] if i not in tkn]
         dump(out, os.path.join(ROOT, "edition.json"))
         built = subprocess.run([sys.executable, os.path.join(ROOT, "tools", "build.py")], capture_output=True, text=True)
         if built.returncode:
