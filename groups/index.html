@@ -228,9 +228,12 @@ document.getElementById("showDone").addEventListener("click", () => { showDone =
 
 Promise.all([
   fetch("/edition.json", { cache: "no-store" }).then(r => r.json()),
-  fetch("/data/fb-groups.json", { cache: "no-store" }).then(r => r.json())
-]).then(([e, c]) => {
+  fetch("/data/fb-groups.json", { cache: "no-store" }).then(r => r.json()),
+  fetch("/data/fb-group-log.json", { cache: "no-store" }).then(r => r.ok ? r.json() : null).catch(() => null)
+]).then(([e, c, rl]) => {
   ed = e; cfg = c;
+  /* posts made by the automated desk count too, so nothing is sent twice */
+  ((rl && rl.posts) || []).forEach(x => { if(x && x.g && x.s && !log.some(y => y.g === x.g && y.s === x.s)) log.push({ g: x.g, s: x.s, t: x.t, h: x.h || "" }); });
   const old = Date.now() - 14 * DAY; log = log.filter(x => x.t > old); save();
   table(); render();
 }).catch(() => {

@@ -1,0 +1,95 @@
+{
+ "note": "Every Seax post into a Facebook group, newest last. Written by the groups desk (ops/fbgroups.md). The queue page merges it with the ticks saved in the browser.",
+ "paused": false,
+ "pauseReason": "",
+ "posts": [
+  {
+   "g": "our-thurrock-community-1282",
+   "s": "grays-towers-road-scrapyard-fire-20-firefighters",
+   "t": 1795171620000,
+   "h": "Grays scrapyard fire likely started by discarded battery, crews say",
+   "result": "live"
+  },
+  {
+   "g": "we-love-southend-6147",
+   "s": "s-preview-southend-boreham-wood-2026-11-20",
+   "t": 1795171680000,
+   "h": "Top-of-the-table clash: Southend host unbeaten leaders Boreham Wood tonight",
+   "result": "pending"
+  },
+  {
+   "g": "essex-politics-planning-and-news",
+   "s": "braintree-mp-james-cleverly-conservative-london-mayor-candidate",
+   "t": 1795171740000,
+   "h": "Braintree MP Cleverly targets Khan on crime and housing in mayor bid",
+   "result": "live"
+  },
+  {
+   "g": "little-thurrock-community-fo-2316",
+   "s": "grays-towers-road-scrapyard-fire-20-firefighters",
+   "t": 1795173300000,
+   "h": "Grays scrapyard fire likely started by discarded battery, crews say",
+   "result": "live"
+  },
+  {
+   "g": "the-original-city-of-southen-9185",
+   "s": "s-preview-southend-boreham-wood-2026-11-20",
+   "t": 1795173360000,
+   "h": "Top-of-the-table clash: Southend host unbeaten leaders Boreham Wood tonight",
+   "result": "pending"
+  },
+  {
+   "g": "essex-connected-7990",
+   "s": "chelmsford-weather-1c-friday-night-heavy-rain-sunday-22-november",
+   "t": 1795173780000,
+   "h": "Frosty Friday night for Essex with lows of -1C, then a bright Saturday",
+   "result": "declined"
+  }
+ ],
+ "joins": [
+  {
+   "id": "231743330573420",
+   "t": 1795172100000
+  },
+  {
+   "id": "canveyisland",
+   "t": 1795172100000
+  },
+  {
+   "id": "728128481422466",
+   "t": 1795172100000
+  },
+  {
+   "id": "billericaylocal",
+   "t": 1795172100000
+  },
+  {
+   "id": "720179751895522",
+   "t": 1795172100000
+  },
+  {
+   "id": "4784521311592919",
+   "t": 1795172100000
+  },
+  {
+   "id": "461226308085384",
+   "t": 1795172100000
+  },
+  {
+   "id": "9051485514921970",
+   "t": 1795172100000
+  },
+  {
+   "id": "walthamabbeycommunitycharityevents",
+   "t": 1795172100000
+  },
+  {
+   "id": "371844019936074",
+   "t": 1795172100000
+  },
+  {
+   "id": "192923094627747",
+   "t": 1795172100000
+  }
+ ]
+}
