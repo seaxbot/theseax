@@ -35,7 +35,7 @@ Until the end of Sunday 22 November, the story "essex-recorded-crime-september-2
 3. Strong local interest: a town's own news, Southend United and Colchester United match previews on match days, results the morning after.
 - A story must still be live on theseax.com (not in tools/takedown.txt) and be under 12 hours old (under 6 hours for safety and disruption items, which go first). Stories from the previous day only if still current (e.g. a road still closed).
 - Groups that hold posts for admin approval get time-sensitive items only in the 07:41 or 09:41 run, so approval can land in time (a match preview posted at 11:15 is no use if approved after kick-off).
-- Never post the Brentwood School abuse review story ("brentwood-school-safeguarding-review-british-fencing-own-review") into groups (owner's site lead, sensitive).
+- The Brentwood School abuse review story ("brentwood-school-safeguarding-review-british-fencing-own-review") was posted by hand at the owner's request on 20 Nov (7 Brentwood groups, 2 Wickford, Essex UK Community). Do not post it again anywhere, and never post follow-ups that identify a victim-survivor.
 - Never post: court stories (Court tag), anything about a person charged but not yet convicted, inquests, stories involving children's welfare, anything the legal gate holds, sponsored or deals content, and the same story into overlapping groups of one town in one day (rotate them).
 - Match the group: town and crime groups only get stories from their own area; events groups only events; the politics group only council, planning and politics; county groups only the day's biggest Essex story.
 
