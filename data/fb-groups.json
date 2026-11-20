@@ -1134,7 +1134,8 @@
     "church langley"
    ],
    "status": "on",
-   "perWeek": 4
+   "perWeek": 4,
+   "approval": "instant"
   },
   {
    "id": "248249947433360",
