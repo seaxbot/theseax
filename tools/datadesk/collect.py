@@ -346,6 +346,86 @@ def prices(state):
     return {"month": month, "new": is_new, "rows": rows, "url": "https://landregistry.data.gov.uk/app/ukhpi"}
 
 
+# ---------------------------------------------------------------- recorded crime
+def _months_back(ym, n):
+    y, m = int(ym[:4]), int(ym[5:7])
+    m -= n
+    while m <= 0:
+        y, m = y - 1, m + 12
+    return f"{y}-{m:02d}"
+
+
+def _crimes(poly, month):
+    body = urllib.parse.urlencode({"poly": poly, "date": month}).encode()
+    for attempt in range(3):
+        try:
+            return get("https://data.police.uk/api/crimes-street/all-crime", data=body, timeout=60)
+        except urllib.error.HTTPError as e:
+            if e.code == 429:
+                time.sleep(2 + attempt * 3); continue
+            raise
+    return None
+
+
+def crime(state):
+    """Street-level recorded crime by Essex Police neighbourhood (data.police.uk, Open Government Licence), newest month,
+    with the month before and the same month a year earlier. Runs in full only when a new month is published."""
+    last = str(get("https://data.police.uk/api/crime-last-updated").get("date") or "")[:7]
+    if not last:
+        return {"error": "no last-updated date"}
+    store = state.setdefault("crime", {})          # {month: {hood id: {"n": total, "cats": {...}}}}
+    names = state.setdefault("crimeHoods", {})
+    is_new = state.get("crimeMonth") != last
+    months = [last, _months_back(last, 1), _months_back(last, 12)]
+    if is_new or any(m not in store for m in months):
+        hoods = get("https://data.police.uk/api/essex/neighbourhoods")
+        print("crime: neighbourhoods", len(hoods), [h.get("name") for h in hoods[:12]])
+        polys, failed = {}, 0
+        for h in hoods:
+            hid = h.get("id"); names[hid] = str(h.get("name") or hid).strip()
+            try:
+                b = get(f"https://data.police.uk/api/essex/{hid}/boundary", timeout=40)
+            except Exception as e:
+                failed += 1; continue
+            step = max(1, len(b) // 120)
+            pts = b[::step]
+            polys[hid] = ":".join(f"{float(p['latitude']):.4f},{float(p['longitude']):.4f}" for p in pts)
+            time.sleep(0.08)
+        for mth in months:
+            if mth in store and len(store[mth]) >= len(polys) * 0.9:
+                continue
+            got = {}
+            for hid, poly in polys.items():
+                try:
+                    cs = _crimes(poly, mth)
+                except Exception as e:
+                    cs = None
+                if cs is None:
+                    continue
+                cats = {}
+                for c in cs:
+                    cats[c.get("category") or "other"] = cats.get(c.get("category") or "other", 0) + 1
+                got[hid] = {"n": len(cs), "cats": cats}
+                time.sleep(0.08)
+            store[mth] = got
+            print("crime:", mth, "areas read", len(got), "of", len(polys), "boundaries failed", failed)
+        for old in [k for k in store if k not in months]:
+            del store[old]
+    state["crimeMonth"] = last
+    cur, prev, yago = store.get(months[0], {}), store.get(months[1], {}), store.get(months[2], {})
+    rows = []
+    for hid, v in cur.items():
+        top = sorted(v["cats"].items(), key=lambda kv: -kv[1])[:3]
+        rows.append({"area": names.get(hid, hid), "id": hid, "n": v["n"], "prev": (prev.get(hid) or {}).get("n"), "yearAgo": (yago.get(hid) or {}).get("n"),
+                     "top": [[k.replace("-", " "), n] for k, n in top], "shoplifting": v["cats"].get("shoplifting", 0),
+                     "violence": v["cats"].get("violent-crime", 0), "asb": v["cats"].get("anti-social-behaviour", 0), "burglary": v["cats"].get("burglary", 0),
+                     "vehicle": v["cats"].get("vehicle-crime", 0)})
+    rows.sort(key=lambda r: -r["n"])
+    tot = lambda d: sum(x["n"] for x in d.values()) if d else None
+    return {"month": last, "new": is_new, "rows": rows, "total": tot(cur), "totalPrev": tot(prev), "totalYearAgo": tot(yago),
+            "months": months, "url": "https://www.police.uk/pu/your-area/essex-police/"}
+
+
 # ---------------------------------------------------------------- digest
 def digest(data):
     L = [f"THE SEAX DATA DESK  |  collected {NOW.strftime('%A %d %B %Y, %H:%M')} UTC",
@@ -404,6 +484,22 @@ def digest(data):
             L.append("  Most new Essex signatures since the last run:")
             for x in movers[:5]:
                 L.append(f"  - +{x['essexSinceLastRun']:,} | {x['action'][:120]} | {x['url']}")
+    cr = data.get("crime") or {}
+    L.append("== RECORDED CRIME BY NEIGHBOURHOOD (data.police.uk street-level crime, Essex Police) ==")
+    if cr.get("error"):
+        L.append("  could not be read this run: " + cr["error"])
+    elif cr.get("rows"):
+        try:
+            mm = datetime.strptime(cr["month"], "%Y-%m").strftime("%B %Y")
+        except Exception:
+            mm = cr.get("month")
+        chg = lambda a, b: (f"{100 * (a - b) / b:+.0f}%" if isinstance(a, int) and isinstance(b, int) and b >= 30 else "n/a")
+        L.append(f"  Newest month published: {mm}" + ("  ** NEW SINCE THE LAST RUN: worth a story **" if cr.get("new") else "  (already seen)"))
+        L.append(f"  All Essex Police neighbourhoods: {cr.get('total'):,} crimes and anti-social behaviour incidents | month before {cr.get('totalPrev') or 0:,} | same month a year earlier {cr.get('totalYearAgo') or 0:,}")
+        for r in cr["rows"][:60]:
+            L.append(f"  - {r['area']}: {r['n']:,} | vs month before {chg(r['n'], r['prev'])} | vs a year earlier {chg(r['n'], r['yearAgo'])} | violence {r['violence']}, anti-social behaviour {r['asb']}, shoplifting {r['shoplifting']}, burglary {r['burglary']}, vehicle crime {r['vehicle']}")
+        L.append("  Source: " + str(cr.get("url")))
+    L.append("")
     h = data.get("prices") or {}
     L.append("== HOUSE PRICES (UK House Price Index, HM Land Registry and ONS) ==")
     if h.get("error"):
@@ -427,7 +523,7 @@ def main():
     os.makedirs(OUT, exist_ok=True)
     state = load("state.json", {})
     data = load("data.json", {})
-    for name, fn in (("food", food), ("contracts", contracts), ("petitions", petitions), ("prices", prices)):
+    for name, fn in (("food", food), ("contracts", contracts), ("petitions", petitions), ("prices", prices), ("crime", crime)):
         if ONLY and name not in ONLY:
             continue
         try:
