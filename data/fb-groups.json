@@ -8,7 +8,7 @@
   "minHoursBetweenSameGroup": 20,
   "storyMaxAgeHours": 24
  },
- "notChecked": "Whether each group holds posts for admin approval.",
+ "notChecked": "Whether each group holds posts for admin approval: recorded in 'approval' as posts are made.",
  "groups": [
   {
    "id": "714311515362043",
@@ -159,7 +159,8 @@
     "shoebury"
    ],
    "status": "on",
-   "perWeek": 3
+   "perWeek": 3,
+   "approval": "admin approval"
   },
   {
    "id": "210071846236048",
@@ -775,7 +776,8 @@
     "corringham"
    ],
    "status": "on",
-   "perWeek": 3
+   "perWeek": 3,
+   "approval": "instant"
   },
   {
    "id": "299484843504522",
@@ -1329,7 +1331,8 @@
     "Council Watch",
     "Property"
    ],
-   "owner": "Echo Essex"
+   "owner": "Echo Essex",
+   "approval": "instant"
   },
   {
    "id": "927583790732618",
