@@ -771,10 +771,10 @@
   "ids": [
    "essex-recorded-crime-september-2026-police-data"
   ],
-  "name": "Change in police records by type in Essex, September 2026 against September 2025. Anti-social behaviour up 76%, from 1,162 to 2,042; theft from the person up 50%; shoplifting up 22%; other theft up 20%; violence and sexual offences up 15%; other crime up 7%; public order and burglary down 3%; drugs down 4%; possession of weapons down 5%; vehicle crime down 6%; criminal damage and arson down 8%; bicycle theft down 12%; robbery down 19%",
+  "name": "Essex in numbers, September 2026: 2,042 anti-social behaviour reports, up 76% from 1,162; 12,530 crimes recorded, up 8% from 11,563; 5,800 violence and sexual offences, almost half of all crime",
   "label": "Chart",
   "creator": "The Seax analysis of police.uk data",
-  "wide": "/img/people/essex-crime-sept-2026-chart-wide.jpg",
-  "og": "/img/people/essex-crime-sept-2026-chart-og.jpg"
+  "wide": "/img/people/essex-crime-sept-2026-keyfigures-wide.jpg",
+  "og": "/img/people/essex-crime-sept-2026-keyfigures-og.jpg"
  }
 ]
