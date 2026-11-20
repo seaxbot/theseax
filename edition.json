@@ -6092,6 +6092,36 @@
    "time": "2026-11-20T17:01:00Z"
   },
   {
+   "id": "braintree-raf-wethersfield-dispersal-order-21-23-november",
+   "tag": "Police",
+   "icon": "police",
+   "areas": [
+    "braintree"
+   ],
+   "place": "Wethersfield",
+   "weight": 6,
+   "headline": "Dispersal order and face-covering powers at RAF Wethersfield this weekend",
+   "summary": "Essex Police say the order, from 8am on Saturday to midnight on Monday, is to keep emergency access to the site open while allowing lawful protest.",
+   "body": [
+    "A dispersal order will be in force around RAF Wethersfield, near Braintree, from 8am on Saturday 21 November until midnight on Monday 23 November, Essex Police has announced.",
+    "The force said the order was needed to make sure there is essential emergency access to the site. It covers a wide area around the former airbase shown on a map published by the police, taking in Wethersfield village, Howe Street, Morris Green, Brickkiln Green, School Green and a stretch of the B1053.",
+    "Officers will also be able to tell people to remove face coverings inside a designated area under Section 158 of the Crime and Policing Act 2026, the force said.",
+    "Essex Police said it would work to make sure people could exercise their right to lawful protest, while dealing appropriately with any crime or anti-social behaviour.",
+    "A dispersal order lets officers direct anyone they believe is causing, or likely to cause, anti-social behaviour to leave the area and stay away for up to 48 hours. Refusing to go is an offence.",
+    "RAF Wethersfield is used by the Home Office to house asylum seekers."
+   ],
+   "points": [
+    "People can be told to leave and stay away for up to 48 hours",
+    "Covers Wethersfield, Howe Street and the lanes around the base",
+    "Officers can order people to remove face coverings"
+   ],
+   "source": "Essex Police",
+   "url": "https://www.essex.police.uk/news/news-search/?ct=News",
+   "also": [],
+   "time": "2026-11-20T18:00:00Z",
+   "updated": "2026-11-20T19:33:15Z"
+  },
+  {
    "id": "thurrock-a282-four-vehicle-crash-dartford-crossing",
    "tag": "Police",
    "areas": [
