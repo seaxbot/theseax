@@ -19,6 +19,7 @@ The Seax Page is a member of about 140 Essex Facebook groups. Meta has no API fo
 - Posts go out as The Seax Page, never the owner's personal profile, and never into groups run by Essex Live.
 
 ## Upkeep
+- Before adding a group, read the "Group by" banner on its page. Groups run by Essex Live are always "off"; groups run by another news outlet go on "hold" until the owner decides (field "owner").
 - Re-audit the groups every few months, or when a post is removed or declined: update status, note and perWeek.
 - A group that removes a Seax post goes to "off" with the reason in "note".
 - Not yet checked: which groups hold posts for admin approval.

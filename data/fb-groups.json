@@ -74,7 +74,8 @@
     "broomfield"
    ],
    "status": "on",
-   "perWeek": 3
+   "perWeek": 3,
+   "owner": "Essex Central"
   },
   {
    "id": "4505572166393645",
@@ -140,7 +141,8 @@
     "thorpe bay"
    ],
    "status": "on",
-   "perWeek": 4
+   "perWeek": 4,
+   "owner": "Southend Gossip"
   },
   {
    "id": "1625927480836147",
@@ -172,8 +174,10 @@
     "leigh-on-sea",
     "westcliff"
    ],
-   "status": "on",
-   "perWeek": 2
+   "status": "hold",
+   "perWeek": 0,
+   "owner": "Your Southend",
+   "note": "Run by Your Southend, another news outlet. Owner to decide."
   },
   {
    "id": "welovesouthendonsea",
@@ -448,11 +452,13 @@
     "mersea",
     "stanway"
    ],
-   "status": "on",
-   "perWeek": 3,
+   "status": "hold",
+   "perWeek": 0,
    "onlyTags": [
     "What's On"
-   ]
+   ],
+   "owner": "Actual Radio",
+   "note": "Run by Actual Radio, another news outlet. Owner to decide."
   },
   {
    "id": "656074891127949",
@@ -745,8 +751,10 @@
     "stanford-le-hope",
     "corringham"
    ],
-   "status": "on",
-   "perWeek": 3
+   "status": "off",
+   "perWeek": 0,
+   "owner": "Essex Live",
+   "note": "Run by Essex Live. Never post."
   },
   {
    "id": "1601081196881282",
@@ -1312,15 +1320,16 @@
    "privacy": "Public",
    "kind": "politics",
    "match": [],
-   "status": "on",
-   "perWeek": 7,
-   "note": "Council, planning and politics stories, including Council Watch.",
+   "status": "hold",
+   "perWeek": 0,
+   "note": "Run by the Echo (Newsquest), a rival newsroom. Owner to decide.",
    "onlyTags": [
     "Politics",
     "Council",
     "Council Watch",
     "Property"
-   ]
+   ],
+   "owner": "Echo Essex"
   },
   {
    "id": "927583790732618",
@@ -1331,11 +1340,13 @@
    "privacy": "Public",
    "kind": "events",
    "match": [],
-   "status": "on",
-   "perWeek": 3,
+   "status": "off",
+   "perWeek": 0,
    "onlyTags": [
     "What's On"
-   ]
+   ],
+   "owner": "Essex Live",
+   "note": "Run by Essex Live. Never post."
   },
   {
    "id": "whatsonessex",
@@ -1534,5 +1545,6 @@
    "perWeek": 0,
    "note": "Junior football only; The Seax covers senior clubs."
   }
- ]
+ ],
+ "ownersChecked": "2026-11-20: 'Group by' banner read on all ready and strict-rules groups."
 }
