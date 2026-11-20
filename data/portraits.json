@@ -775,6 +775,7 @@
   "label": "Chart",
   "creator": "The Seax analysis of police.uk data",
   "wide": "/img/people/essex-crime-sept-2026-keyfigures-wide.jpg",
-  "og": "/img/people/essex-crime-sept-2026-keyfigures-og.jpg"
+  "og": "/img/people/essex-crime-sept-2026-keyfigures-og.jpg",
+  "front": false
  }
 ]
