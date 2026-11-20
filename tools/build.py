@@ -1367,6 +1367,19 @@ def body_with_charts(it, body):
     return "".join(out)
 
 
+def own_banner(it):
+    """Banner for The Seax's own journalism (owner, 20 Nov 2026): "Seax Analysis" on our data stories, "Seax Investigates"
+    on other original reporting. Styled inline so it needs no change to the shared stylesheet."""
+    if not it.get("original"):
+        return ""
+    inv = it.get("original") != "data"
+    return ('<div style="display:inline-flex;margin:0 0 12px;font-family:inherit;line-height:1;border-radius:3px;overflow:hidden">'
+            '<b style="background:#111;color:#fff;font-size:12px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;'
+            'padding:7px 10px 7px 12px;border-left:5px solid #c8102e">' + ("Seax Investigates" if inv else "Seax Analysis") + '</b>'
+            '<span style="background:#f1efe9;color:#333;font-size:12px;font-weight:600;padding:7px 10px">'
+            + ("Original reporting" if inv else "Original data journalism") + '</span></div>')
+
+
 def original_note(it, src, corr):
     """Footer for The Seax's own reporting: it is not a summary of someone else's work."""
     what = "analysis" if it.get("original") == "data" else "reporting"
@@ -1529,7 +1542,7 @@ def story_page(sec, it, more):
         extra += '<script type="application/ld+json">' + json.dumps(vo, ensure_ascii=False).replace("</", "<\\/") + "</script>\n"
     return head(f"{title} · The Seax", desc, url, og_img, "article", extra) + f"""<main class="wrap story">
 <article style="--c:{colour}">
-  <div class="kick"><span>{E(kicker)}</span><span>{E(place)}</span></div>
+  {own_banner(it)}<div class="kick"><span>{E(kicker)}</span><span>{E(place)}</span></div>
   {org}{cw_badge(it) if sec == "councilwatch" else ""}
   <h1>{E(title)}</h1>
   <!-- Article Start -->
