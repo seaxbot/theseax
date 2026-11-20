@@ -1,6 +1,21 @@
 [
  {
   "ids": [
+   "chelmsford-broomfield-hospital-nuclear-medicine-4-3m-scanners"
+  ],
+  "name": "Staff open the new nuclear medicine suite at Broomfield Hospital",
+  "label": "Picture",
+  "wide": "/img/people/broomfield-nuclear-medicine-suite-wide.jpg",
+  "og": "/img/people/broomfield-nuclear-medicine-suite-og.jpg",
+  "creator": "Mid and South Essex NHS Foundation Trust",
+  "provider": "",
+  "license": "",
+  "licenseUrl": "",
+  "source": "",
+  "addedBy": "owner, 20 Nov 2026 17:47 (Broomfield £4.3m suite story; the trust's own picture, credited to the trust)"
+ },
+ {
+  "ids": [
    "thurrock-a282-four-vehicle-crash-dartford-crossing"
   ],
   "name": "The Queen Elizabeth II Bridge at the Dartford Crossing",
