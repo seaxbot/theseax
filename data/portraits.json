@@ -1,6 +1,21 @@
 [
  {
   "ids": [
+   "essex-nhs-online-gp-consultations-204-surgeries-procurement"
+  ],
+  "name": "A patient on a video call with a nurse at home",
+  "label": "Illustration",
+  "wide": "/img/people/online-gp-consultation-wide.jpg",
+  "og": "/img/people/online-gp-consultation-og.jpg",
+  "creator": "The Seax",
+  "provider": "",
+  "license": "",
+  "licenseUrl": "",
+  "source": "",
+  "addedBy": "owner, 20 Nov 2026 (NHS Essex online consultations story)"
+ },
+ {
+  "ids": [
    "colchester-university-of-essex-highly-cited-researchers-lawson-pekrun"
   ],
   "name": "Professors Reinhard Pekrun and Tracy Lawson, Highly Cited Researchers 2026",
