@@ -101,6 +101,8 @@ def plus_headlines(out):
     for x in (out.get("lead") or {}).get("history") or []:
         if isinstance(x, dict) and isinstance(x.get("headline"), str):
             x["headline"] = PLUS_RX.sub(r"\1+", x["headline"])
+    if isinstance(out.get("ticker"), list):
+        out["ticker"] = [PLUS_RX.sub(r"\1+", t) if isinstance(t, str) else t for t in out["ticker"]]
     return n
 
 
