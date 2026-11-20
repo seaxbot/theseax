@@ -1289,9 +1289,10 @@
    "privacy": "Public",
    "kind": "county",
    "match": [],
-   "status": "caution",
-   "perWeek": 2,
-   "note": "Has an advertising policy and shared-content guidelines."
+   "status": "off",
+   "perWeek": 0,
+   "note": "Automatically declined The Seax's posts (3 declined by 20 Nov 2026). Do not post.",
+   "approval": "auto-declined"
   },
   {
    "id": "1269965971002437",
