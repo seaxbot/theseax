@@ -1298,6 +1298,16 @@ def video_figure(it, fig):
             'f.style.cssText="display:block;width:100%;aspect-ratio:16/9;height:auto;border:0;border-radius:10px";'
             'a.replaceWith(f)})})();</script>')
 
+def is_thin(it, sec):
+    """True for a story page with nothing of its own beyond a sentence and a link out: no body and fewer than two
+    key points (link-only and summary-only stories, bare listings)."""
+    if sec == "councilwatch" or video_id(it):
+        return False
+    body = it.get("body") if isinstance(it.get("body"), list) else []
+    points = it.get("points") if isinstance(it.get("points"), list) else []
+    return not any(str(p).strip() for p in body) and len([p for p in points if str(p).strip()]) < 2
+
+
 def story_page(sec, it, more):
     sid = it["id"]
     url = f"{SITE}/story/{sid}/"
@@ -1340,6 +1350,11 @@ def story_page(sec, it, more):
         extra += f'<meta property="article:published_time" content="{iso(t)}">\n<meta property="article:modified_time" content="{iso(up or t)}">\n'
     extra += '<script type="application/ld+json">' + json.dumps(ld, ensure_ascii=False).replace("</", "<\\/") + "</script>\n"
     body = it.get("body") if isinstance(it.get("body"), list) else []
+    if is_thin(it, sec):
+        # a one-line pointer to another outlet's report is useful to readers but is not an article of ours: keep it out
+        # of search indexes so the site is judged on its own reporting (20 Nov 2026; Google spam policies on thin and
+        # scaled content). Links on the page are still followed.
+        extra = '<meta name="robots" content="noindex, follow">\n' + extra
     points = it.get("points") if isinstance(it.get("points"), list) else []
     meta = [f"<b>{E(place)}</b>"]
     if t:
@@ -2217,6 +2232,8 @@ def main():
             archive[it["id"]]["a"] = ar
         elif prev.get("a"):
             archive[it["id"]]["a"] = prev["a"]
+        if is_thin(it, sec):
+            archive[it["id"]]["thin"] = True
         if sec == "councilwatch":
             archive[it["id"]].update({"council": it.get("council") or "", "councilName": it.get("councilName") or "", "cwKey": it.get("cwKey") or ""})
 
@@ -2293,6 +2310,8 @@ def main():
             (SITE + "/briefing/", latest or None, "daily", "0.7"),
             (SITE + "/story/the-seax-launches/", "2026-11-09", None, "0.5")]  # owner's launch story, kept findable
     for sid, rec in sorted(archive.items(), key=lambda kv: kv[1].get("t") or kv[1].get("first") or "", reverse=True):
+        if rec.get("thin"):  # noindexed pointer pages stay out of the sitemaps
+            continue
         urls.append((f"{SITE}/story/{sid}/", lastmod(rec), None, None))
     for x in briefs:
         urls.append((f"{SITE}/briefing/{x['date']}/", x["date"], None, None))
@@ -2310,7 +2329,7 @@ def main():
           '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">']
     for sid, rec in archive.items():
         t = parse_t(rec.get("t"))
-        if t and t >= NOW - timedelta(hours=48) and rec.get("sec") != "features":
+        if t and t >= NOW - timedelta(hours=48) and rec.get("sec") != "features" and not rec.get("thin"):
             ns.append(f"<url><loc>{SITE}/story/{sid}/</loc><news:news><news:publication><news:name>The Seax</news:name>"
                       f"<news:language>en</news:language></news:publication><news:publication_date>{iso(t)}</news:publication_date>"
                       f"<news:title>{E(rec['h'])}</news:title></news:news></url>")
