@@ -396,7 +396,7 @@
    "chelmsford-weather-1c-friday-night-heavy-rain-sunday-22-november"
   ],
   "name": "Wrapped up against the frost",
-  "label": "AI-generated illustration",
+  "label": "",
   "wide": "/img/people/frosty-night-hot-drink-wide.jpg",
   "og": "/img/people/frosty-night-hot-drink-og.jpg",
   "creator": "The Seax",
@@ -404,7 +404,8 @@
   "license": "",
   "licenseUrl": "",
   "source": "",
-  "addedBy": "owner, 20 Nov 2026 (frosty Friday night weather story; AI-generated, so labelled as such)"
+  "addedBy": "owner, 20 Nov 2026 (frosty Friday night weather story); owner asked 17:37 for no caption or credit on it",
+  "noCaption": true
  },
  {
   "match": "^Frost|\\bfrosty?\\b|^Frosty",
