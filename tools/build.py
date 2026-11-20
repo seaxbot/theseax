@@ -1391,7 +1391,7 @@ def own_banner(it):
             '<b style="background:linear-gradient(180deg,#f7cf5a 0%,#e9b33c 55%,#d79f2b 100%);color:#1c1400;font-size:12px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;'
             'padding:7px 10px 7px 12px;border-left:5px solid #a8781a">' + (OWN_ICON_INV if inv else OWN_ICON_DATA) + ("Seax Investigates" if inv else "Seax Analysis") + '</b>'
             '<span style="background:#fbf3dc;color:#4a3b10;font-size:12px;font-weight:600;padding:7px 10px;display:inline-flex;align-items:center">'
-            + ("Original reporting" if inv else "Original data journalism") + '</span></div>')
+            + ("Exclusive" if it.get("exclusive") else "Original reporting" if inv else "Original data journalism") + '</span></div>')
 
 
 def original_note(it, src, corr):
@@ -1418,7 +1418,7 @@ def story_page(sec, it, more):
     src = it.get("source") or ""
     surl = safe_url(it.get("url"))
     also = [a for a in (it.get("also") or []) if isinstance(a, dict) and safe_url(a.get("url"))]
-    kicker = "Feature" if sec == "features" else "Council Watch" if sec == "councilwatch" else (it.get("tag") or SECTION_LABEL.get(sec, "News"))
+    kicker = "Breaking exclusive" if (it.get("exclusive") and it.get("breaking")) else "Exclusive" if it.get("exclusive") else "Feature" if sec == "features" else "Council Watch" if sec == "councilwatch" else (it.get("tag") or SECTION_LABEL.get(sec, "News"))
     if it.get("original") == "data":  # The Seax's own data analysis carries the same label as on the front page (owner, 20 Nov 2026)
         kicker = "Essex Numbers"
     ld = {

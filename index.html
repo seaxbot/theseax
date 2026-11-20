@@ -5076,9 +5076,11 @@ function leadChecker(s){
   }, 0);
   return `<div class="lp-check"><div class="lpc-t"><b>${OB_DATA}Crime checker</b><span>How is your neighbourhood doing? See the September figures for any of Essex's 56 police areas.</span></div><select id="lpCheckSel" aria-label="Check your neighbourhood"><option value="">Loading the 56 areas…</option></select></div>`;
 }
-function ownBanner(s, cls){ if(!s || !s.original) return ""; const inv = s.original !== "data"; return `<span class="ownban${cls ? " " + cls : ""}"><b>${inv ? OB_INV : OB_DATA}${inv ? "Seax Investigates" : "Seax Analysis"}</b><em>${inv ? "Original reporting" : "Original data journalism"}</em></span>`; }
+function ownBanner(s, cls){ if(!s || !s.original) return ""; const inv = s.original !== "data"; return `<span class="ownban${cls ? " " + cls : ""}"><b>${inv ? OB_INV : OB_DATA}${inv ? "Seax Investigates" : "Seax Analysis"}</b><em>${s.exclusive ? "Exclusive" : inv ? "Original reporting" : "Original data journalism"}</em></span>`; }
 function flashBadge(s){ return flashOn(s) ? '<span class="flash"><i></i>Breaking</span>' : ""; }
 function leadKicker(s){
+  if(s.breaking && s.exclusive) return '<i class="hotdot"></i>Breaking exclusive'; /* owner, 20 Nov 2026: our own scoops say so */
+  if(s.exclusive) return '<i class="hotdot"></i>Exclusive';
   if(s.breaking) return '<i class="hotdot"></i>Breaking';
   if(s.developing) return '<i class="hotdot"></i>Developing';
   return esc(s.tag||"Top story");
