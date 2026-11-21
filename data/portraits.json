@@ -3,6 +3,50 @@
   "ids": [
    "chelmsford-hollywood-bowl-meadows-opening-december"
   ],
+  "name": "A young bowler at a Hollywood Bowl centre",
+  "label": "Picture",
+  "wide": "/img/people/hollywood-bowl-wide.jpg",
+  "og": "/img/people/hollywood-bowl-og.jpg",
+  "creator": "Hollywood Bowl",
+  "provider": "Hollywood Bowl",
+  "license": "",
+  "licenseUrl": "",
+  "source": "https://www.hollywoodbowl.co.uk/chelmsford",
+  "addedBy": "owner, 21 Nov 2026 20:20 (Chelmsford Meadows opening story: owner's chosen main picture plus five Hollywood Bowl press pictures from the August 2026 announcement, shown after the story text; credit Hollywood Bowl)",
+  "more": [
+   {
+    "name": "The Meadows entrance in Chelmsford, with Hollywood Bowl's opening hoardings inside",
+    "label": "Picture",
+    "wide": "/img/people/hollywood-bowl-chelmsford-meadows-entrance.jpg",
+    "creator": "Hollywood Bowl"
+   },
+   {
+    "name": "Marking the start of work outside the Hollywood Bowl hoardings at The Meadows",
+    "label": "Picture",
+    "wide": "/img/people/hollywood-bowl-chelmsford-hoardings.jpg",
+    "creator": "Hollywood Bowl"
+   },
+   {
+    "name": "Inside the unit at The Meadows during building work",
+    "label": "Picture",
+    "wide": "/img/people/hollywood-bowl-chelmsford-site.jpg",
+    "creator": "Hollywood Bowl"
+   },
+   {
+    "name": "A bowling pin held up on the building site",
+    "label": "Picture",
+    "wide": "/img/people/hollywood-bowl-chelmsford-pin.jpg",
+    "creator": "Hollywood Bowl"
+   },
+   {
+    "name": "A Hollywood Bowl hard hat on site at The Meadows",
+    "label": "Picture",
+    "wide": "/img/people/hollywood-bowl-chelmsford-hard-hat.jpg",
+    "creator": "Hollywood Bowl"
+   }
+  ]
+ },
+ {
   "match": "^(?!.*\\b(?:[Cc]los\\w*|[Ff]ire|[Dd]ied|[Dd]eath|[Ii]njur\\w*|[Pp]olice|[Ff]ined)\\b).*(?:\\bHollywood Bowl\\b.*\\b(?:[Oo]pen\\w*|[Ll]aunch\\w*)\\b|\\b(?:[Oo]pen\\w*|[Ll]aunch\\w*)\\b.*\\bHollywood Bowl\\b)",
   "name": "A young bowler at a Hollywood Bowl centre",
   "label": "Picture",
