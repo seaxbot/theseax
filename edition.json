@@ -6209,6 +6209,33 @@
    "updated": "2026-11-21T14:51:51Z"
   },
   {
+   "id": "colchester-gavyn-booker-wanted-recall-prison",
+   "tag": "Police",
+   "icon": "police",
+   "areas": [
+    "colchester"
+   ],
+   "place": "Colchester",
+   "weight": 5,
+   "headline": "Colchester police seek Gavyn Booker, 34, wanted on recall to prison",
+   "summary": "He has long brown hair and a beard, and has connections to Colchester.",
+   "body": [
+    "Essex Police is asking for help to find Gavyn Booker, who is wanted on recall to prison.",
+    "Booker, 34, is about 5ft 9in tall, with long brown hair and a beard. He has connections to Colchester.",
+    "Anyone who sees him or knows where he is should contact Essex Police quoting reference 42/176658/26. Information can be given through the force's website or Live Chat, by calling 101, or anonymously to Crimestoppers on 0800 555 111."
+   ],
+   "points": [
+    "About 5ft 9in tall",
+    "Quote reference 42/176658/26",
+    "Call 101 or Crimestoppers anonymously"
+   ],
+   "source": "Essex Police Colchester",
+   "url": "https://www.facebook.com/EPColchester",
+   "also": [],
+   "time": "2026-11-21T14:53:12Z",
+   "updated": "2026-11-21T14:53:12Z"
+  },
+  {
    "id": "colchester-leisure-world-swimming-pool-closed-incident",
    "tag": "Community",
    "icon": "community",

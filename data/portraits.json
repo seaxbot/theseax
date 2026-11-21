@@ -1,6 +1,21 @@
 [
  {
   "ids": [
+   "colchester-gavyn-booker-wanted-recall-prison"
+  ],
+  "name": "Gavyn Booker",
+  "label": "Picture",
+  "wide": "/img/people/gavyn-booker-wanted-wide.jpg",
+  "og": "/img/people/gavyn-booker-wanted-og.jpg",
+  "creator": "Essex Police",
+  "provider": "",
+  "license": "",
+  "licenseUrl": "",
+  "source": "",
+  "addedBy": "owner, 21 Nov 2026 14:52 (Essex Police Colchester wanted appeal photo)"
+ },
+ {
+  "ids": [
    "basildon-valeriy-hurynchuk-49-missing-appeal"
   ],
   "name": "Valeriy Hurynchuk",
