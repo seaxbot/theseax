@@ -1,6 +1,35 @@
 [
  {
   "ids": [
+   "warley-burst-water-main-floodwater-five-houses"
+  ],
+  "name": "A fire service lorry from Maldon on the flooded road in Warley",
+  "label": "Picture",
+  "wide": "/img/people/warley-burst-main-wide.jpg",
+  "og": "/img/people/warley-burst-main-og.jpg",
+  "creator": "Essex County Fire and Rescue Service",
+  "provider": "Essex County Fire and Rescue Service",
+  "license": "",
+  "licenseUrl": "",
+  "source": "https://www.facebook.com/ECFRS",
+  "more": [
+   {
+    "name": "A firefighter pumps floodwater out of a back garden",
+    "label": "Picture",
+    "wide": "/img/people/warley-burst-main-garden.jpg",
+    "creator": "Essex County Fire and Rescue Service"
+   },
+   {
+    "name": "Hoses run across a green to the fire engines in the street",
+    "label": "Picture",
+    "wide": "/img/people/warley-burst-main-hoses.jpg",
+    "creator": "Essex County Fire and Rescue Service"
+   }
+  ],
+  "addedBy": "owner, 21 Nov 2026 18:05 (Essex County Fire and Rescue Service's own pictures of the Warley burst water main, supplied by the owner as a collage; credited)"
+ },
+ {
+  "ids": [
    "harlow-damien-clinton-police-appeal-theft-investigation"
   ],
   "name": "Damien Clinton",
