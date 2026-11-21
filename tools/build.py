@@ -715,6 +715,8 @@ def uk_long(d):
     u = d.astimezone(UK)
     return f"{u.strftime('%A')} {u.day} {u.strftime('%B %Y')}, {u.strftime('%H:%M')}"
 
+UPD_AGO_JS = """<script>(function(){var e=document.querySelector(".meta time.ago");if(!e)return;function f(){var m=Math.round((Date.now()-Date.parse(e.getAttribute("datetime")))/60000);if(isNaN(m)||m<0)return;var t;if(m<1)t="just now";else if(m<60)t=m+(m==1?" minute":" minutes")+" ago";else if(m<2880){var h=Math.round(m/60);t=h+(h==1?" hour":" hours")+" ago";}else{var d=Math.round(m/1440);t=d+" days ago";}e.textContent=t;}f();setInterval(f,60000);})();</script>"""
+
 def uk_day(d):
     u = d.astimezone(UK)
     return f"{u.strftime('%A')} {u.day} {u.strftime('%B')}"
@@ -1713,10 +1715,13 @@ def story_page(sec, it, more):
         extra = '<meta name="robots" content="noindex, follow">\n' + extra
     points = it.get("points") if isinstance(it.get("points"), list) else []
     meta = [f"<b>{E(place)}</b>"]
-    if t:
-        meta.append(f'<time datetime="{iso(t)}">{E(uk_long(t))}</time>')
+    # owner, 21 Nov 2026: an updated story says clearly "Updated 2 hours ago" and then when it was first published;
+    # the relative time is filled in by the reader's browser (UPD_AGO_JS), with the full date as the fallback
     if up and t and up > t + timedelta(minutes=5):
-        meta.append(f'<span>Updated <time datetime="{iso(up)}">{E(uk_long(up))}</time></span>')
+        meta.append(f'<span class="upd" style="font-weight:700;color:#c8102e">Updated <time class="ago" datetime="{iso(up)}">{E(uk_long(up))}</time></span>')
+        meta.append(f'<span>First published <time datetime="{iso(t)}">{E(uk_long(t))}</time></span>')
+    elif t:
+        meta.append(f'<time datetime="{iso(t)}">{E(uk_long(t))}</time>')
     if src and sec != "councilwatch":
         meta.append(f"<span>Reported by {E(src)}</span>")
     if sec == "councilwatch":
@@ -1835,7 +1840,7 @@ def story_page(sec, it, more):
   {org}{cw_badge(it) if sec == "councilwatch" else ""}
   <h1>{E(title)}</h1>
   <!-- Article Start -->
-  <div class="meta">{' <span class="dot">·</span> '.join(meta)}</div>
+  <div class="meta">{' <span class="dot">·</span> '.join(meta)}</div>{UPD_AGO_JS if any('class="ago"' in m for m in meta) else ''}
   {share_bar(url, title)}
   {fig}
   {body_with_charts(it, body, opening=summary)}{fig_more}
