@@ -8,6 +8,7 @@
 "h": "Colchester A12 death: witnesses sought after young man is struck near junction 26 on Saturday evening",
 "last": "2026-11-11T00:44:31Z",
 "place": "Colchester",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-07T19:00:00Z",
 "u": "2026-11-08T17:51:00Z"
@@ -22,6 +23,7 @@
 "h": "A12 reopens near Ingatestone as Anglian Water blames blockage for collapse",
 "last": "2026-11-20T20:35:20Z",
 "place": "Ingatestone, Margaretting",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-17T09:50:00Z",
 "u": "2026-11-18T07:09:00Z"
@@ -37,6 +39,7 @@
 "h": "Driver counts 15 dead animals along two miles of the A120",
 "last": "2026-11-17T22:24:30Z",
 "place": "Essex",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-15T06:54:00Z",
 "u": ""
@@ -49,7 +52,7 @@
 "card": "a127",
 "first": "2026-11-20T19:39:00Z",
 "h": "A127 drivers face months of lane and slip road closures",
-"last": "2026-11-21T18:18:55Z",
+"last": "2026-11-21T18:33:43Z",
 "place": "Basildon, Rayleigh, Southend-on-Sea",
 "sec": "news",
 "t": "2026-11-20T17:52:00Z",
@@ -62,6 +65,7 @@
 "h": "A130 southbound weekend maintenance closure between Howe Green and Rayleigh Spur was scheduled to lift at 6am Monday",
 "last": "2026-11-09T07:45:20Z",
 "place": "Howe Green & Rayleigh",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-06T19:30:00Z",
 "u": ""
@@ -76,6 +80,7 @@
 "h": "Lower A414 speed limits and average speed cameras between Chelmsford and Ongar due to stay for good, councillor says",
 "last": "2026-11-17T12:40:12Z",
 "place": "Writtle, Chelmsford, Ongar",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-14T14:24:00Z",
 "u": ""
@@ -89,6 +94,7 @@
 "h": "Anglia Ruskin University seeks voluntary redundancies to cut staff bill by 10%",
 "last": "2026-11-16T15:41:00Z",
 "place": "Chelmsford",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-13T16:01:15Z",
 "u": ""
@@ -99,6 +105,7 @@
 "h": "Nearly 55,000 sign petition telling Google to 'search elsewhere' for Arena Essex data centre",
 "last": "2026-11-07T12:47:20Z",
 "place": "Purfleet, Thurrock",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-05T14:06:00Z",
 "u": ""
@@ -112,6 +119,7 @@
 "h": "Anglia Ruskin construction professor takes sustainable building message to COP31 climate summit",
 "last": "2026-11-11T11:44:14Z",
 "place": "Chelmsford",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-09T10:00:00Z",
 "u": ""
@@ -125,6 +133,7 @@
 "h": "Aveley crossing patrol officer marks 39 years as Thurrock warns drivers",
 "last": "2026-11-19T19:20:41Z",
 "place": "Aveley, Thurrock",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-17T14:12:00Z",
 "u": ""
@@ -136,7 +145,7 @@
 "card": "business",
 "first": "2026-11-18T18:39:14Z",
 "h": "BAE Systems, with Great Baddow base, plans up to 1,070 UK job cuts",
-"last": "2026-11-21T18:18:55Z",
+"last": "2026-11-21T18:33:43Z",
 "place": "Great Baddow, Chelmsford",
 "sec": "news",
 "t": "2026-11-18T17:32:00Z",
@@ -149,7 +158,7 @@
 "card": "business",
 "first": "2026-11-19T19:39:15Z",
 "h": "Basildon firm AVRT trains soldiers and police in virtual reality",
-"last": "2026-11-21T18:18:55Z",
+"last": "2026-11-21T18:33:43Z",
 "place": "Basildon",
 "sec": "news",
 "t": "2026-11-19T17:11:00Z",
@@ -164,6 +173,7 @@
 "h": "Basildon jobless claims climb to 4,600, highest in Essex",
 "last": "2026-11-20T07:08:39Z",
 "place": "Basildon",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-18T07:19:00Z",
 "u": ""
@@ -175,7 +185,7 @@
 "card": "council",
 "first": "2026-11-19T14:41:04Z",
 "h": "Basildon council homes audit cannot confirm hazards were fixed",
-"last": "2026-11-21T18:18:55Z",
+"last": "2026-11-21T18:33:43Z",
 "place": "Basildon",
 "sec": "news",
 "t": "2026-11-19T07:21:00Z",
@@ -190,6 +200,7 @@
 "h": "Temporary housing for homeless families drives Basildon Council towards a £3.8m overspend this year",
 "last": "2026-11-13T18:08:59Z",
 "place": "Basildon",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-10T18:34:00Z",
 "u": ""
@@ -201,7 +212,7 @@
 "card": "council",
 "first": "2026-11-19T14:41:04Z",
 "h": "Basildon council tenants face up to £1 a week extra rent from April",
-"last": "2026-11-21T18:18:55Z",
+"last": "2026-11-21T18:33:43Z",
 "place": "Basildon",
 "sec": "news",
 "t": "2026-11-19T07:21:00Z",
@@ -216,6 +227,7 @@
 "h": "Basildon Council offers tenants £1,500 and free removals to move to a smaller home",
 "last": "2026-11-17T12:40:12Z",
 "place": "Basildon",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-14T14:06:00Z",
 "u": ""
@@ -226,6 +238,7 @@
 "h": "Basildon mayor urges council to complete war memorial championed by late D-Day veteran Don Sheppard",
 "last": "2026-11-10T13:44:47Z",
 "place": "Basildon, Laindon",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-09T11:32:00Z",
 "u": ""
@@ -236,6 +249,7 @@
 "h": "Six Basildon disabled bays set to become enforceable as three are earmarked for removal",
 "last": "2026-11-09T15:39:34Z",
 "place": "Basildon",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-08T12:00:00Z",
 "u": ""
@@ -249,6 +263,7 @@
 "h": "Basildon man, 19, charged with GBH after man hurt in East Walk",
 "last": "2026-11-16T21:40:31Z",
 "place": "Basildon",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-13T21:45:00Z",
 "u": ""
@@ -262,6 +277,7 @@
 "h": "Two 18-year-olds and a boy of 17 arrested after man is stabbed in Basildon's East Walk",
 "last": "2026-11-14T10:44:44Z",
 "place": "Basildon",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-11T11:45:00Z",
 "u": ""
@@ -275,6 +291,7 @@
 "h": "Basildon Council forms fly-tipping task force after clearing 1,696 dumps in six months",
 "last": "2026-11-15T12:48:20Z",
 "place": "Basildon",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-13T09:54:00Z",
 "u": ""
@@ -288,6 +305,7 @@
 "h": "Basildon's Gateway 97.8 Johnny Jenkins named in Audio Academy 30 Under 30",
 "last": "2026-11-19T11:49:20Z",
 "place": "Basildon",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-17T11:00:00Z",
 "u": ""
@@ -301,6 +319,7 @@
 "h": "Home Bargains wants to take over empty TUI unit and double its Basildon store",
 "last": "2026-11-18T07:11:32Z",
 "place": "Basildon, Westgate Shopping Park",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-15T07:15:00Z",
 "u": ""
@@ -314,6 +333,7 @@
 "h": "Basildon house prices hit record average of £367,920",
 "last": "2026-11-21T10:19:02Z",
 "place": "Basildon",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-19T07:21:00Z",
 "u": ""
@@ -325,7 +345,7 @@
 "card": "remembrance",
 "first": "2026-11-20T07:42:00Z",
 "h": "Basildon councillors back permanent war memorial D-Day veteran sought",
-"last": "2026-11-21T18:18:55Z",
+"last": "2026-11-21T18:33:43Z",
 "place": "Basildon, Laindon",
 "sec": "news",
 "t": "2026-11-20T06:35:00Z",
@@ -340,6 +360,7 @@
 "h": "Basildon loses 32 planned affordable homes after council agrees scheme changes",
 "last": "2026-11-20T09:26:39Z",
 "place": "Great Burstead, Basildon",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-17T08:11:00Z",
 "u": ""
@@ -353,6 +374,7 @@
 "h": "Teenage girls' designs become Basildon's new Town Square seating and a five-way swing",
 "last": "2026-11-15T10:44:05Z",
 "place": "Basildon",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-13T09:54:00Z",
 "u": ""
@@ -364,7 +386,7 @@
 "card": "police",
 "first": "2026-11-21T14:50:41Z",
 "h": "Child, 11, bitten by dog at Basildon recreation ground",
-"last": "2026-11-21T18:18:55Z",
+"last": "2026-11-21T18:33:43Z",
 "place": "Basildon",
 "sec": "news",
 "t": "2026-11-21T14:50:36Z",
@@ -376,6 +398,7 @@
 "h": "Basildon's Mercantile scheme of 492 rented flats reaches its highest point beside Market Square",
 "last": "2026-11-08T15:50:23Z",
 "place": "Basildon",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-06T12:00:00Z",
 "u": ""
@@ -386,6 +409,7 @@
 "h": "Topping-out milestone for Basildon Market Square scheme of 492 rental flats",
 "last": "2026-11-08T23:10:59Z",
 "place": "Basildon",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-06T12:00:00Z",
 "u": ""
@@ -396,6 +420,7 @@
 "h": "Gas mains work shuts Pipps Hill Road North near Basildon for almost four weeks from today",
 "last": "2026-11-10T09:54:30Z",
 "place": "Basildon, Crays Hill",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-08T12:00:00Z",
 "u": ""
@@ -411,6 +436,7 @@
 "h": "Deaf patient's feedback leads to communication boards at three Essex hospitals",
 "last": "2026-11-19T11:49:20Z",
 "place": "Basildon, Southend-on-Sea, Broomfield",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-17T12:00:00Z",
 "u": ""
@@ -424,6 +450,7 @@
 "h": "Basildon sets aside £150,000 for two years of town centre safety wardens",
 "last": "2026-11-19T11:49:20Z",
 "place": "Basildon",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-17T08:11:00Z",
 "u": ""
@@ -435,7 +462,7 @@
 "card": "business",
 "first": "2026-11-20T22:41:26Z",
 "h": "Basildon council pledges to revive town centre as shops close",
-"last": "2026-11-21T18:18:55Z",
+"last": "2026-11-21T18:33:43Z",
 "place": "Basildon",
 "sec": "news",
 "t": "2026-11-20T22:02:00Z",
@@ -449,7 +476,7 @@
 "card": "bluelights",
 "first": "2026-11-20T19:39:00Z",
 "h": "Police appeal to find Basildon man, 49, not heard from for weeks",
-"last": "2026-11-21T18:18:55Z",
+"last": "2026-11-21T18:33:43Z",
 "place": "Basildon",
 "sec": "news",
 "t": "2026-11-20T18:28:00Z",
@@ -464,6 +491,7 @@
 "h": "Basildon councillors to vote on backing a permanent war memorial, taking up D-Day veteran Don Sheppard's campaign",
 "last": "2026-11-12T20:50:32Z",
 "place": "Basildon, Laindon",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-10T18:37:00Z",
 "u": ""
@@ -475,7 +503,7 @@
 "card": "community",
 "first": "2026-11-21T08:41:46Z",
 "h": "Benfleet student builds life-size Dalek for his degree",
-"last": "2026-11-21T18:18:55Z",
+"last": "2026-11-21T18:33:43Z",
 "place": "Benfleet",
 "sec": "news",
 "t": "2026-11-21T06:32:00Z",
@@ -487,6 +515,7 @@
 "h": "First look at Better Queensway's next phase shows homes plan for Southend car park sites",
 "last": "2026-11-06T23:26:20Z",
 "place": "Southend-on-Sea",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-04T14:53:00Z",
 "u": ""
@@ -500,6 +529,7 @@
 "h": "Billericay switches on its Christmas lights on 26 November, with a 150-stall market to follow",
 "last": "2026-11-14T11:44:51Z",
 "place": "Billericay",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-12T12:00:00Z",
 "u": ""
@@ -513,6 +543,7 @@
 "h": "Billericay community awards draw more than 20,000 public votes",
 "last": "2026-11-21T10:19:02Z",
 "place": "Billericay",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-18T13:22:00Z",
 "u": ""
@@ -524,7 +555,7 @@
 "card": "food",
 "first": "2026-11-20T19:39:00Z",
 "h": "Billericay High Street gets Alice in Wonderland-themed tea room",
-"last": "2026-11-21T18:18:55Z",
+"last": "2026-11-21T18:33:43Z",
 "place": "Billericay",
 "sec": "news",
 "t": "2026-11-20T17:00:00Z",
@@ -540,6 +571,7 @@
 "h": "Billericay's 910-home Foots Farm plan heads to public inquiry after councillors say they would have refused it",
 "last": "2026-11-15T07:43:06Z",
 "place": "Billericay, Great Burstead",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-12T03:06:00Z",
 "u": ""
@@ -550,6 +582,7 @@
 "h": "Basildon councillors refuse 910-home Foots Farm scheme near Billericay's Sun Corner",
 "last": "2026-11-08T19:44:07Z",
 "place": "Billericay",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-06T07:06:00Z",
 "u": ""
@@ -564,6 +597,7 @@
 "h": "Fun Walk Trust shares record £123,107 among 62 Essex good causes",
 "last": "2026-11-19T11:49:20Z",
 "place": "Billericay",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-17T06:57:00Z",
 "u": ""
@@ -577,6 +611,7 @@
 "h": "Public inquiry into 310 green belt homes at Billericay's Greens Farm Lane opens on 1 December",
 "last": "2026-11-17T08:36:26Z",
 "place": "Billericay",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-14T07:28:00Z",
 "u": ""
@@ -588,7 +623,7 @@
 "card": "transport",
 "first": "2026-11-21T07:39:17Z",
 "h": "Boxted Bridge on Essex-Suffolk border still shut after three years",
-"last": "2026-11-21T18:18:55Z",
+"last": "2026-11-21T18:33:43Z",
 "place": "Boxted",
 "sec": "news",
 "t": "2026-11-21T06:00:00Z",
@@ -601,6 +636,7 @@
 "h": "Braintree district homes can put glass out at the kerb after £12m recycling plant upgrade",
 "last": "2026-11-07T07:40:56Z",
 "place": "Braintree & Witham",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-05T16:37:00Z",
 "u": ""
@@ -611,6 +647,7 @@
 "h": "£12m recycling plant upgrade lets Braintree district households put glass out at the kerbside",
 "last": "2026-11-07T17:48:13Z",
 "place": "Braintree, Witham",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-05T16:37:00Z",
 "u": ""
@@ -621,6 +658,7 @@
 "h": "£12m recycling plant upgrade paves way for kerbside glass collections in Braintree district",
 "last": "2026-11-07T11:19:45Z",
 "place": "Braintree, Witham, Halstead",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-05T12:00:00Z",
 "u": ""
@@ -632,7 +670,7 @@
 "card": "council",
 "first": "2026-11-19T12:39:17Z",
 "h": "Braintree MP Cleverly targets Khan on crime and housing in mayor bid",
-"last": "2026-11-21T18:18:55Z",
+"last": "2026-11-21T18:33:43Z",
 "place": "Braintree",
 "sec": "news",
 "t": "2026-11-19T11:04:00Z",
@@ -647,6 +685,7 @@
 "h": "Getting to an incident faster is no excuse, Essex chief warns after Braintree PC is sacked for speeding",
 "last": "2026-11-17T15:40:31Z",
 "place": "Braintree",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-14T15:01:00Z",
 "u": ""
@@ -660,6 +699,7 @@
 "h": "Braintree PC sacked after police car data showed 75 speeding incidents",
 "last": "2026-11-19T11:49:20Z",
 "place": "Braintree",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-16T12:00:00Z",
 "u": ""
@@ -671,7 +711,7 @@
 "card": "bluelights",
 "first": "2026-11-20T19:33:25Z",
 "h": "RAF Wethersfield dispersal order in force until midnight on Monday",
-"last": "2026-11-21T18:18:55Z",
+"last": "2026-11-21T18:33:43Z",
 "place": "Wethersfield",
 "sec": "news",
 "t": "2026-11-20T18:00:00Z",
@@ -686,6 +726,7 @@
 "h": "Retired Wethersfield camp teacher says Reform councillor Carl Johnson likened her to a Nazi collaborator, days after his deleted immigration post",
 "last": "2026-11-12T10:48:18Z",
 "place": "Wethersfield, Great Notley, Braintree",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-09T14:00:00Z",
 "u": "2026-11-09T19:27:00Z"
@@ -696,6 +737,7 @@
 "h": "Labour calls for Reform to expel Great Notley county councillor over deleted social media post",
 "last": "2026-11-08T19:44:07Z",
 "place": "Great Notley, Braintree",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-06T06:42:00Z",
 "u": ""
@@ -707,7 +749,7 @@
 "card": "community",
 "first": "2026-11-20T20:38:41Z",
 "h": "Braintree Village ice rink holds inclusive skate for disability groups",
-"last": "2026-11-21T18:18:55Z",
+"last": "2026-11-21T18:33:43Z",
 "place": "Braintree",
 "sec": "news",
 "t": "2026-11-20T16:49:36Z",
@@ -723,6 +765,7 @@
 "h": "Home Office bypasses Braintree council in bid to keep Wethersfield asylum centre open past April 2027",
 "last": "2026-11-15T15:45:25Z",
 "place": "Wethersfield, Braintree",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-12T16:23:00Z",
 "u": ""
@@ -738,6 +781,7 @@
 "h": "Buses replace Greater Anglia trains between Braintree and Witham this weekend",
 "last": "2026-11-21T15:08:59Z",
 "place": "Braintree, Witham",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-17T23:38:58Z",
 "u": ""
@@ -749,7 +793,7 @@
 "card": "business",
 "first": "2026-11-21T16:02:47Z",
 "h": "Brentwood raid nets 616kg of raw tobacco in illegal cigarette crackdown",
-"last": "2026-11-21T18:18:55Z",
+"last": "2026-11-21T18:33:43Z",
 "place": "Brentwood",
 "sec": "news",
 "t": "2026-11-21T16:02:45Z",
@@ -762,7 +806,7 @@
 "card": "transport",
 "first": "2026-11-19T19:39:15Z",
 "h": "A128 near Brentwood slowed by burst water main",
-"last": "2026-11-21T18:18:55Z",
+"last": "2026-11-21T18:33:43Z",
 "place": "Brentwood",
 "sec": "news",
 "t": "2026-11-19T16:03:00Z",
@@ -775,6 +819,7 @@
 "h": "Brentwood Centre revamp cost rises to £29m as planned spa is dropped",
 "last": "2026-11-08T12:50:45Z",
 "place": "Brentwood",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-05T12:00:00Z",
 "u": ""
@@ -788,6 +833,7 @@
 "h": "Brentwood's Chicken and Frog bookshop to shut, blaming steep rise in rates and power costs",
 "last": "2026-11-12T20:50:32Z",
 "place": "Brentwood",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-10T00:00:00Z",
 "u": ""
@@ -801,6 +847,7 @@
 "h": "Brentwood's town centre business group and its art trail up for national awards",
 "last": "2026-11-17T22:24:30Z",
 "place": "Brentwood, Shenfield, Ingatestone",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-15T07:18:00Z",
 "u": ""
@@ -814,6 +861,7 @@
 "h": "Brentwood centre for rape and sexual assault survivors reopens after refit with new aftercare rooms",
 "last": "2026-11-14T11:44:51Z",
 "place": "Brentwood",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-11T14:19:35Z",
 "u": ""
@@ -827,6 +875,7 @@
 "h": "Javelin great Fatima Whitbread made a Freewoman of Brentwood for her work with children in care",
 "last": "2026-11-17T23:50:53Z",
 "place": "Brentwood",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-14T16:50:00Z",
 "u": ""
@@ -840,6 +889,7 @@
 "h": "Brentwood Golf Club up for sale at £2.95m guide price",
 "last": "2026-11-21T07:39:48Z",
 "place": "Brentwood, Coxtie Green",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-18T08:20:00Z",
 "u": ""
@@ -850,6 +900,7 @@
 "h": "No pantomime in Brentwood this Christmas, but the town's theatre has a festive line-up instead",
 "last": "2026-11-07T21:42:46Z",
 "place": "Brentwood",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-05T07:05:00Z",
 "u": ""
@@ -860,6 +911,7 @@
 "h": "No pantomime in Brentwood this Christmas as town's two venues leave panto off the bill",
 "last": "2026-11-07T12:47:20Z",
 "place": "Brentwood",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-05T12:00:00Z",
 "u": ""
@@ -873,6 +925,7 @@
 "h": "Brentwood residents earn the most in Essex and rank fourth in the UK for pay",
 "last": "2026-11-20T07:08:39Z",
 "place": "Brentwood",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-17T16:53:00Z",
 "u": ""
@@ -883,6 +936,7 @@
 "h": "Elliott Smith crowned Sports Personality of the Year at joint Brentwood and Rochford awards",
 "last": "2026-11-09T20:45:00Z",
 "place": "Brentwood, Rayleigh",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-07T12:00:00Z",
 "u": ""
@@ -895,7 +949,7 @@
 "card": "breaking",
 "first": "2026-11-20T18:39:04Z",
 "h": "Brentwood School coach Gareth Stafford Bull likely abused pupils, review finds",
-"last": "2026-11-21T18:18:55Z",
+"last": "2026-11-21T18:33:43Z",
 "place": "Brentwood",
 "sec": "news",
 "t": "2026-11-20T17:30:00Z",
@@ -910,6 +964,7 @@
 "h": "Young jobless claimants in Brentwood reach highest level since early 2022",
 "last": "2026-11-19T11:49:20Z",
 "place": "Brentwood",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-17T08:39:00Z",
 "u": ""
@@ -925,6 +980,7 @@
 "h": "Picture boards help Broomfield stroke patients tell nurses where it hurts",
 "last": "2026-11-18T13:40:25Z",
 "place": "Broomfield, Chelmsford",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-16T10:18:00Z",
 "u": ""
@@ -936,7 +992,7 @@
 "card": "community",
 "first": "2026-11-19T17:39:46Z",
 "h": "Burnham-on-Crouch swimmers cross Channel in relay for Havens Hospices",
-"last": "2026-11-21T18:18:55Z",
+"last": "2026-11-21T18:33:43Z",
 "place": "Burnham-on-Crouch",
 "sec": "news",
 "t": "2026-11-19T15:55:00Z",
@@ -951,6 +1007,7 @@
 "h": "Burnham-on-Crouch signs friendship pact with Carpathian town of Yaremche",
 "last": "2026-11-15T12:48:20Z",
 "place": "Burnham-on-Crouch",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-12T13:03:00Z",
 "u": ""
@@ -964,6 +1021,7 @@
 "h": "Abberton Reservoir exhibition marks what would have been writer Ronald Blythe's birthday",
 "last": "2026-11-18T08:39:51Z",
 "place": "Abberton Reservoir, Layer de la Haye",
+"rl": "2026-11-21",
 "sec": "community",
 "t": "2026-11-06T09:00:00Z",
 "thin": true,
@@ -976,7 +1034,7 @@
 "card": "community",
 "first": "2026-11-16T17:43:51Z",
 "h": "Alresford bowel cancer survivor walks 45 miles for research",
-"last": "2026-11-21T18:18:55Z",
+"last": "2026-11-21T18:33:43Z",
 "place": "Alresford",
 "sec": "community",
 "t": "2026-11-16T13:24:00Z",
@@ -989,6 +1047,7 @@
 "h": "BASICS Essex volunteer medics win King's Award for Voluntary Service",
 "last": "2026-11-20T14:10:25Z",
 "place": "Chelmsford",
+"rl": "2026-11-21",
 "sec": "community",
 "t": "2026-11-15T12:11:00Z",
 "u": ""
@@ -1002,6 +1061,7 @@
 "h": "Basildon Christmas Giving Drive asks for £5 vouchers by 4 December",
 "last": "2026-11-18T13:40:25Z",
 "place": "Basildon",
+"rl": "2026-11-21",
 "sec": "community",
 "t": "2026-11-06T12:00:00Z",
 "u": ""
@@ -1015,6 +1075,7 @@
 "h": "Young carers group and Wickford Town youth club among first winners from Basildon's £100,000 community fund",
 "last": "2026-11-18T13:40:25Z",
 "place": "Wickford, Basildon",
+"rl": "2026-11-21",
 "sec": "community",
 "t": "2026-11-10T18:36:00Z",
 "u": ""
@@ -1028,6 +1089,7 @@
 "h": "Maldon Mud Race sponsor gives Basildon Hospital two Xbox gaming trolleys for young patients",
 "last": "2026-11-11T14:43:55Z",
 "place": "Basildon",
+"rl": "2026-11-21",
 "sec": "community",
 "t": "2026-11-05T08:00:00Z",
 "u": ""
@@ -1041,6 +1103,7 @@
 "h": "Hollyoaks creator Sir Phil Redmond tours Basildon as town prepares its UK Town of Culture bid",
 "last": "2026-11-18T13:40:25Z",
 "place": "Basildon",
+"rl": "2026-11-21",
 "sec": "community",
 "t": "2026-11-10T18:36:00Z",
 "u": ""
@@ -1054,6 +1117,7 @@
 "h": "£25,000 gift transforms end-of-life rooms at Broomfield Hospital",
 "last": "2026-11-11T14:43:55Z",
 "place": "Broomfield, Chelmsford",
+"rl": "2026-11-21",
 "sec": "community",
 "t": "2026-11-03T13:51:00Z",
 "u": ""
@@ -1067,6 +1131,7 @@
 "h": "Refurbished cafe opens at Chafford Gorges Nature Discovery Centre in Chafford Hundred",
 "last": "2026-11-18T13:40:25Z",
 "place": "Chafford Hundred, Grays",
+"rl": "2026-11-21",
 "sec": "community",
 "t": "2026-11-11T05:47:00Z",
 "u": ""
@@ -1080,6 +1145,7 @@
 "h": "Cafe at Chafford Gorges Nature Discovery Centre reopens after refurbishment",
 "last": "2026-11-12T12:44:57Z",
 "place": "Chafford Hundred, Grays",
+"rl": "2026-11-21",
 "sec": "community",
 "t": "2026-11-11T05:47:00Z",
 "u": ""
@@ -1090,6 +1156,7 @@
 "h": "More than 75,000 handmade poppies on show for Chelmsford's Remembrance events",
 "last": "2026-11-10T15:44:41Z",
 "place": "Chelmsford",
+"rl": "2026-11-21",
 "sec": "community",
 "t": "2026-11-03T09:00:00Z",
 "u": ""
@@ -1103,6 +1170,7 @@
 "h": "Young Chelmsford writers to voice Cinderella's pre-show announcements",
 "last": "2026-11-18T10:57:08Z",
 "place": "Chelmsford",
+"rl": "2026-11-21",
 "sec": "community",
 "t": "2026-11-06T12:00:00Z",
 "u": ""
@@ -1114,7 +1182,7 @@
 "card": "christmas",
 "first": "2026-11-19T16:47:56Z",
 "h": "Clacton Victorian Christmas market raises more than £6,000 for charities",
-"last": "2026-11-21T18:18:55Z",
+"last": "2026-11-21T18:33:43Z",
 "place": "Clacton-on-Sea",
 "sec": "community",
 "t": "2026-11-19T15:17:01Z",
@@ -1128,7 +1196,7 @@
 "card": "education",
 "first": "2026-11-19T07:40:28Z",
 "h": "Colchester Institute students serve breakfast at Essex business festival",
-"last": "2026-11-21T18:18:55Z",
+"last": "2026-11-21T18:33:43Z",
 "place": "Braxted Park, Great Braxted",
 "sec": "community",
 "t": "2026-11-18T14:08:00Z",
@@ -1141,7 +1209,7 @@
 "card": "health",
 "first": "2026-11-19T18:39:01Z",
 "h": "Colchester's Provide Community asked to pilot UK nursing public health framework",
-"last": "2026-11-21T18:18:55Z",
+"last": "2026-11-21T18:33:43Z",
 "place": "Colchester",
 "sec": "community",
 "t": "2026-11-19T15:53:00Z",
@@ -1156,6 +1224,7 @@
 "h": "Harlow's ECCO launches Green Lottery with first £150 draw this Friday",
 "last": "2026-11-11T14:43:55Z",
 "place": "Harlow",
+"rl": "2026-11-21",
 "sec": "community",
 "t": "2026-11-04T11:55:00Z",
 "u": ""
@@ -1169,6 +1238,7 @@
 "h": "Air ambulance charity draws more than 150 women to North Weald event on careers in emergency flight medicine",
 "last": "2026-11-18T13:40:25Z",
 "place": "North Weald",
+"rl": "2026-11-21",
 "sec": "community",
 "t": "2026-11-10T10:00:00Z",
 "u": ""
@@ -1177,7 +1247,7 @@
 "card": "community",
 "first": "2026-11-21T07:39:17Z",
 "h": "Essex's 5,200 charities and community groups add £4.6bn, audit finds",
-"last": "2026-11-21T18:18:55Z",
+"last": "2026-11-21T18:33:43Z",
 "place": "Essex",
 "sec": "community",
 "t": "2026-11-20T16:23:25Z",
@@ -1189,6 +1259,7 @@
 "h": "Essex Freemasons hand air ambulance charity another £11,000 and pledge more for 2027",
 "last": "2026-11-18T13:40:25Z",
 "place": "Thaxted",
+"rl": "2026-11-21",
 "sec": "community",
 "t": "2026-11-11T12:00:00Z",
 "u": ""
@@ -1199,6 +1270,7 @@
 "h": "Essex Freemasons hand air ambulance charity another £11,000 and pledge more for 2027",
 "last": "2026-11-12T12:44:57Z",
 "place": "Thaxted, Essex",
+"rl": "2026-11-21",
 "sec": "community",
 "t": "2026-11-11T09:00:00Z",
 "u": ""
@@ -1207,7 +1279,7 @@
 "card": "environment",
 "first": "2026-11-19T07:40:28Z",
 "h": "Essex Wildlife Trust aims to raise £1m for nature in three-year appeal",
-"last": "2026-11-21T18:18:55Z",
+"last": "2026-11-21T18:33:43Z",
 "place": "Essex",
 "sec": "community",
 "t": "2026-11-19T06:14:35Z",
@@ -1219,6 +1291,7 @@
 "h": "Grays social club bar manager to Brave the Shave for Macmillan",
 "last": "2026-11-07T13:41:23Z",
 "place": "Grays",
+"rl": "2026-11-21",
 "sec": "community",
 "t": "2026-10-31T12:00:00Z",
 "u": ""
@@ -1232,6 +1305,7 @@
 "h": "Historian calls for Grays church memorial naming 22 boys lost in the 1875 Goliath training ship fire",
 "last": "2026-11-18T13:40:25Z",
 "place": "Grays",
+"rl": "2026-11-21",
 "sec": "community",
 "t": "2026-11-08T12:00:00Z",
 "u": ""
@@ -1245,6 +1319,7 @@
 "h": "Free slippers and falls advice for older people at Rainbow Services' Ageing Well drop-in in Harlow",
 "last": "2026-11-11T14:43:55Z",
 "place": "Harlow",
+"rl": "2026-11-21",
 "sec": "community",
 "t": "2026-11-04T08:00:00Z",
 "u": ""
@@ -1255,6 +1330,7 @@
 "h": "Harlow foodbank charity seeks new leader as chief executive Andy Thornton plans to retire",
 "last": "2026-11-10T15:44:41Z",
 "place": "Harlow",
+"rl": "2026-11-21",
 "sec": "community",
 "t": "2026-11-02T12:00:00Z",
 "u": ""
@@ -1268,6 +1344,7 @@
 "h": "Harlow Gymnastics Club shortlisted for Active Essex Sports Club of the Year and asks for votes",
 "last": "2026-11-11T14:43:55Z",
 "place": "Harlow",
+"rl": "2026-11-21",
 "sec": "community",
 "t": "2026-11-04T09:00:00Z",
 "u": ""
@@ -1281,6 +1358,7 @@
 "h": "Hundreds run through Harlow Town Park for Let's Lift the Curfew women's safety event",
 "last": "2026-11-18T08:39:51Z",
 "place": "Harlow",
+"rl": "2026-11-21",
 "sec": "community",
 "t": "2026-11-06T10:47:00Z",
 "u": ""
@@ -1291,6 +1369,7 @@
 "h": "Harlow fundraiser brings South Asian community together for mental health",
 "last": "2026-11-07T13:41:23Z",
 "place": "Harlow",
+"rl": "2026-11-21",
 "sec": "community",
 "t": "2026-10-30T10:00:00Z",
 "u": ""
@@ -1301,6 +1380,7 @@
 "h": "Poppy Appeal under way in Harlow",
 "last": "2026-11-07T13:41:23Z",
 "place": "Harlow",
+"rl": "2026-11-21",
 "sec": "community",
 "t": "2026-10-31T10:00:00Z",
 "u": ""
@@ -1311,6 +1391,7 @@
 "h": "45 free prostate cancer blood tests on offer at Harlow Town FC on 14 November",
 "last": "2026-11-10T15:44:41Z",
 "place": "Harlow",
+"rl": "2026-11-21",
 "sec": "community",
 "t": "2026-11-03T09:00:00Z",
 "u": ""
@@ -1324,6 +1405,7 @@
 "h": "Harlow RSPCA branch wins £10,000 to extend animal welfare clinic hours",
 "last": "2026-11-20T09:40:05Z",
 "place": "Harlow",
+"rl": "2026-11-21",
 "sec": "community",
 "t": "2026-11-12T13:37:00Z",
 "u": ""
@@ -1337,6 +1419,7 @@
 "h": "Harlow Rugby Club to host free prostate cancer blood tests for 96 men in December",
 "last": "2026-11-18T13:40:25Z",
 "place": "Harlow",
+"rl": "2026-11-21",
 "sec": "community",
 "t": "2026-11-11T07:49:00Z",
 "u": ""
@@ -1350,6 +1433,7 @@
 "h": "Free prostate cancer blood tests on offer at Harlow Rugby Club next month",
 "last": "2026-11-11T14:43:55Z",
 "place": "Harlow",
+"rl": "2026-11-21",
 "sec": "community",
 "t": "2026-11-11T08:00:00Z",
 "u": ""
@@ -1358,7 +1442,7 @@
 "card": "christmas-2",
 "first": "2026-11-16T15:41:00Z",
 "h": "Havens Hospices asks Essex to back its Big Yes! Christmas appeal",
-"last": "2026-11-21T18:18:55Z",
+"last": "2026-11-21T18:33:43Z",
 "place": "Essex",
 "sec": "community",
 "t": "2026-11-16T13:32:00Z",
@@ -1372,7 +1456,7 @@
 "card": "christmas-2",
 "first": "2026-11-19T15:39:21Z",
 "h": "Havens Hospices asks Essex schools to stage a Santa Run in December",
-"last": "2026-11-21T18:18:55Z",
+"last": "2026-11-21T18:33:43Z",
 "place": "Southend-on-Sea",
 "sec": "community",
 "t": "2026-11-19T12:44:00Z",
@@ -1388,6 +1472,7 @@
 "h": "HAVENS Hospices opens Light up a Life dedications for Christmas",
 "last": "2026-11-17T21:17:23Z",
 "place": "Southend-on-Sea, Prittlewell & Canvey Island",
+"rl": "2026-11-21",
 "sec": "community",
 "t": "2026-11-04T09:00:00Z",
 "u": ""
@@ -1399,7 +1484,7 @@
 "card": "community",
 "first": "2026-11-17T07:39:49Z",
 "h": "Just Ride Southend volunteers win the King's Award for Voluntary Service",
-"last": "2026-11-21T18:18:55Z",
+"last": "2026-11-21T18:33:43Z",
 "place": "Southend-on-Sea",
 "sec": "community",
 "t": "2026-11-17T06:00:00Z",
@@ -1412,6 +1497,7 @@
 "h": "Kids Inspire opens Christmas hamper drop-off for Essex families",
 "last": "2026-11-07T13:41:23Z",
 "place": "Great Baddow",
+"rl": "2026-11-21",
 "sec": "community",
 "t": "2026-11-01T09:00:00Z",
 "u": ""
@@ -1425,6 +1511,7 @@
 "h": "Underfloor heating firms behind Fastwarm pass £150,000 raised for Little Havens children's hospice",
 "last": "2026-11-18T13:40:25Z",
 "place": "Thundersley",
+"rl": "2026-11-21",
 "sec": "community",
 "t": "2026-11-10T12:00:00Z",
 "u": ""
@@ -1438,6 +1525,7 @@
 "h": "Underfloor heating firm's founders pass £150,000 raised for Little Havens children's hospice",
 "last": "2026-11-11T23:45:07Z",
 "place": "Thundersley",
+"rl": "2026-11-21",
 "sec": "community",
 "t": "2026-11-10T12:00:00Z",
 "u": ""
@@ -1449,7 +1537,7 @@
 "card": "community",
 "first": "2026-11-17T16:44:36Z",
 "h": "Fastwarm founders join Little Havens hospice's corporate supporters",
-"last": "2026-11-21T18:18:55Z",
+"last": "2026-11-21T18:33:43Z",
 "place": "Thundersley",
 "sec": "community",
 "t": "2026-11-17T13:02:00Z",
@@ -1463,7 +1551,7 @@
 "card": "community",
 "first": "2026-11-18T11:46:09Z",
 "h": "Little Havens shows bereaved children's grief artwork in Thundersley",
-"last": "2026-11-21T18:18:55Z",
+"last": "2026-11-21T18:33:43Z",
 "place": "Thundersley",
 "sec": "community",
 "t": "2026-11-18T08:42:00Z",
@@ -1475,6 +1563,7 @@
 "h": "Unwanted crutches and walkers can now be dropped at 13 Essex tips for reuse",
 "last": "2026-11-07T13:41:23Z",
 "place": "Braintree, Brentwood, Canvey, Chigwell, Clacton, Colchester, Harlow, Kirby le Soken, Maldon, Mountnessing, Saffron Walden, South Woodham Ferrers & Witham",
+"rl": "2026-11-21",
 "sec": "community",
 "t": "2026-10-30T10:00:00Z",
 "u": ""
@@ -1486,7 +1575,7 @@
 "card": "history",
 "first": "2026-11-21T17:44:45Z",
 "h": "Maldon's Combined Military Services Museum named a VisitEngland Hidden Gem",
-"last": "2026-11-21T18:18:55Z",
+"last": "2026-11-21T18:33:43Z",
 "place": "Maldon",
 "sec": "community",
 "t": "2026-11-11T12:00:00Z",
@@ -1498,6 +1587,7 @@
 "h": "NHS Essex asks new parents how useful its safer sleep advice for babies really was",
 "last": "2026-11-18T13:40:25Z",
 "place": "Essex",
+"rl": "2026-11-21",
 "sec": "community",
 "t": "2026-11-11T09:00:00Z",
 "u": ""
@@ -1509,7 +1599,7 @@
 "card": "business",
 "first": "2026-11-18T10:43:52Z",
 "h": "Ongar's Mulberry House named best wedding venue in East of England",
-"last": "2026-11-21T18:18:55Z",
+"last": "2026-11-21T18:33:43Z",
 "place": "High Ongar",
 "sec": "community",
 "t": "2026-11-18T08:31:00Z",
@@ -1523,7 +1613,7 @@
 "card": "community",
 "first": "2026-11-19T15:39:21Z",
 "h": "Colchester's Provide Community staff vote grants to 10 charities",
-"last": "2026-11-21T18:18:55Z",
+"last": "2026-11-21T18:33:43Z",
 "place": "Colchester",
 "sec": "community",
 "t": "2026-11-19T14:18:00Z",
@@ -1535,6 +1625,7 @@
 "h": "Saffron Walden mayor invites young artists to design the town's Christmas e-card",
 "last": "2026-11-10T15:44:41Z",
 "place": "Saffron Walden",
+"rl": "2026-11-21",
 "sec": "community",
 "t": "2026-11-03T09:00:00Z",
 "u": ""
@@ -1546,7 +1637,7 @@
 "card": "community",
 "first": "2026-11-19T10:39:27Z",
 "h": "Saffron Walden opens nominations for Freedom of the town",
-"last": "2026-11-21T18:18:55Z",
+"last": "2026-11-21T18:33:43Z",
 "place": "Saffron Walden",
 "sec": "community",
 "t": "2026-11-19T08:47:00Z",
@@ -1558,6 +1649,7 @@
 "h": "SECE Mind's festive Merry Minds 5k comes to Belfairs Wood",
 "last": "2026-11-07T13:41:23Z",
 "place": "Leigh-on-Sea",
+"rl": "2026-11-21",
 "sec": "community",
 "t": "2026-11-01T09:00:00Z",
 "u": ""
@@ -1568,6 +1660,7 @@
 "h": "Shoeburyness residents invited to Pride in Place workshops",
 "last": "2026-11-07T13:41:23Z",
 "place": "Shoeburyness",
+"rl": "2026-11-21",
 "sec": "community",
 "t": "2026-10-30T12:00:00Z",
 "u": ""
@@ -1579,7 +1672,7 @@
 "card": "community",
 "first": "2026-11-20T07:42:42Z",
 "h": "Shoeburyness picked for up to £20m from Pride in Place scheme",
-"last": "2026-11-21T18:18:55Z",
+"last": "2026-11-21T18:33:43Z",
 "place": "Shoeburyness",
 "sec": "community",
 "t": "2026-11-19T14:01:36Z",
@@ -1591,6 +1684,7 @@
 "h": "Southend Council's 13th Christmas toy drive asks for new, unwrapped gifts by 15 December",
 "last": "2026-11-10T15:44:41Z",
 "place": "Southend-on-Sea",
+"rl": "2026-11-21",
 "sec": "community",
 "t": "2026-10-27T12:00:00Z",
 "u": ""
@@ -1602,7 +1696,7 @@
 "card": "homeless",
 "first": "2026-11-19T12:39:17Z",
 "h": "Southend homelessness charity HARP launches Christmas Unwrapped appeal",
-"last": "2026-11-21T18:18:55Z",
+"last": "2026-11-21T18:33:43Z",
 "place": "Southend-on-Sea",
 "sec": "community",
 "t": "2026-11-19T11:00:00Z",
@@ -1616,7 +1710,7 @@
 "card": "business",
 "first": "2026-11-18T18:39:14Z",
 "h": "Southend small firms told of 75% discount on Cyber Essentials certificate",
-"last": "2026-11-21T18:18:55Z",
+"last": "2026-11-21T18:33:43Z",
 "place": "Southend-on-Sea",
 "sec": "community",
 "t": "2026-11-18T15:00:00Z",
@@ -1630,7 +1724,7 @@
 "card": "food",
 "first": "2026-11-16T14:43:16Z",
 "h": "St Luke's Hospice bistro launches its first Christmas menu",
-"last": "2026-11-21T18:18:55Z",
+"last": "2026-11-21T18:33:43Z",
 "place": "Thurrock",
 "sec": "community",
 "t": "2026-11-16T13:41:00Z",
@@ -1642,6 +1736,7 @@
 "h": "Fancy dress Halloween walk wins Stanford school 7,200 Beat the Street points",
 "last": "2026-11-07T13:41:23Z",
 "place": "Stanford-le-Hope",
+"rl": "2026-11-21",
 "sec": "community",
 "t": "2026-10-31T13:00:00Z",
 "u": ""
@@ -1655,6 +1750,7 @@
 "h": "Takeley-founded charity Women of Grace UK wins King's Award",
 "last": "2026-11-20T14:10:25Z",
 "place": "Takeley",
+"rl": "2026-11-21",
 "sec": "community",
 "t": "2026-11-14T00:01:00Z",
 "u": ""
@@ -1665,6 +1761,7 @@
 "h": "Volunteers wanted for Tesco winter food collection on 26 to 28 November",
 "last": "2026-11-17T21:17:23Z",
 "place": "Essex",
+"rl": "2026-11-21",
 "sec": "community",
 "t": "2026-11-04T13:24:00Z",
 "u": ""
@@ -1675,6 +1772,7 @@
 "h": "Volunteers wanted to care for Thurrock Museum collection",
 "last": "2026-11-07T13:41:23Z",
 "place": "Grays",
+"rl": "2026-11-21",
 "sec": "community",
 "t": "2026-10-30T10:00:00Z",
 "u": ""
@@ -1688,6 +1786,7 @@
 "h": "Thameside Complex in Grays lit blue for Care Leavers Month",
 "last": "2026-11-20T14:10:25Z",
 "place": "Grays, Thurrock",
+"rl": "2026-11-21",
 "sec": "community",
 "t": "2026-11-14T14:09:00Z",
 "u": ""
@@ -1701,6 +1800,7 @@
 "h": "Thurrock's war memorials tidied and replanted ahead of Remembrance Sunday",
 "last": "2026-11-18T10:57:08Z",
 "place": "Tilbury, Grays, Aveley, Purfleet, East Tilbury",
+"rl": "2026-11-21",
 "sec": "community",
 "t": "2026-11-06T15:51:00Z",
 "u": ""
@@ -1712,7 +1812,7 @@
 "card": "community",
 "first": "2026-11-17T08:43:05Z",
 "h": "West Essex food charity TouchPoint faces hard times despite King's award",
-"last": "2026-11-21T18:18:55Z",
+"last": "2026-11-21T18:33:43Z",
 "place": "West Essex",
 "sec": "community",
 "t": "2026-11-17T06:48:00Z",
@@ -1726,7 +1826,7 @@
 "card": "community",
 "first": "2026-11-18T10:43:52Z",
 "h": "Uttlesford opens Warm Spaces with free soup in five towns this winter",
-"last": "2026-11-21T18:18:55Z",
+"last": "2026-11-21T18:33:43Z",
 "place": "Saffron Walden, Great Dunmow, Thaxted, Stansted, Newport",
 "sec": "community",
 "t": "2026-11-17T10:49:00Z",
@@ -1739,7 +1839,7 @@
 "card": "community",
 "first": "2026-11-18T11:46:09Z",
 "h": "Wickford sisters' Shotgate craft fair raises money for cancer and pet charities",
-"last": "2026-11-21T18:18:55Z",
+"last": "2026-11-21T18:33:43Z",
 "place": "Wickford, Shotgate",
 "sec": "community",
 "t": "2026-11-18T10:52:00Z",
@@ -1754,6 +1854,7 @@
 "h": "Free football pilot for 10 to 13-year-olds runs at Orsett Heath Academy in Grays",
 "last": "2026-11-18T10:57:08Z",
 "place": "Grays",
+"rl": "2026-11-21",
 "sec": "community",
 "t": "2026-11-08T13:21:00Z",
 "u": ""
@@ -1765,7 +1866,7 @@
 "card": "community",
 "first": "2026-11-20T07:42:42Z",
 "h": "Writtle Green benches moved away from moth-hit oak",
-"last": "2026-11-21T18:18:55Z",
+"last": "2026-11-21T18:33:43Z",
 "place": "Writtle, Chelmsford",
 "sec": "community",
 "t": "2026-11-19T13:35:58Z",
@@ -1777,6 +1878,7 @@
 "h": "Thurrock MPs demand talks with c2c and Network Rail bosses after signal failure strands commuters",
 "last": "2026-11-06T23:26:20Z",
 "place": "Grays, Stanford-le-Hope, Tilbury & Purfleet",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-10-31T12:43:00Z",
 "u": "2026-11-04T11:09:00Z"
@@ -1787,6 +1889,7 @@
 "h": "c2c bosses admit service 'hasn't been good enough' and agree to meet south Essex MPs",
 "last": "2026-11-07T17:48:13Z",
 "place": "Grays, Thurrock",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-06T06:22:00Z",
 "u": ""
@@ -1797,6 +1900,7 @@
 "h": "c2c rail bosses agree to face eight south Essex MPs in Parliament after months of disruption",
 "last": "2026-11-08T00:45:49Z",
 "place": "Grays, Thurrock",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-06T06:22:00Z",
 "u": ""
@@ -1810,6 +1914,7 @@
 "h": "c2c trains to call at Purfleet, Rainham and Dagenham Dock again from Wednesday after Barking derailment repairs",
 "last": "2026-11-13T08:47:26Z",
 "place": "Purfleet, Thurrock",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-09T11:58:00Z",
 "u": "2026-11-10T09:26:00Z"
@@ -1822,7 +1927,7 @@
 "card": "c2c",
 "first": "2026-11-19T15:39:21Z",
 "h": "c2c signalling fault near Barking disrupts trains on all routes",
-"last": "2026-11-21T18:18:55Z",
+"last": "2026-11-21T18:33:43Z",
 "place": "Southend-on-Sea, Grays, Basildon",
 "sec": "news",
 "t": "2026-11-19T15:30:00Z",
@@ -1837,6 +1942,7 @@
 "h": "Castle Point to get £1m CCTV network upgrade, watched around the clock from Southend",
 "last": "2026-11-12T10:48:18Z",
 "place": "Canvey Island, Benfleet",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-10T05:00:00Z",
 "u": ""
@@ -1847,6 +1953,7 @@
 "h": "Inspectors find Castle Point's local plan unsound and press for more green belt homes",
 "last": "2026-11-06T22:23:47Z",
 "place": "Benfleet, Canvey Island & Hadleigh",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-03T17:56:00Z",
 "u": ""
@@ -1860,6 +1967,7 @@
 "h": "South Ockendon school trust keeps pupils' Christmas events as it reviews visits",
 "last": "2026-11-21T07:39:48Z",
 "place": "South Ockendon, Thurrock",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-18T08:33:00Z",
 "u": ""
@@ -1873,6 +1981,7 @@
 "h": "Chadwell St Mary bleed control cabinet unveiled in memory of Liam Taylor",
 "last": "2026-11-19T11:49:20Z",
 "place": "Chadwell St Mary, Thurrock",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-17T12:00:00Z",
 "u": ""
@@ -1886,6 +1995,7 @@
 "h": "Teenage boy wounded by air rifle in Chadwell St Mary street",
 "last": "2026-11-18T10:29:42Z",
 "place": "Chadwell St Mary",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-15T10:13:00Z",
 "u": ""
@@ -1899,6 +2009,7 @@
 "h": "Chadwell St Mary gets a Tesco Express on Defoe Parade",
 "last": "2026-11-15T10:44:05Z",
 "place": "Chadwell St Mary",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-12T14:24:00Z",
 "u": ""
@@ -1910,7 +2021,7 @@
 "card": "transport",
 "first": "2026-11-16T18:41:17Z",
 "h": "Chelmsford's £81m Army and Navy scheme faces land inquiry from 24 November",
-"last": "2026-11-21T18:18:55Z",
+"last": "2026-11-21T18:33:43Z",
 "place": "Chelmsford, Army and Navy roundabout",
 "sec": "news",
 "t": "2026-11-16T10:56:00Z",
@@ -1922,6 +2033,7 @@
 "h": "The Gym Group applies to move into Chelmsford's empty former BHS store in The Meadows",
 "last": "2026-11-07T00:18:26Z",
 "place": "Chelmsford",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-05T23:00:00Z",
 "u": ""
@@ -1933,7 +2045,7 @@
 "card": "hospital",
 "first": "2026-11-20T16:43:07Z",
 "h": "Broomfield Hospital gets £4.3m nuclear medicine suite for cancer scans",
-"last": "2026-11-21T18:18:55Z",
+"last": "2026-11-21T18:33:43Z",
 "place": "Broomfield, Chelmsford",
 "sec": "news",
 "t": "2026-11-20T16:00:00Z",
@@ -1948,6 +2060,7 @@
 "h": "Two teenagers deny murdering Radwan Shakur, 21, in Chelmsford's Central Park",
 "last": "2026-11-21T07:11:14Z",
 "place": "Chelmsford, Central Park",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-17T16:33:00Z",
 "u": ""
@@ -1961,6 +2074,7 @@
 "h": "Community award winners to switch on Chelmsford's Christmas lights on Sunday",
 "last": "2026-11-17T08:36:26Z",
 "place": "Chelmsford",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-14T08:22:18Z",
 "u": ""
@@ -1974,6 +2088,7 @@
 "h": "Chelmsford Christmas lights to be switched on after a day of festive entertainment",
 "last": "2026-11-13T23:08:50Z",
 "place": "Chelmsford",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-11T17:01:00Z",
 "thin": true,
@@ -1988,6 +2103,7 @@
 "h": "Chelmsford College's Daniel Holland named national Young Student of the Year",
 "last": "2026-11-18T13:40:25Z",
 "place": "Chelmsford",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-16T11:01:00Z",
 "u": ""
@@ -1998,6 +2114,7 @@
 "h": "Churchgoers across the Diocese of Chelmsford asked to help shape an independent safeguarding audit",
 "last": "2026-11-18T13:40:25Z",
 "place": "Chelmsford",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-15T12:23:00Z",
 "u": ""
@@ -2011,6 +2128,7 @@
 "h": "Police still seeking witnesses to Sunday's early-hours crash that killed two people on Chelmsford's Copperfield Road",
 "last": "2026-11-12T15:44:20Z",
 "place": "Chelmsford",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-09T13:59:00Z",
 "u": "2026-11-09T15:30:00Z"
@@ -2024,6 +2142,7 @@
 "h": "Ex-PC who drove past cyclist in danger near Chelmsford's Army and Navy would have been sacked, panel finds",
 "last": "2026-11-16T14:11:52Z",
 "place": "Chelmsford, Army and Navy roundabout",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-13T12:00:00Z",
 "u": ""
@@ -2037,6 +2156,7 @@
 "h": "Former PC who saw cyclist heading into traffic before fatal A130 crash would have been sacked, hearing rules",
 "last": "2026-11-16T09:22:44Z",
 "place": "Chelmsford",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-13T09:23:00Z",
 "u": "2026-11-13T13:10:56Z"
@@ -2050,6 +2170,7 @@
 "h": "Wet and windy start to Tuesday across Essex, with gusts close to 40mph",
 "last": "2026-11-17T23:50:53Z",
 "place": "Essex",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-16T21:25:00Z",
 "u": "2026-11-16T21:25:00Z"
@@ -2061,7 +2182,7 @@
 "card": "bluelights",
 "first": "2026-11-21T11:42:51Z",
 "h": "Chelmsford police urgently search for Johnny Coyle, 37, who may be hurt",
-"last": "2026-11-21T18:18:55Z",
+"last": "2026-11-21T18:33:43Z",
 "place": "Chelmsford",
 "sec": "news",
 "t": "2026-11-21T08:11:00Z",
@@ -2073,6 +2194,7 @@
 "h": "Planning inspectors open public hearings into Chelmsford's plan for nearly 23,000 homes",
 "last": "2026-11-10T19:04:28Z",
 "place": "Chelmsford",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-10-06T09:00:00Z",
 "u": ""
@@ -2086,6 +2208,7 @@
 "h": "Spanish fashion chain Mango heading for Chelmsford's High Chelmer centre",
 "last": "2026-11-18T21:39:36Z",
 "place": "Chelmsford, High Chelmer",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-16T15:00:00Z",
 "thin": true,
@@ -2097,6 +2220,7 @@
 "h": "Police hunt two cars after motorcyclist knocked off in suspected Chelmsford hit-and-run",
 "last": "2026-11-07T10:41:47Z",
 "place": "Chelmsford",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-05T15:25:00Z",
 "u": ""
@@ -2107,6 +2231,7 @@
 "h": "Police appeal after two cars leave the scene when motorcyclist is knocked off in Chelmsford",
 "last": "2026-11-08T08:45:17Z",
 "place": "Chelmsford",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-05T08:00:00Z",
 "u": ""
@@ -2120,6 +2245,7 @@
 "h": "Chelmsford MP says Broomfield Hospital trust's recovery plan is moving too slowly",
 "last": "2026-11-14T11:44:51Z",
 "place": "Broomfield, Chelmsford",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-11T19:05:00Z",
 "u": ""
@@ -2131,7 +2257,7 @@
 "card": "education",
 "first": "2026-11-20T18:39:04Z",
 "h": "Chelmsford's New Hall School wins national ISA award for sport",
-"last": "2026-11-21T18:18:55Z",
+"last": "2026-11-21T18:33:43Z",
 "place": "Boreham, Chelmsford",
 "sec": "news",
 "t": "2026-11-20T17:01:00Z",
@@ -2146,6 +2272,7 @@
 "h": "Nine trees to come down on Chelmsford's North Avenue after safety inspection",
 "last": "2026-11-18T13:40:25Z",
 "place": "Chelmsford, North Avenue",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-16T10:41:00Z",
 "u": ""
@@ -2159,6 +2286,7 @@
 "h": "Chelmsford roads operation ends in 19 arrests and suspected fake cigarettes seized",
 "last": "2026-11-14T11:44:51Z",
 "place": "Chelmsford",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-12T11:08:00Z",
 "u": ""
@@ -2172,6 +2300,7 @@
 "h": "Power back on in Chelmer Village and Springfield after underground cable fault",
 "last": "2026-11-19T20:40:50Z",
 "place": "Chelmer Village & Springfield, Chelmsford",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-16T14:15:00Z",
 "u": "2026-11-16T17:00:00Z"
@@ -2186,6 +2315,7 @@
 "h": "Chelmsford's Sandon School raffles prizes to keep GTA 6 fans in class",
 "last": "2026-11-21T15:08:59Z",
 "place": "Sandon, Chelmsford",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-19T06:16:00Z",
 "u": ""
@@ -2199,6 +2329,7 @@
 "h": "Family of St John's Hospital cleaner who died of mesothelioma ask former staff for asbestos information",
 "last": "2026-11-11T14:44:25Z",
 "place": "Chelmsford",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-09T12:00:00Z",
 "u": ""
@@ -2212,6 +2343,7 @@
 "h": "State Fayre claims a UK camping festival first with an all-female headline bill at Hylands Park",
 "last": "2026-11-13T13:23:35Z",
 "place": "Chelmsford, Hylands Park",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-11T10:00:00Z",
 "u": ""
@@ -2225,6 +2357,7 @@
 "h": "Inquest opens into death of Chelmsford boy, 2, who fell from Cyprus hotel window",
 "last": "2026-11-16T15:41:00Z",
 "place": "Chelmsford",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-13T15:48:46Z",
 "u": ""
@@ -2236,7 +2369,7 @@
 "card": "weather",
 "first": "2026-11-19T00:45:39Z",
 "h": "Frost likely across inland Essex on Sunday night as lows near 0C",
-"last": "2026-11-21T18:18:55Z",
+"last": "2026-11-21T18:33:43Z",
 "place": "Essex",
 "sec": "news",
 "t": "2026-11-19T00:45:00Z",
@@ -2249,7 +2382,7 @@
 "card": "business",
 "first": "2026-11-21T11:42:51Z",
 "h": "Clacton's former ATS Euromaster garage goes up for sale",
-"last": "2026-11-21T18:18:55Z",
+"last": "2026-11-21T18:33:43Z",
 "place": "Clacton-on-Sea",
 "sec": "news",
 "t": "2026-11-20T16:14:00Z",
@@ -2265,6 +2398,7 @@
 "h": "High tides prompt two flood warnings along the coast around Clacton",
 "last": "2026-11-14T11:44:51Z",
 "place": "Clacton-on-Sea",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-12T09:00:00Z",
 "thin": true,
@@ -2276,6 +2410,7 @@
 "h": "Clacton loses its Halifax branch as the bank shuts its town centre doors for good today",
 "last": "2026-11-10T10:46:12Z",
 "place": "Clacton-on-Sea",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-09T07:48:00Z",
 "thin": true,
@@ -2288,7 +2423,7 @@
 "card": "bluelights",
 "first": "2026-11-16T14:11:24Z",
 "h": "Police concerned for missing Clacton girl Hannah Steer, 15",
-"last": "2026-11-21T18:18:55Z",
+"last": "2026-11-21T18:33:43Z",
 "place": "Clacton",
 "sec": "news",
 "t": "2026-11-16T14:08:00Z",
@@ -2301,7 +2436,7 @@
 "card": "hospital",
 "first": "2026-11-20T11:41:10Z",
 "h": "Clacton Hospital's £25m revamp brings new urgent care centre",
-"last": "2026-11-21T18:18:55Z",
+"last": "2026-11-21T18:33:43Z",
 "place": "Clacton-on-Sea",
 "sec": "news",
 "t": "2026-11-20T11:05:00Z",
@@ -2316,6 +2451,7 @@
 "h": "Clacton Pier keeps its big new ride for spring 2027 under wraps",
 "last": "2026-11-20T07:08:39Z",
 "place": "Clacton-on-Sea",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-18T05:00:00Z",
 "thin": true,
@@ -2328,7 +2464,7 @@
 "card": "education",
 "first": "2026-11-20T20:38:41Z",
 "h": "Clacton primary school's garden in running for county award",
-"last": "2026-11-21T18:18:55Z",
+"last": "2026-11-21T18:33:43Z",
 "place": "Clacton-on-Sea",
 "sec": "news",
 "t": "2026-11-20T16:36:19Z",
@@ -2342,7 +2478,7 @@
 "card": "environment",
 "first": "2026-11-20T07:42:42Z",
 "h": "Abbotts Hall reserve near Colchester counts record number of rare moths",
-"last": "2026-11-21T18:18:55Z",
+"last": "2026-11-21T18:33:43Z",
 "place": "Colchester",
 "sec": "news",
 "t": "2026-11-20T05:00:00Z",
@@ -2358,6 +2494,7 @@
 "h": "Flooding partly blocks Axial Way in Colchester during heavy rain",
 "last": "2026-11-19T19:20:41Z",
 "place": "Colchester, Axial Way",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-17T15:44:00Z",
 "thin": true,
@@ -2372,6 +2509,7 @@
 "h": "Batteries thrown out with household rubbish blamed for Colchester bin lorry fire",
 "last": "2026-11-14T11:44:51Z",
 "place": "Colchester",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-12T09:45:00Z",
 "thin": true,
@@ -2386,6 +2524,7 @@
 "h": "Colchester bus gate switched off to ease St Botolph's Circus traffic",
 "last": "2026-11-20T07:08:39Z",
 "place": "Colchester",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-17T17:09:00Z",
 "thin": true,
@@ -2398,7 +2537,7 @@
 "card": "colchestercastle",
 "first": "2026-11-20T13:39:43Z",
 "h": "Colchester Castle roof repairs finished after £1.3m project",
-"last": "2026-11-21T18:18:55Z",
+"last": "2026-11-21T18:33:43Z",
 "place": "Colchester",
 "sec": "news",
 "t": "2026-11-20T11:32:00Z",
@@ -2413,6 +2552,7 @@
 "h": "James Blunt booked to top the bill at Colchester Castle Summer Series",
 "last": "2026-11-19T11:49:20Z",
 "place": "Colchester",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-17T10:00:00Z",
 "u": ""
@@ -2426,6 +2566,7 @@
 "h": "Three vehicles involved in crash that shut Colchester's Chitts Hill",
 "last": "2026-11-19T11:49:20Z",
 "place": "Chitts Hill, Colchester",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-16T19:27:00Z",
 "thin": true,
@@ -2440,6 +2581,7 @@
 "h": "Colchester's Christmas lights go on at 7.30pm on Saturday, with fireworks over Lion Walk",
 "last": "2026-11-15T12:48:20Z",
 "place": "Colchester",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-13T12:00:00Z",
 "u": ""
@@ -2453,6 +2595,7 @@
 "h": "Colchester council answers complaints over Christmas lights night traffic",
 "last": "2026-11-19T11:49:20Z",
 "place": "Colchester",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-17T05:00:00Z",
 "thin": true,
@@ -2467,6 +2610,7 @@
 "h": "Colchester council says it delivered 100 affordable homes between April and September",
 "last": "2026-11-13T13:23:35Z",
 "place": "Colchester",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-11T12:00:00Z",
 "u": ""
@@ -2480,6 +2624,7 @@
 "h": "Microsoft picks Colchester City Council as the only UK council in its latest AI case study",
 "last": "2026-11-12T20:50:32Z",
 "place": "Colchester",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-10T10:00:00Z",
 "u": ""
@@ -2493,6 +2638,7 @@
 "h": "Colchester deputy leader criticises £900 SEND school transport charges",
 "last": "2026-11-21T12:39:22Z",
 "place": "Colchester",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-18T13:00:00Z",
 "thin": true,
@@ -2508,6 +2654,7 @@
 "h": "Colchester hospital trust logs 240+ cases of staff snooping on records",
 "last": "2026-11-20T23:41:03Z",
 "place": "Colchester, Clacton-on-Sea",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-18T00:01:00Z",
 "u": ""
@@ -2521,6 +2668,7 @@
 "h": "Colchester firm ETK Group receives King's Award from Lord-Lieutenant",
 "last": "2026-11-20T07:08:39Z",
 "place": "Langham, Colchester",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-17T17:27:00Z",
 "u": ""
@@ -2532,7 +2680,7 @@
 "card": "food",
 "first": "2026-11-20T12:39:18Z",
 "h": "Three Colchester food outlets hold hygiene ratings of 0 or 1",
-"last": "2026-11-21T18:18:55Z",
+"last": "2026-11-21T18:33:43Z",
 "place": "Colchester",
 "sec": "news",
 "t": "2026-11-20T12:39:16Z",
@@ -2545,7 +2693,7 @@
 "card": "bluelights-2",
 "first": "2026-11-21T14:53:12Z",
 "h": "Colchester police seek Gavyn Booker, 34, wanted on recall to prison",
-"last": "2026-11-21T18:18:55Z",
+"last": "2026-11-21T18:33:43Z",
 "place": "Colchester",
 "sec": "news",
 "t": "2026-11-21T14:53:12Z",
@@ -2560,6 +2708,7 @@
 "h": "Colchester's parks and green spaces brought back under council-owned Amphora",
 "last": "2026-11-17T21:17:23Z",
 "place": "Colchester",
+"rl": "2026-11-21",
 "sec": "official",
 "t": "2026-11-06T12:00:00Z",
 "u": ""
@@ -2573,6 +2722,7 @@
 "h": "Power cut hits hundreds near Colchester after high-voltage line fault",
 "last": "2026-11-19T11:49:20Z",
 "place": "Colchester",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-17T10:27:00Z",
 "thin": true,
@@ -2585,7 +2735,7 @@
 "card": "hospital",
 "first": "2026-11-20T09:40:05Z",
 "h": "Colchester Hospital asks patients to hand back crutches and frames",
-"last": "2026-11-21T18:18:55Z",
+"last": "2026-11-21T18:33:43Z",
 "place": "Colchester",
 "sec": "news",
 "t": "2026-11-20T06:30:25Z",
@@ -2600,6 +2750,7 @@
 "h": "Partially blind after eye cancer, Felix is now studying music at Colchester Institute",
 "last": "2026-11-15T20:02:04Z",
 "place": "Colchester",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-13T06:03:00Z",
 "u": ""
@@ -2613,6 +2764,7 @@
 "h": "Colchester city centre gets police knife arch checks",
 "last": "2026-11-21T15:08:59Z",
 "place": "Colchester",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-19T13:57:00Z",
 "thin": true,
@@ -2627,6 +2779,7 @@
 "h": "Colchester councillors to weigh up major spending plan for Leisure World",
 "last": "2026-11-19T11:49:20Z",
 "place": "Colchester, Leisure World",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-16T17:00:00Z",
 "thin": true,
@@ -2639,7 +2792,7 @@
 "card": "pool",
 "first": "2026-11-21T11:42:51Z",
 "h": "Colchester Leisure World swimming pool shut for cleaning after incident",
-"last": "2026-11-21T18:18:55Z",
+"last": "2026-11-21T18:33:43Z",
 "place": "Colchester",
 "sec": "news",
 "t": "2026-11-21T10:14:00Z",
@@ -2655,6 +2808,7 @@
 "h": "Colchester Local Plan heads for the inspector after more than 1,800 responses",
 "last": "2026-11-19T13:32:55Z",
 "place": "Colchester",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-16T12:00:00Z",
 "u": ""
@@ -2668,6 +2822,7 @@
 "h": "North Essex councils' joint Link scheme has backed 149 firms so far this year, 22 of them in Colchester",
 "last": "2026-11-12T20:50:32Z",
 "place": "Colchester",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-10T12:00:00Z",
 "u": ""
@@ -2681,6 +2836,7 @@
 "h": "Colchester to get US chicken chain Raising Cane's first UK drive-thru",
 "last": "2026-11-21T12:39:22Z",
 "place": "Colchester",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-18T12:25:00Z",
 "u": ""
@@ -2694,6 +2850,7 @@
 "h": "Colchester curry house takes national Restaurant of the Year title",
 "last": "2026-11-13T19:44:08Z",
 "place": "Colchester",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-11T17:00:00Z",
 "thin": true,
@@ -2708,6 +2865,7 @@
 "h": "Colchester's Shrub End sports centre could get two new floodlit 3G pitches under £2m-plus plan",
 "last": "2026-11-14T11:44:51Z",
 "place": "Shrub End, Colchester",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-12T12:00:00Z",
 "u": ""
@@ -2719,7 +2877,7 @@
 "card": "council",
 "first": "2026-11-16T07:31:48Z",
 "h": "Nearly 100 Colchester households stuck in B&Bs as housing demand climbs",
-"last": "2026-11-21T18:18:55Z",
+"last": "2026-11-21T18:33:43Z",
 "place": "Colchester",
 "sec": "news",
 "t": "2026-11-16T05:00:00Z",
@@ -2733,7 +2891,7 @@
 "card": "bluelights-2",
 "first": "2026-11-21T14:51:51Z",
 "h": "Police hunt Connor Downer, 22, wanted on recall to prison",
-"last": "2026-11-21T18:18:55Z",
+"last": "2026-11-21T18:33:43Z",
 "place": "Colchester",
 "sec": "news",
 "t": "2026-11-21T14:51:51Z",
@@ -2746,7 +2904,7 @@
 "card": "education",
 "first": "2026-11-18T13:40:09Z",
 "h": "University of Essex may house 150 MoD staff in spare Colchester rooms",
-"last": "2026-11-21T18:18:55Z",
+"last": "2026-11-21T18:33:43Z",
 "place": "Colchester",
 "sec": "news",
 "t": "2026-11-18T12:11:00Z",
@@ -2761,6 +2919,7 @@
 "h": "University of Essex AI skin cancer scientist named a top UK innovator",
 "last": "2026-11-20T20:35:20Z",
 "place": "Colchester",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-17T14:58:00Z",
 "u": ""
@@ -2774,6 +2933,7 @@
 "h": "University of Essex pair named among world's most cited researchers",
 "last": "2026-11-20T23:41:03Z",
 "place": "Colchester",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-18T00:00:00Z",
 "u": ""
@@ -2787,6 +2947,7 @@
 "h": "Jake Quickenden joins Colchester's Wizard of Oz as city adds an ice rink",
 "last": "2026-11-18T13:40:25Z",
 "place": "Colchester",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-16T12:00:00Z",
 "u": ""
@@ -2797,6 +2958,7 @@
 "h": "Colchester Zoo rated second-best day out in the East of England on Tripadvisor reviews",
 "last": "2026-11-09T15:39:34Z",
 "place": "Colchester, Stanway",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-08T13:37:00Z",
 "u": ""
@@ -2807,6 +2969,7 @@
 "h": "Colchester Zoo ranked the second best day out in the East of England in Tripadvisor review study",
 "last": "2026-11-10T07:10:21Z",
 "place": "Colchester",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-08T12:00:00Z",
 "u": ""
@@ -2820,6 +2983,7 @@
 "h": "Colne Engaine horse stables refused on appeal over landscape and drainage",
 "last": "2026-11-19T11:49:20Z",
 "place": "Colne Engaine",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-17T12:00:00Z",
 "u": ""
@@ -2833,6 +2997,7 @@
 "h": "Corringham town centre promised extra police patrols over anti-social behaviour",
 "last": "2026-11-19T11:49:20Z",
 "place": "Corringham",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-16T17:00:00Z",
 "u": ""
@@ -2844,7 +3009,7 @@
 "card": "court",
 "first": "2026-11-21T16:40:16Z",
 "h": "Man, 21, charged over death of Kelsie Stevens, 19, in Crays Hill crash",
-"last": "2026-11-21T18:18:55Z",
+"last": "2026-11-21T18:33:43Z",
 "place": "Crays Hill, Basildon",
 "sec": "news",
 "t": "2026-11-20T12:10:38Z",
@@ -2856,6 +3021,7 @@
 "h": "Braintree driver banned after roof load smashed into armed police car on A120",
 "last": "2026-11-10T19:47:53Z",
 "place": "Little Canfield",
+"rl": "2026-11-21",
 "sec": "courts",
 "t": "2026-10-28T15:30:20Z",
 "u": ""
@@ -2869,6 +3035,7 @@
 "h": "Aveley car repair firm ordered to pay £16,192 after ignoring Thurrock planning enforcement notices",
 "last": "2026-11-13T18:59:48Z",
 "place": "Aveley",
+"rl": "2026-11-21",
 "sec": "courts",
 "t": "2026-11-11T12:00:00Z",
 "u": ""
@@ -2882,6 +3049,7 @@
 "h": "Aveley car repair firm pays more than £16,000 after ignoring Thurrock planning notices",
 "last": "2026-11-18T13:40:25Z",
 "place": "Aveley, Thurrock",
+"rl": "2026-11-21",
 "sec": "courts",
 "t": "2026-11-11T12:00:00Z",
 "u": ""
@@ -2895,6 +3063,7 @@
 "h": "Former teacher jailed for racist emails threatening Kemi Badenoch, MP for North West Essex",
 "last": "2026-11-19T18:11:29Z",
 "place": "Saffron Walden",
+"rl": "2026-11-21",
 "sec": "courts",
 "t": "2026-11-09T15:00:00Z",
 "u": ""
@@ -2909,6 +3078,7 @@
 "h": "Three Kent men charged over suspected hare coursing near Bardfield",
 "last": "2026-11-19T18:11:29Z",
 "place": "Great Bardfield",
+"rl": "2026-11-21",
 "sec": "courts",
 "t": "2026-11-09T09:00:00Z",
 "u": ""
@@ -2922,6 +3092,7 @@
 "h": "West Beckton man, 29, charged with robbery after £50,000 in cash was taken in Basildon",
 "last": "2026-11-21T07:11:14Z",
 "place": "Basildon",
+"rl": "2026-11-21",
 "sec": "courts",
 "t": "2026-11-12T12:00:00Z",
 "u": ""
@@ -2932,6 +3103,7 @@
 "h": "Basildon shop thief jailed and banned from two stores",
 "last": "2026-11-09T11:49:17Z",
 "place": "Basildon",
+"rl": "2026-11-21",
 "sec": "courts",
 "t": "2026-10-26T10:00:00Z",
 "u": ""
@@ -2943,7 +3115,7 @@
 "card": "court",
 "first": "2026-11-17T16:44:36Z",
 "h": "Braintree man, 38, charged with 21 shop thefts in Braintree and Great Notley",
-"last": "2026-11-21T18:18:55Z",
+"last": "2026-11-21T18:33:43Z",
 "place": "Braintree",
 "sec": "courts",
 "t": "2026-11-16T18:00:00Z",
@@ -2955,6 +3127,7 @@
 "h": "Brentwood man, 50, admits stealing champagne and meat from petrol station shops",
 "last": "2026-11-10T19:47:53Z",
 "place": "Brentwood & Wickford",
+"rl": "2026-11-21",
 "sec": "courts",
 "t": "2026-10-28T10:21:00Z",
 "u": ""
@@ -2966,7 +3139,7 @@
 "card": "court",
 "first": "2026-11-14T13:48:47Z",
 "h": "ATM thief found hiding in Dagenham loft jailed after targeting cash machines in Essex and across Britain",
-"last": "2026-11-21T18:18:55Z",
+"last": "2026-11-21T18:33:43Z",
 "place": "Chelmsford",
 "sec": "courts",
 "t": "2026-11-13T20:45:00Z",
@@ -2979,7 +3152,7 @@
 "card": "court",
 "first": "2026-11-18T21:39:36Z",
 "h": "Church Langley man, 51, gets suspended term over attempts to incite children",
-"last": "2026-11-21T18:18:55Z",
+"last": "2026-11-21T18:33:43Z",
 "place": "Church Langley, Harlow",
 "sec": "courts",
 "t": "2026-11-18T17:54:00Z",
@@ -2991,6 +3164,7 @@
 "h": "Parents jailed for more than 23 years for seriously harming a child",
 "last": "2026-11-09T11:49:17Z",
 "place": "Colchester",
+"rl": "2026-11-21",
 "sec": "courts",
 "t": "2026-10-26T10:00:00Z",
 "u": ""
@@ -3004,6 +3178,7 @@
 "h": "Man, 32, jailed for 58 weeks for breaching restraining order in Colchester area",
 "last": "2026-11-18T13:40:25Z",
 "place": "Colchester",
+"rl": "2026-11-21",
 "sec": "courts",
 "t": "2026-11-07T09:40:00Z",
 "u": ""
@@ -3014,6 +3189,7 @@
 "h": "Colchester man jailed for ten years for sexual assaults",
 "last": "2026-11-08T12:50:45Z",
 "place": "Colchester",
+"rl": "2026-11-21",
 "sec": "courts",
 "t": "2026-10-25T10:00:00Z",
 "u": ""
@@ -3027,6 +3203,7 @@
 "h": "Eastwood dog owner to be sentenced in December after 15 German shepherds were rescued from his home",
 "last": "2026-11-21T07:11:14Z",
 "place": "Eastwood, Southend",
+"rl": "2026-11-21",
 "sec": "courts",
 "t": "2026-11-11T08:24:00Z",
 "u": ""
@@ -3037,6 +3214,7 @@
 "h": "Former Essex maths teacher given further jail term for grooming and abusing girls",
 "last": "2026-11-19T18:11:29Z",
 "place": "Essex",
+"rl": "2026-11-21",
 "sec": "courts",
 "t": "2026-11-05T17:45:00Z",
 "u": ""
@@ -3047,6 +3225,7 @@
 "h": "Jailed drug dealers stripped of more than £1m",
 "last": "2026-11-08T12:50:45Z",
 "place": "Fobbing & Westcliff",
+"rl": "2026-11-21",
 "sec": "courts",
 "t": "2026-10-25T12:00:00Z",
 "u": ""
@@ -3060,6 +3239,7 @@
 "h": "Grays man, 60, denies possessing an imitation firearm with intent to cause fear of violence",
 "last": "2026-11-17T18:09:50Z",
 "place": "Grays",
+"rl": "2026-11-21",
 "sec": "courts",
 "t": "2026-11-04T12:00:00Z",
 "u": ""
@@ -3073,6 +3253,7 @@
 "h": "Windmill Fields man banned for a year after cocaine drug-driving in Harlow",
 "last": "2026-11-20T09:40:05Z",
 "place": "Harlow",
+"rl": "2026-11-21",
 "sec": "courts",
 "t": "2026-11-14T15:45:36Z",
 "u": ""
@@ -3086,6 +3267,7 @@
 "h": "Harlow man admits cocaine supply and £82,000 criminal property charge",
 "last": "2026-11-17T18:09:50Z",
 "place": "Harlow",
+"rl": "2026-11-21",
 "sec": "courts",
 "t": "2026-11-05T17:33:00Z",
 "u": ""
@@ -3097,7 +3279,7 @@
 "card": "court",
 "first": "2026-11-15T11:45:17Z",
 "h": "Man of no fixed abode charged with two counts of assault by beating in Harlow",
-"last": "2026-11-21T18:18:55Z",
+"last": "2026-11-21T18:33:43Z",
 "place": "Harlow",
 "sec": "courts",
 "t": "2026-11-15T10:51:16Z",
@@ -3112,6 +3294,7 @@
 "h": "Disqualified drink-driver jailed after three-vehicle crash on London Road, Harlow",
 "last": "2026-11-18T13:40:25Z",
 "place": "Harlow",
+"rl": "2026-11-21",
 "sec": "courts",
 "t": "2026-11-06T10:00:00Z",
 "u": ""
@@ -3123,7 +3306,7 @@
 "card": "court",
 "first": "2026-11-20T11:41:10Z",
 "h": "19-year-old Harlow man charged over hospital & McDonald's trespass",
-"last": "2026-11-21T18:18:55Z",
+"last": "2026-11-21T18:33:43Z",
 "place": "Harlow",
 "sec": "courts",
 "t": "2026-11-20T11:21:56Z",
@@ -3136,7 +3319,7 @@
 "card": "court",
 "first": "2026-11-13T08:47:26Z",
 "h": "Dover man, 83, charged with indecent assault in Harlow dating back to 1974",
-"last": "2026-11-21T18:18:55Z",
+"last": "2026-11-21T18:33:43Z",
 "place": "Harlow",
 "sec": "courts",
 "t": "2026-11-13T07:58:00Z",
@@ -3152,6 +3335,7 @@
 "h": "Harlow man, 19, charged with taking a vehicle without consent and failing to stop for police",
 "last": "2026-11-18T13:40:25Z",
 "place": "Harlow, Navestock",
+"rl": "2026-11-21",
 "sec": "courts",
 "t": "2026-11-09T12:37:00Z",
 "u": ""
@@ -3165,6 +3349,7 @@
 "h": "Harlow man, 42, sent to crown court charged with offering to supply heroin and crack cocaine",
 "last": "2026-11-18T13:40:25Z",
 "place": "Harlow",
+"rl": "2026-11-21",
 "sec": "courts",
 "t": "2026-11-06T12:00:00Z",
 "u": ""
@@ -3175,6 +3360,7 @@
 "h": "Two Harlow 21-year-olds remanded over replica gun, machete and drugs",
 "last": "2026-11-10T19:47:53Z",
 "place": "Harlow",
+"rl": "2026-11-21",
 "sec": "courts",
 "t": "2026-10-29T10:00:00Z",
 "u": ""
@@ -3188,6 +3374,7 @@
 "h": "Harlow man admits drug-driving on Southern Way and is given interim ban",
 "last": "2026-11-20T09:40:05Z",
 "place": "Harlow",
+"rl": "2026-11-21",
 "sec": "courts",
 "t": "2026-11-13T15:34:48Z",
 "u": ""
@@ -3201,6 +3388,7 @@
 "h": "Harlow man banned for 30 months after admitting driving at more than three times the limit on Southern Way",
 "last": "2026-11-18T13:40:25Z",
 "place": "Harlow",
+"rl": "2026-11-21",
 "sec": "courts",
 "t": "2026-11-09T12:00:00Z",
 "u": ""
@@ -3212,7 +3400,7 @@
 "card": "court",
 "first": "2026-11-13T21:45:23Z",
 "h": "Harlow man, 47, charged with two counts of harassment",
-"last": "2026-11-21T18:18:55Z",
+"last": "2026-11-21T18:33:43Z",
 "place": "Harlow",
 "sec": "courts",
 "t": "2026-11-13T12:00:00Z",
@@ -3228,6 +3416,7 @@
 "h": "Witham man, 21, jailed for 12 months over drugs and phones package thrown into HMP Chelmsford",
 "last": "2026-11-20T09:40:05Z",
 "place": "Chelmsford",
+"rl": "2026-11-21",
 "sec": "courts",
 "t": "2026-11-12T17:27:00Z",
 "u": ""
@@ -3241,6 +3430,7 @@
 "h": "Loughton man, 43, jailed for 11 years over rapes in Maidenhead",
 "last": "2026-11-16T18:08:35Z",
 "place": "Loughton",
+"rl": "2026-11-21",
 "sec": "courts",
 "t": "2026-11-02T12:00:00Z",
 "u": ""
@@ -3254,6 +3444,7 @@
 "h": "Agency nurse told Colchester care home colleague he would 'kill' his whole family, panel finds",
 "last": "2026-11-15T07:43:06Z",
 "place": "Colchester",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-12T06:42:00Z",
 "u": ""
@@ -3264,6 +3455,7 @@
 "h": "Developer denies 30 highways charges over Old Harlow homes",
 "last": "2026-11-10T19:47:53Z",
 "place": "Old Harlow",
+"rl": "2026-11-21",
 "sec": "courts",
 "t": "2026-10-29T12:00:00Z",
 "u": ""
@@ -3274,6 +3466,7 @@
 "h": "Purfleet 19-year-old locked up for six robberies and a machete threat",
 "last": "2026-11-07T13:41:23Z",
 "place": "Purfleet & Grays",
+"rl": "2026-11-21",
 "sec": "courts",
 "t": "2026-10-24T10:00:00Z",
 "u": ""
@@ -3284,6 +3477,7 @@
 "h": "Rochford and Westcliff men jailed for drugs and a prohibited gun",
 "last": "2026-11-07T00:18:26Z",
 "place": "Rochford & Westcliff",
+"rl": "2026-11-21",
 "sec": "courts",
 "t": "2026-10-23T10:00:00Z",
 "u": ""
@@ -3296,7 +3490,7 @@
 "card": "court",
 "first": "2026-11-18T19:39:23Z",
 "h": "South Woodham Ferrers shop thefts: two sentenced after targeted patrols",
-"last": "2026-11-21T18:18:55Z",
+"last": "2026-11-21T18:33:43Z",
 "place": "South Woodham Ferrers",
 "sec": "courts",
 "t": "2026-11-16T12:00:00Z",
@@ -3308,6 +3502,7 @@
 "h": "Southend county lines gang jailed after Operation Raptor",
 "last": "2026-11-10T08:44:46Z",
 "place": "Southend",
+"rl": "2026-11-21",
 "sec": "courts",
 "t": "2026-10-27T12:00:00Z",
 "u": ""
@@ -3320,7 +3515,7 @@
 "card": "court",
 "first": "2026-11-20T23:41:03Z",
 "h": "Danbury man, 79, fined for racially abusing Stansted Airport security",
-"last": "2026-11-21T18:18:55Z",
+"last": "2026-11-21T18:33:43Z",
 "place": "Stansted Airport, Danbury",
 "sec": "courts",
 "t": "2026-11-20T09:23:00Z",
@@ -3335,6 +3530,7 @@
 "h": "Man and woman from Tilbury charged with cannabis supply and criminal property offences",
 "last": "2026-11-18T13:40:25Z",
 "place": "Tilbury",
+"rl": "2026-11-21",
 "sec": "courts",
 "t": "2026-11-07T15:42:00Z",
 "u": ""
@@ -3348,6 +3544,7 @@
 "h": "Waltham Abbey man banned for a year after cannabis drug-driving in Epping",
 "last": "2026-11-20T09:40:05Z",
 "place": "Waltham Abbey, Epping",
+"rl": "2026-11-21",
 "sec": "courts",
 "t": "2026-11-12T16:50:00Z",
 "u": ""
@@ -3362,6 +3559,7 @@
 "h": "Witham man, 21, jailed for a year after phones and cannabis were thrown over HMP Chelmsford wall",
 "last": "2026-11-13T07:15:15Z",
 "place": "Chelmsford",
+"rl": "2026-11-21",
 "sec": "courts",
 "t": "2026-11-12T17:27:00Z",
 "u": ""
@@ -3376,7 +3574,7 @@
 "cwKey": "basildon:9629:5",
 "first": "2026-11-19T06:19:28Z",
 "h": "Basildon Council heads for £3.8m overspend as homelessness costs rise",
-"last": "2026-11-21T18:18:55Z",
+"last": "2026-11-21T18:33:43Z",
 "place": "Basildon",
 "sec": "councilwatch",
 "t": "2026-11-19T06:19:27Z",
@@ -3392,7 +3590,7 @@
 "cwKey": "basildon:9604:4",
 "first": "2026-11-13T06:20:25Z",
 "h": "New rules for licensed pet and animal businesses across Basildon borough adopted until 2031",
-"last": "2026-11-21T18:18:55Z",
+"last": "2026-11-21T18:33:43Z",
 "place": "Basildon",
 "sec": "councilwatch",
 "t": "2026-11-13T06:20:23Z",
@@ -3408,7 +3606,7 @@
 "cwKey": "basildon:9514:5",
 "first": "2026-11-16T06:20:15Z",
 "h": "Auditors expect to give no opinion on three years of Basildon Council's accounts",
-"last": "2026-11-21T18:18:55Z",
+"last": "2026-11-21T18:33:43Z",
 "place": "Basildon",
 "sec": "councilwatch",
 "t": "2026-11-16T06:20:14Z",
@@ -3424,7 +3622,7 @@
 "cwKey": "basildon:9514:4",
 "first": "2026-11-16T06:20:15Z",
 "h": "Basildon Council borrowing stands at £727m as sale of its Dartford investment property is delayed",
-"last": "2026-11-21T18:18:55Z",
+"last": "2026-11-21T18:33:43Z",
 "place": "Basildon",
 "sec": "councilwatch",
 "t": "2026-11-16T06:20:14Z",
@@ -3440,7 +3638,7 @@
 "cwKey": "basildon:9588:6",
 "first": "2026-11-12T06:24:06Z",
 "h": "Developer appeals over lack of decision on 910 green belt homes at Billericay's Foots Farm",
-"last": "2026-11-21T18:18:55Z",
+"last": "2026-11-21T18:33:43Z",
 "place": "Billericay",
 "sec": "councilwatch",
 "t": "2026-11-12T06:24:05Z",
@@ -3453,7 +3651,7 @@
 "cwKey": "basildon:9566:4",
 "first": "2026-11-18T06:20:32Z",
 "h": "Complaints from Basildon council tenants fell by nearly a fifth last year, but most are still about repairs",
-"last": "2026-11-21T18:18:55Z",
+"last": "2026-11-21T18:33:43Z",
 "place": "Basildon",
 "sec": "councilwatch",
 "t": "2026-11-18T06:20:31Z",
@@ -3469,7 +3667,7 @@
 "cwKey": "basildon:9588:4",
 "first": "2026-11-12T06:24:06Z",
 "h": "Basildon councillors confirm refusal of 175 green belt homes at Little Burstead",
-"last": "2026-11-21T18:18:55Z",
+"last": "2026-11-21T18:33:43Z",
 "place": "Billericay",
 "sec": "councilwatch",
 "t": "2026-11-12T06:24:05Z",
@@ -3485,7 +3683,7 @@
 "cwKey": "epping:12581:12",
 "first": "2026-11-09T06:21:00Z",
 "h": "Epping Forest councillors asked to back raising the top fly-tipping fine from £1,000 to £5,000",
-"last": "2026-11-21T18:18:55Z",
+"last": "2026-11-21T18:33:43Z",
 "place": "Epping",
 "sec": "councilwatch",
 "t": "2026-11-09T06:20:58Z",
@@ -3501,7 +3699,7 @@
 "cwKey": "maldon:4727:11",
 "first": "2026-11-19T06:19:28Z",
 "h": "Maldon council proposes new rules for selling its land and buildings",
-"last": "2026-11-21T18:18:55Z",
+"last": "2026-11-21T18:33:43Z",
 "place": "Maldon",
 "sec": "councilwatch",
 "t": "2026-11-19T06:19:27Z",
@@ -3517,7 +3715,7 @@
 "cwKey": "maldon:4717:19",
 "first": "2026-11-13T06:20:25Z",
 "h": "Maldon council agrees to buy two plots at Langford to protect wildlife habitat from inappropriate use",
-"last": "2026-11-21T18:18:55Z",
+"last": "2026-11-21T18:33:43Z",
 "place": "Maldon",
 "sec": "councilwatch",
 "t": "2026-11-13T06:20:23Z",
@@ -3533,7 +3731,7 @@
 "cwKey": "maldon:4727:6",
 "first": "2026-11-19T06:19:28Z",
 "h": "Maldon council expects 5 planning appeals this year costing about £500,000",
-"last": "2026-11-21T18:18:55Z",
+"last": "2026-11-21T18:33:43Z",
 "place": "Maldon",
 "sec": "councilwatch",
 "t": "2026-11-19T06:19:27Z",
@@ -3549,7 +3747,7 @@
 "cwKey": "maldon:4727:10",
 "first": "2026-11-20T06:15:54Z",
 "h": "Maldon council to decide on 25-year River Blackwater foreshore leases",
-"last": "2026-11-21T18:18:55Z",
+"last": "2026-11-21T18:33:43Z",
 "place": "Maldon",
 "sec": "councilwatch",
 "t": "2026-11-20T06:15:53Z",
@@ -3565,7 +3763,7 @@
 "cwKey": "maldon:4717:15",
 "first": "2026-11-12T06:24:06Z",
 "h": "Maldon's share of the halted Mid Essex unitary council set-up costs put at about £26,000",
-"last": "2026-11-21T18:18:55Z",
+"last": "2026-11-21T18:33:43Z",
 "place": "Maldon",
 "sec": "councilwatch",
 "t": "2026-11-12T06:24:05Z",
@@ -3581,7 +3779,7 @@
 "cwKey": "maldon:4717:9",
 "first": "2026-11-12T06:24:06Z",
 "h": "Maldon scraps area planning committees and councillor call-in as new national rules take effect",
-"last": "2026-11-21T18:18:55Z",
+"last": "2026-11-21T18:33:43Z",
 "place": "Maldon",
 "sec": "councilwatch",
 "t": "2026-11-12T06:24:05Z",
@@ -3594,7 +3792,7 @@
 "cwKey": "maldon:4937:4",
 "first": "2026-11-18T06:20:32Z",
 "h": "Maldon planners set to decide on 159 homes north of West Street in Tollesbury at a third meeting",
-"last": "2026-11-21T18:18:55Z",
+"last": "2026-11-21T18:33:43Z",
 "place": "Tollesbury",
 "sec": "councilwatch",
 "t": "2026-11-18T06:20:31Z",
@@ -3610,7 +3808,7 @@
 "cwKey": "southend:5105:18",
 "first": "2026-11-10T06:24:27Z",
 "h": "Auditors flag £1.7m pension difference in Southend's accounts but expect to finish on time",
-"last": "2026-11-21T18:18:55Z",
+"last": "2026-11-21T18:33:43Z",
 "place": "Southend-on-Sea",
 "sec": "councilwatch",
 "t": "2026-11-10T06:24:25Z",
@@ -3626,7 +3824,7 @@
 "cwKey": "southend:5105:16",
 "first": "2026-11-09T06:21:00Z",
 "h": "Southend aims to bring council home repairs up to industry norms by Christmas after regulator judgement",
-"last": "2026-11-21T18:18:55Z",
+"last": "2026-11-21T18:33:43Z",
 "place": "Southend-on-Sea",
 "sec": "councilwatch",
 "t": "2026-11-09T06:20:58Z",
@@ -3642,7 +3840,7 @@
 "cwKey": "southend:5183:44",
 "first": "2026-11-10T06:24:27Z",
 "h": "Government direction pushes Southend's draft local plan towards a six-week public consultation",
-"last": "2026-11-21T18:18:55Z",
+"last": "2026-11-21T18:33:43Z",
 "place": "Southend-on-Sea",
 "sec": "councilwatch",
 "t": "2026-11-10T06:24:25Z",
@@ -3658,7 +3856,7 @@
 "cwKey": "southend:5105:21",
 "first": "2026-11-07T10:41:47Z",
 "h": "Southend's fraud investigators have brought in more than £800,000 for the council this year",
-"last": "2026-11-21T18:18:55Z",
+"last": "2026-11-21T18:33:43Z",
 "place": "Southend-on-Sea",
 "sec": "councilwatch",
 "t": "2026-11-07T10:41:46Z",
@@ -3674,7 +3872,7 @@
 "cwKey": "tendring:2821:49",
 "first": "2026-11-07T10:41:47Z",
 "h": "Tendring budgets for life beyond 2028 as the government pauses the council shake-up",
-"last": "2026-11-21T18:18:55Z",
+"last": "2026-11-21T18:33:43Z",
 "place": "Tendring",
 "sec": "councilwatch",
 "t": "2026-11-07T10:41:46Z",
@@ -3690,7 +3888,7 @@
 "cwKey": "tendring:2821:50",
 "first": "2026-11-09T06:21:00Z",
 "h": "Tendring adopts new skills and conduct standards for council housing staff after tenant feedback",
-"last": "2026-11-21T18:18:55Z",
+"last": "2026-11-21T18:33:43Z",
 "place": "Clacton-on-Sea",
 "sec": "councilwatch",
 "t": "2026-11-09T06:20:58Z",
@@ -3706,7 +3904,7 @@
 "cwKey": "tendring:2822:61",
 "first": "2026-11-20T06:15:54Z",
 "h": "Tendring plans to backdate council tax support for working-age claimants",
-"last": "2026-11-21T18:18:55Z",
+"last": "2026-11-21T18:33:43Z",
 "place": "Clacton-on-Sea",
 "sec": "councilwatch",
 "t": "2026-11-20T06:15:53Z",
@@ -3722,7 +3920,7 @@
 "cwKey": "tendring:2821:45",
 "first": "2026-11-10T06:24:27Z",
 "h": "Tendring households can now recycle glass at the kerbside after 70,000 extra boxes go out",
-"last": "2026-11-21T18:18:55Z",
+"last": "2026-11-21T18:33:43Z",
 "place": "Clacton-on-Sea",
 "sec": "councilwatch",
 "t": "2026-11-10T06:24:25Z",
@@ -3738,7 +3936,7 @@
 "cwKey": "tendring:2822:60",
 "first": "2026-11-20T06:15:54Z",
 "h": "Tendring council runs £3.9m under budget at half-year, mainly on timing",
-"last": "2026-11-21T18:18:55Z",
+"last": "2026-11-21T18:33:43Z",
 "place": "Tendring",
 "sec": "councilwatch",
 "t": "2026-11-20T06:15:53Z",
@@ -3754,7 +3952,7 @@
 "cwKey": "tendring:2943:6",
 "first": "2026-11-12T06:24:06Z",
 "h": "Tendring councillors to vote on sending Local Plan for 1,069 homes a year to a government inspector",
-"last": "2026-11-21T18:18:55Z",
+"last": "2026-11-21T18:33:43Z",
 "place": "Tendring",
 "sec": "councilwatch",
 "t": "2026-11-12T06:24:05Z",
@@ -3770,7 +3968,7 @@
 "cwKey": "tendring:2822:12",
 "first": "2026-11-09T06:21:00Z",
 "h": "Tendring set to adopt new protection plans for St Osyth and Manningtree and Mistley conservation areas",
-"last": "2026-11-21T18:18:55Z",
+"last": "2026-11-21T18:33:43Z",
 "place": "St Osyth",
 "sec": "councilwatch",
 "t": "2026-11-09T06:20:58Z",
@@ -3786,7 +3984,7 @@
 "cwKey": "thurrock:6943:12",
 "first": "2026-11-09T06:21:00Z",
 "h": "Three in four Thurrock children entering care now get their first health check on time, up from 36%",
-"last": "2026-11-21T18:18:55Z",
+"last": "2026-11-21T18:33:43Z",
 "place": "Grays",
 "sec": "councilwatch",
 "t": "2026-11-09T06:20:58Z",
@@ -3802,7 +4000,7 @@
 "cwKey": "thurrock:6943:14",
 "first": "2026-11-07T10:41:47Z",
 "h": "Thurrock picked as one of seven national pilots helping children stay with their wider family",
-"last": "2026-11-21T18:18:55Z",
+"last": "2026-11-21T18:33:43Z",
 "place": "Thurrock",
 "sec": "councilwatch",
 "t": "2026-11-07T10:41:46Z",
@@ -3818,7 +4016,7 @@
 "cwKey": "thurrock:6943:13",
 "first": "2026-11-07T10:41:47Z",
 "h": "Thurrock's special needs funding gap keeps growing as Treetops School plans 110 more places",
-"last": "2026-11-21T18:18:55Z",
+"last": "2026-11-21T18:33:43Z",
 "place": "Thurrock",
 "sec": "councilwatch",
 "t": "2026-11-07T10:41:46Z",
@@ -3831,7 +4029,7 @@
 "card": "christmas",
 "first": "2026-11-21T09:40:39Z",
 "h": "Dedham bridge once saw 90,000+ turkeys walked to London for Christmas",
-"last": "2026-11-21T18:18:55Z",
+"last": "2026-11-21T18:33:43Z",
 "place": "Dedham",
 "sec": "news",
 "t": "2026-11-21T08:28:00Z",
@@ -3843,6 +4041,7 @@
 "h": "Plans emerge for 1GW solar and battery energy park on the Dengie Peninsula",
 "last": "2026-11-09T16:49:55Z",
 "place": "Bradwell-on-Sea, Dengie & Burnham-on-Crouch",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-06T14:16:00Z",
 "u": ""
@@ -3854,7 +4053,7 @@
 "card": "environment",
 "first": "2026-11-21T07:39:17Z",
 "h": "Dengie solar farm: wider public consultation planned for early 2027",
-"last": "2026-11-21T18:18:55Z",
+"last": "2026-11-21T18:33:43Z",
 "place": "Burnham-on-Crouch, Bradwell-on-Sea, Tillingham & Southminster",
 "sec": "news",
 "t": "2026-11-21T06:33:00Z",
@@ -3866,6 +4065,7 @@
 "h": "Ambulance chief paramedic admits past misogyny as Essex councillors hear sexual safety sackings rose sixfold",
 "last": "2026-11-13T13:23:35Z",
 "place": "Essex",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-09T12:00:00Z",
 "u": "2026-11-10T13:08:00Z"
@@ -3876,6 +4076,7 @@
 "h": "New 24-hour NHS crisis text line opens for people in Essex struggling with their mental health",
 "last": "2026-11-07T07:40:56Z",
 "place": "Essex",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-05T08:00:00Z",
 "u": ""
@@ -3886,6 +4087,7 @@
 "h": "Essex & Herts Air Ambulance calls on more women doctors and paramedics to join its helicopter crews",
 "last": "2026-11-18T07:11:32Z",
 "place": "North Weald",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-15T07:20:58Z",
 "u": ""
@@ -3899,6 +4101,7 @@
 "h": "More than 23 years of jail terms over Epping Bell Hotel disorder after Loughton man, 34, is locked up",
 "last": "2026-11-13T16:23:26Z",
 "place": "Epping, Loughton",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-10T14:42:00Z",
 "u": "2026-11-10T16:49:00Z"
@@ -3912,6 +4115,7 @@
 "h": "Epping Forest MP Neil Hudson seeks easier Blue Badges for Parkinson's",
 "last": "2026-11-19T11:49:20Z",
 "place": "Epping",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-17T10:05:00Z",
 "u": ""
@@ -3925,6 +4129,7 @@
 "h": "Blood tests at St Margaret's Hospital in Epping switch to the new diagnostic centre on Monday",
 "last": "2026-11-17T10:41:12Z",
 "place": "Epping",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-14T11:17:00Z",
 "u": ""
@@ -3938,6 +4143,7 @@
 "h": "Walk-in X-rays and new scans coming to St Margaret's diagnostic centre in Epping from mid-December",
 "last": "2026-11-13T12:42:05Z",
 "place": "Epping",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-10T10:46:00Z",
 "u": ""
@@ -3948,6 +4154,7 @@
 "h": "Four closed Essex Beefeater restaurants could reopen soon under new owners",
 "last": "2026-11-10T09:54:30Z",
 "place": "Essex",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-09T10:00:00Z",
 "thin": true,
@@ -3959,6 +4166,7 @@
 "h": "Essex football and cricket clubs to lead year-long push on men's mental health",
 "last": "2026-11-16T09:22:44Z",
 "place": "Essex",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-13T07:51:57Z",
 "u": ""
@@ -3969,6 +4177,7 @@
 "h": "Essex council shake-up still under review as county leaders warn ministers",
 "last": "2026-11-18T13:40:25Z",
 "place": "Essex",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-16T13:40:00Z",
 "u": ""
@@ -3979,6 +4188,7 @@
 "h": "Southend presses its case for five Essex councils as ministers weigh a ruling due by early 2027",
 "last": "2026-11-07T00:43:56Z",
 "place": "Chelmsford, Southend & Thurrock",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-01T07:00:00Z",
 "u": "2026-11-04T06:08:00Z"
@@ -3989,6 +4199,7 @@
 "h": "County Hall finance chief warns of 'existential threat' as Essex budget gap could reach £476m by 2030",
 "last": "2026-11-13T13:23:35Z",
 "place": "Chelmsford",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-06T12:00:00Z",
 "u": "2026-11-10T10:12:26Z"
@@ -3999,6 +4210,7 @@
 "h": "Essex council's SEND school taxi change unlawful, High Court rules",
 "last": "2026-11-21T09:32:56Z",
 "place": "Essex",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-18T07:07:39Z",
 "u": ""
@@ -4009,6 +4221,7 @@
 "h": "Essex members given until Monday to renew at old price as Division One place is finally secured",
 "last": "2026-11-08T13:45:23Z",
 "place": "Chelmsford",
+"rl": "2026-11-21",
 "sec": "sport",
 "t": "2026-11-04T15:09:00Z",
 "u": "2026-11-04T16:22:00Z"
@@ -4019,6 +4232,7 @@
 "h": "Essex drivers warned before Christmas crackdown as drug-driving arrests reach 1,960 in ten months",
 "last": "2026-11-10T09:54:30Z",
 "place": "Essex",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-07T15:20:00Z",
 "u": ""
@@ -4029,6 +4243,7 @@
 "h": "Essex firefighters offer free car checks with Halfords, starting at Colchester fire station",
 "last": "2026-11-17T22:24:30Z",
 "place": "Colchester, Grays, Rayleigh",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-15T12:36:43Z",
 "u": ""
@@ -4039,6 +4254,7 @@
 "h": "Dense fog warning covers all of Essex until 11am, with visibility down to 100 metres",
 "last": "2026-11-07T11:19:45Z",
 "place": "Essex",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-06T20:27:00Z",
 "u": ""
@@ -4049,6 +4265,7 @@
 "h": "Frosty night for Essex, with Chelmsford forecast to drop to -3C",
 "last": "2026-11-14T10:44:44Z",
 "place": "Essex",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-11T20:48:32Z",
 "u": "2026-11-13T15:20:19Z"
@@ -4059,6 +4276,7 @@
 "h": "Air ambulance charity recruits 27 volunteer responders for Essex",
 "last": "2026-11-21T10:19:02Z",
 "place": "Essex",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-18T15:57:00Z",
 "thin": true,
@@ -4074,6 +4292,7 @@
 "h": "People sleeping rough in Essex offered free flu jabs for the first time, with clinics in Southend and Grays",
 "last": "2026-11-12T20:50:32Z",
 "place": "Southend & Grays",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-10T13:26:00Z",
 "u": ""
@@ -4084,6 +4303,7 @@
 "h": "Essex pupils to shape year-long county push against bullying",
 "last": "2026-11-19T11:49:20Z",
 "place": "Essex",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-16T16:29:00Z",
 "u": ""
@@ -4094,6 +4314,7 @@
 "h": "Essex County Council's healthy food campaign carried to a Westminster event by retired medic",
 "last": "2026-11-09T19:44:39Z",
 "place": "Essex",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-09T08:41:00Z",
 "u": ""
@@ -4102,7 +4323,7 @@
 "card": "health",
 "first": "2026-11-20T14:39:30Z",
 "h": "NHS Essex looks for new online consultation tools for 204 GP surgeries",
-"last": "2026-11-21T18:18:55Z",
+"last": "2026-11-21T18:33:43Z",
 "place": "Essex",
 "sec": "news",
 "t": "2026-11-20T13:42:01Z",
@@ -4114,6 +4335,7 @@
 "h": "NHS Essex puts £850,000 into braces to cut waits for young patients",
 "last": "2026-11-17T10:41:12Z",
 "place": "Essex",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-14T11:08:19Z",
 "u": ""
@@ -4124,6 +4346,7 @@
 "h": "Ofsted rates Essex children's services Outstanding for a third inspection in a row",
 "last": "2026-11-06T22:23:47Z",
 "place": "Chelmsford",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-03T12:00:00Z",
 "u": "2026-11-03T12:00:00Z"
@@ -4134,6 +4357,7 @@
 "h": "Multi-agency raids on more than 100 Essex premises seize £10,360 in cash and illicit cigarettes",
 "last": "2026-11-12T15:44:20Z",
 "place": "Essex",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-09T11:45:00Z",
 "u": ""
@@ -4144,6 +4368,7 @@
 "h": "Figures reveal 1,600 litter reports about Essex parks",
 "last": "2026-11-13T12:42:05Z",
 "place": "Essex",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-11T09:01:00Z",
 "thin": true,
@@ -4155,6 +4380,7 @@
 "h": "Essex police commissioner joins 30 others urging PM to halt force mergers",
 "last": "2026-11-21T12:39:22Z",
 "place": "Essex",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-18T12:00:00Z",
 "u": ""
@@ -4165,6 +4391,7 @@
 "h": "Essex police commissioner warns of cuts to the force if its share of council tax is not raised",
 "last": "2026-11-15T08:48:35Z",
 "place": "Essex",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-12T07:22:00Z",
 "u": "2026-11-13T04:45:00Z"
@@ -4175,6 +4402,7 @@
 "h": "Essex training boss calls Milburn youth jobs review a 'missed opportunity'",
 "last": "2026-11-21T10:19:02Z",
 "place": "Essex",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-19T06:53:00Z",
 "u": ""
@@ -4185,6 +4413,7 @@
 "h": "Essex Police secure more than 200 shop theft charges in a fortnight as retailers report more",
 "last": "2026-11-18T13:40:25Z",
 "place": "Essex",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-15T14:06:00Z",
 "u": ""
@@ -4195,6 +4424,7 @@
 "h": "Essex Police can now ban drink and drug drive suspects from driving on bail",
 "last": "2026-11-19T07:13:25Z",
 "place": "Essex",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-16T04:40:00Z",
 "u": ""
@@ -4203,7 +4433,7 @@
 "card": "bluelights-2",
 "first": "2026-11-19T13:15:09Z",
 "h": "Essex Police arrest 17 in week-long county lines crackdown",
-"last": "2026-11-21T18:18:55Z",
+"last": "2026-11-21T18:33:43Z",
 "place": "Essex",
 "sec": "news",
 "t": "2026-11-19T13:20:00Z",
@@ -4213,7 +4443,7 @@
 "card": "bluelights-2",
 "first": "2026-11-21T09:20:04Z",
 "h": "One of Essex Police's first female detective sergeants retires after 48 years",
-"last": "2026-11-21T18:18:55Z",
+"last": "2026-11-21T18:33:43Z",
 "place": "Essex",
 "sec": "news",
 "t": "2026-11-21T09:20:00Z",
@@ -4225,6 +4455,7 @@
 "h": "Suspected drug-drivers in Essex barred from driving for up to six weeks while police investigate",
 "last": "2026-11-15T08:48:35Z",
 "place": "Essex",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-12T06:18:00Z",
 "u": "2026-11-12T14:12:00Z"
@@ -4235,6 +4466,7 @@
 "h": "Essex commissioner brands regional 'mega force' plan not fit for purpose as merger review awaits publication",
 "last": "2026-11-09T15:39:34Z",
 "place": "Essex",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-06T15:48:00Z",
 "u": "2026-11-07T06:21:00Z"
@@ -4245,6 +4477,7 @@
 "h": "Essex families with children born in 2022-23 can now apply for reception places, with 15 January the deadline",
 "last": "2026-11-12T10:48:18Z",
 "place": "Essex",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-10T07:00:00Z",
 "u": ""
@@ -4253,7 +4486,7 @@
 "card": "bluelights",
 "first": "2026-11-20T14:39:30Z",
 "h": "Essex anti-social behaviour reports up 76% as robbery falls 19%",
-"last": "2026-11-21T18:18:55Z",
+"last": "2026-11-21T18:33:43Z",
 "place": "Essex",
 "sec": "news",
 "t": "2026-11-20T15:15:09Z",
@@ -4265,6 +4498,7 @@
 "h": "Chelmsford Cathedral to remember Essex road victims at Sunday service after deaths rise to 58",
 "last": "2026-11-17T07:14:51Z",
 "place": "Chelmsford",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-14T07:14:00Z",
 "u": ""
@@ -4275,6 +4509,7 @@
 "h": "Poppies painted on roads by Essex war memorials split opinion before Remembrance Sunday",
 "last": "2026-11-06T22:25:01Z",
 "place": "Essex",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-05T14:17:00Z",
 "u": ""
@@ -4285,6 +4520,7 @@
 "h": "£57,721 grant gives Essex Police rural team an all-terrain vehicle, mobile ANPR and trail cameras",
 "last": "2026-11-06T22:23:47Z",
 "place": "Rural Essex",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-05T06:28:00Z",
 "u": ""
@@ -4295,6 +4531,7 @@
 "h": "Essex knife crime down more than a quarter since 2019, violence unit says",
 "last": "2026-11-19T11:49:20Z",
 "place": "Essex",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-17T08:30:00Z",
 "u": ""
@@ -4303,7 +4540,7 @@
 "card": "bluelights",
 "first": "2026-11-20T21:39:47Z",
 "h": "Essex speed checks catch 4,035 drivers in October, one at 114mph",
-"last": "2026-11-21T18:18:55Z",
+"last": "2026-11-21T18:33:43Z",
 "place": "Essex",
 "sec": "news",
 "t": "2026-11-20T05:40:00Z",
@@ -4321,7 +4558,7 @@
 "card": "environment",
 "first": "2026-11-18T12:40:01Z",
 "h": "Essex water firm adds 30% more leak crews as reservoirs stay low",
-"last": "2026-11-21T18:18:55Z",
+"last": "2026-11-21T18:33:43Z",
 "place": "Hanningfield, Abberton",
 "sec": "news",
 "t": "2026-11-18T11:48:00Z",
@@ -4333,6 +4570,7 @@
 "h": "Essex Police took 5,507 uninsured vehicles off the roads in ten months as week-long insurance crackdown begins",
 "last": "2026-11-10T12:50:16Z",
 "place": "Essex",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-09T17:45:00Z",
 "u": ""
@@ -4341,7 +4579,7 @@
 "card": "bus",
 "first": "2026-11-20T15:39:42Z",
 "h": "Essex weekend travel: buses replace trains from Colchester on Sunday",
-"last": "2026-11-21T18:18:55Z",
+"last": "2026-11-21T18:33:43Z",
 "place": "Essex",
 "sec": "news",
 "t": "2026-11-20T15:39:30Z",
@@ -4357,6 +4595,7 @@
 "h": "Air ambulance downwash seriously injured woman filming its take-off near Southend Airport, report finds",
 "last": "2026-11-15T15:16:56Z",
 "place": "Southend-on-Sea",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-13T06:14:00Z",
 "u": ""
@@ -4367,6 +4606,7 @@
 "h": "Met Office fog warning for Essex ends at 11am after a misty Monday morning commute",
 "last": "2026-11-09T15:49:17Z",
 "place": "Essex",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-08T16:40:00Z",
 "u": ""
@@ -4377,6 +4617,7 @@
 "h": "Historian wants Grays church memorial naming 22 boys lost in 1875 Goliath training ship fire",
 "last": "2026-11-09T19:44:39Z",
 "place": "Grays",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-08T13:27:00Z",
 "u": ""
@@ -4390,6 +4631,7 @@
 "h": "National Highways asks Thurrock to wait until February before deciding on 200 Grays homes",
 "last": "2026-11-13T19:44:08Z",
 "place": "Grays, Thurrock",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-10T12:00:00Z",
 "u": ""
@@ -4403,6 +4645,7 @@
 "h": "National Highways asks Thurrock to hold off on 200-home Grey Goose Farm scheme in Grays until February as residents object",
 "last": "2026-11-13T13:23:35Z",
 "place": "Grays",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-10T13:13:00Z",
 "u": ""
@@ -4416,6 +4659,7 @@
 "h": "Missing Grays pensioner Patrick Francisco, 83, has been found",
 "last": "2026-11-19T23:38:35Z",
 "place": "Grays",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-16T20:42:00Z",
 "u": "2026-11-16T23:03:00Z"
@@ -4427,7 +4671,7 @@
 "card": "council",
 "first": "2026-11-21T08:41:46Z",
 "h": "Grays and Tilbury town boards replaced by councillor working groups",
-"last": "2026-11-21T18:18:55Z",
+"last": "2026-11-21T18:33:43Z",
 "place": "Grays, Tilbury",
 "sec": "news",
 "t": "2026-11-20T12:09:25Z",
@@ -4440,7 +4684,7 @@
 "card": "fireengine",
 "first": "2026-11-19T20:40:50Z",
 "h": "Grays scrapyard fire likely started by discarded battery, crews say",
-"last": "2026-11-21T18:18:55Z",
+"last": "2026-11-21T18:33:43Z",
 "place": "Grays, Little Thurrock",
 "sec": "news",
 "t": "2026-11-19T19:44:01Z",
@@ -4453,7 +4697,7 @@
 "card": "property",
 "first": "2026-11-20T12:39:18Z",
 "h": "Grays school trust plans indoor padel courts on Green Belt site",
-"last": "2026-11-21T18:18:55Z",
+"last": "2026-11-21T18:33:43Z",
 "place": "Grays, Stifford Clays",
 "sec": "news",
 "t": "2026-11-20T11:43:58Z",
@@ -4466,7 +4710,7 @@
 "card": "property",
 "first": "2026-11-20T19:39:00Z",
 "h": "Great Clacton church hall to be demolished and rebuilt after approval",
-"last": "2026-11-21T18:18:55Z",
+"last": "2026-11-21T18:33:43Z",
 "place": "Great Clacton, Clacton-on-Sea",
 "sec": "news",
 "t": "2026-11-20T17:00:00Z",
@@ -4479,6 +4723,7 @@
 "h": "Essex, Southend and Thurrock councils start work on 25-year plan for where homes, jobs and roads will go",
 "last": "2026-11-07T10:41:47Z",
 "place": "Essex",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-05T17:28:00Z",
 "u": ""
@@ -4489,6 +4734,7 @@
 "h": "Halstead father paralysed in hospital now helping Colchester Hospital improve spinal injury care",
 "last": "2026-11-06T22:23:47Z",
 "place": "Halstead & Colchester",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-05T06:23:00Z",
 "u": ""
@@ -4503,6 +4749,7 @@
 "h": "Hanningfield among England's most depleted reservoirs as Essex hosepipe ban enters fourth month",
 "last": "2026-11-15T07:43:06Z",
 "place": "Hanningfield",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-12T06:22:00Z",
 "u": ""
@@ -4514,7 +4761,7 @@
 "card": "business",
 "first": "2026-11-20T13:39:43Z",
 "h": "Harlow's Avant Garde salon on The Rows shuts without warning",
-"last": "2026-11-21T18:18:55Z",
+"last": "2026-11-21T18:33:43Z",
 "place": "Harlow",
 "sec": "news",
 "t": "2026-11-20T10:11:00Z",
@@ -4529,6 +4776,7 @@
 "h": "Harlow sets 21 November for Christmas lights switch-on in revamped Market Square, with ice rink opening the same day",
 "last": "2026-11-12T20:50:32Z",
 "place": "Harlow",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-10T15:29:00Z",
 "u": ""
@@ -4540,7 +4788,7 @@
 "card": "christmas-2",
 "first": "2026-11-20T09:40:05Z",
 "h": "Harlow to switch on bigger Christmas lights display on Broad Walk",
-"last": "2026-11-21T18:18:55Z",
+"last": "2026-11-21T18:33:43Z",
 "place": "Harlow",
 "sec": "news",
 "t": "2026-11-20T09:39:48Z",
@@ -4555,6 +4803,7 @@
 "h": "Harlow College shuts for the day after power cut",
 "last": "2026-11-21T12:39:22Z",
 "place": "Harlow",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-18T10:13:00Z",
 "u": ""
@@ -4568,6 +4817,7 @@
 "h": "Hidden faces, street drinking and e-scooters on footpaths could all bring fines in Harlow under council plans open until 5 January",
 "last": "2026-11-13T08:47:26Z",
 "place": "Harlow",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-10T08:07:00Z",
 "u": ""
@@ -4581,6 +4831,7 @@
 "h": "Forecasters tip Harlow Conservatives to tighten grip on council next May, with Labour down to six seats",
 "last": "2026-11-13T19:44:08Z",
 "place": "Harlow",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-11T16:36:00Z",
 "u": ""
@@ -4594,6 +4845,7 @@
 "h": "Silt cleared from five Harlow ponds in first wave of restoration",
 "last": "2026-11-18T08:39:51Z",
 "place": "Harlow",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-16T08:21:00Z",
 "u": ""
@@ -4605,7 +4857,7 @@
 "card": "council",
 "first": "2026-11-18T13:40:09Z",
 "h": "Harlow Council spoofs GTA 6 with video tour of its town centre revamp",
-"last": "2026-11-21T18:18:55Z",
+"last": "2026-11-21T18:33:43Z",
 "place": "Harlow",
 "sec": "news",
 "t": "2026-11-18T12:54:00Z",
@@ -4620,6 +4872,7 @@
 "h": "Harlow Council to put up Christmas trees in five neighbourhood shopping areas",
 "last": "2026-11-17T22:24:30Z",
 "place": "Harlow",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-15T13:21:05Z",
 "u": ""
@@ -4633,6 +4886,7 @@
 "h": "Harlow Council plans tougher line on landlords who let unsafe homes",
 "last": "2026-11-21T15:08:59Z",
 "place": "Harlow",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-19T08:12:00Z",
 "u": ""
@@ -4646,6 +4900,7 @@
 "h": "Gibberd Garden creative space and Parndon Mill festival share in Harlow's £75,000 arts pot",
 "last": "2026-11-14T11:44:51Z",
 "place": "Harlow",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-12T12:00:00Z",
 "u": ""
@@ -4657,7 +4912,7 @@
 "card": "bluelights",
 "first": "2026-11-21T14:55:20Z",
 "h": "Harlow police want to speak to Damien Clinton, 33, over theft inquiry",
-"last": "2026-11-21T18:18:55Z",
+"last": "2026-11-21T18:33:43Z",
 "place": "Harlow",
 "sec": "news",
 "t": "2026-11-21T14:55:20Z",
@@ -4672,6 +4927,7 @@
 "h": "Harlow employment rate rises to 82.9% in latest ONS figures",
 "last": "2026-11-21T15:08:59Z",
 "place": "Harlow",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-19T12:13:00Z",
 "u": ""
@@ -4685,6 +4941,7 @@
 "h": "Pedestrian suffers potentially serious leg injury at Harlow crossing as police seek white or silver car",
 "last": "2026-11-14T17:28:53Z",
 "place": "Harlow",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-11T17:08:33Z",
 "u": ""
@@ -4698,6 +4955,7 @@
 "h": "GMB opens strike ballot at G4S Cash in Harlow, raising prospect of action before Christmas",
 "last": "2026-11-13T13:23:35Z",
 "place": "Harlow",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-11T12:39:00Z",
 "u": ""
@@ -4708,6 +4966,7 @@
 "h": "Harlow councillors approve rebuild of Sir Frederick Gibberd College after structural problems",
 "last": "2026-11-08T08:45:17Z",
 "place": "Harlow",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-05T08:00:00Z",
 "u": ""
@@ -4719,7 +4978,7 @@
 "card": "council",
 "first": "2026-11-21T08:41:46Z",
 "h": "Harlow Market Square's first rebuild phase is finished",
-"last": "2026-11-21T18:18:55Z",
+"last": "2026-11-21T18:33:43Z",
 "place": "Harlow",
 "sec": "news",
 "t": "2026-11-21T07:26:35Z",
@@ -4734,6 +4993,7 @@
 "h": "Harlow's Water Gardens to host Mind in West Essex's fifth Merry Minds fun run",
 "last": "2026-11-18T08:39:51Z",
 "place": "Harlow, The Water Gardens",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-16T09:37:00Z",
 "u": ""
@@ -4747,6 +5007,7 @@
 "h": "Lung cancer screening arrives in Harlow, the first town in west Essex to get it",
 "last": "2026-11-19T18:11:29Z",
 "place": "Harlow",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-16T14:46:00Z",
 "u": ""
@@ -4760,6 +5021,7 @@
 "h": "Harlow parkrun marks 12 years with MP Chris Vince among the runners",
 "last": "2026-11-17T22:24:30Z",
 "place": "Harlow",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-15T10:31:00Z",
 "u": ""
@@ -4773,6 +5035,7 @@
 "h": "Michael Rosen performs for more than 300 Harlow primary pupils at the Playhouse",
 "last": "2026-11-15T10:44:05Z",
 "place": "Harlow",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-12T16:30:00Z",
 "u": ""
@@ -4786,6 +5049,7 @@
 "h": "Senior doctors' walkout that threatened Harlow hospital appointments is paused for pay talks",
 "last": "2026-11-14T23:44:46Z",
 "place": "Harlow",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-12T00:00:00Z",
 "u": ""
@@ -4796,6 +5060,7 @@
 "h": "Parking at Harlow's Princess Alexandra Hospital to cost more from 17 November, with an hour rising to £3.60",
 "last": "2026-11-10T11:44:38Z",
 "place": "Harlow",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-09T11:14:00Z",
 "u": ""
@@ -4809,6 +5074,7 @@
 "h": "Harlow hospital moves waiting list checks to My Alex Health app",
 "last": "2026-11-21T15:08:59Z",
 "place": "Harlow",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-19T14:20:00Z",
 "u": ""
@@ -4819,6 +5085,7 @@
 "h": "Harlow's Raj Lodge chef Samiha Hai named regional Chef of the Year at Bangladesh Caterers awards",
 "last": "2026-11-06T22:23:47Z",
 "place": "Harlow",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-05T16:17:00Z",
 "u": ""
@@ -4832,6 +5099,7 @@
 "h": "Harlow's River Way Bridge shuts to vehicles until further notice",
 "last": "2026-11-21T15:08:59Z",
 "place": "Harlow, River Way",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-19T11:29:00Z",
 "u": "2026-11-19T16:35:44Z"
@@ -4845,6 +5113,7 @@
 "h": "Harlow college shut over building safety fears wins approval for a permanent new school",
 "last": "2026-11-12T15:44:20Z",
 "place": "Harlow",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-09T12:13:00Z",
 "u": ""
@@ -4858,6 +5127,7 @@
 "h": "Three taxis taken off the road after police checks at Harlow station",
 "last": "2026-11-18T21:39:36Z",
 "place": "Harlow, Harlow Town station",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-16T16:44:00Z",
 "u": ""
@@ -4871,6 +5141,7 @@
 "h": "Police seek doorbell and dash cam footage after young driver dies in Harlow crash at Kingsland",
 "last": "2026-11-11T13:17:47Z",
 "place": "Harlow",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-08T08:56:00Z",
 "u": "2026-11-08T17:22:00Z"
@@ -4881,6 +5152,7 @@
 "h": "Harlow underpass between Katherines and Sumners turned into a jungle",
 "last": "2026-11-07T00:18:26Z",
 "place": "Harlow",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-06T09:00:00Z",
 "u": ""
@@ -4894,6 +5166,7 @@
 "h": "Weekly market to come back to Harlow's rebuilt Market Square in February",
 "last": "2026-11-19T11:49:20Z",
 "place": "Harlow, Market Square",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-17T08:17:00Z",
 "u": ""
@@ -4907,6 +5180,7 @@
 "h": "Harlow's William Aylmer tops list of cheapest Wetherspoons in the east",
 "last": "2026-11-21T10:19:02Z",
 "place": "Harlow",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-18T17:00:00Z",
 "thin": true,
@@ -4921,6 +5195,7 @@
 "h": "Police ask Harlow drivers to look out for missing William Knight and his white Seat Ateca",
 "last": "2026-11-16T15:41:00Z",
 "place": "Harlow",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-12T17:11:00Z",
 "u": ""
@@ -4931,6 +5206,7 @@
 "h": "E-bike pods at Harwich station and on the harbour ferry aim to keep coastal visitors moving",
 "last": "2026-11-09T09:49:50Z",
 "place": "Harwich",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-07T08:45:00Z",
 "u": ""
@@ -4944,6 +5220,7 @@
 "h": "Former BT transformation director joins Harwich Haven Authority board",
 "last": "2026-11-19T11:49:20Z",
 "place": "Harwich",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-17T09:49:00Z",
 "u": ""
@@ -4957,6 +5234,7 @@
 "h": "Woman in her 80s seriously hurt after being hit by a car on Harwich High Street",
 "last": "2026-11-20T09:26:39Z",
 "place": "Harwich",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-17T10:30:00Z",
 "u": ""
@@ -4970,6 +5248,7 @@
 "h": "Harwich lifeboat volunteers treat unconscious crew member on commercial ship before helicopter airlift",
 "last": "2026-11-12T20:50:32Z",
 "place": "Harwich",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-10T06:45:00Z",
 "u": ""
@@ -4980,6 +5259,7 @@
 "h": "Peter Swift wins World Sausage Throwing Championship on Harwich Green for third year running",
 "last": "2026-11-10T07:10:21Z",
 "place": "Harwich",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-08T06:22:00Z",
 "u": ""
@@ -4991,7 +5271,7 @@
 "card": "property",
 "first": "2026-11-19T19:39:15Z",
 "h": "Henham showhome wins national interior design award",
-"last": "2026-11-21T18:18:55Z",
+"last": "2026-11-21T18:33:43Z",
 "place": "Henham",
 "sec": "news",
 "t": "2026-11-19T17:13:00Z",
@@ -5004,6 +5284,7 @@
 "h": "Henry Nowak's killer has minimum term raised to 25 years as appeal judges rule 21 years was unduly lenient",
 "last": "2026-11-07T19:41:40Z",
 "place": "Chafford Hundred",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-02T13:30:00Z",
 "u": "2026-11-05T16:15:00Z"
@@ -5017,6 +5298,7 @@
 "h": "Developer seeks permission for 170 homes on Hutton green belt land",
 "last": "2026-11-13T12:42:05Z",
 "place": "Hutton, Brentwood",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-11T12:00:00Z",
 "thin": true,
@@ -5031,6 +5313,7 @@
 "h": "Jaywick Sands' Brooklands could be rebuilt as one-way road with beach path",
 "last": "2026-11-21T15:08:59Z",
 "place": "Jaywick Sands, Brooklands",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-19T13:25:00Z",
 "u": ""
@@ -5044,6 +5327,7 @@
 "h": "Christmas breakfast, market and Santa's grotto planned for Jaywick Sands at the Sunspot",
 "last": "2026-11-15T10:44:05Z",
 "place": "Jaywick Sands",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-12T12:00:00Z",
 "u": ""
@@ -5055,7 +5339,7 @@
 "card": "property",
 "first": "2026-11-19T17:39:46Z",
 "h": "Kelvedon's Monks Farm scheme of 600 homes wins planning approval",
-"last": "2026-11-21T18:18:55Z",
+"last": "2026-11-21T18:33:43Z",
 "place": "Kelvedon",
 "sec": "news",
 "t": "2026-11-19T17:00:00Z",
@@ -5068,6 +5352,7 @@
 "h": "Zara owner's budget chain Lefties opens its second UK store at Lakeside",
 "last": "2026-11-06T22:23:47Z",
 "place": "West Thurrock",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-03T16:20:00Z",
 "u": ""
@@ -5081,6 +5366,7 @@
 "h": "Lakeside Retail Park to open King Living furniture showroom on Saturday",
 "last": "2026-11-21T15:08:59Z",
 "place": "West Thurrock, Lakeside",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-19T11:20:00Z",
 "u": ""
@@ -5091,6 +5377,7 @@
 "h": "Chicken chain Slim Chickens to create 50 jobs with Lakeside restaurant due in early December",
 "last": "2026-11-08T23:10:59Z",
 "place": "West Thurrock, Lakeside",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-06T17:10:00Z",
 "u": ""
@@ -5101,6 +5388,7 @@
 "h": "Slim Chickens to open at Lakeside in early December with 50 jobs",
 "last": "2026-11-07T00:18:26Z",
 "place": "West Thurrock & Grays",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-06T17:10:41Z",
 "u": ""
@@ -5112,7 +5400,7 @@
 "card": "property",
 "first": "2026-11-21T08:41:46Z",
 "h": "Leigh phone mast on London Road to rise to 20 metres despite objections",
-"last": "2026-11-21T18:18:55Z",
+"last": "2026-11-21T18:33:43Z",
 "place": "Leigh-on-Sea, Westcliff",
 "sec": "news",
 "t": "2026-11-20T10:04:45Z",
@@ -5127,6 +5415,7 @@
 "h": "Southend council says it cannot step in to reopen Leigh North Street school's shut swimming pool",
 "last": "2026-11-13T13:23:35Z",
 "place": "Leigh-on-Sea",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-11T12:53:00Z",
 "u": ""
@@ -5140,6 +5429,7 @@
 "h": "Parish councils object as Saturday deadline nears for comments on data centre at Little Canfield's old Crumps Farm landfill",
 "last": "2026-11-13T12:42:05Z",
 "place": "Little Canfield, Dunmow",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-10T11:25:00Z",
 "u": ""
@@ -5153,6 +5443,7 @@
 "h": "Inspector rejects five homes near Little Easton but orders Uttlesford to pay part of developer's costs",
 "last": "2026-11-16T07:31:48Z",
 "place": "Little Easton, Great Dunmow",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-13T22:18:00Z",
 "u": ""
@@ -5166,6 +5457,7 @@
 "h": "Lloyd Scott, Theydon Bois fundraiser who did a marathon in a diving suit, dies",
 "last": "2026-11-20T21:28:16Z",
 "place": "Theydon Bois, Epping",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-17T12:42:00Z",
 "u": "2026-11-17T21:17:00Z"
@@ -5179,6 +5471,7 @@
 "h": "Loughton dealer caught with loaded handgun jailed for 12 and a half years",
 "last": "2026-11-16T21:40:31Z",
 "place": "Loughton",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-13T21:45:00Z",
 "u": ""
@@ -5192,6 +5485,7 @@
 "h": "Whatever happened to Loughton's £2bn data centre?",
 "last": "2026-11-21T07:11:14Z",
 "place": "Loughton",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-18T01:05:28Z",
 "u": ""
@@ -5206,6 +5500,7 @@
 "h": "M11 southbound reopens near Stansted after two-lorry crash",
 "last": "2026-11-21T09:32:56Z",
 "place": "Stansted, M11",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-18T06:55:00Z",
 "u": "2026-11-19T09:57:00Z"
@@ -5219,6 +5514,7 @@
 "h": "Six-vehicle M25 crash between the M11 and Waltham Abbey brings hour-long delays to morning rush",
 "last": "2026-11-15T07:43:06Z",
 "place": "Waltham Abbey",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-12T07:22:00Z",
 "u": ""
@@ -5232,6 +5528,7 @@
 "h": "Footage shows stolen BMW tearing through M25 roadworks at Theydon as Roadworker Safety Week begins",
 "last": "2026-11-18T07:11:32Z",
 "place": "Theydon Bois, Epping",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-16T06:21:00Z",
 "u": ""
@@ -5245,6 +5542,7 @@
 "h": "Maldon MP and council leader urge Home Secretary to drop plan for asylum seekers to live in Tillingham",
 "last": "2026-11-13T13:23:35Z",
 "place": "Tillingham, Maldon",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-10T11:00:00Z",
 "u": ""
@@ -5258,6 +5556,7 @@
 "h": "Maldon council says national rules leave little room to refuse new homes in Tollesbury, Great Totham and Latchingdon",
 "last": "2026-11-12T15:44:20Z",
 "place": "Maldon, Tollesbury, Great Totham, Latchingdon",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-09T12:00:00Z",
 "u": ""
@@ -5272,6 +5571,7 @@
 "h": "Maldon MP warns Hammonds Farm garden community could clog the A414 into town",
 "last": "2026-11-15T20:02:04Z",
 "place": "Maldon, Heybridge",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-13T16:05:00Z",
 "u": ""
@@ -5283,7 +5583,7 @@
 "card": "business",
 "first": "2026-11-21T07:39:17Z",
 "h": "Maldon Salt labelling questions passed to Essex Trading Standards",
-"last": "2026-11-21T18:18:55Z",
+"last": "2026-11-21T18:33:43Z",
 "place": "Maldon",
 "sec": "news",
 "t": "2026-11-21T05:00:00Z",
@@ -5298,6 +5598,7 @@
 "h": "Maldon Salt mixes German rock salt into its product, Observer finds",
 "last": "2026-11-18T13:40:25Z",
 "place": "Goldhanger, Maldon",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-15T14:15:08Z",
 "u": ""
@@ -5311,6 +5612,7 @@
 "h": "Man arrested at Maldon home where officers were searching for missing man",
 "last": "2026-11-19T13:32:55Z",
 "place": "Maldon",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-16T11:40:00Z",
 "u": "2026-11-16T11:40:00Z"
@@ -5324,6 +5626,7 @@
 "h": "Marks Tey's car boot sale is off until 2027",
 "last": "2026-11-20T07:08:39Z",
 "place": "Marks Tey, Colchester",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-17T18:24:00Z",
 "thin": true,
@@ -5335,6 +5638,7 @@
 "h": "South Basildon MP James McMurdock raises alarm over how few refused asylum claims end in returns",
 "last": "2026-11-09T15:49:17Z",
 "place": "Basildon, Thurrock",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-07T16:02:00Z",
 "u": ""
@@ -5345,6 +5649,7 @@
 "h": "MPs' standards watchdog finds South Basildon MP James McMurdock started racial slur chain but takes no action",
 "last": "2026-11-06T23:26:20Z",
 "place": "Basildon & Thurrock",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-04T08:03:00Z",
 "u": ""
@@ -5358,6 +5663,7 @@
 "h": "Police ask for dash cam footage after man in his 80s dies following Mount Bures crash on Hall Road",
 "last": "2026-11-13T18:08:59Z",
 "place": "Mount Bures, Colchester",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-10T17:32:00Z",
 "u": ""
@@ -5373,6 +5679,7 @@
 "h": "Broomfield, Southend and Basildon hospital patients told to keep appointments as Microsoft email recovery continues",
 "last": "2026-11-16T16:59:54Z",
 "place": "Chelmsford, Southend-on-Sea, Basildon",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-13T13:18:06Z",
 "u": "2026-11-13T17:39:51Z"
@@ -5386,6 +5693,7 @@
 "h": "Chelmsford pupils turn archaeologist as museum sends Iron Age gold hoard box into schools",
 "last": "2026-11-19T07:40:55Z",
 "place": "Chelmsford",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-15T22:08:45Z",
 "u": ""
@@ -5396,6 +5704,7 @@
 "h": "NHS Essex asks patients not to demand antibiotics for colds and flu",
 "last": "2026-11-21T15:08:59Z",
 "place": "Essex",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-19T13:23:00Z",
 "u": ""
@@ -5404,7 +5713,7 @@
 "card": "christmas",
 "first": "2026-11-19T20:40:50Z",
 "h": "NHS Essex urges flu jabs by 11 December for Christmas protection",
-"last": "2026-11-21T18:18:55Z",
+"last": "2026-11-21T18:33:43Z",
 "place": "Essex",
 "sec": "news",
 "t": "2026-11-19T19:21:42Z",
@@ -5419,6 +5728,7 @@
 "h": "Basildon Council takes back three homes in St Martin's, Billericay West and Lee Chapel North after serious tenancy breaches",
 "last": "2026-11-18T13:40:25Z",
 "place": "Basildon, Billericay",
+"rl": "2026-11-21",
 "sec": "official",
 "t": "2026-11-09T13:38:00Z",
 "u": ""
@@ -5429,6 +5739,7 @@
 "h": "Basildon sets out winter homelessness help",
 "last": "2026-11-07T13:41:23Z",
 "place": "Basildon",
+"rl": "2026-11-21",
 "sec": "official",
 "t": "2026-10-31T10:00:00Z",
 "u": "2026-11-01T09:00:00Z"
@@ -5440,7 +5751,7 @@
 "card": "fireengine",
 "first": "2026-11-20T08:40:57Z",
 "h": "Basildon neighbour rescues sleeping woman after hearing smoke alarm",
-"last": "2026-11-21T18:18:55Z",
+"last": "2026-11-21T18:33:43Z",
 "place": "Basildon",
 "sec": "official",
 "t": "2026-11-20T07:42:30Z",
@@ -5452,6 +5763,7 @@
 "h": "Basildon's Westgate car park to offer 90 minutes free from December as Aldi prepares to open",
 "last": "2026-11-07T13:41:23Z",
 "place": "Basildon",
+"rl": "2026-11-21",
 "sec": "official",
 "t": "2026-11-01T09:00:00Z",
 "u": ""
@@ -5463,7 +5775,7 @@
 "card": "council",
 "first": "2026-11-20T21:39:47Z",
 "h": "Braintree council sets out first budget plans for 2027-28",
-"last": "2026-11-21T18:18:55Z",
+"last": "2026-11-21T18:33:43Z",
 "place": "Braintree",
 "sec": "official",
 "t": "2026-11-20T16:18:00Z",
@@ -5479,6 +5791,7 @@
 "h": "£12m revamp of Ipswich recycling plant finished to handle Braintree District's new kerbside collections",
 "last": "2026-11-17T18:09:50Z",
 "place": "Braintree",
+"rl": "2026-11-21",
 "sec": "official",
 "t": "2026-11-05T12:00:00Z",
 "thin": true,
@@ -5491,7 +5804,7 @@
 "card": "bluelights-2",
 "first": "2026-11-17T00:39:16Z",
 "h": "Police charge man over string of shoplifting offences in Braintree",
-"last": "2026-11-21T18:18:55Z",
+"last": "2026-11-21T18:33:43Z",
 "place": "Braintree",
 "sec": "official",
 "t": "2026-11-16T18:00:00Z",
@@ -5504,6 +5817,7 @@
 "h": "£12m upgrade finished at recycling plant that will handle Braintree district's new kerbside collections",
 "last": "2026-11-07T00:18:26Z",
 "place": "Braintree",
+"rl": "2026-11-21",
 "sec": "official",
 "t": "2026-11-05T16:37:00Z",
 "u": ""
@@ -5514,6 +5828,7 @@
 "h": "Braintree Town Hall a finalist in the Essex Wedding Awards historic venues category",
 "last": "2026-11-10T19:47:53Z",
 "place": "Braintree",
+"rl": "2026-11-21",
 "sec": "official",
 "t": "2026-11-04T09:00:00Z",
 "u": ""
@@ -5525,7 +5840,7 @@
 "card": "council",
 "first": "2026-11-19T16:47:56Z",
 "h": "Brightlingsea's Bayard Recreation Ground recovering after maintenance closure",
-"last": "2026-11-21T18:18:55Z",
+"last": "2026-11-21T18:33:43Z",
 "place": "Brightlingsea",
 "sec": "official",
 "t": "2026-11-19T15:25:56Z",
@@ -5538,6 +5853,7 @@
 "h": "Castle Point changes how planning applications reach committee",
 "last": "2026-11-07T13:41:23Z",
 "place": "Canvey Island & Benfleet",
+"rl": "2026-11-21",
 "sec": "official",
 "t": "2026-10-30T12:00:00Z",
 "u": ""
@@ -5551,6 +5867,7 @@
 "h": "Planning inspectors begin public hearings on Chelmsford's Local Plan at the Civic Centre",
 "last": "2026-11-11T14:44:25Z",
 "place": "Chelmsford",
+"rl": "2026-11-21",
 "sec": "official",
 "t": "2026-10-06T09:00:00Z",
 "u": ""
@@ -5561,6 +5878,7 @@
 "h": "Public hearings into Chelmsford's Local Plan open at the Civic Centre on Tuesday",
 "last": "2026-11-08T12:50:45Z",
 "place": "Chelmsford",
+"rl": "2026-11-21",
 "sec": "official",
 "t": "2026-10-06T09:00:00Z",
 "u": ""
@@ -5571,6 +5889,7 @@
 "h": "Great Baddow's Iron Age gold hoard goes into classrooms in new Museum of Chelmsford history kit",
 "last": "2026-11-10T19:47:53Z",
 "place": "Great Baddow, Chelmsford",
+"rl": "2026-11-21",
 "sec": "official",
 "t": "2026-11-04T09:00:00Z",
 "u": ""
@@ -5581,6 +5900,7 @@
 "h": "Extra weekend night police patrols in Chelmsford city centre to run to Christmas",
 "last": "2026-11-07T13:41:23Z",
 "place": "Chelmsford",
+"rl": "2026-11-21",
 "sec": "official",
 "t": "2026-10-30T10:00:00Z",
 "u": ""
@@ -5591,6 +5911,7 @@
 "h": "Chelmsford City Council extends funding for extra night-time police patrols in the city centre",
 "last": "2026-11-10T15:44:41Z",
 "place": "Chelmsford",
+"rl": "2026-11-21",
 "sec": "official",
 "t": "2026-10-30T12:00:00Z",
 "u": ""
@@ -5604,6 +5925,7 @@
 "h": "Chelmsford roads operation ends with 19 arrests, 14 of them on suspicion of drink or drug driving",
 "last": "2026-11-13T16:51:39Z",
 "place": "Chelmsford",
+"rl": "2026-11-21",
 "sec": "official",
 "t": "2026-11-12T11:08:00Z",
 "u": ""
@@ -5614,6 +5936,7 @@
 "h": "Dustfree Springfield and Vac Sparrow: Chelmsford names its new street cleaners",
 "last": "2026-11-07T13:41:23Z",
 "place": "Chelmsford",
+"rl": "2026-11-21",
 "sec": "official",
 "t": "2026-10-30T10:00:00Z",
 "u": ""
@@ -5627,6 +5950,7 @@
 "h": "Clacton Town given temporary licence to keep playing at council-owned Rush Green Bowl",
 "last": "2026-11-18T13:40:25Z",
 "place": "Clacton-on-Sea",
+"rl": "2026-11-21",
 "sec": "official",
 "t": "2026-11-11T09:00:00Z",
 "u": ""
@@ -5637,6 +5961,7 @@
 "h": "Work starts on turning three Clacton seafront buildings into micro venues",
 "last": "2026-11-07T13:41:23Z",
 "place": "Clacton-on-Sea",
+"rl": "2026-11-21",
 "sec": "official",
 "t": "2026-10-30T10:00:00Z",
 "u": ""
@@ -5650,6 +5975,7 @@
 "h": "Clacton pupils elect 12-member school council in a real polling station run by election staff",
 "last": "2026-11-17T21:17:23Z",
 "place": "Clacton-on-Sea",
+"rl": "2026-11-21",
 "sec": "official",
 "t": "2026-11-06T12:00:00Z",
 "u": ""
@@ -5663,6 +5989,7 @@
 "h": "Free housing advice day for Tendring council tenants at Clacton's Princes Theatre on Thursday",
 "last": "2026-11-11T14:44:25Z",
 "place": "Clacton-on-Sea",
+"rl": "2026-11-21",
 "sec": "official",
 "t": "2026-10-27T12:00:00Z",
 "u": ""
@@ -5673,6 +6000,7 @@
 "h": "Council-owned Amphora takes over Colchester grounds maintenance today",
 "last": "2026-11-07T13:41:23Z",
 "place": "Colchester",
+"rl": "2026-11-21",
 "sec": "official",
 "t": "2026-10-30T10:00:00Z",
 "u": ""
@@ -5686,6 +6014,7 @@
 "h": "Battery packs set a bin lorry alight in Colchester's Tangerine Close",
 "last": "2026-11-18T13:40:25Z",
 "place": "Colchester, Tangerine Close",
+"rl": "2026-11-21",
 "sec": "official",
 "t": "2026-11-11T12:19:00Z",
 "thin": true,
@@ -5698,7 +6027,7 @@
 "card": "council",
 "first": "2026-11-18T09:41:02Z",
 "h": "Colchester asks residents where to save money in 2027/28 budget",
-"last": "2026-11-21T18:18:55Z",
+"last": "2026-11-21T18:33:43Z",
 "place": "Colchester",
 "sec": "official",
 "t": "2026-11-17T12:00:00Z",
@@ -5713,6 +6042,7 @@
 "h": "Candle fire spreads through roof and leaves two Colchester homes uninhabitable",
 "last": "2026-11-17T18:09:50Z",
 "place": "Colchester",
+"rl": "2026-11-21",
 "sec": "official",
 "t": "2026-11-07T16:46:00Z",
 "u": ""
@@ -5726,6 +6056,7 @@
 "h": "Floodlit winter running sessions start at Colchester Sports Park on 17 November",
 "last": "2026-11-18T10:57:08Z",
 "place": "Colchester",
+"rl": "2026-11-21",
 "sec": "official",
 "t": "2026-11-09T12:00:00Z",
 "thin": true,
@@ -5740,6 +6071,7 @@
 "h": "Two Colchester city centre shops served with closure notices after counterfeit tobacco is seized",
 "last": "2026-11-19T07:40:55Z",
 "place": "Colchester",
+"rl": "2026-11-21",
 "sec": "official",
 "t": "2026-11-11T14:00:00Z",
 "u": ""
@@ -5750,6 +6082,7 @@
 "h": "Police helicopter sent to Dengie marshes after reports of hare coursing",
 "last": "2026-11-10T19:47:53Z",
 "place": "Dengie marshes, Burnham-on-Crouch",
+"rl": "2026-11-21",
 "sec": "official",
 "t": "2026-11-04T10:00:00Z",
 "u": ""
@@ -5760,6 +6093,7 @@
 "h": "£2,500 grant for Dovercourt's Christmas lights switch-on night",
 "last": "2026-11-10T15:44:41Z",
 "place": "Dovercourt",
+"rl": "2026-11-21",
 "sec": "official",
 "t": "2026-11-03T12:00:00Z",
 "u": ""
@@ -5770,6 +6104,7 @@
 "h": "Epping community day marks Black History Month",
 "last": "2026-11-07T13:41:23Z",
 "place": "Epping",
+"rl": "2026-11-21",
 "sec": "official",
 "t": "2026-10-31T10:00:00Z",
 "u": ""
@@ -5780,6 +6115,7 @@
 "h": "Police want to identify man after report of outraging public decency in Epping store",
 "last": "2026-11-10T15:44:41Z",
 "place": "Epping",
+"rl": "2026-11-21",
 "sec": "official",
 "t": "2026-11-03T08:00:00Z",
 "u": ""
@@ -5790,6 +6126,7 @@
 "h": "Epping Forest Community Lottery super draw offers PS5 Pro bundle or £1,000",
 "last": "2026-11-07T13:41:23Z",
 "place": "Epping",
+"rl": "2026-11-21",
 "sec": "official",
 "t": "2026-10-30T10:00:00Z",
 "u": ""
@@ -5801,7 +6138,7 @@
 "card": "business",
 "first": "2026-11-18T11:46:09Z",
 "h": "Epping job fair draws more than 300 people hoping to work in tourism",
-"last": "2026-11-21T18:18:55Z",
+"last": "2026-11-21T18:33:43Z",
 "place": "Epping",
 "sec": "official",
 "t": "2026-11-18T10:31:00Z",
@@ -5816,6 +6153,7 @@
 "h": "More time to have a say on Epping Forest's bin and street cleaning crews, with the survey now open until 29 November",
 "last": "2026-11-18T13:40:25Z",
 "place": "Epping, Loughton, Waltham Abbey, Ongar",
+"rl": "2026-11-21",
 "sec": "official",
 "t": "2026-11-09T12:00:00Z",
 "u": ""
@@ -5827,7 +6165,7 @@
 "card": "bluelights",
 "first": "2026-11-18T14:40:47Z",
 "h": "Epping pupils and Speed Watch volunteers join Vision Zero road safety day",
-"last": "2026-11-21T18:18:55Z",
+"last": "2026-11-21T18:33:43Z",
 "place": "Epping",
 "sec": "official",
 "t": "2026-11-18T11:09:00Z",
@@ -5840,6 +6178,7 @@
 "h": "Essex County Council asks residents to help close a £170m gap in its 2027/28 budget",
 "last": "2026-11-17T21:17:23Z",
 "place": "Chelmsford",
+"rl": "2026-11-21",
 "sec": "official",
 "t": "2026-11-06T12:00:00Z",
 "u": ""
@@ -5850,6 +6189,7 @@
 "h": "Trading Standards seize 460,000 illicit cigarettes",
 "last": "2026-11-07T13:41:23Z",
 "place": "Braintree & Chelmsford",
+"rl": "2026-11-21",
 "sec": "official",
 "t": "2026-10-30T10:00:00Z",
 "u": "2026-11-03T08:40:00Z"
@@ -5860,6 +6200,7 @@
 "h": "Essex PC dismissed after panel finds gross misconduct towards three female colleagues",
 "last": "2026-11-17T21:17:23Z",
 "place": "Essex",
+"rl": "2026-11-21",
 "sec": "official",
 "t": "2026-11-06T12:00:00Z",
 "u": ""
@@ -5870,6 +6211,7 @@
 "h": "Essex Police seized more than 5,500 uninsured vehicles in the first ten months of 2026",
 "last": "2026-11-19T07:13:25Z",
 "place": "Essex",
+"rl": "2026-11-21",
 "sec": "official",
 "t": "2026-11-09T17:45:00Z",
 "u": ""
@@ -5880,6 +6222,7 @@
 "h": "Essex Police wins £30,000 to test how its drink and drug-drive crackdown deters offenders",
 "last": "2026-11-10T13:44:10Z",
 "place": "Chelmsford",
+"rl": "2026-11-21",
 "sec": "official",
 "t": "2026-11-02T12:00:00Z",
 "u": ""
@@ -5890,6 +6233,7 @@
 "h": "Smoking in Essex falls to its lowest level on record",
 "last": "2026-11-07T13:41:23Z",
 "place": "Chelmsford",
+"rl": "2026-11-21",
 "sec": "official",
 "t": "2026-10-30T12:00:00Z",
 "u": ""
@@ -5900,6 +6244,7 @@
 "h": "Former Essex PC who admitted assaulting a paramedic would have been dismissed, panel rules",
 "last": "2026-11-10T19:47:53Z",
 "place": "Chelmsford",
+"rl": "2026-11-21",
 "sec": "official",
 "t": "2026-11-04T12:00:00Z",
 "u": ""
@@ -5911,7 +6256,7 @@
 "card": "property",
 "first": "2026-11-17T07:39:49Z",
 "h": "Gilston 10,000-home scheme by Harlow is a 30-year job, planners hear",
-"last": "2026-11-21T18:18:55Z",
+"last": "2026-11-21T18:33:43Z",
 "place": "Harlow, Gilston",
 "sec": "official",
 "t": "2026-11-16T16:08:00Z",
@@ -5923,6 +6268,7 @@
 "h": "Harlow council homes getting their first full repaint in almost 30 years",
 "last": "2026-11-10T13:44:10Z",
 "place": "Harlow",
+"rl": "2026-11-21",
 "sec": "official",
 "t": "2026-11-02T10:00:00Z",
 "u": ""
@@ -5934,7 +6280,7 @@
 "card": "bluelights-2",
 "first": "2026-11-21T13:39:52Z",
 "h": "Harlow police want to speak to Damien Clinton, 33, in theft inquiry",
-"last": "2026-11-21T18:18:55Z",
+"last": "2026-11-21T18:33:43Z",
 "place": "Harlow",
 "sec": "official",
 "t": "2026-11-21T13:14:00Z",
@@ -5949,6 +6295,7 @@
 "h": "Harlow's new bus lane and cycle corridor wins Partnership of the Year at the Essex Housing Awards",
 "last": "2026-11-18T13:40:25Z",
 "place": "Harlow",
+"rl": "2026-11-21",
 "sec": "official",
 "t": "2026-11-09T15:27:00Z",
 "u": ""
@@ -5962,6 +6309,7 @@
 "h": "Essex Police concerned for missing Harlow man Jayden Baksh, 20",
 "last": "2026-11-21T07:11:14Z",
 "place": "Harlow",
+"rl": "2026-11-21",
 "sec": "official",
 "t": "2026-11-13T17:16:00Z",
 "u": ""
@@ -5972,6 +6320,7 @@
 "h": "Harlow man, 37, charged with stalking a woman and damaging her letterbox",
 "last": "2026-11-10T19:47:53Z",
 "place": "Harlow",
+"rl": "2026-11-21",
 "sec": "official",
 "t": "2026-11-04T07:00:00Z",
 "u": ""
@@ -5985,6 +6334,7 @@
 "h": "Harlow Council asks residents whether the town is on the right track in its 2026 survey",
 "last": "2026-11-18T10:57:08Z",
 "place": "Harlow",
+"rl": "2026-11-21",
 "sec": "official",
 "t": "2026-11-09T09:00:00Z",
 "thin": true,
@@ -5996,6 +6346,7 @@
 "h": "Harwich roadshow offered autism awareness and free health checks",
 "last": "2026-11-07T13:41:23Z",
 "place": "Harwich",
+"rl": "2026-11-21",
 "sec": "official",
 "t": "2026-10-30T10:00:00Z",
 "u": ""
@@ -6007,7 +6358,7 @@
 "card": "council",
 "first": "2026-11-19T21:40:44Z",
 "h": "Harwich High Lighthouse to be lit for campaign against violence towards women",
-"last": "2026-11-21T18:18:55Z",
+"last": "2026-11-21T18:33:43Z",
 "place": "Harwich",
 "sec": "official",
 "t": "2026-11-19T19:42:07Z",
@@ -6020,6 +6371,7 @@
 "h": "Healthwatch Southend welcomes Government decision to keep patient watchdogs",
 "last": "2026-11-10T15:44:41Z",
 "place": "Southend-on-Sea",
+"rl": "2026-11-21",
 "sec": "official",
 "t": "2026-11-03T12:00:00Z",
 "u": ""
@@ -6033,6 +6385,7 @@
 "h": "Batteries stored in a cupboard caught fire in a Latchingdon home, firefighters say",
 "last": "2026-11-18T13:40:25Z",
 "place": "Latchingdon",
+"rl": "2026-11-21",
 "sec": "official",
 "t": "2026-11-10T05:45:00Z",
 "u": ""
@@ -6046,6 +6399,7 @@
 "h": "Leigh Ward by-election called for Thursday 10 December",
 "last": "2026-11-18T13:40:25Z",
 "place": "Leigh-on-Sea",
+"rl": "2026-11-21",
 "sec": "official",
 "t": "2026-11-06T14:31:00Z",
 "u": ""
@@ -6059,6 +6413,7 @@
 "h": "Rosie the Jack Russell is dug out of a Maldon rabbit hole and learns absolutely nothing",
 "last": "2026-11-19T20:40:50Z",
 "place": "Maldon",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-16T15:53:00Z",
 "u": "2026-11-16T17:50:00Z"
@@ -6069,6 +6424,7 @@
 "h": "Maldon District groups can bid for Livewell health grants of up to £2,000",
 "last": "2026-11-10T19:47:53Z",
 "place": "Maldon",
+"rl": "2026-11-21",
 "sec": "official",
 "t": "2026-11-04T13:58:00Z",
 "u": ""
@@ -6079,6 +6435,7 @@
 "h": "Maldon car parks go paperless with new contactless-only machines by 20 November",
 "last": "2026-11-10T15:44:41Z",
 "place": "Maldon",
+"rl": "2026-11-21",
 "sec": "official",
 "t": "2026-11-02T12:00:00Z",
 "u": ""
@@ -6090,7 +6447,7 @@
 "card": "council",
 "first": "2026-11-20T16:43:07Z",
 "h": "Maldon's Promenade Park gets free outdoor gym as work begins",
-"last": "2026-11-21T18:18:55Z",
+"last": "2026-11-21T18:33:43Z",
 "place": "Maldon",
 "sec": "official",
 "t": "2026-11-20T15:31:00Z",
@@ -6104,7 +6461,7 @@
 "card": "bluelights-2",
 "first": "2026-11-14T17:44:21Z",
 "h": "Man arrested over threats at Maldon home during missing man search",
-"last": "2026-11-21T18:18:55Z",
+"last": "2026-11-21T18:33:43Z",
 "place": "Maldon",
 "sec": "official",
 "t": "2026-11-14T11:35:00Z",
@@ -6116,6 +6473,7 @@
 "h": "Essex Police checked 200 lorries in national vehicle crime crackdown",
 "last": "2026-11-10T15:44:41Z",
 "place": "Essex",
+"rl": "2026-11-21",
 "sec": "official",
 "t": "2026-11-03T12:00:00Z",
 "u": ""
@@ -6129,6 +6487,7 @@
 "h": "Rochford leader urges ministers to lift block on Local Plan and allow more time to consult",
 "last": "2026-11-17T21:17:23Z",
 "place": "Rochford, Hawkwell",
+"rl": "2026-11-21",
 "sec": "official",
 "t": "2026-11-06T12:00:00Z",
 "u": ""
@@ -6139,6 +6498,7 @@
 "h": "New national planning rules end call-ins for smaller cases in Rochford and Castle Point",
 "last": "2026-11-07T13:41:23Z",
 "place": "Rochford & Benfleet",
+"rl": "2026-11-21",
 "sec": "official",
 "t": "2026-10-30T10:00:00Z",
 "u": ""
@@ -6149,6 +6509,7 @@
 "h": "Graham Gooch presents Rochford sports awards as Heidi Nevin named Sports Personality of the Year",
 "last": "2026-11-10T19:47:53Z",
 "place": "Rayleigh",
+"rl": "2026-11-21",
 "sec": "official",
 "t": "2026-11-04T12:00:00Z",
 "u": ""
@@ -6160,7 +6521,7 @@
 "card": "fireengine",
 "first": "2026-11-19T07:40:28Z",
 "h": "Roydon narrowboat gutted by fire on River Lee near Dobbs Weir Road",
-"last": "2026-11-21T18:18:55Z",
+"last": "2026-11-21T18:33:43Z",
 "place": "Roydon",
 "sec": "official",
 "t": "2026-11-18T11:25:00Z",
@@ -6175,6 +6536,7 @@
 "h": "£57,721 grant gives Essex Police's rural team an all-terrain vehicle and mobile ANPR",
 "last": "2026-11-17T18:09:50Z",
 "place": "Burnham-on-Crouch, Dengie",
+"rl": "2026-11-21",
 "sec": "official",
 "t": "2026-11-05T12:00:00Z",
 "u": ""
@@ -6186,7 +6548,7 @@
 "card": "bluelights",
 "first": "2026-11-20T07:42:00Z",
 "h": "Saffron Walden police seek witnesses after man hurt in Market Row",
-"last": "2026-11-21T18:18:55Z",
+"last": "2026-11-21T18:33:43Z",
 "place": "Saffron Walden",
 "sec": "official",
 "t": "2026-11-17T09:06:00Z",
@@ -6198,6 +6560,7 @@
 "h": "Saffron Walden recycling centre shut all week after serious incident, reopening Monday at the earliest",
 "last": "2026-11-10T15:44:41Z",
 "place": "Saffron Walden",
+"rl": "2026-11-21",
 "sec": "official",
 "t": "2026-11-02T09:00:00Z",
 "u": "2026-11-04T06:05:00Z"
@@ -6208,6 +6571,7 @@
 "h": "Saffron Walden war memorial will not get a deep clean, town council says",
 "last": "2026-11-10T15:44:41Z",
 "place": "Saffron Walden",
+"rl": "2026-11-21",
 "sec": "official",
 "t": "2026-11-03T12:00:00Z",
 "u": ""
@@ -6218,6 +6582,7 @@
 "h": "Medieval Southchurch Hall shuts until mid-2027 for £423,000 conservation work",
 "last": "2026-11-07T13:41:23Z",
 "place": "Southchurch",
+"rl": "2026-11-21",
 "sec": "official",
 "t": "2026-10-30T10:00:00Z",
 "u": ""
@@ -6229,7 +6594,7 @@
 "card": "property",
 "first": "2026-11-18T09:41:02Z",
 "h": "Southend cabinet backs investment partnership for Better Queensway",
-"last": "2026-11-21T18:18:55Z",
+"last": "2026-11-21T18:33:43Z",
 "place": "Southend-on-Sea, Queensway",
 "sec": "official",
 "t": "2026-11-18T09:09:00Z",
@@ -6241,6 +6606,7 @@
 "h": "First sketches show next Better Queensway zones as Southend scrutiny meeting looms",
 "last": "2026-11-10T19:47:53Z",
 "place": "Southend-on-Sea",
+"rl": "2026-11-21",
 "sec": "official",
 "t": "2026-11-04T12:00:00Z",
 "u": ""
@@ -6252,7 +6618,7 @@
 "card": "council",
 "first": "2026-11-16T14:43:16Z",
 "h": "Free parking returns to selected Southend council car parks in December",
-"last": "2026-11-21T18:18:55Z",
+"last": "2026-11-21T18:33:43Z",
 "place": "Southend-on-Sea",
 "sec": "official",
 "t": "2026-11-16T13:43:00Z",
@@ -6267,6 +6633,7 @@
 "h": "Southend in Action week to showcase council teams from 9 to 13 November",
 "last": "2026-11-16T20:43:21Z",
 "place": "Southend-on-Sea",
+"rl": "2026-11-21",
 "sec": "official",
 "t": "2026-11-06T10:18:00Z",
 "u": ""
@@ -6280,6 +6647,7 @@
 "h": "Southend SEND partners publish three-year action plan after Ofsted and CQC inspection",
 "last": "2026-11-19T07:40:55Z",
 "place": "Southend-on-Sea",
+"rl": "2026-11-21",
 "sec": "official",
 "t": "2026-11-12T12:00:00Z",
 "u": ""
@@ -6293,6 +6661,7 @@
 "h": "St Osyth, Manningtree and Mistley get new conservation area plans",
 "last": "2026-11-20T09:40:05Z",
 "place": "St Osyth, Manningtree and Mistley",
+"rl": "2026-11-21",
 "sec": "official",
 "t": "2026-11-13T12:00:00Z",
 "u": ""
@@ -6307,6 +6676,7 @@
 "h": "One-stop website launched for the planned Tendring Colchester Borders Garden Community",
 "last": "2026-11-17T21:17:23Z",
 "place": "Colchester",
+"rl": "2026-11-21",
 "sec": "official",
 "t": "2026-11-06T12:00:00Z",
 "thin": true,
@@ -6321,6 +6691,7 @@
 "h": "Tendring council tenants rate housing services above national average",
 "last": "2026-11-20T09:40:05Z",
 "place": "Clacton, Tendring",
+"rl": "2026-11-21",
 "sec": "official",
 "t": "2026-11-13T12:00:00Z",
 "u": ""
@@ -6334,6 +6705,7 @@
 "h": "Tendring doorstep glass rounds collect nearly 200 tonnes in first month",
 "last": "2026-11-20T09:40:05Z",
 "place": "Clacton-on-Sea, Tendring",
+"rl": "2026-11-21",
 "sec": "official",
 "t": "2026-11-13T12:00:00Z",
 "u": ""
@@ -6344,6 +6716,7 @@
 "h": "Thurrock flu jab clinics and winter roadshows announced",
 "last": "2026-11-07T13:41:23Z",
 "place": "Grays",
+"rl": "2026-11-21",
 "sec": "official",
 "t": "2026-10-30T10:00:00Z",
 "u": ""
@@ -6357,6 +6730,7 @@
 "h": "Thurrock repairs pavements in South Ockendon, Tilbury, Corringham, Grays",
 "last": "2026-11-20T09:40:05Z",
 "place": "South Ockendon, Tilbury, Corringham, Grays",
+"rl": "2026-11-21",
 "sec": "official",
 "t": "2026-11-13T14:18:00Z",
 "u": ""
@@ -6367,6 +6741,7 @@
 "h": "Grays has 54 of Thurrock's 172 licensed shared houses, council register shows",
 "last": "2026-11-07T13:41:23Z",
 "place": "Grays, Tilbury & Stanford-le-Hope",
+"rl": "2026-11-21",
 "sec": "official",
 "t": "2026-10-31T12:00:00Z",
 "u": ""
@@ -6378,7 +6753,7 @@
 "card": "transport",
 "first": "2026-11-19T17:39:46Z",
 "h": "Thurrock road safety day reaches 200 Woodside School parents and pupils",
-"last": "2026-11-21T18:18:55Z",
+"last": "2026-11-21T18:33:43Z",
 "place": "Thurrock",
 "sec": "official",
 "t": "2026-11-19T16:28:00Z",
@@ -6391,6 +6766,7 @@
 "h": "Overnight clean-up after latest fly-tip on rural lane between Tilbury and West Tilbury",
 "last": "2026-11-10T15:44:41Z",
 "place": "Tilbury & West Tilbury",
+"rl": "2026-11-21",
 "sec": "official",
 "t": "2026-11-03T09:00:00Z",
 "u": ""
@@ -6404,6 +6780,7 @@
 "h": "Police appeal after three men claiming to be officers targeted people in Tilbury before dawn",
 "last": "2026-11-19T07:13:25Z",
 "place": "Tilbury",
+"rl": "2026-11-21",
 "sec": "official",
 "t": "2026-11-07T12:00:00Z",
 "u": ""
@@ -6414,6 +6791,7 @@
 "h": "Walton's empty former fire station to be sold for computer repair business",
 "last": "2026-11-10T13:44:10Z",
 "place": "Walton-on-the-Naze",
+"rl": "2026-11-21",
 "sec": "official",
 "t": "2026-11-02T12:00:00Z",
 "u": ""
@@ -6427,6 +6805,7 @@
 "h": "Dispersal order covers Witham town centre until 6pm on Sunday",
 "last": "2026-11-17T18:09:50Z",
 "place": "Witham",
+"rl": "2026-11-21",
 "sec": "official",
 "t": "2026-11-07T06:40:00Z",
 "u": ""
@@ -6440,6 +6819,7 @@
 "h": "Gas main works to shut five Wivenhoe roads for six weeks from February",
 "last": "2026-11-21T07:11:14Z",
 "place": "Wivenhoe",
+"rl": "2026-11-21",
 "sec": "official",
 "t": "2026-11-12T12:00:00Z",
 "u": ""
@@ -6453,6 +6833,7 @@
 "h": "Orsett Hospital clinics moved out before winter as heating fails",
 "last": "2026-11-19T13:32:55Z",
 "place": "Orsett, Thurrock",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-16T13:29:00Z",
 "u": ""
@@ -6466,6 +6847,7 @@
 "h": "Pitsea man jailed over gunpowder as judge says ChatGPT fed his fears",
 "last": "2026-11-21T07:11:14Z",
 "place": "Pitsea, Basildon",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-19T15:10:00Z",
 "u": ""
@@ -6476,6 +6858,7 @@
 "h": "Parking at Princess Alexandra Hospital in Harlow to cost more from 17 November",
 "last": "2026-11-09T15:49:17Z",
 "place": "Harlow",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-07T07:49:00Z",
 "u": ""
@@ -6489,6 +6872,7 @@
 "h": "Parking at Harlow's Princess Alexandra Hospital to cost up to 40p more from 17 November",
 "last": "2026-11-11T08:49:26Z",
 "place": "Harlow",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-07T12:00:00Z",
 "u": ""
@@ -6499,6 +6883,7 @@
 "h": "Wildlife groups take 55,000-name petition to Google over data centre plan for Purfleet's old Arena Essex site",
 "last": "2026-11-08T13:45:23Z",
 "place": "Purfleet, Thurrock",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-05T14:06:00Z",
 "u": ""
@@ -6512,6 +6897,7 @@
 "h": "Purfleet grandmother says rats are still keeping her family out of their Chieftain Drive council home",
 "last": "2026-11-14T11:44:51Z",
 "place": "Purfleet, Thurrock",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-11T23:21:00Z",
 "u": ""
@@ -6525,6 +6911,7 @@
 "h": "Purfleet's Garrison Estate gets wider pest checks after rodents force family out",
 "last": "2026-11-18T13:40:25Z",
 "place": "Purfleet",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-16T12:00:00Z",
 "u": ""
@@ -6538,6 +6925,7 @@
 "h": "Purfleet lorry park refused by Thurrock councillors goes to appeal",
 "last": "2026-11-21T12:39:22Z",
 "place": "Purfleet-on-Thames",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-18T13:28:00Z",
 "u": ""
@@ -6551,6 +6939,7 @@
 "h": "Rayleigh mother urges parents to learn the signs of type 1 diabetes after daughter's collapse",
 "last": "2026-11-15T07:20:59Z",
 "place": "Rayleigh",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-13T13:55:00Z",
 "u": ""
@@ -6564,6 +6953,7 @@
 "h": "Learn the 4Ts: Rayleigh mother shares her daughter's intensive care ordeal so parents spot type 1 diabetes sooner",
 "last": "2026-11-18T07:11:32Z",
 "place": "Rayleigh",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-15T06:51:23Z",
 "u": ""
@@ -6574,6 +6964,7 @@
 "h": "Essex falls silent for Remembrance Sunday as parades close town centres from Colchester to Leigh-on-Sea",
 "last": "2026-11-09T19:44:39Z",
 "place": "Chelmsford, Colchester, Brentwood, Saffron Walden",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-07T18:45:57Z",
 "u": "2026-11-08T13:45:00Z"
@@ -6584,6 +6975,7 @@
 "h": "Remembrance Sunday brings road closures and bus diversions to towns across Essex",
 "last": "2026-11-07T15:46:19Z",
 "place": "Chelmsford, Colchester, Maldon, Saffron Walden",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-02T12:00:00Z",
 "u": ""
@@ -6594,6 +6986,7 @@
 "h": "Rochford warns Local Plan consultation may have to run over Christmas unless ministers lift their hold",
 "last": "2026-11-07T17:48:13Z",
 "place": "Rochford, Rayleigh",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-06T12:00:00Z",
 "u": ""
@@ -6604,6 +6997,7 @@
 "h": "Rochford leader urges ministers to lift Local Plan hold or risk a consultation over Christmas",
 "last": "2026-11-07T07:40:56Z",
 "place": "Rochford",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-06T12:00:00Z",
 "u": ""
@@ -6617,6 +7011,7 @@
 "h": "Russell Brand, who grew up in Grays, could challenge his 10-and-a-half-year rape sentence, solicitor tells the Standard",
 "last": "2026-11-12T20:50:32Z",
 "place": "Grays",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-05T15:29:00Z",
 "u": "2026-11-09T18:45:00Z"
@@ -6630,6 +7025,7 @@
 "h": "Grays-raised Russell Brand faces move to third prison over YouTube message",
 "last": "2026-11-21T07:11:14Z",
 "place": "Grays",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-18T01:28:00Z",
 "u": ""
@@ -6640,6 +7036,7 @@
 "h": "Billericay put five past Hemel Hempstead",
 "last": "2026-11-07T00:43:56Z",
 "place": "Billericay",
+"rl": "2026-11-21",
 "sec": "sport",
 "t": "2026-10-31T17:00:00Z",
 "u": ""
@@ -6651,7 +7048,7 @@
 "card": "football",
 "first": "2026-11-21T18:18:55Z",
 "h": "Billericay Town beat bottom club Slough Town 4-1 at home",
-"last": "2026-11-21T18:18:55Z",
+"last": "2026-11-21T18:33:43Z",
 "place": "Billericay",
 "sec": "sport",
 "t": "2026-11-21T18:22:00Z",
@@ -6666,6 +7063,7 @@
 "h": "Elliott Smith named Brentwood Sports Personality of the Year",
 "last": "2026-11-13T16:04:06Z",
 "place": "Brentwood",
+"rl": "2026-11-21",
 "sec": "sport",
 "t": "2026-11-07T07:00:00Z",
 "u": ""
@@ -6677,7 +7075,7 @@
 "card": "football",
 "first": "2026-11-18T18:15:46Z",
 "h": "Brentwood Town edge Burgess Hill Town 1-0 in Isthmian Premier",
-"last": "2026-11-21T18:18:55Z",
+"last": "2026-11-21T18:33:43Z",
 "place": "Brentwood",
 "sec": "sport",
 "t": "2026-11-18T18:20:00Z",
@@ -6690,7 +7088,7 @@
 "card": "sport",
 "first": "2026-11-09T23:14:23Z",
 "h": "Chelmsford Chieftains hit nine to win 9-3 at Cardiff Fire",
-"last": "2026-11-21T18:18:55Z",
+"last": "2026-11-21T18:33:43Z",
 "place": "Chelmsford",
 "sec": "sport",
 "t": "2026-11-09T23:14:00Z",
@@ -6703,7 +7101,7 @@
 "card": "football",
 "first": "2026-11-09T22:22:22Z",
 "h": "Chelmsford City hold leaders Ebbsfleet United to a 2-2 draw",
-"last": "2026-11-21T18:18:55Z",
+"last": "2026-11-21T18:33:43Z",
 "place": "Chelmsford",
 "sec": "sport",
 "t": "2026-11-09T21:48:00Z",
@@ -6716,7 +7114,7 @@
 "card": "football",
 "first": "2026-11-08T08:21:16Z",
 "h": "Chelmsford City come from behind to beat Farnborough 2-1",
-"last": "2026-11-21T18:18:55Z",
+"last": "2026-11-21T18:33:43Z",
 "place": "Chelmsford",
 "sec": "sport",
 "t": "2026-11-07T17:04:57Z",
@@ -6728,6 +7126,7 @@
 "h": "Racing returns to Chelmsford City, but Ladbrokes and Coral refuse to take bets",
 "last": "2026-11-07T16:46:45Z",
 "place": "Great Leighs",
+"rl": "2026-11-21",
 "sec": "sport",
 "t": "2026-11-02T16:28:00Z",
 "u": ""
@@ -6738,6 +7137,7 @@
 "h": "Chelmsford City win 3-1 at AFC Totton",
 "last": "2026-11-07T13:41:54Z",
 "place": "Totton",
+"rl": "2026-11-21",
 "sec": "sport",
 "t": "2026-10-31T17:00:00Z",
 "u": ""
@@ -6750,7 +7150,7 @@
 "card": "football",
 "first": "2026-11-19T18:10:49Z",
 "h": "Aveley out of Velocity Cup after 4-3 defeat at Cheshunt",
-"last": "2026-11-21T18:18:55Z",
+"last": "2026-11-21T18:33:43Z",
 "place": "Aveley",
 "sec": "sport",
 "t": "2026-11-18T13:44:00Z",
@@ -6762,6 +7162,7 @@
 "h": "Chieftains hit Cardiff for seven to stay top",
 "last": "2026-11-07T13:41:54Z",
 "place": "Chelmsford",
+"rl": "2026-11-21",
 "sec": "sport",
 "t": "2026-10-31T21:30:00Z",
 "u": ""
@@ -6773,7 +7174,7 @@
 "card": "sport",
 "first": "2026-11-15T22:17:36Z",
 "h": "Chelmsford Chieftains beat Slough Jets 6-3 with a strong final period",
-"last": "2026-11-21T18:18:55Z",
+"last": "2026-11-21T18:33:43Z",
 "place": "Chelmsford",
 "sec": "sport",
 "t": "2026-11-15T22:17:35Z",
@@ -6786,7 +7187,7 @@
 "card": "football",
 "first": "2026-11-11T23:45:07Z",
 "h": "Colchester United's home game with Fleetwood Town switched to Sunday 20 December",
-"last": "2026-11-21T18:18:55Z",
+"last": "2026-11-21T18:33:43Z",
 "place": "Colchester",
 "sec": "sport",
 "t": "2026-11-11T15:13:00Z",
@@ -6799,7 +7200,7 @@
 "card": "football",
 "first": "2026-11-14T18:12:03Z",
 "h": "Colchester United end 10-game winless run by beating Gillingham 2-0",
-"last": "2026-11-21T18:18:55Z",
+"last": "2026-11-21T18:33:43Z",
 "place": "Colchester",
 "sec": "sport",
 "t": "2026-11-14T16:45:00Z",
@@ -6812,7 +7213,7 @@
 "card": "football",
 "first": "2026-11-10T23:14:39Z",
 "h": "Colchester United edge Ipswich Town U21 on penalties after goalless EFL Trophy dead rubber",
-"last": "2026-11-21T18:18:55Z",
+"last": "2026-11-21T18:33:43Z",
 "place": "Colchester",
 "sec": "sport",
 "t": "2026-11-10T22:12:00Z",
@@ -6824,6 +7225,7 @@
 "h": "Walsall pledge support for Colchester keeper after alleged racist remark",
 "last": "2026-11-07T13:41:54Z",
 "place": "Colchester",
+"rl": "2026-11-21",
 "sec": "sport",
 "t": "2026-11-01T10:00:00Z",
 "u": ""
@@ -6835,7 +7237,7 @@
 "card": "football",
 "first": "2026-11-17T21:40:58Z",
 "h": "Colchester United loan striker Leon Chiwome back on grass after hamstring injury",
-"last": "2026-11-21T18:18:55Z",
+"last": "2026-11-21T18:33:43Z",
 "place": "Colchester",
 "sec": "sport",
 "t": "2026-11-16T14:17:00Z",
@@ -6851,6 +7253,7 @@
 "h": "Colchester United drawn at home to Mansfield Town in FA Cup second round",
 "last": "2026-11-13T16:04:06Z",
 "place": "Colchester",
+"rl": "2026-11-21",
 "sec": "sport",
 "t": "2026-11-09T19:00:00Z",
 "u": ""
@@ -6861,6 +7264,7 @@
 "h": "Walsall end Colchester's unbeaten home league run",
 "last": "2026-11-07T13:41:54Z",
 "place": "Colchester",
+"rl": "2026-11-21",
 "sec": "sport",
 "t": "2026-10-31T17:30:00Z",
 "u": ""
@@ -6872,7 +7276,7 @@
 "card": "football",
 "first": "2026-11-07T08:47:18Z",
 "h": "Colchester United edge Worcester City 1-0 to reach the FA Cup second round",
-"last": "2026-11-21T18:18:55Z",
+"last": "2026-11-21T18:33:43Z",
 "place": "Colchester",
 "sec": "sport",
 "t": "2026-11-08T08:23:00Z",
@@ -6885,7 +7289,7 @@
 "card": "football",
 "first": "2026-11-08T08:23:21Z",
 "h": "Elliot Long double earns Billericay Town a 2-2 draw at Dagenham & Redbridge",
-"last": "2026-11-21T18:18:55Z",
+"last": "2026-11-21T18:33:43Z",
 "place": "Billericay",
 "sec": "sport",
 "t": "2026-11-08T00:00:00Z",
@@ -6900,6 +7304,7 @@
 "h": "Essex pair Jordan Cox and Sam Cook keep their places in England's Test squad for the South Africa tour",
 "last": "2026-11-13T16:04:06Z",
 "place": "Chelmsford",
+"rl": "2026-11-21",
 "sec": "sport",
 "t": "2026-11-10T09:00:00Z",
 "u": ""
@@ -6912,7 +7317,7 @@
 "card": "football",
 "first": "2026-11-15T18:15:27Z",
 "h": "Billericay Town beat Waltham Abbey to stay in the FA Trophy",
-"last": "2026-11-21T18:18:55Z",
+"last": "2026-11-21T18:33:43Z",
 "place": "Billericay",
 "sec": "sport",
 "t": "2026-11-14T20:35:00Z",
@@ -6922,7 +7327,7 @@
 "card": "football",
 "first": "2026-11-14T09:33:30Z",
 "h": "Essex fixtures: Colchester host Gillingham on Saturday 14 November",
-"last": "2026-11-21T18:18:55Z",
+"last": "2026-11-21T18:33:43Z",
 "place": "Essex",
 "sec": "sport",
 "t": "2026-11-14T09:32:39Z",
@@ -6932,7 +7337,7 @@
 "card": "football",
 "first": "2026-11-21T07:11:14Z",
 "h": "Essex football fixtures: Colchester go to Tranmere on Saturday",
-"last": "2026-11-21T18:18:55Z",
+"last": "2026-11-21T18:33:43Z",
 "place": "Essex",
 "sec": "sport",
 "t": "2026-11-21T07:11:13Z",
@@ -6942,7 +7347,7 @@
 "card": "football",
 "first": "2026-11-14T21:44:14Z",
 "h": "Essex Senior Cup quarter-final draw sets holders Billericay Town's path",
-"last": "2026-11-21T18:18:55Z",
+"last": "2026-11-21T18:33:43Z",
 "place": "Aveley, Witham, Billericay, Dagenham",
 "sec": "sport",
 "t": "2026-11-14T13:57:35Z",
@@ -6952,7 +7357,7 @@
 "card": "cricket",
 "first": "2026-11-17T19:45:04Z",
 "h": "Essex skipper Grace Scrivens to lead England Women A in four-day match in Mumbai",
-"last": "2026-11-21T18:18:55Z",
+"last": "2026-11-21T18:33:43Z",
 "place": "Chelmsford",
 "sec": "sport",
 "t": "2026-11-17T16:03:13Z",
@@ -6964,6 +7369,7 @@
 "h": "Grays Athletic hand Lewis Clark the player-manager's job as club seeks a fresh start",
 "last": "2026-11-08T13:45:23Z",
 "place": "Grays",
+"rl": "2026-11-21",
 "sec": "sport",
 "t": "2026-11-05T14:12:00Z",
 "u": ""
@@ -6974,6 +7380,7 @@
 "h": "Harlow Rugby Club hold off Wanstead fightback for fifth win in a row",
 "last": "2026-11-07T16:46:45Z",
 "place": "Harlow",
+"rl": "2026-11-21",
 "sec": "sport",
 "t": "2026-11-03T12:00:00Z",
 "u": ""
@@ -6984,6 +7391,7 @@
 "h": "Harlow Cycling Club honours Vin Denson, first Briton to win a Giro d'Italia stage",
 "last": "2026-11-07T16:46:45Z",
 "place": "Harlow",
+"rl": "2026-11-21",
 "sec": "sport",
 "t": "2026-11-02T18:00:00Z",
 "u": ""
@@ -6995,7 +7403,7 @@
 "card": "football",
 "first": "2026-11-13T23:08:50Z",
 "h": "Aveley cruise past Hutton 5-0 in the BBC Essex Senior Cup fourth round",
-"last": "2026-11-21T18:18:55Z",
+"last": "2026-11-21T18:33:43Z",
 "place": "Aveley",
 "sec": "sport",
 "t": "2026-11-13T14:34:00Z",
@@ -7005,7 +7413,7 @@
 "card": "football",
 "first": "2026-11-08T08:23:21Z",
 "h": "Buckhurst Hill win 3-0 at Bowers & Pitsea in Isthmian North",
-"last": "2026-11-21T18:18:55Z",
+"last": "2026-11-21T18:33:43Z",
 "place": "Buckhurst Hill",
 "sec": "sport",
 "t": "2026-11-08T08:23:00Z",
@@ -7015,7 +7423,7 @@
 "card": "football",
 "first": "2026-11-14T18:12:03Z",
 "h": "Canvey Island hit five at Witham Town in Isthmian North",
-"last": "2026-11-21T18:18:55Z",
+"last": "2026-11-21T18:33:43Z",
 "place": "Canvey Island",
 "sec": "sport",
 "t": "2026-11-14T18:25:00Z",
@@ -7025,7 +7433,7 @@
 "card": "football",
 "first": "2026-11-21T18:18:55Z",
 "h": "Grays Athletic win 4-2 at Brightlingsea Regent in Isthmian North",
-"last": "2026-11-21T18:18:55Z",
+"last": "2026-11-21T18:33:43Z",
 "place": "Grays",
 "sec": "sport",
 "t": "2026-11-21T18:22:00Z",
@@ -7041,7 +7449,7 @@
 "card": "football",
 "first": "2026-11-08T18:10:17Z",
 "h": "Maldon & Tiptree win 3-1 at Wingate & Finchley",
-"last": "2026-11-21T18:18:55Z",
+"last": "2026-11-21T18:33:43Z",
 "place": "Aveley",
 "sec": "sport",
 "t": "2026-11-08T15:48:00Z",
@@ -7055,7 +7463,7 @@
 "card": "football",
 "first": "2026-11-16T23:08:52Z",
 "h": "Brentwood Town lose 3-0 at home to Ramsgate in Isthmian Premier",
-"last": "2026-11-21T18:18:55Z",
+"last": "2026-11-21T18:33:43Z",
 "place": "Brentwood",
 "sec": "sport",
 "t": "2026-11-16T23:08:51Z",
@@ -7065,7 +7473,7 @@
 "card": "cricket",
 "first": "2026-11-19T13:31:15Z",
 "h": "Essex all-rounder Luc Benkenstein leaves for Durham",
-"last": "2026-11-21T18:18:55Z",
+"last": "2026-11-21T18:33:43Z",
 "place": "Chelmsford",
 "sec": "sport",
 "t": "2026-11-19T13:25:00Z",
@@ -7078,7 +7486,7 @@
 "card": "football",
 "first": "2026-11-17T11:39:03Z",
 "h": "Ex-Billericay Town youngster Max Dowman is England Under-21s' youngest scorer",
-"last": "2026-11-21T18:18:55Z",
+"last": "2026-11-21T18:33:43Z",
 "place": "Billericay",
 "sec": "sport",
 "t": "2026-11-17T09:50:00Z",
@@ -7092,7 +7500,7 @@
 "card": "football",
 "first": "2026-11-21T07:11:14Z",
 "h": "Colchester United go to Tranmere looking to build on Gillingham win",
-"last": "2026-11-21T18:18:55Z",
+"last": "2026-11-21T18:33:43Z",
 "place": "Colchester",
 "sec": "sport",
 "t": "2026-11-21T07:11:13Z",
@@ -7107,6 +7515,7 @@
 "h": "More than 10,000 expected for Southend's table-topping clash with Boreham Wood",
 "last": "2026-11-20T19:37:27Z",
 "place": "Southend-on-Sea",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-20T08:24:08Z",
 "u": "2026-11-20T17:12:00Z"
@@ -7118,7 +7527,7 @@
 "card": "sport",
 "first": "2026-11-11T19:18:37Z",
 "h": "Roper twins back at the University of Essex after double Commonwealth Games bronze for Wales",
-"last": "2026-11-21T18:18:55Z",
+"last": "2026-11-21T18:33:43Z",
 "place": "Colchester",
 "sec": "sport",
 "t": "2026-11-11T19:18:00Z",
@@ -7131,7 +7540,7 @@
 "card": "football",
 "first": "2026-11-13T07:15:15Z",
 "h": "Braintree Town beaten 2-0 at Salisbury despite facing ten men after half-time",
-"last": "2026-11-21T18:18:55Z",
+"last": "2026-11-21T18:33:43Z",
 "place": "Braintree",
 "sec": "sport",
 "t": "2026-11-13T07:20:00Z",
@@ -7144,7 +7553,7 @@
 "card": "football",
 "first": "2026-11-14T18:54:45Z",
 "h": "Southend United fight back to beat ten-man Aldershot Town 2-1 at Roots Hall",
-"last": "2026-11-21T18:18:55Z",
+"last": "2026-11-21T18:33:43Z",
 "place": "Southend-on-Sea",
 "sec": "sport",
 "t": "2026-11-14T18:54:45Z",
@@ -7157,7 +7566,7 @@
 "card": "football",
 "first": "2026-11-20T22:15:40Z",
 "h": "Shrimpers lose five-goal table-top thriller",
-"last": "2026-11-21T18:18:55Z",
+"last": "2026-11-21T18:33:43Z",
 "place": "Southend-on-Sea",
 "sec": "news",
 "t": "2026-11-20T22:15:28Z",
@@ -7170,7 +7579,7 @@
 "card": "football",
 "first": "2026-11-11T12:45:20Z",
 "h": "Southend United's Kieron Dyer banned for one match and goalkeeping coach Anssi Jaakkola for six",
-"last": "2026-11-21T18:18:55Z",
+"last": "2026-11-21T18:33:43Z",
 "place": "Southend-on-Sea",
 "sec": "sport",
 "t": "2026-11-11T12:10:00Z",
@@ -7184,7 +7593,7 @@
 "card": "football",
 "first": "2026-11-17T21:40:58Z",
 "h": "Southend United send Jack Stone back to Grays Athletic for a month",
-"last": "2026-11-21T18:18:55Z",
+"last": "2026-11-21T18:33:43Z",
 "place": "Southend-on-Sea, Grays",
 "sec": "sport",
 "t": "2026-11-17T18:00:00Z",
@@ -7199,6 +7608,7 @@
 "h": "Southend mark 20 years since Eastwood sank Manchester United, as Sam Austin rejoins Kidderminster on loan",
 "last": "2026-11-13T16:04:06Z",
 "place": "Southend-on-Sea",
+"rl": "2026-11-21",
 "sec": "sport",
 "t": "2026-11-07T06:22:00Z",
 "u": ""
@@ -7210,7 +7620,7 @@
 "card": "football",
 "first": "2026-11-14T15:44:25Z",
 "h": "Southend United sign former Tottenham academy defender Maxwell McKnight",
-"last": "2026-11-21T18:18:55Z",
+"last": "2026-11-21T18:33:43Z",
 "place": "Southend-on-Sea",
 "sec": "sport",
 "t": "2026-11-14T14:17:00Z",
@@ -7222,6 +7632,7 @@
 "h": "Late Wealdstone winner sinks Southend",
 "last": "2026-11-07T13:41:54Z",
 "place": "Ruislip",
+"rl": "2026-11-21",
 "sec": "sport",
 "t": "2026-10-31T17:00:00Z",
 "u": ""
@@ -7233,7 +7644,7 @@
 "card": "sport",
 "first": "2026-11-08T08:23:21Z",
 "h": "Chelmsford Chieftains lose 6-5 to Swindon Wildcats 2 after a shootout",
-"last": "2026-11-21T18:18:55Z",
+"last": "2026-11-21T18:33:43Z",
 "place": "Chelmsford",
 "sec": "sport",
 "t": "2026-11-08T08:23:00Z",
@@ -7246,7 +7657,7 @@
 "card": "football",
 "first": "2026-11-14T18:12:03Z",
 "h": "Chelmsford City knocked out of the FA Trophy on penalties at AFC Telford United",
-"last": "2026-11-21T18:18:55Z",
+"last": "2026-11-21T18:33:43Z",
 "place": "Chelmsford",
 "sec": "sport",
 "t": "2026-11-14T17:17:00Z",
@@ -7259,7 +7670,7 @@
 "card": "football",
 "first": "2026-11-12T18:14:53Z",
 "h": "Ten-man Dagenham & Redbridge knock Tilbury out of the Essex Senior Cup",
-"last": "2026-11-21T18:18:55Z",
+"last": "2026-11-21T18:33:43Z",
 "place": "Tilbury",
 "sec": "sport",
 "t": "2026-11-12T14:54:41Z",
@@ -7272,7 +7683,7 @@
 "card": "football",
 "first": "2026-11-18T18:15:46Z",
 "h": "Billericay Town hold Truro City to goalless draw in Cornwall",
-"last": "2026-11-21T18:18:55Z",
+"last": "2026-11-21T18:33:43Z",
 "place": "Billericay",
 "sec": "sport",
 "t": "2026-11-18T11:21:00Z",
@@ -7285,7 +7696,7 @@
 "card": "football",
 "first": "2026-11-08T08:21:51Z",
 "h": "Braintree Town beaten 4-1 by Weston-super-Mare in National League South",
-"last": "2026-11-21T18:18:55Z",
+"last": "2026-11-21T18:33:43Z",
 "place": "Braintree",
 "sec": "sport",
 "t": "2026-11-08T08:24:00Z",
@@ -7298,7 +7709,7 @@
 "card": "football",
 "first": "2026-11-19T12:39:17Z",
 "h": "Wivenhoe Town to take out pitchside brick walls under new FA safety rules",
-"last": "2026-11-21T18:18:55Z",
+"last": "2026-11-21T18:33:43Z",
 "place": "Wivenhoe",
 "sec": "sport",
 "t": "2026-11-19T10:27:00Z",
@@ -7314,6 +7725,7 @@
 "h": "Saffron Walden lights switch-on brings Market Place party on Friday",
 "last": "2026-11-21T10:19:02Z",
 "place": "Saffron Walden",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-18T13:11:00Z",
 "u": ""
@@ -7327,6 +7739,7 @@
 "h": "Two men arrested after man suffers facial injuries in Saffron Walden town centre",
 "last": "2026-11-19T11:49:20Z",
 "place": "Saffron Walden",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-17T09:06:00Z",
 "u": ""
@@ -7337,6 +7750,7 @@
 "h": "Saffron Walden recycling centre stays shut after worker is airlifted following serious injury",
 "last": "2026-11-10T11:44:38Z",
 "place": "Saffron Walden",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-09T10:16:00Z",
 "u": "2026-11-09T12:13:00Z"
@@ -7350,6 +7764,7 @@
 "h": "Saffron Walden recycling centre on Thaxted Road reopens after ten-day closure",
 "last": "2026-11-12T20:50:32Z",
 "place": "Saffron Walden",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-09T10:16:00Z",
 "u": "2026-11-10T20:19:00Z"
@@ -7363,6 +7778,7 @@
 "h": "Saffron Walden tip reopens after staff injury closure",
 "last": "2026-11-13T19:44:08Z",
 "place": "Saffron Walden",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-10T20:19:00Z",
 "u": ""
@@ -7376,6 +7792,7 @@
 "h": "Saffron Walden tip back open after closing when a member of staff was hurt",
 "last": "2026-11-13T13:23:35Z",
 "place": "Saffron Walden",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-10T20:19:00Z",
 "u": ""
@@ -7389,6 +7806,7 @@
 "h": "Long-empty Shenfield shop on Hutton Road cleared to become a Londis",
 "last": "2026-11-15T12:48:20Z",
 "place": "Shenfield",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-14T07:33:00Z",
 "u": ""
@@ -7400,7 +7818,7 @@
 "card": "bluelights-2",
 "first": "2026-11-18T10:55:54Z",
 "h": "Shoebury toddler Blake, 17 months, remembered as police inquiry continues",
-"last": "2026-11-21T18:18:55Z",
+"last": "2026-11-21T18:33:43Z",
 "place": "Shoeburyness",
 "sec": "news",
 "t": "2026-11-18T10:07:00Z",
@@ -7412,6 +7830,7 @@
 "h": "Slim Chickens to open at Lakeside in early December with 50 new jobs",
 "last": "2026-11-07T08:47:18Z",
 "place": "West Thurrock, Lakeside",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-06T12:00:00Z",
 "u": ""
@@ -7422,6 +7841,7 @@
 "h": "South Basildon MP says asylum system failing to act on refusals as returns fall to 10%",
 "last": "2026-11-07T11:44:40Z",
 "place": "Basildon",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-06T12:00:00Z",
 "u": ""
@@ -7435,6 +7855,7 @@
 "h": "Southend seafront to get new public toilets in £750,000 plan",
 "last": "2026-11-21T12:39:22Z",
 "place": "Southend-on-Sea",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-18T12:14:00Z",
 "u": ""
@@ -7449,6 +7870,7 @@
 "h": "Southend Airport wins daily Zurich flights with Swiss carrier Chair Airlines",
 "last": "2026-11-19T09:44:59Z",
 "place": "Southend-on-Sea",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-16T09:22:00Z",
 "u": ""
@@ -7463,6 +7885,7 @@
 "h": "c2c trains stopped near Chalkwell after person dies on the line",
 "last": "2026-11-20T09:26:39Z",
 "place": "Leigh-on-Sea, Chalkwell, Southend-on-Sea, Shoeburyness",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-17T10:34:00Z",
 "u": "2026-11-17T14:37:00Z"
@@ -7474,7 +7897,7 @@
 "card": "property",
 "first": "2026-11-21T16:40:16Z",
 "h": "Former Ravens store in Southend could become 17-room HMO",
-"last": "2026-11-21T18:18:55Z",
+"last": "2026-11-21T18:33:43Z",
 "place": "Southend-on-Sea, Clifftown Road",
 "sec": "news",
 "t": "2026-11-21T13:57:00Z",
@@ -7487,7 +7910,7 @@
 "card": "council",
 "first": "2026-11-18T22:49:50Z",
 "h": "Southend council leadership challenge fails by two votes",
-"last": "2026-11-21T18:18:55Z",
+"last": "2026-11-21T18:33:43Z",
 "place": "Southend-on-Sea",
 "sec": "news",
 "t": "2026-11-18T19:10:00Z",
@@ -7503,6 +7926,7 @@
 "h": "Southend council still heading for an almost £12m overspend as children's care placements cost more",
 "last": "2026-11-12T20:50:32Z",
 "place": "Southend-on-Sea",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-09T12:00:00Z",
 "u": ""
@@ -7516,6 +7940,7 @@
 "h": "Southend council still heading for a £12m overspend as one child's care placement tops £1m a year",
 "last": "2026-11-12T08:49:09Z",
 "place": "Southend-on-Sea",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-09T09:00:00Z",
 "u": ""
@@ -7529,6 +7954,7 @@
 "h": "Dispersal order covers central Southend into the evening as pier lights return and fireworks light the seafront",
 "last": "2026-11-17T09:38:40Z",
 "place": "Southend-on-Sea",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-14T09:01:36Z",
 "u": ""
@@ -7542,6 +7968,7 @@
 "h": "New image in bid to name man found dead at Southend East 26 years ago",
 "last": "2026-11-19T07:40:55Z",
 "place": "Southend-on-Sea, Southend East station",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-15T12:32:00Z",
 "u": "2026-11-16T00:26:40Z"
@@ -7555,6 +7982,7 @@
 "h": "Southend drivers get four days of free council parking before Christmas",
 "last": "2026-11-18T16:45:10Z",
 "place": "Southend",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-17T08:38:00Z",
 "u": ""
@@ -7568,6 +7996,7 @@
 "h": "Gemma Collins takes new theatre tour to Southend's Cliffs Pavilion",
 "last": "2026-11-19T11:49:20Z",
 "place": "Southend-on-Sea",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-17T11:00:00Z",
 "thin": true,
@@ -7582,6 +8011,7 @@
 "h": "Southend Hospital becomes first in Essex to win Sophie's Legacy award for looking after children's families",
 "last": "2026-11-14T11:44:51Z",
 "place": "Southend-on-Sea",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-11T15:45:00Z",
 "u": ""
@@ -7592,6 +8022,7 @@
 "h": "More than 50,000 still waiting at Southend Hospital as trust backlog falls by 14,000",
 "last": "2026-11-08T19:44:07Z",
 "place": "Southend-on-Sea",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-06T06:52:00Z",
 "u": ""
@@ -7605,6 +8036,7 @@
 "h": "Southend knife violence falls 23% but city still tops Essex list",
 "last": "2026-11-21T15:08:59Z",
 "place": "Southend",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-19T11:54:00Z",
 "u": ""
@@ -7615,6 +8047,7 @@
 "h": "Southend opens final consultation on Local Plan it was ordered to publish by ministers",
 "last": "2026-11-09T15:39:34Z",
 "place": "Southend-on-Sea",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-06T11:39:00Z",
 "u": ""
@@ -7628,6 +8061,7 @@
 "h": "Last chance for Southend residents to comment on Local Plan the Government ordered the council to publish",
 "last": "2026-11-17T21:17:23Z",
 "place": "Southend-on-Sea",
+"rl": "2026-11-21",
 "sec": "official",
 "t": "2026-11-06T12:00:00Z",
 "u": ""
@@ -7641,6 +8075,7 @@
 "h": "Southend's Palace Hotel to switch from Radisson to IHG's Garner brand",
 "last": "2026-11-21T09:32:56Z",
 "place": "Southend-on-Sea",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-18T09:00:00Z",
 "u": ""
@@ -7654,6 +8089,7 @@
 "h": "Festoon lights back on Southend Pier for the first time in more than 20 years",
 "last": "2026-11-14T12:45:58Z",
 "place": "Southend-on-Sea",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-11T12:00:00Z",
 "u": ""
@@ -7667,6 +8103,7 @@
 "h": "Festoon lights back on Southend Pier for the first time in over 20 years, with switch-on set for Saturday",
 "last": "2026-11-14T10:44:44Z",
 "place": "Southend-on-Sea",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-11T12:00:00Z",
 "u": ""
@@ -7678,7 +8115,7 @@
 "card": "transport",
 "first": "2026-11-21T11:42:51Z",
 "h": "Southend Pier trains: calls grow for a firm date to restart £3.5m railway",
-"last": "2026-11-21T18:18:55Z",
+"last": "2026-11-21T18:33:43Z",
 "place": "Southend-on-Sea",
 "sec": "news",
 "t": "2026-11-21T10:16:00Z",
@@ -7692,7 +8129,7 @@
 "card": "transport",
 "first": "2026-11-20T22:41:26Z",
 "h": "Southend seafront road gets almost 5,000 parking fines in a year",
-"last": "2026-11-21T18:18:55Z",
+"last": "2026-11-21T18:33:43Z",
 "place": "Southend-on-Sea",
 "sec": "news",
 "t": "2026-11-20T22:02:00Z",
@@ -7708,6 +8145,7 @@
 "h": "Southend publishes three-year SEND plan after inspectors call for improvements",
 "last": "2026-11-15T15:16:56Z",
 "place": "Southend-on-Sea",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-12T15:12:00Z",
 "u": ""
@@ -7719,7 +8157,7 @@
 "card": "community",
 "first": "2026-11-21T15:40:51Z",
 "h": "Southend tip's Havens Hospices reuse shop sells 100 tonnes of goods",
-"last": "2026-11-21T18:18:55Z",
+"last": "2026-11-21T18:33:43Z",
 "place": "Southend-on-Sea",
 "sec": "news",
 "t": "2026-11-21T13:38:00Z",
@@ -7734,6 +8172,7 @@
 "h": "Southend cabinet backs £800,000 plan to remove Three Shells Lagoon",
 "last": "2026-11-19T23:38:35Z",
 "place": "Southend-on-Sea",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-16T05:58:57Z",
 "u": "2026-11-16T18:00:00Z"
@@ -7747,6 +8186,7 @@
 "h": "Southend's fenced-off Three Shells Lagoon should be removed and the beach restored, council report says",
 "last": "2026-11-13T16:04:06Z",
 "place": "Southend-on-Sea",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-09T16:17:00Z",
 "u": "2026-11-10T08:08:00Z"
@@ -7757,6 +8197,7 @@
 "h": "Second shop could open inside Southend's Fossetts Way Waitrose after store is refurbished and shrunk",
 "last": "2026-11-07T21:42:46Z",
 "place": "Southend-on-Sea",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-06T10:42:00Z",
 "u": ""
@@ -7767,6 +8208,7 @@
 "h": "New shop could open inside Southend's Fossetts Way Waitrose after store's makeover",
 "last": "2026-11-07T08:47:18Z",
 "place": "Southend-on-Sea",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-06T12:00:00Z",
 "u": ""
@@ -7777,6 +8219,7 @@
 "h": "Another shop could move in beside Waitrose in Southend under plans to split the refurbished store",
 "last": "2026-11-07T19:41:40Z",
 "place": "Southend-on-Sea",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-06T10:42:00Z",
 "u": ""
@@ -7790,6 +8233,7 @@
 "h": "Southend woman broke her hip when a medical helicopter's downwash blew her over",
 "last": "2026-11-17T12:40:12Z",
 "place": "Southend-on-Sea",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-13T11:29:00Z",
 "u": "2026-11-16T13:21:00Z"
@@ -7803,6 +8247,7 @@
 "h": "Helicopter downwash knocked Southend woman off her feet as she filmed outside her home, air accident report finds",
 "last": "2026-11-15T20:02:04Z",
 "place": "Southend-on-Sea",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-13T11:29:00Z",
 "u": ""
@@ -7816,6 +8261,7 @@
 "h": "London Gateway systems fault queues lorries back to A13 Manorway",
 "last": "2026-11-21T15:08:59Z",
 "place": "Stanford-le-Hope, London Gateway",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-19T09:27:00Z",
 "u": ""
@@ -7826,6 +8272,7 @@
 "h": "Former New Courthouse pub in Stanford-le-Hope sold as building waste is dumped outside",
 "last": "2026-11-09T19:44:39Z",
 "place": "Stanford-le-Hope",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-08T12:00:00Z",
 "u": ""
@@ -7836,6 +8283,7 @@
 "h": "Planning inquiry opens into 480-home 'Stanhanger' appeal on Green Belt between Stansted and Birchanger",
 "last": "2026-11-07T13:41:54Z",
 "place": "Stansted Mountfitchet & Birchanger",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-05T09:37:00Z",
 "u": ""
@@ -7847,7 +8295,7 @@
 "card": "stansted-2",
 "first": "2026-11-21T12:39:22Z",
 "h": "Stansted Airport College welcomes Kemi Badenoch for student talks",
-"last": "2026-11-21T18:18:55Z",
+"last": "2026-11-21T18:33:43Z",
 "place": "Stansted",
 "sec": "news",
 "t": "2026-11-21T11:10:00Z",
@@ -7860,7 +8308,7 @@
 "card": "stansted-1",
 "first": "2026-11-20T10:44:23Z",
 "h": "Stansted Airport plans major emergency exercise with 400 taking part",
-"last": "2026-11-21T18:18:55Z",
+"last": "2026-11-21T18:33:43Z",
 "place": "Stansted",
 "sec": "news",
 "t": "2026-11-20T10:44:04Z",
@@ -7873,7 +8321,7 @@
 "card": "transport",
 "first": "2026-11-20T19:39:00Z",
 "h": "Greater Anglia trains to Stansted Airport hit by signalling failure",
-"last": "2026-11-21T18:18:55Z",
+"last": "2026-11-21T18:33:43Z",
 "place": "Stansted",
 "sec": "news",
 "t": "2026-11-20T18:17:00Z",
@@ -7889,6 +8337,7 @@
 "h": "Almost half of Stansted Airport passengers now arrive by train, bus or coach",
 "last": "2026-11-15T15:45:25Z",
 "place": "Stansted",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-13T15:53:00Z",
 "u": ""
@@ -7903,6 +8352,7 @@
 "h": "Almost half of Stansted's passengers now reach the airport by train, bus or coach",
 "last": "2026-11-16T21:40:31Z",
 "place": "Stansted",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-13T14:53:00Z",
 "u": ""
@@ -7916,6 +8366,7 @@
 "h": "No direct summer flight from Stansted to Florence once British Airways leaves the airport",
 "last": "2026-11-15T15:45:25Z",
 "place": "Stansted",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-12T16:13:00Z",
 "u": ""
@@ -7929,6 +8380,7 @@
 "h": "Half-term getaway gives Stansted its busiest day ever with 109,881 passengers",
 "last": "2026-11-13T13:23:35Z",
 "place": "Stansted",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-11T14:55:00Z",
 "u": ""
@@ -7942,6 +8394,7 @@
 "h": "Stansted owner's survey puts east ahead for export growth",
 "last": "2026-11-21T10:19:02Z",
 "place": "Stansted",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-19T10:35:00Z",
 "u": ""
@@ -7955,6 +8408,7 @@
 "h": "Stansted's Meet the Buyers event turns 25 as local firms chase airport contracts",
 "last": "2026-11-20T07:08:39Z",
 "place": "Stansted",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-17T17:37:00Z",
 "u": ""
@@ -7968,6 +8422,7 @@
 "h": "Stansted has busiest day in its history during October half-term",
 "last": "2026-11-14T21:44:14Z",
 "place": "Stansted",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-11T12:00:00Z",
 "u": "2026-11-13T12:00:00Z"
@@ -7978,6 +8433,7 @@
 "h": "Stansted flight to Sofia diverted to Plovdiv after bomb alert as hoax threats hit flights across Europe",
 "last": "2026-11-07T00:18:26Z",
 "place": "Stansted",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-05T11:06:00Z",
 "u": ""
@@ -7988,6 +8444,7 @@
 "h": "Transport Secretary tours Stansted as airport pushes on with plan for 51 million passengers",
 "last": "2026-11-09T15:49:17Z",
 "place": "Stansted",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-06T11:38:00Z",
 "u": ""
@@ -7998,6 +8455,7 @@
 "h": "Heidi Alexander tours Stansted's bigger security hall and new solar farm on Transport Secretary visit",
 "last": "2026-11-10T09:54:30Z",
 "place": "Stansted",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-08T12:00:00Z",
 "u": ""
@@ -8011,6 +8469,7 @@
 "h": "Rim Jhim Spice in Stanway takes top national curry restaurant title",
 "last": "2026-11-17T22:24:30Z",
 "place": "Stanway, Colchester",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-15T17:00:00Z",
 "thin": true,
@@ -8022,6 +8481,7 @@
 "h": "New website launched for 7,750-home Tendring Colchester Borders Garden Community",
 "last": "2026-11-08T15:50:23Z",
 "place": "Colchester & Tendring borders",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-06T12:58:00Z",
 "u": ""
@@ -8035,6 +8495,7 @@
 "h": "Working-age Tendring households could backdate council tax help by three months",
 "last": "2026-11-19T11:49:20Z",
 "place": "Clacton-on-Sea",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-17T12:17:00Z",
 "u": ""
@@ -8048,6 +8509,7 @@
 "h": "Tendring council tenants rate housing service above national average as tenant panel gains a bigger say",
 "last": "2026-11-16T19:38:45Z",
 "place": "Clacton-on-Sea, Tendring",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-13T12:00:00Z",
 "u": ""
@@ -8061,6 +8523,7 @@
 "h": "Tendring council tenants rate housing service above national average in first annual report",
 "last": "2026-11-16T14:11:52Z",
 "place": "Clacton-on-Sea",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-13T12:00:00Z",
 "u": ""
@@ -8074,6 +8537,7 @@
 "h": "Some Tendring households miss bin collections as council cites technical problems",
 "last": "2026-11-13T12:42:05Z",
 "place": "Clacton",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-11T11:16:00Z",
 "thin": true,
@@ -8085,6 +8549,7 @@
 "h": "Tendring police take 116 illegal e-scooters and e-bikes off the streets in three months",
 "last": "2026-11-07T00:43:56Z",
 "place": "Clacton",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-05T05:45:00Z",
 "u": ""
@@ -8096,7 +8561,7 @@
 "card": "community",
 "first": "2026-11-20T15:39:42Z",
 "h": "Tendring offers £100,000+ in health grants to sport and community groups",
-"last": "2026-11-21T18:18:55Z",
+"last": "2026-11-21T18:33:43Z",
 "place": "Clacton-on-Sea, Walton-on-the-Naze, Dovercourt, Brightlingsea",
 "sec": "news",
 "t": "2026-11-20T14:49:00Z",
@@ -8113,6 +8578,7 @@
 "h": "TG Jones to shut Harlow, Brentwood and Clacton shops",
 "last": "2026-11-21T15:08:59Z",
 "place": "Harlow, Brentwood & Clacton",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-19T13:25:00Z",
 "thin": true,
@@ -8127,6 +8593,7 @@
 "h": "Thaxted's Dunmow Road shut for roadworks, with a long diversion",
 "last": "2026-11-18T13:40:25Z",
 "place": "Thaxted",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-16T11:30:00Z",
 "thin": true,
@@ -8141,6 +8608,7 @@
 "h": "Thaxted's John Webb windmill named on Historic England's 2026 at-risk list",
 "last": "2026-11-15T20:02:04Z",
 "place": "Thaxted",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-13T17:17:00Z",
 "thin": true,
@@ -8155,6 +8623,7 @@
 "h": "Driver jailed for 81mph Theydon Bois crash that killed pedestrian",
 "last": "2026-11-21T07:11:14Z",
 "place": "Theydon Bois",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-18T17:01:00Z",
 "u": ""
@@ -8166,7 +8635,7 @@
 "card": "bluelights-2",
 "first": "2026-11-20T13:25:21Z",
 "h": "Two taken to hospital after A282 crash shuts QEII Bridge for hours",
-"last": "2026-11-21T18:18:55Z",
+"last": "2026-11-21T18:33:43Z",
 "place": "Thurrock",
 "sec": "news",
 "t": "2026-11-20T13:25:21Z",
@@ -8181,6 +8650,7 @@
 "h": "Armistice Day in Thurrock: two-minute silence at Stifford's Ardale memorial and evening maritime service at Tilbury",
 "last": "2026-11-12T06:24:06Z",
 "place": "Tilbury, North Stifford",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-11T06:45:39Z",
 "u": ""
@@ -8191,6 +8661,7 @@
 "h": "Thurrock residents raise masked bike gangs, fly-tipping and catapults at Grays police forum",
 "last": "2026-11-06T22:25:01Z",
 "place": "Grays & Corringham",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-05T15:53:00Z",
 "u": ""
@@ -8204,6 +8675,7 @@
 "h": "Thurrock cabinet brings Tilbury Towns Fund board under council control",
 "last": "2026-11-20T20:35:20Z",
 "place": "Grays and Tilbury, Thurrock",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-17T13:36:00Z",
 "u": "2026-11-19T17:16:00Z"
@@ -8217,6 +8689,7 @@
 "h": "Thurrock academy trust puts school events for parents on hold, leaving nativity plays in doubt",
 "last": "2026-11-13T13:23:35Z",
 "place": "South Ockendon",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-11T13:00:00Z",
 "u": ""
@@ -8230,6 +8703,7 @@
 "h": "Nativity plays in doubt as Thurrock academy trust puts parent events on hold",
 "last": "2026-11-14T10:44:44Z",
 "place": "South Ockendon, Thurrock",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-11T12:00:00Z",
 "u": ""
@@ -8243,6 +8717,7 @@
 "h": "Thurrock Council looks for £27.3m of cuts, with 72 jobs in line to go",
 "last": "2026-11-21T07:11:14Z",
 "place": "Grays, Thurrock",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-18T06:07:00Z",
 "u": ""
@@ -8254,7 +8729,7 @@
 "card": "education",
 "first": "2026-11-20T12:39:18Z",
 "h": "Thurrock Council's Inspire careers team up for national inclusion award",
-"last": "2026-11-21T18:18:55Z",
+"last": "2026-11-21T18:33:43Z",
 "place": "Grays, Thurrock",
 "sec": "news",
 "t": "2026-11-20T11:35:10Z",
@@ -8269,6 +8744,7 @@
 "h": "Thurrock cabinet asked to scrap modular council homes plan and write off almost £400,000",
 "last": "2026-11-14T10:44:44Z",
 "place": "Grays, Thurrock",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-11T12:00:00Z",
 "u": ""
@@ -8282,6 +8758,7 @@
 "h": "Thurrock Council may stop buying new mobile phones for staff",
 "last": "2026-11-21T10:19:02Z",
 "place": "Grays",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-19T04:00:00Z",
 "thin": true,
@@ -8296,6 +8773,7 @@
 "h": "Thurrock sites took in more scrapped-car waste than anywhere in England but Birmingham",
 "last": "2026-11-17T09:38:40Z",
 "place": "East Tilbury, Thurrock",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-14T09:43:00Z",
 "u": ""
@@ -8306,6 +8784,7 @@
 "h": "Missing Thurrock EuroMillions winner comes forward to claim £1m",
 "last": "2026-11-06T23:26:20Z",
 "place": "Thurrock",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-06T06:39:00Z",
 "u": ""
@@ -8319,6 +8798,7 @@
 "h": "Thurrock bus journeys capped at £2 from Monday until New Year's Eve",
 "last": "2026-11-14T11:44:51Z",
 "place": "Grays, Thurrock",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-11T12:00:00Z",
 "u": ""
@@ -8332,6 +8812,7 @@
 "h": "Bus journeys starting in Thurrock to cost no more than £2 from Monday under festive fare cap",
 "last": "2026-11-13T18:08:59Z",
 "place": "Grays, Thurrock",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-10T17:53:00Z",
 "u": ""
@@ -8342,6 +8823,7 @@
 "h": "Campaigners say Google turned away 54,000-name petition against Purfleet data centre on Arena Essex wildlife site",
 "last": "2026-11-07T10:41:47Z",
 "place": "Purfleet",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-05T11:30:00Z",
 "u": ""
@@ -8355,6 +8837,7 @@
 "h": "More than 100 people from many faiths gather at Grays gurdwara for Thurrock's fifth interfaith conference",
 "last": "2026-11-17T22:24:30Z",
 "place": "Grays, Thurrock",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-15T13:45:00Z",
 "u": ""
@@ -8365,6 +8848,7 @@
 "h": "Thurrock's baby death rate of 6.2 per 1,000 births puts new health plan's focus on pregnancy and early years",
 "last": "2026-11-10T09:54:30Z",
 "place": "Grays, Thurrock",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-07T15:58:00Z",
 "u": "2026-11-06T20:43:00Z"
@@ -8378,6 +8862,7 @@
 "h": "Ex-Thurrock finance chief Sean Clark tells BBC reporter to 'go away'",
 "last": "2026-11-20T07:42:00Z",
 "place": "Grays, Thurrock",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-17T06:20:00Z",
 "u": "2026-11-17T14:04:00Z"
@@ -8391,6 +8876,7 @@
 "h": "Thurrock Council launches review of its libraries and asks residents for their views",
 "last": "2026-11-13T13:23:35Z",
 "place": "Grays, Thurrock",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-11T05:29:00Z",
 "u": ""
@@ -8404,6 +8890,7 @@
 "h": "Thurrock's last chance to comment on plan for nearly 29,000 homes has now closed",
 "last": "2026-11-13T13:23:35Z",
 "place": "Grays, Thurrock",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-10T13:09:49Z",
 "u": ""
@@ -8417,6 +8904,7 @@
 "h": "Last hours to comment on Thurrock's draft Local Plan as extended consultation closes at midnight",
 "last": "2026-11-10T23:50:59Z",
 "place": "Grays, Thurrock",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-10-21T12:00:00Z",
 "u": ""
@@ -8430,6 +8918,7 @@
 "h": "Thurrock's minor injuries unit leaves Orsett for a bigger home at Thurrock Hospital",
 "last": "2026-11-17T13:38:01Z",
 "place": "Grays, Thurrock",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-14T14:00:00Z",
 "u": ""
@@ -8441,7 +8930,7 @@
 "card": "hospital",
 "first": "2026-11-20T16:43:07Z",
 "h": "Essex opticians treat new eye problems without a GP visit, NHS Essex says",
-"last": "2026-11-21T18:18:55Z",
+"last": "2026-11-21T18:33:43Z",
 "place": "Pitsea, Thurrock",
 "sec": "news",
 "t": "2026-11-20T15:31:32Z",
@@ -8456,6 +8945,7 @@
 "h": "Thurrock households with several cars could pay more for parking permits",
 "last": "2026-11-20T07:08:39Z",
 "place": "Grays, Thurrock",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-17T18:00:00Z",
 "thin": true,
@@ -8470,6 +8960,7 @@
 "h": "Only 49 per cent of Thurrock residents feel safe after dark, council health strategy reveals",
 "last": "2026-11-11T14:44:25Z",
 "place": "Grays, Thurrock",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-09T13:35:00Z",
 "u": ""
@@ -8480,6 +8971,7 @@
 "h": "Only 49% of Thurrock residents feel safe after dark, figure in new borough health plan shows",
 "last": "2026-11-10T11:44:38Z",
 "place": "Grays, Thurrock",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-09T13:35:00Z",
 "u": ""
@@ -8493,6 +8985,7 @@
 "h": "Fewer than half of Thurrock residents feel safe after dark, council health strategy reveals",
 "last": "2026-11-12T10:48:18Z",
 "place": "Grays, Thurrock",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-09T13:35:00Z",
 "u": ""
@@ -8506,6 +8999,7 @@
 "h": "Thurrock families could get travel budgets in place of council taxis for SEND students",
 "last": "2026-11-18T07:11:32Z",
 "place": "Grays, Thurrock",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-15T10:20:00Z",
 "u": ""
@@ -8519,6 +9013,7 @@
 "h": "Thurrock plans travel budgets for SEND students aged 16 to 25",
 "last": "2026-11-20T07:08:39Z",
 "place": "Grays, Thurrock",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-17T13:58:00Z",
 "u": ""
@@ -8529,6 +9024,7 @@
 "h": "Thurrock told to rewrite its SEND plan by end of November or miss out on government debt relief",
 "last": "2026-11-07T16:46:45Z",
 "place": "Grays & Thurrock",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-06T14:53:00Z",
 "u": ""
@@ -8542,6 +9038,7 @@
 "h": "Thurrock Council plans to save £995,000 as fewer families wait in emergency housing",
 "last": "2026-11-16T14:11:52Z",
 "place": "Grays, Thurrock",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-13T13:42:00Z",
 "u": ""
@@ -8555,6 +9052,7 @@
 "h": "Thurrock crackdown on uninsured drivers takes 36 cars off the road in a single day",
 "last": "2026-11-15T10:44:05Z",
 "place": "Grays, Thurrock",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-12T14:21:00Z",
 "u": ""
@@ -8566,7 +9064,7 @@
 "card": "community",
 "first": "2026-11-19T23:38:35Z",
 "h": "Tilbury community pantry and café get go-ahead as works go to tender",
-"last": "2026-11-21T18:18:55Z",
+"last": "2026-11-21T18:33:43Z",
 "place": "Tilbury, Thurrock",
 "sec": "news",
 "t": "2026-11-19T17:16:00Z",
@@ -8578,6 +9076,7 @@
 "h": "Developer appeals after Thurrock councillors refuse 20-bed HMO in former Tilbury convent beside primary school",
 "last": "2026-11-08T00:45:49Z",
 "place": "Tilbury",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-07T12:13:00Z",
 "u": ""
@@ -8591,6 +9090,7 @@
 "h": "Four pieces of council land in Tilbury put up for sale, including nine acres off Parker Avenue",
 "last": "2026-11-14T11:44:51Z",
 "place": "Tilbury",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-12T12:00:00Z",
 "u": ""
@@ -8604,6 +9104,7 @@
 "h": "Interactive artwork about living with MS and Parkinson's goes on show at Tilbury library",
 "last": "2026-11-14T11:44:51Z",
 "place": "Tilbury",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-12T08:02:00Z",
 "u": ""
@@ -8617,6 +9118,7 @@
 "h": "Tilbury shop that opens at 5am must keep its alcohol covered until 7am",
 "last": "2026-11-15T15:45:25Z",
 "place": "Tilbury, Thurrock",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-13T14:11:00Z",
 "u": ""
@@ -8630,6 +9132,7 @@
 "h": "Tilbury shop allowed to sell alcohol from 7am, but its drinks fridges must stay locked until then",
 "last": "2026-11-14T11:44:51Z",
 "place": "Tilbury",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-12T12:00:00Z",
 "u": ""
@@ -8640,6 +9143,7 @@
 "h": "Dash cam appeal as police link three pre-dawn Tilbury incidents involving men falsely claiming to be officers",
 "last": "2026-11-10T10:46:12Z",
 "place": "Tilbury",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-07T12:56:00Z",
 "u": ""
@@ -8653,6 +9157,7 @@
 "h": "Detectives appeal for dash cam footage after men claiming to be police stop people in Tilbury before dawn",
 "last": "2026-11-11T00:44:31Z",
 "place": "Tilbury",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-07T15:49:00Z",
 "u": ""
@@ -8666,6 +9171,7 @@
 "h": "Tilbury youth zone on track for 2027 as charity warns of isolated generation",
 "last": "2026-11-14T11:44:51Z",
 "place": "Tilbury",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-12T08:55:00Z",
 "u": ""
@@ -8679,6 +9185,7 @@
 "h": "Tilbury youth zone wants youth work in plan for young people out of work",
 "last": "2026-11-19T19:20:41Z",
 "place": "Tilbury, Thurrock",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-17T14:07:00Z",
 "u": ""
@@ -8692,6 +9199,7 @@
 "h": "Tillingham villagers divided over Home Office plan to house six asylum seekers",
 "last": "2026-11-20T07:08:39Z",
 "place": "Tillingham",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-18T05:00:00Z",
 "thin": true,
@@ -8706,6 +9214,7 @@
 "h": "Inspector overrules Maldon council to allow self-build house on Tollesbury field",
 "last": "2026-11-18T08:39:51Z",
 "place": "Tollesbury",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-16T09:00:00Z",
 "u": ""
@@ -8719,6 +9228,7 @@
 "h": "Heavy bone picked up on Tollesbury sea wall may be from an Ice Age woolly rhino",
 "last": "2026-11-19T11:49:20Z",
 "place": "Tollesbury",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-17T06:53:00Z",
 "u": ""
@@ -8733,6 +9243,7 @@
 "h": "University of Essex experts lead call for coastal focus in mental health plan",
 "last": "2026-11-21T15:08:59Z",
 "place": "Colchester, Wivenhoe Park",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-19T12:00:00Z",
 "u": ""
@@ -8744,7 +9255,7 @@
 "card": "council",
 "first": "2026-11-19T22:39:49Z",
 "h": "Uttlesford may charge for film ratings by length of the film",
-"last": "2026-11-21T18:18:55Z",
+"last": "2026-11-21T18:33:43Z",
 "place": "Saffron Walden, Uttlesford",
 "sec": "news",
 "t": "2026-11-19T16:25:00Z",
@@ -8757,6 +9268,7 @@
 "h": "Water workers find a carpet python hissing in a Vange meter chamber during leak repair",
 "last": "2026-11-08T10:53:58Z",
 "place": "Vange, Basildon",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-07T06:21:00Z",
 "u": ""
@@ -8767,6 +9279,7 @@
 "h": "Man, 36, to face crown court over Waltham Abbey town centre collision that left pedestrian with serious leg injuries",
 "last": "2026-11-06T23:26:20Z",
 "place": "Waltham Abbey",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-04T10:50:00Z",
 "u": ""
@@ -8780,6 +9293,7 @@
 "h": "Cheshunt man, 41, charged with arson over two Waltham Abbey shop fires",
 "last": "2026-11-19T07:40:55Z",
 "place": "Waltham Abbey",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-15T22:01:49Z",
 "u": ""
@@ -8791,7 +9305,7 @@
 "card": "fireengine",
 "first": "2026-11-21T18:07:37Z",
 "h": "Firefighters pump floodwater away from five Warley homes",
-"last": "2026-11-21T18:18:55Z",
+"last": "2026-11-21T18:33:43Z",
 "place": "Warley, Brentwood",
 "sec": "news",
 "t": "2026-11-21T18:07:22Z",
@@ -8806,6 +9320,7 @@
 "h": "Westcliff construction insurance specialist Blackhawk bought by Clear Group",
 "last": "2026-11-15T10:44:05Z",
 "place": "Westcliff-on-Sea",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-13T00:00:00Z",
 "u": ""
@@ -8817,7 +9332,7 @@
 "card": "christmas",
 "first": "2026-11-20T20:38:41Z",
 "h": "Westcliff's Hamlet Court Road gets Christmas lights after community push",
-"last": "2026-11-21T18:18:55Z",
+"last": "2026-11-21T18:33:43Z",
 "place": "Westcliff-on-Sea, Southend-on-Sea",
 "sec": "news",
 "t": "2026-11-20T18:00:00Z",
@@ -8833,6 +9348,7 @@
 "h": "RSPCA appeal after young cat dumped in box at Westcliff InPost parcel locker",
 "last": "2026-11-17T09:38:40Z",
 "place": "Westcliff-on-Sea",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-14T09:50:00Z",
 "u": ""
@@ -8843,6 +9359,7 @@
 "h": "Essex housebuilder Weston Homes taken over by Leeds firm Endless",
 "last": "2026-11-20T09:26:39Z",
 "place": "Essex",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-17T07:16:00Z",
 "u": ""
@@ -8856,6 +9373,7 @@
 "h": "Wethersfield asylum centre extension goes to ministers, not Braintree council",
 "last": "2026-11-19T13:32:55Z",
 "place": "Wethersfield, Braintree",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-16T10:50:00Z",
 "u": ""
@@ -8869,6 +9387,7 @@
 "h": "Braintree and County Hall leaders vow to resist Home Office bid to keep Wethersfield asylum site open after April 2027",
 "last": "2026-11-12T15:44:20Z",
 "place": "Wethersfield, Braintree",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-09T06:28:00Z",
 "u": ""
@@ -8882,6 +9401,7 @@
 "h": "Retired teacher who taught English at Wethersfield asylum camp says Reform councillor likened her to a Nazi collaborator",
 "last": "2026-11-12T20:50:32Z",
 "place": "Wethersfield, Braintree",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-10T15:13:00Z",
 "u": ""
@@ -8896,6 +9416,7 @@
 "h": "Missing Wickford man Simon Mahoney found safe, Essex Police say",
 "last": "2026-11-18T19:39:23Z",
 "place": "Wickford",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-15T19:58:00Z",
 "u": ""
@@ -8909,6 +9430,7 @@
 "h": "Wickford station's new ticket office opens as Greater Anglia rebuild nears the finish",
 "last": "2026-11-12T10:48:18Z",
 "place": "Wickford",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-10T10:59:00Z",
 "u": ""
@@ -8922,6 +9444,7 @@
 "h": "Writtle restaurant Pakwaan is the only Essex name in national Indian food guide's top 100",
 "last": "2026-11-13T19:44:08Z",
 "place": "Writtle, Chelmsford",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-11T16:14:00Z",
 "u": ""
@@ -8935,6 +9458,7 @@
 "h": "Writtle pub's painters put their work on public show for the first time",
 "last": "2026-11-17T12:40:12Z",
 "place": "Writtle, Chelmsford",
+"rl": "2026-11-21",
 "sec": "news",
 "t": "2026-11-14T12:45:00Z",
 "u": ""

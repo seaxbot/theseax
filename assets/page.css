@@ -145,3 +145,15 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--red);outline-offset
 .pointer{margin-top:22px;font:600 15px var(--sans);color:var(--ink2)}
 .log-table{width:100%;border-collapse:collapse;font-size:15px}.log-table th,.log-table td{text-align:left;padding:10px 8px;border-bottom:1px solid var(--line);vertical-align:top}
 .slink{color:#c8102e;font-weight:650;text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:3px}.slink:hover{color:#8f0b20} /* links to our own earlier stories (owner, 21 Nov 2026) */
+/* "You may be interested in" (21 Nov 2026) */
+.interested{margin:28px 0 8px;padding-top:14px;border-top:3px solid var(--ink)}
+.interested h2{margin:0 0 6px;font:800 13px var(--sans);letter-spacing:.12em;text-transform:uppercase}
+.interested ul{list-style:none;margin:0;padding:0}
+.interested li{padding:11px 0;border-bottom:1px solid var(--line)}
+.interested li a{text-decoration:none;color:inherit}
+.interested li b{font:700 17px/1.3 var(--head)}
+.interested li a:hover b{text-decoration:underline}
+.interested li span{display:block;margin-top:3px;font-size:13px;color:var(--muted)}
+.interested .more-links{margin:12px 0 0;display:flex;flex-wrap:wrap;gap:8px 18px}
+.interested .more-links a{font-weight:700;color:var(--red);text-decoration:none}
+.interested .more-links a:hover{text-decoration:underline}

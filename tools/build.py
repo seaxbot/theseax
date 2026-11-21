@@ -16,7 +16,7 @@ Writes, inside the repository:
 
 Uses only the Python standard library. Never touches edition.json.
 """
-import time, json, os, re, sys, html, shutil, argparse
+import time, json, os, re, sys, html, shutil, argparse, math
 from datetime import datetime, timedelta, timezone
 from zoneinfo import ZoneInfo
 from email.utils import format_datetime
@@ -786,7 +786,7 @@ def head(title, desc, canonical, og_image, og_type="website", extra=""):
 <link rel="alternate" type="application/rss+xml" title="The Seax: latest Essex news" href="/feed.xml">
 <link rel="preload" href="/assets/fonts/inter-latin-opsz-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/assets/fonts.css?v=1">
-<link rel="stylesheet" href="/assets/page.css?v=20261121a">
+<link rel="stylesheet" href="/assets/page.css?v={PAGE_CSS_V}">
 {extra}{analytics()}
 </head>
 <body>
@@ -1312,7 +1312,8 @@ def video_figure(it, fig):
             'f.style.cssText="display:block;width:100%;aspect-ratio:16/9;height:auto;border:0;border-radius:10px";'
             'a.replaceWith(f)})})();</script>')
 
-STORY_CTX = {"archive": {}, "diary": {}}
+STORY_CTX = {"archive": {}, "diary": {}, "takedown": set()}
+PAGE_CSS_V = "20261121b"
 
 
 def story_extras(it, sec):
@@ -1338,6 +1339,242 @@ def story_extras(it, sec):
         earlier = (f'<p class="earlier"><b>Earlier on this story:</b> <a href="/story/{E(fid)}/">{E(prev.get("h") or "")}</a>'
                    f'{(" (" + E(uk_day(t0)) + ")") if t0 else ""}</p>')
     return nxt, earlier
+
+
+# ---------- "You may be interested in" (owner's request, 21 Nov 2026) ----------
+# After the key points on every story page: up to 5 other Seax stories on the same subject first, then the same town
+# or road, then the same district, newest preferred, drawn from the whole archive (not only the live edition). Ends
+# with links to the town (or district) page and the topic page. Taste rules: a tribute, death, inquest or missing
+# person page never gets crime, court or other death stories beside it; council stories never get crime beside them
+# unless the subject matches; link-only pages and takedowns are never offered.
+REL_STOP = set("""a an the and or but of in on at to for from by with as is are was were be been being has have had it its
+this that these those into over after before up out off near new more than about after says said say could would will
+can may might must should after amid over under via per two three four five six seven eight nine ten one essex
+first last year years week weeks day days today tonight told calls call plan plans back set get gets make made now
+monday tuesday wednesday thursday friday saturday sunday january february march april june july august september
+october november december morning afternoon evening night weekend weekday early late latest next earlier soon still
+likely away sought seek seeks help helps start starts started open opens opened close closes closed ahead given give
+gives take takes took goes going come comes came keep keeps kept send sends sent bring brings brought find finds found
+show shows shown want wants hope hopes look looks see sees seen turn turns turned move moves moved left leave leaves
+people person man men woman women boy girl family families local area areas town city county centre road street
+more most many much some other others again also just only still while where when what which who why how their them
+they there here than then this your ours what's public former latest update updates crew crews say team teams """.split())
+REL_SENSITIVE = re.compile(r"\b(died|dies|death|deaths|dead|tribute|tributes|inquest|funeral|fatal|killed|murder|missing|"
+                           r"body found|drown\w*|stabbed|stabbing|suicide|abuse|abused)\b", re.I)
+REL_CRIME_CARDS = {"court", "police", "bluelights", "bluelights-2"}
+REL_MAX_AGE_DAYS = 60
+_REL_IDF = {}
+
+
+def _rel_words(text):
+    out = set()
+    for w in re.findall(r"[A-Za-z0-9][A-Za-z0-9'’&-]*", str(text or "")):
+        w = re.sub(r"['’]s?$", "", w)
+        lw = w.lower().strip("-")
+        if re.fullmatch(r"[am]\d{1,4}", lw) or (w.isupper() and len(w) >= 3):
+            out.add(lw)                      # road numbers and acronyms (A12, HMO, NHS)
+        elif len(lw) >= 4 and lw not in REL_STOP and not lw.isdigit():
+            out.add(lw[:-1] if lw.endswith("s") and len(lw) > 5 else lw)
+    return out
+
+
+def _rel_idf(archive):
+    key = len(archive)
+    if _REL_IDF.get("key") != key:
+        df = {}
+        for r in archive.values():
+            for w in _rel_words(str(r.get("h") or "") + " " + str(r.get("place") or "")):
+                df[w] = df.get(w, 0) + 1
+        n = max(1, len(archive))
+        _REL_IDF.clear()
+        _REL_IDF.update({"key": key, "w": {w: math.log((n + 1) / (c + 0.5)) for w, c in df.items()}})
+    return _REL_IDF["w"]
+
+
+_REL_TOWN_RX = []
+def _rel_towns(text):
+    if not _REL_TOWN_RX:
+        for sl, nm, extra in TOWN_PAGES:
+            _REL_TOWN_RX.append((sl, re.compile(r"\b(?:" + "|".join(re.escape(w) for w in (nm,) + tuple(extra)) + r")\b", re.I)))
+        for rd in ROAD_PAGES:
+            _REL_TOWN_RX.append((rd.lower(), re.compile(r"\b" + rd + r"\b")))
+        for sl, nm, rx, _ph in ISSUE_PAGES:
+            _REL_TOWN_RX.append(("issue:" + sl, re.compile(rx, re.I)))
+    t = str(text or "")
+    return {sl for sl, rx in _REL_TOWN_RX if rx.search(t)}
+
+
+_REL_PLACE_WORDS = set()
+REL_GENERIC_PLACE = {"essex", "east", "west", "north", "south", "great", "little", "city", "town"}
+def _rel_place_words():
+    if not _REL_PLACE_WORDS:
+        names = [w for _sl, nm, extra in TOWN_PAGES for w in (nm,) + tuple(extra)]
+        names += [w for row in AREA_PAGES for w in row[5]] + [row[2] for row in AREA_PAGES]
+        names += ["southend-on-sea", "westcliff-on-sea", "leigh-on-sea", "clacton-on-sea", "thurrock", "tendring", "uttlesford",
+                  "rochford", "maldon", "castle point", "dengie", "essex", "east", "west", "north", "south", "great", "little"]
+        for n in names:
+            _REL_PLACE_WORDS.update(_rel_words(n.replace("-", " ")) | _rel_words(n))
+            _REL_PLACE_WORDS.add(n.lower())
+    return _REL_PLACE_WORDS
+
+
+def _rel_card(rec):
+    return re.sub(r"-\d+$", "", str(rec.get("card") or ""))
+
+
+def _rel_crime(rec):
+    return _rel_card(rec) in REL_CRIME_CARDS or rec.get("sec") == "courts"
+
+
+def _rel_sport(rec):
+    return rec.get("sec") == "sport" or "sport" in topic_of(rec)
+
+
+_REL_FEAT = {}
+def _rel_feat(sid, rec):
+    """Cached features of one story: words, places, areas, topics, card, flags."""
+    h, pl = str(rec.get("h") or ""), str(rec.get("place") or "")
+    key = (sid, h, pl, _rel_card(rec), rec.get("sec"))
+    f = _REL_FEAT.get(sid)
+    if f and f["key"] == key:
+        return f
+    f = {"key": key, "w": _rel_words(h) - _rel_place_words(), "places": _rel_towns(pl + " | " + h),
+         "pw": (_rel_words(h + " " + pl) & _rel_place_words()) - REL_GENERIC_PLACE,
+         "areas": set(areas_of(rec)), "topics": set(topic_of(rec)), "card": _rel_card(rec),
+         "crime": _rel_crime(rec), "sport": _rel_sport(rec),
+         "sad": bool(REL_SENSITIVE.search(h + " " + str(sid or "").replace("-", " ")))}
+    _REL_FEAT[sid] = f
+    return f
+
+
+def related_stories(sid, rec, archive, limit=5):
+    """[(score, id, archive record)] for the "You may be interested in" block. rec is the story's own archive-shaped
+    record: h, place, a (areas), card, sec. Subject comes first: shared headline words (rarer words count more), the
+    same running issue, the same kind of story; place (town or road, then district) adds weight and fills the list."""
+    idf = _rel_idf(archive)
+    me = _rel_feat(sid, rec)
+    calm = rec.get("sec") in ("councilwatch", "community")
+    takedown = STORY_CTX.get("takedown") or set()
+    cands, fill = [], []
+    for cid, r in archive.items():
+        if cid == sid or cid in takedown or r.get("thin") or r.get("sec") not in ("news", "sport", "official", "courts", "community", "councilwatch"):
+            continue
+        t = parse_t(r.get("u") or r.get("t") or r.get("first"))
+        if not t:
+            continue
+        age = (NOW - t).total_seconds() / 86400
+        if age > REL_MAX_AGE_DAYS or age < -1:
+            continue
+        c = _rel_feat(cid, r)
+        if me["sad"] and (c["crime"] or c["sad"]):
+            continue                      # tribute, death, inquest or missing person: no crime or other deaths beside it
+        if c["sad"] and not me["crime"] and not me["sad"]:
+            continue                      # no death or missing stories under ordinary stories
+        shared = me["w"] & c["w"]
+        subj = sum(idf.get(x, 0) for x in shared)
+        strong1 = any(re.fullmatch(r"[am]\d{1,4}|[a-z]{2,5}", x) and x.upper() in str(r.get("h") or "") for x in shared) \
+            or any(idf.get(x, 0) >= 4.5 and len(x) >= 5 for x in shared)
+        town = len([p for p in me["places"] & c["places"] if not p.startswith("issue:")]) or len(me["pw"] & c["pw"])
+        same_kind = (me["card"] == c["card"] and me["card"] not in ("news", "community", "")) or bool(me["topics"] & c["topics"])
+        local = bool(town) or bool(me["areas"] & c["areas"])
+        if len(shared) < 2 and not (strong1 and (same_kind or local or re.fullmatch(r"[am]\d{1,4}", next(iter(shared), "")))):
+            subj = 0                      # one ordinary shared word is chance, not a shared subject
+        issue = len([p for p in me["places"] & c["places"] if p.startswith("issue:")])
+        if c["crime"] and not me["crime"] and (calm or subj < 8):
+            continue                      # crime beside a non-crime story only when the subject really matches
+        if c["sport"] != me["sport"] and subj < 8:
+            continue                      # sport beside news (or news beside sport) only on a real subject match
+        if subj < 5 and not issue and not (same_kind and local):
+            if local and age <= 7 and not c["crime"] and c["sport"] == me["sport"]:
+                fill.append(((3 if town else 1) + max(0.0, 2.0 - age / 3.5), cid, r))   # recent local stories, to top up
+            continue                      # needs a shared subject, a running issue, or the same kind of story nearby
+        score = 2 * subj + 8 * issue + 3 * same_kind + 3 * min(town, 1) + 1 * bool(me["areas"] & c["areas"])
+        if score < 6:
+            continue
+        score += max(0.0, 2.0 - age / 7)  # newer first among equals
+        cands.append((score, cid, r))
+    cands.sort(key=lambda x: (-x[0], x[1]))
+    out, seen_h = [], []
+    for sc, cid, r in cands:
+        hw = _rel_feat(cid, r)["w"]
+        if any(len(hw & s) >= max(3, 0.6 * min(len(hw), len(s))) for s in seen_h):
+            continue                      # two versions of the same story: keep the better one
+        if not os.path.exists(os.path.join(ROOT, "story", cid, "index.html")):
+            continue
+        out.append((sc, cid, r)); seen_h.append(hw)
+        if len(out) >= limit:
+            break
+    if len(out) < 4:                      # top up with the latest stories from the same town, then the same district
+        fill.sort(key=lambda x: (-x[0], x[1]))
+        for sc, cid, r in fill:
+            hw = _rel_feat(cid, r)["w"]
+            if any(len(hw & s) >= max(3, 0.6 * min(len(hw), len(s))) for s in seen_h):
+                continue
+            if not os.path.exists(os.path.join(ROOT, "story", cid, "index.html")):
+                continue
+            out.append((0, cid, r)); seen_h.append(hw)
+            if len(out) >= 4:
+                break
+    return out
+
+
+def interested_html(sid, rec, archive):
+    """The block itself, wrapped in markers so pages built earlier can be refreshed in place."""
+    rel = related_stories(sid, rec, archive)
+    places = _rel_towns(str(rec.get("place") or "") + " | " + str(rec.get("h") or ""))
+    more = []
+    for sl, (kind, nm, _m) in _PLACE_CACHE.items():
+        key = ("issue:" + sl) if kind == "issue" else sl
+        if key in places and len(more) < 2:
+            more.append(f'<a href="/news/{E(sl)}/">More on {E(nm)} →</a>' if kind == "issue" else f'<a href="/news/{E(sl)}/">More {E(nm)} news →</a>')
+    if not more:
+        for k, sl, nm, *_ in AREA_PAGES:
+            if k in set(areas_of(rec)):
+                more.append(f'<a href="/news/{E(sl)}/">More {E(nm)} news →</a>')
+                break
+    for sl in topic_of(rec)[:1]:
+        nm = next((n for s, n, *_ in TOPIC_PAGES if s == sl), "")
+        if nm:
+            more.append(f'<a href="/news/{E(sl)}/">More {E(nm.lower() if nm != "Crime & courts" else "crime and court")} news →</a>')
+    if not rel and not more:
+        return "<!-- interested --><!-- /interested -->"
+    rows = ""
+    for _sc, cid, r in rel:
+        t0 = parse_t(r.get("t") or r.get("first"))
+        meta = " · ".join(x for x in (str(r.get("place") or "").split(",")[0].strip(), uk_day(t0) if t0 else "") if x)
+        rows += f'<li><a href="/story/{E(cid)}/"><b>{E(r.get("h") or "")}</b></a>{(" <span>" + E(meta) + "</span>") if meta else ""}</li>'
+    return ('<!-- interested --><section class="interested"><h2>You may be interested in</h2>'
+            + (f'<ul>{rows}</ul>' if rows else "")
+            + (f'<p class="more-links">{" ".join(more)}</p>' if more else "")
+            + "</section><!-- /interested -->")
+
+
+def refresh_interested(archive, live_ids):
+    """Story pages that have dropped out of the edition are not rebuilt, so their "You may be interested in" block is
+    refreshed in place, at most once a day per page (field "rl" in the archive) to keep commits small."""
+    n = 0
+    today = NOW.astimezone(UK).date().isoformat()
+    rx = re.compile(r"<!-- interested -->.*?<!-- /interested -->", re.S)
+    for sid, r in archive.items():
+        if sid in live_ids or r.get("rl") == today or r.get("sec") not in ("news", "sport", "official", "courts", "community", "councilwatch"):
+            continue
+        p = os.path.join(ROOT, "story", sid, "index.html")
+        if not os.path.exists(p):
+            continue
+        html = open(p, encoding="utf-8").read()
+        block = interested_html(sid, r, archive)
+        if rx.search(html):
+            new = rx.sub(lambda _m: block, html, count=1)
+        elif "<!-- Article End -->" in html:
+            new = html.replace("<!-- Article End -->", "<!-- Article End -->\n  " + block, 1)
+        else:
+            r["rl"] = today
+            continue
+        new = re.sub(r'/assets/page\.css\?v=[0-9a-z]+', '/assets/page.css?v=' + PAGE_CSS_V, new, count=1)
+        if new != html:
+            open(p, "w", encoding="utf-8").write(new); n += 1
+        r["rl"] = today
+    return n
 
 
 def is_thin(it, sec):
@@ -1501,6 +1738,16 @@ def story_page(sec, it, more):
     tipkey = "sport" if sec == "sport" else "community" if sec == "community" else "news"
     tip = (f'<p class="tip">Know more about this story, or have one of your own? Email {mlink(tipkey, "About: " + title)}. '
            f'Corrections to {mlink("corrections", "Correction: " + title)}.</p>')
+    _rec = {"h": it.get("headline") or "", "place": it.get("place") or "", "card": card_of(it, sec), "sec": sec,
+            "a": [x for x in (it.get("areas") or []) if isinstance(x, str) and x != "all"]}
+    try:
+        interested = interested_html(it.get("id"), _rec, STORY_CTX["archive"])
+    except Exception as e:  # related links must never stop a story page being built
+        print("interested block skipped for", it.get("id"), type(e).__name__, e)
+        interested = ""
+
+    _shown = set(re.findall(r'href="/story/([a-z0-9-]+)/"', interested))
+    more = [(s, m) for s, m in more if m.get("id") not in _shown]
     more_html = "".join(
         f'<a class="rel" href="/story/{E(m["id"])}/" style="--c:{ICON_COLOUR.get(icon_of(m, s), "#3a3f4b")}"><i></i><b>{E(m["headline"])}</b><span>{E(m.get("place") or "Essex")}</span></a>'
         for s, m in more)
@@ -1593,6 +1840,7 @@ def story_page(sec, it, more):
   {body_with_charts(it, body, opening=summary)}{fig_more}
   {('<h2>Key points</h2><ul class="points">' + ''.join(f'<li>{E(p)}</li>' for p in points) + '</ul>') if points else ''}
   <!-- Article End -->
+  {interested}
   {story_extras(it, sec)[0]}{story_extras(it, sec)[1]}
   {'<p class="pointer">The Seax has not reported this story itself. This page points you to the outlet that did.</p>' if is_thin(it, sec) and surl else ''}
   {readfull}
@@ -2476,7 +2724,7 @@ def main():
     ed = json.load(open(os.path.join(ROOT, "edition.json"), encoding="utf-8"))
     if a.preview_briefing:
         b = briefing(ed, NOW)
-        open(a.preview_briefing, "w", encoding="utf-8").write(briefing_page(b).replace('href="/assets/page.css?v=20261121a"', f'href="file://{ROOT}/assets/page.css"'))
+        open(a.preview_briefing, "w", encoding="utf-8").write(briefing_page(b).replace(f'href="/assets/page.css?v={PAGE_CSS_V}"', f'href="file://{ROOT}/assets/page.css"'))
         print("preview written"); return
 
     # owner's source and copyright policy (tools/policy.py): no features, link-only outlets,
@@ -2523,6 +2771,7 @@ def main():
     pick_police(ed)
     pick_sport(ed)
     items = [(s, it) for s, it in collect(ed) if it["id"] not in takedown]
+    STORY_CTX["takedown"] = set(takedown)
     seen = set()
     top = sorted([(s, it) for s, it in items if s in ("news", "sport")],
                  key=lambda x: (-(x[1].get("weight") or 3), -((parse_t(x[1].get("time")) or NOW).timestamp())))
@@ -2554,6 +2803,15 @@ def main():
             archive[it["id"]]["thin"] = True
         if sec == "councilwatch":
             archive[it["id"]].update({"council": it.get("council") or "", "councilName": it.get("councilName") or "", "cwKey": it.get("cwKey") or ""})
+
+    # "You may be interested in" on pages no longer in the edition (refreshed in place, once a day each)
+    try:
+        n_rel = refresh_interested(archive, {it["id"] for _s, it in items})
+        changed += n_rel
+        if n_rel:
+            print("interested blocks refreshed on older pages:", n_rel)
+    except Exception as e:  # never let related links stop the build
+        print("interested refresh skipped:", type(e).__name__, e)
 
     # about page
     if write("about/index.html", about_page()):
