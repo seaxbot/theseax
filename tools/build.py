@@ -1377,7 +1377,9 @@ def body_with_charts(it, body, opening=""):
     # No separate summary block under the headline (owner, 20 Nov 2026: "just get straight into it"): the summary is the
     # story's opening line, in ordinary body text after the picture. Skipped if the first paragraph already says it.
     op = " ".join(str(opening or "").split())
-    out = [f"<p>{E(op)}</p>"] if op and not (paras and " ".join(paras[0].split()).startswith(op)) else []
+    # Owner, 21 Nov 2026: the summary repeated under the picture "adds nothing and can look weird", so it only shows when
+    # a story has no body of its own (link-only and short items), where it is the only text.
+    out = [f"<p>{E(op)}</p>"] if op and not paras else []
     if str(it.get("warning") or "").strip():  # content warning at the top (owner, 20 Nov 2026: Brentwood School review)
         out.insert(0, f'<p class="cwarn" role="note" style="background:#fdf1f1;border-left:5px solid #c8102e;padding:12px 14px;border-radius:6px;font-size:.95em;margin:0 0 1.2em"><b>Warning:</b> {E(str(it["warning"]).strip())}</p>')
     for i, p in enumerate(paras):
