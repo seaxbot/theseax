@@ -144,3 +144,4 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--red);outline-offset
 .earlier{margin-top:18px;font-size:15px}.earlier a{text-decoration:underline}
 .pointer{margin-top:22px;font:600 15px var(--sans);color:var(--ink2)}
 .log-table{width:100%;border-collapse:collapse;font-size:15px}.log-table th,.log-table td{text-align:left;padding:10px 8px;border-bottom:1px solid var(--line);vertical-align:top}
+.slink{color:#c8102e;font-weight:650;text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:3px}.slink:hover{color:#8f0b20} /* links to our own earlier stories (owner, 21 Nov 2026) */

@@ -786,7 +786,7 @@ def head(title, desc, canonical, og_image, og_type="website", extra=""):
 <link rel="alternate" type="application/rss+xml" title="The Seax: latest Essex news" href="/feed.xml">
 <link rel="preload" href="/assets/fonts/inter-latin-opsz-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/assets/fonts.css?v=1">
-<link rel="stylesheet" href="/assets/page.css?v=20261120b">
+<link rel="stylesheet" href="/assets/page.css?v=20261121a">
 {extra}{analytics()}
 </head>
 <body>
@@ -1360,7 +1360,7 @@ def ilinks(escaped):
     def rep(m):
         href = m.group(2)
         if os.path.exists(os.path.join(ROOT, href.strip("/"), "index.html")):
-            return f'<a href="{href}">{m.group(1)}</a>'
+            return f'<a class="slink" href="{href}">{m.group(1)}</a>'
         return m.group(1)
     return ILINK_RE.sub(rep, escaped)
 
@@ -2460,7 +2460,7 @@ def main():
     ed = json.load(open(os.path.join(ROOT, "edition.json"), encoding="utf-8"))
     if a.preview_briefing:
         b = briefing(ed, NOW)
-        open(a.preview_briefing, "w", encoding="utf-8").write(briefing_page(b).replace('href="/assets/page.css?v=20261120b"', f'href="file://{ROOT}/assets/page.css"'))
+        open(a.preview_briefing, "w", encoding="utf-8").write(briefing_page(b).replace('href="/assets/page.css?v=20261121a"', f'href="file://{ROOT}/assets/page.css"'))
         print("preview written"); return
 
     # owner's source and copyright policy (tools/policy.py): no features, link-only outlets,
