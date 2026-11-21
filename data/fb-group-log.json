@@ -225,6 +225,14 @@
    "h": "Dengie solar farm: fuller say before consent bid",
    "result": "pending",
    "note": "owner asked for more runs on 21 Nov after the scheduled runs missed (Chrome not connected)"
+  },
+  {
+   "g": "basildon-community-sticking-9519",
+   "s": "basildon-markhams-chase-dog-bite-child-11-appeal",
+   "t": 1795280365184,
+   "h": "Child, 11, bitten by dog at Markhams Chase: police appeal",
+   "result": "live",
+   "note": "posted by hand 21 Nov once Facebook showed the police-light picture; no pending banner seen"
   }
  ],
  "joins": [
@@ -271,6 +279,10 @@
   {
    "id": "192923094627747",
    "t": 1795172100000
+  },
+  {
+   "t": 1795280485184,
+   "note": "Bulk join at the owner's request: about 465 Essex groups joined by search, 16 wrong-area or political groups left again. Full list at facebook.com/groups/joins."
   }
  ]
 }
