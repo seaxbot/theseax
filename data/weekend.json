@@ -1,0 +1,22 @@
+{
+  "_note": "The Weekend (owner's section, 21 Nov 2026): a prominent weekend feature shown on the front page just below the lead, between 'from' and 'until' (UTC), then it hides itself. The feature story is not repeated in the lead slots, News grid or the Only on The Seax row while the section is up. 'tiles' must not repeat facts in the headline. 'checker' mounts the neighbourhood crime checker beside the feature. The newsroom never edits this file.",
+  "from": "2026-11-21T12:30:00Z",
+  "until": "2026-11-23T07:00:00Z",
+  "title": "The Weekend",
+  "strap": "Our own analysis to take your time over",
+  "feature": {
+    "id": "essex-recorded-crime-september-2026-police-data",
+    "kicker": "Weekend read",
+    "headline": "Essex anti-social behaviour reports up 76% as robbery falls 19%",
+    "image": "/img/people/essex-crime-sept-2026-chart-wide.jpg",
+    "alt": "Chart: change in Essex police records by type, September 2026 against September 2025. Source: The Seax analysis of police.uk data.",
+    "dek": "The Seax went through every police record in Essex for September, neighbourhood by neighbourhood. See how your area compares with a year ago.",
+    "tiles": [
+      {"n": "12,530", "t": "crimes recorded", "c": "up 8% on a year earlier", "dir": "up"},
+      {"n": "5,800", "t": "violence and sexual offences", "c": "almost half of all crime", "dir": "flat"},
+      {"n": "45 of 56", "t": "neighbourhoods with more records", "c": "Clacton had the biggest rise", "dir": "up"}
+    ],
+    "cta": "Read the full analysis",
+    "checker": "/data/crime/essex-2026-09.json"
+  }
+}

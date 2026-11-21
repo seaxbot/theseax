@@ -2424,6 +2424,16 @@ def patch_index(latest_briefing, ed=None):
         # desks mark "original": true: data desk analysis, FOI disclosures, weekly pieces), as plain links above News
         own = [("Council Watch", x) for x in (ed.get("councilwatch") or []) if isinstance(x, dict) and x.get("id") and x.get("headline")]
         own += [("Essex Numbers" if x.get("original") == "data" else "The Seax", x) for x in (ed.get("stories") or []) if isinstance(x, dict) and x.get("original") and x.get("id")]
+        # The Weekend (owner's section, 21 Nov 2026, data/weekend.json): its feature story is already big on the
+        # front page while the section is up, so it is not repeated in this row
+        try:
+            wk = json.load(open(os.path.join(ROOT, "data", "weekend.json"), encoding="utf-8"))
+            wf, wt = parse_t(wk.get("from")), parse_t(wk.get("until"))
+            wk_id = (wk.get("feature") or {}).get("id") if (wf and wt and wf <= NOW < wt) else None
+        except Exception:
+            wk_id = None
+        if wk_id:
+            own = [kx for kx in own if kx[1].get("id") != wk_id]
         own.sort(key=lambda kx: str(kx[1].get("updated") or kx[1].get("time") or ""), reverse=True)
         seen_src, pick = set(), []
         for k, x in own:   # one per council or desk, so the row is not three stories from one place

@@ -751,6 +751,40 @@ h1,h2,h3,h4,.story h1,.lead h2,.card h3,.drow h4{letter-spacing:-.022em}
 .pin-card:hover .pin-go{background:#f4c35a}
 .pin-card:hover h2{text-decoration:underline;text-underline-offset:4px;text-decoration-thickness:2px}
 @media (max-width:860px){.pin-card{grid-template-columns:1fr}.pin-img{aspect-ratio:1200/655;min-height:0}.pin-text{padding:20px 18px 22px}}
+/* ---------- The Weekend (data/weekend.json, owner's section, 21 Nov 2026) ---------- */
+#weekend{--pillar:#d79f2b}
+.wk-band{background:linear-gradient(180deg,#fbf3dc 0%,#fffaf0 100%);border:1px solid #ecdcae;border-top:6px solid #d79f2b;border-radius:var(--r);padding:26px 26px 28px;position:relative;overflow:hidden}
+.wk-band::before{content:"";position:absolute;right:-70px;top:-70px;width:220px;height:220px;border-radius:50%;background:radial-gradient(circle,#f7cf5a 0%,rgba(247,207,90,.35) 45%,rgba(247,207,90,0) 70%);pointer-events:none}
+.wk-head{display:flex;align-items:baseline;flex-wrap:wrap;gap:4px 14px;margin:0 0 20px;position:relative}
+.wk-head h2{margin:0;font-family:var(--serif);font-weight:900;font-size:40px;line-height:1;letter-spacing:-.03em;display:flex;align-items:center;gap:12px}
+.wk-sun{width:30px;height:30px;flex:none}
+.wk-sun circle{fill:#e9b33c}.wk-sun path{stroke:#d79f2b;stroke-width:2.2;stroke-linecap:round;transform-origin:15px 15px;animation:wkspin 18s linear infinite}
+@keyframes wkspin{to{transform:rotate(360deg)}}
+.wk-head small{font-size:14px;font-weight:600;color:#6b5a2a}
+.wk-grid{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(0,1fr);gap:26px;align-items:start;position:relative}
+.wk-feat{display:block;background:#fff;border:1px solid #ecdcae;border-radius:10px;overflow:hidden;color:var(--ink);text-decoration:none;box-shadow:0 10px 30px -18px rgba(80,55,0,.35)}
+.wk-img{display:block;background:#f9f9f8;border-bottom:1px solid #f0e6cc}
+.wk-img img{display:block;width:100%;height:auto;aspect-ratio:1200/655}
+.wk-text{padding:22px 24px 24px}
+.wk-kick{display:block;font-size:12px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:#a8781a;margin:0 0 8px}
+.wk-feat h3{margin:0 0 10px;font-family:var(--serif);font-weight:800;font-size:clamp(25px,2.6vw,36px);line-height:1.08;letter-spacing:-.025em;text-wrap:balance}
+.wk-feat p{margin:0 0 18px;font-size:17px;line-height:1.5;color:var(--ink2)}
+.wk-tiles{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:0 0 20px}
+.wk-tile{background:#fffaf0;border:1px solid #f0e3c0;border-top:4px solid #c8102e;border-radius:8px;padding:12px 12px 10px}
+.wk-tile.flat{border-top-color:#2a6fd1}
+.wk-tile b{display:block;font-family:var(--serif);font-size:28px;font-weight:800;line-height:1.05;letter-spacing:-.02em}
+.wk-tile span{display:block;font-size:13.5px;line-height:1.3;color:var(--ink2);margin-top:3px}
+.wk-tile em{display:block;font-style:normal;font-size:12.5px;font-weight:700;margin-top:6px;color:#c8102e}
+.wk-tile.flat em{color:#2a6fd1}
+.wk-go{display:inline-flex;align-items:center;min-height:46px;padding:0 22px;border-radius:999px;background:var(--navy);color:#fff;font-weight:800;font-size:15px}
+.wk-feat:hover .wk-go{background:#d79f2b;color:#1c1400}
+.wk-feat:hover h3{text-decoration:underline;text-underline-offset:4px;text-decoration-thickness:2px}
+.wk-side .seax-lookup{margin:0;background:#fff;box-shadow:0 10px 30px -18px rgba(80,55,0,.35)}
+.wk-side .seax-lookup .sl-out{max-height:560px;overflow:auto}
+.wk-grid.solo{grid-template-columns:1fr}
+@media (max-width:960px){.wk-grid{grid-template-columns:1fr}.wk-side .seax-lookup .sl-out{max-height:none}}
+@media (max-width:640px){.wk-band{padding:18px 14px 20px;border-radius:10px}.wk-head h2{font-size:32px}.wk-text{padding:16px 16px 18px}.wk-tiles{grid-template-columns:1fr 1fr}.wk-tile:last-child{grid-column:1/-1}.wk-tile b{font-size:24px}.wk-go{width:100%;justify-content:center}}
+@media (prefers-reduced-motion:reduce){.wk-sun path{animation:none}}
 
 /* ---------- lead package + latest rail ---------- */
 .fp-grid{display:grid;grid-template-columns:minmax(0,1fr);gap:28px;align-items:start}
@@ -1220,6 +1254,9 @@ footer .flinks a{text-decoration:underline}
   </div>
 </section>
 
+<!-- The Weekend (owner's section, 21 Nov 2026): data/weekend.json, shown only between its from and until times -->
+<section class="block" id="weekend" hidden aria-label="The Weekend"></section>
+
 <section class="block" id="news">
   <div class="wrap">
     <div class="bh"><h2>News<small id="newsCount"></small></h2><div class="tools" id="newsTools"></div></div>
@@ -1231,7 +1268,7 @@ footer .flinks a{text-decoration:underline}
 
 <div class="wrap otd-wrap"><aside class="otd" id="otd" hidden aria-label="On this day in Essex"></aside></div>
 
-<!--seax-only--><style>@media(max-width:700px){#onlyseax .tools{display:none}}</style><section class="block" id="onlyseax"><div class="wrap"><div class="bh"><h2>Only on The Seax<small>Our own reporting from council papers and official data</small></h2><div class="tools"><a href="/council-watch/">All Council Watch →</a></div></div><div class="grid news-grid"><a class="card" href="/story/brentwood-school-safeguarding-review-british-fencing-own-review/"><div class="body"><div class="meta"><span class="place">The Seax</span> <span class="when">Brentwood</span></div><h3>Brentwood School coach Gareth Stafford Bull likely abused pupils, review finds</h3><p>The school&#x27;s own independent review says the fencing coach probably harmed a number of boys through the 1980s and 1990s, and that former pupils who came forward years…</p></div></a><a class="card" href="/story/essex-recorded-crime-september-2026-police-data/"><div class="body"><div class="meta"><span class="place">Essex Numbers</span> <span class="when">Essex</span></div><h3>Essex anti-social behaviour reports up 76% as robbery falls 19%</h3><p>The Seax analysis of police.uk data shows anti-social behaviour reports rose in 50 of Essex Police&#x27;s 56 neighbourhood areas in September 2026 compared with September…</p></div></a><a class="card" href="/story/cw-tendring-council-tax-support-backdating-working-age/"><div class="body"><div class="meta"><span class="place">Council Watch</span> <span class="when">Tendring District Council</span></div><h3>Tendring plans to backdate council tax support for working-age claimants</h3><p>Tendring District Council wants to extend a rule that now helps only pension-age claimants. Other council tax discounts and premiums in the district stay the same in…</p></div></a></div></div></section>
+<!--seax-only--><style>@media(max-width:700px){#onlyseax .tools{display:none}}</style><section class="block" id="onlyseax"><div class="wrap"><div class="bh"><h2>Only on The Seax<small>Our own reporting from council papers and official data</small></h2><div class="tools"><a href="/council-watch/">All Council Watch →</a></div></div><div class="grid news-grid"><a class="card" href="/story/brentwood-school-safeguarding-review-british-fencing-own-review/"><div class="body"><div class="meta"><span class="place">The Seax</span> <span class="when">Brentwood</span></div><h3>Brentwood School coach Gareth Stafford Bull likely abused pupils, review finds</h3><p>The school&#x27;s own independent review says the fencing coach probably harmed a number of boys through the 1980s and 1990s, and that former pupils who came forward years…</p></div></a><a class="card" href="/story/colchester-food-hygiene-ratings-0-1-fsa-data-november-2026/"><div class="body"><div class="meta"><span class="place">Essex Numbers</span> <span class="when">Colchester</span></div><h3>Three Colchester food outlets hold hygiene ratings of 0 or 1</h3><p>A High Street restaurant has the lowest rating, zero, and two other city centre businesses are rated one after inspections in October, an analysis of Food Standards…</p></div></a><a class="card" href="/story/cw-tendring-council-tax-support-backdating-working-age/"><div class="body"><div class="meta"><span class="place">Council Watch</span> <span class="when">Tendring District Council</span></div><h3>Tendring plans to backdate council tax support for working-age claimants</h3><p>Tendring District Council wants to extend a rule that now helps only pension-age claimants. Other council tax discounts and premiums in the district stay the same in…</p></div></a></div></div></section>
 <!--/seax-only-->
 <section class="block" id="history" hidden>
   <div class="wrap">
@@ -4900,8 +4937,39 @@ function syncNewsExtras(){
 function renderPinnedNews(){ syncNewsExtras(); }
 function renderFixturesNews(){ syncNewsExtras(); }
 fetch("/data/pinned.json", { cache: "no-store" }).then(r => r.ok ? r.json() : null).then(p => { PIN = p; renderPinned(); renderPinnedNews(); if(pinnedId() && typeof ED !== "undefined" && ED && (ED.stories||[]).some(x => x && x.id === PIN.id)) renderAll(); }).catch(() => {});
+/* The Weekend (owner's section, 21 Nov 2026): a big weekend feature just below the lead, from data/weekend.json between its
+   from and until times (UTC). Its story is not repeated in the lead slots or News grid while the section is up. */
+let WK = null;
+function weekendOn(){ const now = Date.now(), f = WK && WK.feature; return !!(f && f.id && now >= +new Date(WK.from) && now < +new Date(WK.until)); }
+function weekendId(){ return weekendOn() ? WK.feature.id : null; }
+function renderWeekend(){
+  const el = document.getElementById("weekend"); if(!el) return;
+  if(!weekendOn()){ if(!el.hidden){ el.hidden = true; el.innerHTML = ""; } return; }
+  const f = WK.feature, s = (typeof ED !== "undefined" && ED && (ED.stories||[]).find(x => x && x.id === f.id)) || null;
+  const headline = (s && s.headline) || f.headline, href = s ? storyHref(s) : "/story/" + encodeURIComponent(f.id) + "/";
+  if(!headline) { el.hidden = true; return; }
+  const key = f.id + "|" + headline + (s ? "+" : "");
+  if(!el.hidden && el.dataset.k === key) return;
+  el.dataset.k = key; el.hidden = false;
+  const tiles = (f.tiles||[]).slice(0,3).map(t => `<div class="wk-tile${t.dir === "flat" ? " flat" : ""}"><b>${esc(t.n)}</b><span>${esc(t.t)}</span>${t.c ? `<em>${esc(t.c)}</em>` : ""}</div>`).join("");
+  const checker = f.checker && /^\/data\//.test(f.checker) ? `<aside class="wk-side"><div class="seax-lookup" data-src="${esc(f.checker)}"></div></aside>` : "";
+  el.innerHTML = `<div class="wrap"><div class="wk-band">
+    <div class="wk-head"><h2><svg class="wk-sun" viewBox="0 0 30 30" aria-hidden="true"><path d="M15 2v4M15 24v4M2 15h4M24 15h4M5.8 5.8l2.8 2.8M21.4 21.4l2.8 2.8M5.8 24.2l2.8-2.8M21.4 8.6l2.8-2.8"/><circle cx="15" cy="15" r="6.5"/></svg>${esc(WK.title || "The Weekend")}</h2>${WK.strap ? `<small>${esc(WK.strap)}</small>` : ""}</div>
+    <div class="wk-grid${checker ? "" : " solo"}">
+      <a class="wk-feat" href="${esc(href)}">
+        ${f.image ? `<div class="wk-img"><img src="${esc(f.image)}" alt="${esc(f.alt || "")}" width="1200" height="655" loading="lazy"></div>` : ""}
+        <div class="wk-text">${s && typeof ownBanner === "function" ? ownBanner(s) : ""}<span class="wk-kick">${esc(f.kicker || "Weekend read")}</span>
+          <h3>${esc(headline)}</h3>${f.dek ? `<p>${esc(f.dek)}</p>` : ""}
+          ${tiles ? `<div class="wk-tiles">${tiles}</div>` : ""}
+          <span class="wk-go">${esc(f.cta || "Read the story")} →</span></div>
+      </a>${checker}
+    </div></div></div>`;
+  if(checker && typeof seaxNeedLookup === "function") seaxNeedLookup();
+}
+fetch("/data/weekend.json", { cache: "no-store" }).then(r => r.ok ? r.json() : null).then(w => { WK = w; if(typeof ED !== "undefined" && ED && weekendId()) renderAll(); else renderWeekend(); }).catch(() => {});
 function renderAll(){
   if(typeof renderPinned === "function") renderPinned();
+  if(typeof renderWeekend === "function") renderWeekend();
   renderChips(); renderTicker(); buildHero(); renderTopList(); renderNews(); renderPinnedNews(); renderFixturesNews(); renderDesk(); renderCouncilWatch(); renderCommunity(); renderSport(); renderTables(); renderWeather();
   renderEvents(); renderCulture(); renderVital(); renderSpecials(); renderSources(); renderMeta(); afterRender(); updateLiveLine();
   if(location.hash.startsWith("#story-")) renderStory(location.hash.slice(7));
@@ -4923,6 +4991,7 @@ function tickMinute(){
   if(k !== lastDay){ lastDay = k; renderAll(); }
   else { renderWeather(); renderTicker(); renderToday(); }
   renderPinned(); renderPinnedNews(); renderFixturesNews();
+  if(typeof ED !== "undefined" && ED && weekendOn() !== !document.getElementById("weekend").hidden) renderAll();   /* the section switches itself on and off on time */
 }
 setInterval(() => { tickSecond(); const m = new Date().getMinutes(); if(m !== lastMinute){ lastMinute = m; tickMinute(); } }, 1000);
 
@@ -5048,7 +5117,7 @@ function rankStories(list, now){ return list.slice().sort((a,b) => frontScore(b,
 function frontPicks(){
   const now = Date.now();
   const pid = pinnedId();
-  const list = ED.stories.filter(inArea).filter(s => s.id !== pid);
+  const list = ED.stories.filter(inArea).filter(s => s.id !== pid && s.id !== weekendId());
   const ranked = rankStories(list, now);
   let lead = null;
   const L = ED.lead || {};
@@ -5322,7 +5391,7 @@ function renderToday(){
 /* ---------- news: tiered ---------- */
 function renderNews(){
   const pid = pinnedId();
-  const all = ED.stories.filter(inArea).filter(s => s.id !== pid).slice().sort(byTime);
+  const all = ED.stories.filter(inArea).filter(s => s.id !== pid && s.id !== weekendId()).slice().sort(byTime);
   const used = new Set(heroList.map(s => s && s.id));
   const ranked = rankStories(all.filter(s => !used.has(s.id)), Date.now());
   const topIds = new Set(ranked.slice(0, 5).map(s => s.id));
