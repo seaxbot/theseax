@@ -868,5 +868,30 @@
   "licenseUrl": "",
   "source": "https://www.essex.icb.nhs.uk/news/essex-mum-avoids-ae-visit-thanks-to-local-nhs-eye-care-service/",
   "addedBy": "inbox desk 20 Nov 2026 (owner's rule, 20 Nov 2026: use the pictures emailed with stories, credited)"
+ },
+ {
+  "ids": [
+   "essex-police-deirdre-nowell-retires-48-years"
+  ],
+  "name": "Deirdre Nowell",
+  "label": "Picture",
+  "caption": "Deirdre Nowell, who has retired after 48 years with Essex Police",
+  "wide": "/img/people/deirdre-nowell-wide.jpg",
+  "og": "/img/people/deirdre-nowell-og.jpg",
+  "creator": "Essex Police",
+  "provider": "Essex Police",
+  "license": "",
+  "licenseUrl": "",
+  "source": "https://www.facebook.com/EssexPoliceUK",
+  "more": [
+   {
+    "name": "Deirdre Nowell with her Liam Brigginshaw Award",
+    "label": "Picture",
+    "caption": "Deirdre Nowell with her 2024 Liam Brigginshaw Award for outstanding commitment",
+    "wide": "/img/people/deirdre-nowell-award-wide.jpg",
+    "creator": "Essex Police"
+   }
+  ],
+  "addedBy": "owner, 21 Nov 2026 (Essex Police Facebook post on Deirdre Nowell's retirement; force's pictures used with credit; owner supplied screenshots)"
  }
 ]
