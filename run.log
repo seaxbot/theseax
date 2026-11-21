@@ -1,0 +1,51 @@
+food ok
+contracts ok
+petitions ok
+prices ok
+crime ok
+insolvency: total 112 first entry keys ['author', 'category', 'content', 'f:familyName', 'f:name', 'f:notice-code', 'f:status', 'geo:Point', 'id', 'link', 'published', 'title', 'updated']
+{"id": "https://www.thegazette.co.uk/id/notice/5256838", "f:status": "published", "f:notice-code": "2443", "f:name": "Chris", "f:familyName": "Herbert", "title": "JEHANGIR RESTAURANT LTD", "link": [{"@href": "https://www.thegazette.co.uk/id/notice/5256838", "@rel": "self"}, {"@href": "https://www.thegazette.co.uk/notice/5256838"}, {"@href": "https://www.thegazette.co.uk/notice/5256838/data.ttl", "@rel": "alternate", "@title": "TURTLE", "@type": "text/turtle"}, {"@href": "https://www.thegazette.co.uk/notice/5256838/data.jsonld", "@rel": "alternate", "@title": "JSON-LD", "@type": "application/json"}, {"@href": "https://www.thegazette.co.uk/notice/5256838/data.rdf", "@rel": "alternate", "@title": "RDF/XML", "@type": "application/rdf+xml"}, {"@href": "https://www.thegazette.co.uk/notice/5256838/data.ttl?view=linked-data", "@rel": "alternate", "@title": "TURTLE", "@type": "text/turtle"}, {"@href": "https://www.thegazette.co.uk/notice/5256838/data.json?view=linked-data", "@rel": "alternate", "@title": "JSON-SIMPLE", "@type": "application/json"}, {"@href": "https://www.thegazette.co.uk/notice/5256838/data.rdfjson?view=linked-data", "@rel": "alternate", "@title": "JSON-RDF", "@type": "application/rdf+json"}, {"@href": "https://www.thegazette.co.uk/notice/5256838/data.rdf?view=linked-data", "@rel": "alternate", "@title": "RDF/XML", "@type": "application/rdf+xml"}, {"@href": "https://www.thegazette.co.uk/notice/5256838/data.xml?view=linked-data", "@rel": "alternate", "@title": "XML", "
+insolvency ok
+THE SEAX DATA DESK  |  collected Saturday 21 November 2026, 05:33 UTC
+Official open data, worked out for Essex. Leads for the newsroom: read ops/newsroom.md (DATA DESK) before writing.
+
+== FOOD HYGIENE (Food Standards Agency) ==
+  Ratings of 0 or 1 first seen by the desk in the last 40 hours (inspected in the last 45 days): 5
+  - RATING 0 | Bees Indian Restaurant & Bar | Restaurant/Cafe/Canteen | 105 High Street, Colchester, Essex CO1 1TH | Colchester | inspected 14 October 2026 | https://ratings.food.gov.uk/business/1585645
+  - RATING 1 | Vinny's Restaurant | Restaurant/Cafe/Canteen | 1 Headgate, Colchester, Essex CO1 1NU | Colchester | inspected 8 October 2026 | https://ratings.food.gov.uk/business/1787236
+  - RATING 1 | Broadway Convenience | Retailers - other | 17 Broadway, Jaywick, Clacton On Sea, Essex CO15 2EG | Tendring | inspected 9 October 2026 | https://ratings.food.gov.uk/business/1772334
+  - RATING 1 | The Royal British Legion | Pub/bar/nightclub | White Hart Lane, Hawkwell, Hockley, Essex SS5 4DQ | Rochford | inspected 14 October 2026 | https://ratings.food.gov.uk/business/155564
+  - RATING 1 | Geek Retreat Harlow | Restaurant/Cafe/Canteen | 50 Harvey Centre, Harvey Centre Approach, Harlow, Essex CM20 1XR | Harlow | inspected 30 October 2026 | https://ratings.food.gov.uk/business/1562496
+  Share of rated premises with a rating of 0, 1 or 2, by council (highest first):
+  - Rochford: 4.4% | zero-rated 4, one-rated 16, two-rated 5 of 568 rated | rated 5: 83.1%
+  - Tendring: 4.2% | zero-rated 4, one-rated 21, two-rated 25 of 1188 rated | rated 5: 66.7%
+  - Southend-On-Sea: 3.2% | zero-rated 1, one-rated 11, two-rated 32 of 1391 rated | rated 5: 71.2%
+  - Basildon: 2.8% | zero-rated 2, one-rated 17, two-rated 15 of 1199 rated | rated 5: 81.2%
+  - Thurrock: 2.4% | zero-rated 0, one-rated 15, two-rated 14 of 1184 rated | rated 5: 72.8%
+  - Epping Forest: 2.1% | zero-rated 0, one-rated 13, two-rated 6 of 926 rated | rated 5: 85.1%
+  - Braintree: 1.4% | zero-rated 0, one-rated 8, two-rated 9 of 1178 rated | rated 5: 85.2%
+  - Brentwood: 1.2% | zero-rated 0, one-rated 8, two-rated 0 of 694 rated | rated 5: 82.7%
+  - Uttlesford: 1.1% | zero-rated 0, one-rated 4, two-rated 3 of 652 rated | rated 5: 89.9%
+  - Chelmsford: 1.0% | zero-rated 0, one-rated 8, two-rated 7 of 1458 rated | rated 5: 91.8%
+  - Maldon: 1.0% | zero-rated 1, one-rated 3, two-rated 2 of 594 rated | rated 5: 89.1%
+  - Colchester: 0.9% | zero-rated 3, one-rated 7, two-rated 3 of 1413 rated | rated 5: 90.7%
+  - Castle Point: 0.8% | zero-rated 0, one-rated 3, two-rated 1 of 493 rated | rated 5: 92.9%
+  - Harlow: 0.8% (was 0.6% on 20 November 2026) | zero-rated 0, one-rated 4, two-rated 1 of 622 rated | rated 5: 82.8%
+
+== CONTRACT AWARDS (Find a Tender and Contracts Finder, last 8 days) ==
+  New awards by Essex public bodies or for work in Essex: 6 (from 531 UK award notices scanned)
+  - £378,450 | Essex Police, Fire and Crime Commissioner Fire and Rescue Authority | GB-Witham: ECFRS00534 - Procurement of Pumping Appliance | to Emergency One (UK) Ltd | awarded 19 November 2026 | runs 2026-11-23 to 2028-06-30 | Contracts Finder | https://www.contractsfinder.service.gov.uk/Notice/4fad5398-7a4c-4f9f-9ec6-4dd4dbd0a0a4-922147
+  - £190,000 | Epping Forest District Council | Provision of Electronic Payment Services | to Allpay Limited | awarded 1 October 2026 | runs 2026-11-01 to 2029-10-31 | Contracts Finder | https://www.contractsfinder.service.gov.uk/Notice/62393559-9dcb-4d17-9667-995d1c9b5062-921414
+  - £127,137 | Essex Police, Fire and Crime Commissioner Fire and Rescue Authority | GB-Kelvedon: Brentwood Boiler replacement and Associated works | to Oakray Limited | awarded 19 November 2026 | runs 2027-01-11 to 2027-02-01 | Contracts Finder | https://www.contractsfinder.service.gov.uk/Notice/d572285e-000c-45bb-bc45-1169839cec51-922232
+  - £74,762 | ESSEX COUNTY COUNCIL | Cyber Security Learning and Awareness Platform | to THINK CYBER SECURITY LTD | awarded 3 September 2026 | runs 2026-10-06 to 2027-10-05 | Contracts Finder | https://www.contractsfinder.service.gov.uk/Notice/b4ca8929-9073-44f6-adcb-4231cb492026-922012
+  - £150 | UNIVERSITY OF ESSEX | T1212 - Confidential Waste removal | to Shred Station Limited | awarded 18 November 2026 | runs 2026-10-23 to 2029-10-22 | Contracts Finder | https://www.contractsfinder.service.gov.uk/Notice/f50ab757-4a9a-4afb-90c7-d39c205f1ebb-921887
+  - £150 | UNIVERSITY OF ESSEX | T1212 - Confidential Waste removal | to Shred Station Limited | awarded 18 November 2026 | runs 2026-10-23 to 2029-10-22 | Contracts Finder | https://www.contractsfinder.service.gov.uk/Notice/f50ab757-4a9a-4afb-90c7-d39c205f1ebb-921886
+  note: find-tender: TimeoutError: The read operation timed out
+
+== PARLIAMENT PETITIONS (the 25 biggest open petitions) ==
+  Essex signs these far MORE than the typical UK constituency (ratio = median Essex seat / median UK seat):
+  - x5.11 | Mandatory Prison for Drivers Who Conceal Accidents or Obstruct Investigations | Essex 4,089 of 56,652 signatures | top: Clacton 536 (UK rank 8 of 650) | https://petition.parliament.uk/petitions/781048
+  - x2.44 | Permanent driving ban on intoxicated drivers guilty of causing death | Essex 1,558 of 70,524 signatures | top: Chelmsford 184 (UK rank 103 of 650) | https://petition.parliament.uk/petitions/771401
+  - x1.79 | Launch a public inquiry into the regulation of animal experimentation | Essex 2,170 of 48,745 signatures | top: Harwich and North Essex 170 (UK rank 11 of 650) | https://petition.parliament.uk/petitions/778680
+  - x1.51 | Make catapult attacks against animals a standalone criminal offence | Essex 3,192 of 83,836 signatures | top: Rayleigh and Wickford 249 (UK rank 26 of 650) | https://petition.parliament.uk/petitions/777710
+  - x1.4 | Require asylum seekers & foreign criminals to be detained on remote UK islands | Essex 1,391 of 33,670 signatures | top: Braintree 159 (UK rank 2 of 649) | https://petition.parliament.uk/petitions/778

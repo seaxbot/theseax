@@ -1,0 +1,3909 @@
+{
+ "food": {
+  "new": [
+   {
+    "name": "Bees Indian Restaurant & Bar",
+    "type": "Restaurant/Cafe/Canteen",
+    "rating": "0",
+    "inspected": "2026-10-14",
+    "council": "Colchester",
+    "address": "105 High Street, Colchester, Essex",
+    "postcode": "CO1 1TH",
+    "addressWithheld": false,
+    "newRatingPending": false,
+    "scores": {
+     "hygiene": 20,
+     "structural": 20,
+     "management": 30
+    },
+    "url": "https://ratings.food.gov.uk/business/1585645"
+   },
+   {
+    "name": "Vinny's Restaurant",
+    "type": "Restaurant/Cafe/Canteen",
+    "rating": "1",
+    "inspected": "2026-10-08",
+    "council": "Colchester",
+    "address": "1 Headgate, Colchester, Essex",
+    "postcode": "CO1 1NU",
+    "addressWithheld": false,
+    "newRatingPending": false,
+    "scores": {
+     "hygiene": 20,
+     "structural": 20,
+     "management": 10
+    },
+    "url": "https://ratings.food.gov.uk/business/1787236"
+   },
+   {
+    "name": "Broadway Convenience",
+    "type": "Retailers - other",
+    "rating": "1",
+    "inspected": "2026-10-09",
+    "council": "Tendring",
+    "address": "17 Broadway, Jaywick, Clacton On Sea, Essex",
+    "postcode": "CO15 2EG",
+    "addressWithheld": false,
+    "newRatingPending": false,
+    "scores": {
+     "hygiene": 10,
+     "structural": 15,
+     "management": 20
+    },
+    "url": "https://ratings.food.gov.uk/business/1772334"
+   },
+   {
+    "name": "The Royal British Legion",
+    "type": "Pub/bar/nightclub",
+    "rating": "1",
+    "inspected": "2026-10-14",
+    "council": "Rochford",
+    "address": "White Hart Lane, Hawkwell, Hockley, Essex",
+    "postcode": "SS5 4DQ",
+    "addressWithheld": false,
+    "newRatingPending": false,
+    "scores": {
+     "hygiene": 5,
+     "structural": 5,
+     "management": 20
+    },
+    "url": "https://ratings.food.gov.uk/business/155564"
+   },
+   {
+    "name": "Geek Retreat Harlow",
+    "type": "Restaurant/Cafe/Canteen",
+    "rating": "1",
+    "inspected": "2026-10-30",
+    "council": "Harlow",
+    "address": "50 Harvey Centre, Harvey Centre Approach, Harlow, Essex",
+    "postcode": "CM20 1XR",
+    "addressWithheld": false,
+    "newRatingPending": false,
+    "scores": {
+     "hygiene": 10,
+     "structural": 5,
+     "management": 20
+    },
+    "url": "https://ratings.food.gov.uk/business/1562496"
+   }
+  ],
+  "table": [
+   {
+    "council": "Rochford",
+    "rated": 568,
+    "zero": 4,
+    "one": 16,
+    "two": 5,
+    "five": 472,
+    "lowPct": 4.4,
+    "fivePct": 83.1,
+    "lowPctBefore": 4.4,
+    "before": "2026-11-20"
+   },
+   {
+    "council": "Tendring",
+    "rated": 1188,
+    "zero": 4,
+    "one": 21,
+    "two": 25,
+    "five": 792,
+    "lowPct": 4.2,
+    "fivePct": 66.7,
+    "lowPctBefore": 4.2,
+    "before": "2026-11-20"
+   },
+   {
+    "council": "Southend-On-Sea",
+    "rated": 1391,
+    "zero": 1,
+    "one": 11,
+    "two": 32,
+    "five": 991,
+    "lowPct": 3.2,
+    "fivePct": 71.2,
+    "lowPctBefore": 3.2,
+    "before": "2026-11-20"
+   },
+   {
+    "council": "Basildon",
+    "rated": 1199,
+    "zero": 2,
+    "one": 17,
+    "two": 15,
+    "five": 973,
+    "lowPct": 2.8,
+    "fivePct": 81.2,
+    "lowPctBefore": 2.8,
+    "before": "2026-11-20"
+   },
+   {
+    "council": "Thurrock",
+    "rated": 1184,
+    "zero": 0,
+    "one": 15,
+    "two": 14,
+    "five": 862,
+    "lowPct": 2.4,
+    "fivePct": 72.8,
+    "lowPctBefore": 2.4,
+    "before": "2026-11-20"
+   },
+   {
+    "council": "Epping Forest",
+    "rated": 926,
+    "zero": 0,
+    "one": 13,
+    "two": 6,
+    "five": 788,
+    "lowPct": 2.1,
+    "fivePct": 85.1,
+    "lowPctBefore": 2.1,
+    "before": "2026-11-20"
+   },
+   {
+    "council": "Braintree",
+    "rated": 1178,
+    "zero": 0,
+    "one": 8,
+    "two": 9,
+    "five": 1004,
+    "lowPct": 1.4,
+    "fivePct": 85.2,
+    "lowPctBefore": 1.4,
+    "before": "2026-11-20"
+   },
+   {
+    "council": "Brentwood",
+    "rated": 694,
+    "zero": 0,
+    "one": 8,
+    "two": 0,
+    "five": 574,
+    "lowPct": 1.2,
+    "fivePct": 82.7,
+    "lowPctBefore": 1.2,
+    "before": "2026-11-20"
+   },
+   {
+    "council": "Uttlesford",
+    "rated": 652,
+    "zero": 0,
+    "one": 4,
+    "two": 3,
+    "five": 586,
+    "lowPct": 1.1,
+    "fivePct": 89.9,
+    "lowPctBefore": 1.1,
+    "before": "2026-11-20"
+   },
+   {
+    "council": "Chelmsford",
+    "rated": 1458,
+    "zero": 0,
+    "one": 8,
+    "two": 7,
+    "five": 1339,
+    "lowPct": 1.0,
+    "fivePct": 91.8,
+    "lowPctBefore": 1.0,
+    "before": "2026-11-20"
+   },
+   {
+    "council": "Maldon",
+    "rated": 594,
+    "zero": 1,
+    "one": 3,
+    "two": 2,
+    "five": 529,
+    "lowPct": 1.0,
+    "fivePct": 89.1,
+    "lowPctBefore": 1.0,
+    "before": "2026-11-20"
+   },
+   {
+    "council": "Colchester",
+    "rated": 1413,
+    "zero": 3,
+    "one": 7,
+    "two": 3,
+    "five": 1281,
+    "lowPct": 0.9,
+    "fivePct": 90.7,
+    "lowPctBefore": 0.9,
+    "before": "2026-11-20"
+   },
+   {
+    "council": "Castle Point",
+    "rated": 493,
+    "zero": 0,
+    "one": 3,
+    "two": 1,
+    "five": 458,
+    "lowPct": 0.8,
+    "fivePct": 92.9,
+    "lowPctBefore": 0.8,
+    "before": "2026-11-20"
+   },
+   {
+    "council": "Harlow",
+    "rated": 622,
+    "zero": 0,
+    "one": 4,
+    "two": 1,
+    "five": 515,
+    "lowPct": 0.8,
+    "fivePct": 82.8,
+    "lowPctBefore": 0.6,
+    "before": "2026-11-20"
+   }
+  ],
+  "missingCouncils": [],
+  "firstRun": false
+ },
+ "contracts": {
+  "awards": [
+   {
+    "buyer": "Essex Police, Fire and Crime Commissioner Fire and Rescue Authority",
+    "title": "GB-Witham: ECFRS00534 - Procurement of Pumping Appliance",
+    "description": "Procurement of 1 x Pumping Appliance. Direct Award via the YPO Framework - Purchase, Lease and Hire of Specialist Vehicles Framework - 1170, Lot 18 - Purchase and Lease of Pumping Appliances. Additional information: Direct Award via the YPO Framework - Purchase, Lease and Hire of Specialist Vehicles Framework - 1170, Lot 18 - Purchase and Lease of Pumping Appliances.",
+    "suppliers": [
+     "Emergency One (UK) Ltd"
+    ],
+    "value": 378450,
+    "valueText": "£378,450",
+    "awarded": "2026-11-19",
+    "published": "2026-11-20",
+    "start": "2026-11-23",
+    "end": "2028-06-30",
+    "ocid": "ocds-b5fd17-c6ab6f56-d963-41e4-a9ea-9c1771399864",
+    "id": "4fad5398-7a4c-4f9f-9ec6-4dd4dbd0a0a4-922147",
+    "where": "Contracts Finder",
+    "url": "https://www.contractsfinder.service.gov.uk/Notice/4fad5398-7a4c-4f9f-9ec6-4dd4dbd0a0a4-922147",
+    "why": "Essex buyer"
+   },
+   {
+    "buyer": "Epping Forest District Council",
+    "title": "Provision of Electronic Payment Services",
+    "description": "Appointment of a Supplier for the Provision of Electronic Payment Services",
+    "suppliers": [
+     "Allpay Limited"
+    ],
+    "value": 190000,
+    "valueText": "£190,000",
+    "awarded": "2026-10-01",
+    "published": "2026-11-17",
+    "start": "2026-11-01",
+    "end": "2029-10-31",
+    "ocid": "ocds-b5fd17-8a04d66c-6580-4ff2-a680-30f0f7a789cb",
+    "id": "62393559-9dcb-4d17-9667-995d1c9b5062-921414",
+    "where": "Contracts Finder",
+    "url": "https://www.contractsfinder.service.gov.uk/Notice/62393559-9dcb-4d17-9667-995d1c9b5062-921414",
+    "why": "Essex buyer"
+   },
+   {
+    "buyer": "Essex Police, Fire and Crime Commissioner Fire and Rescue Authority",
+    "title": "GB-Kelvedon: Brentwood Boiler replacement and Associated works",
+    "description": "Replacement Boiler at Basildon Fire Station awarded under Fusion 21 Heating, Renewables and Electricals Lot 6 Commercial Heating (All)",
+    "suppliers": [
+     "Oakray Limited"
+    ],
+    "value": 127137.26,
+    "valueText": "£127,137",
+    "awarded": "2026-11-19",
+    "published": "2026-11-20",
+    "start": "2027-01-11",
+    "end": "2027-02-01",
+    "ocid": "ocds-b5fd17-ece4e046-2416-4ca9-a816-789471bf852e",
+    "id": "d572285e-000c-45bb-bc45-1169839cec51-922232",
+    "where": "Contracts Finder",
+    "url": "https://www.contractsfinder.service.gov.uk/Notice/d572285e-000c-45bb-bc45-1169839cec51-922232",
+    "why": "Essex buyer"
+   },
+   {
+    "buyer": "ESSEX COUNTY COUNCIL",
+    "title": "Cyber Security Learning and Awareness Platform",
+    "description": "Call-Off Contract description The organisation requires a Cyber Security Learning and Awareness Platform that delivers continuous cyber security education, behavioural reinforcement, and risk reduction across the workforce complimenting our current e-learning module. The platform must support compliance, audit, and assurance requirements by providing ongoing, measurable cyber awareness activities ",
+    "suppliers": [
+     "THINK CYBER SECURITY LTD"
+    ],
+    "value": 74762.02,
+    "valueText": "£74,762",
+    "awarded": "2026-09-03",
+    "published": "2026-11-19",
+    "start": "2026-10-06",
+    "end": "2027-10-05",
+    "ocid": "ocds-b5fd17-2ce5cd65-dc67-4775-87a9-88ce5562d136",
+    "id": "b4ca8929-9073-44f6-adcb-4231cb492026-922012",
+    "where": "Contracts Finder",
+    "url": "https://www.contractsfinder.service.gov.uk/Notice/b4ca8929-9073-44f6-adcb-4231cb492026-922012",
+    "why": "Essex buyer"
+   },
+   {
+    "buyer": "UNIVERSITY OF ESSEX",
+    "title": "T1212 - Confidential Waste removal",
+    "description": "The University of Essex requires a confidential waste removal and secure shredding service from a suitably qualified and experienced Supplier using the ESPO 981_23 secure shredding and confidential waste disposal service framework",
+    "suppliers": [
+     "Shred Station Limited"
+    ],
+    "value": 150,
+    "valueText": "£150",
+    "awarded": "2026-11-18",
+    "published": "2026-11-18",
+    "start": "2026-10-23",
+    "end": "2029-10-22",
+    "ocid": "ocds-b5fd17-3970d988-7bd4-4965-95c0-b8a871cef1f8",
+    "id": "f50ab757-4a9a-4afb-90c7-d39c205f1ebb-921887",
+    "where": "Contracts Finder",
+    "url": "https://www.contractsfinder.service.gov.uk/Notice/f50ab757-4a9a-4afb-90c7-d39c205f1ebb-921887",
+    "why": "Essex buyer"
+   },
+   {
+    "buyer": "UNIVERSITY OF ESSEX",
+    "title": "T1212 - Confidential Waste removal",
+    "description": "The University of Essex requires a confidential waste removal and secure shredding service from a suitably qualified and experienced Supplier using the ESPO 981_23 secure shredding and confidential waste disposal service framework",
+    "suppliers": [
+     "Shred Station Limited"
+    ],
+    "value": 150,
+    "valueText": "£150",
+    "awarded": "2026-11-18",
+    "published": "2026-11-18",
+    "start": "2026-10-23",
+    "end": "2029-10-22",
+    "ocid": "ocds-b5fd17-3970d988-7bd4-4965-95c0-b8a871cef1f8",
+    "id": "f50ab757-4a9a-4afb-90c7-d39c205f1ebb-921886",
+    "where": "Contracts Finder",
+    "url": "https://www.contractsfinder.service.gov.uk/Notice/f50ab757-4a9a-4afb-90c7-d39c205f1ebb-921886",
+    "why": "Essex buyer"
+   }
+  ],
+  "scanned": 531,
+  "findTenderPages": 0,
+  "contractsFinderPages": 5,
+  "errors": [
+   "find-tender: TimeoutError: The read operation timed out"
+  ]
+ },
+ "petitions": {
+  "petitions": [
+   {
+    "id": 775267,
+    "action": "Legislate to protect ILR applicants from retrospective changes",
+    "total": 177897,
+    "opened": "2026-07-30",
+    "closes": "",
+    "debateThresholdReached": true,
+    "governmentResponded": false,
+    "essexTotal": 3146,
+    "essexSinceLastRun": 1,
+    "essexMedian": 164,
+    "ukMedian": 168,
+    "ratio": 0.98,
+    "top": {
+     "name": "Colchester",
+     "signatures": 437,
+     "ukRank": 113,
+     "of": 650
+    },
+    "byConstituency": {
+     "Colchester": 437,
+     "Chelmsford": 339,
+     "Thurrock": 330,
+     "Harlow": 283,
+     "Southend East and Rochford": 254,
+     "Epping Forest": 211,
+     "Brentwood and Ongar": 185,
+     "Basildon and Billericay": 167,
+     "South Basildon and East Thurrock": 164,
+     "North West Essex": 145,
+     "Southend West and Leigh": 142,
+     "Harwich and North Essex": 99,
+     "Witham": 94,
+     "Braintree": 91,
+     "Clacton": 68,
+     "Rayleigh and Wickford": 53,
+     "Maldon": 52,
+     "Castle Point": 32
+    },
+    "url": "https://petition.parliament.uk/petitions/775267"
+   },
+   {
+    "id": 769589,
+    "action": "End the mandatory fortification of white flour with folic acid immediately",
+    "total": 145708,
+    "opened": "2026-06-08",
+    "closes": "",
+    "debateThresholdReached": true,
+    "governmentResponded": true,
+    "essexTotal": 4545,
+    "essexSinceLastRun": 12,
+    "essexMedian": 273,
+    "ukMedian": 217,
+    "ratio": 1.26,
+    "top": {
+     "name": "Witham",
+     "signatures": 314,
+     "ukRank": 62,
+     "of": 650
+    },
+    "byConstituency": {
+     "Witham": 314,
+     "Maldon": 304,
+     "Rayleigh and Wickford": 304,
+     "Braintree": 301,
+     "Southend East and Rochford": 292,
+     "Clacton": 289,
+     "Brentwood and Ongar": 281,
+     "North West Essex": 274,
+     "Harwich and North Essex": 273,
+     "Castle Point": 271,
+     "Southend West and Leigh": 237,
+     "Basildon and Billericay": 224,
+     "Chelmsford": 223,
+     "Colchester": 221,
+     "South Basildon and East Thurrock": 204,
+     "Epping Forest": 201,
+     "Harlow": 171,
+     "Thurrock": 161
+    },
+    "url": "https://petition.parliament.uk/petitions/769589"
+   },
+   {
+    "id": 780269,
+    "action": "Reduce the state pension age to 65 for all",
+    "total": 116581,
+    "opened": "2026-09-16",
+    "closes": "",
+    "debateThresholdReached": true,
+    "governmentResponded": true,
+    "essexTotal": 2923,
+    "essexSinceLastRun": 0,
+    "essexMedian": 162,
+    "ukMedian": 173,
+    "ratio": 0.94,
+    "top": {
+     "name": "Clacton",
+     "signatures": 257,
+     "ukRank": 88,
+     "of": 650
+    },
+    "byConstituency": {
+     "Clacton": 257,
+     "Harwich and North Essex": 208,
+     "Rayleigh and Wickford": 196,
+     "Colchester": 192,
+     "Southend East and Rochford": 174,
+     "Braintree": 173,
+     "Harlow": 171,
+     "Witham": 165,
+     "Castle Point": 162,
+     "Maldon": 161,
+     "Thurrock": 158,
+     "South Basildon and East Thurrock": 156,
+     "Southend West and Leigh": 153,
+     "Basildon and Billericay": 137,
+     "North West Essex": 122,
+     "Chelmsford": 115,
+     "Brentwood and Ongar": 114,
+     "Epping Forest": 109
+    },
+    "url": "https://petition.parliament.uk/petitions/780269"
+   },
+   {
+    "id": 783252,
+    "action": "Launch a public inquiry into the UK's role in Israeli operations in Gaza",
+    "total": 113585,
+    "opened": "2026-10-23",
+    "closes": "",
+    "debateThresholdReached": true,
+    "governmentResponded": false,
+    "essexTotal": 1823,
+    "essexSinceLastRun": 1,
+    "essexMedian": 98,
+    "ukMedian": 143,
+    "ratio": 0.69,
+    "top": {
+     "name": "Colchester",
+     "signatures": 163,
+     "ukRank": 274,
+     "of": 650
+    },
+    "byConstituency": {
+     "Colchester": 163,
+     "Harwich and North Essex": 142,
+     "Chelmsford": 141,
+     "Southend West and Leigh": 130,
+     "Epping Forest": 117,
+     "North West Essex": 117,
+     "Harlow": 114,
+     "Southend East and Rochford": 113,
+     "Thurrock": 98,
+     "Brentwood and Ongar": 96,
+     "Braintree": 92,
+     "Maldon": 92,
+     "Witham": 86,
+     "Clacton": 80,
+     "South Basildon and East Thurrock": 72,
+     "Rayleigh and Wickford": 61,
+     "Basildon and Billericay": 59,
+     "Castle Point": 50
+    },
+    "url": "https://petition.parliament.uk/petitions/783252"
+   },
+   {
+    "id": 779259,
+    "action": "Make statutory maternity pay 90% of wage for first 12 weeks & minimum wage after",
+    "total": 106287,
+    "opened": "2026-09-14",
+    "closes": "",
+    "debateThresholdReached": true,
+    "governmentResponded": true,
+    "essexTotal": 3244,
+    "essexSinceLastRun": 0,
+    "essexMedian": 191,
+    "ukMedian": 150,
+    "ratio": 1.27,
+    "top": {
+     "name": "North West Essex",
+     "signatures": 289,
+     "ukRank": 37,
+     "of": 650
+    },
+    "byConstituency": {
+     "North West Essex": 289,
+     "Witham": 243,
+     "Chelmsford": 231,
+     "Brentwood and Ongar": 222,
+     "Colchester": 214,
+     "Rayleigh and Wickford": 208,
+     "Epping Forest": 202,
+     "Southend West and Leigh": 202,
+     "Braintree": 191,
+     "Maldon": 182,
+     "Harlow": 168,
+     "Harwich and North Essex": 155,
+     "Basildon and Billericay": 148,
+     "Castle Point": 132,
+     "Thurrock": 124,
+     "Southend East and Rochford": 117,
+     "Clacton": 110,
+     "South Basildon and East Thurrock": 106
+    },
+    "url": "https://petition.parliament.uk/petitions/779259"
+   },
+   {
+    "id": 773633,
+    "action": "Launch a public inquiry into illegal migration in the UK",
+    "total": 90062,
+    "opened": "2026-07-15",
+    "closes": "",
+    "debateThresholdReached": false,
+    "governmentResponded": true,
+    "essexTotal": 3447,
+    "essexSinceLastRun": 4,
+    "essexMedian": 191,
+    "ukMedian": 142,
+    "ratio": 1.35,
+    "top": {
+     "name": "Clacton",
+     "signatures": 278,
+     "ukRank": 2,
+     "of": 650
+    },
+    "byConstituency": {
+     "Clacton": 278,
+     "Braintree": 253,
+     "Rayleigh and Wickford": 224,
+     "Castle Point": 215,
+     "Maldon": 210,
+     "Witham": 209,
+     "Brentwood and Ongar": 201,
+     "Southend East and Rochford": 199,
+     "South Basildon and East Thurrock": 191,
+     "Southend West and Leigh": 186,
+     "North West Essex": 178,
+     "Harwich and North Essex": 176,
+     "Basildon and Billericay": 171,
+     "Epping Forest": 165,
+     "Colchester": 162,
+     "Chelmsford": 155,
+     "Harlow": 144,
+     "Thurrock": 130
+    },
+    "url": "https://petition.parliament.uk/petitions/773633"
+   },
+   {
+    "id": 777710,
+    "action": "Make catapult attacks against animals a standalone criminal offence",
+    "total": 83836,
+    "opened": "2026-08-20",
+    "closes": "",
+    "debateThresholdReached": false,
+    "governmentResponded": true,
+    "essexTotal": 3192,
+    "essexSinceLastRun": 0,
+    "essexMedian": 177,
+    "ukMedian": 117,
+    "ratio": 1.51,
+    "top": {
+     "name": "Rayleigh and Wickford",
+     "signatures": 249,
+     "ukRank": 26,
+     "of": 650
+    },
+    "byConstituency": {
+     "Rayleigh and Wickford": 249,
+     "Thurrock": 229,
+     "Maldon": 206,
+     "Epping Forest": 196,
+     "South Basildon and East Thurrock": 193,
+     "Clacton": 187,
+     "Harwich and North Essex": 186,
+     "Southend East and Rochford": 181,
+     "Harlow": 177,
+     "Brentwood and Ongar": 173,
+     "Southend West and Leigh": 173,
+     "Braintree": 161,
+     "Basildon and Billericay": 154,
+     "Castle Point": 149,
+     "North West Essex": 148,
+     "Witham": 148,
+     "Chelmsford": 142,
+     "Colchester": 140
+    },
+    "url": "https://petition.parliament.uk/petitions/777710"
+   },
+   {
+    "id": 771401,
+    "action": "Permanent driving ban on intoxicated drivers guilty of causing death",
+    "total": 70524,
+    "opened": "2026-07-06",
+    "closes": "",
+    "debateThresholdReached": false,
+    "governmentResponded": true,
+    "essexTotal": 1558,
+    "essexSinceLastRun": 16,
+    "essexMedian": 88,
+    "ukMedian": 36,
+    "ratio": 2.44,
+    "top": {
+     "name": "Chelmsford",
+     "signatures": 184,
+     "ukRank": 103,
+     "of": 650
+    },
+    "byConstituency": {
+     "Chelmsford": 184,
+     "Maldon": 156,
+     "Witham": 122,
+     "Braintree": 120,
+     "North West Essex": 105,
+     "Basildon and Billericay": 104,
+     "Brentwood and Ongar": 96,
+     "Colchester": 90,
+     "Rayleigh and Wickford": 88,
+     "Harwich and North Essex": 82,
+     "Southend West and Leigh": 71,
+     "Castle Point": 64,
+     "Clacton": 55,
+     "Thurrock": 51,
+     "Southend East and Rochford": 50,
+     "South Basildon and East Thurrock": 48,
+     "Harlow": 39,
+     "Epping Forest": 33
+    },
+    "url": "https://petition.parliament.uk/petitions/771401"
+   },
+   {
+    "id": 781048,
+    "action": "Mandatory Prison for Drivers Who Conceal Accidents or Obstruct Investigations",
+    "total": 56652,
+    "opened": "2026-10-02",
+    "closes": "",
+    "debateThresholdReached": false,
+    "governmentResponded": false,
+    "essexTotal": 4089,
+    "essexSinceLastRun": 5,
+    "essexMedian": 194,
+    "ukMedian": 38,
+    "ratio": 5.11,
+    "top": {
+     "name": "Clacton",
+     "signatures": 536,
+     "ukRank": 8,
+     "of": 650
+    },
+    "byConstituency": {
+     "Clacton": 536,
+     "Chelmsford": 387,
+     "Maldon": 384,
+     "Harlow": 381,
+     "Witham": 329,
+     "North West Essex": 246,
+     "Epping Forest": 234,
+     "Harwich and North Essex": 232,
+     "Braintree": 194,
+     "Colchester": 191,
+     "Rayleigh and Wickford": 168,
+     "Brentwood and Ongar": 157,
+     "Castle Point": 156,
+     "Basildon and Billericay": 146,
+     "South Basildon and East Thurrock": 117,
+     "Thurrock": 83,
+     "Southend West and Leigh": 79,
+     "Southend East and Rochford": 69
+    },
+    "url": "https://petition.parliament.uk/petitions/781048"
+   },
+   {
+    "id": 769616,
+    "action": "Provide lifelong vet care and financial support for retired service animals",
+    "total": 55968,
+    "opened": "2026-06-12",
+    "closes": "",
+    "debateThresholdReached": false,
+    "governmentResponded": true,
+    "essexTotal": 1686,
+    "essexSinceLastRun": 1,
+    "essexMedian": 95,
+    "ukMedian": 87,
+    "ratio": 1.09,
+    "top": {
+     "name": "Maldon",
+     "signatures": 139,
+     "ukRank": 43,
+     "of": 650
+    },
+    "byConstituency": {
+     "Maldon": 139,
+     "Witham": 123,
+     "Rayleigh and Wickford": 122,
+     "Harwich and North Essex": 117,
+     "Clacton": 110,
+     "Braintree": 105,
+     "North West Essex": 96,
+     "Basildon and Billericay": 95,
+     "Colchester": 95,
+     "Southend East and Rochford": 90,
+     "Harlow": 86,
+     "Castle Point": 81,
+     "South Basildon and East Thurrock": 81,
+     "Chelmsford": 80,
+     "Southend West and Leigh": 75,
+     "Brentwood and Ongar": 74,
+     "Epping Forest": 62,
+     "Thurrock": 55
+    },
+    "url": "https://petition.parliament.uk/petitions/769616"
+   },
+   {
+    "id": 778680,
+    "action": "Launch a public inquiry into the regulation of animal experimentation",
+    "total": 48745,
+    "opened": "2026-09-09",
+    "closes": "",
+    "debateThresholdReached": false,
+    "governmentResponded": true,
+    "essexTotal": 2170,
+    "essexSinceLastRun": 16,
+    "essexMedian": 125,
+    "ukMedian": 70,
+    "ratio": 1.79,
+    "top": {
+     "name": "Harwich and North Essex",
+     "signatures": 170,
+     "ukRank": 11,
+     "of": 650
+    },
+    "byConstituency": {
+     "Harwich and North Essex": 170,
+     "Clacton": 163,
+     "Colchester": 151,
+     "Braintree": 143,
+     "Chelmsford": 142,
+     "Maldon": 141,
+     "North West Essex": 135,
+     "Brentwood and Ongar": 125,
+     "Witham": 125,
+     "Southend West and Leigh": 118,
+     "Southend East and Rochford": 111,
+     "Rayleigh and Wickford": 110,
+     "Castle Point": 109,
+     "Epping Forest": 108,
+     "Harlow": 104,
+     "Basildon and Billericay": 92,
+     "South Basildon and East Thurrock": 70,
+     "Thurrock": 53
+    },
+    "url": "https://petition.parliament.uk/petitions/778680"
+   },
+   {
+    "id": 779519,
+    "action": "Reduce the retirement age for the NHS pension scheme to 60",
+    "total": 47184,
+    "opened": "2026-09-17",
+    "closes": "",
+    "debateThresholdReached": false,
+    "governmentResponded": true,
+    "essexTotal": 973,
+    "essexSinceLastRun": 1,
+    "essexMedian": 42,
+    "ukMedian": 64,
+    "ratio": 0.66,
+    "top": {
+     "name": "Harlow",
+     "signatures": 151,
+     "ukRank": 37,
+     "of": 650
+    },
+    "byConstituency": {
+     "Harlow": 151,
+     "Basildon and Billericay": 94,
+     "South Basildon and East Thurrock": 85,
+     "Southend West and Leigh": 82,
+     "Colchester": 72,
+     "Chelmsford": 68,
+     "Southend East and Rochford": 68,
+     "Thurrock": 47,
+     "North West Essex": 42,
+     "Witham": 40,
+     "Rayleigh and Wickford": 37,
+     "Brentwood and Ongar": 35,
+     "Braintree": 34,
+     "Castle Point": 30,
+     "Epping Forest": 30,
+     "Clacton": 24,
+     "Harwich and North Essex": 17,
+     "Maldon": 17
+    },
+    "url": "https://petition.parliament.uk/petitions/779519"
+   },
+   {
+    "id": 779299,
+    "action": "Reinstate mandatory warning before seizing a vehicle for anti-social driving",
+    "total": 46131,
+    "opened": "2026-09-14",
+    "closes": "",
+    "debateThresholdReached": false,
+    "governmentResponded": false,
+    "essexTotal": 1637,
+    "essexSinceLastRun": 0,
+    "essexMedian": 97,
+    "ukMedian": 68,
+    "ratio": 1.43,
+    "top": {
+     "name": "South Basildon and East Thurrock",
+     "signatures": 116,
+     "ukRank": 57,
+     "of": 650
+    },
+    "byConstituency": {
+     "South Basildon and East Thurrock": 116,
+     "Braintree": 114,
+     "Basildon and Billericay": 111,
+     "Maldon": 106,
+     "Witham": 102,
+     "Thurrock": 100,
+     "Rayleigh and Wickford": 99,
+     "Southend East and Rochford": 99,
+     "Harwich and North Essex": 97,
+     "Harlow": 94,
+     "Castle Point": 92,
+     "Colchester": 91,
+     "North West Essex": 79,
+     "Clacton": 78,
+     "Chelmsford": 77,
+     "Southend West and Leigh": 68,
+     "Brentwood and Ongar": 59,
+     "Epping Forest": 55
+    },
+    "url": "https://petition.parliament.uk/petitions/779299"
+   },
+   {
+    "id": 781598,
+    "action": "Ban children & their likeness being used to promote pornography or adult-content",
+    "total": 45646,
+    "opened": "2026-10-07",
+    "closes": "",
+    "debateThresholdReached": false,
+    "governmentResponded": true,
+    "essexTotal": 1371,
+    "essexSinceLastRun": 0,
+    "essexMedian": 73,
+    "ukMedian": 70,
+    "ratio": 1.04,
+    "top": {
+     "name": "Southend West and Leigh",
+     "signatures": 120,
+     "ukRank": 10,
+     "of": 650
+    },
+    "byConstituency": {
+     "Southend West and Leigh": 120,
+     "Chelmsford": 97,
+     "North West Essex": 94,
+     "Colchester": 91,
+     "Harwich and North Essex": 91,
+     "Witham": 88,
+     "Braintree": 86,
+     "Rayleigh and Wickford": 80,
+     "Basildon and Billericay": 73,
+     "Harlow": 71,
+     "Southend East and Rochford": 71,
+     "Brentwood and Ongar": 70,
+     "South Basildon and East Thurrock": 69,
+     "Castle Point": 65,
+     "Maldon": 65,
+     "Clacton": 55,
+     "Epping Forest": 48,
+     "Thurrock": 37
+    },
+    "url": "https://petition.parliament.uk/petitions/781598"
+   },
+   {
+    "id": 776949,
+    "action": "Introduce urgent moratorium on AI Data Centres and BESS outside AI Growth Zones",
+    "total": 44220,
+    "opened": "2026-08-17",
+    "closes": "",
+    "debateThresholdReached": false,
+    "governmentResponded": true,
+    "essexTotal": 750,
+    "essexSinceLastRun": 0,
+    "essexMedian": 40,
+    "ukMedian": 40,
+    "ratio": 1.0,
+    "top": {
+     "name": "Harwich and North Essex",
+     "signatures": 60,
+     "ukRank": 142,
+     "of": 650
+    },
+    "byConstituency": {
+     "Harwich and North Essex": 60,
+     "Epping Forest": 56,
+     "Colchester": 53,
+     "Braintree": 52,
+     "North West Essex": 52,
+     "Rayleigh and Wickford": 50,
+     "Maldon": 45,
+     "Southend West and Leigh": 45,
+     "Brentwood and Ongar": 40,
+     "Thurrock": 40,
+     "South Basildon and East Thurrock": 39,
+     "Basildon and Billericay": 36,
+     "Chelmsford": 36,
+     "Southend East and Rochford": 36,
+     "Witham": 34,
+     "Clacton": 29,
+     "Harlow": 26,
+     "Castle Point": 21
+    },
+    "url": "https://petition.parliament.uk/petitions/776949"
+   },
+   {
+    "id": 783423,
+    "action": "End the religious slaughter exemption and require irreversible stunning",
+    "total": 40301,
+    "opened": "2026-10-21",
+    "closes": "",
+    "debateThresholdReached": false,
+    "governmentResponded": false,
+    "essexTotal": 1288,
+    "essexSinceLastRun": 12,
+    "essexMedian": 72,
+    "ukMedian": 60,
+    "ratio": 1.2,
+    "top": {
+     "name": "Harwich and North Essex",
+     "signatures": 96,
+     "ukRank": 67,
+     "of": 650
+    },
+    "byConstituency": {
+     "Harwich and North Essex": 96,
+     "Clacton": 95,
+     "Maldon": 91,
+     "Castle Point": 90,
+     "Rayleigh and Wickford": 90,
+     "Braintree": 78,
+     "Witham": 77,
+     "South Basildon and East Thurrock": 76,
+     "North West Essex": 72,
+     "Basildon and Billericay": 71,
+     "Southend East and Rochford": 67,
+     "Brentwood and Ongar": 63,
+     "Colchester": 60,
+     "Chelmsford": 58,
+     "Southend West and Leigh": 58,
+     "Epping Forest": 51,
+     "Thurrock": 51,
+     "Harlow": 44
+    },
+    "url": "https://petition.parliament.uk/petitions/783423"
+   },
+   {
+    "id": 769319,
+    "action": "Fund £20,000 a year (term time) wage for Teaching Assistants",
+    "total": 40213,
+    "opened": "2026-06-08",
+    "closes": "",
+    "debateThresholdReached": false,
+    "governmentResponded": true,
+    "essexTotal": 1429,
+    "essexSinceLastRun": 0,
+    "essexMedian": 75,
+    "ukMedian": 61,
+    "ratio": 1.23,
+    "top": {
+     "name": "Braintree",
+     "signatures": 136,
+     "ukRank": 23,
+     "of": 650
+    },
+    "byConstituency": {
+     "Braintree": 136,
+     "South Basildon and East Thurrock": 132,
+     "Basildon and Billericay": 108,
+     "Witham": 108,
+     "Colchester": 105,
+     "North West Essex": 88,
+     "Rayleigh and Wickford": 85,
+     "Harwich and North Essex": 78,
+     "Clacton": 75,
+     "Thurrock": 75,
+     "Maldon": 70,
+     "Harlow": 64,
+     "Brentwood and Ongar": 59,
+     "Southend East and Rochford": 59,
+     "Castle Point": 53,
+     "Southend West and Leigh": 51,
+     "Epping Forest": 44,
+     "Chelmsford": 39
+    },
+    "url": "https://petition.parliament.uk/petitions/769319"
+   },
+   {
+    "id": 777325,
+    "action": "Fund second stem cell transplants on NHS for relapse within 12 months",
+    "total": 38454,
+    "opened": "2026-08-12",
+    "closes": "",
+    "debateThresholdReached": false,
+    "governmentResponded": true,
+    "essexTotal": 903,
+    "essexSinceLastRun": 0,
+    "essexMedian": 48,
+    "ukMedian": 51,
+    "ratio": 0.94,
+    "top": {
+     "name": "Maldon",
+     "signatures": 78,
+     "ukRank": 93,
+     "of": 650
+    },
+    "byConstituency": {
+     "Maldon": 78,
+     "Brentwood and Ongar": 69,
+     "Witham": 67,
+     "Rayleigh and Wickford": 61,
+     "Southend West and Leigh": 58,
+     "Clacton": 51,
+     "Epping Forest": 50,
+     "Braintree": 49,
+     "South Basildon and East Thurrock": 48,
+     "Harwich and North Essex": 45,
+     "North West Essex": 45,
+     "Basildon and Billericay": 44,
+     "Colchester": 44,
+     "Chelmsford": 43,
+     "Harlow": 40,
+     "Castle Point": 39,
+     "Thurrock": 39,
+     "Southend East and Rochford": 33
+    },
+    "url": "https://petition.parliament.uk/petitions/777325"
+   },
+   {
+    "id": 779197,
+    "action": "Mandate low noise fireworks, drone & laser displays instead of normal fireworks",
+    "total": 38040,
+    "opened": "2026-09-14",
+    "closes": "",
+    "debateThresholdReached": false,
+    "governmentResponded": false,
+    "essexTotal": 1237,
+    "essexSinceLastRun": 0,
+    "essexMedian": 71,
+    "ukMedian": 52,
+    "ratio": 1.37,
+    "top": {
+     "name": "Clacton",
+     "signatures": 127,
+     "ukRank": 29,
+     "of": 649
+    },
+    "byConstituency": {
+     "Clacton": 127,
+     "Castle Point": 107,
+     "Maldon": 88,
+     "Rayleigh and Wickford": 85,
+     "Chelmsford": 76,
+     "Southend West and Leigh": 76,
+     "Epping Forest": 72,
+     "North West Essex": 72,
+     "Southend East and Rochford": 71,
+     "Thurrock": 61,
+     "Braintree": 58,
+     "Brentwood and Ongar": 55,
+     "South Basildon and East Thurrock": 54,
+     "Witham": 54,
+     "Harwich and North Essex": 53,
+     "Basildon and Billericay": 48,
+     "Harlow": 43,
+     "Colchester": 37
+    },
+    "url": "https://petition.parliament.uk/petitions/779197"
+   },
+   {
+    "id": 778453,
+    "action": "Require asylum seekers & foreign criminals to be detained on remote UK islands",
+    "total": 33670,
+    "opened": "2026-09-03",
+    "closes": "",
+    "debateThresholdReached": false,
+    "governmentResponded": false,
+    "essexTotal": 1391,
+    "essexSinceLastRun": 1,
+    "essexMedian": 73,
+    "ukMedian": 52,
+    "ratio": 1.4,
+    "top": {
+     "name": "Braintree",
+     "signatures": 159,
+     "ukRank": 2,
+     "of": 649
+    },
+    "byConstituency": {
+     "Braintree": 159,
+     "Clacton": 113,
+     "Castle Point": 104,
+     "Witham": 90,
+     "Rayleigh and Wickford": 87,
+     "Southend East and Rochford": 86,
+     "Basildon and Billericay": 83,
+     "South Basildon and East Thurrock": 74,
+     "Maldon": 73,
+     "Brentwood and Ongar": 68,
+     "North West Essex": 65,
+     "Southend West and Leigh": 64,
+     "Chelmsford": 58,
+     "Harwich and North Essex": 58,
+     "Thurrock": 55,
+     "Colchester": 54,
+     "Epping Forest": 50,
+     "Harlow": 50
+    },
+    "url": "https://petition.parliament.uk/petitions/778453"
+   },
+   {
+    "id": 781255,
+    "action": "Keep 10-year Long Residence Route for people already living in the UK",
+    "total": 32063,
+    "opened": "2026-10-16",
+    "closes": "",
+    "debateThresholdReached": false,
+    "governmentResponded": false,
+    "essexTotal": 455,
+    "essexSinceLastRun": 1,
+    "essexMedian": 26,
+    "ukMedian": 22,
+    "ratio": 1.18,
+    "top": {
+     "name": "Chelmsford",
+     "signatures": 58,
+     "ukRank": 157,
+     "of": 650
+    },
+    "byConstituency": {
+     "Chelmsford": 58,
+     "Colchester": 55,
+     "Thurrock": 54,
+     "Southend East and Rochford": 43,
+     "Epping Forest": 33,
+     "Harlow": 31,
+     "Brentwood and Ongar": 27,
+     "South Basildon and East Thurrock": 26,
+     "Southend West and Leigh": 26,
+     "Basildon and Billericay": 18,
+     "Harwich and North Essex": 16,
+     "Braintree": 14,
+     "Rayleigh and Wickford": 12,
+     "Witham": 12,
+     "Clacton": 9,
+     "North West Essex": 9,
+     "Maldon": 7,
+     "Castle Point": 5
+    },
+    "url": "https://petition.parliament.uk/petitions/781255"
+   },
+   {
+    "id": 776833,
+    "action": "Require public bodies to achieve unqualified audit opinion before raising taxes",
+    "total": 31094,
+    "opened": "2026-08-12",
+    "closes": "",
+    "debateThresholdReached": false,
+    "governmentResponded": true,
+    "essexTotal": 1185,
+    "essexSinceLastRun": 0,
+    "essexMedian": 67,
+    "ukMedian": 48,
+    "ratio": 1.4,
+    "top": {
+     "name": "Brentwood and Ongar",
+     "signatures": 93,
+     "ukRank": 5,
+     "of": 650
+    },
+    "byConstituency": {
+     "Brentwood and Ongar": 93,
+     "Castle Point": 80,
+     "Braintree": 79,
+     "Maldon": 77,
+     "Rayleigh and Wickford": 77,
+     "Witham": 75,
+     "Harwich and North Essex": 72,
+     "Southend East and Rochford": 72,
+     "Southend West and Leigh": 67,
+     "North West Essex": 65,
+     "Epping Forest": 64,
+     "Clacton": 59,
+     "Basildon and Billericay": 56,
+     "Colchester": 55,
+     "Chelmsford": 54,
+     "South Basildon and East Thurrock": 49,
+     "Thurrock": 46,
+     "Harlow": 45
+    },
+    "url": "https://petition.parliament.uk/petitions/776833"
+   },
+   {
+    "id": 775103,
+    "action": "Minimum State Pension should equal the National Minimum Wage for under 18s.",
+    "total": 29260,
+    "opened": "2026-07-28",
+    "closes": "",
+    "debateThresholdReached": false,
+    "governmentResponded": true,
+    "essexTotal": 792,
+    "essexSinceLastRun": 0,
+    "essexMedian": 44,
+    "ukMedian": 44,
+    "ratio": 1.0,
+    "top": {
+     "name": "Clacton",
+     "signatures": 83,
+     "ukRank": 16,
+     "of": 650
+    },
+    "byConstituency": {
+     "Clacton": 83,
+     "South Basildon and East Thurrock": 56,
+     "Rayleigh and Wickford": 55,
+     "Witham": 52,
+     "Harwich and North Essex": 51,
+     "Maldon": 47,
+     "Braintree": 46,
+     "Southend West and Leigh": 45,
+     "Southend East and Rochford": 44,
+     "Castle Point": 42,
+     "Colchester": 40,
+     "Harlow": 37,
+     "North West Essex": 36,
+     "Basildon and Billericay": 35,
+     "Epping Forest": 35,
+     "Brentwood and Ongar": 32,
+     "Thurrock": 32,
+     "Chelmsford": 24
+    },
+    "url": "https://petition.parliament.uk/petitions/775103"
+   },
+   {
+    "id": 783905,
+    "action": "Hold a UK-wide public consultation before further expansion of AI data centres",
+    "total": 28052,
+    "opened": "2026-10-26",
+    "closes": "",
+    "debateThresholdReached": false,
+    "governmentResponded": false,
+    "essexTotal": 687,
+    "essexSinceLastRun": null,
+    "essexMedian": 37,
+    "ukMedian": 35,
+    "ratio": 1.06,
+    "top": {
+     "name": "Epping Forest",
+     "signatures": 70,
+     "ukRank": 71,
+     "of": 650
+    },
+    "byConstituency": {
+     "Epping Forest": 70,
+     "Harwich and North Essex": 51,
+     "Brentwood and Ongar": 46,
+     "Southend West and Leigh": 46,
+     "Maldon": 45,
+     "Southend East and Rochford": 41,
+     "Braintree": 40,
+     "North West Essex": 40,
+     "South Basildon and East Thurrock": 37,
+     "Colchester": 36,
+     "Chelmsford": 35,
+     "Clacton": 33,
+     "Witham": 33,
+     "Thurrock": 32,
+     "Harlow": 31,
+     "Rayleigh and Wickford": 31,
+     "Basildon and Billericay": 21,
+     "Castle Point": 19
+    },
+    "url": "https://petition.parliament.uk/petitions/783905"
+   },
+   {
+    "id": 770527,
+    "action": "Disapprove the draft Equality Act 2010 guidance laid on 21 May 2026",
+    "total": 27862,
+    "opened": "2026-06-19",
+    "closes": "",
+    "debateThresholdReached": false,
+    "governmentResponded": true,
+    "essexTotal": 590,
+    "essexSinceLastRun": 0,
+    "essexMedian": 31,
+    "ukMedian": 39,
+    "ratio": 0.79,
+    "top": {
+     "name": "Colchester",
+     "signatures": 61,
+     "ukRank": 75,
+     "of": 650
+    },
+    "byConstituency": {
+     "Colchester": 61,
+     "Southend East and Rochford": 56,
+     "Harwich and North Essex": 48,
+     "Southend West and Leigh": 43,
+     "Clacton": 41,
+     "Chelmsford": 37,
+     "Braintree": 36,
+     "Harlow": 35,
+     "Witham": 31,
+     "Basildon and Billericay": 29,
+     "Maldon": 28,
+     "South Basildon and East Thurrock": 28,
+     "Rayleigh and Wickford": 26,
+     "North West Essex": 24,
+     "Castle Point": 20,
+     "Epping Forest": 19,
+     "Brentwood and Ongar": 15,
+     "Thurrock": 13
+    },
+    "url": "https://petition.parliament.uk/petitions/770527"
+   }
+  ]
+ },
+ "at": "2026-11-21T05:33:12Z",
+ "prices": {
+  "month": "2026-09",
+  "new": true,
+  "rows": [
+   {
+    "price": 367920.0,
+    "annual": 0.8,
+    "monthly": 0.1,
+    "detached": 678499.0,
+    "flat": 189146.0,
+    "firstTime": 307721.0,
+    "area": "Basildon",
+    "slug": "basildon"
+   },
+   {
+    "price": 324264.0,
+    "annual": 0.5,
+    "monthly": -1.8,
+    "detached": 559718.0,
+    "flat": 153539.0,
+    "firstTime": 261027.0,
+    "area": "Braintree",
+    "slug": "braintree"
+   },
+   {
+    "price": 520447.0,
+    "annual": 0.2,
+    "monthly": 0.1,
+    "detached": 996190.0,
+    "flat": 264292.0,
+    "firstTime": 373471.0,
+    "area": "Brentwood",
+    "slug": "brentwood"
+   },
+   {
+    "price": 368191.0,
+    "annual": -0.7,
+    "monthly": 2.5,
+    "detached": 492554.0,
+    "flat": 169245.0,
+    "firstTime": 316628.0,
+    "area": "Castle Point",
+    "slug": "castle-point"
+   },
+   {
+    "price": 378412.0,
+    "annual": -0.8,
+    "monthly": 0.1,
+    "detached": 682616.0,
+    "flat": 207628.0,
+    "firstTime": 298428.0,
+    "area": "Chelmsford",
+    "slug": "chelmsford"
+   },
+   {
+    "price": 297638.0,
+    "annual": 0.9,
+    "monthly": 0.6,
+    "detached": 501282.0,
+    "flat": 162068.0,
+    "firstTime": 249711.0,
+    "area": "Colchester",
+    "slug": "colchester"
+   },
+   {
+    "price": 536719.0,
+    "annual": 2.1,
+    "monthly": 2.0,
+    "detached": 1022897.0,
+    "flat": 296026.0,
+    "firstTime": 415027.0,
+    "area": "Epping Forest",
+    "slug": "epping-forest"
+   },
+   {
+    "price": 317113.0,
+    "annual": 3.9,
+    "monthly": 0.0,
+    "detached": 625974.0,
+    "flat": 181964.0,
+    "firstTime": 286294.0,
+    "area": "Harlow",
+    "slug": "harlow"
+   },
+   {
+    "price": 406165.0,
+    "annual": 5.0,
+    "monthly": 0.6,
+    "detached": 596082.0,
+    "flat": 179987.0,
+    "firstTime": 317488.0,
+    "area": "Maldon",
+    "slug": "maldon"
+   },
+   {
+    "price": 408883.0,
+    "annual": 1.3,
+    "monthly": 0.0,
+    "detached": 631647.0,
+    "flat": 179330.0,
+    "firstTime": 333615.0,
+    "area": "Rochford",
+    "slug": "rochford"
+   },
+   {
+    "price": 327570.0,
+    "annual": 1.8,
+    "monthly": 0.9,
+    "detached": 643067.0,
+    "flat": 198138.0,
+    "firstTime": 270046.0,
+    "area": "Southend-on-Sea",
+    "slug": "southend-on-sea"
+   },
+   {
+    "price": 258932.0,
+    "annual": -2.2,
+    "monthly": 0.2,
+    "detached": 366896.0,
+    "flat": 130581.0,
+    "firstTime": 220732.0,
+    "area": "Tendring",
+    "slug": "tendring"
+   },
+   {
+    "price": 322338.0,
+    "annual": -0.7,
+    "monthly": 0.3,
+    "detached": 597374.0,
+    "flat": 189138.0,
+    "firstTime": 296723.0,
+    "area": "Thurrock",
+    "slug": "thurrock"
+   },
+   {
+    "price": 465802.0,
+    "annual": -0.5,
+    "monthly": -0.8,
+    "detached": 716139.0,
+    "flat": 200261.0,
+    "firstTime": 333140.0,
+    "area": "Uttlesford",
+    "slug": "uttlesford"
+   },
+   {
+    "price": 360791.0,
+    "annual": 0.5,
+    "monthly": 0.2,
+    "detached": 581090.0,
+    "flat": 188898.0,
+    "firstTime": 290743.0,
+    "area": "Essex (county council area)",
+    "slug": "essex"
+   },
+   {
+    "price": 292998.0,
+    "annual": 0.8,
+    "monthly": -0.4,
+    "detached": 476710.0,
+    "flat": 215760.0,
+    "firstTime": 245052.0,
+    "area": "England",
+    "slug": "england"
+   }
+  ],
+  "url": "https://landregistry.data.gov.uk/app/ukhpi"
+ },
+ "crime": {
+  "month": "2026-09",
+  "new": true,
+  "rows": [
+   {
+    "area": "Basildon",
+    "id": "SA101",
+    "n": 878,
+    "prev": 931,
+    "yearAgo": 760,
+    "top": [
+     [
+      "violent crime",
+      324
+     ],
+     [
+      "anti social behaviour",
+      151
+     ],
+     [
+      "shoplifting",
+      99
+     ]
+    ],
+    "shoplifting": 99,
+    "violence": 324,
+    "asb": 151,
+    "burglary": 20,
+    "vehicle": 46
+   },
+   {
+    "area": "Colchester Town West",
+    "id": "NC104",
+    "n": 800,
+    "prev": 836,
+    "yearAgo": 709,
+    "top": [
+     [
+      "violent crime",
+      319
+     ],
+     [
+      "anti social behaviour",
+      112
+     ],
+     [
+      "shoplifting",
+      81
+     ]
+    ],
+    "shoplifting": 81,
+    "violence": 319,
+    "asb": 112,
+    "burglary": 16,
+    "vehicle": 44
+   },
+   {
+    "area": "Southend Central",
+    "id": "SC102",
+    "n": 794,
+    "prev": 992,
+    "yearAgo": 762,
+    "top": [
+     [
+      "violent crime",
+      298
+     ],
+     [
+      "anti social behaviour",
+      110
+     ],
+     [
+      "shoplifting",
+      76
+     ]
+    ],
+    "shoplifting": 76,
+    "violence": 298,
+    "asb": 110,
+    "burglary": 19,
+    "vehicle": 31
+   },
+   {
+    "area": "Clacton",
+    "id": "ND102",
+    "n": 720,
+    "prev": 833,
+    "yearAgo": 569,
+    "top": [
+     [
+      "violent crime",
+      339
+     ],
+     [
+      "anti social behaviour",
+      79
+     ],
+     [
+      "other theft",
+      62
+     ]
+    ],
+    "shoplifting": 40,
+    "violence": 339,
+    "asb": 79,
+    "burglary": 14,
+    "vehicle": 19
+   },
+   {
+    "area": "Chelmsford Town",
+    "id": "NB102",
+    "n": 608,
+    "prev": 717,
+    "yearAgo": 560,
+    "top": [
+     [
+      "violent crime",
+      228
+     ],
+     [
+      "shoplifting",
+      87
+     ],
+     [
+      "anti social behaviour",
+      86
+     ]
+    ],
+    "shoplifting": 87,
+    "violence": 228,
+    "asb": 86,
+    "burglary": 11,
+    "vehicle": 8
+   },
+   {
+    "area": "Colchester Town East",
+    "id": "NC103",
+    "n": 550,
+    "prev": 538,
+    "yearAgo": 478,
+    "top": [
+     [
+      "violent crime",
+      256
+     ],
+     [
+      "anti social behaviour",
+      75
+     ],
+     [
+      "shoplifting",
+      46
+     ]
+    ],
+    "shoplifting": 46,
+    "violence": 256,
+    "asb": 75,
+    "burglary": 12,
+    "vehicle": 24
+   },
+   {
+    "area": "Aveley and Ockendon",
+    "id": "WC101",
+    "n": 523,
+    "prev": 586,
+    "yearAgo": 481,
+    "top": [
+     [
+      "violent crime",
+      174
+     ],
+     [
+      "shoplifting",
+      100
+     ],
+     [
+      "anti social behaviour",
+      54
+     ]
+    ],
+    "shoplifting": 100,
+    "violence": 174,
+    "asb": 54,
+    "burglary": 7,
+    "vehicle": 48
+   },
+   {
+    "area": "Chafford Hundred and Grays",
+    "id": "WC103",
+    "n": 494,
+    "prev": 595,
+    "yearAgo": 447,
+    "top": [
+     [
+      "violent crime",
+      181
+     ],
+     [
+      "anti social behaviour",
+      107
+     ],
+     [
+      "public order",
+      33
+     ]
+    ],
+    "shoplifting": 23,
+    "violence": 181,
+    "asb": 107,
+    "burglary": 9,
+    "vehicle": 32
+   },
+   {
+    "area": "Pitsea",
+    "id": "SA103",
+    "n": 405,
+    "prev": 436,
+    "yearAgo": 422,
+    "top": [
+     [
+      "violent crime",
+      186
+     ],
+     [
+      "anti social behaviour",
+      42
+     ],
+     [
+      "criminal damage arson",
+      38
+     ]
+    ],
+    "shoplifting": 23,
+    "violence": 186,
+    "asb": 42,
+    "burglary": 6,
+    "vehicle": 31
+   },
+   {
+    "area": "Westcliff",
+    "id": "SC104",
+    "n": 397,
+    "prev": 376,
+    "yearAgo": 268,
+    "top": [
+     [
+      "violent crime",
+      131
+     ],
+     [
+      "shoplifting",
+      102
+     ],
+     [
+      "anti social behaviour",
+      45
+     ]
+    ],
+    "shoplifting": 102,
+    "violence": 131,
+    "asb": 45,
+    "burglary": 9,
+    "vehicle": 16
+   },
+   {
+    "area": "Southend East",
+    "id": "SC103",
+    "n": 364,
+    "prev": 457,
+    "yearAgo": 309,
+    "top": [
+     [
+      "violent crime",
+      147
+     ],
+     [
+      "anti social behaviour",
+      49
+     ],
+     [
+      "public order",
+      32
+     ]
+    ],
+    "shoplifting": 26,
+    "violence": 147,
+    "asb": 49,
+    "burglary": 8,
+    "vehicle": 29
+   },
+   {
+    "area": "Epping and Ongar",
+    "id": "WA203",
+    "n": 349,
+    "prev": 357,
+    "yearAgo": 330,
+    "top": [
+     [
+      "violent crime",
+      112
+     ],
+     [
+      "anti social behaviour",
+      47
+     ],
+     [
+      "vehicle crime",
+      38
+     ]
+    ],
+    "shoplifting": 22,
+    "violence": 112,
+    "asb": 47,
+    "burglary": 18,
+    "vehicle": 38
+   },
+   {
+    "area": "Chelmsford South",
+    "id": "NB101",
+    "n": 338,
+    "prev": 323,
+    "yearAgo": 223,
+    "top": [
+     [
+      "violent crime",
+      145
+     ],
+     [
+      "anti social behaviour",
+      50
+     ],
+     [
+      "criminal damage arson",
+      26
+     ]
+    ],
+    "shoplifting": 7,
+    "violence": 145,
+    "asb": 50,
+    "burglary": 22,
+    "vehicle": 17
+   },
+   {
+    "area": "Witham South",
+    "id": "NA104",
+    "n": 336,
+    "prev": 324,
+    "yearAgo": 295,
+    "top": [
+     [
+      "violent crime",
+      169
+     ],
+     [
+      "anti social behaviour",
+      39
+     ],
+     [
+      "other theft",
+      31
+     ]
+    ],
+    "shoplifting": 9,
+    "violence": 169,
+    "asb": 39,
+    "burglary": 13,
+    "vehicle": 15
+   },
+   {
+    "area": "Harwich and Manningtree",
+    "id": "ND104",
+    "n": 327,
+    "prev": 353,
+    "yearAgo": 268,
+    "top": [
+     [
+      "violent crime",
+      176
+     ],
+     [
+      "anti social behaviour",
+      44
+     ],
+     [
+      "criminal damage arson",
+      19
+     ]
+    ],
+    "shoplifting": 18,
+    "violence": 176,
+    "asb": 44,
+    "burglary": 12,
+    "vehicle": 9
+   },
+   {
+    "area": "Uttlesford South",
+    "id": "NA204",
+    "n": 325,
+    "prev": 312,
+    "yearAgo": 266,
+    "top": [
+     [
+      "violent crime",
+      89
+     ],
+     [
+      "anti social behaviour",
+      63
+     ],
+     [
+      "other theft",
+      48
+     ]
+    ],
+    "shoplifting": 13,
+    "violence": 89,
+    "asb": 63,
+    "burglary": 7,
+    "vehicle": 33
+   },
+   {
+    "area": "Harlow Town Centre",
+    "id": "WB101",
+    "n": 316,
+    "prev": 322,
+    "yearAgo": 280,
+    "top": [
+     [
+      "violent crime",
+      118
+     ],
+     [
+      "shoplifting",
+      43
+     ],
+     [
+      "anti social behaviour",
+      39
+     ]
+    ],
+    "shoplifting": 43,
+    "violence": 118,
+    "asb": 39,
+    "burglary": 13,
+    "vehicle": 12
+   },
+   {
+    "area": "Chadwell St Mary and Tilbury",
+    "id": "WC104",
+    "n": 310,
+    "prev": 340,
+    "yearAgo": 293,
+    "top": [
+     [
+      "violent crime",
+      116
+     ],
+     [
+      "anti social behaviour",
+      63
+     ],
+     [
+      "criminal damage arson",
+      33
+     ]
+    ],
+    "shoplifting": 5,
+    "violence": 116,
+    "asb": 63,
+    "burglary": 4,
+    "vehicle": 24
+   },
+   {
+    "area": "Old Harlow",
+    "id": "WB103",
+    "n": 299,
+    "prev": 318,
+    "yearAgo": 259,
+    "top": [
+     [
+      "violent crime",
+      118
+     ],
+     [
+      "shoplifting",
+      38
+     ],
+     [
+      "anti social behaviour",
+      31
+     ]
+    ],
+    "shoplifting": 38,
+    "violence": 118,
+    "asb": 31,
+    "burglary": 3,
+    "vehicle": 12
+   },
+   {
+    "area": "Bocking and Braintree",
+    "id": "NA101",
+    "n": 280,
+    "prev": 344,
+    "yearAgo": 266,
+    "top": [
+     [
+      "violent crime",
+      124
+     ],
+     [
+      "anti social behaviour",
+      39
+     ],
+     [
+      "other theft",
+      23
+     ]
+    ],
+    "shoplifting": 17,
+    "violence": 124,
+    "asb": 39,
+    "burglary": 6,
+    "vehicle": 11
+   },
+   {
+    "area": "North Chelmsford",
+    "id": "NB104",
+    "n": 259,
+    "prev": 312,
+    "yearAgo": 269,
+    "top": [
+     [
+      "violent crime",
+      108
+     ],
+     [
+      "anti social behaviour",
+      31
+     ],
+     [
+      "vehicle crime",
+      25
+     ]
+    ],
+    "shoplifting": 15,
+    "violence": 108,
+    "asb": 31,
+    "burglary": 6,
+    "vehicle": 25
+   },
+   {
+    "area": "Braintree Central",
+    "id": "NA102",
+    "n": 251,
+    "prev": 228,
+    "yearAgo": 171,
+    "top": [
+     [
+      "violent crime",
+      98
+     ],
+     [
+      "anti social behaviour",
+      34
+     ],
+     [
+      "criminal damage arson",
+      21
+     ]
+    ],
+    "shoplifting": 17,
+    "violence": 98,
+    "asb": 34,
+    "burglary": 8,
+    "vehicle": 17
+   },
+   {
+    "area": "Corringham, Orsett and Stanford-le-Hope",
+    "id": "WC102",
+    "n": 248,
+    "prev": 217,
+    "yearAgo": 194,
+    "top": [
+     [
+      "violent crime",
+      93
+     ],
+     [
+      "anti social behaviour",
+      47
+     ],
+     [
+      "criminal damage arson",
+      19
+     ]
+    ],
+    "shoplifting": 15,
+    "violence": 93,
+    "asb": 47,
+    "burglary": 9,
+    "vehicle": 16
+   },
+   {
+    "area": "Netteswell",
+    "id": "WB102",
+    "n": 238,
+    "prev": 244,
+    "yearAgo": 184,
+    "top": [
+     [
+      "violent crime",
+      97
+     ],
+     [
+      "public order",
+      24
+     ],
+     [
+      "anti social behaviour",
+      23
+     ]
+    ],
+    "shoplifting": 16,
+    "violence": 97,
+    "asb": 23,
+    "burglary": 4,
+    "vehicle": 13
+   },
+   {
+    "area": "Eastwood and Leigh",
+    "id": "SC101",
+    "n": 232,
+    "prev": 264,
+    "yearAgo": 204,
+    "top": [
+     [
+      "violent crime",
+      113
+     ],
+     [
+      "anti social behaviour",
+      29
+     ],
+     [
+      "other theft",
+      20
+     ]
+    ],
+    "shoplifting": 8,
+    "violence": 113,
+    "asb": 29,
+    "burglary": 8,
+    "vehicle": 14
+   },
+   {
+    "area": "Wickford",
+    "id": "SA104",
+    "n": 228,
+    "prev": 232,
+    "yearAgo": 144,
+    "top": [
+     [
+      "violent crime",
+      75
+     ],
+     [
+      "anti social behaviour",
+      47
+     ],
+     [
+      "shoplifting",
+      24
+     ]
+    ],
+    "shoplifting": 24,
+    "violence": 75,
+    "asb": 47,
+    "burglary": 10,
+    "vehicle": 8
+   },
+   {
+    "area": "Debden and Loughton",
+    "id": "WA202",
+    "n": 222,
+    "prev": 231,
+    "yearAgo": 199,
+    "top": [
+     [
+      "violent crime",
+      87
+     ],
+     [
+      "anti social behaviour",
+      28
+     ],
+     [
+      "shoplifting",
+      27
+     ]
+    ],
+    "shoplifting": 27,
+    "violence": 87,
+    "asb": 28,
+    "burglary": 8,
+    "vehicle": 16
+   },
+   {
+    "area": "Canvey",
+    "id": "SB102",
+    "n": 218,
+    "prev": 263,
+    "yearAgo": 236,
+    "top": [
+     [
+      "violent crime",
+      83
+     ],
+     [
+      "anti social behaviour",
+      32
+     ],
+     [
+      "shoplifting",
+      27
+     ]
+    ],
+    "shoplifting": 27,
+    "violence": 83,
+    "asb": 32,
+    "burglary": 5,
+    "vehicle": 14
+   },
+   {
+    "area": "Billericay",
+    "id": "SA102",
+    "n": 201,
+    "prev": 155,
+    "yearAgo": 183,
+    "top": [
+     [
+      "violent crime",
+      77
+     ],
+     [
+      "anti social behaviour",
+      30
+     ],
+     [
+      "vehicle crime",
+      21
+     ]
+    ],
+    "shoplifting": 11,
+    "violence": 77,
+    "asb": 30,
+    "burglary": 12,
+    "vehicle": 21
+   },
+   {
+    "area": "Waltham Abbey",
+    "id": "WA204",
+    "n": 195,
+    "prev": 226,
+    "yearAgo": 190,
+    "top": [
+     [
+      "violent crime",
+      68
+     ],
+     [
+      "anti social behaviour",
+      37
+     ],
+     [
+      "vehicle crime",
+      25
+     ]
+    ],
+    "shoplifting": 6,
+    "violence": 68,
+    "asb": 37,
+    "burglary": 5,
+    "vehicle": 25
+   },
+   {
+    "area": "Colchester Rural North",
+    "id": "NC101",
+    "n": 170,
+    "prev": 162,
+    "yearAgo": 138,
+    "top": [
+     [
+      "violent crime",
+      53
+     ],
+     [
+      "anti social behaviour",
+      35
+     ],
+     [
+      "shoplifting",
+      25
+     ]
+    ],
+    "shoplifting": 25,
+    "violence": 53,
+    "asb": 35,
+    "burglary": 4,
+    "vehicle": 10
+   },
+   {
+    "area": "Brentwood North",
+    "id": "WA101",
+    "n": 169,
+    "prev": 189,
+    "yearAgo": 139,
+    "top": [
+     [
+      "violent crime",
+      54
+     ],
+     [
+      "vehicle crime",
+      23
+     ],
+     [
+      "anti social behaviour",
+      17
+     ]
+    ],
+    "shoplifting": 12,
+    "violence": 54,
+    "asb": 17,
+    "burglary": 0,
+    "vehicle": 23
+   },
+   {
+    "area": "Colchester Rural South",
+    "id": "NC102",
+    "n": 168,
+    "prev": 158,
+    "yearAgo": 155,
+    "top": [
+     [
+      "violent crime",
+      58
+     ],
+     [
+      "anti social behaviour",
+      34
+     ],
+     [
+      "other theft",
+      19
+     ]
+    ],
+    "shoplifting": 19,
+    "violence": 58,
+    "asb": 34,
+    "burglary": 5,
+    "vehicle": 5
+   },
+   {
+    "area": "Rayleigh",
+    "id": "SB202",
+    "n": 167,
+    "prev": 168,
+    "yearAgo": 148,
+    "top": [
+     [
+      "violent crime",
+      75
+     ],
+     [
+      "anti social behaviour",
+      19
+     ],
+     [
+      "criminal damage arson",
+      15
+     ]
+    ],
+    "shoplifting": 9,
+    "violence": 75,
+    "asb": 19,
+    "burglary": 7,
+    "vehicle": 7
+   },
+   {
+    "area": "Frinton, Thorpe-le-Soken and Walton",
+    "id": "ND103",
+    "n": 159,
+    "prev": 180,
+    "yearAgo": 137,
+    "top": [
+     [
+      "violent crime",
+      89
+     ],
+     [
+      "public order",
+      18
+     ],
+     [
+      "anti social behaviour",
+      15
+     ]
+    ],
+    "shoplifting": 9,
+    "violence": 89,
+    "asb": 15,
+    "burglary": 4,
+    "vehicle": 2
+   },
+   {
+    "area": "Rochford, Ashingdon and Canewdon",
+    "id": "SB203",
+    "n": 157,
+    "prev": 122,
+    "yearAgo": 112,
+    "top": [
+     [
+      "violent crime",
+      73
+     ],
+     [
+      "anti social behaviour",
+      22
+     ],
+     [
+      "criminal damage arson",
+      14
+     ]
+    ],
+    "shoplifting": 8,
+    "violence": 73,
+    "asb": 22,
+    "burglary": 2,
+    "vehicle": 4
+   },
+   {
+    "area": "Brightlingsea and St Osyth",
+    "id": "ND101",
+    "n": 156,
+    "prev": 203,
+    "yearAgo": 135,
+    "top": [
+     [
+      "violent crime",
+      83
+     ],
+     [
+      "other theft",
+      21
+     ],
+     [
+      "anti social behaviour",
+      13
+     ]
+    ],
+    "shoplifting": 1,
+    "violence": 83,
+    "asb": 13,
+    "burglary": 7,
+    "vehicle": 6
+   },
+   {
+    "area": "Maldon",
+    "id": "NB201",
+    "n": 152,
+    "prev": 203,
+    "yearAgo": 163,
+    "top": [
+     [
+      "violent crime",
+      78
+     ],
+     [
+      "anti social behaviour",
+      18
+     ],
+     [
+      "public order",
+      12
+     ]
+    ],
+    "shoplifting": 7,
+    "violence": 78,
+    "asb": 18,
+    "burglary": 1,
+    "vehicle": 1
+   },
+   {
+    "area": "Staple Tye",
+    "id": "WB104",
+    "n": 143,
+    "prev": 200,
+    "yearAgo": 97,
+    "top": [
+     [
+      "violent crime",
+      65
+     ],
+     [
+      "anti social behaviour",
+      18
+     ],
+     [
+      "other theft",
+      16
+     ]
+    ],
+    "shoplifting": 4,
+    "violence": 65,
+    "asb": 18,
+    "burglary": 5,
+    "vehicle": 7
+   },
+   {
+    "area": "Brentwood South",
+    "id": "WA102",
+    "n": 127,
+    "prev": 143,
+    "yearAgo": 123,
+    "top": [
+     [
+      "violent crime",
+      45
+     ],
+     [
+      "vehicle crime",
+      19
+     ],
+     [
+      "other theft",
+      18
+     ]
+    ],
+    "shoplifting": 4,
+    "violence": 45,
+    "asb": 12,
+    "burglary": 4,
+    "vehicle": 19
+   },
+   {
+    "area": "Brentwood Town Centre",
+    "id": "WA103",
+    "n": 126,
+    "prev": 130,
+    "yearAgo": 115,
+    "top": [
+     [
+      "violent crime",
+      47
+     ],
+     [
+      "anti social behaviour",
+      16
+     ],
+     [
+      "shoplifting",
+      16
+     ]
+    ],
+    "shoplifting": 16,
+    "violence": 47,
+    "asb": 16,
+    "burglary": 1,
+    "vehicle": 8
+   },
+   {
+    "area": "Buckhurst Hill and Chigwell",
+    "id": "WA201",
+    "n": 124,
+    "prev": 149,
+    "yearAgo": 138,
+    "top": [
+     [
+      "violent crime",
+      41
+     ],
+     [
+      "vehicle crime",
+      20
+     ],
+     [
+      "anti social behaviour",
+      12
+     ]
+    ],
+    "shoplifting": 6,
+    "violence": 41,
+    "asb": 12,
+    "burglary": 7,
+    "vehicle": 20
+   },
+   {
+    "area": "Dunmow and Felsted",
+    "id": "NA201",
+    "n": 118,
+    "prev": 122,
+    "yearAgo": 75,
+    "top": [
+     [
+      "violent crime",
+      38
+     ],
+     [
+      "anti social behaviour",
+      19
+     ],
+     [
+      "other theft",
+      14
+     ]
+    ],
+    "shoplifting": 6,
+    "violence": 38,
+    "asb": 19,
+    "burglary": 6,
+    "vehicle": 9
+   },
+   {
+    "area": "Benfleet",
+    "id": "SB101",
+    "n": 111,
+    "prev": 94,
+    "yearAgo": 78,
+    "top": [
+     [
+      "violent crime",
+      39
+     ],
+     [
+      "shoplifting",
+      35
+     ],
+     [
+      "anti social behaviour",
+      9
+     ]
+    ],
+    "shoplifting": 35,
+    "violence": 39,
+    "asb": 9,
+    "burglary": 1,
+    "vehicle": 4
+   },
+   {
+    "area": "Hutton and Shenfield",
+    "id": "WA104",
+    "n": 111,
+    "prev": 102,
+    "yearAgo": 112,
+    "top": [
+     [
+      "violent crime",
+      36
+     ],
+     [
+      "shoplifting",
+      26
+     ],
+     [
+      "vehicle crime",
+      12
+     ]
+    ],
+    "shoplifting": 26,
+    "violence": 36,
+    "asb": 5,
+    "burglary": 2,
+    "vehicle": 12
+   },
+   {
+    "area": "Southminster",
+    "id": "NB203",
+    "n": 95,
+    "prev": 133,
+    "yearAgo": 97,
+    "top": [
+     [
+      "violent crime",
+      47
+     ],
+     [
+      "anti social behaviour",
+      16
+     ],
+     [
+      "drugs",
+      11
+     ]
+    ],
+    "shoplifting": 2,
+    "violence": 47,
+    "asb": 16,
+    "burglary": 0,
+    "vehicle": 3
+   },
+   {
+    "area": "Hadleigh",
+    "id": "SB103",
+    "n": 92,
+    "prev": 89,
+    "yearAgo": 58,
+    "top": [
+     [
+      "violent crime",
+      36
+     ],
+     [
+      "anti social behaviour",
+      18
+     ],
+     [
+      "other theft",
+      8
+     ]
+    ],
+    "shoplifting": 5,
+    "violence": 36,
+    "asb": 18,
+    "burglary": 2,
+    "vehicle": 5
+   },
+   {
+    "area": "South Woodham Ferrers",
+    "id": "NB105",
+    "n": 87,
+    "prev": 81,
+    "yearAgo": 38,
+    "top": [
+     [
+      "violent crime",
+      24
+     ],
+     [
+      "shoplifting",
+      14
+     ],
+     [
+      "other crime",
+      13
+     ]
+    ],
+    "shoplifting": 14,
+    "violence": 24,
+    "asb": 10,
+    "burglary": 0,
+    "vehicle": 1
+   },
+   {
+    "area": "Chelmsford West",
+    "id": "NB103",
+    "n": 84,
+    "prev": 108,
+    "yearAgo": 97,
+    "top": [
+     [
+      "violent crime",
+      33
+     ],
+     [
+      "vehicle crime",
+      10
+     ],
+     [
+      "anti social behaviour",
+      7
+     ]
+    ],
+    "shoplifting": 7,
+    "violence": 33,
+    "asb": 7,
+    "burglary": 2,
+    "vehicle": 10
+   },
+   {
+    "area": "Clavering and Thaxted",
+    "id": "NA203",
+    "n": 67,
+    "prev": 68,
+    "yearAgo": 40,
+    "top": [
+     [
+      "anti social behaviour",
+      18
+     ],
+     [
+      "violent crime",
+      17
+     ],
+     [
+      "other theft",
+      7
+     ]
+    ],
+    "shoplifting": 0,
+    "violence": 17,
+    "asb": 18,
+    "burglary": 6,
+    "vehicle": 6
+   },
+   {
+    "area": "Thundersley",
+    "id": "SB104",
+    "n": 61,
+    "prev": 59,
+    "yearAgo": 81,
+    "top": [
+     [
+      "violent crime",
+      26
+     ],
+     [
+      "anti social behaviour",
+      7
+     ],
+     [
+      "vehicle crime",
+      7
+     ]
+    ],
+    "shoplifting": 3,
+    "violence": 26,
+    "asb": 7,
+    "burglary": 1,
+    "vehicle": 7
+   },
+   {
+    "area": "Halstead North",
+    "id": "NA103",
+    "n": 60,
+    "prev": 74,
+    "yearAgo": 52,
+    "top": [
+     [
+      "violent crime",
+      30
+     ],
+     [
+      "anti social behaviour",
+      6
+     ],
+     [
+      "other theft",
+      6
+     ]
+    ],
+    "shoplifting": 0,
+    "violence": 30,
+    "asb": 6,
+    "burglary": 0,
+    "vehicle": 4
+   },
+   {
+    "area": "Saffron Walden",
+    "id": "NA202",
+    "n": 58,
+    "prev": 79,
+    "yearAgo": 52,
+    "top": [
+     [
+      "violent crime",
+      22
+     ],
+     [
+      "anti social behaviour",
+      11
+     ],
+     [
+      "criminal damage arson",
+      10
+     ]
+    ],
+    "shoplifting": 3,
+    "violence": 22,
+    "asb": 11,
+    "burglary": 1,
+    "vehicle": 1
+   },
+   {
+    "area": "Hockley and Hullbridge",
+    "id": "SB201",
+    "n": 58,
+    "prev": 95,
+    "yearAgo": 55,
+    "top": [
+     [
+      "violent crime",
+      23
+     ],
+     [
+      "anti social behaviour",
+      15
+     ],
+     [
+      "vehicle crime",
+      5
+     ]
+    ],
+    "shoplifting": 1,
+    "violence": 23,
+    "asb": 15,
+    "burglary": 0,
+    "vehicle": 5
+   },
+   {
+    "area": "Purleigh",
+    "id": "NB202",
+    "n": 32,
+    "prev": 47,
+    "yearAgo": 35,
+    "top": [
+     [
+      "violent crime",
+      11
+     ],
+     [
+      "anti social behaviour",
+      4
+     ],
+     [
+      "public order",
+      4
+     ]
+    ],
+    "shoplifting": 2,
+    "violence": 11,
+    "asb": 4,
+    "burglary": 2,
+    "vehicle": 2
+   },
+   {
+    "area": "Wakering",
+    "id": "SB204",
+    "n": 15,
+    "prev": 33,
+    "yearAgo": 36,
+    "top": [
+     [
+      "violent crime",
+      8
+     ],
+     [
+      "anti social behaviour",
+      3
+     ],
+     [
+      "burglary",
+      2
+     ]
+    ],
+    "shoplifting": 0,
+    "violence": 8,
+    "asb": 3,
+    "burglary": 2,
+    "vehicle": 2
+   }
+  ],
+  "total": 14572,
+  "totalPrev": 15853,
+  "totalYearAgo": 12725,
+  "months": [
+   "2026-09",
+   "2026-08",
+   "2025-09"
+  ],
+  "noLocation": [
+   216,
+   249,
+   205
+  ],
+  "method": "full boundaries, each crime counted once",
+  "url": "https://www.police.uk/pu/your-area/essex-police/"
+ },
+ "insolvency": {
+  "notices": [
+   {
+    "company": "JEHANGIR RESTAURANT LTD",
+    "code": "2443",
+    "type": "Appointment of liquidators",
+    "published": "2026-11-21",
+    "text": "…eaway Type of Liquidation: Creditors Registered office: 8 Cromwell Centre,, 32 Thames Road, Barking, Essex , IG11 0HZ …",
+    "url": "https://www.thegazette.co.uk/notice/5256838"
+   },
+   {
+    "company": "JEHANGIR RESTAURANT LTD",
+    "code": "2441",
+    "type": "Meetings of creditors",
+    "published": "2026-11-21",
+    "text": "…oluntary Liquidation (\"the Company\") Registered office: 8 Cromwell Centre,, 32 Thames Road, Barking, Essex , IG11 0HZ …",
+    "url": "https://www.thegazette.co.uk/notice/5256837"
+   },
+   {
+    "company": "DTNT SERVICES LIMITED",
+    "code": "2443",
+    "type": "Appointment of liquidators",
+    "published": "2026-11-20",
+    "text": "…ature of Business: 49410 - Freight transport by road Registered office: 224 Stamford Road, Dagenham, Essex , RM9 4EL …",
+    "url": "https://www.thegazette.co.uk/notice/5257039"
+   },
+   {
+    "company": "DTNT SERVICES LIMITED",
+    "code": "2441",
+    "type": "Meetings of creditors",
+    "published": "2026-11-20",
+    "text": "DTNT SERVICES LIMITED (Company Number 09412475 ) Registered office: 224 Stamford Road, Dagenham, Essex , RM9 4EL …",
+    "url": "https://www.thegazette.co.uk/notice/5257038"
+   },
+   {
+    "company": "B.D.R. MICRO INSTRUMENTS LIMITED",
+    "code": "2432",
+    "type": "Resolution for winding-up",
+    "published": "2026-11-20",
+    "text": "…air and spacecraft and related machinery Registered office: Church Street, Great Baddow, Chelmsford, Essex , CM2 7JW, United Kingdom …",
+    "url": "https://www.thegazette.co.uk/notice/5256854"
+   },
+   {
+    "company": "B.D.R. MICRO INSTRUMENTS LIMITED",
+    "code": "2433",
+    "type": "Corporate insolvency notice 2433",
+    "published": "2026-11-20",
+    "text": "…MENTS LIMITED (Company Number 02622761 ) Registered office: Church Street, Great Baddow, Chelmsford, Essex , CM2 7JW, United Kingdom …",
+    "url": "https://www.thegazette.co.uk/notice/5256853"
+   },
+   {
+    "company": "B.D.R. MICRO INSTRUMENTS LIMITED",
+    "code": "2431",
+    "type": "Resolution for voluntary winding-up",
+    "published": "2026-11-20",
+    "text": "…MENTS LIMITED (Company Number 02622761 ) Registered office: Church Street, Great Baddow, Chelmsford, Essex , CM2 7JW, United Kingdom …",
+    "url": "https://www.thegazette.co.uk/notice/5256852"
+   },
+   {
+    "company": "A J SMITH CONSULTANCY LIMITED",
+    "code": "2452",
+    "type": "Winding-up order",
+    "published": "2026-11-20",
+    "text": "…TH CONSULTANCY LIMITED (Company Number 07624884 ) Registered office: 47 HIGH GARRETT, , BRAINTREE, , ESSEX , …",
+    "url": "https://www.thegazette.co.uk/notice/5255322"
+   },
+   {
+    "company": "BRAND HOUSE GROUP LIMITED",
+    "code": "2452",
+    "type": "Winding-up order",
+    "published": "2026-11-20",
+    "text": "BRAND HOUSE GROUP LIMITED (Company Number 12967891 ) Registered office: 43 Bridge Road , Grays , …",
+    "url": "https://www.thegazette.co.uk/notice/5255213"
+   },
+   {
+    "company": "LOTUSTAME LTD",
+    "code": "2454",
+    "type": "Corporate insolvency notice 2454",
+    "published": "2026-11-20",
+    "text": "…5-004894 LOTUSTAME LTD (Company Number 09754095 ) Registered office: 555-557 Cranbrook Road, Ilford, Essex , IG2 6HE …",
+    "url": "https://www.thegazette.co.uk/notice/5256614"
+   },
+   {
+    "company": "KLOEBER UK LTD",
+    "code": "2443",
+    "type": "Appointment of liquidators",
+    "published": "2026-11-20",
+    "text": "…No. 009123 ) both of BTG Begbies Traynor (Central) LLP , Town Wall House, Balkerne Hill, Colchester, Essex , CO3 3AD …",
+    "url": "https://www.thegazette.co.uk/notice/5256569"
+   },
+   {
+    "company": "RBH BUILDING CONTRACTORS LIMITED",
+    "code": "2443",
+    "type": "Appointment of liquidators",
+    "published": "2026-11-20",
+    "text": "…ure of Business: Development of building projects Registered office: 1066 London Road, Leigh On Sea, Essex , SS9 3NA …",
+    "url": "https://www.thegazette.co.uk/notice/5256567"
+   },
+   {
+    "company": "ESSEX RETIREMENT HOMES LIMITED",
+    "code": "2442",
+    "type": "Corporate insolvency notice 2442",
+    "published": "2026-11-20",
+    "text": "ESSEX RETIREMENT HOMES LIMITED …",
+    "url": "https://www.thegazette.co.uk/notice/5256558"
+   },
+   {
+    "company": "KLOEBER UK LTD",
+    "code": "2441",
+    "type": "Meetings of creditors",
+    "published": "2026-11-20",
+    "text": "…No. 009123 ) both of BTG Begbies Traynor (Central) LLP , Town Wall House, Balkerne Hill, Colchester, Essex , CO3 3AD …",
+    "url": "https://www.thegazette.co.uk/notice/5256548"
+   },
+   {
+    "company": "MEMORY LANE MEDIA LTD",
+    "code": "2443",
+    "type": "Appointment of liquidators",
+    "published": "2026-11-20",
+    "text": "…d; Saga Recorded Music Limited Registered office: Suite 1 Concept House, 23 Billet Lane, Hornchurch, Essex RM11 1XP …",
+    "url": "https://www.thegazette.co.uk/notice/5256544"
+   },
+   {
+    "company": "RBH BUILDING CONTRACTORS LIMITED",
+    "code": "2441",
+    "type": "Meetings of creditors",
+    "published": "2026-11-20",
+    "text": "…of the members of the above named Company, duly convened and held at 1066 London Road, Leigh-on-Sea, Essex SS9 3NA on …",
+    "url": "https://www.thegazette.co.uk/notice/5256542"
+   },
+   {
+    "company": "AOD CONTRACTS LIMITED",
+    "code": "2441",
+    "type": "Meetings of creditors",
+    "published": "2026-11-20",
+    "text": "…ad, Beckenham, BR3 6NS Principal trading address: High Oaks, School Road, Kelvedon Hatch, Brentwood, Essex , CM15 0DW, United Kingdom …",
+    "url": "https://www.thegazette.co.uk/notice/5256537"
+   },
+   {
+    "company": "MEMORY LANE MEDIA LTD",
+    "code": "2441",
+    "type": "Meetings of creditors",
+    "published": "2026-11-20",
+    "text": "…d; Saga Recorded Music Limited Registered office: Suite 1 Concept House, 23 Billet Lane, Hornchurch, Essex RM11 1XP …",
+    "url": "https://www.thegazette.co.uk/notice/5256520"
+   },
+   {
+    "company": "ABLE SERVICES PDM LIMITED",
+    "code": "2406",
+    "type": "Corporate insolvency notice 2406",
+    "published": "2026-11-20",
+    "text": "ABLE SERVICES PDM LIMITED 05385949 Registered office: 1066 London Road, Leigh on Sea, Essex , SS9 3NA …",
+    "url": "https://www.thegazette.co.uk/notice/5256481"
+   },
+   {
+    "company": "ACORN BEAUTY LIMITED",
+    "code": "2450",
+    "type": "Petition to wind up a company",
+    "published": "2026-11-20",
+    "text": "… Number 07776696, of Carter Clark Financial Recovery Recovery House, Hainault Business Park, Ilford, Essex , England, IG6 3TU …",
+    "url": "https://www.thegazette.co.uk/notice/5256077"
+   },
+   {
+    "company": "LONDON HOIST LIMITED",
+    "code": "2450",
+    "type": "Petition to wind up a company",
+    "published": "2026-11-20",
+    "text": "…up the above-named Company, Registration Number 01993546, of 43 London Road, Stanford Rivers, Ongar, Essex , CM5 9PJ …",
+    "url": "https://www.thegazette.co.uk/notice/5256072"
+   },
+   {
+    "company": "ARK PROJECT PARTNERS LTD",
+    "code": "2450",
+    "type": "Petition to wind up a company",
+    "published": "2026-11-20",
+    "text": "…named Company, Registration Number 08378851, of 14 Orchis Grove, Badgers' Dene Badgers' Dene, Grays, Essex , England, RM17 5JG …",
+    "url": "https://www.thegazette.co.uk/notice/5255171"
+   },
+   {
+    "company": "/n BRADGATE DEVELOPMENTS (WICKFORD) LIMITED/n/n/n/n/n/n",
+    "code": "2433",
+    "type": "Corporate insolvency notice 2433",
+    "published": "2026-11-19",
+    "text": "…ts In Members' Voluntary Liquidation Registered office: 12 Station Court Station Approach, Wickford, Essex , United Kingdom, SS11 7AT …",
+    "url": "https://www.thegazette.co.uk/notice/5256782"
+   },
+   {
+    "company": "JPL SERVICES LIMITED/n",
+    "code": "2433",
+    "type": "Corporate insolvency notice 2433",
+    "published": "2026-11-19",
+    "text": "…s' Voluntary Liquidation Registered office: 7-8 Britannia Business Park, Comet Way, Southend-on-Sea, Essex , SS2 6GE, England …",
+    "url": "https://www.thegazette.co.uk/notice/5256781"
+   },
+   {
+    "company": "/n BRADGATE DEVELOPMENTS (WICKFORD) LIMITED/n/n/n/n/n/n",
+    "code": "2432",
+    "type": "Resolution for winding-up",
+    "published": "2026-11-19",
+    "text": "…ation: Members Voluntary Liquidation Registered office: 12 Station Court Station Approach, Wickford, Essex , United Kingdom, SS11 7AT …",
+    "url": "https://www.thegazette.co.uk/notice/5256779"
+   },
+   {
+    "company": "JPL SERVICES LIMITED/n",
+    "code": "2431",
+    "type": "Resolution for voluntary winding-up",
+    "published": "2026-11-19",
+    "text": "…consultancy activities Registered office: 7 - 8 Britannia Business Park, Comet Way, Southend On Sea, Essex , England, SS2 6GE …",
+    "url": "https://www.thegazette.co.uk/notice/5256777"
+   },
+   {
+    "company": "/n JPL SERVICES LIMITED",
+    "code": "2432",
+    "type": "Resolution for winding-up",
+    "published": "2026-11-19",
+    "text": "…iquidation: Members Voluntary Liquidation Registered office: 7-8 Britannia Business Park, Comet Way, Essex , SS2 6GE, England …",
+    "url": "https://www.thegazette.co.uk/notice/5256775"
+   },
+   {
+    "company": "/n BRADGATE DEVELOPMENTS (WICKFORD) LIMITED/n/n/n/n/n/n",
+    "code": "2431",
+    "type": "Resolution for voluntary winding-up",
+    "published": "2026-11-19",
+    "text": "…ss: Development of building projects Registered office: 12 Station Court Station Approach, Wickford, Essex , United Kingdom, SS11 7AT …",
+    "url": "https://www.thegazette.co.uk/notice/5256774"
+   },
+   {
+    "company": "HOBOKEN KIDS LIMITED",
+    "code": "2442",
+    "type": "Corporate insolvency notice 2442",
+    "published": "2026-11-19",
+    "text": "… Number 06324588 ) Registered office: Clarence Street Chambers, 32 Clarence Street, Southend on Sea, Essex , SS1 1BD …",
+    "url": "https://www.thegazette.co.uk/notice/5255975"
+   },
+   {
+    "company": "INSTANT DELIVERY SERVICE LTD",
+    "code": "2433",
+    "type": "Corporate insolvency notice 2433",
+    "published": "2026-11-19",
+    "text": "…ls: Zain Iqbal (IP No. 25034 ) of Cooper Young , Hunter House, 109 Snakes Lane West, Woodford Green, Essex , IG8 0DY …",
+    "url": "https://www.thegazette.co.uk/notice/5255892"
+   },
+   {
+    "company": "INSTANT DELIVERY SERVICE LTD",
+    "code": "2432",
+    "type": "Resolution for winding-up",
+    "published": "2026-11-19",
+    "text": "…026 Zain Iqbal (IP No. 25034 ) of Cooper Young , Hunter House, 109 Snakes Lane West, Woodford Green, Essex , IG8 0DY …",
+    "url": "https://www.thegazette.co.uk/notice/5255875"
+   },
+   {
+    "company": "INSTANT DELIVERY SERVICE LTD",
+    "code": "2431",
+    "type": "Resolution for voluntary winding-up",
+    "published": "2026-11-19",
+    "text": "…e above named company, duly convened and held at Hunter House, 109 Snakes Lane West, Woodford Green, Essex , IG8 0DY …",
+    "url": "https://www.thegazette.co.uk/notice/5255866"
+   },
+   {
+    "company": "DKK PARTNERS LTD",
+    "code": "2410",
+    "type": "Appointment of administrators",
+    "published": "2026-11-19",
+    "text": "…, London, EC4M 5SB (to be changed to Jupiter House, Warley Hill Business Park, The Drive, Brentwood, Essex , CM13 3BE) …",
+    "url": "https://www.thegazette.co.uk/notice/5255860"
+   },
+   {
+    "company": "BENFLEET PLASTIC WAREHOUSE LIMITED",
+    "code": "2452",
+    "type": "Winding-up order",
+    "published": "2026-11-19",
+    "text": "…T PLASTIC WAREHOUSE LIMITED (Company Number 07754344 ) Registered office: 1-3 High Street , DUNMOW , …",
+    "url": "https://www.thegazette.co.uk/notice/5254034"
+   },
+   {
+    "company": "ACCEPT RECRUITMENT PAYROLL LTD",
+    "code": "2452",
+    "type": "Winding-up order",
+    "published": "2026-11-19",
+    "text": "…ENT PAYROLL LTD (Company Number 15262237 ) Registered office: 265 Ferry Road, Hullbridge , Hockley , …",
+    "url": "https://www.thegazette.co.uk/notice/5253946"
+   },
+   {
+    "company": "HORNAK VENTURE LTD",
+    "code": "2452",
+    "type": "Winding-up order",
+    "published": "2026-11-19",
+    "text": "HORNAK VENTURE LTD (Company Number 14416682 ) Registered office: 50 Oval Road South , Dagenham , …",
+    "url": "https://www.thegazette.co.uk/notice/5253917"
+   },
+   {
+    "company": "SKKY SOLUTIONS LTD",
+    "code": "2452",
+    "type": "Winding-up order",
+    "published": "2026-11-18",
+    "text": "…3806918 ) Registered office: 6 Office Suite 6 28-30 Fowler Road, Hainault Business Park , Hainault , …",
+    "url": "https://www.thegazette.co.uk/notice/5253610"
+   },
+   {
+    "company": "CSI: MAINTENANCE LTD",
+    "code": "2443",
+    "type": "Appointment of liquidators",
+    "published": "2026-11-18",
+    "text": "…Nature of Business: Construction of domestic buildings Registered office: 31 Hanson Drive, Loughton, Essex , IG10 2EF …",
+    "url": "https://www.thegazette.co.uk/notice/5254438"
+   },
+   {
+    "company": "INDIGO PROJECTS LONDON LIMITED",
+    "code": "2454",
+    "type": "Corporate insolvency notice 2454",
+    "published": "2026-11-18",
+    "text": "…ged to FRP Advisory Trading Limited, Jupiter House, Warley Hill Business Park, The Drive, Brentwood, Essex , CM13 3BE …",
+    "url": "https://www.thegazette.co.uk/notice/5254422"
+   },
+   {
+    "company": "CSI: MAINTENANCE LTD",
+    "code": "2441",
+    "type": "Meetings of creditors",
+    "published": "2026-11-18",
+    "text": "CSI: MAINTENANCE LTD (Company Number 08810005 ) Registered office: 31 Hanson Drive, Loughton, Essex , IG10 2EF …",
+    "url": "https://www.thegazette.co.uk/notice/5254405"
+   },
+   {
+    "company": "PLAYMINT LIMITED",
+    "code": "2433",
+    "type": "Corporate insolvency notice 2433",
+    "published": "2026-11-18",
+    "text": "…ompany Number 13481541 ) Registered office: North Wing, Warlies Park House, Horseshoe Hill, Upshire, Essex EN9 3SL …",
+    "url": "https://www.thegazette.co.uk/notice/5254366"
+   },
+   {
+    "company": "PLAYMINT LIMITED",
+    "code": "2432",
+    "type": "Resolution for winding-up",
+    "published": "2026-11-18",
+    "text": "…ftware development Registered office: North Wing, Warlies Park House, Horseshoe Hill, Waltham Abbey, Essex EN9 3SL …",
+    "url": "https://www.thegazette.co.uk/notice/5254359"
+   },
+   {
+    "company": "PLAYMINT LIMITED",
+    "code": "2431",
+    "type": "Resolution for voluntary winding-up",
+    "published": "2026-11-18",
+    "text": "…ompany Number 13481541 ) Registered office: North Wing, Warlies Park House, Horseshoe Hill, Upshire, Essex EN9 3SL …",
+    "url": "https://www.thegazette.co.uk/notice/5254356"
+   },
+   {
+    "company": "CARDHOOD LIMITED",
+    "code": "2443",
+    "type": "Appointment of liquidators",
+    "published": "2026-11-17",
+    "text": "…Office Holder/s: Zain Iqbal , of COOPER YOUNG & PARTNERS LTD and, 109 Snakes Lane , Woodford Green , …",
+    "url": "https://www.thegazette.co.uk/notice/5254158"
+   },
+   {
+    "company": "CARDHOOD LIMITED",
+    "code": "2441",
+    "type": "Meetings of creditors",
+    "published": "2026-11-17",
+    "text": "…ase contact: Zain Iqbal , ( 25034 ), COOPER YOUNG & PARTNERS LTD, 109 Snakes Lane , Woodford Green , …",
+    "url": "https://www.thegazette.co.uk/notice/5254154"
+   },
+   {
+    "company": "YEAST BAKERY LIMITED",
+    "code": "2441",
+    "type": "Meetings of creditors",
+    "published": "2026-11-17",
+    "text": "…er 09498761 ) Trading Name: Yeast Bakery Registered office: 11 Chandlers Way, South Woodham Ferrers, Essex , United Kingdom, CM3 5TB …",
+    "url": "https://www.thegazette.co.uk/notice/5254070"
+   },
+   {
+    "company": "HOME LOCAL SOUTHEND LTD",
+    "code": "2443",
+    "type": "Appointment of liquidators",
+    "published": "2026-11-17",
+    "text": "…Liquidation: Creditors' Voluntary Registered office: The Old Police Station , West Square , Maldon , …",
+    "url": "https://www.thegazette.co.uk/notice/5254037"
+   },
+   {
+    "company": "HOME LOCAL SOUTHEND LTD",
+    "code": "2441",
+    "type": "Meetings of creditors",
+    "published": "2026-11-17",
+    "text": "…rading as Home Local Southend Ltd Registered Office: The Old Police Station , West Square , Maldon , …",
+    "url": "https://www.thegazette.co.uk/notice/5254033"
+   },
+   {
+    "company": "INDIGO PROJECTS LONDON LIMITED",
+    "code": "2454",
+    "type": "Corporate insolvency notice 2454",
+    "published": "2026-11-17",
+    "text": "…ged to FRP Advisory Trading Limited, Jupiter House, Warley Hill Business Park, The Drive, Brentwood, Essex , CM13 3BE …",
+    "url": "https://www.thegazette.co.uk/notice/5253511"
+   },
+   {
+    "company": "CHHHR LTD",
+    "code": "2443",
+    "type": "Appointment of liquidators",
+    "published": "2026-11-17",
+    "text": "… Baxter (IP No. 009123 ) both of BTG Begbies Traynor (Central) LLP , 1066 London Road, Leigh-on-Sea, Essex , SS9 3NA …",
+    "url": "https://www.thegazette.co.uk/notice/5253504"
+   },
+   {
+    "company": "LOW TIDE HOSPITALITY LIMITED",
+    "code": "2441",
+    "type": "Meetings of creditors",
+    "published": "2026-11-17",
+    "text": "…) Trading Name: The East Kent Registered office: The Retreat, 406 Roding Lane South, Woodford Green, Essex , IG8 8EY …",
+    "url": "https://www.thegazette.co.uk/notice/5253489"
+   },
+   {
+    "company": "CHP PAYMENTS LTD",
+    "code": "2443",
+    "type": "Appointment of liquidators",
+    "published": "2026-11-17",
+    "text": "… Baxter (IP No. 009123 ) both of BTG Begbies Traynor (Central) LLP , 1066 London Road, Leigh-on-Sea, Essex , SS9 3NA …",
+    "url": "https://www.thegazette.co.uk/notice/5253466"
+   },
+   {
+    "company": "CURS ACCOUNTS LIMITED",
+    "code": "2443",
+    "type": "Appointment of liquidators",
+    "published": "2026-11-17",
+    "text": "… Baxter (IP No. 009123 ) both of BTG Begbies Traynor (Central) LLP , 1066 London Road, Leigh-on-Sea, Essex , SS9 3NA …",
+    "url": "https://www.thegazette.co.uk/notice/5253454"
+   },
+   {
+    "company": "LOW TIDE HOSPITALITY LIMITED",
+    "code": "2443",
+    "type": "Appointment of liquidators",
+    "published": "2026-11-17",
+    "text": "…ties not elsewhere classified Registered office: The Retreat, 406 Roding Lane South, Woodford Green, Essex , IG8 8EY …",
+    "url": "https://www.thegazette.co.uk/notice/5253447"
+   },
+   {
+    "company": "CHP PAYMENTS LTD",
+    "code": "2441",
+    "type": "Meetings of creditors",
+    "published": "2026-11-17",
+    "text": "…of the members of the above named Company, duly convened and held at 1066 London Road, Leigh-on-Sea, Essex SS9 3NA on …",
+    "url": "https://www.thegazette.co.uk/notice/5253438"
+   },
+   {
+    "company": "CURS ACCOUNTS LIMITED",
+    "code": "2441",
+    "type": "Meetings of creditors",
+    "published": "2026-11-17",
+    "text": "…of the members of the above named Company, duly convened and held at 1066 London Road, Leigh-on-Sea, Essex SS9 3NA on …",
+    "url": "https://www.thegazette.co.uk/notice/5253436"
+   },
+   {
+    "company": "CHHHR LTD",
+    "code": "2441",
+    "type": "Meetings of creditors",
+    "published": "2026-11-17",
+    "text": "…of the Members of the above-named Company, duly convened and held at 1066 London Road, Leigh-on-Sea, Essex , SS9 3NA …",
+    "url": "https://www.thegazette.co.uk/notice/5253432"
+   },
+   {
+    "company": "WESTBOUND MANAGEMENT LTD",
+    "code": "2461",
+    "type": "Corporate insolvency notice 2461",
+    "published": "2026-11-16",
+    "text": "…pany, Registration Number 09740814 of Suite 1a, 2nd Floor, Hunter House, 150 Hutton Road, Shenfield, Essex , England, CM15 8NL …",
+    "url": "https://www.thegazette.co.uk/notice/5253213"
+   },
+   {
+    "company": "FACTORY DOOR SERVICES LIMITED",
+    "code": "2442",
+    "type": "Corporate insolvency notice 2442",
+    "published": "2026-11-16",
+    "text": "…IMITED (Company Number 07855784 ) Registered office: 4 Capricorn Centre, Cranes Farm Road, Basildon, Essex , SS14 3JJ …",
+    "url": "https://www.thegazette.co.uk/notice/5253158"
+   },
+   {
+    "company": "I P S LAW LLP",
+    "code": "2454",
+    "type": "Corporate insolvency notice 2454",
+    "published": "2026-11-16",
+    "text": "…ged to FRP Advisory Trading Limited, Jupiter House, Warley Hill Business Park, The Drive, Brentwood, Essex , CM13 3BE) …",
+    "url": "https://www.thegazette.co.uk/notice/5252719"
+   },
+   {
+    "company": "MK4 ELECTRICAL SOLUTIONS LTD",
+    "code": "2450",
+    "type": "Petition to wind up a company",
+    "published": "2026-11-16",
+    "text": "…rical Distributors Limited of Unit 5 Northumberland Court, Dukes Park Industrial Estate, Chelmsford, Essex , CM2 6UW claiming to be a Creditor of the Company will be heard at …",
+    "url": "https://www.thegazette.co.uk/notice/5252683"
+   },
+   {
+    "company": "IZ ENERGY SERVICES LTD",
+    "code": "2452",
+    "type": "Winding-up order",
+    "published": "2026-11-14",
+    "text": "…any Number 08801107 ) Registered office: 2 Unit 2 & 3 Muirhead Quays, Fresh Wharf Estate , Barking , Essex , …",
+    "url": "https://www.thegazette.co.uk/notice/5252332"
+   },
+   {
+    "company": "THE DAILY TRAY LIMITED",
+    "code": "2443",
+    "type": "Appointment of liquidators",
+    "published": "2026-11-13",
+    "text": "…number 30470 ) of Carter Clark , Recovery House, 15-17 Roebuck Road, Hainault Business Park, Ilford, Essex , IG6 3TU …",
+    "url": "https://www.thegazette.co.uk/notice/5252824"
+   },
+   {
+    "company": "THE DAILY TRAY LIMITED",
+    "code": "2441",
+    "type": "Meetings of creditors",
+    "published": "2026-11-13",
+    "text": "…pany, duly convened, and held at Recovery House, Hainault Business Park, 15-17 Roebuck Road, Ilford, Essex , IG6 3TU at 11am on 10 November 2026, the following resolutions were passed: …",
+    "url": "https://www.thegazette.co.uk/notice/5252823"
+   },
+   {
+    "company": "YEAST BAKERY LIMITED",
+    "code": "2443",
+    "type": "Appointment of liquidators",
+    "published": "2026-11-13",
+    "text": "…e of Liquidation: Creditors' Voluntary Registered office: 11 Chandlers Way , South Woodham Ferrers , …",
+    "url": "https://www.thegazette.co.uk/notice/5252741"
+   },
+   {
+    "company": "JPL SERVICES LIMITED/n",
+    "code": "2431",
+    "type": "Resolution for voluntary winding-up",
+    "published": "2026-11-19",
+    "text": "…consultancy activities Registered office: 7 - 8 Britannia Business Park, Comet Way, Southend On Sea, Essex , England, SS2 6GE …",
+    "url": "https://www.thegazette.co.uk/notice/5256777"
+   },
+   {
+    "company": "/n BRADGATE DEVELOPMENTS (WICKFORD) LIMITED/n/n/n/n/n/n",
+    "code": "2432",
+    "type": "Resolution for winding-up",
+    "published": "2026-11-19",
+    "text": "…ation: Members Voluntary Liquidation Registered office: 12 Station Court Station Approach, Wickford, Essex , United Kingdom, SS11 7AT …",
+    "url": "https://www.thegazette.co.uk/notice/5256779"
+   },
+   {
+    "company": "JPL SERVICES LIMITED/n",
+    "code": "2433",
+    "type": "Corporate insolvency notice 2433",
+    "published": "2026-11-19",
+    "text": "…s' Voluntary Liquidation Registered office: 7-8 Britannia Business Park, Comet Way, Southend-on-Sea, Essex , SS2 6GE, England …",
+    "url": "https://www.thegazette.co.uk/notice/5256781"
+   },
+   {
+    "company": "PLAYMINT LIMITED",
+    "code": "2433",
+    "type": "Corporate insolvency notice 2433",
+    "published": "2026-11-18",
+    "text": "…ompany Number 13481541 ) Registered office: North Wing, Warlies Park House, Horseshoe Hill, Upshire, Essex EN9 3SL …",
+    "url": "https://www.thegazette.co.uk/notice/5254366"
+   },
+   {
+    "company": "YEAST BAKERY LIMITED",
+    "code": "2441",
+    "type": "Meetings of creditors",
+    "published": "2026-11-17",
+    "text": "…er 09498761 ) Trading Name: Yeast Bakery Registered office: 11 Chandlers Way, South Woodham Ferrers, Essex , United Kingdom, CM3 5TB …",
+    "url": "https://www.thegazette.co.uk/notice/5254070"
+   },
+   {
+    "company": "HOBOKEN KIDS LIMITED",
+    "code": "2442",
+    "type": "Corporate insolvency notice 2442",
+    "published": "2026-11-19",
+    "text": "… Number 06324588 ) Registered office: Clarence Street Chambers, 32 Clarence Street, Southend on Sea, Essex , SS1 1BD …",
+    "url": "https://www.thegazette.co.uk/notice/5255975"
+   },
+   {
+    "company": "INDIGO PROJECTS LONDON LIMITED",
+    "code": "2454",
+    "type": "Corporate insolvency notice 2454",
+    "published": "2026-11-17",
+    "text": "…ged to FRP Advisory Trading Limited, Jupiter House, Warley Hill Business Park, The Drive, Brentwood, Essex , CM13 3BE …",
+    "url": "https://www.thegazette.co.uk/notice/5253511"
+   },
+   {
+    "company": "CSI: MAINTENANCE LTD",
+    "code": "2441",
+    "type": "Meetings of creditors",
+    "published": "2026-11-18",
+    "text": "CSI: MAINTENANCE LTD (Company Number 08810005 ) Registered office: 31 Hanson Drive, Loughton, Essex , IG10 2EF …",
+    "url": "https://www.thegazette.co.uk/notice/5254405"
+   },
+   {
+    "company": "INDIGO PROJECTS LONDON LIMITED",
+    "code": "2454",
+    "type": "Corporate insolvency notice 2454",
+    "published": "2026-11-18",
+    "text": "…ged to FRP Advisory Trading Limited, Jupiter House, Warley Hill Business Park, The Drive, Brentwood, Essex , CM13 3BE …",
+    "url": "https://www.thegazette.co.uk/notice/5254422"
+   },
+   {
+    "company": "DTNT SERVICES LIMITED",
+    "code": "2441",
+    "type": "Meetings of creditors",
+    "published": "2026-11-20",
+    "text": "DTNT SERVICES LIMITED (Company Number 09412475 ) Registered office: 224 Stamford Road, Dagenham, Essex , RM9 4EL …",
+    "url": "https://www.thegazette.co.uk/notice/5257038"
+   },
+   {
+    "company": "I P S LAW LLP",
+    "code": "2454",
+    "type": "Corporate insolvency notice 2454",
+    "published": "2026-11-16",
+    "text": "…ged to FRP Advisory Trading Limited, Jupiter House, Warley Hill Business Park, The Drive, Brentwood, Essex , CM13 3BE) …",
+    "url": "https://www.thegazette.co.uk/notice/5252719"
+   },
+   {
+    "company": "DKK PARTNERS LTD",
+    "code": "2410",
+    "type": "Appointment of administrators",
+    "published": "2026-11-19",
+    "text": "…, London, EC4M 5SB (to be changed to Jupiter House, Warley Hill Business Park, The Drive, Brentwood, Essex , CM13 3BE) …",
+    "url": "https://www.thegazette.co.uk/notice/5255860"
+   },
+   {
+    "company": "MEMORY LANE MEDIA LTD",
+    "code": "2443",
+    "type": "Appointment of liquidators",
+    "published": "2026-11-20",
+    "text": "…d; Saga Recorded Music Limited Registered office: Suite 1 Concept House, 23 Billet Lane, Hornchurch, Essex RM11 1XP …",
+    "url": "https://www.thegazette.co.uk/notice/5256544"
+   },
+   {
+    "company": "RBH BUILDING CONTRACTORS LIMITED",
+    "code": "2443",
+    "type": "Appointment of liquidators",
+    "published": "2026-11-20",
+    "text": "…ure of Business: Development of building projects Registered office: 1066 London Road, Leigh On Sea, Essex , SS9 3NA …",
+    "url": "https://www.thegazette.co.uk/notice/5256567"
+   },
+   {
+    "company": "/n JPL SERVICES LIMITED",
+    "code": "2432",
+    "type": "Resolution for winding-up",
+    "published": "2026-11-19",
+    "text": "…iquidation: Members Voluntary Liquidation Registered office: 7-8 Britannia Business Park, Comet Way, Essex , SS2 6GE, England …",
+    "url": "https://www.thegazette.co.uk/notice/5256775"
+   },
+   {
+    "company": "PLAYMINT LIMITED",
+    "code": "2431",
+    "type": "Resolution for voluntary winding-up",
+    "published": "2026-11-18",
+    "text": "…ompany Number 13481541 ) Registered office: North Wing, Warlies Park House, Horseshoe Hill, Upshire, Essex EN9 3SL …",
+    "url": "https://www.thegazette.co.uk/notice/5254356"
+   },
+   {
+    "company": "GB SKIPS LIMITED",
+    "code": "2442",
+    "type": "Corporate insolvency notice 2442",
+    "published": "2026-11-13",
+    "text": "…elow. Stewart Bennett of S T Bennett & Co, Office 8, North Wing, Warlies Park House, Horseshoe Hill, Essex , EN9 3SL is a person qualified to act as an insolvency practitioner in relation to the Company who,…",
+    "url": "https://www.thegazette.co.uk/notice/5251908"
+   },
+   {
+    "company": "ABLE SERVICES PDM LIMITED",
+    "code": "2406",
+    "type": "Corporate insolvency notice 2406",
+    "published": "2026-11-20",
+    "text": "ABLE SERVICES PDM LIMITED 05385949 Registered office: 1066 London Road, Leigh on Sea, Essex , SS9 3NA …",
+    "url": "https://www.thegazette.co.uk/notice/5256481"
+   },
+   {
+    "company": "HOME LOCAL SOUTHEND LTD",
+    "code": "2443",
+    "type": "Appointment of liquidators",
+    "published": "2026-11-17",
+    "text": "…Liquidation: Creditors' Voluntary Registered office: The Old Police Station , West Square , Maldon , …",
+    "url": "https://www.thegazette.co.uk/notice/5254037"
+   },
+   {
+    "company": "THE DAILY TRAY LIMITED",
+    "code": "2443",
+    "type": "Appointment of liquidators",
+    "published": "2026-11-13",
+    "text": "…number 30470 ) of Carter Clark , Recovery House, 15-17 Roebuck Road, Hainault Business Park, Ilford, Essex , IG6 3TU …",
+    "url": "https://www.thegazette.co.uk/notice/5252824"
+   },
+   {
+    "company": "IZ ENERGY SERVICES LTD",
+    "code": "2452",
+    "type": "Winding-up order",
+    "published": "2026-11-14",
+    "text": "…any Number 08801107 ) Registered office: 2 Unit 2 & 3 Muirhead Quays, Fresh Wharf Estate , Barking , Essex , …",
+    "url": "https://www.thegazette.co.uk/notice/5252332"
+   },
+   {
+    "company": "DOME BRANDS LIMITED",
+    "code": "2441",
+    "type": "Meetings of creditors",
+    "published": "2026-11-13",
+    "text": "…of the members of the above named Company, duly convened and held at 170a-172 High Street, Rayleigh, Essex , SS6 7BS …",
+    "url": "https://www.thegazette.co.uk/notice/5251878"
+   },
+   {
+    "company": "DOME PAYROLL LTD",
+    "code": "2441",
+    "type": "Meetings of creditors",
+    "published": "2026-11-13",
+    "text": "…of the members of the above named Company, duly convened and held at 170a-172 High Street, Rayleigh, Essex , SS6 7BS …",
+    "url": "https://www.thegazette.co.uk/notice/5251886"
+   },
+   {
+    "company": "VERVE MEDIA LTD",
+    "code": "2441",
+    "type": "Meetings of creditors",
+    "published": "2026-11-13",
+    "text": "…of the members of the above named Company, duly convened and held at 170a-172 High Street, Rayleigh, Essex , SS6 7BS …",
+    "url": "https://www.thegazette.co.uk/notice/5251899"
+   },
+   {
+    "company": "JEHANGIR RESTAURANT LTD",
+    "code": "2441",
+    "type": "Meetings of creditors",
+    "published": "2026-11-21",
+    "text": "…oluntary Liquidation (\"the Company\") Registered office: 8 Cromwell Centre,, 32 Thames Road, Barking, Essex , IG11 0HZ …",
+    "url": "https://www.thegazette.co.uk/notice/5256837"
+   },
+   {
+    "company": "JEHANGIR RESTAURANT LTD",
+    "code": "2443",
+    "type": "Appointment of liquidators",
+    "published": "2026-11-21",
+    "text": "…eaway Type of Liquidation: Creditors Registered office: 8 Cromwell Centre,, 32 Thames Road, Barking, Essex , IG11 0HZ …",
+    "url": "https://www.thegazette.co.uk/notice/5256838"
+   },
+   {
+    "company": "B.D.R. MICRO INSTRUMENTS LIMITED",
+    "code": "2431",
+    "type": "Resolution for voluntary winding-up",
+    "published": "2026-11-20",
+    "text": "…MENTS LIMITED (Company Number 02622761 ) Registered office: Church Street, Great Baddow, Chelmsford, Essex , CM2 7JW, United Kingdom …",
+    "url": "https://www.thegazette.co.uk/notice/5256852"
+   },
+   {
+    "company": "B.D.R. MICRO INSTRUMENTS LIMITED",
+    "code": "2433",
+    "type": "Corporate insolvency notice 2433",
+    "published": "2026-11-20",
+    "text": "…MENTS LIMITED (Company Number 02622761 ) Registered office: Church Street, Great Baddow, Chelmsford, Essex , CM2 7JW, United Kingdom …",
+    "url": "https://www.thegazette.co.uk/notice/5256853"
+   },
+   {
+    "company": "B.D.R. MICRO INSTRUMENTS LIMITED",
+    "code": "2432",
+    "type": "Resolution for winding-up",
+    "published": "2026-11-20",
+    "text": "…air and spacecraft and related machinery Registered office: Church Street, Great Baddow, Chelmsford, Essex , CM2 7JW, United Kingdom …",
+    "url": "https://www.thegazette.co.uk/notice/5256854"
+   },
+   {
+    "company": "CSI: MAINTENANCE LTD",
+    "code": "2443",
+    "type": "Appointment of liquidators",
+    "published": "2026-11-18",
+    "text": "…Nature of Business: Construction of domestic buildings Registered office: 31 Hanson Drive, Loughton, Essex , IG10 2EF …",
+    "url": "https://www.thegazette.co.uk/notice/5254438"
+   },
+   {
+    "company": "HORNAK VENTURE LTD",
+    "code": "2452",
+    "type": "Winding-up order",
+    "published": "2026-11-19",
+    "text": "HORNAK VENTURE LTD (Company Number 14416682 ) Registered office: 50 Oval Road South , Dagenham , …",
+    "url": "https://www.thegazette.co.uk/notice/5253917"
+   },
+   {
+    "company": "ACCEPT RECRUITMENT PAYROLL LTD",
+    "code": "2452",
+    "type": "Winding-up order",
+    "published": "2026-11-19",
+    "text": "…ENT PAYROLL LTD (Company Number 15262237 ) Registered office: 265 Ferry Road, Hullbridge , Hockley , …",
+    "url": "https://www.thegazette.co.uk/notice/5253946"
+   },
+   {
+    "company": "YEAST BAKERY LIMITED",
+    "code": "2443",
+    "type": "Appointment of liquidators",
+    "published": "2026-11-13",
+    "text": "…e of Liquidation: Creditors' Voluntary Registered office: 11 Chandlers Way , South Woodham Ferrers , …",
+    "url": "https://www.thegazette.co.uk/notice/5252741"
+   },
+   {
+    "company": "INSTANT DELIVERY SERVICE LTD",
+    "code": "2431",
+    "type": "Resolution for voluntary winding-up",
+    "published": "2026-11-19",
+    "text": "…e above named company, duly convened and held at Hunter House, 109 Snakes Lane West, Woodford Green, Essex , IG8 0DY …",
+    "url": "https://www.thegazette.co.uk/notice/5255866"
+   },
+   {
+    "company": "CHHHR LTD",
+    "code": "2441",
+    "type": "Meetings of creditors",
+    "published": "2026-11-17",
+    "text": "…of the Members of the above-named Company, duly convened and held at 1066 London Road, Leigh-on-Sea, Essex , SS9 3NA …",
+    "url": "https://www.thegazette.co.uk/notice/5253432"
+   },
+   {
+    "company": "CURS ACCOUNTS LIMITED",
+    "code": "2441",
+    "type": "Meetings of creditors",
+    "published": "2026-11-17",
+    "text": "…of the members of the above named Company, duly convened and held at 1066 London Road, Leigh-on-Sea, Essex SS9 3NA on …",
+    "url": "https://www.thegazette.co.uk/notice/5253436"
+   },
+   {
+    "company": "CHP PAYMENTS LTD",
+    "code": "2441",
+    "type": "Meetings of creditors",
+    "published": "2026-11-17",
+    "text": "…of the members of the above named Company, duly convened and held at 1066 London Road, Leigh-on-Sea, Essex SS9 3NA on …",
+    "url": "https://www.thegazette.co.uk/notice/5253438"
+   },
+   {
+    "company": "LOW TIDE HOSPITALITY LIMITED",
+    "code": "2443",
+    "type": "Appointment of liquidators",
+    "published": "2026-11-17",
+    "text": "…ties not elsewhere classified Registered office: The Retreat, 406 Roding Lane South, Woodford Green, Essex , IG8 8EY …",
+    "url": "https://www.thegazette.co.uk/notice/5253447"
+   },
+   {
+    "company": "RBH BUILDING CONTRACTORS LIMITED",
+    "code": "2441",
+    "type": "Meetings of creditors",
+    "published": "2026-11-20",
+    "text": "…of the members of the above named Company, duly convened and held at 1066 London Road, Leigh-on-Sea, Essex SS9 3NA on …",
+    "url": "https://www.thegazette.co.uk/notice/5256542"
+   },
+   {
+    "company": "LOW TIDE HOSPITALITY LIMITED",
+    "code": "2441",
+    "type": "Meetings of creditors",
+    "published": "2026-11-17",
+    "text": "…) Trading Name: The East Kent Registered office: The Retreat, 406 Roding Lane South, Woodford Green, Essex , IG8 8EY …",
+    "url": "https://www.thegazette.co.uk/notice/5253489"
+   }
+  ],
+  "pages": 6
+ },
+ "elections": {
+  "error": "HTTPError: HTTP Error 401: Unauthorized"
+ }
+}
