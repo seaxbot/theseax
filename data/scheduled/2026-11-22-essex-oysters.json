@@ -1,0 +1,114 @@
+{
+ "publishAt": "2026-11-22T06:00:00Z",
+ "note": "Owner's Seax Investigates story (21 Nov 2026, 23:44): to go live at 06:00 on Sunday 22 Nov and lead the site. Figures from the FSA shellfish classification list (data/sources/fsa-shellfish-classification-2026-10-01.xlsx), recounted by data/scheduled/2026-11-22-oysters-recount.py before publishing; the scheduled task re-stamps the triple check with verifyNotes because a stamp lasts 6 hours. Do not change the wording.",
+ "items": [
+  {
+   "section": "stories",
+   "id": "essex-oyster-farmers-eu-trade-uk-eu-deal-class-b",
+   "original": "report",
+   "tag": "Business",
+   "icon": "business",
+   "areas": [
+    "colchester",
+    "maldon",
+    "tendring",
+    "rochford",
+    "southend"
+   ],
+   "place": "West Mersea, Blackwater, Colne, Crouch and Roach",
+   "weight": 8,
+   "photo": "fresh oysters",
+   "headline": "Essex oyster farmers could win back lost EU trade under new deal",
+   "summary": "The UK-EU food deal is expected to reopen a shellfish trade the EU shut in 2021, and a Seax analysis shows most of the county's oyster waters were caught by the ban. Nothing changes until March 2028.",
+   "body": [
+    "Oyster farmers and fishermen on Mersea, the Colne, the Crouch and the Roach could win back European customers they lost after Brexit, under the food and farming deal the UK and the EU agreed in Brussels on Friday.",
+    "Since 2021 the EU has refused live oysters, mussels, clams and cockles from British waters graded Class B unless they have already been purified. Class B waters are clean enough to farm shellfish but not clean enough for them to be eaten straight from the water. Before Brexit, shellfish from those waters was sent to the continent and purified there.",
+    "## Most Essex oyster waters are Class B",
+    "A Seax analysis of the Food Standards Agency's latest classification list, updated on 1 October 2026, shows how hard that rule hits the county. Of the 33 harvesting zones on the Essex coast graded for native or Pacific oysters, 27 are Class B all year round, one of which also closes every September. Two are Class A only in some months, and just four are Class A all year.",
+    "Six of the seven West Mersea oyster zones are Class B, including Ray Creek, Strood Channel and Salcott Channel. Little Ditch is the exception, graded Class A from November to April. Every oyster zone on the Colne, the Crouch and the Roach is Class B, as are the three in the Walton Backwaters. The Blackwater is mixed: Ray Channel, St Peter's Flats and St Peters & Batchelor are Class A all year, Outer Blackwater is Class A from September to April, and Central Blackwater, Goldhanger and Osea South are Class B.",
+    "Cockles tell a similar story. The cockle beds on Southend Flats, Maplin West and Maplin Central are Class B, while Maplin East and the Barrows are Class A only from June to September.",
+    "## What the deal changes",
+    "The government's guidance for fish and shellfish businesses says it expects the agreement to reopen exports of live shellfish from Class B waters to the EU for purification.",
+    "Seafish, the industry's public body, estimated that Britain's live shellfish trade with the EU was worth about £15 million in 2019, mostly mussels, oysters, cockles and clams. Essex's share has never been published. Seafish says the new agreement could cut costs and delays for seafood businesses trading with the EU.",
+    "The ban was felt quickly on Mersea. In 2021 one oysterman told ITV Anglia it had \"devastated business\".",
+    "## When it starts",
+    "Nothing changes yet. The government says the agreement will apply from 1 March 2028, subject to approval procedures on both sides, with transition arrangements in a few areas. Until then the current checks and paperwork stay.",
+    "When it applies, Britain will follow EU rules on food safety and animal and plant health. In return, most routine certificates, advance notices and border checks on food traded between Britain and the EU will go. The government says the deal could add up to £5.1 billion a year to the UK economy by 2040.",
+    "## Fishing and the Thames ports",
+    "The summit also confirmed full access for British and EU boats to each other's fishing waters until 30 June 2038.",
+    "For the Thames ports the picture is mixed. Food from the EU arriving at London Gateway, Tilbury and Purfleet should face fewer checks. But the National Farmers' Union says the UK's current system of prioritised checks will be dropped, which means a larger share of food arriving from outside the EU could be checked at the border.",
+    "## Centuries of Essex oysters",
+    "Oysters have been taken from the Colne since Roman times, and each autumn the Mayor of Colchester dredges the first native oyster of the season in the Pyefleet Channel. The Haward family has farmed oysters on Mersea since at least 1769.",
+    "Native oysters on the Blackwater, Crouch, Roach and Colne are now managed under a permit scheme run by the Kent & Essex Inshore Fisheries and Conservation Authority, because the four estuaries form a Marine Conservation Zone."
+   ],
+   "points": [
+    "The deal applies from 1 March 2028",
+    "Fishing access agreed until 30 June 2038",
+    "UK live shellfish exports to the EU were worth about £15m in 2019"
+   ],
+   "charts": [
+    {
+     "after": 4,
+     "src": "/img/people/essex-oyster-zones-chart.jpg",
+     "w": 1200,
+     "h": 700,
+     "alt": "Bar chart of Essex oyster harvesting zones by grade: West Mersea 6 Class B and 1 seasonal, Blackwater 3 Class B, 1 seasonal and 3 Class A, Colne 3 Class B, Crouch 5 Class B, Roach 5 Class B, Walton Backwaters 3 Class B, Thames Estuary 2 Class B and 1 Class A",
+     "caption": "Essex oyster harvesting zones by grade. Source: Food Standards Agency classification list, 1 October 2026. Graphic: The Seax"
+    }
+   ],
+   "source": "The Seax, from the Food Standards Agency's shellfish classification list",
+   "url": "https://www.gov.uk/government/publications/shellfish-classification",
+   "also": [
+    {
+     "name": "GOV.UK: Fish and shellfish, preparing your business for the SPS agreement",
+     "url": "https://www.gov.uk/government/publications/sps-agreement-preparing-your-business/fish-and-shellfish-preparing-your-business"
+    },
+    {
+     "name": "GOV.UK: UK-EU Summit 2026 explainer, SPS",
+     "url": "https://www.gov.uk/government/publications/ukeu-summit-2026-key-documents/uk-eu-summit-2026-explainer-sps-html"
+    },
+    {
+     "name": "FSA blog: what the SPS agreement means for food businesses",
+     "url": "https://food.blog.gov.uk/2026/11/20/what-the-new-uk-eu-sps-agreement-means-for-food-and-feed-safety-and-food-businesses/"
+    },
+    {
+     "name": "EU-UK summit joint statement, 20 November 2026",
+     "url": "https://www.consilium.europa.eu/en/meetings/international-summit/2026/11/20/"
+    },
+    {
+     "name": "NFU: your questions on border restrictions answered",
+     "url": "https://www.nfuonline.com/news/uk-eu-alignment-your-questions-on-border-restrictions-answered/"
+    },
+    {
+     "name": "Seafish reaction (Air Cargo Week)",
+     "url": "https://aircargoweek.com/eu-uk-summit-marks-first-steps-towards-sps-agreement/"
+    },
+    {
+     "name": "Seafish 2019 trade estimate (IntraFish)",
+     "url": "https://www.intrafish.com/shellfish/indefinite-eu-ban-on-uk-shellfish-exports-potentially-catastrophic-for-industry/2-1-955875"
+    },
+    {
+     "name": "ITV Anglia, 2021: Oystermen worry about post-Brexit trade",
+     "url": "https://www.itv.com/news/anglia/2021-03-02/its-devastated-business-oystermen-worry-about-post-brexit-trade"
+    },
+    {
+     "name": "London Port Health Authority service plan 2025-26",
+     "url": "https://democracy.cityoflondon.gov.uk/documents/s218769/Appendix%202%20-%20Port%20Health%20Service%20Delivery%20Plan%202025-26.pdf"
+    },
+    {
+     "name": "Kent & Essex IFCA: oysters",
+     "url": "https://www.kentandessex-ifca.gov.uk/im-interested-in/fishing-commercially/dredging/oysters"
+    },
+    {
+     "name": "Borough Market: The quality of Mersea",
+     "url": "https://boroughmarket.org.uk/market-blog/the-quality-of-mersea/"
+    }
+   ]
+  }
+ ],
+ "verifyNotes": {
+  "figures": "Recounted with code from the raw FSA spreadsheet (data/sources/fsa-shellfish-classification-2026-10-01.xlsx, GOV.UK list updated 1 October 2026) via data/scheduled/2026-11-22-oysters-recount.py: 33 Essex production zones graded for O. edulis or C. gigas, 27 Class B (B or B-LT, Tollesbury North B-LT with a September prohibition), 2 seasonal A/B (Little Ditch 1 Nov-30 Apr, Outer Blackwater 1 Sep-30 Apr), 4 Class A (Ray Channel, St Peter's Flats, St Peters & Batchelor, Barrow Deep); per area West Mersea 6/1/0, Blackwater 3/1/3, Colne 3, Crouch 5, Roach 5, Walton Backwaters 3, Thames Estuary 2/0/1. Cockles: Southend Flats, Maplin West and Central B-LT; Maplin East and the three Barrows zones seasonal A 1 Jun-30 Sep. Other figures checked against their sources: £15m in 2019 (Seafish via IntraFish), 1 March 2028 (GOV.UK explainer and FSA blog), up to £5.1bn a year by 2040 (government figure via FoodNavigator), 30 June 2038 (EU-UK joint statement), 1769 (Borough Market).",
+  "independent": "Second recount by a different method: filtered rows by local authority (Maldon DC, Colchester CC, London PHA, Tendring DC) and species, excluding Kent-side Sheppey sampling points, without using production-area names: again 33 zones, 27 B, 2 seasonal, 4 A, same named exceptions. Zone names copied exactly as the FSA writes them (Ray Creek, Strood Channel, Salcott Channel, Little Ditch, St Peters & Batchelor). Policy facts each matched to the primary page: GOV.UK fish and shellfish guidance (expects reopening of Class B exports for depuration), GOV.UK summit explainer (applies from 1 March 2028, subject to procedures, targeted transition arrangements), EU-UK joint statement (fishing access to 30 June 2038), London Port Health Authority 2025-26 plan (London Gateway, Tilbury, Purfleet border control posts), NFU Q&A (BTOM dropped, more checks on non-EU imports).",
+  "readback": "Read as a reader: headline says 'could win back', matching the government's 'expect'; no money figure is claimed for Essex and the copy says Essex's share was never published; figures are zones, not businesses, and the copy says zones; the one Class B zone that also closes in September is now disclosed; nothing takes effect until March 2028 and that is in the summary and body; the ITV quote is under 15 words and dated 2021; no fact repeats across headline, summary and points; plain English, no em dashes."
+ }
+}
