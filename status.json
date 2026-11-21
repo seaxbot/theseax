@@ -1,0 +1,43 @@
+{
+ "at": "2026-11-21T17:44:59Z",
+ "newsnow": {
+  "lastOk": "2026-11-21T17:44:59Z",
+  "ok": true,
+  "error": "",
+  "items": 113,
+  "new": 9
+ },
+ "feeds": {
+  "total": 218,
+  "read": 214,
+  "unchanged": 161,
+  "failed": [
+   {
+    "name": "CommunityAd magazines",
+    "error": "HTTP 403"
+   },
+   {
+    "name": "Essex County Fire & Rescue Service",
+    "error": "HTTP 403"
+   },
+   {
+    "name": "Community 360 (Braintree & Colchester)",
+    "error": "URLError: <urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1081)>"
+   },
+   {
+    "name": "Sanctus, Chelmsford",
+    "error": "HTTP 403"
+   }
+  ],
+  "new4h": {
+   "O": 2,
+   "M": 3,
+   "L": 13
+  },
+  "new24h": {
+   "O": 15,
+   "M": 29,
+   "L": 65
+  }
+ }
+}
