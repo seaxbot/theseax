@@ -6236,6 +6236,33 @@
    "updated": "2026-11-21T14:53:12Z"
   },
   {
+   "id": "harlow-damien-clinton-police-appeal-theft-investigation",
+   "tag": "Police",
+   "icon": "police",
+   "areas": [
+    "epping"
+   ],
+   "place": "Harlow",
+   "weight": 5,
+   "headline": "Harlow police want to speak to Damien Clinton, 33, over theft inquiry",
+   "summary": "Officers say he has connections to Harlow and tattoos on the backs of his hands.",
+   "body": [
+    "Essex Police wants to speak to Damien Clinton in connection with an ongoing theft investigation.",
+    "The 33-year-old is white and of medium build, with short blond or ginger hair. He has connections to Harlow.",
+    "Anyone who sees him or knows where he is should contact Essex Police quoting reference 42/180182/26. Information can be given through the force's website or Live Chat, by calling 101, or anonymously to Crimestoppers on 0800 555 111."
+   ],
+   "points": [
+    "Medium build, short blond or ginger hair",
+    "Quote reference 42/180182/26",
+    "Call 101 or Crimestoppers anonymously"
+   ],
+   "source": "Essex Police Harlow",
+   "url": "https://www.facebook.com/EPHarlow",
+   "also": [],
+   "time": "2026-11-21T14:55:20Z",
+   "updated": "2026-11-21T14:55:20Z"
+  },
+  {
    "id": "colchester-leisure-world-swimming-pool-closed-incident",
    "tag": "Community",
    "icon": "community",

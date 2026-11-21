@@ -1,6 +1,21 @@
 [
  {
   "ids": [
+   "harlow-damien-clinton-police-appeal-theft-investigation"
+  ],
+  "name": "Damien Clinton",
+  "label": "Picture",
+  "wide": "/img/people/damien-clinton-appeal-wide.jpg",
+  "og": "/img/people/damien-clinton-appeal-og.jpg",
+  "creator": "Essex Police",
+  "provider": "",
+  "license": "",
+  "licenseUrl": "",
+  "source": "",
+  "addedBy": "owner, 21 Nov 2026 14:55 (Essex Police Harlow appeal photo)"
+ },
+ {
+  "ids": [
    "colchester-gavyn-booker-wanted-recall-prison"
   ],
   "name": "Gavyn Booker",
