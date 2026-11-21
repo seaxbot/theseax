@@ -171,21 +171,6 @@
  },
  {
   "ids": [
-   "basildon-valeriy-hurynchuk-49-missing-appeal"
-  ],
-  "name": "Valeriy Hurynchuk",
-  "label": "Picture",
-  "wide": "/img/people/valeriy-hurynchuk-missing-wide.jpg",
-  "og": "/img/people/valeriy-hurynchuk-missing-og.jpg",
-  "creator": "Essex Police",
-  "provider": "",
-  "license": "",
-  "licenseUrl": "",
-  "source": "",
-  "addedBy": "owner, 21 Nov 2026 14:52 (Essex Police Basildon missing appeal photo)"
- },
- {
-  "ids": [
    "colchester-tendring-connor-downer-wanted-recall-prison"
   ],
   "name": "Connor Downer",
@@ -835,7 +820,8 @@
  },
  {
   "ids": [
-   "grays-patrick-francisco-83-missing-appeal"
+   "grays-patrick-francisco-83-missing-appeal",
+   "basildon-valeriy-hurynchuk-49-missing-appeal"
   ],
   "name": "Essex Police officer with body-worn camera",
   "label": "Picture",
@@ -846,7 +832,7 @@
   "license": "",
   "licenseUrl": "",
   "source": "https://www.facebook.com/EssexPoliceUK",
-  "addedBy": "owner, 16 Nov 2026 (Patrick Francisco found; police said 'good news' but not 'safe', so matched by id rather than a 'found safe' headline)"
+  "addedBy": "owner, 16 Nov 2026 (Patrick Francisco found; police said 'good news' but not 'safe', so matched by id rather than a 'found safe' headline); also Valeriy Hurynchuk found, 21 Nov 2026 (police said 'located', not 'safe')"
  },
  {
   "match": "^(?!.*\\b(?:[Dd]ead|[Bb]ody|[Dd]ied|[Dd]eath|[Kk]illed|[Rr]emains|[Ff]atal\\w*)\\b).*\\b(?:[Ff]ound|[Ll]ocated|[Tt]raced)\\b.*\\b(?:[Ss]afe|[Ss]afely|[Uu]nharmed)\\b",
