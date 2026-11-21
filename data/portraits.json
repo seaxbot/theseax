@@ -1,6 +1,41 @@
 [
  {
   "ids": [
+   "south-woodham-ferrers-marsh-farm-lumina-light-trail-opens"
+  ],
+  "name": "A visitor at the angel wings and hot-air balloon lanterns at Lumina, Marsh Farm",
+  "label": "Picture",
+  "wide": "/img/people/lumina-marsh-farm-wide.jpg",
+  "og": "/img/people/lumina-marsh-farm-og.jpg",
+  "creator": "Marsh Farm",
+  "provider": "Marsh Farm",
+  "license": "",
+  "licenseUrl": "",
+  "source": "https://www.marshfarm.co.uk/events/lumina-light-trail/",
+  "more": [
+   {
+    "name": "The Welcome to Lumina arch at the start of the trail",
+    "label": "Picture",
+    "wide": "/img/people/lumina-marsh-farm-arch.jpg",
+    "creator": "Marsh Farm"
+   },
+   {
+    "name": "Visitors and a dog on the lit walkway on the opening weekend",
+    "label": "Picture",
+    "wide": "/img/people/lumina-marsh-farm-walkway.jpg",
+    "creator": "Marsh Farm"
+   },
+   {
+    "name": "Visitors look up at the lantern displays",
+    "label": "Picture",
+    "wide": "/img/people/lumina-marsh-farm-lanterns.jpg",
+    "creator": "Marsh Farm"
+   }
+  ],
+  "addedBy": "owner, 21 Nov 2026 19:25 (Marsh Farm's opening-night pictures from its press release, supplied for publication; owner asked for the vibrant pictures; credited Marsh Farm)"
+ },
+ {
+  "ids": [
    "southend-clifftown-road-former-ravens-17-room-hmo-plan"
   ],
   "name": "The former Ravens store at 6-7 Clifftown Road, Southend",

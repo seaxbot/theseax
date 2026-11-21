@@ -1,0 +1,46 @@
+{
+ "publishAt": "2026-11-22T12:00:00Z",
+ "note": "Owner's request, 21 Nov 2026: run at midday on Sunday 22 Nov with a news angle, from Marsh Farm's press release (emailed to events@theseax.com by its PR, Maddie Rustman) and the farm's own Lumina page; owner wanted the vibrant opening-night pictures used (data/portraits.json, matched by id, credited Marsh Farm).",
+ "items": [
+  {
+   "section": "stories",
+   "id": "south-woodham-ferrers-marsh-farm-lumina-light-trail-opens",
+   "tag": "What's On",
+   "icon": "community",
+   "areas": [
+    "chelmsford",
+    "maldon"
+   ],
+   "place": "South Woodham Ferrers, Marsh Farm",
+   "weight": 5,
+   "headline": "South Woodham Ferrers' Marsh Farm opens mile-long lantern trail",
+   "summary": "Lumina runs on selected evenings until 20 February, and tickets cost £8 less if you book ahead.",
+   "body": [
+    "Marsh Farm Animal Adventure Park in South Woodham Ferrers opened its new winter light trail, Lumina, on Saturday 21 November 2026. The route winds through the farm and the neighbouring Tipi Village after dark, and the farm says it takes about an hour to walk.",
+    "The trail is split into five themed worlds: Dazzling Nature, Whimsical Wonderland, Dinosaur World, Ice Adventure and Fantasy World, filled with giant lantern sculptures and glowing scenes. The farm says a specialist team from China spent more than a month making, painting and building the lanterns.",
+    "\"My children were mesmerised as soon as we pulled into the car park,\" said Luke Read, who went on the opening weekend.",
+    "## Tickets and times",
+    "Lumina runs from 4.30pm to 7.30pm on selected dates, with timed entry slots, and popular sessions can sell out. Tickets cost from £13.95 each booked in advance, plus a 50p booking fee, or from £21.95 on the day. Children under two go free but may still need a ticket, and carers of disabled visitors get £5 off. Unlimited goes on the illuminated fairground rides, including a carousel and teacups, cost £5 extra.",
+    "## Dog-friendly nights",
+    "Dogs on short leads are welcome on 12 evenings: most Sundays from 29 November to 14 February, plus Wednesday 23 December. Water bowls and bins are set out along the trail, but dogs are not allowed in indoor dining areas or the animal barns. Assistance dogs are welcome on any night.",
+    "## Food, parking and access",
+    "Food stalls along the trail sell burgers, loaded fries and hot drinks, The Wonky Wheelbarrow pub serves drinks, and there are fire pits for toasting marshmallows. Parking is free. Most paths are hard-standing, but some parts of the trail cross grass and uneven ground, so the farm suggests sturdy footwear and suitable wheels for pushchairs and wheelchairs. Some displays use flashing lights. The event goes ahead in most weather, including rain."
+   ],
+   "points": [
+    "The trail takes about an hour to walk",
+    "Open 4.30pm to 7.30pm, with free parking",
+    "First dog-friendly night: Sunday 29 November"
+   ],
+   "source": "Marsh Farm",
+   "url": "https://www.marshfarm.co.uk/events/lumina-light-trail/",
+   "also": [
+    {
+     "name": "Visit Essex: Lumina",
+     "url": "https://www.visitessex.com/whats-on/lumina-p2650641"
+    }
+   ],
+   "time": ""
+  }
+ ],
+ "diary": []
+}
