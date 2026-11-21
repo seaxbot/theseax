@@ -4867,7 +4867,7 @@ function renderPinned(){
   if(PIN.style === "notice"){ el.innerHTML = `<a class="pin-notice" href="${esc(PIN.url)}"><i aria-hidden="true"></i><b>${esc(PIN.kicker || "Site notice")}</b><span>Read more →</span></a>`; return; }
   /* our own reporting keeps its "Seax Investigates" banner and EXCLUSIVE kicker when pinned (owner, 21 Nov 2026) */
   const pinStory = (typeof ED !== "undefined" && ED && (ED.stories||[]).find(x => x && x.id === PIN.id)) || null;
-  const pinOwn = {ban: pinStory && typeof ownBanner === "function" ? ownBanner(pinStory) : "",
+  const pinOwn = {ban: pinStory && typeof ownBanner === "function" ? ownBanner(pinStory, "", true) : "",
                   kick: (pinStory && pinStory.exclusive ? "Exclusive" + (PIN.kicker ? " · " + esc(PIN.kicker) : "") : esc(PIN.kicker || "The Seax"))};
   el.innerHTML = `<a class="pin-card" href="${esc(PIN.url)}">
     <div class="pin-img">${PIN.image ? `<img src="${esc(PIN.image)}" alt="${esc(PIN.alt || "")}" loading="eager">` : ""}</div>
@@ -5157,7 +5157,8 @@ function leadChecker(s){
   }, 0);
   return `<div class="lp-check"><div class="lpc-t"><b>${OB_DATA}Crime checker</b><span>How is your neighbourhood doing? See the September figures for any of Essex's 56 police areas.</span></div><select id="lpCheckSel" aria-label="Check your neighbourhood"><option value="">Loading the 56 areas…</option></select></div>`;
 }
-function ownBanner(s, cls){ if(!s || !s.original) return ""; const inv = s.original !== "data"; return `<span class="ownban${cls ? " " + cls : ""}"><b>${inv ? OB_INV : OB_DATA}${inv ? "Seax Investigates" : "Seax Analysis"}</b><em>${s.exclusive ? "Exclusive" : inv ? "Original reporting" : "Original data journalism"}</em></span>`; }
+/* kickerSaysExc: the card's own kicker already says EXCLUSIVE, so the banner does not say it again (owner, 21 Nov 2026) */
+function ownBanner(s, cls, kickerSaysExc){ if(!s || !s.original) return ""; const inv = s.original !== "data"; return `<span class="ownban${cls ? " " + cls : ""}"><b>${inv ? OB_INV : OB_DATA}${inv ? "Seax Investigates" : "Seax Analysis"}</b><em>${s.exclusive && !kickerSaysExc ? "Exclusive" : inv ? "Original reporting" : "Original data journalism"}</em></span>`; }
 function flashBadge(s){ return flashOn(s) ? '<span class="flash"><i></i>Breaking</span>' : ""; }
 function leadKicker(s){
   /* owner, 20 Nov 2026: our own scoops say just EXCLUSIVE, with the red dot, even when breaking */
@@ -5175,7 +5176,7 @@ function buildHero(){
   if(!s){ $("#leadPkg").innerHTML = ""; return; }
   const pts = (s.points||[]).slice(0,3);
   $("#leadPkg").innerHTML = `<div class="lp-text" style="--c:${pillar(s)}">
-      ${ownBanner(s)}<span class="lp-kick">${leadKicker(s)}<em>${esc(s.place||"Essex")}</em></span>
+      ${ownBanner(s, "", true)}<span class="lp-kick">${leadKicker(s)}<em>${esc(s.place||"Essex")}</em></span>
       <h2><a href="${storyHref(s)}">${esc(s.headline)}</a></h2>
       <p class="lp-stand">${esc(s.summary)}</p>
       ${pts.length ? `<ul class="lp-pts">${pts.map(p=>`<li>${esc(p)}</li>`).join("")}</ul>` : ""}
