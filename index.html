@@ -4816,6 +4816,8 @@ function renderCouncilWatch(){
 
 /* pinned story: the owner's launch story sits above the lead between its from and until times (UTC); the newsroom never edits data/pinned.json */
 let PIN = null;
+/* while a full pinned card is up, its story is not shown again in the lead slots or the News grid (owner, 21 Nov 2026) */
+function pinnedId(){ const now = Date.now(); return (PIN && PIN.id && PIN.style !== "notice" && PIN.headline && PIN.url && now >= +new Date(PIN.from) && now < +new Date(PIN.until)) ? PIN.id : null; }
 function renderPinned(){
   const el = document.getElementById("pinned"); if(!el) return;
   const now = Date.now(), on = PIN && PIN.headline && PIN.url && now >= +new Date(PIN.from) && now < +new Date(PIN.until);
@@ -4891,7 +4893,7 @@ function syncNewsExtras(){
 }
 function renderPinnedNews(){ syncNewsExtras(); }
 function renderFixturesNews(){ syncNewsExtras(); }
-fetch("/data/pinned.json", { cache: "no-store" }).then(r => r.ok ? r.json() : null).then(p => { PIN = p; renderPinned(); renderPinnedNews(); }).catch(() => {});
+fetch("/data/pinned.json", { cache: "no-store" }).then(r => r.ok ? r.json() : null).then(p => { PIN = p; renderPinned(); renderPinnedNews(); if(pinnedId() && typeof ED !== "undefined" && ED && (ED.stories||[]).some(x => x && x.id === PIN.id)) renderAll(); }).catch(() => {});
 function renderAll(){
   renderChips(); renderTicker(); buildHero(); renderTopList(); renderNews(); renderPinnedNews(); renderFixturesNews(); renderDesk(); renderCouncilWatch(); renderCommunity(); renderSport(); renderTables(); renderWeather();
   renderEvents(); renderCulture(); renderVital(); renderSpecials(); renderSources(); renderMeta(); afterRender(); updateLiveLine();
@@ -5038,7 +5040,8 @@ function frontScore(s, now){
 function rankStories(list, now){ return list.slice().sort((a,b) => frontScore(b, now) - frontScore(a, now) || newsTime(b) - newsTime(a)); }
 function frontPicks(){
   const now = Date.now();
-  const list = ED.stories.filter(inArea);
+  const pid = pinnedId();
+  const list = ED.stories.filter(inArea).filter(s => s.id !== pid);
   const ranked = rankStories(list, now);
   let lead = null;
   const L = ED.lead || {};
@@ -5311,7 +5314,8 @@ function renderToday(){
 }
 /* ---------- news: tiered ---------- */
 function renderNews(){
-  const all = ED.stories.filter(inArea).slice().sort(byTime);
+  const pid = pinnedId();
+  const all = ED.stories.filter(inArea).filter(s => s.id !== pid).slice().sort(byTime);
   const used = new Set(heroList.map(s => s && s.id));
   const ranked = rankStories(all.filter(s => !used.has(s.id)), Date.now());
   const topIds = new Set(ranked.slice(0, 5).map(s => s.id));

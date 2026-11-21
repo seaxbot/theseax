@@ -1,15 +1,14 @@
 {
- "_note": "Pinned at the top of the front page between 'from' and 'until' (UTC), then shown as a card in the News section until 'newsUntil'. Owner's story. \"style\": \"notice\" (owner's choice, 13 Nov 2026) shows only a slim site-notice strip linking to the story, and no big card or News card. The newsroom never edits this file. Owner removed the site-notice strip at 19:31 on 13 Nov 2026.",
- "id": "microsoft-outage-site-updates-slower",
- "style": "notice",
- "from": "2026-11-13T09:20:00Z",
- "until": "2026-11-13T19:31:34Z",
- "newsUntil": "2026-11-13T19:31:34Z",
- "kicker": "Site notice: updates may be slower today",
- "place": "Essex",
- "headline": "Global Microsoft outage hits Outlook, Teams and other services worldwide",
- "summary": "Site updates on The Seax may be slower than usual today, as the disruption hits many of the councils, public services and newsrooms we rely on for news.",
- "image": "/img/topics/microsoft-outage.png?v=1",
- "alt": "Illustration: a laptop showing a broken cloud, with email and video-call icons crossed out",
- "url": "/story/microsoft-outage-site-updates-slower/"
+ "_note": "Pinned at the top of the front page between 'from' and 'until' (UTC), then shown as a card in the News section until 'newsUntil'. Owner's story. \"style\": \"notice\" (owner's choice, 13 Nov 2026) shows only a slim site-notice strip linking to the story, and no big card or News card. The newsroom never edits this file. Owner removed the site-notice strip at 19:31 on 13 Nov 2026. 21 Nov 2026: owner pinned the Brentwood School review story as a weekend special report; while a full card is pinned its story is not repeated in the lead slots or News grid.",
+ "id": "brentwood-school-safeguarding-review-british-fencing-own-review",
+ "from": "2026-11-21T08:55:00Z",
+ "until": "2026-11-23T07:00:00Z",
+ "newsUntil": "2026-11-23T07:00:00Z",
+ "kicker": "Special report",
+ "place": "Brentwood",
+ "headline": "Brentwood School coach Gareth Stafford Bull likely abused pupils, review finds",
+ "summary": "The school's own independent review says the fencing coach probably harmed a number of boys through the 1980s and 1990s, and that former pupils who came forward years later were brushed off. British Fencing is now launching its own inquiry.",
+ "image": "/img/people/brentwood-school-tower-wide.jpg?v=1",
+ "alt": "Picture: Brentwood School",
+ "url": "/story/brentwood-school-safeguarding-review-british-fencing-own-review/"
 }
