@@ -1577,6 +1577,10 @@ def story_page(sec, it, more):
         if t:
             vo["uploadDate"] = iso(t)
         extra += '<script type="application/ld+json">' + json.dumps(vo, ensure_ascii=False).replace("</", "<\\/") + "</script>\n"
+    # a map story can still share with a real photo (owner, 20 Nov 2026: every Facebook post needs a real picture):
+    # "ogImage": "/img/..." on the item sets only the share picture, the page keeps its map
+    if map_only and str(it.get("ogImage") or "").startswith("/img/"):
+        og_img = str(it["ogImage"])
     return head(f"{title} · The Seax", desc, url, og_img, "article", extra) + f"""<main class="wrap story">
 <article style="--c:{colour}">
   {own_banner(it)}<div class="kick"><span>{E(kicker)}</span><span>{E(place)}</span></div>
