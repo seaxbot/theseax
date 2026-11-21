@@ -1,0 +1,28 @@
+name: X posts via Buffer
+# Sends the most significant new story to The Seax X account through Buffer, at most once an hour and 12 a day.
+# See tools/xbuffer.py. Needs the repository secret BUFFER_API_KEY (Buffer, Settings, API). Without it, it does nothing.
+on:
+  workflow_dispatch:
+  schedule: [{cron: "17 * * * *"}]
+permissions:
+  contents: write
+concurrency: x-buffer
+jobs:
+  post:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with: { fetch-depth: 1 }
+      - run: python3 -u tools/xbuffer.py
+        env:
+          BUFFER_API_KEY: ${{ secrets.BUFFER_API_KEY }}
+      - name: Save what was posted
+        run: |
+          git config user.name "The Seax policy"
+          git config user.email "seaxbot@users.noreply.github.com"
+          git add data/x-posted.json 2>/dev/null || true
+          git diff --cached --quiet && exit 0
+          git commit -qm "X post via Buffer"
+          for i in 1 2 3 4 5; do git pull -q --rebase origin main && git push -q origin HEAD:main && exit 0; sleep $((i*7)); done
+          exit 1
