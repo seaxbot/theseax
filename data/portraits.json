@@ -1,6 +1,22 @@
 [
  {
   "ids": [
+   "chelmsford-hollywood-bowl-meadows-opening-december"
+  ],
+  "match": "^(?!.*\\b(?:[Cc]los\\w*|[Ff]ire|[Dd]ied|[Dd]eath|[Ii]njur\\w*|[Pp]olice|[Ff]ined)\\b).*(?:\\bHollywood Bowl\\b.*\\b(?:[Oo]pen\\w*|[Ll]aunch\\w*)\\b|\\b(?:[Oo]pen\\w*|[Ll]aunch\\w*)\\b.*\\bHollywood Bowl\\b)",
+  "name": "A young bowler at a Hollywood Bowl centre",
+  "label": "Picture",
+  "wide": "/img/people/hollywood-bowl-wide.jpg",
+  "og": "/img/people/hollywood-bowl-og.jpg",
+  "creator": "Hollywood Bowl",
+  "provider": "Hollywood Bowl",
+  "license": "",
+  "licenseUrl": "",
+  "source": "https://www.hollywoodbowl.co.uk/chelmsford",
+  "addedBy": "owner, 21 Nov 2026 20:13 (Hollywood Bowl promotional picture for the Chelmsford Meadows opening story and all future Hollywood Bowl opening stories; not closures or bad news; credit Hollywood Bowl)"
+ },
+ {
+  "ids": [
    "south-woodham-ferrers-marsh-farm-lumina-light-trail-opens"
   ],
   "name": "A visitor at the angel wings and hot-air balloon lanterns at Lumina, Marsh Farm",
