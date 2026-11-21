@@ -6181,6 +6181,34 @@
    "updated": "2026-11-21T14:50:36Z"
   },
   {
+   "id": "colchester-tendring-connor-downer-wanted-recall-prison",
+   "tag": "Police",
+   "icon": "police",
+   "areas": [
+    "colchester",
+    "tendring"
+   ],
+   "place": "Colchester",
+   "weight": 5,
+   "headline": "Police hunt Connor Downer, 22, wanted on recall to prison",
+   "summary": "Essex Police say he has links to Colchester, Ipswich and the Tendring district.",
+   "body": [
+    "Essex Police is asking for help to find Connor Downer, who is wanted on recall to prison.",
+    "Downer, 22, is about 5ft 10in tall with blond hair. He has connections to Colchester, Ipswich and the Tendring district.",
+    "Anyone who sees him or knows where he is should contact Essex Police quoting reference 42EZ/2895/26. Information can be given through the force's website or Live Chat, by calling 101, or anonymously to Crimestoppers on 0800 555 111."
+   ],
+   "points": [
+    "About 5ft 10in with blond hair",
+    "Quote reference 42EZ/2895/26",
+    "Call 101 or Crimestoppers anonymously"
+   ],
+   "source": "Essex Police",
+   "url": "https://www.essex.police.uk/news/news-search/?ct=News",
+   "also": [],
+   "time": "2026-11-21T14:51:51Z",
+   "updated": "2026-11-21T14:51:51Z"
+  },
+  {
    "id": "colchester-leisure-world-swimming-pool-closed-incident",
    "tag": "Community",
    "icon": "community",

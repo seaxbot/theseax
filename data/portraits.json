@@ -1,6 +1,21 @@
 [
  {
   "ids": [
+   "colchester-tendring-connor-downer-wanted-recall-prison"
+  ],
+  "name": "Connor Downer",
+  "label": "Picture",
+  "wide": "/img/people/connor-downer-wanted-wide.jpg",
+  "og": "/img/people/connor-downer-wanted-og.jpg",
+  "creator": "Essex Police",
+  "provider": "",
+  "license": "",
+  "licenseUrl": "",
+  "source": "",
+  "addedBy": "owner, 21 Nov 2026 14:51 (Essex Police wanted appeal photo)"
+ },
+ {
+  "ids": [
    "braintree-raf-wethersfield-dispersal-order-21-23-november"
   ],
   "name": "Map of the RAF Wethersfield dispersal order area",
