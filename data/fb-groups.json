@@ -2437,8 +2437,869 @@
    "perWeek": 0,
    "joined": "2026-11-21",
    "note": "Owner joined 21 Nov 2026. Business, adverts or buy-and-sell group: news posts would be off-topic and look like spam. Do not post."
+  },
+  {
+   "id": "1672127979683495",
+   "key": "galleywood-community-hub-3495",
+   "name": "Galleywood Community Hub",
+   "members": 9300,
+   "privacy": "",
+   "kind": "town",
+   "match": [
+    "galleywood",
+    "chelmsford"
+   ],
+   "status": "on",
+   "perWeek": 1,
+   "joined": "2026-11-21",
+   "note": "Auto-joined in the 21 Nov 2026 bulk join. Not yet vetted: before the first post, check the Group by banner (never Essex Live) and the rules; set off or caution if they ban links, news or Pages."
+  },
+  {
+   "id": "stanwaycommunitygroup",
+   "key": "stanway-community-group-roup",
+   "name": "Stanway Community Group",
+   "members": 5700,
+   "privacy": "",
+   "kind": "town",
+   "match": [
+    "stanway",
+    "colchester"
+   ],
+   "status": "on",
+   "perWeek": 1,
+   "joined": "2026-11-21",
+   "note": "Auto-joined in the 21 Nov 2026 bulk join. Not yet vetted: before the first post, check the Group by banner (never Essex Live) and the rules; set off or caution if they ban links, news or Pages."
+  },
+  {
+   "id": "welovewestcliffonsea",
+   "key": "we-love-westcliff-on-sea-nsea",
+   "name": "We Love Westcliff-on-Sea",
+   "members": 12000,
+   "privacy": "",
+   "kind": "town",
+   "match": [
+    "westcliff",
+    "southend"
+   ],
+   "status": "on",
+   "perWeek": 1,
+   "joined": "2026-11-21",
+   "note": "Auto-joined in the 21 Nov 2026 bulk join. Not yet vetted: before the first post, check the Group by banner (never Essex Live) and the rules; set off or caution if they ban links, news or Pages."
+  },
+  {
+   "id": "1687650678190443",
+   "key": "chelmsford-crimewatch-0443",
+   "name": "Chelmsford Crimewatch",
+   "members": 27000,
+   "privacy": "",
+   "kind": "crime",
+   "match": [
+    "chelmsford"
+   ],
+   "status": "on",
+   "perWeek": 1,
+   "joined": "2026-11-21",
+   "note": "Auto-joined in the 21 Nov 2026 bulk join. Not yet vetted: before the first post, check the Group by banner (never Essex Live) and the rules; set off or caution if they ban links, news or Pages."
+  },
+  {
+   "id": "480061952766036",
+   "key": "colchester-crime-and-communi-6036",
+   "name": "Colchester Crime and Community Group",
+   "members": 17000,
+   "privacy": "",
+   "kind": "crime",
+   "match": [
+    "colchester"
+   ],
+   "status": "on",
+   "perWeek": 1,
+   "joined": "2026-11-21",
+   "note": "Auto-joined in the 21 Nov 2026 bulk join. Not yet vetted: before the first post, check the Group by banner (never Essex Live) and the rules; set off or caution if they ban links, news or Pages."
+  },
+  {
+   "id": "461308061397014",
+   "key": "spotted-in-colchester-7014",
+   "name": "Spotted in Colchester",
+   "members": 8700,
+   "privacy": "",
+   "kind": "town",
+   "match": [
+    "colchester"
+   ],
+   "status": "on",
+   "perWeek": 1,
+   "joined": "2026-11-21",
+   "note": "Auto-joined in the 21 Nov 2026 bulk join. Not yet vetted: before the first post, check the Group by banner (never Essex Live) and the rules; set off or caution if they ban links, news or Pages."
+  },
+  {
+   "id": "821297107882594",
+   "key": "colchester-what-s-on-and-whe-2594",
+   "name": "Colchester what's on and where can i find",
+   "members": 17000,
+   "privacy": "",
+   "kind": "town",
+   "match": [
+    "colchester"
+   ],
+   "status": "on",
+   "perWeek": 1,
+   "joined": "2026-11-21",
+   "note": "Auto-joined in the 21 Nov 2026 bulk join. Not yet vetted: before the first post, check the Group by banner (never Essex Live) and the rules; set off or caution if they ban links, news or Pages."
+  },
+  {
+   "id": "1558934810810442",
+   "key": "southend-crimewatch-0442",
+   "name": "Southend Crimewatch",
+   "members": 93000,
+   "privacy": "",
+   "kind": "crime",
+   "match": [
+    "southend",
+    "leigh-on-sea",
+    "westcliff",
+    "shoebury"
+   ],
+   "status": "on",
+   "perWeek": 1,
+   "joined": "2026-11-21",
+   "note": "Auto-joined in the 21 Nov 2026 bulk join. Not yet vetted: before the first post, check the Group by banner (never Essex Live) and the rules; set off or caution if they ban links, news or Pages."
+  },
+  {
+   "id": "877136333553072",
+   "key": "we-are-southend-3072",
+   "name": "We Are Southend",
+   "members": 5000,
+   "privacy": "",
+   "kind": "town",
+   "match": [
+    "southend"
+   ],
+   "status": "on",
+   "perWeek": 1,
+   "joined": "2026-11-21",
+   "note": "Auto-joined in the 21 Nov 2026 bulk join. Not yet vetted: before the first post, check the Group by banner (never Essex Live) and the rules; set off or caution if they ban links, news or Pages."
+  },
+  {
+   "id": "essexcrime",
+   "key": "southend-basildon-and-canvey-rime",
+   "name": "Southend, Basildon and Canvey crime and court watch",
+   "members": 6100,
+   "privacy": "",
+   "kind": "crime",
+   "match": [
+    "southend",
+    "basildon",
+    "canvey"
+   ],
+   "status": "on",
+   "perWeek": 1,
+   "joined": "2026-11-21",
+   "note": "Auto-joined in the 21 Nov 2026 bulk join. Not yet vetted: before the first post, check the Group by banner (never Essex Live) and the rules; set off or caution if they ban links, news or Pages."
+  },
+  {
+   "id": "379128661040278",
+   "key": "the-real-billericay-discussi-0278",
+   "name": "The Real Billericay Discussion Page",
+   "members": 16000,
+   "privacy": "",
+   "kind": "town",
+   "match": [
+    "billericay"
+   ],
+   "status": "on",
+   "perWeek": 1,
+   "joined": "2026-11-21",
+   "note": "Auto-joined in the 21 Nov 2026 bulk join. Not yet vetted: before the first post, check the Group by banner (never Essex Live) and the rules; set off or caution if they ban links, news or Pages."
+  },
+  {
+   "id": "429022360521379",
+   "key": "wickford-community-forum-1379",
+   "name": "Wickford Community Forum",
+   "members": 11000,
+   "privacy": "",
+   "kind": "town",
+   "match": [
+    "wickford"
+   ],
+   "status": "on",
+   "perWeek": 1,
+   "joined": "2026-11-21",
+   "note": "Auto-joined in the 21 Nov 2026 bulk join. Not yet vetted: before the first post, check the Group by banner (never Essex Live) and the rules; set off or caution if they ban links, news or Pages."
+  },
+  {
+   "id": "164496027489041",
+   "key": "wickford-chat-group-9041",
+   "name": "Wickford Chat group",
+   "members": 6600,
+   "privacy": "",
+   "kind": "town",
+   "match": [
+    "wickford"
+   ],
+   "status": "on",
+   "perWeek": 1,
+   "joined": "2026-11-21",
+   "note": "Auto-joined in the 21 Nov 2026 bulk join. Not yet vetted: before the first post, check the Group by banner (never Essex Live) and the rules; set off or caution if they ban links, news or Pages."
+  },
+  {
+   "id": "364858025159138",
+   "key": "rayleigh-community-group-9138",
+   "name": "Rayleigh community group",
+   "members": 11000,
+   "privacy": "",
+   "kind": "town",
+   "match": [
+    "rayleigh"
+   ],
+   "status": "on",
+   "perWeek": 1,
+   "joined": "2026-11-21",
+   "note": "Auto-joined in the 21 Nov 2026 bulk join. Not yet vetted: before the first post, check the Group by banner (never Essex Live) and the rules; set off or caution if they ban links, news or Pages."
+  },
+  {
+   "id": "1733544703556405",
+   "key": "the-voice-of-rayleigh-6405",
+   "name": "The Voice Of Rayleigh",
+   "members": 7400,
+   "privacy": "",
+   "kind": "town",
+   "match": [
+    "rayleigh"
+   ],
+   "status": "on",
+   "perWeek": 1,
+   "joined": "2026-11-21",
+   "note": "Auto-joined in the 21 Nov 2026 bulk join. Not yet vetted: before the first post, check the Group by banner (never Essex Live) and the rules; set off or caution if they ban links, news or Pages."
+  },
+  {
+   "id": "891711854928435",
+   "key": "canvey-island-news-24-7-8435",
+   "name": "Canvey Island news 24/7",
+   "members": 7600,
+   "privacy": "",
+   "kind": "town",
+   "match": [
+    "canvey"
+   ],
+   "status": "on",
+   "perWeek": 1,
+   "joined": "2026-11-21",
+   "note": "Auto-joined in the 21 Nov 2026 bulk join. Not yet vetted: before the first post, check the Group by banner (never Essex Live) and the rules; set off or caution if they ban links, news or Pages."
+  },
+  {
+   "id": "canveyislandcommunity",
+   "key": "canvey-island-community-nity",
+   "name": "Canvey Island Community",
+   "members": 4100,
+   "privacy": "",
+   "kind": "town",
+   "match": [
+    "canvey"
+   ],
+   "status": "on",
+   "perWeek": 1,
+   "joined": "2026-11-21",
+   "note": "Auto-joined in the 21 Nov 2026 bulk join. Not yet vetted: before the first post, check the Group by banner (never Essex Live) and the rules; set off or caution if they ban links, news or Pages."
+  },
+  {
+   "id": "1137282292972762",
+   "key": "canvey-island-friendly-page-2762",
+   "name": "Canvey Island Friendly Page",
+   "members": 11000,
+   "privacy": "",
+   "kind": "town",
+   "match": [
+    "canvey"
+   ],
+   "status": "on",
+   "perWeek": 1,
+   "joined": "2026-11-21",
+   "note": "Auto-joined in the 21 Nov 2026 bulk join. Not yet vetted: before the first post, check the Group by banner (never Essex Live) and the rules; set off or caution if they ban links, news or Pages."
+  },
+  {
+   "id": "1682072375410140",
+   "key": "canvey-crime-watch-2-0140",
+   "name": "Canvey Crime Watch 2",
+   "members": 3600,
+   "privacy": "",
+   "kind": "crime",
+   "match": [
+    "canvey"
+   ],
+   "status": "on",
+   "perWeek": 1,
+   "joined": "2026-11-21",
+   "note": "Auto-joined in the 21 Nov 2026 bulk join. Not yet vetted: before the first post, check the Group by banner (never Essex Live) and the rules; set off or caution if they ban links, news or Pages."
+  },
+  {
+   "id": "875383266221189",
+   "key": "benfleet-thundersley-communi-1189",
+   "name": "Benfleet Thundersley Community Friends",
+   "members": 18000,
+   "privacy": "",
+   "kind": "town",
+   "match": [
+    "benfleet",
+    "thundersley",
+    "hadleigh"
+   ],
+   "status": "on",
+   "perWeek": 1,
+   "joined": "2026-11-21",
+   "note": "Auto-joined in the 21 Nov 2026 bulk join. Not yet vetted: before the first post, check the Group by banner (never Essex Live) and the rules; set off or caution if they ban links, news or Pages."
+  },
+  {
+   "id": "426206327427827",
+   "key": "benfleet-watch-7827",
+   "name": "Benfleet Watch",
+   "members": 18000,
+   "privacy": "",
+   "kind": "crime",
+   "match": [
+    "benfleet",
+    "thundersley"
+   ],
+   "status": "on",
+   "perWeek": 1,
+   "joined": "2026-11-21",
+   "note": "Auto-joined in the 21 Nov 2026 bulk join. Not yet vetted: before the first post, check the Group by banner (never Essex Live) and the rules; set off or caution if they ban links, news or Pages."
+  },
+  {
+   "id": "weloveleighonsea",
+   "key": "we-love-leigh-on-sea-nsea",
+   "name": "We Love Leigh-on-Sea",
+   "members": 34000,
+   "privacy": "",
+   "kind": "town",
+   "match": [
+    "leigh-on-sea",
+    "leigh"
+   ],
+   "status": "on",
+   "perWeek": 1,
+   "joined": "2026-11-21",
+   "note": "Auto-joined in the 21 Nov 2026 bulk join. Not yet vetted: before the first post, check the Group by banner (never Essex Live) and the rules; set off or caution if they ban links, news or Pages."
+  },
+  {
+   "id": "maldongroup",
+   "key": "maldon-roup",
+   "name": "MALDON",
+   "members": 52000,
+   "privacy": "",
+   "kind": "town",
+   "match": [
+    "maldon",
+    "heybridge"
+   ],
+   "status": "on",
+   "perWeek": 1,
+   "joined": "2026-11-21",
+   "note": "Auto-joined in the 21 Nov 2026 bulk join. Not yet vetted: before the first post, check the Group by banner (never Essex Live) and the rules; set off or caution if they ban links, news or Pages."
+  },
+  {
+   "id": "505613434942264",
+   "key": "braintree-hub-2264",
+   "name": "Braintree Hub",
+   "members": 2500,
+   "privacy": "",
+   "kind": "town",
+   "match": [
+    "braintree"
+   ],
+   "status": "on",
+   "perWeek": 1,
+   "joined": "2026-11-21",
+   "note": "Auto-joined in the 21 Nov 2026 bulk join. Not yet vetted: before the first post, check the Group by banner (never Essex Live) and the rules; set off or caution if they ban links, news or Pages."
+  },
+  {
+   "id": "365964180241031",
+   "key": "great-notley-unedited-braint-1031",
+   "name": "Great Notley (unedited) Braintree Essex UK",
+   "members": 6900,
+   "privacy": "",
+   "kind": "town",
+   "match": [
+    "great notley",
+    "braintree"
+   ],
+   "status": "on",
+   "perWeek": 1,
+   "joined": "2026-11-21",
+   "note": "Auto-joined in the 21 Nov 2026 bulk join. Not yet vetted: before the first post, check the Group by banner (never Essex Live) and the rules; set off or caution if they ban links, news or Pages."
+  },
+  {
+   "id": "233919596767531",
+   "key": "official-spotted-in-clacton-7531",
+   "name": "OFFICIAL SPOTTED IN CLACTON",
+   "members": 31000,
+   "privacy": "",
+   "kind": "town",
+   "match": [
+    "clacton",
+    "jaywick",
+    "holland-on-sea"
+   ],
+   "status": "on",
+   "perWeek": 1,
+   "joined": "2026-11-21",
+   "note": "Auto-joined in the 21 Nov 2026 bulk join. Not yet vetted: before the first post, check the Group by banner (never Essex Live) and the rules; set off or caution if they ban links, news or Pages."
+  },
+  {
+   "id": "330834718889459",
+   "key": "clacton-what-s-on-9459",
+   "name": "Clacton What's On",
+   "members": 6100,
+   "privacy": "",
+   "kind": "town",
+   "match": [
+    "clacton"
+   ],
+   "status": "on",
+   "perWeek": 1,
+   "joined": "2026-11-21",
+   "note": "Auto-joined in the 21 Nov 2026 bulk join. Not yet vetted: before the first post, check the Group by banner (never Essex Live) and the rules; set off or caution if they ban links, news or Pages."
+  },
+  {
+   "id": "676531853579305",
+   "key": "harwich-dovercourt-events-ne-9305",
+   "name": "Harwich Dovercourt Events News",
+   "members": 11000,
+   "privacy": "",
+   "kind": "town",
+   "match": [
+    "harwich",
+    "dovercourt"
+   ],
+   "status": "on",
+   "perWeek": 1,
+   "joined": "2026-11-21",
+   "note": "Auto-joined in the 21 Nov 2026 bulk join. Not yet vetted: before the first post, check the Group by banner (never Essex Live) and the rules; set off or caution if they ban links, news or Pages."
+  },
+  {
+   "id": "1590988917842302",
+   "key": "crimewatch-harwich-2302",
+   "name": "Crimewatch Harwich",
+   "members": 10000,
+   "privacy": "",
+   "kind": "crime",
+   "match": [
+    "harwich",
+    "dovercourt"
+   ],
+   "status": "on",
+   "perWeek": 1,
+   "joined": "2026-11-21",
+   "note": "Auto-joined in the 21 Nov 2026 bulk join. Not yet vetted: before the first post, check the Group by banner (never Essex Live) and the rules; set off or caution if they ban links, news or Pages."
+  },
+  {
+   "id": "WaltonFrintonKirbyClactonHarwich",
+   "key": "walton-frinton-kirby-clacton-wich",
+   "name": "Walton Frinton Kirby clacton harwich",
+   "members": 7000,
+   "privacy": "",
+   "kind": "town",
+   "match": [
+    "walton",
+    "frinton",
+    "kirby"
+   ],
+   "status": "on",
+   "perWeek": 1,
+   "joined": "2026-11-21",
+   "note": "Auto-joined in the 21 Nov 2026 bulk join. Not yet vetted: before the first post, check the Group by banner (never Essex Live) and the rules; set off or caution if they ban links, news or Pages."
+  },
+  {
+   "id": "846588776681720",
+   "key": "saffron-walden-residents-1720",
+   "name": "saffron walden residents",
+   "members": 5400,
+   "privacy": "",
+   "kind": "town",
+   "match": [
+    "saffron walden"
+   ],
+   "status": "on",
+   "perWeek": 1,
+   "joined": "2026-11-21",
+   "note": "Auto-joined in the 21 Nov 2026 bulk join. Not yet vetted: before the first post, check the Group by banner (never Essex Live) and the rules; set off or caution if they ban links, news or Pages."
+  },
+  {
+   "id": "601484774498781",
+   "key": "debden-broadway-loughton-com-8781",
+   "name": "Debden Broadway (Loughton) Community",
+   "members": 6900,
+   "privacy": "",
+   "kind": "town",
+   "match": [
+    "loughton",
+    "debden"
+   ],
+   "status": "on",
+   "perWeek": 1,
+   "joined": "2026-11-21",
+   "note": "Auto-joined in the 21 Nov 2026 bulk join. Not yet vetted: before the first post, check the Group by banner (never Essex Live) and the rules; set off or caution if they ban links, news or Pages."
+  },
+  {
+   "id": "684612189032668",
+   "key": "waltham-abbey-support-group-2668",
+   "name": "WALTHAM ABBEY SUPPORT GROUP",
+   "members": 5800,
+   "privacy": "",
+   "kind": "town",
+   "match": [
+    "waltham abbey"
+   ],
+   "status": "on",
+   "perWeek": 1,
+   "joined": "2026-11-21",
+   "note": "Auto-joined in the 21 Nov 2026 bulk join. Not yet vetted: before the first post, check the Group by banner (never Essex Live) and the rules; set off or caution if they ban links, news or Pages."
+  },
+  {
+   "id": "219711394905315",
+   "key": "south-woodham-ferrers-5315",
+   "name": "SOUTH WOODHAM FERRERS",
+   "members": 13000,
+   "privacy": "",
+   "kind": "town",
+   "match": [
+    "south woodham ferrers"
+   ],
+   "status": "on",
+   "perWeek": 1,
+   "joined": "2026-11-21",
+   "note": "Auto-joined in the 21 Nov 2026 bulk join. Not yet vetted: before the first post, check the Group by banner (never Essex Live) and the rules; set off or caution if they ban links, news or Pages."
+  },
+  {
+   "id": "458863398073633",
+   "key": "what-s-going-on-in-and-aroun-3633",
+   "name": "What's going on in and around Gosfield and Halstead",
+   "members": 7000,
+   "privacy": "",
+   "kind": "town",
+   "match": [
+    "halstead",
+    "gosfield"
+   ],
+   "status": "on",
+   "perWeek": 1,
+   "joined": "2026-11-21",
+   "note": "Auto-joined in the 21 Nov 2026 bulk join. Not yet vetted: before the first post, check the Group by banner (never Essex Live) and the rules; set off or caution if they ban links, news or Pages."
+  },
+  {
+   "id": "1605993976397597",
+   "key": "burnham-chit-chat-7597",
+   "name": "Burnham Chit Chat",
+   "members": 11000,
+   "privacy": "",
+   "kind": "town",
+   "match": [
+    "burnham-on-crouch",
+    "burnham",
+    "dengie"
+   ],
+   "status": "on",
+   "perWeek": 1,
+   "joined": "2026-11-21",
+   "note": "Auto-joined in the 21 Nov 2026 bulk join. Not yet vetted: before the first post, check the Group by banner (never Essex Live) and the rules; set off or caution if they ban links, news or Pages."
+  },
+  {
+   "id": "4473095489388575",
+   "key": "bishops-stortford-sawbridgew-8575",
+   "name": "Bishops Stortford - Sawbridgeworth - Stanstead - Great Dunmow",
+   "members": 4900,
+   "privacy": "",
+   "kind": "town",
+   "match": [
+    "dunmow",
+    "stansted"
+   ],
+   "status": "on",
+   "perWeek": 1,
+   "joined": "2026-11-21",
+   "note": "Auto-joined in the 21 Nov 2026 bulk join. Not yet vetted: before the first post, check the Group by banner (never Essex Live) and the rules; set off or caution if they ban links, news or Pages."
+  },
+  {
+   "id": "307132976387074",
+   "key": "wivenhoe-information-7074",
+   "name": "WIVENHOE INFORMATION",
+   "members": 7400,
+   "privacy": "",
+   "kind": "town",
+   "match": [
+    "wivenhoe"
+   ],
+   "status": "on",
+   "perWeek": 1,
+   "joined": "2026-11-21",
+   "note": "Auto-joined in the 21 Nov 2026 bulk join. Not yet vetted: before the first post, check the Group by banner (never Essex Live) and the rules; set off or caution if they ban links, news or Pages."
+  },
+  {
+   "id": "1076452101026614",
+   "key": "tiptree-network-6614",
+   "name": "Tiptree Network",
+   "members": 3600,
+   "privacy": "",
+   "kind": "town",
+   "match": [
+    "tiptree"
+   ],
+   "status": "on",
+   "perWeek": 1,
+   "joined": "2026-11-21",
+   "note": "Auto-joined in the 21 Nov 2026 bulk join. Not yet vetted: before the first post, check the Group by banner (never Essex Live) and the rules; set off or caution if they ban links, news or Pages."
+  },
+  {
+   "id": "1485408005070210",
+   "key": "kelvedon-tiptree-feering-gro-0210",
+   "name": "Kelvedon, Tiptree Feering group",
+   "members": 15000,
+   "privacy": "",
+   "kind": "town",
+   "match": [
+    "kelvedon",
+    "tiptree",
+    "feering"
+   ],
+   "status": "on",
+   "perWeek": 1,
+   "joined": "2026-11-21",
+   "note": "Auto-joined in the 21 Nov 2026 bulk join. Not yet vetted: before the first post, check the Group by banner (never Essex Live) and the rules; set off or caution if they ban links, news or Pages."
+  },
+  {
+   "id": "362390810896200",
+   "key": "essex-traffic-and-travel-6200",
+   "name": "Essex Traffic and Travel",
+   "members": 50000,
+   "privacy": "",
+   "kind": "county",
+   "match": [],
+   "status": "on",
+   "perWeek": 1,
+   "joined": "2026-11-21",
+   "note": "Auto-joined in the 21 Nov 2026 bulk join. Not yet vetted: before the first post, check the Group by banner (never Essex Live) and the rules; set off or caution if they ban links, news or Pages."
+  },
+  {
+   "id": "177591302637897",
+   "key": "crimewatch-witham-essex-uk-7897",
+   "name": "Crimewatch Witham, Essex, UK",
+   "members": 10000,
+   "privacy": "",
+   "kind": "crime",
+   "match": [
+    "witham"
+   ],
+   "status": "on",
+   "perWeek": 1,
+   "joined": "2026-11-21",
+   "note": "Auto-joined in the 21 Nov 2026 bulk join. Not yet vetted: before the first post, check the Group by banner (never Essex Live) and the rules; set off or caution if they ban links, news or Pages."
+  },
+  {
+   "id": "SoSCoC",
+   "key": "essex-crime-missing-lost-cau-scoc",
+   "name": "Essex Crime. missing, lost, Caught on Camera",
+   "members": 8300,
+   "privacy": "",
+   "kind": "crime",
+   "match": [],
+   "status": "on",
+   "perWeek": 1,
+   "joined": "2026-11-21",
+   "note": "Auto-joined in the 21 Nov 2026 bulk join. Not yet vetted: before the first post, check the Group by banner (never Essex Live) and the rules; set off or caution if they ban links, news or Pages."
+  },
+  {
+   "id": "1168275366562780",
+   "key": "crimewatch-essex-2780",
+   "name": "CrimeWatch Essex",
+   "members": 7500,
+   "privacy": "",
+   "kind": "crime",
+   "match": [],
+   "status": "on",
+   "perWeek": 1,
+   "joined": "2026-11-21",
+   "note": "Auto-joined in the 21 Nov 2026 bulk join. Not yet vetted: before the first post, check the Group by banner (never Essex Live) and the rules; set off or caution if they ban links, news or Pages."
+  },
+  {
+   "id": "Crimewatch.HarlowAreasUK",
+   "key": "crimewatch-harlow-local-area-asuk",
+   "name": "Crimewatch Harlow Local Areas - Essex. UK.",
+   "members": 6500,
+   "privacy": "",
+   "kind": "crime",
+   "match": [
+    "harlow"
+   ],
+   "status": "on",
+   "perWeek": 1,
+   "joined": "2026-11-21",
+   "note": "Auto-joined in the 21 Nov 2026 bulk join. Not yet vetted: before the first post, check the Group by banner (never Essex Live) and the rules; set off or caution if they ban links, news or Pages."
+  },
+  {
+   "id": "colchestercrime",
+   "key": "colchester-tendring-crime-an-rime",
+   "name": "Colchester Tendring Crime and Court News",
+   "members": 4400,
+   "privacy": "",
+   "kind": "crime",
+   "match": [
+    "colchester",
+    "clacton",
+    "tendring"
+   ],
+   "status": "on",
+   "perWeek": 1,
+   "joined": "2026-11-21",
+   "note": "Auto-joined in the 21 Nov 2026 bulk join. Not yet vetted: before the first post, check the Group by banner (never Essex Live) and the rules; set off or caution if they ban links, news or Pages."
+  },
+  {
+   "id": "Stanford.LE.Hope.Talk",
+   "key": "stanford-le-hope-talk",
+   "name": "Stanford le Hope",
+   "members": 18000,
+   "privacy": "",
+   "kind": "town",
+   "match": [
+    "stanford-le-hope",
+    "corringham"
+   ],
+   "status": "on",
+   "perWeek": 1,
+   "joined": "2026-11-21",
+   "note": "Auto-joined in the 21 Nov 2026 bulk join. Not yet vetted: before the first post, check the Group by banner (never Essex Live) and the rules; set off or caution if they ban links, news or Pages."
+  },
+  {
+   "id": "corringhamandsurroundingareas",
+   "key": "corringham-surrounding-areas-reas",
+   "name": "Corringham Surrounding Areas",
+   "members": 10000,
+   "privacy": "",
+   "kind": "town",
+   "match": [
+    "corringham",
+    "stanford-le-hope"
+   ],
+   "status": "on",
+   "perWeek": 1,
+   "joined": "2026-11-21",
+   "note": "Auto-joined in the 21 Nov 2026 bulk join. Not yet vetted: before the first post, check the Group by banner (never Essex Live) and the rules; set off or caution if they ban links, news or Pages."
+  },
+  {
+   "id": "197415524896797",
+   "key": "stanford-le-hope-corringham-6797",
+   "name": "Stanford-Le-Hope Corringham Community",
+   "members": 14000,
+   "privacy": "",
+   "kind": "town",
+   "match": [
+    "stanford-le-hope",
+    "corringham"
+   ],
+   "status": "on",
+   "perWeek": 1,
+   "joined": "2026-11-21",
+   "note": "Auto-joined in the 21 Nov 2026 bulk join. Not yet vetted: before the first post, check the Group by banner (never Essex Live) and the rules; set off or caution if they ban links, news or Pages."
+  },
+  {
+   "id": "1552697394840993",
+   "key": "my-east-tilbury-0993",
+   "name": "My East Tilbury",
+   "members": 2300,
+   "privacy": "",
+   "kind": "town",
+   "match": [
+    "east tilbury",
+    "tilbury"
+   ],
+   "status": "on",
+   "perWeek": 1,
+   "joined": "2026-11-21",
+   "note": "Auto-joined in the 21 Nov 2026 bulk join. Not yet vetted: before the first post, check the Group by banner (never Essex Live) and the rules; set off or caution if they ban links, news or Pages."
+  },
+  {
+   "id": "1700112523579741",
+   "key": "caring-about-hockley-9741",
+   "name": "Caring About Hockley",
+   "members": 12000,
+   "privacy": "",
+   "kind": "town",
+   "match": [
+    "hockley",
+    "hawkwell"
+   ],
+   "status": "on",
+   "perWeek": 1,
+   "joined": "2026-11-21",
+   "note": "Auto-joined in the 21 Nov 2026 bulk join. Not yet vetted: before the first post, check the Group by banner (never Essex Live) and the rules; set off or caution if they ban links, news or Pages."
+  },
+  {
+   "id": "1840609209521895",
+   "key": "shoebury-community-group-1895",
+   "name": "Shoebury Community Group",
+   "members": 8000,
+   "privacy": "",
+   "kind": "town",
+   "match": [
+    "shoebury",
+    "shoeburyness"
+   ],
+   "status": "on",
+   "perWeek": 1,
+   "joined": "2026-11-21",
+   "note": "Auto-joined in the 21 Nov 2026 bulk join. Not yet vetted: before the first post, check the Group by banner (never Essex Live) and the rules; set off or caution if they ban links, news or Pages."
+  },
+  {
+   "id": "574032001247195",
+   "key": "shoeburyness-residents-assoc-7195",
+   "name": "Shoeburyness Residents Association",
+   "members": 5000,
+   "privacy": "",
+   "kind": "town",
+   "match": [
+    "shoebury",
+    "shoeburyness"
+   ],
+   "status": "on",
+   "perWeek": 1,
+   "joined": "2026-11-21",
+   "note": "Auto-joined in the 21 Nov 2026 bulk join. Not yet vetted: before the first post, check the Group by banner (never Essex Live) and the rules; set off or caution if they ban links, news or Pages."
+  },
+  {
+   "id": "603623975020423",
+   "key": "i-love-stansted-mountfitchet-0423",
+   "name": "I Love Stansted Mountfitchet",
+   "members": 4600,
+   "privacy": "",
+   "kind": "town",
+   "match": [
+    "stansted"
+   ],
+   "status": "on",
+   "perWeek": 1,
+   "joined": "2026-11-21",
+   "note": "Auto-joined in the 21 Nov 2026 bulk join. Not yet vetted: before the first post, check the Group by banner (never Essex Live) and the rules; set off or caution if they ban links, news or Pages."
+  },
+  {
+   "id": "ongarcommunitygroup",
+   "key": "ongar-community-group-essex-roup",
+   "name": "Ongar Community Group (Essex)",
+   "members": 2800,
+   "privacy": "",
+   "kind": "town",
+   "match": [
+    "ongar"
+   ],
+   "status": "on",
+   "perWeek": 1,
+   "joined": "2026-11-21",
+   "note": "Auto-joined in the 21 Nov 2026 bulk join. Not yet vetted: before the first post, check the Group by banner (never Essex Live) and the rules; set off or caution if they ban links, news or Pages."
   }
  ],
  "ownersChecked": "2026-11-20: 'Group by' banner read on all ready and strict-rules groups.",
- "postBoxChecked": "2026-11-20: every ready and strict-rules group opened as The Seax; four had no post box."
+ "postBoxChecked": "2026-11-20: every ready and strict-rules group opened as The Seax; four had no post box.",
+ "bulkJoin": {
+  "date": "2026-11-21",
+  "joined": "about 465 groups after leaving 16 wrong-area ones",
+  "fullList": "https://www.facebook.com/groups/joins/ (as The Seax)",
+  "note": "Only the 55 largest town, crime and travel groups are listed here so far. Many others were joined but need membership questions answered before posting; skip those unless the Page can answer honestly."
+ }
 }

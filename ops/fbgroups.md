@@ -48,6 +48,10 @@ Scheduled task "Seax Facebook groups desk", every day at 07:41, 09:41, 12:41, 17
 5. Commit data/fb-group-log.json and data/fb-groups.json changes with a short message and push.
 6. Report in a few lines: what was posted where, any declines, anything paused.
 
+## Bulk join of 21 Nov 2026 (owner's request)
+
+The owner asked for The Seax to join as many relevant Essex groups as possible. About 465 were joined by search on 21 Nov. The largest town, crime and travel groups are in data/fb-groups.json with a note saying they are not yet vetted. Before the FIRST post in any of them: open the group, check the Group by banner (never Essex Live) and the rules, and set status off or caution if links, news or Pages are banned. Never post in one on 21 Nov (join day). Start them gently: no more than 4 never-posted groups a day, perWeek 1 until a post has gone live without complaint, then 2. Groups that asked membership questions are not listed; leave them unless the Page can answer honestly. More joining may continue on later days at the owner's request; stop at once on any Facebook warning (see Stop rules).
+
 ## Joining groups
 - At most 2 new groups a week, in the 12:41 run, only to cover a town with no active community group (as of 20 Nov 2026: Brightlingsea, Wivenhoe, Manningtree, Frinton and Walton, Thaxted, Ongar, Chigwell and Buckhurst Hill, South Woodham Ferrers, Benfleet, Leigh-on-Sea, Shoeburyness, Grays town centre, Tilbury, Stanford-le-Hope, Ingatestone, Writtle, Danbury).
 - Only real community groups for that town, ideally over 3,000 members and active (posts most days). Check the "Group by" banner (never Essex Live; another news outlet is fine, note it as owner) and the rules (skip groups that ban links, news, promotion or Pages).
