@@ -103,6 +103,23 @@ subject alone, without opening it, unless the subject suggests the owner must ac
 - Other news outlets' alerts (Everything Epping Forest, Misconduct999, The Chelmsford Brief and similar): leads
   only. Never copy their wording. Confirm from an official source or a readable outlet and follow 3g. A charge,
   arrest or court result needs the name, age, area, exact charge and court date from a source read in the run.
+- PRESS RELEASE AND REPORT ALERTS (owner's request, 21 Nov 2026: "sign up to every PR/journalist site that covers
+  Essex ... so that we get alerts in real time"). These arrive at news@ and are sources, not service mail:
+  i) Mynewsdesk alerts (support@ or alerts from mynewsdesk.com; two alerts: "Essex News Alert PR" and "Essex towns
+     (free text)"): each item is an organisation's own press release. Open it on mynewsdesk.com and judge it as
+     that organisation's release: public bodies (HMRC, police forces, NHS, councils, regulators) are official
+     sources; companies and charities are PR, so write only a genuinely newsworthy Essex angle, in your own words,
+     never as promotion, and drop anything whose Essex link is only a passing mention. Use its pictures with credit
+     (PICTURES above; Mynewsdesk images are released for media use). Example of what this catches: HMRC's 19 Nov
+     2026 release on the Bourne cigarette factory, which listed 616kg of raw tobacco seized in Brentwood.
+  ii) Ofsted report alerts (ofsted.reports@notifications.service.gov.uk; searches for Essex, Southend and
+     Thurrock): one email per newly published report. Only notable ones are stories: a school or nursery judged
+     inadequate or graded the lowest on any area, a move up or down two grades, a large or well-known school, or a
+     children's home or council children's services report. Read the report itself on reports.ofsted.gov.uk and
+     write only what it says; never name a child or a member of staff the report does not name; quote the grades
+     exactly as Ofsted gives them.
+  iii) Any other PR wire or newsroom alert added later (Pressat, ResponseSource, CQC, Cision and the like): treat
+     as i). Their confirmation and welcome emails stay service mail.
 - news@ and community@ from members of the public: tip-offs, as social media (3d). Publish only once an official or
   independent source confirms it. A reader's photo may be used only if the email makes clear they took it and it
   shows no children's faces, crash scenes, injured people or casualties; credit "Picture: <first name> / reader".
