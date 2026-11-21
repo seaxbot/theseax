@@ -6706,20 +6706,30 @@
   {
    "also": [],
    "areas": [
-    "south"
+    "basildon"
    ],
-   "headline": "Basildon man, 49, not heard from for weeks as police appeal for help",
+   "headline": "Police appeal to find Basildon man, 49, not heard from for weeks",
    "icon": "appeal",
    "id": "basildon-valeriy-hurynchuk-49-missing-appeal",
-   "linkOnly": true,
    "place": "Basildon",
-   "points": [],
-   "source": "Echo",
-   "summary": "Essex Police are concerned for the welfare of Valeriy Hurynchuk, 49, from Basildon, who has not been in contact for several weeks, the Echo reports.",
+   "points": [
+    "About 5ft 10in, broad build, short brown hair",
+    "May be using a white Skoda Fabia, EO13 FUH",
+    "Quote reference 0631 of 17 November"
+   ],
+   "source": "Essex Police Basildon",
+   "summary": "Officers are worried about Valeriy Hurynchuk and say he may be using a white Skoda Fabia.",
    "tag": "Police",
    "time": "2026-11-20T18:28:00Z",
-   "url": "https://www.echo-news.co.uk/news/26750161.basildon-man-missing-police-launch-urgent-appeal/",
-   "weight": 5
+   "url": "https://www.facebook.com/EPBasildon",
+   "weight": 5,
+   "body": [
+    "Essex Police is appealing for help to find Valeriy Hurynchuk, 49, who is missing from Basildon and has not been in contact for a number of weeks.",
+    "Officers say they are worried about him and need to find him to check he is safe.",
+    "Valeriy is white, about 5ft 10in tall, of broad build, with short brown hair. He may be using a white Skoda Fabia with the registration EO13 FUH.",
+    "Anyone who has seen him or knows where he might be is asked to contact Essex Police quoting reference 0631 of 17 November."
+   ],
+   "updated": "2026-11-21T14:52:33Z"
   },
   {
    "also": [],

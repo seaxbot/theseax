@@ -1,6 +1,21 @@
 [
  {
   "ids": [
+   "basildon-valeriy-hurynchuk-49-missing-appeal"
+  ],
+  "name": "Valeriy Hurynchuk",
+  "label": "Picture",
+  "wide": "/img/people/valeriy-hurynchuk-missing-wide.jpg",
+  "og": "/img/people/valeriy-hurynchuk-missing-og.jpg",
+  "creator": "Essex Police",
+  "provider": "",
+  "license": "",
+  "licenseUrl": "",
+  "source": "",
+  "addedBy": "owner, 21 Nov 2026 14:52 (Essex Police Basildon missing appeal photo)"
+ },
+ {
+  "ids": [
    "colchester-tendring-connor-downer-wanted-recall-prison"
   ],
   "name": "Connor Downer",
