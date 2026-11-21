@@ -8,6 +8,8 @@
 <url><loc>https://theseax.com/corrections/</loc><changefreq>weekly</changefreq><priority>0.3</priority></url>
 <url><loc>https://theseax.com/briefing/</loc><lastmod>2026-11-21</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
 <url><loc>https://theseax.com/story/the-seax-launches/</loc><lastmod>2026-11-09</lastmod><priority>0.5</priority></url>
+<url><loc>https://theseax.com/story/s-isthmian-north-roundup-2026-11-21/</loc><lastmod>2026-11-21</lastmod></url>
+<url><loc>https://theseax.com/story/s-billericay-slough-2026-11-21/</loc><lastmod>2026-11-21</lastmod></url>
 <url><loc>https://theseax.com/story/warley-burst-water-main-floodwater-five-houses/</loc><lastmod>2026-11-21</lastmod></url>
 <url><loc>https://theseax.com/story/brentwood-616kg-raw-tobacco-seized-hmrc-illegal-cigarette-factory-raids/</loc><lastmod>2026-11-21</lastmod></url>
 <url><loc>https://theseax.com/story/harlow-damien-clinton-police-appeal-theft-investigation/</loc><lastmod>2026-11-21</lastmod></url>
@@ -689,9 +691,9 @@
 <url><loc>https://theseax.com/news/weather/</loc><lastmod>2026-11-19</lastmod><changefreq>hourly</changefreq><priority>0.8</priority></url>
 <url><loc>https://theseax.com/news/sport/</loc><lastmod>2026-11-21</lastmod><changefreq>hourly</changefreq><priority>0.8</priority></url>
 <url><loc>https://theseax.com/news/basildon/</loc><lastmod>2026-11-21</lastmod><changefreq>hourly</changefreq><priority>0.8</priority></url>
-<url><loc>https://theseax.com/news/billericay/</loc><lastmod>2026-11-20</lastmod><changefreq>hourly</changefreq><priority>0.8</priority></url>
+<url><loc>https://theseax.com/news/billericay/</loc><lastmod>2026-11-21</lastmod><changefreq>hourly</changefreq><priority>0.8</priority></url>
 <url><loc>https://theseax.com/news/wickford/</loc><lastmod>2026-11-18</lastmod><changefreq>hourly</changefreq><priority>0.8</priority></url>
-<url><loc>https://theseax.com/news/grays/</loc><lastmod>2026-11-20</lastmod><changefreq>hourly</changefreq><priority>0.8</priority></url>
+<url><loc>https://theseax.com/news/grays/</loc><lastmod>2026-11-21</lastmod><changefreq>hourly</changefreq><priority>0.8</priority></url>
 <url><loc>https://theseax.com/news/tilbury/</loc><lastmod>2026-11-20</lastmod><changefreq>hourly</changefreq><priority>0.8</priority></url>
 <url><loc>https://theseax.com/news/thurrock/</loc><lastmod>2026-11-20</lastmod><changefreq>hourly</changefreq><priority>0.8</priority></url>
 <url><loc>https://theseax.com/news/canvey-island/</loc><lastmod>2026-11-14</lastmod><changefreq>hourly</changefreq><priority>0.8</priority></url>
