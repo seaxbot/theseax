@@ -17,7 +17,6 @@
    ],
    "place": "West Mersea, Blackwater, Colne, Crouch and Roach",
    "weight": 8,
-   "photo": "fresh oysters",
    "headline": "Essex oyster farmers could win back lost EU trade under new deal",
    "summary": "Since 2021 the EU has refused oysters from most Essex waters unless they are purified first, a Seax analysis shows. The new UK-EU deal is expected to end that from March 2028.",
    "body": [
@@ -54,6 +53,15 @@
      "h": 700,
      "alt": "Bar chart of Essex oyster harvesting zones by grade: West Mersea 6 Class B and 1 seasonal, Blackwater 3 Class B, 1 seasonal and 3 Class A, Colne 3 Class B, Crouch 5 Class B, Roach 5 Class B, Walton Backwaters 3 Class B, Thames Estuary 2 Class B and 1 Class A",
      "caption": "Essex oyster harvesting zones by grade. Source: Food Standards Agency classification list, 1 October 2026. Graphic: The Seax"
+    },
+    {
+     "after": 9,
+     "kind": "photo",
+     "src": "/img/people/essex-oysters-closeup.jpg",
+     "w": 1200,
+     "h": 900,
+     "alt": "A handful of freshly harvested oysters held above crates of oysters, with a fishing boat behind",
+     "caption": ""
     }
    ],
    "source": "The Seax, from the Food Standards Agency's shellfish classification list",
