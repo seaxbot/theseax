@@ -249,6 +249,7 @@ section.block{padding:38px 0 8px;scroll-margin-top:60px}
 .ev .cal .wd{font-size:11px;font-weight:700;color:var(--muted);padding-bottom:5px}
 .ev h4{margin:0 0 3px;font-family:var(--serif);font-weight:700;font-size:18px;line-height:1.2}
 .ev .where{font-size:13px;color:var(--teal);font-weight:600}
+.ev .ev-ph{display:block;width:100%;aspect-ratio:16/7;object-fit:cover;border-radius:8px;margin:0 0 10px;background:#111}
 .ev p{margin:6px 0 0;font-size:13.5px;color:var(--ink2)}
 .ev .tags{margin-top:8px;display:flex;gap:6px;flex-wrap:wrap}
 .ev .tags span{font-size:11px;font-weight:700;background:var(--paper2);border-radius:99px;padding:2px 8px;color:var(--ink2)}
@@ -4602,7 +4603,7 @@ function renderEvents(){
     const cal = on ? `<div class="mo">UNTIL</div><div class="dy">${fmt(de,{day:"numeric"})}</div><div class="wd">${fmt(de,{month:"short"})}</div>`
                    : `<div class="mo">${fmt(d,{month:"short"}).toUpperCase()}</div><div class="dy">${fmt(d,{day:"numeric"})}</div><div class="wd">${fmt(d,{weekday:"short"})}</div>`;
     return `<a class="ev" href="${safeUrl(e.url)}" target="_blank" rel="noopener"><div class="cal">${cal}</div>
-      <div><h4>${esc(e.title)}${on?`<span class="cd">On now</span>`:cd?`<span class="cd" data-cd="${esc(e.start)}" data-allday="1">${cd}</span>`:""}</h4><div class="where">${esc(e.where)}</div><p>${esc(e.blurb||"")}</p>
+      <div>${/^\/img\//.test(e.photo||"")?`<img class="ev-ph" src="${esc(e.photo)}" alt="" loading="lazy">`:""}<h4>${esc(e.title)}${on?`<span class="cd">On now</span>`:cd?`<span class="cd" data-cd="${esc(e.start)}" data-allday="1">${cd}</span>`:""}</h4><div class="where">${esc(e.where)}</div><p>${esc(e.blurb||"")}</p>
       <div class="tags"><span>${esc(e.cat||"Event")}</span>${e.time?`<span>${esc(e.time)}</span>`:""}${e.end?`<span>Until ${fmt(new Date(e.end),{day:"numeric",month:"short"})}</span>`:""}${e.price?`<span class="${free?"free":""}">${esc(e.price)}</span>`:""}</div></div></a>`;
   }).join("") : `<div class="empty" style="grid-column:1/-1">Nothing listed for this filter yet.</div>`;
 }
