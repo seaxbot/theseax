@@ -70,6 +70,10 @@ subject alone, without opening it, unless the subject suggests the owner must ac
 
 ## F. What to do with each email
 
+- The daily "Seax Essex-angle leads" email (subject starts "Seax Essex-angle leads:", sent from the site's own Gmail
+  account by the Essex-angle desk, ops/essexangle.md, owner's request 21 Nov 2026) is an internal briefing for the owner.
+  Never publish from it and never treat it as a tip. Record it as "service" without acting on it.
+
 - Official senders (councils, Essex Police including its Dispatch newsletter, Essex County Fire and Rescue, NHS
   bodies, Explore Essex, National Highways, Essex & Suffolk Water and similar public bodies), whatever address they
   wrote to: these are sources. Write any newsworthy, current Essex item as a Seax story in your own words (headlines follow ops/newsroom.md 3a vii (HEADLINES): plain, front-loaded with the Essex place, active present tense, one idea, 50 to 70 characters and never over 80), short and
