@@ -1,9 +1,9 @@
 name: X posts via Buffer
-# Sends the most significant new story to The Seax X account through Buffer, at most once an hour and 12 a day.
+# Sends the most significant new story to The Seax X account through Buffer, every 30 minutes at most, up to 30 a day, plus fixed morning, sport, events and crime checker tweets.
 # See tools/xbuffer.py. Needs the repository secret BUFFER_API_KEY (Buffer, Settings, API). Without it, it does nothing.
 on:
   workflow_dispatch:
-  schedule: [{cron: "17 * * * *"}]
+  schedule: [{cron: "17,47 * * * *"}]
 permissions:
   contents: write
 concurrency: x-buffer
