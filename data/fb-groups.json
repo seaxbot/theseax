@@ -1747,7 +1747,8 @@
    ],
    "status": "on",
    "perWeek": 2,
-   "joined": "2026-11-20"
+   "joined": "2026-11-20",
+   "approval": "admin"
   },
   {
    "id": "192923094627747",

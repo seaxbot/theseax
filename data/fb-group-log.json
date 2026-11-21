@@ -185,6 +185,46 @@
    "h": "Crime checker: Chafford Hundred and Grays figures",
    "result": "live",
    "note": "owner started the send by hand at 14:58 after the day's scheduled runs missed (Chrome not connected)"
+  },
+  {
+   "g": "chelmsford-community-uk-3332",
+   "s": "chelmsford-johnny-coyle-37-missing-appeal",
+   "t": 1795273300000,
+   "h": "Police appeal to find Johnny Coyle, 37, missing from Chelmsford",
+   "result": "live",
+   "note": "owner asked for more runs on 21 Nov after the scheduled runs missed (Chrome not connected)"
+  },
+  {
+   "g": "colchester-essex-5409",
+   "s": "colchester-gavyn-booker-wanted-recall-prison",
+   "t": 1795273450000,
+   "h": "Police hunt Gavyn Booker, wanted on recall to prison",
+   "result": "live",
+   "note": "owner asked for more runs on 21 Nov after the scheduled runs missed (Chrome not connected); Booker link preview had no image"
+  },
+  {
+   "g": "brentwood-locals-uk-5482",
+   "s": "essex-recorded-crime-september-2026-police-data",
+   "t": 1795273600000,
+   "h": "Crime checker: Brentwood North figures",
+   "result": "live",
+   "note": "owner asked for more runs on 21 Nov after the scheduled runs missed (Chrome not connected)"
+  },
+  {
+   "g": "we-love-southendonsea-nsea",
+   "s": "s-southend-boreham-wood-2026-11-20",
+   "t": 1795273750000,
+   "h": "Southend United 2-3 Boreham Wood",
+   "result": "live",
+   "note": "owner asked for more runs on 21 Nov after the scheduled runs missed (Chrome not connected)"
+  },
+  {
+   "g": "its-all-happening-in-burnham-6074",
+   "s": "dengie-peninsula-solar-farm-4200-acres-seven-sites",
+   "t": 1795273900000,
+   "h": "Dengie solar farm: fuller say before consent bid",
+   "result": "pending",
+   "note": "owner asked for more runs on 21 Nov after the scheduled runs missed (Chrome not connected)"
   }
  ],
  "joins": [
