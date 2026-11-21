@@ -15,7 +15,7 @@ Owner's instructions (20 Nov 2026): post Seax stories into the relevant Essex gr
 - perWeek: most posts in any seven days. onlyTags / avoidTags: story tags allowed or barred. days: weekdays the group allows (0 = Sunday). approval: "instant", "admin approval" or "auto-declined", recorded as posts are made. owner: the "Group by" banner, when there is one.
 
 ## Hard limits
-- At most 12 group posts a day across all groups, at most 3 in any one run, at least 8 minutes between posts.
+- At most 15 group posts a day across all groups from Sunday 22 November 2026 (owner agreed 21 Nov; it was 12), at most 3 in any one run, at least 8 minutes between posts. Of those 15, no more than 4 a day may go to groups The Seax has never posted in. Do not raise the cap yourself: the owner decides, after a few days with no removals or Facebook warnings.
 - At most 3 groups per story, at most one county-wide group per story.
 - One post per group per day, at least 20 hours apart; never the same story twice in a group; never more than the group's perWeek.
 - Never identical wording in two groups. Write each post fresh from the story: plain English, the useful fact first, no hype, no hashtags, no emoji, no "click here". End with the tagged link.
@@ -43,7 +43,7 @@ Until the end of Sunday 22 November, the story "essex-recorded-crime-september-2
 Scheduled task "Seax Facebook groups desk", every day at 07:41, 09:41, 12:41, 17:41 and 18:41 UK time (clear of the Essex Police Facebook desk, which uses Chrome at :05 past 8, 12, 16 and 20), needs the owner's computer awake with Chrome open. Each run:
 1. Get the repo (seaxbot/theseax) and read this file, data/fb-groups.json and data/fb-group-log.json. If "paused" is true, stop and report why.
 2. In Chrome, open facebook.com/notifications. For each "An admin declined your post" or "removed your post": open it, read the reason, mark the post's result, and set that group to "off" with the reason in "note" (one decline is enough). Mark pending posts that have since appeared as "live". A group that holds posts and leaves one pending for over 48 hours drops to perWeek 1.
-3. Read edition.json from the freshly pulled repo (the shell cannot reach theseax.com; Chrome can, at theseax.com/groups/) and choose up to 3 posts by the rules above, counting today's posts in the log against the daily 12.
+3. Read edition.json from the freshly pulled repo (the shell cannot reach theseax.com; Chrome can, at theseax.com/groups/) and choose up to 3 posts by the rules above, counting today's posts in the log against the daily 15.
 4. For each: open the group, check the top-left of the composer says "The Seax" (if it shows a personal name, stop the run), write the post, wait for the picture preview, press Post. Note whether it went live or "submitted to group admins for approval". Log it at once.
 5. Commit data/fb-group-log.json and data/fb-groups.json changes with a short message and push.
 6. Report in a few lines: what was posted where, any declines, anything paused.
