@@ -1350,6 +1350,21 @@ def is_thin(it, sec):
     return not any(str(p).strip() for p in body) and len([p for p in points if str(p).strip()]) < 2
 
 
+ILINK_RE = re.compile(r"\[([^\[\]]{1,200})\]\((/story/[a-z0-9-]{3,140}/)\)")
+
+
+def ilinks(escaped):
+    """Links to our own earlier stories inside story text, written "[words](/story/<id>/)" (owner, 21 Nov 2026: "if there
+    are older stories which impact or add value/colour to the new angle ... use it and give the link to our story").
+    Only /story/ pages that exist become links; anything else is left as its words."""
+    def rep(m):
+        href = m.group(2)
+        if os.path.exists(os.path.join(ROOT, href.strip("/"), "index.html")):
+            return f'<a href="{href}">{m.group(1)}</a>'
+        return m.group(1)
+    return ILINK_RE.sub(rep, escaped)
+
+
 def body_with_charts(it, body, opening=""):
     """Story paragraphs, with any charts the story carries placed after the paragraph named by "after" (0 = after the
     first). A chart is {"src", "alt", "caption", "after", "w", "h"}: our own data graphics (owner's request, 20 Nov 2026:
@@ -1367,7 +1382,7 @@ def body_with_charts(it, body, opening=""):
         out.insert(0, f'<p class="cwarn" role="note" style="background:#fdf1f1;border-left:5px solid #c8102e;padding:12px 14px;border-radius:6px;font-size:.95em;margin:0 0 1.2em"><b>Warning:</b> {E(str(it["warning"]).strip())}</p>')
     for i, p in enumerate(paras):
         # a paragraph starting "## " is a subheading, for long stories (owner, 20 Nov 2026: Brentwood School review)
-        out.append(f'<h2 class="bsub" style="font-size:1.25em;line-height:1.25;margin:1.6em 0 .4em">{E(p[3:].strip())}</h2>' if p.startswith("## ") else f"<p>{E(p)}</p>")
+        out.append(f'<h2 class="bsub" style="font-size:1.25em;line-height:1.25;margin:1.6em 0 .4em">{E(p[3:].strip())}</h2>' if p.startswith("## ") else f"<p>{ilinks(E(p))}</p>")
         for c in charts:
             if int(c.get("after", len(paras) - 1)) == i or (i == len(paras) - 1 and int(c.get("after", 0)) >= len(paras)):
                 out.append(f'<figure class="stock chart"><img src="{E(c["src"])}?v=1" width="{E(c.get("w") or 1200)}" '
