@@ -33,7 +33,9 @@ OFFICIAL_SUFFIXES = (".gov.uk", ".police.uk", ".nhs.uk", ".ac.uk", ".sch.uk", ".
 OFFICIAL_HOSTS = {"parliament.uk", "judiciary.uk", "nationalhighways.co.uk", "essexhighways.org",
                   "travelessex.co.uk", "greateranglia.co.uk", "c2c-online.co.uk", "firstbus.co.uk",
                   "essexpoliceuk.substack.com", "content.govdelivery.com", "metoffice.gov.uk",
-                  "essexprepared.co.uk", "essex-fire.gov.uk"}
+                  "essexprepared.co.uk", "essex-fire.gov.uk",
+                  # London Stansted's own press office, like the rail and bus operators above (21 Nov 2026)
+                  "stanstedairport.com"}
 
 
 def load_policy():

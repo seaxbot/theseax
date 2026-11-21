@@ -1,0 +1,58 @@
+{
+ "publishAt": "2026-11-24T06:00:00Z",
+ "note": "Owner's request, 21 Nov 2026: publish on the morning of Tuesday 24 Nov so people know about the exercise on the day, although a preview ran on 20 Nov. Written from London Stansted's press release (owner supplied the full text). Picture: owner-supplied (data/portraits.json, matched by id).",
+ "items": [
+  {
+   "section": "stories",
+   "id": "stansted-airport-emergency-exercise-today",
+   "tag": "Transport",
+   "icon": "transport",
+   "areas": [
+    "uttlesford"
+   ],
+   "place": "Stansted",
+   "weight": 5,
+   "headline": "Stansted Airport tests its plane crash response today with 400 people",
+   "summary": "Expect plenty of blue lights around the airport. It is only a drill, and flights should run as normal.",
+   "body": [
+    "Anyone near London Stansted today, Tuesday 24 November, should not be alarmed by a large number of emergency vehicles. The airport is running a full-scale training exercise that simulates a major aircraft accident, to check how its teams and the emergency services would cope with the real thing.",
+    "The drill takes place at Compass Base, a remote aircraft parking stand away from the terminal, using a decommissioned aircraft. The airport says it has been planned so there is no impact on flights or passengers. Civil Aviation Authority rules require every UK certificated aerodrome to stage an exercise like this at least once every four years.",
+    "About 400 people are taking part. Airport teams will work alongside Essex Police, Essex County Fire and Rescue Service, the East of England Ambulance Service and Essex & Herts Air Ambulance. The British Red Cross, Uttlesford District Council, Essex County Council, the Rapid Relief Team, the Air Accidents Investigation Branch, the Ministry of Housing, Communities and Local Government, Ryanair, Border Force and National Express are also supporting it.",
+    "The scenario calls for a long and complicated response involving many organisations. It will test life-saving procedures, who takes command and how, communications, and the support offered to passengers, their families and others caught up in it.",
+    "Nick Millar, operations director at London Stansted, said: \"Although an aircraft accident is an extremely unlikely event, it remains the most significant emergency scenario we could face, which is why it is vital that we regularly test our plans, procedures and response capabilities.\" He said the exercise would let the airport rehearse how it works with partners in a highly challenging situation and find ways to strengthen its response.",
+    "Chief Inspector Julia Finch, Essex Police's Stansted Airport commander, said: \"We regularly test our plans and capabilities, and this is no exception.\" She said exercises like this make sure the force is ready for any eventuality, however unlikely, and that it has a really positive working relationship with the airport."
+   ],
+   "points": [
+    "A decommissioned aircraft is being used on a remote stand",
+    "The Civil Aviation Authority requires a full-scale drill every four years",
+    "Ryanair, Border Force and the British Red Cross are among those helping"
+   ],
+   "source": "London Stansted Airport",
+   "url": "https://mediacentre.stanstedairport.com/london-stansted-to-conduct-major-emergency-training-exercise/",
+   "also": [],
+   "followUp": "stansted-airport-emergency-exercise-400-24-november",
+   "newAngle": "the exercise is taking place today, Tuesday 24 November",
+   "time": ""
+  }
+ ],
+ "diary": [
+  {
+   "id": "d-stansted-emergency-exercise-2026",
+   "date": "2026-11-24",
+   "time": "",
+   "what": "London Stansted holds a full-scale emergency exercise with about 400 people from the airport and Essex emergency services; more emergency vehicles than usual near the airport",
+   "place": "Stansted",
+   "areas": [
+    "uttlesford"
+   ],
+   "kind": "event",
+   "storyId": "stansted-airport-emergency-exercise-today",
+   "url": "https://mediacentre.stanstedairport.com/london-stansted-to-conduct-major-emergency-training-exercise/",
+   "added": "2026-11-20T10:44:04Z",
+   "status": "previewed",
+   "previewId": "stansted-airport-emergency-exercise-today",
+   "followId": "",
+   "note": "Owner's on-the-day story published by a scheduled task on 24 Nov"
+  }
+ ]
+}
