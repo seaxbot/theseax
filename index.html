@@ -5158,7 +5158,7 @@ function leadChecker(s){
   return `<div class="lp-check"><div class="lpc-t"><b>${OB_DATA}Crime checker</b><span>How is your neighbourhood doing? See the September figures for any of Essex's 56 police areas.</span></div><select id="lpCheckSel" aria-label="Check your neighbourhood"><option value="">Loading the 56 areas…</option></select></div>`;
 }
 /* kickerSaysExc: the card's own kicker already says EXCLUSIVE, so the banner does not say it again (owner, 21 Nov 2026) */
-function ownBanner(s, cls, kickerSaysExc){ if(!s || !s.original) return ""; const inv = s.original !== "data"; return `<span class="ownban${cls ? " " + cls : ""}"><b>${inv ? OB_INV : OB_DATA}${inv ? "Seax Investigates" : "Seax Analysis"}</b><em>${s.exclusive && !kickerSaysExc ? "Exclusive" : inv ? "Original reporting" : "Original data journalism"}</em></span>`; }
+function ownBanner(s, cls, kickerSaysExc){ if(!s || !s.original) return ""; const inv = s.original !== "data"; return `<span class="ownban${cls ? " " + cls : ""}"><b>${inv ? OB_INV : OB_DATA}${inv ? "Seax Investigates" : "Seax Analysis"}</b>${(t => t ? `<em>${t}</em>` : "")(s.exclusive && !kickerSaysExc ? "Exclusive" : inv ? "" : "Original data journalism")}</span>`; } /* investigations say just SEAX INVESTIGATES, no "Original reporting" (owner, 21 Nov 2026) */
 function flashBadge(s){ return flashOn(s) ? '<span class="flash"><i></i>Breaking</span>' : ""; }
 function leadKicker(s){
   /* owner, 20 Nov 2026: our own scoops say just EXCLUSIVE, with the red dot, even when breaking */

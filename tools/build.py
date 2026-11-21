@@ -1650,8 +1650,9 @@ def own_banner(it):
     return ('<style>' + OWN_CSS + '</style><div class="ownban" style="display:inline-flex;margin:0 0 12px;font-family:inherit;line-height:1;border-radius:3px;overflow:hidden">'
             '<b style="background:linear-gradient(180deg,#f7cf5a 0%,#e9b33c 55%,#d79f2b 100%);color:#1c1400;font-size:12px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;'
             'padding:7px 10px 7px 12px;border-left:5px solid #a8781a">' + (OWN_ICON_INV if inv else OWN_ICON_DATA) + ("Seax Investigates" if inv else "Seax Analysis") + '</b>'
-            '<span style="background:#fbf3dc;color:#4a3b10;font-size:12px;font-weight:600;padding:7px 10px;display:inline-flex;align-items:center">'
-            + ("Exclusive" if it.get("exclusive") else "Original reporting" if inv else "Original data journalism") + '</span></div>')
+            # investigations say just SEAX INVESTIGATES, no "Original reporting" (owner, 21 Nov 2026)
+            + (lambda t: ('<span style="background:#fbf3dc;color:#4a3b10;font-size:12px;font-weight:600;padding:7px 10px;display:inline-flex;align-items:center">' + t + '</span>') if t else "")(
+                "Exclusive" if it.get("exclusive") else "" if inv else "Original data journalism") + '</div>')
 
 
 def original_note(it, src, corr):
