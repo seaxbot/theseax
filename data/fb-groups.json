@@ -3293,6 +3293,313 @@
    "perWeek": 1,
    "joined": "2026-11-21",
    "note": "Auto-joined in the 21 Nov 2026 bulk join. Not yet vetted: before the first post, check the Group by banner (never Essex Live) and the rules; set off or caution if they ban links, news or Pages."
+  },
+  {
+   "id": "2861052530609683",
+   "key": "the-mersea-locals-9683",
+   "name": "The Mersea Locals",
+   "members": 15000,
+   "privacy": "Public",
+   "kind": "town",
+   "match": [
+    "mersea",
+    "west mersea",
+    "east mersea",
+    "peldon",
+    "oyster"
+   ],
+   "status": "caution",
+   "perWeek": 1,
+   "joined": "2026-11-22",
+   "note": "Rules read 22 Nov: self-promotion at most once every two weeks, no politics. Post at most once a fortnight, Mersea stories only.",
+   "avoidTags": [
+    "Politics",
+    "Council",
+    "Council Watch"
+   ]
+  },
+  {
+   "id": "1008747649185525",
+   "key": "spotted-in-jaywick-sands-5525",
+   "name": "Spotted In Jaywick Sands",
+   "members": 14000,
+   "privacy": "Public",
+   "kind": "town",
+   "match": [
+    "jaywick"
+   ],
+   "status": "hold",
+   "perWeek": 1,
+   "joined": "2026-11-22",
+   "note": "Joined, but the group asks members to agree to its rules before they can post; the owner must tick that box (Participant questions)."
+  },
+  {
+   "id": "436826131246730",
+   "key": "people-of-clacton-6730",
+   "name": "PEOPLE OF CLACTON",
+   "members": 12000,
+   "privacy": "Public",
+   "kind": "town",
+   "match": [
+    "clacton",
+    "holland-on-sea",
+    "jaywick"
+   ],
+   "status": "on",
+   "perWeek": 1,
+   "joined": "2026-11-22",
+   "note": "Joined 22 Nov 2026 (owner's overnight request). Not yet vetted: before the first post, check the Group by banner (never Essex Live) and the rules; set off or caution if they ban links, news or Pages."
+  },
+  {
+   "id": "674108469333033",
+   "key": "all-things-clacton-3033",
+   "name": "All Things Clacton!",
+   "members": 2900,
+   "privacy": "Public",
+   "kind": "town",
+   "match": [
+    "clacton"
+   ],
+   "status": "on",
+   "perWeek": 1,
+   "joined": "2026-11-22",
+   "note": "Joined 22 Nov 2026 (owner's overnight request). Not yet vetted: before the first post, check the Group by banner (never Essex Live) and the rules; set off or caution if they ban links, news or Pages."
+  },
+  {
+   "id": "rochfordneighbourhoodwatch",
+   "key": "rochford-district-neighbourhood-watch-atch",
+   "name": "Rochford District Neighbourhood Watch",
+   "members": 5000,
+   "privacy": "Public",
+   "kind": "crime",
+   "match": [
+    "rochford",
+    "hockley",
+    "hawkwell",
+    "rayleigh",
+    "hullbridge",
+    "great wakering"
+   ],
+   "status": "on",
+   "perWeek": 1,
+   "joined": "2026-11-22",
+   "note": "Joined 22 Nov 2026 (owner's overnight request). Not yet vetted: before the first post, check the Group by banner (never Essex Live) and the rules; set off or caution if they ban links, news or Pages. Neighbourhood watch group: crime and police appeals only."
+  },
+  {
+   "id": "224000291402385",
+   "key": "witham-notice-board-2385",
+   "name": "Witham Notice Board",
+   "members": 8500,
+   "privacy": "Public",
+   "kind": "town",
+   "match": [
+    "witham"
+   ],
+   "status": "hold",
+   "perWeek": 1,
+   "joined": "2026-11-22",
+   "note": "Joined, but the group asks members to agree to its rules before they can post; the owner must tick that box (Participant questions)."
+  },
+  {
+   "id": "508598425851455",
+   "key": "hempstead-radwinter-the-sampfords-news-1455",
+   "name": "Hempstead, Radwinter & the Sampfords NEWS",
+   "members": 3700,
+   "privacy": "Public",
+   "kind": "town",
+   "match": [
+    "hempstead",
+    "radwinter",
+    "sampford",
+    "saffron walden"
+   ],
+   "status": "on",
+   "perWeek": 1,
+   "joined": "2026-11-22",
+   "note": "Joined 22 Nov 2026 (owner's overnight request). Not yet vetted: before the first post, check the Group by banner (never Essex Live) and the rules; set off or caution if they ban links, news or Pages."
+  },
+  {
+   "id": "697374600473886",
+   "key": "stanway-residents-group-3886",
+   "name": "Stanway Residents Group",
+   "members": 27000,
+   "privacy": "Public",
+   "kind": "town",
+   "match": [
+    "stanway",
+    "tollgate",
+    "copford",
+    "colchester"
+   ],
+   "status": "on",
+   "perWeek": 1,
+   "joined": "2026-11-22",
+   "note": "Joined 22 Nov 2026 (owner's overnight request). Not yet vetted: before the first post, check the Group by banner (never Essex Live) and the rules; set off or caution if they ban links, news or Pages."
+  },
+  {
+   "id": "921010441378353",
+   "key": "lexden-and-prettygate-community-hub-8353",
+   "name": "Lexden and Prettygate Community Hub",
+   "members": 12000,
+   "privacy": "Public",
+   "kind": "town",
+   "match": [
+    "lexden",
+    "prettygate",
+    "colchester"
+   ],
+   "status": "hold",
+   "perWeek": 1,
+   "joined": "2026-11-22",
+   "note": "Joined, but the group asks members to agree to its rules before they can post; the owner must tick that box (Participant questions)."
+  },
+  {
+   "id": "422786744588583",
+   "key": "hythe-colchester-stay-in-the-know-8583",
+   "name": "Hythe Colchester - Stay in the know",
+   "members": 6100,
+   "privacy": "Public",
+   "kind": "town",
+   "match": [
+    "hythe",
+    "colchester"
+   ],
+   "status": "on",
+   "perWeek": 1,
+   "joined": "2026-11-22",
+   "note": "Joined 22 Nov 2026 (owner's overnight request). Not yet vetted: before the first post, check the Group by banner (never Essex Live) and the rules; set off or caution if they ban links, news or Pages."
+  },
+  {
+   "id": "210990489476033",
+   "key": "colchester-united-fc-supporters-6033",
+   "name": "Colchester United FC Supporters",
+   "members": 6700,
+   "privacy": "Public",
+   "kind": "sport",
+   "match": [
+    "colchester united",
+    "col u"
+   ],
+   "status": "on",
+   "perWeek": 1,
+   "joined": "2026-11-22",
+   "note": "Joined 22 Nov 2026 (owner's overnight request). Not yet vetted: before the first post, check the Group by banner (never Essex Live) and the rules; set off or caution if they ban links, news or Pages. Colchester United stories only."
+  },
+  {
+   "id": "1682313128600922",
+   "key": "wickford-chit-chat-adverts-0922",
+   "name": "Wickford Chit Chat & Adverts",
+   "members": 15000,
+   "privacy": "Public",
+   "kind": "town",
+   "match": [
+    "wickford",
+    "runwell",
+    "shotgate"
+   ],
+   "status": "on",
+   "perWeek": 1,
+   "joined": "2026-11-22",
+   "note": "Joined 22 Nov 2026 (owner's overnight request). Not yet vetted: before the first post, check the Group by banner (never Essex Live) and the rules; set off or caution if they ban links, news or Pages."
+  },
+  {
+   "id": "239283200268783",
+   "key": "crimewatch-basildon-8783",
+   "name": "Crimewatch Basildon",
+   "members": 16000,
+   "privacy": "Public",
+   "kind": "crime",
+   "match": [
+    "basildon",
+    "laindon",
+    "pitsea",
+    "vange"
+   ],
+   "status": "on",
+   "perWeek": 1,
+   "joined": "2026-11-22",
+   "note": "Joined 22 Nov 2026 (owner's overnight request). Not yet vetted: before the first post, check the Group by banner (never Essex Live) and the rules; set off or caution if they ban links, news or Pages. Crime and police appeals only."
+  },
+  {
+   "id": "2993855174210734",
+   "key": "new-beaulieu-residents-group-0734",
+   "name": "NEW Beaulieu Residents Group",
+   "members": 3100,
+   "privacy": "Public",
+   "kind": "town",
+   "match": [
+    "beaulieu",
+    "springfield",
+    "chelmsford"
+   ],
+   "status": "on",
+   "perWeek": 1,
+   "joined": "2026-11-22",
+   "note": "Joined 22 Nov 2026 (owner's overnight request). Not yet vetted: before the first post, check the Group by banner (never Essex Live) and the rules; set off or caution if they ban links, news or Pages."
+  },
+  {
+   "id": "180960489033520",
+   "key": "events-in-chelmsford-3520",
+   "name": "Events In Chelmsford",
+   "members": 9900,
+   "privacy": "Public",
+   "kind": "events",
+   "match": [
+    "chelmsford"
+   ],
+   "status": "on",
+   "perWeek": 1,
+   "joined": "2026-11-22",
+   "note": "Joined 22 Nov 2026 (owner's overnight request). Not yet vetted: before the first post, check the Group by banner (never Essex Live) and the rules; set off or caution if they ban links, news or Pages. Events and what's on stories only."
+  },
+  {
+   "id": "1281584913816101",
+   "key": "chalkwell-community-page-6101",
+   "name": "Chalkwell Community Page",
+   "members": 3300,
+   "privacy": "Public",
+   "kind": "town",
+   "match": [
+    "chalkwell",
+    "westcliff",
+    "leigh-on-sea"
+   ],
+   "status": "on",
+   "perWeek": 1,
+   "joined": "2026-11-22",
+   "note": "Joined 22 Nov 2026 (owner's overnight request). Not yet vetted: before the first post, check the Group by banner (never Essex Live) and the rules; set off or caution if they ban links, news or Pages."
+  },
+  {
+   "id": "2537070649940134",
+   "key": "lovegreatdunmow-0134",
+   "name": "LoveGreatDunmow",
+   "members": 4900,
+   "privacy": "Public",
+   "kind": "town",
+   "match": [
+    "dunmow",
+    "great dunmow"
+   ],
+   "status": "on",
+   "perWeek": 1,
+   "joined": "2026-11-22",
+   "note": "Joined 22 Nov 2026 (owner's overnight request). Not yet vetted: before the first post, check the Group by banner (never Essex Live) and the rules; set off or caution if they ban links, news or Pages."
+  },
+  {
+   "id": "3009275329351778",
+   "key": "tolleshunt-knights-tiptree-community-hub-1778",
+   "name": "Tolleshunt Knights & Tiptree community hub",
+   "members": 3000,
+   "privacy": "Public",
+   "kind": "town",
+   "match": [
+    "tiptree",
+    "tolleshunt"
+   ],
+   "status": "on",
+   "perWeek": 1,
+   "joined": "2026-11-22",
+   "note": "Joined 22 Nov 2026 (owner's overnight request). Not yet vetted: before the first post, check the Group by banner (never Essex Live) and the rules; set off or caution if they ban links, news or Pages."
   }
  ],
  "ownersChecked": "2026-11-20: 'Group by' banner read on all ready and strict-rules groups.",
@@ -3301,6 +3608,10 @@
   "date": "2026-11-21",
   "joined": "about 465 groups after leaving 16 wrong-area ones",
   "fullList": "https://www.facebook.com/groups/joins/ (as The Seax)",
-  "note": "Only the 55 largest town, crime and travel groups are listed here so far. Many others were joined but need membership questions answered before posting; skip those unless the Page can answer honestly."
+  "note": "Only the 55 largest town, crime and travel groups are listed here so far. Many others were joined but need membership questions answered before posting; skip those unless the Page can answer honestly.",
+  "second": {
+   "date": "2026-11-22",
+   "joined": "18 public groups joined and listed here; about 20 private groups requested (pending admin approval, many with membership questions for the owner to answer at facebook.com/groups/joins)"
+  }
  }
 }
