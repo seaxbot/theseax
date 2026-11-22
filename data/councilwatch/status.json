@@ -1,5 +1,5 @@
 {
- "at": "2026-11-22T06:31:30.470179+00:00",
+ "at": "2026-11-22T16:25:26.869581+00:00",
  "councils": {
   "thurrock": {
    "name": "Thurrock Council",
@@ -44,7 +44,7 @@
    "meetings": 11,
    "changed": 0,
    "state": "ok",
-   "note": ""
+   "note": "meeting 0"
   },
   "harlow": {
    "name": "Harlow Council",
