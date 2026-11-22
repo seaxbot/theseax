@@ -1314,9 +1314,11 @@
     "name": "Harry Fusedale, who is running a Pokémon Christmas appeal for Phoenix Ward",
     "label": "Harry Fusedale",
     "wide": "/img/people/harry-fusedale-pokemon-appeal-wide.jpg",
-    "creator": ""
+    "creator": "",
+    "noCaption": true
    }
   ],
-  "addedBy": "owner, 22 Nov 2026 (Phoenix Ward Pokémon Christmas appeal; pictures supplied by the organiser)"
+  "addedBy": "owner, 22 Nov 2026 (Phoenix Ward Pokémon Christmas appeal; pictures supplied by the organiser)",
+  "noCaption": true
  }
 ]
