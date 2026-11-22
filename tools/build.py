@@ -767,6 +767,7 @@ def head(title, desc, canonical, og_image, og_type="website", extra=""):
 <title>{E(title)}</title>
 <meta name="description" content="{E(desc)}">
 <link rel="canonical" href="{E(canonical)}">
+<meta name="robots" content="max-image-preview:large, max-snippet:-1, max-video-preview:-1">
 <meta property="og:site_name" content="The Seax">
 <meta property="og:locale" content="en_GB">
 <meta property="og:type" content="{og_type}">
@@ -899,11 +900,11 @@ def portrait_figure(p):
     lic = f'<a href="{E(p["licenseUrl"])}" target="_blank" rel="noopener license">{E(p["license"])}</a>' if safe_url(p.get("licenseUrl")) else E(p.get("license"))
     src = f' via <a href="{E(p["source"])}" target="_blank" rel="noopener">{E(p.get("provider") or "source")}</a>' if safe_url(p.get("source")) else ""
     if p.get("noCaption"):  # no caption or credit at all (owner's choice, 17 Nov 2026)
-        return (f'<figure class="stock"><img src="{E(p["wide"])}?v=1" width="1200" height="655" alt="{E(p["name"])}" loading="eager"></figure>')
+        return (f'<figure class="stock"><img src="{E(p["wide"])}?v=1" width="1200" height="655" alt="{E(p["name"])}" loading="eager" fetchpriority="high"></figure>')
     if p.get("label"):  # short caption for labelled images such as a mock-up (owner's choice, 11 Nov 2026)
-        return (f'<figure class="stock"><img src="{E(p["wide"])}?v=1" width="1200" height="655" alt="{E(lab)}: {E(p["name"])}" loading="eager">'
+        return (f'<figure class="stock"><img src="{E(p["wide"])}?v=1" width="1200" height="655" alt="{E(lab)}: {E(p["name"])}" loading="eager" fetchpriority="high">'
                 f'<figcaption>{(E(p["caption"]) + ". ") if p.get("caption") else ""}<b>{E(lab)}</b>{(": " + E(p["creator"])) if p.get("creator") else ""}</figcaption></figure>')
-    return (f'<figure class="stock"><img src="{E(p["wide"])}?v=1" width="1200" height="655" alt="{E(lab)} of {E(p["name"])}" loading="eager">'
+    return (f'<figure class="stock"><img src="{E(p["wide"])}?v=1" width="1200" height="655" alt="{E(lab)} of {E(p["name"])}" loading="eager" fetchpriority="high">'
             f'<figcaption><b>{E(p["name"])}</b>. {E(lab)}{E(p.get("note") or "")}. {"Image" if p.get("label") else "Photo"}: {E(p["creator"])}{src}{", " + lic if p.get("license") else ""}{"" if p.get("label") else ", set on a blurred background"}.</figcaption></figure>')
 
 def stock_figure(it, sec):
@@ -914,14 +915,14 @@ def stock_figure(it, sec):
     lic = f'<a href="{E(p["licenseUrl"])}" target="_blank" rel="noopener">{E(p["license"])}</a>' if safe_url(p.get("licenseUrl")) else E(p.get("license"))
     src = f' via <a href="{E(p["source"])}" target="_blank" rel="noopener">{E(p.get("provider") or "source")}</a>' if safe_url(p.get("source")) else ""
     if p.get("kind") == "owner" and not p.get("creator") and p.get("noCaption") is True:  # owner's choice (15 Nov 2026): no label, caption or credit at all
-        return (f'<figure class="stock"><img src="{E(p["file"])}" width="{E(p.get("w") or 1200)}" height="{E(p.get("h") or 800)}" alt="{E(p.get("title") or "")}" loading="eager"></figure>')
+        return (f'<figure class="stock"><img src="{E(p["file"])}" width="{E(p.get("w") or 1200)}" height="{E(p.get("h") or 800)}" alt="{E(p.get("title") or "")}" loading="eager" fetchpriority="high"></figure>')
     if p.get("kind") == "owner" and not p.get("creator"):  # owner's picture with no credit: caption is its "label" in small type (e.g. "AI illustration"), else just "File photo"
-        return (f'<figure class="stock"><img src="{E(p["file"])}" width="{E(p.get("w") or 1200)}" height="{E(p.get("h") or 800)}" alt="{E((p.get("label") or "File photo") + (": " + p["title"] if p.get("title") else ""))}" loading="eager">'
+        return (f'<figure class="stock"><img src="{E(p["file"])}" width="{E(p.get("w") or 1200)}" height="{E(p.get("h") or 800)}" alt="{E((p.get("label") or "File photo") + (": " + p["title"] if p.get("title") else ""))}" loading="eager" fetchpriority="high">'
                 f'<figcaption>{"<small>" + E(p["label"]) + "</small>" if p.get("label") else "<b>File photo</b>"}</figcaption></figure>')
     if p.get("kind") in ("commons", "owner"):  # Wikimedia Commons file photo, or a picture the owner supplied for this story (kind "owner"), of the story's own subject (owner's rule, Nov 2026)
-        return (f'<figure class="stock"><img src="{E(p["file"])}" width="{E(p.get("w") or 1200)}" height="{E(p.get("h") or 800)}" alt="{E("File photo: " + (p.get("title") or p.get("keyword") or ""))}" loading="eager">'
+        return (f'<figure class="stock"><img src="{E(p["file"])}" width="{E(p.get("w") or 1200)}" height="{E(p.get("h") or 800)}" alt="{E("File photo: " + (p.get("title") or p.get("keyword") or ""))}" loading="eager" fetchpriority="high">'
                 f'<figcaption><b>File photo</b>{": " + E(p.get("title")) if p.get("title") else ""}. Photo: {who}, {lic}{src}</figcaption></figure>')
-    return (f'<figure class="stock"><img src="{E(p["file"])}" width="{E(p.get("w") or 1200)}" height="{E(p.get("h") or 800)}" alt="{E("Stock photo: " + (p.get("title") or p.get("keyword") or ""))}" loading="eager">'
+    return (f'<figure class="stock"><img src="{E(p["file"])}" width="{E(p.get("w") or 1200)}" height="{E(p.get("h") or 800)}" alt="{E("Stock photo: " + (p.get("title") or p.get("keyword") or ""))}" loading="eager" fetchpriority="high">'
             f'<figcaption><b>Stock photo</b>, not the scene of this story. {E(p.get("title") or "")}{" · " if p.get("title") else ""}{who}, {lic}{src}</figcaption></figure>')
 
 
@@ -1089,7 +1090,7 @@ def town_key(it, sec):
 def fallback_photo(it, sec, card):
     """(figure html, share image path) for a story with no specific photo, or ("", "") to keep the branded card."""
     if card == "hospital":
-        return ('<figure class="stock"><img src="/img/topics/hospital.jpg?v=1" width="1200" height="655" alt="Library photo: a hospital" loading="eager">'
+        return ('<figure class="stock"><img src="/img/topics/hospital.jpg?v=1" width="1200" height="655" alt="Library photo: a hospital" loading="eager" fetchpriority="high">'
                 '<figcaption><b>Hospital</b>. Library image, not the scene of this story.</figcaption></figure>', "/img/og/hospital.jpg")
     if card not in set(CARD_FOR.values()) | {"news", "feature", "default"} or it.get("showMap") is True:
         return "", ""
@@ -1101,11 +1102,11 @@ def fallback_photo(it, sec, card):
             f = "cricket-essex"
         if k == "football" and is_southend_united(it, sec) and os.path.exists(os.path.join(ROOT, "img", "og", "sport-southend.jpg")):
             w, h = jpeg_size(os.path.join(ROOT, "img", "sport", "southend.jpg"))
-            return (f'<figure class="stock"><img src="/img/sport/southend.jpg?v=1" width="{w}" height="{h}" alt="Library photo: the Southend United crest" loading="eager">'
+            return (f'<figure class="stock"><img src="/img/sport/southend.jpg?v=1" width="{w}" height="{h}" alt="Library photo: the Southend United crest" loading="eager" fetchpriority="high">'
                     f'<figcaption><b>Southend United</b>. Library image, not the scene of this story.</figcaption></figure>', "/img/og/sport-southend.jpg")
         if os.path.exists(os.path.join(ROOT, "img", "og", f"sport-{f}.jpg")):
             w, h = jpeg_size(os.path.join(ROOT, "img", "sport", f + ".jpg"))
-            return (f'<figure class="stock"><img src="/img/sport/{f}.jpg?v=1" width="{w}" height="{h}" alt="Library photo: {E(SPORT_NAME[k].lower())}" loading="eager">'
+            return (f'<figure class="stock"><img src="/img/sport/{f}.jpg?v=1" width="{w}" height="{h}" alt="Library photo: {E(SPORT_NAME[k].lower())}" loading="eager" fetchpriority="high">'
                     f'<figcaption><b>{E(SPORT_NAME[k])}</b>. Library image, not the scene of this story.</figcaption></figure>', f"/img/og/sport-{f}.jpg")
         return "", ""
     if k:  # athletics and other drawn sport art keep the branded card
@@ -1119,7 +1120,7 @@ def fallback_photo(it, sec, card):
         return "", ""
     if cr.get("own"):  # the owner's own photo (Shoeburyness and Foulness, owner's rule, 14 Nov 2026): no credit line
         w, h = jpeg_size(os.path.join(ROOT, "img", "places", tk + ".jpg"))
-        return (f'<figure class="stock"><img src="/img/places/{tk}.jpg?v=1" width="{w}" height="{h}" alt="Library photo: {E(cr.get("what"))}" loading="eager">'
+        return (f'<figure class="stock"><img src="/img/places/{tk}.jpg?v=1" width="{w}" height="{h}" alt="Library photo: {E(cr.get("what"))}" loading="eager" fetchpriority="high">'
                 f'<figcaption><b>{E(cr.get("what"))}</b>. Library image, not the scene of this story.</figcaption></figure>',
                 f"/img/og/place-{tk}.jpg")
     lic = cr.get("license") or ""
@@ -1127,7 +1128,7 @@ def fallback_photo(it, sec, card):
     lic_html = f'<a href="{E(cr["licenseUrl"])}" target="_blank" rel="noopener license">{E(licl)}</a>' if safe_url(cr.get("licenseUrl")) else E(licl)
     via = f', via <a href="{E(cr["source"])}" target="_blank" rel="noopener">Wikimedia Commons</a>' if safe_url(cr.get("source")) else ""
     w, h = jpeg_size(os.path.join(ROOT, "img", "places", tk + ".jpg"))
-    return (f'<figure class="stock"><img src="/img/places/{tk}.jpg?v=1" width="{w}" height="{h}" alt="File photo: {E(cr.get("what"))}" loading="eager">'
+    return (f'<figure class="stock"><img src="/img/places/{tk}.jpg?v=1" width="{w}" height="{h}" alt="File photo: {E(cr.get("what"))}" loading="eager" fetchpriority="high">'
             f'<figcaption><b>{E(cr.get("what"))}</b>. File photo, not the scene of this story. Photo: {E(cr.get("by"))}, {lic_html}{via}.</figcaption></figure>',
             f"/img/og/place-{tk}.jpg")
 
@@ -1707,6 +1708,15 @@ def story_page(sec, it, more):
     if t:
         extra += f'<meta property="article:published_time" content="{iso(t)}">\n<meta property="article:modified_time" content="{iso(up or t)}">\n'
     extra += '<script type="application/ld+json">' + json.dumps(ld, ensure_ascii=False).replace("</", "<\\/") + "</script>\n"
+    # breadcrumb trail for search results (22 Nov 2026): The Seax > Essex news > the story's area > the story
+    crumbs = [("The Seax", SITE + "/"), ("Essex news", SITE + "/news/")]
+    _ar = next(((sl, nm) for k, sl, nm, *_ in AREA_PAGES if k in (it.get("areas") or [])), None)
+    if _ar:
+        crumbs.append((_ar[1] + " news", f"{SITE}/news/{_ar[0]}/"))
+    crumbs.append((title, url))
+    bc = {"@context": "https://schema.org", "@type": "BreadcrumbList",
+          "itemListElement": [{"@type": "ListItem", "position": i + 1, "name": nm, "item": u} for i, (nm, u) in enumerate(crumbs)]}
+    extra += '<script type="application/ld+json">' + json.dumps(bc, ensure_ascii=False).replace("</", "<\\/") + "</script>\n"
     body = it.get("body") if isinstance(it.get("body"), list) else []
     if is_thin(it, sec):
         # a one-line pointer to another outlet's report is useful to readers but is not an article of ours: keep it out
@@ -1786,11 +1796,11 @@ def story_page(sec, it, more):
                if card == "food" else "<b>Fog</b>. Library image, not the scene of this story."
                if card == "fog" else "<b>Library image</b>, not the scene of this story.")
         fig = (f'<figure class="stock"><img src="/img/topics/{card}.jpg?v=1" width="1200" height="655" '
-               f'alt="Library photo: {LIBRARY_ALT.get(card, "police car blue lights")}" loading="eager">'
+               f'alt="Library photo: {LIBRARY_ALT.get(card, "police car blue lights")}" loading="eager" fetchpriority="high">'
                f'<figcaption>{cap}</figcaption></figure>')
     if not fig and card == "breaking":
         fig = ('<figure class="stock"><img src="/img/topics/breaking.png?v=1" width="1200" height="630" '
-               'alt="The Seax Breaking News graphic" loading="eager">'
+               'alt="The Seax Breaking News graphic" loading="eager" fetchpriority="high">'
                '<figcaption><b>Breaking news</b>. No photo of this story yet.</figcaption></figure>')
     og_img = PHOTOS[sid]["file"] if fig and card not in [k for k, _ in ROAD_OG] + ["hospital", "breaking"] + LIBRARY_PHOTOS else card
     pt = portrait_of(it)
