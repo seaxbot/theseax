@@ -1700,11 +1700,26 @@ def ilinks(escaped):
     return ILINK_RE.sub(rep, escaped)
 
 
+XLINK_RE = re.compile(r"\[([^\[\]]{1,200})\]\((https://[^\s()<>\"]{5,300})\)")
+
+
+def xlinks(escaped, allowed):
+    """Clickable links inside story text to the story's OWN source links only ("url" and "also"), written
+    "[words](https://...)" (owner, 22 Nov 2026: "make the gofundme page clickable"). Any other address stays as words."""
+    def rep(m):
+        href = m.group(2).replace("&amp;", "&")
+        if href in allowed:
+            return f'<a class="slink" href="{E(href)}" target="_blank" rel="noopener">{m.group(1)}</a>'
+        return m.group(1)
+    return XLINK_RE.sub(rep, escaped)
+
+
 def body_with_charts(it, body, opening=""):
     """Story paragraphs, with any charts the story carries placed after the paragraph named by "after" (0 = after the
     first). A chart is {"src", "alt", "caption", "after", "w", "h"}: our own data graphics (owner's request, 20 Nov 2026:
     "This story needs visualisations to make it clear")."""
     paras = [str(p) for p in body if str(p).strip()]
+    allowed = {str(u) for u in [it.get("url")] + [a.get("url") for a in (it.get("also") or []) if isinstance(a, dict)] if u}
     charts = [c for c in (it.get("charts") or []) if isinstance(c, dict) and str(c.get("src") or "").startswith("/img/")]
     # interactive look-ups (owner, 20 Nov 2026: "a selector [so] people could select any one of their 56 neighbourhoods")
     widgets = [w for w in (it.get("widgets") or []) if isinstance(w, dict) and w.get("type") == "crime-lookup"
@@ -1719,7 +1734,7 @@ def body_with_charts(it, body, opening=""):
         out.insert(0, f'<p class="cwarn" role="note" style="background:#fdf1f1;border-left:5px solid #c8102e;padding:12px 14px;border-radius:6px;font-size:.95em;margin:0 0 1.2em"><b>Warning:</b> {E(str(it["warning"]).strip())}</p>')
     for i, p in enumerate(paras):
         # a paragraph starting "## " is a subheading, for long stories (owner, 20 Nov 2026: Brentwood School review)
-        out.append(f'<h2 class="bsub" style="font-size:1.25em;line-height:1.25;margin:1.6em 0 .4em">{E(p[3:].strip())}</h2>' if p.startswith("## ") else f"<p>{ilinks(E(p))}</p>")
+        out.append(f'<h2 class="bsub" style="font-size:1.25em;line-height:1.25;margin:1.6em 0 .4em">{E(p[3:].strip())}</h2>' if p.startswith("## ") else f"<p>{xlinks(ilinks(E(p)), allowed)}</p>")
         for c in charts:
             if int(c.get("after", len(paras) - 1)) == i or (i == len(paras) - 1 and int(c.get("after", 0)) >= len(paras)):
                 out.append(f'<figure class="stock chart"><img src="{E(c["src"])}?v=1" width="{E(c.get("w") or 1200)}" '

@@ -1300,21 +1300,21 @@
  },
  {
   "match": "\\bPok[eé]mon appeal\\b",
-  "name": "Harry Fusedale, who is running a Pokémon Christmas appeal for Phoenix Ward",
-  "label": "Harry Fusedale",
-  "wide": "/img/people/harry-fusedale-pokemon-appeal-wide.jpg",
-  "og": "/img/people/harry-fusedale-pokemon-appeal-og.jpg",
-  "creator": "",
+  "name": "The entrance to Phoenix Ward, the children's ward at Broomfield Hospital",
+  "label": "Picture",
+  "wide": "/img/people/broomfield-phoenix-ward-wide.jpg",
+  "og": "/img/people/broomfield-phoenix-ward-og.jpg",
+  "creator": "supplied by Harry Fusedale",
   "provider": "Harry Fusedale",
   "license": "",
   "licenseUrl": "",
   "source": "https://gofund.me/836bd31dc",
   "more": [
    {
-    "name": "The entrance to Phoenix Ward, the children's ward at Broomfield Hospital",
-    "label": "Picture",
-    "wide": "/img/people/broomfield-phoenix-ward-wide.jpg",
-    "creator": "supplied by Harry Fusedale"
+    "name": "Harry Fusedale, who is running a Pokémon Christmas appeal for Phoenix Ward",
+    "label": "Harry Fusedale",
+    "wide": "/img/people/harry-fusedale-pokemon-appeal-wide.jpg",
+    "creator": ""
    }
   ],
   "addedBy": "owner, 22 Nov 2026 (Phoenix Ward Pokémon Christmas appeal; pictures supplied by the organiser)"
