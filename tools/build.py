@@ -2882,6 +2882,10 @@ def patch_index(latest_briefing, ed=None):
         m_next = new.find('<section class="block', m_news + 10) if m_news >= 0 else -1
         if m_next >= 0:
             new = new[:m_next] + block2 + "\n" + new[m_next:]
+    # Christmas in Essex link in the What's On section, only while that page is being built (22 Nov 2026)
+    xl = ('<p style="margin:0 0 16px;font:700 16px var(--sans)"><a href="/whats-on/christmas/" style="color:var(--red);text-decoration:underline">'
+          'Christmas in Essex: every lights switch-on, market, light trail and panto in one list →</a></p>') if XMAS_HTML else ""
+    new = re.sub(r"<!--seax-xmas-->.*?<!--/seax-xmas-->", lambda m: "<!--seax-xmas-->" + xl + "<!--/seax-xmas-->", new, count=1, flags=re.S)
     if new != s:
         open(p, "w", encoding="utf-8").write(new)
         return True

@@ -15,7 +15,7 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SITE = "https://theseax.com"
 HOST = "theseax.com"
 KEY = "b06cc39c0c39b416b21345fec750c62c"
-WATCH = ("story/", "news/", "council-watch/", "briefing/", "about/")
+WATCH = ("story/", "news/", "council-watch/", "briefing/", "about/", "investigates/", "whats-on/")
 
 
 def changed(before, after):
