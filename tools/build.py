@@ -2449,6 +2449,7 @@ def xmas_search_box():
 .xs-chip{{font:inherit;font-size:13.5px;padding:6px 11px;border-radius:99px;border:1px solid #e2c5c8;background:#fff;cursor:pointer;color:#333}}
 .xs-chip.on{{background:#c8102e;border-color:#c8102e;color:#fff;font-weight:600}}
 .xs-count{{margin:10px 0 0;font-size:14px;color:#555;min-height:1em}}
+.cw-row[hidden],.xs-sec[hidden],.xs-none[hidden],#xsJump[hidden]{{display:none!important}}
 .xs-none{{padding:14px 16px;border:1px dashed #d9b3b6;border-radius:12px;margin:12px 0}}
 .cw-row .xs-near{{display:inline-block;margin-left:6px;font-size:11px;font-weight:700;letter-spacing:.03em;text-transform:uppercase;color:#8e0d18;background:#fbe9ea;border-radius:99px;padding:1px 7px}}
 </style>
