@@ -1,5 +1,5 @@
 {
- "at": "2026-11-21T16:24:15.888345+00:00",
+ "at": "2026-11-22T06:31:30.470179+00:00",
  "councils": {
   "thurrock": {
    "name": "Thurrock Council",
@@ -138,15 +138,15 @@
   }
  },
  "requests": {
-  "thurrock": 3,
-  "southend": 3,
-  "epping": 3,
-  "maldon": 20,
-  "tendring": 14,
-  "harlow": 3,
-  "basildon": 23,
-  "brentwood": 3,
-  "uttlesford": 3,
+  "thurrock": 2,
+  "southend": 2,
+  "epping": 2,
+  "maldon": 19,
+  "tendring": 13,
+  "harlow": 2,
+  "basildon": 22,
+  "brentwood": 2,
+  "uttlesford": 2,
   "rochford": 1,
   "chelmsford": 4
  }
