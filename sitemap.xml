@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-<url><loc>https://theseax.com/</loc><lastmod>2026-11-21</lastmod><changefreq>hourly</changefreq><priority>1.0</priority></url>
+<url><loc>https://theseax.com/</loc><lastmod>2026-11-22</lastmod><changefreq>hourly</changefreq><priority>1.0</priority></url>
 <url><loc>https://theseax.com/about/</loc><changefreq>monthly</changefreq><priority>0.4</priority></url>
 <url><loc>https://theseax.com/contact/</loc><changefreq>monthly</changefreq><priority>0.4</priority></url>
-<url><loc>https://theseax.com/whats-on/</loc><lastmod>2026-11-21</lastmod><changefreq>daily</changefreq><priority>0.8</priority></url>
+<url><loc>https://theseax.com/whats-on/</loc><lastmod>2026-11-22</lastmod><changefreq>daily</changefreq><priority>0.8</priority></url>
 <url><loc>https://theseax.com/standards/</loc><changefreq>monthly</changefreq><priority>0.4</priority></url>
 <url><loc>https://theseax.com/corrections/</loc><changefreq>weekly</changefreq><priority>0.3</priority></url>
 <url><loc>https://theseax.com/briefing/</loc><lastmod>2026-11-21</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
@@ -73,6 +73,7 @@
 <url><loc>https://theseax.com/story/nhs-essex-flu-vaccine-before-christmas-11-december/</loc><lastmod>2026-11-19</lastmod></url>
 <url><loc>https://theseax.com/story/tilbury-community-pantry-cafe-civic-square-cabinet-tender/</loc><lastmod>2026-11-19</lastmod></url>
 <url><loc>https://theseax.com/story/basildon-avrt-vr-training-soldiers-police-standard/</loc><lastmod>2026-11-19</lastmod></url>
+<url><loc>https://theseax.com/story/harlow-river-way-bridge-closed-edinburgh-way/</loc><lastmod>2026-11-19</lastmod></url>
 <url><loc>https://theseax.com/story/burnham-on-crouch-swimmers-channel-relay-havens-hospices-9000/</loc><lastmod>2026-11-19</lastmod></url>
 <url><loc>https://theseax.com/story/c-colchester-provide-community-public-health-nursing-framework-pilot/</loc><lastmod>2026-11-19</lastmod></url>
 <url><loc>https://theseax.com/story/c2c-signalling-fault-cancellations-19-november/</loc><lastmod>2026-11-19</lastmod></url>
@@ -726,7 +727,7 @@
 <url><loc>https://theseax.com/news/new-homes/</loc><lastmod>2026-11-20</lastmod><changefreq>hourly</changefreq><priority>0.8</priority></url>
 <url><loc>https://theseax.com/news/asylum-accommodation/</loc><lastmod>2026-11-20</lastmod><changefreq>hourly</changefreq><priority>0.8</priority></url>
 <url><loc>https://theseax.com/news/university-of-essex/</loc><lastmod>2026-11-21</lastmod><changefreq>hourly</changefreq><priority>0.8</priority></url>
-<url><loc>https://theseax.com/council-watch/</loc><lastmod>2026-11-21</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://theseax.com/council-watch/</loc><lastmod>2026-11-22</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
 <url><loc>https://theseax.com/council-watch/thurrock/</loc><lastmod>2026-11-09</lastmod></url>
 <url><loc>https://theseax.com/council-watch/southend/</loc><lastmod>2026-11-10</lastmod></url>
 <url><loc>https://theseax.com/council-watch/epping/</loc><lastmod>2026-11-09</lastmod></url>
