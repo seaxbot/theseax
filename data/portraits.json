@@ -1234,15 +1234,15 @@
  },
  {
   "match": "\\bRochford garden waste\\b",
-  "name": "A Rochford District Council kerbside food waste bin",
+  "name": "Green garden waste bins with yellow lids, stacked ready for Rochford residents",
   "label": "Picture",
-  "wide": "/img/people/rochford-garden-waste-trial-wide.jpg",
-  "og": "/img/people/rochford-garden-waste-trial-og.jpg",
+  "wide": "/img/people/rochford-garden-waste-bins-wide.jpg",
+  "og": "/img/people/rochford-garden-waste-bins-og.jpg",
   "creator": "Rochford District Council",
   "provider": "Rochford District Council",
   "license": "",
   "licenseUrl": "",
-  "source": "https://www.rochford.gov.uk/winter-garden-waste-pilot-approved-as-council-reviews-future-service",
-  "addedBy": "owner, 22 Nov 2026 (Rochford garden waste winter trial story; picture from Rochford District Council)"
+  "source": "https://www.facebook.com/RochfordDistrictCouncil",
+  "addedBy": "owner, 22 Nov 2026 (Rochford garden waste winter trial story; Rochford District Council picture from its 9 Nov Facebook post, replacing a food waste caddy picture)"
  }
 ]
