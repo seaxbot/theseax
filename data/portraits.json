@@ -1301,10 +1301,10 @@
  {
   "match": "\\bPok[eé]mon appeal\\b",
   "name": "Harry Fusedale, who is running a Pokémon Christmas appeal for Phoenix Ward",
-  "label": "Picture",
+  "label": "Harry Fusedale",
   "wide": "/img/people/harry-fusedale-pokemon-appeal-wide.jpg",
   "og": "/img/people/harry-fusedale-pokemon-appeal-og.jpg",
-  "creator": "supplied by Harry Fusedale",
+  "creator": "",
   "provider": "Harry Fusedale",
   "license": "",
   "licenseUrl": "",
