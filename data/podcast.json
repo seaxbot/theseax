@@ -1,5 +1,12 @@
 [
  {
+  "file": "/audio/bulletin-2026-11-22-am.mp3",
+  "title": "Morning update: Sunday 22 November 2026",
+  "madeAt": "2026-11-22T07:02:56Z",
+  "duration": 139,
+  "bytes": 4451309
+ },
+ {
   "file": "/audio/bulletin-2026-11-21-night.mp3",
   "title": "Overnight bulletin: Saturday 21 November 2026",
   "madeAt": "2026-11-21T23:02:02Z",
@@ -47,12 +54,5 @@
   "madeAt": "2026-11-20T12:28:05Z",
   "duration": 141,
   "bytes": 4509823
- },
- {
-  "file": "/audio/bulletin-2026-11-20-am.mp3",
-  "title": "Morning update: Friday 20 November 2026",
-  "madeAt": "2026-11-20T07:03:03Z",
-  "duration": 146,
-  "bytes": 4668648
  }
 ]
