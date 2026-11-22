@@ -1682,7 +1682,7 @@ def link_box(it):
     u = str(b.get("url") or "")
     if not (u.startswith("/") and not u.startswith("//")) and not u.startswith("https://theseax.com/"): return ""
     return (f'<a class="linkbox" href="{E(u)}" style="display:block;margin:1.2em 0;padding:18px 20px;border:3px solid #c8102e;border-radius:12px;'
-            f'background:#fdf3f4;color:#111;text-decoration:none"><b style="display:block;font-size:1.25em;line-height:1.25">{E(b.get("title") or "")}</b>'
+            f'background:#fdf3f4;color:#111;text-decoration:none"><b style="display:block;font-size:1.25em;line-height:1.25;color:#c8102e">{E(b.get("title") or "")}</b>'
             + (f'<span style="display:block;margin:.35em 0 .8em">{E(b.get("text"))}</span>' if b.get("text") else '<span style="display:block;height:.6em"></span>')
             + f'<span style="display:inline-block;background:#c8102e;color:#fff;font-weight:800;border-radius:99px;padding:11px 20px">{E(b.get("button") or "Open the page")} →</span></a>')
 
@@ -2406,7 +2406,7 @@ def whatson_page(ed):
 <div class="kick"><span><a href="/">The Seax</a></span><span>What's On</span></div>
 <h1>What's on in Essex</h1>
 <p class="standfirst">Events, shows, exhibitions and days out across the county, soonest first. Each listing links to the organiser or venue. To list an event, email {mlink("events", "Event listing")}.</p>
-{'<p><b><a href="/whats-on/christmas/">Christmas in Essex: lights switch-ons, markets, light trails and pantos →</a></b></p>' if XMAS_HTML else ''}
+{'<p><b><a href="/whats-on/christmas/" style="color:#c8102e">Christmas in Essex: lights switch-ons, markets, light trails and pantos →</a></b></p>' if XMAS_HTML else ''}
 {html_groups or "<p>No listings at the moment. Check back soon.</p>"}
 <p><a href="/">Go to the live front page →</a></p>
 </main>""" + newsletter_box() + foot() + "</body></html>\n"
