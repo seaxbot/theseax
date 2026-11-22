@@ -2458,6 +2458,7 @@ def xmas_search_box():
       none = document.getElementById("xsNone"), jump = document.getElementById("xsJump"),
       rows = [].slice.call(document.querySelectorAll(".cw-row[data-q]")), secs = [].slice.call(document.querySelectorAll(".xs-sec"));
   function norm(t){{ return String(t || "").toLowerCase().replace(/[^a-z0-9 ]+/g, " ").replace(/\\s+/g, " ").trim(); }}
+  rows.forEach(function(r, i){{ r.setAttribute("data-i", i); }});
   var NT = {{}}; for(var w in TOWNS) NT[norm(w)] = TOWNS[w];
   function townArea(t){{
     if(!t) return "";
@@ -2483,7 +2484,12 @@ def xmas_search_box():
       else if(tag) tag.remove();
       if(ok){{ shown++; if(t && hit) direct++; }}
     }});
-    secs.forEach(function(s){{ s.hidden = !s.querySelector(".cw-row:not([hidden])"); }});
+    secs.forEach(function(s){{
+      var list = s.querySelector(".cw-list"), rs = [].slice.call(list.children);
+      rs.sort(function(x, y){{ var nx = x.querySelector(".xs-near") ? 1 : 0, ny = y.querySelector(".xs-near") ? 1 : 0;
+        return (nx - ny) || (+x.getAttribute("data-i") - +y.getAttribute("data-i")); }}).forEach(function(r){{ list.appendChild(r); }});
+      s.hidden = !s.querySelector(".cw-row:not([hidden])");
+    }});
     none.hidden = !t || shown > 0; jump.hidden = !!t;
     if(!t){{ cnt.textContent = ""; return; }}
     var said = q.value.trim(), n = function(k){{ return k + (k === 1 ? " event" : " events"); }};
