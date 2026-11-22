@@ -80,6 +80,14 @@
    "at": "2026-11-22T09:04:09Z",
    "update": false,
    "buffer": "6b02b0090247969092386639"
+  },
+  {
+   "id": "essex-recorded-crime-september-2026-police-data",
+   "kind": "checker",
+   "headline": "How does crime where you live compare with a year ago? Look up any of Essex's 56 police neighbourhoods, crime by crime, with The Seax crime checker.",
+   "at": "2026-11-22T10:03:48Z",
+   "update": false,
+   "buffer": "6b02be05d5eabfb8cc9b1fb8"
   }
  ]
 }
