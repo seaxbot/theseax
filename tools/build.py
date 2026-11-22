@@ -1840,7 +1840,10 @@ def story_page(sec, it, more):
         meta.append(f'<span>First published <time datetime="{iso(t)}">{E(uk_long(t))}</time></span>')
     elif t:
         meta.append(f'<time datetime="{iso(t)}">{E(uk_long(t))}</time>')
-    if src and sec != "councilwatch":
+    if src and sec != "councilwatch" and it.get("researched") is True:
+        # owner's rule 22 Nov 2026: say who had it first, and make clear we have added our own reporting
+        meta.append(f"<span>First reported by {E(src)} · Additional reporting by The Seax</span>")
+    elif src and sec != "councilwatch":
         meta.append(f"<span>Reported by {E(src)}</span>")
     if sec == "councilwatch":
         meta.append("<span>Original reporting from council papers</span>")
@@ -1849,13 +1852,13 @@ def story_page(sec, it, more):
         org = f'<div class="org">{E(SECTION_LABEL[sec])} · {E(it["org"])}</div>'
     readfull = ""
     if surl:
-        readfull = f"""<div class="readfull"><div><div class="k">Read the full story</div><div class="src">{E(src or host(surl))}</div></div>
+        readfull = f"""<div class="readfull"><div><div class="k">{"Read the original report" if it.get("researched") is True else "Read the full story"}</div><div class="src">{E(src or host(surl))}</div></div>
 <a class="go" href="{E(surl)}" target="_blank" rel="noopener">Open at {E(host(surl) or src)} ↗</a></div>"""
     if sec == "councilwatch":
         readfull = cw_record_box(it)
     also_html = ""
     if also:
-        also_html = '<h2>Also reported by</h2><ul class="also">' + "".join(
+        also_html = ('<h2>Our research also drew on</h2>' if it.get("researched") is True else '<h2>Also reported by</h2>') + '<ul class="also">' + "".join(
             f'<li><a href="{E(a["url"])}" target="_blank" rel="noopener"><b>{E(a.get("name") or host(a["url"]))}</b> <span>{E(host(a["url"]))} ↗</span></a></li>' for a in also) + "</ul>"
     mail = CFG["contactEmail"]
     corr = f'mailto:{MAILS["corrections"]}?subject={quote("Correction: " + title)}&body={quote("Page: " + url)}'

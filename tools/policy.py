@@ -17,6 +17,13 @@ before story pages are built, so the rules hold even if a desk forgets them:
      Emergency services' own social media accounts (Essex Police, fire, ambulance, coastguard,
      RNLI, air ambulance and the like) count as official sources, so their stories are never
      capped (owner's rule, 16 Nov 2026).
+     RESEARCHED stories are not capped (owner's rule, 22 Nov 2026): an item with "researched": true whose
+     "also" list holds at least two readable sources on hosts other than the main one (not link-only, not
+     excluded), or at least one official source, has been built into The Seax's own story from background
+     research. It keeps the original outlet as "source"/"url" for credit, and gets full copy.
+  5. Map pictures (owner's rule, 22 Nov 2026): story ids listed in data/map-pictures.json always get
+     "showMap": true, so they show the map instead of a town, Commons or stock photo that does not fit the
+     story. The Facebook groups desk adds ids there with tools/usemap.py before posting.
 
 Council Watch items are our own reporting from public council papers and are left alone.
 Run directly to check a file:  python3 tools/policy.py edition.json
@@ -27,6 +34,15 @@ from urllib.parse import urlparse
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 POLICY_FILE = os.path.join(ROOT, "tools", "sources-policy.json")
 MAX_WORDS = 100
+MAP_FILE = os.path.join(ROOT, "data", "map-pictures.json")
+
+def map_ids():
+    try:
+        with open(MAP_FILE, encoding="utf-8") as f:
+            d = json.load(f)
+        return {str(x.get("id") if isinstance(x, dict) else x) for x in (d.get("ids") if isinstance(d, dict) else d) or []}
+    except (OSError, ValueError):
+        return set()
 
 # Official bodies publish to inform the public; summarising their releases in full is fine.
 OFFICIAL_SUFFIXES = (".gov.uk", ".police.uk", ".nhs.uk", ".ac.uk", ".sch.uk", ".mod.uk", ".gov")
@@ -131,6 +147,7 @@ def apply(ed, pol=None):
     ed["features"] = []
     sport = ed.get("sport") if isinstance(ed.get("sport"), dict) else {}
     sections = [("stories", ed), ("official", ed), ("courts", ed), ("community", ed), ("stories", sport)]
+    maps = map_ids()
     for key, holder in sections:
         items = holder.get(key)
         if not isinstance(items, list):
@@ -146,8 +163,19 @@ def apply(ed, pol=None):
             also = [a for a in also if not on(host(a.get("url")), pol["exclude"])]
             if "also" in it:
                 it["also"] = also
+            if it.get("id") in maps:
+                it["showMap"] = True
             hosts = {h for h in [main] + [host(a.get("url")) for a in also] if h}
-            if hosts and all(on(h, pol["linkOnly"]) for h in hosts):
+            # owner's rule 22 Nov 2026: a story built into our own with background research gets full copy
+            extra = {host(a.get("url")) for a in also} - {main, ""}
+            readable = {h for h in extra if not on(h, pol["linkOnly"])}
+            researched = it.get("researched") is True and (len(readable) >= 2 or any(official(h) for h in readable))
+            if it.get("researched") is True and not researched:
+                it.pop("researched", None)  # not enough research sources yet: normal rules apply
+            if researched:
+                it.pop("singleSource", None)
+                it.pop("linkOnly", None)
+            elif hosts and all(on(h, pol["linkOnly"]) for h in hosts):
                 if it.get("body") or it.get("points") or not it.get("linkOnly"):
                     rep["linkOnly"].append(it.get("id"))
                 it.pop("body", None)
