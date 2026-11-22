@@ -47,6 +47,14 @@
    ],
    "charts": [
     {
+     "after": 3,
+     "src": "/img/people/essex-oyster-zones-map.jpg",
+     "w": 1200,
+     "h": 1323,
+     "alt": "Map of the Essex coast with a dot for each of the 33 oyster harvesting zones: orange Class B dots fill the Walton Backwaters, Colne, West Mersea, inner Blackwater, Crouch, Roach and off Southend; two blue seasonal dots at Little Ditch and Outer Blackwater; four green Class A dots off Bradwell and at Barrow Deep",
+     "caption": "Where Essex oysters are graded Class B. Source: Food Standards Agency classification list, 1 October 2026. Graphic: The Seax"
+    },
+    {
      "after": 4,
      "src": "/img/people/essex-oyster-zones-chart.jpg",
      "w": 1200,
@@ -62,6 +70,14 @@
      "h": 900,
      "alt": "A handful of freshly harvested oysters held above crates of oysters, with a fishing boat behind",
      "caption": ""
+    },
+    {
+     "after": 11,
+     "src": "/img/people/essex-oysters-timeline.jpg",
+     "w": 1200,
+     "h": 470,
+     "alt": "Timeline: 2019 UK live shellfish trade with the EU worth about £15m; 2021 EU refuses unpurified shellfish from Class B waters; 20 November 2026 UK-EU deal agreed; 1 March 2028 deal due to apply; 30 June 2038 fishing access agreement runs to here",
+     "caption": "Essex shellfish and the EU: how we got here. Sources: Seafish, GOV.UK, EU-UK summit joint statement. Graphic: The Seax"
     }
    ],
    "source": "The Seax, from the Food Standards Agency's shellfish classification list",
