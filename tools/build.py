@@ -830,7 +830,7 @@ def foot():
   {('<p class="area-links"><b>Running stories:</b> ' + place_links("issue") + '</p>') if place_links("issue") else ''}
   <p><b>The Seax</b> brings together Essex news, sport and life from trusted local and national sources. Every story links to the original reporting.</p>
   <p class="foot-mail"><b>Contact The Seax:</b> news tips {mlink("news")} · sport {mlink("sport")} · events {mlink("events")} · community and charity {mlink("community")} · corrections {mlink("corrections")} · everything else {mlink("info")}</p>
-  <p><a href="/about/">About The Seax</a> · <a href="/whats-on/">What's on</a> · <a href="/podcast.xml">Podcast feed</a> · <a href="/standards/">Editorial standards</a> · <a href="/corrections/">Corrections</a> · <a href="/contact/">Contact us</a> · <a href="/briefing/">Morning briefing</a> · <a href="/feed.xml">RSS</a>{' · ' + ' · '.join(social) if social else ''}</p>
+  <p><a href="/about/">About The Seax</a> · <a href="/investigates/">Seax Investigates</a> · <a href="/whats-on/">What's on</a> · <a href="/podcast.xml">Podcast feed</a> · <a href="/standards/">Editorial standards</a> · <a href="/corrections/">Corrections</a> · <a href="/contact/">Contact us</a> · <a href="/briefing/">Morning briefing</a> · <a href="/feed.xml">RSS</a>{' · ' + ' · '.join(social) if social else ''}</p>
 </div></footer>
 """
 
@@ -1662,7 +1662,7 @@ def original_note(it, src, corr):
     """Footer for The Seax's own reporting: it is not a summary of someone else's work."""
     what = "analysis" if it.get("original") == "data" else "reporting"
     return (f'<p class="note">This is original {what} by The Seax{" of " + E(src) + " figures" if what == "analysis" and src else ""}. '
-            f'{"Every figure was checked three times before publication. " if isinstance(it.get("verified"), dict) else ""}<a href="{E(corr)}">Spotted a mistake? Tell us</a>.</p>')
+            f'{"Every figure was checked three times before publication. " if isinstance(it.get("verified"), dict) else ""}<a href="{E(corr)}">Spotted a mistake? Tell us</a>.{' <a href="/investigates/">More from Seax Investigates →</a>' if it.get("original") in ("report", "data") else ""}</p>')
 
 
 def story_page(sec, it, more):
@@ -2488,7 +2488,7 @@ def about_page():
 <li><b>Exclusive</b>: a red Exclusive tag means The Seax was first to report the story.</li>
 <li><b>The Weekend</b> is our home for longer reads and analysis to take your time over, at the top of the front page every weekend.</li>
 </ul>
-<p>Every piece of our own reporting names and links the documents and data it is based on, so you can check it yourself.</p>
+<p>Every piece of our own reporting names and links the documents and data it is based on, so you can check it yourself. All of it is collected on the <a href="/investigates/">Seax Investigates</a> page.</p>
 
 <h3 id="triple-check">How we check our own reporting</h3>
 <p>When a story is ours alone, no other outlet's report backs it up, so before anything we originate is published it has to pass three checks:</p>
@@ -2759,7 +2759,7 @@ def patch_index(latest_briefing, ed=None):
                          f'<span class="when">{E(x.get("councilName") or x.get("place") or "Essex")}</span></div>'
                          f'<h3>{E(x["headline"])}</h3><p>{E(trunc(str(x.get("summary") or ""), 170))}</p></div></a>' for k, x in own)
             only = ('<style>@media(max-width:700px){#onlyseax .tools{display:none}}</style><section class="block" id="onlyseax"><div class="wrap"><div class="bh"><h2>Only on The Seax<small>Our own reporting from council papers and official data</small></h2>'
-                    '<div class="tools"><a href="/council-watch/">All Council Watch →</a></div></div><div class="grid news-grid">' + oc + '</div></div></section>\n')
+                    '<div class="tools"><a href="/investigates/">Seax Investigates →</a> <a href="/council-watch/">All Council Watch →</a></div></div><div class="grid news-grid">' + oc + '</div></div></section>\n')
         block2 = "<!--seax-only-->" + only + "<!--/seax-only-->"
         # owner's choice (20 Nov 2026): the row sits BELOW News, so it is placed just before the section after News
         new = re.sub(r"<!--seax-only-->.*?<!--/seax-only-->\n?", "", new, count=1, flags=re.S)
@@ -2771,6 +2771,59 @@ def patch_index(latest_briefing, ed=None):
         open(p, "w", encoding="utf-8").write(new)
         return True
     return False
+
+# ---------- Seax Investigates hub (22 Nov 2026) ----------
+def investigates_page(ed, archive):
+    """/investigates/: every piece of The Seax's own reporting (stories marked "original": "report" or "data"),
+    newest first. data/own.json remembers each one after it has left the edition; a story that is taken down
+    (no longer in the archive) drops off the page. Returns (url, lastmod) for the sitemap and whether it changed."""
+    path = os.path.join(ROOT, "data", "own.json")
+    try:
+        own = json.load(open(path, encoding="utf-8"))
+    except Exception:
+        own = {}
+    for k in ("stories", "features", "official", "community", "courts"):
+        for it in ed.get(k) or []:
+            if isinstance(it, dict) and it.get("id") and it.get("headline") and it.get("original") in ("report", "data"):
+                own[it["id"]] = {"kind": it["original"], "h": str(it["headline"]).strip(), "s": trunc(it.get("summary") or "", 230),
+                                 "place": it.get("place") or "Essex", "t": it.get("time") or "", "x": bool(it.get("exclusive"))}
+    own = {k: v for k, v in own.items() if k in archive}
+    changed = write("data/own.json", json.dumps(own, ensure_ascii=False, sort_keys=True, indent=0))
+    mine = sorted(own.items(), key=lambda kv: kv[1].get("t") or "", reverse=True)
+    u = f"{SITE}/investigates/"
+    desc = ("Seax Investigates: original reporting and data journalism from The Seax. Stories we found ourselves in public "
+            "documents and official data about Essex, each checked three times before publication.")
+    rows = []
+    for sid, r in mine:
+        t = parse_t(r.get("t"))
+        lab = ("Seax Investigates" if r.get("kind") == "report" else "Seax Analysis") + (" · Exclusive" if r.get("x") else "")
+        rows.append(f'<a class="cw-row" href="/story/{E(sid)}/"><span class="cw-c">{E(lab)}</span>'
+                    f'<b>{E(r["h"])}</b><span class="cw-m">{E(r.get("place") or "Essex")}{(" · " + E(uk_day(t))) if t else ""}</span>'
+                    f'{("<span class=" + chr(34) + "cw-m" + chr(34) + ">" + E(r["s"]) + "</span>") if r.get("s") else ""}</a>')
+    ld = ('<script type="application/ld+json">' + json.dumps({
+        "@context": "https://schema.org", "@graph": [
+            {"@type": "CollectionPage", "name": "Seax Investigates", "url": u, "description": desc, "inLanguage": "en-GB",
+             "isPartOf": {"@type": "WebSite", "name": "The Seax", "url": SITE + "/"},
+             "mainEntity": {"@type": "ItemList", "itemListElement": [
+                 {"@type": "ListItem", "position": i + 1, "url": f"{SITE}/story/{sid}/"} for i, (sid, _r) in enumerate(mine[:30])]}},
+            {"@type": "BreadcrumbList", "itemListElement": [
+                {"@type": "ListItem", "position": 1, "name": "The Seax", "item": SITE + "/"},
+                {"@type": "ListItem", "position": 2, "name": "Seax Investigates", "item": u}]}]},
+        ensure_ascii=False).replace("</", "<\\/") + "</script>\n")
+    page = f"""<main class="wrap prose cw-hub">
+<div class="kick" style="--c:#a8781a"><span>Seax Investigates</span><span>Our own reporting</span></div>
+<h1>Seax Investigates</h1>
+<p class="standfirst">Original reporting and data journalism from The Seax: stories we found ourselves in public documents and official data about Essex. Every one is checked three times before it is published.</p>
+<div class="cw-list">{"".join(rows) or "<p>Our next investigation is on its way.</p>"}</div>
+<h2>How we do it</h2>
+<p><b>Seax Investigates</b> goes to the primary source, such as a published review, an official register or a government list, and reports what it means for Essex. <b>Seax Analysis</b> works out official figures for the county and its towns, with our own charts and maps. Before anything we originate is published, every figure is recalculated from the source, the key facts are confirmed a second way, and the finished story is read back as a reader would read it. <a href="/about/#triple-check">More on how we check our reporting</a>.</p>
+<p>We also read every Essex council's public papers twice a day: see <a href="/council-watch/">Council Watch</a>.</p>
+<p>Know something we should look into? Email {mlink("news", "Story idea")}. We never publish anything about a person from a tip alone.</p>
+<p><a href="/">Go to the live front page →</a></p>
+</main>"""
+    changed += write("investigates/index.html", head("Seax Investigates: original Essex reporting and data journalism · The Seax", desc, u, "default", extra=ld) +
+                     page + newsletter_box() + foot() + "</body></html>\n")
+    return (u, (mine[0][1].get("t") or "")[:10] if mine else None), changed
 
 # ---------- main ----------
 def main():
@@ -2945,6 +2998,10 @@ def main():
     topic_urls, topic_changed = topic_pages(archive)
     changed += topic_changed
 
+    # Seax Investigates hub: all our own reporting on one page
+    inv_url, inv_changed = investigates_page(ed, archive)
+    changed += inv_changed
+
     # RSS of latest stories
     feed_items = []
     for sec, it in sorted([x for x in items if x[0] in ("news", "sport", "courts", "official", "community", "councilwatch")],
@@ -2970,6 +3027,7 @@ def main():
         urls.append((f"{SITE}/briefing/{x['date']}/", x["date"], None, None))
     for u, lm in area_urls + topic_urls + place_urls:
         urls.append((u, lm, "hourly", "0.8"))
+    urls.append((inv_url[0], inv_url[1] or None, "daily", "0.8"))
     for u, lm in cw_urls:
         urls.append((u, lm, "daily" if u.endswith("/council-watch/") else None, "0.7" if u.endswith("/council-watch/") else None))
     sm = ['<?xml version="1.0" encoding="UTF-8"?>', '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
