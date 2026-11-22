@@ -39,6 +39,13 @@ HOMELESS_HOUSING_RX = re.compile(r"\b(famil(y|ies)|children|kids|temporary (hous
 # Dental stories always show the owner's dental photo (img/topics/dental.jpg). Same headline test as tools/build.py DENTAL_RX.
 # Post Office stories always show the owner's Post Office counter photo (img/topics/postoffice.jpg). Same headline test as tools/build.py POSTOFFICE_RX.
 # Security patrol stories always show the owner's security patrol photo (img/topics/security.jpg). Same headline test as tools/build.py SECURITY_RX.
+# Essex history book stories always show the owner's history books photo (img/topics/historybooks.jpg). Same test as tools/build.py is_historybook.
+HISTBOOK_RX = re.compile(r"\b(books?|authors?|historians?|memoirs?|publish\w*)\b", re.I)
+HISTBOOK_HIST_RX = re.compile(r"\b(histor\w*|heritage|bygone|forgotten|secret|past|wartime|Victorian|Tudor|Roman|Saxon|medieval|Georgian|archives?|through time|memories|curious|witch\w*|workhouses?|centur(y|ies))\b", re.I)
+HISTBOOK_NOT_RX = re.compile(r"\bbook(ed|ing|ings)?\s+(now|your|a|tickets?|places?|early|online|in)\b|\bbookings?\b", re.I)
+def histbook(it):
+    h = str(it.get("headline") or "")
+    return bool(HISTBOOK_RX.search(h) and HISTBOOK_HIST_RX.search(h) and not HISTBOOK_NOT_RX.search(h))
 SECURITY_RX = re.compile(r"\bsecurity (patrol|guard|officer|warden|team|staff|marshal|ranger)s?\b|\bprivate security\b|\bsecurity firms?\b|\b(street|town[- ]centre|city[- ]centre|night[- ]time|community safety) (wardens?|rangers?|marshals?)\b", re.I)
 POSTOFFICE_RX = re.compile(r"\bpost ?offices?\b|\bsub-?postm(aster|istress)\w*|\bpostm(aster|istress)\w*|\bHorizon (IT )?scandal\b", re.I)
 DENTAL_RX = re.compile(r"\b(dentists?|dental|dentistry|orthodont\w*)\b|\bbraces\b(?!\s+(for|itself|themselves|ourselves|yourself)\b)|\btooth decay\b|\b(children'?s|kids'?|baby|milk) teeth\b", re.I)
@@ -284,13 +291,13 @@ def main():
                 photos.pop(it["id"]); changed_rej = True
                 print(f"removed rejected photo: {it['id']}")
             continue
-        if (RAIL_RX.search(str(it.get("headline") or "") + " " + str(it.get("org") or "")) or BUS_RX.search(str(it.get("headline") or "")) or POOL_RX.search(str(it.get("headline") or "")) or (HOMELESS_RX.search(str(it.get("headline") or "")) and not HOMELESS_HOUSING_RX.search(str(it.get("headline") or ""))) or DENTAL_RX.search(str(it.get("headline") or "")) or POSTOFFICE_RX.search(str(it.get("headline") or "")) or SECURITY_RX.search(str(it.get("headline") or "")) or (ROSECROWN_RX.search(str(it.get("headline") or "") + " " + str(it.get("summary") or "")) and re.search(r"\bWrittle\b", " ".join(str(it.get(k) or "") for k in ("headline", "summary", "place")), re.I)) or xmas_cathedral(it)) and it["id"] not in reqs:
+        if (RAIL_RX.search(str(it.get("headline") or "") + " " + str(it.get("org") or "")) or BUS_RX.search(str(it.get("headline") or "")) or POOL_RX.search(str(it.get("headline") or "")) or (HOMELESS_RX.search(str(it.get("headline") or "")) and not HOMELESS_HOUSING_RX.search(str(it.get("headline") or ""))) or DENTAL_RX.search(str(it.get("headline") or "")) or POSTOFFICE_RX.search(str(it.get("headline") or "")) or SECURITY_RX.search(str(it.get("headline") or "")) or histbook(it) or (ROSECROWN_RX.search(str(it.get("headline") or "") + " " + str(it.get("summary") or "")) and re.search(r"\bWrittle\b", " ".join(str(it.get(k) or "") for k in ("headline", "summary", "place")), re.I)) or xmas_cathedral(it)) and it["id"] not in reqs:
             if it["id"] in photos:  # bus stories use the owner's bus photo: drop any stock photo found earlier
                 f = os.path.join(ROOT, "img", "stock", f"{it['id']}.jpg")
                 if os.path.exists(f):
                     os.remove(f)
                 photos.pop(it["id"]); changed_rej = True
-                print(f"removed stock photo from bus, pool, homeless, dental, Post Office, security patrol, Rose and Crown or Christmas cathedral story: {it['id']}")
+                print(f"removed stock photo from bus, pool, homeless, dental, Post Office, security patrol, history book, Rose and Crown or Christmas cathedral story: {it['id']}")
             continue
         kw = str(reqs.get(it["id"]) or it.get("photo") or "").strip()
         cm = str(it.get("commons") or "").strip() if it["id"] not in reqs else ""
