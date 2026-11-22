@@ -1231,5 +1231,18 @@
   "licenseUrl": "",
   "source": "https://www.facebook.com/EPChelmsford",
   "addedBy": "owner, 22 Nov 2026 (Essex Police Chelmsford district CCTV appeal, BP Burnham Road thefts; remove if the man is identified, arrested or charged)"
+ },
+ {
+  "match": "\\bRochford garden waste\\b",
+  "name": "A Rochford District Council kerbside food waste bin",
+  "label": "Picture",
+  "wide": "/img/people/rochford-garden-waste-trial-wide.jpg",
+  "og": "/img/people/rochford-garden-waste-trial-og.jpg",
+  "creator": "Rochford District Council",
+  "provider": "Rochford District Council",
+  "license": "",
+  "licenseUrl": "",
+  "source": "https://www.rochford.gov.uk/winter-garden-waste-pilot-approved-as-council-reviews-future-service",
+  "addedBy": "owner, 22 Nov 2026 (Rochford garden waste winter trial story; picture from Rochford District Council)"
  }
 ]
