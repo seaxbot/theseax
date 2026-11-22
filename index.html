@@ -5009,13 +5009,27 @@ fetch("/data/weekend.json", { cache: "no-store" }).then(r => r.ok ? r.json() : n
 /* one redraw for files that land together (pictures, stock photos, The Weekend), instead of one each (22 Nov 2026) */
 let seaxRsT = 0;
 function seaxRenderSoon(){ clearTimeout(seaxRsT); seaxRsT = setTimeout(() => { try{ renderAll(); }catch(_){} }, 80); }
-function renderAll(){
+/* renderAll(true) is used once, for the first draw of today's edition (22 Nov 2026): the top of the page (pinned
+   special, The Weekend, lead, the three stories under it, ticker) is drawn and shown first, and the long sections
+   below follow a moment later, so the lead appears sooner on a phone. Every other call draws everything at once. */
+let seaxStageT = 0;
+function renderAll(staged){
   document.documentElement.classList.remove("seax-wait");
+  clearTimeout(seaxStageT);
   if(typeof renderPinned === "function") renderPinned();
   if(typeof renderWeekend === "function") renderWeekend();
-  renderChips(); renderTicker(); buildHero(); renderTopList(); renderNews(); renderPinnedNews(); renderFixturesNews(); renderDesk(); renderCouncilWatch(); renderCommunity(); renderSport(); renderTables(); renderWeather();
-  renderEvents(); renderCulture(); renderVital(); renderSpecials(); renderSources(); renderMeta(); afterRender(); updateLiveLine();
-  if(location.hash.startsWith("#story-")) renderStory(location.hash.slice(7));
+  renderChips(); renderTicker(); buildHero(); renderTopList(); renderMeta();
+  let done = false;
+  const rest = () => {
+    if(done) return; done = true; clearTimeout(seaxStageT);
+    renderNews(); renderPinnedNews(); renderFixturesNews(); renderDesk(); renderCouncilWatch(); renderCommunity(); renderSport(); renderTables(); renderWeather();
+    renderEvents(); renderCulture(); renderVital(); renderSpecials(); renderSources(); renderMeta(); afterRender(); updateLiveLine();
+    if(location.hash.startsWith("#story-")) renderStory(location.hash.slice(7));
+  };
+  if(staged === true && !location.hash && typeof requestAnimationFrame === "function"){
+    requestAnimationFrame(() => setTimeout(rest, 0));
+    seaxStageT = setTimeout(rest, 1500);   /* a tab opened in the background gets no animation frame: draw the rest anyway */
+  } else rest();
 }
 
 /* every second: clock. every minute: relative times, countdowns, live line, ticker, weather */
@@ -5113,7 +5127,7 @@ document.addEventListener("visibilitychange", () => { if(document.visibilityStat
       if(!r.ok) throw new Error(r.status);
       const d = await r.json();
       if(d && typeof d === "object" && Array.isArray(d.stories)){
-        if(d.updatedAt !== last){ last = d.updatedAt; ED = normalise(d); window.SEAX_ED_READY = true; renderAll(); }
+        if(d.updatedAt !== last){ const first = !last; last = d.updatedAt; ED = normalise(d); window.SEAX_ED_READY = true; renderAll(first); }
         setFeed("live");
       }
       if(window.SEAX_ED_READY === false){ window.SEAX_ED_READY = true; renderAll(); }
