@@ -2412,6 +2412,95 @@ def whatson_page(ed):
 </main>""" + newsletter_box() + foot() + "</body></html>\n"
 
 
+# Christmas page search (owner, 22 Nov 2026: "a search bar so people can find things near to them easier").
+# Each listing carries its area keys (data-a) and searchable text (data-q). Typing a town or village shows the
+# listings that mention it plus the rest of its area, marked "Nearby"; the area buttons show one area at once.
+AREA_KEYS = [a[0] for a in AREA_PAGES]
+
+def area_keys_for(text):
+    t = str(text or "").lower()
+    return [a[0] for a in AREA_PAGES if any(w in t for w in a[5])]
+
+def xmas_search_box():
+    towns = {}
+    for key, _slug, label, _t, _d, words, _ in AREA_PAGES:
+        for w in words:
+            towns[w] = key
+    labels = {a[0]: a[2] for a in AREA_PAGES}
+    chips = '<button type="button" class="xs-chip on" data-xa="">All Essex</button>' + "".join(
+        f'<button type="button" class="xs-chip" data-xa="{E(k)}">{E(labels[k])}</button>' for k in AREA_KEYS)
+    nice = lambda w: re.sub(r"(?<=[ -])(On|Le|De|La)(?=[ -])", lambda m: m.group(1).lower(), w.title())
+    opts = "".join(f'<option value="{E(nice(w))}">' for w in sorted(towns))
+    return f"""<div class="xs" role="search">
+<label for="xsQ" class="xs-l">Find Christmas events near you</label>
+<div class="xs-row"><input id="xsQ" type="search" list="xsTowns" autocomplete="off" placeholder="Type your town or village, e.g. Witham or Leigh-on-Sea, or an event"><button type="button" id="xsClear" class="xs-clear" hidden>Clear</button></div>
+<datalist id="xsTowns">{opts}</datalist>
+<div class="xs-chips" aria-label="Or pick your area">{chips}</div>
+<p id="xsCount" class="xs-count" aria-live="polite"></p>
+</div>
+<style>
+.xs{{background:#fbf3f3;border:1px solid #f0d6d8;border-radius:14px;padding:14px 16px;margin:14px 0 18px}}
+.xs-l{{display:block;font-weight:700;margin-bottom:8px;color:#8e0d18}}
+.xs-row{{display:flex;gap:8px}}
+.xs-row input{{flex:1;min-width:0;font:inherit;font-size:16px;padding:11px 14px;border:1.5px solid #d9b3b6;border-radius:10px;background:#fff}}
+.xs-row input:focus{{outline:none;border-color:#c8102e;box-shadow:0 0 0 3px rgba(200,16,46,.15)}}
+.xs-clear{{font:inherit;font-weight:600;padding:0 14px;border:1.5px solid #d9b3b6;border-radius:10px;background:#fff;cursor:pointer}}
+.xs-chips{{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}}
+.xs-chip{{font:inherit;font-size:13.5px;padding:6px 11px;border-radius:99px;border:1px solid #e2c5c8;background:#fff;cursor:pointer;color:#333}}
+.xs-chip.on{{background:#c8102e;border-color:#c8102e;color:#fff;font-weight:600}}
+.xs-count{{margin:10px 0 0;font-size:14px;color:#555;min-height:1em}}
+.xs-none{{padding:14px 16px;border:1px dashed #d9b3b6;border-radius:12px;margin:12px 0}}
+.cw-row .xs-near{{display:inline-block;margin-left:6px;font-size:11px;font-weight:700;letter-spacing:.03em;text-transform:uppercase;color:#8e0d18;background:#fbe9ea;border-radius:99px;padding:1px 7px}}
+</style>
+<script>
+(function(){{
+  var TOWNS = {json.dumps(towns, ensure_ascii=False)};
+  var LABEL = {json.dumps(labels, ensure_ascii=False)};
+  var q = document.getElementById("xsQ"), clr = document.getElementById("xsClear"), cnt = document.getElementById("xsCount"),
+      none = document.getElementById("xsNone"), jump = document.getElementById("xsJump"),
+      rows = [].slice.call(document.querySelectorAll(".cw-row[data-q]")), secs = [].slice.call(document.querySelectorAll(".xs-sec")),
+      chips = [].slice.call(document.querySelectorAll(".xs-chip")), area = "";
+  function norm(t){{ return String(t || "").toLowerCase().replace(/[^a-z0-9 ]+/g, " ").replace(/\\s+/g, " ").trim(); }}
+  function townArea(t){{
+    if(!t) return "";
+    if(TOWNS[t]) return TOWNS[t];
+    var best = "", bl = 0;
+    for(var w in TOWNS){{ var nw = norm(w); if(nw.length > 3 && (t.indexOf(nw) === 0 || nw.indexOf(t) === 0) && nw.length > bl){{ best = TOWNS[w]; bl = nw.length; }} }}
+    return t.length >= 4 ? best : "";
+  }}
+  function run(){{
+    var t = norm(q.value), ta = townArea(t), shown = 0, direct = 0;
+    clr.hidden = !q.value;
+    rows.forEach(function(r){{
+      var hay = norm(r.getAttribute("data-q")), ar = (r.getAttribute("data-a") || "").split(" ");
+      var inArea = !area || ar.indexOf(area) > -1;
+      var hit = !t || hay.indexOf(t) > -1, near = !!(t && !hit && ta && ar.indexOf(ta) > -1);
+      var ok = inArea && (hit || near);
+      r.hidden = !ok;
+      var tag = r.querySelector(".xs-near");
+      if(near && ok){{ if(!tag){{ tag = document.createElement("span"); tag.className = "xs-near"; tag.textContent = "Nearby"; r.querySelector(".cw-c").appendChild(tag); }} }}
+      else if(tag) tag.remove();
+      if(ok){{ shown++; if(t && hit) direct++; }}
+    }});
+    secs.forEach(function(s){{ s.hidden = !s.querySelector(".cw-row:not([hidden])"); }});
+    var filtering = !!(t || area);
+    none.hidden = !filtering || shown > 0; jump.hidden = filtering;
+    if(!filtering){{ cnt.textContent = ""; return; }}
+    var where = area ? LABEL[area] : (ta ? LABEL[ta] + " area" : "");
+    cnt.textContent = shown + (shown === 1 ? " event" : " events") + (t ? ' for "' + q.value.trim() + '"' : "") + (where ? " in " + where : "") + (t && ta && shown > direct ? " (" + (shown - direct) + " nearby)" : "") + ".";
+  }}
+  q.addEventListener("input", run);
+  clr.addEventListener("click", function(){{ q.value = ""; run(); q.focus(); }});
+  chips.forEach(function(c){{ c.addEventListener("click", function(){{
+    area = c.getAttribute("data-xa"); chips.forEach(function(x){{ x.classList.toggle("on", x === c); }}); run();
+    try{{ localStorage.setItem("seax-xmas-area", area); }}catch(_){{}}
+  }}); }});
+  try{{ var saved = localStorage.getItem("seax-xmas-area"); if(saved && LABEL[saved]){{ chips.forEach(function(c){{ if(c.getAttribute("data-xa") === saved) c.click(); }}); }} }}catch(_){{}}
+  var m = /[?&]q=([^&]+)/.exec(location.search); if(m){{ q.value = decodeURIComponent(m[1].replace(/\\+/g, " ")); }}
+  run();
+}})();
+</script>"""
+
 XMAS_HTML = None
 
 def christmas_page(ed):
@@ -2464,12 +2553,14 @@ def christmas_page(ed):
         when = fmt(sd) if sd == edd else (f"Until {fmt(edd)}" if sd <= today else f"{fmt(sd)} to {fmt(edd)}")
         place = ", ".join(x for x in (str(e.get("venue") or "").strip(), str(e.get("where") or "").strip()) if x)
         bits = [x for x in (str(e.get("time") or "").strip(), str(e.get("price") or "").strip()) if x]
-        return (f'<a class="cw-row" href="{E(safe_url(e.get("url")))}" target="_blank" rel="noopener"><span class="cw-c">{E(place or "Essex")}</span>'
+        areas = [a for a in (e.get("areas") or []) if a in AREA_KEYS] or area_keys_for(" ".join([place, str(e.get("title") or "")]))
+        hay = " ".join([place, str(e.get("title") or ""), str(e.get("blurb") or ""), str(e.get("cat") or "")]).lower()
+        return (f'<a class="cw-row" data-a="{E(" ".join(areas))}" data-q="{E(hay)}" href="{E(safe_url(e.get("url")))}" target="_blank" rel="noopener"><span class="cw-c">{E(place or "Essex")}</span>'
                 f'<b>{E(e["title"])}</b><span class="cw-m">{E(when)}{(" · " + E(" · ".join(bits))) if bits else ""}</span>'
                 f'<span class="cw-m">{E(e.get("blurb") or "")}</span></a>')
     order = [g for g, _ in groups] + ["More festive events"]
-    body = "".join(f'<h2 id="{re.sub(r"[^a-z]+", "-", g.lower()).strip("-")}">{E(g)}</h2><div class="cw-list">'
-                   f'{"".join(row(*r) for r in sorted(buckets[g], key=lambda x: (max(x[0], today), x[1], str(x[2].get("title")))))}</div>'
+    body = "".join(f'<section class="xs-sec"><h2 id="{re.sub(r"[^a-z]+", "-", g.lower()).strip("-")}">{E(g)}</h2><div class="cw-list">'
+                   f'{"".join(row(*r) for r in sorted(buckets[g], key=lambda x: (max(x[0], today), x[1], str(x[2].get("title")))))}</div></section>'
                    for g in order if buckets[g])
     jump = " · ".join(f'<a href="#{re.sub(r"[^a-z]+", "-", g.lower()).strip("-")}">{E(g)}</a>' for g in order if buckets[g])
     short = {"Christmas lights switch-ons": "lights switch-ons", "Light trails and illuminations": "light trails", "Santa, grottos and family days": "Santa's grottos",
@@ -2498,7 +2589,9 @@ def christmas_page(ed):
 <div class="kick"><span><a href="/whats-on/">What's On</a></span><span>Christmas {year}</span></div>
 <h1>Christmas in Essex {year}</h1>
 <p class="standfirst">{E(kinds[0].upper() + kinds[1:])} across the county: {n} festive things to do, soonest first in each section. Each listing links to the organiser or venue, so check there before you travel. To list an event, email {mlink("events", "Christmas event listing")}.</p>
-<p class="area-links">{jump}</p>
+{xmas_search_box()}
+<p class="area-links" id="xsJump">{jump}</p>
+<div id="xsNone" class="xs-none" hidden>Nothing matches that yet. Try a nearby town, or pick your area above.</div>
 {body}
 <p><a href="/whats-on/">Everything that's on in Essex →</a> · <a href="/">Go to the live front page →</a></p>
 </main>""" + newsletter_box() + foot() + "</body></html>\n"
