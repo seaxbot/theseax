@@ -155,14 +155,17 @@ def merge_inquests(out, items, desk="inquest"):
     n = 0
     for it in items:
         if it.get("remove"):
-            for other in ("stories", "courts"):
+            for other in ("stories", "courts", "official", "community"):
                 out[other] = [x for x in out.get(other) or [] if not (x.get("id") == it["id"] and x.get("desk") == desk)]
             n += 1
             continue
-        sec = it.get("section") if it.get("section") in ("stories", "courts") else "courts"
+        # owner rewrites of "official" and "community" items stay in their own section (owner, 22 Nov 2026: research
+        # every short story, including the official and community lists)
+        okay = ("stories", "courts", "official", "community") if desk == "owner" else ("stories", "courts")
+        sec = it.get("section") if it.get("section") in okay else "courts"
         it = {k: v for k, v in it.items() if k != "section"}
         it["desk"] = desk
-        for other in ("stories", "courts"):
+        for other in ("stories", "courts", "official", "community"):
             out[other] = [x for x in out.get(other) or [] if x.get("id") != it["id"]]
         out.setdefault(sec, []).insert(0, it)
         n += 1
@@ -176,7 +179,7 @@ def keep_inquests(out, live):
     have = {x.get("id") for k in ("stories", "courts", "official", "community") for x in out.get(k) or []}
     cutoff = datetime.now(timezone.utc) - timedelta(hours=INQ_KEEP_H)
     back = 0
-    for sec in ("stories", "courts"):
+    for sec in ("stories", "courts", "official", "community"):
         for x in live.get(sec) or []:
             if x.get("desk") in KEEP_DESKS and x.get("id") not in have and (story_t(x) or cutoff) > cutoff:
                 out.setdefault(sec, []).append(x); back += 1
