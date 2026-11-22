@@ -1,6 +1,21 @@
 [
  {
   "ids": [
+   "a12-northbound-closed-junction-16-galleywood-crash-22-november"
+  ],
+  "name": "Google Maps traffic view of the closed A12 northbound at junction 16, Galleywood",
+  "label": "Map",
+  "wide": "/img/people/a12-j16-galleywood-closure-map-wide.jpg",
+  "og": "/img/people/a12-j16-galleywood-closure-map-og.jpg",
+  "creator": "Google Maps",
+  "provider": "",
+  "license": "",
+  "licenseUrl": "",
+  "source": "",
+  "addedBy": "owner, 22 Nov 2026 19:24 (owner-supplied Google Maps screenshot of the closure for this A12 J16 crash story; credit Google Maps; owner's choice overrides the police-photo rule for this story)"
+ },
+ {
+  "ids": [
    "essex-oyster-farmers-eu-trade-uk-eu-deal-class-b"
   ],
   "name": "Oyster fisherman with a net of oysters",
