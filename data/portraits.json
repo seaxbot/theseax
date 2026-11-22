@@ -1218,5 +1218,18 @@
     "creator": "Colchester City Council"
    }
   ]
+ },
+ {
+  "match": "^(?!.*\\b(?:[Aa]rrest\\w*|[Cc]harged|[Ii]dentified|[Ff]ound|[Tt]raced)\\b).*\\bSouth Woodham Ferrers BP thefts\\b",
+  "name": "CCTV images of the man Essex Police want to speak to over thefts from the BP shop in Burnham Road, South Woodham Ferrers",
+  "label": "Picture",
+  "wide": "/img/people/south-woodham-ferrers-bp-thefts-cctv-wide.jpg",
+  "og": "/img/people/south-woodham-ferrers-bp-thefts-cctv-og.jpg",
+  "creator": "Essex Police",
+  "provider": "Essex Police",
+  "license": "",
+  "licenseUrl": "",
+  "source": "https://www.facebook.com/EPChelmsford",
+  "addedBy": "owner, 22 Nov 2026 (Essex Police Chelmsford district CCTV appeal, BP Burnham Road thefts; remove if the man is identified, arrested or charged)"
  }
 ]
