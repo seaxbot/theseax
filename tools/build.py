@@ -845,7 +845,7 @@ def foot():
   {('<p class="area-links"><b>Running stories:</b> ' + place_links("issue") + '</p>') if place_links("issue") else ''}
   <p><b>The Seax</b> brings together Essex news, sport and life from trusted local and national sources. Every story links to the original reporting.</p>
   <p class="foot-mail"><b>Contact The Seax:</b> news tips {mlink("news")} · sport {mlink("sport")} · events {mlink("events")} · community and charity {mlink("community")} · corrections {mlink("corrections")} · everything else {mlink("info")}</p>
-  <p><a href="/about/">About The Seax</a> · <a href="/investigates/">Seax Investigates</a> · <a href="/whats-on/">What's on</a> · <a href="/podcast.xml">Podcast feed</a> · <a href="/standards/">Editorial standards</a> · <a href="/corrections/">Corrections</a> · <a href="/contact/">Contact us</a> · <a href="/briefing/">Morning briefing</a> · <a href="/feed.xml">RSS</a>{' · ' + ' · '.join(social) if social else ''}</p>
+  <p><a href="/about/">About The Seax</a> · <a href="/investigates/">Seax Investigates</a> · <a href="/whats-on/">What's on</a>{' · <a href="/whats-on/christmas/">Christmas in Essex</a>' if XMAS_HTML else ''} · <a href="/podcast.xml">Podcast feed</a> · <a href="/standards/">Editorial standards</a> · <a href="/corrections/">Corrections</a> · <a href="/contact/">Contact us</a> · <a href="/briefing/">Morning briefing</a> · <a href="/feed.xml">RSS</a>{' · ' + ' · '.join(social) if social else ''}</p>
 </div></footer>
 """
 
@@ -2391,8 +2391,101 @@ def whatson_page(ed):
 <div class="kick"><span><a href="/">The Seax</a></span><span>What's On</span></div>
 <h1>What's on in Essex</h1>
 <p class="standfirst">Events, shows, exhibitions and days out across the county, soonest first. Each listing links to the organiser or venue. To list an event, email {mlink("events", "Event listing")}.</p>
+{'<p><b><a href="/whats-on/christmas/">Christmas in Essex: lights switch-ons, markets, light trails and pantos →</a></b></p>' if XMAS_HTML else ''}
 {html_groups or "<p>No listings at the moment. Check back soon.</p>"}
 <p><a href="/">Go to the live front page →</a></p>
+</main>""" + newsletter_box() + foot() + "</body></html>\n"
+
+
+XMAS_HTML = None
+
+def christmas_page(ed):
+    """/whats-on/christmas/ (22 Nov 2026): the Christmas listings already in What's On and Culture, grouped the way people
+    search for them (lights switch-ons, light trails, markets, Santa, ice rinks, pantos, carols). Built from 1 November
+    to 6 January and only when there are at least 8 listings; returns None otherwise. Nothing here is new reporting:
+    every line is an existing listing and links to its organiser."""
+    today = NOW.astimezone(UK).date()
+    if not (today.month in (11, 12) or (today.month == 1 and today.day <= 6)):
+        return None
+    year = today.year if today.month != 1 else today.year - 1
+    rx_any = re.compile(r"christmas|xmas|santa|grotto|father christmas|panto|festive|nativity|carol|lumina|illuminat|light trail|lights? switch|switch.on|ice rink|on ice|winter wonderland|enlightened|\bglow\b|messiah|wreath|elf\b|elves|reindeer", re.I)
+    groups = [
+        ("Christmas lights switch-ons", re.compile(r"switch.?on|lights? switch|lighting.up|light up (?!a life|the night)|lights and festival", re.I)),
+        ("Light trails and illuminations", re.compile(r"light trail|lumina|illuminat|enlightened|\bglow\b|lantern|winter lights|light up the night", re.I)),
+        ("Santa, grottos and family days", re.compile(r"santa|grotto|father christmas|elf\b|elves|reindeer|winter wonderland", re.I)),
+        ("Ice rinks", re.compile(r"ice rink|on ice|ice skat", re.I)),
+        ("Christmas markets and fairs", re.compile(r"market|fair\b|fayre|bazaar|craft", re.I)),
+        ("Pantomimes", re.compile(r"panto", re.I)),
+        ("Carols, concerts and shows", re.compile(r"carol|concert|messiah|choir|nativity|nutcracker|orchestra", re.I)),
+    ]
+    buckets = {name: [] for name, _ in groups}; buckets["More festive events"] = []
+    seen, n = set(), 0
+    for lst in (ed.get("events") or [], ed.get("culture") or []):
+        for e in lst:
+            if not isinstance(e, dict) or not e.get("title") or not safe_url(e.get("url")):
+                continue
+            st, en = parse_t(e.get("start")), parse_t(e.get("end"))
+            if not st:
+                continue
+            sd = st.astimezone(UK).date(); edd = en.astimezone(UK).date() if en else sd
+            text = " ".join(str(e.get(k) or "") for k in ("title", "blurb", "cat"))
+            if edd < today or not (e.get("cat") in ("Christmas", "Panto") or rx_any.search(text)):
+                continue
+            key = (str(e["title"]).strip().lower(), str(e.get("where") or "").lower())
+            if key in seen:
+                continue
+            seen.add(key); n += 1
+            head_text = str(e["title"]) + " " + str(e.get("cat") or "")
+            if re.search(r"remembrance|light up a life|memorial", text, re.I):   # hospice remembrance evenings are not switch-ons
+                name = "More festive events"
+            else:
+                name = next((g for g, rx in groups if rx.search(head_text)), None) or next((g for g, rx in groups if rx.search(text)), "More festive events")
+            buckets[name].append((sd, edd, e))
+    if n < 8:
+        return None
+    url = f"{SITE}/whats-on/christmas/"
+    fmt = lambda d: f"{d.strftime('%a')} {d.day} {d.strftime('%b')}"
+    def row(sd, edd, e):
+        when = fmt(sd) if sd == edd else (f"Until {fmt(edd)}" if sd <= today else f"{fmt(sd)} to {fmt(edd)}")
+        place = ", ".join(x for x in (str(e.get("venue") or "").strip(), str(e.get("where") or "").strip()) if x)
+        bits = [x for x in (str(e.get("time") or "").strip(), str(e.get("price") or "").strip()) if x]
+        return (f'<a class="cw-row" href="{E(safe_url(e.get("url")))}" target="_blank" rel="noopener"><span class="cw-c">{E(place or "Essex")}</span>'
+                f'<b>{E(e["title"])}</b><span class="cw-m">{E(when)}{(" · " + E(" · ".join(bits))) if bits else ""}</span>'
+                f'<span class="cw-m">{E(e.get("blurb") or "")}</span></a>')
+    order = [g for g, _ in groups] + ["More festive events"]
+    body = "".join(f'<h2 id="{re.sub(r"[^a-z]+", "-", g.lower()).strip("-")}">{E(g)}</h2><div class="cw-list">'
+                   f'{"".join(row(*r) for r in sorted(buckets[g], key=lambda x: (max(x[0], today), x[1], str(x[2].get("title")))))}</div>'
+                   for g in order if buckets[g])
+    jump = " · ".join(f'<a href="#{re.sub(r"[^a-z]+", "-", g.lower()).strip("-")}">{E(g)}</a>' for g in order if buckets[g])
+    short = {"Christmas lights switch-ons": "lights switch-ons", "Light trails and illuminations": "light trails", "Santa, grottos and family days": "Santa's grottos",
+             "Ice rinks": "ice rinks", "Christmas markets and fairs": "Christmas markets", "Pantomimes": "pantomimes", "Carols, concerts and shows": "carols and concerts"}
+    have = [short[g] for g in order if buckets[g] and g in short]
+    kinds = (", ".join(have[:-1]) + " and " + have[-1]) if len(have) > 1 else (have[0] if have else "festive events")
+    desc = f"Christmas in Essex {year}: {n} {kinds} across the county, with dates, times, prices and booking links."
+    evs = []
+    for g in order:
+        for sd, edd, e in buckets[g]:
+            st, en = parse_t(e.get("start")), parse_t(e.get("end"))
+            where = str(e.get("where") or "").strip()
+            evs.append({"@type": "Event", "name": str(e["title"]).strip(), "startDate": iso(st), **({"endDate": iso(en)} if en else {}),
+                        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+                        "location": {"@type": "Place", "name": str(e.get("venue") or where or "Essex").strip(),
+                                     "address": {"@type": "PostalAddress", "addressLocality": where or "Essex", "addressRegion": "Essex", "addressCountry": "GB"}},
+                        **({"description": str(e["blurb"]).strip()} if e.get("blurb") else {}), "url": safe_url(e.get("url"))})
+    ld = ('<script type="application/ld+json">' + json.dumps({"@context": "https://schema.org", "@graph": [
+        {"@type": "CollectionPage", "name": f"Christmas in Essex {year}", "url": url, "description": desc, "inLanguage": "en-GB",
+         "isPartOf": {"@type": "WebSite", "name": "The Seax", "url": SITE + "/"}},
+        {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "The Seax", "item": SITE + "/"},
+                                                         {"@type": "ListItem", "position": 2, "name": "What's on in Essex", "item": SITE + "/whats-on/"},
+                                                         {"@type": "ListItem", "position": 3, "name": f"Christmas in Essex {year}", "item": url}]}] + evs[:60]},
+        ensure_ascii=False).replace("</", "<\\/") + "</script>\n")
+    return head(f"Christmas in Essex {year}: lights switch-ons, markets, light trails and pantos · The Seax", desc, url, "default", extra=ld) + f"""<main class="wrap prose cw-hub">
+<div class="kick"><span><a href="/whats-on/">What's On</a></span><span>Christmas {year}</span></div>
+<h1>Christmas in Essex {year}</h1>
+<p class="standfirst">{E(kinds[0].upper() + kinds[1:])} across the county: {n} festive things to do, soonest first in each section. Each listing links to the organiser or venue, so check there before you travel. To list an event, email {mlink("events", "Christmas event listing")}.</p>
+<p class="area-links">{jump}</p>
+{body}
+<p><a href="/whats-on/">Everything that's on in Essex →</a> · <a href="/">Go to the live front page →</a></p>
 </main>""" + newsletter_box() + foot() + "</body></html>\n"
 
 
@@ -2860,6 +2953,13 @@ def main():
         open(a.preview_briefing, "w", encoding="utf-8").write(briefing_page(b).replace(f'href="/assets/page.css?v={PAGE_CSS_V}"', f'href="file://{ROOT}/assets/page.css"'))
         print("preview written"); return
 
+    # Christmas in Essex page: worked out first so the footer and What's On can link to it while it is up
+    global XMAS_HTML
+    try:
+        XMAS_HTML = christmas_page(ed)
+    except Exception as e:
+        XMAS_HTML = None; print("christmas page not built:", type(e).__name__, e)
+
     # owner's source and copyright policy (tools/policy.py): no features, link-only outlets,
     # single-source length cap, opt-outs. publish.py applies it to edition.json too.
     sys.path.insert(0, os.path.join(ROOT, "tools"))
@@ -2954,6 +3054,8 @@ def main():
             changed += 1
     except Exception as e:  # a listings page must never stop the build
         print("whats-on page not built:", type(e).__name__, e)
+    if XMAS_HTML:
+        changed += write("whats-on/christmas/index.html", XMAS_HTML)
     if write("standards/index.html", standards_page()):
         changed += 1
     # corrections log: the edition's "corrections" list (ops/newsroom.md, CORRECTIONS LOG) is merged into a permanent file
@@ -3050,6 +3152,8 @@ def main():
     for u, lm in area_urls + topic_urls + place_urls:
         urls.append((u, lm, "hourly", "0.8"))
     urls.append((inv_url[0], inv_url[1] or None, "daily", "0.8"))
+    if XMAS_HTML:
+        urls.append((SITE + "/whats-on/christmas/", NOW.date().isoformat(), "daily", "0.8"))
     for u, lm in cw_urls:
         urls.append((u, lm, "daily" if u.endswith("/council-watch/") else None, "0.7" if u.endswith("/council-watch/") else None))
     sm = ['<?xml version="1.0" encoding="UTF-8"?>', '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
