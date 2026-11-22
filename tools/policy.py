@@ -83,8 +83,10 @@ SOCIAL_HOSTS = {"facebook.com", "m.facebook.com", "x.com", "twitter.com", "insta
 OFFICIAL_SOCIAL = {"essexpoliceuk", "essexpolice", "ecfrs", "essexfire", "essexfirerescue",
                    "essexcountyfireandrescueservice", "eastenglandamb", "eeastnhs", "eeastambulance",
                    "hmcoastguard", "maritimecoastguardagency", "mcga_uk", "rnli", "ehaat",
-                   "essexhertsairambulance", "btp", "britishtransportpolice"}
-EMERGENCY_SOURCE = re.compile(r"\b(police|fire|ambulance|coastguard|rnli|lifeboat|air ambulance|"
+                   "essexhertsairambulance", "btp", "britishtransportpolice",
+                   # National Highways' own accounts, like its website (nationalhighways.co.uk) above (owner approved, 22 Nov 2026)
+                   "highwayseast", "nationalhighways"}
+EMERGENCY_SOURCE = re.compile(r"\b(police|fire|ambulance|coastguard|rnli|lifeboat|air ambulance|national highways|"
                               r"mountain rescue|search and rescue)\b", re.I)
 
 
