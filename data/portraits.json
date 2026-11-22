@@ -927,26 +927,26 @@
   "source": "",
   "more": [
    {
-    "name": "The Great Baddow Hoard of Iron Age gold coins",
+    "name": "The Great Baddow Coin Hoard on display at the Museum of Chelmsford",
     "label": "Picture",
-    "wide": "/img/people/great-baddow-hoard-wide.jpg",
-    "creator": "Museum of Chelmsford"
+    "wide": "/img/people/great-baddow-hoard-display-wide.jpg",
+    "creator": "The Seax"
    }
   ],
-  "addedBy": "owner, 15 Nov 2026 (schools box story only; museum's own picture, owner says permission has been sought for the children's faces; the coins picture follows the story text)"
+  "addedBy": "owner, 15 Nov 2026 (schools box story only; museum's own picture, owner says permission has been sought for the children's faces; the hoard display picture follows the story text)"
  },
  {
-  "name": "The Great Baddow Hoard of Iron Age gold coins",
+  "name": "The Great Baddow Coin Hoard on display at the Museum of Chelmsford",
   "label": "Picture",
-  "wide": "/img/people/great-baddow-hoard-wide.jpg",
-  "og": "/img/people/great-baddow-hoard-og.jpg",
-  "creator": "Museum of Chelmsford",
-  "provider": "Museum of Chelmsford",
+  "wide": "/img/people/great-baddow-hoard-display-wide.jpg",
+  "og": "/img/people/great-baddow-hoard-display-og.jpg",
+  "creator": "The Seax",
+  "provider": "",
   "license": "",
   "licenseUrl": "",
   "source": "",
-  "addedBy": "owner, 15 Nov 2026 (use for all Great Baddow Hoard stories; credit: Museum of Chelmsford)",
-  "match": "\\b[Bb]addow [Hh]oard\\b"
+  "addedBy": "owner, 22 Nov 2026 (owner's own photo of the Great Baddow Coin Hoard display case; use for all Great Baddow Hoard stories; replaces the Museum of Chelmsford coins picture supplied 15 Nov 2026)",
+  "match": "\\b[Bb]addow(?:['’]s)? (?:(?:[Cc]oin|[Gg]old|[Gg]old coin|Iron Age gold|Iron Age gold coin) )?[Hh]oard\\b"
  },
  {
   "match": "\\bMuseum of Chelmsford\\b|\\bChelmsford(?: City)? [Mm]useum\\b",
@@ -959,7 +959,7 @@
   "license": "",
   "licenseUrl": "",
   "source": "",
-  "addedBy": "owner, 15 Nov 2026 (use for Museum of Chelmsford stories; not the schools hoard box story, which keeps its pupils picture, and Great Baddow Hoard stories keep the coins picture because their entries come first; credit: Museum of Chelmsford; owner is fine with the visitors and staff being recognisable)"
+  "addedBy": "owner, 15 Nov 2026 (use for Museum of Chelmsford stories; not the schools hoard box story, which keeps its pupils picture, and Great Baddow Hoard stories keep the hoard display picture because their entries come first; credit: Museum of Chelmsford; owner is fine with the visitors and staff being recognisable)"
  },
  {
   "ids": [
