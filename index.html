@@ -102,6 +102,16 @@ nav.main button.adv:hover{background:var(--red)}
 .areas .wrap{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
 .areas .lbl{font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-right:6px}
 .chip{border:1px solid var(--line);background:var(--card);border-radius:99px;padding:6px 13px;font-size:13px;font-weight:600;color:var(--ink2)}
+/* My Essex on a phone: one row of area chips you swipe sideways, so the news starts higher up the screen; the Listen pill sits on the line below (owner, 22 Nov 2026). Desktop is unchanged. */
+.chiprow{display:contents}
+@media (max-width:640px){
+  .areas{padding:12px 0 2px}
+  .areas .wrap{row-gap:10px}
+  .chiprow{display:flex;gap:8px;align-items:center;flex:0 0 100%;max-width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;overscroll-behavior-x:contain;-webkit-mask-image:linear-gradient(90deg,#000 88%,transparent);mask-image:linear-gradient(90deg,#000 88%,transparent);padding:1px 28px 1px 0}
+  .chiprow::-webkit-scrollbar{display:none}
+  .chiprow .chip{flex:none;white-space:nowrap}
+  .chiprow .lbl{flex:none}
+}
 .chip:hover{border-color:var(--ink2)}
 .chip.on{background:var(--ink);color:#fff;border-color:var(--ink)}
 
@@ -4387,8 +4397,11 @@ const hostOf = u => { try{ return new URL(u).hostname.replace(/^www\./,""); }cat
 
 function renderChips(){
   const row = $("#areaChips"), bl = document.getElementById("bulletin");   /* the Listen pill lives at the end of this row (owner's choice) */
-  row.innerHTML = `<span class="lbl">My Essex</span>` + AREAS.map(([k,v]) => `<button class="chip${k===AREA?" on":""}" data-area="${k}">${esc(v)}</button>`).join("");
+  row.innerHTML = `<div class="chiprow"><span class="lbl">My Essex</span>` + AREAS.map(([k,v]) => `<button class="chip${k===AREA?" on":""}" data-area="${k}">${esc(v)}</button>`).join("") + `</div>`;
   if(bl) row.appendChild(bl);
+  /* on a phone the chips are one row you swipe sideways: keep the chosen area in view */
+  const cr = row.querySelector(".chiprow"), on = cr && cr.querySelector(".chip.on");
+  if(cr && on && cr.scrollWidth > cr.clientWidth){ const r = on.getBoundingClientRect(), c = cr.getBoundingClientRect(); if(r.right > c.right - 30) cr.scrollLeft += r.right - c.right + 50; }
 }
 
 function renderTicker(){
