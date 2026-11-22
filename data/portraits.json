@@ -1179,8 +1179,7 @@
    "christmas-in-essex-guide-seax-festive-events"
   ],
   "name": "Christmas lights and crowds in Chelmsford city centre",
-  "label": "Picture",
-  "caption": "Christmas lights, the tree and the crowds in Chelmsford city centre",
+  "label": "",
   "wide": "/img/people/christmas-in-essex-guide-wide.jpg",
   "og": "/img/people/christmas-in-essex-guide-og.jpg",
   "creator": "",
@@ -1188,7 +1187,8 @@
   "license": "",
   "licenseUrl": "",
   "source": "",
-  "addedBy": "owner, 22 Nov 2026 (owner-supplied picture collage for the Christmas in Essex guide story)"
+  "addedBy": "owner, 22 Nov 2026 (owner-supplied picture collage for the Christmas in Essex guide story); 22 Nov 2026 14:18 owner asked to remove the word \"Picture\" from it, so it now shows with no label or caption",
+  "noCaption": true
  },
  {
   "ids": [
