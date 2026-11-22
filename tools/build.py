@@ -1673,6 +1673,19 @@ def own_banner(it):
                 "Exclusive" if it.get("exclusive") else "" if inv else "Original data journalism") + '</div>')
 
 
+def link_box(it):
+    """A bold boxed link inside a story to a page on The Seax itself (owner, 22 Nov 2026, for the Christmas in Essex
+    guide story: "There's no link to the page!! Make it bold - in a box"). Item field "box": {"title", "text", "url",
+    "button"}; the url must be a page on this site."""
+    b = it.get("box")
+    if not isinstance(b, dict): return ""
+    u = str(b.get("url") or "")
+    if not (u.startswith("/") and not u.startswith("//")) and not u.startswith("https://theseax.com/"): return ""
+    return (f'<a class="linkbox" href="{E(u)}" style="display:block;margin:1.2em 0;padding:18px 20px;border:3px solid #c8102e;border-radius:12px;'
+            f'background:#fdf3f4;color:#111;text-decoration:none"><b style="display:block;font-size:1.25em;line-height:1.25">{E(b.get("title") or "")}</b>'
+            + (f'<span style="display:block;margin:.35em 0 .8em">{E(b.get("text"))}</span>' if b.get("text") else '<span style="display:block;height:.6em"></span>')
+            + f'<span style="display:inline-block;background:#c8102e;color:#fff;font-weight:800;border-radius:99px;padding:11px 20px">{E(b.get("button") or "Open the page")} →</span></a>')
+
 def original_note(it, src, corr):
     """Footer for The Seax's own reporting: it is not a summary of someone else's work."""
     what = "analysis" if it.get("original") == "data" else "reporting"
@@ -1868,7 +1881,9 @@ def story_page(sec, it, more):
   <div class="meta">{' <span class="dot">·</span> '.join(meta)}</div>{UPD_AGO_JS if any('class="ago"' in m for m in meta) else ''}
   {share_bar(url, title)}
   {fig}
+  {link_box(it)}
   {body_with_charts(it, body, opening=summary)}{fig_more}
+  {link_box(it)}
   {('<h2>Key points</h2><ul class="points">' + ''.join(f'<li>{E(p)}</li>' for p in points) + '</ul>') if points else ''}
   <!-- Article End -->
   {interested}

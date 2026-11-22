@@ -4812,6 +4812,9 @@ function renderStory(id){
           .map(w => { seaxNeedLookup(); return `<div class="seax-lookup" data-src="${esc(w.src)}"></div>`; }).join("")).join(""); })()}</div>` : ""}
     ${(() => { const pt = portraitOf(s); const m = pt && Array.isArray(pt.more) ? pt.more.filter(x => x && x.wide) : []; /* further pictures after the text, as on the built story page (16 Nov 2026) */
       return m.map(x => `<figure class="sart"><div class="sart-img"><img src="${esc(x.wide)}?v=1" alt="${esc(x.name || "")}" loading="lazy" style="display:block;width:100%;height:auto"></div><figcaption><b>${esc(x.label || "Picture")}</b>${x.creator ? ": " + esc(x.creator) : ""}</figcaption></figure>`).join(""); })()}
+    ${(() => { /* bold boxed link to a page on this site (owner, 22 Nov 2026), as on the built story page */
+      const b = s.box, u = b && String(b.url || ""); if(!b || !(/^\/[^\/]/.test(u) || u.startsWith("https://theseax.com/"))) return "";
+      return `<a class="linkbox" href="${esc(u)}" style="display:block;margin:1.2em 0;padding:18px 20px;border:3px solid #c8102e;border-radius:12px;background:#fdf3f4;color:#111;text-decoration:none"><b style="display:block;font-size:1.25em;line-height:1.25">${esc(b.title || "")}</b><span style="display:block;margin:.35em 0 .8em">${esc(b.text || "")}</span><span style="display:inline-block;background:#c8102e;color:#fff;font-weight:800;border-radius:99px;padding:11px 20px">${esc(b.button || "Open the page")} →</span></a>`; })()}
     ${(s.points||[]).length ? `<h2>Key points</h2><ul class="points">${s.points.map(p=>`<li>${esc(p)}</li>`).join("")}</ul>` : ""}
     <div class="readfull">
       <div><div class="k">${OFFICIAL_KINDS.has(s.kind) && hostOf(s.url).match(/police\.uk|gov\.uk|nhs\.uk/) ? "Read the official statement" : "Read the full story"}</div><div class="src">${esc(s.source)}</div><div class="u">${esc(s.url)}</div></div>
