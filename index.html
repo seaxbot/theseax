@@ -6,6 +6,7 @@
 <title>The Seax · Essex news, sport and life, live</title>
 <link rel="preload" href="/assets/fonts/inter-latin-opsz-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/assets/fonts.css?v=1">
+<!--seax-lcp--><link rel="preload" as="image" href="/img/people/brentwood-school-tower-wide.jpg?v=1" fetchpriority="high"><!--/seax-lcp-->
 <meta name="description" content="The Seax: live Essex news, sport, weather, culture and what's on, from every town and every trusted source, updated through the day.">
 <meta property="og:title" content="The Seax · Essex news, sport and life, live">
 <meta property="og:description" content="Live Essex news, sport, weather, culture and what's on, updated through the day.">
@@ -4485,7 +4486,20 @@ function renderTopList(){
   $("#topList").innerHTML = pick.map(s => `<li><div><h4><a href="${storyHref(s)}">${esc(s.headline)}</a></h4><div class="m">${esc(s.place||"")} · <span data-ago="${esc(shownT(s))}">${ago(shownT(s))}</span></div></div></li>`).join("") || `<li><div class="m">No other stories for this area yet.</div></li>`;
 }
 
+/* Card pictures load only as they come near the screen (owner's overnight push, 22 Nov 2026). The front page was
+   fetching every card's picture at once, about 4MB on a phone, which made the lead picture slow to appear.
+   cardHtml() swaps each picture's address into "data-lz"; lzWatch() puts it back when the card is within 700px of view. */
+const LZ_IO = ("IntersectionObserver" in window) ? new IntersectionObserver(es => es.forEach(e => { if(e.isIntersecting){ lzShow(e.target); LZ_IO.unobserve(e.target); } }), {rootMargin: "700px 0px"}) : null;
+function lzShow(box){ box.querySelectorAll("image[data-lz]").forEach(im => { im.setAttribute("href", im.getAttribute("data-lz")); im.removeAttribute("data-lz"); }); }
+let lzQueued = false;
+function lzWatch(){ lzQueued = false; document.querySelectorAll("image[data-lz]").forEach(im => { const sv = im.closest("svg"), box = sv && sv.parentElement; if(!box){ im.setAttribute("href", im.getAttribute("data-lz")); im.removeAttribute("data-lz"); return; } if(!LZ_IO){ lzShow(box); return; } if(!box.dataset.lzw){ box.dataset.lzw = "1"; LZ_IO.observe(box); } }); }
 function cardHtml(s, wide, art){
+  const h = cardHtml0(s, wide, art);
+  if(!LZ_IO) return h;
+  if(!lzQueued){ lzQueued = true; setTimeout(lzWatch, 0); }
+  return h.replace(/<image href="/g, '<image data-lz="');
+}
+function cardHtml0(s, wide, art){
   return `<a class="card tc${wide?" wide":""}" href="${storyHref(s)}" style="--c:${iconColour(s)}">
     ${portraitOf(s) ? `<div class="cart">${portraitArt(s,{credit:true})}</div>` : isRoseCrownStory(s) ? `<div class="cart">${roseCrownArt(s)}</div>` : isXmasCathedralStory(s) ? `<div class="cart">${xmasCathedralArt(s)}</div>` : isZooMap(s) || isStanstedMap(s) || isMerseaMap(s) || isFoodMap(s) || isOwnerMap(s) || isC2cMap(s) ? `<div class="cart">${storyMap(s,{aspect:wide ? 1/2.4 : 1/2, zoom:wide ? 820 : 760})}</div>` : isC2cStory(s) && isC2cBad(s) ? `<div class="cart">${breakingArt(s)}</div>` : isC2cPhoto(s) ? `<div class="cart">${c2cArt(s)}</div>` : isZooPhoto(s) ? `<div class="cart">${zooArt(s)}</div>` : isStanstedPhoto(s) ? `<div class="cart">${stanstedArt(s)}</div>` : isMerseaPhoto(s) ? `<div class="cart">${merseaArt(s)}</div>` : isFoodPhoto(s) ? `<div class="cart">${foodArt(s)}</div>` : isGasWorkStory(s) ? `<div class="cart">${gasArt(s)}</div>` : isDataCentreStory(s) ? `<div class="cart">${dataCentreArt(s)}</div>` : isRemembranceStory(s) ? `<div class="cart">${remembranceArt(s)}</div>` : isLiverpoolStStory(s) ? `<div class="cart">${liverpoolStArt(s)}</div>` : isGreaterAngliaStory(s) ? `<div class="cart">${greaterAngliaArt(s)}</div>` : isBusStory(s) ? `<div class="cart">${busArt(s)}</div>` : isPoolStory(s) ? `<div class="cart">${poolArt(s)}</div>` : isHomelessStory(s) ? `<div class="cart">${homelessArt(s)}</div>` : isDentalStory(s) ? `<div class="cart">${dentalArt(s)}</div>` : isFogRoadStory(s) ? `<div class="cart">${roadArt(s)}</div>` : isFogStory(s) ? `<div class="cart">${fogArt(s)}</div>` : !sportKindOf(s) && !isWeatherArtStory(s) && roadOf(s) ? `<div class="cart">${roadArt(s)}</div>` : !isWeatherArtStory(s) && isHarlowCollegeStory(s) ? `<div class="cart">${harlowCollegeArt(s)}</div>` : !isWeatherArtStory(s) && isColchesterCastleStory(s) ? `<div class="cart">${colchesterCastleArt(s)}</div>` : !isWeatherArtStory(s) && isCountyHallStory(s) ? `<div class="cart">${countyHallArt(s)}</div>` : !isWeatherArtStory(s) && isHospitalStory(s) ? `<div class="cart">${hospitalArt(s)}</div>` : !isWeatherArtStory(s) && isPoliceStory(s) ? `<div class="cart">${policeArt(s)}</div>` : !isWeatherArtStory(s) && isFireStory(s) ? `<div class="cart">${fireArt(s)}</div>` : isAmbulanceStory(s) ? `<div class="cart">${ambulanceArt(s)}</div>` : isTiptreeStory(s) ? `<div class="cart">${tiptreeArt(s)}</div>` : isStateFayreStory(s) ? `<div class="cart">${stateFayreArt(s)}</div>` : !sportKindOf(s) && !isWeatherArtStory(s) && stockOf(s) ? `<div class="cart">${stockArt(s,{credit:true})}</div>` : !isWeatherArtStory(s) && isBreakingArtStory(s) ? `<div class="cart">${breakingArt(s)}</div>` : (art || s.kind === "community") && SPORT_PHOTO[sportKindOf(s)] && !clubColoursCard(s) ? `<div class="cart">${sportArt(s)}</div>` : art && clubOf(s) ? `<div class="cart">${clubArt(s,{aspect:2})}</div>` : !sportKindOf(s) && !clubOf(s) && !isWeatherArtStory(s) && townKeyOf(s) ? `<div class="cart">${townArt(s,{credit:true})}</div>` : !sportKindOf(s) && ["police","crime","appeal"].includes(iconKey(s)) ? `<div class="cart">${storyMap(s,{aspect:wide ? 1/2.4 : 1/2, zoom:wide ? 820 : 760})}</div>` : ""}
     <div class="body">

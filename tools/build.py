@@ -2882,6 +2882,25 @@ def patch_index(latest_briefing, ed=None):
         m_next = new.find('<section class="block', m_news + 10) if m_news >= 0 else -1
         if m_next >= 0:
             new = new[:m_next] + block2 + "\n" + new[m_next:]
+    # the top picture is fetched straight away (22 Nov 2026): the page only learns which picture leads after loading the
+    # edition, so name it here for the browser. The pinned special's picture while it is pinned, else the lead's own
+    # (owner-supplied) picture; other leads (maps, library art) need no early fetch.
+    lcp = ""
+    try:
+        pin = json.load(open(os.path.join(ROOT, "data", "pinned.json"), encoding="utf-8"))
+        pf, pu = parse_t(pin.get("from")), parse_t(pin.get("until"))
+        if pin.get("image") and pin.get("style") != "notice" and pf and pu and pf <= NOW < pu:
+            lcp = str(pin["image"])
+    except Exception:
+        pass
+    if not lcp and ed is not None:
+        lid = (ed.get("lead") or {}).get("id")
+        lit = next((x for x in (ed.get("stories") or []) if isinstance(x, dict) and x.get("id") == lid), None)
+        pp = portrait_of(lit) if lit else None
+        if pp and pp.get("wide"):
+            lcp = str(pp["wide"]) + "?v=1"
+    lcp_tag = f'<link rel="preload" as="image" href="{E(lcp)}" fetchpriority="high">' if lcp.startswith("/img/") else ""
+    new = re.sub(r"<!--seax-lcp-->.*?<!--/seax-lcp-->", lambda m: "<!--seax-lcp-->" + lcp_tag + "<!--/seax-lcp-->", new, count=1, flags=re.S)
     # Christmas in Essex link in the What's On section, only while that page is being built (22 Nov 2026)
     xl = ('<p style="margin:0 0 16px;font:700 16px var(--sans)"><a href="/whats-on/christmas/" style="color:var(--red);text-decoration:underline">'
           'Christmas in Essex: every lights switch-on, market, light trail and panto in one list →</a></p>') if XMAS_HTML else ""
