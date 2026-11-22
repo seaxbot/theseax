@@ -37,6 +37,8 @@ POOL_RX = re.compile(r"\bswimming (pools?|baths?)\b|\blidos?\b|\b(leisure|school
 HOMELESS_RX = re.compile(r"\bhomeless\w*\b|\brough[- ]sleep\w*\b|\bsleep\w* rough\b|\b(night|winter|homeless|emergency) shelters?\b|\bSWEP\b", re.I)
 HOMELESS_HOUSING_RX = re.compile(r"\b(famil(y|ies)|children|kids|temporary (housing|accommodation)|B&Bs?|bed and breakfasts?|overspend\w*|budgets?|deficits?|council tax|housing (costs?|bill|pressures?|waiting list))\b", re.I)  # homeless families, temporary housing and budget stories can still get a stock photo
 # Dental stories always show the owner's dental photo (img/topics/dental.jpg). Same headline test as tools/build.py DENTAL_RX.
+# Post Office stories always show the owner's Post Office counter photo (img/topics/postoffice.jpg). Same headline test as tools/build.py POSTOFFICE_RX.
+POSTOFFICE_RX = re.compile(r"\bpost ?offices?\b|\bsub-?postm(aster|istress)\w*|\bpostm(aster|istress)\w*|\bHorizon (IT )?scandal\b", re.I)
 DENTAL_RX = re.compile(r"\b(dentists?|dental|dentistry|orthodont\w*)\b|\bbraces\b(?!\s+(for|itself|themselves|ourselves|yourself)\b)|\btooth decay\b|\b(children'?s|kids'?|baby|milk) teeth\b", re.I)
 # Rose and Crown, Writtle stories always show the owner's pub photo (img/topics/rosecrown.jpg). Same test as tools/build.py is_rosecrown.
 ROSECROWN_RX = re.compile(r"\bRose (and|&|&amp;) Crown\b", re.I)
@@ -280,13 +282,13 @@ def main():
                 photos.pop(it["id"]); changed_rej = True
                 print(f"removed rejected photo: {it['id']}")
             continue
-        if (RAIL_RX.search(str(it.get("headline") or "") + " " + str(it.get("org") or "")) or BUS_RX.search(str(it.get("headline") or "")) or POOL_RX.search(str(it.get("headline") or "")) or (HOMELESS_RX.search(str(it.get("headline") or "")) and not HOMELESS_HOUSING_RX.search(str(it.get("headline") or ""))) or DENTAL_RX.search(str(it.get("headline") or "")) or (ROSECROWN_RX.search(str(it.get("headline") or "") + " " + str(it.get("summary") or "")) and re.search(r"\bWrittle\b", " ".join(str(it.get(k) or "") for k in ("headline", "summary", "place")), re.I)) or xmas_cathedral(it)) and it["id"] not in reqs:
+        if (RAIL_RX.search(str(it.get("headline") or "") + " " + str(it.get("org") or "")) or BUS_RX.search(str(it.get("headline") or "")) or POOL_RX.search(str(it.get("headline") or "")) or (HOMELESS_RX.search(str(it.get("headline") or "")) and not HOMELESS_HOUSING_RX.search(str(it.get("headline") or ""))) or DENTAL_RX.search(str(it.get("headline") or "")) or POSTOFFICE_RX.search(str(it.get("headline") or "")) or (ROSECROWN_RX.search(str(it.get("headline") or "") + " " + str(it.get("summary") or "")) and re.search(r"\bWrittle\b", " ".join(str(it.get(k) or "") for k in ("headline", "summary", "place")), re.I)) or xmas_cathedral(it)) and it["id"] not in reqs:
             if it["id"] in photos:  # bus stories use the owner's bus photo: drop any stock photo found earlier
                 f = os.path.join(ROOT, "img", "stock", f"{it['id']}.jpg")
                 if os.path.exists(f):
                     os.remove(f)
                 photos.pop(it["id"]); changed_rej = True
-                print(f"removed stock photo from bus, pool, homeless, dental, Rose and Crown or Christmas cathedral story: {it['id']}")
+                print(f"removed stock photo from bus, pool, homeless, dental, Post Office, Rose and Crown or Christmas cathedral story: {it['id']}")
             continue
         kw = str(reqs.get(it["id"]) or it.get("photo") or "").strip()
         cm = str(it.get("commons") or "").strip() if it["id"] not in reqs else ""
