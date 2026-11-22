@@ -307,6 +307,13 @@ def main():
         print("headlines changed:", stamp_headlines(out, prev_heads))
         rep = policy.apply(out)
         print("policy:", json.dumps({k: (v if isinstance(v, int) else len(v)) for k, v in rep.items()}))
+        # owner, 22 Nov 2026 ("we now need to make stories longer when we only have one source... find the story from
+        # official sources"): list every news story still going out short (link-only or single source, not researched),
+        # so each run researches them under ops/newsroom.md 3g ii MAKE IT OUR OWN until they grow
+        thin = [s.get("id") for sec in ("stories", "official", "community") for s in out.get(sec) or []
+                if isinstance(s, dict) and (s.get("linkOnly") or s.get("singleSource")) and not s.get("researched")]
+        if thin:
+            print(f"SHORT STORIES TO RESEARCH ({len(thin)}; 3g ii, owner 22 Nov: find the official source and make each one our own): " + ", ".join(thin[:25]))
         if a.edition and (out.get("lead") or {}).get("id") not in {s.get("id") for s in out.get("stories", [])}:
             print("bad edition: the lead story was removed by the source policy (opt-out outlet); choose another lead"); sys.exit(2)
         if a.edition or a.sport or a.inquests:
