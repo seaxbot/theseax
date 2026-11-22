@@ -152,6 +152,14 @@
    "at": "2026-11-22T18:25:15Z",
    "update": false,
    "buffer": "6b03338bbf5d5a73b6b0e5de"
+  },
+  {
+   "id": "a12-northbound-closed-junction-16-galleywood-crash-22-november",
+   "kind": "update",
+   "headline": "A12 crash at Chelmsford shuts northbound and a southbound lane",
+   "at": "2026-11-22T19:37:06Z",
+   "update": true,
+   "buffer": "6b034462d864a01105ed8c7e"
   }
  ]
 }
