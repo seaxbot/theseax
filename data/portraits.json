@@ -1234,15 +1234,23 @@
  },
  {
   "match": "\\bRochford garden waste\\b",
-  "name": "Green garden waste bins with yellow lids, stacked ready for Rochford residents",
+  "name": "A Rochford Norse crew member emptying a green garden waste bin",
   "label": "Picture",
-  "wide": "/img/people/rochford-garden-waste-bins-wide.jpg",
-  "og": "/img/people/rochford-garden-waste-bins-og.jpg",
+  "wide": "/img/people/rochford-garden-waste-norse-wide.jpg",
+  "og": "/img/people/rochford-garden-waste-norse-og.jpg",
   "creator": "Rochford District Council",
   "provider": "Rochford District Council",
   "license": "",
   "licenseUrl": "",
   "source": "https://www.facebook.com/RochfordDistrictCouncil",
-  "addedBy": "owner, 22 Nov 2026 (Rochford garden waste winter trial story; Rochford District Council picture from its 9 Nov Facebook post, replacing a food waste caddy picture)"
+  "addedBy": "owner, 22 Nov 2026 (Rochford garden waste winter trial story; main picture of a Rochford Norse crew member from the council's 22 Nov Facebook post, stacked bins picture from its 9 Nov post shown after the story text)",
+  "more": [
+   {
+    "name": "Green garden waste bins with yellow lids, stacked ready for Rochford residents",
+    "label": "Picture",
+    "wide": "/img/people/rochford-garden-waste-bins-wide.jpg",
+    "creator": "Rochford District Council"
+   }
+  ]
  }
 ]
