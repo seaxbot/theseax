@@ -325,7 +325,8 @@
  },
  {
   "ids": [
-   "colchester-university-of-essex-highly-cited-researchers-lawson-pekrun"
+   "colchester-university-of-essex-highly-cited-researchers-lawson-pekrun",
+   "university-of-essex-two-professors-highly-cited-researchers-2026"
   ],
   "name": "Professors Reinhard Pekrun and Tracy Lawson, Highly Cited Researchers 2026",
   "label": "Picture",
@@ -1283,5 +1284,18 @@
     "creator": "Rochford District Council"
    }
   ]
+ },
+ {
+  "match": "\\bHMP (?:& YOI )?Chelmsford\\b|\\bYOI Chelmsford\\b|\\bChelmsford(?:['’]s)? (?:[Pp]rison|[Jj]ail)\\b|\\b(?:[Pp]rison|[Jj]ail) in Chelmsford\\b",
+  "name": "HMP & YOI Chelmsford sign",
+  "label": "Picture",
+  "wide": "/img/people/hmp-chelmsford-sign-wide.jpg",
+  "og": "/img/people/hmp-chelmsford-sign-og.jpg",
+  "creator": "The Seax",
+  "provider": "",
+  "license": "",
+  "licenseUrl": "",
+  "source": "",
+  "addedBy": "owner, 22 Nov 2026 (owner's own photo of the HMP & YOI Chelmsford sign, cropped to remove the photographer's shadow; used for all Chelmsford Prison stories)"
  }
 ]
