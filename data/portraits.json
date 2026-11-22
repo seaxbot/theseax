@@ -1297,5 +1297,26 @@
   "licenseUrl": "",
   "source": "",
   "addedBy": "owner, 22 Nov 2026 (owner's own photo of the HMP & YOI Chelmsford sign, cropped to remove the photographer's shadow; used for all Chelmsford Prison stories)"
+ },
+ {
+  "match": "\\bPok[eé]mon appeal\\b",
+  "name": "Harry Fusedale, who is running a Pokémon Christmas appeal for Phoenix Ward",
+  "label": "Picture",
+  "wide": "/img/people/harry-fusedale-pokemon-appeal-wide.jpg",
+  "og": "/img/people/harry-fusedale-pokemon-appeal-og.jpg",
+  "creator": "supplied by Harry Fusedale",
+  "provider": "Harry Fusedale",
+  "license": "",
+  "licenseUrl": "",
+  "source": "https://gofund.me/836bd31dc",
+  "more": [
+   {
+    "name": "The entrance to Phoenix Ward, the children's ward at Broomfield Hospital",
+    "label": "Picture",
+    "wide": "/img/people/broomfield-phoenix-ward-wide.jpg",
+    "creator": "supplied by Harry Fusedale"
+   }
+  ],
+  "addedBy": "owner, 22 Nov 2026 (Phoenix Ward Pokémon Christmas appeal; pictures supplied by the organiser)"
  }
 ]
