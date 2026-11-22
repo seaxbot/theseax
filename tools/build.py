@@ -1871,6 +1871,8 @@ def story_page(sec, it, more):
     if surl:
         readfull = f"""<div class="readfull"><div><div class="k">{"Find out more" if it.get("hideSource") is True else "Read the original report" if it.get("researched") is True else "Read the full story"}</div><div class="src">{E(src or host(surl))}</div></div>
 <a class="go" href="{E(surl)}" target="_blank" rel="noopener">Open at {E(host(surl) or src)} ↗</a></div>"""
+    if it.get("hideSource") is True and surl and any(f"]({surl})" in str(x) for x in (it.get("body") or [])):
+        readfull = ""  # owner, 22 Nov 2026: the appeal link is already in the story text, so don't repeat it in a box
     if sec == "councilwatch":
         readfull = cw_record_box(it)
     also_html = ""
