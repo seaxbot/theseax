@@ -33,10 +33,12 @@ if not any(x.get("id") == ID for x in ed.get("stories", [])):
     sys.exit("STOP: story not in edition after publish")
 head = next(x["headline"] for x in ed["stories"] if x["id"] == ID)
 old = ed.get("lead") or {}
-if old.get("id") and old["id"] != ID:
-    ed["front"] = [old["id"]] + [x for x in ed.get("front", []) if x not in (old["id"], ID)]
-else:
-    ed["front"] = [x for x in ed.get("front", []) if x != ID]
+# owner, 22 Nov 00:08: the Brentwood School special comes off the pin at 06:00 and goes FIRST in "front" for the weekend
+BW = "brentwood-school-safeguarding-review-british-fencing-own-review"
+top = [BW] if any(x.get("id") == BW for x in ed.get("stories", [])) else []
+if old.get("id") and old["id"] not in (ID, BW):
+    top.append(old["id"])
+ed["front"] = top + [x for x in ed.get("front", []) if x not in top and x != ID]
 ed["lead"] = {"id": ID, "since": now, "headlineAt": now, "ownerUntil": "2026-11-22T10:00:00Z",
               "history": [{"at": now, "id": ID, "headline": head}] + (old.get("history") or [])[:30]}
 json.dump(ed, open("/tmp/oysters-ed.json", "w"), ensure_ascii=False, indent=1)
