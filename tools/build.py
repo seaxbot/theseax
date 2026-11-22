@@ -2303,7 +2303,7 @@ def photo_credits():
         lic_html = f'<a href="{E(c["licenseUrl"])}" rel="license noopener">{E(lic)}</a>' if c.get("licenseUrl") else E(lic)
         rows.append(f'<li>{E(c["what"])}: photo by {E(c["by"])}, {lic_html}, via <a href="{E(c["source"])}" rel="noopener">Wikimedia Commons</a></li>')
     return ('<h2 id="photo-credits">Photo credits</h2>\n<p>Town photographs on The Seax come from Wikimedia Commons and are used under the licences shown. '
-            'They have been resized for the web and are shared under the same terms. Our map artwork is our own.</p>\n<ul class="credits">' + "".join(rows) + '<li>London Stansted Airport library images: photos by London Stansted Airport</li>' + f'<li>c2c train 357 040 at Ripple Lane (used on c2c stories): photo by kitmasterbloke, <a href="{C2C_CREDIT["licenseUrl"]}" rel="license noopener">CC BY 4.0</a>, via <a href="{C2C_CREDIT["source"]}" rel="noopener">Wikimedia Commons</a>; cropped and resized</li>' + "".join(portrait_credit(p) for p in PORTRAITS) + "</ul>\n")
+            'They have been resized for the web and are shared under the same terms. Our map artwork, and the charts, maps and graphics in our own reporting, are made by The Seax. Some pictures are supplied by the organisation in the story or by our own team, and are credited where the supplier asks.</p>\n<ul class="credits">' + "".join(rows) + '<li>London Stansted Airport library images: photos by London Stansted Airport</li>' + f'<li>c2c train 357 040 at Ripple Lane (used on c2c stories): photo by kitmasterbloke, <a href="{C2C_CREDIT["licenseUrl"]}" rel="license noopener">CC BY 4.0</a>, via <a href="{C2C_CREDIT["source"]}" rel="noopener">Wikimedia Commons</a>; cropped and resized</li>' + "".join(portrait_credit(p) for p in PORTRAITS) + "</ul>\n")
 
 
 def whatson_page(ed):
@@ -2464,14 +2464,53 @@ def about_page():
     url = f"{SITE}/about/"
     return head("About The Seax · The Seax", "How The Seax works, who it is for, how to contact us and how we correct mistakes.", url, "default") + f"""<main class="wrap prose">
 <h1>About The Seax</h1>
-<p class="standfirst">The Seax is a free, independent website for the people of Essex: the county's news, sport, weather, public services, community life and what's on, in one place and updated through the day.</p>
+<p class="standfirst">The Seax is a free, independent website for the people of Essex: the county's news, sport, weather, public services, community life and what's on in one place, updated through the day, plus our own investigations and data journalism.</p>
 
 <h2>How The Seax works</h2>
 <p>We watch hundreds of trusted sources across Essex and beyond: local newspapers and radio, hyperlocal and independent newsrooms, Essex Police, the fire and ambulance services, councils, the NHS, courts, charities, clubs and venues, plus national and specialist outlets when they report on Essex.</p>
 <p>The Seax is produced with the help of AI. Automated research tools gather the latest reports each hour, and AI writes our headlines, summaries and short story pages in our own words, following our editorial rules. Every story names the outlet that reported it and links directly to the original, so you can always read the full report and support the journalists who did the work. When only one outlet has reported a story, our summary is deliberately short and points you to theirs.</p>
 <p>We do not copy articles, take photographs from other publishers, or publish anything that is not reported by a named source or set out in a public document.</p>
-<h2 id="council-watch">Council Watch</h2>
-<p><a href="/council-watch/">Council Watch</a> is The Seax's own reporting. Twice a day we read the public meeting papers of Essex's councils (agendas, reports, decisions and minutes), politely and within each website's published rules, and write short stories about the decisions that matter to residents. Every Council Watch story links to the council documents, and the pages, it is based on. It is written with the help of AI from those documents only.</p>
+<h2 id="our-journalism">Our own journalism</h2>
+<p>As well as bringing Essex's news together, The Seax does its own reporting. You can spot it by the gold banner on the story.</p>
+<ul>
+<li><b>Seax Investigates</b> is our original reporting. We go to the primary source, such as a published independent review, an official register or a government list, and report what it means for Essex, often before anyone else has.</li>
+<li><b>Seax Analysis</b> is our data journalism. We take official figures, such as police recorded crime, and work them out for Essex and its towns and neighbourhoods, with our own charts, maps and look-up tools like the neighbourhood crime checker.</li>
+<li><b>Exclusive</b>: a red Exclusive tag means The Seax was first to report the story.</li>
+<li><b>The Weekend</b> is our home for longer reads and analysis to take your time over, at the top of the front page every weekend.</li>
+</ul>
+<p>Every piece of our own reporting names and links the documents and data it is based on, so you can check it yourself.</p>
+
+<h3 id="triple-check">How we check our own reporting</h3>
+<p>When a story is ours alone, no other outlet's report backs it up, so before anything we originate is published it has to pass three checks:</p>
+<ol>
+<li><b>Figures:</b> every number in the headline, summary and story is worked out again from the original source data.</li>
+<li><b>Independent check:</b> the key facts are confirmed a second way, from the official document itself, another dataset or a separate recount, and every name, place and label is checked against how the source writes it.</li>
+<li><b>Read-back:</b> the finished story is read as a reader would read it, to make sure the headline is exactly true, nothing overstates the evidence and the caveats a fair reader needs are there.</li>
+</ol>
+<p>If any check fails, the story is held back until it is fixed. If a single word changes afterwards, all three checks are done again. Our own reporting is researched and written with the help of AI, working only from public documents and data, and is chosen and directed by our editor.</p>
+
+<h3 id="council-watch">Council Watch</h3>
+<p><a href="/council-watch/">Council Watch</a> is also The Seax's own reporting. Twice a day we read the public meeting papers of Essex's councils (agendas, reports, decisions and minutes), politely and within each website's published rules, and write short stories about the decisions that matter to residents. Every Council Watch story links to the council documents, and the pages, it is based on, passes the same three checks, and is written with the help of AI from those documents only.</p>
+<p>Know something we should look into? Email {mlink("news", "Story idea")}. We never publish anything about a person from a tip alone.</p>
+
+<h2 id="on-the-site">What you will find on The Seax</h2>
+<ul>
+<li><b>News</b> from across the county, with a live Latest ticker, and <b>My Essex</b> to show just your area, from Harlow to Harwich and Saffron Walden to Southend.</li>
+<li><b>Sport</b>: fixtures, results, tables, previews and match reports for Essex clubs.</li>
+<li><b>Public Services</b>: straight from Essex Police, Essex County Fire and Rescue, the ambulance service, the courts, the NHS and every council.</li>
+<li><b>Community</b>: charities, appeals, volunteering and local groups.</li>
+<li><b>Weather</b> from the Met Office, with warnings when they are in force, and live <b>Webcams</b> from the Essex coast and the Thames.</li>
+<li><b><a href="/whats-on/">What's On</a></b>, <b>Culture</b> (panto, theatre, exhibitions and screenings) and <b>Deals and freebies</b>.</li>
+<li><b>Vital Info</b>: numbers, travel and services worth bookmarking, and <b>Essex History</b>: on this day in the county, all month.</li>
+</ul>
+
+<h2 id="follow">Listen, read and follow</h2>
+<ul>
+<li><b>Listen:</b> a two-minute spoken Essex news bulletin, updated four times a day, from the Listen button at the top of the front page. It is read by a computer-generated voice. It is also available as a <a href="/podcast.xml">podcast feed</a> and on Amazon Alexa (see below).</li>
+<li><b>Essex at 7:</b> our free <a href="/briefing/">morning briefing</a> email, with the lead, the stories that matter, weather, travel and last night's results, in your inbox before 7am.</li>
+<li><b>Social:</b> follow The Seax on {('<a href="' + E(CFG["facebookPage"]) + '">Facebook</a>, ') if CFG.get("facebookPage") else ''}{('<a href="' + E(CFG["xAccount"]) + '">X</a> ') if CFG.get("xAccount") else ''}{('and our <a href="' + E(CFG["whatsappChannel"]) + '">WhatsApp channel</a>') if CFG.get("whatsappChannel") else ''}. We also share stories in Essex community Facebook groups, as The Seax, where the group allows it.</li>
+<li><b>Feeds:</b> every story as it is published, in our <a href="/feed.xml">RSS feed</a>.</li>
+</ul>
 
 <h2>Our editorial rules</h2>
 <ul>
@@ -2480,7 +2519,10 @@ def about_page():
 <li>We never name victims of sexual offences or identify children involved in criminal cases.</li>
 <li>We do not report suicide or self-harm.</li>
 <li>We report inquests only where there is a clear public interest, from the Essex Coroner's published court list and official or established sources. We never speculate about how someone died and never name children.</li>
+<li>We never identify a survivor of abuse. Stories about abuse carry a warning at the top and support lines at the end.</li>
+<li>Every party and every MP is treated the same way, and where a story makes a serious claim about a person or organisation we include their published response where there is one.</li>
 </ul>
+<p>Our full <a href="/standards/">editorial standards</a> and public <a href="/corrections/">corrections log</a> are on their own pages.</p>
 
 <h2 id="corrections">Corrections and complaints</h2>
 <p>We work hard to be accurate, but if we get something wrong we want to put it right quickly. Email {mlink("corrections", "Correction")} with a link to the page and what is wrong. We aim to review every correction request within 24 hours and will correct, clarify or remove content where it is inaccurate, unfair or should not have been published. Significant corrections are noted on the page.</p>
