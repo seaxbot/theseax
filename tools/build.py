@@ -2429,8 +2429,9 @@ def xmas_search_box():
     labels = {a[0]: a[2] for a in AREA_PAGES}
     return f"""<div class="xs" role="search">
 <label for="xsQ" class="xs-l">Find Christmas events near you</label>
-<p class="xs-h">Type your town, village or an event. We show what's on there and nearby.</p>
-<div class="xs-row"><input id="xsQ" type="search" autocomplete="off" enterkeyhint="search" placeholder="e.g. Witham, Leigh-on-Sea or panto"><button type="button" id="xsClear" class="xs-clear" hidden>Clear</button></div>
+<p class="xs-h">Type your town, village or an event and press Go. We show what's on there and nearby.</p>
+<form class="xs-row" id="xsF" action="#"><input id="xsQ" type="search" autocomplete="off" enterkeyhint="go" placeholder="e.g. Witham, Leigh-on-Sea or panto"><button type="submit" class="xs-go">Go</button></form>
+<button type="button" id="xsReset" class="xs-reset" hidden>Show all events</button>
 <p id="xsCount" class="xs-count" aria-live="polite"></p>
 </div>
 <style>
@@ -2441,7 +2442,9 @@ def xmas_search_box():
 .xs-row input{{flex:1;min-width:0;font:inherit;font-size:16px;padding:11px 14px;border:1.5px solid #d9b3b6;border-radius:10px;background:#fff}}
 .xs-row input::-webkit-search-cancel-button{{-webkit-appearance:none;appearance:none}}
 .xs-row input:focus{{outline:none;border-color:#c8102e;box-shadow:0 0 0 3px rgba(200,16,46,.15)}}
-.xs-clear{{font:inherit;font-weight:600;padding:0 14px;border:1.5px solid #d9b3b6;border-radius:10px;background:#fff;cursor:pointer}}
+.xs-go{{font:inherit;font-weight:700;padding:0 22px;border:0;border-radius:10px;background:#c8102e;color:#fff;cursor:pointer}}
+.xs-go:hover{{background:#a50d25}}
+.xs-reset{{font:inherit;font-size:14px;font-weight:600;margin-top:10px;padding:7px 14px;border:1.5px solid #d9b3b6;border-radius:99px;background:#fff;color:#8e0d18;cursor:pointer}}
 .xs-count{{margin:10px 0 0;font-size:14px;color:#555;min-height:1em}}
 .cw-row[hidden],.xs-sec[hidden],.xs-none[hidden],#xsJump[hidden]{{display:none!important}}
 .xs-none{{padding:14px 16px;border:1px dashed #d9b3b6;border-radius:12px;margin:12px 0}}
@@ -2451,7 +2454,7 @@ def xmas_search_box():
 (function(){{ function init(){{
   var TOWNS = {json.dumps(towns, ensure_ascii=False)};
   var LABEL = {json.dumps(labels, ensure_ascii=False)};
-  var q = document.getElementById("xsQ"), clr = document.getElementById("xsClear"), cnt = document.getElementById("xsCount"),
+  var q = document.getElementById("xsQ"), form = document.getElementById("xsF"), rst = document.getElementById("xsReset"), cnt = document.getElementById("xsCount"),
       none = document.getElementById("xsNone"), jump = document.getElementById("xsJump"),
       rows = [].slice.call(document.querySelectorAll(".cw-row[data-q]")), secs = [].slice.call(document.querySelectorAll(".xs-sec"));
   function norm(t){{ return String(t || "").toLowerCase().replace(/[^a-z0-9 ]+/g, " ").replace(/\\s+/g, " ").trim(); }}
@@ -2466,7 +2469,7 @@ def xmas_search_box():
   }}
   function run(){{
     var t = norm(q.value), words = t ? t.split(" ") : [], ta = townArea(t), shown = 0, direct = 0;
-    clr.hidden = !q.value;
+    rst.hidden = !t;
     rows.forEach(function(r){{
       var hay = r.getAttribute("data-h");
       if(hay === null){{ hay = norm(r.getAttribute("data-q")); r.setAttribute("data-h", hay); }}
@@ -2489,8 +2492,14 @@ def xmas_search_box():
     else if(ta && !direct) cnt.textContent = 'Nothing listed in "' + said + '" itself yet, but ' + n(shown) + " nearby in " + LABEL[ta] + ".";
     else cnt.textContent = n(shown) + ' matching "' + said + '".';
   }}
-  q.addEventListener("input", run);
-  clr.addEventListener("click", function(){{ q.value = ""; run(); q.focus(); }});
+  function go(){{
+    run(); q.blur();
+    var box = document.querySelector(".xs"), y = box.getBoundingClientRect().top + window.pageYOffset - 70;
+    window.scrollTo({{top: y, behavior: "smooth"}});
+  }}
+  form.addEventListener("submit", function(ev){{ ev.preventDefault(); go(); }});
+  q.addEventListener("input", function(){{ if(!q.value) run(); }});
+  rst.addEventListener("click", function(){{ q.value = ""; run(); }});
   var m = /[?&]q=([^&]+)/.exec(location.search); if(m){{ q.value = decodeURIComponent(m[1].replace(/\\+/g, " ")); }}
   run();
 }} if(document.readyState === "loading") document.addEventListener("DOMContentLoaded", init); else init(); }})();
