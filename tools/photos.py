@@ -30,7 +30,7 @@ SKIP_TAGS = {"police", "court", "crime", "appeal", "tribute", "health", "fire", 
 BUS_RX = re.compile(r"\bbus(es|ses)?\b|\bpark (and|&) ride\b|\bFirst (Essex|Bus)\b|\bEnsign ?bus\b", re.I)
 # Greater Anglia and Liverpool Street stories always show the owner's own photos (img/topics/greateranglia.jpg,
 # img/topics/liverpoolst.jpg). Same headline test as tools/build.py LST_RX / GA_RX.
-RAIL_RX = re.compile(r"\bLiverpool Street\b|\bGreater Anglia\b|\bGBR Anglia\b|\bGreat British Railways Anglia\b", re.I)
+RAIL_RX = re.compile(r"\bElizabeth line\b|\bCrossrail\b|\bLiverpool Street\b|\bGreater Anglia\b|\bGBR Anglia\b|\bGreat British Railways Anglia\b", re.I)
 # Swimming pool stories always show the owner's pool photo (img/topics/pool.jpg). Same headline test as tools/build.py POOL_RX.
 POOL_RX = re.compile(r"\bswimming (pools?|baths?)\b|\blidos?\b|\b(leisure|school|public|council|indoor|outdoor|learner|teaching|training|community|hydrotherapy|main) pools?\b|\bpools?\b.{0,40}\bswim\w*|\bswim\w*\b.{0,40}\bpools?\b", re.I)
 # Homeless stories always show the owner's homeless photo (img/topics/homeless.jpg). Same headline test as tools/build.py HOMELESS_RX.
@@ -49,6 +49,15 @@ FIREWORKS_PLACE_RX = re.compile(r"\b(Southend|Westcliff|Leigh(-on-Sea)?|Old Leig
 def southend_fireworks(it):
     h = str(it.get("headline") or "")
     return bool(FIREWORKS_RX.search(h) and FIREWORKS_PLACE_RX.search(h + " " + str(it.get("place") or "")))
+# Frinton and Walton beach stories always show the owner's beach picture (img/topics/frinton.jpg) unless a death is
+# involved. Same test as tools/build.py is_frinton (simplified).
+FRINTON_RX = re.compile(r"\b(Frinton(-on-Sea)?|Walton(-on-the-Naze)?|the Naze)\b", re.I)
+FRINTON_BEACH_RX = re.compile(r"\b(beach(es)?|beach ?huts?|seafront|sea front|foreshore|shoreline|bathing|bathers?|swim(s|mers?|ming)?|sea swim\w*|paddl\w*|promenade|seaside|lifeguards?|blue flag|greensward)\b", re.I)
+FRINTON_DEATH_RX = re.compile(r"\b(died|dies|death|deaths|dead|drown\w*|bod(y|ies)|fatal\w*|killed|tributes?|inquest|passed away|funeral|remains)\b", re.I)
+def frinton(it):
+    h = str(it.get("headline") or "")
+    return bool(FRINTON_BEACH_RX.search(h) and FRINTON_RX.search(h + " " + str(it.get("place") or ""))
+                and not FRINTON_DEATH_RX.search(h + " " + str(it.get("summary") or "")))
 def histbook(it):
     h = str(it.get("headline") or "")
     return bool(HISTBOOK_RX.search(h) and HISTBOOK_HIST_RX.search(h) and not HISTBOOK_NOT_RX.search(h))
@@ -297,13 +306,13 @@ def main():
                 photos.pop(it["id"]); changed_rej = True
                 print(f"removed rejected photo: {it['id']}")
             continue
-        if (RAIL_RX.search(str(it.get("headline") or "") + " " + str(it.get("org") or "")) or BUS_RX.search(str(it.get("headline") or "")) or POOL_RX.search(str(it.get("headline") or "")) or (HOMELESS_RX.search(str(it.get("headline") or "")) and not HOMELESS_HOUSING_RX.search(str(it.get("headline") or ""))) or DENTAL_RX.search(str(it.get("headline") or "")) or POSTOFFICE_RX.search(str(it.get("headline") or "")) or SECURITY_RX.search(str(it.get("headline") or "")) or histbook(it) or southend_fireworks(it) or (ROSECROWN_RX.search(str(it.get("headline") or "") + " " + str(it.get("summary") or "")) and re.search(r"\bWrittle\b", " ".join(str(it.get(k) or "") for k in ("headline", "summary", "place")), re.I)) or xmas_cathedral(it)) and it["id"] not in reqs:
+        if (RAIL_RX.search(str(it.get("headline") or "") + " " + str(it.get("org") or "")) or BUS_RX.search(str(it.get("headline") or "")) or POOL_RX.search(str(it.get("headline") or "")) or (HOMELESS_RX.search(str(it.get("headline") or "")) and not HOMELESS_HOUSING_RX.search(str(it.get("headline") or ""))) or DENTAL_RX.search(str(it.get("headline") or "")) or POSTOFFICE_RX.search(str(it.get("headline") or "")) or SECURITY_RX.search(str(it.get("headline") or "")) or histbook(it) or southend_fireworks(it) or frinton(it) or (ROSECROWN_RX.search(str(it.get("headline") or "") + " " + str(it.get("summary") or "")) and re.search(r"\bWrittle\b", " ".join(str(it.get(k) or "") for k in ("headline", "summary", "place")), re.I)) or xmas_cathedral(it)) and it["id"] not in reqs:
             if it["id"] in photos:  # bus stories use the owner's bus photo: drop any stock photo found earlier
                 f = os.path.join(ROOT, "img", "stock", f"{it['id']}.jpg")
                 if os.path.exists(f):
                     os.remove(f)
                 photos.pop(it["id"]); changed_rej = True
-                print(f"removed stock photo from bus, pool, homeless, dental, Post Office, security patrol, history book, Southend fireworks, Rose and Crown or Christmas cathedral story: {it['id']}")
+                print(f"removed stock photo from bus, pool, homeless, dental, Post Office, security patrol, history book, Southend fireworks, Frinton beach, Elizabeth line, Rose and Crown or Christmas cathedral story: {it['id']}")
             continue
         kw = str(reqs.get(it["id"]) or it.get("photo") or "").strip()
         cm = str(it.get("commons") or "").strip() if it["id"] not in reqs else ""
