@@ -174,7 +174,10 @@ def apply(ed, pol=None):
             researched = it.get("researched") is True and (len(readable) >= 2 or any(official(h) for h in readable))
             if it.get("researched") is True and not researched:
                 it.pop("researched", None)  # not enough research sources yet: normal rules apply
-            if researched:
+            # owner, 22 Nov 2026 ("needs to be longer and link to the stories"): a piece built only from our own
+            # theseax.com stories (e.g. the Sunday "The week in Essex" round-up) is our own copy, so it is never capped
+            own = bool(hosts) and all(h == "theseax.com" or h.endswith(".theseax.com") for h in hosts)
+            if researched or own:
                 it.pop("singleSource", None)
                 it.pop("linkOnly", None)
             elif hosts and all(on(h, pol["linkOnly"]) for h in hosts):
