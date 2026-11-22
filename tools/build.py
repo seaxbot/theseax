@@ -2453,7 +2453,7 @@ def xmas_search_box():
 .cw-row .xs-near{{display:inline-block;margin-left:6px;font-size:11px;font-weight:700;letter-spacing:.03em;text-transform:uppercase;color:#8e0d18;background:#fbe9ea;border-radius:99px;padding:1px 7px}}
 </style>
 <script>
-(function(){{
+(function(){{ function init(){{
   var TOWNS = {json.dumps(towns, ensure_ascii=False)};
   var LABEL = {json.dumps(labels, ensure_ascii=False)};
   var q = document.getElementById("xsQ"), clr = document.getElementById("xsClear"), cnt = document.getElementById("xsCount"),
@@ -2498,7 +2498,7 @@ def xmas_search_box():
   try{{ var saved = localStorage.getItem("seax-xmas-area"); if(saved && LABEL[saved]){{ chips.forEach(function(c){{ if(c.getAttribute("data-xa") === saved) c.click(); }}); }} }}catch(_){{}}
   var m = /[?&]q=([^&]+)/.exec(location.search); if(m){{ q.value = decodeURIComponent(m[1].replace(/\\+/g, " ")); }}
   run();
-}})();
+}} if(document.readyState === "loading") document.addEventListener("DOMContentLoaded", init); else init(); }})();
 </script>"""
 
 XMAS_HTML = None
