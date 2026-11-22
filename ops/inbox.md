@@ -83,6 +83,7 @@ subject alone, without opening it, unless the subject suggests the owner must ac
 - What's On: every future Essex event in an official newsletter's events section, and every events@ email, goes
   into the site's events list in its own format, in your own words, when it has a date, time and place (price if
   given). Public events only. Skip events already listed.
+- APPEALS FROM THE PUBLIC (owner, 22 Nov 2026). A story written from a member of the public's own appeal or fundraiser (charity drives, collections, GoFundMe pages) sets "hideSource": true, so the story page never says "Reported by" or "First reported by" the organiser; the appeal link stays as the "url" (shown as "Find out more").
 - PICTURES (owner's rule, hard, 20 Nov 2026: "When you're getting stories from emails please do use their pics").
   Every story you write from an email MUST carry the sender's own picture when the email has one, credited
   "Picture: <body name>". It beats every library, stock, town, map and topic photo. Read the thread with
