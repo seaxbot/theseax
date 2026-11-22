@@ -814,7 +814,22 @@ def newsletter_box():
         return ""
     field = CFG.get("newsletterField") or "email"
     return f"""<section class="nl"><div><h3>{E(CFG.get('newsletterName','Essex at 7'))}</h3><p>The morning briefing: the lead, the stories that matter, weather, travel and last night's results, in your inbox before 7.</p></div>
-<form action="{E(form)}" method="post" target="_blank"><label class="sr" for="nlE">Email address</label><input id="nlE" type="email" name="{E(field)}" placeholder="Your email address" required><button>Sign me up</button></form></section>"""
+<form action="{E(form)}" method="post" target="_blank"><label class="sr" for="nlE">Email address</label><input id="nlE" type="email" name="{E(field)}" placeholder="Your email address" required><button>Sign me up</button></form>{follow_line()}</section>"""
+
+def follow_line():
+    """Other free ways to follow The Seax, under the newsletter form on every page (22 Nov 2026): the WhatsApp channel,
+    Facebook, X, and Google's "preferred sources" (readers who choose us see more of The Seax in Google's Top Stories)."""
+    bits = []
+    if CFG.get("whatsappChannel"):
+        bits.append(f'<a href="{E(CFG["whatsappChannel"])}" target="_blank" rel="noopener">our WhatsApp channel</a>')
+    if CFG.get("facebookPage"):
+        bits.append(f'<a href="{E(CFG["facebookPage"])}" target="_blank" rel="noopener">Facebook</a>')
+    if CFG.get("xAccount"):
+        bits.append(f'<a href="{E(CFG["xAccount"])}" target="_blank" rel="noopener">X</a>')
+    bits.append('<a href="https://www.google.com/preferences/source?q=theseax.com" target="_blank" rel="noopener">see more of The Seax on Google</a>')
+    return ('<p style="flex-basis:100%;margin:0;font-size:14.5px;line-height:1.5">Also free: follow The Seax on '
+            + ", ".join(bits[:-1]) + ", or " + bits[-1] + ' by adding us as a preferred source.</p>'
+            '<style>.nl p a{color:#fff;text-decoration:underline;font-weight:700}</style>')
 
 def foot():
     mail = CFG["contactEmail"]
@@ -1975,10 +1990,16 @@ def area_pages(archive):
 <p>{cw}</p>
 <h2>Elsewhere in Essex</h2>
 <p class="area-links">{others}</p>
-<p><a href="/">Go to the live front page →</a></p>
+<p><a href="/">Go to the live front page →</a> · <a href="/news/{sl}/feed.xml">RSS feed for {E(heading)}</a></p>
 </main>"""
         title = f"{heading[0].upper() + heading[1:]}: latest stories today · The Seax"
-        changed += write(f"news/{sl}/index.html", head(title, desc, u, "default", extra=ld(heading[0].upper() + heading[1:], u, mine)) +
+        # an RSS feed for each area (22 Nov 2026), so readers, community websites and feed readers can follow one patch
+        feed_u = f"{SITE}/news/{sl}/feed.xml"
+        changed += write(f"news/{sl}/feed.xml", rss(f"The Seax: {heading}", u, desc, feed_u, [
+            {"title": r["h"], "link": f"{SITE}/story/{sid}/", "date": parse_t(r.get("t")), "cat": SECTION_LABEL.get(r.get("sec")),
+             "desc": f'{r.get("place") or nm}: {r["h"]}'} for sid, r in mine[:40] if not r.get("thin")]))
+        feed_link = f'<link rel="alternate" type="application/rss+xml" title="The Seax: {E(heading)}" href="/news/{sl}/feed.xml">\n'
+        changed += write(f"news/{sl}/index.html", head(title, desc, u, "default", extra=feed_link + ld(heading[0].upper() + heading[1:], u, mine)) +
                          page + newsletter_box() + foot() + "</body></html>\n")
         pages.append((u, (mine[0][1].get("t") or NOW.isoformat())[:10] if mine else None))
     return pages, changed
@@ -2519,6 +2540,7 @@ def about_page():
 <li><b>Listen:</b> a two-minute spoken Essex news bulletin, updated four times a day, from the Listen button at the top of the front page. It is read by a computer-generated voice. It is also available as a <a href="/podcast.xml">podcast feed</a> and on Amazon Alexa (see below).</li>
 <li><b>Essex at 7:</b> our free <a href="/briefing/">morning briefing</a> email, with the lead, the stories that matter, weather, travel and last night's results, in your inbox before 7am.</li>
 <li><b>Social:</b> follow The Seax on {('<a href="' + E(CFG["facebookPage"]) + '">Facebook</a>, ') if CFG.get("facebookPage") else ''}{('<a href="' + E(CFG["xAccount"]) + '">X</a> ') if CFG.get("xAccount") else ''}{('and our <a href="' + E(CFG["whatsappChannel"]) + '">WhatsApp channel</a>') if CFG.get("whatsappChannel") else ''}. We also share stories in Essex community Facebook groups, as The Seax, where the group allows it.</li>
+<li><b>Google:</b> <a href="https://www.google.com/preferences/source?q=theseax.com" rel="noopener">add The Seax as a preferred source</a> and Google will show you more of our stories in its Top Stories.</li>
 <li><b>Feeds:</b> every story as it is published, in our <a href="/feed.xml">RSS feed</a>.</li>
 </ul>
 
