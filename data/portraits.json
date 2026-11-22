@@ -1189,5 +1189,34 @@
   "licenseUrl": "",
   "source": "",
   "addedBy": "owner, 22 Nov 2026 (owner-supplied picture collage for the Christmas in Essex guide story)"
+ },
+ {
+  "ids": [
+   "colchester-b-and-m-st-johns-walk-former-wilko-opening"
+  ],
+  "name": "The old Wilko on St John's Street, and its shop front inside St John's Walk",
+  "label": "Pictures",
+  "wide": "/img/people/colchester-wilko-bm-wide.jpg",
+  "og": "/img/people/colchester-wilko-bm-og.jpg",
+  "creator": "Colchester City Council",
+  "provider": "Colchester City Council",
+  "license": "",
+  "licenseUrl": "",
+  "source": "",
+  "addedBy": "owner, 22 Nov 2026 14:09 (owner-supplied Colchester City Council pictures from its 17 Sep 2026 post, for the B&M/former Wilko story; credit Colchester City Council)",
+  "more": [
+   {
+    "name": "The former Wilko on the corner of St John's Street, September 2026",
+    "label": "Picture",
+    "wide": "/img/people/colchester-wilko-st-johns-street-corner.jpg",
+    "creator": "Colchester City Council"
+   },
+   {
+    "name": "The empty Wilko shop front inside St John's Walk, September 2026",
+    "label": "Picture",
+    "wide": "/img/people/colchester-wilko-st-johns-walk-inside.jpg",
+    "creator": "Colchester City Council"
+   }
+  ]
  }
 ]
