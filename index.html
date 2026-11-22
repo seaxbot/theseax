@@ -3762,7 +3762,7 @@ function portraitArt(s, opts){ /* credit on the photo only where no caption bar 
 (function(){
   if(typeof fetch !== "function") return;
   const load = () => fetch("/data/portraits.json?t=" + Math.floor(Date.now()/6e5), {cache:"no-store"}).then(r => r.ok ? r.json() : null)
-    .then(d => { if(Array.isArray(d)){ PORTRAITS = d; try{ if(typeof renderAll === "function") renderAll(); }catch(_){} } }).catch(() => {});
+    .then(d => { if(Array.isArray(d)){ PORTRAITS = d; try{ if(typeof renderAll === "function" && window.SEAX_ED_READY !== false) seaxRenderSoon(); }catch(_){} } }).catch(() => {});
   if(document.readyState === "loading") document.addEventListener("DOMContentLoaded", load); else load();
 })();
 function stockOf(s){ return s && s.id && !s.noPhoto && PHOTOS[s.id] && !sportKindOf(s) ? PHOTOS[s.id] : null; }
@@ -3788,7 +3788,7 @@ function stockArt(s, opts){ const p = stockOf(s); return `<svg class="emap wxart
 (function(){
   if(typeof fetch !== "function") return;
   const load = () => fetch("/data/photos.json?t=" + Math.floor(Date.now()/6e5), {cache:"no-store"}).then(r => r.ok ? r.json() : null)
-    .then(d => { if(d && typeof d === "object"){ PHOTOS = d; try{ if(typeof renderAll === "function") renderAll(); }catch(_){} } }).catch(() => {});
+    .then(d => { if(d && typeof d === "object"){ PHOTOS = d; try{ if(typeof renderAll === "function" && window.SEAX_ED_READY !== false) seaxRenderSoon(); }catch(_){} } }).catch(() => {});
   if(document.readyState === "loading") document.addEventListener("DOMContentLoaded", load); else load();
 })();
 /* road signs: stories about a named road show its sign (add more roads here with a sign image in /img/roads/) */
@@ -4999,7 +4999,10 @@ function renderWeekend(){
     </div></div></div>`;
   if(checker && typeof seaxNeedLookup === "function") seaxNeedLookup();
 }
-fetch("/data/weekend.json", { cache: "no-store" }).then(r => r.ok ? r.json() : null).then(w => { WK = w; if(typeof ED !== "undefined" && ED && weekendId()) renderAll(); else renderWeekend(); }).catch(() => {});
+fetch("/data/weekend.json", { cache: "no-store" }).then(r => r.ok ? r.json() : null).then(w => { WK = w; if(typeof ED !== "undefined" && ED && weekendId() && window.SEAX_ED_READY !== false) seaxRenderSoon(); else renderWeekend(); }).catch(() => {});
+/* one redraw for files that land together (pictures, stock photos, The Weekend), instead of one each (22 Nov 2026) */
+let seaxRsT = 0;
+function seaxRenderSoon(){ clearTimeout(seaxRsT); seaxRsT = setTimeout(() => { try{ renderAll(); }catch(_){} }, 80); }
 function renderAll(){
   if(typeof renderPinned === "function") renderPinned();
   if(typeof renderWeekend === "function") renderWeekend();
@@ -5080,6 +5083,9 @@ document.addEventListener("visibilitychange", () => { if(document.visibilityStat
   const url = window.SEAX_FEED_URL;
   if(!url || typeof fetch !== "function") return;
   let last = "", tag = "";
+  /* Until the live edition has arrived (or failed), the pictures, stock photos and Weekend files do not each redraw
+     the whole page: the edition's own draw picks them all up. Saves several full redraws on a phone (22 Nov 2026). */
+  window.SEAX_ED_READY = false;
   async function pull(){
     try{
       const bust = url + (url.includes("?") ? "&" : "?") + "t=" + Date.now();
@@ -5095,10 +5101,11 @@ document.addEventListener("visibilitychange", () => { if(document.visibilityStat
       if(!r.ok) throw new Error(r.status);
       const d = await r.json();
       if(d && typeof d === "object" && Array.isArray(d.stories)){
-        if(d.updatedAt !== last){ last = d.updatedAt; ED = normalise(d); renderAll(); }
+        if(d.updatedAt !== last){ last = d.updatedAt; ED = normalise(d); window.SEAX_ED_READY = true; renderAll(); }
         setFeed("live");
       }
-    }catch(_){ if(feedState !== "live") setFeed("embedded"); }
+      if(window.SEAX_ED_READY === false){ window.SEAX_ED_READY = true; renderAll(); }
+    }catch(_){ if(feedState !== "live") setFeed("embedded"); if(window.SEAX_ED_READY === false){ window.SEAX_ED_READY = true; try{ renderAll(); }catch(e){} } }
   }
   pull(); setInterval(pull, 60000);
   document.addEventListener("visibilitychange", () => { if(!document.hidden) pull(); });
