@@ -3761,7 +3761,7 @@ function townCredit(k){ const t = TOWN_PHOTO[k]; if(t && t.own) return `${t.what
 let PHOTOS = {};
 /* owner-supplied file photos of people named in a headline (data/portraits.json, Nov 2026): they override every other picture */
 let PORTRAITS = [];
-function portraitOf(s){ const h = String(s && s.headline || ""), id = s && s.id; for(const p of PORTRAITS){ try{ if(p.front === false) continue; /* story-page picture only: the front page keeps its normal picture (owner's choice, 20 Nov 2026) */ if((id && Array.isArray(p.ids) && p.ids.includes(id)) || (p.match && new RegExp(p.match).test(h))) return portraitTurn(p); }catch(_){} } return null; }
+function portraitOf(s){ const h = String(s && s.headline || ""), id = s && s.id; for(const p of PORTRAITS){ try{ if(p.front === false) continue; /* story-page picture only: the front page keeps its normal picture (owner's choice, 20 Nov 2026) */ if((id && Array.isArray(p.ids) && p.ids.includes(id)) || (p.match && new RegExp(p.match).test(h) && !(p.notMatch && new RegExp(p.notMatch, "i").test(h)))) return portraitTurn(p); /* notMatch: charity logos never picked up by name on crime, death or court headlines (22 Nov 2026) */ }catch(_){} } return null; }
 /* an entry with "alts" alternates its pictures hour by hour (owner's choice, 12 Nov 2026), in step with tools/build.py portrait_of */
 function portraitTurn(p){ const a = Array.isArray(p.alts) ? p.alts : []; if(!a.length) return p; const i = Math.floor(Date.now() / 36e5) % (a.length + 1); return i ? Object.assign({}, p, a[i - 1]) : p; }
 let PW_N = 0; /* "whole": true in data/portraits.json shows the full picture uncropped over a blurred copy (owner, 22 Nov 2026: Peter Fluck picture was being cut) */

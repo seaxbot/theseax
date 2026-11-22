@@ -1001,7 +1001,8 @@ def portrait_of(it):
     for p in PORTRAITS:
         try:
             # an entry may name its story by "id" (official bodies' own pictures, Nov 2026), so a rewritten headline keeps it
-            if (sid and sid in (p.get("ids") or [])) or (p.get("match") and re.search(p["match"], h)):
+            # "notMatch" (charity logos, 22 Nov 2026): a headline matching it never picks the picture up by name, only by id
+            if (sid and sid in (p.get("ids") or [])) or (p.get("match") and re.search(p["match"], h) and not (p.get("notMatch") and re.search(p["notMatch"], h, re.I))):
                 alts = p.get("alts") or []
                 if alts:  # alternate pictures hour by hour, in step with the page's portraitTurn (owner's choice, 12 Nov 2026)
                     i = int(time.time() // 3600) % (len(alts) + 1)

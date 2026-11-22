@@ -101,6 +101,9 @@ subject alone, without opening it, unless the subject suggests the owner must ac
      <domain of the address it came from, e.g. tendringdc.gov.uk>, "creator": "<body name>", "name": <caption>,
      "source": <the body's page or "">, "anchor": "centre"}. The photo desk downloads it on GitHub a few minutes
      after you push. Strip tracking parameters from the URL only if the picture still loads without them.
+  ii-b) CHARITY STORIES (owner's rule, 22 Nov 2026): a story about a named charity shows the charity's logo, not a
+     photo of a place. Request it as ops/newsroom.md "CHARITY LOGOS" says ({"logo": true, "creator", "site"}) instead of
+     using a photo from the email.
   iii) If neither works, say so in the run summary ("picture not used: <why>") and the story follows the normal
      image rules. A What's On listing goes up without a picture.
 - Links: never publish newsletter tracking or redirect links (anything with a subscriber ID). Use the body's own

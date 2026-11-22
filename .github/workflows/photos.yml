@@ -15,14 +15,14 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with: { fetch-depth: 1 }
-      - run: pip install -q pillow
+      - run: pip install -q pillow cairosvg
       - run: python3 -u tools/photos.py
       - run: python3 -u tools/sourcephotos.py
       - name: Commit new photos
         run: |
           git config user.name "The Seax photo desk"
           git config user.email "seaxbot@users.noreply.github.com"
-          git add -A img/stock data/photos.json img/people data/portraits.json 2>/dev/null || true
+          git add -A img/stock data/photos.json img/people data/portraits.json data/logo-misses.json 2>/dev/null || true
           git diff --cached --quiet && exit 0
           git commit -qm "Stock photos"
           for i in 1 2 3 4 5; do git pull -q --rebase origin main && git push -q origin HEAD:main && exit 0; sleep $((i*7)); done

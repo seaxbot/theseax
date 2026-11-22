@@ -105,7 +105,7 @@ def message(it, update):
     credit = ""
     for p in load(os.path.join(ROOT, "data", "portraits.json"), []):
         try:
-            if (it.get("id") and it.get("id") in (p.get("ids") or [])) or (p.get("match") and re.search(p["match"], head)):
+            if (it.get("id") and it.get("id") in (p.get("ids") or [])) or (p.get("match") and re.search(p["match"], head) and not (p.get("notMatch") and re.search(p["notMatch"], head, re.I))):
                 credit = (f'{p["label"]}: {p["creator"]}' if p.get("creator") else "") if p.get("label") else f'Photo: {p["creator"]} via {p.get("provider") or "Wikimedia Commons"}, {p["license"]}'
                 break
         except Exception:
