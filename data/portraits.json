@@ -1509,5 +1509,20 @@
   "licenseUrl": "",
   "source": "https://www.trafficcameras.uk/",
   "addedBy": "owner, 23 Nov 2026 10:36 (replaced the 08:17 camera picture with a 10.35am view)"
+ },
+ {
+  "ids": [
+   "chelmsford-city-cav-miley-badger-hole-training-walton-hersham"
+  ],
+  "name": "Cav Miley, left, and a badger",
+  "label": "Pictures",
+  "wide": "/img/people/chelmsford-city-cav-miley-badger-hole-training-walton-hersham-wide.jpg",
+  "og": "/img/people/chelmsford-city-cav-miley-badger-hole-training-walton-hersham-og.jpg",
+  "creator": "Chelmsford City FC (left) and Scottish SPCA (right)",
+  "provider": "Chelmsford City FC (left) and Scottish SPCA (right)",
+  "license": "",
+  "licenseUrl": "",
+  "source": "",
+  "addedBy": "owner, 23 Nov 2026: split screen of the club's video still of Miley and a Scottish SPCA badger photo, both supplied by the owner"
  }
 ]
