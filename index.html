@@ -1195,6 +1195,12 @@ footer .flinks a{text-decoration:underline}
     <div class="mh-right" id="mhRight"></div>
   </div>
   <div class="skyline" role="img" aria-label="The Essex skyline at sunrise: the QEII Bridge, Chelmsford Cathedral, Southend Pier, a Thames sailing barge, Colchester Castle, the Naze Tower and beach huts"></div>
+<script>/* Festive skyline (owner's choice, 23 Nov 2026): all three Christmas banners in turn, by UK date. 1-12 Dec snowfall, 13-20 Dec fairy lights, 21-26 Dec Christmas Eve, 27 Dec-5 Jan snowfall, then back to the normal sunrise on 6 Jan. Preview any time with ?banner=snowfall|fairy-lights|christmas-eve */
+(function(){try{var f=null,q=(location.search.match(/[?&]banner=([a-z-]+)/)||[])[1];
+if(/^(snowfall|fairy-lights|christmas-eve)$/.test(q||'')){f=q}else{var m=0,d=0;new Intl.DateTimeFormat('en-GB',{timeZone:'Europe/London',month:'numeric',day:'numeric'}).formatToParts(new Date()).forEach(function(x){if(x.type==='month')m=+x.value;if(x.type==='day')d=+x.value});
+if(m===12){f=d<=12?'snowfall':d<=20?'fairy-lights':d<=26?'christmas-eve':'snowfall'}else if(m===1&&d<=5){f='snowfall'}}
+if(!f)return;var L={'snowfall':'The Essex skyline in the snow','fairy-lights':'The Essex skyline strung with Christmas fairy lights','christmas-eve':'The Essex skyline on Christmas Eve: moonlight, a bright star over Chelmsford Cathedral and Santa\'s sleigh'};
+var el=document.querySelector('.masthead .skyline');el.style.backgroundImage='url(/img/festive/skyline-'+f+'.svg?v=1)';el.setAttribute('aria-label',L[f]+': the QEII Bridge, Chelmsford Cathedral, Southend Pier, a Thames sailing barge, Colchester Castle, the Naze Tower and beach huts')}catch(e){}})();</script>
 </header>
 
 <nav class="main" aria-label="Sections">
