@@ -13,6 +13,12 @@ In the checkout, load data/archive.json and edition.json and keep the headlines 
 has already covered is only worth sending if there is a genuinely new development (say what it is).
 
 ## 2. Search (about 20 minutes, at most 20 searches or fetches)
+Owner, 23 Nov 2026: the 23 Nov email said "thin morning, web search returned very little" after too few searches.
+A thin result is never an excuse to stop early. Use WebSearch with mode "extended" from the start (fresh results
+matter here), search each area separately (UK politics and GOV.UK, courts, business and jobs, transport, sport,
+culture and showbiz, obituaries, world news), and do at least 12 searches before deciding there is little to send.
+If a page will not load (for example the Wikipedia deaths list), search for it instead ("deaths November 2026
+Essex", "obituary Essex born", "died aged Colchester" and similar) rather than skipping obituaries.
 Look at national and international news from the last 36 hours: the main UK stories (BBC, PA, Sky, ITV, Guardian,
 Times, Telegraph, Independent, Reuters), GOV.UK announcements and written statements, big court cases, business,
 transport, sport, culture and obituaries, and the main world stories. For each, ask: is there a real Essex link?
@@ -36,6 +42,10 @@ but mark it "Essex link not yet confirmed". Note any legal risk (active criminal
 
 ## 4. Write and send the email
 Use ToolSearch "select:mcp__Gmail__send_message" and send ONE email to news@theseax.com only.
+Then put it in the inbox where the owner reads it (owner, 23 Nov 2026: the email "didn't fire" because it only
+showed in Sent; Gmail keeps mail the account sends to itself via news@ forwarding out of the inbox). Load
+"select:mcp__Gmail__update_message_labels" and add INBOX, UNREAD and IMPORTANT to the message id that send_message
+returned. Do this every day, even when the email arrived normally.
 Subject: Seax Essex-angle leads: <weekday> <day> <month> (for example "Seax Essex-angle leads: Sunday 22 November")
 Body (htmlBody, simple and readable on a phone), strongest lead first, 3 to 8 leads:
 - a short working headline;
