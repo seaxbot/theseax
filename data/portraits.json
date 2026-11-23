@@ -1467,5 +1467,20 @@
   "source": "https://www.harpsouthend.org.uk/",
   "notMatch": "\\b(dies|died|death|dead|killed|fatal|crash|collision|stabb|shot|murder|manslaughter|jailed|sentenced|court|charged|guilty|arrest|police|fraud|theft|stole|inquest|coroner|abuse|assault)",
   "addedBy": "photo desk 23 Nov 2026 (owner's rule, 22 Nov 2026: charity stories always use the charity's logo)"
+ },
+ {
+  "ids": [
+   "dartford-crossing-east-tunnel-shut-expansion-joint-23-november"
+  ],
+  "name": "Queues on the approach to the Dartford Crossing on Monday morning",
+  "label": "Picture",
+  "wide": "/img/people/dartford-crossing-east-tunnel-shut-expansion-joint-23-november-wide.jpg",
+  "og": "/img/people/dartford-crossing-east-tunnel-shut-expansion-joint-23-november-og.jpg",
+  "creator": "trafficcameras.uk",
+  "provider": "trafficcameras.uk",
+  "license": "",
+  "licenseUrl": "",
+  "source": "",
+  "addedBy": "owner, 23 Nov 2026 (supplied for today's Dartford Crossing tunnel story)"
  }
 ]
