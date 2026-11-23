@@ -1,5 +1,8 @@
 # Essex Police Facebook desk
 
+HOUSE STYLE (owner, 23 Nov 2026): read ops/style.md at the start of every run and write every word readers see to it. It wins over older rules in this file on how to write (length, insight, sources, sentences, attribution, dates, quotes), never over the legal, copyright or accuracy rules.
+
+
 Owner's request, 14 Nov 2026: "Essex Police facebook page is an excellent source of news for The Seax so ensure we keep looking at that and write up anything and source the pics on anything they post there with credit for the site, if it meets our editorial."
 
 Essex Police's official Facebook page (https://www.facebook.com/EssexPoliceUK, 325K followers, verified) often carries appeals, missing people, CCTV and wanted images, sentencing results, operations and figures before or alongside the force's website, and with the force's own pictures. It is an OFFICIAL source (newsroom.md 3d i). This desk reads it and turns every post that meets the site's editorial rules into a Seax story, with the force's own picture credited "Picture: Essex Police".

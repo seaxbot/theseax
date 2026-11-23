@@ -80,8 +80,9 @@ def body_problems(it):
     # subheadings ("## ...", owner's long-story format, 20 Nov 2026) are not paragraphs
     body = [p for p in it.get("body") or [] if isinstance(p, str) and p.strip() and not p.startswith("## ")]
     probs = []
-    if body and _overlap(it.get("summary") or "", body[0]) >= 0.5:
-        probs.append("paragraph 1 repeats the summary: open it with what the summary leaves out")
+    # relaxed 23 Nov 2026 (owner: the old 0.5 test forced stiff, dodging openings): only a near copy of the summary fails
+    if body and _overlap(it.get("summary") or "", body[0]) >= 0.8:
+        probs.append("paragraph 1 is a near copy of the summary: tell it in fuller, natural words or open with the next detail")
     for i in range(len(body) - 1):
         if _overlap(body[i], body[i + 1]) >= 0.5:
             probs.append(f"paragraph {i + 2} repeats paragraph {i + 1}")
@@ -91,6 +92,42 @@ def body_problems(it):
             probs.append(f'{name} uses stock phrasing "{m.group(0)}": say it plainly')
     if len(STAMP.findall(" ".join(body))) > 1:
         probs.append('more than one "reported on <day> <date> <year>" stamp in the body: date it once, attribute plainly after that')
+    return probs + style_problems(it, body)
+
+# House style (owner, 23 Nov 2026: "the writing sometimes feels a bit mechanical and not human ... style is so important";
+# ops/style.md). Checks the habits that made copy read like a compiled report.
+SENT_SPLIT = re.compile(r"(?<=[.!?])[\"')’”]*\s+(?=[A-Z\"'‘“£0-9])")
+TAIL_CREDIT = re.compile(r",\s+(?:the\s+)?[A-Z][\w&'’.\- ]{1,45}?\s+(?:reports|reported|says|said)[.!]?[\"'’”)]*$")
+FULL_DATE = re.compile(r"\b(?:Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Sunday) \d{1,2} (?:January|February|March|April|May|June|July|August|September|October|November|December)\b")
+LONG_SENTENCE = 35
+MIN_WORDS = 150
+
+def _sentences(p):
+    p = re.sub(r"\[([^\]]+)\]\([^)]+\)", r"\1", p)  # markdown links count as their words
+    return [s for s in SENT_SPLIT.split(p.strip()) if s.strip()]
+
+def style_problems(it, body=None):
+    if body is None:
+        body = [p for p in it.get("body") or [] if isinstance(p, str) and p.strip() and not p.startswith("## ")]
+    probs = []
+    sents = [s for p in body for s in _sentences(p)]
+    long = [s for s in sents if len(s.split()) > LONG_SENTENCE]
+    if long:
+        probs.append(f"{len(long)} sentence(s) over {LONG_SENTENCE} words, e.g. \"{' '.join(long[0].split()[:12])}...\": split them, one idea per sentence")
+    tails = [s for s in sents if TAIL_CREDIT.search(s.strip())]
+    if len(tails) > 2:
+        probs.append(f"{len(tails)} sentences end with a tagged-on credit (\", X reports\" / \", X said\"): credit each source once, naturally, and let the rest run free")
+    dates = FULL_DATE.findall(" ".join(body))
+    if len(dates) > 3:
+        probs.append(f"{len(dates)} full weekday-and-date stamps in the body: give the key date in full once, then use plain words (\"that evening\", \"on Wednesday\")")
+    if len(body) >= 4 and sum(p.split()[0] == "The" for p in body if p.split()) * 2 > len(body):
+        probs.append("more than half the paragraphs start with \"The\": vary how paragraphs open")
+    sid = str(it.get("id") or "")
+    words_n = sum(len(p.split()) for p in body)
+    exempt = (it.get("linkOnly") or it.get("summaryOnly") or sid.startswith(("o-", "c-", "ct-", "s-", "sp-"))
+              or it.get("kind") or it.get("desk") in ("inquest", "sport") or (str(it.get("researchNote") or "").strip() and not it.get("researched")))
+    if not exempt and words_n < MIN_WORDS:
+        probs.append(f"only {words_n} words: research it and add context, background, who is affected and what happens next from more sources (ops/style.md), at least {MIN_WORDS} words")
     return probs
 
 def _text(it):

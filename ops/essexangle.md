@@ -1,5 +1,8 @@
 # Essex-angle leads email: standing instructions (owner's request, 21 Nov 2026)
 
+HOUSE STYLE (owner, 23 Nov 2026): read ops/style.md at the start of every run and write every word readers see to it. It wins over older rules in this file on how to write (length, insight, sources, sentences, attribution, dates, quotes), never over the legal, copyright or accuracy rules.
+
+
 The owner asked (21 Nov 2026) for national and international stories with an Essex angle to be found every day
 and sent as an email to news@theseax.com at 08:00 UK time, so the newsroom and the owner can decide what to follow
 up. The first example was the death of Spitting Image co-creator Peter Fluck, who taught at Colchester School of Art

@@ -1,5 +1,8 @@
 # Inbox desk: standing instructions (owner's request, Nov 2026)
 
+HOUSE STYLE (owner, 23 Nov 2026): read ops/style.md at the start of every run and write every word readers see to it. It wins over older rules in this file on how to write (length, insight, sources, sentences, attribution, dates, quotes), never over the legal, copyright or accuracy rules.
+
+
 The owner wants every email that arrives at the site's inbox (theseaxessex@gmail.com, which receives all
 @theseax.com addresses: news@, sport@, events@, community@, corrections@, editor@, info@) read automatically, mined
 for stories, What's On events and pictures, and published when it meets the site's rules. The desk runs four times
