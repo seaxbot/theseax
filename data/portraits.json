@@ -1521,18 +1521,6 @@
   "license": "",
   "licenseUrl": "",
   "source": "https://www.trafficcameras.uk/",
-  "addedBy": "owner, 23 Nov 2026 10:36 (replaced the 08:17 camera picture with a 10.35am view); owner added a 10.41am Google Maps traffic screenshot after the story text, 23 Nov 2026 (not the main picture)",
-  "more": [
-   {
-    "name": "Google Maps traffic around the Dartford Crossing at 10.41am on Monday 23 November",
-    "caption": "Traffic around the Dartford Crossing at 10.41am on Monday. Red marks the slowest traffic, on the M25 from beyond Swanley up to the tunnels and on the A2 either side of the Darenth Interchange",
-    "label": "Picture",
-    "creator": "Google Maps",
-    "wide": "/img/people/dartford-crossing-east-tunnel-shut-expansion-joint-23-november-map-1041.jpg",
-    "w": 900,
-    "h": 1668,
-    "tall": true
-   }
-  ]
+  "addedBy": "owner, 23 Nov 2026 10:36 (replaced the 08:17 camera picture with a 10.35am view)"
  }
 ]
