@@ -1035,7 +1035,8 @@ def portrait_figure(p):
     if p.get("noCaption"):  # no caption or credit at all (owner's choice, 17 Nov 2026)
         return (f'<figure class="stock"><img src="{E(p["wide"])}?v=1" width="1200" height="655" alt="{E(p["name"])}" loading="eager" fetchpriority="high"></figure>')
     if p.get("label"):  # short caption for labelled images such as a mock-up (owner's choice, 11 Nov 2026)
-        return (f'<figure class="stock"><img src="{E(p["wide"])}?v=1" width="1200" height="655" alt="{E(lab)}: {E(p["name"])}" loading="eager" fetchpriority="high">'
+        # "tall": a portrait picture (e.g. a traffic map screenshot) shown whole at its own shape (owner, 23 Nov 2026)
+        return (f'<figure class="stock{" tall" if p.get("tall") else ""}"><img src="{E(p["wide"])}?v=1" width="{E(p.get("w") or 1200)}" height="{E(p.get("h") or 655)}" alt="{E(lab)}: {E(p["name"])}" loading="eager" fetchpriority="high">'
                 f'<figcaption>{(E(p["caption"]) + ". ") if p.get("caption") else ""}<b>{E(lab)}</b>{(": " + E(p["creator"])) if p.get("creator") else ""}</figcaption></figure>')
     return (f'<figure class="stock"><img src="{E(p["wide"])}?v=1" width="1200" height="655" alt="{E(lab)} of {E(p["name"])}" loading="eager" fetchpriority="high">'
             f'<figcaption><b>{E(p["name"])}</b>. {E(lab)}{E(p.get("note") or "")}. {"Image" if p.get("label") else "Photo"}: {E(p["creator"])}{src}{", " + lic if p.get("license") else ""}{"" if p.get("label") else ", set on a blurred background"}.</figcaption></figure>')
@@ -1451,7 +1452,7 @@ def video_figure(it, fig):
             'a.replaceWith(f)})})();</script>')
 
 STORY_CTX = {"archive": {}, "diary": {}, "takedown": set()}
-PAGE_CSS_V = "20261121b"
+PAGE_CSS_V = "20261123a"
 
 
 def story_extras(it, sec):
