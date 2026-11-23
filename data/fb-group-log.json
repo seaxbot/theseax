@@ -261,6 +261,34 @@
    "t": 1795444360731,
    "h": "Southend Victoria line trains replaced by buses on 28 and 29 November",
    "result": "live"
+  },
+  {
+   "g": "rayleigh-life-2466",
+   "s": "rochford-local-plan-ministers-order-consultation-7-december",
+   "t": 1795460798288,
+   "h": "Ministers force Rochford Local Plan consultation from 7 December, with six big housing sites back in",
+   "result": "pending"
+  },
+  {
+   "g": "caring-about-hockley-9741",
+   "s": "rochford-local-plan-ministers-order-consultation-7-december",
+   "t": 1795460867862,
+   "h": "Ministers force Rochford Local Plan consultation from 7 December, with six big housing sites back in",
+   "result": "pending"
+  },
+  {
+   "g": "rayleigh-community-group-9138",
+   "s": "rochford-local-plan-ministers-order-consultation-7-december",
+   "t": 1795460938359,
+   "h": "Ministers order Rochford Local Plan consultation from 7 December, with six big housing sites back in",
+   "result": "pending"
+  },
+  {
+   "g": "the-voice-of-rayleigh-6405",
+   "s": "rochford-local-plan-ministers-order-consultation-7-december",
+   "t": 1795460982492,
+   "h": "Rochford Local Plan: ministers order public consultation from 7 December, with six big housing sites back in",
+   "result": "pending"
   }
  ],
  "joins": [
