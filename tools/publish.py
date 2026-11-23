@@ -344,7 +344,7 @@ def main():
                     print(f"  {sid}: " + "; ".join(probs))
                 sys.exit(5)
             if older:
-                print(f"older stories with repeats ({len(older)}; tidy up to 10 per run): " +
+                print(f"older stories with repeats ({len(older)}; rewrite at least 8 per run to the house style, ops/style.md 12): " +
                       " | ".join(f"{sid}: {'; '.join(p)}" for sid, p in older[:10]))
         # repeat stories (owner's rule, 18 Nov 2026, after Fatima Whitbread's Freewoman of Brentwood honour ran on
         # 14 Nov and again under a new id on 18 Nov): nothing the site has already run goes up again as a new story
