@@ -1,6 +1,22 @@
 [
  {
   "ids": [
+   "grays-billy-howard-smith-jailed-roy-hibbert-lodge-lane-death"
+  ],
+  "match": "\\bBilly Howard-Smith\\b",
+  "name": "Billy Howard-Smith",
+  "label": "Picture",
+  "wide": "/img/people/grays-billy-howard-smith-wide.jpg",
+  "og": "/img/people/grays-billy-howard-smith-og.jpg",
+  "creator": "Essex Police",
+  "provider": "Essex Police",
+  "license": "",
+  "licenseUrl": "",
+  "source": "https://www.essex.police.uk/news/essex/news/",
+  "addedBy": "owner, 23 Nov 2026 (Essex Police custody image released after sentence; Grays fatal crash story)"
+ },
+ {
+  "ids": [
    "essex-greater-anglia-elizabeth-line-weekend-cancellations-early-2027"
   ],
   "name": "A Great British Railways Anglia train at a station platform",
