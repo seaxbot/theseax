@@ -3277,6 +3277,7 @@ def main():
     # single-source length cap, opt-outs. publish.py applies it to edition.json too.
     sys.path.insert(0, os.path.join(ROOT, "tools"))
     import policy
+    import dupes
     policy.apply(ed)
 
     changed = 0
@@ -3340,6 +3341,12 @@ def main():
             "t": iso(t) if t else prev.get("t", ""), "u": iso(parse_t(it.get("updated"))) if it.get("updated") else prev.get("u", ""),
             "first": prev.get("first") or iso(NOW), "last": iso(NOW),
         }
+        # summary and source links, so the repeat check (tools/dupes.py) can spot the same story under a new headline
+        # (owner, 23 Nov 2026, after the Harlow taxi checks story ran twice a week apart)
+        archive[it["id"]]["s"] = str(it.get("summary") or prev.get("s") or "")[:300]
+        src = sorted(dupes.urls_of(it)) or prev.get("src") or []
+        if src:
+            archive[it["id"]]["src"] = src[:12]
         ar = [x for x in (it.get("areas") or []) if isinstance(x, str) and x != "all"]
         if ar:
             archive[it["id"]]["a"] = ar
