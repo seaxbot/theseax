@@ -28,9 +28,9 @@
     "galleywood",
     "moulsham"
    ],
-   "status": "caution",
+   "status": "off",
    "perWeek": 2,
-   "note": "Rules: no political posts, business promotion Mondays only, no spam. Post Mondays. Business posts must start with the words \"Business Monday\" (rule 2); first Seax post 23 Nov 2026 began that way and went live at once.",
+   "note": "Rules: no political posts, business promotion Mondays only, no spam. Post Mondays. Business posts must start with the words \"Business Monday\" (rule 2); first Seax post 23 Nov 2026 began that way and went live at once. OFF 23 Nov 2026: admin removed the Cav Miley post (posted Monday as a business post); the group shows 6 Seax posts removed in all, including an earlier A12 crash post.",
    "avoidTags": [
     "Politics",
     "Council",
@@ -59,7 +59,8 @@
    ],
    "status": "on",
    "perWeek": 4,
-   "note": "Rule: no AI posters. Real photo only. Group About says business posts only on Wednesdays (seen 23 Nov 2026): keep non-urgent Seax posts to Wednesdays; public safety items any day."
+   "note": "Rule: no AI posters. Real photo only. Group About says business posts only on Wednesdays (seen 23 Nov 2026): keep non-urgent Seax posts to Wednesdays; public safety items any day.",
+   "approval": "instant"
   },
   {
    "id": "1779517199310030",
@@ -199,7 +200,8 @@
    ],
    "status": "on",
    "perWeek": 4,
-   "note": "Rule: one post per day per business."
+   "note": "Rule: one post per day per business.",
+   "approval": "instant"
   },
   {
    "id": "1428282664973912",
@@ -216,7 +218,9 @@
     "shoebury"
    ],
    "status": "on",
-   "perWeek": 4
+   "perWeek": 4,
+   "approval": "instant",
+   "note": "Vetted 23 Nov 2026: no group rules or Group by banner shown; first Seax post went live at once."
   },
   {
    "id": "361117071553387",
