@@ -14,3 +14,5 @@ s-southend-boreham-wood-2026-11-20-live
 stansted-airport-greater-anglia-signalling-failure-20-november
 # owner dropped it, 23 Nov 2026 08:20 (re-added by the 08:35 newsroom run as a kept owner-desk item)
 a12-northbound-closed-junction-16-galleywood-crash-22-november
+# owner, 23 Nov 2026 20:51: repeat of the 16 Nov story harlow-station-taxi-private-hire-checks-three-suspended ("watch for repeats - shouldn't be on there")
+harlow-rail-station-taxi-checks-three-vehicles-suspended
