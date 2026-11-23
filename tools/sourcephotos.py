@@ -111,11 +111,16 @@ def logo_allowed(url, site):
     return any(h == a or h.endswith("." + a) for a in (sh, base) + LOGO_HOSTS)
 
 
+FINAL = [""]
+
+
 def find_logo(site):
     """The charity's logo from its home page: header <img> marked logo, then schema.org logo, then the touch icon."""
     req = urllib.request.Request(site, headers={"User-Agent": UA, "Accept": "text/html"})
     with urllib.request.urlopen(req, timeout=30, context=CTX) as r:
         html = r.read(3_000_000).decode("utf-8", "replace")
+        site = r.geturl() or site  # a charity's site that redirects to its new domain (HARP: harphomeless.org)
+    FINAL[0] = site
     found = []
     for m in re.finditer(r"<img\b[^>]*>", html, re.I):
         tag = m.group(0)
@@ -189,13 +194,14 @@ def do_logo(sid, r, por):
         print("logo reused", sid, creator)
         return por, True
     cands = [str(r["url"])] if r.get("url") else []
+    FINAL[0] = ""
     try:
         cands += find_logo(site)
     except Exception as e:
         print("logo page failed", sid, site, e)
     im = None
     for url in dict.fromkeys(cands):
-        if not logo_allowed(url, site):
+        if not (logo_allowed(url, site) or (FINAL[0] and logo_allowed(url, FINAL[0]))):
             print("logo refused host", sid, url[:80])
             continue
         try:
