@@ -1,5 +1,5 @@
 {
- "at": "2026-11-23T06:44:48.609249+00:00",
+ "at": "2026-11-23T16:32:29.113584+00:00",
  "meetings": [
   {
    "council": "basildon",
@@ -112,16 +112,6 @@
    ]
   },
   {
-   "council": "basildon",
-   "councilName": "Basildon Council",
-   "area": "south",
-   "committee": "General Purposes",
-   "date": "2026-11-30",
-   "time": "7.00 p.m.",
-   "url": "https://www.basildonmeetings.info/ieListDocuments.aspx?CId=995&MId=9526",
-   "items": []
-  },
-  {
    "council": "tendring",
    "councilName": "Tendring District Council",
    "area": "tendring",
@@ -129,7 +119,10 @@
    "date": "2026-12-01",
    "time": "7.30 pm",
    "url": "https://tdcdemocracy.tendringdc.gov.uk/ieListDocuments.aspx?CId=326&MId=2877",
-   "items": []
+   "items": [
+    "Report of the Corporate Director (Finance & IT) - A.1 - Overview of The Financial Outturn 2025/26 and Other Key Financial Matters",
+    "Report of the Assistant Director (Corporate Policy & Support) - A.2 - Review of the Work Programme"
+   ]
   },
   {
    "council": "basildon",
@@ -139,6 +132,16 @@
    "date": "2026-12-02",
    "time": "6.30 p.m.",
    "url": "https://www.basildonmeetings.info/ieListDocuments.aspx?CId=478&MId=9619",
+   "items": []
+  },
+  {
+   "council": "basildon",
+   "councilName": "Basildon Council",
+   "area": "south",
+   "committee": "General Purposes",
+   "date": "2026-12-03",
+   "time": "7.00 p.m.",
+   "url": "https://www.basildonmeetings.info/ieListDocuments.aspx?CId=995&MId=9526",
    "items": []
   },
   {
