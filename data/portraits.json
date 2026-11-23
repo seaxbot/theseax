@@ -1,6 +1,22 @@
 [
  {
   "ids": [
+   "basildon-hospital-gas-and-air-suspended-maternity-staff-safety"
+  ],
+  "match": "\\bBasildon (University )?Hospital\\b",
+  "name": "Basildon University Hospital",
+  "label": "Picture",
+  "wide": "/img/people/basildon-hospital-wide.jpg",
+  "og": "/img/people/basildon-hospital-og.jpg",
+  "creator": "",
+  "provider": "",
+  "license": "",
+  "licenseUrl": "",
+  "source": "",
+  "addedBy": "owner, 23 Nov 2026 (all Basildon Hospital stories, starting with the gas and air maternity story)"
+ },
+ {
+  "ids": [
    "grays-billy-howard-smith-jailed-roy-hibbert-lodge-lane-death"
   ],
   "match": "\\bBilly Howard-Smith\\b",
