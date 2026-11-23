@@ -1,0 +1,16 @@
+{
+ "note": "Owner-requested social pushes (owner, 23 Nov 2026). X via tools/xbuffer.py, Facebook Page via tools/fbdigest.py --slot push. Each message goes once, when its 'after' time has come.",
+ "pushes": [
+  {
+   "id": "chelmsford-city-cav-miley-badger-hole-training-walton-hersham",
+   "x": [
+    {"text": "Chelmsford City captain Cav Miley fell down a badger hole in training. Mark Cooper says it affected his game in Saturday's 2-2 draw at Walton & Hersham 🦡"},
+    {"text": "Former Southend United skipper Cav Miley played the full game for Chelmsford City on Saturday, days after a run-in with a badger hole in training", "after": "2026-11-23T17:05:00Z"},
+    {"text": "The Clarets captain, the training pitch and the badger hole: watch Mark Cooper explain what happened to Cav Miley 🦡", "after": "2026-11-23T20:35:00Z"}
+   ],
+   "fb": [
+    {"text": "Not your usual injury report 🦡\n\nChelmsford City captain Cav Miley fell down a badger hole in training, and manager Mark Cooper says it affected his game in Saturday's 2-2 draw at Walton & Hersham. The former Southend skipper still played the full match.\n\nThe full story, and Cooper's post-match interview:"}
+   ]
+  }
+ ]
+}

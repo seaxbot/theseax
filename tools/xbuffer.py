@@ -202,6 +202,33 @@ def pick_story(ed, now, posts, stories):
     _, kind, text, it = pool[0]
     return kind, fit(text), link(it["id"]), it["id"], clean(it["headline"])
 
+
+PUSH = os.path.join(ROOT, "data", "social-push.json")
+
+def owner_push(ed, now, posts, stories):
+    """Owner-requested pushes (owner, 23 Nov 2026: "Tweet and Facebook out the Cav Miley story widely"). data/social-push.json
+    {"pushes": [{"id": story id, "x": [{"text": ..., "after": ISO time}], "fb": [...]}]}: each tweet goes once, in order,
+    when its time has come, ahead of everything else, still inside the quiet hours, daily cap and gap rules."""
+    try:
+        pushes = json.load(open(PUSH, encoding="utf-8")).get("pushes") or []
+    except Exception:
+        return None
+    live = {it["id"]: it for it in stories}
+    done = {p.get("push") for p in posts if p.get("push")}
+    for pu in pushes:
+        it = live.get(pu.get("id"))
+        if not it:
+            continue
+        for i, x in enumerate(pu.get("x") or []):
+            key = f"{it['id']}#x{i}"
+            if key in done:
+                continue
+            after = fbpage.parse_t(x.get("after")) if x.get("after") else None
+            if after and now < after:
+                break
+            return "owner", fit(x["text"]), link(it["id"]), it["id"], clean(it["headline"]), key
+    return None
+
 def main():
     dry = "--dry-run" in sys.argv
     key = os.environ.get("BUFFER_API_KEY", "").strip()
@@ -222,8 +249,12 @@ def main():
             print(f"nothing posted: last post {int((now - last).total_seconds() // 60)} min ago"); return
     stories = all_stories(ed)
     done_today = {p.get("kind") for p in todays}
-    f = fixed(ed, now, uk, done_today, stories)
-    if f:
+    pkey = None
+    op = owner_push(ed, now, posts, stories)
+    f = None if op else fixed(ed, now, uk, done_today, stories)
+    if op:
+        kind, text, url, sid, headline, pkey = op
+    elif f:
         kind, text, url, sid = f; headline = text
     else:
         s = pick_story(ed, now, posts, stories)
@@ -253,7 +284,7 @@ def main():
     if not post:
         print("Buffer did not accept the post:", res.get("__typename"), res.get("message")); sys.exit(1)
     posts.append({"id": sid, "kind": kind, "headline": headline, "at": now.strftime("%Y-%m-%dT%H:%M:%SZ"),
-                  "update": kind == "update", "buffer": post.get("id")})
+                  "update": kind == "update", "buffer": post.get("id"), **({"push": pkey} if pkey else {})})
     st["posts"] = posts[-800:]
     json.dump(st, open(STATE, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
     print(f"sent to Buffer for X ({kind}):", text)

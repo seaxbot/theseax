@@ -27,6 +27,16 @@ Owner's instructions (20 Nov 2026): post Seax stories into the relevant Essex gr
   - Needs the map: a landmark or town view that is not where the story happened (Colchester Castle on a shop opening, a seafront view on an inland street), a stock photo of a generic scene that could mislead, or anything showing the wrong town.
   - If the Facebook link preview still shows the old picture after the switch, open https://developers.facebook.com/tools/debug/ in the same Chrome, paste the story URL and press "Scrape Again", then reopen the composer. If it still shows the old picture, skip that post this run.
 
+## Cav Miley badger story push (owner, 23 Nov 2026 13:46: "Tweet and Facebook out the Cav Miley story widely")
+Until the end of Tuesday 24 November, the story "chelmsford-city-cav-miley-badger-hole-training-walton-hersham" goes
+first in every run, ahead of other stories, to: Chelmsford town and area groups, Southend groups (Miley was Southend
+United's captain and an FA Trophy winner there), and Essex-wide community groups, wherever the group allows sport or
+general local news and links. It counts towards the usual daily and per-run caps (no group gets it twice, and the
+never-posted-before limit still applies); within those caps, give it as many groups as possible. Keep the wording light
+and friendly (it is a funny story, not a mocking one), for example: "Not your usual injury report: Chelmsford City
+captain Cav Miley fell down a badger hole in training. Mark Cooper explains." Its picture is the owner's split screen of
+Miley and a badger, which fits, so no map. Skip groups whose rules bar sport or news links.
+
 ## Crime checker push (owner, 20 Nov 2026: "the top story could go everywhere, saying you can select your neighbourhood"; scaled back at 17:41: "I don't want to push it as we've just launched; select those that will push it through no problems and won't be held")
 Until the end of Sunday 22 November, the story "essex-recorded-crime-september-2026-police-data" may also go to groups beyond the usual 3, but ONLY groups whose "approval" is "instant" in data/fb-groups.json (posts from The Seax have gone live there straight away) and that are town or crime groups for an area the story covers. Never to groups with approval "admin approval", "auto-declined" or unknown (blank), never to "caution" groups, never to events or politics groups. Every other hard limit still applies (12 a day, 3 a run, 8 minutes apart, one post per group per day and 20 hours apart, perWeek), and public safety items still go first. If any post in this push is declined, removed or held, stop the push at once and report it.
 - At the time of writing that means: Laindon and Basildon (196202630394637), Our Thurrock Community (1601081196881282), Little Thurrock Community Forum (1488274811502316, but not on the same day as Our Thurrock), Harlow Community (1236677473201839). If another town group's approval becomes "instant" during the weekend (a Seax post there went live at once), it may join.

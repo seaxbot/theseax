@@ -228,6 +228,35 @@ def due_slot(now, posts):
 def posted_today(posts, slot, uk):
     return any(p.get("id") == f"digest-{slot}-{uk:%Y-%m-%d}" for p in posts)
 
+def push_posts(now, st, posts):
+    """Post each due "fb" message in data/social-push.json once, as a link post to the story (its share card shows the
+    story's picture). Same Page check as the round-ups."""
+    try:
+        pushes = json.load(open(os.path.join(ROOT, "data", "social-push.json"), encoding="utf-8")).get("pushes") or []
+    except Exception:
+        print("no pushes"); return
+    done = {p.get("id") for p in posts}
+    token = os.environ.get("FB_PAGE_TOKEN", "").strip()
+    who = None
+    for pu in pushes:
+        sid = pu.get("id")
+        for i, m in enumerate(pu.get("fb") or []):
+            key = f"push-{sid}-{i}"
+            after = fbpage.parse_t(m.get("after")) if m.get("after") else None
+            if key in done or (after and now < after):
+                continue
+            if not token:
+                print("FB_PAGE_TOKEN is not set: nothing posted"); return
+            if who is None:
+                who = fbpage.graph("me", {"fields": "id,name", "access_token": token})
+                if who.get("name") != fbpage.PAGE_NAME:
+                    print(f"STOP: the token belongs to {who.get('name')!r}, not the {fbpage.PAGE_NAME} Page. Nothing posted."); sys.exit(1)
+            link = f"{SITE}/story/{sid}/?ref=fbpage"
+            res = fbpage.graph(f"{who['id']}/feed", data={"message": m["text"], "link": link, "access_token": token})
+            fbpage.record(st, key, m["text"].split("\n")[0], False, res.get("post_id") or res.get("id"), now)
+            json.dump(st, open(fbpage.STATE, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
+            print("POSTED push", key, res.get("post_id") or res.get("id"))
+
 def main():
     a = sys.argv
     slot = a[a.index("--slot") + 1] if "--slot" in a else "auto"
@@ -242,6 +271,8 @@ def main():
         ok = who.get("name") == fbpage.PAGE_NAME
         print(f"CHECK: token belongs to {who.get('name')!r} ({'OK, The Seax Page' if ok else 'NOT The Seax Page'})")
         sys.exit(0 if ok else 1)
+    if slot == "push":  # owner-requested single-story Page posts from data/social-push.json (owner, 23 Nov 2026)
+        return push_posts(now, st, posts)
     if slot == "auto":
         slot = due_slot(now, posts)
         if not slot:
