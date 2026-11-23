@@ -3749,7 +3749,9 @@ function townKeyOf(s){
   parts.forEach(p => { const hit = TOWN_ALIAS.find(([re]) => re.test(p)); if(hit && !keys.includes(hit[1])) keys.push(hit[1]); });
   /* only when the first place named is one of our towns, and the story covers no more than two of them */
   const first = parts.length && TOWN_ALIAS.find(([re]) => re.test(parts[0]));
-  return first && keys.length <= 2 && TOWN_PHOTO[first[1]] ? first[1] : null;
+  /* owner's rule (23 Nov 2026): general town views do not show where a story happened, so the map is used instead;
+     only the owner's own town pictures ("own", e.g. Shoeburyness) remain */
+  return first && keys.length <= 2 && TOWN_PHOTO[first[1]] && TOWN_PHOTO[first[1]].own ? first[1] : null;
 }
 function townArt(s, opts){
   const k = townKeyOf(s), t = TOWN_PHOTO[k];
@@ -3772,7 +3774,7 @@ function portraitArt(s, opts){ /* credit on the photo only where no caption bar 
     .then(d => { if(Array.isArray(d)){ PORTRAITS = d; try{ if(typeof renderAll === "function" && window.SEAX_ED_READY !== false) seaxRenderSoon(); }catch(_){} } }).catch(() => {});
   if(document.readyState === "loading") document.addEventListener("DOMContentLoaded", load); else load();
 })();
-function stockOf(s){ return s && s.id && !s.noPhoto && PHOTOS[s.id] && !sportKindOf(s) ? PHOTOS[s.id] : null; }
+function stockOf(s){ const p = s && s.id && !s.noPhoto && PHOTOS[s.id] && !sportKindOf(s) ? PHOTOS[s.id] : null; return p && (p.kind === "commons" || p.kind === "owner") ? p : null; } /* owner's rule (23 Nov 2026): no generic stock photos, maps instead; only Commons photos of the exact place and owner pictures */
 /* major breaking news (a news story flagged breaking, weight 9 or 10) with no suitable photo shows the owner's
    Breaking News picture (owner's rule, Nov 2026); every specific photo rule and a stock photo still win.
    Same rule as tools/build.py is_major_breaking. The breaking flag drops after 6 hours, and the picture with it. */

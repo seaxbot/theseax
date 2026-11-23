@@ -987,6 +987,10 @@ try:
     PHOTOS = json.load(open(os.path.join(ROOT, "data", "photos.json"), encoding="utf-8"))
 except Exception:
     PHOTOS = {}
+# Owner's rule (23 Nov 2026): "Unless there is a picture from Creative Commons which absolutely places the correct pic
+# at the exact right place ... we should stick with maps." Generic stock photos (Openverse) are no longer shown: only
+# Wikimedia Commons photos of the story's exact named place and pictures the owner supplied (kind "owner") remain.
+PHOTOS = {k: v for k, v in PHOTOS.items() if isinstance(v, dict) and v.get("kind") in ("commons", "owner")}
 
 # Owner-supplied file photos of people named in a headline (data/portraits.json; owner's choice, Nov 2026). They
 # override every other picture on the card, story page and share card, with the photographer's credit and licence.
@@ -1214,7 +1218,9 @@ def town_key(it, sec):
                     keys.append(k)
                 break
     first = next((k for rx, k in TOWN_ALIAS if parts and rx.search(parts[0])), None)
-    return first if first and len(keys) <= 2 and first in TOWN_CREDITS else None
+    # owner's rule (23 Nov 2026): a general view of the town does not show where the story happened, so stories get
+    # the map instead; only the owner's own town pictures (TOWN_CREDITS "own", e.g. Shoeburyness) are still used
+    return first if first and len(keys) <= 2 and first in TOWN_CREDITS and TOWN_CREDITS[first].get("own") else None
 
 def fallback_photo(it, sec, card):
     """(figure html, share image path) for a story with no specific photo, or ("", "") to keep the branded card."""
