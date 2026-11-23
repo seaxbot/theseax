@@ -2,12 +2,13 @@
  "checked": "2026-11-20",
  "postAs": "The Seax (Facebook Page)",
  "limits": {
-  "perDay": 15,
+  "perDay": 25,
   "perStory": 3,
   "perGroupPerDay": 1,
   "minHoursBetweenSameGroup": 20,
   "storyMaxAgeHours": 24,
-  "newGroupsPerDay": 4
+  "newGroupsPerDay": 8,
+  "perRun": 5
  },
  "notChecked": "Whether each group holds posts for admin approval: recorded in 'approval' as posts are made.",
  "groups": [
