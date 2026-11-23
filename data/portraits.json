@@ -1450,5 +1450,22 @@
   "notMatch": "\\b(dies|died|death|dead|killed|fatal|crash|collision|stabb|shot|murder|manslaughter|jailed|sentenced|court|charged|guilty|arrest|police|fraud|theft|stole|inquest|coroner|abuse|assault)",
   "addedBy": "photo desk 23 Nov 2026 (owner's rule, 22 Nov 2026: charity stories always use the charity's logo)",
   "match": "\\bCancer[\\s-]Research[\\s-]UK\\b"
+ },
+ {
+  "charity": "harp",
+  "ids": [
+   "c-southend-harp-christmas-unwrapped-appeal"
+  ],
+  "name": "HARP",
+  "label": "Logo",
+  "wide": "/img/people/logo-harp-wide.jpg",
+  "og": "/img/people/logo-harp-og.jpg",
+  "creator": "HARP",
+  "provider": "HARP",
+  "license": "",
+  "licenseUrl": "",
+  "source": "https://www.harpsouthend.org.uk/",
+  "notMatch": "\\b(dies|died|death|dead|killed|fatal|crash|collision|stabb|shot|murder|manslaughter|jailed|sentenced|court|charged|guilty|arrest|police|fraud|theft|stole|inquest|coroner|abuse|assault)",
+  "addedBy": "photo desk 23 Nov 2026 (owner's rule, 22 Nov 2026: charity stories always use the charity's logo)"
  }
 ]
