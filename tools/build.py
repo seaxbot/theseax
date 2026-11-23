@@ -1785,12 +1785,11 @@ def body_with_charts(it, body, opening=""):
     # interactive look-ups (owner, 20 Nov 2026: "a selector [so] people could select any one of their 56 neighbourhoods")
     widgets = [w for w in (it.get("widgets") or []) if isinstance(w, dict) and w.get("type") == "crime-lookup"
                and str(w.get("src") or "").startswith("/data/")]
-    # No separate summary block under the headline (owner, 20 Nov 2026: "just get straight into it"): the summary is the
-    # story's opening line, in ordinary body text after the picture. Skipped if the first paragraph already says it.
+    # Bold summarising opening paragraph on every story (owner, 23 Nov 2026: "Needs to be a bold summarising paragraph at
+    # top of all stories with context and then into the story"; replaces the 20 and 21 Nov "straight into it" choice).
+    # The summary sits first, after the picture, in bold; the body follows and must not repeat it (tools/repeats.py).
     op = " ".join(str(opening or "").split())
-    # Owner, 21 Nov 2026: the summary repeated under the picture "adds nothing and can look weird", so it only shows when
-    # a story has no body of its own (link-only and short items), where it is the only text.
-    out = [f"<p>{E(op)}</p>"] if op and not paras else []
+    out = [f'<p class="intro" style="font-weight:700;font-size:1.08em;line-height:1.5">{E(op)}</p>'] if op else []
     if str(it.get("warning") or "").strip():  # content warning at the top (owner, 20 Nov 2026: Brentwood School review)
         out.insert(0, f'<p class="cwarn" role="note" style="background:#fdf1f1;border-left:5px solid #c8102e;padding:12px 14px;border-radius:6px;font-size:.95em;margin:0 0 1.2em"><b>Warning:</b> {E(str(it["warning"]).strip())}</p>')
     for i, p in enumerate(paras):
