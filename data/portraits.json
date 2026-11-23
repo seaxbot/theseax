@@ -887,6 +887,22 @@
   "addedBy": "owner, 13 Nov 2026 (ARU voluntary redundancies story; used for all Anglia Ruskin stories)"
  },
  {
+  "ids": [
+   "chelmsford-mp-pauls-law-dysphagia-training-birch-care-home"
+  ],
+  "match": "\\bPaul Spearing\\b",
+  "name": "Paul Spearing",
+  "label": "Picture",
+  "wide": "/img/people/paul-spearing-wide.jpg",
+  "og": "/img/people/paul-spearing-og.jpg",
+  "creator": "family handout",
+  "provider": "",
+  "license": "",
+  "licenseUrl": "",
+  "source": "https://www.georgejulian.co.uk/inquests/paul-spearing/",
+  "addedBy": "owner, 23 Nov 2026 (family photo of Paul Spearing, from George Julian's inquest pages; for the Paul's Law story and all Paul Spearing stories; credit: family handout)"
+ },
+ {
   "match": "\\b([Ii]nquests?|[Cc]oroners?)\\b|[Cc]oroner['’]s\\b|\\b[Pp]revention of future deaths\\b",
   "name": "HM Coroner's Service",
   "label": "Logo",
