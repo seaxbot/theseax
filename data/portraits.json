@@ -1512,7 +1512,7 @@
   "ids": [
    "dartford-crossing-east-tunnel-shut-expansion-joint-23-november"
   ],
-  "name": "Queues on the approach to the Dartford Crossing on Monday morning",
+  "name": "Queues on the M25 approaching the Dartford Crossing at 10.35am on Monday",
   "label": "Picture",
   "wide": "/img/people/dartford-crossing-east-tunnel-shut-expansion-joint-23-november-wide.jpg",
   "og": "/img/people/dartford-crossing-east-tunnel-shut-expansion-joint-23-november-og.jpg",
@@ -1520,7 +1520,7 @@
   "provider": "trafficcameras.uk",
   "license": "",
   "licenseUrl": "",
-  "source": "",
-  "addedBy": "owner, 23 Nov 2026 (supplied for today's Dartford Crossing tunnel story)"
+  "source": "https://www.trafficcameras.uk/",
+  "addedBy": "owner, 23 Nov 2026 10:36 (replaced the 08:17 camera picture with a 10.35am view)"
  }
 ]
