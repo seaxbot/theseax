@@ -893,7 +893,6 @@
   "match": "\\bPaul Spearing\\b",
   "name": "Paul Spearing",
   "label": "Picture",
-  "caption": "Paul Spearing",
   "wide": "/img/people/paul-spearing-wide.jpg",
   "og": "/img/people/paul-spearing-og.jpg",
   "creator": "family handout",
@@ -901,7 +900,8 @@
   "license": "",
   "licenseUrl": "",
   "source": "https://www.georgejulian.co.uk/inquests/paul-spearing/",
-  "addedBy": "owner, 23 Nov 2026 (family photo of Paul Spearing, from George Julian's inquest pages; for the Paul's Law story and all Paul Spearing stories; credit: family handout)"
+  "addedBy": "owner, 23 Nov 2026 (family photo of Paul Spearing, from George Julian's inquest pages; for the Paul's Law story and all Paul Spearing stories; credit: family handout); caption set by owner to exactly 'Credit: family handout - Paul Spearing.', shown once",
+  "plainCaption": "Credit: family handout - Paul Spearing."
  },
  {
   "match": "\\b([Ii]nquests?|[Cc]oroners?)\\b|[Cc]oroner['’]s\\b|\\b[Pp]revention of future deaths\\b",
