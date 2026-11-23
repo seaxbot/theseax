@@ -1531,16 +1531,16 @@
   "ids": [
    "dartford-crossing-east-tunnel-shut-expansion-joint-23-november"
   ],
-  "name": "Queues on the M25 approaching the Dartford Crossing at 10.35am on Monday",
+  "name": "Huge tailbacks eastbound, caught on a National Highways traffic camera at 6.06pm on Monday",
   "label": "Picture",
   "wide": "/img/people/dartford-crossing-east-tunnel-shut-expansion-joint-23-november-wide.jpg",
   "og": "/img/people/dartford-crossing-east-tunnel-shut-expansion-joint-23-november-og.jpg",
-  "creator": "trafficcameras.uk",
-  "provider": "trafficcameras.uk",
+  "creator": "National Highways",
+  "provider": "National Highways traffic camera",
   "license": "",
   "licenseUrl": "",
-  "source": "https://www.trafficcameras.uk/",
-  "addedBy": "owner, 23 Nov 2026 10:36 (replaced the 08:17 camera picture with a 10.35am view)"
+  "source": "",
+  "addedBy": "owner, 23 Nov 2026 18:06 (replaced the 10.35am trafficcameras.uk view with a 6.06pm National Highways camera picture showing huge tailbacks eastbound)"
  },
  {
   "ids": [
