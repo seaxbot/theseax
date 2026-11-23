@@ -128,6 +128,14 @@ subject alone, without opening it, unless the subject suggests the owner must ac
      exactly as Ofsted gives them.
   iii) Any other PR wire or newsroom alert added later (Pressat, ResponseSource, CQC, Cision and the like): treat
      as i). Their confirmation and welcome emails stay service mail.
+- STORY PITCHES AND INVESTIGATIONS: NEVER PUBLISH (owner's rule, hard, 23 Nov 2026: "If emails come with a story
+  suggestion or investigation (usually from pressure group or individual) - do not publish"). An email from a pressure
+  or campaign group, an action group, a residents' group, an activist or any private individual that suggests a story,
+  pitches an angle, or sends its own investigation, research, dossier, allegations or "exposé" is never published and
+  never written up, not even after checking it against other sources, and its pictures and documents are not used.
+  Record the thread as "flagged" and name it in your closing summary to the owner (sender type and topic only), who
+  decides. This beats the tip-off rule below. It does not cover official senders, PR wires or clubs (above), events@
+  listings, or a member of the public's own charity appeal or fundraiser (APPEALS FROM THE PUBLIC above).
 - news@ and community@ from members of the public: tip-offs, as social media (3d). Publish only once an official or
   independent source confirms it. A reader's photo may be used only if the email makes clear they took it and it
   shows no children's faces, crash scenes, injured people or casualties; credit "Picture: <first name> / reader".
