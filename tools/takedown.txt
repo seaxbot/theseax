@@ -16,3 +16,6 @@ stansted-airport-greater-anglia-signalling-failure-20-november
 a12-northbound-closed-junction-16-galleywood-crash-22-november
 # owner, 23 Nov 2026 20:51: repeat of the 16 Nov story harlow-station-taxi-private-hire-checks-three-suspended ("watch for repeats - shouldn't be on there")
 harlow-rail-station-taxi-checks-three-vehicles-suspended
+# owner, 23 Nov 2026 20:51 ("watch for repeats - shouldn't be on there"): duplicates of stories still live
+o-harlow-damien-clinton-33-theft-appeal
+chelmsford-army-and-navy-public-inquiry-compulsory-purchase-24-november
