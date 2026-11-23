@@ -30,7 +30,7 @@
    ],
    "status": "caution",
    "perWeek": 2,
-   "note": "Rules: no political posts, business promotion Mondays only, no spam. Post Mondays.",
+   "note": "Rules: no political posts, business promotion Mondays only, no spam. Post Mondays. Business posts must start with the words \"Business Monday\" (rule 2); first Seax post 23 Nov 2026 began that way and went live at once.",
    "avoidTags": [
     "Politics",
     "Council",
@@ -38,7 +38,8 @@
    ],
    "days": [
     1
-   ]
+   ],
+   "approval": "instant"
   },
   {
    "id": "675762093643332",
@@ -58,7 +59,7 @@
    ],
    "status": "on",
    "perWeek": 4,
-   "note": "Rule: no AI posters. Real photo only."
+   "note": "Rule: no AI posters. Real photo only. Group About says business posts only on Wednesdays (seen 23 Nov 2026): keep non-urgent Seax posts to Wednesdays; public safety items any day."
   },
   {
    "id": "1779517199310030",
