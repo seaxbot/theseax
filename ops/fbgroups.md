@@ -15,7 +15,7 @@ Owner's instructions (20 Nov 2026): post Seax stories into the relevant Essex gr
 - perWeek: most posts in any seven days. onlyTags / avoidTags: story tags allowed or barred. days: weekdays the group allows (0 = Sunday). approval: "instant", "admin approval" or "auto-declined", recorded as posts are made. owner: the "Group by" banner, when there is one.
 
 ## Hard limits
-- At most 25 group posts a day across all groups from 23 November 2026 (owner, 23 Nov 17:04: "increase to 25 posts across those times"; it was 15, and 12 before that), at most 5 in any one run (5 runs x 5 = 25), at least 8 minutes between posts. Of those 25, no more than 8 a day may go to groups The Seax has never posted in. Do not raise the cap further yourself: the owner decides.
+- At most 25 group posts a day across all groups from 23 November 2026 (owner, 23 Nov 17:04: "increase to 25 posts across those times"; it was 15, and 12 before that), at most 7 in any one run (each run's own limit is under "Automated runs"), at least 8 minutes between posts. Of those 25, no more than 8 a day may go to groups The Seax has never posted in. Do not raise the cap further yourself: the owner decides.
 - At most 3 groups per story, at most one county-wide group per story. A post that was declined or removed does not count towards its story's 3.
 
 ## Picking the groups (owner, 23 Nov 2026: "pick best groups by size and relevance to story")
@@ -26,7 +26,7 @@ For each story, rank every group that may take it (status on or caution, rules a
 4. Spread the day: across the 25, cover as many different towns and groups as the stories allow rather than sending one town five posts.
 
 ## If a post is removed or declined (owner, 23 Nov 2026: "if one gets removed or refused try another")
-When a run finds a post was declined or removed (step 2 of each run), switch that group off as below, then give the same story to the next group on its ranked list in this run, if the story is still under 12 hours old (6 for safety and disruption) and the rules above still allow it. It counts towards the daily 25 and the run's 5. Try at most one replacement per removed post, and none for a story removed in two groups (the story, not the group, is probably the problem). The stop rule still applies: more than 2 declines or removals in one day pauses the desk.
+When a run finds a post was declined or removed (step 2 of each run), switch that group off as below, then give the same story to the next group on its ranked list in this run, if the story is still under 12 hours old (6 for safety and disruption) and the rules above still allow it. It counts towards the daily 25 and the run's limit. Try at most one replacement per removed post, and none for a story removed in two groups (the story, not the group, is probably the problem). The stop rule still applies: more than 2 declines or removals in one day pauses the desk.
 - One post per group per day, at least 20 hours apart; never the same story twice in a group; never more than the group's perWeek.
 - Never identical wording in two groups. Write each post fresh from the story: plain English, the useful fact first, no hype, no hashtags, no emoji, no "click here". End with the tagged link.
 - Every fact in a post must be in the story itself. Never add a quote, a reason or a claim ("X says it shows...") the story does not carry.
@@ -58,20 +58,20 @@ Until the end of Sunday 22 November, the story "essex-recorded-crime-september-2
 2. Time-bound information people can act on: events this weekend, consultations closing soon, service changes, bin and transport changes, health services (NHS Essex), council decisions affecting a town.
 3. Strong local interest: a town's own news, Southend United and Colchester United match previews on match days, results the morning after.
 - A story must still be live on theseax.com (not in tools/takedown.txt) and be under 12 hours old (under 6 hours for safety and disruption items, which go first). Stories from the previous day only if still current (e.g. a road still closed).
-- Groups that hold posts for admin approval get time-sensitive items only in the 07:11 or 12:41 run, so approval can land in time (a match preview posted at 11:15 is no use if approved after kick-off).
+- Groups that hold posts for admin approval get time-sensitive items only in the 07:41 or 12:41 run, so approval can land in time (a match preview posted at 11:15 is no use if approved after kick-off).
 - The Brentwood School abuse review story ("brentwood-school-safeguarding-review-british-fencing-own-review") was posted by hand at the owner's request on 20 Nov (7 Brentwood groups, 2 Wickford, Essex UK Community). Do not post it again anywhere, and never post follow-ups that identify a victim-survivor.
 - Never post: court stories (Court tag), anything about a person charged but not yet convicted, inquests, stories involving children's welfare, anything the legal gate holds, sponsored or deals content, and the same story into overlapping groups of one town in one day (rotate them).
 - Match the group: town and crime groups only get stories from their own area; events groups only events; the politics group only council, planning and politics; county groups only the day's biggest Essex story.
 
 ## Automated runs
-Scheduled task "Seax Facebook groups desk", every day at 07:11, 12:41, 17:41, 19:11 and 20:41 UK time (from 23 Nov 2026; before that 07:41, 09:41, 12:41, 17:41 and 18:41). A run of 5 posts takes about 45 minutes, so the times keep each run clear of the Essex Police Facebook desk, which uses Chrome at :05 past 8, 12, 16 and 20; finish every run by :55 past the hour it ends in, and never post between :05 and :25 past 8, 12, 16 or 20. Needs the owner's computer awake with Chrome open.
+Scheduled task "Seax Facebook groups desk", every day at 07:41, 12:41, 17:41, 19:41 and 20:41 UK time (from 23 Nov 2026; before that 07:41, 09:41, 12:41, 17:41 and 18:41). Posts per run, so no run uses Chrome while the Essex Police Facebook desk does (it starts at :05 past 8, 12, 16 and 20): 07:41 up to 3 and finished by 08:03; 12:41 up to 7 (it starts after the 12:05 police run); 17:41 up to 7; 19:41 up to 3 and finished by 20:03; 20:41 up to 7. That allows 27, so the daily 25 is the limit that bites. Needs the owner's computer awake with Chrome open.
 
 ### Timing (owner asked 23 Nov 2026 to optimise the best time to post)
 Evidence: The Seax's own GoatCounter figures for 16 to 23 Nov (site visits by hour: weekday peaks 08:00, 11:00 to 12:00, 17:00 and 19:00 to 22:00, with 21:00 the busiest; quietest 09:00 to 10:00 and 13:00 to 14:00), the group posts so far (the Brentwood story posted 18:51 to 19:14 on a Friday brought 28 visits in three hours and 42 from one group; Saturday 14:45 to 15:11 posts brought 0 to 5 each), and published UK Facebook studies, which agree that 7 to 9pm after dinner is the biggest audience, with lunchtime and the morning commute next.
-- 07:11: public safety and disruption first (road closures, appeals, weather), same-day events, and anything for groups that hold posts for approval. Morning commute.
+- 07:41: public safety and disruption first (road closures, appeals, weather), same-day events, and anything for groups that hold posts for approval. Morning commute.
 - 12:41: lunchtime. Council decisions, consultations, service changes, health. Last run for approval-held groups.
 - 17:41: commute home. Disruption still live, tonight's events, match-day previews for evening games.
-- 19:11 and 20:41: prime time. Save the day's strongest local-interest stories (the ones people will read and share) for these two runs, and fill all 5 slots in each of these runs when there is enough good material. Stories must still be under 12 hours old.
+- 19:41 and 20:41: prime time. Save the day's strongest local-interest stories (the ones people will read and share) for these two runs, and fill the 20:41 run's 7 slots (and 19:41's 3) when there is enough good material. Stories must still be under 12 hours old.
 - Saturday and Sunday: the same runs. Weekend afternoons are the quietest time on Facebook, so do not hold weekend stories for an afternoon run.
 - Breaking public safety news still goes out at the next run whatever the time.
 - Re-check this every couple of weeks: GoatCounter (theseax.goatcounter.com, signed in on the owner's Chrome) shows visits by hour (View by: hour) and each group's clicks as fbg-<group key> under Top referrers. Move a run if the evidence shifts, and note why here.
@@ -82,7 +82,7 @@ Two desk sessions posted at once on 23 Nov 2026 and put the same story into two 
 Each run:
 1. Get the repo (seaxbot/theseax) and read this file, data/fb-groups.json and data/fb-group-log.json. If "paused" is true, stop and report why.
 2. In Chrome, open facebook.com/notifications. For each "An admin declined your post" or "removed your post": open it, read the reason, mark the post's result, and set that group to "off" with the reason in "note" (one decline is enough). Mark pending posts that have since appeared as "live". A group that holds posts and leaves one pending for over 48 hours drops to perWeek 1.
-3. Read edition.json from the freshly pulled repo (the shell cannot reach theseax.com; Chrome can, at theseax.com/groups/) and choose up to 5 posts by the rules above (replacements for removed or declined posts first, then the ranked groups), counting today's posts in the log against the daily 25.
+3. Read edition.json from the freshly pulled repo (the shell cannot reach theseax.com; Chrome can, at theseax.com/groups/) and choose up to the run's limit of posts (3, 7, 7, 3, 7 for 07:41, 12:41, 17:41, 19:41, 20:41) by the rules above (replacements for removed or declined posts first, then the ranked groups), counting today's posts in the log against the daily 25.
 4. For each: open the group, check the top-left of the composer says "The Seax" (if it shows a personal name, stop the run), write the post, wait for the picture preview, press Post. Note whether it went live or "submitted to group admins for approval". Log it at once.
 5. Commit data/fb-group-log.json and data/fb-groups.json changes with a short message and push.
 6. Report in a few lines: what was posted where, any declines, anything paused.

@@ -8,7 +8,7 @@
   "minHoursBetweenSameGroup": 20,
   "storyMaxAgeHours": 24,
   "newGroupsPerDay": 8,
-  "perRun": 5
+  "perRun": 7
  },
  "notChecked": "Whether each group holds posts for admin approval: recorded in 'approval' as posts are made.",
  "groups": [
