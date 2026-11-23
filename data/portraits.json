@@ -1320,5 +1320,135 @@
   ],
   "addedBy": "owner, 22 Nov 2026 (Phoenix Ward Pokémon Christmas appeal; pictures supplied by the organiser)",
   "noCaption": true
+ },
+ {
+  "charity": "havens-hospices",
+  "ids": [
+   "southend-stock-road-havens-hospices-reuse-shop-100-tonnes",
+   "c-havens-hospices-schools-santa-run-2026",
+   "c-little-havens-invisible-backpack-grief-artwork",
+   "c-little-havens-fastwarm-corporate-members-thundersley",
+   "c-havens-hospices-big-yes-christmas-appeal-2026"
+  ],
+  "name": "Havens Hospices",
+  "label": "Logo",
+  "wide": "/img/people/logo-havens-hospices-wide.jpg",
+  "og": "/img/people/logo-havens-hospices-og.jpg",
+  "creator": "Havens Hospices",
+  "provider": "Havens Hospices",
+  "license": "",
+  "licenseUrl": "",
+  "source": "https://www.havenshospices.org.uk/",
+  "notMatch": "\\b(dies|died|death|dead|killed|fatal|crash|collision|stabb|shot|murder|manslaughter|jailed|sentenced|court|charged|guilty|arrest|police|fraud|theft|stole|inquest|coroner|abuse|assault)",
+  "addedBy": "photo desk 23 Nov 2026 (owner's rule, 22 Nov 2026: charity stories always use the charity's logo)",
+  "match": "\\bHavens[\\s-]Hospices\\b"
+ },
+ {
+  "charity": "essex-community-foundation",
+  "ids": [
+   "c-essex-community-foundation-vcse-sector-audit-2026"
+  ],
+  "name": "Essex Community Foundation",
+  "label": "Logo",
+  "wide": "/img/people/logo-essex-community-foundation-wide.jpg",
+  "og": "/img/people/logo-essex-community-foundation-og.jpg",
+  "creator": "Essex Community Foundation",
+  "provider": "Essex Community Foundation",
+  "license": "",
+  "licenseUrl": "",
+  "source": "https://www.essexcommunityfoundation.org.uk/",
+  "notMatch": "\\b(dies|died|death|dead|killed|fatal|crash|collision|stabb|shot|murder|manslaughter|jailed|sentenced|court|charged|guilty|arrest|police|fraud|theft|stole|inquest|coroner|abuse|assault)",
+  "addedBy": "photo desk 23 Nov 2026 (owner's rule, 22 Nov 2026: charity stories always use the charity's logo)",
+  "match": "\\bEssex[\\s-]Community[\\s-]Foundation\\b"
+ },
+ {
+  "charity": "cvs-together",
+  "ids": [
+   "c-clacton-cvst-victorian-christmas-market-6000"
+  ],
+  "name": "CVS Together",
+  "label": "Logo",
+  "wide": "/img/people/logo-cvs-together-wide.jpg",
+  "og": "/img/people/logo-cvs-together-og.jpg",
+  "creator": "CVS Together",
+  "provider": "CVS Together",
+  "license": "",
+  "licenseUrl": "",
+  "source": "https://cvstogether.org.uk/",
+  "notMatch": "\\b(dies|died|death|dead|killed|fatal|crash|collision|stabb|shot|murder|manslaughter|jailed|sentenced|court|charged|guilty|arrest|police|fraud|theft|stole|inquest|coroner|abuse|assault)",
+  "addedBy": "photo desk 23 Nov 2026 (owner's rule, 22 Nov 2026: charity stories always use the charity's logo)",
+  "match": "\\bCVS[\\s-]Together\\b"
+ },
+ {
+  "charity": "essex-wildlife-trust",
+  "ids": [
+   "c-essex-wildlife-trust-great-nature-appeal-1m"
+  ],
+  "name": "Essex Wildlife Trust",
+  "label": "Logo",
+  "wide": "/img/people/logo-essex-wildlife-trust-wide.jpg",
+  "og": "/img/people/logo-essex-wildlife-trust-og.jpg",
+  "creator": "Essex Wildlife Trust",
+  "provider": "Essex Wildlife Trust",
+  "license": "",
+  "licenseUrl": "",
+  "source": "https://www.essexwt.org.uk/",
+  "notMatch": "\\b(dies|died|death|dead|killed|fatal|crash|collision|stabb|shot|murder|manslaughter|jailed|sentenced|court|charged|guilty|arrest|police|fraud|theft|stole|inquest|coroner|abuse|assault)",
+  "addedBy": "photo desk 23 Nov 2026 (owner's rule, 22 Nov 2026: charity stories always use the charity's logo)",
+  "match": "\\bEssex[\\s-]Wildlife[\\s-]Trust\\b"
+ },
+ {
+  "charity": "touchpoint",
+  "ids": [
+   "c-touchpoint-west-essex-food-charity-kings-award"
+  ],
+  "name": "TouchPoint",
+  "label": "Logo",
+  "wide": "/img/people/logo-touchpoint-wide.jpg",
+  "og": "/img/people/logo-touchpoint-og.jpg",
+  "creator": "TouchPoint",
+  "provider": "TouchPoint",
+  "license": "",
+  "licenseUrl": "",
+  "source": "https://www.thetouchpoint.org/",
+  "notMatch": "\\b(dies|died|death|dead|killed|fatal|crash|collision|stabb|shot|murder|manslaughter|jailed|sentenced|court|charged|guilty|arrest|police|fraud|theft|stole|inquest|coroner|abuse|assault)",
+  "addedBy": "photo desk 23 Nov 2026 (owner's rule, 22 Nov 2026: charity stories always use the charity's logo)",
+  "match": "\\bTouchPoint\\b"
+ },
+ {
+  "charity": "st-john-ambulance",
+  "ids": [
+   "colchester-sir-bob-russell-new-years-walk-st-john-flag-175"
+  ],
+  "name": "St John Ambulance",
+  "label": "Logo",
+  "wide": "/img/people/logo-st-john-ambulance-wide.jpg",
+  "og": "/img/people/logo-st-john-ambulance-og.jpg",
+  "creator": "St John Ambulance",
+  "provider": "St John Ambulance",
+  "license": "",
+  "licenseUrl": "",
+  "source": "https://www.sja.org.uk/",
+  "notMatch": "\\b(dies|died|death|dead|killed|fatal|crash|collision|stabb|shot|murder|manslaughter|jailed|sentenced|court|charged|guilty|arrest|police|fraud|theft|stole|inquest|coroner|abuse|assault)",
+  "addedBy": "photo desk 23 Nov 2026 (owner's rule, 22 Nov 2026: charity stories always use the charity's logo)",
+  "match": "\\bSt[\\s-]John[\\s-]Ambulance\\b"
+ },
+ {
+  "charity": "cancer-research-uk",
+  "ids": [
+   "c-alresford-nina-murton-bowel-cancer-walk"
+  ],
+  "name": "Cancer Research UK",
+  "label": "Logo",
+  "wide": "/img/people/logo-cancer-research-uk-wide.jpg",
+  "og": "/img/people/logo-cancer-research-uk-og.jpg",
+  "creator": "Cancer Research UK",
+  "provider": "Cancer Research UK",
+  "license": "",
+  "licenseUrl": "",
+  "source": "https://www.cancerresearchuk.org/",
+  "notMatch": "\\b(dies|died|death|dead|killed|fatal|crash|collision|stabb|shot|murder|manslaughter|jailed|sentenced|court|charged|guilty|arrest|police|fraud|theft|stole|inquest|coroner|abuse|assault)",
+  "addedBy": "photo desk 23 Nov 2026 (owner's rule, 22 Nov 2026: charity stories always use the charity's logo)",
+  "match": "\\bCancer[\\s-]Research[\\s-]UK\\b"
  }
 ]
