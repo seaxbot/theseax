@@ -164,10 +164,12 @@ function link(s, g){ return `${SITE}/story/${s.id}/?ref=fbg-${g.key}`; }
 function caption(s, g, i){
   const sum = String(s.summary || "").trim(), pts = list(s.points).slice(0, 2).map(p => String(p).replace(/\.$/, ""));
   const place = String(s.place || "").split(",")[0].trim();
+  // Owner, 23 Nov 2026: group posts short and human, then the link.
+  const first = (sum.match(/^.*?[.!?](\s|$)/) || [sum])[0].trim();
   const v = [
-    () => `${s.headline}\n\n${sum}\n\n${link(s, g)}`,
-    () => `${place && place !== "Essex" ? place + ": " : ""}${sum}\n\nFull story from The Seax: ${link(s, g)}`,
-    () => `${sum}${pts.length ? "\n\n" + pts.map(p => "• " + p).join("\n") : ""}\n\nMore: ${link(s, g)}`
+    () => `${first}\n\n${link(s, g)}`,
+    () => `${place && place !== "Essex" ? "For anyone in " + place + ": " : ""}${first}\n\n${link(s, g)}`,
+    () => `${first} More here:\n${link(s, g)}`
   ];
   return v[i % v.length]();
 }
