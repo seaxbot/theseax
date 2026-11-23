@@ -1,6 +1,29 @@
 [
  {
   "ids": [
+   "essex-greater-anglia-elizabeth-line-weekend-cancellations-early-2027"
+  ],
+  "name": "A Great British Railways Anglia train at a station platform",
+  "label": "Library image",
+  "wide": "/img/topics/greateranglia.jpg",
+  "og": "/img/og/greateranglia.jpg",
+  "creator": "",
+  "provider": "",
+  "license": "",
+  "licenseUrl": "",
+  "source": "",
+  "more": [
+   {
+    "name": "An Elizabeth line roundel at a station",
+    "label": "Library image",
+    "wide": "/img/topics/elizabethline.jpg",
+    "creator": ""
+   }
+  ],
+  "addedBy": "owner, 23 Nov 2026 10:18 (weekend cancellations story: Greater Anglia picture as the main image, Elizabeth line picture in the story)"
+ },
+ {
+  "ids": [
    "ct-inq-pfd-gianfrancesco-202611",
    "ct-harlow-man-19-charged-hospital-staff-room-mcdonalds"
   ],
