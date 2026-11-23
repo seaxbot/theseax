@@ -28,7 +28,7 @@ If the build fails, the edition is still published without the built pages.
   owner's rule 18 Nov 2026): a story the site has already run is refused (exit 6) unless it is a declared follow-up
   with a new development ("followUp" + "newAngle").
 Prints PUSHED <hash> on success. Exit codes: 0 pushed, 2 bad input, 3 needs a manual merge, 4 push failed, 5 repeats,
-6 repeat story.
+6 repeat story, 8 new short story not researched.
 """
 import argparse, json, os, re, subprocess, sys, time
 from datetime import datetime, timezone, timedelta
@@ -317,6 +317,19 @@ def main():
                 if isinstance(s, dict) and (s.get("linkOnly") or s.get("singleSource")) and not s.get("researched")]
         if thin:
             print(f"SHORT STORIES TO RESEARCH ({len(thin)}; 3g ii, owner 22 Nov: find the official source and make each one our own): " + ", ".join(thin[:25]))
+        # owner, 23 Nov 2026 ("we need more info on these one paragraph stories - always always do it"): a NEW news story
+        # may not go out short. Research it first (3g ii MAKE IT OUR OWN, then "researched": true), or, when research has
+        # genuinely found nothing more (a true exclusive, nothing else online), say so in "researchNote".
+        if a.edition:
+            live_ids = {x.get("id") for sec in ("stories", "official", "community") for x in live.get(sec) or [] if isinstance(x, dict)}
+            unres = [s.get("id") for s in out.get("stories") or [] if isinstance(s, dict) and s.get("id") not in live_ids
+                     and (s.get("linkOnly") or s.get("singleSource")) and not s.get("researched") and not str(s.get("researchNote") or "").strip()]
+            if unres:
+                print("NOT RESEARCHED (owner's rule, 23 Nov 2026: one-paragraph stories must always be researched and made our own, "
+                      "ops/newsroom.md 3g ii). Research each new story, add what you find with \"researched\": true and the sources in "
+                      "\"also\", or, if searches genuinely found nothing more, add \"researchNote\": \"<what you searched and why "
+                      "nothing more was usable>\". Then rerun: " + ", ".join(unres))
+                sys.exit(8)
         if a.edition and (out.get("lead") or {}).get("id") not in {s.get("id") for s in out.get("stories", [])}:
             print("bad edition: the lead story was removed by the source policy (opt-out outlet); choose another lead"); sys.exit(2)
         if a.edition or a.sport or a.inquests:
