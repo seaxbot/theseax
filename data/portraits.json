@@ -1,6 +1,23 @@
 [
  {
   "ids": [
+   "ct-inq-pfd-gianfrancesco-202611",
+   "ct-harlow-man-19-charged-hospital-staff-room-mcdonalds"
+  ],
+  "match": "\\bPrincess Alexandra Hospital\\b|\\bPAH\\b|\\b[Hh]arlow(['’]s)? [Hh]ospital\\b",
+  "name": "The Princess Alexandra Hospital, Harlow",
+  "label": "Picture",
+  "wide": "/img/people/princess-alexandra-hospital-wide.jpg",
+  "og": "/img/people/princess-alexandra-hospital-og.jpg",
+  "creator": "NHS",
+  "provider": "NHS",
+  "license": "",
+  "licenseUrl": "",
+  "source": "https://www.pah.nhs.uk/",
+  "addedBy": "owner, 23 Nov 2026 (all Princess Alexandra Hospital, Harlow stories, including the coroner report story; ahead of the coroner picture)"
+ },
+ {
+  "ids": [
    "the-week-in-essex-2026-11-22"
   ],
   "name": "This week's stories: Brentwood School, Essex oysters, Three Shells Lagoon and James Cleverly",
