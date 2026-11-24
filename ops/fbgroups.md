@@ -80,6 +80,11 @@ Evidence: The Seax's own GoatCounter figures for 16 to 23 Nov (site visits by ho
 ### One run at a time
 Two desk sessions posted at once on 23 Nov 2026 and put the same story into two Chelmsford groups. So: at the start of a run, after pulling, look at the newest post in data/fb-group-log.json. If it is under 25 minutes old and you did not make it, another run is in progress: do not post, and end the run saying so. Pull again just before each post and check the same thing.
 
+### ALWAYS THE MOST UP-TO-DATE STORIES (owner, 24 Nov 2026 23:35: "always post the most up to date stories")
+- Choose from the freshest stories first. Rank candidates by when they were first published or last genuinely updated ("updated", else "time" in edition.json), newest first, within the What to post priority order. Prefer stories from the last 6 hours; use a story 6 to 12 hours old only when nothing fresher fits the group; never anything older than 12 hours (6 for safety and disruption), unless it is still live news (a road still shut).
+- Post the LATEST version only. Use the story's current headline and link as edition.json has them at the moment of posting, and open theseax.com/story/<id>/ in Chrome to confirm the page shows that version before posting. If a newer story supersedes an older one (a result after a preview, "found" after a missing appeal, "reopened" after a closure, a follow-up with "followUp" pointing at it), post the newer one and never the older one (on 24 Nov the Bake Off watch-party preview went out at 17:45 when the result was hours away; once a winner story exists, only that is posted).
+- Never post something the site has moved on from: a preview after the event has happened, an appeal that has been resolved, a closure that has ended.
+
 ### PRE-POST CHECK (owner, 24 Nov 2026, after 24 Nov's posts sent the Cav Miley story into Essex UK Community twice and a Maldon and Tendring house prices story into Harlow Community)
 Immediately before EVERY post, pull the repo again and run these checks against data/fb-group-log.json and edition.json. If any fails, do not post; pick another group or story, or leave the slot empty.
 1. COUNT: count today's posts in the log by UK date (all results, including pending, declined and removed). If it is already 20, stop the run.
@@ -88,7 +93,7 @@ Immediately before EVERY post, pull the repo again and run these checks against 
 4. STORY SPREAD: the story has fewer than 3 posts today (live or pending) and at most one in a county-wide group.
 5. LOCATION: the group's own area must be where the story happened. For town, crime and community groups, the story's "place" or headline must contain one of the group's "match" words, AND the story's "areas" must include the group's district. A story about Maldon or Tendring never goes to a Harlow group; a Chelmsford story never goes to a Southend group unless it is about Southend too (the Cav Miley push named Southend groups by the owner's choice; that push has ended). County-wide groups (Essex UK Community and similar) only take county-wide stories ("areas" includes "all") or the lead. When unsure, do not post.
 6. STATUS: the group is "on" or "caution" in data/fb-groups.json (never "off" or "hold"), its "days" allow today, its perWeek is not used up, and its onlyTags or avoidTags allow the story's tag.
-7. STORY STILL GOOD: the story is live in edition.json, not in tools/takedown.txt, within the freshness rules, and not excluded (court, inquests, children's welfare and the rest under What to post).
+7. STORY STILL GOOD AND LATEST: the story is live in edition.json, not in tools/takedown.txt, the freshest suitable story for this group (ALWAYS THE MOST UP-TO-DATE STORIES above), not superseded by a newer story, posted with its current headline, and not excluded (court, inquests, children's welfare and the rest under What to post).
 8. WORDS: the post names the right town, says nothing the story does not, and is not worded like any other post today.
 Log each post the moment it is made (before the next one), with the group key, story id, time, headline and result, and push, so the next check sees it.
 
