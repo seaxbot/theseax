@@ -1640,17 +1640,23 @@
   "ids": [
    "loughton-moyin-odeniran-bake-off-final-church-watch-party"
   ],
-  "name": "Moyin Odeniran at work in the Bake Off tent",
+  "name": "Moyin Odeniran, winner of The Great British Bake Off 2026",
   "label": "Picture",
-  "wide": "/img/people/loughton-moyin-odeniran-bake-off-final-church-watch-party-moyin-wide.jpg",
-  "og": "/img/people/loughton-moyin-odeniran-bake-off-final-church-watch-party-moyin-og.jpg",
+  "wide": "/img/people/loughton-moyin-odeniran-bake-off-final-church-watch-party-donut-wide.jpg",
+  "og": "/img/people/loughton-moyin-odeniran-bake-off-final-church-watch-party-donut-og.jpg",
   "creator": "Channel 4/Love Productions/Patch Dolan",
   "provider": "Channel 4/Love Productions/Patch Dolan",
   "license": "",
   "licenseUrl": "",
   "source": "",
-  "addedBy": "owner, 24 Nov 2026 23:19 (Bake Off line-up picture supplied by the owner, credit Channel 4); credit updated by the owner 24 Nov; 24 Nov 23:23 owner: baking picture is the main picture, team picture moved into the story",
+  "addedBy": "owner, 24 Nov 2026 23:19 (Bake Off line-up picture supplied by the owner, credit Channel 4); credit updated by the owner 24 Nov; 24 Nov 23:23 owner: baking picture is the main picture, team picture moved into the story; 23:26 owner: doughnut portrait is the main picture, baking shot and team shot follow the story",
   "more": [
+   {
+    "name": "Moyin Odeniran at work in the Bake Off tent",
+    "label": "Picture",
+    "wide": "/img/people/loughton-moyin-odeniran-bake-off-final-church-watch-party-moyin-wide.jpg",
+    "creator": "Channel 4/Love Productions/Patch Dolan"
+   },
    {
     "name": "The Great British Bake Off series 17 bakers in the tent",
     "label": "Picture",
