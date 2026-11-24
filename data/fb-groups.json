@@ -95,7 +95,9 @@
     "writtle"
    ],
    "status": "on",
-   "perWeek": 3
+   "perWeek": 3,
+   "note": "Vetted 24 Nov 2026: no group rules listed, created June 2026, active (35 posts a day). First Seax post (Army and Navy inquiry) held for admin approval.",
+   "approval": "admin approval"
   },
   {
    "id": "1641478769808655",
