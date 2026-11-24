@@ -1786,7 +1786,8 @@ def body_with_charts(it, body, opening=""):
     allowed = {str(u) for u in [it.get("url")] + [a.get("url") for a in (it.get("also") or []) if isinstance(a, dict)] if u}
     charts = [c for c in (it.get("charts") or []) if isinstance(c, dict) and str(c.get("src") or "").startswith("/img/")]
     # interactive look-ups (owner, 20 Nov 2026: "a selector [so] people could select any one of their 56 neighbourhoods")
-    widgets = [w for w in (it.get("widgets") or []) if isinstance(w, dict) and w.get("type") == "crime-lookup"
+    # house price look-up (owner, 24 Nov 2026: "a dropdown to select your area"), same shape, type "price-lookup"
+    widgets = [w for w in (it.get("widgets") or []) if isinstance(w, dict) and w.get("type") in ("crime-lookup", "price-lookup")
                and str(w.get("src") or "").startswith("/data/")]
     # Bold summarising opening paragraph on every story (owner, 23 Nov 2026: "Needs to be a bold summarising paragraph at
     # top of all stories with context and then into the story"; replaces the 20 and 21 Nov "straight into it" choice).
@@ -1805,9 +1806,14 @@ def body_with_charts(it, body, opening=""):
                            + (f'<figcaption>{E(c.get("caption") or "")}</figcaption></figure>' if c.get("kind") == "photo" else f'<figcaption><b>Chart</b>. {E(c.get("caption") or "")}</figcaption></figure>'))
         for w in widgets:
             if int(w.get("after", len(paras) - 1)) == i or (i == len(paras) - 1 and int(w.get("after", 0)) >= len(paras)):
-                out.append(f'<div class="seax-lookup" id="check" data-src="{E(w["src"])}"><noscript>Turn on JavaScript to look up your neighbourhood.</noscript></div>')
-    if widgets:
+                if w.get("type") == "price-lookup":
+                    out.append(f'<div class="seax-plookup" id="prices" data-src="{E(w["src"])}"><noscript>Turn on JavaScript to check prices in your area.</noscript></div>')
+                else:
+                    out.append(f'<div class="seax-lookup" id="check" data-src="{E(w["src"])}"><noscript>Turn on JavaScript to look up your neighbourhood.</noscript></div>')
+    if any(w.get("type") == "crime-lookup" for w in widgets):
         out.append('<script src="/js/crime-lookup.js?v=2" defer></script>')
+    if any(w.get("type") == "price-lookup" for w in widgets):
+        out.append('<script src="/js/price-lookup.js?v=1" defer></script>')
     return "".join(out)
 
 

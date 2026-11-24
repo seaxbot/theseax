@@ -1,0 +1,142 @@
+{
+ "title": "Average house prices by Essex council area",
+ "month": "2026-09",
+ "monthLabel": "September 2026",
+ "source": "The Seax analysis of the UK House Price Index (HM Land Registry and the Office for National Statistics), Open Government Licence",
+ "sourceUrl": "https://landregistry.data.gov.uk/app/ukhpi",
+ "notes": [
+  "Averages cover whole council areas, not individual towns or streets.",
+  "The index is revised for several months as more sales are registered, so these figures may change.",
+  "Changes in pounds are worked out from the rounded percentage change, so they are approximate."
+ ],
+ "areas": {
+  "Basildon": {
+   "price": 367920.0,
+   "annual": 0.8,
+   "monthly": 0.1,
+   "detached": 678499.0,
+   "flat": 189146.0,
+   "firstTime": 307721.0
+  },
+  "Braintree": {
+   "price": 324264.0,
+   "annual": 0.5,
+   "monthly": -1.8,
+   "detached": 559718.0,
+   "flat": 153539.0,
+   "firstTime": 261027.0
+  },
+  "Brentwood": {
+   "price": 520447.0,
+   "annual": 0.2,
+   "monthly": 0.1,
+   "detached": 996190.0,
+   "flat": 264292.0,
+   "firstTime": 373471.0
+  },
+  "Castle Point": {
+   "price": 368191.0,
+   "annual": -0.7,
+   "monthly": 2.5,
+   "detached": 492554.0,
+   "flat": 169245.0,
+   "firstTime": 316628.0
+  },
+  "Chelmsford": {
+   "price": 378412.0,
+   "annual": -0.8,
+   "monthly": 0.1,
+   "detached": 682616.0,
+   "flat": 207628.0,
+   "firstTime": 298428.0
+  },
+  "Colchester": {
+   "price": 297638.0,
+   "annual": 0.9,
+   "monthly": 0.6,
+   "detached": 501282.0,
+   "flat": 162068.0,
+   "firstTime": 249711.0
+  },
+  "Epping Forest": {
+   "price": 536719.0,
+   "annual": 2.1,
+   "monthly": 2.0,
+   "detached": 1022897.0,
+   "flat": 296026.0,
+   "firstTime": 415027.0
+  },
+  "Harlow": {
+   "price": 317113.0,
+   "annual": 3.9,
+   "monthly": 0.0,
+   "detached": 625974.0,
+   "flat": 181964.0,
+   "firstTime": 286294.0
+  },
+  "Maldon": {
+   "price": 406165.0,
+   "annual": 5.0,
+   "monthly": 0.6,
+   "detached": 596082.0,
+   "flat": 179987.0,
+   "firstTime": 317488.0
+  },
+  "Rochford": {
+   "price": 408883.0,
+   "annual": 1.3,
+   "monthly": 0.0,
+   "detached": 631647.0,
+   "flat": 179330.0,
+   "firstTime": 333615.0
+  },
+  "Southend-on-Sea": {
+   "price": 327570.0,
+   "annual": 1.8,
+   "monthly": 0.9,
+   "detached": 643067.0,
+   "flat": 198138.0,
+   "firstTime": 270046.0
+  },
+  "Tendring": {
+   "price": 258932.0,
+   "annual": -2.2,
+   "monthly": 0.2,
+   "detached": 366896.0,
+   "flat": 130581.0,
+   "firstTime": 220732.0
+  },
+  "Thurrock": {
+   "price": 322338.0,
+   "annual": -0.7,
+   "monthly": 0.3,
+   "detached": 597374.0,
+   "flat": 189138.0,
+   "firstTime": 296723.0
+  },
+  "Uttlesford": {
+   "price": 465802.0,
+   "annual": -0.5,
+   "monthly": -0.8,
+   "detached": 716139.0,
+   "flat": 200261.0,
+   "firstTime": 333140.0
+  }
+ },
+ "essex": {
+  "price": 360791.0,
+  "annual": 0.5,
+  "monthly": 0.2,
+  "detached": 581090.0,
+  "flat": 188898.0,
+  "firstTime": 290743.0
+ },
+ "england": {
+  "price": 292998.0,
+  "annual": 0.8,
+  "monthly": -0.4,
+  "detached": 476710.0,
+  "flat": 215760.0,
+  "firstTime": 245052.0
+ }
+}
