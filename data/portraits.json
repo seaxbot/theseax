@@ -1588,5 +1588,21 @@
   "licenseUrl": "",
   "source": "https://www.essex.police.uk/",
   "addedBy": "owner, 23 Nov 2026 18:11 (south Essex child cruelty sentencing; still from Essex Police's YouTube video, supplied by the owner)"
+ },
+ {
+  "ids": [
+   "cold-norton-barn-cannabis-farm-500-plants"
+  ],
+  "match": "\\bCold Norton\\b.*\\bcannabis\\b",
+  "name": "Cannabis plants under lamps in the barn, a body-worn camera view inside the grow, and a forensic investigator at the scene",
+  "label": "Picture",
+  "wide": "/img/people/cold-norton-barn-cannabis-farm-500-plants-wide.jpg",
+  "og": "/img/people/cold-norton-barn-cannabis-farm-500-plants-og.jpg",
+  "creator": "Essex Police",
+  "provider": "Essex Police",
+  "license": "",
+  "licenseUrl": "",
+  "source": "https://www.facebook.com/EssexPoliceUK",
+  "addedBy": "owner, 24 Nov 2026 (Essex Police - Maldon District Facebook pictures; owner's rule: Essex Police pictures from its Facebook pages)"
  }
 ]
