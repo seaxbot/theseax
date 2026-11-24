@@ -15,7 +15,7 @@ Owner's instructions (20 Nov 2026): post Seax stories into the relevant Essex gr
 - perWeek: most posts in any seven days. onlyTags / avoidTags: story tags allowed or barred. days: weekdays the group allows (0 = Sunday). approval: "instant", "admin approval" or "auto-declined", recorded as posts are made. owner: the "Group by" banner, when there is one.
 
 ## Hard limits
-- At most 25 group posts a day across all groups from 23 November 2026 (owner, 23 Nov 17:04: "increase to 25 posts across those times"; it was 15, and 12 before that), at most 7 in any one run (each run's own limit is under "Automated runs"), at least 8 minutes between posts. Of those 25, no more than 8 a day may go to groups The Seax has never posted in. Do not raise the cap further yourself: the owner decides.
+- DAILY TARGET 20 (owner, 24 Nov 2026 23:30: "be more accurate with the posting and location etc - aim for 20 tomorrow"). From Wednesday 25 November aim for 20 group posts a day and never more than 20, spread by run as 07:41 up to 3, 12:41 up to 5, 17:41 up to 5, 19:41 up to 3, 20:41 up to 4. Accuracy comes before the count: a run that cannot find a correct, rule-passing post leaves the slot empty. Every post must pass the PRE-POST CHECK below. The rest of this line is the older limit, kept for the record: At most 25 group posts a day across all groups from 23 November 2026 (owner, 23 Nov 17:04: "increase to 25 posts across those times"; it was 15, and 12 before that), at most 7 in any one run (each run's own limit is under "Automated runs"), at least 8 minutes between posts. Of those 25, no more than 8 a day may go to groups The Seax has never posted in. Do not raise the cap further yourself: the owner decides.
 - At most 3 groups per story, at most one county-wide group per story. A post that was declined or removed does not count towards its story's 3.
 
 ## Picking the groups (owner, 23 Nov 2026: "pick best groups by size and relevance to story")
@@ -80,10 +80,22 @@ Evidence: The Seax's own GoatCounter figures for 16 to 23 Nov (site visits by ho
 ### One run at a time
 Two desk sessions posted at once on 23 Nov 2026 and put the same story into two Chelmsford groups. So: at the start of a run, after pulling, look at the newest post in data/fb-group-log.json. If it is under 25 minutes old and you did not make it, another run is in progress: do not post, and end the run saying so. Pull again just before each post and check the same thing.
 
+### PRE-POST CHECK (owner, 24 Nov 2026, after 24 Nov's posts sent the Cav Miley story into Essex UK Community twice and a Maldon and Tendring house prices story into Harlow Community)
+Immediately before EVERY post, pull the repo again and run these checks against data/fb-group-log.json and edition.json. If any fails, do not post; pick another group or story, or leave the slot empty.
+1. COUNT: count today's posts in the log by UK date (all results, including pending, declined and removed). If it is already 20, stop the run.
+2. GROUP TODAY: this group has no post in the log in the last 20 hours, under any story.
+3. STORY IN GROUP: this story id has never been posted to this group, on any day. Check by story id AND by headline (the same story can carry a new headline).
+4. STORY SPREAD: the story has fewer than 3 posts today (live or pending) and at most one in a county-wide group.
+5. LOCATION: the group's own area must be where the story happened. For town, crime and community groups, the story's "place" or headline must contain one of the group's "match" words, AND the story's "areas" must include the group's district. A story about Maldon or Tendring never goes to a Harlow group; a Chelmsford story never goes to a Southend group unless it is about Southend too (the Cav Miley push named Southend groups by the owner's choice; that push has ended). County-wide groups (Essex UK Community and similar) only take county-wide stories ("areas" includes "all") or the lead. When unsure, do not post.
+6. STATUS: the group is "on" or "caution" in data/fb-groups.json (never "off" or "hold"), its "days" allow today, its perWeek is not used up, and its onlyTags or avoidTags allow the story's tag.
+7. STORY STILL GOOD: the story is live in edition.json, not in tools/takedown.txt, within the freshness rules, and not excluded (court, inquests, children's welfare and the rest under What to post).
+8. WORDS: the post names the right town, says nothing the story does not, and is not worded like any other post today.
+Log each post the moment it is made (before the next one), with the group key, story id, time, headline and result, and push, so the next check sees it.
+
 Each run:
 1. Get the repo (seaxbot/theseax) and read this file, data/fb-groups.json and data/fb-group-log.json. If "paused" is true, stop and report why.
 2. In Chrome, open facebook.com/notifications. For each "An admin declined your post" or "removed your post": open it, read the reason, mark the post's result, and set that group to "off" with the reason in "note" (one decline is enough). Mark pending posts that have since appeared as "live". A group that holds posts and leaves one pending for over 48 hours drops to perWeek 1.
-3. Read edition.json from the freshly pulled repo (the shell cannot reach theseax.com; Chrome can, at theseax.com/groups/) and choose up to the run's limit of posts (3, 7, 7, 3, 7 for 07:41, 12:41, 17:41, 19:41, 20:41) by the rules above (replacements for removed or declined posts first, then the ranked groups), counting today's posts in the log against the daily 25.
+3. Read edition.json from the freshly pulled repo (the shell cannot reach theseax.com; Chrome can, at theseax.com/groups/) and choose up to the run's limit of posts (from 25 Nov: 3, 5, 5, 3, 4 for 07:41, 12:41, 17:41, 19:41, 20:41, daily target 20) by the rules above (replacements for removed or declined posts first, then the ranked groups), counting today's posts in the log against the daily 20, and putting every chosen post through the PRE-POST CHECK.
 4. For each: open the group, check the top-left of the composer says "The Seax" (if it shows a personal name, stop the run), write the post, wait for the picture preview, press Post. Note whether it went live or "submitted to group admins for approval". Log it at once.
 5. Commit data/fb-group-log.json and data/fb-groups.json changes with a short message and push.
 6. Report in a few lines: what was posted where, any declines, anything paused.
