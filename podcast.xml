@@ -16,6 +16,16 @@
 <itunes:type>episodic</itunes:type>
 <copyright>The Seax</copyright>
 <item>
+<title>Morning update: Tuesday 24 November 2026</title>
+<description>The latest Essex news bulletin from The Seax. Full stories at theseax.com.</description>
+<link>https://theseax.com/</link>
+<guid isPermaLink="false">https://theseax.com/audio/bulletin-2026-11-24-am.mp3#2026-11-24T07:03:24Z</guid>
+<pubDate>Tue, 24 Nov 2026 07:03:24 +0000</pubDate>
+<enclosure url="https://theseax.com/audio/bulletin-2026-11-24-am.mp3" length="4666140" type="audio/mpeg"/>
+<itunes:duration>146</itunes:duration>
+<itunes:explicit>false</itunes:explicit>
+</item>
+<item>
 <title>Overnight bulletin: Monday 23 November 2026</title>
 <description>The latest Essex news bulletin from The Seax. Full stories at theseax.com.</description>
 <link>https://theseax.com/</link>
@@ -83,16 +93,6 @@
 <pubDate>Sun, 22 Nov 2026 12:27:51 +0000</pubDate>
 <enclosure url="https://theseax.com/audio/bulletin-2026-11-22-mid.mp3" length="4605954" type="audio/mpeg"/>
 <itunes:duration>144</itunes:duration>
-<itunes:explicit>false</itunes:explicit>
-</item>
-<item>
-<title>Morning update: Sunday 22 November 2026</title>
-<description>The latest Essex news bulletin from The Seax. Full stories at theseax.com.</description>
-<link>https://theseax.com/</link>
-<guid isPermaLink="false">https://theseax.com/audio/bulletin-2026-11-22-am.mp3#2026-11-22T07:02:56Z</guid>
-<pubDate>Sun, 22 Nov 2026 07:02:56 +0000</pubDate>
-<enclosure url="https://theseax.com/audio/bulletin-2026-11-22-am.mp3" length="4451309" type="audio/mpeg"/>
-<itunes:duration>139</itunes:duration>
 <itunes:explicit>false</itunes:explicit>
 </item>
 </channel>
