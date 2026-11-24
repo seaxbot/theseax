@@ -108,3 +108,5 @@
 {"at":"2026-11-23T20:26:55Z","stage":"done","handled":0,"stories":[],"events":0,"flags":0,"left":3}
 {"at":"2026-11-23T20:27:29Z","stage":"done","handled":1,"stories":["harlow-rail-station-taxi-checks-three-vehicles-suspended"],"events":0,"flags":1,"left":2}
 {"at":"2026-11-24T09:20:46Z","stage":"started"}
+{"at":"2026-11-24T09:21:16Z","stage":"inbox","unhandled":5}
+{"at":"2026-11-24T09:26:46Z","stage":"done","handled":4,"stories":[],"events":0,"flags":0,"left":1,"error":"web fetch of Ofsted report pages not permitted"}
