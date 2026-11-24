@@ -1640,15 +1640,23 @@
   "ids": [
    "loughton-moyin-odeniran-bake-off-final-church-watch-party"
   ],
-  "name": "The Great British Bake Off bakers in the tent",
+  "name": "Moyin Odeniran at work in the Bake Off tent",
   "label": "Picture",
-  "wide": "/img/people/loughton-moyin-odeniran-bake-off-final-church-watch-party-wide.jpg",
-  "og": "/img/people/loughton-moyin-odeniran-bake-off-final-church-watch-party-og.jpg",
+  "wide": "/img/people/loughton-moyin-odeniran-bake-off-final-church-watch-party-moyin-wide.jpg",
+  "og": "/img/people/loughton-moyin-odeniran-bake-off-final-church-watch-party-moyin-og.jpg",
   "creator": "Channel 4/Love Productions/Patch Dolan",
   "provider": "Channel 4/Love Productions/Patch Dolan",
   "license": "",
   "licenseUrl": "",
   "source": "",
-  "addedBy": "owner, 24 Nov 2026 23:19 (Bake Off line-up picture supplied by the owner, credit Channel 4); credit updated by the owner 24 Nov"
+  "addedBy": "owner, 24 Nov 2026 23:19 (Bake Off line-up picture supplied by the owner, credit Channel 4); credit updated by the owner 24 Nov; 24 Nov 23:23 owner: baking picture is the main picture, team picture moved into the story",
+  "more": [
+   {
+    "name": "The Great British Bake Off series 17 bakers in the tent",
+    "label": "Picture",
+    "wide": "/img/people/loughton-moyin-odeniran-bake-off-final-church-watch-party-team.jpg",
+    "creator": "Channel 4/Love Productions/Patch Dolan"
+   }
+  ]
  }
 ]
