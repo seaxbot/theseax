@@ -242,7 +242,9 @@
     "shoebury"
    ],
    "status": "on",
-   "perWeek": 3
+   "perWeek": 3,
+   "note": "Vetted 24 Nov 2026: private group; About welcomes news, updates, crime and local business; one rule (be kind). First Seax post held for admin approval.",
+   "approval": "admin approval"
   },
   {
    "id": "406770896143550",
