@@ -263,6 +263,22 @@
    "result": "live"
   },
   {
+   "g": "essex-community-group-est2008-6296",
+   "s": "dartford-crossing-east-tunnel-shut-expansion-joint-23-november",
+   "t": 1795458120000,
+   "h": "Terrible day at Dartford as repairs and now a police incident cause huge delays",
+   "result": "live",
+   "note": "found in the Page activity log 24 Nov, not logged at the time; group 2833892923516296 is not in fb-groups.json"
+  },
+  {
+   "g": "essex-traffic-and-travel-6200",
+   "s": "dartford-crossing-east-tunnel-shut-expansion-joint-23-november",
+   "t": 1795458150000,
+   "h": "Terrible day at Dartford as repairs and now a police incident cause huge delays",
+   "result": "live",
+   "note": "found in the Page activity log 24 Nov, not logged at the time"
+  },
+  {
    "g": "rayleigh-life-2466",
    "s": "rochford-local-plan-ministers-order-consultation-7-december",
    "t": 1795460798288,
@@ -291,6 +307,14 @@
    "result": "pending"
   },
   {
+   "g": "essex-uk-community-2437",
+   "s": "chelmsford-city-cav-miley-badger-hole-training-walton-hersham",
+   "t": 1795506180000,
+   "h": "Chelmsford City captain Cav Miley falls down badger hole in training",
+   "result": "live",
+   "note": "made by the 07:41 scheduled run, which did not log it"
+  },
+  {
    "g": "saffron-walden-community-unc-2919",
    "s": "stansted-airport-emergency-exercise-today",
    "t": 1795508820387,
@@ -310,6 +334,14 @@
    "t": 1795508949066,
    "h": "Stansted Airport tests its plane crash response today with 400 people",
    "result": "live"
+  },
+  {
+   "g": "essex-uk-community-2437",
+   "s": "chelmsford-city-cav-miley-badger-hole-training-walton-hersham",
+   "t": 1795524180000,
+   "h": "Chelmsford City captain Cav Miley falls down badger hole in training",
+   "result": "live",
+   "note": "DUPLICATE: made by the 12:41 scheduled run, which did not log it and so repeated the 07:43 post in the same group"
   },
   {
    "g": "chelmsford-community-uk-3332",
