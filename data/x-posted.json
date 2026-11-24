@@ -291,6 +291,14 @@
    "at": "2026-11-24T07:46:31Z",
    "update": false,
    "buffer": "6b0540d7f1f04351232cf54c"
+  },
+  {
+   "id": "stansted-airport-emergency-exercise-today",
+   "kind": "story",
+   "headline": "Stansted Airport tests its plane crash response today with 400 people",
+   "at": "2026-11-24T08:50:17Z",
+   "update": false,
+   "buffer": "6b054fc9b0942b30ce1f258e"
   }
  ]
 }
