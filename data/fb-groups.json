@@ -1242,7 +1242,9 @@
     "mayland"
    ],
    "status": "on",
-   "perWeek": 4
+   "perWeek": 4,
+   "note": "Vetted 24 Nov 2026: no rules listed, very busy (227 posts a day). First Seax post (house prices) held for admin approval.",
+   "approval": "admin approval"
   },
   {
    "id": "126875950685557",
