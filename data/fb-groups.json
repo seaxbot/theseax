@@ -2949,10 +2949,11 @@
     "loughton",
     "debden"
    ],
-   "status": "on",
+   "status": "off",
    "perWeek": 1,
    "joined": "2026-11-21",
-   "note": "Auto-joined in the 21 Nov 2026 bulk join. Not yet vetted: before the first post, check the Group by banner (never Essex Live) and the rules; set off or caution if they ban links, news or Pages."
+   "note": "OFF 24 Nov 2026: admins declined the first Seax post (Loughton Bake Off story).",
+   "approval": "declined"
   },
   {
    "id": "684612189032668",
