@@ -1,5 +1,5 @@
 {
- "at": "2026-11-24T06:29:19.211747+00:00",
+ "at": "2026-11-24T16:42:13.807319+00:00",
  "councils": {
   "thurrock": {
    "name": "Thurrock Council",
@@ -44,7 +44,7 @@
    "meetings": 0,
    "changed": 0,
    "state": "unreachable",
-   "note": "calendar 0 TimeoutError('The read operation timed out')"
+   "note": "calendar 502 HTTP Error 502: Bad Gateway"
   },
   "harlow": {
    "name": "Harlow Council",
@@ -62,7 +62,7 @@
    "meetings": 20,
    "changed": 1,
    "state": "ok",
-   "note": ""
+   "note": "per-council time cap reached"
   },
   "brentwood": {
    "name": "Brentwood Borough Council",
@@ -144,7 +144,7 @@
   "maldon": 19,
   "tendring": 2,
   "harlow": 2,
-  "basildon": 22,
+  "basildon": 21,
   "brentwood": 2,
   "uttlesford": 2,
   "rochford": 1,
