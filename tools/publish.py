@@ -107,6 +107,19 @@ def plus_headlines(out):
     return n
 
 
+def list_bodies(out):
+    """A story's body must be a list of paragraphs: the page builder skips a plain string, so the story page goes out
+    blank (23 Nov 2026: the sport desk saved the Chelmsford v Maidstone report as one string and readers saw only the
+    headline). Split any string body on blank lines into paragraphs, and say which stories needed it."""
+    fixed = []
+    for x in _items(out):
+        b = x.get("body")
+        if isinstance(b, str):
+            x["body"] = [" ".join(p.split()) for p in re.split(r"\n\s*\n", b) if p.strip()]
+            fixed.append(x["id"])
+    return fixed
+
+
 def stamp_headlines(out, prev):
     """Owner's rule (Nov 2026): whenever a story's headline changes, the time shown on the site moves to the
     time of the change. Stored as "headlineAt" (display only; the newsroom's freshness and lead rules ignore it)."""
@@ -306,6 +319,9 @@ def main():
         if dprobs:
             print("DIARY WARNINGS (fix next run):", " | ".join(dprobs[:8]))
         print("diary:", len(out["diary"]), "entries")
+        lb = list_bodies(out)
+        if lb:
+            print("BODY WAS A STRING, split into paragraphs (save body as a list):", ", ".join(lb))
         print("plus to +:", plus_headlines(out))
         print("headlines changed:", stamp_headlines(out, prev_heads))
         rep = policy.apply(out)
