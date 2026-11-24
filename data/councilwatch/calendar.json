@@ -1,5 +1,5 @@
 {
- "at": "2026-11-23T16:32:29.113584+00:00",
+ "at": "2026-11-24T06:29:19.211747+00:00",
  "meetings": [
   {
    "council": "basildon",
@@ -25,21 +25,6 @@
    "url": "https://democracy.maldon.gov.uk/ieListDocuments.aspx?CId=148&MId=4930",
    "items": [
     "Outstanding Code of Conduct Complaint"
-   ]
-  },
-  {
-   "council": "tendring",
-   "councilName": "Tendring District Council",
-   "area": "tendring",
-   "committee": "Council",
-   "date": "2026-11-24",
-   "time": "7.30 pm",
-   "url": "https://tdcdemocracy.tendringdc.gov.uk/ieListDocuments.aspx?CId=130&MId=2837",
-   "items": [
-    "Urgent Cabinet or Portfolio Holder Decisions",
-    "Reference from the Planning Policy & Local Plan Committee - A.3 - Tendring District Local Plan Review: Final Submission to the Secretary of State following Regulation 19 Consultation",
-    "Petitions to Council",
-    "Reference from the Cabinet - A.1 - Discretionary Council Tax Exemptions / Discounts / Premiums for 2027/28 and Annual Minimum Revenue Provision Policy Statement 2027/28"
    ]
   },
   {
@@ -70,19 +55,6 @@
    ]
   },
   {
-   "council": "tendring",
-   "councilName": "Tendring District Council",
-   "area": "tendring",
-   "committee": "Planning Committee",
-   "date": "2026-11-26",
-   "time": "5.00 pm",
-   "url": "https://tdcdemocracy.tendringdc.gov.uk/ieListDocuments.aspx?CId=162&MId=2863",
-   "items": [
-    "Report of the Corporate Director (Planning & Community) - A.1 - Planning Application 26/01057/FUL - The Lifeboat House, The Parade, Walton-on-the-Naze, CO14 8EA",
-    "Report of the Corporate Director (Planning & Community) - A.2 - Planning Application 26/01058/ADV - The Lifeboat House, The Parade, Walton-on-the-Naze, CO14 8EA"
-   ]
-  },
-  {
    "council": "basildon",
    "councilName": "Basildon Council",
    "area": "south",
@@ -109,19 +81,6 @@
     "Long Lease Agreement - Foreshores at River Blackwater and Downs Road Boatyard",
     "Asset Disposal Policy",
     "Fees and Charges Proposals 2027/28"
-   ]
-  },
-  {
-   "council": "tendring",
-   "councilName": "Tendring District Council",
-   "area": "tendring",
-   "committee": "Resources and Services Overview and Scrutiny Committee",
-   "date": "2026-12-01",
-   "time": "7.30 pm",
-   "url": "https://tdcdemocracy.tendringdc.gov.uk/ieListDocuments.aspx?CId=326&MId=2877",
-   "items": [
-    "Report of the Corporate Director (Finance & IT) - A.1 - Overview of The Financial Outturn 2025/26 and Other Key Financial Matters",
-    "Report of the Assistant Director (Corporate Policy & Support) - A.2 - Review of the Work Programme"
    ]
   },
   {
@@ -155,16 +114,6 @@
    "items": []
   },
   {
-   "council": "tendring",
-   "councilName": "Tendring District Council",
-   "area": "tendring",
-   "committee": "Premises / Personal Licences Sub-Committee",
-   "date": "2026-12-07",
-   "time": "10.30 am",
-   "url": "https://tdcdemocracy.tendringdc.gov.uk/ieListDocuments.aspx?CId=329&MId=2951",
-   "items": []
-  },
-  {
    "council": "chelmsford",
    "councilName": "Chelmsford City Council",
    "area": "chelmsford",
@@ -182,16 +131,6 @@
    "date": "2026-12-08",
    "time": "7.00 p.m.",
    "url": "https://www.basildonmeetings.info/ieListDocuments.aspx?CId=709&MId=9589",
-   "items": []
-  },
-  {
-   "council": "tendring",
-   "councilName": "Tendring District Council",
-   "area": "tendring",
-   "committee": "Community Leadership Overview and Scrutiny Committee",
-   "date": "2026-12-08",
-   "time": "7.30 pm",
-   "url": "https://tdcdemocracy.tendringdc.gov.uk/ieListDocuments.aspx?CId=325&MId=2846",
    "items": []
   },
   {
@@ -235,16 +174,6 @@
    "items": []
   },
   {
-   "council": "tendring",
-   "councilName": "Tendring District Council",
-   "area": "tendring",
-   "committee": "Planning Committee",
-   "date": "2026-12-15",
-   "time": "5.00 pm",
-   "url": "https://tdcdemocracy.tendringdc.gov.uk/ieListDocuments.aspx?CId=162&MId=2864",
-   "items": []
-  },
-  {
    "council": "basildon",
    "councilName": "Basildon Council",
    "area": "south",
@@ -282,26 +211,6 @@
    "date": "2026-12-17",
    "time": "7.00 p.m.",
    "url": "https://www.basildonmeetings.info/ieListDocuments.aspx?CId=297&MId=9506",
-   "items": []
-  },
-  {
-   "council": "tendring",
-   "councilName": "Tendring District Council",
-   "area": "tendring",
-   "committee": "Cabinet",
-   "date": "2026-12-21",
-   "time": "10.30 am",
-   "url": "https://tdcdemocracy.tendringdc.gov.uk/ieListDocuments.aspx?CId=134&MId=2953",
-   "items": []
-  },
-  {
-   "council": "tendring",
-   "councilName": "Tendring District Council",
-   "area": "tendring",
-   "committee": "Premises / Personal Licences Sub-Committee",
-   "date": "2026-12-21",
-   "time": "2.00 pm",
-   "url": "https://tdcdemocracy.tendringdc.gov.uk/ieListDocuments.aspx?CId=329&MId=2952",
    "items": []
   }
  ]
