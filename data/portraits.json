@@ -1604,5 +1604,21 @@
   "licenseUrl": "",
   "source": "https://www.facebook.com/EssexPoliceUK",
   "addedBy": "owner, 24 Nov 2026 (Essex Police - Maldon District Facebook pictures; owner's rule: Essex Police pictures from its Facebook pages)"
+ },
+ {
+  "ids": [
+   "hatfield-peverel-david-cooney-jailed-sexual-assaults"
+  ],
+  "match": "\\bHatfield Peverel man\\b.*\\bsexual assaults?\\b",
+  "name": "David Cooney",
+  "label": "Picture",
+  "wide": "/img/people/hatfield-peverel-david-cooney-jailed-sexual-assaults-wide.jpg",
+  "og": "/img/people/hatfield-peverel-david-cooney-jailed-sexual-assaults-og.jpg",
+  "creator": "Essex Police",
+  "provider": "Essex Police",
+  "license": "",
+  "licenseUrl": "",
+  "source": "https://www.essex.police.uk/news/essex/news/news/2026/november/chelmsford-man-jailed-for-five-years-for-sexual-assaults/",
+  "addedBy": "owner, 24 Nov 2026 (Essex Police custody image released after sentence; Hatfield Peverel sexual assaults story)"
  }
 ]
