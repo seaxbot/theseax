@@ -107,6 +107,25 @@ def plus_headlines(out):
     return n
 
 
+SUMMARY_MAX_WORDS, SUMMARY_MAX_SENTENCE = 25, 18
+
+
+def long_summaries(out, live):
+    """Owner, 24 Nov 2026: the bold paragraph must be clear and easy to read ("This is too long!"). Flags new or
+    rewritten summaries over 25 words, or with a sentence over 18 words (ops/style.md 8a). Warning only."""
+    old = {x["id"]: x.get("summary") for x in _items(live)}
+    bad = []
+    for x in _items(out):
+        sm = " ".join(str(x.get("summary") or "").split())
+        if not sm or old.get(x["id"]) == sm:
+            continue
+        words = len(sm.split())
+        longest = max(len(t.split()) for t in re.split(r"(?<=[.!?])\s+", sm) if t)
+        if words > SUMMARY_MAX_WORDS or longest > SUMMARY_MAX_SENTENCE:
+            bad.append(f"{x['id']} ({words} words, longest sentence {longest})")
+    return bad
+
+
 def list_bodies(out):
     """A story's body must be a list of paragraphs: the page builder skips a plain string, so the story page goes out
     blank (23 Nov 2026: the sport desk saved the Chelmsford v Maidstone report as one string and readers saw only the
@@ -324,6 +343,9 @@ def main():
             print("BODY WAS A STRING, split into paragraphs (save body as a list):", ", ".join(lb))
         print("plus to +:", plus_headlines(out))
         print("headlines changed:", stamp_headlines(out, prev_heads))
+        ls = long_summaries(out, live)
+        if ls:
+            print("SUMMARY TOO LONG (max 25 words, no sentence over 18; ops/style.md 8a, fix now):", "; ".join(ls[:12]))
         rep = policy.apply(out)
         print("policy:", json.dumps({k: (v if isinstance(v, int) else len(v)) for k, v in rep.items()}))
         # owner, 22 Nov 2026 ("we now need to make stories longer when we only have one source... find the story from

@@ -83,6 +83,20 @@ The page reads: headline, picture, bold summary, body. Each should add something
 the news in fuller, natural words; it does not have to dodge the summary. Only a near copy of the summary is
 refused. Never say the same fact twice in the body.
 
+## 8a. The bold paragraph: short and easy to read
+Owner, 24 Nov 2026, on "An unauthorised parking business for Stansted Airport passengers at New Farm, Elsenham, must
+shut and restore the land after a planning inspector upheld Uttlesford District Council's enforcement notice": "This
+is too long! ... we must make it clear and easy to read."
+- At most 25 words, in one or two short sentences. No sentence over 18 words.
+- One idea a sentence. Say what it means for people, in everyday words, not the legal or official process.
+- Do not stack names and titles: at most one place and one organisation. Full official names, legal terms ("enforcement
+  notice", "upheld", "planning inspector") and site names go in the body.
+- Read it aloud: if you need a breath, cut it.
+- Before: the sentence above (29 words). After: "The unauthorised Stansted parking site at New Farm has lost its
+  fight with the council. The land must now be cleared." (21 words)
+tools/publish.py prints "SUMMARY TOO LONG" with the ids of new or rewritten stories that break the word limits;
+fix them in the same run. Each run, also shorten up to 10 older summaries that break it.
+
 ## 9. People and quotes
 - Real people make stories human. In our own reporting (owner stories, Council Watch, data stories, anything we
   witnessed or asked about), include the voices of the people affected where we have them: a resident, a trader, a
