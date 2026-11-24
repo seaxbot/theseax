@@ -43,14 +43,16 @@
     if (!a) { out.innerHTML = ""; return; }
     var n = Object.keys(D.areas).length, E = D.england, X = D.essex;
     var prev = a.price / (1 + a.annual / 100), diff = Math.round((a.price - prev) / 100) * 100;
-    var growth = rank(D, name, "annual", true), dear = rank(D, name, "price", true);
+    var growth = rank(D, name, "annual", true), fall = rank(D, name, "annual", false), dear = rank(D, name, "price", true);
     var vsEng = Math.round((a.price / E.price - 1) * 100);
     var change = a.annual > 0 ? "up " + Math.abs(a.annual).toFixed(1) + "%, about " + gbp(Math.abs(diff)) + " more than a year earlier"
       : a.annual < 0 ? "down " + Math.abs(a.annual).toFixed(1) + "%, about " + gbp(Math.abs(diff)) + " less than a year earlier" : "unchanged on a year earlier";
     var facts = [
-      "The average home in " + esc(name) + " sold for " + gbp(a.price) + " in " + esc(D.monthLabel) + ", " + change + ".",
-      "That is the " + (growth === 1 ? "biggest rise" : growth === n ? "biggest fall" : ord(growth) + " strongest change") + " of Essex's " + n + " council areas, and the " + (dear === 1 ? "highest" : dear === n ? "lowest" : ord(dear) + " highest") + " average price.",
-      "Homes here cost " + (vsEng === 0 ? "about the same as" : Math.abs(vsEng) + "% " + (vsEng > 0 ? "more" : "less") + " than") + " the England average of " + gbp(E.price) + ". England rose " + pct(E.annual) + " over the year.",
+      "The average home in " + esc(name) + " cost " + gbp(a.price) + " in " + esc(D.monthLabel) + ", " + change + ".",
+      (a.annual > 0 ? "That is the " + (growth === 1 ? "biggest rise" : ord(growth) + " biggest rise") + " of Essex's " + n + " council areas"
+        : a.annual < 0 ? "That is the " + (fall === 1 ? "biggest fall" : ord(fall) + " biggest fall") + " of Essex's " + n + " council areas"
+        : "Prices held steady, unlike most of Essex's " + n + " council areas") + ", and the " + (dear === 1 ? "highest" : dear === n ? "lowest" : ord(dear) + " highest") + " average price.",
+      "Homes here cost " + (vsEng === 0 ? "about the same as" : Math.abs(vsEng) + "% " + (vsEng > 0 ? "more" : "less") + " than") + " the England average of " + gbp(E.price) + ". Across England, prices " + (E.annual > 0 ? "rose " : E.annual < 0 ? "fell " : "held at ") + Math.abs(E.annual).toFixed(1) + "% over the year.",
       "A first-time buyer pays an average of " + gbp(a.firstTime) + ", against " + gbp(E.firstTime) + " across England."
     ];
     var types = [["Detached house", "detached"], ["Flat or maisonette", "flat"], ["First-time buyer home", "firstTime"], ["All homes", "price"]];

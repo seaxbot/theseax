@@ -1813,7 +1813,7 @@ def body_with_charts(it, body, opening=""):
     if any(w.get("type") == "crime-lookup" for w in widgets):
         out.append('<script src="/js/crime-lookup.js?v=2" defer></script>')
     if any(w.get("type") == "price-lookup" for w in widgets):
-        out.append('<script src="/js/price-lookup.js?v=1" defer></script>')
+        out.append('<script src="/js/price-lookup.js?v=2" defer></script>')
     return "".join(out)
 
 
