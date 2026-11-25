@@ -1,6 +1,23 @@
 [
  {
   "ids": [
+   "mersea-peter-shilton-auction-5642-gambling-charity"
+  ],
+  "match": "\\bShiltons?\\b",
+  "name": "Peter Shilton",
+  "label": "Picture",
+  "wide": "/img/people/peter-shilton-wide.jpg",
+  "og": "/img/people/peter-shilton-og.jpg",
+  "creator": "",
+  "provider": "",
+  "license": "",
+  "licenseUrl": "",
+  "source": "",
+  "noCaption": true,
+  "addedBy": "owner, 25 Nov 2026 00:58 (picture of Peter Shilton supplied by the owner, for all Peter Shilton stories; no credit given yet, so no caption)"
+ },
+ {
+  "ids": [
    "basildon-hospital-gas-and-air-suspended-maternity-staff-safety"
   ],
   "match": "\\bBasildon (University )?Hospital\\b",
