@@ -1476,6 +1476,11 @@ def video_figure(it, fig):
             'f.style.cssText="display:block;width:100%;aspect-ratio:16/9;height:auto;border:0;border-radius:10px";'
             'a.replaceWith(f)})})();</script>')
 
+def link_query(it):
+    """Optional "linkQuery" on a story (owner, 25 Nov 2026): a short query such as "?fresh=6" added to its front-page links."""
+    q = str((it or {}).get("linkQuery") or "")
+    return q if re.fullmatch(r"\?[A-Za-z0-9=&_-]{1,40}", q) else ""
+
 STORY_CTX = {"archive": {}, "diary": {}, "takedown": set()}
 PAGE_CSS_V = "20261123a"
 
@@ -3264,7 +3269,7 @@ def patch_index(latest_briefing, ed=None):
     if ed is not None:
         cards = []
         for it in [x for x in (ed.get("stories") or []) if isinstance(x, dict) and x.get("id") and x.get("headline")][:40]:
-            cards.append(f'<a class="card" href="/story/{E(it["id"])}/"><div class="body"><div class="meta"><span class="place">{E(it.get("place") or "Essex")}</span>'
+            cards.append(f'<a class="card" href="/story/{E(it["id"])}/{E(link_query(it))}"><div class="body"><div class="meta"><span class="place">{E(it.get("place") or "Essex")}</span>'
                          f'{(" <span class=\"when\">" + E(uk_long(parse_t(it.get("time")))) + "</span>") if parse_t(it.get("time")) else ""}</div>'
                          f'<h3>{E(it["headline"])}</h3><p>{E(it.get("summary") or "")}</p></div></a>')
         static = "<!--seax-static-->" + "".join(cards) + "<!--/seax-static-->"
@@ -3292,7 +3297,7 @@ def patch_index(latest_briefing, ed=None):
         own = (pick + [o for o in own if o not in pick])[:3]
         only = ""
         if len(own) >= 3:
-            oc = "".join(f'<a class="card" href="/story/{E(x["id"])}/"><div class="body"><div class="meta"><span class="place">{E(k)}</span> '
+            oc = "".join(f'<a class="card" href="/story/{E(x["id"])}/{E(link_query(x))}"><div class="body"><div class="meta"><span class="place">{E(k)}</span> '
                          f'<span class="when">{E(x.get("councilName") or x.get("place") or "Essex")}</span></div>'
                          f'<h3>{E(x["headline"])}</h3><p>{E(trunc(str(x.get("summary") or ""), 170))}</p></div></a>' for k, x in own)
             only = ('<style>@media(max-width:700px){#onlyseax .tools{display:none}}</style><section class="block" id="onlyseax"><div class="wrap"><div class="bh"><h2>Only on The Seax<small>Our own reporting from council papers and official data</small></h2>'

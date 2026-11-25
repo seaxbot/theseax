@@ -4537,7 +4537,8 @@ const inArea = item => AREA === "all" || !item.areas || item.areas.includes("all
 const deskItems = () => { const seen = new Set(); return [...ED.official, ...ED.courts].filter(s => { const k = s.url || s.id; if(seen.has(k)) return false; seen.add(k); return true; }); };
 const allStories = () => [...ED.stories, ...ED.sport.stories, ...deskItems(), ...ED.community, ...(ED.councilwatch || [])];
 const byTime = (x,y) => new Date(y.time||0) - new Date(x.time||0);
-const storyHref = s => "/story/" + s.id + "/";
+/* "linkQuery" (owner, 25 Nov 2026, Tunde story: "update the link with ...?fresh=6"): a short query added to the story's link */
+const storyHref = s => "/story/" + s.id + "/" + (/^\?[A-Za-z0-9=&_-]{1,40}$/.test(s.linkQuery || "") ? s.linkQuery : "");
 const hostOf = u => { try{ return new URL(u).hostname.replace(/^www\./,""); }catch(_){ return ""; } };
 
 function renderChips(){
@@ -5880,12 +5881,15 @@ setTimeout(navOverflow, 0);
   var CFG = window.SEAX_CONFIG || {};
   var SITE = CFG.site || "https://theseax.com";
   function known(id){ try{ return allStories().some(function(x){ return x.id === id; }); }catch(_){ return false; } }
+  /* stories with videos, embedded posts, extra pictures or a link query open their full page, not the in-page reader,
+     which shows only the words (owner, 25 Nov 2026: the Tunde videos did not show when tapped from the front page) */
+  function rich(id){ try{ return allStories().some(function(x){ return x.id === id && ((x.embeds && x.embeds.length) || (x.charts && x.charts.length) || x.video || x.linkQuery || (x.widgets && x.widgets.length)); }); }catch(_){ return false; } }
   document.addEventListener("click", function(e){
     if(e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
     var a = e.target.closest('a[href^="/story/"]');
     if(a){
       var id = (a.getAttribute("href").split("/")[2] || "");
-      if(id && known(id)){ e.preventDefault(); location.hash = "story-" + id; }
+      if(id && known(id) && !rich(id)){ e.preventDefault(); location.hash = "story-" + id; }
       return;
     }
     var b = e.target.closest("[data-sharestory]");
