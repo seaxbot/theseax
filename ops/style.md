@@ -78,6 +78,9 @@ everyday sentences before relying on it.
   More than three full weekday-and-date stamps in one body is refused.
 - Still never "today", "yesterday" or "tonight" in story copy (pages outlive the day), and no year for this year.
 
+## 7a. Council names: capital letters (owner, 25 Nov 2026)
+Name a council in full with capitals on first mention, as it calls itself: "Southend City Council" (formally Southend-on-Sea City Council), "Chelmsford City Council", "Basildon Council", "Essex County Council" and so on. Never write "Southend council" or "Southend city council". After that, "the council" in lower case is fine. A council's tax is still "council tax", lower case ("Southend's council tax").
+
 ## 8. Layers, not echoes
 The page reads: headline, picture, bold summary, body. Each should add something, but the first paragraph may tell
 the news in fuller, natural words; it does not have to dodge the summary. Only a near copy of the summary is
