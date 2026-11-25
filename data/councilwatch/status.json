@@ -1,5 +1,5 @@
 {
- "at": "2026-11-25T06:31:22.506094+00:00",
+ "at": "2026-11-25T16:41:51.312600+00:00",
  "councils": {
   "thurrock": {
    "name": "Thurrock Council",
@@ -33,7 +33,7 @@
    "system": "mg",
    "base": "https://democracy.maldon.gov.uk",
    "meetings": 17,
-   "changed": 0,
+   "changed": 3,
    "state": "ok",
    "note": ""
   },
@@ -41,10 +41,10 @@
    "name": "Tendring District Council",
    "system": "mg",
    "base": "https://tdcdemocracy.tendringdc.gov.uk",
-   "meetings": 12,
-   "changed": 1,
-   "state": "ok",
-   "note": ""
+   "meetings": 0,
+   "changed": 0,
+   "state": "unreachable",
+   "note": "calendar 502 HTTP Error 502: Bad Gateway"
   },
   "harlow": {
    "name": "Harlow Council",
@@ -60,7 +60,7 @@
    "system": "mg",
    "base": "https://www.basildonmeetings.info",
    "meetings": 18,
-   "changed": 2,
+   "changed": 0,
    "state": "ok",
    "note": ""
   },
@@ -141,8 +141,8 @@
   "thurrock": 2,
   "southend": 2,
   "epping": 2,
-  "maldon": 19,
-  "tendring": 14,
+  "maldon": 21,
+  "tendring": 2,
   "harlow": 2,
   "basildon": 20,
   "brentwood": 2,
