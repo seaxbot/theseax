@@ -1,4 +1,15 @@
 {
+ "ardleigh-environment-agency-flood-response-depot-approved": {
+  "after": 0,
+  "h": 750,
+  "kicker": "Where it happened",
+  "made": "2026-11-25T18:00:34Z",
+  "road": "Old Ipswich Road",
+  "sig": "[[\"Old Ipswich Road\"], \"Ardleigh\", null]",
+  "src": "/img/maps/ardleigh-environment-agency-flood-response-depot-approved.svg",
+  "town": "Ardleigh",
+  "w": 1200
+ },
  "basildon-consortium-elevate-business-top-four-ied-awards-2026": {
   "none": "no road named",
   "sig": "[[], \"Basildon\", null]"
@@ -7,9 +18,21 @@
   "none": "no road named",
   "sig": "[[], \"Basildon\", null]"
  },
+ "benfleet-student-life-size-dalek-modelmaking-degree": {
+  "none": "no road named",
+  "sig": "[[], \"Benfleet\", null]"
+ },
  "billericay-chip-pan-fire-burns-hands-24-november": {
   "none": "no road named",
   "sig": "[[], \"Billericay\", null]"
+ },
+ "boxted-bridge-closure-three-years-calls-for-action": {
+  "none": "roads called Wick Road far apart near Colchester: not sure which",
+  "sig": "[[\"Wick Road\"], \"Colchester\", null]"
+ },
+ "braintree-cat-zeus-train-trip-liverpool-street": {
+  "none": "no road named",
+  "sig": "[[], \"Braintree\", null]"
  },
  "brentwood-council-womens-safety-charter-16-days-of-activism": {
   "none": "no road named",
@@ -30,6 +53,10 @@
   "none": "no road named",
   "sig": "[[], \"Brightlingsea\", null]"
  },
+ "broomfield-phoenix-ward-pokemon-christmas-appeal-harry-fusedale": {
+  "none": "no road named",
+  "sig": "[[], \"Chelmsford\", null]"
+ },
  "c2c-best-in-britain-to-not-good-enough-investigation": {
   "none": "no road named",
   "sig": "[[], \"Southend\", null]"
@@ -44,6 +71,10 @@
   "src": "/img/maps/chelmsford-army-and-navy-inquiry-opens-preview.svg",
   "town": "Chelmsford",
   "w": 1200
+ },
+ "chelmsford-army-and-navy-public-inquiry-compulsory-purchase-24-november": {
+  "none": "no road named",
+  "sig": "[[], \"Chelmsford\", null]"
  },
  "chelmsford-colchester-first-bus-network-changes-3-january-2027": {
   "none": "no road named",
@@ -62,6 +93,10 @@
   "sig": "[[], \"Colchester\", null]"
  },
  "colchester-draft-local-plan-to-be-submitted-for-examination": {
+  "none": "no road named",
+  "sig": "[[], \"Colchester\", null]"
+ },
+ "colchester-local-plan-committee-23-november-preview": {
   "none": "no road named",
   "sig": "[[], \"Colchester\", null]"
  },
@@ -112,6 +147,10 @@
   "none": "no road named",
   "sig": "[[], null, null]"
  },
+ "essex-greater-anglia-elizabeth-line-weekend-cancellations-early-2027": {
+  "none": "no road named",
+  "sig": "[[], null, null]"
+ },
  "essex-gritters-55-winter-service-2026-27": {
   "none": "no town to search near",
   "sig": "[[\"Snowy Way\"], null, null]"
@@ -151,6 +190,17 @@
   "none": "no road named",
   "sig": "[[], null, null]"
  },
+ "halstead-banking-hub-permanent-bridge-street-home": {
+  "after": 0,
+  "h": 750,
+  "kicker": "On the map",
+  "made": "2026-11-25T18:00:54Z",
+  "road": "Bridge Street",
+  "sig": "[[\"Bridge Street\"], \"Halstead\", null]",
+  "src": "/img/maps/halstead-banking-hub-permanent-bridge-street-home.svg",
+  "town": "Halstead",
+  "w": 1200
+ },
  "hanningfield-reservoir-record-low-35-percent-hosepipe-ban": {
   "none": "no road named",
   "sig": "[[], \"Hanningfield\", null]"
@@ -162,6 +212,28 @@
  "harlow-council-fourth-budget-surplus-forecast-2026-27": {
   "none": "no road named",
   "sig": "[[], \"Harlow\", null]"
+ },
+ "harlow-market-square-first-phase-rebuild-finished": {
+  "after": 0,
+  "h": 750,
+  "kicker": "On the map",
+  "made": "2026-11-25T18:01:29Z",
+  "road": "Market Square",
+  "sig": "[[\"Market Square\"], \"Harlow\", null]",
+  "src": "/img/maps/harlow-market-square-first-phase-rebuild-finished.svg",
+  "town": "Harlow",
+  "w": 1200
+ },
+ "harlow-river-way-bridge-closed-edinburgh-way": {
+  "after": 0,
+  "h": 750,
+  "kicker": "Where it happened",
+  "made": "2026-11-25T18:01:23Z",
+  "road": "River Way",
+  "sig": "[[\"River Way\", \"Edinburgh Way\", \"Cambridge Road\"], \"Harlow\", null]",
+  "src": "/img/maps/harlow-river-way-bridge-closed-edinburgh-way.svg",
+  "town": "Harlow",
+  "w": 1200
  },
  "harlow-savannah-lodge-ofsted-new-compliance-notice": {
   "none": "no road named",
@@ -194,6 +266,10 @@
  "mersea-peter-shilton-auction-5642-gambling-charity": {
   "none": "no road named",
   "sig": "[[], \"West Mersea\", null]"
+ },
+ "rochford-garden-waste-fortnightly-winter-trial-23-november": {
+  "none": "no road named",
+  "sig": "[[], \"Rochford\", null]"
  },
  "rochford-local-plan-ministers-order-consultation-7-december": {
   "none": "no road named",
@@ -230,6 +306,10 @@
   "none": "no road named",
   "sig": "[[], \"Southend-on-Sea\", null]"
  },
+ "southend-pier-trains-firm-restart-date-pressure": {
+  "none": "no road named",
+  "sig": "[[], \"Southend-on-Sea\", null]"
+ },
  "southend-shoplifter-jailed-48-weeks-one-stop-sutton-road-ban": {
   "after": 1,
   "h": 750,
@@ -245,11 +325,26 @@
   "none": "no road named",
   "sig": "[[], \"Southend-on-Sea\", null]"
  },
+ "southend-stock-road-havens-hospices-reuse-shop-100-tonnes": {
+  "after": 0,
+  "h": 750,
+  "kicker": "Where it happened",
+  "made": "2026-11-25T18:01:00Z",
+  "road": "Stock Road",
+  "sig": "[[\"Stock Road\"], \"Southend-on-Sea\", null]",
+  "src": "/img/maps/southend-stock-road-havens-hospices-reuse-shop-100-tonnes.svg",
+  "town": "Southend-on-Sea",
+  "w": 1200
+ },
  "southend-victoria-southminster-lines-rail-buses-28-29-november": {
   "none": "no road named",
   "sig": "[[], \"Southminster\", null]"
  },
  "stansted-airport-college-5m-essex-council-leader-peter-harris": {
+  "none": "no road named",
+  "sig": "[[], \"Stansted\", null]"
+ },
+ "stansted-airport-college-kemi-badenoch-visit-students": {
   "none": "no road named",
   "sig": "[[], \"Stansted\", null]"
  },
@@ -265,6 +360,14 @@
   "none": "no road named",
   "sig": "[[], \"Clacton-on-Sea\", null]"
  },
+ "the-week-in-essex-2026-11-22": {
+  "none": "no road named",
+  "sig": "[[], \"Brentwood\", null]"
+ },
+ "thorrington-red-lion-letter-1972-rennie-chivers": {
+  "none": "no road named",
+  "sig": "[[], \"Colchester\", null]"
+ },
  "thurrock-budget-savings-scrutiny-24-november-preview": {
   "none": "no road named",
   "sig": "[[], \"Thurrock\", null]"
@@ -276,5 +379,35 @@
  "tolleshunt-darcy-village-hall-70000-grants-january-refit": {
   "none": "no road named",
   "sig": "[[], \"Tolleshunt D'Arcy\", null]"
+ },
+ "university-of-essex-marianne-straub-textile-designer-legacy-project": {
+  "none": "no road named",
+  "sig": "[[], \"Colchester\", null]"
+ },
+ "university-of-essex-two-professors-highly-cited-researchers-2026": {
+  "none": "no road named",
+  "sig": "[[], \"Colchester\", null]"
+ },
+ "wickford-derailment-repairs-cost-network-rail-3-65m": {
+  "after": 1,
+  "h": 750,
+  "kicker": "Where it happened",
+  "made": "2026-11-25T18:00:39Z",
+  "road": "Salcott Crescent",
+  "sig": "[[\"Salcott Crescent\"], \"Wickford\", null]",
+  "src": "/img/maps/wickford-derailment-repairs-cost-network-rail-3-65m.svg",
+  "town": "Wickford",
+  "w": 1200
+ },
+ "wivenhoe-cadent-gas-pipe-drop-in-26-november": {
+  "after": 0,
+  "h": 750,
+  "kicker": "On the map",
+  "made": "2026-11-25T18:00:50Z",
+  "road": "Grasby Close",
+  "sig": "[[\"Grasby Close\", \"Broome Grove\", \"Spring Lane\", \"Tower Road\", \"Heath Road\", \"High Street\"], \"Wivenhoe\", null]",
+  "src": "/img/maps/wivenhoe-cadent-gas-pipe-drop-in-26-november.svg",
+  "town": "Wivenhoe",
+  "w": 1200
  }
 }
