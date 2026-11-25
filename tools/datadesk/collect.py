@@ -13,6 +13,8 @@ when the figures are news. Every figure in the digest carries the link to its of
   prices     UK House Price Index for the 14 Essex council areas (HM Land Registry and ONS, Open Government Licence)
   petitions  The UK Parliament petitions with the most signatures (petition.parliament.uk, Open Parliament
              Licence): which ones Essex constituencies sign far more, or far less, than the country as a whole
+  elections  Elections and by-elections in Essex in the next 75 days, with candidates once published (Democracy
+             Club candidates API, CC BY 4.0; needs the secret DEMOCRACY_CLUB_KEY)
 
 Rules: official APIs only, identifies itself honestly, a handful of requests per source, standard library only,
 never fails the whole run because one source is down. Output directory is argv[1] (default ./datadesk-out); the
@@ -558,6 +560,24 @@ def digest(data):
             L.append(f"  - {r['area']}: average {gbp(r['price'])} | change in a year {pct(r['annual'])} | in a month {pct(r['monthly'])} | first-time buyers {gbp(r.get('firstTime'))} | flats {gbp(r.get('flat'))} | detached {gbp(r.get('detached'))}")
         L.append("  Source page: " + str(h.get("url")))
     L.append("")
+    el = data.get("elections")
+    if el:
+        L.append("== ELECTIONS AND BY-ELECTIONS IN ESSEX, NEXT 75 DAYS (Democracy Club, CC BY 4.0) ==")
+        if el.get("error"):
+            L.append("  could not be read this run: " + el["error"])
+        elif not el.get("ballots"):
+            L.append(f"  none found ({el.get('scanned', 0)} ballots scanned UK-wide)")
+        else:
+            for r in el["ballots"]:
+                flag = "  ** NEW **" if r.get("new") else ""
+                if r.get("candidatesNew"):
+                    flag += "  ** CANDIDATES JUST CONFIRMED **"
+                cands = "; ".join(f"{c['name']} ({c['party']})" for c in r.get("candidates") or []) or "candidates not yet published"
+                L.append(f"  - {r['date']}: {r['election']}, {r['seat']}{' (by-election)' if r.get('byElection') else ''}, seats {r.get('seats')}, list {'final' if r.get('candidatesLocked') else 'not final'}{flag}")
+                L.append(f"    {cands}")
+                L.append(f"    {r['url']}")
+            L.append("  Credit: Democracy Club (whocanivotefor.co.uk). Check candidate names against the council's statement of persons nominated before publishing.")
+        L.append("")
     return "\n".join(L)
 
 
@@ -619,11 +639,14 @@ ELECTION_RX = re.compile(r"^(local|parl|mayor|pcc|europarl)\.(essex|greater-esse
 def elections(state):
     """Elections and by-elections coming up in Essex, with candidates once published (Democracy Club, CC BY 4.0)."""
     start = NOW.strftime("%Y-%m-%d"); end = (NOW + timedelta(days=75)).strftime("%Y-%m-%d")
+    key = os.environ.get("DEMOCRACY_CLUB_KEY", "").strip()  # GitHub secret DEMOCRACY_CLUB_KEY (owner, 25 Nov 2026)
     url = "https://candidates.democracyclub.org.uk/api/next/ballots/?" + urllib.parse.urlencode(
         {"election_date_range_after": start, "election_date_range_before": end, "page_size": 200})
     rows, pages, total = [], 0, 0
     while url and pages < 15:
-        d = get(url, timeout=60); pages += 1
+        if key and "auth_token=" not in url:
+            url += ("&" if "?" in url else "?") + urllib.parse.urlencode({"auth_token": key})
+        d = get(url, headers={"Authorization": "Token " + key} if key else None, timeout=60); pages += 1
         res = d.get("results") or []
         if pages == 1:
             print("elections: count", d.get("count"), "first keys", sorted((res[0] if res else {}).keys()))
@@ -662,9 +685,12 @@ def main():
     os.makedirs(OUT, exist_ok=True)
     state = load("state.json", {})
     data = load("data.json", {})
-    for name, fn in (("food", food), ("contracts", contracts), ("petitions", petitions), ("prices", prices), ("crime", crime), ("insolvency", insolvency)):
-        # elections(): Democracy Club's API answered 401 on 20 Nov 2026 (it needs a free API key); the function is kept
-        # for when the owner adds one as the secret DEMOCRACY_CLUB_KEY
+    desks = [("food", food), ("contracts", contracts), ("petitions", petitions), ("prices", prices), ("crime", crime), ("insolvency", insolvency)]
+    # elections(): Democracy Club's API needs a free API key (401 without one, 20 Nov 2026). The owner got one on
+    # 25 Nov 2026; it is the GitHub secret DEMOCRACY_CLUB_KEY, passed in by .github/workflows/datadesk.yml.
+    if os.environ.get("DEMOCRACY_CLUB_KEY", "").strip():
+        desks.append(("elections", elections))
+    for name, fn in desks:
         if ONLY and name not in ONLY:
             continue
         try:

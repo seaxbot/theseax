@@ -24,6 +24,8 @@ jobs:
           mkdir -p /tmp/dd
           if git fetch -q --depth 1 origin data-desk; then git archive FETCH_HEAD | tar -x -C /tmp/dd; else echo "no previous state"; fi
       - name: Collect
+        env:
+          DEMOCRACY_CLUB_KEY: ${{ secrets.DEMOCRACY_CLUB_KEY }}
         run: |
           set -o pipefail
           python3 -u tools/datadesk/collect.py /tmp/dd 2>&1 | tee /tmp/dd/run.log
