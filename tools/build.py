@@ -1881,7 +1881,16 @@ def body_with_charts(it, body, opening=""):
                        + f"&show_text=false&width={360 if vert else 560}&t=0")
                 box = ("max-width:360px;aspect-ratio:9/16" if vert else "max-width:100%;aspect-ratio:16/9")
                 poster = str(em.get("poster") or "")
-                if poster.startswith("/img/"):
+                if poster.startswith("/img/") and em.get("player") is True:
+                    # owner, 25 Nov 2026, 23:03 ("I can see the still images but not the embedded videos"): with
+                    # "player": true the real Facebook player shows straight away on every device, with the poster
+                    # still behind it so the space is never empty while the player loads
+                    inner = (f'<img src="{E(poster)}?v=1" width="720" height="1280" alt="" aria-hidden="true" loading="lazy" '
+                             'style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover">'
+                             f'<iframe src="{E(src)}" title="{cap}" loading="lazy" scrolling="no" frameborder="0" allowfullscreen="true" '
+                             'allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" '
+                             'style="position:absolute;inset:0;width:100%;height:100%;border:0;overflow:hidden"></iframe>')
+                elif poster.startswith("/img/"):
                     # owner, 25 Nov 2026 ("I cannot see the two facebook videos"): Facebook's player is blanked on
                     # iPhones (Safari tracking protection), so with a "poster" still the video shows as a tap-to-watch
                     # card that always appears. On a computer a tap swaps in Facebook's player and plays it in the
@@ -1900,7 +1909,7 @@ def body_with_charts(it, body, opening=""):
                 out.append(f'<figure class="fbembed" style="margin:1.4em 0"><div style="position:relative;{box};margin:0 auto;'
                            f'background:#000;border-radius:10px;overflow:hidden">{inner}</div>'
                            f'<figcaption>{cap}. <a href="{E(em["url"])}" target="_blank" rel="noopener">Watch on Facebook ↗</a></figcaption></figure>')
-    if any(str(em.get("poster") or "").startswith("/img/") for em in fbembeds):
+    if any(str(em.get("poster") or "").startswith("/img/") and em.get("player") is not True for em in fbembeds):
         out.append('<script>(function(){var m=/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)||'
                    '(navigator.platform==="MacIntel"&&navigator.maxTouchPoints>1);if(m)return;'
                    'document.querySelectorAll("a.fbplay").forEach(function(a){a.addEventListener("click",function(e){e.preventDefault();'
