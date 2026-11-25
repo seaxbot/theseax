@@ -1747,5 +1747,39 @@
   "licenseUrl": "",
   "source": "https://www.facebook.com/EPSouthend",
   "addedBy": "owner, 25 Nov 2026 17:27: \"I like this pic when talking about being jailed\" (Essex Police picture from its Southend District Facebook page; stories where someone is jailed; story-specific pictures such as custody photos still win)"
+ },
+ {
+  "generic": true,
+  "match": "^(?=.*\\b([Ll]ow|[Ll]owest|[Ll]evels?|[Dd]rought|[Hh]osepipe|[Dd]ry|[Dd]rying|[Ss]hortages?|[Rr]ain|[Rr]ainfall|[Ww]ater supply|[Rr]efill|[Cc]apacity|per ?cent)\\b|.*\\d+%).*\\b([Rr]eservoirs?|Abberton|Hanningfield)\\b",
+  "notMatch": "\\b(drown|drowned|drowning|body|bodies|died|dies|death|dead|missing|rescue|rescued|sailing|sailor|swim|swimmer|swimming|fishing|angler|cyclist|road|crash|collision)\\b",
+  "name": "Exposed shoreline at a low Essex reservoir",
+  "label": "Picture",
+  "wide": "/img/people/reservoir-low-shoreline-wide.jpg",
+  "og": "/img/people/reservoir-low-shoreline-og.jpg",
+  "creator": "",
+  "provider": "",
+  "license": "",
+  "licenseUrl": "",
+  "source": "",
+  "noCaption": true,
+  "ids": [
+   "hanningfield-reservoir-record-low-35-percent-hosepipe-ban"
+  ],
+  "addedBy": "owner, 25 Nov 2026 17:36: \"Use this for reservoir low stories (any in Essex)\" (picture supplied by the owner, no credit given, so no caption)"
+ },
+ {
+  "generic": true,
+  "match": "\\b(RNLI|[Ll]ifeboats?|[Cc]oastguards?|[Ll]ifeboat crews?)\\b|^(?=.*\\b(sea|beach|boats?|yacht|dinghy|kayak\\w*|paddle ?board\\w*|canoe\\w*|estuary|mud|mudflats?|tide|stranded|cut off|swimmers?|pier|harbour|river|creek|marina|sailors?|offshore|coast\\w*)\\b).*\\b([Rr]escue[ds]?|[Rr]escuers?|[Ss]aved)\\b|^(?=.*\\b([Rr]escue[ds]?|[Rr]escuers?|[Ss]aved)\\b).*\\b(sea|beach|boats?|yacht|dinghy|kayak\\w*|paddle ?board\\w*|canoe\\w*|estuary|mud|mudflats?|tide|stranded|cut off|swimmers?|pier|harbour|river|creek|marina|sailors?|offshore|coast\\w*)\\b",
+  "notMatch": "\\b(died|dies|death|dead|body|bodies|drowned|drowning|killed|fatal\\w*|tragedy|tributes?|funeral|inquest|missing|search called off|dogs?|cats?|horses?|RSPCA|animal|wildlife|seals?|birds?|fire|blaze|police|court|charged|jailed)\\b",
+  "name": "An RNLI lifeboat and crew at Clacton",
+  "label": "Picture",
+  "wide": "/img/people/rnli-clacton-lifeboat-wide.jpg",
+  "og": "/img/people/rnli-clacton-lifeboat-og.jpg",
+  "creator": "RNLI Clacton Lifeboat",
+  "provider": "RNLI Clacton Lifeboat",
+  "license": "",
+  "licenseUrl": "",
+  "source": "",
+  "addedBy": "owner, 25 Nov 2026 17:37: \"Use this for RNLI stories / rescues etc\" (Clacton lifeboat 13-52; RNLI, lifeboat, coastguard and sea or shore rescue stories; not deaths, missing people, animal rescues, fires or crime)"
  }
 ]
