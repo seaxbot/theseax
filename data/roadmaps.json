@@ -18,6 +18,10 @@
   "none": "no road named",
   "sig": "[[], \"Basildon\", null]"
  },
+ "basildon-valeriy-hurynchuk-49-missing-appeal": {
+  "none": "no road named",
+  "sig": "[[], \"Basildon\", null]"
+ },
  "benfleet-student-life-size-dalek-modelmaking-degree": {
   "none": "no road named",
   "sig": "[[], \"Benfleet\", null]"
@@ -34,7 +38,19 @@
   "none": "no road named",
   "sig": "[[], \"Braintree\", null]"
  },
+ "braintree-raf-wethersfield-dispersal-order-21-23-november": {
+  "none": "no road called Howe Street near Wethersfield",
+  "sig": "[[\"Howe Street\"], \"Wethersfield\", null]"
+ },
+ "brentwood-616kg-raw-tobacco-seized-hmrc-illegal-cigarette-factory-raids": {
+  "none": "no road named",
+  "sig": "[[], \"Brentwood\", null]"
+ },
  "brentwood-council-womens-safety-charter-16-days-of-activism": {
+  "none": "no road named",
+  "sig": "[[], \"Brentwood\", null]"
+ },
+ "brentwood-school-safeguarding-review-british-fencing-own-review": {
   "none": "no road named",
   "sig": "[[], \"Brentwood\", null]"
  },
@@ -80,6 +96,14 @@
   "none": "no road named",
   "sig": "[[], \"Chelmsford\", null]"
  },
+ "chelmsford-hollywood-bowl-meadows-opening-december": {
+  "none": "no road named",
+  "sig": "[[], \"Chelmsford\", null]"
+ },
+ "chelmsford-johnny-coyle-37-missing-appeal": {
+  "none": "no road named",
+  "sig": "[[], \"Chelmsford\", null]"
+ },
  "chelmsford-mp-pauls-law-dysphagia-training-birch-care-home": {
   "none": "no road named",
   "sig": "[[], \"Birch\", null]"
@@ -87,6 +111,18 @@
  "chelmsford-rough-sleeping-navigators-50-percent-rise": {
   "none": "no road called Open Road near Chelmsford",
   "sig": "[[\"Open Road\"], \"Chelmsford\", null]"
+ },
+ "christmas-in-essex-guide-seax-festive-events": {
+  "none": "no road named",
+  "sig": "[[], null, null]"
+ },
+ "clacton-hannah-steer-15-missing-appeal": {
+  "none": "no road named",
+  "sig": "[[], \"Clacton\", null]"
+ },
+ "colchester-b-and-m-st-johns-walk-former-wilko-opening": {
+  "none": "St John's Walk not found in the map data",
+  "sig": "[[\"St John's Walk\"], \"Colchester\", null]"
  },
  "colchester-borough-homes-armed-forces-gold-award": {
   "none": "no road named",
@@ -96,11 +132,30 @@
   "none": "no road named",
   "sig": "[[], \"Colchester\", null]"
  },
+ "colchester-leisure-world-rebuild-ruled-out-cabinet-2-december": {
+  "after": 0,
+  "h": 750,
+  "kicker": "On the map",
+  "made": "2026-11-25T18:10:33Z",
+  "road": "Cowdray Avenue",
+  "sig": "[[\"Cowdray Avenue\"], \"Colchester\", null]",
+  "src": "/img/maps/colchester-leisure-world-rebuild-ruled-out-cabinet-2-december.svg",
+  "town": "Colchester",
+  "w": 1200
+ },
  "colchester-local-plan-committee-23-november-preview": {
   "none": "no road named",
   "sig": "[[], \"Colchester\", null]"
  },
  "colchester-rol-cruise-third-best-company-to-work-for-2026": {
+  "none": "no road named",
+  "sig": "[[], \"Colchester\", null]"
+ },
+ "colchester-spitting-image-peter-fluck-dies-85": {
+  "none": "no road named",
+  "sig": "[[], \"Colchester\", null]"
+ },
+ "colchester-temporary-accommodation-588-households": {
   "none": "no road named",
   "sig": "[[], \"Colchester\", null]"
  },
@@ -158,6 +213,14 @@
  "essex-house-prices-september-2026-maldon-tendring": {
   "none": "no road named",
   "sig": "[[], \"Maldon\", null]"
+ },
+ "essex-oyster-farmers-eu-trade-uk-eu-deal-class-b": {
+  "none": "no road named",
+  "sig": "[[], \"West Mersea\", null]"
+ },
+ "essex-police-county-lines-week-17-arrests-zombie-knife": {
+  "none": "no road named",
+  "sig": "[[], null, null]"
  },
  "essex-poundland-stores-keep-trading-administration-alixpartners": {
   "none": "no road named",
@@ -279,6 +342,10 @@
   "none": "no road called Market Square near Saffron Walden",
   "sig": "[[\"Lantern Parade\", \"Market Square\"], \"Saffron Walden\", null]"
  },
+ "shoeburyness-eagle-way-blake-branch-tribute-two-bailed": {
+  "none": "no road named",
+  "sig": "[[], \"Shoeburyness\", null]"
+ },
  "south-essex-father-jailed-child-cruelty-suffocation-mother-neglect": {
   "none": "no road named",
   "sig": "[[], \"Basildon\", null]"
@@ -290,6 +357,17 @@
  "southend-airport-chief-christmas-officer-lapland-competition": {
   "none": "no road named",
   "sig": "[[], \"Southend\", null]"
+ },
+ "southend-clifftown-road-former-ravens-17-room-hmo-plan": {
+  "after": 0,
+  "h": 750,
+  "kicker": "Where it happened",
+  "made": "2026-11-25T18:10:37Z",
+  "road": "Clifftown Road",
+  "sig": "[[\"Clifftown Road\"], \"Southend-on-Sea\", null]",
+  "src": "/img/maps/southend-clifftown-road-former-ravens-17-room-hmo-plan.svg",
+  "town": "Southend-on-Sea",
+  "w": 1200
  },
  "southend-clifftown-road-robbery-four-men-balaclavas-appeal": {
   "after": 0,
@@ -368,6 +446,10 @@
   "none": "no road named",
   "sig": "[[], \"Colchester\", null]"
  },
+ "thurrock-a282-four-vehicle-crash-dartford-crossing": {
+  "none": "no road named",
+  "sig": "[[], \"Thurrock\", null]"
+ },
  "thurrock-budget-savings-scrutiny-24-november-preview": {
   "none": "no road named",
   "sig": "[[], \"Thurrock\", null]"
@@ -387,6 +469,10 @@
  "university-of-essex-two-professors-highly-cited-researchers-2026": {
   "none": "no road named",
   "sig": "[[], \"Colchester\", null]"
+ },
+ "warley-burst-water-main-floodwater-five-houses": {
+  "none": "no road named",
+  "sig": "[[], \"Brentwood\", null]"
  },
  "wickford-derailment-repairs-cost-network-rail-3-65m": {
   "after": 1,
