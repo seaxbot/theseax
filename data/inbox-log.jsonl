@@ -120,3 +120,4 @@
 {"at":"2026-11-24T20:20:54Z","stage":"inbox","unhandled":3}
 {"at":"2026-11-24T20:26:17Z","stage":"done","handled":0,"stories":[],"events":0,"flags":2,"left":3,"error":"web fetch of Ofsted report pages not permitted"}
 {"at":"2026-11-25T09:20:49Z","stage":"started"}
+{"at":"2026-11-25T09:21:14Z","stage":"inbox","unhandled":6}
