@@ -19,6 +19,10 @@ reads them at no cost.
                        PAGE_TEXT_MAX new articles a run from the last 3 days are opened once each for their text,
                        obeying robots.txt (owner's request, 17 Nov 2026, after the newsroom missed a University of
                        Essex story: the university has no feed and its site refuses the newsroom's own fetches)
+              "page": "cqc" = the Care Quality Commission's press release listing (owner's request, 25 Nov 2026, after
+                       the newsroom picked up the East of England Ambulance Service rating second-hand): one item per
+                       press release link with its date; the release text is opened as for "ld" pages, and the
+                       "essex" filter keeps only those that name an Essex place
               "page": "ehaat" = the Essex & Herts Air Ambulance mission reports listing (owner's request, 20 Nov
                        2026): one item per mission card (type, date logged, place, one-line summary); the place alone
                        is the item's Essex test, so the newsroom decides which missions are in Essex
@@ -228,6 +232,30 @@ def parse_page(text, feed):
     return out
 
 
+CQC_LINK = re.compile(r'(?is)<a\b[^>]*href="([^"]*/(?:press-release|news/releases)/[a-z0-9-]+/?)"[^>]*>(.*?)</a>')
+CQC_DATE = re.compile(r"\b(\d{1,2}) (January|February|March|April|May|June|July|August|September|October|November|December) (20\d\d)\b")
+MONTHS = {m: i + 1 for i, m in enumerate(["January", "February", "March", "April", "May", "June", "July", "August",
+                                          "September", "October", "November", "December"])}
+
+def parse_cqc(text, feed):
+    """The CQC's press release listing (owner's request, 25 Nov 2026). Each card is a link to /press-release/<slug>
+    with the publication date ("25 November 2026") shown just after it. Matched loosely: the link text is the title,
+    the first date within the next stretch of the card is its date."""
+    out, seen = [], set()
+    for m in CQC_LINK.finditer(text):
+        url = urljoin(feed["url"], html.unescape(m.group(1)))
+        title = " ".join(clean(m.group(2)).split())
+        if url in seen or len(title) < 15 or len(title) > 220:
+            continue
+        d = CQC_DATE.search(clean(text[m.end():m.end() + 1500]))
+        if not d:
+            continue
+        seen.add(url)
+        day, mon, yr = d.groups()
+        out.append({"title": title, "url": url, "time": f"{yr}-{MONTHS[mon]:02d}-{int(day):02d}T09:00:00Z", "body": "", "image": ""})
+    return out
+
+
 def parse_missions(text, feed):
     """Essex & Herts Air Ambulance mission reports (owner's request, 20 Nov 2026). The charity has no feed: its listing page
     shows one card per mission with the type, the date it was logged (DD.MM.YYYY), the place and a one-line summary.
@@ -269,6 +297,8 @@ def parse_feed(text, feed):
         return parse_page(text, feed)
     if feed.get("page") == "ehaat":
         return parse_missions(text, feed)
+    if feed.get("page") == "cqc":
+        return parse_cqc(text, feed)
     t = text.lstrip(); out = []
     if feed.get("json"):
         for i in (json.loads(t).get("items") or []):   # Environment Agency flood warnings
@@ -322,7 +352,7 @@ def read_feed(feed, state):
         return None, f"HTTP {e.code}", False
     except Exception as e:
         return None, f"{type(e).__name__}: {str(e)[:120]}", False
-    if feed.get("page") == "ld" and feed["kind"] == "O":
+    if feed.get("page") in ("ld", "cqc") and feed["kind"] == "O":
         with LOCK:
             texts = state.setdefault("pagetext", {})
         cut = (NOW - timedelta(days=3)).strftime(ISO); opened = 0

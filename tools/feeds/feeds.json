@@ -1987,5 +1987,15 @@
   "filter": "none",
   "page": "ehaat",
   "id": 218
+ },
+ {
+  "name": "Care Quality Commission press releases",
+  "url": "https://www.cqc.org.uk/search/press-releases",
+  "group": "health",
+  "area": "all",
+  "kind": "O",
+  "filter": "essex",
+  "page": "cqc",
+  "id": 219
  }
 ]
