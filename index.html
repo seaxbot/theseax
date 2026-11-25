@@ -3800,9 +3800,10 @@ let PW_N = 0; /* "plainCaption" in data/portraits.json: the story page shows exa
 function portraitArt(s, opts){ /* owner, 23 Nov 2026: "Take the credit off the picture - only needs to be text on story only. Apply this for every single story": no caller passes credit:true any more, so credits appear only as caption text under the picture on story pages. */ /* credit on the photo only where no caption bar shows it (opts.credit), so it never appears twice */ const p = portraitOf(s); return `<svg class="emap wxart townphoto" width="100%" height="100%" role="img" aria-label="${esc(p.label || "File photo")} of ${esc(p.name)}" style="background:#222">${p.whole ? `<defs><filter id="pwb${++PW_N}" x="-10%" y="-10%" width="120%" height="120%"><feGaussianBlur stdDeviation="22"/></filter></defs><image href="${esc(p.wide)}?v=1" x="0" y="0" width="100%" height="100%" preserveAspectRatio="xMidYMid slice" filter="url(#pwb${PW_N})" opacity=".55"/><image href="${esc(p.wide)}?v=1" x="0" y="0" width="100%" height="100%" preserveAspectRatio="xMidYMid meet"/>` : `<image href="${esc(p.wide)}?v=1" x="0" y="0" width="100%" height="100%" preserveAspectRatio="xMidYMid slice"/>`}${opts && opts.credit && !p.noCaption && !p.plainCaption ? `<text x="99%" y="95%" text-anchor="end" font-size="11" font-family="var(--sans), sans-serif" fill="#fff" stroke="rgba(0,0,0,.6)" stroke-width="2.5" paint-order="stroke">${esc(p.label || "File photo")}${p.creator ? " · " + esc(p.creator) : ""}${p.provider && p.provider !== p.creator ? ", " + esc(p.provider) : ""}${p.license ? " · " + esc(p.license) : ""}</text>` : ""}</svg>`; }
 (function(){
   if(typeof fetch !== "function") return;
+  /* window.SEAX_PICS_P: the edition's first draw waits for this (and photos.json) so cards never show a stand-in picture that flips to the right one a moment later (owner, 25 Nov 2026) */
   const load = () => fetch("/data/portraits.json?t=" + Math.floor(Date.now()/6e5), {cache:"no-store"}).then(r => r.ok ? r.json() : null)
     .then(d => { if(Array.isArray(d)){ PORTRAITS = d; try{ if(typeof renderAll === "function" && window.SEAX_ED_READY !== false) seaxRenderSoon(); }catch(_){} } }).catch(() => {});
-  if(document.readyState === "loading") document.addEventListener("DOMContentLoaded", load); else load();
+  (window.SEAX_PICS_P = window.SEAX_PICS_P || []).push(load());
 })();
 function stockOf(s){ const p = s && s.id && !s.noPhoto && PHOTOS[s.id] && !sportKindOf(s) ? PHOTOS[s.id] : null; return p && (p.kind === "commons" || p.kind === "owner") ? p : null; } /* owner's rule (23 Nov 2026): no generic stock photos, maps instead; only Commons photos of the exact place and owner pictures */
 /* major breaking news (a news story flagged breaking, weight 9 or 10) with no suitable photo shows the owner's
@@ -3828,7 +3829,7 @@ function stockArt(s, opts){ const p = stockOf(s); return `<svg class="emap wxart
   if(typeof fetch !== "function") return;
   const load = () => fetch("/data/photos.json?t=" + Math.floor(Date.now()/6e5), {cache:"no-store"}).then(r => r.ok ? r.json() : null)
     .then(d => { if(d && typeof d === "object"){ PHOTOS = d; try{ if(typeof renderAll === "function" && window.SEAX_ED_READY !== false) seaxRenderSoon(); }catch(_){} } }).catch(() => {});
-  if(document.readyState === "loading") document.addEventListener("DOMContentLoaded", load); else load();
+  (window.SEAX_PICS_P = window.SEAX_PICS_P || []).push(load());
 })();
 /* road signs: stories about a named road show its sign (add more roads here with a sign image in /img/roads/) */
 const ROAD_SIGN = {
@@ -5255,7 +5256,9 @@ document.addEventListener("visibilitychange", () => { if(document.visibilityStat
       if(!r.ok) throw new Error(r.status);
       const d = await r.json();
       if(d && typeof d === "object" && Array.isArray(d.stories)){
-        if(d.updatedAt !== last){ const first = !last; last = d.updatedAt; ED = normalise(d); window.SEAX_ED_READY = true; renderAll(first); }
+        if(d.updatedAt !== last){ const first = !last; last = d.updatedAt; ED = normalise(d);
+          if(first){ try{ await Promise.race([Promise.all(window.SEAX_PICS_P || []), new Promise(ok => setTimeout(ok, 2500))]); }catch(_){} }   /* pictures first, so nothing flips (25 Nov 2026) */
+          window.SEAX_ED_READY = true; renderAll(first); }
         setFeed("live");
       }
       if(window.SEAX_ED_READY === false){ window.SEAX_ED_READY = true; renderAll(); }
