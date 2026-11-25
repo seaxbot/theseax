@@ -1829,16 +1829,18 @@ def body_with_charts(it, body, opening=""):
                             'border-style:solid;border-width:14px 0 14px 22px;border-color:transparent transparent transparent #fff"></span></span>'
                             '<span style="position:absolute;left:10px;bottom:10px;background:rgba(0,0,0,.75);color:#fff;font-size:13px;font-weight:600;'
                             f'padding:5px 9px;border-radius:4px">Watch on X{" · " + dur if dur else ""}</span></a>')
-                bq_style = ' style="margin:0;height:0;overflow:hidden;font-size:0"' if card else ""
-                out.append(f'<figure class="xembed" style="margin:1.4em 0">{card}<blockquote class="twitter-tweet" data-dnt="true" data-conversation="none"{bq_style}>'
-                           f'<a href="{E(em["url"])}">{cap}</a></blockquote><figcaption>{cap}. <a href="{E(em["url"])}" target="_blank" rel="noopener">View on X ↗</a></figcaption></figure>')
+                # with a poster, the card IS the embed: X's own widget is not loaded at all (owner, 25 Nov 2026: the widget
+                # kept vanishing on iPhones, where Safari's tracking protection blanks it), so it shows the same everywhere
+                bq = "" if card else (f'<blockquote class="twitter-tweet" data-dnt="true" data-conversation="none">'
+                                      f'<a href="{E(em["url"])}">{cap}</a></blockquote>')
+                out.append(f'<figure class="xembed" style="margin:1.4em 0">{card}{bq}<figcaption>{cap}. <a href="{E(em["url"])}" target="_blank" rel="noopener">View on X ↗</a></figcaption></figure>')
         for w in widgets:
             if int(w.get("after", len(paras) - 1)) == i or (i == len(paras) - 1 and int(w.get("after", 0)) >= len(paras)):
                 if w.get("type") == "price-lookup":
                     out.append(f'<div class="seax-plookup" id="prices" data-src="{E(w["src"])}"><noscript>Turn on JavaScript to check prices in your area.</noscript></div>')
                 else:
                     out.append(f'<div class="seax-lookup" id="check" data-src="{E(w["src"])}"><noscript>Turn on JavaScript to look up your neighbourhood.</noscript></div>')
-    if embeds:
+    if any(not str(em.get("poster") or "").startswith("/img/") for em in embeds):
         out.append('<script>window.twttr=(function(d,s,id){var t=window.twttr||{};if(d.getElementById(id))return t;var j=d.createElement(s);j.id=id;'
                    'j.async=true;j.src="https://platform.twitter.com/widgets.js";d.head.appendChild(j);t._e=[];t.ready=function(f){t._e.push(f)};return t}'
                    '(document,"script","twitter-wjs"));twttr.ready(function(t){t.events.bind("rendered",function(e){var f=e.target&&e.target.closest'
