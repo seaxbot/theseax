@@ -1,5 +1,5 @@
 {
- "at": "2026-11-24T16:42:13.807319+00:00",
+ "at": "2026-11-25T06:31:22.506094+00:00",
  "councils": {
   "thurrock": {
    "name": "Thurrock Council",
@@ -41,10 +41,10 @@
    "name": "Tendring District Council",
    "system": "mg",
    "base": "https://tdcdemocracy.tendringdc.gov.uk",
-   "meetings": 0,
-   "changed": 0,
-   "state": "unreachable",
-   "note": "calendar 502 HTTP Error 502: Bad Gateway"
+   "meetings": 12,
+   "changed": 1,
+   "state": "ok",
+   "note": ""
   },
   "harlow": {
    "name": "Harlow Council",
@@ -59,10 +59,10 @@
    "name": "Basildon Council",
    "system": "mg",
    "base": "https://www.basildonmeetings.info",
-   "meetings": 20,
-   "changed": 1,
+   "meetings": 18,
+   "changed": 2,
    "state": "ok",
-   "note": "per-council time cap reached"
+   "note": ""
   },
   "brentwood": {
    "name": "Brentwood Borough Council",
@@ -142,9 +142,9 @@
   "southend": 2,
   "epping": 2,
   "maldon": 19,
-  "tendring": 2,
+  "tendring": 14,
   "harlow": 2,
-  "basildon": 21,
+  "basildon": 20,
   "brentwood": 2,
   "uttlesford": 2,
   "rochford": 1,
