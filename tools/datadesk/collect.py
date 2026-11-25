@@ -572,7 +572,12 @@ def digest(data):
                 flag = "  ** NEW **" if r.get("new") else ""
                 if r.get("candidatesNew"):
                     flag += "  ** CANDIDATES JUST CONFIRMED **"
-                cands = "; ".join(f"{c['name']} ({c['party']})" for c in r.get("candidates") or []) or "candidates not yet published"
+                cands = "; ".join(f"{c['name']} ({c['party']})" for c in r.get("candidates") or []) or (
+                    f"candidates not in this feed: the council publishes them by {r.get('candidatesDue') or 'its statement of persons nominated date'}; read them from the whocanivotefor.co.uk page below or the council's notice")
+                extra = ", ".join(x for x in [f"reason: {r['reason']}" if r.get("reason") else "", f"nominations close {r['nominationsClose']}" if r.get("nominationsClose") else "",
+                                              f"register to vote by {r['registerBy']}" if r.get("registerBy") else ""] if x)
+                if extra:
+                    cands = extra + " | " + cands
                 L.append(f"  - {r['date']}: {r['election']}, {r['seat']}{' (by-election)' if r.get('byElection') else ''}, seats {r.get('seats')}, list {'final' if r.get('candidatesLocked') else 'not final'}{flag}")
                 L.append(f"    {cands}")
                 L.append(f"    {r['url']}")
@@ -692,6 +697,10 @@ def elections(state):
         rows.append({"id": bid, "date": date, "election": str(b.get("election_title") or b.get("name") or "").strip(),
                      "seat": str(b.get("post_name") or ((b.get("division") or {}).get("name") if isinstance(b.get("division"), dict) else "") or "").strip(),
                      "byElection": ".by." in bid, "seats": seats, "candidatesLocked": locked,
+                     "reason": str(b.get("by_election_reason") or "").strip(),
+                     "nominationsClose": day((b.get("timetable") or {}).get("close_of_nominations")),
+                     "candidatesDue": day((b.get("timetable") or {}).get("sopn_publish_deadline")),
+                     "registerBy": day((b.get("timetable") or {}).get("registration_deadline")),
                      "candidates": sorted(cands, key=lambda c: c["name"].split()[-1] if c["name"] else ""),
                      "url": "https://whocanivotefor.co.uk/elections/" + bid + "/"})
         time.sleep(0.4)
