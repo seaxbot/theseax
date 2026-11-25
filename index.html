@@ -2311,7 +2311,9 @@ const SOURCES = [
     ["Brightlingsea Info (independent town news)","https://brightlingsea.info/","tendring"],
     ["Rebel (University of Essex student media)","https://www.rebelessex.com/","colchester"],
     ["Essex TV", "https://essex-tv.co.uk", "all"],
-    ["Livewell Southend news", "https://www.livewellsouthend.com/news", "southend"]
+    ["Livewell Southend news", "https://www.livewellsouthend.com/news", "southend"],
+    ["Elsenham Herald (independent community paper)", "https://elsenhamherald.co.uk/", "uttlesford"],
+    ["CanveyIsland.org (community news and archive)", "https://canveyisland.org/", "south"]
   ]},
   {id:"magazines", title:"Community magazines", blurb:"Local monthly and quarterly magazines and lifestyle titles", list:[
     ["Moulsham Times","https://www.moulshamtimes.com/","chelmsford"],
@@ -2341,7 +2343,9 @@ const SOURCES = [
     ["The Parish News (Berden & Manuden)","https://berden.org.uk/useful-links/","uttlesford"],
     ["Simply Magazine (Colchester, Brightlingsea & Wivenhoe)","https://issuu.com/simplycolchester","colchester"],
     ["Talk About Epping (Epping Town Council magazine)","https://issuu.com/eppingtowncouncil","epping"],
-    ["Margaretting News (parish magazine)","https://e-voice.org.uk/margaretting/","chelmsford"]
+    ["Margaretting News (parish magazine)","https://e-voice.org.uk/margaretting/","chelmsford"],
+    ["Stansted & Dunmow Flyer (Flyer Magazines)", "https://www.flyeronline.co.uk/", "uttlesford"],
+    ["Tendring Life magazine (Peer Media)", "https://issuu.com/peermediauk", "tendring"]
   ]},
   {id:"radio", title:"Radio & TV", blurb:"Local stations with Essex newsrooms", list:[
     ["BBC Essex","https://www.bbc.co.uk/sounds/play/live:bbc_radio_essex","all"],
@@ -2362,7 +2366,9 @@ const SOURCES = [
     ["Bedrock Radio (community and health radio)","https://www.bedrockradio.org.uk/","south"],
     ["Essex Radio (Tendring, online community station)","https://essex.radio/","tendring"],
     ["Chelmsford Talking Newspaper (weekly spoken news)","https://e-voice.org.uk/chelmsfordtalkingnewspaper/","chelmsford"],
-    ["Actual Radio (Colchester & north-east Essex)","https://www.actualradio.com/","colchester"]
+    ["Actual Radio (Colchester & north-east Essex)","https://www.actualradio.com/","colchester"],
+    ["Shrimpers Trust Podcast (Southend United supporters)", "https://shows.acast.com/the-shrimpers-trust-podcast/episodes", "southend"],
+    ["Essex By The Sea podcast (coastal stories)", "https://podcasts.apple.com/se/podcast/essex-by-the-sea/id1525273262", "all"]
   ]},
   {id:"emergency", title:"Emergency services", blurb:"Police, fire, ambulance and rescue", list:[
     ["Essex Police news","https://www.essex.police.uk/news/essex/news/","all"],
@@ -2475,7 +2481,11 @@ const SOURCES = [
     ["Health and Care Professions Tribunal Service", "https://www.hcpts-uk.org", "all"],
     ["INQUEST (deaths in state care)", "https://www.inquest.org.uk", "all"],
     ["Court News UK", "https://courtnewsuk.co.uk", "all"],
-    ["Law Gazette", "https://www.lawgazette.co.uk", "all"]
+    ["Law Gazette", "https://www.lawgazette.co.uk", "all"],
+    ["Traffic Commissioner East of England decisions (hauliers, bus and coach firms)", "https://www.gov.uk/traffic-commissioner-regulatory-decisions", "all"],
+    ["Teaching Regulation Agency misconduct panel outcomes", "https://www.gov.uk/guidance/teacher-misconduct-regulating-the-teaching-profession", "all"],
+    ["SRA recent decisions (solicitors, has RSS)", "https://www.sra.org.uk/consumers/solicitor-check/recent-decisions", "all"],
+    ["Solicitors Disciplinary Tribunal judgments", "https://www.solicitorstribunal.org.uk/judgment-search-results", "all"]
   ]},
   {id:"planning", title:"Planning & property", blurb:"Applications, appeals, statutory notices and property data", list:[
     ["Public Notice Portal (Essex planning, roads, licensing)","https://publicnoticeportal.uk/","all"],
@@ -2505,12 +2515,12 @@ const SOURCES = [
     ["Harlow and Gilston Garden Town", "https://hggt.co.uk", "epping"],
     ["Tendring Colchester Borders Garden Community", "https://www.tcbgardencommunity.co.uk", "colchester"],
     ["Bradwell B", "https://bradwellb.co.uk", "maldon"],
-    ["CHP (Chelmer Housing Partnership)", "https://www.chp.org.uk", "chelmsford"],
+    ["Delta Housing (CHP and Estuary, merged April 2026)", "https://www.chp.org.uk", "all"],
     ["Eastlight Community Homes", "https://www.eastlighthomes.co.uk", "braintree"],
-    ["Estuary Housing Association", "https://www.estuary.co.uk", "southend"],
     ["South Essex Homes", "https://www.southessexhomes.co.uk", "southend"],
     ["Colchester Borough Homes", "https://www.cbhomes.org.uk", "colchester"],
-    ["PlanIt planning applications (all Essex councils)", "https://www.planit.org.uk", "all"]
+    ["PlanIt planning applications (all Essex councils)", "https://www.planit.org.uk", "all"],
+    ["Rivenhall IWMF and Energy Centre (Planning Inspectorate)", "https://national-infrastructure-consenting.planninginspectorate.gov.uk/projects/EN010138", "braintree"]
   ]},
   {id:"health", title:"NHS & health", blurb:"Hospitals, trusts and health boards", list:[
     ["Mid and South Essex NHS Trust","https://www.mse.nhs.uk","all"],
@@ -2579,7 +2589,15 @@ const SOURCES = [
     ["Epping Forest Heritage Trust", "https://efht.org.uk", "epping"],
     ["Lee Valley Regional Park", "https://www.leevalleypark.org.uk", "epping"],
     ["Dedham Vale National Landscape", "https://dedhamvale-nl.org.uk", "colchester"],
-    ["South Essex Wildlife Hospital", "https://southessexwildlife.org", "south"]
+    ["South Essex Wildlife Hospital", "https://southessexwildlife.org", "south"],
+    ["Kent & Essex Inshore Fisheries and Conservation Authority news", "https://kentandessex-ifca.gov.uk/news", "all"],
+    ["MOD Shoeburyness range activity and closures (QinetiQ)", "https://www.qinetiq.com/shoeburyness/forthcoming-range-activity", "southend"],
+    ["Crouch Harbour Authority notices to mariners", "https://crouchharbour.uk/notices/", "maldon"],
+    ["Maldon notices to mariners (Blackwater, Hythe Quay)", "https://www.maldon.gov.uk/info/20106/rivers_and_waterways/9277/rivers_and_moorings/4", "maldon"],
+    ["EssexAir (Essex air quality consortium)", "https://www.essexair.org.uk/", "all"],
+    ["Anglian Water live storm overflow map", "https://www.anglianwater.co.uk/services/sewerage/storm-overflows/improving-rivers-and-coastlines/", "all"],
+    ["Bird flu latest situation in England (Defra/APHA)", "https://www.gov.uk/guidance/bird-flu-avian-influenza-latest-situation-in-england", "all"],
+    ["Epping Forest (City of London Corporation)", "https://www.cityoflondon.gov.uk/things-to-do/green-spaces/epping-forest", "epping"]
   ]},
   {id:"sport", title:"Sport", blurb:"Clubs, leagues and results services", list:[
     ["Colchester United","https://www.cu-fc.com","colchester"],
@@ -2703,7 +2721,10 @@ const SOURCES = [
     ["Leigh Art Trail", "https://www.leigharttrail.com", "southend"],
     ["Maldon Mud Race", "https://www.maldonmudrace.com", "maldon"],
     ["Tendring Show", "https://www.tendringshow.co.uk", "tendring"],
-    ["Clacton Airshow", "https://www.clactonairshow.com", "tendring"]
+    ["Clacton Airshow", "https://www.clactonairshow.com", "tendring"],
+    ["Visit Epping Forest (what's on)", "https://www.visiteppingforest.org/", "epping"],
+    ["Epping Ongar Railway events", "https://www.eorailway.co.uk/events/", "epping"],
+    ["East Anglian Railway Museum, Chappel", "https://earm.co.uk/", "colchester"]
   ]},
   {id:"reviews", title:"Reviews & guides", blurb:"Where to eat, drink, stay and go", list:[
     ["Muddy Stilettos Essex","https://essex.muddystilettos.co.uk","all"],
@@ -2827,7 +2848,8 @@ const SOURCES = [
     ["Chelmsford College news", "https://www.chelmsford.ac.uk", "chelmsford"],
     ["South Essex College news", "https://www.southessex.ac.uk", "south"],
     ["Colchester Institute news", "https://www.colchester.ac.uk", "colchester"],
-    ["Harlow College news", "https://www.harlow-college.ac.uk", "epping"]
+    ["Harlow College news", "https://www.harlow-college.ac.uk", "epping"],
+    ["USP College news (Seevic, Benfleet and Palmer's, Grays)", "https://www.uspcollege.ac.uk/news-events-blog/news/", "south"]
   ]},
   {id:"trade", title:"Trade & specialist press", blurb:"Industry titles that report Essex councils, building, transport, health and schools", list:[
     ["Local Government Chronicle","https://www.lgcplus.com/","all"],
@@ -2869,7 +2891,9 @@ const SOURCES = [
     ["Ofsted reports","https://reports.ofsted.gov.uk/","all"],
     ["HSE press releases (prosecutions)","https://press.hse.gov.uk/","all"],
     ["Charity Commission register","https://register-of-charities.charitycommission.gov.uk/","all"],
-    ["Contracts Finder (council contracts)","https://www.contractsfinder.service.gov.uk/","all"]
+    ["Contracts Finder (council contracts)","https://www.contractsfinder.service.gov.uk/","all"],
+    ["Historic England Heritage at Risk Register (annual, November)", "https://historicengland.org.uk/advice/heritage-at-risk/", "all"],
+    ["Essex Police FOI and publication scheme", "https://www.essex.police.uk/foi-ai/essex-police/", "all"]
   ]},
   {id:"politics", title:"Politics, unions & campaigns", blurb:"All 18 Essex MPs, residents' groups, unions and campaigns, reported as their own claims", list:[
     ["Residents for Uttlesford", "https://www.residents4u.org", "uttlesford"],
