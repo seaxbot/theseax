@@ -1987,14 +1987,5 @@
   "filter": "none",
   "page": "ehaat",
   "id": 218
- },
- {
-  "name": "CQC reports in Essex (Google News)",
-  "url": "https://news.google.com/rss/search?q=%22Care+Quality+Commission%22+OR+CQC+Essex+when:7d&hl=en-GB&gl=GB&ceid=GB:en",
-  "group": "health",
-  "area": "all",
-  "kind": "M",
-  "filter": "essex",
-  "id": 219
  }
 ]
