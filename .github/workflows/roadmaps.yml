@@ -1,0 +1,47 @@
+name: Street maps
+# Street maps for stories that name a road: finds the road in OpenStreetMap and draws the map. See tools/roadmaps.py.
+on:
+  workflow_dispatch:
+    inputs:
+      id: { description: "One story id (optional, redraws it)", required: false, default: "" }
+  push:
+    branches: [main]
+    paths: ["edition.json"]
+permissions:
+  contents: write
+concurrency: roadmaps
+jobs:
+  maps:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with: { fetch-depth: 1 }
+      - name: Draw maps
+        run: |
+          if [ -n "${{ github.event.inputs.id }}" ]; then python3 -u tools/roadmaps.py --id "${{ github.event.inputs.id }}"; else python3 -u tools/roadmaps.py; fi
+      - name: Commit maps and rebuild story pages
+        run: |
+          git config user.name "The Seax map desk"
+          git config user.email "seaxbot@users.noreply.github.com"
+          git status --porcelain img/maps data/roadmaps.json | grep -q . || exit 0
+          mkdir -p /tmp/rm && cp -r img/maps /tmp/rm/ && cp data/roadmaps.json /tmp/rm/new.json
+          for i in 1 2 3 4 5; do
+            git fetch -q origin main && git reset -q --hard origin/main
+            mkdir -p img/maps && cp /tmp/rm/maps/* img/maps/
+            python3 - <<'PY'
+          import json
+          new = json.load(open("/tmp/rm/new.json"))
+          try: cur = json.load(open("data/roadmaps.json"))
+          except Exception: cur = {}
+          cur.update(new)
+          json.dump(cur, open("data/roadmaps.json", "w"), indent=1, ensure_ascii=False, sort_keys=True); open("data/roadmaps.json", "a").write("\n")
+          PY
+            python3 tools/build.py || git checkout -- story
+            git add -A img/maps data/roadmaps.json story data/archive.json sitemap.xml news-sitemap.xml feed.xml news 2>/dev/null || true
+            git diff --cached --quiet && exit 0
+            git commit -qm "Street maps"
+            git push -q origin HEAD:main && exit 0
+            sleep $((i*9))
+          done
+          exit 1

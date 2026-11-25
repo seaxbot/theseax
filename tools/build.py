@@ -1780,6 +1780,29 @@ def xlinks(escaped, allowed):
     return XLINK_RE.sub(rep, escaped)
 
 
+# street maps for stories that name a road (owner, 25 Nov 2026: "big map then placed where the road is"), drawn by
+# tools/roadmaps.py in GitHub Actions and listed in data/roadmaps.json; shown inside the story after the paragraph that
+# first names the road. Story field "roadMap": false turns one off.
+try:
+    ROADMAPS = json.load(open(os.path.join(ROOT, "data", "roadmaps.json"), encoding="utf-8"))
+except (OSError, ValueError):
+    ROADMAPS = {}
+
+def roadmap_of(it):
+    rm = ROADMAPS.get(str(it.get("id") or "")) or {}
+    src = str(rm.get("src") or "")
+    if it.get("roadMap") is False or not re.fullmatch(r"/img/maps/[a-z0-9-]+\.svg", src) or not os.path.exists(os.path.join(ROOT, src.lstrip("/"))):
+        return None
+    return rm
+
+def roadmap_figure(rm):
+    v = re.sub(r"\D", "", str(rm.get("made") or ""))[:12] or "1"
+    alt = f"Street map of {rm.get('road')}, {rm.get('town')}, with the road marked in red"
+    return (f'<figure class="stock chart roadmap"><img src="{E(rm["src"])}?v={v}" width="{E(rm.get("w") or 1200)}" height="{E(rm.get("h") or 750)}" '
+            f'alt="{E(alt)}" loading="lazy" style="display:block;width:100%;height:auto">'
+            f'<figcaption><b>{E(rm.get("kicker") or "On the map")}</b>: {E(rm.get("road"))}, {E(rm.get("town"))}. Map data © '
+            '<a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a> contributors</figcaption></figure>')
+
 def body_with_charts(it, body, opening=""):
     """Story paragraphs, with any charts the story carries placed after the paragraph named by "after" (0 = after the
     first). A chart is {"src", "alt", "caption", "after", "w", "h"}: our own data graphics (owner's request, 20 Nov 2026:
@@ -1787,6 +1810,7 @@ def body_with_charts(it, body, opening=""):
     paras = [str(p) for p in body if str(p).strip()]
     allowed = {str(u) for u in [it.get("url")] + [a.get("url") for a in (it.get("also") or []) if isinstance(a, dict)] if u}
     charts = [c for c in (it.get("charts") or []) if isinstance(c, dict) and str(c.get("src") or "").startswith("/img/")]
+    rmap = roadmap_of(it)
     # interactive look-ups (owner, 20 Nov 2026: "a selector [so] people could select any one of their 56 neighbourhoods")
     # house price look-up (owner, 24 Nov 2026: "a dropdown to select your area"), same shape, type "price-lookup"
     widgets = [w for w in (it.get("widgets") or []) if isinstance(w, dict) and w.get("type") in ("crime-lookup", "price-lookup")
@@ -1814,6 +1838,8 @@ def body_with_charts(it, body, opening=""):
                 out.append(f'<figure class="stock chart"><img src="{E(c["src"])}?v=1" width="{E(c.get("w") or 1200)}" '
                            f'height="{E(c.get("h") or 700)}" alt="{E(c.get("alt") or "")}" loading="lazy">'
                            + (f'<figcaption>{E(c.get("caption") or "")}</figcaption></figure>' if c.get("kind") == "photo" else f'<figcaption><b>Chart</b>. {E(c.get("caption") or "")}</figcaption></figure>'))
+        if rmap and (int(rmap.get("after") or 0) == i or (i == len(paras) - 1 and int(rmap.get("after") or 0) >= len(paras))):
+            out.append(roadmap_figure(rmap))
         for em in embeds:
             if int(em.get("after", len(paras) - 1)) == i or (i == len(paras) - 1 and int(em.get("after", 0)) >= len(paras)):
                 cap = E(str(em.get("caption") or f"Post by @{em['account']} on X"))
@@ -2572,7 +2598,7 @@ def photo_credits():
         lic_html = f'<a href="{E(c["licenseUrl"])}" rel="license noopener">{E(lic)}</a>' if c.get("licenseUrl") else E(lic)
         rows.append(f'<li>{E(c["what"])}: photo by {E(c["by"])}, {lic_html}, via <a href="{E(c["source"])}" rel="noopener">Wikimedia Commons</a></li>')
     return ('<h2 id="photo-credits">Photo credits</h2>\n<p>Town photographs on The Seax come from Wikimedia Commons and are used under the licences shown. '
-            'They have been resized for the web and are shared under the same terms. Our map artwork, and the charts, maps and graphics in our own reporting, are made by The Seax. Some pictures are supplied by the organisation in the story or by our own team, and are credited where the supplier asks.</p>\n<ul class="credits">' + "".join(rows) + '<li>London Stansted Airport library images: photos by London Stansted Airport</li>' + f'<li>c2c train 357 040 at Ripple Lane (used on c2c stories): photo by kitmasterbloke, <a href="{C2C_CREDIT["licenseUrl"]}" rel="license noopener">CC BY 4.0</a>, via <a href="{C2C_CREDIT["source"]}" rel="noopener">Wikimedia Commons</a>; cropped and resized</li>' + "".join(portrait_credit(p) for p in PORTRAITS) + "</ul>\n")
+            'They have been resized for the web and are shared under the same terms. Our map artwork, and the charts, maps and graphics in our own reporting, are made by The Seax. Some pictures are supplied by the organisation in the story or by our own team, and are credited where the supplier asks.</p>\n<ul class="credits">' + "".join(rows) + '<li>Street maps in stories that name a road: map data © <a href="https://www.openstreetmap.org/copyright" rel="noopener">OpenStreetMap</a> contributors, available under the Open Database Licence; maps drawn by The Seax</li><li>London Stansted Airport library images: photos by London Stansted Airport</li>' + f'<li>c2c train 357 040 at Ripple Lane (used on c2c stories): photo by kitmasterbloke, <a href="{C2C_CREDIT["licenseUrl"]}" rel="license noopener">CC BY 4.0</a>, via <a href="{C2C_CREDIT["source"]}" rel="noopener">Wikimedia Commons</a>; cropped and resized</li>' + "".join(portrait_credit(p) for p in PORTRAITS) + "</ul>\n")
 
 
 def whatson_page(ed):
