@@ -96,6 +96,10 @@
   "none": "no road named",
   "sig": "[[], \"Chelmsford\", null]"
  },
+ "chelmsford-high-street-tunde-lighthouse-family-big-sing-flash-mob": {
+  "none": "no road called Ocean Drive near Chelmsford",
+  "sig": "[[\"High Street\", \"Ocean Drive\"], \"Chelmsford\", null]"
+ },
  "chelmsford-hollywood-bowl-meadows-opening-december": {
   "none": "no road named",
   "sig": "[[], \"Chelmsford\", null]"
