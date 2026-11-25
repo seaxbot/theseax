@@ -1698,7 +1698,8 @@
   "license": "",
   "licenseUrl": "",
   "source": "",
-  "addedBy": "owner, 25 Nov 2026 08:57: \"Use this pic for the energy story and any similar energy stories\" (energy bills, price cap, energy payments and help with heating costs; not gas works, leaks, power cuts or energy infrastructure)"
+  "addedBy": "owner, 25 Nov 2026 08:57: \"Use this pic for the energy story and any similar energy stories\" (energy bills, price cap, energy payments and help with heating costs; not gas works, leaks, power cuts or energy infrastructure)",
+  "generic": true
  },
  {
   "ids": [
@@ -1729,6 +1730,22 @@
   "license": "",
   "licenseUrl": "",
   "source": "",
-  "addedBy": "owner, 25 Nov 2026 17:23: \"Use this for Wivenhoe Colne stories - credit: Stephen Burke\" (not gas works, crime, deaths or fires)"
+  "addedBy": "owner, 25 Nov 2026 17:23: \"Use this for Wivenhoe Colne stories - credit: Stephen Burke\" (not gas works, crime, deaths or fires)",
+  "generic": true
+ },
+ {
+  "generic": true,
+  "match": "\\b([Jj]ailed|[Jj]ail|[Ii]mprisoned|[Bb]ehind bars|[Ll]ocked up|(years?|months?|weeks?) in prison)\\b",
+  "notMatch": "\\b(suspended|spared|avoids?|avoided|escapes?|escaped|walks? free|bail|prison officers?|HMP|jailbreak|died|dies|death)\\b",
+  "name": "A barred window in a police cell",
+  "label": "Picture",
+  "wide": "/img/people/jail-cell-window-wide.jpg",
+  "og": "/img/people/jail-cell-window-og.jpg",
+  "creator": "Essex Police",
+  "provider": "Essex Police",
+  "license": "",
+  "licenseUrl": "",
+  "source": "https://www.facebook.com/EPSouthend",
+  "addedBy": "owner, 25 Nov 2026 17:27: \"I like this pic when talking about being jailed\" (Essex Police picture from its Southend District Facebook page; stories where someone is jailed; story-specific pictures such as custody photos still win)"
  }
 ]

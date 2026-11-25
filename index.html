@@ -3802,7 +3802,7 @@ function portraitArt(s, opts){ /* owner, 23 Nov 2026: "Take the credit off the p
   if(typeof fetch !== "function") return;
   /* window.SEAX_PICS_P: the edition's first draw waits for this (and photos.json) so cards never show a stand-in picture that flips to the right one a moment later (owner, 25 Nov 2026) */
   const load = () => fetch("/data/portraits.json?t=" + Math.floor(Date.now()/6e5), {cache:"no-store"}).then(r => r.ok ? r.json() : null)
-    .then(d => { if(Array.isArray(d)){ PORTRAITS = d; try{ if(typeof renderAll === "function" && window.SEAX_ED_READY !== false) seaxRenderSoon(); }catch(_){} } }).catch(() => {});
+    .then(d => { if(Array.isArray(d)){ PORTRAITS = d.filter(x => !(x && x.generic)).concat(d.filter(x => x && x.generic)); /* "generic" topic pictures after story-specific ones, as in tools/build.py (25 Nov 2026) */ try{ if(typeof renderAll === "function" && window.SEAX_ED_READY !== false) seaxRenderSoon(); }catch(_){} } }).catch(() => {});
   (window.SEAX_PICS_P = window.SEAX_PICS_P || []).push(load());
 })();
 function stockOf(s){ const p = s && s.id && !s.noPhoto && PHOTOS[s.id] && !sportKindOf(s) ? PHOTOS[s.id] : null; return p && (p.kind === "commons" || p.kind === "owner") ? p : null; } /* owner's rule (23 Nov 2026): no generic stock photos, maps instead; only Commons photos of the exact place and owner pictures */

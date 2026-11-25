@@ -1016,6 +1016,8 @@ PHOTOS = {k: v for k, v in PHOTOS.items() if isinstance(v, dict) and v.get("kind
 # override every other picture on the card, story page and share card, with the photographer's credit and licence.
 try:
     PORTRAITS = json.load(open(os.path.join(ROOT, "data", "portraits.json"), encoding="utf-8"))
+    # "generic": true (topic pictures such as the jail cell or energy hob, owner 25 Nov 2026) are tried after every story-specific entry
+    PORTRAITS = [x for x in PORTRAITS if not x.get("generic")] + [x for x in PORTRAITS if x.get("generic")]
 except Exception:
     PORTRAITS = []
 
