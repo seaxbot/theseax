@@ -1,4 +1,220 @@
 {
+ "basildon-consortium-elevate-business-top-four-ied-awards-2026": {
+  "none": "no road named",
+  "sig": "[[], \"Basildon\", null]"
+ },
+ "basildon-hospital-gas-and-air-suspended-maternity-staff-safety": {
+  "none": "no road named",
+  "sig": "[[], \"Basildon\", null]"
+ },
+ "billericay-chip-pan-fire-burns-hands-24-november": {
+  "none": "no road named",
+  "sig": "[[], \"Billericay\", null]"
+ },
+ "brentwood-council-womens-safety-charter-16-days-of-activism": {
+  "none": "no road named",
+  "sig": "[[], \"Brentwood\", null]"
+ },
+ "brightlingsea-councillors-oppose-550-homes-church-road-local-plan": {
+  "after": 1,
+  "h": 750,
+  "kicker": "On the map",
+  "made": "2026-11-25T17:55:23Z",
+  "road": "Church Road",
+  "sig": "[[\"Church Road\"], \"Brightlingsea\", null]",
+  "src": "/img/maps/brightlingsea-councillors-oppose-550-homes-church-road-local-plan.svg",
+  "town": "Brightlingsea",
+  "w": 1200
+ },
+ "brightlingsea-promenade-splash-point-first-phase-christmas": {
+  "none": "no road named",
+  "sig": "[[], \"Brightlingsea\", null]"
+ },
+ "c2c-best-in-britain-to-not-good-enough-investigation": {
+  "none": "no road named",
+  "sig": "[[], \"Southend\", null]"
+ },
+ "chelmsford-army-and-navy-inquiry-opens-preview": {
+  "after": 0,
+  "h": 750,
+  "kicker": "On the map",
+  "made": "2026-11-25T17:55:33Z",
+  "road": "Market Road",
+  "sig": "[[\"Market Road\"], \"Chelmsford\", null]",
+  "src": "/img/maps/chelmsford-army-and-navy-inquiry-opens-preview.svg",
+  "town": "Chelmsford",
+  "w": 1200
+ },
+ "chelmsford-colchester-first-bus-network-changes-3-january-2027": {
+  "none": "no road named",
+  "sig": "[[], \"Chelmsford\", null]"
+ },
+ "chelmsford-mp-pauls-law-dysphagia-training-birch-care-home": {
+  "none": "no road named",
+  "sig": "[[], \"Birch\", null]"
+ },
+ "chelmsford-rough-sleeping-navigators-50-percent-rise": {
+  "none": "no road called Open Road near Chelmsford",
+  "sig": "[[\"Open Road\"], \"Chelmsford\", null]"
+ },
+ "colchester-borough-homes-armed-forces-gold-award": {
+  "none": "no road named",
+  "sig": "[[], \"Colchester\", null]"
+ },
+ "colchester-draft-local-plan-to-be-submitted-for-examination": {
+  "none": "no road named",
+  "sig": "[[], \"Colchester\", null]"
+ },
+ "colchester-rol-cruise-third-best-company-to-work-for-2026": {
+  "none": "no road named",
+  "sig": "[[], \"Colchester\", null]"
+ },
+ "colchester-university-of-essex-students-safety-fears-mod-housing": {
+  "none": "no road named",
+  "sig": "[[], \"Colchester\", null]"
+ },
+ "cold-norton-barn-cannabis-farm-500-plants": {
+  "none": "no road named",
+  "sig": "[[], \"Cold Norton\", null]"
+ },
+ "dartford-crossing-east-tunnel-shut-expansion-joint-23-november": {
+  "none": "no road named",
+  "sig": "[[], \"Thurrock\", null]"
+ },
+ "elsenham-new-farm-airport-parking-told-to-close-february": {
+  "after": 0,
+  "h": 750,
+  "kicker": "Where it happened",
+  "made": "2026-11-25T17:55:38Z",
+  "road": "Stansted Road",
+  "sig": "[[\"Stansted Road\"], \"Elsenham\", null]",
+  "src": "/img/maps/elsenham-new-farm-airport-parking-told-to-close-february.svg",
+  "town": "Elsenham",
+  "w": 1200
+ },
+ "epping-forest-50-favourite-trees-museum-exhibition": {
+  "none": "no road named",
+  "sig": "[[], \"Waltham Abbey\", null]"
+ },
+ "epping-forest-council-crushes-fly-tipping-truck-first-time": {
+  "none": "no road named",
+  "sig": "[[], \"Epping\", null]"
+ },
+ "epping-nurse-tracy-reed-qicn-long-service-award": {
+  "none": "no road named",
+  "sig": "[[], \"Epping\", null]"
+ },
+ "essex-ambulance-service-eeast-cqc-rated-good-warning-notice-lifted": {
+  "none": "no road named",
+  "sig": "[[], null, null]"
+ },
+ "essex-energy-bills-price-cap-rise-26-percent-january-2027": {
+  "none": "no road named",
+  "sig": "[[], null, null]"
+ },
+ "essex-gritters-55-winter-service-2026-27": {
+  "none": "no town to search near",
+  "sig": "[[\"Snowy Way\"], null, null]"
+ },
+ "essex-house-prices-september-2026-maldon-tendring": {
+  "none": "no road named",
+  "sig": "[[], \"Maldon\", null]"
+ },
+ "essex-poundland-stores-keep-trading-administration-alixpartners": {
+  "none": "no road named",
+  "sig": "[[], null, null]"
+ },
+ "essex-tube-commuters-24-hour-strike-26-november-elizabeth-line": {
+  "none": "no road named",
+  "sig": "[[], \"Brentwood\", null]"
+ },
+ "fyfield-ongar-newark-siege-coin-1646-metal-detector": {
+  "none": "no road named",
+  "sig": "[[], \"Ongar\", null]"
+ },
+ "grays-billy-howard-smith-jailed-roy-hibbert-lodge-lane-death": {
+  "after": 0,
+  "h": 750,
+  "kicker": "Where it happened",
+  "made": "2026-11-25T17:55:43Z",
+  "road": "Lodge Lane",
+  "sig": "[[\"Lodge Lane\"], \"Grays\", null]",
+  "src": "/img/maps/grays-billy-howard-smith-jailed-roy-hibbert-lodge-lane-death.svg",
+  "town": "Grays",
+  "w": 1200
+ },
+ "grays-essex-fire-museum-best-museum-essex-mums-awards-2026": {
+  "none": "no road named",
+  "sig": "[[], \"Grays\", null]"
+ },
+ "greater-anglia-c2c-level-crossing-misuse-under-16s-campaign": {
+  "none": "no road named",
+  "sig": "[[], null, null]"
+ },
+ "hanningfield-reservoir-record-low-35-percent-hosepipe-ban": {
+  "none": "no road named",
+  "sig": "[[], \"Hanningfield\", null]"
+ },
+ "harlow-college-students-consent-videos-essex-sexual-health-service": {
+  "none": "no road named",
+  "sig": "[[], \"Harlow\", null]"
+ },
+ "harlow-council-fourth-budget-surplus-forecast-2026-27": {
+  "none": "no road named",
+  "sig": "[[], \"Harlow\", null]"
+ },
+ "harlow-savannah-lodge-ofsted-new-compliance-notice": {
+  "none": "no road named",
+  "sig": "[[], \"Harlow\", null]"
+ },
+ "hatfield-peverel-david-cooney-jailed-sexual-assaults": {
+  "none": "no road named",
+  "sig": "[[], null, null]"
+ },
+ "loughton-moyin-odeniran-bake-off-final-church-watch-party": {
+  "none": "no road named",
+  "sig": "[[], \"Loughton\", null]"
+ },
+ "loughton-roding-valley-recreation-ground-improvement-strategy": {
+  "none": "no road named",
+  "sig": "[[], \"Buckhurst Hill\", null]"
+ },
+ "lower-thames-crossing-electric-haulers-carbon-neutral-build": {
+  "none": "no road named",
+  "sig": "[[], \"Thurrock\", null]"
+ },
+ "lower-thames-crossing-pylons-30000-workers-skills-report-east": {
+  "none": "no road named",
+  "sig": "[[], \"Thurrock\", null]"
+ },
+ "maldon-local-plan-scoping-consultation-preview": {
+  "none": "no road named",
+  "sig": "[[], \"Maldon\", null]"
+ },
+ "mersea-peter-shilton-auction-5642-gambling-charity": {
+  "none": "no road named",
+  "sig": "[[], \"West Mersea\", null]"
+ },
+ "rochford-local-plan-ministers-order-consultation-7-december": {
+  "none": "no road named",
+  "sig": "[[], \"Rochford\", null]"
+ },
+ "saffron-walden-free-christmas-shopper-buses-27-november-4-december": {
+  "none": "no road called Market Square near Saffron Walden",
+  "sig": "[[\"Lantern Parade\", \"Market Square\"], \"Saffron Walden\", null]"
+ },
+ "south-essex-father-jailed-child-cruelty-suffocation-mother-neglect": {
+  "none": "no road named",
+  "sig": "[[], \"Basildon\", null]"
+ },
+ "south-woodham-ferrers-bp-burnham-road-thefts-cctv-appeal": {
+  "none": "3 different roads called Burnham Road near South Woodham Ferrers: not sure which",
+  "sig": "[[\"Burnham Road\"], \"South Woodham Ferrers\", null]"
+ },
+ "southend-airport-chief-christmas-officer-lapland-competition": {
+  "none": "no road named",
+  "sig": "[[], \"Southend\", null]"
+ },
  "southend-clifftown-road-robbery-four-men-balaclavas-appeal": {
   "after": 0,
   "h": 750,
@@ -9,5 +225,56 @@
   "src": "/img/maps/southend-clifftown-road-robbery-four-men-balaclavas-appeal.svg",
   "town": "Southend",
   "w": 1200
+ },
+ "southend-council-tax-direct-debit-100-household-energy-payment": {
+  "none": "no road named",
+  "sig": "[[], \"Southend-on-Sea\", null]"
+ },
+ "southend-shoplifter-jailed-48-weeks-one-stop-sutton-road-ban": {
+  "after": 1,
+  "h": 750,
+  "kicker": "Where it happened",
+  "made": "2026-11-25T17:55:17Z",
+  "road": "Sutton Road",
+  "sig": "[[\"Sutton Road\"], \"Southend\", null]",
+  "src": "/img/maps/southend-shoplifter-jailed-48-weeks-one-stop-sutton-road-ban.svg",
+  "town": "Southend",
+  "w": 1200
+ },
+ "southend-southchurch-library-review-2600-responses-four-options": {
+  "none": "no road named",
+  "sig": "[[], \"Southend-on-Sea\", null]"
+ },
+ "southend-victoria-southminster-lines-rail-buses-28-29-november": {
+  "none": "no road named",
+  "sig": "[[], \"Southminster\", null]"
+ },
+ "stansted-airport-college-5m-essex-council-leader-peter-harris": {
+  "none": "no road named",
+  "sig": "[[], \"Stansted\", null]"
+ },
+ "stansted-airport-emergency-exercise-today": {
+  "none": "no road named",
+  "sig": "[[], \"Stansted\", null]"
+ },
+ "stansted-airport-meet-the-buyers-140-firms-transformation": {
+  "none": "no road named",
+  "sig": "[[], \"Stansted\", null]"
+ },
+ "tendring-55-recycling-banks-removed-kerbside-glass": {
+  "none": "no road named",
+  "sig": "[[], \"Clacton-on-Sea\", null]"
+ },
+ "thurrock-budget-savings-scrutiny-24-november-preview": {
+  "none": "no road named",
+  "sig": "[[], \"Thurrock\", null]"
+ },
+ "thurrock-fire-incidents-highest-in-essex-community-safety-report": {
+  "none": "no road named",
+  "sig": "[[], \"Thurrock\", null]"
+ },
+ "tolleshunt-darcy-village-hall-70000-grants-january-refit": {
+  "none": "no road named",
+  "sig": "[[], \"Tolleshunt D'Arcy\", null]"
  }
 }
