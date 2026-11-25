@@ -62,7 +62,8 @@ Then search: in:inbox -in:sent newer_than:7d (pageSize 50, view
 THREAD_VIEW_SUMMARY; fetch a second page if there is one). The Gmail connection cannot create or apply labels
 (found 15 Nov 2026), so do NOT use labels. Handled threads are recorded in data/inbox-handled.json instead:
 {"handled": {"<thread id>": "<YYYY-MM-DD> <one word: published|event|rejected|flagged|service|old>"}}. A thread is
-unhandled when its id is not in that file. Then write the section B log line.
+unhandled when its id is not in that file. "scheduled" means the owner has set the story up to publish at a set time: never touch it.
+EMBARGOES (owner, 24 Nov 2026, hard): if an email says it is embargoed, or "not for publication until", and the embargo time has not passed, publish NOTHING from it, not even a mention, and do not commit any of its details to the repository, which is public. Record the thread as "flagged" with the embargo time in your log line only, and leave it for the owner. After the embargo time, treat it like any other email (check first that the owner has not already published it). Then write the section B log line.
 Read each thread you are going to act on (PLAIN_TEXT; FULL_CONTENT only when you need picture URLs or event
 details). Newest official items first.
 
