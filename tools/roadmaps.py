@@ -388,7 +388,14 @@ def render(it, name, town, segs, view, els):
                f'<circle cx="{ex:.1f}" cy="{ey:.1f}" r="22" fill="none" stroke="#14171f" stroke-width="7"/></svg>'
                f'<text x="28" y="276" font-size="22" font-weight="800" fill="#14171f">{E(town["name"])}</text></g>')
     out.append("</svg>")
-    return "".join(out)
+    # text halos as a separate copy underneath (paint-order is not drawn by every SVG renderer)
+    def halo(m):
+        a, col, sw, b, body = m.groups()
+        under = re.sub(r' ?stroke-linejoin="round"', "", re.sub(r'fill="[^"]*"', f'fill="{col}"', a + b))
+        return (f'<text {under} stroke="{col}" stroke-width="{sw}" stroke-linejoin="round">{body}</text>'
+                f'<text {a}{b}>{body}</text>')
+    return re.sub(r'<text ([^>]*?) stroke="(#[0-9a-fA-F]+)" stroke-width="([\d.]+)" paint-order="stroke"((?: stroke-linejoin="round")?[^>]*)>(.*?)</text>',
+                  halo, "".join(out))
 
 
 def main():
