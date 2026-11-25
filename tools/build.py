@@ -1880,12 +1880,34 @@ def body_with_charts(it, body, opening=""):
                 src = ("https://www.facebook.com/plugins/video.php?href=" + quote(em["url"], safe="")
                        + f"&show_text=false&width={360 if vert else 560}&t=0")
                 box = ("max-width:360px;aspect-ratio:9/16" if vert else "max-width:100%;aspect-ratio:16/9")
+                poster = str(em.get("poster") or "")
+                if poster.startswith("/img/"):
+                    # owner, 25 Nov 2026 ("I cannot see the two facebook videos"): Facebook's player is blanked on
+                    # iPhones (Safari tracking protection), so with a "poster" still the video shows as a tap-to-watch
+                    # card that always appears. On a computer a tap swaps in Facebook's player and plays it in the
+                    # page; on a phone or tablet the tap opens the video on Facebook (in the app if installed).
+                    inner = (f'<a class="fbplay" href="{E(em["url"])}" target="_blank" rel="noopener" data-src="{E(src + "&autoplay=1")}" '
+                             f'aria-label="Play video: {cap}" style="position:absolute;inset:0;display:block">'
+                             f'<img src="{E(poster)}?v=1" width="720" height="1280" alt="{cap}" loading="lazy" '
+                             'style="display:block;width:100%;height:100%;object-fit:cover">'
+                             '<span style="position:absolute;left:50%;bottom:14px;transform:translateX(-50%);background:#1877f2;color:#fff;'
+                             'font-size:14px;font-weight:700;padding:8px 14px;border-radius:20px;white-space:nowrap;box-shadow:0 2px 10px rgba(0,0,0,.4)">'
+                             '▶ Play video</span></a>')
+                else:
+                    inner = (f'<iframe src="{E(src)}" title="{cap}" loading="lazy" scrolling="no" frameborder="0" allowfullscreen="true" '
+                             'allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" '
+                             'style="position:absolute;inset:0;width:100%;height:100%;border:0;overflow:hidden"></iframe>')
                 out.append(f'<figure class="fbembed" style="margin:1.4em 0"><div style="position:relative;{box};margin:0 auto;'
-                           'background:#000;border-radius:10px;overflow:hidden">'
-                           f'<iframe src="{E(src)}" title="{cap}" loading="lazy" scrolling="no" frameborder="0" allowfullscreen="true" '
-                           'allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" '
-                           'style="position:absolute;inset:0;width:100%;height:100%;border:0;overflow:hidden"></iframe></div>'
+                           f'background:#000;border-radius:10px;overflow:hidden">{inner}</div>'
                            f'<figcaption>{cap}. <a href="{E(em["url"])}" target="_blank" rel="noopener">Watch on Facebook ↗</a></figcaption></figure>')
+    if any(str(em.get("poster") or "").startswith("/img/") for em in fbembeds):
+        out.append('<script>(function(){var m=/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)||'
+                   '(navigator.platform==="MacIntel"&&navigator.maxTouchPoints>1);if(m)return;'
+                   'document.querySelectorAll("a.fbplay").forEach(function(a){a.addEventListener("click",function(e){e.preventDefault();'
+                   'var f=document.createElement("iframe");f.src=a.dataset.src;f.title=a.getAttribute("aria-label");'
+                   'f.allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share";f.allowFullscreen=true;'
+                   'f.setAttribute("scrolling","no");f.style.cssText="position:absolute;inset:0;width:100%;height:100%;border:0;overflow:hidden";'
+                   'a.replaceWith(f)})})})();</script>')
         for w in widgets:
             if int(w.get("after", len(paras) - 1)) == i or (i == len(paras) - 1 and int(w.get("after", 0)) >= len(paras)):
                 if w.get("type") == "price-lookup":
