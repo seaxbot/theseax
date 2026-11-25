@@ -14,7 +14,7 @@ when the figures are news. Every figure in the digest carries the link to its of
   petitions  The UK Parliament petitions with the most signatures (petition.parliament.uk, Open Parliament
              Licence): which ones Essex constituencies sign far more, or far less, than the country as a whole
   elections  Elections and by-elections in Essex in the next 75 days, with candidates once published (Democracy
-             Club candidates API, CC BY 4.0; needs the secret DEMOCRACY_CLUB_KEY)
+             Club developers API, CC BY 4.0; needs the secret DEMOCRACY_CLUB_KEY)
 
 Rules: official APIs only, identifies itself honestly, a handful of requests per source, standard library only,
 never fails the whole run because one source is down. Output directory is argv[1] (default ./datadesk-out); the
@@ -637,43 +637,71 @@ ELECTION_RX = re.compile(r"^(local|parl|mayor|pcc|europarl)\.(essex|greater-esse
 
 
 def elections(state):
-    """Elections and by-elections coming up in Essex, with candidates once published (Democracy Club, CC BY 4.0)."""
-    start = NOW.strftime("%Y-%m-%d"); end = (NOW + timedelta(days=75)).strftime("%Y-%m-%d")
-    key = os.environ.get("DEMOCRACY_CLUB_KEY", "").strip()  # GitHub secret DEMOCRACY_CLUB_KEY (owner, 25 Nov 2026)
-    url = "https://candidates.democracyclub.org.uk/api/next/ballots/?" + urllib.parse.urlencode(
-        {"election_date_range_after": start, "election_date_range_before": end, "page_size": 200})
-    rows, pages, total = [], 0, 0
+    """Elections and by-elections coming up in Essex, with candidates once published (Democracy Club, CC BY 4.0).
+    Uses the Democracy Club developers API (developers.democracyclub.org.uk/api/v1/), which is what the owner's key is
+    for (Democracy Club, 25 Nov 2026). The key is the GitHub secret DEMOCRACY_CLUB_KEY, sent as ?auth_token=; it is
+    never printed."""
+    key = os.environ.get("DEMOCRACY_CLUB_KEY", "").strip()
+    base = "https://developers.democracyclub.org.uk/api/v1"
+
+    def dc(url):
+        full = url + ("&" if "?" in url else "?") + urllib.parse.urlencode({"auth_token": key}) if "auth_token=" not in url else url
+        try:
+            return get(full, timeout=60)
+        except urllib.error.HTTPError as e:
+            body = e.read()[:300].decode("utf-8", "replace") if hasattr(e, "read") else ""
+            print("elections: HTTP", e.code, "for", url.split("?")[0], "|", body.replace(key, "***") if key else body)
+            raise
+
+    today = NOW.strftime("%Y-%m-%d"); end = (NOW + timedelta(days=75)).strftime("%Y-%m-%d")
+    url = base + "/elections/?" + urllib.parse.urlencode({"future": 1, "identifier_type": "ballot", "limit": 200})
+    items, pages = [], 0
     while url and pages < 15:
-        if key and "auth_token=" not in url:
-            url += ("&" if "?" in url else "?") + urllib.parse.urlencode({"auth_token": key})
-        d = get(url, headers={"Authorization": "Token " + key} if key else None, timeout=60); pages += 1
-        res = d.get("results") or []
+        d = dc(url); pages += 1
+        res = d.get("results") if isinstance(d, dict) else d
+        res = res or []
         if pages == 1:
-            print("elections: count", d.get("count"), "first keys", sorted((res[0] if res else {}).keys()))
-        for b in res:
-            total += 1
-            bid = str(b.get("ballot_paper_id") or "")
-            if not ELECTION_RX.match(bid) or b.get("cancelled"):
-                continue
-            el = b.get("election") or {}
-            post = b.get("post") or {}
-            cands = []
-            for c in (b.get("candidacies") or []):
-                per = c.get("person") or {}; par = c.get("party") or {}
-                cands.append({"name": str(per.get("name") or "").strip(), "party": str(c.get("party_name") or par.get("name") or "").strip()})
-            rows.append({"id": bid, "date": day(el.get("election_date") or bid.rsplit(".", 1)[-1]), "election": str(el.get("name") or "").strip(),
-                         "seat": str(post.get("label") or "").strip(), "byElection": ".by." in bid, "seats": b.get("winner_count"),
-                         "candidatesLocked": bool(b.get("candidates_locked")), "candidates": sorted(cands, key=lambda c: c["name"].split()[-1] if c["name"] else ""),
-                         "url": "https://whocanivotefor.co.uk/elections/" + bid + "/"})
-        url = d.get("next")
+            print("elections: count", d.get("count") if isinstance(d, dict) else len(res), "first item keys", sorted((res[0] if res else {}).keys()))
+            print("elections: sample", json.dumps(res[0])[:700] if res else "")
+        items += res
+        url = d.get("next") if isinstance(d, dict) else None
         time.sleep(0.4)
-    rows.sort(key=lambda r: r["date"])
+    rows, detail_logged = [], False
+    for b in items:
+        bid = str(b.get("election_id") or b.get("ballot_paper_id") or "")
+        if not ELECTION_RX.match(bid) or b.get("cancelled"):
+            continue
+        date = day(b.get("poll_open_date") or b.get("election_date") or bid.rsplit(".", 1)[-1])
+        if date and (date < today or date > end):
+            continue
+        cands, locked, seats = [], False, b.get("seats_contested") or b.get("winner_count")
+        try:
+            det = dc(base + "/elections/" + urllib.parse.quote(bid) + "/")
+            if not detail_logged:
+                print("elections: detail keys", sorted(det.keys()) if isinstance(det, dict) else type(det))
+                detail_logged = True
+            for c in (det.get("candidates") or []):
+                per = c.get("person") or {}; par = c.get("party") or {}
+                nm = str(per.get("name") or c.get("name") or "").strip()
+                if nm:
+                    cands.append({"name": nm, "party": str(c.get("party_name") or par.get("party_name") or par.get("name") or "").strip()})
+            locked = bool(det.get("candidates_verified") or det.get("candidates_locked")) or bool(cands)
+            seats = seats or det.get("seats_contested") or det.get("winner_count")
+        except Exception as e:
+            print("elections: detail failed", bid, type(e).__name__)
+        rows.append({"id": bid, "date": date, "election": str(b.get("election_title") or b.get("name") or "").strip(),
+                     "seat": str(b.get("post_name") or ((b.get("division") or {}).get("name") if isinstance(b.get("division"), dict) else "") or "").strip(),
+                     "byElection": ".by." in bid, "seats": seats, "candidatesLocked": locked,
+                     "candidates": sorted(cands, key=lambda c: c["name"].split()[-1] if c["name"] else ""),
+                     "url": "https://whocanivotefor.co.uk/elections/" + bid + "/"})
+        time.sleep(0.4)
+    rows.sort(key=lambda r: r["date"] or "")
     known = state.setdefault("electionsSeen", {})
     for r in rows:
         r["new"] = r["id"] not in known
         r["candidatesNew"] = r["candidatesLocked"] and not (known.get(r["id"]) or {}).get("locked")
         known[r["id"]] = {"locked": r["candidatesLocked"], "at": NOW.strftime("%Y-%m-%d")}
-    return {"ballots": rows, "scanned": total}
+    return {"ballots": rows, "scanned": len(items)}
 
 
 def html_unescape(t):
