@@ -1789,6 +1789,14 @@ def body_with_charts(it, body, opening=""):
     # house price look-up (owner, 24 Nov 2026: "a dropdown to select your area"), same shape, type "price-lookup"
     widgets = [w for w in (it.get("widgets") or []) if isinstance(w, dict) and w.get("type") in ("crime-lookup", "price-lookup")
                and str(w.get("src") or "").startswith("/data/")]
+    # embedded X posts (owner, 25 Nov 2026: c2c's video apology to embed in the c2c investigation). Field "embeds": a list
+    # of {"type": "x", "url": "https://x.com/<account>/status/<id>", "after": paragraph index, "caption": what it is}.
+    # The post shows as X's own embed (widgets.js, do-not-track on); without JavaScript it is a plain link to the post.
+    embeds = []
+    for em in (it.get("embeds") or []):
+        m = re.fullmatch(r"https://(?:x|twitter)\.com/([A-Za-z0-9_]{1,15})/status/(\d{5,25})(?:[/?].*)?", str((em or {}).get("url") or "")) if isinstance(em, dict) and em.get("type") == "x" else None
+        if m:
+            embeds.append(dict(em, url=f"https://x.com/{m.group(1)}/status/{m.group(2)}", account=m.group(1)))
     # Bold summarising opening paragraph on every story (owner, 23 Nov 2026: "Needs to be a bold summarising paragraph at
     # top of all stories with context and then into the story"; replaces the 20 and 21 Nov "straight into it" choice).
     # The summary sits first, after the picture, in bold; the body follows and must not repeat it (tools/repeats.py).
@@ -1804,12 +1812,19 @@ def body_with_charts(it, body, opening=""):
                 out.append(f'<figure class="stock chart"><img src="{E(c["src"])}?v=1" width="{E(c.get("w") or 1200)}" '
                            f'height="{E(c.get("h") or 700)}" alt="{E(c.get("alt") or "")}" loading="lazy">'
                            + (f'<figcaption>{E(c.get("caption") or "")}</figcaption></figure>' if c.get("kind") == "photo" else f'<figcaption><b>Chart</b>. {E(c.get("caption") or "")}</figcaption></figure>'))
+        for em in embeds:
+            if int(em.get("after", len(paras) - 1)) == i or (i == len(paras) - 1 and int(em.get("after", 0)) >= len(paras)):
+                cap = E(str(em.get("caption") or f"Post by @{em['account']} on X"))
+                out.append(f'<figure class="xembed" style="margin:1.4em 0"><blockquote class="twitter-tweet" data-dnt="true" data-conversation="none">'
+                           f'<a href="{E(em["url"])}">{cap}</a></blockquote><figcaption>{cap}. <a href="{E(em["url"])}" target="_blank" rel="noopener">View on X ↗</a></figcaption></figure>')
         for w in widgets:
             if int(w.get("after", len(paras) - 1)) == i or (i == len(paras) - 1 and int(w.get("after", 0)) >= len(paras)):
                 if w.get("type") == "price-lookup":
                     out.append(f'<div class="seax-plookup" id="prices" data-src="{E(w["src"])}"><noscript>Turn on JavaScript to check prices in your area.</noscript></div>')
                 else:
                     out.append(f'<div class="seax-lookup" id="check" data-src="{E(w["src"])}"><noscript>Turn on JavaScript to look up your neighbourhood.</noscript></div>')
+    if embeds:
+        out.append('<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>')
     if any(w.get("type") == "crime-lookup" for w in widgets):
         out.append('<script src="/js/crime-lookup.js?v=2" defer></script>')
     if any(w.get("type") == "price-lookup" for w in widgets):
