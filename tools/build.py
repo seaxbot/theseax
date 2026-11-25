@@ -1814,6 +1814,14 @@ def body_with_charts(it, body, opening=""):
         out.append('<script src="/js/crime-lookup.js?v=2" defer></script>')
     if any(w.get("type") == "price-lookup" for w in widgets):
         out.append('<script src="/js/price-lookup.js?v=2" defer></script>')
+    # Democracy Club credit (owner, 25 Nov 2026: "must credit Democracy Club with a link on every story that uses the
+    # data at the end of the story"). Added automatically to any story whose source or "also" links point at Democracy
+    # Club or Who Can I Vote For, or that carries "dataCredit": "democracyclub".
+    if it.get("dataCredit") == "democracyclub" or any(re.search(r"democracyclub\.org\.uk|whocanivotefor\.co\.uk", u) for u in allowed):
+        out.append('<p class="dcredit" style="font-size:.92em;color:#555;border-top:1px solid #ddd;padding-top:.7em;margin-top:1.4em">'
+                   'Election and candidate data from <a href="https://democracyclub.org.uk/" target="_blank" rel="noopener">Democracy Club</a>, '
+                   'used under <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">CC BY 4.0</a>. '
+                   'Find your polling station and candidates at <a href="https://whocanivotefor.co.uk/" target="_blank" rel="noopener">Who Can I Vote For?</a></p>')
     return "".join(out)
 
 
