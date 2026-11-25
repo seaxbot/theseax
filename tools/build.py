@@ -1819,10 +1819,21 @@ def body_with_charts(it, body, opening=""):
     # of {"type": "x", "url": "https://x.com/<account>/status/<id>", "after": paragraph index, "caption": what it is}.
     # The post shows as X's own embed (widgets.js, do-not-track on); without JavaScript it is a plain link to the post.
     embeds = []
+    fbembeds = []
     for em in (it.get("embeds") or []):
         m = re.fullmatch(r"https://(?:x|twitter)\.com/([A-Za-z0-9_]{1,15})/status/(\d{5,25})(?:[/?].*)?", str((em or {}).get("url") or "")) if isinstance(em, dict) and em.get("type") == "x" else None
         if m:
             embeds.append(dict(em, url=f"https://x.com/{m.group(1)}/status/{m.group(2)}", account=m.group(1)))
+        # Facebook videos and reels (owner, 25 Nov 2026: Tunde's Chelmsford High Street flash mob reels). Field "embeds"
+        # entry {"type": "fb", "url": "https://www.facebook.com/reel/<id>" (or a /<page>/videos/<id> link), "after",
+        # "caption", optional "vertical": false for a landscape video}. Shown in Facebook's own video player (an iframe,
+        # no Facebook SDK); the caption always carries a plain "Watch on Facebook" link in case the player is blocked.
+        fm = re.fullmatch(r"https://(?:www\.|m\.)?facebook\.com/(?:reel/(\d{5,25})|([A-Za-z0-9.\-]{1,80})/videos/(?:[^/]+/)?(\d{5,25}))/?(?:\?.*)?",
+                          str((em or {}).get("url") or "")) if isinstance(em, dict) and em.get("type") == "fb" else None
+        if fm:
+            clean = (f"https://www.facebook.com/reel/{fm.group(1)}" if fm.group(1)
+                     else f"https://www.facebook.com/{fm.group(2)}/videos/{fm.group(3)}")
+            fbembeds.append(dict(em, url=clean))
     # Bold summarising opening paragraph on every story (owner, 23 Nov 2026: "Needs to be a bold summarising paragraph at
     # top of all stories with context and then into the story"; replaces the 20 and 21 Nov "straight into it" choice).
     # The summary sits first, after the picture, in bold; the body follows and must not repeat it (tools/repeats.py).
@@ -1862,6 +1873,19 @@ def body_with_charts(it, body, opening=""):
                 bq = "" if card else (f'<blockquote class="twitter-tweet" data-dnt="true" data-conversation="none">'
                                       f'<a href="{E(em["url"])}">{cap}</a></blockquote>')
                 out.append(f'<figure class="xembed" style="margin:1.4em 0">{card}{bq}<figcaption>{cap}. <a href="{E(em["url"])}" target="_blank" rel="noopener">View on X ↗</a></figcaption></figure>')
+        for em in fbembeds:
+            if int(em.get("after", len(paras) - 1)) == i or (i == len(paras) - 1 and int(em.get("after", 0)) >= len(paras)):
+                cap = E(str(em.get("caption") or "Video posted on Facebook"))
+                vert = em.get("vertical") is not False
+                src = ("https://www.facebook.com/plugins/video.php?href=" + quote(em["url"], safe="")
+                       + f"&show_text=false&width={360 if vert else 560}&t=0")
+                box = ("max-width:360px;aspect-ratio:9/16" if vert else "max-width:100%;aspect-ratio:16/9")
+                out.append(f'<figure class="fbembed" style="margin:1.4em 0"><div style="position:relative;{box};margin:0 auto;'
+                           'background:#000;border-radius:10px;overflow:hidden">'
+                           f'<iframe src="{E(src)}" title="{cap}" loading="lazy" scrolling="no" frameborder="0" allowfullscreen="true" '
+                           'allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" '
+                           'style="position:absolute;inset:0;width:100%;height:100%;border:0;overflow:hidden"></iframe></div>'
+                           f'<figcaption>{cap}. <a href="{E(em["url"])}" target="_blank" rel="noopener">Watch on Facebook ↗</a></figcaption></figure>')
         for w in widgets:
             if int(w.get("after", len(paras) - 1)) == i or (i == len(paras) - 1 and int(w.get("after", 0)) >= len(paras)):
                 if w.get("type") == "price-lookup":
