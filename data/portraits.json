@@ -1681,5 +1681,23 @@
     "creator": "Channel 4/Love Productions/Patch Dolan"
    }
   ]
+ },
+ {
+  "ids": [
+   "essex-energy-bills-price-cap-rise-26-percent-january-2027",
+   "basildon-100-household-energy-payment-65000-homes-bands-a-d"
+  ],
+  "match": "\\b([Ee]nergy (bills?|prices?|costs?|payments?|support|grants?|debts?|suppliers?|tariffs?|firms?|companies)|[Ee]nergy price cap|[Pp]rice cap|Ofgem|[Gg]as and electricity|[Gg]as (bills?|prices?)|[Ee]lectricity (bills?|prices?)|[Hh]eating (bills?|costs?)|[Ff]uel poverty|[Ss]tanding charges?)\\b",
+  "notMatch": "\\b(gas works|gasworks|gas main|gas pipe|gas leak|explosion|blast|fire|blaze|power cut|power outage|outage|died|dies|death|dead|killed|fatal|court|jailed|charged|gas and air|data centre|solar|wind farm|pylon)",
+  "name": "Blue gas flames on a cooker hob",
+  "label": "Library image",
+  "wide": "/img/people/energy-gas-hob-wide.jpg",
+  "og": "/img/people/energy-gas-hob-og.jpg",
+  "creator": "",
+  "provider": "The Seax",
+  "license": "",
+  "licenseUrl": "",
+  "source": "",
+  "addedBy": "owner, 25 Nov 2026 08:57: \"Use this pic for the energy story and any similar energy stories\" (energy bills, price cap, energy payments and help with heating costs; not gas works, leaks, power cuts or energy infrastructure)"
  }
 ]
