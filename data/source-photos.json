@@ -84,5 +84,26 @@
   "logo": true,
   "creator": "Cancer Research UK",
   "site": "https://www.cancerresearchuk.org/"
+ },
+ "harwich-air-rescue-uk-university-of-essex-vr-helicopter-rescue-training": {
+  "url": "https://www.essex.ac.uk/-/media/2026/11/air-rescue-gallery/scenes-from-helicopter-rescue.jpg",
+  "creator": "University of Essex",
+  "name": "A helicopter rescue",
+  "source": "https://www.essex.ac.uk/news/2026/11/25/vr-could-help-helicopter-crews-prepare-for-life-or-death-rescues",
+  "anchor": "centre"
+ },
+ "harwich-air-rescue-uk-university-of-essex-vr-helicopter-rescue-training-pic2": {
+  "url": "https://www.essex.ac.uk/-/media/2026/11/air-rescue-gallery/the-vr-trainer-in-use.jpg",
+  "creator": "University of Essex",
+  "name": "The VR trainer in use",
+  "source": "https://www.essex.ac.uk/news/2026/11/25/vr-could-help-helicopter-crews-prepare-for-life-or-death-rescues",
+  "anchor": "centre"
+ },
+ "harwich-air-rescue-uk-university-of-essex-vr-helicopter-rescue-training-pic3": {
+  "url": "https://www.essex.ac.uk/-/media/2026/11/air-rescue-gallery/the-vr-training.jpg",
+  "creator": "University of Essex",
+  "name": "VR training in action",
+  "source": "https://www.essex.ac.uk/news/2026/11/25/vr-could-help-helicopter-crews-prepare-for-life-or-death-rescues",
+  "anchor": "centre"
  }
 }
