@@ -14,13 +14,14 @@ Safety rules:
     is skipped, and no house number is ever drawn; the whole road is highlighted, never a point on it;
   * story field "roadMap": false turns it off for that story; "roadMap": "Clifftown Road" picks the road by hand.
 
-Runs in GitHub Actions (.github/workflows/roadmaps.yml), which can reach OpenStreetMap's Overpass API. Map data
+Runs in GitHub Actions (.github/workflows/roadmaps.yml), which can reach OpenStreetMap: Nominatim finds the road and
+the main OpenStreetMap API gives the streets around it (one call each per story, within both services' usage rules). Map data
 (c) OpenStreetMap contributors, ODbL; the caption carries the credit.
 
   python3 tools/roadmaps.py              all stories in the edition that need a map
   python3 tools/roadmaps.py --id X       one story, even if it was checked before
 """
-import argparse, json, math, os, re, sys, time, urllib.parse, urllib.request, html
+import argparse, json, math, os, re, sys, time, urllib.error, urllib.parse, urllib.request, html
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.join(ROOT, "tools"))
@@ -29,8 +30,6 @@ import build  # story_pins and the Essex map data, so the town matches the story
 DB = os.path.join(ROOT, "data", "roadmaps.json")
 OUT = os.path.join(ROOT, "img", "maps")
 UA = "TheSeax/1.0 (https://theseax.com; news@theseax.com)"
-OVERPASS = ["https://overpass-api.de/api/interpreter", "https://overpass.kumi.systems/api/interpreter",
-            "https://overpass.private.coffee/api/interpreter"]
 W, H = 1200, 750
 RED = "#c8102e"
 FONT = "system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif"
@@ -95,18 +94,21 @@ def town_of(it):
     return {"name": p["name"], "district": p.get("d"), "lon": p["x"] / (M["kx"] * M["k"]) + M["lon0"], "lat": M["lat1"] - p["y"] / M["k"]}
 
 
-def overpass(q):
+def http_get(url, tries=3):
     last = None
-    for url in OVERPASS:
-        for attempt in range(2):
-            try:
-                req = urllib.request.Request(url, data=urllib.parse.urlencode({"data": q}).encode(), headers={"User-Agent": UA})
-                with urllib.request.urlopen(req, timeout=90) as r:
-                    return json.load(r)
-            except Exception as e:  # busy server: try again, then the next one
-                last = e
-                time.sleep(4 + attempt * 6)
-    raise RuntimeError(f"Overpass failed: {last}")
+    for i in range(tries):
+        try:
+            req = urllib.request.Request(url, headers={"User-Agent": UA, "Accept-Language": "en-GB"})
+            with urllib.request.urlopen(req, timeout=60) as r:
+                return r.read()
+        except urllib.error.HTTPError as e:
+            if e.code in (400, 404, 509):
+                raise
+            last = e
+        except Exception as e:
+            last = e
+        time.sleep(3 + i * 5)
+    raise RuntimeError(f"{url[:60]}: {last}")
 
 
 # ---- geometry (Web Mercator metres, good enough at town scale) ----
@@ -118,60 +120,103 @@ def unmerc(x, y):
     return math.degrees(x / R), math.degrees(2 * math.atan(math.exp(y / R)) - math.pi / 2)
 
 
+def nominatim(name, town):
+    d = 0.065
+    q = urllib.parse.urlencode({"q": f"{name}, {town['name']}", "format": "jsonv2", "limit": 15, "dedupe": 0, "countrycodes": "gb",
+                                "viewbox": f"{town['lon'] - d * 1.6:.5f},{town['lat'] + d:.5f},{town['lon'] + d * 1.6:.5f},{town['lat'] - d:.5f}", "bounded": 1})
+    time.sleep(1.2)  # Nominatim's limit is one request a second
+    res = json.loads(http_get("https://nominatim.openstreetmap.org/search?" + q))
+    norm = lambda x: re.sub(r"[^a-z]", "", x.lower())
+    return [r for r in res if r.get("category") == "highway" and norm(r.get("name") or "") == norm(name)]
+
+
+def osm_map(view):
+    """Everything OpenStreetMap holds inside the view (the main API's map call), as Overpass-style elements."""
+    import xml.etree.ElementTree as ET
+    x, y, vw, vh = view
+    w, s_ = unmerc(x, y); e, n = unmerc(x + vw, y + vh)
+    raw = http_get(f"https://api.openstreetmap.org/api/0.6/map?bbox={w:.6f},{s_:.6f},{e:.6f},{n:.6f}")
+    root = ET.fromstring(raw)
+    nodes, ways, els = {}, {}, []
+    tags = lambda el: {t.get("k"): t.get("v") for t in el.findall("tag")}
+    for nd in root.iter("node"):
+        nodes[nd.get("id")] = (float(nd.get("lat")), float(nd.get("lon")))
+        tg = tags(nd)
+        if tg.get("railway") in ("station", "halt"):
+            els.append({"type": "node", "lat": nodes[nd.get("id")][0], "lon": nodes[nd.get("id")][1], "tags": tg})
+    for wy in root.iter("way"):
+        refs = [r.get("ref") for r in wy.findall("nd") if r.get("ref") in nodes]
+        if len(refs) < 2:
+            continue
+        el = {"type": "way", "id": wy.get("id"), "tags": tags(wy), "refs": refs,
+              "geometry": [{"lat": nodes[r][0], "lon": nodes[r][1]} for r in refs]}
+        ways[wy.get("id")] = el
+        els.append(el)
+    # parks, water and woods drawn as multipolygon relations: draw their outer ways with the relation's tags
+    for rel in root.iter("relation"):
+        tg = tags(rel)
+        if tg.get("type") != "multipolygon":
+            continue
+        for m in rel.findall("member"):
+            if m.get("type") == "way" and m.get("role") in ("outer", "") and m.get("ref") in ways:
+                w_ = ways[m.get("ref")]
+                if w_["refs"][0] == w_["refs"][-1]:
+                    els.append({"type": "way", "tags": tg, "geometry": w_["geometry"]})
+    return els
+
+
 def find_road(name, town):
-    q = f'[out:json][timeout:40];way[highway~"^({ROAD_KINDS})$"][name="{name}"](around:4500,{town["lat"]:.6f},{town["lon"]:.6f});out geom;'
-    ways = [w for w in overpass(q).get("elements", []) if w.get("geometry")]
-    if not ways:
-        return None, "no road of that name near " + town["name"]
-    segs = [[merc(p["lon"], p["lat"]) for p in w["geometry"]] for w in ways]
-    # group touching pieces: one real road is usually split into many OSM ways
+    """The road's pieces, the map view and the map data, or (None, reason)."""
+    hits = nominatim(name, town)
+    if not hits:
+        return None, f"no road called {name} near {town['name']}"
+    pts = [merc(float(h["lon"]), float(h["lat"])) for h in hits]
+    if max((math.dist(a, b) for a in pts for b in pts), default=0) > 6000:
+        return None, f"roads called {name} far apart near {town['name']}: not sure which"
+    bxs = []
+    for h in hits:
+        s_, n, w, e = map(float, h["boundingbox"])
+        bxs += [merc(w, s_), merc(e, n)]
+    view = view_for([bxs], town)
+    try:
+        els = osm_map(view)
+    except urllib.error.HTTPError as e:  # too much data: a tighter view
+        x, y, vw, vh = view
+        view = (x + vw * .2, y + vh * .2, vw * .6, vh * .6)
+        els = osm_map(view)
+    norm = lambda x: re.sub(r"[^a-z]", "", (x or "").lower())
+    mine = [el for el in els if el["type"] == "way" and "highway" in el["tags"] and norm(el["tags"].get("name")) == norm(name)
+            and el["tags"].get("highway") not in ("footway", "path", "cycleway", "steps", "bridleway", "proposed", "construction")]
+    if not mine:
+        return None, f"{name} not found in the map data"
+    # join pieces that share a node: one real road is many OSM ways
     groups = []
-    for s in segs:
-        hit = [g for g in groups if any(math.dist(a, b) < 60 for t in g for a in (t[0], t[-1]) for b in (s[0], s[-1]))
-               or any(math.dist(a, b) < 25 for t in g for a in t[::3] for b in s[::3])]
-        merged = [s]
+    for el in mine:
+        hit = [g for g in groups if any(set(el["refs"]) & set(o["refs"]) for o in g)]
+        merged = [el]
         for g in hit:
             merged += g; groups.remove(g)
         groups.append(merged)
     if len(groups) > 1:
-        def gap(g1, g2):
-            return min(math.dist(a, b) for t1 in g1 for a in t1[::2] for t2 in g2 for b in t2[::2])
-        if any(gap(a, b) > 300 for i, a in enumerate(groups) for b in groups[i + 1:]):
+        gs = [[merc(p["lon"], p["lat"]) for el in g for p in el["geometry"]] for g in groups]
+        if any(min(math.dist(a, b) for a in g1 for b in g2) > 300 for i, g1 in enumerate(gs) for g2 in gs[i + 1:]):
             return None, f"{len(groups)} different roads called {name} near {town['name']}: not sure which"
-        groups = [[s for g in groups for s in g]]
-    return groups[0], "ok"
+    segs = [[merc(p["lon"], p["lat"]) for p in el["geometry"]] for el in mine]
+    return (segs, view, els), "ok"
 
 
 def view_for(segs, town):
     xs = [p[0] for s in segs for p in s]; ys = [p[1] for s in segs for p in s]
     x0, x1, y0, y1 = min(xs), max(xs), min(ys), max(ys)
     span = max(x1 - x0, (y1 - y0) * W / H)
-    vw = min(max(span * 1.45, 750), 4000)
-    if span * 1.45 > 4000:  # a very long road: centre on the part nearest the town
+    vw = min(max(span * 1.45, 750), 2500)
+    if span * 1.45 > 2500:  # a very long road: centre on the part nearest the town
         tx, ty = merc(town["lon"], town["lat"])
         cx, cy = min(((p[0], p[1]) for s in segs for p in s), key=lambda p: math.dist(p, (tx, ty)))
     else:
         cx, cy = (x0 + x1) / 2, (y0 + y1) / 2
     vh = vw * H / W
     return cx - vw / 2, cy - vh / 2, vw, vh
-
-
-def surroundings(view, svc):
-    x, y, vw, vh = view
-    w, s = unmerc(x, y); e, n = unmerc(x + vw, y + vh)
-    bb = f"{s:.6f},{w:.6f},{n:.6f},{e:.6f}"
-    kinds = ROAD_KINDS if svc else ROAD_KINDS.replace("|service", "")
-    q = (f'[out:json][timeout:60];('
-         f'way[highway~"^({kinds}|footway)$"]({bb});'
-         f'way[railway~"^(rail|light_rail|narrow_gauge)$"]({bb});'
-         f'way[natural~"^(water|beach|wetland|wood|coastline)$"]({bb});'
-         f'way[waterway~"^(river|canal|riverbank|dock|stream)$"]({bb});'
-         f'way[leisure~"^(park|garden|recreation_ground|pitch|golf_course|common|nature_reserve)$"]({bb});'
-         f'way[landuse~"^(grass|recreation_ground|cemetery|forest|meadow|village_green|allotments)$"]({bb});'
-         f'way[amenity=grave_yard]({bb});way[building]["building"!~"^(house|residential|detached|semidetached_house|terrace|garage|garages|shed|bungalow|apartments)$"]({bb});'
-         f'node[railway~"^(station|halt)$"]({bb});node[public_transport=station][railway]({bb});'
-         f');out geom;')
-    return overpass(q).get("elements", [])
 
 
 def render(it, name, town, segs, view, els):
@@ -196,19 +241,31 @@ def render(it, name, town, segs, view, els):
         if len(g) < 2:
             continue
         if "highway" in t:
-            roads.append((t, g))
+            hw = t["highway"]
+            if hw in ("path", "cycleway", "steps", "bridleway", "track", "footway", "corridor"):
+                if vw < 1600 and t.get("area") != "yes":
+                    roads.append((dict(t, highway="footway"), g))
+            elif hw == "service":
+                if vw < 1600 and t.get("service") not in ("parking_aisle", "driveway", "drive-through"):
+                    roads.append((t, g))
+            elif hw in ("motorway", "trunk", "primary", "secondary", "tertiary", "unclassified", "residential", "living_street",
+                        "pedestrian", "road", "motorway_link", "trunk_link", "primary_link", "secondary_link", "tertiary_link"):
+                roads.append((t, g))
         elif "railway" in t:
             rails.append(g)
         elif t.get("natural") == "coastline":
             coast.append(g)
         elif t.get("waterway") in ("river", "canal", "stream"):
             waters.append(("line", g, t.get("waterway")))
-        elif t.get("natural") == "water" or t.get("waterway") in ("riverbank", "dock"):
+        elif t.get("natural") == "water" or t.get("waterway") in ("riverbank", "dock") or t.get("landuse") in ("reservoir", "basin"):
             waters.append(("area", g, None))
-        elif "building" in t:
+        elif "building" in t and t.get("building") != "no":
             builds.append(g)
         else:
             kind = t.get("natural") or t.get("leisure") or t.get("landuse") or t.get("amenity")
+            if kind not in ("beach", "wetland", "wood", "forest", "cemetery", "grave_yard", "allotments", "pitch", "golf_course", "park",
+                            "garden", "recreation_ground", "grass", "meadow", "village_green", "common", "nature_reserve", "scrub", "heath"):
+                continue
             col = {"beach": "#efe6cc", "wetland": "#e3e6d3", "wood": "#cfe0bf", "forest": "#cfe0bf", "cemetery": "#dbe5d2",
                    "grave_yard": "#dbe5d2", "allotments": "#e2e8cf", "pitch": "#cde3bd", "golf_course": "#d5e7c6"}.get(kind, "#d9e9c8")
             fills.append((col, g))
@@ -321,7 +378,7 @@ def render(it, name, town, segs, view, els):
                f'<svg x="22" y="22" width="294" height="226" viewBox="20 10 {M["w"] - 40} {M["h"] - 60}" preserveAspectRatio="xMidYMid meet">'
                f'<rect x="-50" y="-50" width="{M["w"] + 100}" height="{M["h"] + 100}" fill="#d3e6f0"/><path d="{M["context"]}" fill="#f1ede4"/>{dpaths}'
                f'<circle cx="{ex:.1f}" cy="{ey:.1f}" r="22" fill="none" stroke="#14171f" stroke-width="7"/></svg>'
-               f'<text x="28" y="276" font-size="22" font-weight="800" fill="#14171f">{E(town["name"])}, Essex</text></g>')
+               f'<text x="28" y="276" font-size="22" font-weight="800" fill="#14171f">{E(town["name"])}</text></g>')
     out.append("</svg>")
     return "".join(out)
 
@@ -353,17 +410,13 @@ def main():
         entry = {"sig": sig, "none": ""}
         for name, after in roads[:3]:
             try:
-                segs, why = find_road(name, town)
+                got, why = find_road(name, town)
             except Exception as e:
                 print(sid, name, "ERROR", e); entry = None; break
             print(sid, "|", name, "|", town["name"], "|", why)
-            if not segs:
+            if not got:
                 entry["none"] = why; continue
-            view = view_for(segs, town)
-            try:
-                els = surroundings(view, view[2] < 1600)
-            except Exception as e:
-                print(sid, "surroundings ERROR", e); entry = None; break
+            segs, view, els = got
             svg = render(it, name, town, segs, view, els)
             open(os.path.join(OUT, sid + ".svg"), "w", encoding="utf-8").write(svg)
             txt = " ".join([str(it.get("headline") or ""), str(it.get("summary") or "")] + [str(x) for x in (it.get("body") or [])[:3]])

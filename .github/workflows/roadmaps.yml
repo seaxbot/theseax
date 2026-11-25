@@ -25,10 +25,10 @@ jobs:
           git config user.name "The Seax map desk"
           git config user.email "seaxbot@users.noreply.github.com"
           git status --porcelain img/maps data/roadmaps.json | grep -q . || exit 0
-          mkdir -p /tmp/rm && cp -r img/maps /tmp/rm/ && cp data/roadmaps.json /tmp/rm/new.json
+          mkdir -p /tmp/rm/maps img/maps && cp -r img/maps/. /tmp/rm/maps/ && cp data/roadmaps.json /tmp/rm/new.json
           for i in 1 2 3 4 5; do
             git fetch -q origin main && git reset -q --hard origin/main
-            mkdir -p img/maps && cp /tmp/rm/maps/* img/maps/
+            mkdir -p img/maps && cp /tmp/rm/maps/* img/maps/ 2>/dev/null || true
             python3 - <<'PY'
           import json
           new = json.load(open("/tmp/rm/new.json"))
