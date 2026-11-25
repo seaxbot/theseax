@@ -1699,5 +1699,22 @@
   "licenseUrl": "",
   "source": "",
   "addedBy": "owner, 25 Nov 2026 08:57: \"Use this pic for the energy story and any similar energy stories\" (energy bills, price cap, energy payments and help with heating costs; not gas works, leaks, power cuts or energy infrastructure)"
+ },
+ {
+  "ids": [
+   "southend-southchurch-library-review-2600-responses-four-options"
+  ],
+  "match": "\\bSouthchurch [Ll]ibrary\\b",
+  "notMatch": "\\b(fire|blaze|died|death|dead|killed|court|arrest\\w*|charged|jailed|assault\\w*|stabb\\w*)\\b",
+  "name": "A shelf of Essex local history books",
+  "label": "Library image",
+  "wide": "/img/people/essex-books-shelf-wide.jpg",
+  "og": "/img/people/essex-books-shelf-og.jpg",
+  "creator": "",
+  "provider": "The Seax",
+  "license": "",
+  "licenseUrl": "",
+  "source": "",
+  "addedBy": "owner, 25 Nov 2026 17:18: \"Use Essex books pic for southchirch library story\" (his own photo of a shelf of Essex local history books; also used for Southchurch Library follow-ups)"
  }
 ]
