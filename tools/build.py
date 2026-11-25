@@ -1815,7 +1815,22 @@ def body_with_charts(it, body, opening=""):
         for em in embeds:
             if int(em.get("after", len(paras) - 1)) == i or (i == len(paras) - 1 and int(em.get("after", 0)) >= len(paras)):
                 cap = E(str(em.get("caption") or f"Post by @{em['account']} on X"))
-                out.append(f'<figure class="xembed" style="margin:1.4em 0"><blockquote class="twitter-tweet" data-dnt="true" data-conversation="none">'
+                poster = str(em.get("poster") or "")
+                # optional "poster" (owner, 25 Nov 2026, after the X embed did not show on his phone): a still of the video,
+                # shown as a tap-to-watch card that always works; it is hidden only once X's own embed has rendered.
+                card = ""
+                if poster.startswith("/img/"):
+                    dur = E(str(em.get("duration") or ""))
+                    card = (f'<a class="xcard" href="{E(em["url"])}" target="_blank" rel="noopener" aria-label="Watch on X: {cap}" '
+                            'style="position:relative;display:block;border-radius:10px;overflow:hidden;background:#000">'
+                            f'<img src="{E(poster)}?v=1" width="1200" height="560" alt="{cap}" loading="lazy" style="display:block;width:100%;height:auto">'
+                            '<span aria-hidden="true" style="position:absolute;left:50%;top:50%;width:68px;height:68px;margin:-34px 0 0 -34px;border-radius:50%;'
+                            'background:rgba(29,155,240,.95);box-shadow:0 2px 12px rgba(0,0,0,.45)"><span style="position:absolute;left:27px;top:20px;'
+                            'border-style:solid;border-width:14px 0 14px 22px;border-color:transparent transparent transparent #fff"></span></span>'
+                            '<span style="position:absolute;left:10px;bottom:10px;background:rgba(0,0,0,.75);color:#fff;font-size:13px;font-weight:600;'
+                            f'padding:5px 9px;border-radius:4px">Watch on X{" · " + dur if dur else ""}</span></a>')
+                bq_style = ' style="margin:0;height:0;overflow:hidden;font-size:0"' if card else ""
+                out.append(f'<figure class="xembed" style="margin:1.4em 0">{card}<blockquote class="twitter-tweet" data-dnt="true" data-conversation="none"{bq_style}>'
                            f'<a href="{E(em["url"])}">{cap}</a></blockquote><figcaption>{cap}. <a href="{E(em["url"])}" target="_blank" rel="noopener">View on X ↗</a></figcaption></figure>')
         for w in widgets:
             if int(w.get("after", len(paras) - 1)) == i or (i == len(paras) - 1 and int(w.get("after", 0)) >= len(paras)):
@@ -1824,7 +1839,10 @@ def body_with_charts(it, body, opening=""):
                 else:
                     out.append(f'<div class="seax-lookup" id="check" data-src="{E(w["src"])}"><noscript>Turn on JavaScript to look up your neighbourhood.</noscript></div>')
     if embeds:
-        out.append('<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>')
+        out.append('<script>window.twttr=(function(d,s,id){var t=window.twttr||{};if(d.getElementById(id))return t;var j=d.createElement(s);j.id=id;'
+                   'j.async=true;j.src="https://platform.twitter.com/widgets.js";d.head.appendChild(j);t._e=[];t.ready=function(f){t._e.push(f)};return t}'
+                   '(document,"script","twitter-wjs"));twttr.ready(function(t){t.events.bind("rendered",function(e){var f=e.target&&e.target.closest'
+                   '&&e.target.closest("figure.xembed");if(f&&e.target.offsetHeight>80){var c=f.querySelector(".xcard");if(c)c.style.display="none"}})});</script>')
     if any(w.get("type") == "crime-lookup" for w in widgets):
         out.append('<script src="/js/crime-lookup.js?v=2" defer></script>')
     if any(w.get("type") == "price-lookup" for w in widgets):
