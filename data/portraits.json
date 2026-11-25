@@ -1,6 +1,22 @@
 [
  {
   "ids": [
+   "chelmsford-high-street-tunde-lighthouse-family-big-sing-flash-mob"
+  ],
+  "name": "Tunde Baiyewu singing to the crowd on Chelmsford High Street",
+  "label": "Picture",
+  "wide": "/img/people/tunde-chelmsford-high-street-wide.jpg",
+  "og": "/img/people/tunde-chelmsford-high-street-og.jpg",
+  "creator": "Chelmsford For You",
+  "provider": "Chelmsford For You",
+  "license": "",
+  "licenseUrl": "",
+  "source": "https://www.facebook.com/reel/1135605805908671",
+  "plainCaption": "Tunde sings to the crowd on Chelmsford High Street. Picture: Chelmsford For You",
+  "addedBy": "owner, 25 Nov 2026 22:52 (\"i cant see the photo\"): still from the Chelmsford For You video embedded in the story; for this story only"
+ },
+ {
+  "ids": [
    "mersea-peter-shilton-auction-5642-gambling-charity"
   ],
   "match": "\\bShiltons?\\b",
