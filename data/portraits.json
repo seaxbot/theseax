@@ -1716,5 +1716,19 @@
   "licenseUrl": "",
   "source": "",
   "addedBy": "owner, 25 Nov 2026 17:18: \"Use Essex books pic for southchirch library story\" (his own photo of a shelf of Essex local history books; also used for Southchurch Library follow-ups)"
+ },
+ {
+  "match": "\\b(Wivenhoe|River Colne|Colne [Ee]stuary)\\b",
+  "notMatch": "\\b(gas works|gasworks|Cadent|died|dies|death|dead|body|drown\\w*|killed|fatal\\w*|crash\\w*|injur\\w*|court|jailed|charged|arrest\\w*|assault\\w*|stabb\\w*|murder\\w*|fire|blaze|police)\\b",
+  "name": "Sunrise over the River Colne at Wivenhoe on a frosty morning",
+  "label": "Picture",
+  "wide": "/img/people/wivenhoe-colne-frost-wide.jpg",
+  "og": "/img/people/wivenhoe-colne-frost-og.jpg",
+  "creator": "Stephen Burke",
+  "provider": "Stephen Burke",
+  "license": "",
+  "licenseUrl": "",
+  "source": "",
+  "addedBy": "owner, 25 Nov 2026 17:23: \"Use this for Wivenhoe Colne stories - credit: Stephen Burke\" (not gas works, crime, deaths or fires)"
  }
 ]
