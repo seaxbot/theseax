@@ -313,10 +313,18 @@ def render(it, name, town, segs, view, els):
         if not nm or nm == name or t.get("highway") in ("footway", "service"):
             continue
         q = [px(p) for p in g]
-        for a, b in zip(q, q[1:]):
-            L = math.dist(a, b)
-            if L > best.get(nm, (0,))[0]:
-                best[nm] = (L, a, b, rank(t))
+        # longest nearly straight run of the way (OSM ways are many short pieces)
+        for i in range(len(q) - 1):
+            run, j = 0.0, i
+            while j + 1 < len(q):
+                run += math.dist(q[j], q[j + 1])
+                if math.dist(q[i], q[j + 1]) < run * .96:
+                    run -= math.dist(q[j], q[j + 1]); break
+                j += 1
+            if j > i:
+                L = math.dist(q[i], q[j])
+                if L > best.get(nm, (0,))[0]:
+                    best[nm] = (L, q[i], q[j], rank(t))
     fs = 21
     for nm, (L, a, b, rk) in sorted(best.items(), key=lambda kv: (kv[1][3], -kv[1][0])):
         tw = len(nm) * fs * .56
