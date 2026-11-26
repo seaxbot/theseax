@@ -456,6 +456,10 @@
   "none": "no road called Market Square near Saffron Walden",
   "sig": "[[\"Lantern Parade\", \"Market Square\"], \"Saffron Walden\", null]"
  },
+ "saffron-walden-museum-60000-collection-records-online": {
+  "none": "no road named",
+  "sig": "[[], \"Saffron Walden\", null]"
+ },
  "shoeburyness-eagle-way-blake-branch-tribute-two-bailed": {
   "none": "no road named",
   "sig": "[[], \"Shoeburyness\", null]"
