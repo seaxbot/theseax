@@ -2016,5 +2016,24 @@
   "licenseUrl": "",
   "source": "https://www.mynewsdesk.com/uk/metpoliceuk/news/man-who-controlled-drug-network-sentenced-to-18-years-515476",
   "addedBy": "photo desk 26 Nov 2026 (owner's rule: official bodies' own pictures, credited)"
+ },
+ {
+  "ids": [
+   "essex-nhs-32000-extra-gp-appointments-winter-2026"
+  ],
+  "match": "\\b(GPs?|GP (surgery|surgeries|practices?|appointments?|services?|access)|[Ff]amily doctors?|[Dd]octors' surgery|[Dd]octor's surgery|[Gg]eneral practice)\\b",
+  "notMatch": "\\b(Grand Prix|died|dies|death|dead|killed|fatal\\w*|inquest|coroner|court|jailed|sentenced|charged|arrest\\w*|police|assault\\w*|attack\\w*|stabb?\\w*|abuse\\w*|struck off|suspended|misconduct|tribunal|fire|blaze|sexual\\w*|fraud)\\b",
+  "name": "A GP talking with a patient in a consulting room",
+  "label": "Library image",
+  "wide": "/img/people/gp-appointment-wide.jpg",
+  "og": "/img/people/gp-appointment-og.jpg",
+  "creator": "",
+  "provider": "The Seax",
+  "license": "",
+  "licenseUrl": "",
+  "source": "",
+  "noCaption": true,
+  "addedBy": "owner, 26 Nov 2026 18:48: \"Use this pic for general GP appointment stories\" (GP appointments, access, surgeries and practices; AI-generated picture supplied by the owner, so no caption or credit under his 20 Nov rule; not deaths, inquests, court, police, misconduct or struck-off doctors)",
+  "generic": true
  }
 ]
