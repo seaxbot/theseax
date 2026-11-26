@@ -139,3 +139,4 @@
 {"at":"2026-11-26T13:27:15Z","stage":"done","handled":6,"stories":[],"events":0,"flags":2,"left":8,"error":"web fetch not permitted, no page could be read"}
 {"at":"2026-11-26T17:21:18Z","stage":"started"}
 {"at": "2026-11-26T17:22:01Z", "stage": "inbox", "unhandled": 10}
+{"at": "2026-11-26T17:27:22Z", "stage": "done", "handled": 3, "stories": [], "events": 0, "flags": 1, "left": 7, "error": "web fetch not permitted, no page could be read"}
