@@ -112,6 +112,10 @@
   "none": "no road named",
   "sig": "[[], \"Chelmsford\", null]"
  },
+ "chelmsford-local-plan-hearings-finish-inspectors-report-next": {
+  "none": "no road named",
+  "sig": "[[], \"Chelmsford\", null]"
+ },
  "chelmsford-mp-pauls-law-dysphagia-training-birch-care-home": {
   "none": "no road named",
   "sig": "[[], \"Birch\", null]"
@@ -243,6 +247,10 @@
   "sig": "[[], null, null]"
  },
  "essex-poundland-stores-keep-trading-administration-alixpartners": {
+  "none": "no road named",
+  "sig": "[[], null, null]"
+ },
+ "essex-things-to-do-weekend-2026-11-27": {
   "none": "no road named",
   "sig": "[[], null, null]"
  },
@@ -405,6 +413,14 @@
  "southend-airport-chief-christmas-officer-lapland-competition": {
   "none": "no road named",
   "sig": "[[], \"Southend\", null]"
+ },
+ "southend-airport-easyjet-corfu-route-may-2027": {
+  "none": "no road named",
+  "sig": "[[], \"Southend\", null]"
+ },
+ "southend-cliffs-pavilion-new-foyer-restaurant-cafe-bar-opens": {
+  "none": "no road named",
+  "sig": "[[], \"Westcliff\", null]"
  },
  "southend-clifftown-road-former-ravens-17-room-hmo-plan": {
   "after": 0,
