@@ -39,7 +39,8 @@ UA = "TheSeaxPhotoDesk/1.0 (+https://theseax.com/about/; info@theseax.com)"
 ALLOWED = ("essex.icb.nhs.uk", "nhs.uk", "essex.police.uk", "essex-fire.gov.uk", "gov.uk",
            "essex.ac.uk",   # University of Essex: owner approved, 17 Nov 2026 ("I expected the pics to be already uploaded with credit")
            "colchester.gov.uk",   # Colchester City Council: owner approved, 21 Nov 2026 (Leisure World story: "use pic on that site")
-           "img.youtube.com", "i.ytimg.com")   # stills of videos the owner asks to embed (owner, 18 Nov 2026: Harlow Council's GTA video)
+           "img.youtube.com", "i.ytimg.com",   # stills of videos the owner asks to embed (owner, 18 Nov 2026: Harlow Council's GTA video)
+           "mnd-assets.mynewsdesk.com")   # Mynewsdesk, the press-release platform the Met Police and other official press offices use: owner approved, 26 Nov 2026 ("use this link for pics")
 # Mailing services that host the pictures inside press-release and newsletter emails. Accepted only for requests
 # marked "via": "email" (owner's rule, 20 Nov 2026: "When you're getting stories from emails please do use their pics").
 MAIL_HOSTS = ("content.govdelivery.com", "govdelivery.com", "mcusercontent.com", "gallery.mailchimp.com",
