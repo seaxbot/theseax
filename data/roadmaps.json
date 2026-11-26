@@ -454,6 +454,17 @@
   "none": "no road named",
   "sig": "[[], \"Stansted\", null]"
  },
+ "stanway-dyers-heath-road-closures-fiveways-roundabout-december": {
+  "after": 5,
+  "h": 750,
+  "kicker": "On the map",
+  "made": "2026-11-26T07:42:54Z",
+  "road": "Peartree Road",
+  "sig": "[[\"Peartree Road\", \"London Road\", \"Dyers Road\", \"Heath Road\"], \"Colchester\", null]",
+  "src": "/img/maps/stanway-dyers-heath-road-closures-fiveways-roundabout-december.svg",
+  "town": "Colchester",
+  "w": 1200
+ },
  "tendring-55-recycling-banks-removed-kerbside-glass": {
   "none": "no road named",
   "sig": "[[], \"Clacton-on-Sea\", null]"
@@ -475,6 +486,10 @@
   "sig": "[[], \"Thurrock\", null]"
  },
  "thurrock-budget-savings-scrutiny-24-november-preview": {
+  "none": "no road named",
+  "sig": "[[], \"Thurrock\", null]"
+ },
+ "thurrock-council-minister-seventh-commissioners-report-assurance-plan": {
   "none": "no road named",
   "sig": "[[], \"Thurrock\", null]"
  },
@@ -512,6 +527,10 @@
   "src": "/img/maps/wickford-derailment-repairs-cost-network-rail-3-65m.svg",
   "town": "Wickford",
   "w": 1200
+ },
+ "witham-broomfield-hospital-digigo-bus-trial-30-november": {
+  "none": "no road named",
+  "sig": "[[], \"Broomfield\", null]"
  },
  "wivenhoe-cadent-gas-pipe-drop-in-26-november": {
   "after": 0,
