@@ -3092,11 +3092,10 @@
    "privacy": "",
    "kind": "county",
    "match": [],
-   "status": "on",
+   "status": "off",
    "perWeek": 1,
    "joined": "2026-11-21",
-   "note": "Group by Essex Live (never post, owner rule)",
-   "on": false
+   "note": "Group by Essex Live (never post, owner rule)"
   },
   {
    "id": "177591302637897",
