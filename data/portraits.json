@@ -868,6 +868,22 @@
   "addedBy": "owner, 12 Nov 2026 (all RSPCA stories)"
  },
  {
+  "ids": [
+   "harlow-g4s-cash-depot-workers-strike-vote-christmas",
+   "harlow-g4s-cash-gmb-pay-ballot"
+  ],
+  "name": "GMB Union",
+  "label": "Logo",
+  "wide": "/img/people/gmb-wide.jpg",
+  "og": "/img/people/gmb-og.jpg",
+  "creator": "GMB",
+  "provider": "Wikimedia Commons",
+  "license": "",
+  "licenseUrl": "",
+  "source": "https://commons.wikimedia.org/wiki/File:GMB_trade_union_logo.jpg",
+  "addedBy": "owner, 26 Nov 2026 14:55: GMB Union logo (Wikimedia Commons, File:GMB trade union logo.jpg) for the Harlow G4S cash depot GMB stories"
+ },
+ {
   "match": "^(?!.*\\b([Cc]rash|[Cc]ollision|[Dd]ied|[Dd]ies|[Dd]eath|[Kk]illed|[Ff]atal|[Ss]tabb\\w*|[Ss]hot)\\b).*(\\b[Aa]ir [Aa]mbulance\\b|\\bEHAAT\\b)",
   "name": "Essex & Herts Air Ambulance",
   "label": "Photo",
