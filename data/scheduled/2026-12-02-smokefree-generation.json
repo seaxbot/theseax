@@ -1,0 +1,133 @@
+{
+ "publishAt": "2026-12-02T06:05:00Z",
+ "note": "Owner's story (26 Nov 2026, 22:20: \"go on then with this pic no credit needed... do good research and triple check as normal\"), from the Let's Be Clear release of 26 Nov with The Seax's own Essex analysis of ONS smoking figures. Goes live at 06:05 on Wed 2 Dec, 30 days before the law starts. Picture is the owner's own, no caption or credit. The scheduled task recounts with data/scheduled/2026-12-02-smokefree-recount.py and re-stamps the triple check with verifyNotes because a stamp lasts 6 hours. Do not change the wording.",
+ "verifyNotes": {
+  "figures": "Recounted with code (data/scheduled/2026-12-02-smokefree-recount.py) from the raw ONS Explore Local Statistics file saved as data/sources/ons-cigarette-smokers-2021-25-essex.csv (cigarette smokers 18+, 2021-2025 five-year average): 14 Essex council areas; England 10.9%; five above England (Basildon 13.4, Thurrock 13.4, Tendring 13.3, Harlow 13.0, Uttlesford 11.9); lowest Rochford 4.8, then Maldon 7.1, Brentwood 7.3; Harlow 95% interval 8 to 17.9; chart labels and alt text match every area. Other figures checked against their sources: 9.5% in 2025 (GOV.UK smoking profile commentary, October 2026); £200 fine cut to £100 within 14 days (CTSI and ASH letter to retailers, 11 Aug 2026); fines from 29 October (GOV.UK/Welsh Government FPN guidance); 14,280 quitters since 2022 (Essex County Council notice via Burnham-on-Crouch Town Council, March 2026); 8.9% and more than 6,500 deaths a year (Let's Be Clear release, 26 Nov 2026); 12 weeks support (NHS directory for Everyone Health Southend; Thurrock Council).",
+  "independent": "Second pull of every ONS figure by a different method: 15 separate per-area queries to the ONS API by area code (E06000033, E06000034, E07000066 to E07000077, E92000001) instead of the regional list, all values and intervals identical; area names written as ONS writes them (Southend-on-Sea in the chart, Epping Forest, Castle Point). Law facts matched to primary pages: legislation.gov.uk section 1 (offence to sell to a person born on or after 1 January 2009, covers tobacco, herbal smoking products and cigarette papers), GOV.UK news (Royal Assent 29 April 2026), NHS page (does not apply to vapes; trading standards can fine), Welsh Government guidance (proxy buying offence for 18+, age-of-sale notices), WHO/GOV.UK list of products (shisha, heated tobacco, cigars), Lewis Silkin (people born 1 Jan 2009 become the first adults who can never legally buy a cigarette). Thurrock membership from Thurrock Council's own news page (2 Feb 2026). 1 January 2027 is a Friday, 2 December 2026 a Wednesday (checked with code).",
+  "readback": "Read as a reader on its publication day, 2 Dec: first paragraph says what changes, when and who it affects before any figure; '17 or younger now' is exact on 2 Dec for anyone born on or after 1 Jan 2009; headline says 'never be legally sold', matching the law (selling is the offence, not buying); district figures are presented as five-year survey averages with the wide-margin caveat; 'above the England average' refers to the point estimates; release figures are attributed to Let's Be Clear; quote is from the release and attributed; no fact repeats across headline, summary and points; no em dashes; summary 22 words, no sentence over 18 words; headline 64 characters."
+ },
+ "items": [
+  {
+   "section": "stories",
+   "id": "essex-smokefree-generation-born-2009-tobacco-ban-30-days",
+   "tag": "Health",
+   "icon": "health",
+   "areas": [
+    "all"
+   ],
+   "place": "Essex",
+   "weight": 6,
+   "original": "data",
+   "headline": "Essex teens born from 2009 will never be legally sold cigarettes",
+   "summary": "A new law starts on 1 January. Anyone born in 2009 or later can never be sold tobacco, even as an adult.",
+   "body": [
+    "In 30 days, the rules on selling tobacco change for good. From Friday 1 January, no shop in Essex will be allowed to sell tobacco to anyone born on or after 1 January 2009. That means everyone in the county who is 17 or younger now can never legally be sold a cigarette, however old they get.",
+    "The law creates what ministers call a smoke-free generation. Each year the age of sale effectively rises by one year, so tobacco is phased out a generation at a time. Those born on New Year's Day 2009 turn 18 on the day the law starts, becoming the first adults in Britain who can never legally buy cigarettes.",
+    "## What the new law says",
+    "The change comes from the Tobacco and Vapes Act 2026, which became law on 29 April. It covers cigarettes, rolling tobacco, cigars, shisha and heated tobacco, as well as herbal smoking products and cigarette papers. It does not cover vapes, which stay on sale to over-18s.",
+    "It will also be an offence for anyone aged 18 or over to buy tobacco for someone born in 2009 or later. Shops must put up an age-of-sale notice at every till where tobacco is sold.",
+    "The cut-off date never moves. Someone born in 2009 will still be refused at 40.",
+    "## What it means for Essex shops",
+    "Trading standards teams enforce the law: Essex County Council's across most of the county, and Southend City Council's and Thurrock Council's in their own areas. Since 29 October, officers have been able to hand out on-the-spot fines rather than going straight to court. For most offences the fine is £200, cut to £100 if paid within 14 days.",
+    "## How many people in Essex smoke",
+    "Smoking is already falling. Government figures published in October show 9.5% of adults in England smoked in 2025, the first time the figure has dropped below 10%. [As The Seax reported](/story/o-essex-smoking-record-low/) at the time, smoking in the Essex County Council area also fell to its lowest level on record.",
+    "The picture still varies a lot across Essex. The Office for National Statistics publishes local rates as five-year averages, because survey samples in each district are small. Analysis of those figures by The Seax shows that for 2021 to 2025, five Essex council areas were above the England average of 10.9%.",
+    "Basildon and Thurrock had the highest rates, both 13.4%, followed by Tendring on 13.3%, Harlow on 13% and Uttlesford on 11.9%. Rochford had the lowest rate in Essex, at 4.8%, followed by Maldon on 7.1% and Brentwood on 7.3%.",
+    "The figures come with wide margins. In Harlow, for example, the true rate could lie anywhere between 8% and 17.9%.",
+    "## Who is behind the campaign",
+    "Let's Be Clear, the East of England's tobacco control programme, is marking the 30 days to go. It brings together councils across the region, and Thurrock Council announced in February that it had joined. The programme says 8.9% of adults in the East of England still smoke, and more than 6,500 people in the region die from smoking every year.",
+    "Its programme lead, Hannah Clougherty, said the government, councils, shops and enforcement teams must make sure the law is understood and enforced from day one. \"This isn't about waiting for another generation to become addicted and then trying to help them quit,\" she said. \"It's about preventing the next generation from becoming addicted in the first place.\"",
+    "## Help to stop smoking",
+    "Anyone born before 2009 can still buy tobacco, and free help to quit is on offer across Essex. The Essex Wellbeing Service, which covers the county outside Southend and Thurrock, has helped 14,280 people stop smoking since 2022, according to Essex County Council. Southend and Thurrock run their own free services, with up to 12 weeks of support and free quit aids such as nicotine replacement products or a vape kit."
+   ],
+   "charts": [
+    {
+     "after": 12,
+     "src": "/img/people/essex-smoking-rates-2021-25-chart.jpg",
+     "w": 1200,
+     "h": 700,
+     "alt": "Bar chart of adult smoking rates by Essex council area, 2021 to 2025 average, against the England average of 10.9%: Basildon 13.4%, Thurrock 13.4%, Tendring 13.3%, Harlow 13.0%, Uttlesford 11.9%, Southend-on-Sea 10.3%, Braintree 10.2%, Castle Point 9.5%, Epping Forest 9.4%, Colchester 9.2%, Chelmsford 9.0%, Brentwood 7.3%, Maldon 7.1%, Rochford 4.8%",
+     "caption": "Adults who smoke cigarettes by Essex council area, 2021 to 2025 average. Source: Office for National Statistics. Graphic: The Seax"
+    }
+   ],
+   "points": [
+    "Spot a shop breaking the rules? Report it to trading standards through Citizens Advice",
+    "Southend: Everyone Health Southend Stop Smoking Service",
+    "Thurrock: Healthy Lifestyle Service, 0800 292 2299"
+   ],
+   "source": "Let's Be Clear",
+   "url": "https://www.lets-be-clear.com/",
+   "also": [
+    {
+     "name": "GOV.UK: Tobacco and Vapes Bill becomes law",
+     "url": "https://www.gov.uk/government/news/tobacco-and-vapes-bill-becomes-law"
+    },
+    {
+     "name": "Tobacco and Vapes Act 2026 (legislation.gov.uk)",
+     "url": "https://www.legislation.gov.uk/ukpga/2026/18/body"
+    },
+    {
+     "name": "NHS: The Tobacco and Vapes Act",
+     "url": "https://www.nhs.uk/better-health/quit-smoking/tobacco-vapes-act/"
+    },
+    {
+     "name": "GOV.UK: Selling tobacco, herbal smoking products and cigarette papers",
+     "url": "https://www.gov.uk/guidance/selling-tobacco-herbal-smoking-products-and-cigarette-papers"
+    },
+    {
+     "name": "CTSI and ASH letter to retailers on fixed penalty notices",
+     "url": "https://ash.org.uk/uploads/Retailer-letter-new-guidance-FINAL.pdf"
+    },
+    {
+     "name": "ONS Explore Local Statistics: cigarette smokers",
+     "url": "https://www.ons.gov.uk/explore-local-statistics/indicators/cigarette-smokers"
+    },
+    {
+     "name": "GOV.UK: Smoking profile statistical commentary, October 2026",
+     "url": "https://www.gov.uk/government/statistics/smoking-profile-october-2026-update/smoking-profile-statistical-commentary-october-2026"
+    },
+    {
+     "name": "Thurrock Council joins East of England partnership",
+     "url": "https://www.thurrock.gov.uk/news/thurrock-council-joins-east-of-england-partnership-to-support-tobacco-free-future"
+    },
+    {
+     "name": "Essex County Council: Stop smoking",
+     "url": "https://essex.gov.uk/adult-social-care-and-health/health-and-wellbeing-services/stop-smoking"
+    },
+    {
+     "name": "Burnham-on-Crouch Town Council: support to live healthier lives",
+     "url": "https://burnhamoncrouchtowncouncil.gov.uk/notices/support-available-to-help-residents-live-healthier-and-happier-lives/"
+    },
+    {
+     "name": "NHS: Everyone Health Southend Stop Smoking Service",
+     "url": "https://www.nhs.uk/services/service-directory/everyone-health-southend-stop-smoking-service/N11043355"
+    },
+    {
+     "name": "Thurrock Council: Help to stop smoking",
+     "url": "https://www.thurrock.gov.uk/help-to-stop-smoking"
+    }
+   ],
+   "time": ""
+  }
+ ],
+ "diary": [
+  {
+   "id": "d-smokefree-generation-starts-2027",
+   "date": "2027-01-01",
+   "time": "",
+   "what": "The smoke-free generation law starts: shops can no longer sell tobacco to anyone born on or after 1 January 2009",
+   "place": "Essex",
+   "areas": [
+    "all"
+   ],
+   "kind": "other",
+   "storyId": "essex-smokefree-generation-born-2009-tobacco-ban-30-days",
+   "url": "https://www.gov.uk/government/news/tobacco-and-vapes-bill-becomes-law",
+   "added": "2026-12-02T06:05:00Z",
+   "status": "open",
+   "previewId": "",
+   "followId": "",
+   "note": "Owner's story set up 26 Nov 2026. Preview on 31 Dec (reminder for shops and what changes at midnight); follow up in January with any Essex trading standards enforcement news."
+  }
+ ]
+}
