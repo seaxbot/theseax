@@ -2035,5 +2035,102 @@
   "noCaption": true,
   "addedBy": "owner, 26 Nov 2026 18:48: \"Use this pic for general GP appointment stories\" (GP appointments, access, surgeries and practices; AI-generated picture supplied by the owner, so no caption or credit under his 20 Nov rule; not deaths, inquests, court, police, misconduct or struck-off doctors)",
   "generic": true
+ },
+ {
+  "ids": [
+   "leigh-douglas-kramer-jailed-15kg-cocaine-car-stop"
+  ],
+  "name": "Douglas Kramer, custody photo released by Essex Police",
+  "label": "Picture",
+  "wide": "/img/people/leigh-douglas-kramer-cocaine-custody-wide.jpg",
+  "og": "/img/people/leigh-douglas-kramer-cocaine-custody-og.jpg",
+  "creator": "Essex Police",
+  "provider": "Essex Police",
+  "license": "",
+  "licenseUrl": "",
+  "source": "https://www.essex.police.uk/news/essex/news/news/2026/november/leigh-seizure-cocaine/",
+  "addedBy": "owner, 26 Nov 2026 18:51: \"put them all on the site with the relevant pics\" from the Essex Police news page (pictures from the force's own releases, credited)",
+  "alts": [
+   {
+    "wide": "/img/people/leigh-kramer-cocaine-car-boot-wide.jpg",
+    "og": "/img/people/leigh-kramer-cocaine-car-boot-og.jpg",
+    "name": "Cocaine blocks found in the car boot"
+   }
+  ]
+ },
+ {
+  "ids": [
+   "colchester-danny-archer-admits-10-thefts-bp-ipswich-road-ban"
+  ],
+  "name": "Magistrates' court building in Colchester (library image)",
+  "label": "Picture",
+  "wide": "/img/people/colchester-magistrates-court-essex-police-wide.jpg",
+  "og": "/img/people/colchester-magistrates-court-essex-police-og.jpg",
+  "creator": "Essex Police",
+  "provider": "Essex Police",
+  "license": "",
+  "licenseUrl": "",
+  "source": "https://www.essex.police.uk/news/essex/news/news/2026/november/colchester-thief-in-court/",
+  "addedBy": "owner, 26 Nov 2026 18:51: \"put them all on the site with the relevant pics\" from the Essex Police news page (pictures from the force's own releases, credited)"
+ },
+ {
+  "ids": [
+   "rayleigh-stefan-jaworski-jailed-bp-london-road-thefts"
+  ],
+  "name": "Police custody cell doors (library image)",
+  "label": "Picture",
+  "wide": "/img/people/essex-police-custody-cell-door-wide.jpg",
+  "og": "/img/people/essex-police-custody-cell-door-og.jpg",
+  "creator": "Essex Police",
+  "provider": "Essex Police",
+  "license": "",
+  "licenseUrl": "",
+  "source": "https://www.essex.police.uk/news/essex/news/news/2026/november/rayleigh-shoplifter-jailed/",
+  "addedBy": "owner, 26 Nov 2026 18:51: \"put them all on the site with the relevant pics\" from the Essex Police news page (pictures from the force's own releases, credited)"
+ },
+ {
+  "ids": [
+   "clacton-tayla-sabaroche-admits-14-shop-thefts-selection-boxes"
+  ],
+  "name": "Clacton police station (library image)",
+  "label": "Picture",
+  "wide": "/img/people/clacton-police-station-essex-police-wide.jpg",
+  "og": "/img/people/clacton-police-station-essex-police-og.jpg",
+  "creator": "Essex Police",
+  "provider": "Essex Police",
+  "license": "",
+  "licenseUrl": "",
+  "source": "https://www.essex.police.uk/news/essex/news/news/2026/november/admits-14-shop-thefts/",
+  "addedBy": "owner, 26 Nov 2026 18:51: \"put them all on the site with the relevant pics\" from the Essex Police news page (pictures from the force's own releases, credited)"
+ },
+ {
+  "ids": [
+   "essex-police-op-vigilant-128-arrests-16-days-of-activism"
+  ],
+  "name": "A #Reflect stand at an Essex domestic abuse conference",
+  "label": "Picture",
+  "wide": "/img/people/essex-police-16-days-reflect-stand-wide.jpg",
+  "og": "/img/people/essex-police-16-days-reflect-stand-og.jpg",
+  "creator": "Essex Police",
+  "provider": "Essex Police",
+  "license": "",
+  "licenseUrl": "",
+  "source": "https://www.essex.police.uk/news/essex/news/news/2026/november/16-days-of-activism-2026/",
+  "addedBy": "owner, 26 Nov 2026 18:51: \"put them all on the site with the relevant pics\" from the Essex Police news page (pictures from the force's own releases, credited)"
+ },
+ {
+  "ids": [
+   "brentwood-fly-tipping-crackdown-navestock-police-van-checks"
+  ],
+  "name": "Brentwood police and council officers at a fly-tip near Navestock",
+  "label": "Picture",
+  "wide": "/img/people/brentwood-fly-tipping-navestock-police-council-wide.jpg",
+  "og": "/img/people/brentwood-fly-tipping-navestock-police-council-og.jpg",
+  "creator": "Essex Police",
+  "provider": "Essex Police",
+  "license": "",
+  "licenseUrl": "",
+  "source": "https://www.essex.police.uk/news/essex/news/news/2026/november/brentwood-fly-tipping-crackdown/",
+  "addedBy": "owner, 26 Nov 2026 18:51: \"put them all on the site with the relevant pics\" from the Essex Police news page (pictures from the force's own releases, credited)"
  }
 ]
