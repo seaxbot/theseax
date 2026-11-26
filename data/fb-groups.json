@@ -3095,7 +3095,8 @@
    "status": "on",
    "perWeek": 1,
    "joined": "2026-11-21",
-   "note": "Auto-joined in the 21 Nov 2026 bulk join. Not yet vetted: before the first post, check the Group by banner (never Essex Live) and the rules; set off or caution if they ban links, news or Pages."
+   "note": "Group by Essex Live (never post, owner rule)",
+   "on": false
   },
   {
    "id": "177591302637897",
