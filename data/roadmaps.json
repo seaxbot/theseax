@@ -140,6 +140,10 @@
   "none": "no road named",
   "sig": "[[], \"Clacton\", null]"
  },
+ "clacton-tayla-sabaroche-admits-14-shop-thefts-selection-boxes": {
+  "none": "no road named",
+  "sig": "[[], \"Clacton-on-Sea\", null]"
+ },
  "colchester-b-and-m-st-johns-walk-former-wilko-opening": {
   "none": "St John's Walk not found in the map data",
   "sig": "[[\"St John's Walk\"], \"Colchester\", null]"
@@ -151,6 +155,17 @@
  "colchester-council-4-6m-budget-gap-2027-28-cabinet-2-december": {
   "none": "no road named",
   "sig": "[[], \"Colchester\", null]"
+ },
+ "colchester-danny-archer-admits-10-thefts-bp-ipswich-road-ban": {
+  "after": 2,
+  "h": 750,
+  "kicker": "Where it happened",
+  "made": "2026-11-26T18:58:03Z",
+  "road": "Tamarisk Way",
+  "sig": "[[\"Ipswich Road\", \"Tamarisk Way\", \"Bromley Road\", \"St Christopher Road\", \"St Andrew's Gardens\"], \"Colchester\", null]",
+  "src": "/img/maps/colchester-danny-archer-admits-10-thefts-bp-ipswich-road-ban.svg",
+  "town": "Colchester",
+  "w": 1200
  },
  "colchester-draft-local-plan-to-be-submitted-for-examination": {
   "none": "no road named",
@@ -255,6 +270,10 @@
   "sig": "[[], \"West Mersea\", null]"
  },
  "essex-police-county-lines-week-17-arrests-zombie-knife": {
+  "none": "no road named",
+  "sig": "[[], null, null]"
+ },
+ "essex-police-op-vigilant-128-arrests-16-days-of-activism": {
   "none": "no road named",
   "sig": "[[], null, null]"
  },
@@ -370,6 +389,10 @@
   "none": "no road named",
   "sig": "[[], null, null]"
  },
+ "leigh-douglas-kramer-jailed-15kg-cocaine-car-stop": {
+  "none": "no road called Bosworth Road near Leigh-on-Sea",
+  "sig": "[[\"Bosworth Road\"], \"Leigh-on-Sea\", null]"
+ },
  "leigh-on-sea-greggs-broadway-opens-14-jobs": {
   "none": "no road called Keep The Broadway near Leigh-on-Sea",
   "sig": "[[\"Leigh Broadway\", \"Sea's Broadway\", \"Keep The Broadway\"], \"Leigh-on-Sea\", null]"
@@ -401,6 +424,17 @@
  "mersea-peter-shilton-auction-5642-gambling-charity": {
   "none": "no road named",
   "sig": "[[], \"West Mersea\", null]"
+ },
+ "rayleigh-stefan-jaworski-jailed-bp-london-road-thefts": {
+  "after": 1,
+  "h": 750,
+  "kicker": "Where it happened",
+  "made": "2026-11-26T18:58:12Z",
+  "road": "London Road",
+  "sig": "[[\"London Road\"], \"Rayleigh\", null]",
+  "src": "/img/maps/rayleigh-stefan-jaworski-jailed-bp-london-road-thefts.svg",
+  "town": "Rayleigh",
+  "w": 1200
  },
  "rochford-garden-waste-fortnightly-winter-trial-23-november": {
   "none": "no road named",
