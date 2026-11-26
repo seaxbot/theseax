@@ -1874,5 +1874,58 @@
   "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0/",
   "source": "https://commons.wikimedia.org/wiki/File:London_Underground_2009_Stock_front.jpg",
   "addedBy": "owner, 26 Nov 2026 07:47: use a Tube train picture for the Tube strike story and any other Tube stories affecting Essex (strikes, delays etc). Owner sent a Trainspo photo; this is the matching Wikimedia Commons photo, which is free to use with credit. Not for crashes, deaths, injuries, police, fires or court cases."
+ },
+ {
+  "ids": [
+   "southend-lazydays-festival-2027-ella-eyre-kt-tunstall-pixie-lott"
+  ],
+  "name": "Ella Eyre, one of the acts joining Lazydays Festival 2027",
+  "label": "Picture",
+  "wide": "/img/people/lazydays-2027-wide.jpg",
+  "og": "/img/people/lazydays-2027-og.jpg",
+  "creator": "Lazydays Festival",
+  "provider": "Lazydays Festival",
+  "license": "",
+  "licenseUrl": "",
+  "source": "https://www.lazydaysfestival.com/",
+  "addedBy": "owner, 24 Nov 2026 (Lazydays 2027 line-up; festival press pictures supplied by WeCraft Events; Ella Eyre picture is the owner's choice for the headline picture; The Cribs removed 25 Nov at WeCraft's request)",
+  "more": [
+   {
+    "name": "Crowds at Lazydays Festival in Priory Park, Southend",
+    "label": "Picture",
+    "wide": "/img/people/lazydays-2027-aerial.jpg",
+    "creator": "Lazydays Festival"
+   },
+   {
+    "name": "KT Tunstall",
+    "label": "Picture",
+    "wide": "/img/people/lazydays-2027-kt-tunstall.jpg",
+    "creator": "Lazydays Festival"
+   },
+   {
+    "name": "Pixie Lott",
+    "label": "Picture",
+    "wide": "/img/people/lazydays-2027-pixie-lott.jpg",
+    "creator": "Lazydays Festival"
+   },
+   {
+    "name": "Sigala",
+    "label": "Picture",
+    "wide": "/img/people/lazydays-2027-sigala.jpg",
+    "creator": "Lazydays Festival"
+   },
+   {
+    "name": "Bash Croft",
+    "label": "Picture",
+    "wide": "/img/people/lazydays-2027-bash-croft.jpg",
+    "creator": "Lazydays Festival"
+   },
+   {
+    "name": "Fireworks over the main stage at Lazydays Festival",
+    "label": "Picture",
+    "wide": "/img/people/lazydays-2027-fireworks.jpg",
+    "creator": "Lazydays Festival"
+   }
+  ]
  }
 ]
