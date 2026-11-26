@@ -536,6 +536,10 @@
   "town": "Southend-on-Sea",
   "w": 1200
  },
+ "southend-united-frankie-banks-freedom-of-the-city": {
+  "none": "no road named",
+  "sig": "[[], \"Southend-on-Sea\", null]"
+ },
  "southend-victoria-southminster-lines-rail-buses-28-29-november": {
   "none": "no road named",
   "sig": "[[], \"Southminster\", null]"
