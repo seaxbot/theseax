@@ -77,6 +77,10 @@
   "none": "no road named",
   "sig": "[[], \"Southend\", null]"
  },
+ "c2c-gbr-anglia-2m-reliability-plan-december-works": {
+  "none": "no road named",
+  "sig": "[[], \"Southend-on-Sea\", null]"
+ },
  "castle-point-green-belt-commons-debate-preview": {
   "none": "no road named",
   "sig": "[[], \"Canvey Island\", null]"
@@ -237,6 +241,10 @@
  "essex-house-prices-september-2026-maldon-tendring": {
   "none": "no road named",
   "sig": "[[], \"Maldon\", null]"
+ },
+ "essex-nhs-32000-extra-gp-appointments-winter-2026": {
+  "none": "no road named",
+  "sig": "[[], null, null]"
  },
  "essex-oyster-farmers-eu-trade-uk-eu-deal-class-b": {
   "none": "no road named",
@@ -548,6 +556,17 @@
  "thurrock-budget-savings-scrutiny-24-november-preview": {
   "none": "no road named",
   "sig": "[[], \"Thurrock\", null]"
+ },
+ "thurrock-council-70-acres-open-space-linford-tilbury-corringham": {
+  "after": 0,
+  "h": 750,
+  "kicker": "On the map",
+  "made": "2026-11-26T15:46:28Z",
+  "road": "Silvertown Avenue",
+  "sig": "[[\"Silvertown Avenue\"], \"Corringham\", null]",
+  "src": "/img/maps/thurrock-council-70-acres-open-space-linford-tilbury-corringham.svg",
+  "town": "Corringham",
+  "w": 1200
  },
  "thurrock-council-minister-seventh-commissioners-report-assurance-plan": {
   "none": "no road named",
