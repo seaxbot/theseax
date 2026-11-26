@@ -4284,8 +4284,12 @@ function remembranceArt(s){ return `<svg class="emap wxart townphoto" width="100
 function isChristmasStory(s){ return !!s && !sportKindOf(s) && seasonKindOf(s) === "christmas"; }
 /* owner's library photos picked by story id (same as tools/build.py id_pick) */
 function idPick(s, list){ let h = 0; for(const c of String(s && s.id || "")) h = (h * 31 + c.charCodeAt(0)) >>> 0; return list[h % list.length]; }
-const XMAS_PHOTOS = [{f:"christmas", alt:"red Christmas baubles on a fir garland"}, {f:"christmas-2", alt:"a lit Christmas tree"}];
-function christmasArt(s){ const p = idPick(s, XMAS_PHOTOS); return `<svg class="emap wxart townphoto" width="100%" height="100%" role="img" aria-label="Library photo: ${p.alt}" style="background:#5e1418"><image href="/img/topics/${p.f}.jpg?v=1" x="0" y="0" width="100%" height="100%" preserveAspectRatio="xMidYMid slice"/></svg>`; }
+const XMAS_PHOTOS = [{f:"christmas", alt:"red Christmas baubles on a fir garland"}, {f:"christmas-2", alt:"a lit Christmas tree"}, {f:"christmas-3", alt:"a Christmas tree covered in warm white lights"}];
+/* Christmas stories directly about Chelmsford use the owner's photo of the lit tree in Chelmsford High Street (owner's rule,
+   26 Nov 2026). Chelmsford in the headline, or as the first place. Same rule as tools/build.py is_xmas_chelmsford */
+const XMAS_CHELMSFORD = {f:"christmas-chelmsford", alt:"the lit Christmas tree in Chelmsford High Street, with festive lights across the street"};
+function isXmasChelmsford(s){ const first = String(s && s.place || "").split(/[,;]/)[0].trim(); return /\bChelmsford\b/i.test(String(s && s.headline || "")) || /^chelmsford( city centre)?$/i.test(first); }
+function christmasArt(s){ const p = isXmasChelmsford(s) ? XMAS_CHELMSFORD : idPick(s, XMAS_PHOTOS); return `<svg class="emap wxart townphoto" width="100%" height="100%" role="img" aria-label="Library photo: ${p.alt}" style="background:#5e1418"><image href="/img/topics/${p.f}.jpg?v=1" x="0" y="0" width="100%" height="100%" preserveAspectRatio="xMidYMid slice"/></svg>`; }
 /* Fog stories use the owner's fog photo (owner's rule, Nov 2026) on the front page, the story page and the share card,
    ahead of weather artwork, road signs, stock, town and map art; sport, police and fire stories keep their own art.
    Same rule as tools/build.py is_fog */
