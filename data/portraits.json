@@ -1857,5 +1857,22 @@
   "licenseUrl": "",
   "source": "https://www.localgoveasteng.gov.uk/new-report-warns-skills-gap-could-threaten-east-of-englands-biggest-infrastructure-opportunity-in-a-generation/",
   "addedBy": "photo desk 25 Nov 2026 (owner's rule: official bodies' own pictures, credited)"
+ },
+ {
+  "generic": true,
+  "ids": [
+   "essex-tube-commuters-24-hour-strike-26-november-elizabeth-line"
+  ],
+  "match": "\\bTube\\b|\\bLondon Underground\\b|\\bUnderground (drivers?|strikes?|lines?|stations?|services?|trains?|walkouts?)\\b",
+  "notMatch": "\\b(crash\\w*|collision\\w*|derail\\w*|killed|died|dies|death|dead|body|fatal\\w*|injur\\w*|hurt|stabb?\\w*|assault\\w*|attack\\w*|arrest\\w*|charged|jailed|sentenced|court|police|fire|blaze|smoke|bomb\\w*|terror\\w*|evacuat\\w*|fell|fall)\\b",
+  "name": "A Tube train arriving at a London Underground platform",
+  "wide": "/img/people/tube-train-wide.jpg",
+  "og": "/img/people/tube-train-og.jpg",
+  "creator": "Tom Page",
+  "provider": "Wikimedia Commons",
+  "license": "CC BY-SA 2.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0/",
+  "source": "https://commons.wikimedia.org/wiki/File:London_Underground_2009_Stock_front.jpg",
+  "addedBy": "owner, 26 Nov 2026 07:47: use a Tube train picture for the Tube strike story and any other Tube stories affecting Essex (strikes, delays etc). Owner sent a Trainspo photo; this is the matching Wikimedia Commons photo, which is free to use with credit. Not for crashes, deaths, injuries, police, fires or court cases."
  }
 ]
