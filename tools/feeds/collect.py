@@ -319,6 +319,11 @@ def parse_feed(text, feed):
     if feed.get("page") == "links":
         return parse_links(text, feed)
     t = text.lstrip(); out = []
+    if feed.get("page") == "wp":   # a WordPress site with its feed switched off: its own posts list (/wp-json/wp/v2/posts)
+        for i in json.loads(t):
+            out.append({"title": clean((i.get("title") or {}).get("rendered")), "url": str(i.get("link") or ""),
+                        "time": when(str(i.get("date_gmt") or "") + "Z"), "body": clean((i.get("content") or {}).get("rendered"))})
+        return [r for r in out if r["title"] and r["url"]]
     if feed.get("json"):
         for i in (json.loads(t).get("items") or []):   # Environment Agency flood warnings
             out.append({"title": f"{i.get('severity', 'Flood alert')}: {i.get('description', '')}", "url": str(i.get("@id") or ""),

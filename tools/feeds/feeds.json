@@ -3647,18 +3647,6 @@
 "match": "essexhighways\\.org/news/."
 },
 {
-"name": "Police, Fire and Crime Commissioner for Essex",
-"url": "https://www.essex.pfcc.police.uk/news/",
-"group": "emergency",
-"area": "all",
-"kind": "O",
-"filter": "none",
-"id": 383,
-"added": "2026-11-27",
-"page": "links",
-"match": "/news-events/.|/news/."
-},
-{
 "name": "IOPC (police conduct investigations)",
 "url": "https://www.policeconduct.gov.uk/news",
 "group": "emergency",
@@ -3681,18 +3669,6 @@
 "added": "2026-11-27",
 "page": "links",
 "match": "/news-media/news/."
-},
-{
-"name": "Mid and South Essex NHS Foundation Trust",
-"url": "https://www.mse.nhs.uk/latest-news",
-"group": "health",
-"area": "all",
-"kind": "O",
-"filter": "none",
-"id": 386,
-"added": "2026-11-27",
-"page": "links",
-"match": "mse\\.nhs\\.uk/(latest-)?news/."
 },
 {
 "name": "Care Quality Commission",
@@ -3743,18 +3719,6 @@
 "match": "essexwt\\.org\\.uk/news/."
 },
 {
-"name": "Essex & Suffolk Water",
-"url": "https://www.eswater.co.uk/news",
-"group": "environment",
-"area": "all",
-"kind": "O",
-"filter": "none",
-"id": 391,
-"added": "2026-11-27",
-"page": "links",
-"match": "eswater\\.co\\.uk/news/."
-},
-{
 "name": "Northumbrian Water Group releases (Essex & Suffolk Water)",
 "url": "https://www.nwg.co.uk/news-and-media/news-releases/",
 "group": "environment",
@@ -3788,7 +3752,7 @@
 "id": 394,
 "added": "2026-11-27",
 "page": "links",
-"match": "/news-media/news/."
+"match": "/news/[a-z]+-20\\d\\d/."
 },
 {
 "name": "Office for Nuclear Regulation (Bradwell)",
@@ -3813,30 +3777,6 @@
 "added": "2026-11-27",
 "page": "links",
 "match": "/information-centre/news/20\\d\\d/."
-},
-{
-"name": "Eastlight Community Homes",
-"url": "https://www.eastlighthomes.co.uk/news",
-"group": "planning",
-"area": "braintree",
-"kind": "O",
-"filter": "none",
-"id": 397,
-"added": "2026-11-27",
-"page": "links",
-"match": "eastlighthomes\\.co\\.uk/news/."
-},
-{
-"name": "Estuary Housing Association",
-"url": "https://www.estuary.co.uk/news",
-"group": "planning",
-"area": "southend",
-"kind": "O",
-"filter": "none",
-"id": 398,
-"added": "2026-11-27",
-"page": "links",
-"match": "estuary\\.co\\.uk/news/."
 },
 {
 "name": "Anglia Ruskin University",
@@ -3969,5 +3909,63 @@
 "added": "2026-11-27",
 "page": "links",
 "match": "lbc\\.co\\.uk/article/."
+},
+{
+"name": "Police, Fire and Crime Commissioner for Essex",
+"url": "https://www.essex.pfcc.police.uk/wp-json/wp/v2/posts?per_page=20",
+"group": "emergency",
+"area": "all",
+"kind": "O",
+"filter": "none",
+"id": 410,
+"added": "2026-11-27",
+"page": "wp"
+},
+{
+"name": "Solicitors Disciplinary Tribunal judgments",
+"url": "https://www.solicitorstribunal.org.uk/judgments/",
+"group": "courts",
+"area": "all",
+"kind": "O",
+"filter": "essex",
+"id": 411,
+"added": "2026-11-27",
+"page": "links",
+"match": "/case/\\d+"
+},
+{
+"name": "Lampard Inquiry (Essex mental health deaths)",
+"url": "https://lampardinquiry.org.uk/",
+"group": "courts",
+"area": "all",
+"kind": "O",
+"filter": "none",
+"id": 412,
+"added": "2026-11-27",
+"page": "links"
+},
+{
+"name": "Chelmsford College",
+"url": "https://www.chelmsford.ac.uk/",
+"group": "community",
+"area": "chelmsford",
+"kind": "O",
+"filter": "none",
+"id": 413,
+"added": "2026-11-27",
+"page": "links",
+"match": "view-news\\.asp"
+},
+{
+"name": "Essex Senior League",
+"url": "https://www.essexseniorleague.co.uk/",
+"group": "sport",
+"area": "all",
+"kind": "O",
+"filter": "none",
+"id": 414,
+"added": "2026-11-27",
+"page": "links",
+"match": "/articles/."
 }
 ]
