@@ -3290,16 +3290,6 @@
 "added": "2026-11-27"
 },
 {
-"name": "Thaxted Parish Council",
-"url": "https://www.thaxted-pc.gov.uk/news/rss/",
-"group": "parish",
-"area": "all",
-"kind": "O",
-"filter": "none",
-"id": 349,
-"added": "2026-11-27"
-},
-{
 "name": "Heybridge Parish Council",
 "url": "https://heybridgeparishcouncil.gov.uk/feed/",
 "group": "parish",
@@ -3912,7 +3902,7 @@
 },
 {
 "name": "Police, Fire and Crime Commissioner for Essex",
-"url": "https://www.essex.pfcc.police.uk/wp-json/wp/v2/posts?per_page=20",
+"url": "https://essex.pfcc.police.uk/wp-json/wp/v2/posts?per_page=20",
 "group": "emergency",
 "area": "all",
 "kind": "O",

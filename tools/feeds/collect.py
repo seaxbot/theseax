@@ -496,18 +496,34 @@ def main():
     json.dump(nn_doc, open(os.path.join(out, "newsnow.json"), "w", encoding="utf-8"), ensure_ascii=False, indent=1)
 
     # feeds, one host at a time, several hosts at once
+    # Grouped by the server each site sits on, not just its name (27 Nov 2026): about 30 small council, charity and
+    # club sites share one hosting firm, which answered HTTP 415 to all of them when they were read side by side.
+    import socket
+    def server(host):
+        try:
+            return ".".join(socket.gethostbyname(host.split(":")[0]).split(".")[:3])
+        except Exception:
+            return host
+    hosts = sorted({urlparse(f["url"]).netloc for f in feeds})
+    with ThreadPoolExecutor(max_workers=32) as ex:
+        where = dict(zip(hosts, ex.map(server, hosts)))
     by_host = {}
     for f in feeds:
-        by_host.setdefault(urlparse(f["url"]).netloc, []).append(f)
+        by_host.setdefault(where[urlparse(f["url"]).netloc], []).append(f)
     def run_host(lst):
         res = []
         for f in lst:
-            res.append((f, *read_feed(f, state))); time.sleep(0.3)
+            res.append((f, *read_feed(f, state))); time.sleep(0.5 if len(lst) > 3 else 0.3)
         return res
     results = []
     with ThreadPoolExecutor(max_workers=20) as ex:
         for res in ex.map(run_host, by_host.values()):
             results += res
+    again = [i for i, r in enumerate(results) if r[1] is None and re.search(r"HTTP (415|429|503)|timed out", r[2] or "")]
+    if again:   # a second, slower try for sites that were busy or rate-limiting
+        time.sleep(8)
+        for i in again[:60]:
+            f = results[i][0]; results[i] = (f, *read_feed(f, state)); time.sleep(1.5)
     cache = state.setdefault("cache", {}); failed, ok, unchanged = [], 0, 0
     used = edition_urls(root); items = {}
     for f, got, e, cached in results:
