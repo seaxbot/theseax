@@ -3,15 +3,15 @@
   "ids": [
    "essex-food-hygiene-ratings-takeaways-november-2026"
   ],
-  "name": "Chart: share of takeaways rated 5 for food hygiene by Essex council area",
-  "label": "Chart",
-  "wide": "/img/people/essex-food-hygiene-takeaways-chart-wide.jpg",
-  "og": "/img/people/essex-food-hygiene-takeaways-chart-og.jpg",
-  "creator": "The Seax",
-  "provider": "The Seax",
+  "name": "A chef in gloves cutting raw chicken on a red board in a clean commercial kitchen",
+  "label": "Picture",
+  "wide": "/img/people/essex-food-hygiene-kitchen-wide.jpg",
+  "og": "/img/people/essex-food-hygiene-kitchen-og.jpg",
+  "creator": "",
+  "provider": "",
   "source": "",
-  "plainCaption": "Share of takeaways rated 5, by council area. Source: The Seax analysis of Food Standards Agency ratings, 27 November 2026",
-  "addedBy": "27 Nov 2026: weekend Seax Analysis (owner chose the food hygiene topic)"
+  "addedBy": "27 Nov 2026: weekend Seax Analysis (owner chose the food hygiene topic); 13:26 owner: AI-generated kitchen picture as the main picture (no caption, owner's rule)",
+  "noCaption": true
  },
  {
   "ids": [
