@@ -822,6 +822,10 @@
   "none": "no road named",
   "sig": "[[], \"Brentwood\", null]"
  },
+ "wickford-cameron-weedon-jailed-30m-cocaine-recovery-dover-strait": {
+  "none": "no road named",
+  "sig": "[[], \"Wickford\", null]"
+ },
  "wickford-derailment-repairs-cost-network-rail-3-65m": {
   "after": 1,
   "h": 750,
