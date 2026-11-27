@@ -43,7 +43,8 @@ the data is and why it matters, then the figures), the bold summary rule (max 25
 - Include "How we did this" and where readers can check or report things themselves.
 - Charts: follow CHART VARIETY in ops/newsroom.md 2k. Three charts in at least two different forms; when the data is by
   council area, one of them is the shaded Essex map (ESSEX_MAP in index.html holds the district outlines
-  and label centroids; draw it with matplotlib, one-hue scale, labelled areas, a legend, as in the hygiene map). House style, alt text listing the figures, captions with source and date.
+  and label centroids; draw it with matplotlib, one-hue scale, labelled areas, a legend, as in tools/datadesk/hygiene_charts_2026_11.py,
+  whose grid, map and dot-pair code can be reused; tools/datadesk/hygiene_recount_2026_11.py shows the recount). House style, alt text listing the figures, captions with source and date.
 - A look-up widget when readers would want to check their own area: reuse js/hygiene-lookup.js, js/price-lookup.js or
   js/crime-lookup.js if the shape fits; otherwise write a new one the same way and wire it into tools/build.py (widgets)
   and index.html (front page reader and the weekend box "checkerType").
