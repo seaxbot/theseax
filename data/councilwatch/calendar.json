@@ -1,27 +1,26 @@
 {
- "at": "2026-11-27T06:33:45.447644+00:00",
+ "at": "2026-11-27T16:42:27.734570+00:00",
  "meetings": [
   {
-   "council": "tendring",
-   "councilName": "Tendring District Council",
-   "area": "tendring",
-   "committee": "Resources and Services Overview and Scrutiny Committee",
-   "date": "2026-12-01",
-   "time": "7.30 pm",
-   "url": "https://tdcdemocracy.tendringdc.gov.uk/ieListDocuments.aspx?CId=326&MId=2877",
+   "council": "basildon",
+   "councilName": "Basildon Council",
+   "area": "south",
+   "committee": "Licensing Act 2003 Sub-Committee",
+   "date": "2026-12-02",
+   "time": "6.30 p.m.",
+   "url": "https://www.basildonmeetings.info/ieListDocuments.aspx?CId=478&MId=9619",
    "items": [
-    "Report of the Corporate Director (Finance & IT) - A.1 - Overview of The Financial Outturn 2025/26 and Other Key Financial Matters",
-    "Report of the Assistant Director (Corporate Policy & Support) - A.2 - Review of the Work Programme"
+    "Licensing Act 2003 Premises licence application - Woodvalley Vineyard Outwood Common Road Billericay"
    ]
   },
   {
-   "council": "tendring",
-   "councilName": "Tendring District Council",
-   "area": "tendring",
-   "committee": "Premises / Personal Licences Sub-Committee",
-   "date": "2026-12-07",
-   "time": "10.30 am",
-   "url": "https://tdcdemocracy.tendringdc.gov.uk/ieListDocuments.aspx?CId=329&MId=2951",
+   "council": "basildon",
+   "councilName": "Basildon Council",
+   "area": "south",
+   "committee": "General Purposes",
+   "date": "2026-12-03",
+   "time": "7.00 p.m.",
+   "url": "https://www.basildonmeetings.info/ieListDocuments.aspx?CId=995&MId=9526",
    "items": []
   },
   {
@@ -42,16 +41,6 @@
    "date": "2026-12-08",
    "time": "7.00 p.m.",
    "url": "https://www.basildonmeetings.info/ieListDocuments.aspx?CId=709&MId=9589",
-   "items": []
-  },
-  {
-   "council": "tendring",
-   "councilName": "Tendring District Council",
-   "area": "tendring",
-   "committee": "Community Leadership Overview and Scrutiny Committee",
-   "date": "2026-12-08",
-   "time": "7.30 pm",
-   "url": "https://tdcdemocracy.tendringdc.gov.uk/ieListDocuments.aspx?CId=325&MId=2846",
    "items": []
   },
   {
@@ -95,13 +84,13 @@
    "items": []
   },
   {
-   "council": "tendring",
-   "councilName": "Tendring District Council",
-   "area": "tendring",
-   "committee": "Planning Committee",
+   "council": "basildon",
+   "councilName": "Basildon Council",
+   "area": "south",
+   "committee": "Council",
    "date": "2026-12-15",
-   "time": "5.00 pm",
-   "url": "https://tdcdemocracy.tendringdc.gov.uk/ieListDocuments.aspx?CId=162&MId=2864",
+   "time": "7.30 p.m.",
+   "url": "https://www.basildonmeetings.info/ieListDocuments.aspx?CId=216&MId=9632",
    "items": []
   },
   {
@@ -142,26 +131,6 @@
    "date": "2026-12-17",
    "time": "7.00 p.m.",
    "url": "https://www.basildonmeetings.info/ieListDocuments.aspx?CId=297&MId=9506",
-   "items": []
-  },
-  {
-   "council": "tendring",
-   "councilName": "Tendring District Council",
-   "area": "tendring",
-   "committee": "Cabinet",
-   "date": "2026-12-21",
-   "time": "10.30 am",
-   "url": "https://tdcdemocracy.tendringdc.gov.uk/ieListDocuments.aspx?CId=134&MId=2953",
-   "items": []
-  },
-  {
-   "council": "tendring",
-   "councilName": "Tendring District Council",
-   "area": "tendring",
-   "committee": "Premises / Personal Licences Sub-Committee",
-   "date": "2026-12-21",
-   "time": "2.00 pm",
-   "url": "https://tdcdemocracy.tendringdc.gov.uk/ieListDocuments.aspx?CId=329&MId=2952",
    "items": []
   },
   {
