@@ -829,8 +829,8 @@
    "s": "basildon-town-centre-safety-wardens-underpasses-committee-backs",
    "t": 1795803025711,
    "h": "Basildon town centre safety wardens and underpass clean-up get go-ahead",
-   "result": "pending",
-   "note": "17:41 run. Replacement for the Laindon and Basildon removal. Submitted to group admins for approval (Your content > Pending)."
+   "result": "live",
+   "note": "17:41 run. Replacement for the Laindon and Basildon removal. Submitted to group admins for approval (Your content > Pending). Approved by an admin (notification, checked 27 Nov 19:43)."
   },
   {
    "g": "brentwood-community-8458",
@@ -839,6 +839,14 @@
    "h": "KFC applies to serve hot food until 3am on Brentwood High Street",
    "result": "live",
    "note": "17:41 run. Live at once (Your content > Published). Preview used the site's KFC file photo, captioned as not the Brentwood branch."
+  },
+  {
+   "g": "brentwood-locals-uk-5482",
+   "s": "shenfield-priests-lane-97-homes-appeal-costs-brentwood-council",
+   "t": 1795808673874,
+   "h": "Brentwood Council must pay Cala's costs after losing Priests Lane appeal",
+   "result": "live",
+   "note": "19:41 run. Live at once (Your content > Published). Preview used the site's Property & Planning card."
   }
  ],
  "joins": [
