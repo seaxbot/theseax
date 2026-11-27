@@ -604,9 +604,9 @@
     "dovercourt",
     "parkeston"
    ],
-   "status": "on",
+   "status": "off",
    "perWeek": 3,
-   "note": "Rules: local relevance, no spamming. Re-read 27 Nov 2026: anything local can be posted; no spam, local relevance."
+   "note": "Rules: local relevance, no spamming. Re-read 27 Nov 2026: anything local can be posted; no spam, local relevance. OFF 27 Nov 2026: first Seax post (GP push) declined within seconds, no feedback."
   },
   {
    "id": "348813442508581",
