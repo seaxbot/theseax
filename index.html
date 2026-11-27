@@ -820,10 +820,12 @@ h1,h2,h3,h4,.story h1,.lead h2,.card h3,.drow h4{letter-spacing:-.022em}
 .wk-more p{margin:0 0 12px;font-size:15px;line-height:1.45;color:var(--ink2)}
 .wk-more .wk-link{margin-top:auto;font-weight:800;font-size:14.5px;color:var(--navy)}
 .wk-more a:hover h3{text-decoration:underline;text-underline-offset:3px}
-.wk-below{margin-top:22px;position:relative}
+/* The checker sits inside .wk-three (27 Nov 2026): full width under both columns on desktop, straight under the big read on phones so readers can find it */
+.wk-three > .wk-feat{order:1}.wk-three > .wk-more{order:2}.wk-three > .wk-below{order:3;grid-column:1/-1}
+.wk-below{position:relative}
 .wk-below .seax-lookup,.wk-below .seax-hlookup,.wk-below .seax-plookup{margin:0;background:#fff;color:var(--ink);border-radius:10px}
 .wk-below > div{max-height:470px;overflow:auto}
-@media (max-width:960px){.wk-three{grid-template-columns:1fr}.wk-more{grid-template-rows:none;grid-template-columns:1fr 1fr}}
+@media (max-width:960px){.wk-three > .wk-below{order:2}.wk-three > .wk-more{order:3}.wk-below > div{max-height:none;overflow:visible}.wk-three{grid-template-columns:1fr}.wk-more{grid-template-rows:none;grid-template-columns:1fr 1fr}}
 @media (max-width:640px){.wk-more{grid-template-columns:1fr}.wk-more h3{font-size:19px}}
 @media (max-width:960px){.wk-grid{grid-template-columns:1fr}.wk-side .seax-lookup .sl-out{max-height:none}}
 @media (max-width:640px){.wk-band{padding:18px 14px 20px;border-radius:10px}.wk-head h2{font-size:32px}.wk-text{padding:16px 16px 18px}.wk-tiles{grid-template-columns:1fr 1fr}.wk-tile:last-child{grid-column:1/-1}.wk-tile b{font-size:24px}.wk-go{width:100%;justify-content:center}}
@@ -5266,8 +5268,8 @@ function renderWeekend(){
           <h3>${esc(headline)}</h3>${f.dek ? `<p>${esc(f.dek)}</p>` : ""}
           ${tiles ? `<div class="wk-tiles">${tiles}</div>` : ""}
           <span class="wk-go">${esc(f.cta || "Read the story")} →</span></div>
-      </a>${more ? `<div class="wk-more">${more}</div>` : ""}
-    </div>${checker}</div></div>`;
+      </a>${checker}${more ? `<div class="wk-more">${more}</div>` : ""}
+    </div></div></div>`;
   if(checker){ if(f.checkerType === "hygiene"){ if(typeof seaxNeedHygieneLookup === "function") seaxNeedHygieneLookup(); } else if(f.checkerType === "price"){ if(typeof seaxNeedPriceLookup === "function") seaxNeedPriceLookup(); } else if(typeof seaxNeedLookup === "function") seaxNeedLookup(); }
 }
 fetch("/data/weekend.json", { cache: "no-store" }).then(r => r.ok ? r.json() : null).then(w => { WK = w; if(typeof ED !== "undefined" && ED && weekendId() && window.SEAX_ED_READY !== false) seaxRenderSoon(); else renderWeekend(); }).catch(() => {});
