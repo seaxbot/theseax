@@ -1,5 +1,12 @@
 [
  {
+  "file": "/audio/bulletin-2026-11-27-pm.mp3",
+  "title": "Evening update: Friday 27 November 2026",
+  "madeAt": "2026-11-27T17:03:31Z",
+  "duration": 146,
+  "bytes": 4660289
+ },
+ {
   "file": "/audio/bulletin-2026-11-27-mid.mp3",
   "title": "Afternoon update: Friday 27 November 2026",
   "madeAt": "2026-11-27T12:29:58Z",
@@ -40,13 +47,6 @@
   "madeAt": "2026-11-26T07:03:08Z",
   "duration": 142,
   "bytes": 4559978
- },
- {
-  "file": "/audio/bulletin-2026-11-25-night.mp3",
-  "title": "Overnight bulletin: Wednesday 25 November 2026",
-  "madeAt": "2026-11-25T23:02:22Z",
-  "duration": 141,
-  "bytes": 4498956
  },
  {
   "file": "/audio/bulletin-2026-11-25-pm.mp3",
