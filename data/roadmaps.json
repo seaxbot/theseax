@@ -464,6 +464,17 @@
   "town": "Maldon",
   "w": 1200
  },
+ "maldon-high-street-salt-restaurant-arson-investigation": {
+  "after": 0,
+  "h": 750,
+  "kicker": "Where it happened",
+  "made": "2026-11-27T12:26:58Z",
+  "road": "High Street",
+  "sig": "[[\"High Street\"], \"Maldon\", null]",
+  "src": "/img/maps/maldon-high-street-salt-restaurant-arson-investigation.svg",
+  "town": "Maldon",
+  "w": 1200
+ },
  "maldon-local-plan-scoping-consultation-preview": {
   "none": "no road named",
   "sig": "[[], \"Maldon\", null]"
