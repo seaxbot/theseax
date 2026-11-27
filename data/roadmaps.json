@@ -449,6 +449,17 @@
   "none": "no road called Brook Street near Thurrock",
   "sig": "[[\"Brook Street\"], \"Thurrock\", null]"
  },
+ "maldon-high-street-gas-main-fire-properties-evacuated": {
+  "after": 0,
+  "h": 750,
+  "kicker": "Where it happened",
+  "made": "2026-11-27T10:38:21Z",
+  "road": "High Street",
+  "sig": "[[\"High Street\", \"Four Maldon High Street\"], \"Maldon\", null]",
+  "src": "/img/maps/maldon-high-street-gas-main-fire-properties-evacuated.svg",
+  "town": "Maldon",
+  "w": 1200
+ },
  "maldon-local-plan-scoping-consultation-preview": {
   "none": "no road named",
   "sig": "[[], \"Maldon\", null]"
