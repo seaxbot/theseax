@@ -2209,5 +2209,22 @@
   "licenseUrl": "",
   "source": "https://www.facebook.com/EPSouthend",
   "addedBy": "owner, 27 Nov 2026 07:51 (Essex Police - Southend District Facebook appeal picture, sent as a screenshot)"
+ },
+ {
+  "generic": true,
+  "ids": [
+   "essex-pfcc-1-1m-stalking-intervention-victim-support-2029"
+  ],
+  "match": "\\b([Ss]talk(er|ers|ing|ed|s)?|[Ss]talking)\\b",
+  "notMatch": "\\b(court|jailed|sentenced|charged|guilty|trial|accused|denies|arrest\\w*|died|dies|death|dead|body|killed|murder\\w*|fatal\\w*|inquest|celebrit\\w*)\\b",
+  "name": "A man watching from a rain-streaked window on a dark street",
+  "label": "Picture",
+  "wide": "/img/people/stalking-wide.jpg",
+  "og": "/img/people/stalking-og.jpg",
+  "creator": "",
+  "provider": "",
+  "source": "",
+  "noCaption": true,
+  "addedBy": "owner, 27 Nov 2026 09:44 (owner-supplied AI-generated picture for stalking stories; no credit or caption needed)"
  }
 ]
