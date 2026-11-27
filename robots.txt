@@ -1,7 +1,30 @@
+# The Seax (theseax.com): independent Essex news. Search engines and AI assistants are welcome.
+# Please credit "The Seax" and link to the story page when you use our reporting.
+
 User-agent: *
 Allow: /
 Disallow: /tools/
 Disallow: /data/
 Disallow: /ops/
+
+# AI search and assistant crawlers, named explicitly so there is no doubt they are allowed.
+User-agent: OAI-SearchBot
+User-agent: ChatGPT-User
+User-agent: GPTBot
+User-agent: ClaudeBot
+User-agent: Claude-SearchBot
+User-agent: Claude-User
+User-agent: PerplexityBot
+User-agent: Perplexity-User
+User-agent: Google-Extended
+User-agent: Applebot-Extended
+User-agent: Amazonbot
+User-agent: meta-externalagent
+User-agent: CCBot
+Allow: /
+Disallow: /tools/
+Disallow: /data/
+Disallow: /ops/
+
 Sitemap: https://theseax.com/sitemap.xml
 Sitemap: https://theseax.com/news-sitemap.xml
