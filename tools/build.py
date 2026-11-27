@@ -2833,6 +2833,55 @@ def xmas_search_box():
 
 XMAS_HTML = None
 
+# Christmas in Essex page styling (owner 27 Nov 2026: "needs a Christmassy feel"). Hero uses the owner's lit-tree photo
+# (img/topics/christmas-3.jpg, no credit needed) under a deep green and red wash, with a string of twinkling fairy lights
+# and gentle snowfall. Motion stops for readers who ask for reduced motion.
+XMAS_STYLE = """<style>
+.xmas .xh{position:relative;overflow:hidden;margin:6px 0 18px;border-radius:18px;color:#fff;min-height:230px;display:flex;align-items:flex-end;
+  background:linear-gradient(160deg,rgba(9,52,33,.86) 0%,rgba(9,52,33,.62) 45%,rgba(122,10,26,.82) 100%),url(/img/topics/christmas-3.jpg) center 35%/cover #0b3d27;
+  box-shadow:0 10px 30px rgba(9,52,33,.25)}
+.xmas .xh-in{position:relative;z-index:2;padding:46px 20px 20px}
+.xmas .xh .kick span,.xmas .xh .kick a{color:#fff}
+.xmas .xh .kick span:first-child{background:#c8102e}
+.xmas .xh .kick span:last-child{color:#f6d27a}
+.xmas .xh h1{color:#fff;margin:8px 0 6px;font-size:clamp(30px,8vw,46px);line-height:1.05;text-shadow:0 2px 14px rgba(0,0,0,.35)}
+.xmas .xh h1 span{color:#f6d27a}
+.xmas .xh-n{margin:0;font-size:17px;color:#f3efe4}
+.xmas .xh-n b{color:#f6d27a;font-size:20px}
+.xmas .xh-lights{position:absolute;top:-6px;left:-4%;right:-4%;height:44px;z-index:3;display:flex;justify-content:space-between;
+  border-top:2px solid rgba(20,20,20,.55);border-radius:0 0 50% 50%/0 0 30px 30px;padding:0 3%}
+.xmas .xh-lights i{width:11px;height:16px;border-radius:50% 50% 45% 45%;margin-top:9px;background:#ffd34d;box-shadow:0 0 10px 2px #ffd34d;animation:xtw 1.8s ease-in-out infinite alternate}
+.xmas .xh-lights i:nth-child(4n+1){background:#ff4d5e;box-shadow:0 0 10px 2px #ff4d5e;animation-delay:.3s}
+.xmas .xh-lights i:nth-child(4n+2){background:#5fe39a;box-shadow:0 0 10px 2px #5fe39a;animation-delay:.9s;margin-top:15px}
+.xmas .xh-lights i:nth-child(4n+3){background:#6cc6ff;box-shadow:0 0 10px 2px #6cc6ff;animation-delay:1.4s;margin-top:17px}
+.xmas .xh-lights i:nth-child(4n){margin-top:13px;animation-delay:.6s}
+@keyframes xtw{from{opacity:.45;filter:saturate(.7)}to{opacity:1}}
+.xmas .xh-snow,.xmas .xh-snow:after{position:absolute;inset:-60px 0 0;z-index:1;pointer-events:none;
+  background-image:radial-gradient(2.5px 2.5px at 20px 30px,#fff 60%,transparent),radial-gradient(2px 2px at 90px 80px,#fff 60%,transparent),
+  radial-gradient(3px 3px at 160px 20px,rgba(255,255,255,.9) 60%,transparent),radial-gradient(2px 2px at 230px 110px,#fff 60%,transparent),
+  radial-gradient(2.5px 2.5px at 300px 60px,rgba(255,255,255,.85) 60%,transparent),radial-gradient(1.5px 1.5px at 60px 140px,#fff 60%,transparent);
+  background-size:320px 160px;animation:xsnow 14s linear infinite;opacity:.8}
+.xmas .xh-snow:after{content:"";inset:0;background-size:220px 120px;animation-duration:9s;opacity:.55}
+@keyframes xsnow{from{background-position:0 0}to{background-position:40px 160px}}
+.xmas .xh-snow:after{animation-name:xsnow2}
+@keyframes xsnow2{from{background-position:0 0}to{background-position:-30px 120px}}
+.xmas .xs{background:#f2f7f3;border-color:#cfe3d5}
+.xmas .xs-l{color:#0b5a37}
+.xmas .xs-l:before{content:"\\2744\\FE0E";margin-right:6px;color:#2a8a5a}
+.xmas .xs-jump{display:flex;flex-wrap:wrap;gap:8px;font-size:0}
+.xmas .xs-jump a{font-size:14px;font-weight:600;text-decoration:none;color:#0b5a37;background:#fff;border:1.5px solid #cfe3d5;border-radius:99px;padding:6px 12px}
+.xmas .xs-jump a:nth-child(even){color:#8e0d18;border-color:#f0d6d8}
+.xmas .xs-sec h2{display:flex;align-items:center;gap:10px;padding-bottom:8px;border-bottom:0;
+  background:linear-gradient(90deg,#c8102e 0 33%,#f6d27a 33% 66%,#0b5a37 66%) bottom/100% 3px no-repeat}
+.xmas .xs-sec h2:before{content:"\\2605";color:#d9a521;font-size:.9em}
+.xmas .xs-sec .cw-row{border-left:4px solid #0b5a37;padding-left:12px;border-radius:4px}
+.xmas .xs-sec:nth-of-type(even) .cw-row{border-left-color:#c8102e}
+.xmas .cw-row .cw-c{color:#0b5a37}
+@media (min-width:700px){.xmas .xh{min-height:280px}.xmas .xh-in{padding:56px 32px 28px}}
+@media (prefers-reduced-motion:reduce){.xmas .xh-snow,.xmas .xh-snow:after,.xmas .xh-lights i{animation:none}}
+</style>"""
+
+
 def christmas_page(ed):
     """/whats-on/christmas/ (22 Nov 2026): the Christmas listings already in What's On and Culture, grouped the way people
     search for them (lights switch-ons, light trails, markets, Santa, ice rinks, pantos, carols). Built from 1 November
@@ -2915,12 +2964,20 @@ def christmas_page(ed):
                                                          {"@type": "ListItem", "position": 2, "name": "What's on in Essex", "item": SITE + "/whats-on/"},
                                                          {"@type": "ListItem", "position": 3, "name": f"Christmas in Essex {year}", "item": url}]}] + evs[:60]},
         ensure_ascii=False).replace("</", "<\\/") + "</script>\n")
-    return head(f"Christmas in Essex {year}: lights switch-ons, markets, light trails and pantos · The Seax", desc, url, "default", extra=ld) + f"""<main class="wrap prose cw-hub">
+    return head(f"Christmas in Essex {year}: lights switch-ons, markets, light trails and pantos · The Seax", desc, url, "default", extra=ld) + f"""<main class="wrap prose cw-hub xmas">
+{XMAS_STYLE}
+<header class="xh">
+<div class="xh-lights" aria-hidden="true">{"".join("<i></i>" for _ in range(14))}</div>
+<div class="xh-snow" aria-hidden="true"></div>
+<div class="xh-in">
 <div class="kick"><span><a href="/whats-on/">What's On</a></span><span>Christmas {year}</span></div>
-<h1>Christmas in Essex {year}</h1>
-<p class="standfirst">{E(kinds[0].upper() + kinds[1:])} across the county: {n} festive things to do, soonest first in each section. Each listing links to the organiser or venue, so check there before you travel. To list an event, email {mlink("events", "Christmas event listing")}.</p>
+<h1>Christmas in Essex <span>{year}</span></h1>
+<p class="xh-n"><b>{n}</b> festive things to do across the county</p>
+</div>
+</header>
+<p class="standfirst">{E(kinds[0].upper() + kinds[1:])}, soonest first in each section. Each listing links to the organiser or venue, so check there before you travel. To list an event, email {mlink("events", "Christmas event listing")}.</p>
 {xmas_search_box()}
-<p class="area-links" id="xsJump">{jump}</p>
+<p class="area-links xs-jump" id="xsJump">{jump}</p>
 <div id="xsNone" class="xs-none" hidden>Nothing matches that yet. Try a nearby town, or a word like market, panto or Santa.</div>
 {body}
 <p><a href="/whats-on/">Everything that's on in Essex →</a> · <a href="/">Go to the live front page →</a></p>
