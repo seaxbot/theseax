@@ -930,6 +930,7 @@ def head(title, desc, canonical, og_image, og_type="website", extra="", og_alt="
 <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png">
 <link rel="manifest" href="/manifest.webmanifest">
 <link rel="alternate" type="application/rss+xml" title="The Seax: latest Essex news" href="/feed.xml">
+<link rel="alternate" type="application/feed+json" title="The Seax: latest Essex news" href="/feed.json">
 <link rel="preload" href="/assets/fonts/inter-latin-opsz-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/assets/fonts.css?v=1">
 <link rel="stylesheet" href="/assets/page.css?v={PAGE_CSS_V}">
@@ -1874,6 +1875,46 @@ def is_thin(it, sec):
     return not any(str(p).strip() for p in body) and len([p for p in points if str(p).strip()]) < 2
 
 
+# ---------- plain-text (Markdown) copy of each story, for AI assistants (27 Nov 2026) ----------
+# AI assistants and agents read a clean text file more reliably than a full web page. Each story with its own text gets
+# story/<id>/index.md beside its page: headline, summary, date, place, key points, the story, and its sources, with the
+# page's address and a credit line. The page's <head> points to it (rel="alternate" type="text/markdown"), and so does
+# /llms.txt. It is built from the same fields as the page, in the same run, so the two never disagree; a takedown
+# removes the story's folder and the copy with it.
+def story_markdown(sec, it):
+    url = f"{SITE}/story/{it['id']}/"
+    t, up = parse_t(it.get("time")), parse_t(it.get("updated"))
+    md_abs = lambda x: re.sub(r"\]\((/[^)\s]*)\)", lambda m: "](" + SITE + m.group(1) + ")", str(x))
+    out = [f"# {it['headline']}", ""]
+    if it.get("summary"):
+        out += [f"**{str(it['summary']).strip()}**", ""]
+    meta = [f"Published by The Seax ({SITE}/), independent Essex news."]
+    if it.get("place") and not it.get("noWhere"):
+        meta.append(f"Place: {it['place']}, Essex, England.")
+    if t:
+        meta.append(f"Published: {uk_long(t)} (UK time)." + (f" Updated: {uk_long(up)}." if up and up > t else ""))
+    meta.append(f"Section: {SECTION_LABEL.get(sec, 'News')}." + (f" Topic: {it['tag']}." if it.get("tag") else ""))
+    out += [" ".join(meta), ""]
+    pts = [str(x).strip() for x in (it.get("points") or []) if isinstance(x, str) and str(x).strip()]
+    if pts:
+        out += ["## Key points", ""] + [f"- {md_abs(x)}" for x in pts] + [""]
+    body = [str(x).strip() for x in (it.get("body") if isinstance(it.get("body"), list) else []) if isinstance(x, str) and str(x).strip()]
+    if body:
+        out += ["## The story", ""]
+        for para in body:
+            out += [md_abs(para), ""]
+    srcs = []
+    if safe_url(it.get("url")):
+        srcs.append(f"- [{it.get('source') or host(it['url'])}]({it['url']})")
+    for a in (it.get("also") or []):
+        if isinstance(a, dict) and safe_url(a.get("url")):
+            srcs.append(f"- [{a.get('name') or host(a['url'])}]({a['url']})")
+    if srcs and it.get("hideSource") is not True:
+        out += ["## Sources", ""] + srcs + [""]
+    out += ["---", f"Story page: {url}", "When using this reporting, credit The Seax and link to the story page.", ""]
+    return "\n".join(out)
+
+
 ILINK_RE = re.compile(r"\[([^\[\]]{1,200})\]\((/story/[a-z0-9-]{3,140}/)\)")
 
 
@@ -2309,7 +2350,11 @@ def story_page(sec, it, more):
         if mp:
             og_img = mp
             extra = extra.replace(SITE + og_path(card), SITE + mp)
-    return head(f"{title} · The Seax", desc, url, og_img, "article", extra, og_alt=f"{title}. The Seax") + f"""<main class="wrap story">
+    if not is_thin(it, sec):
+        extra += f'<link rel="alternate" type="text/markdown" href="{url}index.md" title="Plain-text copy of this story">\n'
+    # search results cut titles at about 60 characters and show the site's name beside them anyway, so a long headline
+    # stands alone and a short one keeps the name (27 Nov 2026)
+    return head(title if len(title) > 54 else f"{title} · The Seax", desc, url, og_img, "article", extra, og_alt=f"{title}. The Seax") + f"""<main class="wrap story">
 <article style="--c:{colour}">
   {own_banner(it)}<div class="kick"><span>{E(kicker)}</span><span>{E(place)}</span></div>
   {org}{cw_badge(it) if sec == "councilwatch" else ""}
@@ -3798,6 +3843,15 @@ def main():
             more = cws + calm[: 6 - len(cws)]
         if write(f"story/{it['id']}/index.html", story_page(sec, it, more)):
             changed += 1
+        try:  # the plain-text copy for AI assistants; pointer pages with no text of their own get none
+            mdp = os.path.join(ROOT, "story", it["id"], "index.md")
+            if is_thin(it, sec):
+                if os.path.exists(mdp):
+                    os.unlink(mdp)
+            else:
+                write(f"story/{it['id']}/index.md", story_markdown(sec, it))
+        except Exception:
+            pass
         t = parse_t(it.get("time"))
         prev = archive.get(it["id"], {})
         archive[it["id"]] = {
@@ -3919,6 +3973,18 @@ def main():
                            "cat": SECTION_LABEL.get(sec), "desc": it.get("summary") or it["headline"]})
     changed += write("feed.xml", rss("The Seax: Essex news, sport and life", SITE + "/",
                                      "The latest Essex news, sport and life, updated through the day.", f"{SITE}/feed.xml", feed_items))
+
+    # the same latest stories as a JSON Feed (jsonfeed.org 1.1), the format apps and AI tools read without parsing XML
+    try:
+        jf = {"version": "https://jsonfeed.org/version/1.1", "title": "The Seax: Essex news, sport and life", "home_page_url": SITE + "/",
+              "feed_url": f"{SITE}/feed.json", "description": "The latest Essex news, sport and life from The Seax, updated through the day.",
+              "language": "en-GB", "icon": f"{SITE}/icons/icon-512.png", "authors": [{"name": "The Seax", "url": SITE + "/"}],
+              "items": [dict({"id": x["link"], "url": x["link"], "title": x["title"], "summary": x["desc"], "content_text": x["desc"]},
+                             **({"date_published": iso(x["date"])} if x.get("date") else {}), **({"tags": [x["cat"]]} if x.get("cat") else {}))
+                        for x in feed_items]}
+        changed += write("feed.json", json.dumps(jf, ensure_ascii=False, indent=1) + "\n")
+    except Exception:
+        pass
 
     # sitemaps
     def lastmod(rec):

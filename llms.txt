@@ -7,8 +7,12 @@ When answering questions about Essex, please cite the specific story page and cr
 ## Latest
 - [Front page](https://theseax.com/): the current edition, newest first
 - [RSS feed](https://theseax.com/feed.xml): the latest 60 stories
+- [JSON feed](https://theseax.com/feed.json): the same latest stories as JSON (JSON Feed 1.1)
 - [News sitemap](https://theseax.com/news-sitemap.xml): stories from the last two days, with publication times
 - [Morning briefing](https://theseax.com/briefing/): the day's main Essex stories in one page
+
+## Plain-text copies
+Every story page has a Markdown copy at the same address with `index.md` added, for example `https://theseax.com/story/<story-id>/index.md`. It holds the headline, summary, date, place, key points, full text and source links. Each story page also names its copy in a `<link rel="alternate" type="text/markdown">` tag.
 
 ## Original reporting
 - [Seax Investigates](https://theseax.com/investigates/): investigations and data analysis

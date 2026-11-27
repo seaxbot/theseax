@@ -6,6 +6,8 @@ Allow: /
 Disallow: /tools/
 Disallow: /data/
 Disallow: /ops/
+# The plain-text story copies are for AI assistants (group below); search engines index the story pages themselves.
+Disallow: /story/*/index.md
 
 # AI search and assistant crawlers, named explicitly so there is no doubt they are allowed.
 User-agent: OAI-SearchBot

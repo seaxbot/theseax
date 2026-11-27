@@ -1,0 +1,677 @@
+{
+ "version": "https://jsonfeed.org/version/1.1",
+ "title": "The Seax: Essex news, sport and life",
+ "home_page_url": "https://theseax.com/",
+ "feed_url": "https://theseax.com/feed.json",
+ "description": "The latest Essex news, sport and life from The Seax, updated through the day.",
+ "language": "en-GB",
+ "icon": "https://theseax.com/icons/icon-512.png",
+ "authors": [
+  {
+   "name": "The Seax",
+   "url": "https://theseax.com/"
+  }
+ ],
+ "items": [
+  {
+   "id": "https://theseax.com/story/anglia-ruskin-study-most-dog-attacks-preventable-battersea/",
+   "url": "https://theseax.com/story/anglia-ruskin-study-most-dog-attacks-preventable-battersea/",
+   "title": "Anglia Ruskin study finds most dog attacks are preventable",
+   "summary": "Owners losing control of their dogs is the biggest single cause of bites, university research for Battersea finds. Many breeds are involved.",
+   "content_text": "Owners losing control of their dogs is the biggest single cause of bites, university research for Battersea finds. Many breeds are involved.",
+   "date_published": "2026-11-27T21:38:00Z",
+   "tags": [
+    "News"
+   ]
+  },
+  {
+   "id": "https://theseax.com/story/anglia-ruskin-chancellor-sue-black-installed-chelmsford/",
+   "url": "https://theseax.com/story/anglia-ruskin-chancellor-sue-black-installed-chelmsford/",
+   "title": "ARU installs forensic scientist Sue Black as chancellor in Chelmsford",
+   "summary": "One of the world's leading forensic scientists, named Anglia Ruskin University's chancellor in September, has been formally invested at its Chelmsford graduations.",
+   "content_text": "One of the world's leading forensic scientists, named Anglia Ruskin University's chancellor in September, has been formally invested at its Chelmsford graduations.",
+   "date_published": "2026-11-27T20:38:41Z",
+   "tags": [
+    "News"
+   ]
+  },
+  {
+   "id": "https://theseax.com/story/benfleet-twins-ella-freya-ward-midwives-basildon-hospital-aru/",
+   "url": "https://theseax.com/story/benfleet-twins-ella-freya-ward-midwives-basildon-hospital-aru/",
+   "title": "Benfleet twin sisters to work as midwives at Basildon Hospital",
+   "summary": "Ella and Freya Ward, 21, graduated together in Chelmsford. Both trained on placement at Basildon Hospital and will now work there.",
+   "content_text": "Ella and Freya Ward, 21, graduated together in Chelmsford. Both trained on placement at Basildon Hospital and will now work there.",
+   "date_published": "2026-11-27T20:38:41Z",
+   "tags": [
+    "News"
+   ]
+  },
+  {
+   "id": "https://theseax.com/story/harlow-stuart-buckland-45-missing-appeal/",
+   "url": "https://theseax.com/story/harlow-stuart-buckland-45-missing-appeal/",
+   "title": "Missing Harlow man found, police say",
+   "summary": "Essex Police has ended its appeal for a 45-year-old man reported missing from Harlow on Friday.",
+   "content_text": "Essex Police has ended its appeal for a 45-year-old man reported missing from Harlow on Friday.",
+   "date_published": "2026-11-27T20:15:00Z",
+   "tags": [
+    "News"
+   ]
+  },
+  {
+   "id": "https://theseax.com/story/colchester-prettygate-bridleway-gas-pipes-cadent-december/",
+   "url": "https://theseax.com/story/colchester-prettygate-bridleway-gas-pipes-cadent-december/",
+   "title": "Prettygate bridleway in Colchester to shut for gas pipe work",
+   "summary": "Cadent is replacing 1950s gas pipes under the path to Norman Way. The path closes to walkers over Christmas.",
+   "content_text": "Cadent is replacing 1950s gas pipes under the path to Norman Way. The path closes to walkers over Christmas.",
+   "date_published": "2026-11-27T19:44:00Z",
+   "tags": [
+    "News"
+   ]
+  },
+  {
+   "id": "https://theseax.com/story/ct-harlow-gladys-ibanibo-drink-driving-ban-child-front-seat/",
+   "url": "https://theseax.com/story/ct-harlow-gladys-ibanibo-drink-driving-ban-child-front-seat/",
+   "title": "Harlow driver banned for 40 months after drink-driving with child in front",
+   "summary": "A Harlow woman has lost her licence for drink-driving. A toddler was sitting unrestrained in her front passenger seat.",
+   "content_text": "A Harlow woman has lost her licence for drink-driving. A toddler was sitting unrestrained in her front passenger seat.",
+   "date_published": "2026-11-27T18:35:05Z",
+   "tags": [
+    "Courts"
+   ]
+  },
+  {
+   "id": "https://theseax.com/story/basildon-town-centre-safety-wardens-underpasses-committee-backs/",
+   "url": "https://theseax.com/story/basildon-town-centre-safety-wardens-underpasses-committee-backs/",
+   "title": "Basildon town centre safety wardens and underpass clean-up get go-ahead",
+   "summary": "Wardens would patrol five days a week from early 2027, alongside brighter lighting and deep-cleaned underpasses.",
+   "content_text": "Wardens would patrol five days a week from early 2027, alongside brighter lighting and deep-cleaned underpasses.",
+   "date_published": "2026-11-27T17:31:00Z",
+   "tags": [
+    "News"
+   ]
+  },
+  {
+   "id": "https://theseax.com/story/epping-ongar-railway-stacey-solomon-joe-swash-lights-party-express/",
+   "url": "https://theseax.com/story/epping-ongar-railway-stacey-solomon-joe-swash-lights-party-express/",
+   "title": "Stacey Solomon and Joe Swash film Christmas show on Epping Ongar Railway",
+   "summary": "The couple rode the heritage line's festive light train for their BBC One series. The railway says their visit added extra sparkle.",
+   "content_text": "The couple rode the heritage line's festive light train for their BBC One series. The railway says their visit added extra sparkle.",
+   "date_published": "2026-11-27T17:31:00Z",
+   "tags": [
+    "News"
+   ]
+  },
+  {
+   "id": "https://theseax.com/story/c-basildon-borough-volunteer-awards-2027-nominations/",
+   "url": "https://theseax.com/story/c-basildon-borough-volunteer-awards-2027-nominations/",
+   "title": "Basildon Borough Volunteer Awards open for nominations",
+   "summary": "Nominations close at 11.59pm on Friday 18 December. Winners will be named at the Towngate Theatre in March.",
+   "content_text": "Nominations close at 11.59pm on Friday 18 December. Winners will be named at the Towngate Theatre in March.",
+   "date_published": "2026-11-27T17:31:00Z",
+   "tags": [
+    "Community"
+   ]
+  },
+  {
+   "id": "https://theseax.com/story/shenfield-priests-lane-97-homes-appeal-costs-brentwood-council/",
+   "url": "https://theseax.com/story/shenfield-priests-lane-97-homes-appeal-costs-brentwood-council/",
+   "title": "Brentwood Council must pay Cala's costs after losing Priests Lane appeal",
+   "summary": "An inspector allowed 97 homes on a former school playing field near Shenfield, overturning a refusal made against planning officers' advice.",
+   "content_text": "An inspector allowed 97 homes on a former school playing field near Shenfield, overturning a refusal made against planning officers' advice.",
+   "date_published": "2026-11-27T17:10:00Z",
+   "tags": [
+    "News"
+   ]
+  },
+  {
+   "id": "https://theseax.com/story/brentwood-kfc-high-street-3am-late-night-licence/",
+   "url": "https://theseax.com/story/brentwood-kfc-high-street-3am-late-night-licence/",
+   "title": "KFC applies to serve hot food until 3am on Brentwood High Street",
+   "summary": "Residents have until 18 December to comment on the plan, which would run to 3am from Thursday to Saturday.",
+   "content_text": "Residents have until 18 December to comment on the plan, which would run to 3am from Thursday to Saturday.",
+   "date_published": "2026-11-27T17:10:00Z",
+   "tags": [
+    "News"
+   ]
+  },
+  {
+   "id": "https://theseax.com/story/wickford-cameron-weedon-jailed-30m-cocaine-recovery-dover-strait/",
+   "url": "https://theseax.com/story/wickford-cameron-weedon-jailed-30m-cocaine-recovery-dover-strait/",
+   "title": "Wickford man jailed over £30m cocaine pick-up from the sea",
+   "summary": "Cameron Weedon helped fishermen fetch 374kg of cocaine dumped in the Channel. A gang leader from Rainham was also jailed.",
+   "content_text": "Cameron Weedon helped fishermen fetch 374kg of cocaine dumped in the Channel. A gang leader from Rainham was also jailed.",
+   "date_published": "2026-11-27T17:05:00Z",
+   "tags": [
+    "News"
+   ]
+  },
+  {
+   "id": "https://theseax.com/story/o-braintree-buddy-the-boar-christmas-trail/",
+   "url": "https://theseax.com/story/o-braintree-buddy-the-boar-christmas-trail/",
+   "title": "Braintree Town FC mascot Buddy the Boar leads town centre Christmas trail",
+   "summary": "The council and the football club's mascot have set up a Christmas trail. It runs around Braintree town centre.",
+   "content_text": "The council and the football club's mascot have set up a Christmas trail. It runs around Braintree town centre.",
+   "date_published": "2026-11-27T16:44:00Z",
+   "tags": [
+    "Public Services"
+   ]
+  },
+  {
+   "id": "https://theseax.com/story/clacton-nhs-essex-health-checks-flu-jabs-research-event-30-november/",
+   "url": "https://theseax.com/story/clacton-nhs-essex-health-checks-flu-jabs-research-event-30-november/",
+   "title": "Clacton Leisure Centre hosts free NHS health checks on Monday",
+   "summary": "Clacton residents can get blood pressure checks and flu jabs at a free NHS event. Researchers will also show studies people can join.",
+   "content_text": "Clacton residents can get blood pressure checks and flu jabs at a free NHS event. Researchers will also show studies people can join.",
+   "date_published": "2026-11-27T16:34:09Z",
+   "tags": [
+    "News"
+   ]
+  },
+  {
+   "id": "https://theseax.com/story/ct-grays-oksana-antanaitiene-prison-tutor-sentenced-hmp-chelmsford/",
+   "url": "https://theseax.com/story/ct-grays-oksana-antanaitiene-prison-tutor-sentenced-hmp-chelmsford/",
+   "title": "Grays prison tutor spared jail over secret relationship with inmate",
+   "summary": "Oksana Antanaitiene, 52, a maths tutor at HMP Chelmsford, used a false name and a secret phone to keep in touch with him.",
+   "content_text": "Oksana Antanaitiene, 52, a maths tutor at HMP Chelmsford, used a false name and a secret phone to keep in touch with him.",
+   "date_published": "2026-11-27T16:15:00Z",
+   "tags": [
+    "News"
+   ]
+  },
+  {
+   "id": "https://theseax.com/story/c2c-grays-fire-near-railway-delays-27-november/",
+   "url": "https://theseax.com/story/c2c-grays-fire-near-railway-delays-27-november/",
+   "title": "c2c lines reopen after fire beside Grays railway",
+   "summary": "A fire next to the railway at Grays slowed c2c trains on every route. Cancellations ran into Friday evening.",
+   "content_text": "A fire next to the railway at Grays slowed c2c trains on every route. Cancellations ran into Friday evening.",
+   "date_published": "2026-11-27T16:08:00Z",
+   "tags": [
+    "News"
+   ]
+  },
+  {
+   "id": "https://theseax.com/story/braintree-springwood-drive-panfield-lane-link-road-work-begins/",
+   "url": "https://theseax.com/story/braintree-springwood-drive-panfield-lane-link-road-work-begins/",
+   "title": "Work starts on stalled Braintree link road to Panfield Lane",
+   "summary": "Building has begun on a road linking Springwood Drive and Panfield Lane. It had stalled for years while developers argued over timing.",
+   "content_text": "Building has begun on a road linking Springwood Drive and Panfield Lane. It had stalled for years while developers argued over timing.",
+   "date_published": "2026-11-27T16:02:00Z",
+   "tags": [
+    "News"
+   ]
+  },
+  {
+   "id": "https://theseax.com/story/s-southend-dyer-hartlepool-kick-off-shambles/",
+   "url": "https://theseax.com/story/s-southend-dyer-hartlepool-kick-off-shambles/",
+   "title": "Southend boss Dyer calls Hartlepool's 5.30pm kick-off a 'shambles'",
+   "summary": "Southend United fans face another late start at the far end of the country. The manager says they will still travel in their hundreds.",
+   "content_text": "Southend United fans face another late start at the far end of the country. The manager says they will still travel in their hundreds.",
+   "date_published": "2026-11-27T16:01:00Z",
+   "tags": [
+    "Sport"
+   ]
+  },
+  {
+   "id": "https://theseax.com/story/essex-weekend-travel-2026-11-28/",
+   "url": "https://theseax.com/story/essex-weekend-travel-2026-11-28/",
+   "title": "Buses replace trains across south Essex this weekend",
+   "summary": "Rail passengers from Shenfield, Southend and the Crouch Valley face replacement buses on Saturday and Sunday. Dartford Crossing works are paused for Black Friday.",
+   "content_text": "Rail passengers from Shenfield, Southend and the Crouch Valley face replacement buses on Saturday and Sunday. Dartford Crossing works are paused for Black Friday.",
+   "date_published": "2026-11-27T15:40:35Z",
+   "tags": [
+    "News"
+   ]
+  },
+  {
+   "id": "https://theseax.com/story/epping-forest-homelessness-rough-sleeping-strategy-2026-2031/",
+   "url": "https://theseax.com/story/epping-forest-homelessness-rough-sleeping-strategy-2026-2031/",
+   "title": "Epping Forest District Council backs plan to prevent homelessness",
+   "summary": "A new five-year plan aims to stop people in the Epping Forest district losing their homes. Requests for help are up a quarter since 2022.",
+   "content_text": "A new five-year plan aims to stop people in the Epping Forest district losing their homes. Requests for help are up a quarter since 2022.",
+   "date_published": "2026-11-27T14:46:00Z",
+   "tags": [
+    "News"
+   ]
+  },
+  {
+   "id": "https://theseax.com/story/c-thurrock-beat-the-street-eastern-awards-2026/",
+   "url": "https://theseax.com/story/c-thurrock-beat-the-street-eastern-awards-2026/",
+   "title": "Beat the Street players in eastern Thurrock walk 35,201 miles",
+   "summary": "Schools and teams from Stanford-le-Hope, Corringham and nearby villages were honoured after the six-week walking game.",
+   "content_text": "Schools and teams from Stanford-le-Hope, Corringham and nearby villages were honoured after the six-week walking game.",
+   "date_published": "2026-11-27T14:43:00Z",
+   "tags": [
+    "Community"
+   ]
+  },
+  {
+   "id": "https://theseax.com/story/c-grays-christmas-lights-switch-on-mayor-2026/",
+   "url": "https://theseax.com/story/c-grays-christmas-lights-switch-on-mayor-2026/",
+   "title": "Grays Christmas tree lights switched on by Mayor of Thurrock",
+   "summary": "Families packed Grays High Street for the town's annual switch-on and Christmas fair.",
+   "content_text": "Families packed Grays High Street for the town's annual switch-on and Christmas fair.",
+   "date_published": "2026-11-27T14:39:00Z",
+   "tags": [
+    "Community"
+   ]
+  },
+  {
+   "id": "https://theseax.com/story/essex-gp-missed-appointments-september-2026/",
+   "url": "https://theseax.com/story/essex-gp-missed-appointments-september-2026/",
+   "title": "Essex patients missed almost 37,000 GP surgery appointments in September",
+   "summary": "It is the highest monthly figure this year. NHS Essex is asking patients to cancel appointments they cannot make.",
+   "content_text": "It is the highest monthly figure this year. NHS Essex is asking patients to cancel appointments they cannot make.",
+   "date_published": "2026-11-27T14:15:12Z",
+   "tags": [
+    "News"
+   ]
+  },
+  {
+   "id": "https://theseax.com/story/ingatestone-festive-fair-shenfield-christmas-trails-2026/",
+   "url": "https://theseax.com/story/ingatestone-festive-fair-shenfield-christmas-trails-2026/",
+   "title": "Ingatestone Festive Fair brings 30 stalls to the High Street on Sunday",
+   "summary": "Brentwood's Christmas lights are now on. The borough's free festive events move on to Ingatestone and Shenfield.",
+   "content_text": "Brentwood's Christmas lights are now on. The borough's free festive events move on to Ingatestone and Shenfield.",
+   "date_published": "2026-11-27T13:57:00Z",
+   "tags": [
+    "News"
+   ]
+  },
+  {
+   "id": "https://theseax.com/story/greater-anglia-shenfield-london-line-shut-christmas-new-year-2026/",
+   "url": "https://theseax.com/story/greater-anglia-shenfield-london-line-shut-christmas-new-year-2026/",
+   "title": "Greater Anglia shuts Shenfield to London line for 8 days after Christmas",
+   "summary": "Essex rail passengers face buses to the Tube for a week over New Year. Trains also finish early on Christmas Eve.",
+   "content_text": "Essex rail passengers face buses to the Tube for a week over New Year. Trains also finish early on Christmas Eve.",
+   "date_published": "2026-11-27T13:40:46Z",
+   "tags": [
+    "News"
+   ]
+  },
+  {
+   "id": "https://theseax.com/story/essex-food-hygiene-ratings-takeaways-november-2026/",
+   "url": "https://theseax.com/story/essex-food-hygiene-ratings-takeaways-november-2026/",
+   "title": "One in three Essex takeaways misses top food hygiene rating",
+   "summary": "The Seax checked every food hygiene rating in Essex. Takeaways fare worst, and Tendring's lag the rest of the county.",
+   "content_text": "The Seax checked every food hygiene rating in Essex. Takeaways fare worst, and Tendring's lag the rest of the county.",
+   "date_published": "2026-11-27T13:20:10Z",
+   "tags": [
+    "News"
+   ]
+  },
+  {
+   "id": "https://theseax.com/story/lakeside-slim-chickens-opening-10-december-fresh-drop/",
+   "url": "https://theseax.com/story/lakeside-slim-chickens-opening-10-december-fresh-drop/",
+   "title": "Lakeside's Slim Chickens restaurant opens on 10 December",
+   "summary": "The US chicken chain is bringing 50 jobs to the Thurrock shopping centre. Its first 5,000 customers each get a prize card.",
+   "content_text": "The US chicken chain is bringing 50 jobs to the Thurrock shopping centre. Its first 5,000 customers each get a prize card.",
+   "date_published": "2026-11-27T12:41:00Z",
+   "tags": [
+    "News"
+   ]
+  },
+  {
+   "id": "https://theseax.com/story/ct-brentwood-stefan-pierre-tomlin-charged-rape-soho-club/",
+   "url": "https://theseax.com/story/ct-brentwood-stefan-pierre-tomlin-charged-rape-soho-club/",
+   "title": "Brentwood man charged with rape at Soho's Groucho Club",
+   "summary": "Stefan-Pierre Tomlin, 36, is due at Southwark Crown Court on Monday. He also faces two counts of assault by penetration.",
+   "content_text": "Stefan-Pierre Tomlin, 36, is due at Southwark Crown Court on Monday. He also faces two counts of assault by penetration.",
+   "date_published": "2026-11-27T12:41:00Z",
+   "tags": [
+    "Courts"
+   ]
+  },
+  {
+   "id": "https://theseax.com/story/maldon-high-street-salt-restaurant-arson-investigation/",
+   "url": "https://theseax.com/story/maldon-high-street-salt-restaurant-arson-investigation/",
+   "title": "Maldon High Street arson: police appeal for information",
+   "summary": "Two people tried to break into a High Street business and start a fire at about 2.30am. Salt Bar Pizza Grill says it is open as usual.",
+   "content_text": "Two people tried to break into a High Street business and start a fire at about 2.30am. Salt Bar Pizza Grill says it is open as usual.",
+   "date_published": "2026-11-27T12:26:24Z",
+   "tags": [
+    "News"
+   ]
+  },
+  {
+   "id": "https://theseax.com/story/c-braintree-recycling-centre-santas-grotto-christmas-reuse/",
+   "url": "https://theseax.com/story/c-braintree-recycling-centre-santas-grotto-christmas-reuse/",
+   "title": "Braintree Recycling Centre opens free 'Santa's Grotto' for Christmas reuse",
+   "summary": "Unwanted Christmas trees and decorations left at the Braintree tip are now free to take home.",
+   "content_text": "Unwanted Christmas trees and decorations left at the Braintree tip are now free to take home.",
+   "date_published": "2026-11-27T11:28:00Z",
+   "tags": [
+    "Community"
+   ]
+  },
+  {
+   "id": "https://theseax.com/story/c-southend-havens-hospices-father-son-cycle-plymouth-fair-havens/",
+   "url": "https://theseax.com/story/c-southend-havens-hospices-father-son-cycle-plymouth-fair-havens/",
+   "title": "Havens Hospices cyclists ride 500km from Devon to Southend",
+   "summary": "A father and son rode from Devon to Fair Havens hospice in Southend. They raised more than £4,000 for the hospice that cared for family.",
+   "content_text": "A father and son rode from Devon to Fair Havens hospice in Southend. They raised more than £4,000 for the hospice that cared for family.",
+   "date_published": "2026-11-27T11:13:00Z",
+   "tags": [
+    "Community"
+   ]
+  },
+  {
+   "id": "https://theseax.com/story/essex-urgent-treatment-centres-review-nhs-survey-4-january/",
+   "url": "https://theseax.com/story/essex-urgent-treatment-centres-review-nhs-survey-4-january/",
+   "title": "Essex urgent treatment centres under review",
+   "summary": "NHS Essex wants to hear where people go when they need help fast. Its survey will shape a new plan for urgent care.",
+   "content_text": "NHS Essex wants to hear where people go when they need help fast. Its survey will shape a new plan for urgent care.",
+   "date_published": "2026-11-27T10:09:38Z",
+   "tags": [
+    "News"
+   ]
+  },
+  {
+   "id": "https://theseax.com/story/ct-harlow-lower-meadow-man-charged-strangulation/",
+   "url": "https://theseax.com/story/ct-harlow-lower-meadow-man-charged-strangulation/",
+   "title": "Harlow man, 41, sent to crown court on strangulation charge",
+   "summary": "A Harlow man has been charged over an alleged offence in the town on 7 November. He is on bail until a crown court hearing.",
+   "content_text": "A Harlow man has been charged over an alleged offence in the town on 7 November. He is on bail until a crown court hearing.",
+   "date_published": "2026-11-27T09:19:42Z",
+   "tags": [
+    "Courts"
+   ]
+  },
+  {
+   "id": "https://theseax.com/story/essex-ofsted-southview-witham-strong-every-area-schools-roundup-nov-2026/",
+   "url": "https://theseax.com/story/essex-ofsted-southview-witham-strong-every-area-schools-roundup-nov-2026/",
+   "title": "Witham special school rated strong in every area by Ofsted",
+   "summary": "Southview School got the second-highest grade in all eight areas. Four other Essex primaries also had new report cards published this week.",
+   "content_text": "Southview School got the second-highest grade in all eight areas. Four other Essex primaries also had new report cards published this week.",
+   "date_published": "2026-11-27T09:00:00Z",
+   "tags": [
+    "News"
+   ]
+  },
+  {
+   "id": "https://theseax.com/story/o-southend-nigel-folkard-honorary-alderman-civic-recognition/",
+   "url": "https://theseax.com/story/o-southend-nigel-folkard-honorary-alderman-civic-recognition/",
+   "title": "Southend names Nigel Folkard Honorary Alderman",
+   "summary": "Southend's councillors also gave certificates to a dance school, a powerlifter and the Masonic centre at Saxon Hall.",
+   "content_text": "Southend's councillors also gave certificates to a dance school, a powerlifter and the Masonic centre at Saxon Hall.",
+   "date_published": "2026-11-27T08:53:00Z",
+   "tags": [
+    "Public Services"
+   ]
+  },
+  {
+   "id": "https://theseax.com/story/essex-pfcc-1-1m-stalking-intervention-victim-support-2029/",
+   "url": "https://theseax.com/story/essex-pfcc-1-1m-stalking-intervention-victim-support-2029/",
+   "title": "Essex gets £1.1m to tackle stalking",
+   "summary": "Stalkers across Essex will be offered help to change their behaviour. Victims get more specialist support, including help with online tracking.",
+   "content_text": "Stalkers across Essex will be offered help to change their behaviour. Victims get more specialist support, including help with online tracking.",
+   "date_published": "2026-11-27T08:04:00Z",
+   "tags": [
+    "News"
+   ]
+  },
+  {
+   "id": "https://theseax.com/story/stansted-airport-poppy-appeal-record-26190-royal-british-legion/",
+   "url": "https://theseax.com/story/stansted-airport-poppy-appeal-record-26190-royal-british-legion/",
+   "title": "Stansted Airport Poppy Appeal raises record £26,190",
+   "summary": "Passengers and staff at Stansted gave more than ever to this year's Poppy Appeal. The total beat last year's record by over £2,000.",
+   "content_text": "Passengers and staff at Stansted gave more than ever to this year's Poppy Appeal. The total beat last year's record by over £2,000.",
+   "date_published": "2026-11-27T07:56:00Z",
+   "tags": [
+    "News"
+   ]
+  },
+  {
+   "id": "https://theseax.com/story/shoeburyness-east-beach-dunes-boardwalk-plan-900000/",
+   "url": "https://theseax.com/story/shoeburyness-east-beach-dunes-boardwalk-plan-900000/",
+   "title": "Shoeburyness East Beach could get dunes and step-free boardwalk",
+   "summary": "Southend City Council plans to replace worn sea defences at East Beach with replanted dunes. Work could start in spring 2027.",
+   "content_text": "Southend City Council plans to replace worn sea defences at East Beach with replanted dunes. Work could start in spring 2027.",
+   "date_published": "2026-11-27T07:55:00Z",
+   "tags": [
+    "News"
+   ]
+  },
+  {
+   "id": "https://theseax.com/story/southend-sutton-road-crash-pedestrian-seriously-hurt-dashcam-appeal/",
+   "url": "https://theseax.com/story/southend-sutton-road-crash-pedestrian-seriously-hurt-dashcam-appeal/",
+   "title": "Southend crash: police seek dashcam footage after man seriously hurt",
+   "summary": "A pedestrian in his 40s was hit by a car in Sutton Road last Saturday. Police want witnesses and footage.",
+   "content_text": "A pedestrian in his 40s was hit by a car in Sutton Road last Saturday. Police want witnesses and footage.",
+   "date_published": "2026-11-27T07:53:02Z",
+   "tags": [
+    "News"
+   ]
+  },
+  {
+   "id": "https://theseax.com/story/o-harwich-guildhall-archive-digitise/",
+   "url": "https://theseax.com/story/o-harwich-guildhall-archive-digitise/",
+   "title": "Harwich Town Council plans to digitise its Guildhall archive",
+   "summary": "Harwich's Guildhall holds thousands of historic papers, some from the late 1200s. The town council wants to start putting them online.",
+   "content_text": "Harwich's Guildhall holds thousands of historic papers, some from the late 1200s. The town council wants to start putting them online.",
+   "date_published": "2026-11-27T07:14:40Z",
+   "tags": [
+    "Public Services"
+   ]
+  },
+  {
+   "id": "https://theseax.com/story/lakeside-superdry-arabian-oud-studio-gloss-christmas-openings/",
+   "url": "https://theseax.com/story/lakeside-superdry-arabian-oud-studio-gloss-christmas-openings/",
+   "title": "Lakeside gets bigger Superdry and new perfume shop before Christmas",
+   "summary": "West Thurrock's Lakeside Shopping Centre is adding shops and festive events. Superdry has moved to a larger unit opposite Boots.",
+   "content_text": "West Thurrock's Lakeside Shopping Centre is adding shops and festive events. Superdry has moved to a larger unit opposite Boots.",
+   "date_published": "2026-11-27T06:55:00Z",
+   "tags": [
+    "News"
+   ]
+  },
+  {
+   "id": "https://theseax.com/story/southend-sea-life-adventure-canopy-appeal-allowed/",
+   "url": "https://theseax.com/story/southend-sea-life-adventure-canopy-appeal-allowed/",
+   "title": "Southend Sea Life Adventure wins appeal to keep wider entrance canopy",
+   "summary": "A planning inspector has overruled Southend councillors over the seafront attraction's canopy. They said it narrowed the pavement for disabled people.",
+   "content_text": "A planning inspector has overruled Southend councillors over the seafront attraction's canopy. They said it narrowed the pavement for disabled people.",
+   "date_published": "2026-11-27T06:19:15Z",
+   "tags": [
+    "News"
+   ]
+  },
+  {
+   "id": "https://theseax.com/story/grays-town-park-cafe-8000-rent-thurrock-council/",
+   "url": "https://theseax.com/story/grays-town-park-cafe-8000-rent-thurrock-council/",
+   "title": "Thurrock Council says sorry over Grays Town Park cafe rent demand",
+   "summary": "A Reform councillor says the demand was sent without authorisation. The council will meet the volunteers to agree a way forward.",
+   "content_text": "A Reform councillor says the demand was sent without authorisation. The council will meet the volunteers to agree a way forward.",
+   "date_published": "2026-11-27T06:19:00Z",
+   "tags": [
+    "News"
+   ]
+  },
+  {
+   "id": "https://theseax.com/story/essex-keith-flint-prodigy-fossil-snail-archaeospirostoma-flinti/",
+   "url": "https://theseax.com/story/essex-keith-flint-prodigy-fossil-snail-archaeospirostoma-flinti/",
+   "title": "Essex's Prodigy star Keith Flint honoured with fossil snail name",
+   "summary": "Scientists have named a 99-million-year-old snail after the late Prodigy singer. Its hairy shell reminded them of his famous spiky hair.",
+   "content_text": "Scientists have named a 99-million-year-old snail after the late Prodigy singer. Its hairy shell reminded them of his famous spiky hair.",
+   "date_published": "2026-11-26T22:45:00Z",
+   "tags": [
+    "News"
+   ]
+  },
+  {
+   "id": "https://theseax.com/story/o-basildon-end-terrace-house-fire-26-november/",
+   "url": "https://theseax.com/story/o-basildon-end-terrace-house-fire-26-november/",
+   "title": "Basildon end-terrace house destroyed by fire as crews protect neighbours",
+   "summary": "An end-terrace house in Basildon was completely alight when firefighters arrived. Smoke spread to the home next door.",
+   "content_text": "An end-terrace house in Basildon was completely alight when firefighters arrived. Smoke spread to the home next door.",
+   "date_published": "2026-11-26T21:25:00Z",
+   "tags": [
+    "Public Services"
+   ]
+  },
+  {
+   "id": "https://theseax.com/story/southend-united-frankie-banks-freedom-of-the-city/",
+   "url": "https://theseax.com/story/southend-united-frankie-banks-freedom-of-the-city/",
+   "title": "Southend United legend Frankie Banks given Freedom of the City",
+   "summary": "The former Shrimpers full-back started the club's community work in 1991. The club says his impact goes far beyond the pitch.",
+   "content_text": "The former Shrimpers full-back started the club's community work in 1991. The club says his impact goes far beyond the pitch.",
+   "date_published": "2026-11-26T18:24:00Z",
+   "tags": [
+    "News"
+   ]
+  },
+  {
+   "id": "https://theseax.com/story/harlow-council-opposes-asylum-seekers-private-rented-homes/",
+   "url": "https://theseax.com/story/harlow-council-opposes-asylum-seekers-private-rented-homes/",
+   "title": "Harlow Council tells government to drop asylum plan for private homes",
+   "summary": "The Home Office's contractor wants to rent homes across Harlow for asylum seekers. The council's leader wants the plan dropped.",
+   "content_text": "The Home Office's contractor wants to rent homes across Harlow for asylum seekers. The council's leader wants the plan dropped.",
+   "date_published": "2026-11-26T18:13:05Z",
+   "tags": [
+    "News"
+   ]
+  },
+  {
+   "id": "https://theseax.com/story/ct-chelmsford-central-park-murder-trial-boy-denies-turf-war/",
+   "url": "https://theseax.com/story/ct-chelmsford-central-park-murder-trial-boy-denies-turf-war/",
+   "title": "Chelmsford murder trial: boy, 17, tells jury he carried knife for protection",
+   "summary": "A teenager accused of murdering Radwan Shakur in Central Park has given evidence. He denies being part of any turf war.",
+   "content_text": "A teenager accused of murdering Radwan Shakur in Central Park has given evidence. He denies being part of any turf war.",
+   "date_published": "2026-11-26T17:48:54Z",
+   "tags": [
+    "News"
+   ]
+  },
+  {
+   "id": "https://theseax.com/story/o-little-clacton-weeley-bypass-night-closures-7-december/",
+   "url": "https://theseax.com/story/o-little-clacton-weeley-bypass-night-closures-7-december/",
+   "title": "Weeley and Little Clacton bypasses to shut for four nights from 7 December",
+   "summary": "Drivers heading to and from Clacton face overnight closures on two bypasses. The road is being resurfaced.",
+   "content_text": "Drivers heading to and from Clacton face overnight closures on two bypasses. The road is being resurfaced.",
+   "date_published": "2026-11-26T17:37:00Z",
+   "tags": [
+    "Public Services"
+   ]
+  },
+  {
+   "id": "https://theseax.com/story/saffron-walden-museum-60000-collection-records-online/",
+   "url": "https://theseax.com/story/saffron-walden-museum-60000-collection-records-online/",
+   "title": "Saffron Walden Museum catalogue goes online with 60,000 records",
+   "summary": "Anyone can now browse the town museum's collection records from home, the Saffron Walden Reporter reported.",
+   "content_text": "Anyone can now browse the town museum's collection records from home, the Saffron Walden Reporter reported.",
+   "date_published": "2026-11-26T17:25:00Z",
+   "tags": [
+    "News"
+   ]
+  },
+  {
+   "id": "https://theseax.com/story/colchester-danny-archer-admits-10-thefts-bp-ipswich-road-ban/",
+   "url": "https://theseax.com/story/colchester-danny-archer-admits-10-thefts-bp-ipswich-road-ban/",
+   "title": "Colchester man admits 10 thefts from garage he was banned from",
+   "summary": "Danny Archer, 40, took £550 of meat and other food from the BP in Ipswich Road. He has been remanded in custody.",
+   "content_text": "Danny Archer, 40, took £550 of meat and other food from the BP in Ipswich Road. He has been remanded in custody.",
+   "date_published": "2026-11-26T17:00:00Z",
+   "tags": [
+    "News"
+   ]
+  },
+  {
+   "id": "https://theseax.com/story/brentwood-fly-tipping-crackdown-navestock-police-van-checks/",
+   "url": "https://theseax.com/story/brentwood-fly-tipping-crackdown-navestock-police-van-checks/",
+   "title": "Navestock fly-tippers targeted by Brentwood police van checks",
+   "summary": "Police and council officers are patrolling Brentwood's country lanes and stopping vans. The borough sees about three fly-tips a day.",
+   "content_text": "Police and council officers are patrolling Brentwood's country lanes and stopping vans. The borough sees about three fly-tips a day.",
+   "date_published": "2026-11-26T16:36:00Z",
+   "tags": [
+    "News"
+   ]
+  },
+  {
+   "id": "https://theseax.com/story/leigh-douglas-kramer-jailed-15kg-cocaine-car-stop/",
+   "url": "https://theseax.com/story/leigh-douglas-kramer-jailed-15kg-cocaine-car-stop/",
+   "title": "Leigh police stop finds £1m of cocaine as driver is jailed",
+   "summary": "Officers found 8kg in a car boot, then 7kg more in a Southend storage unit. Douglas Kramer got six years and eight months.",
+   "content_text": "Officers found 8kg in a car boot, then 7kg more in a Southend storage unit. Douglas Kramer got six years and eight months.",
+   "date_published": "2026-11-26T16:10:00Z",
+   "tags": [
+    "News"
+   ]
+  },
+  {
+   "id": "https://theseax.com/story/essex-county-council-farming-rural-roundtable-quarterly/",
+   "url": "https://theseax.com/story/essex-county-council-farming-rural-roundtable-quarterly/",
+   "title": "Essex farmers raise fly-tipping costs at first county roundtable",
+   "summary": "Farmers told Essex County Council that rural crime and the cost of clearing dumped waste hurt them. More meetings are planned.",
+   "content_text": "Farmers told Essex County Council that rural crime and the cost of clearing dumped waste hurt them. More meetings are planned.",
+   "date_published": "2026-11-26T15:57:00Z",
+   "tags": [
+    "News"
+   ]
+  },
+  {
+   "id": "https://theseax.com/story/c2c-gbr-anglia-2m-reliability-plan-december-works/",
+   "url": "https://theseax.com/story/c2c-gbr-anglia-2m-reliability-plan-december-works/",
+   "title": "c2c gets £2m plan to fix delays",
+   "summary": "Rail bosses are spending more to fix the Southend line after months of delays. Some December trains will finish early or be replaced by buses.",
+   "content_text": "Rail bosses are spending more to fix the Southend line after months of delays. Some December trains will finish early or be replaced by buses.",
+   "date_published": "2026-11-26T15:40:07Z",
+   "tags": [
+    "News"
+   ]
+  },
+  {
+   "id": "https://theseax.com/story/thurrock-council-70-acres-open-space-linford-tilbury-corringham/",
+   "url": "https://theseax.com/story/thurrock-council-70-acres-open-space-linford-tilbury-corringham/",
+   "title": "Thurrock Council says no decision yet on selling 70 acres of open space",
+   "summary": "Three sites in Linford, Tilbury and Corringham could be sold. Residents have until 27 November to object, and cabinet would have the final say.",
+   "content_text": "Three sites in Linford, Tilbury and Corringham could be sold. Residents have until 27 November to object, and cabinet would have the final say.",
+   "date_published": "2026-11-26T15:40:07Z",
+   "tags": [
+    "News"
+   ]
+  },
+  {
+   "id": "https://theseax.com/story/essex-nhs-32000-extra-gp-appointments-winter-2026/",
+   "url": "https://theseax.com/story/essex-nhs-32000-extra-gp-appointments-winter-2026/",
+   "title": "Essex GP surgeries to offer 32,000 extra appointments this winter",
+   "summary": "NHS Essex is paying for 8,000 more GP appointments a month until February. It is part of a county-wide plan for the busiest season.",
+   "content_text": "NHS Essex is paying for 8,000 more GP appointments a month until February. It is part of a county-wide plan for the busiest season.",
+   "date_published": "2026-11-26T15:40:07Z",
+   "tags": [
+    "News"
+   ]
+  },
+  {
+   "id": "https://theseax.com/story/c-chelmsford-family-havens-hospices-big-yes-appeal-elio/",
+   "url": "https://theseax.com/story/c-chelmsford-family-havens-hospices-big-yes-appeal-elio/",
+   "title": "Chelmsford parents back Havens Hospices appeal after baby son's care",
+   "summary": "Michael and Sarah Fragnito's son Elio spent his last two days at the Little Havens children's hospice. They now support its Christmas appeal.",
+   "content_text": "Michael and Sarah Fragnito's son Elio spent his last two days at the Little Havens children's hospice. They now support its Christmas appeal.",
+   "date_published": "2026-11-26T15:40:07Z",
+   "tags": [
+    "Community"
+   ]
+  },
+  {
+   "id": "https://theseax.com/story/c-thurrock-cvs-volunteer-centre-warm-up-for-winter-tilbury/",
+   "url": "https://theseax.com/story/c-thurrock-cvs-volunteer-centre-warm-up-for-winter-tilbury/",
+   "title": "Thurrock CVS invites would-be volunteers to drop in after Tilbury winter event",
+   "summary": "Thurrock CVS says anyone curious about volunteering can get in touch. Its co-ordinator met many residents at a busy Tilbury winter event.",
+   "content_text": "Thurrock CVS says anyone curious about volunteering can get in touch. Its co-ordinator met many residents at a busy Tilbury winter event.",
+   "date_published": "2026-11-26T14:54:00Z",
+   "tags": [
+    "Community"
+   ]
+  },
+  {
+   "id": "https://theseax.com/story/rayleigh-stefan-jaworski-jailed-bp-london-road-thefts/",
+   "url": "https://theseax.com/story/rayleigh-stefan-jaworski-jailed-bp-london-road-thefts/",
+   "title": "Rayleigh shoplifter jailed for five months after BP garage thefts",
+   "summary": "Stefan Jaworski, 44, stole £260 of meat, fish, chocolate and alcohol. A court order bans him from every BP in England and Wales.",
+   "content_text": "Stefan Jaworski, 44, stole £260 of meat, fish, chocolate and alcohol. A court order bans him from every BP in England and Wales.",
+   "date_published": "2026-11-26T14:35:00Z",
+   "tags": [
+    "News"
+   ]
+  }
+ ]
+}
