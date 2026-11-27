@@ -429,7 +429,22 @@
   "none": "no road named",
   "sig": "[[], null, null]"
  },
+ "ingatestone-festive-fair-shenfield-christmas-trails-2026": {
+  "after": 0,
+  "h": 750,
+  "kicker": "On the map",
+  "made": "2026-11-27T14:42:14Z",
+  "road": "High Street",
+  "sig": "[[\"High Street\", \"Hutton Road\"], \"Ingatestone\", null]",
+  "src": "/img/maps/ingatestone-festive-fair-shenfield-christmas-trails-2026.svg",
+  "town": "Ingatestone",
+  "w": 1200
+ },
  "lakeside-boots-40000-sq-ft-flagship-upsize": {
+  "none": "no road named",
+  "sig": "[[], \"Thurrock\", null]"
+ },
+ "lakeside-slim-chickens-opening-10-december-fresh-drop": {
   "none": "no road named",
   "sig": "[[], \"Thurrock\", null]"
  },
