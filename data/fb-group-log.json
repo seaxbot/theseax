@@ -1,7 +1,7 @@
 {
  "note": "Every Seax post into a Facebook group, newest last. Written by the groups desk (ops/fbgroups.md). The queue page merges it with the ticks saved in the browser.",
- "paused": false,
- "pauseReason": "27 Nov 2026 15:34: GP push stopped after the owner's unpause. Two more first posts were declined within seconds with no feedback (It All Happens In Harwich 15:25, The Real Billericay Discussion Page 15:33), making 5 instant declines or removals today (with MALDON, Southend Crimewatch, Crimewatch Southend). Pattern looks like automatic filtering of The Seax Page or theseax.com links in groups the Page has not posted in before. The push check also found earlier Seax posts declined or removed in 10 more groups (We Love Southend, Colchester Community, Braintree Community Hub, Wickford Connected, The Basildon Discussion Page, Canvey Island, Southend City Discussion, Benfleet Thundersley, Witham and Silver End, The Mersea Locals), now off. Only the owner unpauses. UNPAUSED again 27 Nov 2026 by the owner in chat ('you should keep trying') to finish the GP push.",
+ "paused": true,
+ "pauseReason": "27 Nov 2026 17:55 (17:41 groups desk run): paused again. The Basildon safety wardens post in Laindon and Basildon was removed within seconds, and that group's Removed list shows 8 Seax posts, including ones that had gone live on 25 and 26 Nov. That makes 6 declines or removals today (MALDON, Southend Crimewatch, Crimewatch Southend, It All Happens In Harwich, The Real Billericay Discussion Page, Laindon and Basildon), now including a group where the Page had posted live several times. Pattern still points to automatic filtering of The Seax Page or theseax.com links. Only the owner unpauses. Earlier: 27 Nov 2026 15:34: GP push stopped after the owner's unpause. Two more first posts were declined within seconds with no feedback (It All Happens In Harwich 15:25, The Real Billericay Discussion Page 15:33), making 5 instant declines or removals today (with MALDON, Southend Crimewatch, Crimewatch Southend). Pattern looks like automatic filtering of The Seax Page or theseax.com links in groups the Page has not posted in before. The push check also found earlier Seax posts declined or removed in 10 more groups (We Love Southend, Colchester Community, Braintree Community Hub, Wickford Connected, The Basildon Discussion Page, Canvey Island, Southend City Discussion, Benfleet Thundersley, Witham and Silver End, The Mersea Locals), now off. Only the owner unpauses. UNPAUSED again 27 Nov 2026 by the owner in chat ('you should keep trying') to finish the GP push.",
  "posts": [
   {
    "g": "our-thurrock-community-1282",
@@ -525,8 +525,8 @@
    "s": "c2c-gbr-anglia-2m-reliability-plan-december-works",
    "t": 1795728287452,
    "h": "c2c gets £2m plan to fix delays, with night and weekend works in December",
-   "result": "live",
-   "note": "posted by hand from the owner's chat session, 26 Nov 2026 evening (owner: 40 tonight, about 4 minutes apart)"
+   "result": "removed",
+   "note": "posted by hand from the owner's chat session, 26 Nov 2026 evening (owner: 40 tonight, about 4 minutes apart) REMOVED: found in the group's Your content > Removed list on 27 Nov 2026 17:55."
   },
   {
    "g": "langdon-hills-official-group-5388",
@@ -807,6 +807,14 @@
    "h": "c2c trains delayed across network after fire near Grays line",
    "result": "live",
    "note": "17:41 run. Live at once (Your content > Published)."
+  },
+  {
+   "g": "laindon-and-basildon-4637",
+   "s": "basildon-town-centre-safety-wardens-underpasses-committee-backs",
+   "t": 1795802013204,
+   "h": "Basildon town centre safety wardens and underpass clean-up get go-ahead",
+   "result": "removed",
+   "note": "17:41 run. Removed within seconds (Your content > Removed, no feedback, no notification). The group's Removed list now shows 8 Seax posts, including the c2c investigation (25 Nov) and c2c £2m plan (26 Nov) posts logged as live, so those are marked removed too. Group set off. Sixth decline or removal today: desk paused."
   }
  ],
  "joins": [

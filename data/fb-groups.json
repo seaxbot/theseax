@@ -661,9 +661,10 @@
     "pitsea",
     "vange"
    ],
-   "status": "on",
+   "status": "off",
    "perWeek": 4,
-   "approval": "instant"
+   "approval": "instant",
+   "note": "OFF 27 Nov 2026: the 17:41 groups desk post (Basildon safety wardens) was removed within seconds with no feedback; the group's Removed list shows 8 Seax posts, including earlier ones that had gone live."
   },
   {
    "id": "555060564639519",
