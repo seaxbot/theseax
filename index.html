@@ -33,7 +33,7 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"NewsMediaOrganization","name":"The Seax","url":"https://theseax.com/","logo":"https://theseax.com/icons/icon-512.png","email":"info@theseax.com","contactPoint":[{"@type":"ContactPoint","contactType":"news tips","email":"news@theseax.com","areaServed":"Essex"},{"@type":"ContactPoint","contactType":"sport","email":"sport@theseax.com"},{"@type":"ContactPoint","contactType":"events","email":"events@theseax.com"},{"@type":"ContactPoint","contactType":"community and charity","email":"community@theseax.com"},{"@type":"ContactPoint","contactType":"corrections","email":"corrections@theseax.com"},{"@type":"ContactPoint","contactType":"complaints","email":"editor@theseax.com"}],"areaServed":"Essex, England","publishingPrinciples":"https://theseax.com/about/","correctionsPolicy":"https://theseax.com/about/#corrections","sameAs":["https://www.facebook.com/profile.php?id=61596409826403","https://x.com/theseaxessex","https://whatsapp.com/channel/0029VbHuL8nBKfi870qIO307"]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"The Seax","alternateName":["The Seax Essex","theseax.com","Seax Essex news"],"url":"https://theseax.com/","inLanguage":"en-GB","description":"Essex news, sport and life, updated through the day.","publisher":{"@type":"NewsMediaOrganization","name":"The Seax","url":"https://theseax.com/"}}</script>
 <!--seax-config--><script>window.SEAX_CONFIG = {"site": "https://theseax.com", "contactEmail": "info@theseax.com", "goatcounter": "theseax", "newsletterForm": "https://api.follow.it/subscription-form/N0lnWUp5VkdWOGJVVzdWaHBld1MxSVVEMUl6bTJOQVlGRjhXSSsxTjQwL1h3YWhJL01XamxxSWNCbGNUalM3MEo1NHAyTWpLSFdpMVJONTNnOS9VY1RoRXVCbUlCT0VpU1FDWmhUUW5FL1pEVkhwTURueVNGMkYramxTSEZFMXZ8T2p4L0ZWaGwrUHdRL0hRQ1NnM0ErcHJDRUhwd3hXMDgzOHI5V3paZE5tbz0=/8", "newsletterField": "email", "newsletterLink": "https://follow.it/essex-at-7-the-seax-morning-briefing?leanpub", "newsletterName": "Essex at 7", "whatsappChannel": "https://whatsapp.com/channel/0029VbHuL8nBKfi870qIO307", "facebookPage": "https://www.facebook.com/profile.php?id=61596409826403", "latestBriefing": "2026-11-27"};</script><script data-goatcounter="https://theseax.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script><!--/seax-config-->
-<script>window.SEAX_FEED_URL = "edition.json";</script>
+<script>window.SEAX_FEED_URL = "edition.json"; document.documentElement.classList.add("seax-wait"); /* holds the space for the lead open from the first paint; the page script removes it when it draws */</script>
 <style>
 :root{
   --ink:#15161b; --ink2:#3a3a40; --muted:#6d675c; --paper:#f6f1e6; --paper2:#ede5d4; --card:#fffdf7;
@@ -1515,7 +1515,11 @@ var el=document.querySelector('.masthead .skyline');el.style.backgroundImage='ur
 </footer>
 
 
-<script>
+<!-- 27 Nov 2026: the page's two scripts are held as text and run by the small loader at the foot of the page just after
+     the browser has shown the first screen. Run in place, they made a phone work through the whole script before it
+     could show anything. They are ordinary scripts in every other way: edit them here exactly as before. Do not change
+     type="text/plain" or the ids without changing the loader. -->
+<script type="text/plain" id="seax-app-1">
 const $ = s => document.querySelector(s);
 const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 const safeUrl = u => /^https?:\/\//i.test(String(u||"")) ? String(u) : "#";
@@ -5323,7 +5327,9 @@ function renderAll(staged){
     () => { renderDesk(); renderCouncilWatch(); renderCommunity(); },
     () => { renderSport(); renderTables(); renderWeather(); },
     () => { renderEvents(); renderCulture(); renderVital(); renderSpecials(); seaxSourcesWhenNear(); },
-    () => { renderMeta(); afterRender(); updateLiveLine(); if(location.hash.startsWith("#story-")) renderStory(location.hash.slice(7)); }
+    () => { renderMeta(); afterRender(); updateLiveLine(); if(location.hash.startsWith("#story-")) renderStory(location.hash.slice(7));
+            /* a link straight to a section (/#sport, /#sources): go there once the page has its full length, first draw only */
+            if(!window.SEAX_HASH_DONE){ window.SEAX_HASH_DONE = true; const h = location.hash.slice(1); if(h && !h.startsWith("story-")){ const el = document.getElementById(h); if(el && !document.body.classList.contains("reading")) el.scrollIntoView(); } } }
   ];
   let at = 0;
   const rest = () => { if(gen !== seaxGen) return; clearTimeout(seaxStageT); while(at < steps.length) steps[at++](); };
@@ -6051,7 +6057,7 @@ document.addEventListener("scroll", e => { if(e.target && e.target.classList && 
 setTimeout(navOverflow, 0);
 
 </script>
-<script>
+<script type="text/plain" id="seax-app-2">
 /* added: story pages, native share, analytics for in-page story views, briefing band */
 (function(){
   var CFG = window.SEAX_CONFIG || {};
@@ -6083,7 +6089,7 @@ setTimeout(navOverflow, 0);
     }
   }
   window.addEventListener("hashchange", count);
-  window.addEventListener("load", function(){ setTimeout(count, 1500); });
+  if(document.readyState === "complete") setTimeout(count, 1500); else window.addEventListener("load", function(){ setTimeout(count, 1500); });
   var fl = document.querySelector("footer .flinks");
   if(fl){
     if(CFG.whatsappChannel) fl.insertAdjacentHTML("beforeend", ' · <a href="' + CFG.whatsappChannel + '" target="_blank" rel="noopener">WhatsApp channel</a>');
@@ -6101,6 +6107,14 @@ setTimeout(navOverflow, 0);
     }
     if(CFG.latestBriefing){ document.getElementById("nlRead").hidden = false; }
   }
+})();
+</script>
+<script>/* loader for the two scripts above (see the note on the first): run them, in order, once the first screen is on show */
+(function(){
+  var ran = false;
+  function run(){ if(ran) return; ran = true; ["seax-app-1","seax-app-2"].forEach(function(id){ var src = document.getElementById(id); if(!src) return; var s = document.createElement("script"); s.textContent = src.textContent; document.body.appendChild(s); }); }
+  if(typeof requestAnimationFrame === "function" && document.visibilityState !== "hidden"){ requestAnimationFrame(function(){ setTimeout(run, 0); }); setTimeout(run, 700); }
+  else run();
 })();
 </script>
 </body>
