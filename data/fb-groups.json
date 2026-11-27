@@ -3371,7 +3371,7 @@
    "id": "436826131246730",
    "key": "people-of-clacton-6730",
    "name": "PEOPLE OF CLACTON",
-   "members": 12000,
+   "members": 12500,
    "privacy": "Public",
    "kind": "town",
    "match": [
@@ -3382,7 +3382,9 @@
    "status": "on",
    "perWeek": 1,
    "joined": "2026-11-22",
-   "note": "Joined 22 Nov 2026 (owner's overnight request). Not yet vetted: before the first post, check the Group by banner (never Essex Live) and the rules; set off or caution if they ban links, news or Pages."
+   "note": "Vetted 27 Nov 2026 (19:41 run): no written rules or description, admins Laura and Andy, not Essex Live. Holds posts for admin approval. perWeek 1 until a post has gone live without complaint.",
+   "approval": "admin approval",
+   "postsMonth": 49
   },
   {
    "id": "674108469333033",
