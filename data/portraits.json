@@ -3,19 +3,19 @@
   "ids": [
    "maldon-high-street-salt-restaurant-arson-investigation"
   ],
-  "name": "A police car and cordon tape in Maldon High Street overnight",
+  "name": "Fire damage after the arson attempt in Maldon High Street",
   "label": "Picture",
-  "wide": "/img/people/maldon-salt-arson-police-wide.jpg",
-  "og": "/img/people/maldon-salt-arson-police-og.jpg",
+  "wide": "/img/people/maldon-salt-arson-damage-wide.jpg",
+  "og": "/img/people/maldon-salt-arson-damage-og.jpg",
   "creator": "Maldon Essex Local",
   "provider": "Maldon Essex Local",
   "source": "",
-  "plainCaption": "Police in Maldon High Street overnight. Picture: Maldon Essex Local",
+  "plainCaption": "Damage after the attempted fire. Picture: Maldon Essex Local",
   "more": [
    {
-    "name": "Fire damage after the arson attempt",
-    "wide": "/img/people/maldon-salt-arson-damage-wide.jpg",
-    "plainCaption": "Damage after the attempted fire. Picture: Maldon Essex Local",
+    "name": "A police car and cordon tape in Maldon High Street overnight",
+    "wide": "/img/people/maldon-salt-arson-police-wide.jpg",
+    "plainCaption": "Police in Maldon High Street overnight. Picture: Maldon Essex Local",
     "creator": "Maldon Essex Local"
    },
    {
@@ -25,7 +25,7 @@
     "creator": "Sark Restaurant & Cocktail Bar"
    }
   ],
-  "addedBy": "owner, 27 Nov 2026 12:24 (owner-supplied screenshots: two pictures shared by Maldon Essex Local, one from Sark's Facebook post)"
+  "addedBy": "owner, 27 Nov 2026 12:24 (owner-supplied screenshots: two pictures shared by Maldon Essex Local, one from Sark's Facebook post); 12:32 owner: damage picture as the main picture"
  },
  {
   "ids": [
