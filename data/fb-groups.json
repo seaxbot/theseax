@@ -680,8 +680,9 @@
     "laindon",
     "vange"
    ],
-   "status": "on",
-   "perWeek": 3
+   "status": "off",
+   "perWeek": 3,
+   "note": "OFF 27 Nov 2026: Your content shows both Seax posts removed (including the 21 Nov one logged as live), none published."
   },
   {
    "id": "3289065801164630",
