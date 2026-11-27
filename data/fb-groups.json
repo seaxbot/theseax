@@ -606,7 +606,7 @@
    ],
    "status": "on",
    "perWeek": 3,
-   "note": "Rules: local relevance, no spamming."
+   "note": "Rules: local relevance, no spamming. Re-read 27 Nov 2026: anything local can be posted; no spam, local relevance."
   },
   {
    "id": "348813442508581",
@@ -3459,10 +3459,10 @@
     "copford",
     "colchester"
    ],
-   "status": "on",
+   "status": "off",
    "perWeek": 1,
    "joined": "2026-11-22",
-   "note": "Joined 22 Nov 2026 (owner's overnight request). Not yet vetted: before the first post, check the Group by banner (never Essex Live) and the rules; set off or caution if they ban links, news or Pages."
+   "note": "Joined 22 Nov 2026 (owner's overnight request). Not yet vetted: before the first post, check the Group by banner (never Essex Live) and the rules; set off or caution if they ban links, news or Pages. OFF 27 Nov 2026 (vetted in GP push): rules say strictly no advertising and no links to other pages without admin approval."
   },
   {
    "id": "921010441378353",
