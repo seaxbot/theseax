@@ -1038,7 +1038,11 @@ def portrait_of(it):
         try:
             # an entry may name its story by "id" (official bodies' own pictures, Nov 2026), so a rewritten headline keeps it
             # "notMatch" (charity logos, 22 Nov 2026): a headline matching it never picks the picture up by name, only by id
-            if (sid and sid in (p.get("ids") or [])) or (p.get("match") and re.search(p["match"], h) and not (p.get("notMatch") and re.search(p["notMatch"], h, re.I))):
+            # "textMatch" (owner, 27 Nov 2026: the Chelmsford Crown Court picture for cases heard there): searched in the
+            # headline, summary, body and key points, for generic pictures where the court is named only in the text
+            tm = p.get("textMatch") and not (p.get("notMatch") and re.search(p["notMatch"], h, re.I)) and re.search(
+                p["textMatch"], " ".join([h, str(it.get("summary") or "")] + [str(x) for x in (it.get("body") or []) + (it.get("points") or []) if isinstance(x, str)]))
+            if (sid and sid in (p.get("ids") or [])) or tm or (p.get("match") and re.search(p["match"], h) and not (p.get("notMatch") and re.search(p["notMatch"], h, re.I))):
                 alts = p.get("alts") or []
                 if alts:  # alternate pictures hour by hour, in step with the page's portraitTurn (owner's choice, 12 Nov 2026)
                     i = int(time.time() // 3600) % (len(alts) + 1)

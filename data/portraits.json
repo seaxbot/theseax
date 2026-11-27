@@ -1503,16 +1503,19 @@
  },
  {
   "match": "\\bHMP (?:& YOI )?Chelmsford\\b|\\bYOI Chelmsford\\b|\\bChelmsford(?:['’]s)? (?:[Pp]rison|[Jj]ail)\\b|\\b(?:[Pp]rison|[Jj]ail) in Chelmsford\\b",
-  "name": "HMP & YOI Chelmsford sign",
+  "name": "The entrance to HMP & YOI Chelmsford",
   "label": "Picture",
-  "wide": "/img/people/hmp-chelmsford-sign-wide.jpg",
-  "og": "/img/people/hmp-chelmsford-sign-og.jpg",
-  "creator": "The Seax",
-  "provider": "",
+  "wide": "/img/people/hmp-chelmsford-entrance-wide.jpg",
+  "og": "/img/people/hmp-chelmsford-entrance-og.jpg",
+  "creator": "Google Street View",
+  "provider": "Google",
   "license": "",
   "licenseUrl": "",
   "source": "",
-  "addedBy": "owner, 22 Nov 2026 (owner's own photo of the HMP & YOI Chelmsford sign, cropped to remove the photographer's shadow; used for all Chelmsford Prison stories)"
+  "addedBy": "owner, 27 Nov 2026 19:08: \"use this pic for chelmsford prison stories incl top story now\" (Google Street View image of the prison entrance; replaces the owner's sign photo of 22 Nov)",
+  "ids": [
+   "ct-grays-oksana-antanaitiene-prison-tutor-sentenced-hmp-chelmsford"
+  ]
  },
  {
   "match": "\\bPok[eé]mon appeal\\b",
@@ -1870,6 +1873,21 @@
   "licenseUrl": "",
   "source": "https://www.facebook.com/EPSouthend",
   "addedBy": "owner, 25 Nov 2026 17:27: \"I like this pic when talking about being jailed\" (Essex Police picture from its Southend District Facebook page; stories where someone is jailed; story-specific pictures such as custody photos still win)"
+ },
+ {
+  "name": "Chelmsford Crown Court",
+  "label": "Picture",
+  "wide": "/img/people/chelmsford-crown-court-antanaitiene-essex-police-wide.jpg",
+  "og": "/img/people/chelmsford-crown-court-antanaitiene-essex-police-og.jpg",
+  "creator": "Essex Police",
+  "provider": "Essex Police",
+  "license": "",
+  "licenseUrl": "",
+  "source": "https://www.essex.police.uk/news/essex/news/news/2026/november/chelmsford-prison-tutor-sentenced-after-secret-relationship-with-inmate/",
+  "addedBy": "owner, 27 Nov 2026 19:08: \"use the current one for stories which dont have pics but were heard / tried / verdict given at chelmsford crown court\" (Essex Police picture; story-specific pictures win, and the jail cell picture stays first for jailed stories)",
+  "generic": true,
+  "textMatch": "\\bChelmsford Crown Court\\b",
+  "notMatch": "\\b(HMP|[Pp]rison officer|inquest)\\b"
  },
  {
   "generic": true,
@@ -2288,21 +2306,6 @@
   "source": "",
   "noCaption": true,
   "addedBy": "owner, 27 Nov 2026 09:44 (owner-supplied AI-generated picture for stalking stories; no credit or caption needed)"
- },
- {
-  "ids": [
-   "ct-grays-oksana-antanaitiene-prison-tutor-sentenced-hmp-chelmsford"
-  ],
-  "name": "Chelmsford Crown Court",
-  "label": "Picture",
-  "wide": "/img/people/chelmsford-crown-court-antanaitiene-essex-police-wide.jpg",
-  "og": "/img/people/chelmsford-crown-court-antanaitiene-essex-police-og.jpg",
-  "creator": "Essex Police",
-  "provider": "Essex Police",
-  "license": "",
-  "licenseUrl": "",
-  "source": "https://www.essex.police.uk/news/essex/news/news/2026/november/chelmsford-prison-tutor-sentenced-after-secret-relationship-with-inmate/",
-  "addedBy": "Essex Police news sweep, 27 Nov 2026 (owner's rule: pictures from the Essex Police website)"
  },
  {
   "ids": [
