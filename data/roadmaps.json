@@ -247,6 +247,17 @@
   "none": "no road named",
   "sig": "[[], \"Colchester\", null]"
  },
+ "colchester-prettygate-bridleway-gas-pipes-cadent-december": {
+  "after": 0,
+  "h": 750,
+  "kicker": "Where it happened",
+  "made": "2026-11-27T23:40:12Z",
+  "road": "Norman Way",
+  "sig": "[[\"Norman Way\"], \"Colchester\", null]",
+  "src": "/img/maps/colchester-prettygate-bridleway-gas-pipes-cadent-december.svg",
+  "town": "Colchester",
+  "w": 1200
+ },
  "colchester-rol-cruise-third-best-company-to-work-for-2026": {
   "none": "no road named",
   "sig": "[[], \"Colchester\", null]"
