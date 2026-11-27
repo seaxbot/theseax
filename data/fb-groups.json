@@ -60,7 +60,7 @@
    ],
    "status": "on",
    "perWeek": 4,
-   "note": "Rule: no AI posters. Real photo only. Group About says business posts only on Wednesdays (seen 23 Nov 2026): keep non-urgent Seax posts to Wednesdays; public safety items any day.",
+   "note": "Rule: no AI posters. Real photo only. Group About says business posts only on Wednesdays (seen 23 Nov 2026): keep non-urgent Seax posts to Wednesdays; public safety items any day. 27 Nov 2026 (Fri): skipped in GP push, business posts Wednesdays only.",
    "approval": "instant"
   },
   {
@@ -1292,9 +1292,9 @@
     "rivenhall",
     "kelvedon"
    ],
-   "status": "caution",
+   "status": "off",
    "perWeek": 2,
-   "note": "Rule: no promotions or spam."
+   "note": "Rule: no promotions or spam. OFF 27 Nov 2026: Your content shows an earlier Seax post Declined (found in GP push check)."
   },
   {
    "id": "bnnlessex",
@@ -2767,10 +2767,10 @@
     "thundersley",
     "hadleigh"
    ],
-   "status": "on",
+   "status": "off",
    "perWeek": 1,
    "joined": "2026-11-21",
-   "note": "Auto-joined in the 21 Nov 2026 bulk join. Not yet vetted: before the first post, check the Group by banner (never Essex Live) and the rules; set off or caution if they ban links, news or Pages."
+   "note": "Auto-joined in the 21 Nov 2026 bulk join. Not yet vetted: before the first post, check the Group by banner (never Essex Live) and the rules; set off or caution if they ban links, news or Pages. OFF 27 Nov 2026: Your content shows 2 earlier Seax posts Removed (found in GP push check)."
   },
   {
    "id": "426206327427827",
@@ -3087,10 +3087,10 @@
     "tiptree",
     "feering"
    ],
-   "status": "on",
+   "status": "hold",
    "perWeek": 1,
    "joined": "2026-11-21",
-   "note": "Auto-joined in the 21 Nov 2026 bulk join. Not yet vetted: before the first post, check the Group by banner (never Essex Live) and the rules; set off or caution if they ban links, news or Pages."
+   "note": "Auto-joined in the 21 Nov 2026 bulk join. Not yet vetted: before the first post, check the Group by banner (never Essex Live) and the rules; set off or caution if they ban links, news or Pages. HOLD 27 Nov 2026: private group, Page's membership still pending (Cancel Request shown); cannot post."
   },
   {
    "id": "362390810896200",
@@ -3336,10 +3336,10 @@
     "peldon",
     "oyster"
    ],
-   "status": "caution",
+   "status": "off",
    "perWeek": 1,
    "joined": "2026-11-22",
-   "note": "Rules read 22 Nov: self-promotion at most once every two weeks, no politics. Post at most once a fortnight, Mersea stories only.",
+   "note": "Rules read 22 Nov: self-promotion at most once every two weeks, no politics. Post at most once a fortnight, Mersea stories only. OFF 27 Nov 2026: Your content shows an earlier Seax post Removed (found in GP push check).",
    "avoidTags": [
     "Politics",
     "Council",
