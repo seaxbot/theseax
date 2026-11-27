@@ -821,14 +821,21 @@ h1,h2,h3,h4,.story h1,.lead h2,.card h3,.drow h4{letter-spacing:-.022em}
 .wk-more .wk-link{margin-top:auto;font-weight:800;font-size:14.5px;color:var(--navy)}
 .wk-more a:hover h3{text-decoration:underline;text-underline-offset:3px}
 /* The checker sits inside .wk-three (27 Nov 2026): full width under both columns on desktop, straight under the big read on phones so readers can find it */
-.wk-three > .wk-feat{order:1}.wk-three > .wk-more{order:2}.wk-three > .wk-below{order:3;grid-column:1/-1}
+.wk-three:has(.wk-main) > .wk-more{align-self:start}
+.wk-main{background:#fff;border-radius:10px;overflow:hidden;box-shadow:0 10px 30px -18px rgba(0,0,0,.6);align-self:start;color:var(--ink)}
+.wk-main .wk-feat{border:0;border-radius:0;box-shadow:none}
+.wk-main .wk-below{position:relative;border-top:2px dashed #e6dcc0;margin:0 24px}
+.wk-main .wk-below::before{content:"";position:absolute;left:50%;top:-9px;width:16px;height:16px;margin-left:-8px;background:#fff;border-right:2px dashed #e6dcc0;border-bottom:2px dashed #e6dcc0;transform:rotate(45deg)}
+.wk-main .wk-below > div{max-height:none;overflow:visible}
+.wk-main .seax-hlookup,.wk-main .seax-lookup,.wk-main .seax-plookup{margin:0;border:0;border-radius:0;background:#fff;padding:22px 0 24px;box-shadow:none}
+.wk-main .seax-hlookup .hl-out{max-height:520px;overflow:auto}
 .wk-below{position:relative}
 .wk-below .seax-lookup,.wk-below .seax-hlookup,.wk-below .seax-plookup{margin:0;background:#fff;color:var(--ink);border-radius:10px}
 .wk-below > div{max-height:470px;overflow:auto}
-@media (max-width:960px){.wk-three > .wk-below{order:2}.wk-three > .wk-more{order:3}.wk-below > div{max-height:none;overflow:visible}.wk-three{grid-template-columns:1fr}.wk-more{grid-template-rows:none;grid-template-columns:1fr 1fr}}
+@media (max-width:960px){.wk-main .seax-hlookup .hl-out{max-height:none;overflow:visible}.wk-three{grid-template-columns:1fr}.wk-more{grid-template-rows:none;grid-template-columns:1fr 1fr}}
 @media (max-width:640px){.wk-more{grid-template-columns:1fr}.wk-more h3{font-size:19px}}
 @media (max-width:960px){.wk-grid{grid-template-columns:1fr}.wk-side .seax-lookup .sl-out{max-height:none}}
-@media (max-width:640px){.wk-band{padding:18px 14px 20px;border-radius:10px}.wk-head h2{font-size:32px}.wk-text{padding:16px 16px 18px}.wk-tiles{grid-template-columns:1fr 1fr}.wk-tile:last-child{grid-column:1/-1}.wk-tile b{font-size:24px}.wk-go{width:100%;justify-content:center}}
+@media (max-width:640px){.wk-main .wk-below{margin:0 16px}.wk-band{padding:18px 14px 20px;border-radius:10px}.wk-head h2{font-size:32px}.wk-text{padding:16px 16px 18px}.wk-tiles{grid-template-columns:1fr 1fr}.wk-tile:last-child{grid-column:1/-1}.wk-tile b{font-size:24px}.wk-go{width:100%;justify-content:center}}
 @media (prefers-reduced-motion:reduce){.wk-sun path{animation:none}}
 
 /* ---------- lead package + latest rail ---------- */
@@ -5254,6 +5261,7 @@ function renderWeekend(){
   const tiles = (f.tiles||[]).slice(0,3).map(t => `<div class="wk-tile${t.dir === "flat" ? " flat" : ""}"><b>${esc(t.n)}</b><span>${esc(t.t)}</span>${t.c ? `<em>${esc(t.c)}</em>` : ""}</div>`).join("");
   const ckCls = f.checkerType === "hygiene" ? "seax-hlookup" : f.checkerType === "price" ? "seax-plookup" : "seax-lookup";
   const checker = f.checker && /^\/data\//.test(f.checker) ? `<div class="wk-below"><div class="${ckCls}" data-src="${esc(f.checker)}"></div></div>` : "";
+  /* the checker is joined to the bottom of the big read as one card (owner, 27 Nov 2026: "link the story and the selector") */
   /* "more": two further pieces beside the big read (owner, 27 Nov 2026: "we need 3 bits"). Each is a story id or a page address. */
   const more = (WK.more||[]).slice(0,2).map((m, i) => { const ms = m.id && typeof ED !== "undefined" && ED && (ED.stories||[]).find(x => x && x.id === m.id) || null;
     const mh = m.headline || (ms && ms.headline); if(!mh) return "";
@@ -5262,13 +5270,13 @@ function renderWeekend(){
   el.innerHTML = `<div class="wrap"><div class="wk-band">
     <div class="wk-head"><h2><svg class="wk-cup" viewBox="0 0 34 34" aria-hidden="true"><path class="st s1" d="M11 12c-2-2 2-3 0-6"/><path class="st s2" d="M16 12c-2-2 2-3 0-6"/><path class="st s3" d="M21 12c-2-2 2-3 0-6"/><path class="mug" d="M6 15h20v6a9 9 0 0 1-9 9h-2a9 9 0 0 1-9-9z"/><path class="hd" d="M26 17h2a3.5 3.5 0 0 1 0 7h-3"/><path class="sc" d="M4 32h24"/></svg>${esc(WK.title || "The Weekend")}</h2>${WK.strap ? `<small>${esc(WK.strap)}</small>` : ""}</div>
     <div class="wk-three${more ? "" : " solo"}">
-      <a class="wk-feat" href="${esc(href)}">
+      ${checker ? `<div class="wk-main">` : ""}<a class="wk-feat" href="${esc(href)}">
         ${f.image ? `<div class="wk-img"><img src="${esc(f.image)}" alt="${esc(f.alt || "")}" width="1200" height="655" loading="lazy"></div>` : ""}
         <div class="wk-text">${s && typeof ownBanner === "function" ? ownBanner(s) : ""}<span class="wk-kick">${esc(f.kicker || "Weekend read")}</span>
           <h3>${esc(headline)}</h3>${f.dek ? `<p>${esc(f.dek)}</p>` : ""}
           ${tiles ? `<div class="wk-tiles">${tiles}</div>` : ""}
           <span class="wk-go">${esc(f.cta || "Read the story")} →</span></div>
-      </a>${checker}${more ? `<div class="wk-more">${more}</div>` : ""}
+      </a>${checker}${checker ? `</div>` : ""}${more ? `<div class="wk-more">${more}</div>` : ""}
     </div></div></div>`;
   if(checker){ if(f.checkerType === "hygiene"){ if(typeof seaxNeedHygieneLookup === "function") seaxNeedHygieneLookup(); } else if(f.checkerType === "price"){ if(typeof seaxNeedPriceLookup === "function") seaxNeedPriceLookup(); } else if(typeof seaxNeedLookup === "function") seaxNeedLookup(); }
 }
