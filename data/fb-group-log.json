@@ -751,6 +751,14 @@
    "h": "Essex patients missed almost 37,000 GP surgery appointments in September",
    "result": "declined",
    "note": "GP push 27 Nov. First Seax post here. Declined within seconds (Your content > Declined, no feedback): looks automatic, like the Southend Crimewatch and MALDON declines."
+  },
+  {
+   "g": "eastwood-and-st-laurence-ess-1118",
+   "s": "essex-gp-missed-appointments-september-2026",
+   "t": 1795793364334,
+   "h": "Essex patients missed almost 37,000 GP surgery appointments in September",
+   "result": "pending",
+   "note": "GP push 27 Nov. First Seax post here; rules read (Group by Kimberley O'Connell, not Essex Live; no self-promotion or irrelevant links). Held for admin approval (Your content > Pending)."
   }
  ],
  "joins": [
