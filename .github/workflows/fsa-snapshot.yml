@@ -1,0 +1,31 @@
+name: FSA hygiene snapshot
+# One-off: every food hygiene rating held by the 14 Essex councils, for the weekend analysis (owner, 27 Nov 2026).
+# Saves to the branch "fsa-snapshot". Runs by hand or when the script changes.
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: [".github/workflows/fsa-snapshot.yml", "tools/datadesk/fsa_snapshot.py"]
+permissions:
+  contents: write
+concurrency: fsa-snapshot
+jobs:
+  snap:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with: { fetch-depth: 1 }
+      - run: |
+          set -o pipefail
+          python3 -u tools/datadesk/fsa_snapshot.py /tmp/fsa 2>&1 | tee /tmp/fsa-run.log
+      - name: Save to the data branch
+        if: always()
+        run: |
+          mkdir -p /tmp/fsa; cp /tmp/fsa-run.log /tmp/fsa/run.log 2>/dev/null || true
+          cd /tmp/fsa && rm -rf .git
+          git init -q -b fsa-snapshot
+          git config user.name "The Seax data desk"
+          git config user.email "seaxbot@users.noreply.github.com"
+          git add -A && git commit -qm "FSA snapshot $(date -u +%FT%TZ)"
+          git push -qf "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" fsa-snapshot
