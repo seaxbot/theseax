@@ -136,6 +136,10 @@
   "none": "no road named",
   "sig": "[[], \"Birch\", null]"
  },
+ "chelmsford-prison-tutor-oksana-antanaitiene-sentenced": {
+  "none": "no road named",
+  "sig": "[[], \"Chelmsford\", null]"
+ },
  "chelmsford-rough-sleeping-navigators-50-percent-rise": {
   "none": "no road called Open Road near Chelmsford",
   "sig": "[[\"Open Road\"], \"Chelmsford\", null]"
