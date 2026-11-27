@@ -1,0 +1,32 @@
+councils found: {'Basildon': 6, 'Braintree': 7, 'Brentwood': 8, 'Castle Point': 9, 'Chelmsford': 10, 'Colchester': 11, 'Epping Forest': 12, 'Harlow': 13, 'Maldon': 14, 'Rochford': 15, 'Southend-On-Sea': 46, 'Tendring': 16, 'Thurrock': 47, 'Uttlesford': 17} missing: []
+Basildon page 1 of 1 1416
+Braintree page 1 of 1 1295
+Brentwood page 1 of 1 764
+Castle Point page 1 of 1 540
+Chelmsford page 1 of 1 1638
+retry 0 https://api.ratings.food.gov.uk/Establishments?localAuthorityId=11&pageSize=5000&pageNumber=1 HTTP Error 429: 
+Colchester page 1 of 1 1661
+Epping Forest page 1 of 1 1081
+Harlow page 1 of 1 698
+Maldon page 1 of 1 683
+Rochford page 1 of 1 645
+Southend-On-Sea page 1 of 1 1481
+Tendring page 1 of 1 1317
+Thurrock page 1 of 1 1367
+Uttlesford page 1 of 1 850
+{'Basildon': 1416, 'Braintree': 1295, 'Brentwood': 764, 'Castle Point': 540, 'Chelmsford': 1638, 'Colchester': 1661, 'Epping Forest': 1081, 'Harlow': 698, 'Maldon': 683, 'Rochford': 645, 'Southend-On-Sea': 1481, 'Tendring': 1317, 'Thurrock': 1367, 'Uttlesford': 850, '_at': '2026-11-27T13:17:24Z'}
+Basildon https://ratings.food.gov.uk/OpenDataFiles/FHRS109en-GB.xml 1416 2026-11-24T00:30:24.37
+Braintree https://ratings.food.gov.uk/OpenDataFiles/FHRS110en-GB.xml 1295 2026-11-26T00:30:24.863
+Brentwood https://ratings.food.gov.uk/OpenDataFiles/FHRS111en-GB.xml 764 2026-11-27T00:30:13.68
+Castle Point https://ratings.food.gov.uk/OpenDataFiles/FHRS112en-GB.xml 540 2026-11-27T00:30:16.003
+Chelmsford https://ratings.food.gov.uk/OpenDataFiles/FHRS113en-GB.xml 1638 2026-11-23T00:30:18.873
+Colchester https://ratings.food.gov.uk/OpenDataFiles/FHRS114en-GB.xml 1661 2026-11-27T00:30:22.593
+Epping Forest https://ratings.food.gov.uk/OpenDataFiles/FHRS115en-GB.xml 1081 2026-11-27T00:30:26.137
+Harlow https://ratings.food.gov.uk/OpenDataFiles/FHRS116en-GB.xml 698 2026-11-24T00:30:38.927
+Maldon https://ratings.food.gov.uk/OpenDataFiles/FHRS117en-GB.xml 683 2026-11-25T00:30:45.727
+Rochford https://ratings.food.gov.uk/OpenDataFiles/FHRS118en-GB.xml 645 2026-11-27T00:30:29.087
+Southend-On-Sea https://ratings.food.gov.uk/OpenDataFiles/FHRS893en-GB.xml 1481 2026-11-24T00:31:47.76
+Tendring https://ratings.food.gov.uk/OpenDataFiles/FHRS120en-GB.xml 1317 2026-11-27T00:30:34.663
+Thurrock https://ratings.food.gov.uk/OpenDataFiles/FHRS894en-GB.xml 1367 2026-11-27T00:31:45.593
+Uttlesford https://ratings.food.gov.uk/OpenDataFiles/FHRS122en-GB.xml 850 2026-11-27T00:30:38.583
+{'Basildon': (1416, 1416), 'Braintree': (1295, 1295), 'Brentwood': (764, 764), 'Castle Point': (540, 540), 'Chelmsford': (1638, 1638), 'Colchester': (1661, 1661), 'Epping Forest': (1081, 1081), 'Harlow': (698, 698), 'Maldon': (683, 683), 'Rochford': (645, 645), 'Southend-On-Sea': (1481, 1481), 'Tendring': (1317, 1317), 'Thurrock': (1366, 1367), 'Uttlesford': (850, 850)}
