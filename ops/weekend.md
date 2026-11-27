@@ -59,9 +59,22 @@ anything it refuses. Confirm the story page shows the charts and the look-up aft
 
 ## 6. Set the Weekend box
 Edit data/weekend.json: "from" this Friday 17:00 UK (in UTC), "until" Monday 07:00 UK (in UTC), keep "title" and
-"strap", and set "feature": id, "kicker": "Weekend read", headline (the story's), image and alt, a one or two sentence
+"strap", and set "feature": id, "kicker": "The big read", headline (the story's), image and alt, a one or two sentence
 "dek" inviting readers in, three "tiles" (figure, label, short context; none repeating the headline figure), "cta":
 "Read the full analysis", and "checker" plus "checkerType" if the story has a look-up. Push.
+
+THREE PIECES (owner, 27 Nov 2026: "the weekend section needs a refresh... I think we need 3 bits"; he also disliked the
+old strap "Our own analysis to take your time over" as odd phrasing). The section now shows the big read with two
+smaller pieces beside it, numbered 1 to 3, and the look-up below. Always set "more" to exactly two entries, each
+{"id" (a live story) or "href" (a page on the site), "kicker", "headline", "image", "alt", "dek", "cta"}:
+- piece 2, something to check or explore: another Seax Analysis or Seax Investigates story from the last two weeks that
+  has a look-up or charts and is still current (kicker "Check your area" or similar);
+- piece 3, something to do: the What's On page, a seasonal guide (for example /whats-on/christmas/ in December) or the
+  Saturday sport fixtures story (kicker "Out and about" or "Weekend sport").
+Never the same story as the feature, never a crime, court or inquest story, and each needs a real picture that is
+already on the site. Headlines for these two cards may be written for the card (short, an invitation, under 60
+characters) but must be exactly true to the story. Keep "strap" plain and short ("Three things to read, check and do");
+never bring back the old one.
 
 ## 7. Fallback
 If by 15:30 no analysis has passed all three checks, do not publish a half-checked one. Instead feature the strongest

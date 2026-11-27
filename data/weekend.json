@@ -1,12 +1,12 @@
 {
- "_note": "The Weekend (owner's section, 21 Nov 2026): a prominent weekend feature shown on the front page just below the lead, between 'from' and 'until' (UTC), then it hides itself. The feature story is not repeated in the lead slots, News grid or the Only on The Seax row while the section is up. 'tiles' must not repeat facts in the headline. 'checker' mounts the neighbourhood crime checker beside the feature. The newsroom never edits this file.",
+ "_note": "The Weekend (owner's section, 21 Nov 2026): a prominent weekend feature shown on the front page just below the lead, between 'from' and 'until' (UTC), then it hides itself. The feature story is not repeated in the lead slots, News grid or the Only on The Seax row while the section is up. 'tiles' must not repeat facts in the headline. 'checker' mounts the neighbourhood crime checker beside the feature. The newsroom never edits this file. 'more' (owner, 27 Nov 2026: 'we need 3 bits'): two further pieces shown beside the feature, each {id or href, kicker, headline, image, alt, dek, cta}.",
  "from": "2026-11-27T13:35:00Z",
  "until": "2026-11-30T07:00:00Z",
  "title": "The Weekend",
- "strap": "Our own analysis to take your time over",
+ "strap": "Three things to read, check and do",
  "feature": {
   "id": "essex-food-hygiene-ratings-takeaways-november-2026",
-  "kicker": "Weekend read",
+  "kicker": "The big read",
   "headline": "One in three Essex takeaways misses top food hygiene rating",
   "image": "/img/people/essex-food-hygiene-kitchen-wide.jpg",
   "alt": "A chef in gloves cutting raw chicken on a red chopping board in a clean commercial kitchen",
@@ -34,5 +34,25 @@
   "cta": "Read the full analysis",
   "checker": "/data/hygiene/essex-2026-11.json",
   "checkerType": "hygiene"
- }
+ },
+ "more": [
+  {
+   "id": "essex-house-prices-september-2026-maldon-tendring",
+   "kicker": "Check your area",
+   "headline": "What has happened to house prices where you live?",
+   "image": "/img/stock/essex-house-prices-september-2026-maldon-tendring.jpg",
+   "alt": "Houses on a residential street in Essex",
+   "dek": "Up 5% in Maldon, down 2.2% in Tendring. Look up all 14 Essex council areas.",
+   "cta": "See the figures"
+  },
+  {
+   "href": "/whats-on/christmas/",
+   "kicker": "Out and about",
+   "headline": "Christmas in Essex: 80+ lights, markets and grottos",
+   "image": "/img/people/christmas-in-essex-guide-wide.jpg",
+   "alt": "Christmas lights",
+   "dek": "Search for festive events near you this weekend and right through December.",
+   "cta": "Find an event"
+  }
+ ]
 }

@@ -798,6 +798,27 @@ h1,h2,h3,h4,.story h1,.lead h2,.card h3,.drow h4{letter-spacing:-.022em}
 .wk-side .seax-lookup{margin:0;background:#fff;box-shadow:0 10px 30px -18px rgba(80,55,0,.35)}
 .wk-side .seax-lookup .sl-out{max-height:560px;overflow:auto}
 .wk-grid.solo{grid-template-columns:1fr}
+/* Refresh (owner, 27 Nov 2026: "needs a refresh... we need 3 bits"): one big read with two more beside it, the look-up below */
+.wk-band{background:linear-gradient(135deg,#14213d 0%,#1d2f55 60%,#27406e 100%);border:0;border-top:6px solid #e9b33c;color:#fff}
+.wk-band::before{background:radial-gradient(circle,rgba(247,207,90,.55) 0%,rgba(247,207,90,.18) 45%,rgba(247,207,90,0) 70%)}
+.wk-head h2{color:#fff}.wk-head small{color:#f3dfa6;font-size:15px}
+.wk-feat,.wk-more a{border-color:transparent}
+.wk-three{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:22px;align-items:stretch;position:relative}
+.wk-three.solo{grid-template-columns:1fr}
+.wk-more{display:grid;grid-template-rows:1fr 1fr;gap:22px}
+.wk-more a{display:flex;flex-direction:column;background:#fff;border-radius:10px;overflow:hidden;color:var(--ink);text-decoration:none;box-shadow:0 10px 30px -18px rgba(0,0,0,.6)}
+.wk-more .wk-img img{aspect-ratio:16/8;object-fit:cover}
+.wk-more .wk-mtext{padding:14px 18px 18px;display:flex;flex-direction:column;flex:1}
+.wk-more h3{margin:0 0 6px;font-family:var(--serif);font-weight:800;font-size:21px;line-height:1.15;letter-spacing:-.02em;text-wrap:balance}
+.wk-more p{margin:0 0 12px;font-size:15px;line-height:1.45;color:var(--ink2)}
+.wk-more .wk-link{margin-top:auto;font-weight:800;font-size:14.5px;color:var(--navy)}
+.wk-more a:hover h3{text-decoration:underline;text-underline-offset:3px}
+.wk-num{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:50%;background:#e9b33c;color:#1c1400;font-size:12px;font-weight:900;margin-right:8px;letter-spacing:0;vertical-align:1px}
+.wk-below{margin-top:22px;position:relative}
+.wk-below .seax-lookup,.wk-below .seax-hlookup,.wk-below .seax-plookup{margin:0;background:#fff;color:var(--ink);border-radius:10px}
+.wk-below .sl-out{max-height:420px;overflow:auto}
+@media (max-width:960px){.wk-three{grid-template-columns:1fr}.wk-more{grid-template-rows:none;grid-template-columns:1fr 1fr}}
+@media (max-width:640px){.wk-more{grid-template-columns:1fr}.wk-more h3{font-size:19px}}
 @media (max-width:960px){.wk-grid{grid-template-columns:1fr}.wk-side .seax-lookup .sl-out{max-height:none}}
 @media (max-width:640px){.wk-band{padding:18px 14px 20px;border-radius:10px}.wk-head h2{font-size:32px}.wk-text{padding:16px 16px 18px}.wk-tiles{grid-template-columns:1fr 1fr}.wk-tile:last-child{grid-column:1/-1}.wk-tile b{font-size:24px}.wk-go{width:100%;justify-content:center}}
 @media (prefers-reduced-motion:reduce){.wk-sun path{animation:none}}
@@ -5219,23 +5240,28 @@ function renderWeekend(){
   const f = WK.feature, s = (typeof ED !== "undefined" && ED && (ED.stories||[]).find(x => x && x.id === f.id)) || null;
   const headline = (s && s.headline) || f.headline, href = s ? storyHref(s) : "/story/" + encodeURIComponent(f.id) + "/";
   if(!headline) { el.hidden = true; return; }
-  const key = f.id + "|" + headline + (s ? "+" : "");
+  const key = f.id + "|" + headline + (s ? "+" : "") + "|" + (WK.strap||"") + "|" + (WK.more||[]).map(m => m.id || m.href).join(",");
   if(!el.hidden && el.dataset.k === key) return;
   el.dataset.k = key; el.hidden = false;
   const tiles = (f.tiles||[]).slice(0,3).map(t => `<div class="wk-tile${t.dir === "flat" ? " flat" : ""}"><b>${esc(t.n)}</b><span>${esc(t.t)}</span>${t.c ? `<em>${esc(t.c)}</em>` : ""}</div>`).join("");
   const ckCls = f.checkerType === "hygiene" ? "seax-hlookup" : f.checkerType === "price" ? "seax-plookup" : "seax-lookup";
-  const checker = f.checker && /^\/data\//.test(f.checker) ? `<aside class="wk-side"><div class="${ckCls}" data-src="${esc(f.checker)}"></div></aside>` : "";
+  const checker = f.checker && /^\/data\//.test(f.checker) ? `<div class="wk-below"><div class="${ckCls}" data-src="${esc(f.checker)}"></div></div>` : "";
+  /* "more": two further pieces beside the big read (owner, 27 Nov 2026: "we need 3 bits"). Each is a story id or a page address. */
+  const more = (WK.more||[]).slice(0,2).map((m, i) => { const ms = m.id && typeof ED !== "undefined" && ED && (ED.stories||[]).find(x => x && x.id === m.id) || null;
+    const mh = m.headline || (ms && ms.headline); if(!mh) return "";
+    const mhref = m.href || (ms ? storyHref(ms) : "/story/" + encodeURIComponent(m.id) + "/");
+    return `<a href="${esc(mhref)}">${m.image ? `<div class="wk-img"><img src="${esc(m.image)}" alt="${esc(m.alt || "")}" width="1200" height="600" loading="lazy"></div>` : ""}<div class="wk-mtext"><span class="wk-kick"><i class="wk-num">${i + 2}</i>${esc(m.kicker || "Also this weekend")}</span><h3>${esc(mh)}</h3>${m.dek ? `<p>${esc(m.dek)}</p>` : ""}<span class="wk-link">${esc(m.cta || "Read more")} →</span></div></a>`; }).join("");
   el.innerHTML = `<div class="wrap"><div class="wk-band">
     <div class="wk-head"><h2><svg class="wk-sun" viewBox="0 0 30 30" aria-hidden="true"><path d="M15 2v4M15 24v4M2 15h4M24 15h4M5.8 5.8l2.8 2.8M21.4 21.4l2.8 2.8M5.8 24.2l2.8-2.8M21.4 8.6l2.8-2.8"/><circle cx="15" cy="15" r="6.5"/></svg>${esc(WK.title || "The Weekend")}</h2>${WK.strap ? `<small>${esc(WK.strap)}</small>` : ""}</div>
-    <div class="wk-grid${checker ? "" : " solo"}">
+    <div class="wk-three${more ? "" : " solo"}">
       <a class="wk-feat" href="${esc(href)}">
         ${f.image ? `<div class="wk-img"><img src="${esc(f.image)}" alt="${esc(f.alt || "")}" width="1200" height="655" loading="lazy"></div>` : ""}
-        <div class="wk-text">${s && typeof ownBanner === "function" ? ownBanner(s) : ""}<span class="wk-kick">${esc(f.kicker || "Weekend read")}</span>
+        <div class="wk-text">${s && typeof ownBanner === "function" ? ownBanner(s) : ""}<span class="wk-kick">${more ? '<i class="wk-num">1</i>' : ""}${esc(f.kicker || "Weekend read")}</span>
           <h3>${esc(headline)}</h3>${f.dek ? `<p>${esc(f.dek)}</p>` : ""}
           ${tiles ? `<div class="wk-tiles">${tiles}</div>` : ""}
           <span class="wk-go">${esc(f.cta || "Read the story")} →</span></div>
-      </a>${checker}
-    </div></div></div>`;
+      </a>${more ? `<div class="wk-more">${more}</div>` : ""}
+    </div>${checker}</div></div>`;
   if(checker){ if(f.checkerType === "hygiene"){ if(typeof seaxNeedHygieneLookup === "function") seaxNeedHygieneLookup(); } else if(f.checkerType === "price"){ if(typeof seaxNeedPriceLookup === "function") seaxNeedPriceLookup(); } else if(typeof seaxNeedLookup === "function") seaxNeedLookup(); }
 }
 fetch("/data/weekend.json", { cache: "no-store" }).then(r => r.ok ? r.json() : null).then(w => { WK = w; if(typeof ED !== "undefined" && ED && weekendId() && window.SEAX_ED_READY !== false) seaxRenderSoon(); else renderWeekend(); }).catch(() => {});
