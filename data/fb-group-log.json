@@ -15,7 +15,8 @@
    "s": "s-preview-southend-boreham-wood-2026-11-20",
    "t": 1795171680000,
    "h": "Top-of-the-table clash: Southend host unbeaten leaders Boreham Wood tonight",
-   "result": "pending"
+   "result": "declined",
+   "note": "27 Nov 15:1x GP push check: shown under Your content > Declined."
   },
   {
    "g": "essex-politics-planning-and-news",
@@ -57,7 +58,8 @@
    "s": "colchester-hospital-esneft-crutches-walking-frames-return",
    "t": 1795175685671,
    "h": "Colchester Hospital asks patients to hand back crutches and frames",
-   "result": "pending"
+   "result": "declined",
+   "note": "27 Nov 15:1x GP push check: shown under Your content > Declined."
   },
   {
    "g": "laindon-and-basildon-4637",
@@ -135,8 +137,8 @@
    "s": "brentwood-school-safeguarding-review-british-fencing-own-review",
    "t": 1795201907459,
    "h": "Brentwood School review finds fencing coach likely abused pupils for years",
-   "result": "pending",
-   "note": "owner's push, 20 Nov 19:08: post to as many Brentwood, Wickford and Essex groups as possible now (over the daily cap by the owner's choice)"
+   "result": "declined",
+   "note": "owner's push, 20 Nov 19:08: post to as many Brentwood, Wickford and Essex groups as possible now (over the daily cap by the owner's choice) 27 Nov 15:1x GP push check: shown under Your content > Declined."
   },
   {
    "g": "essex-uk-community-2437",
@@ -159,8 +161,8 @@
    "s": "braintree-raf-wethersfield-dispersal-order-21-23-november",
    "t": 1795272548888,
    "h": "Dispersal order and face-covering powers at RAF Wethersfield this weekend",
-   "result": "pending",
-   "note": "owner started the send by hand at 14:58 after the day's scheduled runs missed (Chrome not connected)"
+   "result": "declined",
+   "note": "owner started the send by hand at 14:58 after the day's scheduled runs missed (Chrome not connected) 27 Nov 15:1x GP push check: shown under Your content > Declined."
   },
   {
    "g": "colchester-community-group-1832",
@@ -283,14 +285,16 @@
    "s": "rochford-local-plan-ministers-order-consultation-7-december",
    "t": 1795460798288,
    "h": "Ministers force Rochford Local Plan consultation from 7 December, with six big housing sites back in",
-   "result": "pending"
+   "result": "live",
+   "note": "27 Nov 15:1x GP push check: shown under Your content > Published."
   },
   {
    "g": "caring-about-hockley-9741",
    "s": "rochford-local-plan-ministers-order-consultation-7-december",
    "t": 1795460867862,
    "h": "Ministers force Rochford Local Plan consultation from 7 December, with six big housing sites back in",
-   "result": "pending"
+   "result": "live",
+   "note": "27 Nov 15:1x GP push check: shown under Your content > Published."
   },
   {
    "g": "rayleigh-community-group-9138",
@@ -405,7 +409,8 @@
    "s": "o-colchester-hob-fire-smoke-alarms-neighbours-24-november",
    "t": 1795546407258,
    "h": "Colchester neighbours raise alarm over hob fire in empty house",
-   "result": "pending"
+   "result": "declined",
+   "note": "27 Nov 15:1x GP push check: shown under Your content > Declined."
   },
   {
    "g": "maldon-essex-local-4675",

@@ -167,9 +167,10 @@
     "westcliff",
     "shoebury"
    ],
-   "status": "on",
+   "status": "off",
    "perWeek": 3,
-   "approval": "admin approval"
+   "approval": "admin approval",
+   "note": "OFF 27 Nov 2026: Your content shows all 3 Seax posts declined (Boreham Wood preview, c2c investigation, Frankie Banks)."
   },
   {
    "id": "210071846236048",
@@ -377,9 +378,9 @@
     "stanway",
     "mersea"
    ],
-   "status": "on",
+   "status": "off",
    "perWeek": 3,
-   "note": "Rule: no spam or repetitive posting.",
+   "note": "Rule: no spam or repetitive posting. OFF 27 Nov 2026: Your content shows both Seax posts declined (crutches, hob fire).",
    "approval": "admin approval"
   },
   {
@@ -1634,7 +1635,8 @@
    "status": "on",
    "perWeek": 3,
    "joined": "2026-11-20",
-   "note": "Rules: no duplicate posts, no selling. 23 Nov 2026: group asks new participants to agree to its rules (participation review); first Seax post (Rochford Local Plan) pending while admins review The Seax as a new participant."
+   "note": "Rules: no duplicate posts, no selling. 23 Nov 2026: group asks new participants to agree to its rules (participation review); first Seax post (Rochford Local Plan) pending while admins review The Seax as a new participant.",
+   "approval": "admin approval"
   },
   {
    "id": "billericaylocal",
@@ -1666,10 +1668,10 @@
     "runwell",
     "shotgate"
    ],
-   "status": "caution",
+   "status": "off",
    "perWeek": 2,
    "joined": "2026-11-20",
-   "note": "Rules: Wickford-first advertising policy, shared-content guidelines, no spam.",
+   "note": "Rules: Wickford-first advertising policy, shared-content guidelines, no spam. OFF 27 Nov 2026: Your content shows the Seax post declined (Brentwood School review).",
    "approval": "admin approval"
   },
   {
@@ -1727,10 +1729,11 @@
     "great notley",
     "black notley"
    ],
-   "status": "on",
+   "status": "off",
    "perWeek": 3,
    "joined": "2026-11-20",
-   "approval": "admin approval"
+   "approval": "admin approval",
+   "note": "OFF 27 Nov 2026: Your content shows the Seax post declined (RAF Wethersfield dispersal order)."
   },
   {
    "id": "walthamabbeycommunitycharityevents",
@@ -3252,7 +3255,8 @@
    "status": "on",
    "perWeek": 1,
    "joined": "2026-11-21",
-   "note": "Vetted 23 Nov 2026: Group by banner not Essex Live. Rules: be kind, no hate, respect privacy, business advertising Mondays and Wednesdays only and must be Hockley-based, no ticket or private sales. News posts held for admin approval (first Seax post 23 Nov, Rochford Local Plan)."
+   "note": "Vetted 23 Nov 2026: Group by banner not Essex Live. Rules: be kind, no hate, respect privacy, business advertising Mondays and Wednesdays only and must be Hockley-based, no ticket or private sales. News posts held for admin approval (first Seax post 23 Nov, Rochford Local Plan).",
+   "approval": "admin approval"
   },
   {
    "id": "1840609209521895",
