@@ -295,7 +295,7 @@
  },
  "essex-tube-commuters-24-hour-strike-26-november-elizabeth-line": {
   "none": "no road named",
-  "sig": "[[], \"Epping\", null]"
+  "sig": "[[], \"Buckhurst Hill\", null]"
  },
  "felsted-school-isi-inspection-2026-all-standards-met": {
   "none": "no road named",
@@ -321,6 +321,10 @@
   "w": 1200
  },
  "grays-essex-fire-museum-best-museum-essex-mums-awards-2026": {
+  "none": "no road named",
+  "sig": "[[], \"Grays\", null]"
+ },
+ "grays-town-park-cafe-8000-rent-thurrock-council": {
   "none": "no road named",
   "sig": "[[], \"Grays\", null]"
  },
@@ -400,6 +404,10 @@
  "hatfield-peverel-david-cooney-jailed-sexual-assaults": {
   "none": "no road named",
   "sig": "[[], null, null]"
+ },
+ "lakeside-superdry-arabian-oud-studio-gloss-christmas-openings": {
+  "none": "no road named",
+  "sig": "[[], \"Thurrock\", null]"
  },
  "leigh-douglas-kramer-jailed-15kg-cocaine-car-stop": {
   "none": "no road called Bosworth Road near Leigh-on-Sea",
@@ -525,6 +533,17 @@
  "southend-pier-trains-firm-restart-date-pressure": {
   "none": "no road named",
   "sig": "[[], \"Southend-on-Sea\", null]"
+ },
+ "southend-sea-life-adventure-canopy-appeal-allowed": {
+  "after": 0,
+  "h": 750,
+  "kicker": "Where it happened",
+  "made": "2026-11-27T07:42:34Z",
+  "road": "Eastern Esplanade",
+  "sig": "[[\"Eastern Esplanade\"], \"Southend-on-Sea\", null]",
+  "src": "/img/maps/southend-sea-life-adventure-canopy-appeal-allowed.svg",
+  "town": "Southend-on-Sea",
+  "w": 1200
  },
  "southend-shoplifter-jailed-48-weeks-one-stop-sutton-road-ban": {
   "after": 1,
