@@ -1,48 +1,6 @@
 {
- "at": "2026-11-26T16:41:06.808730+00:00",
+ "at": "2026-11-27T06:33:45.447644+00:00",
  "meetings": [
-  {
-   "council": "tendring",
-   "councilName": "Tendring District Council",
-   "area": "tendring",
-   "committee": "Planning Committee",
-   "date": "2026-11-26",
-   "time": "5.00 pm",
-   "url": "https://tdcdemocracy.tendringdc.gov.uk/ieListDocuments.aspx?CId=162&MId=2863",
-   "items": [
-    "Report of the Corporate Director (Planning & Community) - A.1 - Planning Application 26/01057/FUL - The Lifeboat House, The Parade, Walton-on-the-Naze, CO14 8EA",
-    "Report of the Corporate Director (Planning & Community) - A.2 - Planning Application 26/01058/ADV - The Lifeboat House, The Parade, Walton-on-the-Naze, CO14 8EA"
-   ]
-  },
-  {
-   "council": "basildon",
-   "councilName": "Basildon Council",
-   "area": "south",
-   "committee": "Cabinet",
-   "date": "2026-11-26",
-   "time": "7.00 p.m.",
-   "url": "https://www.basildonmeetings.info/ieListDocuments.aspx?CId=297&MId=9629",
-   "items": [
-    "Finance Update Quarter 2 - 2026/27",
-    "Rent and Service Charge Policy 2026",
-    "CABINET MEMBER UPDATES"
-   ]
-  },
-  {
-   "council": "maldon",
-   "councilName": "Maldon District Council",
-   "area": "maldon",
-   "committee": "Strategy and Resources Committee",
-   "date": "2026-11-26",
-   "time": "7.30 pm",
-   "url": "https://democracy.maldon.gov.uk/ieListDocuments.aspx?CId=285&MId=4727",
-   "items": [
-    "Budget Monitoring Report - Quarter 2",
-    "Long Lease Agreement - Foreshores at River Blackwater and Downs Road Boatyard",
-    "Asset Disposal Policy",
-    "Fees and Charges Proposals 2027/28"
-   ]
-  },
   {
    "council": "tendring",
    "councilName": "Tendring District Council",
@@ -55,28 +13,6 @@
     "Report of the Corporate Director (Finance & IT) - A.1 - Overview of The Financial Outturn 2025/26 and Other Key Financial Matters",
     "Report of the Assistant Director (Corporate Policy & Support) - A.2 - Review of the Work Programme"
    ]
-  },
-  {
-   "council": "basildon",
-   "councilName": "Basildon Council",
-   "area": "south",
-   "committee": "Licensing Act 2003 Sub-Committee",
-   "date": "2026-12-02",
-   "time": "6.30 p.m.",
-   "url": "https://www.basildonmeetings.info/ieListDocuments.aspx?CId=478&MId=9619",
-   "items": [
-    "Licensing Act 2003 Premises licence application - Woodvalley Vineyard Outwood Common Road Billericay"
-   ]
-  },
-  {
-   "council": "basildon",
-   "councilName": "Basildon Council",
-   "area": "south",
-   "committee": "General Purposes",
-   "date": "2026-12-03",
-   "time": "7.00 p.m.",
-   "url": "https://www.basildonmeetings.info/ieListDocuments.aspx?CId=995&MId=9526",
-   "items": []
   },
   {
    "council": "tendring",
