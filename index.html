@@ -1519,7 +1519,11 @@ const $ = s => document.querySelector(s);
 const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 const safeUrl = u => /^https?:\/\//i.test(String(u||"")) ? String(u) : "#";
 const TZ = "Europe/London";
-const fmt = (d, o) => new Intl.DateTimeFormat("en-GB", Object.assign({timeZone:TZ}, o)).format(d);
+/* 27 Nov 2026: one formatter per set of options, kept and reused. Building a new Intl.DateTimeFormat on every call was
+   the single biggest cost on the page (about 1.8s of a phone's processor time per load). Output is unchanged. */
+const FMT_CACHE = new Map();
+const fmt = (d, o) => { const k = o ? JSON.stringify(o) : ""; let f = FMT_CACHE.get(k); if(!f){ f = new Intl.DateTimeFormat("en-GB", Object.assign({timeZone:TZ}, o)); FMT_CACHE.set(k, f); } return f.format(d); };
+const UK_YMD = new Intl.DateTimeFormat("en-CA",{timeZone:"Europe/London",year:"numeric",month:"2-digit",day:"2-digit"});
 const pad = n => String(n).padStart(2,"0");
 function ago(iso){
   if(!iso) return "Recently";
@@ -4605,7 +4609,7 @@ function parseLiveWx(j){
   }).filter(x => Number.isFinite(x.hi) && Number.isFinite(x.lo));
   return { at: at.toISOString(), got: Date.now(), now, days };
 }
-function ukDayKey(d){ return new Intl.DateTimeFormat("en-CA",{timeZone:"Europe/London",year:"numeric",month:"2-digit",day:"2-digit"}).format(d); }
+function ukDayKey(d){ return UK_YMD.format(d); }
 function applyLiveWx(w){
   if(!w) return w;
   const today = ukDayKey(new Date());
@@ -4898,7 +4902,8 @@ function renderEvents(){
     .filter(e => new Date(e.end || e.start) >= new Date(now.getTime() - 3*36e5))
     .filter(inArea).filter(e => EVCAT === "All" || e.cat === EVCAT)
     .sort((a,b) => new Date(a.start) - new Date(b.start));
-  $("#events").innerHTML = list.length ? list.map(e => {
+  $("#events").dataset.total = list.length;   /* 27 Nov 2026: only the rows shown are drawn; capList reads the full count from here */
+  $("#events").innerHTML = list.length ? (window.SEAX_EV_ALL ? list : list.slice(0, 8)).map(e => {
     const d = new Date(e.start); const cd = countdown(e.start, true); const on = e.end && new Date(e.start) <= now && new Date(e.end) >= now;
     const free = /^free\b/i.test(e.price||"");
     /* an event that has already started shows its closing date, not a start date that has passed */
@@ -5000,7 +5005,8 @@ function renderCulture(){
   if(!cats.includes(CULCAT)) CULCAT = "All";
   $("#culTools").innerHTML = cats.map(c => `<button class="chip${c===CULCAT?" on":""}" data-culcat="${esc(c)}">${esc(c)}</button>`).join("");
   const list = live.filter(inArea).filter(c => CULCAT === "All" || c.cat === CULCAT).sort((a,b) => new Date(a.start) - new Date(b.start));
-  $("#culture-grid").innerHTML = list.length ? list.map(c => {
+  $("#culture-grid").dataset.total = list.length;
+  $("#culture-grid").innerHTML = list.length ? (window.SEAX_CUL_ALL ? list : list.slice(0, 9)).map(c => {
     const st = new Date(c.start), en = c.end ? new Date(c.end) : null, on = st <= now && (!en || en >= now);
     const free = /^free\b/i.test(c.price||"");
     const when = en && fmt(st,{day:"numeric",month:"short"}) !== fmt(en,{day:"numeric",month:"short"}) ? `${fmt(st,{day:"numeric",month:"short"})} to ${fmt(en,{day:"numeric",month:"short", year: en.getFullYear()!==st.getFullYear()?"numeric":undefined})}` : fmt(st,{weekday:"short",day:"numeric",month:"short"});
@@ -5290,22 +5296,39 @@ function seaxRenderSoon(){ clearTimeout(seaxRsT); seaxRsT = setTimeout(() => { t
 /* renderAll(true) is used once, for the first draw of today's edition (22 Nov 2026): the top of the page (pinned
    special, The Weekend, lead, the three stories under it, ticker) is drawn and shown first, and the long sections
    below follow a moment later, so the lead appears sooner on a phone. Every other call draws everything at once. */
-let seaxStageT = 0;
+/* 27 Nov 2026: the sources directory (about 700 links, a third of everything on the page) is drawn when the reader
+   gets within a few screens of it, or asks for it, not on first load. It looks and works the same once drawn. */
+let seaxSrcDrawn = false, seaxSrcIO = null;
+function seaxSourcesNow(){ if(seaxSrcIO){ seaxSrcIO.disconnect(); seaxSrcIO = null; } seaxSrcDrawn = true; renderSources(); }
+function seaxSourcesWhenNear(){
+  const sec = document.getElementById("sources");
+  if(seaxSrcDrawn || !sec || typeof IntersectionObserver !== "function" || location.hash === "#sources"){ seaxSourcesNow(); return; }
+  if(seaxSrcIO) return;
+  seaxSrcIO = new IntersectionObserver(es => { if(es.some(e => e.isIntersecting)) seaxSourcesNow(); }, {rootMargin: "3000px 0px"});
+  seaxSrcIO.observe(sec);
+}
+let seaxStageT = 0, seaxGen = 0;
 function renderAll(staged){
   document.documentElement.classList.remove("seax-wait");
   clearTimeout(seaxStageT);
   if(typeof renderPinned === "function") renderPinned();
   if(typeof renderWeekend === "function") renderWeekend();
   renderChips(); renderTicker(); buildHero(); renderTopList(); renderMeta();
-  let done = false;
-  const rest = () => {
-    if(done) return; done = true; clearTimeout(seaxStageT);
-    renderNews(); renderPinnedNews(); renderFixturesNews(); renderDesk(); renderCouncilWatch(); renderCommunity(); renderSport(); renderTables(); renderWeather();
-    renderEvents(); renderCulture(); renderVital(); renderSpecials(); renderSources(); renderMeta(); afterRender(); updateLiveLine();
-    if(location.hash.startsWith("#story-")) renderStory(location.hash.slice(7));
-  };
+  /* 27 Nov 2026: on the first draw the sections below the lead are drawn a few at a time, each in its own turn, so a
+     phone is never locked up for one long stretch. Any later draw, or the 1.5s safety net, finishes them all at once. */
+  const gen = ++seaxGen;
+  const steps = [
+    () => { renderNews(); renderPinnedNews(); renderFixturesNews(); },
+    () => { renderDesk(); renderCouncilWatch(); renderCommunity(); },
+    () => { renderSport(); renderTables(); renderWeather(); },
+    () => { renderEvents(); renderCulture(); renderVital(); renderSpecials(); seaxSourcesWhenNear(); },
+    () => { renderMeta(); afterRender(); updateLiveLine(); if(location.hash.startsWith("#story-")) renderStory(location.hash.slice(7)); }
+  ];
+  let at = 0;
+  const rest = () => { if(gen !== seaxGen) return; clearTimeout(seaxStageT); while(at < steps.length) steps[at++](); };
+  const oneStep = () => { if(gen !== seaxGen || at >= steps.length) return; steps[at++](); if(at < steps.length) setTimeout(oneStep, 0); else clearTimeout(seaxStageT); };
   if(staged === true && !location.hash && typeof requestAnimationFrame === "function"){
-    requestAnimationFrame(() => setTimeout(rest, 0));
+    requestAnimationFrame(() => setTimeout(oneStep, 0));
     seaxStageT = setTimeout(rest, 1500);   /* a tab opened in the background gets no animation frame: draw the rest anyway */
   } else rest();
 }
@@ -5336,7 +5359,7 @@ document.addEventListener("click", e => {
   if(!t) return;
   if(t.hasAttribute("data-home")){ e.preventDefault(); if(location.hash) location.hash = ""; closeStory(); window.scrollTo({top:0}); }
   else if(t.dataset.area){ AREA = t.dataset.area; try{ localStorage.setItem("seax-area", AREA); }catch(_){} renderChips(); buildHero(); renderTopList(); renderNews(); renderDesk(); renderCouncilWatch(); renderCommunity(); renderSport(); renderTables(); renderEvents(); renderCulture(); renderSpecials(); renderSources(); afterRender(); }
-  else if(t.dataset.go){ if(document.body.classList.contains("reading")){ location.hash = ""; closeStory(); } const el = document.getElementById(t.dataset.go); if(el) setTimeout(()=>el.scrollIntoView({behavior:"smooth", block:"start"}), 30); }
+  else if(t.dataset.go){ if(document.body.classList.contains("reading")){ location.hash = ""; closeStory(); } const el = document.getElementById(t.dataset.go); if(t.dataset.go === "sources" && typeof seaxSourcesNow === "function" && !seaxSrcDrawn) seaxSourcesNow(); if(el) setTimeout(()=>el.scrollIntoView({behavior:"smooth", block:"start"}), 30); }
   else if(t.dataset.slide){ showSlide(+t.dataset.slide); clearInterval(heroTimer); heroTimer = setInterval(() => showSlide(heroIdx+1), 9000); }
   else if(t.dataset.evcat){ EVCAT = t.dataset.evcat; renderEvents(); afterRender(); }
   else if(t.dataset.culcat){ CULCAT = t.dataset.culcat; renderCulture(); afterRender(); }
@@ -5603,7 +5626,7 @@ function renderToday(){
   const now = new Date(), st = solar(now), w = ED.weather || {};
   const bits = [];
   if(w.now){
-    const ukDate = d => new Intl.DateTimeFormat("en-CA",{timeZone:"Europe/London",year:"numeric",month:"2-digit",day:"2-digit"}).format(d);
+    const ukDate = d => UK_YMD.format(d);
     const ukHour = Number(new Intl.DateTimeFormat("en-GB",{timeZone:"Europe/London",hour:"2-digit",hour12:false}).format(now));
     const days = w.days || [], today = days.find(d => d.date === ukDate(now)), tmrw = days.find(d => d.date === ukDate(new Date(now.getTime()+864e5)));
     const low = s => esc(String(s||"").toLowerCase());
@@ -5698,7 +5721,7 @@ function renderToday(){
   const btn = document.getElementById("blPlay"), wave = document.getElementById("blWave"), tm = document.getElementById("blTime");
   let B = null, bars = [], counted = false;
   const mmss = t => { t = Math.max(0, Math.round(t || 0)); return Math.floor(t/60) + ":" + String(t%60).padStart(2,"0"); };
-  const ukDay = d => new Intl.DateTimeFormat("en-CA",{timeZone:"Europe/London",year:"numeric",month:"2-digit",day:"2-digit"}).format(d);
+  const ukDay = d => UK_YMD.format(d);
   function paint(){
     const d = au.duration || (B && B.duration) || 0, p = d ? au.currentTime / d : 0;
     const n = Math.round(p * bars.length);
@@ -5766,7 +5789,7 @@ function renderNews(){
   const top = list.slice(0, slots), rest = list.slice(slots);
   $("#newsGrid").innerHTML = top.length ? top.map((s,i) => cardHtml(s, i===0)).join("") : `<div class="empty">No more stories tagged for this area right now. Try All Essex, or check back after the next newsroom refresh.</div>`;
   placeNewsExtras();
-  $("#moreNews").innerHTML = rest.length ? `<h4 class="mn-h">More Essex news</h4><ol class="mn" id="mnList">${rest.map(s => compactRow(s)).join("")}</ol><div class="show-all" id="mnMore"></div>` : "";
+  $("#moreNews").innerHTML = rest.length ? `<h4 class="mn-h">More Essex news</h4><ol class="mn" id="mnList" data-total="${rest.length}">${(window.SEAX_MN_ALL ? rest : rest.slice(0, window.innerWidth < 860 ? 8 : 14)).map(s => compactRow(s)).join("")}</ol><div class="show-all" id="mnMore"></div>` : "";
 }
 function compactRow(s, label){
   return `<li style="--c:${pillar(s)}"><a href="${storyHref(s)}"><span class="mk">${esc(label || s.tag || "News")}</span><b>${esc(s.headline)}</b><span class="mm">${esc(s.place||"Essex")} · <span data-ago="${esc(shownT(s))}">${ago(shownT(s))}</span></span></a></li>`;
@@ -5791,7 +5814,7 @@ function renderCommunity(){
   $("#commCount").textContent = AREA==="all" ? `${ED.community.length} stories from charities, volunteers and community groups` : `${list.length} for ${AREAS.find(a=>a[0]===AREA)[1]}`;
   $("#commGrid").innerHTML = list.length ? list.slice(0,4).map(s => cardHtml(s)).join("") : `<div class="empty" style="grid-column:1/-1">No community stories tagged for this area yet. Try All Essex.</div>`;
   const rest = list.slice(4);
-  $("#commMore").innerHTML = rest.length ? `<h4 class="mn-h">More from charities and community groups</h4><ol class="mn one" id="commList">${rest.map(s => compactRow(s, s.org)).join("")}</ol><div class="show-all" id="commListMore"></div>` : "";
+  $("#commMore").innerHTML = rest.length ? `<h4 class="mn-h">More from charities and community groups</h4><ol class="mn one" id="commList" data-total="${rest.length}">${(window.SEAX_COMM_ALL ? rest : rest.slice(0, 8)).map(s => compactRow(s, s.org)).join("")}</ol><div class="show-all" id="commListMore"></div>` : "";
   const cls = k => /volunteer|join/i.test(k) ? "v" : /give|fund/i.test(k) ? "g" : /help/i.test(k) ? "h" : "";
   $("#helpList").innerHTML = ED.getInvolved.map(g => `<li><a href="${safeUrl(g.url)}" target="_blank" rel="noopener"><span class="hk ${cls(g.kind||"")}">${esc(g.kind||"Info")}</span><div><b>${esc(g.title)}</b><span>${esc(g.org||"")}${g.when?` · ${esc(g.when)}`:""}</span></div></a></li>`).join("");
 }
@@ -5838,8 +5861,9 @@ function capList(containerSel, moreSel, limit, flag, label){
   const box = document.querySelector(containerSel), more = document.getElementById(moreSel);
   if(!box || !more) return;
   const kids = Array.from(box.children).filter(c => !c.classList.contains("empty"));
+  const total = Math.max(kids.length, Number(box.dataset.total) || 0);   /* rows past the limit are no longer drawn until asked for */
   kids.forEach((c,i) => c.style.display = (window[flag] || i < limit) ? "" : "none");
-  more.innerHTML = kids.length > limit ? `<button data-showall="${flag}">${window[flag] ? "Show fewer" : `Show all ${kids.length} ${label}`}</button>` : "";
+  more.innerHTML = total > limit ? `<button data-showall="${flag}">${window[flag] ? "Show fewer" : `Show all ${total} ${label}`}</button>` : "";
 }
 function afterRender(){
   fitLatest();
@@ -5854,7 +5878,7 @@ function afterRender(){
 document.addEventListener("click", e => {
   const b = e.target.closest("[data-showall],[data-copylink]");
   if(!b) return;
-  if(b.dataset.showall){ window[b.dataset.showall] = !window[b.dataset.showall]; afterRender(); }
+  if(b.dataset.showall){ window[b.dataset.showall] = !window[b.dataset.showall]; renderNews(); renderCommunity(); renderEvents(); renderCulture(); afterRender(); }
   else if(b.dataset.copylink){
     const url = ((window.SEAX_CONFIG||{}).site || "https://theseax.com") + "/story/" + b.dataset.copylink + "/";
     const done = ok => { b.textContent = ok ? "Link copied" : url; setTimeout(() => b.textContent = "Copy link", 2500); };
@@ -5997,7 +6021,7 @@ document.addEventListener("click", e => {
   if(go && !go.target){
     const h = go.getAttribute("href") || "";
     closeSearch();
-    if(h.startsWith("#") && !h.startsWith("#story-")){ e.preventDefault(); const el = document.getElementById(h.slice(1)); if(location.hash.startsWith("#story-")) location.hash = ""; setTimeout(() => { const t = document.getElementById(h.slice(1)); if(t) t.scrollIntoView({behavior:"smooth", block:"start"}); }, 60); }
+    if(h.startsWith("#") && !h.startsWith("#story-")){ e.preventDefault(); const el = document.getElementById(h.slice(1)); if(h === "#sources" && typeof seaxSourcesNow === "function" && !seaxSrcDrawn) seaxSourcesNow(); if(location.hash.startsWith("#story-")) location.hash = ""; setTimeout(() => { const t = document.getElementById(h.slice(1)); if(t) t.scrollIntoView({behavior:"smooth", block:"start"}); }, 60); }
   }
 });
 document.addEventListener("input", e => {
