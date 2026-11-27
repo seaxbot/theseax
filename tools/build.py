@@ -1924,14 +1924,6 @@ def body_with_charts(it, body, opening=""):
                 out.append(f'<figure class="fbembed" style="margin:1.4em 0"><div style="position:relative;{box};margin:0 auto;'
                            f'background:#000;border-radius:10px;overflow:hidden">{inner}</div>'
                            f'<figcaption>{cap}. <a href="{E(em["url"])}" target="_blank" rel="noopener">Watch on Facebook ↗</a></figcaption></figure>')
-    if any(str(em.get("poster") or "").startswith("/img/") and em.get("player") is not True for em in fbembeds):
-        out.append('<script>(function(){var m=/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)||'
-                   '(navigator.platform==="MacIntel"&&navigator.maxTouchPoints>1);if(m)return;'
-                   'document.querySelectorAll("a.fbplay").forEach(function(a){a.addEventListener("click",function(e){e.preventDefault();'
-                   'var f=document.createElement("iframe");f.src=a.dataset.src;f.title=a.getAttribute("aria-label");'
-                   'f.allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share";f.allowFullscreen=true;'
-                   'f.setAttribute("scrolling","no");f.style.cssText="position:absolute;inset:0;width:100%;height:100%;border:0;overflow:hidden";'
-                   'a.replaceWith(f)})})})();</script>')
         for w in widgets:
             if int(w.get("after", len(paras) - 1)) == i or (i == len(paras) - 1 and int(w.get("after", 0)) >= len(paras)):
                 if w.get("type") == "price-lookup":
@@ -1940,6 +1932,14 @@ def body_with_charts(it, body, opening=""):
                     out.append(f'<div class="seax-hlookup" id="hygiene" data-src="{E(w["src"])}"><noscript>Turn on JavaScript to check food hygiene in your area.</noscript></div>')
                 else:
                     out.append(f'<div class="seax-lookup" id="check" data-src="{E(w["src"])}"><noscript>Turn on JavaScript to look up your neighbourhood.</noscript></div>')
+    if any(str(em.get("poster") or "").startswith("/img/") and em.get("player") is not True for em in fbembeds):
+        out.append('<script>(function(){var m=/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)||'
+                   '(navigator.platform==="MacIntel"&&navigator.maxTouchPoints>1);if(m)return;'
+                   'document.querySelectorAll("a.fbplay").forEach(function(a){a.addEventListener("click",function(e){e.preventDefault();'
+                   'var f=document.createElement("iframe");f.src=a.dataset.src;f.title=a.getAttribute("aria-label");'
+                   'f.allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share";f.allowFullscreen=true;'
+                   'f.setAttribute("scrolling","no");f.style.cssText="position:absolute;inset:0;width:100%;height:100%;border:0;overflow:hidden";'
+                   'a.replaceWith(f)})})})();</script>')
     if any(not str(em.get("poster") or "").startswith("/img/") for em in embeds):
         out.append('<script>window.twttr=(function(d,s,id){var t=window.twttr||{};if(d.getElementById(id))return t;var j=d.createElement(s);j.id=id;'
                    'j.async=true;j.src="https://platform.twitter.com/widgets.js";d.head.appendChild(j);t._e=[];t.ready=function(f){t._e.push(f)};return t}'
