@@ -129,9 +129,9 @@
     "hatfield peverel",
     "boreham"
    ],
-   "status": "caution",
+   "status": "off",
    "perWeek": 1,
-   "note": "Rule: once weekly posting."
+   "note": "OFF 27 Nov 2026: admins declined the Page's request to participate and the GP push post. Rule: once weekly posting."
   },
   {
    "id": "247965605609185",
@@ -294,7 +294,8 @@
    ],
    "status": "caution",
    "perWeek": 1,
-   "note": "Rule: no promotions or spam."
+   "note": "Rule: no promotions or spam.",
+   "approval": "admin approval"
   },
   {
    "id": "1014342272384539",
@@ -645,7 +646,8 @@
     "basildon"
    ],
    "status": "on",
-   "perWeek": 3
+   "perWeek": 3,
+   "approval": "admin approval"
   },
   {
    "id": "196202630394637",
