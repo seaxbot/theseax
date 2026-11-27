@@ -185,10 +185,10 @@
     "leigh-on-sea",
     "westcliff"
    ],
-   "status": "caution",
+   "status": "off",
    "perWeek": 2,
    "owner": "Your Southend",
-   "note": "Run by Your Southend, another news outlet. Owner chose to post and see what happens (20 Nov 2026)."
+   "note": "Run by Your Southend, another news outlet. Owner chose to post and see what happens (20 Nov 2026). OFF 27 Nov 2026: Your content shows an earlier Seax post Declined (found in GP push check)."
   },
   {
    "id": "welovesouthendonsea",
@@ -1616,9 +1616,10 @@
     "benfleet",
     "castle point"
    ],
-   "status": "on",
+   "status": "off",
    "perWeek": 3,
-   "joined": "2026-11-20"
+   "joined": "2026-11-20",
+   "note": "OFF 27 Nov 2026: Your content shows an earlier Seax post Removed (found in GP push check)."
   },
   {
    "id": "728128481422466",
@@ -2801,7 +2802,7 @@
    "status": "on",
    "perWeek": 1,
    "joined": "2026-11-21",
-   "note": "Auto-joined in the 21 Nov 2026 bulk join. Not yet vetted: before the first post, check the Group by banner (never Essex Live) and the rules; set off or caution if they ban links, news or Pages."
+   "note": "Auto-joined in the 21 Nov 2026 bulk join. Not yet vetted: before the first post, check the Group by banner (never Essex Live) and the rules; set off or caution if they ban links, news or Pages. Vetted 27 Nov 2026: rules: business guides, one post a day for approved businesses, no hate, no for-sale. Earlier unlogged Seax c2c post (25 Nov 16:05) is live."
   },
   {
    "id": "maldongroup",
