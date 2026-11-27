@@ -32,6 +32,16 @@ def one(c):
                 out["links"] = len(items); out["sample"] = [[i["title"][:90], i["url"][:140]] for i in items[:12]]
             except Exception as e:
                 out["links"] = 0; out["note"] = str(e)[:200]
+            if c.get("raw"):   # every same-site link with some text, to work out a "match" pattern by hand
+                import re, html
+                from urllib.parse import urljoin
+                host = urlparse(c["url"]).netloc.replace("www.", "")
+                raw = []
+                for m in collect.LINK_RX.finditer(re.sub(r"(?is)<(script|style)\b.*?</\1>", " ", body)):
+                    u = urljoin(c["url"], html.unescape(m.group(1))); tx = " ".join(collect.clean(m.group(2)).split())
+                    if host in u and len(tx) >= 18:
+                        raw.append([tx[:80], u[:150]])
+                out["raw"] = raw[:150]; out["starts"] = " ".join(collect.clean(body[:200000]).split())[:300]
             out["status"] = 200
     except Exception as e:
         out["status"] = f"{type(e).__name__}: {str(e)[:120]}"
