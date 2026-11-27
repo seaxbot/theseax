@@ -23,6 +23,12 @@ jobs:
           GOATCOUNTER_TOKEN: ${{ secrets.GOATCOUNTER_TOKEN }}
         run: |
           mkdir -p /tmp/stats
+          if [ -z "$GOATCOUNTER_TOKEN" ]; then
+            # No key yet: skip quietly instead of failing (owner 27 Nov 2026: failure emails every run)
+            echo "::notice::GOATCOUNTER_TOKEN secret is not set yet, so stats were skipped"
+            echo "skipped: GOATCOUNTER_TOKEN secret not set" > /tmp/stats/run.log
+            exit 0
+          fi
           set -o pipefail
           python3 -u tools/stats/goatcounter.py /tmp/stats 2>&1 | tee /tmp/stats/run.log
       - name: Save to the data branch
