@@ -363,6 +363,17 @@ def parse_feed(text, feed):
 def read_feed(feed, state):
     """Returns (items or None, error, cached). Items carry id, title, url, time, source, kind and summary or text."""
     url = feed["url"]; prev = (state.get("cache") or {}).get(url)
+    # Not too often (27 Nov 2026): every edition any desk publishes starts a collection, so a busy hour could read a
+    # small site five times. A feed read in the last 25 minutes is taken from the last read; the small sites that
+    # share one hosting firm (which blocks readers that call too often) are read at most once in 55 minutes.
+    gap = feed.get("_gap", 25)
+    with LOCK:
+        last = state.setdefault("last", {})
+        was = last.get(url)
+        if prev is not None and (was is None and gap > 25 or was and was > (NOW - timedelta(minutes=gap)).strftime(ISO)):
+            last.setdefault(url, NOW.strftime(ISO))
+            return prev, "", True
+        last[url] = NOW.strftime(ISO)
     try:
         if not allowed(url, state):
             return None, "robots.txt does not allow this feed", False
@@ -513,10 +524,14 @@ def main():
     by_host = {}
     for f in feeds:
         by_host.setdefault(where[urlparse(f["url"]).netloc], []).append(f)
+    for lst in by_host.values():
+        if len({urlparse(f["url"]).netloc for f in lst}) >= 6:   # many different sites on one server: a shared host
+            for f in lst:
+                f["_gap"] = 55
     def run_host(lst):
         res = []
         for f in lst:
-            res.append((f, *read_feed(f, state))); time.sleep(0.5 if len(lst) > 3 else 0.3)
+            res.append((f, *read_feed(f, state))); time.sleep(1.0 if f.get("_gap") else 0.5 if len(lst) > 3 else 0.3)
         return res
     results = []
     with ThreadPoolExecutor(max_workers=20) as ex:
@@ -526,7 +541,11 @@ def main():
     if again:   # a second, slower try for sites that were busy or rate-limiting
         time.sleep(8)
         for i in again[:60]:
-            f = results[i][0]; results[i] = (f, *read_feed(f, state)); time.sleep(1.5)
+            f = results[i][0]
+            if f.get("_gap"):   # a shared host that is refusing us: leave it until the next hour
+                continue
+            state.get("last", {}).pop(f["url"], None)
+            results[i] = (f, *read_feed(f, state)); time.sleep(1.5)
     cache = state.setdefault("cache", {}); failed, ok, unchanged = [], 0, 0
     used = edition_urls(root); items = {}
     for f, got, e, cached in results:
