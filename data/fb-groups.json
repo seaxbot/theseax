@@ -3315,7 +3315,7 @@
    "id": "ongarcommunitygroup",
    "key": "ongar-community-group-essex-roup",
    "name": "Ongar Community Group (Essex)",
-   "members": 2800,
+   "members": 2900,
    "privacy": "",
    "kind": "town",
    "match": [
@@ -3324,7 +3324,9 @@
    "status": "on",
    "perWeek": 1,
    "joined": "2026-11-21",
-   "note": "Auto-joined in the 21 Nov 2026 bulk join. Not yet vetted: before the first post, check the Group by banner (never Essex Live) and the rules; set off or caution if they ban links, news or Pages."
+   "note": "Vetted 27 Nov 2026 (19:41 run): no Group by banner, admin Stuart, not Essex Live; for posts relevant to Ongar, Essex; no ban on links, news or Pages. First Seax post went live at once. perWeek 1 until a post has gone live without complaint.",
+   "approval": "instant",
+   "postsMonth": 523
   },
   {
    "id": "2861052530609683",
