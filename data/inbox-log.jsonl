@@ -155,3 +155,4 @@
 {"at": "2026-11-27T17:27:56Z", "stage": "done", "handled": 4, "stories": [], "events": 1, "flags": 0, "left": 8, "error": "web fetch not permitted, no page could be read"}
 {"at":"2026-11-27T20:20:41Z","stage":"started"}
 {"at":"2026-11-27T20:21:04Z","stage":"inbox","unhandled":3}
+{"at":"2026-11-27T20:27:04Z","stage":"done","handled":1,"stories":[],"events":1,"flags":0,"left":2,"error":"web fetch not permitted, Ofsted reports not read"}
