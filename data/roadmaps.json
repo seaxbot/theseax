@@ -356,6 +356,10 @@
   "none": "no road named",
   "sig": "[[], null, null]"
  },
+ "greater-anglia-shenfield-london-line-shut-christmas-new-year-2026": {
+  "none": "no road named",
+  "sig": "[[], null, null]"
+ },
  "halstead-banking-hub-permanent-bridge-street-home": {
   "after": 0,
   "h": 750,
