@@ -216,7 +216,7 @@ section.block{padding:38px 0 8px;scroll-margin-top:60px}
 .fx:first-of-type{border-top:0}
 .fx .d{background:var(--paper2);border-radius:10px;text-align:center;padding:7px 0;line-height:1.05}
 .fx .d b{display:block;font-family:var(--serif);font-size:24px;font-weight:900}
-.fx .d span{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
+.fx .d span{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:#5a554b}
 .fx .w{font-weight:700;font-size:15px}
 .fx .s{font-size:12.5px;color:var(--muted)}
 .cd{display:inline-block;font-size:11px;font-weight:800;color:var(--red);background:#fbe3e7;padding:2px 7px;border-radius:99px;margin-left:6px;vertical-align:1px}
@@ -1308,6 +1308,7 @@ var el=document.querySelector('.masthead .skyline');el.style.backgroundImage='ur
   </div>
 </div>
 
+<main>
 <section class="frontpage">
   <div class="wrap">
     <div class="todaybar" id="todayBar"></div>
@@ -1348,7 +1349,7 @@ var el=document.querySelector('.masthead .skyline');el.style.backgroundImage='ur
     <div class="grid" id="sportStories"><!--seax-s:sportStories--><a class="card" href="/story/s-southend-dyer-hartlepool-kick-off-shambles/"><div class="body"><div class="meta"><span class="place">Southend-on-Sea</span> <span class="when">Friday 27 November 2026, 16:01</span></div><h3>Southend boss Dyer calls Hartlepool&#x27;s 5.30pm kick-off a &#x27;shambles&#x27;</h3><p>Southend United fans face another late start at the far end of the country. The manager says they will still travel in their hundreds.</p></div></a><a class="card" href="/story/s-brentwood-bowers-velocity-cup-2026-11-24/"><div class="body"><div class="meta"><span class="place">Brentwood</span> <span class="when">Wednesday 25 November 2026, 23:10</span></div><h3>Brentwood Town beat Bowers &amp; Pitsea 4-2 in the Velocity Cup</h3><p>Bradley Sach scored twice inside ten minutes at The Arena. Brentwood are through to the fourth round.</p></div></a><a class="card" href="/story/s-takeley-witham-2026-11-24/"><div class="body"><div class="meta"><span class="place">Witham</span> <span class="when">Wednesday 25 November 2026, 18:15</span></div><h3>Witham Town win 2-0 at Takeley to climb to sixth in Isthmian North</h3><p>Witham Town are now in the Isthmian North play-off places. Brightlingsea Regent had a tough night at the new leaders.</p></div></a><a class="card" href="/story/s-eastbourne-aveley-2026-11-24/"><div class="body"><div class="meta"><span class="place">Aveley</span> <span class="when">Wednesday 25 November 2026, 14:54</span></div><h3>Aveley beaten 3-1 away at Isthmian Premier high-flyers Eastbourne</h3><p>Aveley hit the woodwork and briefly drew level in Sussex. Two goals either side of half-time settled it.</p></div></a><a class="card" href="/story/s-essex-t20-blast-2027-fixtures/"><div class="body"><div class="meta"><span class="place">Chelmsford</span> <span class="when">Wednesday 25 November 2026, 09:59</span></div><h3>Essex to open 2027 T20 season at Hove, with six games in Chelmsford</h3><p>Essex Cricket has published next summer&#x27;s T20 fixtures for its men and women. Members can book first, from 2 December.</p></div></a><a class="card" href="/story/s-preview-southend-forest-green-2026-11-24/"><div class="body"><div class="meta"><span class="place">Southend-on-Sea</span> <span class="when">Wednesday 25 November 2026, 00:45</span></div><h3>Southend climb to fourth with 2-0 win at Forest Green</h3><p>Southend United won 2-0 at The New Lawn on Tuesday 24 November, bouncing back from their home defeat by leaders Boreham Wood four days earlier.</p></div></a><!--/seax-s:sportStories--></div>
     <div class="tbl-wrap" id="tblWrap" hidden>
       <div class="sec-h"><h3>Essex in the tables</h3></div>
-      <div class="tbl-strip" id="tblStrip" role="list"></div>
+      <div class="tbl-strip" id="tblStrip"></div>
       <div class="tbl-full" id="tblFull" hidden></div>
     </div>
     <div class="sec-h res-h"><h3>Latest results</h3><span class="sub">Tap a score for the match report</span></div>
@@ -1487,6 +1488,7 @@ var el=document.querySelector('.masthead .skyline');el.style.backgroundImage='ur
   </div>
 </section>
 
+</main>
 <footer>
   <div class="wrap">
     <div>
@@ -4966,7 +4968,7 @@ function renderTables(){
   cards.sort((a,b) => (b.local - a.local) || (a.ti - b.ti) || (a.r.pos - b.r.pos));
   $("#tblStrip").innerHTML = cards.map(({t, r, local}) => {
     const [zc, zl] = tblZone(t, r.pos), key = t.id + "|" + r.team, on = TBL_OPEN === key;
-    return `<button class="tcard ${zc}${local ? " local" : ""}${on ? " on" : ""}" role="listitem" data-tblkey="${esc(key)}" aria-expanded="${on}">
+    return `<button class="tcard ${zc}${local ? " local" : ""}${on ? " on" : ""}" data-tblkey="${esc(key)}" aria-expanded="${on}">
       <span class="tc-div">${esc(t.short || t.comp)}</span>
       <span class="tc-team">${esc(r.team)}</span>
       <span class="tc-pos"><b>${ordinal(r.pos)}</b><i>of ${t.size || t.rows.length}</i></span>
@@ -5521,7 +5523,11 @@ function buildHero(){
   const s = lead;
   if(!s){ $("#leadPkg").innerHTML = ""; return; }
   const pts = (s.points||[]).slice(0,3);
-  $("#leadPkg").innerHTML = `<div class="lp-text" style="--c:${pillar(s)}">
+  /* 27 Nov 2026: when the build has already written this same lead into the page (a.lp-map[data-static], tools/build.py),
+     its picture is already on screen, so it is kept in place and only the text and badges around it are refreshed.
+     Swapping the picture for an identical one made phones wait for this script before showing the lead. */
+  const lpBox = $("#leadPkg"), lpKeep = lpBox.querySelector("a.lp-map[data-static]"), lpTmp = document.createElement("div");
+  lpTmp.innerHTML = `<div class="lp-text" style="--c:${pillar(s)}">
       ${ownBanner(s, "", true)}<span class="lp-kick">${leadKicker(s)}<em>${esc(s.place||"Essex")}</em></span>
       <h2><a href="${storyHref(s)}">${esc(s.headline)}</a></h2>
       <p class="lp-stand">${esc(s.summary)}</p>
@@ -5530,6 +5536,16 @@ function buildHero(){
       <div class="lp-meta">${lastUpd(s) && new Date(lastUpd(s)) > new Date(s.time||0) ? `<span class="lp-upd">Updated ${esc(hhmm(lastUpd(s)))}</span>` : `<span data-ago="${esc(shownT(s))}">${ago(shownT(s))}</span>`}<a class="lp-read" href="${storyHref(s)}">Read the story</a></div>
     </div>
     <a class="lp-map" href="${storyHref(s)}" style="--c:${pillar(s)}" aria-label="${artKick(s) === "Club" ? "Club colours" : artKick(s) === "Sport" ? "Illustration" : artKick(s) === "Photo" ? "Photo" : artKick(s) === "Breaking" ? "Breaking news picture" : artCaption(s) ? "Map" : "Picture"}: ${esc(artCaption(s) || s.headline || "")}">${flashBadge(s)}${storyArt(s,{zoom:430,aspect:1.05})}${frontCap(s) ? `<span class="mcap"${artKick(s) ? "" : ' style="font-size:10.5px;font-weight:400;padding:3px 7px;opacity:.85"'}>${artKick(s) ? `<b>${artKick(s)}</b> ` : ""}${esc(frontCap(s))}</span>` : ""}</a>`;
+  (function(){
+    const nm = lpTmp.querySelector("a.lp-map"), nt = lpTmp.querySelector(".lp-text"), ot = lpBox.querySelector(".lp-text");
+    const oi = lpKeep && lpKeep.querySelector("svg > image"), ni = nm && nm.querySelectorAll("svg image");
+    if(lpKeep && lpKeep.dataset.static === s.id && nm && nt && ot && oi && ni.length === 1 && ni[0].getAttribute("href") === oi.getAttribute("href")){
+      ot.replaceWith(nt);
+      [...lpKeep.children].forEach(c => { if(c.tagName.toLowerCase() !== "svg") c.remove(); });
+      [...nm.children].forEach(c => { if(c.tagName.toLowerCase() !== "svg") (c.classList.contains("flash") ? lpKeep.insertBefore(c, lpKeep.firstChild) : lpKeep.appendChild(c)); });
+      lpKeep.setAttribute("href", nm.getAttribute("href")); lpKeep.setAttribute("aria-label", nm.getAttribute("aria-label") || "");
+    } else lpBox.innerHTML = lpTmp.innerHTML;
+  })();
   $("#seconds").innerHTML = seconds.map(x => `<a class="sec" href="${storyHref(x)}" style="--c:${pillar(x)}">
       <div class="sec-map" style="position:relative">${flashBadge(x)}${storyArt(x,{zoom:340,aspect:.5,label:false,credit:false})}</div>
       <div class="sec-body">${ownBanner(x, "sm")}<span class="kick2">${x.exclusive ? '<i class="hotdot"></i><b class="exk">Exclusive</b>' : esc(x.tag||"News")}<em>${esc(x.place||"Essex")}</em></span>

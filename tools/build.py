@@ -3445,7 +3445,7 @@ def rss(title, link, desc, self_url, items):
 # with innerHTML), so readers see no change. Any box that fails to build is simply left as it was.
 def _static_fill(page, box_id, inner):
     mark = f"<!--seax-s:{box_id}-->"; end = f"<!--/seax-s:{box_id}-->"
-    rx = re.compile(r'(<(?:div|ul|ol)\b[^>]*\bid="' + re.escape(box_id) + r'"[^>]*>)(?:' + re.escape(mark) + r'.*?' + re.escape(end) + r')?', re.S)
+    rx = re.compile(r'(<(?:div|ul|ol|article)\b[^>]*\bid="' + re.escape(box_id) + r'"[^>]*>)(?:' + re.escape(mark) + r'.*?' + re.escape(end) + r')?', re.S)
     return rx.sub(lambda m: m.group(1) + mark + inner + end, page, count=1)
 
 def static_sections(page, ed):
@@ -3622,6 +3622,38 @@ def patch_index(latest_briefing, ed=None):
         if pp and pp.get("wide"):
             lcp = str(pp["wide"]) + "?v=1"
     lcp_tag = f'<link rel="preload" as="image" href="{E(lcp)}" fetchpriority="high">' if lcp.startswith("/img/") else ""
+    # the lead story itself as plain HTML (27 Nov 2026): the lead used to appear only once the page's script had run, which
+    # on a phone delayed the biggest thing on the page by about two seconds. Written here with the same markup the script
+    # draws, for a lead the desks have set with its own wide picture; the script then replaces it with the full version.
+    # Any other lead (maps, library art, an older lead) is left for the script alone, as before.
+    lead_html = ""
+    try:
+        L = (ed or {}).get("lead") or {}
+        lit = next((x for x in ((ed or {}).get("stories") or []) if isinstance(x, dict) and x.get("id") == L.get("id")), None) if L.get("id") else None
+        pp = portrait_of(lit) if lit else None
+        if lit and pp and pp.get("wide") and not pp.get("whole") and slug_ok(lit.get("id")):
+            ts = max([d for d in (parse_t(lit.get("time")), parse_t(lit.get("updated"))) if d] or [NOW - timedelta(days=9)])
+            ou = parse_t(L.get("ownerUntil"))
+            if NOW - ts < timedelta(hours=30) or (ou and NOW < ou):
+                col = ICON_COLOUR.get(icon_of(lit, "news"), "#3a3f4b")
+                href = f'/story/{E(lit["id"])}/{E(link_query(lit))}'
+                kick = ('<i class="hotdot"></i>Exclusive' if lit.get("exclusive") else '<i class="hotdot"></i>Breaking' if lit.get("breaking")
+                        else '<i class="hotdot"></i>Developing' if lit.get("developing") else E(lit.get("tag") or "Top story"))
+                pts = [x for x in (lit.get("points") or []) if x][:3]
+                lead_html = (f'<div class="lp-text" style="--c:{E(col)}"><span class="lp-kick">{kick}<em>{E(lit.get("place") or "Essex")}</em></span>'
+                             f'<h2><a href="{href}">{E(lit["headline"])}</a></h2><p class="lp-stand">{E(lit.get("summary") or "")}</p>'
+                             + (('<ul class="lp-pts">' + "".join(f"<li>{E(x)}</li>" for x in pts) + "</ul>") if pts else "")
+                             + f'<div class="lp-meta"><a class="lp-read" href="{href}">Read the story</a></div></div>'
+                             f'<a class="lp-map" data-static="{E(lit["id"])}" href="{href}" style="--c:{E(col)}" aria-label="Photo: {E(lit["headline"])}">'
+                             f'<svg class="emap wxart townphoto" width="100%" height="100%" role="img" aria-label="{E(pp.get("label") or "File photo")} of {E(pp.get("name") or "")}" style="background:#222">'
+                             f'<image href="{E(pp["wide"])}?v=1" x="0" y="0" width="100%" height="100%" preserveAspectRatio="xMidYMid slice"/></svg></a>')
+    except Exception:
+        lead_html = ""
+    try:
+        if ed is not None:
+            new = _static_fill(new, "leadPkg", lead_html)
+    except Exception:
+        pass
     new = re.sub(r"<!--seax-lcp-->.*?<!--/seax-lcp-->", lambda m: "<!--seax-lcp-->" + lcp_tag + "<!--/seax-lcp-->", new, count=1, flags=re.S)
     # Christmas in Essex link in the What's On section, only while that page is being built (22 Nov 2026)
     xl = ('<p style="margin:0 0 16px;font:700 16px var(--sans)"><a href="/whats-on/christmas/" style="color:var(--red);text-decoration:underline">'
