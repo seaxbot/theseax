@@ -153,3 +153,4 @@
 {"at": "2026-11-27T17:21:57Z", "stage": "inbox", "unhandled": 10}
 {"at": "2026-11-27T17:22:25Z", "stage": "done", "handled": 3, "stories": [], "events": 1, "flags": 0, "left": 9}
 {"at": "2026-11-27T17:27:56Z", "stage": "done", "handled": 4, "stories": [], "events": 1, "flags": 0, "left": 8, "error": "web fetch not permitted, no page could be read"}
+{"at":"2026-11-27T20:20:41Z","stage":"started"}
