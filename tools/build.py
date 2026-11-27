@@ -3438,6 +3438,98 @@ def rss(title, link, desc, self_url, items):
     out.append("</channel>\n</rss>\n")
     return "\n".join(out)
 
+# ---------- front page sections as plain HTML (27 Nov 2026) ----------
+# Sport, Public Services, Council Watch, Community, Weather, What's On and Culture are drawn by the page's script, so
+# search engines' first pass and AI crawlers that do not run scripts saw empty boxes. static_sections writes the same
+# facts into each box as plain links and text. The page's script replaces every one of them on load (each box is set
+# with innerHTML), so readers see no change. Any box that fails to build is simply left as it was.
+def _static_fill(page, box_id, inner):
+    mark = f"<!--seax-s:{box_id}-->"; end = f"<!--/seax-s:{box_id}-->"
+    rx = re.compile(r'(<(?:div|ul|ol)\b[^>]*\bid="' + re.escape(box_id) + r'"[^>]*>)(?:' + re.escape(mark) + r'.*?' + re.escape(end) + r')?', re.S)
+    return rx.sub(lambda m: m.group(1) + mark + inner + end, page, count=1)
+
+def static_sections(page, ed):
+    def card(it):
+        t = parse_t(it.get("updated") or it.get("time"))
+        return (f'<a class="card" href="/story/{E(it["id"])}/{E(link_query(it))}"><div class="body"><div class="meta"><span class="place">{E(it.get("place") or "Essex")}</span>'
+                + (f' <span class="when">{E(uk_long(t))}</span>' if t else "") + f'</div><h3>{E(it["headline"])}</h3><p>{E(it.get("summary") or "")}</p></div></a>')
+    def ok(x):
+        return isinstance(x, dict) and slug_ok(x.get("id")) and x.get("headline")
+    def newest(items, n):
+        items = [x for x in (items or []) if ok(x)]
+        far = datetime(1970, 1, 1, tzinfo=timezone.utc)
+        return sorted(items, key=lambda x: parse_t(x.get("updated") or x.get("time")) or far, reverse=True)[:n]
+    def ext(u, text):
+        return f'<a href="{E(u)}" target="_blank" rel="noopener">{E(text)}</a>' if safe_url(u) else E(text)
+    boxes = {}
+    try:
+        sp = ed.get("sport") or {}
+        boxes["sportStories"] = "".join(card(x) for x in newest(sp.get("stories"), 6))
+        rows = []
+        for m in (sp.get("results") or [])[:12]:
+            if not (isinstance(m, dict) and m.get("home") and m.get("away")):
+                continue
+            line = f'{m["home"]} {m.get("hs", "")}-{m.get("as", "")} {m["away"]}'
+            d = parse_t(m.get("date"))
+            rows.append(f'<p><b>{ext(m.get("url"), line)}</b> ({E(m.get("comp") or "")}{", " + E(uk_day(d)) if d else ""}). {E(m.get("note") or "")}</p>')
+        boxes["scores"] = "".join(rows)
+        fx = [(parse_t(f.get("date")), f) for f in (sp.get("fixtures") or []) if isinstance(f, dict) and f.get("title")]
+        fx = sorted([(d, f) for d, f in fx if d and d >= NOW - timedelta(hours=3)], key=lambda p: p[0])[:12]
+        boxes["fixtures"] = "".join(f'<p><b>{ext(f.get("url"), f["title"])}</b>: {E(f.get("comp") or "")}, {E(uk_long(d))}{", " + E(f["where"]) if f.get("where") else ""}</p>' for d, f in fx)
+    except Exception:
+        pass
+    try:
+        boxes["deskFeed"] = "".join(f'<a class="drow" href="/story/{E(x["id"])}/{E(link_query(x))}"><b>{E(x["headline"])}</b> <span>{E(x.get("org") or "")}</span></a>'
+                                    for x in newest(ed.get("official"), 10))
+        boxes["incidents"] = "".join(f'<li>{ext(i.get("url"), i.get("title") or "")}<span>{E(i.get("place") or "")}'
+                                     f'{" · " + E(uk_long(parse_t(i.get("time")))) if parse_t(i.get("time")) else ""}</span></li>'
+                                     for i in (ed.get("incidents") or [])[:7] if isinstance(i, dict) and i.get("title"))
+        hs = [(parse_t(h.get("date")), h) for h in (ed.get("hearings") or []) if isinstance(h, dict) and h.get("title")]
+        hs = sorted([(d, h) for d, h in hs if d and d >= NOW - timedelta(hours=12)], key=lambda p: p[0])[:8]
+        boxes["hearings"] = "".join(f'<li>{ext(h.get("url"), h["title"])}<span>{E(uk_long(d))}{" · " + E(h["court"]) if h.get("court") else ""}</span></li>' for d, h in hs)
+    except Exception:
+        pass
+    try:
+        boxes["cwCards"] = "".join(card(x) for x in newest(ed.get("councilwatch"), 4))
+        boxes["commGrid"] = "".join(card(x) for x in newest(ed.get("community"), 4))
+    except Exception:
+        pass
+    try:
+        w = ed.get("weather") or {}
+        now = w.get("now") or {}
+        if now.get("temp") is not None:
+            boxes["wxNow"] = (f'<p><b>{E(w.get("place") or "Chelmsford")} now</b>: {E(now.get("temp"))}°C, {E(now.get("desc") or "")}'
+                              + (f', feels like {E(now.get("feels"))}°C' if now.get("feels") is not None else "")
+                              + (f'. {E(now.get("wind"))}' if now.get("wind") else "") + '.</p>')
+        days = []
+        for d in (w.get("days") or [])[:5]:
+            dt = parse_t(str(d.get("date")) + "T12:00:00Z") if isinstance(d, dict) and d.get("date") else None
+            if dt:
+                days.append(f'<p><b>{E(uk_day(dt))}</b>: {E(d.get("desc") or "")}, high {E(d.get("hi"))}°C, low {E(d.get("lo"))}°C'
+                            + (f', {E(d.get("rain"))}% chance of rain' if d.get("rain") is not None else "") + '.</p>')
+        boxes["wxDays"] = "".join(days)
+    except Exception:
+        pass
+    try:
+        def listing(e, place_key):
+            bits = [e.get(place_key) or e.get("where"), e.get("where") if e.get(place_key) and e.get("where") != e.get(place_key) else None, e.get("time"), e.get("price")]
+            return (f'<p><b>{ext(e.get("url"), e["title"])}</b>' + "".join(", " + E(b) for b in bits if b)
+                    + (f'. {E(e["blurb"])}' if e.get("blurb") else "") + '</p>')
+        ev = [(parse_t(e.get("start")), e) for e in (ed.get("events") or []) if isinstance(e, dict) and e.get("title")]
+        ev = sorted([(d, e) for d, e in ev if d and (parse_t(e.get("end")) or d) >= NOW - timedelta(hours=6)], key=lambda p: p[0])[:8]
+        boxes["events"] = "".join(listing(e, "where") for _, e in ev)
+        cu = [e for e in (ed.get("culture") or []) if isinstance(e, dict) and e.get("title") and (not parse_t(e.get("end")) or parse_t(e.get("end")) >= NOW)][:9]
+        boxes["culture-grid"] = "".join(listing(e, "venue") for e in cu)
+    except Exception:
+        pass
+    for box_id, inner in boxes.items():
+        if inner:
+            try:
+                page = _static_fill(page, box_id, inner)
+            except Exception:
+                pass
+    return page
+
 # ---------- index.html config block ----------
 def patch_index(latest_briefing, ed=None):
     p = os.path.join(ROOT, "index.html")
@@ -3459,6 +3551,10 @@ def patch_index(latest_briefing, ed=None):
                          f'<h3>{E(it["headline"])}</h3><p>{E(it.get("summary") or "")}</p></div></a>')
         static = "<!--seax-static-->" + "".join(cards) + "<!--/seax-static-->"
         new = re.sub(r"<!--seax-static-->.*?<!--/seax-static-->", lambda m: static, new, count=1, flags=re.S)
+        try:
+            new = static_sections(new, ed)
+        except Exception:
+            pass
         # "Only on The Seax" (20 Nov 2026): the newest pieces of our own reporting (Council Watch, and stories the
         # desks mark "original": true: data desk analysis, FOI disclosures, weekly pieces), as plain links above News
         own = [("Council Watch", x) for x in (ed.get("councilwatch") or []) if isinstance(x, dict) and x.get("id") and x.get("headline")]
