@@ -18,3 +18,5 @@ a12-northbound-closed-junction-16-galleywood-crash-22-november
 harlow-rail-station-taxi-checks-three-vehicles-suspended
 # owner, 23 Nov 2026 20:51 ("watch for repeats - shouldn't be on there"): duplicate of a story still live
 o-harlow-damien-clinton-33-theft-appeal
+# owner: remove for now, 27 Nov 2026 11:28 (Maldon gas main fire; delete this line to allow it back)
+maldon-high-street-gas-main-fire-properties-evacuated
