@@ -658,6 +658,22 @@
    "h": "Saffron Walden to run free Christmas buses for two late-night events",
    "result": "live",
    "note": "07:41 run. First Seax post here; group vetted first (no Group by banner, no written rules, 43 posts a day). Live at once."
+  },
+  {
+   "g": "maldon-roup",
+   "s": "maldon-high-street-salt-restaurant-arson-investigation",
+   "t": 1795782412989,
+   "h": "Maldon restaurant targeted in overnight arson attempt",
+   "result": "declined",
+   "note": "Owner's request 27 Nov 12:3x. Auto-declined at once: group admits only accounts over 4 weeks old ('New profile' criteria)."
+  },
+  {
+   "g": "maldon-essex-local-4675",
+   "s": "maldon-high-street-salt-restaurant-arson-investigation",
+   "t": 1795782592989,
+   "h": "Maldon restaurant targeted in overnight arson attempt",
+   "result": "pending",
+   "note": "Owner's request 27 Nov 12:3x. Held for admin approval (group holds every Seax post). A Tunde Chelmsford post is also sitting pending here."
   }
  ],
  "joins": [
