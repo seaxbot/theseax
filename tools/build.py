@@ -1443,6 +1443,110 @@ def map_figure(it, colour):
     return (f'<figure class="stock">{story_map_svg(it, colour)}'
             f'<figcaption><b>Where</b>. {E(map_caption(it))}</figcaption></figure>')
 
+# ---------- map share pictures (27 Nov 2026) ----------
+# A story with no photo shows the Essex map on its page, but its share picture used to be the plain branded section card,
+# the same picture for hundreds of stories. Here the story's own map is drawn as a 1200x630 PNG (img/og/map/<id>-<hash>.png)
+# and used as the share picture instead. It needs rsvg-convert or cairosvg; where neither is installed, or anything goes
+# wrong, the story simply keeps its branded card, so a build can never fail because of this. Only stories from the last
+# MAPCARD_DAYS days get a new picture drawn (older pages keep whatever they already have), which keeps the repo small.
+MAPCARD_DIR = os.path.join(ROOT, "img", "og", "map")
+MAPCARD_DAYS = 10
+MAPCARD_MAX_PER_BUILD = 400
+_MAPCARDS = None
+_MAPCARD_DRAWN = 0
+
+def _mapcard_index():
+    global _MAPCARDS
+    if _MAPCARDS is None:
+        _MAPCARDS = {}
+        if os.path.isdir(MAPCARD_DIR):
+            for f in sorted(os.listdir(MAPCARD_DIR)):
+                m = re.fullmatch(r"([a-z0-9-]+)-([0-9a-f]{8})\.png", f)
+                if m:
+                    _MAPCARDS.setdefault(m.group(1), []).append(f)
+    return _MAPCARDS
+
+def _rasterise(svg, out):
+    import subprocess, tempfile
+    tmp = tempfile.NamedTemporaryFile("w", suffix=".svg", delete=False, encoding="utf-8")
+    try:
+        tmp.write(svg); tmp.close()
+        try:
+            r = subprocess.run(["rsvg-convert", "-w", "1200", "-h", "630", "-o", out, tmp.name], capture_output=True, timeout=30)
+            ok = r.returncode == 0 and os.path.exists(out) and os.path.getsize(out) > 2000
+        except Exception:
+            ok = False
+        if not ok:
+            try:
+                import cairosvg
+                cairosvg.svg2png(url=tmp.name, write_to=out, output_width=1200, output_height=630)
+                ok = os.path.exists(out) and os.path.getsize(out) > 2000
+            except Exception:
+                ok = False
+        if ok:  # flat-colour map: a 64-colour palette cuts the file to about a third (needs Pillow; skipped without it)
+            try:
+                from PIL import Image
+                Image.open(out).convert("RGB").quantize(colors=64, method=Image.Quantize.MEDIANCUT, dither=Image.Dither.NONE).save(out, optimize=True)
+            except Exception:
+                pass
+        return ok
+    finally:
+        try:
+            os.unlink(tmp.name)
+        except Exception:
+            pass
+
+def map_share_image(it, colour):
+    """Share picture path for a map-only story ("/img/og/map/<id>-<hash>.png"), or "" to keep the branded card."""
+    global _MAPCARD_DRAWN
+    try:
+        import hashlib
+        sid = str(it.get("id") or "")
+        if not slug_ok(sid):
+            return ""
+        have = _mapcard_index().get(sid, [])
+        recent = True
+        try:
+            ts = datetime.fromisoformat(str(it.get("updated") or it.get("time")).replace("Z", "+00:00"))
+            recent = datetime.now(timezone.utc) - ts < timedelta(days=MAPCARD_DAYS)
+        except Exception:
+            recent = False
+        if not recent:
+            return f"/img/og/map/{have[-1]}" if have else ""
+        svg = story_map_svg(it, colour, aspect=630 / 1200)
+        m = re.search(r'viewBox="([\d.\-]+) ([\d.\-]+) ([\d.\-]+) ([\d.\-]+)"', svg)
+        if not m:
+            return f"/img/og/map/{have[-1]}" if have else ""
+        x0, y0, w, h = (float(v) for v in m.groups())
+        bh, fs = h * .1, h * .052
+        brand = (f'<rect x="{x0:.1f}" y="{y0 + h - bh:.1f}" width="{w:.1f}" height="{bh:.1f}" fill="#0e1b30"/>'
+                 f'<rect x="{x0:.1f}" y="{y0 + h - bh:.1f}" width="{w:.1f}" height="{bh * .07:.2f}" fill="#d0a13a"/>'
+                 f'<text x="{x0 + w * .03:.1f}" y="{y0 + h - bh * .32:.1f}" font-size="{fs:.1f}" fill="#f6f1e6" '
+                 f'style="font-family:Georgia,serif;font-weight:900">The Seax</text>'
+                 f'<text x="{x0 + w * .97:.1f}" y="{y0 + h - bh * .34:.1f}" font-size="{fs * .68:.1f}" fill="#f6f1e6" text-anchor="end" '
+                 f'style="font-family:Inter,Helvetica,Arial,sans-serif;font-weight:600">Essex News, Sport, Life. theseax.com</text>')
+        svg = re.sub(r'<svg viewBox="([^"]+)"[^>]*>', lambda k: f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="{k.group(1)}" width="1200" height="630" preserveAspectRatio="xMidYMid slice">', svg, count=1)
+        svg = svg.replace("font-family:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif", "font-family:Inter,Helvetica,Arial,sans-serif")
+        svg = svg[:svg.rindex("</svg>")] + brand + "</svg>"
+        name = f"{sid}-{hashlib.sha1(svg.encode('utf-8')).hexdigest()[:8]}.png"
+        if name in have:
+            return f"/img/og/map/{name}"
+        if _MAPCARD_DRAWN >= MAPCARD_MAX_PER_BUILD:
+            return f"/img/og/map/{have[-1]}" if have else ""
+        os.makedirs(MAPCARD_DIR, exist_ok=True)
+        if not _rasterise(svg, os.path.join(MAPCARD_DIR, name)):
+            return f"/img/og/map/{have[-1]}" if have else ""
+        _MAPCARD_DRAWN += 1
+        for old in have:  # the map changed (a place was added or corrected): drop the earlier picture
+            try:
+                os.unlink(os.path.join(MAPCARD_DIR, old))
+            except Exception:
+                pass
+        _mapcard_index()[sid] = [name]
+        return f"/img/og/map/{name}"
+    except Exception:
+        return ""
+
 # ---------- story pages ----------
 def collect(ed):
     out = []
@@ -2200,6 +2304,11 @@ def story_page(sec, it, more):
     # "ogImage": "/img/..." on the item sets only the share picture, the page keeps its map
     if map_only and str(it.get("ogImage") or "").startswith("/img/"):
         og_img = str(it["ogImage"])
+    elif map_only:  # otherwise share the story's own map, not the branded section card (27 Nov 2026)
+        mp = map_share_image(it, colour)
+        if mp:
+            og_img = mp
+            extra = extra.replace(SITE + og_path(card), SITE + mp)
     return head(f"{title} · The Seax", desc, url, og_img, "article", extra) + f"""<main class="wrap story">
 <article style="--c:{colour}">
   {own_banner(it)}<div class="kick"><span>{E(kicker)}</span><span>{E(place)}</span></div>
