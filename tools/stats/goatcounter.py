@@ -28,6 +28,11 @@ def window(hours):
     try:
         h = get("/stats/hits", limit=50, **q)
         out["pages"] = [{"path": x.get("path"), "title": x.get("title"), "count": x.get("count")} for x in h.get("hits", [])]
+        if "total" not in out:   # /stats/total answers 404 on this site (27 Nov 2026): fall back to the hits list
+            t = h.get("total")
+            out["total"] = {"total": t if isinstance(t, int) else sum(int(x.get("count") or 0) for x in h.get("hits", [])),
+                            "from": "hits" if isinstance(t, int) else "top 50 pages"}
+            out.pop("totalError", None)
     except Exception as e:
         out["pagesError"] = str(e)[:200]
     try:
