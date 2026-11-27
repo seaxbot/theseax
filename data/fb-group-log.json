@@ -1,7 +1,7 @@
 {
  "note": "Every Seax post into a Facebook group, newest last. Written by the groups desk (ops/fbgroups.md). The queue page merges it with the ticks saved in the browser.",
- "paused": false,
- "pauseReason": "",
+ "paused": true,
+ "pauseReason": "27 Nov 2026 13:21: stop rule, 3 declines or removals today: MALDON (auto-declined, account under 4 weeks old), Southend Crimewatch (declined within seconds) and Crimewatch Southend & Local Areas (removed within seconds). The last two were both the Sutton Road crash appeal, rejected instantly with no feedback, which may mean automatic filtering of new Pages or Seax links in some groups. Only the owner unpauses.",
  "posts": [
   {
    "g": "our-thurrock-community-1282",
@@ -698,6 +698,14 @@
    "h": "Stansted Airport Poppy Appeal raises record £26,190",
    "result": "live",
    "note": "12:41 run. Submitted to admins for approval, then shown under Your content > Published within a minute."
+  },
+  {
+   "g": "crimewatch-southend-and-loca-asuk",
+   "s": "southend-sutton-road-crash-pedestrian-seriously-hurt-dashcam-appeal",
+   "t": 1795785692630,
+   "h": "Southend crash: police seek dashcam footage after man seriously hurt",
+   "result": "removed",
+   "note": "12:41 run. Replacement for the Southend Crimewatch decline. First Seax post here (no Group by banner, rules only no hate/be kind, business Pages post freely). Removed within seconds (Your content > Removed, no feedback): looks automatic. Third decline or removal today, so the desk is paused."
   }
  ],
  "joins": [
