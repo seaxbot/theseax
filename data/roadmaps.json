@@ -46,6 +46,17 @@
   "none": "no road called Howe Street near Wethersfield",
   "sig": "[[\"Howe Street\"], \"Wethersfield\", null]"
  },
+ "braintree-springwood-drive-panfield-lane-link-road-work-begins": {
+  "after": 0,
+  "h": 750,
+  "kicker": "On the map",
+  "made": "2026-11-27T17:40:47Z",
+  "road": "Panfield Lane",
+  "sig": "[[\"Panfield Lane\", \"Springwood Drive\"], \"Braintree\", null]",
+  "src": "/img/maps/braintree-springwood-drive-panfield-lane-link-road-work-begins.svg",
+  "town": "Braintree",
+  "w": 1200
+ },
  "brentwood-616kg-raw-tobacco-seized-hmrc-illegal-cigarette-factory-raids": {
   "none": "no road named",
   "sig": "[[], \"Brentwood\", null]"
@@ -155,6 +166,17 @@
  "clacton-hannah-steer-15-missing-appeal": {
   "none": "no road named",
   "sig": "[[], \"Clacton\", null]"
+ },
+ "clacton-nhs-essex-health-checks-flu-jabs-research-event-30-november": {
+  "after": 0,
+  "h": 750,
+  "kicker": "On the map",
+  "made": "2026-11-27T17:40:41Z",
+  "road": "Vista Road",
+  "sig": "[[\"Vista Road\"], \"Clacton-on-Sea\", null]",
+  "src": "/img/maps/clacton-nhs-essex-health-checks-flu-jabs-research-event-30-november.svg",
+  "town": "Clacton-on-Sea",
+  "w": 1200
  },
  "clacton-tayla-sabaroche-admits-14-shop-thefts-selection-boxes": {
   "none": "no road named",
