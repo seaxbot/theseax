@@ -20,3 +20,5 @@ harlow-rail-station-taxi-checks-three-vehicles-suspended
 o-harlow-damien-clinton-33-theft-appeal
 # owner: remove for now, 27 Nov 2026 11:28 (Maldon gas main fire; delete this line to allow it back)
 maldon-high-street-gas-main-fire-properties-evacuated
+# Essex Police news sweep, 27 Nov 2026 17:10: duplicate of the owner story ct-grays-oksana-antanaitiene-prison-tutor-sentenced-hmp-chelmsford, which was published while the sweep was publishing
+chelmsford-prison-tutor-oksana-antanaitiene-sentenced
