@@ -329,7 +329,10 @@ def parse_feed(text, feed):
             out.append({"title": f"{i.get('severity', 'Flood alert')}: {i.get('description', '')}", "url": str(i.get("@id") or ""),
                         "time": when(i.get("timeMessageChanged") or i.get("timeRaised")), "body": clean(i.get("message") or "")})
         return out
-    root = ET.fromstring(t.encode("utf-8"))
+    try:
+        root = ET.fromstring(t.encode("utf-8"))
+    except ET.ParseError:   # web-page entities such as &nbsp; in a feed (Community 360): turn them into characters and try once more
+        root = ET.fromstring(re.sub(r"&(?!(?:amp|lt|gt|quot|apos);|#)(\w+);", lambda m: html.unescape(m.group(0)) if html.unescape(m.group(0)) != m.group(0) else "", t).encode("utf-8"))
     strip = lambda tag: tag.split("}")[-1]
     for it in root.iter():
         if strip(it.tag) not in ("item", "entry"):

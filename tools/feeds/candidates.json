@@ -5507,5 +5507,607 @@
 "name": "Priti Patel MP (Witham) in Parliament",
 "url": "https://www.theyworkforyou.com/mp/24778/priti_patel/witham",
 "new": true
+},
+{
+"group": "data",
+"area": "all",
+"name": "GOV.UK: everything published about 32 Essex towns and projects",
+"url": "https://www.gov.uk/search/all?keywords=Essex&order=updated-newest",
+"new": true
+},
+{
+"group": "data",
+"area": "all",
+"name": "Competition and Markets Authority cases mentioning Essex",
+"url": "https://www.gov.uk/cma-cases?keywords=Essex",
+"new": true
+},
+{
+"group": "data",
+"area": "all",
+"name": "GOV.UK consultations and policy papers mentioning Essex",
+"url": "https://www.gov.uk/search/policy-papers-and-consultations?keywords=Essex",
+"new": true
+},
+{
+"group": "data",
+"area": "all",
+"name": "GOV.UK statistics mentioning Essex",
+"url": "https://www.gov.uk/search/research-and-statistics?keywords=Essex",
+"new": true
+},
+{
+"group": "data",
+"area": "all",
+"name": "GOV.UK transparency and FOI releases mentioning Essex",
+"url": "https://www.gov.uk/search/transparency-and-freedom-of-information-releases?keywords=Essex",
+"new": true
+},
+{
+"group": "data",
+"area": "all",
+"name": "National Audit Office",
+"url": "https://www.nao.org.uk",
+"new": true
+},
+{
+"group": "data",
+"area": "all",
+"name": "House of Commons Library",
+"url": "https://commonslibrary.parliament.uk",
+"new": true
+},
+{
+"group": "courts",
+"area": "all",
+"name": "Employment Appeal Tribunal decisions mentioning Essex",
+"url": "https://www.gov.uk/employment-appeal-tribunal-decisions?keywords=Essex",
+"new": true
+},
+{
+"group": "courts",
+"area": "all",
+"name": "Property tribunal decisions mentioning Essex (rents, leaseholds, park homes)",
+"url": "https://www.gov.uk/residential-property-tribunal-decisions?keywords=Essex",
+"new": true
+},
+{
+"group": "courts",
+"area": "all",
+"name": "Administrative Appeals tribunal decisions mentioning Essex",
+"url": "https://www.gov.uk/administrative-appeals-tribunal-decisions?keywords=Essex",
+"new": true
+},
+{
+"group": "courts",
+"area": "all",
+"name": "Employment tribunal decisions (Essex towns)",
+"url": "https://www.gov.uk/employment-tribunal-decisions?keywords=Essex",
+"new": true
+},
+{
+"group": "courts",
+"area": "all",
+"name": "Find Case Law: new court judgments mentioning Essex places",
+"url": "https://caselaw.nationalarchives.gov.uk/search?query=Essex&order=-date",
+"new": true
+},
+{
+"group": "culture",
+"area": "all",
+"name": "Frinton Summer Theatre",
+"url": "https://www.frintonsummertheatre.org",
+"new": true
+},
+{
+"group": "culture",
+"area": "all",
+"name": "Essex Record Office blog",
+"url": "https://www.essexrecordofficeblog.co.uk",
+"new": true
+},
+{
+"group": "culture",
+"area": "all",
+"name": "National Lottery Heritage Fund",
+"url": "https://www.heritagefund.org.uk/news",
+"new": true
+},
+{
+"group": "national",
+"area": "all",
+"name": "The Guardian UK news",
+"url": "https://www.theguardian.com/uk-news",
+"new": true
+},
+{
+"group": "national",
+"area": "all",
+"name": "The Guardian society",
+"url": "https://www.theguardian.com/society",
+"new": true
+},
+{
+"group": "national",
+"area": "all",
+"name": "The Guardian environment",
+"url": "https://www.theguardian.com/environment",
+"new": true
+},
+{
+"group": "national",
+"area": "all",
+"name": "The New World",
+"url": "https://www.thenewworld.co.uk",
+"new": true
+},
+{
+"group": "broadcast",
+"area": "all",
+"name": "BBC News UK",
+"url": "https://www.bbc.co.uk/news/uk",
+"new": true
+},
+{
+"group": "broadcast",
+"area": "all",
+"name": "BBC News politics",
+"url": "https://www.bbc.co.uk/news/politics",
+"new": true
+},
+{
+"group": "broadcast",
+"area": "all",
+"name": "BBC News business",
+"url": "https://www.bbc.co.uk/news/business",
+"new": true
+},
+{
+"group": "broadcast",
+"area": "all",
+"name": "BBC News health",
+"url": "https://www.bbc.co.uk/news/health",
+"new": true
+},
+{
+"group": "broadcast",
+"area": "all",
+"name": "BBC News education",
+"url": "https://www.bbc.co.uk/news/education",
+"new": true
+},
+{
+"group": "broadcast",
+"area": "all",
+"name": "BBC News science and environment",
+"url": "https://www.bbc.co.uk/news/science_and_environment",
+"new": true
+},
+{
+"group": "broadcast",
+"area": "all",
+"name": "BBC News Suffolk (north Essex borders)",
+"url": "https://www.bbc.co.uk/news/england/suffolk",
+"new": true
+},
+{
+"group": "broadcast",
+"area": "all",
+"name": "BBC News Cambridgeshire (Stansted and Saffron Walden borders)",
+"url": "https://www.bbc.co.uk/news/england/cambridgeshire",
+"new": true
+},
+{
+"group": "broadcast",
+"area": "all",
+"name": "BBC News Beds, Herts and Bucks (west Essex borders)",
+"url": "https://www.bbc.co.uk/news/england/beds_bucks_and_herts",
+"new": true
+},
+{
+"group": "broadcast",
+"area": "all",
+"name": "BBC News Kent (Thames crossings)",
+"url": "https://www.bbc.co.uk/news/england/kent",
+"new": true
+},
+{
+"group": "sport",
+"area": "all",
+"name": "BBC Sport football",
+"url": "https://www.bbc.co.uk/sport/football",
+"new": true
+},
+{
+"group": "sport",
+"area": "all",
+"name": "BBC Sport cricket",
+"url": "https://www.bbc.co.uk/sport/cricket",
+"new": true
+},
+{
+"group": "sport",
+"area": "all",
+"name": "Sport England",
+"url": "https://www.sportengland.org/news",
+"new": true
+},
+{
+"group": "digital",
+"area": "all",
+"name": "Big Issue",
+"url": "https://www.bigissue.com",
+"new": true
+},
+{
+"group": "international",
+"area": "all",
+"name": "New York Times Europe",
+"url": "https://rss.nytimes.com",
+"new": true
+},
+{
+"group": "international",
+"area": "all",
+"name": "RTE News",
+"url": "https://www.rte.ie",
+"new": true
+},
+{
+"group": "trade",
+"area": "all",
+"name": "Pulse (GPs)",
+"url": "https://www.pulsetoday.co.uk",
+"new": true
+},
+{
+"group": "trade",
+"area": "all",
+"name": "PBC Today (planning and building)",
+"url": "https://www.pbctoday.co.uk",
+"new": true
+},
+{
+"group": "trade",
+"area": "all",
+"name": "Highways News",
+"url": "https://www.highways-news.com",
+"new": true
+},
+{
+"group": "trade",
+"area": "all",
+"name": "Rail Business Daily",
+"url": "https://news.railbusinessdaily.com",
+"new": true
+},
+{
+"group": "trade",
+"area": "all",
+"name": "Emergency Services Times",
+"url": "https://emergencyservicestimes.com",
+"new": true
+},
+{
+"group": "trade",
+"area": "all",
+"name": "Data Centre Dynamics",
+"url": "https://www.datacenterdynamics.com",
+"new": true
+},
+{
+"group": "trade",
+"area": "all",
+"name": "UK Aviation News",
+"url": "https://ukaviation.news",
+"new": true
+},
+{
+"group": "trade",
+"area": "all",
+"name": "ISPreview (broadband rollouts)",
+"url": "https://www.ispreview.co.uk",
+"new": true
+},
+{
+"group": "trade",
+"area": "all",
+"name": "Public Sector Executive",
+"url": "https://www.publicsectorexecutive.com",
+"new": true
+},
+{
+"group": "trade",
+"area": "all",
+"name": "UKAuthority",
+"url": "https://www.ukauthority.com",
+"new": true
+},
+{
+"group": "trade",
+"area": "all",
+"name": "edie (environment)",
+"url": "https://www.edie.net",
+"new": true
+},
+{
+"group": "trade",
+"area": "all",
+"name": "Energy Live News",
+"url": "https://www.energylivenews.com",
+"new": true
+},
+{
+"group": "trade",
+"area": "all",
+"name": "Bus and Coach Buyer",
+"url": "https://www.busandcoachbuyer.com",
+"new": true
+},
+{
+"group": "trade",
+"area": "all",
+"name": "Coach & Bus Week",
+"url": "https://cbwmagazine.com",
+"new": true
+},
+{
+"group": "trade",
+"area": "all",
+"name": "Business Traveller",
+"url": "https://www.businesstraveller.com",
+"new": true
+},
+{
+"group": "trade",
+"area": "all",
+"name": "Morning Advertiser (pubs)",
+"url": "https://www.morningadvertiser.co.uk",
+"new": true
+},
+{
+"group": "health",
+"area": "all",
+"name": "Central East ICB (west Essex health)",
+"url": "https://www.centraleast.icb.nhs.uk",
+"new": true
+},
+{
+"group": "transport",
+"area": "all",
+"name": "Essex & South Suffolk Community Rail Partnership",
+"url": "https://www.esscrp.org.uk",
+"new": true
+},
+{
+"group": "transport",
+"area": "all",
+"name": "Office of Rail and Road",
+"url": "https://www.orr.gov.uk/search-news",
+"new": true
+},
+{
+"group": "community",
+"area": "all",
+"name": "Colchester Civic Society",
+"url": "https://www.colchestercivicsociety.co.uk",
+"new": true
+},
+{
+"group": "community",
+"area": "all",
+"name": "Epping Forest Foodbank",
+"url": "https://eppingforest.foodbank.org.uk",
+"new": true
+},
+{
+"group": "environment",
+"area": "all",
+"name": "City of London Corporation newsroom (Epping Forest)",
+"url": "https://news.cityoflondon.gov.uk",
+"new": true
+},
+{
+"group": "environment",
+"area": "all",
+"name": "Northumbrian Water Group releases (Essex & Suffolk Water)",
+"url": "https://www.nwg.co.uk/news-and-media/news-releases/",
+"new": true
+},
+{
+"group": "environment",
+"area": "all",
+"name": "Office for Nuclear Regulation (Bradwell)",
+"url": "https://www.onr.org.uk/news/all-news/",
+"new": true
+},
+{
+"group": "parish",
+"area": "uttlesford",
+"name": "Thaxted Parish Council",
+"url": "https://thaxted-pc.gov.uk",
+"new": true
+},
+{
+"group": "parish",
+"area": "maldon",
+"name": "Heybridge Parish Council",
+"url": "https://heybridgeparishcouncil.gov.uk",
+"new": true
+},
+{
+"group": "parish",
+"area": "maldon",
+"name": "Tollesbury Parish Council",
+"url": "https://www.tollesburyparishcouncil.gov.uk",
+"new": true
+},
+{
+"group": "parish",
+"area": "uttlesford",
+"name": "Takeley Parish Council",
+"url": "https://www.takeley-pc.gov.uk",
+"new": true
+},
+{
+"group": "parish",
+"area": "braintree",
+"name": "Sible Hedingham Parish Council",
+"url": "https://siblehedingham-pc.gov.uk",
+"new": true
+},
+{
+"group": "parish",
+"area": "epping",
+"name": "Nazeing Parish Council",
+"url": "https://nazeingparishcouncil.gov.uk",
+"new": true
+},
+{
+"group": "parish",
+"area": "epping",
+"name": "Theydon Bois Parish Council",
+"url": "https://theydonbois-pc.gov.uk",
+"new": true
+},
+{
+"group": "parish",
+"area": "chelmsford",
+"name": "Stock Parish Council",
+"url": "https://stock-pc.gov.uk",
+"new": true
+},
+{
+"group": "parish",
+"area": "chelmsford",
+"name": "Runwell Parish Council",
+"url": "https://runwellparishcouncil.gov.uk",
+"new": true
+},
+{
+"group": "parish",
+"area": "south",
+"name": "Ashingdon Parish Council",
+"url": "https://ashingdonparishcouncil.gov.uk",
+"new": true
+},
+{
+"group": "parish",
+"area": "south",
+"name": "Hawkwell Parish Council",
+"url": "https://hawkwellparishcouncil.gov.uk",
+"new": true
+},
+{
+"group": "parish",
+"area": "maldon",
+"name": "Southminster Parish Council",
+"url": "https://southminsterparishcouncil.gov.uk",
+"new": true
+},
+{
+"group": "parish",
+"area": "uttlesford",
+"name": "Birchanger Parish Council",
+"url": "https://birchanger-pc.gov.uk",
+"new": true
+},
+{
+"group": "parish",
+"area": "braintree",
+"name": "Finchingfield Parish Council",
+"url": "https://finchingfield-pc.gov.uk",
+"new": true
+},
+{
+"group": "parish",
+"area": "braintree",
+"name": "Wethersfield Parish Council",
+"url": "https://wethersfield-pc.gov.uk",
+"new": true
+},
+{
+"group": "parish",
+"area": "brentwood",
+"name": "Kelvedon Hatch Parish Council",
+"url": "https://kelvedonhatch-pc.gov.uk",
+"new": true
+},
+{
+"group": "parish",
+"area": "braintree",
+"name": "Feering Parish Council",
+"url": "https://feeringparishcouncil.gov.uk",
+"new": true
+},
+{
+"group": "parish",
+"area": "chelmsford",
+"name": "Broomfield Parish Council",
+"url": "https://www.broomfield-pc.gov.uk",
+"new": true
+},
+{
+"group": "parish",
+"area": "chelmsford",
+"name": "Springfield Parish Council",
+"url": "https://www.springfield-pc.gov.uk",
+"new": true
+},
+{
+"group": "parish",
+"area": "chelmsford",
+"name": "Boreham Parish Council",
+"url": "https://www.boreham-pc.gov.uk",
+"new": true
+},
+{
+"group": "parish",
+"area": "south",
+"name": "Barling Magna Parish Council",
+"url": "https://barlingmagna-pc.gov.uk",
+"new": true
+},
+{
+"group": "parish",
+"area": "epping",
+"name": "Sheering Parish Council",
+"url": "https://sheeringparishcouncil.gov.uk",
+"new": true
+},
+{
+"group": "parish",
+"area": "maldon",
+"name": "Althorne Parish Council",
+"url": "https://althorneparishcouncil.gov.uk",
+"new": true
+},
+{
+"group": "parish",
+"area": "braintree",
+"name": "Stisted Parish Council",
+"url": "https://stisted-pc.gov.uk",
+"new": true
+},
+{
+"group": "parish",
+"area": "braintree",
+"name": "Toppesfield Parish Council",
+"url": "https://toppesfield-pc.gov.uk",
+"new": true
+},
+{
+"group": "councils",
+"area": "chelmsford",
+"name": "Chelmsford City Council",
+"url": "https://www.chelmsford.gov.uk/news/",
+"new": true
+},
+{
+"group": "councils",
+"area": "all",
+"name": "Essex County Council consultations",
+"url": "https://consultations.essex.gov.uk/",
+"new": true
 }
 ]

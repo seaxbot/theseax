@@ -2229,7 +2229,11 @@ const SOURCES = [
     ["The Spectator","https://www.spectator.co.uk/","all"],
     ["New Statesman","https://www.newstatesman.com/","all"],
     ["The Economist (Britain)","https://www.economist.com/britain","all"],
-    ["Private Eye","https://www.private-eye.co.uk/","all"]
+    ["Private Eye","https://www.private-eye.co.uk/","all"],
+    ["The Guardian UK news", "https://www.theguardian.com/uk-news", "all"],
+    ["The Guardian society", "https://www.theguardian.com/society", "all"],
+    ["The Guardian environment", "https://www.theguardian.com/environment", "all"],
+    ["The New World", "https://www.thenewworld.co.uk", "all"]
   ]},
   {id:"broadcast", title:"Broadcasters & news agencies", blurb:"National TV, radio and the wire services that supply them", list:[
     ["Sky News","https://news.sky.com/uk","all"],
@@ -2245,7 +2249,17 @@ const SOURCES = [
     ["AFP","https://www.afp.com/en","all"],
     ["Bloomberg UK","https://www.bloomberg.com/uk","all"],
     ["ITV News London (south and west Essex)","https://www.itv.com/news/london","all"],
-    ["BBC London News (Essex borders)","https://www.bbc.co.uk/news/england/london","brentwood"]
+    ["BBC London News (Essex borders)","https://www.bbc.co.uk/news/england/london","brentwood"],
+    ["BBC News UK", "https://www.bbc.co.uk/news/uk", "all"],
+    ["BBC News politics", "https://www.bbc.co.uk/news/politics", "all"],
+    ["BBC News business", "https://www.bbc.co.uk/news/business", "all"],
+    ["BBC News health", "https://www.bbc.co.uk/news/health", "all"],
+    ["BBC News education", "https://www.bbc.co.uk/news/education", "all"],
+    ["BBC News science and environment", "https://www.bbc.co.uk/news/science_and_environment", "all"],
+    ["BBC News Suffolk (north Essex borders)", "https://www.bbc.co.uk/news/england/suffolk", "all"],
+    ["BBC News Cambridgeshire (Stansted and Saffron Walden borders)", "https://www.bbc.co.uk/news/england/cambridgeshire", "all"],
+    ["BBC News Beds, Herts and Bucks (west Essex borders)", "https://www.bbc.co.uk/news/england/beds_bucks_and_herts", "all"],
+    ["BBC News Kent (Thames crossings)", "https://www.bbc.co.uk/news/england/kent", "all"]
   ]},
   {id:"digital", title:"Digital & online platforms", blurb:"Online-first newsrooms, investigative outlets and social platforms", list:[
     ["HuffPost UK","https://www.huffingtonpost.co.uk/","all"],
@@ -2259,7 +2273,8 @@ const SOURCES = [
     ["UnHerd","https://unherd.com/","all"],
     ["LADbible","https://www.ladbible.com/news","all"],
     ["UNILAD","https://www.unilad.com/news","all"],
-    ["Press Gazette","https://pressgazette.co.uk/","all"]
+    ["Press Gazette","https://pressgazette.co.uk/","all"],
+    ["Big Issue", "https://www.bigissue.com", "all"]
   ]},
   {id:"international", title:"International news", blurb:"World outlets that pick up Essex people, ports, airports and businesses", list:[
     ["BBC World","https://www.bbc.co.uk/news/world","all"],
@@ -2273,7 +2288,9 @@ const SOURCES = [
     ["The Irish Times","https://www.irishtimes.com/","all"],
     ["ABC News (Australia)","https://www.abc.net.au/news","all"],
     ["CBC News","https://www.cbc.ca/news","all"],
-    ["Politico Europe","https://www.politico.eu/","all"]
+    ["Politico Europe","https://www.politico.eu/","all"],
+    ["New York Times Europe", "https://rss.nytimes.com", "all"],
+    ["RTE News", "https://www.rte.ie", "all"]
   ]},
   {id:"hyperlocal", title:"Hyperlocal & independent", blurb:"Town sites, community newsrooms and newsletters", list:[
     ["Your Harlow","https://www.yourharlow.com","epping"],
@@ -2422,7 +2439,9 @@ const SOURCES = [
     ["Local government reorganisation (GOV.UK)","https://www.gov.uk/government/collections/essex-southend-on-sea-and-thurrock-local-government-reorganisation","all"],
     ["Local government reorganisation (Essex County Council)","https://www.essex.gov.uk/about-council/plans-and-strategies/our-vision-essex/local-government-reorganisation-lgr","all"],
     ["Greater Essex devolution and combined authority","https://www.essex.gov.uk/devolution","all"],
-    ["Love Essex (Essex Waste Partnership news)","https://www.loveessex.org/news","all"]
+    ["Love Essex (Essex Waste Partnership news)","https://www.loveessex.org/news","all"],
+    ["Chelmsford City Council", "https://www.chelmsford.gov.uk/news/", "chelmsford"],
+    ["Essex County Council consultations", "https://consultations.essex.gov.uk/", "all"]
   ]},
   {id:"parish", title:"Town & parish councils", blurb:"The first tier of local democracy, checked on rotation", list:[
     ["Essex Association of Local Councils","https://www.ealc.gov.uk/","all"],
@@ -2456,7 +2475,32 @@ const SOURCES = [
     ["Writtle Parish Council", "https://www.writtle-pc.gov.uk", "chelmsford"],
     ["Great Baddow Parish Council", "https://www.greatbaddowparishcouncil.gov.uk", "chelmsford"],
     ["Ingatestone and Fryerning Parish Council", "https://www.ingatestone-fryerningpc.gov.uk", "brentwood"],
-    ["Manningtree Town Council", "https://www.manningtreetowncouncil.gov.uk", "tendring"]
+    ["Manningtree Town Council", "https://www.manningtreetowncouncil.gov.uk", "tendring"],
+    ["Thaxted Parish Council", "https://thaxted-pc.gov.uk", "uttlesford"],
+    ["Heybridge Parish Council", "https://heybridgeparishcouncil.gov.uk", "maldon"],
+    ["Tollesbury Parish Council", "https://www.tollesburyparishcouncil.gov.uk", "maldon"],
+    ["Takeley Parish Council", "https://www.takeley-pc.gov.uk", "uttlesford"],
+    ["Sible Hedingham Parish Council", "https://siblehedingham-pc.gov.uk", "braintree"],
+    ["Nazeing Parish Council", "https://nazeingparishcouncil.gov.uk", "epping"],
+    ["Theydon Bois Parish Council", "https://theydonbois-pc.gov.uk", "epping"],
+    ["Stock Parish Council", "https://stock-pc.gov.uk", "chelmsford"],
+    ["Runwell Parish Council", "https://runwellparishcouncil.gov.uk", "chelmsford"],
+    ["Ashingdon Parish Council", "https://ashingdonparishcouncil.gov.uk", "south"],
+    ["Hawkwell Parish Council", "https://hawkwellparishcouncil.gov.uk", "south"],
+    ["Southminster Parish Council", "https://southminsterparishcouncil.gov.uk", "maldon"],
+    ["Birchanger Parish Council", "https://birchanger-pc.gov.uk", "uttlesford"],
+    ["Finchingfield Parish Council", "https://finchingfield-pc.gov.uk", "braintree"],
+    ["Wethersfield Parish Council", "https://wethersfield-pc.gov.uk", "braintree"],
+    ["Kelvedon Hatch Parish Council", "https://kelvedonhatch-pc.gov.uk", "brentwood"],
+    ["Feering Parish Council", "https://feeringparishcouncil.gov.uk", "braintree"],
+    ["Broomfield Parish Council", "https://www.broomfield-pc.gov.uk", "chelmsford"],
+    ["Springfield Parish Council", "https://www.springfield-pc.gov.uk", "chelmsford"],
+    ["Boreham Parish Council", "https://www.boreham-pc.gov.uk", "chelmsford"],
+    ["Barling Magna Parish Council", "https://barlingmagna-pc.gov.uk", "south"],
+    ["Sheering Parish Council", "https://sheeringparishcouncil.gov.uk", "epping"],
+    ["Althorne Parish Council", "https://althorneparishcouncil.gov.uk", "maldon"],
+    ["Stisted Parish Council", "https://stisted-pc.gov.uk", "braintree"],
+    ["Toppesfield Parish Council", "https://toppesfield-pc.gov.uk", "braintree"]
   ]},
   {id:"courts", title:"Courts & justice", blurb:"Hearings, sentences, inquests and listings", list:[
     ["Chelmsford Crown Court","https://www.find-court-tribunal.service.gov.uk/courts/chelmsford-crown-court","chelmsford"],
@@ -2485,7 +2529,12 @@ const SOURCES = [
     ["Traffic Commissioner East of England decisions (hauliers, bus and coach firms)", "https://www.gov.uk/traffic-commissioner-regulatory-decisions", "all"],
     ["Teaching Regulation Agency misconduct panel outcomes", "https://www.gov.uk/guidance/teacher-misconduct-regulating-the-teaching-profession", "all"],
     ["SRA recent decisions (solicitors, has RSS)", "https://www.sra.org.uk/consumers/solicitor-check/recent-decisions", "all"],
-    ["Solicitors Disciplinary Tribunal judgments", "https://www.solicitorstribunal.org.uk/judgment-search-results", "all"]
+    ["Solicitors Disciplinary Tribunal judgments", "https://www.solicitorstribunal.org.uk/judgment-search-results", "all"],
+    ["Employment Appeal Tribunal decisions mentioning Essex", "https://www.gov.uk/employment-appeal-tribunal-decisions?keywords=Essex", "all"],
+    ["Property tribunal decisions mentioning Essex (rents, leaseholds, park homes)", "https://www.gov.uk/residential-property-tribunal-decisions?keywords=Essex", "all"],
+    ["Administrative Appeals tribunal decisions mentioning Essex", "https://www.gov.uk/administrative-appeals-tribunal-decisions?keywords=Essex", "all"],
+    ["Employment tribunal decisions (Essex towns)", "https://www.gov.uk/employment-tribunal-decisions?keywords=Essex", "all"],
+    ["Find Case Law: new court judgments mentioning Essex places", "https://caselaw.nationalarchives.gov.uk/search?query=Essex&order=-date", "all"]
   ]},
   {id:"planning", title:"Planning & property", blurb:"Applications, appeals, statutory notices and property data", list:[
     ["Public Notice Portal (Essex planning, roads, licensing)","https://publicnoticeportal.uk/","all"],
@@ -2538,7 +2587,8 @@ const SOURCES = [
     ["South East Essex Alliance (NHS partnership update)", "https://southeastessexalliance.substack.com", "southend"],
     ["NELFT NHS Foundation Trust", "https://www.nelft.nhs.uk", "all"],
     ["Provide Community", "https://www.provide.org.uk", "all"],
-    ["ECL (Essex Cares)", "https://www.ecl.org", "all"]
+    ["ECL (Essex Cares)", "https://www.ecl.org", "all"],
+    ["Central East ICB (west Essex health)", "https://www.centraleast.icb.nhs.uk", "all"]
   ]},
   {id:"transport", title:"Transport & travel", blurb:"Rail, roads, buses, airports and ports", list:[
     ["Greater Anglia","https://www.greateranglia.co.uk","all"],
@@ -2566,7 +2616,9 @@ const SOURCES = [
     ["London Stansted media centre","https://mediacentre.stanstedairport.com/","uttlesford"],
     ["Network Rail media centre (Anglia)", "https://www.networkrailmediacentre.co.uk", "all"],
     ["Transport East", "https://www.transporteast.gov.uk", "all"],
-    ["Stansted Express", "https://www.stanstedexpress.com", "uttlesford"]
+    ["Stansted Express", "https://www.stanstedexpress.com", "uttlesford"],
+    ["Essex & South Suffolk Community Rail Partnership", "https://www.esscrp.org.uk", "all"],
+    ["Office of Rail and Road", "https://www.orr.gov.uk/search-news", "all"]
   ]},
   {id:"environment", title:"Weather, coast & utilities", blurb:"Forecasts, floods, tides, power and water", list:[
     ["Met Office Chelmsford forecast","https://weather.metoffice.gov.uk/forecast/u10q6cgzm","all"],
@@ -2597,7 +2649,10 @@ const SOURCES = [
     ["EssexAir (Essex air quality consortium)", "https://www.essexair.org.uk/", "all"],
     ["Anglian Water live storm overflow map", "https://www.anglianwater.co.uk/services/sewerage/storm-overflows/improving-rivers-and-coastlines/", "all"],
     ["Bird flu latest situation in England (Defra/APHA)", "https://www.gov.uk/guidance/bird-flu-avian-influenza-latest-situation-in-england", "all"],
-    ["Epping Forest (City of London Corporation)", "https://www.cityoflondon.gov.uk/things-to-do/green-spaces/epping-forest", "epping"]
+    ["Epping Forest (City of London Corporation)", "https://www.cityoflondon.gov.uk/things-to-do/green-spaces/epping-forest", "epping"],
+    ["City of London Corporation newsroom (Epping Forest)", "https://news.cityoflondon.gov.uk", "all"],
+    ["Northumbrian Water Group releases (Essex & Suffolk Water)", "https://www.nwg.co.uk/news-and-media/news-releases/", "all"],
+    ["Office for Nuclear Regulation (Bradwell)", "https://www.onr.org.uk/news/all-news/", "all"]
   ]},
   {id:"sport", title:"Sport", blurb:"Clubs, leagues and results services", list:[
     ["Colchester United","https://www.cu-fc.com","colchester"],
@@ -2639,7 +2694,10 @@ const SOURCES = [
     ["Billericay Town FC", "https://www.billericaytownfc.co.uk", "south"],
     ["Essex Golf Union", "https://www.essexgolfunion.org", "all"],
     ["Colchester Rugby Club", "https://www.colchesterrugby.co.uk", "colchester"],
-    ["Essex Rebels basketball", "https://www.essexrebels.co.uk", "colchester"]
+    ["Essex Rebels basketball", "https://www.essexrebels.co.uk", "colchester"],
+    ["BBC Sport football", "https://www.bbc.co.uk/sport/football", "all"],
+    ["BBC Sport cricket", "https://www.bbc.co.uk/sport/cricket", "all"],
+    ["Sport England", "https://www.sportengland.org/news", "all"]
   ]},
   {id:"culture", title:"Theatre, music & culture", blurb:"Stages, galleries, museums and venues", list:[
     ["Mercury Theatre, Colchester","https://www.mercurytheatre.co.uk","colchester"],
@@ -2689,7 +2747,10 @@ const SOURCES = [
     ["Creative Estuary", "https://www.creativeestuary.com", "south"],
     ["Essex Cultural Diversity Project", "https://essexcdp.com", "all"],
     ["Essex Society for Archaeology and History", "https://www.esah1852.org.uk", "all"],
-    ["Chelmsford Cathedral", "https://www.chelmsfordcathedral.org.uk", "chelmsford"]
+    ["Chelmsford Cathedral", "https://www.chelmsfordcathedral.org.uk", "chelmsford"],
+    ["Frinton Summer Theatre", "https://www.frintonsummertheatre.org", "all"],
+    ["Essex Record Office blog", "https://www.essexrecordofficeblog.co.uk", "all"],
+    ["National Lottery Heritage Fund", "https://www.heritagefund.org.uk/news", "all"]
   ]},
   {id:"events", title:"Events & what's on", blurb:"Listings, tickets and festival guides", list:[
     ["Visit Essex","https://www.visitessex.com","all"],
@@ -2797,7 +2858,9 @@ const SOURCES = [
     ["Colchester Foodbank", "https://colchester.foodbank.org.uk", "colchester"],
     ["Chelmsford Foodbank", "https://chelmsford.foodbank.org.uk", "chelmsford"],
     ["Basildon Foodbank", "https://basildon.foodbank.org.uk", "south"],
-    ["Harlow Foodbank", "https://harlow.foodbank.org.uk", "epping"]
+    ["Harlow Foodbank", "https://harlow.foodbank.org.uk", "epping"],
+    ["Colchester Civic Society", "https://www.colchestercivicsociety.co.uk", "all"],
+    ["Epping Forest Foodbank", "https://eppingforest.foodbank.org.uk", "all"]
   ]},
   {id:"feeds", title:"RSS feeds", blurb:"Live feeds the newsroom pulls on every run", list:[
     ["Southend-on-Sea City Council news feed","https://www.southend.gov.uk/rss/news","southend"],
@@ -2874,7 +2937,23 @@ const SOURCES = [
     ["routeone (bus and coach industry news)","https://www.route-one.net/","all"],
     ["RadioToday (Essex radio industry news)","https://radiotoday.co.uk/","all"],
     ["HoldTheFrontPage (Essex newspaper industry news)","https://www.holdthefrontpage.co.uk/","all"],
-    ["The MJ (local government management)","https://www.themj.co.uk/","all"]
+    ["The MJ (local government management)","https://www.themj.co.uk/","all"],
+    ["Pulse (GPs)", "https://www.pulsetoday.co.uk", "all"],
+    ["PBC Today (planning and building)", "https://www.pbctoday.co.uk", "all"],
+    ["Highways News", "https://www.highways-news.com", "all"],
+    ["Rail Business Daily", "https://news.railbusinessdaily.com", "all"],
+    ["Emergency Services Times", "https://emergencyservicestimes.com", "all"],
+    ["Data Centre Dynamics", "https://www.datacenterdynamics.com", "all"],
+    ["UK Aviation News", "https://ukaviation.news", "all"],
+    ["ISPreview (broadband rollouts)", "https://www.ispreview.co.uk", "all"],
+    ["Public Sector Executive", "https://www.publicsectorexecutive.com", "all"],
+    ["UKAuthority", "https://www.ukauthority.com", "all"],
+    ["edie (environment)", "https://www.edie.net", "all"],
+    ["Energy Live News", "https://www.energylivenews.com", "all"],
+    ["Bus and Coach Buyer", "https://www.busandcoachbuyer.com", "all"],
+    ["Coach & Bus Week", "https://cbwmagazine.com", "all"],
+    ["Business Traveller", "https://www.businesstraveller.com", "all"],
+    ["Morning Advertiser (pubs)", "https://www.morningadvertiser.co.uk", "all"]
   ]},
   {id:"data", title:"Data, politics & records", blurb:"Statistics, Parliament and government decisions affecting Essex", list:[
     ["ONS (population, jobs and prices)","https://www.ons.gov.uk/","all"],
@@ -2893,7 +2972,14 @@ const SOURCES = [
     ["Charity Commission register","https://register-of-charities.charitycommission.gov.uk/","all"],
     ["Contracts Finder (council contracts)","https://www.contractsfinder.service.gov.uk/","all"],
     ["Historic England Heritage at Risk Register (annual, November)", "https://historicengland.org.uk/advice/heritage-at-risk/", "all"],
-    ["Essex Police FOI and publication scheme", "https://www.essex.police.uk/foi-ai/essex-police/", "all"]
+    ["Essex Police FOI and publication scheme", "https://www.essex.police.uk/foi-ai/essex-police/", "all"],
+    ["GOV.UK: everything published about 32 Essex towns and projects", "https://www.gov.uk/search/all?keywords=Essex&order=updated-newest", "all"],
+    ["Competition and Markets Authority cases mentioning Essex", "https://www.gov.uk/cma-cases?keywords=Essex", "all"],
+    ["GOV.UK consultations and policy papers mentioning Essex", "https://www.gov.uk/search/policy-papers-and-consultations?keywords=Essex", "all"],
+    ["GOV.UK statistics mentioning Essex", "https://www.gov.uk/search/research-and-statistics?keywords=Essex", "all"],
+    ["GOV.UK transparency and FOI releases mentioning Essex", "https://www.gov.uk/search/transparency-and-freedom-of-information-releases?keywords=Essex", "all"],
+    ["National Audit Office", "https://www.nao.org.uk", "all"],
+    ["House of Commons Library", "https://commonslibrary.parliament.uk", "all"]
   ]},
   {id:"politics", title:"Politics, unions & campaigns", blurb:"All 18 Essex MPs, residents' groups, unions and campaigns, reported as their own claims", list:[
     ["Residents for Uttlesford", "https://www.residents4u.org", "uttlesford"],
