@@ -5,7 +5,7 @@ on:
   workflow_dispatch:
   push:
     branches: [main]
-    paths: [".github/workflows/fsa-snapshot.yml", "tools/datadesk/fsa_snapshot.py"]
+    paths: [".github/workflows/fsa-snapshot.yml", "tools/datadesk/fsa_snapshot.py", "tools/datadesk/fsa_xmlcheck.py"]
 permissions:
   contents: write
 concurrency: fsa-snapshot
@@ -19,6 +19,7 @@ jobs:
       - run: |
           set -o pipefail
           python3 -u tools/datadesk/fsa_snapshot.py /tmp/fsa 2>&1 | tee /tmp/fsa-run.log
+          python3 -u tools/datadesk/fsa_xmlcheck.py /tmp/fsa 2>&1 | tee -a /tmp/fsa-run.log
       - name: Save to the data branch
         if: always()
         run: |
