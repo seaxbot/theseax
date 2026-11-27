@@ -803,6 +803,13 @@ h1,h2,h3,h4,.story h1,.lead h2,.card h3,.drow h4{letter-spacing:-.022em}
 .wk-band::before{background:radial-gradient(circle,rgba(247,207,90,.55) 0%,rgba(247,207,90,.18) 45%,rgba(247,207,90,0) 70%)}
 .wk-head h2{color:#fff}.wk-head small{color:#f3dfa6;font-size:15px}
 .wk-feat,.wk-more a{border-color:transparent}
+/* a steaming cup in place of the spinning sun (owner, 27 Nov 2026) */
+.wk-cup{width:38px;height:38px;flex:none;overflow:visible}
+.wk-cup .mug{fill:#e9b33c}.wk-cup .hd,.wk-cup .sc{fill:none;stroke:#e9b33c;stroke-width:2.4;stroke-linecap:round}
+.wk-cup .st{fill:none;stroke:#f3dfa6;stroke-width:2;stroke-linecap:round;opacity:0;animation:wksteam 2.8s ease-in-out infinite}
+.wk-cup .s2{animation-delay:.9s}.wk-cup .s3{animation-delay:1.8s}
+@keyframes wksteam{0%{opacity:0;transform:translateY(4px)}35%{opacity:.95}100%{opacity:0;transform:translateY(-6px)}}
+@media (prefers-reduced-motion:reduce){.wk-cup .st{animation:none;opacity:.8}}
 .wk-three{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:22px;align-items:stretch;position:relative}
 .wk-three.solo{grid-template-columns:1fr}
 .wk-more{display:grid;grid-template-rows:1fr 1fr;gap:22px}
@@ -5252,7 +5259,7 @@ function renderWeekend(){
     const mhref = m.href || (ms ? storyHref(ms) : "/story/" + encodeURIComponent(m.id) + "/");
     return `<a href="${esc(mhref)}">${m.image ? `<div class="wk-img"><img src="${esc(m.image)}" alt="${esc(m.alt || "")}" width="1200" height="600" loading="lazy"></div>` : ""}<div class="wk-mtext"><span class="wk-kick"><i class="wk-num">${i + 2}</i>${esc(m.kicker || "Also this weekend")}</span><h3>${esc(mh)}</h3>${m.dek ? `<p>${esc(m.dek)}</p>` : ""}<span class="wk-link">${esc(m.cta || "Read more")} →</span></div></a>`; }).join("");
   el.innerHTML = `<div class="wrap"><div class="wk-band">
-    <div class="wk-head"><h2><svg class="wk-sun" viewBox="0 0 30 30" aria-hidden="true"><path d="M15 2v4M15 24v4M2 15h4M24 15h4M5.8 5.8l2.8 2.8M21.4 21.4l2.8 2.8M5.8 24.2l2.8-2.8M21.4 8.6l2.8-2.8"/><circle cx="15" cy="15" r="6.5"/></svg>${esc(WK.title || "The Weekend")}</h2>${WK.strap ? `<small>${esc(WK.strap)}</small>` : ""}</div>
+    <div class="wk-head"><h2><svg class="wk-cup" viewBox="0 0 34 34" aria-hidden="true"><path class="st s1" d="M11 12c-2-2 2-3 0-6"/><path class="st s2" d="M16 12c-2-2 2-3 0-6"/><path class="st s3" d="M21 12c-2-2 2-3 0-6"/><path class="mug" d="M6 15h20v6a9 9 0 0 1-9 9h-2a9 9 0 0 1-9-9z"/><path class="hd" d="M26 17h2a3.5 3.5 0 0 1 0 7h-3"/><path class="sc" d="M4 32h24"/></svg>${esc(WK.title || "The Weekend")}</h2>${WK.strap ? `<small>${esc(WK.strap)}</small>` : ""}</div>
     <div class="wk-three${more ? "" : " solo"}">
       <a class="wk-feat" href="${esc(href)}">
         ${f.image ? `<div class="wk-img"><img src="${esc(f.image)}" alt="${esc(f.alt || "")}" width="1200" height="655" loading="lazy"></div>` : ""}
