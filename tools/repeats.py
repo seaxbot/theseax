@@ -40,7 +40,7 @@ def repeats(it):
         w = words(p)
         if len(w) >= 2 and sum(x in top for x in w) / len(w) >= 0.75:
             probs.append(f'point {i + 1} only repeats the headline or summary: "{p}"')
-    return probs + headline_problems(h) + body_problems(it)
+    return probs + headline_problems(h) + headline_parts(h, s, pts) + body_problems(it)
 
 # Headlines (owner's rule, 18 Nov 2026; ops/newsroom.md 3a vii): short, front-loaded, plain.
 HEADLINE_MAX = 80
@@ -60,6 +60,25 @@ def headline_problems(h):
     m = HEAD_SPEAK.search(h)
     if m:
         probs.append(f'headline uses tabloid headline-speak "{m.group(0)}": use a plain, exact verb')
+    return probs
+
+# Too many parts (owner's rule, 27 Nov 2026: "don't complicate", after "Essex wins £1.1m to tackle stalkers and help
+# their victims to 2029" carried three ideas and a date the summary already gave). Length is fine up to 80; parts are not.
+HEAD_JOIN = re.compile(r"\b(and|as|after|while|with|amid|plus|but|despite|following)\b", re.I)
+JOIN_NAMES = re.compile(r"\b(army and navy|essex and (suffolk|herts|hertfordshire)|bed and breakfast|fish and chips|"
+                        r"police, fire and crime|town and country)\b", re.I)
+YEAR = re.compile(r"\b(19|20)\d\d\b")
+
+def headline_parts(h, s="", pts=()):
+    h = str(h or "")
+    probs = []
+    joins = HEAD_JOIN.findall(JOIN_NAMES.sub(" ", h))
+    if len(joins) >= 2:
+        probs.append(f'headline has too many parts (joined by "{joins[0]}" and "{joins[1]}"): keep the one main idea and move the rest to the summary')
+    rest = " ".join([str(s or "")] + [str(p) for p in pts])
+    for y in sorted({m.group(0) for m in YEAR.finditer(h)}):
+        if y in rest:
+            probs.append(f'headline repeats the year {y}, which the summary or key points already give: take it out of the headline')
     return probs
 
 # Story page copy (owner's rule, 12 Nov 2026: "write like a world class journalist; no story should sound written by AI").
