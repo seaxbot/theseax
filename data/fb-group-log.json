@@ -1,7 +1,7 @@
 {
  "note": "Every Seax post into a Facebook group, newest last. Written by the groups desk (ops/fbgroups.md). The queue page merges it with the ticks saved in the browser.",
- "paused": false,
- "pauseReason": "UNPAUSED 27 Nov 2026 by the owner in chat ('keep going') after the 17:41 run's pause. 27 Nov 2026 17:55 (17:41 groups desk run): paused again. The Basildon safety wardens post in Laindon and Basildon was removed within seconds, and that group's Removed list shows 8 Seax posts, including ones that had gone live on 25 and 26 Nov. That makes 6 declines or removals today (MALDON, Southend Crimewatch, Crimewatch Southend, It All Happens In Harwich, The Real Billericay Discussion Page, Laindon and Basildon), now including a group where the Page had posted live several times. Pattern still points to automatic filtering of The Seax Page or theseax.com links. Only the owner unpauses. Earlier: 27 Nov 2026 15:34: GP push stopped after the owner's unpause. Two more first posts were declined within seconds with no feedback (It All Happens In Harwich 15:25, The Real Billericay Discussion Page 15:33), making 5 instant declines or removals today (with MALDON, Southend Crimewatch, Crimewatch Southend). Pattern looks like automatic filtering of The Seax Page or theseax.com links in groups the Page has not posted in before. The push check also found earlier Seax posts declined or removed in 10 more groups (We Love Southend, Colchester Community, Braintree Community Hub, Wickford Connected, The Basildon Discussion Page, Canvey Island, Southend City Discussion, Benfleet Thundersley, Witham and Silver End, The Mersea Locals), now off. Only the owner unpauses. UNPAUSED again 27 Nov 2026 by the owner in chat ('you should keep trying') to finish the GP push.",
+ "paused": true,
+ "pauseReason": "27 Nov 2026 20:55 (20:41 groups desk run): paused. The Anglia Ruskin chancellor post in Chelmsford Community Group | Essex Central UK (Group by Essex Central), a group where a Seax post had gone live on 24 Nov, was removed within seconds with no feedback; its Removed list shows 8 Seax posts and none published. That is the seventh decline or removal today. Posts made at 19:44 (Brentwood locals UK) and 19:52 (Ongar Community Group) were still published when checked at 20:55, so the removals look group by group (admin rules or auto-moderation) rather than a Page-wide block. Only the owner unpauses. Earlier today: UNPAUSED 27 Nov 2026 by the owner in chat ('keep going') after the 17:41 run's pause. 27 Nov 2026 17:55 (17:41 groups desk run): paused again. The Basildon safety wardens post in Laindon and Basildon was removed within seconds, and that group's Removed list shows 8 Seax posts, including ones that had gone live on 25 and 26 Nov. That makes 6 declines or removals today (MALDON, Southend Crimewatch, Crimewatch Southend, It All Happens In Harwich, The Real Billericay Discussion Page, Laindon and Basildon), now including a group where the Page had posted live several times. Pattern still points to automatic filtering of The Seax Page or theseax.com links. Only the owner unpauses. Earlier: 27 Nov 2026 15:34: GP push stopped after the owner's unpause. Two more first posts were declined within seconds with no feedback (It All Happens In Harwich 15:25, The Real Billericay Discussion Page 15:33), making 5 instant declines or removals today (with MALDON, Southend Crimewatch, Crimewatch Southend). Pattern looks like automatic filtering of The Seax Page or theseax.com links in groups the Page has not posted in before. The push check also found earlier Seax posts declined or removed in 10 more groups (We Love Southend, Colchester Community, Braintree Community Hub, Wickford Connected, The Basildon Discussion Page, Canvey Island, Southend City Discussion, Benfleet Thundersley, Witham and Silver End, The Mersea Locals), now off. Only the owner unpauses. UNPAUSED again 27 Nov 2026 by the owner in chat ('you should keep trying') to finish the GP push.",
  "posts": [
   {
    "g": "our-thurrock-community-1282",
@@ -380,7 +380,8 @@
    "s": "chelmsford-city-cav-miley-badger-hole-training-walton-hersham",
    "t": 1795528630588,
    "h": "Chelmsford City captain Cav Miley falls down badger hole in training",
-   "result": "live"
+   "result": "removed",
+   "note": "REMOVED: not in Published, group Removed list shows 8 Seax posts (checked 27 Nov 2026 20:55)."
   },
   {
    "g": "our-southend-3387",
@@ -863,6 +864,14 @@
    "h": "Clacton Leisure Centre hosts free NHS health checks on Monday",
    "result": "pending",
    "note": "19:41 run. First Seax post here; vetted (no written rules or description, admins Laura and Andy, not Essex Live). Submitted to group admins for approval (Your content > Pending). Health card preview."
+  },
+  {
+   "g": "chelmsford-community-group-e-0030",
+   "s": "anglia-ruskin-chancellor-sue-black-installed-chelmsford",
+   "t": 1795811967915,
+   "h": "Anglia Ruskin installs forensic scientist Sue Black as chancellor",
+   "result": "removed",
+   "note": "20:41 run. Showed in the group feed as 'Just now', then within seconds was under Your content > Removed (no feedback, no notification). The group's Removed list shows 8 Seax posts and Published shows none, so the Cav Miley post of 24 Nov (logged live) has also gone. Group set off. Seventh decline or removal today: desk paused. Checked the same minute: the 19:41 run's posts in Brentwood locals UK and Ongar Community Group are still published."
   }
  ],
  "joins": [
