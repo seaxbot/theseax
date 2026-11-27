@@ -901,7 +901,7 @@ def analytics():
         return ""
     return f'<script data-goatcounter="https://{E(code)}.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>'
 
-def head(title, desc, canonical, og_image, og_type="website", extra=""):
+def head(title, desc, canonical, og_image, og_type="website", extra="", og_alt=""):
     return f"""<!DOCTYPE html>
 <html lang="en-GB">
 <head>
@@ -920,7 +920,7 @@ def head(title, desc, canonical, og_image, og_type="website", extra=""):
 <meta property="og:image" content="{SITE}{og_image if og_image.startswith("/") else og_path(og_image)}">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="The Seax, Essex News, Sport, Life.">
+<meta property="og:image:alt" content="{E(og_alt) if og_alt else 'The Seax, Essex News, Sport, Life.'}">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="{E(title.replace(' · The Seax', ''))}">
 <meta name="twitter:description" content="{E(desc)}">
@@ -1450,7 +1450,7 @@ def map_figure(it, colour):
 # wrong, the story simply keeps its branded card, so a build can never fail because of this. Only stories from the last
 # MAPCARD_DAYS days get a new picture drawn (older pages keep whatever they already have), which keeps the repo small.
 MAPCARD_DIR = os.path.join(ROOT, "img", "og", "map")
-MAPCARD_DAYS = 10
+MAPCARD_DAYS = 60  # long enough for Council Watch and court stories that stay in the edition for weeks
 MAPCARD_MAX_PER_BUILD = 400
 _MAPCARDS = None
 _MAPCARD_DRAWN = 0
@@ -2132,7 +2132,7 @@ def story_page(sec, it, more):
         kicker = "Essex Numbers"
     ld = {
         "@context": "https://schema.org", "@type": "NewsArticle",
-        "headline": title, "description": desc,
+        "headline": title if len(title) <= 110 else trunc(title, 110), "description": desc,
         "mainEntityOfPage": url, "url": url,
         "image": [SITE + og_path(card)],
         "articleSection": SECTION_LABEL.get(sec, "News"),
@@ -2309,7 +2309,7 @@ def story_page(sec, it, more):
         if mp:
             og_img = mp
             extra = extra.replace(SITE + og_path(card), SITE + mp)
-    return head(f"{title} · The Seax", desc, url, og_img, "article", extra) + f"""<main class="wrap story">
+    return head(f"{title} · The Seax", desc, url, og_img, "article", extra, og_alt=f"{title}. The Seax") + f"""<main class="wrap story">
 <article style="--c:{colour}">
   {own_banner(it)}<div class="kick"><span>{E(kicker)}</span><span>{E(place)}</span></div>
   {org}{cw_badge(it) if sec == "councilwatch" else ""}
@@ -3555,6 +3555,20 @@ def patch_index(latest_briefing, ed=None):
             new = static_sections(new, ed)
         except Exception:
             pass
+        # the front page's top stories as a schema.org ItemList (27 Nov 2026), so search engines and AI assistants can
+        # read the running order without parsing the page
+        try:
+            top = [x for x in (ed.get("stories") or []) if isinstance(x, dict) and slug_ok(x.get("id")) and x.get("headline")][:12]
+            il = {"@context": "https://schema.org", "@type": "ItemList", "name": "Latest Essex news from The Seax",
+                  "itemListElement": [{"@type": "ListItem", "position": i + 1, "url": f"{SITE}/story/{x['id']}/", "name": x["headline"]} for i, x in enumerate(top)]}
+            blk = ('<!--seax-itemlist--><script type="application/ld+json">' + json.dumps(il, ensure_ascii=False).replace("</", "<\\/")
+                   + "</script><!--/seax-itemlist-->")
+            if "<!--seax-itemlist-->" in new:
+                new = re.sub(r"<!--seax-itemlist-->.*?<!--/seax-itemlist-->", lambda m: blk, new, count=1, flags=re.S)
+            elif top:
+                new = new.replace("</head>", blk + "\n</head>", 1)
+        except Exception:
+            pass
         # "Only on The Seax" (20 Nov 2026): the newest pieces of our own reporting (Council Watch, and stories the
         # desks mark "original": true: data desk analysis, FOI disclosures, weekly pieces), as plain links above News
         own = [("Council Watch", x) for x in (ed.get("councilwatch") or []) if isinstance(x, dict) and x.get("id") and x.get("headline")]
@@ -3887,6 +3901,13 @@ def main():
         urls.append((f"{SITE}/story/{sid}/", lastmod(rec), None, None))
     for x in briefs:
         urls.append((f"{SITE}/briefing/{x['date']}/", x["date"], None, None))
+    try:  # earlier briefings still on the site stay findable too
+        got = {x["date"] for x in briefs}
+        for d in sorted(os.listdir(os.path.join(ROOT, "briefing")), reverse=True):
+            if re.fullmatch(r"\d{4}-\d\d-\d\d", d) and d not in got and os.path.exists(os.path.join(ROOT, "briefing", d, "index.html")):
+                urls.append((f"{SITE}/briefing/{d}/", d, None, None))
+    except Exception:
+        pass
     for u, lm in area_urls + topic_urls + place_urls:
         urls.append((u, lm, "hourly", "0.8"))
     urls.append((inv_url[0], inv_url[1] or None, "daily", "0.8"))
