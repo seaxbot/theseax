@@ -2576,10 +2576,12 @@
     "westcliff",
     "shoebury"
    ],
-   "status": "on",
+   "status": "off",
    "perWeek": 1,
    "joined": "2026-11-21",
-   "note": "Auto-joined in the 21 Nov 2026 bulk join. Not yet vetted: before the first post, check the Group by banner (never Essex Live) and the rules; set off or caution if they ban links, news or Pages."
+   "note": "Vetted 27 Nov 2026: Group by Your Southend (news outlet), no written rules. OFF 27 Nov 2026: first Seax post (Sutton Road crash appeal) declined within seconds, no feedback; likely an automatic rule (new accounts or links).",
+   "approval": "auto-declined",
+   "owner": "Your Southend"
   },
   {
    "id": "877136333553072",

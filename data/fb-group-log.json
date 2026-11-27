@@ -674,6 +674,14 @@
    "h": "Maldon restaurant targeted in overnight arson attempt",
    "result": "pending",
    "note": "Owner's request 27 Nov 12:3x. Held for admin approval (group holds every Seax post). A Tunde Chelmsford post is also sitting pending here."
+  },
+  {
+   "g": "southend-crimewatch-0442",
+   "s": "southend-sutton-road-crash-pedestrian-seriously-hurt-dashcam-appeal",
+   "t": 1795784135319,
+   "h": "Southend crash: police seek dashcam footage after man seriously hurt",
+   "result": "declined",
+   "note": "12:41 run. First Seax post here; group vetted first (Group by Your Southend, no written rules, post box open to the Page). Declined within seconds of posting (shown under Your content > Declined, no feedback given): looks like an automatic admin rule, probably the same new-account criteria as MALDON."
   }
  ],
  "joins": [
