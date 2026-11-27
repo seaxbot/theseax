@@ -549,7 +549,7 @@ def main():
             rows = [i for i in recent if i["kind"] == kind and i["at"] >= cut and norm(i["url"]) not in used]
             counts[kind] = len(rows)
             text += ["", f"== {label}", f"   {len(rows)} items not yet on the site. Times are UTC.", ""]
-            for i in rows[:(60 if kind == "L" else 120) if hours > 6 else (40 if kind == "L" else 80)]:
+            for i in rows[:(60 if kind == "L" else 200) if hours > 6 else (40 if kind == "L" else 120)]:   # room for the wider source list (27 Nov 2026)
                 extra = "  [POLITICAL SOURCE: report as their claim]" if i.get("political") else ""
                 tag = " [sport desk]" if i.get("group") == "sport" else ""
                 text.append(f"{i['id']} | {i['at'][5:16].replace('T', ' ')} | {i['source'][:30]:<30} | {i['title']}{tag}{extra}")
