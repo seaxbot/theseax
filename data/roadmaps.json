@@ -54,6 +54,10 @@
   "none": "no road named",
   "sig": "[[], \"Brentwood\", null]"
  },
+ "brentwood-kfc-high-street-3am-late-night-licence": {
+  "none": "roads called High Street far apart near Brentwood: not sure which",
+  "sig": "[[\"High Street\"], \"Brentwood\", null]"
+ },
  "brentwood-school-safeguarding-review-british-fencing-own-review": {
   "none": "no road named",
   "sig": "[[], \"Brentwood\", null]"
@@ -211,6 +215,10 @@
   "sig": "[[], \"Cold Norton\", null]"
  },
  "ct-chelmsford-central-park-murder-trial-boy-denies-turf-war": {
+  "none": "no road named",
+  "sig": "[[], \"Chelmsford\", null]"
+ },
+ "ct-grays-oksana-antanaitiene-prison-tutor-sentenced-hmp-chelmsford": {
   "none": "no road named",
   "sig": "[[], \"Chelmsford\", null]"
  },
@@ -548,6 +556,10 @@
  "saffron-walden-museum-60000-collection-records-online": {
   "none": "no road named",
   "sig": "[[], \"Saffron Walden\", null]"
+ },
+ "shenfield-priests-lane-97-homes-appeal-costs-brentwood-council": {
+  "none": "no road called Priests Lane near Brentwood",
+  "sig": "[[\"Priests Lane\"], \"Brentwood\", null]"
  },
  "shoeburyness-eagle-way-blake-branch-tribute-two-bailed": {
   "none": "no road named",
