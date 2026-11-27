@@ -820,7 +820,6 @@ h1,h2,h3,h4,.story h1,.lead h2,.card h3,.drow h4{letter-spacing:-.022em}
 .wk-more p{margin:0 0 12px;font-size:15px;line-height:1.45;color:var(--ink2)}
 .wk-more .wk-link{margin-top:auto;font-weight:800;font-size:14.5px;color:var(--navy)}
 .wk-more a:hover h3{text-decoration:underline;text-underline-offset:3px}
-.wk-num{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:50%;background:#e9b33c;color:#1c1400;font-size:12px;font-weight:900;margin-right:8px;letter-spacing:0;vertical-align:1px}
 .wk-below{margin-top:22px;position:relative}
 .wk-below .seax-lookup,.wk-below .seax-hlookup,.wk-below .seax-plookup{margin:0;background:#fff;color:var(--ink);border-radius:10px}
 .wk-below > div{max-height:470px;overflow:auto}
@@ -5257,13 +5256,13 @@ function renderWeekend(){
   const more = (WK.more||[]).slice(0,2).map((m, i) => { const ms = m.id && typeof ED !== "undefined" && ED && (ED.stories||[]).find(x => x && x.id === m.id) || null;
     const mh = m.headline || (ms && ms.headline); if(!mh) return "";
     const mhref = m.href || (ms ? storyHref(ms) : "/story/" + encodeURIComponent(m.id) + "/");
-    return `<a href="${esc(mhref)}">${m.image ? `<div class="wk-img"><img src="${esc(m.image)}" alt="${esc(m.alt || "")}" width="1200" height="600" loading="lazy"></div>` : ""}<div class="wk-mtext"><span class="wk-kick"><i class="wk-num">${i + 2}</i>${esc(m.kicker || "Also this weekend")}</span><h3>${esc(mh)}</h3>${m.dek ? `<p>${esc(m.dek)}</p>` : ""}<span class="wk-link">${esc(m.cta || "Read more")} →</span></div></a>`; }).join("");
+    return `<a href="${esc(mhref)}">${m.image ? `<div class="wk-img"><img src="${esc(m.image)}" alt="${esc(m.alt || "")}" width="1200" height="600" loading="lazy"></div>` : ""}<div class="wk-mtext"><span class="wk-kick">${esc(m.kicker || "Also this weekend")}</span><h3>${esc(mh)}</h3>${m.dek ? `<p>${esc(m.dek)}</p>` : ""}<span class="wk-link">${esc(m.cta || "Read more")} →</span></div></a>`; }).join("");
   el.innerHTML = `<div class="wrap"><div class="wk-band">
     <div class="wk-head"><h2><svg class="wk-cup" viewBox="0 0 34 34" aria-hidden="true"><path class="st s1" d="M11 12c-2-2 2-3 0-6"/><path class="st s2" d="M16 12c-2-2 2-3 0-6"/><path class="st s3" d="M21 12c-2-2 2-3 0-6"/><path class="mug" d="M6 15h20v6a9 9 0 0 1-9 9h-2a9 9 0 0 1-9-9z"/><path class="hd" d="M26 17h2a3.5 3.5 0 0 1 0 7h-3"/><path class="sc" d="M4 32h24"/></svg>${esc(WK.title || "The Weekend")}</h2>${WK.strap ? `<small>${esc(WK.strap)}</small>` : ""}</div>
     <div class="wk-three${more ? "" : " solo"}">
       <a class="wk-feat" href="${esc(href)}">
         ${f.image ? `<div class="wk-img"><img src="${esc(f.image)}" alt="${esc(f.alt || "")}" width="1200" height="655" loading="lazy"></div>` : ""}
-        <div class="wk-text">${s && typeof ownBanner === "function" ? ownBanner(s) : ""}<span class="wk-kick">${more ? '<i class="wk-num">1</i>' : ""}${esc(f.kicker || "Weekend read")}</span>
+        <div class="wk-text">${s && typeof ownBanner === "function" ? ownBanner(s) : ""}<span class="wk-kick">${esc(f.kicker || "Weekend read")}</span>
           <h3>${esc(headline)}</h3>${f.dek ? `<p>${esc(f.dek)}</p>` : ""}
           ${tiles ? `<div class="wk-tiles">${tiles}</div>` : ""}
           <span class="wk-go">${esc(f.cta || "Read the story")} →</span></div>

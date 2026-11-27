@@ -58,8 +58,8 @@ calculation); a read-back of the final copy. Then publish with tools/publish.py 
 anything it refuses. Confirm the story page shows the charts and the look-up after the build.
 
 ## 6. Set the Weekend box
-Edit data/weekend.json: "from" this Friday 17:00 UK (in UTC), "until" Monday 07:00 UK (in UTC), keep "title" and
-"strap", and set "feature": id, "kicker": "The big read", headline (the story's), image and alt, a one or two sentence
+Edit data/weekend.json: "from" this Friday 17:00 UK (in UTC), "until" Monday 07:00 UK (in UTC), keep "title" (no
+"strap"), and set "feature": id, "kicker": "The big read", headline (the story's), image and alt, a one or two sentence
 "dek" inviting readers in, three "tiles" (figure, label, short context; none repeating the headline figure), "cta":
 "Read the full analysis", and "checker" plus "checkerType" if the story has a look-up. Push.
 
@@ -73,7 +73,7 @@ smaller pieces beside it, numbered 1 to 3, and the look-up below. Always set "mo
   Saturday sport fixtures story (kicker "Out and about" or "Weekend sport").
 Never the same story as the feature, never a crime, court or inquest story, and each needs a real picture that is
 already on the site. Headlines for these two cards may be written for the card (short, an invitation, under 60
-characters) but must be exactly true to the story. Keep "strap" plain and short ("Three things to read, check and do");
+characters) but must be exactly true to the story. No "strap" line and no 1 2 3 numbers on the cards (owner, 27 Nov 2026: "get rid of three things to do and the 1 2 3"): leave "strap" out of weekend.json;
 never bring back the old one.
 
 ## 7. Fallback
