@@ -1,0 +1,29 @@
+name: Source trial
+# Tests the candidate sources in tools/feeds/trial.json from GitHub's servers (feeds, home pages and plain news listing
+# pages) and saves the results to the branch "trial-data". Owner's request, 27 Nov 2026. Runs by hand or when the list changes.
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ["tools/feeds/trial.py", "tools/feeds/trial.json"]
+permissions:
+  contents: write
+concurrency: trial
+jobs:
+  trial:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with: { fetch-depth: 1 }
+      - run: python3 -u tools/feeds/trial.py /tmp/trial 2>&1 | tee /tmp/trial-run.log
+      - name: Save to the data branch
+        if: always()
+        run: |
+          mkdir -p /tmp/trial; cp /tmp/trial-run.log /tmp/trial/run.log 2>/dev/null || true
+          cd /tmp/trial && rm -rf .git
+          git init -q -b trial-data
+          git config user.name "The Seax source trial"
+          git config user.email "seaxbot@users.noreply.github.com"
+          git add -A && git commit -qm "Source trial $(date -u +%FT%TZ)"
+          git push -qf "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" trial-data

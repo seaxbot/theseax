@@ -19,6 +19,14 @@ reads them at no cost.
                        PAGE_TEXT_MAX new articles a run from the last 3 days are opened once each for their text,
                        obeying robots.txt (owner's request, 17 Nov 2026, after the newsroom missed a University of
                        Essex story: the university has no feed and its site refuses the newsroom's own fetches)
+              "page": "links" = any news listing page with no feed and no article data (owner's request, 27 Nov 2026:
+                       "be pulling in everything you possibly can"; most Essex councils, the ambulance service, the
+                       commissioner, hospital trusts, housing associations and rail firms publish this way). Every
+                       link on the page that looks like a headline (25 to 220 characters of link text, pointing at a
+                       hyphenated article address on the same site, or matching the source's own "match" pattern)
+                       is an item. Items have no date: the first read is the back catalogue, and a link counts as
+                       new from the hour it first appears. For kind O, up to PAGE_TEXT_MAX newly appeared articles
+                       a run are opened once each for their text, obeying robots.txt
               "page": "ehaat" = the Essex & Herts Air Ambulance mission reports listing (owner's request, 20 Nov
                        2026): one item per mission card (type, date logged, place, one-line summary); the place alone
                        is the item's Essex test, so the newsroom decides which missions are in Essex
@@ -228,6 +236,45 @@ def parse_page(text, feed):
     return out
 
 
+LINK_RX = re.compile(r'(?is)<a\b[^>]*?href=["\']([^"\'#]+)["\'][^>]*>(.*?)</a>')
+LINK_SKIP = re.compile(r"(?i)/(tag|tags|category|categories|author|page|search|login|account|cookies?|privacy|accessibility|contact|about|jobs|careers|vacancies)(/|$)|[?&](page|p|start)=\d|\.(pdf|docx?|xlsx?|zip|jpg|png)$|^(mailto|tel|javascript):")
+SITE_RX = re.compile(r"^(www\d?|new|news|media|mediacentre)\.")
+
+def parse_links(text, feed):
+    """A plain news listing page (page "links"): every link that looks like a headline. See the notes at the top."""
+    text = re.sub(r"(?is)<(script|style|noscript|svg)\b.*?</\1>", " ", text)
+    base = feed["url"]; host = SITE_RX.sub("", urlparse(base).netloc.lower())
+    match = re.compile(feed["match"]) if feed.get("match") else None
+    best = {}
+    for m in LINK_RX.finditer(text):
+        href = html.unescape(m.group(1)).strip()
+        if LINK_SKIP.search(href):
+            continue
+        url = urljoin(base, href); p = urlparse(url)
+        if p.scheme not in ("http", "https") or SITE_RX.sub("", p.netloc.lower()) != host:
+            continue
+        url = url.split("#")[0]
+        if url.rstrip("/") == base.rstrip("/"):
+            continue
+        inner = m.group(2)
+        alt = re.search(r'(?is)<h\d[^>]*>(.*?)</h\d>', inner)   # a card that is one big link: its heading is the headline
+        title = " ".join(clean(alt.group(1) if alt else inner).split())
+        if match:
+            if not match.search(url):
+                continue
+            if len(title) < 12:
+                continue
+        else:
+            slug = p.path.rstrip("/").rsplit("/", 1)[-1]
+            if not (25 <= len(title) <= 220) or slug.count("-") < 2 or title.count(" ") < 3:
+                continue
+        if len(title) > len(best.get(url, "")):
+            best[url] = title[:220]
+    out = [{"title": t, "url": u, "time": "", "body": ""} for u, t in best.items()]
+    if len(out) < 3:   # a changed or blocked page should show in status.json, not silently give nothing
+        raise ValueError(f"only {len(out)} headline links found; page starts: " + " ".join(clean(text[:3000]).split())[:140])
+    return out
+
 def parse_missions(text, feed):
     """Essex & Herts Air Ambulance mission reports (owner's request, 20 Nov 2026). The charity has no feed: its listing page
     shows one card per mission with the type, the date it was logged (DD.MM.YYYY), the place and a one-line summary.
@@ -269,6 +316,8 @@ def parse_feed(text, feed):
         return parse_page(text, feed)
     if feed.get("page") == "ehaat":
         return parse_missions(text, feed)
+    if feed.get("page") == "links":
+        return parse_links(text, feed)
     t = text.lstrip(); out = []
     if feed.get("json"):
         for i in (json.loads(t).get("items") or []):   # Environment Agency flood warnings
@@ -341,6 +390,28 @@ def read_feed(feed, state):
         with LOCK:
             keep = {r["url"] for r in raw}
             for u in [u for u in texts if u not in keep and u.startswith(feed["url"])]:
+                texts.pop(u, None)
+    if feed.get("page") == "links" and feed["kind"] == "O":
+        with LOCK:
+            texts = state.setdefault("linktext", {}).setdefault(url, {})
+            first = url not in (state.get("known") or [])   # the back catalogue is never opened
+            seen = state.get("seen") or {}
+        opened = 0
+        for r in raw:
+            u = r["url"]
+            if u in texts:
+                r["body"] = texts[u]
+            elif not first and ("f|" + u) not in seen and opened < PAGE_TEXT_MAX and not u.lower().endswith(".pdf") and allowed(u, state):
+                opened += 1
+                try:
+                    r["body"] = article_text(u); time.sleep(0.5)
+                except Exception:
+                    continue
+                with LOCK:
+                    texts[u] = r["body"]
+        with LOCK:
+            keep = {r["url"] for r in raw}
+            for u in [u for u in texts if u not in keep]:
                 texts.pop(u, None)
     items = []
     skip = re.compile(feed["skip"]) if feed.get("skip") else None
