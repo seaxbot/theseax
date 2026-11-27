@@ -1,6 +1,22 @@
 [
  {
   "ids": [
+   "grays-town-park-cafe-8000-rent-thurrock-council"
+  ],
+  "match": "\\bGrays Town Park\\b|\\bGrays park cafe\\b",
+  "notMatch": "\\b(died|dies|death|dead|body|killed|fatal\\w*|inquest|stabb?\\w*|assault\\w*|attack\\w*|arrest\\w*|charged|jailed|court|police|fire|blaze|arson|vandal\\w*)\\b",
+  "name": "The volunteer-run cafe in Grays Town Park, with a rose bed in front",
+  "label": "Picture",
+  "wide": "/img/people/grays-town-park-cafe-wide.jpg",
+  "og": "/img/people/grays-town-park-cafe-og.jpg",
+  "creator": "",
+  "provider": "",
+  "source": "",
+  "noCaption": true,
+  "addedBy": "owner, 27 Nov 2026 08:54 (owner-supplied picture of Grays Town Park cafe, for the rent story and all Grays Town Park cafe stories; no credit given)"
+ },
+ {
+  "ids": [
    "great-waltham-concert-for-ukraine-igor-saienko-generators"
   ],
   "name": "Concert for Ukraine poster with Igor Saienko",
