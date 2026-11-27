@@ -1503,16 +1503,16 @@
  },
  {
   "match": "\\bHMP (?:& YOI )?Chelmsford\\b|\\bYOI Chelmsford\\b|\\bChelmsford(?:['’]s)? (?:[Pp]rison|[Jj]ail)\\b|\\b(?:[Pp]rison|[Jj]ail) in Chelmsford\\b",
-  "name": "The entrance to HMP & YOI Chelmsford",
+  "name": "The HMP & YOI Chelmsford sign at the prison entrance",
   "label": "Picture",
-  "wide": "/img/people/hmp-chelmsford-entrance-wide.jpg",
-  "og": "/img/people/hmp-chelmsford-entrance-og.jpg",
+  "wide": "/img/people/hmp-chelmsford-gate-wide.jpg",
+  "og": "/img/people/hmp-chelmsford-gate-og.jpg",
   "creator": "Google Street View",
   "provider": "Google",
   "license": "",
   "licenseUrl": "",
   "source": "",
-  "addedBy": "owner, 27 Nov 2026 19:08: \"use this pic for chelmsford prison stories incl top story now\" (Google Street View image of the prison entrance; replaces the owner's sign photo of 22 Nov)",
+  "addedBy": "owner, 27 Nov 2026 19:13: \"this is a better pic for chelmsford prison stories\" (Google Street View image of the prison sign and entrance; replaces the 19:08 entrance picture and the owner's sign photo of 22 Nov; used for all Chelmsford prison stories)",
   "ids": [
    "ct-grays-oksana-antanaitiene-prison-tutor-sentenced-hmp-chelmsford"
   ]
