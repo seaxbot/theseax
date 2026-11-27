@@ -1,0 +1,1271 @@
+{
+ "title": "Food hygiene ratings for places to eat out, by Essex council area",
+ "asOf": "2026-11-27",
+ "asOfLabel": "27 November 2026",
+ "source": "The Seax analysis of Food Standards Agency food hygiene ratings for Essex's 14 councils, Open Government Licence",
+ "sourceUrl": "https://ratings.food.gov.uk/",
+ "notes": [
+  "Places to eat out means restaurants, cafes, takeaways, sandwich shops, pubs, bars, hotels, B&Bs and mobile caterers.",
+  "A rating shows hygiene standards on the day of the inspection. A business can improve and ask for a new inspection, so always check the latest rating on the Food Standards Agency site."
+ ],
+ "areas": {
+  "Basildon": {
+   "eatRated": 526,
+   "eatMix": {
+    "5": 404,
+    "4": 75,
+    "3": 27,
+    "2": 9,
+    "1": 10,
+    "0": 1
+   },
+   "twRated": 150,
+   "twMix": {
+    "5": 101,
+    "4": 25,
+    "3": 18,
+    "2": 3,
+    "1": 3,
+    "0": 0
+   },
+   "awaiting": 22,
+   "old5": 3,
+   "lowest": [
+    {
+     "name": "De-Source Africa Restaurant/ Miolad",
+     "type": "Restaurant or cafe",
+     "rating": 0,
+     "date": "2026-02-03",
+     "town": "Basildon",
+     "pc": "SS14 1EU",
+     "pending": false,
+     "url": "https://ratings.food.gov.uk/business/1027035"
+    },
+    {
+     "name": "Aylam fish & chips",
+     "type": "Takeaway or sandwich shop",
+     "rating": 1,
+     "date": "2025-09-10",
+     "town": "Laindon",
+     "pc": "SS15 6DU",
+     "pending": false,
+     "url": "https://ratings.food.gov.uk/business/1669973"
+    },
+    {
+     "name": "The Hive",
+     "type": "Restaurant or cafe",
+     "rating": 1,
+     "date": "2025-10-08",
+     "town": "Basildon",
+     "pc": "SS14 2JZ",
+     "pending": false,
+     "url": "https://ratings.food.gov.uk/business/1669970"
+    },
+    {
+     "name": "Peking Chef",
+     "type": "Takeaway or sandwich shop",
+     "rating": 1,
+     "date": "2025-11-19",
+     "town": "Billericay",
+     "pc": "CM12 9JD",
+     "pending": false,
+     "url": "https://ratings.food.gov.uk/business/75391"
+    },
+    {
+     "name": "Hooked on food Hut",
+     "type": "Mobile caterer",
+     "rating": 1,
+     "date": "2025-11-28",
+     "town": "",
+     "pc": "SS11",
+     "pending": false,
+     "url": "https://ratings.food.gov.uk/business/1823377"
+    },
+    {
+     "name": "Barleylands Social Club",
+     "type": "Pub or bar",
+     "rating": 1,
+     "date": "2026-01-23",
+     "town": "Basildon",
+     "pc": "SS15 4BJ",
+     "pending": false,
+     "url": "https://ratings.food.gov.uk/business/93877"
+    },
+    {
+     "name": "Queens Palace",
+     "type": "Takeaway or sandwich shop",
+     "rating": 1,
+     "date": "2026-02-05",
+     "town": "Billericay",
+     "pc": "CM12 0NH",
+     "pending": false,
+     "url": "https://ratings.food.gov.uk/business/97917"
+    },
+    {
+     "name": "Royal Café & Restaurant",
+     "type": "Restaurant or cafe",
+     "rating": 1,
+     "date": "2026-03-03",
+     "town": "Basildon",
+     "pc": "SS14 1EU",
+     "pending": false,
+     "url": "https://ratings.food.gov.uk/business/1754284"
+    },
+    {
+     "name": "The Veil Restaurant & Bar",
+     "type": "Restaurant or cafe",
+     "rating": 1,
+     "date": "2026-06-09",
+     "town": "Basildon",
+     "pc": "SS14 3JX",
+     "pending": false,
+     "url": "https://ratings.food.gov.uk/business/1537093"
+    },
+    {
+     "name": "Olivers Restaurant & Wine Bar",
+     "type": "Restaurant or cafe",
+     "rating": 1,
+     "date": "2026-07-21",
+     "town": "Billericay",
+     "pc": "CM11 2DG",
+     "pending": false,
+     "url": "https://ratings.food.gov.uk/business/1002795"
+    },
+    {
+     "name": "Mickys Catering",
+     "type": "Restaurant or cafe",
+     "rating": 1,
+     "date": "2026-08-12",
+     "town": "Wickford",
+     "pc": "SS11 7HL",
+     "pending": false,
+     "url": "https://ratings.food.gov.uk/business/1636025"
+    }
+   ]
+  },
+  "Braintree": {
+   "eatRated": 566,
+   "eatMix": {
+    "5": 446,
+    "4": 75,
+    "3": 33,
+    "2": 8,
+    "1": 4,
+    "0": 0
+   },
+   "twRated": 95,
+   "twMix": {
+    "5": 62,
+    "4": 19,
+    "3": 11,
+    "2": 2,
+    "1": 1,
+    "0": 0
+   },
+   "awaiting": 15,
+   "old5": 29,
+   "lowest": [
+    {
+     "name": "Crittall Athletic Social Club",
+     "type": "Pub or bar",
+     "rating": 1,
+     "date": "2024-12-09",
+     "town": "Silver End",
+     "pc": "CM8 3RQ",
+     "pending": false,
+     "url": "https://ratings.food.gov.uk/business/300456"
+    },
+    {
+     "name": "Great British Roast Company",
+     "type": "Restaurant or cafe",
+     "rating": 1,
+     "date": "2026-03-27",
+     "town": "Halstead",
+     "pc": "CO9 1JQ",
+     "pending": false,
+     "url": "https://ratings.food.gov.uk/business/1899300"
+    },
+    {
+     "name": "The Kings Head PH",
+     "type": "Pub or bar",
+     "rating": 1,
+     "date": "2026-09-24",
+     "town": "Gosfield",
+     "pc": "CO9 1TP",
+     "pending": false,
+     "url": "https://ratings.food.gov.uk/business/300259"
+    },
+    {
+     "name": "USA Chicken Pizza Kebab",
+     "type": "Takeaway or sandwich shop",
+     "rating": 1,
+     "date": "2026-09-25",
+     "town": "Halstead",
+     "pc": "CO9 1JD",
+     "pending": false,
+     "url": "https://ratings.food.gov.uk/business/300229"
+    }
+   ]
+  },
+  "Brentwood": {
+   "eatRated": 303,
+   "eatMix": {
+    "5": 230,
+    "4": 44,
+    "3": 25,
+    "2": 0,
+    "1": 4,
+    "0": 0
+   },
+   "twRated": 50,
+   "twMix": {
+    "5": 31,
+    "4": 8,
+    "3": 9,
+    "2": 0,
+    "1": 2,
+    "0": 0
+   },
+   "awaiting": 11,
+   "old5": 44,
+   "lowest": [
+    {
+     "name": "Taste Of China",
+     "type": "Takeaway or sandwich shop",
+     "rating": 1,
+     "date": "2026-03-12",
+     "town": "Brentwood",
+     "pc": "CM15 8NR",
+     "pending": false,
+     "url": "https://ratings.food.gov.uk/business/1395848"
+    },
+    {
+     "name": "Blackmore Sports And Social Club",
+     "type": "Pub or bar",
+     "rating": 1,
+     "date": "2026-03-14",
+     "town": "Blackmore",
+     "pc": "CM4 0QW",
+     "pending": false,
+     "url": "https://ratings.food.gov.uk/business/431476"
+    },
+    {
+     "name": "Kiddos Play Cafe",
+     "type": "Restaurant or cafe",
+     "rating": 1,
+     "date": "2026-06-11",
+     "town": "Brentwood",
+     "pc": "CM14 4SX",
+     "pending": false,
+     "url": "https://ratings.food.gov.uk/business/1713364"
+    },
+    {
+     "name": "BIRYANI BOX",
+     "type": "Takeaway or sandwich shop",
+     "rating": 1,
+     "date": "2026-08-20",
+     "town": "Brentwood",
+     "pc": "CM14 4EG",
+     "pending": false,
+     "url": "https://ratings.food.gov.uk/business/1935035"
+    }
+   ]
+  },
+  "Castle Point": {
+   "eatRated": 229,
+   "eatMix": {
+    "5": 208,
+    "4": 17,
+    "3": 4,
+    "2": 0,
+    "1": 0,
+    "0": 0
+   },
+   "twRated": 74,
+   "twMix": {
+    "5": 66,
+    "4": 6,
+    "3": 2,
+    "2": 0,
+    "1": 0,
+    "0": 0
+   },
+   "awaiting": 11,
+   "old5": 0,
+   "lowest": []
+  },
+  "Chelmsford": {
+   "eatRated": 717,
+   "eatMix": {
+    "5": 639,
+    "4": 53,
+    "3": 15,
+    "2": 6,
+    "1": 4,
+    "0": 0
+   },
+   "twRated": 110,
+   "twMix": {
+    "5": 83,
+    "4": 17,
+    "3": 7,
+    "2": 1,
+    "1": 2,
+    "0": 0
+   },
+   "awaiting": 27,
+   "old5": 1,
+   "lowest": [
+    {
+     "name": "Tonios Cucina",
+     "type": "Takeaway or sandwich shop",
+     "rating": 1,
+     "date": "2025-07-09",
+     "town": "",
+     "pc": "CM1",
+     "pending": false,
+     "url": "https://ratings.food.gov.uk/business/1846564"
+    },
+    {
+     "name": "Groundwork Coffee",
+     "type": "Takeaway or sandwich shop",
+     "rating": 1,
+     "date": "2026-05-01",
+     "town": "Chelmsford",
+     "pc": "CM3 3QW",
+     "pending": false,
+     "url": "https://ratings.food.gov.uk/business/1943285"
+    },
+    {
+     "name": "Coffee At The Close",
+     "type": "Restaurant or cafe",
+     "rating": 1,
+     "date": "2026-07-16",
+     "town": "Chelmsford",
+     "pc": "CM1 7QQ",
+     "pending": false,
+     "url": "https://ratings.food.gov.uk/business/1961180"
+    },
+    {
+     "name": "The Dog And Gun Restaurant",
+     "type": "Restaurant or cafe",
+     "rating": 1,
+     "date": "2026-08-14",
+     "town": "Great Leighs",
+     "pc": "CM3 3NF",
+     "pending": false,
+     "url": "https://ratings.food.gov.uk/business/1971136"
+    }
+   ]
+  },
+  "Colchester": {
+   "eatRated": 758,
+   "eatMix": {
+    "5": 676,
+    "4": 41,
+    "3": 33,
+    "2": 2,
+    "1": 4,
+    "0": 2
+   },
+   "twRated": 124,
+   "twMix": {
+    "5": 99,
+    "4": 12,
+    "3": 12,
+    "2": 0,
+    "1": 1,
+    "0": 0
+   },
+   "awaiting": 80,
+   "old5": 6,
+   "lowest": [
+    {
+     "name": "Coffee Link",
+     "type": "Restaurant or cafe",
+     "rating": 0,
+     "date": "2025-04-22",
+     "town": "Colchester",
+     "pc": "CO1 1XD",
+     "pending": false,
+     "url": "https://ratings.food.gov.uk/business/1586637"
+    },
+    {
+     "name": "Bees Indian Restaurant & Bar",
+     "type": "Restaurant or cafe",
+     "rating": 0,
+     "date": "2026-10-14",
+     "town": "Colchester",
+     "pc": "CO1 1TH",
+     "pending": false,
+     "url": "https://ratings.food.gov.uk/business/1585645"
+    },
+    {
+     "name": "The British Grenadier",
+     "type": "Pub or bar",
+     "rating": 1,
+     "date": "2025-05-22",
+     "town": "Colchester",
+     "pc": "CO1 2AP",
+     "pending": false,
+     "url": "https://ratings.food.gov.uk/business/1585833"
+    },
+    {
+     "name": "King of Spice",
+     "type": "Takeaway or sandwich shop",
+     "rating": 1,
+     "date": "2026-10-06",
+     "town": "Colchester",
+     "pc": "CO1 2TQ",
+     "pending": false,
+     "url": "https://ratings.food.gov.uk/business/2010594"
+    },
+    {
+     "name": "Vinny's Restaurant",
+     "type": "Restaurant or cafe",
+     "rating": 1,
+     "date": "2026-10-08",
+     "town": "Colchester",
+     "pc": "CO1 1NU",
+     "pending": false,
+     "url": "https://ratings.food.gov.uk/business/1787236"
+    },
+    {
+     "name": "Chez Afrique",
+     "type": "Restaurant or cafe",
+     "rating": 1,
+     "date": "2026-10-22",
+     "town": "Colchester",
+     "pc": "CO2 7EA",
+     "pending": false,
+     "url": "https://ratings.food.gov.uk/business/1586264"
+    }
+   ]
+  },
+  "Epping Forest": {
+   "eatRated": 431,
+   "eatMix": {
+    "5": 350,
+    "4": 50,
+    "3": 19,
+    "2": 5,
+    "1": 7,
+    "0": 0
+   },
+   "twRated": 39,
+   "twMix": {
+    "5": 28,
+    "4": 9,
+    "3": 1,
+    "2": 0,
+    "1": 1,
+    "0": 0
+   },
+   "awaiting": 33,
+   "old5": 0,
+   "lowest": [
+    {
+     "name": "The Epping Forest Cafe",
+     "type": "Restaurant or cafe",
+     "rating": 1,
+     "date": "2025-08-11",
+     "town": "Epping",
+     "pc": "CM16 5HW",
+     "pending": false,
+     "url": "https://ratings.food.gov.uk/business/1858808"
+    },
+    {
+     "name": "Bertie's Deli",
+     "type": "Mobile caterer",
+     "rating": 1,
+     "date": "2025-09-05",
+     "town": "Loughton",
+     "pc": "IG10 3TZ",
+     "pending": false,
+     "url": "https://ratings.food.gov.uk/business/1894076"
+    },
+    {
+     "name": "Jasmine",
+     "type": "Takeaway or sandwich shop",
+     "rating": 1,
+     "date": "2026-03-05",
+     "town": "Loughton",
+     "pc": "IG10 3AA",
+     "pending": false,
+     "url": "https://ratings.food.gov.uk/business/554214"
+    },
+    {
+     "name": "Naira Indian & Bangladeshi Cuisine",
+     "type": "Restaurant or cafe",
+     "rating": 1,
+     "date": "2026-05-18",
+     "town": "Waltham Abbey",
+     "pc": "EN9 1RD",
+     "pending": false,
+     "url": "https://ratings.food.gov.uk/business/799510"
+    },
+    {
+     "name": "The Cartshed restaurant",
+     "type": "Restaurant or cafe",
+     "rating": 1,
+     "date": "2026-07-13",
+     "town": "Duck Lane",
+     "pc": "CM16 6NE",
+     "pending": false,
+     "url": "https://ratings.food.gov.uk/business/1089895"
+    },
+    {
+     "name": "Funky Monk Hotel, Restaurant, bar",
+     "type": "Restaurant or cafe",
+     "rating": 1,
+     "date": "2026-07-28",
+     "town": "Epping",
+     "pc": "CM16 4AP",
+     "pending": false,
+     "url": "https://ratings.food.gov.uk/business/554250"
+    },
+    {
+     "name": "The Garnon Bushes",
+     "type": "Pub or bar",
+     "rating": 1,
+     "date": "2026-09-21",
+     "town": "Epping",
+     "pc": "CM16 7QS",
+     "pending": false,
+     "url": "https://ratings.food.gov.uk/business/589445"
+    }
+   ]
+  },
+  "Harlow": {
+   "eatRated": 282,
+   "eatMix": {
+    "5": 216,
+    "4": 39,
+    "3": 22,
+    "2": 1,
+    "1": 4,
+    "0": 0
+   },
+   "twRated": 50,
+   "twMix": {
+    "5": 30,
+    "4": 12,
+    "3": 8,
+    "2": 0,
+    "1": 0,
+    "0": 0
+   },
+   "awaiting": 14,
+   "old5": 24,
+   "lowest": [
+    {
+     "name": "Harlow International Youth Hostel",
+     "type": "Hotel or B&B",
+     "rating": 1,
+     "date": "2026-02-27",
+     "town": "Harlow",
+     "pc": "CM20 2QD",
+     "pending": false,
+     "url": "https://ratings.food.gov.uk/business/872343"
+    },
+    {
+     "name": "Mobile Sandwich Van - DV61 TXC",
+     "type": "Mobile caterer",
+     "rating": 1,
+     "date": "2026-02-27",
+     "town": "",
+     "pc": "CM20",
+     "pending": false,
+     "url": "https://ratings.food.gov.uk/business/872817"
+    },
+    {
+     "name": "Riverway Cafe",
+     "type": "Restaurant or cafe",
+     "rating": 1,
+     "date": "2026-05-14",
+     "town": "Harlow",
+     "pc": "CM20 2DR",
+     "pending": false,
+     "url": "https://ratings.food.gov.uk/business/954676"
+    },
+    {
+     "name": "Geek Retreat Harlow",
+     "type": "Restaurant or cafe",
+     "rating": 1,
+     "date": "2026-10-30",
+     "town": "Harlow",
+     "pc": "CM20 1XR",
+     "pending": false,
+     "url": "https://ratings.food.gov.uk/business/1562496"
+    }
+   ]
+  },
+  "Maldon": {
+   "eatRated": 282,
+   "eatMix": {
+    "5": 237,
+    "4": 25,
+    "3": 14,
+    "2": 2,
+    "1": 3,
+    "0": 1
+   },
+   "twRated": 50,
+   "twMix": {
+    "5": 41,
+    "4": 3,
+    "3": 5,
+    "2": 0,
+    "1": 1,
+    "0": 0
+   },
+   "awaiting": 13,
+   "old5": 3,
+   "lowest": [
+    {
+     "name": "The Bull And Willow Ltd",
+     "type": "Pub or bar",
+     "rating": 0,
+     "date": "2026-09-30",
+     "town": "Great Totham",
+     "pc": "CM9 8NH",
+     "pending": true,
+     "url": "https://ratings.food.gov.uk/business/1017121"
+    },
+    {
+     "name": "Little Sportsters Coaching",
+     "type": "Restaurant or cafe",
+     "rating": 1,
+     "date": "2025-12-22",
+     "town": "",
+     "pc": "CM9",
+     "pending": false,
+     "url": "https://ratings.food.gov.uk/business/1887914"
+    },
+    {
+     "name": "Fish On The Quay",
+     "type": "Pub or bar",
+     "rating": 1,
+     "date": "2026-07-16",
+     "town": "Maldon",
+     "pc": "CM9 5HP",
+     "pending": false,
+     "url": "https://ratings.food.gov.uk/business/14430"
+    },
+    {
+     "name": "Maldon King Kebab",
+     "type": "Takeaway or sandwich shop",
+     "rating": 1,
+     "date": "2026-09-10",
+     "town": "Maldon",
+     "pc": "CM9 5BS",
+     "pending": true,
+     "url": "https://ratings.food.gov.uk/business/499823"
+    }
+   ]
+  },
+  "Rochford": {
+   "eatRated": 258,
+   "eatMix": {
+    "5": 199,
+    "4": 36,
+    "3": 8,
+    "2": 5,
+    "1": 10,
+    "0": 0
+   },
+   "twRated": 50,
+   "twMix": {
+    "5": 34,
+    "4": 12,
+    "3": 2,
+    "2": 1,
+    "1": 1,
+    "0": 0
+   },
+   "awaiting": 24,
+   "old5": 30,
+   "lowest": [
+    {
+     "name": "Hullbridge Community Cafe",
+     "type": "Restaurant or cafe",
+     "rating": 1,
+     "date": "2021-10-15",
+     "town": "Hullbridge",
+     "pc": "SS5 6PA",
+     "pending": false,
+     "url": "https://ratings.food.gov.uk/business/1423480"
+    },
+    {
+     "name": "Premier Shop",
+     "type": "Restaurant or cafe",
+     "rating": 1,
+     "date": "2025-05-01",
+     "town": "Hockley",
+     "pc": "SS5 4QS",
+     "pending": false,
+     "url": "https://ratings.food.gov.uk/business/1746864"
+    },
+    {
+     "name": "Golden Lion",
+     "type": "Pub or bar",
+     "rating": 1,
+     "date": "2025-06-11",
+     "town": "Rochford",
+     "pc": "SS4 1AB",
+     "pending": false,
+     "url": "https://ratings.food.gov.uk/business/33584"
+    },
+    {
+     "name": "Poppy's Cafe",
+     "type": "Restaurant or cafe",
+     "rating": 1,
+     "date": "2025-12-18",
+     "town": "Hockley",
+     "pc": "SS5 4QY",
+     "pending": false,
+     "url": "https://ratings.food.gov.uk/business/1903805"
+    },
+    {
+     "name": "Shuhag Restaurant",
+     "type": "Restaurant or cafe",
+     "rating": 1,
+     "date": "2026-02-09",
+     "town": "Hockley",
+     "pc": "SS5 4PZ",
+     "pending": false,
+     "url": "https://ratings.food.gov.uk/business/1921030"
+    },
+    {
+     "name": "TasteSted",
+     "type": "Restaurant or cafe",
+     "rating": 1,
+     "date": "2026-07-13",
+     "town": "Aviation Way",
+     "pc": "",
+     "pending": false,
+     "url": "https://ratings.food.gov.uk/business/1551363"
+    },
+    {
+     "name": "Spice Hut",
+     "type": "Takeaway or sandwich shop",
+     "rating": 1,
+     "date": "2026-07-22",
+     "town": "Rayleigh",
+     "pc": "SS6 9NL",
+     "pending": false,
+     "url": "https://ratings.food.gov.uk/business/989190"
+    },
+    {
+     "name": "Royal Oak",
+     "type": "Pub or bar",
+     "rating": 1,
+     "date": "2026-08-21",
+     "town": "Rochford",
+     "pc": "SS4 2AX",
+     "pending": false,
+     "url": "https://ratings.food.gov.uk/business/155700"
+    },
+    {
+     "name": "Betty's Baps",
+     "type": "Mobile caterer",
+     "rating": 1,
+     "date": "2026-09-10",
+     "town": "",
+     "pc": "SS5",
+     "pending": false,
+     "url": "https://ratings.food.gov.uk/business/1895607"
+    },
+    {
+     "name": "The Royal British Legion",
+     "type": "Pub or bar",
+     "rating": 1,
+     "date": "2026-10-14",
+     "town": "Hockley",
+     "pc": "SS5 4DQ",
+     "pending": false,
+     "url": "https://ratings.food.gov.uk/business/155564"
+    }
+   ]
+  },
+  "Southend": {
+   "eatRated": 744,
+   "eatMix": {
+    "5": 527,
+    "4": 118,
+    "3": 75,
+    "2": 17,
+    "1": 6,
+    "0": 1
+   },
+   "twRated": 143,
+   "twMix": {
+    "5": 91,
+    "4": 28,
+    "3": 21,
+    "2": 3,
+    "1": 0,
+    "0": 0
+   },
+   "awaiting": 9,
+   "old5": 2,
+   "lowest": [
+    {
+     "name": "Pallavas",
+     "type": "Restaurant or cafe",
+     "rating": 0,
+     "date": "2026-09-07",
+     "town": "Southend-on-sea",
+     "pc": "SS1 1PF",
+     "pending": false,
+     "url": "https://ratings.food.gov.uk/business/1785324"
+    },
+    {
+     "name": "Shoebury Cafe",
+     "type": "Restaurant or cafe",
+     "rating": 1,
+     "date": "2025-07-22",
+     "town": "Southend-On-Sea",
+     "pc": "SS3 9DA",
+     "pending": true,
+     "url": "https://ratings.food.gov.uk/business/512988"
+    },
+    {
+     "name": "Twelve Brunch & Cocktails",
+     "type": "Restaurant or cafe",
+     "rating": 1,
+     "date": "2025-12-05",
+     "town": "Southend-on-sea",
+     "pc": "SS1 1BX",
+     "pending": false,
+     "url": "https://ratings.food.gov.uk/business/1738134"
+    },
+    {
+     "name": "The Sultan Lounge",
+     "type": "Restaurant or cafe",
+     "rating": 1,
+     "date": "2026-01-09",
+     "town": "Southend-on-sea",
+     "pc": "SS1 2PS",
+     "pending": false,
+     "url": "https://ratings.food.gov.uk/business/1910868"
+    },
+    {
+     "name": "Royal Wok",
+     "type": "Restaurant or cafe",
+     "rating": 1,
+     "date": "2026-07-07",
+     "town": "Westcliff-on-sea",
+     "pc": "SS0 7HU",
+     "pending": false,
+     "url": "https://ratings.food.gov.uk/business/1931768"
+    },
+    {
+     "name": "Namcha Ltd",
+     "type": "Restaurant or cafe",
+     "rating": 1,
+     "date": "2026-07-29",
+     "town": "Southend-on-sea",
+     "pc": "SS1 1NN",
+     "pending": false,
+     "url": "https://ratings.food.gov.uk/business/1945926"
+    },
+    {
+     "name": "STARS Recovery Cafe",
+     "type": "Restaurant or cafe",
+     "rating": 1,
+     "date": "2026-08-06",
+     "town": "Southend-On-Sea",
+     "pc": "SS1 1AS",
+     "pending": false,
+     "url": "https://ratings.food.gov.uk/business/859558"
+    }
+   ]
+  },
+  "Tendring": {
+   "eatRated": 634,
+   "eatMix": {
+    "5": 377,
+    "4": 145,
+    "3": 84,
+    "2": 16,
+    "1": 10,
+    "0": 2
+   },
+   "twRated": 135,
+   "twMix": {
+    "5": 62,
+    "4": 35,
+    "3": 33,
+    "2": 3,
+    "1": 1,
+    "0": 1
+   },
+   "awaiting": 48,
+   "old5": 35,
+   "lowest": [
+    {
+     "name": "Efes BBQ",
+     "type": "Takeaway or sandwich shop",
+     "rating": 0,
+     "date": "2026-06-04",
+     "town": "Clacton On Sea",
+     "pc": "CO15 3NR",
+     "pending": false,
+     "url": "https://ratings.food.gov.uk/business/1154326"
+    },
+    {
+     "name": "Welcome 168 Ltd",
+     "type": "Restaurant or cafe",
+     "rating": 0,
+     "date": "2026-09-04",
+     "town": "Clacton On Sea",
+     "pc": "CO15 4DD",
+     "pending": false,
+     "url": "https://ratings.food.gov.uk/business/1638583"
+    },
+    {
+     "name": "Ocean Diner and Xpress Burger Bar",
+     "type": "Restaurant or cafe",
+     "rating": 1,
+     "date": "2011-07-28",
+     "town": "Clacton On Sea",
+     "pc": "CO15 1QX",
+     "pending": false,
+     "url": "https://ratings.food.gov.uk/business/611675"
+    },
+    {
+     "name": "The Robert Burre",
+     "type": "Pub or bar",
+     "rating": 1,
+     "date": "2024-03-11",
+     "town": "Clacton On Sea",
+     "pc": "CO15 4LN",
+     "pending": false,
+     "url": "https://ratings.food.gov.uk/business/1523623"
+    },
+    {
+     "name": "Albert Edward Hall Community Cafe",
+     "type": "Restaurant or cafe",
+     "rating": 1,
+     "date": "2024-06-24",
+     "town": "Clacton On Sea",
+     "pc": "",
+     "pending": false,
+     "url": "https://ratings.food.gov.uk/business/908135"
+    },
+    {
+     "name": "Never Say Die",
+     "type": "Restaurant or cafe",
+     "rating": 1,
+     "date": "2025-07-12",
+     "town": "Clacton On Sea",
+     "pc": "CO15 2EL",
+     "pending": false,
+     "url": "https://ratings.food.gov.uk/business/1615031"
+    },
+    {
+     "name": "Amber",
+     "type": "Takeaway or sandwich shop",
+     "rating": 1,
+     "date": "2026-01-15",
+     "town": "Little Clacton",
+     "pc": "CO16 9LE",
+     "pending": false,
+     "url": "https://ratings.food.gov.uk/business/1022623"
+    },
+    {
+     "name": "United Services Club",
+     "type": "Pub or bar",
+     "rating": 1,
+     "date": "2026-01-17",
+     "town": "Harwich",
+     "pc": "CO12 3NS",
+     "pending": false,
+     "url": "https://ratings.food.gov.uk/business/611855"
+    },
+    {
+     "name": "Billys Burger Bar",
+     "type": "Mobile caterer",
+     "rating": 1,
+     "date": "2026-01-31",
+     "town": "Clacton On Sea",
+     "pc": "CO15 3AX",
+     "pending": false,
+     "url": "https://ratings.food.gov.uk/business/1731479"
+    },
+    {
+     "name": "Nirala Tandoori",
+     "type": "Restaurant or cafe",
+     "rating": 1,
+     "date": "2026-07-16",
+     "town": "Manningtree",
+     "pc": "CO11 1DR",
+     "pending": false,
+     "url": "https://ratings.food.gov.uk/business/1763723"
+    },
+    {
+     "name": "Mr Enzo Fish and Chip",
+     "type": "Restaurant or cafe",
+     "rating": 1,
+     "date": "2026-07-23",
+     "town": "Clacton On Sea",
+     "pc": "CO16 8PG",
+     "pending": false,
+     "url": "https://ratings.food.gov.uk/business/1870111"
+    },
+    {
+     "name": "The Crown",
+     "type": "Pub or bar",
+     "rating": 1,
+     "date": "2026-09-28",
+     "town": "Manningtree",
+     "pc": "CO11 1AH",
+     "pending": false,
+     "url": "https://ratings.food.gov.uk/business/755969"
+    }
+   ]
+  },
+  "Thurrock": {
+   "eatRated": 613,
+   "eatMix": {
+    "5": 440,
+    "4": 111,
+    "3": 50,
+    "2": 6,
+    "1": 6,
+    "0": 0
+   },
+   "twRated": 146,
+   "twMix": {
+    "5": 78,
+    "4": 42,
+    "3": 22,
+    "2": 3,
+    "1": 1,
+    "0": 0
+   },
+   "awaiting": 42,
+   "old5": 3,
+   "lowest": [
+    {
+     "name": "The Top House",
+     "type": "Pub or bar",
+     "rating": 1,
+     "date": "2025-12-05",
+     "town": "Aveley",
+     "pc": "RM15 4DL",
+     "pending": false,
+     "url": "https://ratings.food.gov.uk/business/1318473"
+    },
+    {
+     "name": "Happy Garden",
+     "type": "Takeaway or sandwich shop",
+     "rating": 1,
+     "date": "2026-05-05",
+     "town": "Aveley",
+     "pc": "RM15 4AX",
+     "pending": false,
+     "url": "https://ratings.food.gov.uk/business/1944557"
+    },
+    {
+     "name": "Tat's Kitchen",
+     "type": "Mobile caterer",
+     "rating": 1,
+     "date": "2026-05-15",
+     "town": "Grays",
+     "pc": "",
+     "pending": false,
+     "url": "https://ratings.food.gov.uk/business/1947588"
+    },
+    {
+     "name": "Mangal Meze",
+     "type": "Restaurant or cafe",
+     "rating": 1,
+     "date": "2026-07-08",
+     "town": "Grays",
+     "pc": "RM17 5DL",
+     "pending": true,
+     "url": "https://ratings.food.gov.uk/business/1853652"
+    },
+    {
+     "name": "The Railway Tavern",
+     "type": "Pub or bar",
+     "rating": 1,
+     "date": "2026-07-11",
+     "town": "Stanford Le Hope",
+     "pc": "SS17 0HL",
+     "pending": false,
+     "url": "https://ratings.food.gov.uk/business/1966976"
+    },
+    {
+     "name": "Bikash Restaurant",
+     "type": "Restaurant or cafe",
+     "rating": 1,
+     "date": "2026-10-05",
+     "town": "Corringham",
+     "pc": "SS17 7NA",
+     "pending": false,
+     "url": "https://ratings.food.gov.uk/business/391071"
+    }
+   ]
+  },
+  "Uttlesford": {
+   "eatRated": 389,
+   "eatMix": {
+    "5": 340,
+    "4": 37,
+    "3": 9,
+    "2": 2,
+    "1": 1,
+    "0": 0
+   },
+   "twRated": 38,
+   "twMix": {
+    "5": 33,
+    "4": 4,
+    "3": 1,
+    "2": 0,
+    "1": 0,
+    "0": 0
+   },
+   "awaiting": 69,
+   "old5": 4,
+   "lowest": [
+    {
+     "name": "Takeley Kebab",
+     "type": "Mobile caterer",
+     "rating": 1,
+     "date": "2026-06-02",
+     "town": "Dunmow Road",
+     "pc": "CM22 6SB",
+     "pending": false,
+     "url": "https://ratings.food.gov.uk/business/1776257"
+    }
+   ]
+  }
+ },
+ "essex": {
+  "eatRated": 6732,
+  "eatMix": {
+   "5": 5289,
+   "4": 866,
+   "3": 418,
+   "2": 79,
+   "1": 73,
+   "0": 7
+  },
+  "twRated": 1254,
+  "twMix": {
+   "5": 839,
+   "4": 232,
+   "3": 152,
+   "2": 16,
+   "1": 14,
+   "0": 1
+  },
+  "allRated": 13591,
+  "allMix": {
+   "5": 11196,
+   "4": 1528,
+   "3": 595,
+   "2": 122,
+   "1": 134,
+   "0": 16
+  },
+  "awaitingEat": 418,
+  "awaitingAll": 1031,
+  "old5": 184,
+  "total": 15436
+ },
+ "byType": {
+  "Hotel/bed & breakfast/guest house": {
+   "n": 155,
+   "mix": {
+    "5": 131,
+    "4": 15,
+    "3": 6,
+    "2": 2,
+    "1": 1,
+    "0": 0
+   }
+  },
+  "Mobile caterer": {
+   "n": 942,
+   "mix": {
+    "5": 837,
+    "4": 66,
+    "3": 28,
+    "2": 4,
+    "1": 7,
+    "0": 0
+   }
+  },
+  "Pub/bar/nightclub": {
+   "n": 1056,
+   "mix": {
+    "5": 842,
+    "4": 145,
+    "3": 43,
+    "2": 10,
+    "1": 15,
+    "0": 1
+   }
+  },
+  "Restaurant/Cafe/Canteen": {
+   "n": 3325,
+   "mix": {
+    "5": 2640,
+    "4": 408,
+    "3": 189,
+    "2": 47,
+    "1": 36,
+    "0": 5
+   }
+  },
+  "Takeaway/sandwich shop": {
+   "n": 1254,
+   "mix": {
+    "5": 839,
+    "4": 232,
+    "3": 152,
+    "2": 16,
+    "1": 14,
+    "0": 1
+   }
+  },
+  "Retailers - supermarkets/hypermarkets": {
+   "n": 372,
+   "mix": {
+    "5": 325,
+    "4": 36,
+    "3": 6,
+    "2": 3,
+    "1": 2,
+    "0": 0
+   }
+  },
+  "Caring Premises": {
+   "n": 1041,
+   "mix": {
+    "5": 929,
+    "4": 100,
+    "3": 10,
+    "2": 1,
+    "1": 1,
+    "0": 0
+   }
+  },
+  "School/college/university": {
+   "n": 888,
+   "mix": {
+    "5": 846,
+    "4": 36,
+    "3": 5,
+    "2": 1,
+    "1": 0,
+    "0": 0
+   }
+  }
+ }
+}

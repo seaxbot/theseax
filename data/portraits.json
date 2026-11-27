@@ -1,6 +1,20 @@
 [
  {
   "ids": [
+   "essex-food-hygiene-ratings-takeaways-november-2026"
+  ],
+  "name": "Chart: share of takeaways rated 5 for food hygiene by Essex council area",
+  "label": "Chart",
+  "wide": "/img/people/essex-food-hygiene-takeaways-chart-wide.jpg",
+  "og": "/img/people/essex-food-hygiene-takeaways-chart-og.jpg",
+  "creator": "The Seax",
+  "provider": "The Seax",
+  "source": "",
+  "plainCaption": "Share of takeaways rated 5, by council area. Source: The Seax analysis of Food Standards Agency ratings, 27 November 2026",
+  "addedBy": "27 Nov 2026: weekend Seax Analysis (owner chose the food hygiene topic)"
+ },
+ {
+  "ids": [
    "maldon-high-street-salt-restaurant-arson-investigation"
   ],
   "name": "Fire damage around a gas meter in Maldon High Street",

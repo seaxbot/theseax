@@ -1828,7 +1828,7 @@ def body_with_charts(it, body, opening=""):
     rmap = roadmap_of(it)
     # interactive look-ups (owner, 20 Nov 2026: "a selector [so] people could select any one of their 56 neighbourhoods")
     # house price look-up (owner, 24 Nov 2026: "a dropdown to select your area"), same shape, type "price-lookup"
-    widgets = [w for w in (it.get("widgets") or []) if isinstance(w, dict) and w.get("type") in ("crime-lookup", "price-lookup")
+    widgets = [w for w in (it.get("widgets") or []) if isinstance(w, dict) and w.get("type") in ("crime-lookup", "price-lookup", "hygiene-lookup")
                and str(w.get("src") or "").startswith("/data/")]
     # embedded X posts (owner, 25 Nov 2026: c2c's video apology to embed in the c2c investigation). Field "embeds": a list
     # of {"type": "x", "url": "https://x.com/<account>/status/<id>", "after": paragraph index, "caption": what it is}.
@@ -1936,6 +1936,8 @@ def body_with_charts(it, body, opening=""):
             if int(w.get("after", len(paras) - 1)) == i or (i == len(paras) - 1 and int(w.get("after", 0)) >= len(paras)):
                 if w.get("type") == "price-lookup":
                     out.append(f'<div class="seax-plookup" id="prices" data-src="{E(w["src"])}"><noscript>Turn on JavaScript to check prices in your area.</noscript></div>')
+                elif w.get("type") == "hygiene-lookup":   # food hygiene look-up (27 Nov 2026 weekend analysis)
+                    out.append(f'<div class="seax-hlookup" id="hygiene" data-src="{E(w["src"])}"><noscript>Turn on JavaScript to check food hygiene in your area.</noscript></div>')
                 else:
                     out.append(f'<div class="seax-lookup" id="check" data-src="{E(w["src"])}"><noscript>Turn on JavaScript to look up your neighbourhood.</noscript></div>')
     if any(not str(em.get("poster") or "").startswith("/img/") for em in embeds):
@@ -1947,6 +1949,8 @@ def body_with_charts(it, body, opening=""):
         out.append('<script src="/js/crime-lookup.js?v=2" defer></script>')
     if any(w.get("type") == "price-lookup" for w in widgets):
         out.append('<script src="/js/price-lookup.js?v=2" defer></script>')
+    if any(w.get("type") == "hygiene-lookup" for w in widgets):
+        out.append('<script src="/js/hygiene-lookup.js?v=1" defer></script>')
     # Democracy Club credit (owner, 25 Nov 2026: "must credit Democracy Club with a link on every story that uses the
     # data at the end of the story"). Added automatically to any story whose source or "also" links point at Democracy
     # Club or Who Can I Vote For, or that carries "dataCredit": "democracyclub".
