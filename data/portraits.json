@@ -16,19 +16,6 @@
   "addedBy": "owner, 27 Nov 2026 21:15: \"Prof Sue Black story - elevate and use this pic\" (ARU's own picture of its chancellor, from the owner's screenshot of her ARU page)"
  },
  {
-  "match": "^(?!.*\\b[Ff]ound\\b).*\\bStuart Buckland\\b",
-  "name": "Stuart Buckland, missing from Harlow",
-  "label": "Picture",
-  "wide": "/img/people/harlow-stuart-buckland-missing-wide.jpg",
-  "og": "/img/people/harlow-stuart-buckland-missing-og.jpg",
-  "creator": "Essex Police",
-  "provider": "Essex Police",
-  "license": "",
-  "licenseUrl": "",
-  "source": "https://www.essex.police.uk/news/essex/news/",
-  "addedBy": "owner, 27 Nov 2026 (Stuart Buckland missing appeal from Essex Police Harlow District's Facebook page; remove the picture once he is found)"
- },
- {
   "ids": [
    "essex-food-hygiene-ratings-takeaways-november-2026"
   ],
