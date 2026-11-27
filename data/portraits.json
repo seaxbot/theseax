@@ -1,6 +1,20 @@
 [
  {
   "ids": [
+   "essex-urgent-treatment-centres-review-nhs-survey-4-january"
+  ],
+  "name": "Staff outside the urgent treatment centre at Clacton Hospital",
+  "label": "Picture",
+  "wide": "/img/people/clacton-utc-wide.jpg",
+  "og": "/img/people/clacton-utc-og.jpg",
+  "creator": "Tendring District Council",
+  "provider": "Tendring District Council",
+  "source": "https://www.tendringdc.gov.uk/",
+  "plainCaption": "Staff at the urgent treatment centre at Clacton Hospital. Picture: Tendring District Council",
+  "addedBy": "owner, 27 Nov 2026 10:12 (owner-supplied Tendring District Council picture of the Clacton urgent treatment centre for the NHS Essex urgent care review story; full picture kept uncropped on a blurred backdrop so the aspect ratio is right)"
+ },
+ {
+  "ids": [
    "grays-town-park-cafe-8000-rent-thurrock-council"
   ],
   "match": "\\bGrays Town Park\\b|\\bGrays park cafe\\b",
