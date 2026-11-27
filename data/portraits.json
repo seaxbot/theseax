@@ -1,6 +1,34 @@
 [
  {
   "ids": [
+   "maldon-high-street-salt-restaurant-arson-investigation"
+  ],
+  "name": "A police car and cordon tape in Maldon High Street overnight",
+  "label": "Picture",
+  "wide": "/img/people/maldon-salt-arson-police-wide.jpg",
+  "og": "/img/people/maldon-salt-arson-police-og.jpg",
+  "creator": "Maldon Essex Local",
+  "provider": "Maldon Essex Local",
+  "source": "",
+  "plainCaption": "Police in Maldon High Street overnight. Picture: Maldon Essex Local",
+  "more": [
+   {
+    "name": "Fire damage after the arson attempt",
+    "wide": "/img/people/maldon-salt-arson-damage-wide.jpg",
+    "plainCaption": "Damage after the attempted fire. Picture: Maldon Essex Local",
+    "creator": "Maldon Essex Local"
+   },
+   {
+    "name": "The front of Sark restaurant in Maldon, decorated for Christmas",
+    "wide": "/img/people/maldon-sark-frontage-wide.jpg",
+    "plainCaption": "Sark, next door, says it was not affected. Picture: Sark Restaurant & Cocktail Bar",
+    "creator": "Sark Restaurant & Cocktail Bar"
+   }
+  ],
+  "addedBy": "owner, 27 Nov 2026 12:24 (owner-supplied screenshots: two pictures shared by Maldon Essex Local, one from Sark's Facebook post)"
+ },
+ {
+  "ids": [
    "essex-urgent-treatment-centres-review-nhs-survey-4-january"
   ],
   "name": "Staff outside the urgent treatment centre at Clacton Hospital",

@@ -5,7 +5,11 @@
 <link>https://theseax.com/</link>
 <description>The latest Essex news, sport and life, updated through the day.</description>
 <language>en-gb</language>
+<<<<<<< HEAD
 <lastBuildDate>Fri, 27 Nov 2026 12:27:01 +0000</lastBuildDate>
+=======
+<lastBuildDate>Fri, 27 Nov 2026 12:27:04 +0000</lastBuildDate>
+>>>>>>> 4c56b59 (Maldon arson story: owner's pictures (Maldon Essex Local, Sark))
 <atom:link href="https://theseax.com/feed.xml" rel="self" type="application/rss+xml"/>
 <image><url>https://theseax.com/icons/icon-192.png</url><title>The Seax: Essex news, sport and life</title><link>https://theseax.com/</link></image>
 <item><title>Maldon restaurant targeted in overnight arson attempt</title><link>https://theseax.com/story/maldon-high-street-salt-restaurant-arson-investigation/</link><guid isPermaLink="true">https://theseax.com/story/maldon-high-street-salt-restaurant-arson-investigation/</guid><pubDate>Fri, 27 Nov 2026 12:26:24 +0000</pubDate><category>News</category><description>Two people tried to break into a High Street business and start a fire at about 2.30am. Police are appealing for witnesses.</description></item>
