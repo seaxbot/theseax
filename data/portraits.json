@@ -1,5 +1,21 @@
 [
  {
+  "ids": [
+   "anglia-ruskin-chancellor-sue-black-installed-chelmsford"
+  ],
+  "match": "\\b(?:Lady |Dame )?Sue Black\\b.*\\b(?:ARU|Anglia Ruskin|[Cc]hancellor)\\b|\\b(?:ARU|Anglia Ruskin).*\\bSue Black\\b",
+  "name": "Professor Lady Sue Black, Chancellor of Anglia Ruskin University",
+  "label": "Picture",
+  "wide": "/img/people/sue-black-aru-chancellor-wide.jpg",
+  "og": "/img/people/sue-black-aru-chancellor-og.jpg",
+  "creator": "Anglia Ruskin University",
+  "provider": "Anglia Ruskin University",
+  "license": "",
+  "licenseUrl": "",
+  "source": "https://www.aru.ac.uk/people/sue-black",
+  "addedBy": "owner, 27 Nov 2026 21:15: \"Prof Sue Black story - elevate and use this pic\" (ARU's own picture of its chancellor, from the owner's screenshot of her ARU page)"
+ },
+ {
   "match": "^(?!.*\\b[Ff]ound\\b).*\\bStuart Buckland\\b",
   "name": "Stuart Buckland, missing from Harlow",
   "label": "Picture",
