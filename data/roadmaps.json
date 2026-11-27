@@ -571,6 +571,17 @@
   "town": "Southend-on-Sea",
   "w": 1200
  },
+ "southend-sutton-road-crash-pedestrian-seriously-hurt-dashcam-appeal": {
+  "after": 1,
+  "h": 750,
+  "kicker": "Where it happened",
+  "made": "2026-11-27T07:53:28Z",
+  "road": "Sutton Road",
+  "sig": "[[\"Sutton Road\", \"Cromwell Road\"], \"Southend-on-Sea\", null]",
+  "src": "/img/maps/southend-sutton-road-crash-pedestrian-seriously-hurt-dashcam-appeal.svg",
+  "town": "Southend-on-Sea",
+  "w": 1200
+ },
  "southend-united-frankie-banks-freedom-of-the-city": {
   "none": "no road named",
   "sig": "[[], \"Southend-on-Sea\", null]"
