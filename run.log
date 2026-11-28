@@ -1,0 +1,111 @@
+[0s] thurrock (mg)
+[1s] southend (mg)
+[2s] epping (mg)
+[3s] maldon (mg)
+  16 meetings in window
+[25s] tendring (mg)
+[126s] harlow (mg)
+[128s] basildon (mg)
+  17 meetings in window
+[338s] brentwood (mg)
+[339s] uttlesford (mg)
+[341s] essex (cmis)
+[341s] colchester (cmis)
+[342s] rochford (cmis)
+[402s] chelmsford (chelmsford)
+  3 meetings in window
+[407s] braintree (none)
+[407s] castlepoint (none)
+{
+"thurrock": [
+"blocked",
+0,
+0,
+"calendar 403 HTTP Error 403: Forbidden"
+],
+"southend": [
+"blocked",
+0,
+0,
+"calendar 403 HTTP Error 403: Forbidden"
+],
+"epping": [
+"blocked",
+0,
+0,
+"calendar 403 HTTP Error 403: Forbidden"
+],
+"maldon": [
+"ok",
+16,
+0,
+""
+],
+"tendring": [
+"unreachable",
+0,
+0,
+"calendar 0 TimeoutError('The read operation timed out')"
+],
+"harlow": [
+"unreachable",
+0,
+0,
+"calendar 0 URLError(gaierror(-2, 'Name or service not known'))"
+],
+"basildon": [
+"ok",
+17,
+0,
+"per-council time cap reached"
+],
+"brentwood": [
+"blocked",
+0,
+0,
+"calendar 403 HTTP Error 403: Forbidden"
+],
+"uttlesford": [
+"blocked",
+0,
+0,
+"calendar 403 HTTP Error 403: Forbidden"
+],
+"essex": [
+"refused",
+0,
+0,
+"robots.txt disallows"
+],
+"colchester": [
+"refused",
+0,
+0,
+"robots.txt disallows"
+],
+"rochford": [
+"unreachable",
+0,
+0,
+"committees 0 URLError(TimeoutError('timed out'))"
+],
+"chelmsford": [
+"ok",
+3,
+0,
+""
+],
+"braintree": [
+"manual",
+0,
+0,
+"no machine-readable meetings system found; the desk checks it by search"
+],
+"castlepoint": [
+"manual",
+0,
+0,
+"no machine-readable meetings system found; the desk checks it by search"
+]
+}
+inbox 6 meetings, calendar 12, pdf excerpts 0

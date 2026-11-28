@@ -1,0 +1,125 @@
+{
+ "at": "2026-11-28T06:33:55.543493+00:00",
+ "meetings": [
+  {
+   "council": "chelmsford",
+   "councilName": "Chelmsford City Council",
+   "area": "chelmsford",
+   "committee": "Planning committee",
+   "date": "2026-12-08",
+   "time": "",
+   "url": "https://www.chelmsford.gov.uk/committee-meetings/planning-committee-december-2026/",
+   "items": []
+  },
+  {
+   "council": "basildon",
+   "councilName": "Basildon Council",
+   "area": "south",
+   "committee": "Planning Committee",
+   "date": "2026-12-08",
+   "time": "7.00 p.m.",
+   "url": "https://www.basildonmeetings.info/ieListDocuments.aspx?CId=709&MId=9589",
+   "items": []
+  },
+  {
+   "council": "chelmsford",
+   "councilName": "Chelmsford City Council",
+   "area": "chelmsford",
+   "committee": "Full council",
+   "date": "2026-12-09",
+   "time": "",
+   "url": "https://www.chelmsford.gov.uk/committee-meetings/full-council-december-2026/",
+   "items": []
+  },
+  {
+   "council": "basildon",
+   "councilName": "Basildon Council",
+   "area": "south",
+   "committee": "Standards and Privileges Committee",
+   "date": "2026-12-09",
+   "time": "7.00 p.m.",
+   "url": "https://www.basildonmeetings.info/ieListDocuments.aspx?CId=1000&MId=9524",
+   "items": []
+  },
+  {
+   "council": "basildon",
+   "councilName": "Basildon Council",
+   "area": "south",
+   "committee": "Licensing Committee",
+   "date": "2026-12-10",
+   "time": "7.00 p.m.",
+   "url": "https://www.basildonmeetings.info/ieListDocuments.aspx?CId=222&MId=9519",
+   "items": []
+  },
+  {
+   "council": "maldon",
+   "councilName": "Maldon District Council",
+   "area": "maldon",
+   "committee": "Council",
+   "date": "2026-12-10",
+   "time": "7.30 pm",
+   "url": "https://democracy.maldon.gov.uk/ieListDocuments.aspx?CId=130&MId=4729",
+   "items": []
+  },
+  {
+   "council": "basildon",
+   "councilName": "Basildon Council",
+   "area": "south",
+   "committee": "Council",
+   "date": "2026-12-15",
+   "time": "7.30 p.m.",
+   "url": "https://www.basildonmeetings.info/ieListDocuments.aspx?CId=216&MId=9632",
+   "items": []
+  },
+  {
+   "council": "basildon",
+   "councilName": "Basildon Council",
+   "area": "south",
+   "committee": "Council",
+   "date": "2026-12-15",
+   "time": "7.30 p.m.",
+   "url": "https://www.basildonmeetings.info/ieListDocuments.aspx?CId=216&MId=9601",
+   "items": []
+  },
+  {
+   "council": "chelmsford",
+   "councilName": "Chelmsford City Council",
+   "area": "chelmsford",
+   "committee": "Audit and risk committee",
+   "date": "2026-12-16",
+   "time": "",
+   "url": "https://www.chelmsford.gov.uk/committee-meetings/audit-and-risk-committee-december-2026/",
+   "items": []
+  },
+  {
+   "council": "maldon",
+   "councilName": "Maldon District Council",
+   "area": "maldon",
+   "committee": "Planning Committee",
+   "date": "2026-12-16",
+   "time": "7.00 pm",
+   "url": "https://democracy.maldon.gov.uk/ieListDocuments.aspx?CId=390&MId=4938",
+   "items": []
+  },
+  {
+   "council": "basildon",
+   "councilName": "Basildon Council",
+   "area": "south",
+   "committee": "Cabinet",
+   "date": "2026-12-17",
+   "time": "7.00 p.m.",
+   "url": "https://www.basildonmeetings.info/ieListDocuments.aspx?CId=297&MId=9506",
+   "items": []
+  },
+  {
+   "council": "maldon",
+   "councilName": "Maldon District Council",
+   "area": "maldon",
+   "committee": "Overview and Scrutiny Committee",
+   "date": "2026-12-22",
+   "time": "10.00 am",
+   "url": "https://democracy.maldon.gov.uk/ieListDocuments.aspx?CId=134&MId=4953",
+   "items": []
+  }
+ ]
+}
