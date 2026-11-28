@@ -1,0 +1,958 @@
+{
+ "at": "2026-11-28T13:28:35Z",
+ "day": {
+  "start": "2026-11-27T14:00:00Z",
+  "end": "2026-11-28T14:00:00Z",
+  "pages": [
+   {
+    "path": "/story/chelmsford-high-street-tunde-lighthouse-family-big-sing-flash-mob",
+    "title": "Chelmsford gets Lifted as Lighthouse Family's Tunde hits the High Street · The Seax",
+    "count": 46
+   },
+   {
+    "path": "/story/shenfield-priests-lane-97-homes-appeal-costs-brentwood-council",
+    "title": "Brentwood Council must pay Cala's costs after losing Priests Lane appeal · The Seax",
+    "count": 22
+   },
+   {
+    "path": "/",
+    "title": "The Seax · Essex news, sport and life, live",
+    "count": 22
+   },
+   {
+    "path": "/story/essex-gp-missed-appointments-september-2026",
+    "title": "Essex patients missed almost 37,000 GP surgery appointments in September · The Seax",
+    "count": 19
+   },
+   {
+    "path": "/story/chelmsford-baddow-road-texaco-sign-diesel-389-9p",
+    "title": "'Blimey': Chelmsford forecourt sign puts diesel at 389.9p a litre · The Seax",
+    "count": 15
+   },
+   {
+    "path": "/story/c2c-best-in-britain-to-not-good-enough-investigation",
+    "title": "From best in Britain to below standard: what's going wrong at c2c · The Seax",
+    "count": 13
+   },
+   {
+    "path": "/whats-on/christmas",
+    "title": "Christmas in Essex 2026: lights switch-ons, markets, light trails and pantos · The Seax",
+    "count": 9
+   },
+   {
+    "path": "/story/greater-anglia-shenfield-london-line-shut-christmas-new-year-2026",
+    "title": "Greater Anglia shuts Shenfield to London line for 8 days after Christmas · The Seax",
+    "count": 8
+   },
+   {
+    "path": "/story/c2c-grays-fire-near-railway-delays-27-november",
+    "title": "c2c trains delayed across network after fire near Grays line · The Seax",
+    "count": 7
+   },
+   {
+    "path": "/whats-on",
+    "title": "What's on in Essex this weekend and beyond · The Seax",
+    "count": 7
+   },
+   {
+    "path": "/story/brentwood-fly-tipping-crackdown-navestock-police-van-checks",
+    "title": "Brentwood police and council target Navestock fly-tippers with van checks · The Seax",
+    "count": 6
+   },
+   {
+    "path": "/story/basildon-town-centre-safety-wardens-underpasses-committee-backs",
+    "title": "Basildon town centre safety wardens and underpass clean-up get go-ahead · The Seax",
+    "count": 5
+   },
+   {
+    "path": "/story/saffron-walden-free-christmas-shopper-buses-27-november-4-december",
+    "title": "Saffron Walden to run free Christmas buses for two late-night events · The Seax",
+    "count": 5
+   },
+   {
+    "path": "/story/harlow-stuart-buckland-45-missing-appeal",
+    "title": "The Seax · Essex news, sport and life, live",
+    "count": 4
+   },
+   {
+    "path": "/story/anglia-ruskin-chancellor-sue-black-installed-chelmsford",
+    "title": "Anglia Ruskin installs forensic scientist Sue Black as chancellor · The Seax",
+    "count": 4
+   },
+   {
+    "path": "/story/epping-ongar-railway-stacey-solomon-joe-swash-lights-party-express",
+    "title": "Stacey Solomon and Joe Swash film Christmas show on Epping Ongar Railway · The Seax",
+    "count": 4
+   },
+   {
+    "path": "/story/wickford-cameron-weedon-jailed-30m-cocaine-recovery-dover-strait",
+    "title": "Wickford man jailed over £30m cocaine pick-up from the sea · The Seax",
+    "count": 4
+   },
+   {
+    "path": "/story/maldon-high-street-salt-restaurant-arson-investigation",
+    "title": "Maldon restaurant targeted in overnight arson attempt · The Seax",
+    "count": 3
+   },
+   {
+    "path": "/story/brentwood-school-safeguarding-review-british-fencing-own-review",
+    "title": "Brentwood School coach Gareth Stafford Bull likely abused pupils, review finds · The Seax",
+    "count": 3
+   },
+   {
+    "path": "/story/o-harlow-man-charged-stalking",
+    "title": "Harlow man, 37, charged with stalking a woman and damaging her letterbox · The Seax",
+    "count": 3
+   },
+   {
+    "path": "/story/clacton-nhs-essex-health-checks-flu-jabs-research-event-30-november",
+    "title": "Clacton Leisure Centre hosts free NHS health checks on Monday · The Seax",
+    "count": 2
+   },
+   {
+    "path": "/story/ct-grays-oksana-antanaitiene-prison-tutor-sentenced-hmp-chelmsford",
+    "title": "The Seax · Essex news, sport and life, live",
+    "count": 2
+   },
+   {
+    "path": "/story/ct-brentwood-stefan-pierre-tomlin-charged-rape-soho-club",
+    "title": "Brentwood man charged with rape at Soho's Groucho Club · The Seax",
+    "count": 2
+   },
+   {
+    "path": "/story/essex-food-hygiene-ratings-takeaways-november-2026",
+    "title": "One in three Essex takeaways misses top food hygiene rating · The Seax",
+    "count": 2
+   },
+   {
+    "path": "/story/great-waltham-concert-for-ukraine-igor-saienko-generators",
+    "title": "Great Waltham concert to fund generators for Ukraine's winter · The Seax",
+    "count": 2
+   },
+   {
+    "path": "bulletin-play",
+    "title": "Audio bulletin played",
+    "count": 2
+   },
+   {
+    "path": "/story/old-harlow-wilson-davies-solicitors-joins-hrj-foreman-laws",
+    "title": "Wilson Davies solicitors in Old Harlow becomes part of HRJ Foreman Laws · The Seax",
+    "count": 1
+   },
+   {
+    "path": "/story/southend-mencap-disability-hate-crime-report-appeal",
+    "title": "Southend Mencap urges disabled people to report hate crime · The Seax",
+    "count": 1
+   },
+   {
+    "path": "/story/tendring-second-homes-premium-council-tax-discounts-2027-28",
+    "title": "Tendring keeps 100% council tax premium on second homes",
+    "count": 1
+   },
+   {
+    "path": "/story/s-essex-fixtures-2026-11-28",
+    "title": "Essex fixtures: Colchester host York City on Saturday · The Seax",
+    "count": 1
+   },
+   {
+    "path": "/story/anglia-ruskin-study-most-dog-attacks-preventable-battersea",
+    "title": "Anglia Ruskin study finds most dog attacks are preventable · The Seax",
+    "count": 1
+   },
+   {
+    "path": "/story/ingatestone-festive-fair-shenfield-christmas-trails-2026",
+    "title": "Ingatestone Festive Fair brings 30 stalls to the High Street on Sunday · The Seax",
+    "count": 1
+   },
+   {
+    "path": "/news/shenfield",
+    "title": "Shenfield news: latest today · The Seax",
+    "count": 1
+   },
+   {
+    "path": "/story/s-southend-dyer-hartlepool-kick-off-shambles",
+    "title": "Southend boss Dyer calls Hartlepool's 5.30pm kick-off a 'shambles' · The Seax",
+    "count": 1
+   },
+   {
+    "path": "/story/braintree-springwood-drive-panfield-lane-link-road-work-begins",
+    "title": "Work starts on stalled Braintree link road to Panfield Lane · The Seax",
+    "count": 1
+   },
+   {
+    "path": "/story/lakeside-slim-chickens-opening-10-december-fresh-drop",
+    "title": "Lakeside's Slim Chickens restaurant opens on 10 December · The Seax",
+    "count": 1
+   },
+   {
+    "path": "/story/brentwood-kfc-high-street-3am-late-night-licence",
+    "title": "KFC applies to serve hot food until 3am on Brentwood High Street · The Seax",
+    "count": 1
+   },
+   {
+    "path": "/story/southend-united-frankie-banks-freedom-of-the-city",
+    "title": "Southend United legend Frankie Banks given Freedom of the City · The Seax",
+    "count": 1
+   },
+   {
+    "path": "/story/epping-forest-council-crushes-fly-tipping-truck-first-time",
+    "title": "Epping Forest council crushes fly-tipping truck in a first for the district · The Seax",
+    "count": 1
+   },
+   {
+    "path": "/news/colchester",
+    "title": "Colchester news: latest stories today · The Seax",
+    "count": 1
+   },
+   {
+    "path": "/story/broomfield-phoenix-ward-pokemon-christmas-appeal-harry-fusedale",
+    "title": "Broomfield children's ward Pokémon appeal seeks Christmas gifts · The Seax",
+    "count": 1
+   },
+   {
+    "path": "/story/christmas-in-essex-guide-seax-festive-events",
+    "title": "Christmas in Essex: The Seax opens free guide to more than 80 festive events · The Seax",
+    "count": 1
+   },
+   {
+    "path": "/story/ct-harlow-man-charged-navestock-vehicle",
+    "title": "Harlow man, 19, charged with taking a vehicle without consent and failing to stop for police · The Seax",
+    "count": 1
+   }
+  ],
+  "total": {
+   "total": 238,
+   "from": "hits"
+  },
+  "referrers": [
+   {
+    "name": "(direct or unknown)",
+    "count": 58
+   },
+   {
+    "name": "facebook.com",
+    "count": 30
+   },
+   {
+    "name": "fbg-brentwood-locals-uk-5482",
+    "count": 24
+   },
+   {
+    "name": "www.facebook.com",
+    "count": 18
+   },
+   {
+    "name": "www.facebook.com",
+    "count": 17
+   },
+   {
+    "name": "chatgpt.com",
+    "count": 15
+   },
+   {
+    "name": "fbg-langdon-hills-official-group-5388",
+    "count": 7
+   },
+   {
+    "name": "Google",
+    "count": 5
+   },
+   {
+    "name": "fbg-little-thurrock-community-fo-2316",
+    "count": 5
+   },
+   {
+    "name": "fbg-saffron-walden-residents-1720",
+    "count": 5
+   },
+   {
+    "name": "fbg-eastwood-and-st-laurence-ess-1118",
+    "count": 5
+   },
+   {
+    "name": "fbg-east-tilbury-community-group-2197",
+    "count": 4
+   },
+   {
+    "name": "fbg-caring-about-hockley-9741",
+    "count": 4
+   },
+   {
+    "name": "fbg-the-basildon-discussion-page-8581",
+    "count": 3
+   },
+   {
+    "name": "x",
+    "count": 2
+   },
+   {
+    "name": "fbg-ongar-community-group-essex-roup",
+    "count": 2
+   },
+   {
+    "name": "www.snapchat.com",
+    "count": 1
+   },
+   {
+    "name": "fbg-laindon-and-basildon-4637",
+    "count": 1
+   },
+   {
+    "name": "fbg-brentwood-neighborhood-1219",
+    "count": 1
+   },
+   {
+    "name": "fbg-kelvedon-hatch-and-the-brent-6209",
+    "count": 1
+   },
+   {
+    "name": "fbg-we-love-southendonsea-nsea",
+    "count": 1
+   },
+   {
+    "name": "fbg-chelmsford-community-group-e-0030",
+    "count": 1
+   },
+   {
+    "name": "fbg-chalkwell-community-page-6101",
+    "count": 1
+   },
+   {
+    "name": "fbg-waltham-abbey-community-grou-ents",
+    "count": 1
+   },
+   {
+    "name": "fbg-it-all-happens-in-harwich-es-8825",
+    "count": 1
+   }
+  ]
+ },
+ "week": {
+  "start": "2026-11-21T14:00:00Z",
+  "end": "2026-11-28T14:00:00Z",
+  "total": {
+   "total": 1732,
+   "total_events": 17,
+   "total_utc": 1732,
+   "stats": [
+    {
+     "day": "2026-11-21",
+     "hourly": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      6,
+      18,
+      1,
+      7,
+      16,
+      4,
+      7,
+      4,
+      2,
+      6
+     ],
+     "daily": 71,
+     "weekly": 1637,
+     "monthly": 1732
+    },
+    {
+     "day": "2026-11-22",
+     "hourly": [
+      7,
+      2,
+      4,
+      1,
+      0,
+      2,
+      1,
+      2,
+      10,
+      12,
+      27,
+      9,
+      5,
+      6,
+      11,
+      3,
+      2,
+      23,
+      6,
+      4,
+      13,
+      37,
+      3,
+      4
+     ],
+     "daily": 194
+    },
+    {
+     "day": "2026-11-23",
+     "hourly": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      2,
+      1,
+      10,
+      13,
+      15,
+      42,
+      13,
+      14,
+      7,
+      15,
+      5,
+      9,
+      11,
+      12,
+      18,
+      9,
+      20,
+      6,
+      9
+     ],
+     "daily": 231
+    },
+    {
+     "day": "2026-11-24",
+     "hourly": [
+      1,
+      1,
+      2,
+      1,
+      0,
+      0,
+      6,
+      5,
+      11,
+      7,
+      13,
+      1,
+      4,
+      15,
+      1,
+      2,
+      6,
+      15,
+      19,
+      4,
+      7,
+      21,
+      1,
+      4
+     ],
+     "daily": 147
+    },
+    {
+     "day": "2026-11-25",
+     "hourly": [
+      4,
+      7,
+      0,
+      2,
+      1,
+      0,
+      1,
+      9,
+      7,
+      6,
+      5,
+      3,
+      15,
+      3,
+      3,
+      32,
+      21,
+      24,
+      21,
+      20,
+      33,
+      39,
+      15,
+      21
+     ],
+     "daily": 292
+    },
+    {
+     "day": "2026-11-26",
+     "hourly": [
+      7,
+      1,
+      2,
+      0,
+      1,
+      8,
+      15,
+      18,
+      14,
+      9,
+      10,
+      11,
+      8,
+      5,
+      7,
+      6,
+      7,
+      26,
+      14,
+      13,
+      18,
+      40,
+      17,
+      11
+     ],
+     "daily": 268
+    },
+    {
+     "day": "2026-11-27",
+     "hourly": [
+      16,
+      3,
+      2,
+      0,
+      0,
+      6,
+      18,
+      59,
+      58,
+      36,
+      22,
+      27,
+      26,
+      18,
+      8,
+      26,
+      9,
+      29,
+      7,
+      19,
+      16,
+      16,
+      6,
+      7
+     ],
+     "daily": 434
+    },
+    {
+     "day": "2026-11-28",
+     "hourly": [
+      8,
+      2,
+      2,
+      1,
+      1,
+      0,
+      2,
+      4,
+      12,
+      26,
+      14,
+      14,
+      7,
+      2,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "daily": 95,
+     "weekly": 95
+    }
+   ]
+  },
+  "pages": [
+   {
+    "path": "/story/chelmsford-high-street-tunde-lighthouse-family-big-sing-flash-mob",
+    "title": "Chelmsford gets Lifted as Lighthouse Family's Tunde hits the High Street · The Seax",
+    "count": 268
+   },
+   {
+    "path": "/story/c2c-best-in-britain-to-not-good-enough-investigation",
+    "title": "From best in Britain to below standard: what's going wrong at c2c · The Seax",
+    "count": 249
+   },
+   {
+    "path": "/",
+    "title": "The Seax · Essex news, sport and life, live",
+    "count": 125
+   },
+   {
+    "path": "/story/broomfield-phoenix-ward-pokemon-christmas-appeal-harry-fusedale",
+    "title": "Broomfield children's ward Pokémon appeal seeks Christmas gifts · The Seax",
+    "count": 67
+   },
+   {
+    "path": "/whats-on/christmas",
+    "title": "Christmas in Essex 2026: lights switch-ons, markets, light trails and pantos · The Seax",
+    "count": 66
+   },
+   {
+    "path": "/story/brentwood-school-safeguarding-review-british-fencing-own-review",
+    "title": "Brentwood School coach Gareth Stafford Bull likely abused pupils, review finds · The Seax",
+    "count": 45
+   },
+   {
+    "path": "/story/a12-northbound-closed-junction-16-galleywood-crash-22-november",
+    "title": "A12 northbound closed at Chelmsford after crash damages central barrier · The Seax",
+    "count": 27
+   },
+   {
+    "path": "/story/brentwood-fly-tipping-crackdown-navestock-police-van-checks",
+    "title": "Brentwood police and council target Navestock fly-tippers with van checks · The Seax",
+    "count": 23
+   },
+   {
+    "path": "/whats-on",
+    "title": "What's on in Essex this weekend and beyond · The Seax",
+    "count": 23
+   },
+   {
+    "path": "/story/s-chelmsford-racing-returns",
+    "title": "Racing returns to Chelmsford City, but Ladbrokes and Coral refuse to take bets · The Seax",
+    "count": 23
+   },
+   {
+    "path": "/story/shenfield-priests-lane-97-homes-appeal-costs-brentwood-council",
+    "title": "Brentwood Council must pay Cala's costs after losing Priests Lane appeal · The Seax",
+    "count": 22
+   },
+   {
+    "path": "/story/essex-gp-missed-appointments-september-2026",
+    "title": "Essex patients missed almost 37,000 GP surgery appointments in September · The Seax",
+    "count": 19
+   },
+   {
+    "path": "/story/chelmsford-city-cav-miley-badger-hole-training-walton-hersham",
+    "title": "Chelmsford City captain Cav Miley falls down badger hole in training · The Seax",
+    "count": 19
+   },
+   {
+    "path": "/story/christmas-in-essex-guide-seax-festive-events",
+    "title": "Christmas in Essex: The Seax opens free guide to more than 80 festive events · The Seax",
+    "count": 19
+   },
+   {
+    "path": "bulletin-play",
+    "title": "Audio bulletin played",
+    "count": 17
+   },
+   {
+    "path": "/story/saffron-walden-free-christmas-shopper-buses-27-november-4-december",
+    "title": "Saffron Walden to run free Christmas buses for two late-night events · The Seax",
+    "count": 16
+   },
+   {
+    "path": "/story/essex-recorded-crime-september-2026-police-data",
+    "title": "Essex anti-social behaviour reports up 76% year on year as crime rises 8% · The Seax",
+    "count": 16
+   },
+   {
+    "path": "/story/chelmsford-baddow-road-texaco-sign-diesel-389-9p",
+    "title": "'Blimey': Chelmsford forecourt sign puts diesel at 389.9p a litre · The Seax",
+    "count": 15
+   },
+   {
+    "path": "/story/rochford-local-plan-ministers-order-consultation-7-december",
+    "title": "Rochford ordered by ministers to put Local Plan out to consultation · The Seax",
+    "count": 15
+   },
+   {
+    "path": "/story/dartford-crossing-east-tunnel-shut-expansion-joint-23-november",
+    "title": "The Seax · Essex news, sport and life, live",
+    "count": 15
+   },
+   {
+    "path": "/story/essex-tube-commuters-24-hour-strike-26-november-elizabeth-line",
+    "title": "Essex Tube commuters face 24-hour strike from Thursday lunchtime · The Seax",
+    "count": 13
+   },
+   {
+    "path": "/story/essex-house-prices-september-2026-maldon-tendring",
+    "title": "Maldon house prices up 5% in a year as Tendring's fall 2.2% · The Seax",
+    "count": 13
+   },
+   {
+    "path": "/story/great-waltham-concert-for-ukraine-igor-saienko-generators",
+    "title": "Great Waltham concert to fund generators for Ukraine's winter · The Seax",
+    "count": 12
+   },
+   {
+    "path": "/story/essex-oyster-farmers-eu-trade-uk-eu-deal-class-b",
+    "title": "Essex oyster farmers could win back lost EU trade under new deal · The Seax",
+    "count": 11
+   },
+   {
+    "path": "/story/essex-things-to-do-weekend-2026-11-27",
+    "title": "Essex this weekend: light trails, Christmas markets and switch-ons · The Seax",
+    "count": 10
+   },
+   {
+    "path": "/story/southend-united-frankie-banks-freedom-of-the-city",
+    "title": "Southend United legend Frankie Banks given Freedom of the City · The Seax",
+    "count": 10
+   },
+   {
+    "path": "/story/stansted-airport-emergency-exercise-today",
+    "title": "Stansted Airport tests its plane crash response today with 400 people · The Seax",
+    "count": 10
+   },
+   {
+    "path": "/story/chelmsford-army-and-navy-inquiry-opens-preview",
+    "title": "The Seax · Essex news, sport and life, live",
+    "count": 10
+   },
+   {
+    "path": "/story/maldon-high-street-salt-restaurant-arson-investigation",
+    "title": "Maldon restaurant targeted in overnight arson attempt · The Seax",
+    "count": 9
+   },
+   {
+    "path": "/story/s-preview-southend-forest-green-2026-11-24",
+    "title": "Southend United visit struggling Forest Green Rovers on Tuesday · The Seax",
+    "count": 9
+   },
+   {
+    "path": "/story/basildon-hospital-gas-and-air-suspended-maternity-staff-safety",
+    "title": "Basildon Hospital suspends gas and air on its maternity unit · The Seax",
+    "count": 9
+   },
+   {
+    "path": "/story/greater-anglia-shenfield-london-line-shut-christmas-new-year-2026",
+    "title": "Greater Anglia shuts Shenfield to London line for 8 days after Christmas · The Seax",
+    "count": 8
+   },
+   {
+    "path": "/story/southend-lazydays-festival-2027-ella-eyre-kt-tunstall-pixie-lott",
+    "title": "Southend's Lazydays adds Ella Eyre, KT Tunstall and Pixie Lott for 2027 · The Seax",
+    "count": 8
+   },
+   {
+    "path": "/story/o-takeley-springer-spaniel-head-stuck-wall-rescue",
+    "title": "Takeley firefighter chisels trapped spaniel's head free from wall · The Seax",
+    "count": 8
+   },
+   {
+    "path": "/story/c2c-grays-fire-near-railway-delays-27-november",
+    "title": "c2c trains delayed across network after fire near Grays line · The Seax",
+    "count": 7
+   },
+   {
+    "path": "/story/stansted-airport-poppy-appeal-record-26190-royal-british-legion",
+    "title": "Stansted Airport Poppy Appeal raises record £26,190 · The Seax",
+    "count": 7
+   },
+   {
+    "path": "/story/chelmsford-mp-pauls-law-dysphagia-training-birch-care-home",
+    "title": "Chelmsford MP backs Paul's Law after Birch care home choking death · The Seax",
+    "count": 7
+   },
+   {
+    "path": "/story/braintree-cat-zeus-train-trip-liverpool-street",
+    "title": "Braintree cat Zeus takes 37-mile solo train trip to Liverpool Street · The Seax",
+    "count": 7
+   },
+   {
+    "path": "/story/colchester-spitting-image-peter-fluck-dies-85",
+    "title": "Ex-Colchester art teacher Peter Fluck, Spitting Image co-creator, dies at 85 · The Seax",
+    "count": 7
+   },
+   {
+    "path": "/story/hatfield-peverel-david-cooney-jailed-sexual-assaults",
+    "title": "Hatfield Peverel man, 26, jailed for five years for sexual assaults · The Seax",
+    "count": 6
+   },
+   {
+    "path": "/story/chelmsford-colchester-first-bus-network-changes-3-january-2027",
+    "title": "Chelmsford bus C3 to reach Boreham and Beaulieu Park station in January · The Seax",
+    "count": 6
+   },
+   {
+    "path": "/story/southend-victoria-southminster-lines-rail-buses-28-29-november",
+    "title": "Southend Victoria line trains replaced by buses on 28 and 29 November · The Seax",
+    "count": 6
+   },
+   {
+    "path": "/story/essex-greater-anglia-elizabeth-line-weekend-cancellations-early-2027",
+    "title": "Greater Anglia and Elizabeth line weekend trains cancelled in early 2027 · The Seax",
+    "count": 6
+   },
+   {
+    "path": "/story/colchester-b-and-m-st-johns-walk-former-wilko-opening",
+    "title": "Colchester's empty former Wilko unit to reopen as B&M store · The Seax",
+    "count": 6
+   },
+   {
+    "path": "/investigates",
+    "title": "Seax Investigates: original Essex reporting and data journalism · The Seax",
+    "count": 6
+   },
+   {
+    "path": "/story/chelmsford-johnny-coyle-37-missing-appeal",
+    "title": "Chelmsford police urgently search for missing man, 37, who may be hurt · The Seax",
+    "count": 6
+   },
+   {
+    "path": "/story/maldon-salt-german-rock-salt-sea-salt-observer",
+    "title": "Maldon Salt confirms German rock salt goes into its Essex sea salt · The Seax",
+    "count": 6
+   },
+   {
+    "path": "/story/basildon-town-centre-safety-wardens-underpasses-committee-backs",
+    "title": "Basildon town centre safety wardens and underpass clean-up get go-ahead · The Seax",
+    "count": 5
+   },
+   {
+    "path": "/story/harlow-council-opposes-asylum-seekers-private-rented-homes",
+    "title": "Harlow Council tells government to drop asylum plan for private homes · The Seax",
+    "count": 5
+   },
+   {
+    "path": "/story/c2c-gbr-anglia-2m-reliability-plan-december-works",
+    "title": "c2c gets £2m plan to fix delays, with night and weekend works in December · The Seax",
+    "count": 5
+   }
+  ],
+  "referrers": [
+   {
+    "name": "(direct or unknown)",
+    "count": 552
+   },
+   {
+    "name": "fbg-langdon-hills-official-group-5388",
+    "count": 150
+   },
+   {
+    "name": "www.facebook.com",
+    "count": 136
+   },
+   {
+    "name": "facebook.com",
+    "count": 134
+   },
+   {
+    "name": "chatgpt.com",
+    "count": 122
+   },
+   {
+    "name": "www.facebook.com",
+    "count": 82
+   },
+   {
+    "name": "Google",
+    "count": 59
+   },
+   {
+    "name": "fbg-brentwood-locals-uk-5482",
+    "count": 58
+   },
+   {
+    "name": "fbg-chalkwell-community-page-6101",
+    "count": 16
+   },
+   {
+    "name": "fbg-saffron-walden-residents-1720",
+    "count": 14
+   },
+   {
+    "name": "fbg-chelmsford-community-uk-3332",
+    "count": 12
+   },
+   {
+    "name": "fbg-little-thurrock-community-fo-2316",
+    "count": 11
+   },
+   {
+    "name": "fbg-east-tilbury-community-group-2197",
+    "count": 11
+   },
+   {
+    "name": "fbg-we-love-southendonsea-nsea",
+    "count": 10
+   },
+   {
+    "name": "x",
+    "count": 9
+   },
+   {
+    "name": "fbg-maldon-essex-local-4675",
+    "count": 9
+   },
+   {
+    "name": "fbg-your-southend-3912",
+    "count": 9
+   },
+   {
+    "name": "fbg-i-love-stansted-mountfitchet-0423",
+    "count": 9
+   },
+   {
+    "name": "fbg-shoebury-community-group-1895",
+    "count": 9
+   },
+   {
+    "name": "fbg-the-original-city-of-southen-9185",
+    "count": 8
+   },
+   {
+    "name": "fbg-essex-fetes-fairs-and-festiv-0178",
+    "count": 8
+   },
+   {
+    "name": "t.co",
+    "count": 7
+   },
+   {
+    "name": "fbg-essex-uk-community-2437",
+    "count": 7
+   },
+   {
+    "name": "fbg-our-thurrock-community-1282",
+    "count": 6
+   },
+   {
+    "name": "fbg-colchester-community-group-1832",
+    "count": 5
+   },
+   {
+    "name": "fbg-events-in-essex-6969",
+    "count": 5
+   },
+   {
+    "name": "fbg-navestock-and-brentwood-peop-9011",
+    "count": 5
+   },
+   {
+    "name": "fbg-lovegreatdunmow-0134",
+    "count": 5
+   },
+   {
+    "name": "fbg-eastwood-and-st-laurence-ess-1118",
+    "count": 5
+   },
+   {
+    "name": "fbg-kelvedon-hatch-and-the-brent-6209",
+    "count": 4
+   }
+  ]
+ }
+}
