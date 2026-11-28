@@ -1,0 +1,16 @@
+page 1: 10 rows
+page 2: 10 rows
+page 3: 10 rows
+page 4: 10 rows
+page 5: 10 rows
+page 6: 10 rows
+page 7: 10 rows
+page 8: 10 rows
+page 9: 10 rows
+page 10: 10 rows
+page 11: 10 rows
+page 12: 10 rows
+page 13: 10 rows
+page 14: 10 rows
+case url check: https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?query=Lockwood -> 4 rows, finds LOCKWOOD Coby John
+{"generated": "2026-11-28T07:38:21Z", "pagesRead": 14, "lastPage": 344, "rows": 127, "cases": 105, "caseUrlCheck": "https://coroner.essex.gov.uk/inquests/search-for-an-inquest/?query=Lockwood -> 4 rows, finds LOCKWOOD Coby John", "errors": []}
