@@ -1,0 +1,27 @@
+{
+ "at": "2026-11-28T07:38:27+00:00",
+ "pages": [
+  {
+   "month": "october 2026",
+   "url": "https://www.nmc.org.uk/concerns-nurses-midwives/hearings/hearings-sanctions/hearings-october-2026/",
+   "rows": 146,
+   "essex": 2
+  },
+  {
+   "month": "november 2026",
+   "url": "https://www.nmc.org.uk/concerns-nurses-midwives/hearings/hearings-sanctions/hearings-november-2026/",
+   "rows": 109,
+   "essex": 3
+  },
+  {
+   "month": "december 2026",
+   "url": "https://www.nmc.org.uk/concerns-nurses-midwives/hearings/hearings-sanctions/hearings-december-2026/",
+   "rows": 32,
+   "essex": 0
+  }
+ ],
+ "rowsSeen": 287,
+ "essexRows": 5,
+ "docsFetched": 0,
+ "errors": []
+}
