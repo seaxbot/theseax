@@ -36,6 +36,7 @@ Pre-show dining returns for the Christmas pantomime. Oliver Stacey, venue direct
 - [Trafalgar Entertainment](https://www.trafalgarentertainment.com/2026/11/26/the-cliffs-pavilion-unveils-new-restaurant-and-cafe-bar/)
 - [Hospitality & Catering News](https://www.hospitalityandcateringnews.com/2026/11/cliffs-pavilion-refurbishment-delivers-expanded-restaurant-and-new-cafe-bar/)
 - [BBC News](https://www.bbc.co.uk/news/articles/crn805p8n011o)
+- [BBC News (via Gateway 97.8)](https://www.gateway978.com/bbc-essex/landmark-venue-gets-8m-new-lease-of-life)
 
 ---
 Story page: https://theseax.com/story/southend-cliffs-pavilion-new-foyer-restaurant-cafe-bar-opens/
