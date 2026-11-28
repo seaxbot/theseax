@@ -197,6 +197,10 @@
   "none": "no road called Open Road near Chelmsford",
   "sig": "[[\"Open Road\"], \"Chelmsford\", null]"
  },
+ "chelmsford-royal-mail-delivery-delays-cm1-cm2-postcodes-28-november": {
+  "none": "no road named",
+  "sig": "[[], \"Chelmsford\", null]"
+ },
  "christmas-in-essex-guide-seax-festive-events": {
   "none": "no road named",
   "sig": "[[], null, null]"
@@ -233,6 +237,10 @@
   "sig": "[[], \"Colchester\", null]"
  },
  "colchester-council-4-6m-budget-gap-2027-28-cabinet-2-december": {
+  "none": "no road named",
+  "sig": "[[], \"Colchester\", null]"
+ },
+ "colchester-council-out-of-order-reply-parking-older-people": {
   "none": "no road named",
   "sig": "[[], \"Colchester\", null]"
  },
@@ -312,6 +320,10 @@
  "dartford-crossing-east-tunnel-shut-expansion-joint-23-november": {
   "none": "no road named",
   "sig": "[[], \"Thurrock\", null]"
+ },
+ "doddinghurst-hopefield-sanctuary-stacey-solomon-joe-swash-bbc-christmas": {
+  "none": "no road named",
+  "sig": "[[], \"Brentwood\", null]"
  },
  "elsenham-new-farm-airport-parking-told-to-close-february": {
   "after": 0,
@@ -940,5 +952,9 @@
   "src": "/img/maps/wivenhoe-cadent-gas-pipe-drop-in-26-november.svg",
   "town": "Wivenhoe",
   "w": 1200
+ },
+ "wix-eight-homes-refused-road-safety-tendring": {
+  "none": "no road named",
+  "sig": "[[], null, null]"
  }
 }
