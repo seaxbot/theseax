@@ -19,6 +19,8 @@ National Highways says diesel has not been used on its worksites since 2025, and
 ## Sources
 
 - [BBC News](https://www.yahoo.com/news/world/articles/lower-thames-crossings-carbon-neutral-174431638.html)
+- [KentOnline](https://www.kentonline.co.uk/gravesend/news/world-s-first-electric-dump-trucks-start-work-on-uk-s-longes-347736/)
+- [The Construction Index](https://www.theconstructionindex.co.uk/news/view/electric-volvo-haulers-debut-on-thames-crossing)
 
 ---
 Story page: https://theseax.com/story/lower-thames-crossing-electric-haulers-carbon-neutral-build/
