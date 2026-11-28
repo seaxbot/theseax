@@ -4,35 +4,33 @@
  "until": "2026-11-30T07:00:00Z",
  "title": "The Weekend",
  "feature": {
-  "id": "essex-food-hygiene-ratings-takeaways-november-2026",
+  "id": "c2c-best-in-britain-to-not-good-enough-investigation",
   "kicker": "The big read",
-  "headline": "One in three Essex takeaways misses top food hygiene rating",
-  "image": "/img/people/essex-food-hygiene-kitchen-wide.jpg",
-  "alt": "A chef in gloves cutting raw chicken on a red chopping board in a clean commercial kitchen",
-  "dek": "The Seax went through every food hygiene rating in Essex before the Christmas rush. Check how restaurants, takeaways and pubs in your area are rated.",
+  "headline": "From best in Britain to below standard: what's going wrong at c2c",
+  "image": "/img/topics/c2c.jpg",
+  "alt": "A c2c train near Ripple Lane, Barking",
+  "dek": "c2c was the country's most punctual railway last spring. The Seax looked at how the Southend line fell so far, and what its bosses say they will do about it. Now updated with the extra £2m announced for the route.",
   "tiles": [
    {
-    "n": "6,732",
-    "t": "places to eat with a rating",
-    "c": "79% have the top score",
-    "dir": "flat"
+    "n": "53.5%",
+    "t": "of stops on time in the four weeks to 15 November",
+    "c": "It was 79.4% in May",
+    "dir": "down"
    },
    {
-    "n": "46%",
-    "t": "of Tendring's takeaways rated 5",
-    "c": "Castle Point does best at 89%",
+    "n": "4.5%",
+    "t": "of station calls cancelled in the four weeks to 17 October",
+    "c": "c2c's own target is 1.6%",
     "dir": "up"
    },
    {
-    "n": "418",
-    "t": "places awaiting a first inspection",
-    "c": "Colchester has the most, 80",
+    "n": "£2m",
+    "t": "extra to make the route more reliable",
+    "c": "Announced on 26 November",
     "dir": "flat"
    }
   ],
-  "cta": "Read the full analysis",
-  "checker": "/data/hygiene/essex-2026-11.json",
-  "checkerType": "hygiene"
+  "cta": "Read the full investigation"
  },
  "more": [
   {
