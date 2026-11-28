@@ -1,0 +1,166 @@
+THE SEAX DATA DESK  |  collected Saturday 28 November 2026, 05:33 UTC
+Official open data, worked out for Essex. Leads for the newsroom: read ops/newsroom.md (DATA DESK) before writing.
+
+== FOOD HYGIENE (Food Standards Agency) ==
+  Ratings of 0 or 1 first seen by the desk in the last 40 hours (inspected in the last 45 days): 2
+  - RATING 0 | Imperial's Curry House | Restaurant/Cafe/Canteen | 62 Imperial Avenue, Mayland, Chelmsford, Essex CM3 6AH | Maldon | inspected 23 October 2026 | https://ratings.food.gov.uk/business/1701578
+  - RATING 1 | Chez Afrique | Restaurant/Cafe/Canteen | 36 St Botolphs Street, Colchester, Essex CO2 7EA | Colchester | inspected 22 October 2026 | https://ratings.food.gov.uk/business/1586264
+  Share of rated premises with a rating of 0, 1 or 2, by council (highest first):
+  - Rochford: 4.2% (was 4.4% on 20 November 2026) | zero-rated 4, one-rated 15, two-rated 5 of 565 rated | rated 5: 83.5%
+  - Tendring: 4.0% (was 4.2% on 20 November 2026) | zero-rated 4, one-rated 20, two-rated 24 of 1197 rated | rated 5: 66.4%
+  - Southend-On-Sea: 3.1% (was 3.2% on 20 November 2026) | zero-rated 1, one-rated 11, two-rated 31 of 1383 rated | rated 5: 71.3%
+  - Basildon: 2.8% | zero-rated 2, one-rated 17, two-rated 15 of 1208 rated | rated 5: 81.5%
+  - Thurrock: 2.4% | zero-rated 0, one-rated 14, two-rated 14 of 1188 rated | rated 5: 73.1%
+  - Epping Forest: 2.0% (was 2.1% on 20 November 2026) | zero-rated 0, one-rated 13, two-rated 6 of 928 rated | rated 5: 85.1%
+  - Braintree: 1.4% | zero-rated 0, one-rated 8, two-rated 9 of 1183 rated | rated 5: 85.2%
+  - Maldon: 1.2% (was 1.0% on 20 November 2026) | zero-rated 2, one-rated 3, two-rated 2 of 597 rated | rated 5: 88.9%
+  - Uttlesford: 1.1% | zero-rated 0, one-rated 4, two-rated 3 of 652 rated | rated 5: 89.6%
+  - Brentwood: 1.0% (was 1.2% on 20 November 2026) | zero-rated 0, one-rated 7, two-rated 0 of 696 rated | rated 5: 82.6%
+  - Chelmsford: 1.0% | zero-rated 0, one-rated 8, two-rated 7 of 1459 rated | rated 5: 91.8%
+  - Harlow: 1.0% (was 0.6% on 20 November 2026) | zero-rated 0, one-rated 4, two-rated 2 of 624 rated | rated 5: 82.7%
+  - Castle Point: 0.8% | zero-rated 0, one-rated 3, two-rated 1 of 499 rated | rated 5: 93.0%
+  - Colchester: 0.8% (was 0.9% on 20 November 2026) | zero-rated 3, one-rated 6, two-rated 3 of 1417 rated | rated 5: 90.7%
+
+== CONTRACT AWARDS (Find a Tender and Contracts Finder, last 8 days) ==
+  New awards by Essex public bodies or for work in Essex: 8 (from 888 UK award notices scanned)
+  - £805,608 | Southend-on-Sea City Council | GB-Southend-on-Sea: TPPL Southend-on-Sea City Council HCC Contract Hire Lot 5 - Contract Hire of 10 x Minibuses (32342) | to London Hire Limited | awarded 12 October 2026 | runs 2026-10-13 to 2026-11-13 | Contracts Finder | https://www.contractsfinder.service.gov.uk/Notice/e96a411e-4fbd-473a-9284-bbfa49c95882-922569
+  - £296,152 | ESSEX COUNTY COUNCIL | High Street Accelerator (HSA) Dovercourt Green Spaces | to Ryebridge Construction | awarded 15 December 2025 | runs 2026-01-31 to 2026-11-30 | Contracts Finder | https://www.contractsfinder.service.gov.uk/Notice/a21190d4-61e0-419f-af65-0c89e09e1a67-922433
+  - £247,092 | National Highways Limited | PDF Framework - A12 J27-J28 NB Braiswick Colchester Urgent Resurfacing SDF RR | to Tripod Crest | awarded 10 November 2026 | runs 2026-11-11 to 2027-11-04 | Contracts Finder | https://www.contractsfinder.service.gov.uk/Notice/5d34fc3f-512d-4252-8f2d-f53484592215-922524
+  - £245,945 | ESSEX COUNTY COUNCIL | M365 and EntraID SaaS Cloud Backup Solution | to AvePoint UK Ltd | awarded 15 April 2026 | runs 2026-04-20 to 2028-04-19 | Contracts Finder | https://www.contractsfinder.service.gov.uk/Notice/80c101eb-c180-4649-82dd-00f58f4b6f5c-922462
+  - £210,000 | Braintree District Council | Tree Management Services in the Braintree District | to KW Edge Limited T/A KW Tree Care | awarded 16 November 2026 | runs 2026-12-01 to 2029-11-30 | Contracts Finder | https://www.contractsfinder.service.gov.uk/Notice/8202137d-fa1e-4b05-9d7b-47554617ee22-922450
+  - £210,000 | Braintree District Council | Tree Management Services in the Braintree District | to Be Green Tree Surgery Ltd | awarded 16 November 2026 | runs 2026-12-01 to 2029-11-30 | Contracts Finder | https://www.contractsfinder.service.gov.uk/Notice/8202137d-fa1e-4b05-9d7b-47554617ee22-922450
+  - £210,000 | Braintree District Council | Tree Management Services in the Braintree District | to Rochfords Tree Services Limited | awarded 16 November 2026 | runs 2026-12-01 to 2029-11-30 | Contracts Finder | https://www.contractsfinder.service.gov.uk/Notice/8202137d-fa1e-4b05-9d7b-47554617ee22-922450
+  - £75,835 | Suffolk County Council Passenger Transport | 2026-11-26 09:00 - QOC977 Stowupland & Thurston to Doucecroft School, Colchester, Essex - AWARD | to a-z private hire services ltd | awarded 27 November 2026 | runs 2026-11-30 to 2028-07-31 | Contracts Finder | https://www.contractsfinder.service.gov.uk/Notice/994d51ed-54c6-457c-9469-5283aa1fd45d-922515
+
+== PARLIAMENT PETITIONS (the 25 biggest open petitions) ==
+  Essex signs these far MORE than the typical UK constituency (ratio = median Essex seat / median UK seat):
+  - x3.96 | Mandatory Prison for Drivers Who Conceal Accidents or Obstruct Investigations | Essex 4,122 of 61,734 signatures | top: Clacton 538 (UK rank 8 of 650) | https://petition.parliament.uk/petitions/781048
+  - x2.11 | Permanent driving ban on intoxicated drivers guilty of causing death | Essex 1,660 of 77,791 signatures | top: Chelmsford 187 (UK rank 109 of 650) | https://petition.parliament.uk/petitions/771401
+  - x1.77 | Launch a public inquiry into the regulation of animal experimentation | Essex 2,389 of 53,677 signatures | top: Clacton 209 (UK rank 5 of 650) | https://petition.parliament.uk/petitions/778680
+  - x1.53 | Make catapult attacks against animals a standalone criminal offence | Essex 3,201 of 84,168 signatures | top: Rayleigh and Wickford 249 (UK rank 26 of 650) | https://petition.parliament.uk/petitions/777710
+  - x1.39 | Require asylum seekers & foreign criminals to be detained on remote UK islands | Essex 1,437 of 34,983 signatures | top: Braintree 163 (UK rank 2 of 649) | https://petition.parliament.uk/petitions/778453
+  - x1.37 | Require public bodies to achieve unqualified audit opinion before raising taxes | Essex 1,188 of 31,196 signatures | top: Brentwood and Ongar 93 (UK rank 5 of 650) | https://petition.parliament.uk/petitions/776833
+  - x1.37 | General election now – and always call one if a PM is replaced | Essex 1,168 of 30,052 signatures | top: Clacton 125 (UK rank 1 of 650) | https://petition.parliament.uk/petitions/771833
+  - x1.34 | Launch a public inquiry into illegal migration in the UK | Essex 3,468 of 90,802 signatures | top: Clacton 279 (UK rank 2 of 650) | https://petition.parliament.uk/petitions/773633
+  Essex signs these far LESS:
+  Most new Essex signatures since the last run:
+  - +26 | Hold a UK-wide public consultation before further expansion of AI data centres | https://petition.parliament.uk/petitions/783905
+  - +14 | Permanent driving ban on intoxicated drivers guilty of causing death | https://petition.parliament.uk/petitions/771401
+  - +13 | End the religious slaughter exemption and require irreversible stunning | https://petition.parliament.uk/petitions/783423
+  - +12 | Launch a public inquiry into the regulation of animal experimentation | https://petition.parliament.uk/petitions/778680
+  - +8 | End the mandatory fortification of white flour with folic acid immediately | https://petition.parliament.uk/petitions/769589
+== COMPANY INSOLVENCY NOTICES MENTIONING ESSEX (The Gazette, last 8 days; companies only) ==
+  New notices: 25. LEADS ONLY: read ops/newsroom.md 2k vi before using any of them.
+  - Petition to wind up a company | /n EDIFIC LTD | published 26 November 2026 | … INSOLVENCY ACT 1986 A Petition to wind-up the above named Company of 114 Wilmongton Gardens Barking Essex IG11 9TU … | https://www.thegazette.co.uk/notice/5261338
+  - Appointment of liquidators | LOOFERS FOOD & COFFEE CO LTD | published 27 November 2026 | …House Lanswoodpark, Colchester, CO7 7FD Principal trading address: 1 Culver Street West, Colchester, Essex , CO1 1JG … | https://www.thegazette.co.uk/notice/5262689
+  - Appointment of liquidators | MANIMPEX RECRUITMENT LIMITED | published 27 November 2026 | …MPEX RECRUITMENT LIMITED Company Number: 09410110 Registered office: The Forge, Langham, Colchester, Essex , CO4 5PX … | https://www.thegazette.co.uk/notice/5261745
+  - Appointment of liquidators | ASHGROVE SERVICES LTD | published 27 November 2026 | …ltancy activities other than financial management Registered office: 1066 London Road, Leigh-on-Sea, Essex , SS9 3NA … | https://www.thegazette.co.uk/notice/5261587
+  - Appointment of liquidators | EKON GROUP LTD | published 27 November 2026 | …ss: Construction of domestic buildings Registered office: First Floor, 81-85 High Street, Brentwood, Essex , United Kingdom, CM14 4RR and it is in the process of being changed to 18a Capricorn Centre | https://www.thegazette.co.uk/notice/5261548
+  - Appointment of liquidators | AROE ELECTRICAL LIMITED | published 27 November 2026 | …26730 Nature of Business: Electrical installation Registered office: 1066 London Road, Leigh-on-Sea, Essex , SS9 3NA … | https://www.thegazette.co.uk/notice/5261547
+  - Appointment of liquidators | UNIQUE REAL ESTATES (UK ) LTD | published 26 November 2026 | … Lancelot Road , Wembley HA0 2AJ Office Holder/s: Zain Iqbal , of 109 Snakes Lane , Woodford Green , … | https://www.thegazette.co.uk/notice/5261272
+  - Appointment of liquidators | FACTORY DOOR SERVICES LIMITED | published 26 November 2026 | …rley, Lancashire, PR7 4EX Principal trading address: 4 Capricorn Centre, Cranes Farm Road, Basildon, Essex , SS14 3JJ … | https://www.thegazette.co.uk/notice/5260797
+  - Appointment of liquidators | MANIMPEX MANAGEMENT LIMITED | published 26 November 2026 | …IMPEX MANAGEMENT LIMITED Company Number: 04245315 Registered office: The Forge, Langham, Colchester, Essex , CO4 5PX … | https://www.thegazette.co.uk/notice/5260706
+  - Appointment of liquidators | MANIMPEX RECRUITMENT LIMITED | published 27 November 2026 | …MPEX RECRUITMENT LIMITED Company Number: 09410110 Registered office: The Forge, Langham, Colchester, Essex , CO4 5PX … | https://www.thegazette.co.uk/notice/5261745
+  - Appointment of liquidators | MANIMPEX MANAGEMENT LIMITED | published 26 November 2026 | …IMPEX MANAGEMENT LIMITED Company Number: 04245315 Registered office: The Forge, Langham, Colchester, Essex , CO4 5PX … | https://www.thegazette.co.uk/notice/5260706
+  - Meetings of creditors | Resolutions for Winding-up | published 27 November 2026 | …House Lanswoodpark, Colchester, CO7 7FD Principal trading address: 1 Culver Street West, Colchester, Essex , CO1 1JG … | https://www.thegazette.co.uk/notice/5262688
+  - Meetings of creditors | MANIMPEX RECRUITMENT LIMITED | published 27 November 2026 | …EX RECRUITMENT LIMITED (Company Number 09410110 ) Registered office: The Forge, Langham, Colchester, Essex , CO4 5PX … | https://www.thegazette.co.uk/notice/5261744
+  - Corporate insolvency notice 2446 | EKON GROUP LTD | published 27 November 2026 | …N GROUP LTD (Company Number 11395688 ) Registered office: First Floor, 81-85 High Street, Brentwood, Essex , United Kingdom, CM14 4RR and it is in the process of being changed to 18a Capricorn Centre | https://www.thegazette.co.uk/notice/5261580
+  - Meetings of creditors | AROE ELECTRICAL LIMITED | published 27 November 2026 | …of the members of the above named Company, duly convened and held at 1066 London Road, Leigh-on-Sea, Essex , SS9 3NA on … | https://www.thegazette.co.uk/notice/5261524
+  - Meetings of creditors | EKON GROUP LTD | published 27 November 2026 | …N GROUP LTD (Company Number 11395688 ) Registered office: First Floor, 81-85 High Street, Brentwood, Essex , United Kingdom, CM14 4RR and it is in the process of being changed to 18a Capricorn Centre | https://www.thegazette.co.uk/notice/5261516
+  - Meetings of creditors | ASHGROVE SERVICES LTD | published 27 November 2026 | …of the members of the above named Company, duly convened and held at 1066 London Road, Leigh-on-Sea, Essex SS9 3NA on … | https://www.thegazette.co.uk/notice/5261515
+  - Meetings of creditors | UNIQUE REAL ESTATES (UK ) LTD | published 26 November 2026 | …any. For further details, please contact: Zain Iqbal , ( 25034 ), 109 Snakes Lane , Woodford Green , … | https://www.thegazette.co.uk/notice/5261266
+  - Meetings of creditors | FACTORY DOOR SERVICES LIMITED | published 26 November 2026 | …rley, Lancashire, PR7 4EX Principal trading address: 4 Capricorn Centre, Cranes Farm Road, Basildon, Essex , SS14 3JJ … | https://www.thegazette.co.uk/notice/5260715
+  - Meetings of creditors | MANIMPEX MANAGEMENT LIMITED | published 26 November 2026 | …PEX MANAGEMENT LIMITED (Company Number 04245315 ) Registered office: The Forge, Langham, Colchester, Essex , CO4 5PX … | https://www.thegazette.co.uk/notice/5260710
+  - Meetings of creditors | MANIMPEX RECRUITMENT LIMITED | published 27 November 2026 | …EX RECRUITMENT LIMITED (Company Number 09410110 ) Registered office: The Forge, Langham, Colchester, Essex , CO4 5PX … | https://www.thegazette.co.uk/notice/5261744
+  - Meetings of creditors | MANIMPEX MANAGEMENT LIMITED | published 26 November 2026 | …PEX MANAGEMENT LIMITED (Company Number 04245315 ) Registered office: The Forge, Langham, Colchester, Essex , CO4 5PX … | https://www.thegazette.co.uk/notice/5260710
+  - Meetings of creditors | Resolutions for Winding-up | published 27 November 2026 | …House Lanswoodpark, Colchester, CO7 7FD Principal trading address: 1 Culver Street West, Colchester, Essex , CO1 1JG … | https://www.thegazette.co.uk/notice/5262688
+  - Meetings of creditors | ASHGROVE SERVICES LTD | published 27 November 2026 | …of the members of the above named Company, duly convened and held at 1066 London Road, Leigh-on-Sea, Essex SS9 3NA on … | https://www.thegazette.co.uk/notice/5261515
+  - Meetings of creditors | AROE ELECTRICAL LIMITED | published 27 November 2026 | …of the members of the above named Company, duly convened and held at 1066 London Road, Leigh-on-Sea, Essex , SS9 3NA on … | https://www.thegazette.co.uk/notice/5261524
+
+== RECORDED CRIME BY NEIGHBOURHOOD (data.police.uk street-level crime, Essex Police) ==
+  Newest month published: September 2026  (already seen)
+  All Essex Police neighbourhoods: 14,572 crimes and anti-social behaviour incidents | month before 15,853 | same month a year earlier 12,725
+  Method: full boundaries, each crime counted once. Crimes with no location (not in the totals), this month / month before / a year earlier: [216, 249, 205]. Figures are counts of police.uk records; TRIPLE CHECK every figure before publishing (ops/newsroom.md).
+  - Basildon: 878 | vs month before -6% | vs a year earlier +16% | violence 324, anti-social behaviour 151, shoplifting 99, burglary 20, vehicle crime 46
+  - Colchester Town West: 800 | vs month before -4% | vs a year earlier +13% | violence 319, anti-social behaviour 112, shoplifting 81, burglary 16, vehicle crime 44
+  - Southend Central: 794 | vs month before -20% | vs a year earlier +4% | violence 298, anti-social behaviour 110, shoplifting 76, burglary 19, vehicle crime 31
+  - Clacton: 720 | vs month before -14% | vs a year earlier +27% | violence 339, anti-social behaviour 79, shoplifting 40, burglary 14, vehicle crime 19
+  - Chelmsford Town: 608 | vs month before -15% | vs a year earlier +9% | violence 228, anti-social behaviour 86, shoplifting 87, burglary 11, vehicle crime 8
+  - Colchester Town East: 550 | vs month before +2% | vs a year earlier +15% | violence 256, anti-social behaviour 75, shoplifting 46, burglary 12, vehicle crime 24
+  - Aveley and Ockendon: 523 | vs month before -11% | vs a year earlier +9% | violence 174, anti-social behaviour 54, shoplifting 100, burglary 7, vehicle crime 48
+  - Chafford Hundred and Grays: 494 | vs month before -17% | vs a year earlier +11% | violence 181, anti-social behaviour 107, shoplifting 23, burglary 9, vehicle crime 32
+  - Pitsea: 405 | vs month before -7% | vs a year earlier -4% | violence 186, anti-social behaviour 42, shoplifting 23, burglary 6, vehicle crime 31
+  - Westcliff: 397 | vs month before +6% | vs a year earlier +48% | violence 131, anti-social behaviour 45, shoplifting 102, burglary 9, vehicle crime 16
+  - Southend East: 364 | vs month before -20% | vs a year earlier +18% | violence 147, anti-social behaviour 49, shoplifting 26, burglary 8, vehicle crime 29
+  - Epping and Ongar: 349 | vs month before -2% | vs a year earlier +6% | violence 112, anti-social behaviour 47, shoplifting 22, burglary 18, vehicle crime 38
+  - Chelmsford South: 338 | vs month before +5% | vs a year earlier +52% | violence 145, anti-social behaviour 50, shoplifting 7, burglary 22, vehicle crime 17
+  - Witham South: 336 | vs month before +4% | vs a year earlier +14% | violence 169, anti-social behaviour 39, shoplifting 9, burglary 13, vehicle crime 15
+  - Harwich and Manningtree: 327 | vs month before -7% | vs a year earlier +22% | violence 176, anti-social behaviour 44, shoplifting 18, burglary 12, vehicle crime 9
+  - Uttlesford South: 325 | vs month before +4% | vs a year earlier +22% | violence 89, anti-social behaviour 63, shoplifting 13, burglary 7, vehicle crime 33
+  - Harlow Town Centre: 316 | vs month before -2% | vs a year earlier +13% | violence 118, anti-social behaviour 39, shoplifting 43, burglary 13, vehicle crime 12
+  - Chadwell St Mary and Tilbury: 310 | vs month before -9% | vs a year earlier +6% | violence 116, anti-social behaviour 63, shoplifting 5, burglary 4, vehicle crime 24
+  - Old Harlow: 299 | vs month before -6% | vs a year earlier +15% | violence 118, anti-social behaviour 31, shoplifting 38, burglary 3, vehicle crime 12
+  - Bocking and Braintree: 280 | vs month before -19% | vs a year earlier +5% | violence 124, anti-social behaviour 39, shoplifting 17, burglary 6, vehicle crime 11
+  - North Chelmsford: 259 | vs month before -17% | vs a year earlier -4% | violence 108, anti-social behaviour 31, shoplifting 15, burglary 6, vehicle crime 25
+  - Braintree Central: 251 | vs month before +10% | vs a year earlier +47% | violence 98, anti-social behaviour 34, shoplifting 17, burglary 8, vehicle crime 17
+  - Corringham, Orsett and Stanford-le-Hope: 248 | vs month before +14% | vs a year earlier +28% | violence 93, anti-social behaviour 47, shoplifting 15, burglary 9, vehicle crime 16
+  - Netteswell: 238 | vs month before -2% | vs a year earlier +29% | violence 97, anti-social behaviour 23, shoplifting 16, burglary 4, vehicle crime 13
+  - Eastwood and Leigh: 232 | vs month before -12% | vs a year earlier +14% | violence 113, anti-social behaviour 29, shoplifting 8, burglary 8, vehicle crime 14
+  - Wickford: 228 | vs month before -2% | vs a year earlier +58% | violence 75, anti-social behaviour 47, shoplifting 24, burglary 10, vehicle crime 8
+  - Debden and Loughton: 222 | vs month before -4% | vs a year earlier +12% | violence 87, anti-social behaviour 28, shoplifting 27, burglary 8, vehicle crime 16
+  - Canvey: 218 | vs month before -17% | vs a year earlier -8% | violence 83, anti-social behaviour 32, shoplifting 27, burglary 5, vehicle crime 14
+  - Billericay: 201 | vs month before +30% | vs a year earlier +10% | violence 77, anti-social behaviour 30, shoplifting 11, burglary 12, vehicle crime 21
+  - Waltham Abbey: 195 | vs month before -14% | vs a year earlier +3% | violence 68, anti-social behaviour 37, shoplifting 6, burglary 5, vehicle crime 25
+  - Colchester Rural North: 170 | vs month before +5% | vs a year earlier +23% | violence 53, anti-social behaviour 35, shoplifting 25, burglary 4, vehicle crime 10
+  - Brentwood North: 169 | vs month before -11% | vs a year earlier +22% | violence 54, anti-social behaviour 17, shoplifting 12, burglary 0, vehicle crime 23
+  - Colchester Rural South: 168 | vs month before +6% | vs a year earlier +8% | violence 58, anti-social behaviour 34, shoplifting 19, burglary 5, vehicle crime 5
+  - Rayleigh: 167 | vs month before -1% | vs a year earlier +13% | violence 75, anti-social behaviour 19, shoplifting 9, burglary 7, vehicle crime 7
+  - Frinton, Thorpe-le-Soken and Walton: 159 | vs month before -12% | vs a year earlier +16% | violence 89, anti-social behaviour 15, shoplifting 9, burglary 4, vehicle crime 2
+  - Rochford, Ashingdon and Canewdon: 157 | vs month before +29% | vs a year earlier +40% | violence 73, anti-social behaviour 22, shoplifting 8, burglary 2, vehicle crime 4
+  - Brightlingsea and St Osyth: 156 | vs month before -23% | vs a year earlier +16% | violence 83, anti-social behaviour 13, shoplifting 1, burglary 7, vehicle crime 6
+  - Maldon: 152 | vs month before -25% | vs a year earlier -7% | violence 78, anti-social behaviour 18, shoplifting 7, burglary 1, vehicle crime 1
+  - Staple Tye: 143 | vs month before -28% | vs a year earlier +47% | violence 65, anti-social behaviour 18, shoplifting 4, burglary 5, vehicle crime 7
+  - Brentwood South: 127 | vs month before -11% | vs a year earlier +3% | violence 45, anti-social behaviour 12, shoplifting 4, burglary 4, vehicle crime 19
+  - Brentwood Town Centre: 126 | vs month before -3% | vs a year earlier +10% | violence 47, anti-social behaviour 16, shoplifting 16, burglary 1, vehicle crime 8
+  - Buckhurst Hill and Chigwell: 124 | vs month before -17% | vs a year earlier -10% | violence 41, anti-social behaviour 12, shoplifting 6, burglary 7, vehicle crime 20
+  - Dunmow and Felsted: 118 | vs month before -3% | vs a year earlier +57% | violence 38, anti-social behaviour 19, shoplifting 6, burglary 6, vehicle crime 9
+  - Benfleet: 111 | vs month before +18% | vs a year earlier +42% | violence 39, anti-social behaviour 9, shoplifting 35, burglary 1, vehicle crime 4
+  - Hutton and Shenfield: 111 | vs month before +9% | vs a year earlier -1% | violence 36, anti-social behaviour 5, shoplifting 26, burglary 2, vehicle crime 12
+  - Southminster: 95 | vs month before -29% | vs a year earlier -2% | violence 47, anti-social behaviour 16, shoplifting 2, burglary 0, vehicle crime 3
+  - Hadleigh: 92 | vs month before +3% | vs a year earlier +59% | violence 36, anti-social behaviour 18, shoplifting 5, burglary 2, vehicle crime 5
+  - South Woodham Ferrers: 87 | vs month before +7% | vs a year earlier +129% | violence 24, anti-social behaviour 10, shoplifting 14, burglary 0, vehicle crime 1
+  - Chelmsford West: 84 | vs month before -22% | vs a year earlier -13% | violence 33, anti-social behaviour 7, shoplifting 7, burglary 2, vehicle crime 10
+  - Clavering and Thaxted: 67 | vs month before -1% | vs a year earlier +68% | violence 17, anti-social behaviour 18, shoplifting 0, burglary 6, vehicle crime 6
+  - Thundersley: 61 | vs month before +3% | vs a year earlier -25% | violence 26, anti-social behaviour 7, shoplifting 3, burglary 1, vehicle crime 7
+  - Halstead North: 60 | vs month before -19% | vs a year earlier +15% | violence 30, anti-social behaviour 6, shoplifting 0, burglary 0, vehicle crime 4
+  - Saffron Walden: 58 | vs month before -27% | vs a year earlier +12% | violence 22, anti-social behaviour 11, shoplifting 3, burglary 1, vehicle crime 1
+  - Hockley and Hullbridge: 58 | vs month before -39% | vs a year earlier +5% | violence 23, anti-social behaviour 15, shoplifting 1, burglary 0, vehicle crime 5
+  - Purleigh: 32 | vs month before -32% | vs a year earlier -9% | violence 11, anti-social behaviour 4, shoplifting 2, burglary 2, vehicle crime 2
+  - Wakering: 15 | vs month before -55% | vs a year earlier -58% | violence 8, anti-social behaviour 3, shoplifting 0, burglary 2, vehicle crime 2
+  Source: https://www.police.uk/pu/your-area/essex-police/
+
+== HOUSE PRICES (UK House Price Index, HM Land Registry and ONS) ==
+  Newest month published: September 2026  (already seen: no story unless one was never written)
+  - Tendring: average £258,932 | change in a year -2.2% | in a month +0.2% | first-time buyers £220,732 | flats £130,581 | detached £366,896
+  - Chelmsford: average £378,412 | change in a year -0.8% | in a month +0.1% | first-time buyers £298,428 | flats £207,628 | detached £682,616
+  - Castle Point: average £368,191 | change in a year -0.7% | in a month +2.5% | first-time buyers £316,628 | flats £169,245 | detached £492,554
+  - Thurrock: average £322,338 | change in a year -0.7% | in a month +0.3% | first-time buyers £296,723 | flats £189,138 | detached £597,374
+  - Uttlesford: average £465,802 | change in a year -0.5% | in a month -0.8% | first-time buyers £333,140 | flats £200,261 | detached £716,139
+  - Brentwood: average £520,447 | change in a year +0.2% | in a month +0.1% | first-time buyers £373,471 | flats £264,292 | detached £996,190
+  - Braintree: average £324,264 | change in a year +0.5% | in a month -1.8% | first-time buyers £261,027 | flats £153,539 | detached £559,718
+  - Basildon: average £367,920 | change in a year +0.8% | in a month +0.1% | first-time buyers £307,721 | flats £189,146 | detached £678,499
+  - Colchester: average £297,638 | change in a year +0.9% | in a month +0.6% | first-time buyers £249,711 | flats £162,068 | detached £501,282
+  - Rochford: average £408,883 | change in a year +1.3% | in a month +0.0% | first-time buyers £333,615 | flats £179,330 | detached £631,647
+  - Southend-on-Sea: average £327,570 | change in a year +1.8% | in a month +0.9% | first-time buyers £270,046 | flats £198,138 | detached £643,067
+  - Epping Forest: average £536,719 | change in a year +2.1% | in a month +2.0% | first-time buyers £415,027 | flats £296,026 | detached £1,022,897
+  - Harlow: average £317,113 | change in a year +3.9% | in a month +0.0% | first-time buyers £286,294 | flats £181,964 | detached £625,974
+  - Maldon: average £406,165 | change in a year +5.0% | in a month +0.6% | first-time buyers £317,488 | flats £179,987 | detached £596,082
+  - Essex (county council area): average £360,791 | change in a year +0.5% | in a month +0.2% | first-time buyers £290,743 | flats £188,898 | detached £581,090
+  - England: average £292,998 | change in a year +0.8% | in a month -0.4% | first-time buyers £245,052 | flats £215,760 | detached £476,710
+  Source page: https://landregistry.data.gov.uk/app/ukhpi
+
+== ELECTIONS AND BY-ELECTIONS IN ESSEX, NEXT 75 DAYS (Democracy Club, CC BY 4.0) ==
+  - 2026-12-10: Southend-on-Sea local election Leigh by-election, Leigh (by-election), seats 1, list not final
+    reason: RESIGNATION, nominations close 2026-11-13, register to vote by 2026-11-24 | candidates not in this feed: the council publishes them by 2026-11-16; read them from the whocanivotefor.co.uk page below or the council's notice
+    https://whocanivotefor.co.uk/elections/local.southend-on-sea.leigh.by.2026-12-10/
+  Credit: Democracy Club (whocanivotefor.co.uk). Check candidate names against the council's statement of persons nominated before publishing.

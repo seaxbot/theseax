@@ -1,0 +1,52 @@
+food ok
+contracts ok
+petitions ok
+prices ok
+crime ok
+insolvency: total 110 first entry keys ['author', 'category', 'content', 'f:familyName', 'f:name', 'f:notice-code', 'f:status', 'geo:Point', 'id', 'link', 'published', 'title', 'updated']
+{"id": "https://www.thegazette.co.uk/id/notice/5260689", "f:status": "published", "f:notice-code": "2503", "f:name": "Jemma", "f:familyName": "Raymond", "title": "Julian Rexha", "link": [{"@href": "https://www.thegazette.co.uk/id/notice/5260689", "@rel": "self"}, {"@href": "https://www.thegazette.co.uk/notice/5260689"}, {"@href": "https://www.thegazette.co.uk/notice/5260689/data.ttl", "@rel": "alternate", "@title": "TURTLE", "@type": "text/turtle"}, {"@href": "https://www.thegazette.co.uk/notice/5260689/data.jsonld", "@rel": "alternate", "@title": "JSON-LD", "@type": "application/json"}, {"@href": "https://www.thegazette.co.uk/notice/5260689/data.rdf", "@rel": "alternate", "@title": "RDF/XML", "@type": "application/rdf+xml"}, {"@href": "https://www.thegazette.co.uk/notice/5260689/data.ttl?view=linked-data", "@rel": "alternate", "@title": "TURTLE", "@type": "text/turtle"}, {"@href": "https://www.thegazette.co.uk/notice/5260689/data.json?view=linked-data", "@rel": "alternate", "@title": "JSON-SIMPLE", "@type": "application/json"}, {"@href": "https://www.thegazette.co.uk/notice/5260689/data.rdfjson?view=linked-data", "@rel": "alternate", "@title": "JSON-RDF", "@type": "application/rdf+json"}, {"@href": "https://www.thegazette.co.uk/notice/5260689/data.rdf?view=linked-data", "@rel": "alternate", "@title": "RDF/XML", "@type": "application/rdf+xml"}, {"@href": "https://www.thegazette.co.uk/notice/5260689/data.xml?view=linked-data", "@rel": "alternate", "@title": "XML", "@type": "ap
+insolvency ok
+elections: count 18 first item keys ['by_election_reason', 'cancellation_reason', 'cancelled', 'children', 'created', 'current', 'division', 'elected_role', 'election_id', 'election_subtype', 'election_title', 'election_type', 'group', 'identifier_type', 'metadata', 'modified', 'organisation', 'poll_open_date', 'replaced_by', 'replaces', 'requires_voter_id', 'seats_contested', 'tags', 'timetable', 'voting_system']
+elections: sample {"election_id": "local.east-ayrshire.cumnock-and-new-cumnock.by.2026-12-10", "election_title": "East Ayrshire local election Cumnock and New Cumnock by-election", "poll_open_date": "2026-12-10", "timetable": {"notice_of_election_deadline": "2026-10-30", "close_of_nominations": "2026-11-06", "sopn_publish_deadline": "2026-11-09", "registration_deadline": "2026-11-23", "postal_vote_application_deadline": "2026-11-24", "proxy_vote_application_deadline": "2026-12-02", "vac_application_deadline": null, "replacement_pack_start_date": "2026-12-04"}, "election_type": {"name": "Local elections", "election_type": "local"}, "election_subtype": null, "organisation": {"official_identifier": "EAY", "organ
+elections: detail keys ['by_election_reason', 'cancellation_reason', 'cancelled', 'children', 'created', 'current', 'division', 'elected_role', 'election_id', 'election_subtype', 'election_title', 'election_type', 'group', 'identifier_type', 'metadata', 'modified', 'organisation', 'poll_open_date', 'replaced_by', 'replaces', 'requires_voter_id', 'seats_contested', 'tags', 'timetable', 'voting_system']
+elections ok
+THE SEAX DATA DESK  |  collected Saturday 28 November 2026, 05:33 UTC
+Official open data, worked out for Essex. Leads for the newsroom: read ops/newsroom.md (DATA DESK) before writing.
+
+== FOOD HYGIENE (Food Standards Agency) ==
+  Ratings of 0 or 1 first seen by the desk in the last 40 hours (inspected in the last 45 days): 2
+  - RATING 0 | Imperial's Curry House | Restaurant/Cafe/Canteen | 62 Imperial Avenue, Mayland, Chelmsford, Essex CM3 6AH | Maldon | inspected 23 October 2026 | https://ratings.food.gov.uk/business/1701578
+  - RATING 1 | Chez Afrique | Restaurant/Cafe/Canteen | 36 St Botolphs Street, Colchester, Essex CO2 7EA | Colchester | inspected 22 October 2026 | https://ratings.food.gov.uk/business/1586264
+  Share of rated premises with a rating of 0, 1 or 2, by council (highest first):
+  - Rochford: 4.2% (was 4.4% on 20 November 2026) | zero-rated 4, one-rated 15, two-rated 5 of 565 rated | rated 5: 83.5%
+  - Tendring: 4.0% (was 4.2% on 20 November 2026) | zero-rated 4, one-rated 20, two-rated 24 of 1197 rated | rated 5: 66.4%
+  - Southend-On-Sea: 3.1% (was 3.2% on 20 November 2026) | zero-rated 1, one-rated 11, two-rated 31 of 1383 rated | rated 5: 71.3%
+  - Basildon: 2.8% | zero-rated 2, one-rated 17, two-rated 15 of 1208 rated | rated 5: 81.5%
+  - Thurrock: 2.4% | zero-rated 0, one-rated 14, two-rated 14 of 1188 rated | rated 5: 73.1%
+  - Epping Forest: 2.0% (was 2.1% on 20 November 2026) | zero-rated 0, one-rated 13, two-rated 6 of 928 rated | rated 5: 85.1%
+  - Braintree: 1.4% | zero-rated 0, one-rated 8, two-rated 9 of 1183 rated | rated 5: 85.2%
+  - Maldon: 1.2% (was 1.0% on 20 November 2026) | zero-rated 2, one-rated 3, two-rated 2 of 597 rated | rated 5: 88.9%
+  - Uttlesford: 1.1% | zero-rated 0, one-rated 4, two-rated 3 of 652 rated | rated 5: 89.6%
+  - Brentwood: 1.0% (was 1.2% on 20 November 2026) | zero-rated 0, one-rated 7, two-rated 0 of 696 rated | rated 5: 82.6%
+  - Chelmsford: 1.0% | zero-rated 0, one-rated 8, two-rated 7 of 1459 rated | rated 5: 91.8%
+  - Harlow: 1.0% (was 0.6% on 20 November 2026) | zero-rated 0, one-rated 4, two-rated 2 of 624 rated | rated 5: 82.7%
+  - Castle Point: 0.8% | zero-rated 0, one-rated 3, two-rated 1 of 499 rated | rated 5: 93.0%
+  - Colchester: 0.8% (was 0.9% on 20 November 2026) | zero-rated 3, one-rated 6, two-rated 3 of 1417 rated | rated 5: 90.7%
+
+== CONTRACT AWARDS (Find a Tender and Contracts Finder, last 8 days) ==
+  New awards by Essex public bodies or for work in Essex: 8 (from 888 UK award notices scanned)
+  - £805,608 | Southend-on-Sea City Council | GB-Southend-on-Sea: TPPL Southend-on-Sea City Council HCC Contract Hire Lot 5 - Contract Hire of 10 x Minibuses (32342) | to London Hire Limited | awarded 12 October 2026 | runs 2026-10-13 to 2026-11-13 | Contracts Finder | https://www.contractsfinder.service.gov.uk/Notice/e96a411e-4fbd-473a-9284-bbfa49c95882-922569
+  - £296,152 | ESSEX COUNTY COUNCIL | High Street Accelerator (HSA) Dovercourt Green Spaces | to Ryebridge Construction | awarded 15 December 2025 | runs 2026-01-31 to 2026-11-30 | Contracts Finder | https://www.contractsfinder.service.gov.uk/Notice/a21190d4-61e0-419f-af65-0c89e09e1a67-922433
+  - £247,092 | National Highways Limited | PDF Framework - A12 J27-J28 NB Braiswick Colchester Urgent Resurfacing SDF RR | to Tripod Crest | awarded 10 November 2026 | runs 2026-11-11 to 2027-11-04 | Contracts Finder | https://www.contractsfinder.service.gov.uk/Notice/5d34fc3f-512d-4252-8f2d-f53484592215-922524
+  - £245,945 | ESSEX COUNTY COUNCIL | M365 and EntraID SaaS Cloud Backup Solution | to AvePoint UK Ltd | awarded 15 April 2026 | runs 2026-04-20 to 2028-04-19 | Contracts Finder | https://www.contractsfinder.service.gov.uk/Notice/80c101eb-c180-4649-82dd-00f58f4b6f5c-922462
+  - £210,000 | Braintree District Council | Tree Management Services in the Braintree District | to KW Edge Limited T/A KW Tree Care | awarded 16 November 2026 | runs 2026-12-01 to 2029-11-30 | Contracts Finder | https://www.contractsfinder.service.gov.uk/Notice/8202137d-fa1e-4b05-9d7b-47554617ee22-922450
+  - £210,000 | Braintree District Council | Tree Management Services in the Braintree District | to Be Green Tree Surgery Ltd | awarded 16 November 2026 | runs 2026-12-01 to 2029-11-30 | Contracts Finder | https://www.contractsfinder.service.gov.uk/Notice/8202137d-fa1e-4b05-9d7b-47554617ee22-922450
+  - £210,000 | Braintree District Council | Tree Management Services in the Braintree District | to Rochfords Tree Services Limited | awarded 16 November 2026 | runs 2026-12-01 to 2029-11-30 | Contracts Finder | https://www.contractsfinder.service.gov.uk/Notice/8202137d-fa1e-4b05-9d7b-47554617ee22-922450
+  - £75,835 | Suffolk County Council Passenger Transport | 2026-11-26 09:00 - QOC977 Stowupland & Thurston to Doucecroft School, Colchester, Essex - AWARD | to a-z private hire services ltd | awarded 27 November 2026 | runs 2026-11-30 to 2028-07-31 | Contracts Finder | https://www.contractsfinder.service.gov.uk/Notice/994d51ed-54c6-457c-9469-5283aa1fd45d-922515
+
+== PARLIAMENT PETITIONS (the 25 biggest open petitions) ==
+  Essex signs these far MORE than the typical UK constituency (ratio = median Essex seat / median UK seat):
+  - x3.96 | Mandatory Prison for Drivers Who Conceal Accidents or Obstruct Investigations | Essex 4,122 of 61,734 signatures | top: Clacton 538 (UK rank 8 of 650) | https://petition.parliament.uk/petitions/781048
+  - x2.11 | Permanent driving ban on intoxicated drivers guilty of causing death | Essex 1,660 of 77,791 signatures | top: Chelmsford 187 (UK rank 109 of 650) | https://petition.parliament.uk/petitions/771401
+  - x1.77 | Launch a public inquiry into the regulation of animal experimentation | Essex 2,389 of 53,677 signatures | top: Clacton 209 (UK rank 5 of 650) | https://petition.parliament.uk/petitions/778680
+  - x1.53 | Make catapult attacks against animals a standalone criminal offence | Essex 3,201 of 84,168 signatures | top: Rayleigh and Wickford 249 (UK rank 26 o

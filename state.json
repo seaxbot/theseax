@@ -1,0 +1,3578 @@
+{
+ "foodSeen": {
+  "1669973:2025-09-10:1": "2026-11-20T01:37:20Z",
+  "93877:2026-01-23:1": "2026-11-20T01:37:20Z",
+  "1710442:2026-04-11:1": "2026-11-20T01:37:20Z",
+  "644109:2025-10-14:1": "2026-11-20T01:37:20Z",
+  "93624:2026-09-08:1": "2026-11-20T01:37:20Z",
+  "1823377:2025-11-28:1": "2026-11-20T01:37:20Z",
+  "1501240:2025-06-12:1": "2026-11-20T01:37:20Z",
+  "145766:2026-06-23:1": "2026-11-20T01:37:20Z",
+  "1893077:2026-01-30:1": "2026-11-20T01:37:20Z",
+  "1636025:2026-08-12:1": "2026-11-20T01:37:20Z",
+  "1002795:2026-07-21:1": "2026-11-20T01:37:20Z",
+  "75391:2025-11-19:1": "2026-11-20T01:37:20Z",
+  "97917:2026-02-05:1": "2026-11-20T01:37:20Z",
+  "1754284:2026-03-03:1": "2026-11-20T01:37:20Z",
+  "103744:2025-09-24:1": "2026-11-20T01:37:20Z",
+  "1669970:2025-10-08:1": "2026-11-20T01:37:20Z",
+  "1537093:2026-06-09:1": "2026-11-20T01:37:20Z",
+  "1027035:2026-02-03:0": "2026-11-20T01:37:20Z",
+  "1745929:2026-02-05:0": "2026-11-20T01:37:20Z",
+  "300456:2024-12-09:1": "2026-11-20T01:37:20Z",
+  "1899300:2026-03-27:1": "2026-11-20T01:37:20Z",
+  "300726:2025-10-17:1": "2026-11-20T01:37:20Z",
+  "300711:2025-09-17:1": "2026-11-20T01:37:20Z",
+  "300715:2026-02-04:1": "2026-11-20T01:37:20Z",
+  "300617:2025-11-26:1": "2026-11-20T01:37:20Z",
+  "300259:2026-09-24:1": "2026-11-20T01:37:20Z",
+  "300229:2026-09-25:1": "2026-11-20T01:37:20Z",
+  "1935035:2026-08-20:1": "2026-11-20T01:37:20Z",
+  "431476:2026-03-14:1": "2026-11-20T01:37:20Z",
+  "1036353:2025-11-03:1": "2026-11-20T01:37:20Z",
+  "1519966:2026-03-31:1": "2026-11-20T01:37:20Z",
+  "1713364:2026-06-11:1": "2026-11-20T01:37:20Z",
+  "1955317:2026-07-29:1": "2026-11-20T01:37:20Z",
+  "1043260:2026-09-01:1": "2026-11-20T01:37:20Z",
+  "1395848:2026-03-12:1": "2026-11-20T01:37:20Z",
+  "39003:2026-08-18:1": "2026-11-20T01:37:20Z",
+  "1620889:2025-06-30:1": "2026-11-20T01:37:20Z",
+  "1713062:2024-04-11:1": "2026-11-20T01:37:20Z",
+  "1885815:2026-01-06:1": "2026-11-20T01:37:20Z",
+  "1961180:2026-07-16:1": "2026-11-20T01:37:20Z",
+  "1943285:2026-05-01:1": "2026-11-20T01:37:20Z",
+  "1998252:2026-09-23:1": "2026-11-20T01:37:20Z",
+  "1697284:2024-06-28:1": "2026-11-20T01:37:20Z",
+  "1971136:2026-08-14:1": "2026-11-20T01:37:20Z",
+  "1846564:2025-07-09:1": "2026-11-20T01:37:20Z",
+  "1895887:2025-11-21:1": "2026-11-20T01:37:20Z",
+  "1586516:2026-09-16:1": "2026-11-20T01:37:20Z",
+  "1585269:2025-03-24:1": "2026-11-20T01:37:20Z",
+  "2010594:2026-10-06:1": "2026-11-20T01:37:20Z",
+  "1585283:2025-03-13:1": "2026-11-20T01:37:20Z",
+  "1585833:2025-05-22:1": "2026-11-20T01:37:20Z",
+  "1586627:2025-07-23:1": "2026-11-20T01:37:20Z",
+  "1787236:2026-10-08:1": "2026-11-20T01:37:20Z",
+  "1585645:2026-10-14:0": "2026-11-20T01:37:20Z",
+  "1586637:2025-04-22:0": "2026-11-20T01:37:20Z",
+  "1586425:2025-08-19:0": "2026-11-20T01:37:20Z",
+  "1045066:2026-09-21:1": "2026-11-20T01:37:20Z",
+  "1894076:2025-09-05:1": "2026-11-20T01:37:20Z",
+  "554250:2026-07-28:1": "2026-11-20T01:37:20Z",
+  "553604:2025-12-08:1": "2026-11-20T01:37:20Z",
+  "554214:2026-03-05:1": "2026-11-20T01:37:20Z",
+  "1053375:2026-07-08:1": "2026-11-20T01:37:20Z",
+  "553870:2025-06-02:1": "2026-11-20T01:37:20Z",
+  "1986460:2026-03-04:1": "2026-11-20T01:37:20Z",
+  "799510:2026-05-18:1": "2026-11-20T01:37:20Z",
+  "554319:2026-02-20:1": "2026-11-20T01:37:20Z",
+  "1089895:2026-07-13:1": "2026-11-20T01:37:20Z",
+  "1858808:2025-08-11:1": "2026-11-20T01:37:20Z",
+  "589445:2026-09-21:1": "2026-11-20T01:37:20Z",
+  "872343:2026-02-27:1": "2026-11-20T01:37:20Z",
+  "872817:2026-02-27:1": "2026-11-20T01:37:20Z",
+  "954676:2026-05-14:1": "2026-11-20T01:37:20Z",
+  "14430:2026-07-16:1": "2026-11-20T01:37:20Z",
+  "1887914:2025-12-22:1": "2026-11-20T01:37:20Z",
+  "499823:2026-09-10:1": "2026-11-20T01:37:20Z",
+  "1017121:2026-09-30:0": "2026-11-20T01:37:20Z",
+  "1895607:2026-09-10:1": "2026-11-20T01:37:20Z",
+  "1876206:2025-09-16:1": "2026-11-20T01:37:20Z",
+  "936421:2026-09-30:1": "2026-11-20T01:37:20Z",
+  "33584:2025-06-11:1": "2026-11-20T01:37:20Z",
+  "1943692:2026-04-29:1": "2026-11-20T01:37:20Z",
+  "1423480:2021-10-15:1": "2026-11-20T01:37:20Z",
+  "1369083:2025-04-01:1": "2026-11-20T01:37:20Z",
+  "669433:2026-09-10:1": "2026-11-20T01:37:20Z",
+  "1903805:2025-12-18:1": "2026-11-20T01:37:20Z",
+  "1746864:2025-05-01:1": "2026-11-20T01:37:20Z",
+  "155700:2026-08-21:1": "2026-11-20T01:37:20Z",
+  "1921030:2026-02-09:1": "2026-11-20T01:37:20Z",
+  "989190:2026-07-22:1": "2026-11-20T01:37:20Z",
+  "1895614:2025-11-21:1": "2026-11-20T01:37:20Z",
+  "1551363:2026-07-13:1": "2026-11-20T01:37:20Z",
+  "155564:2026-10-14:1": "2026-11-20T01:37:20Z",
+  "155573:2025-08-18:0": "2026-11-20T01:37:20Z",
+  "155581:2025-08-01:0": "2026-11-20T01:37:20Z",
+  "1777290:2026-09-16:0": "2026-11-20T01:37:20Z",
+  "1436568:2026-09-24:0": "2026-11-20T01:37:20Z",
+  "512878:2026-02-12:1": "2026-11-20T01:37:20Z",
+  "512830:2024-10-10:1": "2026-11-20T01:37:20Z",
+  "1321036:2025-12-09:1": "2026-11-20T01:37:20Z",
+  "1210369:2025-04-07:1": "2026-11-20T01:37:20Z",
+  "1945926:2026-07-29:1": "2026-11-20T01:37:20Z",
+  "1931768:2026-07-07:1": "2026-11-20T01:37:20Z",
+  "512988:2025-07-22:1": "2026-11-20T01:37:20Z",
+  "859558:2026-08-06:1": "2026-11-20T01:37:20Z",
+  "2010919:2026-09-28:1": "2026-11-20T01:37:20Z",
+  "1910868:2026-01-09:1": "2026-11-20T01:37:20Z",
+  "1738134:2025-12-05:1": "2026-11-20T01:37:20Z",
+  "1785324:2026-09-07:0": "2026-11-20T01:37:20Z",
+  "908135:2024-06-24:1": "2026-11-20T01:37:20Z",
+  "1022623:2026-01-15:1": "2026-11-20T01:37:20Z",
+  "1765401:2026-08-11:1": "2026-11-20T01:37:20Z",
+  "1700646:2026-04-20:1": "2026-11-20T01:37:20Z",
+  "1731479:2026-01-31:1": "2026-11-20T01:37:20Z",
+  "1772334:2026-10-09:1": "2026-11-20T01:37:20Z",
+  "611951:2026-09-29:1": "2026-11-20T01:37:20Z",
+  "1495721:2026-05-08:1": "2026-11-20T01:37:20Z",
+  "848655:2024-06-13:1": "2026-11-20T01:37:20Z",
+  "1676695:2026-02-11:1": "2026-11-20T01:37:20Z",
+  "1577759:2025-10-13:1": "2026-11-20T01:37:20Z",
+  "1731491:2024-06-22:1": "2026-11-20T01:37:20Z",
+  "1870111:2026-07-23:1": "2026-11-20T01:37:20Z",
+  "1783958:2024-11-27:1": "2026-11-20T01:37:20Z",
+  "1615031:2025-07-12:1": "2026-11-20T01:37:20Z",
+  "1763723:2026-07-16:1": "2026-11-20T01:37:20Z",
+  "611675:2011-07-28:1": "2026-11-20T01:37:20Z",
+  "1772339:2026-10-06:1": "2026-11-20T01:37:20Z",
+  "755969:2026-09-28:1": "2026-11-20T01:37:20Z",
+  "1523623:2024-03-11:1": "2026-11-20T01:37:20Z",
+  "611855:2026-01-17:1": "2026-11-20T01:37:20Z",
+  "1154326:2026-06-04:0": "2026-11-20T01:37:20Z",
+  "1708400:2025-09-24:0": "2026-11-20T01:37:20Z",
+  "908042:2025-11-03:0": "2026-11-20T01:37:20Z",
+  "1638583:2026-09-04:0": "2026-11-20T01:37:20Z",
+  "391071:2026-10-05:1": "2026-11-20T01:37:20Z",
+  "1981133:2026-10-02:1": "2026-11-20T01:37:20Z",
+  "1594632:2025-12-30:1": "2026-11-20T01:37:20Z",
+  "1944557:2026-05-05:1": "2026-11-20T01:37:20Z",
+  "1955219:2026-08-21:1": "2026-11-20T01:37:20Z",
+  "1853652:2026-07-08:1": "2026-11-20T01:37:20Z",
+  "1927786:2025-12-07:1": "2026-11-20T01:37:20Z",
+  "390593:2026-02-21:1": "2026-11-20T01:37:20Z",
+  "1701851:2026-01-03:1": "2026-11-20T01:37:20Z",
+  "1947581:2026-07-02:1": "2026-11-20T01:37:20Z",
+  "390877:2026-08-07:1": "2026-11-20T01:37:20Z",
+  "1468970:2026-08-08:1": "2026-11-20T01:37:20Z",
+  "1947588:2026-05-15:1": "2026-11-20T01:37:20Z",
+  "1966976:2026-07-11:1": "2026-11-20T01:37:20Z",
+  "1318473:2025-12-05:1": "2026-11-20T01:37:20Z",
+  "1252643:2026-07-08:1": "2026-11-20T01:37:20Z",
+  "1556492:2026-01-15:1": "2026-11-20T01:37:20Z",
+  "1469882:2026-03-03:1": "2026-11-20T01:37:20Z",
+  "1776257:2026-06-02:1": "2026-11-20T01:37:20Z",
+  "1562496:2026-10-30:1": "2026-11-21T05:33:12Z",
+  "1586627:2026-10-20:0": "2026-11-25T00:23:39Z",
+  "1586264:2026-10-22:1": "2026-11-27T05:37:50Z",
+  "1701578:2026-10-23:0": "2026-11-28T05:33:48Z"
+ },
+ "foodTable": {
+  "Rochford": {
+   "lowPct": 4.4,
+   "zero": 4,
+   "one": 16,
+   "rated": 568,
+   "at": "2026-11-20"
+  },
+  "Tendring": {
+   "lowPct": 4.2,
+   "zero": 4,
+   "one": 21,
+   "rated": 1188,
+   "at": "2026-11-20"
+  },
+  "Southend-On-Sea": {
+   "lowPct": 3.2,
+   "zero": 1,
+   "one": 11,
+   "rated": 1391,
+   "at": "2026-11-20"
+  },
+  "Basildon": {
+   "lowPct": 2.8,
+   "zero": 2,
+   "one": 17,
+   "rated": 1199,
+   "at": "2026-11-20"
+  },
+  "Thurrock": {
+   "lowPct": 2.4,
+   "zero": 0,
+   "one": 15,
+   "rated": 1185,
+   "at": "2026-11-20"
+  },
+  "Epping Forest": {
+   "lowPct": 2.1,
+   "zero": 0,
+   "one": 13,
+   "rated": 926,
+   "at": "2026-11-20"
+  },
+  "Braintree": {
+   "lowPct": 1.4,
+   "zero": 0,
+   "one": 8,
+   "rated": 1178,
+   "at": "2026-11-20"
+  },
+  "Brentwood": {
+   "lowPct": 1.2,
+   "zero": 0,
+   "one": 8,
+   "rated": 694,
+   "at": "2026-11-20"
+  },
+  "Uttlesford": {
+   "lowPct": 1.1,
+   "zero": 0,
+   "one": 4,
+   "rated": 652,
+   "at": "2026-11-20"
+  },
+  "Chelmsford": {
+   "lowPct": 1.0,
+   "zero": 0,
+   "one": 8,
+   "rated": 1458,
+   "at": "2026-11-20"
+  },
+  "Maldon": {
+   "lowPct": 1.0,
+   "zero": 1,
+   "one": 3,
+   "rated": 594,
+   "at": "2026-11-20"
+  },
+  "Colchester": {
+   "lowPct": 0.9,
+   "zero": 3,
+   "one": 7,
+   "rated": 1413,
+   "at": "2026-11-20"
+  },
+  "Castle Point": {
+   "lowPct": 0.8,
+   "zero": 0,
+   "one": 3,
+   "rated": 493,
+   "at": "2026-11-20"
+  },
+  "Harlow": {
+   "lowPct": 0.6,
+   "zero": 0,
+   "one": 3,
+   "rated": 622,
+   "at": "2026-11-20"
+  }
+ },
+ "contractsSeen": {
+  "ocds-h6vhtk-07be9d|Alliance Medical Limited": "2026-11-20T01:37:20Z",
+  "ocds-h6vhtk-07bc89|Softcat PLC": "2026-11-20T01:37:20Z",
+  "ocds-b5fd17-2ce5cd65-dc67-4775-87a9-88ce5562d136|THINK CYBER SECURITY LTD": "2026-11-20T01:37:20Z",
+  "ocds-b5fd17-3970d988-7bd4-4965-95c0-b8a871cef1f8|Shred Station Limited": "2026-11-20T01:37:20Z",
+  "ocds-b5fd17-8a04d66c-6580-4ff2-a680-30f0f7a789cb|Allpay Limited": "2026-11-20T01:37:20Z",
+  "ocds-b5fd17-c6ab6f56-d963-41e4-a9ea-9c1771399864|Emergency One (UK) Ltd": "2026-11-20T15:19:34Z",
+  "ocds-b5fd17-ece4e046-2416-4ca9-a816-789471bf852e|Oakray Limited": "2026-11-21T05:33:12Z",
+  "ocds-h6vhtk-06ee10|Infinity Fire Prevention": "2026-11-25T00:23:39Z",
+  "ocds-h6vhtk-06ee10|Bell Group Limited": "2026-11-25T00:23:39Z",
+  "ocds-h6vhtk-06ee10|Sureserve Compliance Fire": "2026-11-25T00:23:39Z",
+  "ocds-h6vhtk-05fea6|Infinity Fire Prevention": "2026-11-26T05:36:32Z",
+  "ocds-h6vhtk-07c382|HERTS and ESSEX FERTILITY CENTRE LIMITED": "2026-11-26T05:36:32Z",
+  "ocds-b5fd17-f2d6e0ef-bcc7-40d1-9ab3-273d02504120|KW Edge Limited T/A KW Tree Care": "2026-11-27T05:37:50Z",
+  "ocds-b5fd17-f2d6e0ef-bcc7-40d1-9ab3-273d02504120|Be Green Tree Surgery Ltd": "2026-11-27T05:37:50Z",
+  "ocds-b5fd17-f2d6e0ef-bcc7-40d1-9ab3-273d02504120|Rochfords Tree Services Limited": "2026-11-27T05:37:50Z",
+  "ocds-b5fd17-0dd4bd6e-51e5-4bd1-a95b-5d4a96633642|Ryebridge Construction": "2026-11-27T05:37:50Z",
+  "ocds-b5fd17-0a79501d-285f-47ff-889c-2f58936b40d1|London Hire Limited": "2026-11-28T05:33:48Z",
+  "ocds-b5fd17-dec0b35e-1b8d-4a4d-9ab2-49fce3ad39a2|Tripod Crest": "2026-11-28T05:33:48Z",
+  "ocds-b5fd17-1404146b-9777-4501-9355-e93b827a43f0|a-z private hire services ltd": "2026-11-28T05:33:48Z",
+  "ocds-b5fd17-b32a6e93-f2a4-4561-82e9-4fb049cdd299|AvePoint UK Ltd": "2026-11-28T05:33:48Z"
+ },
+ "petitions": {
+  "775267": {
+   "essex": 3162,
+   "at": "2026-11-28"
+  },
+  "769589": {
+   "essex": 4659,
+   "at": "2026-11-28"
+  },
+  "780269": {
+   "essex": 3085,
+   "at": "2026-11-28"
+  },
+  "783252": {
+   "essex": 1840,
+   "at": "2026-11-28"
+  },
+  "779259": {
+   "essex": 3257,
+   "at": "2026-11-28"
+  },
+  "773633": {
+   "essex": 3468,
+   "at": "2026-11-28"
+  },
+  "777710": {
+   "essex": 3201,
+   "at": "2026-11-28"
+  },
+  "771401": {
+   "essex": 1660,
+   "at": "2026-11-28"
+  },
+  "781048": {
+   "essex": 4122,
+   "at": "2026-11-28"
+  },
+  "769616": {
+   "essex": 1688,
+   "at": "2026-11-28"
+  },
+  "778680": {
+   "essex": 2389,
+   "at": "2026-11-28"
+  },
+  "783423": {
+   "essex": 1531,
+   "at": "2026-11-28"
+  },
+  "779519": {
+   "essex": 975,
+   "at": "2026-11-28"
+  },
+  "779299": {
+   "essex": 1658,
+   "at": "2026-11-28"
+  },
+  "781598": {
+   "essex": 1375,
+   "at": "2026-11-28"
+  },
+  "776949": {
+   "essex": 755,
+   "at": "2026-11-28"
+  },
+  "783905": {
+   "essex": 993,
+   "at": "2026-11-28"
+  },
+  "769319": {
+   "essex": 1434,
+   "at": "2026-11-28"
+  },
+  "777325": {
+   "essex": 916,
+   "at": "2026-11-28"
+  },
+  "779197": {
+   "essex": 1244,
+   "at": "2026-11-28"
+  },
+  "778453": {
+   "essex": 1437,
+   "at": "2026-11-28"
+  },
+  "781255": {
+   "essex": 463,
+   "at": "2026-11-28"
+  },
+  "776833": {
+   "essex": 1188,
+   "at": "2026-11-28"
+  },
+  "771833": {
+   "essex": 1168,
+   "at": "2026-11-28"
+  },
+  "775103": {
+   "essex": 795,
+   "at": "2026-11-28"
+  }
+ },
+ "hpiMonth": "2026-09",
+ "crime": {
+  "2026-09": {
+   "NA101": {
+    "n": 280,
+    "cats": {
+     "anti-social-behaviour": 39,
+     "bicycle-theft": 1,
+     "burglary": 6,
+     "criminal-damage-arson": 22,
+     "drugs": 7,
+     "other-theft": 23,
+     "public-order": 21,
+     "robbery": 1,
+     "shoplifting": 17,
+     "theft-from-the-person": 2,
+     "vehicle-crime": 11,
+     "violent-crime": 124,
+     "other-crime": 6
+    }
+   },
+   "NA102": {
+    "n": 251,
+    "cats": {
+     "anti-social-behaviour": 34,
+     "bicycle-theft": 1,
+     "burglary": 8,
+     "criminal-damage-arson": 21,
+     "drugs": 10,
+     "other-theft": 19,
+     "possession-of-weapons": 5,
+     "public-order": 14,
+     "robbery": 1,
+     "shoplifting": 17,
+     "vehicle-crime": 17,
+     "violent-crime": 98,
+     "other-crime": 6
+    }
+   },
+   "NA103": {
+    "n": 60,
+    "cats": {
+     "anti-social-behaviour": 6,
+     "bicycle-theft": 1,
+     "criminal-damage-arson": 5,
+     "drugs": 3,
+     "other-theft": 6,
+     "possession-of-weapons": 1,
+     "public-order": 4,
+     "vehicle-crime": 4,
+     "violent-crime": 30
+    }
+   },
+   "NA104": {
+    "n": 336,
+    "cats": {
+     "anti-social-behaviour": 39,
+     "burglary": 13,
+     "criminal-damage-arson": 22,
+     "drugs": 8,
+     "other-theft": 31,
+     "possession-of-weapons": 1,
+     "public-order": 19,
+     "robbery": 3,
+     "shoplifting": 9,
+     "vehicle-crime": 15,
+     "violent-crime": 169,
+     "other-crime": 7
+    }
+   },
+   "NA201": {
+    "n": 118,
+    "cats": {
+     "anti-social-behaviour": 19,
+     "burglary": 6,
+     "criminal-damage-arson": 10,
+     "drugs": 1,
+     "other-theft": 14,
+     "public-order": 10,
+     "shoplifting": 6,
+     "vehicle-crime": 9,
+     "violent-crime": 38,
+     "other-crime": 5
+    }
+   },
+   "NA202": {
+    "n": 58,
+    "cats": {
+     "anti-social-behaviour": 11,
+     "bicycle-theft": 2,
+     "burglary": 1,
+     "criminal-damage-arson": 10,
+     "drugs": 1,
+     "other-theft": 4,
+     "public-order": 3,
+     "shoplifting": 3,
+     "vehicle-crime": 1,
+     "violent-crime": 22
+    }
+   },
+   "NA203": {
+    "n": 67,
+    "cats": {
+     "anti-social-behaviour": 18,
+     "bicycle-theft": 1,
+     "burglary": 6,
+     "criminal-damage-arson": 5,
+     "other-theft": 7,
+     "public-order": 6,
+     "vehicle-crime": 6,
+     "violent-crime": 17,
+     "other-crime": 1
+    }
+   },
+   "NA204": {
+    "n": 325,
+    "cats": {
+     "anti-social-behaviour": 63,
+     "bicycle-theft": 2,
+     "burglary": 7,
+     "criminal-damage-arson": 14,
+     "drugs": 16,
+     "other-theft": 48,
+     "possession-of-weapons": 10,
+     "public-order": 18,
+     "robbery": 1,
+     "shoplifting": 13,
+     "theft-from-the-person": 7,
+     "vehicle-crime": 33,
+     "violent-crime": 89,
+     "other-crime": 4
+    }
+   },
+   "NB101": {
+    "n": 338,
+    "cats": {
+     "anti-social-behaviour": 50,
+     "bicycle-theft": 3,
+     "burglary": 22,
+     "criminal-damage-arson": 26,
+     "drugs": 9,
+     "other-theft": 24,
+     "possession-of-weapons": 7,
+     "public-order": 20,
+     "shoplifting": 7,
+     "theft-from-the-person": 3,
+     "vehicle-crime": 17,
+     "violent-crime": 145,
+     "other-crime": 5
+    }
+   },
+   "NB102": {
+    "n": 608,
+    "cats": {
+     "anti-social-behaviour": 86,
+     "bicycle-theft": 9,
+     "burglary": 11,
+     "criminal-damage-arson": 30,
+     "drugs": 38,
+     "other-theft": 40,
+     "possession-of-weapons": 9,
+     "public-order": 37,
+     "robbery": 2,
+     "shoplifting": 87,
+     "theft-from-the-person": 12,
+     "vehicle-crime": 8,
+     "violent-crime": 228,
+     "other-crime": 11
+    }
+   },
+   "NB103": {
+    "n": 84,
+    "cats": {
+     "anti-social-behaviour": 7,
+     "burglary": 2,
+     "criminal-damage-arson": 5,
+     "drugs": 6,
+     "other-theft": 5,
+     "public-order": 5,
+     "shoplifting": 7,
+     "vehicle-crime": 10,
+     "violent-crime": 33,
+     "other-crime": 4
+    }
+   },
+   "NB104": {
+    "n": 259,
+    "cats": {
+     "anti-social-behaviour": 31,
+     "bicycle-theft": 4,
+     "burglary": 6,
+     "criminal-damage-arson": 11,
+     "drugs": 11,
+     "other-theft": 22,
+     "possession-of-weapons": 2,
+     "public-order": 16,
+     "robbery": 1,
+     "shoplifting": 15,
+     "vehicle-crime": 25,
+     "violent-crime": 108,
+     "other-crime": 7
+    }
+   },
+   "NB105": {
+    "n": 87,
+    "cats": {
+     "anti-social-behaviour": 10,
+     "criminal-damage-arson": 3,
+     "drugs": 4,
+     "other-theft": 5,
+     "possession-of-weapons": 1,
+     "public-order": 11,
+     "shoplifting": 14,
+     "theft-from-the-person": 1,
+     "vehicle-crime": 1,
+     "violent-crime": 24,
+     "other-crime": 13
+    }
+   },
+   "NB201": {
+    "n": 152,
+    "cats": {
+     "anti-social-behaviour": 18,
+     "burglary": 1,
+     "criminal-damage-arson": 11,
+     "drugs": 8,
+     "other-theft": 9,
+     "possession-of-weapons": 1,
+     "public-order": 12,
+     "robbery": 1,
+     "shoplifting": 7,
+     "theft-from-the-person": 2,
+     "vehicle-crime": 1,
+     "violent-crime": 78,
+     "other-crime": 3
+    }
+   },
+   "NB202": {
+    "n": 32,
+    "cats": {
+     "anti-social-behaviour": 4,
+     "burglary": 2,
+     "criminal-damage-arson": 2,
+     "drugs": 2,
+     "other-theft": 1,
+     "public-order": 4,
+     "shoplifting": 2,
+     "vehicle-crime": 2,
+     "violent-crime": 11,
+     "other-crime": 2
+    }
+   },
+   "NB203": {
+    "n": 95,
+    "cats": {
+     "anti-social-behaviour": 16,
+     "criminal-damage-arson": 6,
+     "drugs": 11,
+     "other-theft": 5,
+     "possession-of-weapons": 1,
+     "public-order": 2,
+     "shoplifting": 2,
+     "vehicle-crime": 3,
+     "violent-crime": 47,
+     "other-crime": 2
+    }
+   },
+   "NC101": {
+    "n": 170,
+    "cats": {
+     "anti-social-behaviour": 35,
+     "burglary": 4,
+     "criminal-damage-arson": 6,
+     "other-theft": 19,
+     "possession-of-weapons": 1,
+     "public-order": 10,
+     "robbery": 2,
+     "shoplifting": 25,
+     "theft-from-the-person": 1,
+     "vehicle-crime": 10,
+     "violent-crime": 53,
+     "other-crime": 4
+    }
+   },
+   "NC102": {
+    "n": 168,
+    "cats": {
+     "anti-social-behaviour": 34,
+     "burglary": 5,
+     "criminal-damage-arson": 13,
+     "drugs": 2,
+     "other-theft": 19,
+     "possession-of-weapons": 1,
+     "public-order": 7,
+     "shoplifting": 19,
+     "theft-from-the-person": 2,
+     "vehicle-crime": 5,
+     "violent-crime": 58,
+     "other-crime": 3
+    }
+   },
+   "NC103": {
+    "n": 550,
+    "cats": {
+     "anti-social-behaviour": 75,
+     "burglary": 12,
+     "criminal-damage-arson": 37,
+     "drugs": 16,
+     "other-theft": 28,
+     "possession-of-weapons": 6,
+     "public-order": 37,
+     "robbery": 3,
+     "shoplifting": 46,
+     "theft-from-the-person": 3,
+     "vehicle-crime": 24,
+     "violent-crime": 256,
+     "other-crime": 7
+    }
+   },
+   "NC104": {
+    "n": 800,
+    "cats": {
+     "anti-social-behaviour": 112,
+     "bicycle-theft": 4,
+     "burglary": 16,
+     "criminal-damage-arson": 53,
+     "drugs": 18,
+     "other-theft": 46,
+     "possession-of-weapons": 14,
+     "public-order": 64,
+     "robbery": 5,
+     "shoplifting": 81,
+     "theft-from-the-person": 11,
+     "vehicle-crime": 44,
+     "violent-crime": 319,
+     "other-crime": 13
+    }
+   },
+   "ND101": {
+    "n": 156,
+    "cats": {
+     "anti-social-behaviour": 13,
+     "bicycle-theft": 1,
+     "burglary": 7,
+     "criminal-damage-arson": 10,
+     "drugs": 2,
+     "other-theft": 21,
+     "public-order": 6,
+     "shoplifting": 1,
+     "theft-from-the-person": 1,
+     "vehicle-crime": 6,
+     "violent-crime": 83,
+     "other-crime": 5
+    }
+   },
+   "ND102": {
+    "n": 720,
+    "cats": {
+     "anti-social-behaviour": 79,
+     "bicycle-theft": 2,
+     "burglary": 14,
+     "criminal-damage-arson": 55,
+     "drugs": 17,
+     "other-theft": 62,
+     "possession-of-weapons": 5,
+     "public-order": 46,
+     "robbery": 11,
+     "shoplifting": 40,
+     "theft-from-the-person": 12,
+     "vehicle-crime": 19,
+     "violent-crime": 339,
+     "other-crime": 19
+    }
+   },
+   "ND103": {
+    "n": 159,
+    "cats": {
+     "anti-social-behaviour": 15,
+     "burglary": 4,
+     "criminal-damage-arson": 10,
+     "drugs": 3,
+     "other-theft": 4,
+     "public-order": 18,
+     "shoplifting": 9,
+     "theft-from-the-person": 2,
+     "vehicle-crime": 2,
+     "violent-crime": 89,
+     "other-crime": 3
+    }
+   },
+   "ND104": {
+    "n": 327,
+    "cats": {
+     "anti-social-behaviour": 44,
+     "bicycle-theft": 2,
+     "burglary": 12,
+     "criminal-damage-arson": 19,
+     "drugs": 7,
+     "other-theft": 17,
+     "possession-of-weapons": 2,
+     "public-order": 10,
+     "robbery": 1,
+     "shoplifting": 18,
+     "theft-from-the-person": 2,
+     "vehicle-crime": 9,
+     "violent-crime": 176,
+     "other-crime": 8
+    }
+   },
+   "SA101": {
+    "n": 878,
+    "cats": {
+     "anti-social-behaviour": 151,
+     "bicycle-theft": 6,
+     "burglary": 20,
+     "criminal-damage-arson": 51,
+     "drugs": 32,
+     "other-theft": 54,
+     "possession-of-weapons": 11,
+     "public-order": 53,
+     "robbery": 8,
+     "shoplifting": 99,
+     "theft-from-the-person": 5,
+     "vehicle-crime": 46,
+     "violent-crime": 324,
+     "other-crime": 18
+    }
+   },
+   "SA102": {
+    "n": 201,
+    "cats": {
+     "anti-social-behaviour": 30,
+     "burglary": 12,
+     "criminal-damage-arson": 9,
+     "drugs": 5,
+     "other-theft": 14,
+     "possession-of-weapons": 2,
+     "public-order": 13,
+     "robbery": 1,
+     "shoplifting": 11,
+     "theft-from-the-person": 1,
+     "vehicle-crime": 21,
+     "violent-crime": 77,
+     "other-crime": 5
+    }
+   },
+   "SA103": {
+    "n": 405,
+    "cats": {
+     "anti-social-behaviour": 42,
+     "bicycle-theft": 1,
+     "burglary": 6,
+     "criminal-damage-arson": 38,
+     "drugs": 24,
+     "other-theft": 16,
+     "possession-of-weapons": 5,
+     "public-order": 18,
+     "robbery": 7,
+     "shoplifting": 23,
+     "theft-from-the-person": 1,
+     "vehicle-crime": 31,
+     "violent-crime": 186,
+     "other-crime": 7
+    }
+   },
+   "SA104": {
+    "n": 228,
+    "cats": {
+     "anti-social-behaviour": 47,
+     "bicycle-theft": 1,
+     "burglary": 10,
+     "criminal-damage-arson": 22,
+     "drugs": 8,
+     "other-theft": 8,
+     "possession-of-weapons": 3,
+     "public-order": 9,
+     "robbery": 2,
+     "shoplifting": 24,
+     "theft-from-the-person": 2,
+     "vehicle-crime": 8,
+     "violent-crime": 75,
+     "other-crime": 9
+    }
+   },
+   "SB101": {
+    "n": 111,
+    "cats": {
+     "anti-social-behaviour": 9,
+     "burglary": 1,
+     "criminal-damage-arson": 6,
+     "drugs": 2,
+     "other-theft": 7,
+     "possession-of-weapons": 3,
+     "public-order": 5,
+     "shoplifting": 35,
+     "vehicle-crime": 4,
+     "violent-crime": 39
+    }
+   },
+   "SB102": {
+    "n": 218,
+    "cats": {
+     "anti-social-behaviour": 32,
+     "bicycle-theft": 1,
+     "burglary": 5,
+     "criminal-damage-arson": 15,
+     "drugs": 8,
+     "other-theft": 14,
+     "public-order": 10,
+     "robbery": 3,
+     "shoplifting": 27,
+     "theft-from-the-person": 2,
+     "vehicle-crime": 14,
+     "violent-crime": 83,
+     "other-crime": 4
+    }
+   },
+   "SB103": {
+    "n": 92,
+    "cats": {
+     "anti-social-behaviour": 18,
+     "burglary": 2,
+     "criminal-damage-arson": 7,
+     "drugs": 3,
+     "other-theft": 8,
+     "public-order": 6,
+     "shoplifting": 5,
+     "vehicle-crime": 5,
+     "violent-crime": 36,
+     "other-crime": 2
+    }
+   },
+   "SB104": {
+    "n": 61,
+    "cats": {
+     "anti-social-behaviour": 7,
+     "burglary": 1,
+     "criminal-damage-arson": 3,
+     "drugs": 3,
+     "other-theft": 3,
+     "public-order": 6,
+     "shoplifting": 3,
+     "vehicle-crime": 7,
+     "violent-crime": 26,
+     "other-crime": 2
+    }
+   },
+   "SB201": {
+    "n": 58,
+    "cats": {
+     "anti-social-behaviour": 15,
+     "criminal-damage-arson": 4,
+     "drugs": 1,
+     "other-theft": 3,
+     "public-order": 3,
+     "shoplifting": 1,
+     "theft-from-the-person": 1,
+     "vehicle-crime": 5,
+     "violent-crime": 23,
+     "other-crime": 2
+    }
+   },
+   "SB202": {
+    "n": 167,
+    "cats": {
+     "anti-social-behaviour": 19,
+     "bicycle-theft": 1,
+     "burglary": 7,
+     "criminal-damage-arson": 15,
+     "drugs": 5,
+     "other-theft": 10,
+     "possession-of-weapons": 1,
+     "public-order": 12,
+     "robbery": 1,
+     "shoplifting": 9,
+     "vehicle-crime": 7,
+     "violent-crime": 75,
+     "other-crime": 5
+    }
+   },
+   "SB203": {
+    "n": 157,
+    "cats": {
+     "anti-social-behaviour": 22,
+     "burglary": 2,
+     "criminal-damage-arson": 14,
+     "drugs": 4,
+     "other-theft": 8,
+     "possession-of-weapons": 2,
+     "public-order": 13,
+     "robbery": 1,
+     "shoplifting": 8,
+     "theft-from-the-person": 3,
+     "vehicle-crime": 4,
+     "violent-crime": 73,
+     "other-crime": 3
+    }
+   },
+   "SB204": {
+    "n": 15,
+    "cats": {
+     "anti-social-behaviour": 3,
+     "burglary": 2,
+     "vehicle-crime": 2,
+     "violent-crime": 8
+    }
+   },
+   "SC101": {
+    "n": 232,
+    "cats": {
+     "anti-social-behaviour": 29,
+     "bicycle-theft": 1,
+     "burglary": 8,
+     "criminal-damage-arson": 13,
+     "drugs": 7,
+     "other-theft": 20,
+     "possession-of-weapons": 2,
+     "public-order": 12,
+     "shoplifting": 8,
+     "theft-from-the-person": 3,
+     "vehicle-crime": 14,
+     "violent-crime": 113,
+     "other-crime": 2
+    }
+   },
+   "SC102": {
+    "n": 794,
+    "cats": {
+     "anti-social-behaviour": 110,
+     "bicycle-theft": 14,
+     "burglary": 19,
+     "criminal-damage-arson": 54,
+     "drugs": 46,
+     "other-theft": 46,
+     "possession-of-weapons": 12,
+     "public-order": 51,
+     "robbery": 5,
+     "shoplifting": 76,
+     "theft-from-the-person": 16,
+     "vehicle-crime": 31,
+     "violent-crime": 298,
+     "other-crime": 16
+    }
+   },
+   "SC103": {
+    "n": 364,
+    "cats": {
+     "anti-social-behaviour": 49,
+     "bicycle-theft": 4,
+     "burglary": 8,
+     "criminal-damage-arson": 21,
+     "drugs": 12,
+     "other-theft": 14,
+     "possession-of-weapons": 7,
+     "public-order": 32,
+     "robbery": 3,
+     "shoplifting": 26,
+     "theft-from-the-person": 2,
+     "vehicle-crime": 29,
+     "violent-crime": 147,
+     "other-crime": 10
+    }
+   },
+   "SC104": {
+    "n": 397,
+    "cats": {
+     "anti-social-behaviour": 45,
+     "bicycle-theft": 4,
+     "burglary": 9,
+     "criminal-damage-arson": 21,
+     "drugs": 6,
+     "other-theft": 31,
+     "possession-of-weapons": 3,
+     "public-order": 20,
+     "robbery": 2,
+     "shoplifting": 102,
+     "theft-from-the-person": 2,
+     "vehicle-crime": 16,
+     "violent-crime": 131,
+     "other-crime": 5
+    }
+   },
+   "WA101": {
+    "n": 169,
+    "cats": {
+     "anti-social-behaviour": 17,
+     "bicycle-theft": 1,
+     "criminal-damage-arson": 12,
+     "drugs": 8,
+     "other-theft": 16,
+     "possession-of-weapons": 4,
+     "public-order": 16,
+     "shoplifting": 12,
+     "theft-from-the-person": 2,
+     "vehicle-crime": 23,
+     "violent-crime": 54,
+     "other-crime": 4
+    }
+   },
+   "WA102": {
+    "n": 127,
+    "cats": {
+     "anti-social-behaviour": 12,
+     "burglary": 4,
+     "criminal-damage-arson": 10,
+     "drugs": 10,
+     "other-theft": 18,
+     "possession-of-weapons": 1,
+     "public-order": 4,
+     "shoplifting": 4,
+     "vehicle-crime": 19,
+     "violent-crime": 45
+    }
+   },
+   "WA103": {
+    "n": 126,
+    "cats": {
+     "anti-social-behaviour": 16,
+     "bicycle-theft": 1,
+     "burglary": 1,
+     "criminal-damage-arson": 6,
+     "drugs": 7,
+     "other-theft": 14,
+     "possession-of-weapons": 2,
+     "public-order": 6,
+     "shoplifting": 16,
+     "theft-from-the-person": 1,
+     "vehicle-crime": 8,
+     "violent-crime": 47,
+     "other-crime": 1
+    }
+   },
+   "WA104": {
+    "n": 111,
+    "cats": {
+     "anti-social-behaviour": 5,
+     "burglary": 2,
+     "criminal-damage-arson": 7,
+     "drugs": 6,
+     "other-theft": 6,
+     "public-order": 9,
+     "robbery": 1,
+     "shoplifting": 26,
+     "vehicle-crime": 12,
+     "violent-crime": 36,
+     "other-crime": 1
+    }
+   },
+   "WA201": {
+    "n": 124,
+    "cats": {
+     "anti-social-behaviour": 12,
+     "burglary": 7,
+     "criminal-damage-arson": 9,
+     "drugs": 1,
+     "other-theft": 10,
+     "public-order": 11,
+     "robbery": 3,
+     "shoplifting": 6,
+     "theft-from-the-person": 2,
+     "vehicle-crime": 20,
+     "violent-crime": 41,
+     "other-crime": 2
+    }
+   },
+   "WA202": {
+    "n": 222,
+    "cats": {
+     "anti-social-behaviour": 28,
+     "burglary": 8,
+     "criminal-damage-arson": 12,
+     "drugs": 5,
+     "other-theft": 13,
+     "possession-of-weapons": 1,
+     "public-order": 14,
+     "robbery": 5,
+     "shoplifting": 27,
+     "theft-from-the-person": 2,
+     "vehicle-crime": 16,
+     "violent-crime": 87,
+     "other-crime": 4
+    }
+   },
+   "WA203": {
+    "n": 349,
+    "cats": {
+     "anti-social-behaviour": 47,
+     "burglary": 18,
+     "criminal-damage-arson": 28,
+     "drugs": 13,
+     "other-theft": 28,
+     "possession-of-weapons": 1,
+     "public-order": 22,
+     "robbery": 3,
+     "shoplifting": 22,
+     "theft-from-the-person": 4,
+     "vehicle-crime": 38,
+     "violent-crime": 112,
+     "other-crime": 13
+    }
+   },
+   "WA204": {
+    "n": 195,
+    "cats": {
+     "anti-social-behaviour": 37,
+     "burglary": 5,
+     "criminal-damage-arson": 16,
+     "drugs": 8,
+     "other-theft": 7,
+     "possession-of-weapons": 2,
+     "public-order": 17,
+     "robbery": 1,
+     "shoplifting": 6,
+     "theft-from-the-person": 1,
+     "vehicle-crime": 25,
+     "violent-crime": 68,
+     "other-crime": 2
+    }
+   },
+   "WB101": {
+    "n": 316,
+    "cats": {
+     "anti-social-behaviour": 39,
+     "bicycle-theft": 5,
+     "burglary": 13,
+     "criminal-damage-arson": 20,
+     "drugs": 13,
+     "other-theft": 16,
+     "possession-of-weapons": 1,
+     "public-order": 23,
+     "robbery": 4,
+     "shoplifting": 43,
+     "theft-from-the-person": 1,
+     "vehicle-crime": 12,
+     "violent-crime": 118,
+     "other-crime": 8
+    }
+   },
+   "WB102": {
+    "n": 238,
+    "cats": {
+     "anti-social-behaviour": 23,
+     "bicycle-theft": 1,
+     "burglary": 4,
+     "criminal-damage-arson": 19,
+     "drugs": 10,
+     "other-theft": 18,
+     "possession-of-weapons": 2,
+     "public-order": 24,
+     "robbery": 1,
+     "shoplifting": 16,
+     "theft-from-the-person": 2,
+     "vehicle-crime": 13,
+     "violent-crime": 97,
+     "other-crime": 8
+    }
+   },
+   "WB103": {
+    "n": 299,
+    "cats": {
+     "anti-social-behaviour": 31,
+     "bicycle-theft": 5,
+     "burglary": 3,
+     "criminal-damage-arson": 18,
+     "drugs": 19,
+     "other-theft": 16,
+     "possession-of-weapons": 1,
+     "public-order": 25,
+     "robbery": 8,
+     "shoplifting": 38,
+     "vehicle-crime": 12,
+     "violent-crime": 118,
+     "other-crime": 5
+    }
+   },
+   "WB104": {
+    "n": 143,
+    "cats": {
+     "anti-social-behaviour": 18,
+     "bicycle-theft": 1,
+     "burglary": 5,
+     "criminal-damage-arson": 14,
+     "drugs": 4,
+     "other-theft": 16,
+     "possession-of-weapons": 1,
+     "public-order": 3,
+     "robbery": 2,
+     "shoplifting": 4,
+     "theft-from-the-person": 1,
+     "vehicle-crime": 7,
+     "violent-crime": 65,
+     "other-crime": 2
+    }
+   },
+   "WC101": {
+    "n": 523,
+    "cats": {
+     "anti-social-behaviour": 54,
+     "bicycle-theft": 4,
+     "burglary": 7,
+     "criminal-damage-arson": 32,
+     "drugs": 19,
+     "other-theft": 23,
+     "possession-of-weapons": 4,
+     "public-order": 32,
+     "robbery": 6,
+     "shoplifting": 100,
+     "theft-from-the-person": 7,
+     "vehicle-crime": 48,
+     "violent-crime": 174,
+     "other-crime": 13
+    }
+   },
+   "WC102": {
+    "n": 248,
+    "cats": {
+     "anti-social-behaviour": 47,
+     "bicycle-theft": 1,
+     "burglary": 9,
+     "criminal-damage-arson": 19,
+     "drugs": 5,
+     "other-theft": 19,
+     "possession-of-weapons": 3,
+     "public-order": 15,
+     "robbery": 2,
+     "shoplifting": 15,
+     "vehicle-crime": 16,
+     "violent-crime": 93,
+     "other-crime": 4
+    }
+   },
+   "WC103": {
+    "n": 494,
+    "cats": {
+     "anti-social-behaviour": 107,
+     "bicycle-theft": 9,
+     "burglary": 9,
+     "criminal-damage-arson": 27,
+     "drugs": 23,
+     "other-theft": 31,
+     "possession-of-weapons": 3,
+     "public-order": 33,
+     "robbery": 5,
+     "shoplifting": 23,
+     "theft-from-the-person": 3,
+     "vehicle-crime": 32,
+     "violent-crime": 181,
+     "other-crime": 8
+    }
+   },
+   "WC104": {
+    "n": 310,
+    "cats": {
+     "anti-social-behaviour": 63,
+     "burglary": 4,
+     "criminal-damage-arson": 33,
+     "drugs": 11,
+     "other-theft": 22,
+     "possession-of-weapons": 1,
+     "public-order": 26,
+     "robbery": 1,
+     "shoplifting": 5,
+     "theft-from-the-person": 1,
+     "vehicle-crime": 24,
+     "violent-crime": 116,
+     "other-crime": 3
+    }
+   }
+  },
+  "2026-08": {
+   "NA101": {
+    "n": 344,
+    "cats": {
+     "anti-social-behaviour": 76,
+     "bicycle-theft": 3,
+     "burglary": 7,
+     "criminal-damage-arson": 26,
+     "drugs": 12,
+     "other-theft": 23,
+     "possession-of-weapons": 3,
+     "public-order": 18,
+     "robbery": 2,
+     "shoplifting": 26,
+     "theft-from-the-person": 2,
+     "vehicle-crime": 15,
+     "violent-crime": 130,
+     "other-crime": 1
+    }
+   },
+   "NA102": {
+    "n": 228,
+    "cats": {
+     "anti-social-behaviour": 39,
+     "bicycle-theft": 1,
+     "burglary": 4,
+     "criminal-damage-arson": 20,
+     "drugs": 6,
+     "other-theft": 15,
+     "possession-of-weapons": 1,
+     "public-order": 17,
+     "robbery": 2,
+     "shoplifting": 19,
+     "theft-from-the-person": 1,
+     "vehicle-crime": 7,
+     "violent-crime": 90,
+     "other-crime": 6
+    }
+   },
+   "NA103": {
+    "n": 74,
+    "cats": {
+     "anti-social-behaviour": 9,
+     "bicycle-theft": 1,
+     "burglary": 5,
+     "criminal-damage-arson": 7,
+     "other-theft": 11,
+     "possession-of-weapons": 1,
+     "public-order": 5,
+     "shoplifting": 1,
+     "vehicle-crime": 5,
+     "violent-crime": 27,
+     "other-crime": 2
+    }
+   },
+   "NA104": {
+    "n": 324,
+    "cats": {
+     "anti-social-behaviour": 52,
+     "bicycle-theft": 2,
+     "burglary": 8,
+     "criminal-damage-arson": 24,
+     "drugs": 3,
+     "other-theft": 27,
+     "possession-of-weapons": 3,
+     "public-order": 22,
+     "shoplifting": 16,
+     "vehicle-crime": 15,
+     "violent-crime": 144,
+     "other-crime": 8
+    }
+   },
+   "NA201": {
+    "n": 122,
+    "cats": {
+     "anti-social-behaviour": 28,
+     "bicycle-theft": 1,
+     "burglary": 3,
+     "criminal-damage-arson": 14,
+     "drugs": 6,
+     "other-theft": 9,
+     "public-order": 10,
+     "shoplifting": 2,
+     "vehicle-crime": 4,
+     "violent-crime": 43,
+     "other-crime": 2
+    }
+   },
+   "NA202": {
+    "n": 79,
+    "cats": {
+     "anti-social-behaviour": 14,
+     "burglary": 1,
+     "criminal-damage-arson": 7,
+     "drugs": 1,
+     "other-theft": 3,
+     "public-order": 6,
+     "robbery": 1,
+     "shoplifting": 7,
+     "theft-from-the-person": 2,
+     "vehicle-crime": 2,
+     "violent-crime": 33,
+     "other-crime": 2
+    }
+   },
+   "NA203": {
+    "n": 68,
+    "cats": {
+     "anti-social-behaviour": 17,
+     "burglary": 5,
+     "criminal-damage-arson": 1,
+     "drugs": 2,
+     "other-theft": 6,
+     "public-order": 4,
+     "vehicle-crime": 8,
+     "violent-crime": 25
+    }
+   },
+   "NA204": {
+    "n": 312,
+    "cats": {
+     "anti-social-behaviour": 70,
+     "bicycle-theft": 1,
+     "burglary": 3,
+     "criminal-damage-arson": 19,
+     "drugs": 14,
+     "other-theft": 49,
+     "possession-of-weapons": 9,
+     "public-order": 18,
+     "robbery": 3,
+     "shoplifting": 17,
+     "theft-from-the-person": 7,
+     "vehicle-crime": 9,
+     "violent-crime": 86,
+     "other-crime": 7
+    }
+   },
+   "NB101": {
+    "n": 323,
+    "cats": {
+     "anti-social-behaviour": 54,
+     "bicycle-theft": 2,
+     "burglary": 9,
+     "criminal-damage-arson": 21,
+     "drugs": 11,
+     "other-theft": 26,
+     "possession-of-weapons": 3,
+     "public-order": 21,
+     "robbery": 1,
+     "shoplifting": 9,
+     "vehicle-crime": 36,
+     "violent-crime": 123,
+     "other-crime": 7
+    }
+   },
+   "NB102": {
+    "n": 717,
+    "cats": {
+     "anti-social-behaviour": 99,
+     "bicycle-theft": 14,
+     "burglary": 7,
+     "criminal-damage-arson": 33,
+     "drugs": 49,
+     "other-theft": 32,
+     "possession-of-weapons": 7,
+     "public-order": 47,
+     "robbery": 8,
+     "shoplifting": 121,
+     "theft-from-the-person": 8,
+     "vehicle-crime": 18,
+     "violent-crime": 260,
+     "other-crime": 14
+    }
+   },
+   "NB103": {
+    "n": 108,
+    "cats": {
+     "anti-social-behaviour": 16,
+     "bicycle-theft": 2,
+     "burglary": 3,
+     "drugs": 6,
+     "other-theft": 8,
+     "public-order": 3,
+     "robbery": 1,
+     "shoplifting": 13,
+     "theft-from-the-person": 1,
+     "vehicle-crime": 12,
+     "violent-crime": 43
+    }
+   },
+   "NB104": {
+    "n": 312,
+    "cats": {
+     "anti-social-behaviour": 44,
+     "bicycle-theft": 2,
+     "burglary": 6,
+     "criminal-damage-arson": 21,
+     "drugs": 9,
+     "other-theft": 21,
+     "public-order": 24,
+     "shoplifting": 23,
+     "theft-from-the-person": 1,
+     "vehicle-crime": 27,
+     "violent-crime": 128,
+     "other-crime": 6
+    }
+   },
+   "NB105": {
+    "n": 81,
+    "cats": {
+     "anti-social-behaviour": 8,
+     "bicycle-theft": 1,
+     "drugs": 2,
+     "other-theft": 8,
+     "possession-of-weapons": 1,
+     "public-order": 4,
+     "shoplifting": 32,
+     "vehicle-crime": 1,
+     "violent-crime": 21,
+     "other-crime": 3
+    }
+   },
+   "NB201": {
+    "n": 203,
+    "cats": {
+     "anti-social-behaviour": 50,
+     "burglary": 7,
+     "criminal-damage-arson": 12,
+     "drugs": 7,
+     "other-theft": 10,
+     "possession-of-weapons": 1,
+     "public-order": 11,
+     "robbery": 2,
+     "shoplifting": 6,
+     "vehicle-crime": 2,
+     "violent-crime": 91,
+     "other-crime": 4
+    }
+   },
+   "NB202": {
+    "n": 47,
+    "cats": {
+     "anti-social-behaviour": 8,
+     "burglary": 2,
+     "criminal-damage-arson": 5,
+     "drugs": 3,
+     "other-theft": 3,
+     "public-order": 5,
+     "vehicle-crime": 2,
+     "violent-crime": 18,
+     "other-crime": 1
+    }
+   },
+   "NB203": {
+    "n": 133,
+    "cats": {
+     "anti-social-behaviour": 23,
+     "burglary": 1,
+     "criminal-damage-arson": 6,
+     "other-theft": 5,
+     "public-order": 14,
+     "robbery": 3,
+     "shoplifting": 2,
+     "vehicle-crime": 2,
+     "violent-crime": 72,
+     "other-crime": 5
+    }
+   },
+   "NC101": {
+    "n": 162,
+    "cats": {
+     "anti-social-behaviour": 25,
+     "bicycle-theft": 1,
+     "burglary": 6,
+     "criminal-damage-arson": 22,
+     "drugs": 1,
+     "other-theft": 11,
+     "public-order": 16,
+     "shoplifting": 11,
+     "theft-from-the-person": 3,
+     "vehicle-crime": 10,
+     "violent-crime": 56
+    }
+   },
+   "NC102": {
+    "n": 158,
+    "cats": {
+     "anti-social-behaviour": 37,
+     "bicycle-theft": 1,
+     "burglary": 3,
+     "criminal-damage-arson": 12,
+     "drugs": 3,
+     "other-theft": 9,
+     "possession-of-weapons": 2,
+     "public-order": 14,
+     "shoplifting": 10,
+     "vehicle-crime": 5,
+     "violent-crime": 57,
+     "other-crime": 5
+    }
+   },
+   "NC103": {
+    "n": 538,
+    "cats": {
+     "anti-social-behaviour": 90,
+     "bicycle-theft": 5,
+     "burglary": 13,
+     "criminal-damage-arson": 38,
+     "drugs": 8,
+     "other-theft": 26,
+     "possession-of-weapons": 1,
+     "public-order": 31,
+     "robbery": 1,
+     "shoplifting": 65,
+     "theft-from-the-person": 3,
+     "vehicle-crime": 29,
+     "violent-crime": 219,
+     "other-crime": 9
+    }
+   },
+   "NC104": {
+    "n": 836,
+    "cats": {
+     "anti-social-behaviour": 121,
+     "bicycle-theft": 10,
+     "burglary": 15,
+     "criminal-damage-arson": 66,
+     "drugs": 21,
+     "other-theft": 59,
+     "possession-of-weapons": 9,
+     "public-order": 67,
+     "robbery": 9,
+     "shoplifting": 58,
+     "theft-from-the-person": 10,
+     "vehicle-crime": 23,
+     "violent-crime": 357,
+     "other-crime": 11
+    }
+   },
+   "ND101": {
+    "n": 203,
+    "cats": {
+     "anti-social-behaviour": 30,
+     "burglary": 6,
+     "criminal-damage-arson": 11,
+     "other-theft": 12,
+     "possession-of-weapons": 8,
+     "public-order": 12,
+     "robbery": 1,
+     "shoplifting": 3,
+     "theft-from-the-person": 2,
+     "vehicle-crime": 15,
+     "violent-crime": 99,
+     "other-crime": 4
+    }
+   },
+   "ND102": {
+    "n": 833,
+    "cats": {
+     "anti-social-behaviour": 162,
+     "bicycle-theft": 13,
+     "burglary": 13,
+     "criminal-damage-arson": 61,
+     "drugs": 18,
+     "other-theft": 48,
+     "possession-of-weapons": 10,
+     "public-order": 63,
+     "robbery": 13,
+     "shoplifting": 32,
+     "theft-from-the-person": 2,
+     "vehicle-crime": 24,
+     "violent-crime": 347,
+     "other-crime": 27
+    }
+   },
+   "ND103": {
+    "n": 180,
+    "cats": {
+     "anti-social-behaviour": 46,
+     "bicycle-theft": 1,
+     "burglary": 6,
+     "criminal-damage-arson": 9,
+     "drugs": 2,
+     "other-theft": 13,
+     "possession-of-weapons": 4,
+     "public-order": 6,
+     "robbery": 1,
+     "shoplifting": 4,
+     "theft-from-the-person": 2,
+     "vehicle-crime": 9,
+     "violent-crime": 75,
+     "other-crime": 2
+    }
+   },
+   "ND104": {
+    "n": 353,
+    "cats": {
+     "anti-social-behaviour": 63,
+     "bicycle-theft": 4,
+     "burglary": 14,
+     "criminal-damage-arson": 25,
+     "drugs": 3,
+     "other-theft": 22,
+     "possession-of-weapons": 1,
+     "public-order": 24,
+     "robbery": 3,
+     "shoplifting": 32,
+     "vehicle-crime": 19,
+     "violent-crime": 134,
+     "other-crime": 9
+    }
+   },
+   "SA101": {
+    "n": 931,
+    "cats": {
+     "anti-social-behaviour": 138,
+     "bicycle-theft": 7,
+     "burglary": 20,
+     "criminal-damage-arson": 63,
+     "drugs": 42,
+     "other-theft": 51,
+     "possession-of-weapons": 11,
+     "public-order": 68,
+     "robbery": 19,
+     "shoplifting": 92,
+     "theft-from-the-person": 5,
+     "vehicle-crime": 48,
+     "violent-crime": 356,
+     "other-crime": 11
+    }
+   },
+   "SA102": {
+    "n": 155,
+    "cats": {
+     "anti-social-behaviour": 22,
+     "burglary": 7,
+     "criminal-damage-arson": 11,
+     "drugs": 4,
+     "other-theft": 11,
+     "possession-of-weapons": 1,
+     "public-order": 10,
+     "robbery": 2,
+     "shoplifting": 16,
+     "vehicle-crime": 4,
+     "violent-crime": 62,
+     "other-crime": 5
+    }
+   },
+   "SA103": {
+    "n": 436,
+    "cats": {
+     "anti-social-behaviour": 74,
+     "bicycle-theft": 1,
+     "burglary": 8,
+     "criminal-damage-arson": 38,
+     "drugs": 18,
+     "other-theft": 18,
+     "possession-of-weapons": 3,
+     "public-order": 31,
+     "robbery": 7,
+     "shoplifting": 36,
+     "theft-from-the-person": 4,
+     "vehicle-crime": 17,
+     "violent-crime": 172,
+     "other-crime": 9
+    }
+   },
+   "SA104": {
+    "n": 232,
+    "cats": {
+     "anti-social-behaviour": 97,
+     "burglary": 3,
+     "criminal-damage-arson": 18,
+     "drugs": 3,
+     "other-theft": 10,
+     "possession-of-weapons": 5,
+     "public-order": 21,
+     "shoplifting": 14,
+     "theft-from-the-person": 1,
+     "vehicle-crime": 5,
+     "violent-crime": 52,
+     "other-crime": 3
+    }
+   },
+   "SB101": {
+    "n": 94,
+    "cats": {
+     "anti-social-behaviour": 14,
+     "burglary": 2,
+     "criminal-damage-arson": 6,
+     "drugs": 1,
+     "other-theft": 6,
+     "possession-of-weapons": 2,
+     "public-order": 7,
+     "robbery": 2,
+     "shoplifting": 15,
+     "vehicle-crime": 3,
+     "violent-crime": 36
+    }
+   },
+   "SB102": {
+    "n": 263,
+    "cats": {
+     "anti-social-behaviour": 62,
+     "bicycle-theft": 2,
+     "burglary": 8,
+     "criminal-damage-arson": 23,
+     "drugs": 8,
+     "other-theft": 13,
+     "possession-of-weapons": 2,
+     "public-order": 8,
+     "robbery": 1,
+     "shoplifting": 8,
+     "theft-from-the-person": 2,
+     "vehicle-crime": 18,
+     "violent-crime": 105,
+     "other-crime": 3
+    }
+   },
+   "SB103": {
+    "n": 89,
+    "cats": {
+     "anti-social-behaviour": 24,
+     "burglary": 5,
+     "criminal-damage-arson": 8,
+     "drugs": 2,
+     "other-theft": 3,
+     "possession-of-weapons": 1,
+     "public-order": 5,
+     "robbery": 1,
+     "shoplifting": 6,
+     "vehicle-crime": 2,
+     "violent-crime": 32
+    }
+   },
+   "SB104": {
+    "n": 59,
+    "cats": {
+     "anti-social-behaviour": 9,
+     "burglary": 3,
+     "criminal-damage-arson": 4,
+     "drugs": 2,
+     "other-theft": 8,
+     "public-order": 2,
+     "shoplifting": 2,
+     "vehicle-crime": 4,
+     "violent-crime": 24,
+     "other-crime": 1
+    }
+   },
+   "SB201": {
+    "n": 95,
+    "cats": {
+     "anti-social-behaviour": 23,
+     "burglary": 2,
+     "criminal-damage-arson": 8,
+     "drugs": 1,
+     "other-theft": 5,
+     "public-order": 9,
+     "shoplifting": 8,
+     "vehicle-crime": 3,
+     "violent-crime": 35,
+     "other-crime": 1
+    }
+   },
+   "SB202": {
+    "n": 168,
+    "cats": {
+     "anti-social-behaviour": 27,
+     "burglary": 4,
+     "criminal-damage-arson": 9,
+     "drugs": 16,
+     "other-theft": 8,
+     "possession-of-weapons": 1,
+     "public-order": 11,
+     "robbery": 1,
+     "shoplifting": 1,
+     "theft-from-the-person": 1,
+     "vehicle-crime": 7,
+     "violent-crime": 80,
+     "other-crime": 2
+    }
+   },
+   "SB203": {
+    "n": 122,
+    "cats": {
+     "anti-social-behaviour": 17,
+     "bicycle-theft": 1,
+     "burglary": 5,
+     "criminal-damage-arson": 10,
+     "drugs": 3,
+     "other-theft": 11,
+     "public-order": 3,
+     "robbery": 1,
+     "shoplifting": 6,
+     "theft-from-the-person": 1,
+     "vehicle-crime": 6,
+     "violent-crime": 56,
+     "other-crime": 2
+    }
+   },
+   "SB204": {
+    "n": 33,
+    "cats": {
+     "anti-social-behaviour": 4,
+     "bicycle-theft": 1,
+     "criminal-damage-arson": 4,
+     "other-theft": 6,
+     "public-order": 2,
+     "vehicle-crime": 2,
+     "violent-crime": 14
+    }
+   },
+   "SC101": {
+    "n": 264,
+    "cats": {
+     "anti-social-behaviour": 54,
+     "bicycle-theft": 1,
+     "burglary": 6,
+     "criminal-damage-arson": 20,
+     "drugs": 8,
+     "other-theft": 16,
+     "possession-of-weapons": 2,
+     "public-order": 22,
+     "robbery": 4,
+     "shoplifting": 10,
+     "vehicle-crime": 12,
+     "violent-crime": 106,
+     "other-crime": 3
+    }
+   },
+   "SC102": {
+    "n": 992,
+    "cats": {
+     "anti-social-behaviour": 183,
+     "bicycle-theft": 12,
+     "burglary": 18,
+     "criminal-damage-arson": 59,
+     "drugs": 54,
+     "other-theft": 51,
+     "possession-of-weapons": 9,
+     "public-order": 67,
+     "robbery": 14,
+     "shoplifting": 69,
+     "theft-from-the-person": 12,
+     "vehicle-crime": 39,
+     "violent-crime": 390,
+     "other-crime": 15
+    }
+   },
+   "SC103": {
+    "n": 457,
+    "cats": {
+     "anti-social-behaviour": 100,
+     "burglary": 7,
+     "criminal-damage-arson": 28,
+     "drugs": 16,
+     "other-theft": 42,
+     "possession-of-weapons": 8,
+     "public-order": 23,
+     "robbery": 4,
+     "shoplifting": 30,
+     "theft-from-the-person": 2,
+     "vehicle-crime": 25,
+     "violent-crime": 164,
+     "other-crime": 8
+    }
+   },
+   "SC104": {
+    "n": 376,
+    "cats": {
+     "anti-social-behaviour": 56,
+     "bicycle-theft": 5,
+     "burglary": 5,
+     "criminal-damage-arson": 13,
+     "drugs": 9,
+     "other-theft": 25,
+     "possession-of-weapons": 5,
+     "public-order": 27,
+     "robbery": 7,
+     "shoplifting": 59,
+     "theft-from-the-person": 1,
+     "vehicle-crime": 20,
+     "violent-crime": 135,
+     "other-crime": 9
+    }
+   },
+   "WA101": {
+    "n": 189,
+    "cats": {
+     "anti-social-behaviour": 35,
+     "burglary": 2,
+     "criminal-damage-arson": 23,
+     "drugs": 5,
+     "other-theft": 13,
+     "possession-of-weapons": 4,
+     "public-order": 11,
+     "robbery": 2,
+     "shoplifting": 27,
+     "theft-from-the-person": 1,
+     "vehicle-crime": 15,
+     "violent-crime": 50,
+     "other-crime": 1
+    }
+   },
+   "WA102": {
+    "n": 143,
+    "cats": {
+     "anti-social-behaviour": 27,
+     "bicycle-theft": 2,
+     "burglary": 10,
+     "criminal-damage-arson": 8,
+     "drugs": 4,
+     "other-theft": 16,
+     "possession-of-weapons": 1,
+     "public-order": 5,
+     "robbery": 1,
+     "shoplifting": 10,
+     "theft-from-the-person": 2,
+     "vehicle-crime": 18,
+     "violent-crime": 37,
+     "other-crime": 2
+    }
+   },
+   "WA103": {
+    "n": 130,
+    "cats": {
+     "anti-social-behaviour": 16,
+     "bicycle-theft": 2,
+     "burglary": 4,
+     "criminal-damage-arson": 7,
+     "drugs": 8,
+     "other-theft": 9,
+     "possession-of-weapons": 1,
+     "public-order": 7,
+     "shoplifting": 35,
+     "theft-from-the-person": 1,
+     "vehicle-crime": 8,
+     "violent-crime": 31,
+     "other-crime": 1
+    }
+   },
+   "WA104": {
+    "n": 102,
+    "cats": {
+     "anti-social-behaviour": 10,
+     "bicycle-theft": 1,
+     "burglary": 14,
+     "criminal-damage-arson": 3,
+     "drugs": 3,
+     "other-theft": 4,
+     "public-order": 2,
+     "robbery": 1,
+     "shoplifting": 27,
+     "vehicle-crime": 10,
+     "violent-crime": 27
+    }
+   },
+   "WA201": {
+    "n": 149,
+    "cats": {
+     "anti-social-behaviour": 15,
+     "bicycle-theft": 1,
+     "burglary": 12,
+     "criminal-damage-arson": 16,
+     "drugs": 2,
+     "other-theft": 13,
+     "possession-of-weapons": 1,
+     "public-order": 12,
+     "robbery": 1,
+     "shoplifting": 1,
+     "theft-from-the-person": 2,
+     "vehicle-crime": 21,
+     "violent-crime": 49,
+     "other-crime": 3
+    }
+   },
+   "WA202": {
+    "n": 231,
+    "cats": {
+     "anti-social-behaviour": 32,
+     "burglary": 17,
+     "criminal-damage-arson": 20,
+     "drugs": 7,
+     "other-theft": 13,
+     "public-order": 24,
+     "robbery": 8,
+     "shoplifting": 30,
+     "theft-from-the-person": 2,
+     "vehicle-crime": 22,
+     "violent-crime": 53,
+     "other-crime": 3
+    }
+   },
+   "WA203": {
+    "n": 357,
+    "cats": {
+     "anti-social-behaviour": 67,
+     "burglary": 18,
+     "criminal-damage-arson": 22,
+     "drugs": 6,
+     "other-theft": 28,
+     "possession-of-weapons": 2,
+     "public-order": 27,
+     "robbery": 3,
+     "shoplifting": 18,
+     "theft-from-the-person": 2,
+     "vehicle-crime": 35,
+     "violent-crime": 117,
+     "other-crime": 12
+    }
+   },
+   "WA204": {
+    "n": 226,
+    "cats": {
+     "anti-social-behaviour": 34,
+     "bicycle-theft": 1,
+     "burglary": 5,
+     "criminal-damage-arson": 27,
+     "drugs": 7,
+     "other-theft": 18,
+     "possession-of-weapons": 3,
+     "public-order": 14,
+     "robbery": 1,
+     "shoplifting": 13,
+     "vehicle-crime": 23,
+     "violent-crime": 80
+    }
+   },
+   "WB101": {
+    "n": 322,
+    "cats": {
+     "anti-social-behaviour": 29,
+     "bicycle-theft": 7,
+     "burglary": 12,
+     "criminal-damage-arson": 28,
+     "drugs": 18,
+     "other-theft": 32,
+     "possession-of-weapons": 5,
+     "public-order": 22,
+     "robbery": 5,
+     "shoplifting": 30,
+     "theft-from-the-person": 3,
+     "vehicle-crime": 15,
+     "violent-crime": 114,
+     "other-crime": 2
+    }
+   },
+   "WB102": {
+    "n": 244,
+    "cats": {
+     "anti-social-behaviour": 29,
+     "bicycle-theft": 1,
+     "burglary": 8,
+     "criminal-damage-arson": 11,
+     "drugs": 8,
+     "other-theft": 20,
+     "possession-of-weapons": 3,
+     "public-order": 19,
+     "robbery": 6,
+     "shoplifting": 29,
+     "vehicle-crime": 17,
+     "violent-crime": 91,
+     "other-crime": 2
+    }
+   },
+   "WB103": {
+    "n": 318,
+    "cats": {
+     "anti-social-behaviour": 48,
+     "bicycle-theft": 1,
+     "burglary": 10,
+     "criminal-damage-arson": 18,
+     "drugs": 17,
+     "other-theft": 24,
+     "possession-of-weapons": 3,
+     "public-order": 25,
+     "robbery": 4,
+     "shoplifting": 27,
+     "theft-from-the-person": 2,
+     "vehicle-crime": 17,
+     "violent-crime": 114,
+     "other-crime": 8
+    }
+   },
+   "WB104": {
+    "n": 200,
+    "cats": {
+     "anti-social-behaviour": 54,
+     "bicycle-theft": 1,
+     "burglary": 6,
+     "criminal-damage-arson": 15,
+     "drugs": 15,
+     "other-theft": 7,
+     "public-order": 19,
+     "shoplifting": 7,
+     "theft-from-the-person": 1,
+     "vehicle-crime": 8,
+     "violent-crime": 63,
+     "other-crime": 4
+    }
+   },
+   "WC101": {
+    "n": 586,
+    "cats": {
+     "anti-social-behaviour": 86,
+     "bicycle-theft": 2,
+     "burglary": 14,
+     "criminal-damage-arson": 46,
+     "drugs": 16,
+     "other-theft": 39,
+     "possession-of-weapons": 6,
+     "public-order": 34,
+     "robbery": 3,
+     "shoplifting": 83,
+     "theft-from-the-person": 2,
+     "vehicle-crime": 47,
+     "violent-crime": 200,
+     "other-crime": 8
+    }
+   },
+   "WC102": {
+    "n": 217,
+    "cats": {
+     "anti-social-behaviour": 38,
+     "burglary": 7,
+     "criminal-damage-arson": 13,
+     "drugs": 2,
+     "other-theft": 20,
+     "public-order": 8,
+     "robbery": 5,
+     "shoplifting": 31,
+     "theft-from-the-person": 1,
+     "vehicle-crime": 18,
+     "violent-crime": 71,
+     "other-crime": 3
+    }
+   },
+   "WC103": {
+    "n": 595,
+    "cats": {
+     "anti-social-behaviour": 103,
+     "bicycle-theft": 5,
+     "burglary": 12,
+     "criminal-damage-arson": 39,
+     "drugs": 20,
+     "other-theft": 33,
+     "possession-of-weapons": 4,
+     "public-order": 25,
+     "robbery": 9,
+     "shoplifting": 38,
+     "theft-from-the-person": 6,
+     "vehicle-crime": 47,
+     "violent-crime": 250,
+     "other-crime": 4
+    }
+   },
+   "WC104": {
+    "n": 340,
+    "cats": {
+     "anti-social-behaviour": 68,
+     "bicycle-theft": 1,
+     "burglary": 6,
+     "criminal-damage-arson": 32,
+     "drugs": 13,
+     "other-theft": 17,
+     "possession-of-weapons": 2,
+     "public-order": 20,
+     "robbery": 1,
+     "shoplifting": 4,
+     "theft-from-the-person": 1,
+     "vehicle-crime": 30,
+     "violent-crime": 137,
+     "other-crime": 8
+    }
+   }
+  },
+  "2025-09": {
+   "NA101": {
+    "n": 266,
+    "cats": {
+     "anti-social-behaviour": 19,
+     "burglary": 5,
+     "criminal-damage-arson": 14,
+     "drugs": 9,
+     "other-theft": 26,
+     "possession-of-weapons": 2,
+     "public-order": 27,
+     "robbery": 2,
+     "shoplifting": 20,
+     "theft-from-the-person": 3,
+     "vehicle-crime": 14,
+     "violent-crime": 118,
+     "other-crime": 7
+    }
+   },
+   "NA102": {
+    "n": 171,
+    "cats": {
+     "anti-social-behaviour": 19,
+     "bicycle-theft": 1,
+     "burglary": 3,
+     "criminal-damage-arson": 10,
+     "drugs": 10,
+     "other-theft": 8,
+     "possession-of-weapons": 3,
+     "public-order": 17,
+     "robbery": 2,
+     "shoplifting": 9,
+     "vehicle-crime": 8,
+     "violent-crime": 73,
+     "other-crime": 8
+    }
+   },
+   "NA103": {
+    "n": 52,
+    "cats": {
+     "burglary": 8,
+     "criminal-damage-arson": 3,
+     "drugs": 3,
+     "other-theft": 6,
+     "public-order": 3,
+     "shoplifting": 2,
+     "vehicle-crime": 5,
+     "violent-crime": 22
+    }
+   },
+   "NA104": {
+    "n": 295,
+    "cats": {
+     "anti-social-behaviour": 21,
+     "bicycle-theft": 2,
+     "burglary": 11,
+     "criminal-damage-arson": 27,
+     "drugs": 11,
+     "other-theft": 22,
+     "possession-of-weapons": 2,
+     "public-order": 29,
+     "robbery": 1,
+     "shoplifting": 10,
+     "theft-from-the-person": 1,
+     "vehicle-crime": 17,
+     "violent-crime": 130,
+     "other-crime": 11
+    }
+   },
+   "NA201": {
+    "n": 75,
+    "cats": {
+     "anti-social-behaviour": 8,
+     "bicycle-theft": 1,
+     "burglary": 3,
+     "criminal-damage-arson": 6,
+     "drugs": 1,
+     "other-theft": 9,
+     "possession-of-weapons": 1,
+     "public-order": 5,
+     "shoplifting": 4,
+     "theft-from-the-person": 1,
+     "vehicle-crime": 10,
+     "violent-crime": 24,
+     "other-crime": 2
+    }
+   },
+   "NA202": {
+    "n": 52,
+    "cats": {
+     "anti-social-behaviour": 6,
+     "burglary": 4,
+     "criminal-damage-arson": 4,
+     "other-theft": 6,
+     "public-order": 2,
+     "shoplifting": 5,
+     "vehicle-crime": 2,
+     "violent-crime": 22,
+     "other-crime": 1
+    }
+   },
+   "NA203": {
+    "n": 40,
+    "cats": {
+     "anti-social-behaviour": 6,
+     "burglary": 5,
+     "criminal-damage-arson": 7,
+     "drugs": 1,
+     "other-theft": 6,
+     "public-order": 3,
+     "vehicle-crime": 1,
+     "violent-crime": 11
+    }
+   },
+   "NA204": {
+    "n": 266,
+    "cats": {
+     "anti-social-behaviour": 48,
+     "bicycle-theft": 1,
+     "burglary": 3,
+     "criminal-damage-arson": 26,
+     "drugs": 11,
+     "other-theft": 51,
+     "possession-of-weapons": 5,
+     "public-order": 21,
+     "shoplifting": 9,
+     "theft-from-the-person": 9,
+     "vehicle-crime": 17,
+     "violent-crime": 62,
+     "other-crime": 3
+    }
+   },
+   "NB101": {
+    "n": 223,
+    "cats": {
+     "anti-social-behaviour": 19,
+     "bicycle-theft": 2,
+     "burglary": 10,
+     "criminal-damage-arson": 12,
+     "drugs": 11,
+     "other-theft": 17,
+     "possession-of-weapons": 2,
+     "public-order": 19,
+     "robbery": 1,
+     "shoplifting": 15,
+     "vehicle-crime": 15,
+     "violent-crime": 94,
+     "other-crime": 6
+    }
+   },
+   "NB102": {
+    "n": 560,
+    "cats": {
+     "anti-social-behaviour": 38,
+     "bicycle-theft": 9,
+     "burglary": 9,
+     "criminal-damage-arson": 27,
+     "drugs": 34,
+     "other-theft": 34,
+     "possession-of-weapons": 7,
+     "public-order": 50,
+     "robbery": 3,
+     "shoplifting": 88,
+     "theft-from-the-person": 5,
+     "vehicle-crime": 11,
+     "violent-crime": 231,
+     "other-crime": 14
+    }
+   },
+   "NB103": {
+    "n": 97,
+    "cats": {
+     "anti-social-behaviour": 7,
+     "burglary": 4,
+     "criminal-damage-arson": 12,
+     "drugs": 5,
+     "other-theft": 11,
+     "public-order": 3,
+     "shoplifting": 12,
+     "vehicle-crime": 4,
+     "violent-crime": 35,
+     "other-crime": 4
+    }
+   },
+   "NB104": {
+    "n": 269,
+    "cats": {
+     "anti-social-behaviour": 15,
+     "bicycle-theft": 1,
+     "burglary": 7,
+     "criminal-damage-arson": 19,
+     "drugs": 9,
+     "other-theft": 14,
+     "possession-of-weapons": 5,
+     "public-order": 16,
+     "robbery": 3,
+     "shoplifting": 31,
+     "theft-from-the-person": 2,
+     "vehicle-crime": 13,
+     "violent-crime": 128,
+     "other-crime": 6
+    }
+   },
+   "NB105": {
+    "n": 38,
+    "cats": {
+     "anti-social-behaviour": 3,
+     "burglary": 2,
+     "criminal-damage-arson": 4,
+     "drugs": 2,
+     "other-theft": 3,
+     "robbery": 1,
+     "shoplifting": 3,
+     "vehicle-crime": 2,
+     "violent-crime": 16,
+     "other-crime": 2
+    }
+   },
+   "NB201": {
+    "n": 163,
+    "cats": {
+     "anti-social-behaviour": 13,
+     "burglary": 4,
+     "criminal-damage-arson": 13,
+     "drugs": 10,
+     "other-theft": 9,
+     "possession-of-weapons": 3,
+     "public-order": 12,
+     "shoplifting": 11,
+     "theft-from-the-person": 1,
+     "vehicle-crime": 3,
+     "violent-crime": 81,
+     "other-crime": 3
+    }
+   },
+   "NB202": {
+    "n": 35,
+    "cats": {
+     "burglary": 2,
+     "criminal-damage-arson": 4,
+     "other-theft": 1,
+     "public-order": 2,
+     "vehicle-crime": 5,
+     "violent-crime": 21
+    }
+   },
+   "NB203": {
+    "n": 97,
+    "cats": {
+     "anti-social-behaviour": 6,
+     "burglary": 1,
+     "criminal-damage-arson": 12,
+     "drugs": 1,
+     "other-theft": 7,
+     "possession-of-weapons": 1,
+     "public-order": 6,
+     "shoplifting": 1,
+     "vehicle-crime": 9,
+     "violent-crime": 51,
+     "other-crime": 2
+    }
+   },
+   "NC101": {
+    "n": 138,
+    "cats": {
+     "anti-social-behaviour": 14,
+     "bicycle-theft": 2,
+     "burglary": 7,
+     "criminal-damage-arson": 10,
+     "drugs": 3,
+     "other-theft": 6,
+     "public-order": 10,
+     "robbery": 1,
+     "shoplifting": 11,
+     "vehicle-crime": 19,
+     "violent-crime": 53,
+     "other-crime": 2
+    }
+   },
+   "NC102": {
+    "n": 155,
+    "cats": {
+     "anti-social-behaviour": 16,
+     "burglary": 4,
+     "criminal-damage-arson": 11,
+     "drugs": 2,
+     "other-theft": 10,
+     "possession-of-weapons": 1,
+     "public-order": 17,
+     "shoplifting": 5,
+     "theft-from-the-person": 1,
+     "vehicle-crime": 15,
+     "violent-crime": 69,
+     "other-crime": 4
+    }
+   },
+   "NC103": {
+    "n": 478,
+    "cats": {
+     "anti-social-behaviour": 36,
+     "bicycle-theft": 11,
+     "burglary": 12,
+     "criminal-damage-arson": 39,
+     "drugs": 14,
+     "other-theft": 32,
+     "possession-of-weapons": 7,
+     "public-order": 43,
+     "robbery": 8,
+     "shoplifting": 36,
+     "theft-from-the-person": 2,
+     "vehicle-crime": 30,
+     "violent-crime": 196,
+     "other-crime": 12
+    }
+   },
+   "NC104": {
+    "n": 709,
+    "cats": {
+     "anti-social-behaviour": 78,
+     "bicycle-theft": 14,
+     "burglary": 30,
+     "criminal-damage-arson": 44,
+     "drugs": 18,
+     "other-theft": 43,
+     "possession-of-weapons": 4,
+     "public-order": 68,
+     "robbery": 3,
+     "shoplifting": 72,
+     "theft-from-the-person": 3,
+     "vehicle-crime": 54,
+     "violent-crime": 271,
+     "other-crime": 7
+    }
+   },
+   "ND101": {
+    "n": 135,
+    "cats": {
+     "anti-social-behaviour": 13,
+     "bicycle-theft": 1,
+     "burglary": 7,
+     "criminal-damage-arson": 8,
+     "drugs": 4,
+     "other-theft": 7,
+     "possession-of-weapons": 5,
+     "public-order": 8,
+     "shoplifting": 4,
+     "vehicle-crime": 7,
+     "violent-crime": 65,
+     "other-crime": 6
+    }
+   },
+   "ND102": {
+    "n": 569,
+    "cats": {
+     "anti-social-behaviour": 57,
+     "bicycle-theft": 4,
+     "burglary": 12,
+     "criminal-damage-arson": 52,
+     "drugs": 21,
+     "other-theft": 30,
+     "possession-of-weapons": 7,
+     "public-order": 37,
+     "robbery": 9,
+     "shoplifting": 25,
+     "theft-from-the-person": 2,
+     "vehicle-crime": 10,
+     "violent-crime": 290,
+     "other-crime": 13
+    }
+   },
+   "ND103": {
+    "n": 137,
+    "cats": {
+     "anti-social-behaviour": 12,
+     "bicycle-theft": 4,
+     "burglary": 2,
+     "criminal-damage-arson": 11,
+     "drugs": 1,
+     "other-theft": 7,
+     "possession-of-weapons": 1,
+     "public-order": 12,
+     "robbery": 1,
+     "shoplifting": 10,
+     "vehicle-crime": 6,
+     "violent-crime": 67,
+     "other-crime": 3
+    }
+   },
+   "ND104": {
+    "n": 268,
+    "cats": {
+     "anti-social-behaviour": 29,
+     "burglary": 4,
+     "criminal-damage-arson": 25,
+     "drugs": 3,
+     "other-theft": 8,
+     "possession-of-weapons": 5,
+     "public-order": 21,
+     "robbery": 4,
+     "shoplifting": 26,
+     "theft-from-the-person": 1,
+     "vehicle-crime": 17,
+     "violent-crime": 119,
+     "other-crime": 6
+    }
+   },
+   "SA101": {
+    "n": 760,
+    "cats": {
+     "anti-social-behaviour": 76,
+     "bicycle-theft": 7,
+     "burglary": 22,
+     "criminal-damage-arson": 66,
+     "drugs": 45,
+     "other-theft": 42,
+     "possession-of-weapons": 4,
+     "public-order": 59,
+     "robbery": 9,
+     "shoplifting": 75,
+     "theft-from-the-person": 9,
+     "vehicle-crime": 57,
+     "violent-crime": 272,
+     "other-crime": 17
+    }
+   },
+   "SA102": {
+    "n": 183,
+    "cats": {
+     "anti-social-behaviour": 21,
+     "burglary": 3,
+     "criminal-damage-arson": 10,
+     "drugs": 6,
+     "other-theft": 10,
+     "possession-of-weapons": 3,
+     "public-order": 15,
+     "shoplifting": 22,
+     "vehicle-crime": 22,
+     "violent-crime": 67,
+     "other-crime": 4
+    }
+   },
+   "SA103": {
+    "n": 422,
+    "cats": {
+     "anti-social-behaviour": 29,
+     "bicycle-theft": 1,
+     "burglary": 9,
+     "criminal-damage-arson": 52,
+     "drugs": 21,
+     "other-theft": 21,
+     "possession-of-weapons": 5,
+     "public-order": 31,
+     "robbery": 4,
+     "shoplifting": 29,
+     "theft-from-the-person": 3,
+     "vehicle-crime": 27,
+     "violent-crime": 181,
+     "other-crime": 9
+    }
+   },
+   "SA104": {
+    "n": 144,
+    "cats": {
+     "anti-social-behaviour": 33,
+     "criminal-damage-arson": 29,
+     "drugs": 5,
+     "other-theft": 5,
+     "possession-of-weapons": 4,
+     "public-order": 6,
+     "shoplifting": 10,
+     "theft-from-the-person": 1,
+     "vehicle-crime": 7,
+     "violent-crime": 42,
+     "other-crime": 2
+    }
+   },
+   "SB101": {
+    "n": 78,
+    "cats": {
+     "anti-social-behaviour": 3,
+     "burglary": 4,
+     "criminal-damage-arson": 7,
+     "drugs": 2,
+     "other-theft": 8,
+     "public-order": 4,
+     "robbery": 1,
+     "shoplifting": 7,
+     "vehicle-crime": 8,
+     "violent-crime": 34
+    }
+   },
+   "SB102": {
+    "n": 236,
+    "cats": {
+     "anti-social-behaviour": 33,
+     "bicycle-theft": 7,
+     "burglary": 7,
+     "criminal-damage-arson": 27,
+     "drugs": 7,
+     "other-theft": 7,
+     "possession-of-weapons": 2,
+     "public-order": 14,
+     "shoplifting": 12,
+     "theft-from-the-person": 1,
+     "vehicle-crime": 9,
+     "violent-crime": 102,
+     "other-crime": 8
+    }
+   },
+   "SB103": {
+    "n": 58,
+    "cats": {
+     "anti-social-behaviour": 3,
+     "bicycle-theft": 2,
+     "burglary": 2,
+     "criminal-damage-arson": 4,
+     "drugs": 7,
+     "other-theft": 1,
+     "possession-of-weapons": 1,
+     "public-order": 3,
+     "shoplifting": 4,
+     "theft-from-the-person": 1,
+     "vehicle-crime": 3,
+     "violent-crime": 27
+    }
+   },
+   "SB104": {
+    "n": 81,
+    "cats": {
+     "bicycle-theft": 2,
+     "burglary": 4,
+     "criminal-damage-arson": 7,
+     "drugs": 3,
+     "other-theft": 8,
+     "possession-of-weapons": 1,
+     "public-order": 8,
+     "robbery": 1,
+     "shoplifting": 9,
+     "theft-from-the-person": 2,
+     "vehicle-crime": 6,
+     "violent-crime": 30
+    }
+   },
+   "SB201": {
+    "n": 55,
+    "cats": {
+     "anti-social-behaviour": 3,
+     "burglary": 2,
+     "criminal-damage-arson": 9,
+     "other-theft": 6,
+     "public-order": 7,
+     "shoplifting": 5,
+     "vehicle-crime": 1,
+     "violent-crime": 21,
+     "other-crime": 1
+    }
+   },
+   "SB202": {
+    "n": 148,
+    "cats": {
+     "anti-social-behaviour": 13,
+     "burglary": 7,
+     "criminal-damage-arson": 13,
+     "drugs": 2,
+     "other-theft": 11,
+     "possession-of-weapons": 4,
+     "public-order": 5,
+     "shoplifting": 10,
+     "vehicle-crime": 9,
+     "violent-crime": 70,
+     "other-crime": 4
+    }
+   },
+   "SB203": {
+    "n": 112,
+    "cats": {
+     "anti-social-behaviour": 7,
+     "burglary": 2,
+     "criminal-damage-arson": 11,
+     "drugs": 6,
+     "other-theft": 11,
+     "possession-of-weapons": 2,
+     "public-order": 12,
+     "shoplifting": 5,
+     "vehicle-crime": 6,
+     "violent-crime": 47,
+     "other-crime": 3
+    }
+   },
+   "SB204": {
+    "n": 36,
+    "cats": {
+     "anti-social-behaviour": 3,
+     "criminal-damage-arson": 4,
+     "drugs": 3,
+     "other-theft": 5,
+     "public-order": 3,
+     "shoplifting": 1,
+     "theft-from-the-person": 1,
+     "vehicle-crime": 2,
+     "violent-crime": 13,
+     "other-crime": 1
+    }
+   },
+   "SC101": {
+    "n": 204,
+    "cats": {
+     "anti-social-behaviour": 12,
+     "bicycle-theft": 3,
+     "burglary": 6,
+     "criminal-damage-arson": 8,
+     "drugs": 5,
+     "other-theft": 18,
+     "possession-of-weapons": 5,
+     "public-order": 23,
+     "robbery": 5,
+     "shoplifting": 10,
+     "theft-from-the-person": 1,
+     "vehicle-crime": 20,
+     "violent-crime": 83,
+     "other-crime": 5
+    }
+   },
+   "SC102": {
+    "n": 762,
+    "cats": {
+     "anti-social-behaviour": 75,
+     "bicycle-theft": 10,
+     "burglary": 33,
+     "criminal-damage-arson": 46,
+     "drugs": 51,
+     "other-theft": 44,
+     "possession-of-weapons": 19,
+     "public-order": 47,
+     "robbery": 14,
+     "shoplifting": 83,
+     "theft-from-the-person": 11,
+     "vehicle-crime": 25,
+     "violent-crime": 292,
+     "other-crime": 12
+    }
+   },
+   "SC103": {
+    "n": 309,
+    "cats": {
+     "anti-social-behaviour": 38,
+     "bicycle-theft": 1,
+     "burglary": 7,
+     "criminal-damage-arson": 14,
+     "drugs": 15,
+     "other-theft": 18,
+     "possession-of-weapons": 1,
+     "public-order": 5,
+     "robbery": 11,
+     "shoplifting": 28,
+     "vehicle-crime": 26,
+     "violent-crime": 134,
+     "other-crime": 11
+    }
+   },
+   "SC104": {
+    "n": 268,
+    "cats": {
+     "anti-social-behaviour": 12,
+     "bicycle-theft": 2,
+     "burglary": 10,
+     "criminal-damage-arson": 18,
+     "drugs": 14,
+     "other-theft": 18,
+     "possession-of-weapons": 2,
+     "public-order": 20,
+     "robbery": 3,
+     "shoplifting": 38,
+     "theft-from-the-person": 2,
+     "vehicle-crime": 22,
+     "violent-crime": 103,
+     "other-crime": 4
+    }
+   },
+   "WA101": {
+    "n": 139,
+    "cats": {
+     "anti-social-behaviour": 7,
+     "burglary": 10,
+     "criminal-damage-arson": 7,
+     "drugs": 6,
+     "other-theft": 11,
+     "possession-of-weapons": 1,
+     "public-order": 5,
+     "robbery": 1,
+     "shoplifting": 14,
+     "theft-from-the-person": 1,
+     "vehicle-crime": 23,
+     "violent-crime": 47,
+     "other-crime": 6
+    }
+   },
+   "WA102": {
+    "n": 123,
+    "cats": {
+     "anti-social-behaviour": 12,
+     "burglary": 4,
+     "criminal-damage-arson": 12,
+     "drugs": 2,
+     "other-theft": 9,
+     "possession-of-weapons": 2,
+     "public-order": 3,
+     "shoplifting": 2,
+     "vehicle-crime": 18,
+     "violent-crime": 57,
+     "other-crime": 2
+    }
+   },
+   "WA103": {
+    "n": 115,
+    "cats": {
+     "anti-social-behaviour": 9,
+     "bicycle-theft": 1,
+     "burglary": 4,
+     "criminal-damage-arson": 5,
+     "drugs": 5,
+     "other-theft": 10,
+     "possession-of-weapons": 1,
+     "public-order": 5,
+     "robbery": 1,
+     "shoplifting": 18,
+     "vehicle-crime": 8,
+     "violent-crime": 44,
+     "other-crime": 4
+    }
+   },
+   "WA104": {
+    "n": 112,
+    "cats": {
+     "anti-social-behaviour": 3,
+     "burglary": 4,
+     "criminal-damage-arson": 3,
+     "drugs": 6,
+     "other-theft": 8,
+     "possession-of-weapons": 1,
+     "public-order": 19,
+     "robbery": 1,
+     "shoplifting": 30,
+     "theft-from-the-person": 1,
+     "vehicle-crime": 9,
+     "violent-crime": 26,
+     "other-crime": 1
+    }
+   },
+   "WA201": {
+    "n": 138,
+    "cats": {
+     "anti-social-behaviour": 7,
+     "bicycle-theft": 1,
+     "burglary": 8,
+     "criminal-damage-arson": 9,
+     "drugs": 11,
+     "other-theft": 8,
+     "possession-of-weapons": 2,
+     "public-order": 11,
+     "robbery": 1,
+     "theft-from-the-person": 1,
+     "vehicle-crime": 20,
+     "violent-crime": 54,
+     "other-crime": 5
+    }
+   },
+   "WA202": {
+    "n": 199,
+    "cats": {
+     "anti-social-behaviour": 12,
+     "burglary": 10,
+     "criminal-damage-arson": 15,
+     "drugs": 6,
+     "other-theft": 17,
+     "possession-of-weapons": 1,
+     "public-order": 26,
+     "robbery": 1,
+     "shoplifting": 17,
+     "theft-from-the-person": 4,
+     "vehicle-crime": 17,
+     "violent-crime": 70,
+     "other-crime": 3
+    }
+   },
+   "WA203": {
+    "n": 330,
+    "cats": {
+     "anti-social-behaviour": 28,
+     "burglary": 9,
+     "criminal-damage-arson": 43,
+     "drugs": 14,
+     "other-theft": 28,
+     "possession-of-weapons": 2,
+     "public-order": 26,
+     "robbery": 3,
+     "shoplifting": 16,
+     "theft-from-the-person": 1,
+     "vehicle-crime": 45,
+     "violent-crime": 107,
+     "other-crime": 8
+    }
+   },
+   "WA204": {
+    "n": 190,
+    "cats": {
+     "anti-social-behaviour": 21,
+     "burglary": 1,
+     "criminal-damage-arson": 24,
+     "drugs": 13,
+     "other-theft": 8,
+     "possession-of-weapons": 1,
+     "public-order": 16,
+     "robbery": 2,
+     "shoplifting": 5,
+     "vehicle-crime": 23,
+     "violent-crime": 74,
+     "other-crime": 2
+    }
+   },
+   "WB101": {
+    "n": 280,
+    "cats": {
+     "anti-social-behaviour": 20,
+     "bicycle-theft": 1,
+     "burglary": 5,
+     "criminal-damage-arson": 28,
+     "drugs": 16,
+     "other-theft": 20,
+     "possession-of-weapons": 2,
+     "public-order": 28,
+     "robbery": 7,
+     "shoplifting": 26,
+     "vehicle-crime": 13,
+     "violent-crime": 107,
+     "other-crime": 7
+    }
+   },
+   "WB102": {
+    "n": 184,
+    "cats": {
+     "anti-social-behaviour": 16,
+     "bicycle-theft": 3,
+     "burglary": 3,
+     "criminal-damage-arson": 17,
+     "drugs": 5,
+     "other-theft": 9,
+     "possession-of-weapons": 11,
+     "public-order": 13,
+     "robbery": 8,
+     "theft-from-the-person": 6,
+     "vehicle-crime": 12,
+     "violent-crime": 78,
+     "other-crime": 3
+    }
+   },
+   "WB103": {
+    "n": 259,
+    "cats": {
+     "anti-social-behaviour": 25,
+     "burglary": 7,
+     "criminal-damage-arson": 21,
+     "drugs": 12,
+     "other-theft": 16,
+     "possession-of-weapons": 1,
+     "public-order": 25,
+     "robbery": 4,
+     "shoplifting": 11,
+     "vehicle-crime": 28,
+     "violent-crime": 102,
+     "other-crime": 7
+    }
+   },
+   "WB104": {
+    "n": 97,
+    "cats": {
+     "anti-social-behaviour": 8,
+     "burglary": 2,
+     "criminal-damage-arson": 7,
+     "drugs": 5,
+     "other-theft": 3,
+     "public-order": 11,
+     "shoplifting": 5,
+     "theft-from-the-person": 2,
+     "vehicle-crime": 10,
+     "violent-crime": 42,
+     "other-crime": 2
+    }
+   },
+   "WC101": {
+    "n": 481,
+    "cats": {
+     "anti-social-behaviour": 57,
+     "bicycle-theft": 6,
+     "burglary": 11,
+     "criminal-damage-arson": 42,
+     "drugs": 20,
+     "other-theft": 20,
+     "possession-of-weapons": 4,
+     "public-order": 34,
+     "robbery": 6,
+     "shoplifting": 67,
+     "theft-from-the-person": 2,
+     "vehicle-crime": 51,
+     "violent-crime": 146,
+     "other-crime": 15
+    }
+   },
+   "WC102": {
+    "n": 194,
+    "cats": {
+     "anti-social-behaviour": 10,
+     "bicycle-theft": 1,
+     "burglary": 12,
+     "criminal-damage-arson": 18,
+     "drugs": 12,
+     "other-theft": 18,
+     "possession-of-weapons": 4,
+     "public-order": 10,
+     "shoplifting": 15,
+     "vehicle-crime": 14,
+     "violent-crime": 75,
+     "other-crime": 5
+    }
+   },
+   "WC103": {
+    "n": 447,
+    "cats": {
+     "anti-social-behaviour": 51,
+     "bicycle-theft": 4,
+     "burglary": 12,
+     "criminal-damage-arson": 45,
+     "drugs": 35,
+     "other-theft": 34,
+     "possession-of-weapons": 5,
+     "public-order": 28,
+     "robbery": 5,
+     "shoplifting": 38,
+     "theft-from-the-person": 3,
+     "vehicle-crime": 34,
+     "violent-crime": 144,
+     "other-crime": 9
+    }
+   },
+   "WC104": {
+    "n": 293,
+    "cats": {
+     "anti-social-behaviour": 32,
+     "bicycle-theft": 2,
+     "burglary": 10,
+     "criminal-damage-arson": 46,
+     "drugs": 4,
+     "other-theft": 12,
+     "possession-of-weapons": 1,
+     "public-order": 16,
+     "robbery": 5,
+     "shoplifting": 16,
+     "vehicle-crime": 39,
+     "violent-crime": 105,
+     "other-crime": 5
+    }
+   }
+  }
+ },
+ "crimeHoods": {
+  "NA101": "Bocking and Braintree",
+  "NA102": "Braintree Central",
+  "NA103": "Halstead North",
+  "NA104": "Witham South",
+  "NA201": "Dunmow and Felsted",
+  "NA202": "Saffron Walden",
+  "NA203": "Clavering and Thaxted",
+  "NA204": "Uttlesford South",
+  "NB101": "Chelmsford South",
+  "NB102": "Chelmsford Town",
+  "NB103": "Chelmsford West",
+  "NB104": "North Chelmsford",
+  "NB105": "South Woodham Ferrers",
+  "NB201": "Maldon",
+  "NB202": "Purleigh",
+  "NB203": "Southminster",
+  "NC101": "Colchester Rural North",
+  "NC102": "Colchester Rural South",
+  "NC103": "Colchester Town East",
+  "NC104": "Colchester Town West",
+  "ND101": "Brightlingsea and St Osyth",
+  "ND102": "Clacton",
+  "ND103": "Frinton, Thorpe-le-Soken and Walton",
+  "ND104": "Harwich and Manningtree",
+  "SA101": "Basildon",
+  "SA102": "Billericay",
+  "SA103": "Pitsea",
+  "SA104": "Wickford",
+  "SB101": "Benfleet",
+  "SB102": "Canvey",
+  "SB103": "Hadleigh",
+  "SB104": "Thundersley",
+  "SB201": "Hockley and Hullbridge",
+  "SB202": "Rayleigh",
+  "SB203": "Rochford, Ashingdon and Canewdon",
+  "SB204": "Wakering",
+  "SC101": "Eastwood and Leigh",
+  "SC102": "Southend Central",
+  "SC103": "Southend East",
+  "SC104": "Westcliff",
+  "WA101": "Brentwood North",
+  "WA102": "Brentwood South",
+  "WA103": "Brentwood Town Centre",
+  "WA104": "Hutton and Shenfield",
+  "WA201": "Buckhurst Hill and Chigwell",
+  "WA202": "Debden and Loughton",
+  "WA203": "Epping and Ongar",
+  "WA204": "Waltham Abbey",
+  "WB101": "Harlow Town Centre",
+  "WB102": "Netteswell",
+  "WB103": "Old Harlow",
+  "WB104": "Staple Tye",
+  "WC101": "Aveley and Ockendon",
+  "WC102": "Corringham, Orsett and Stanford-le-Hope",
+  "WC103": "Chafford Hundred and Grays",
+  "WC104": "Chadwell St Mary and Tilbury"
+ },
+ "crimeMonth": "2026-09",
+ "gazetteSeen": {
+  "5256614": "2026-11-20T02:14:57Z",
+  "5256569": "2026-11-20T02:14:57Z",
+  "5256567": "2026-11-20T02:14:57Z",
+  "5256558": "2026-11-20T02:14:57Z",
+  "5256548": "2026-11-20T02:14:57Z",
+  "5256544": "2026-11-20T02:14:57Z",
+  "5256542": "2026-11-20T02:14:57Z",
+  "5256537": "2026-11-20T02:14:57Z",
+  "5256520": "2026-11-20T02:14:57Z",
+  "5256481": "2026-11-20T02:14:57Z",
+  "5256077": "2026-11-20T02:14:57Z",
+  "5256072": "2026-11-20T02:14:57Z",
+  "5255171": "2026-11-20T02:14:57Z",
+  "5256782": "2026-11-20T02:14:57Z",
+  "5256781": "2026-11-20T02:14:57Z",
+  "5256779": "2026-11-20T02:14:57Z",
+  "5256777": "2026-11-20T02:14:57Z",
+  "5256775": "2026-11-20T02:14:57Z",
+  "5256774": "2026-11-20T02:14:57Z",
+  "5255975": "2026-11-20T02:14:57Z",
+  "5255892": "2026-11-20T02:14:57Z",
+  "5255875": "2026-11-20T02:14:57Z",
+  "5255866": "2026-11-20T02:14:57Z",
+  "5255860": "2026-11-20T02:14:57Z",
+  "5254034": "2026-11-20T02:14:57Z",
+  "5253946": "2026-11-20T02:14:57Z",
+  "5253917": "2026-11-20T02:14:57Z",
+  "5253610": "2026-11-20T02:14:57Z",
+  "5254438": "2026-11-20T02:14:57Z",
+  "5254422": "2026-11-20T02:14:57Z",
+  "5254405": "2026-11-20T02:14:57Z",
+  "5254366": "2026-11-20T02:14:57Z",
+  "5254359": "2026-11-20T02:14:57Z",
+  "5254356": "2026-11-20T02:14:57Z",
+  "5254158": "2026-11-20T02:14:57Z",
+  "5254154": "2026-11-20T02:14:57Z",
+  "5254070": "2026-11-20T02:14:57Z",
+  "5254037": "2026-11-20T02:14:57Z",
+  "5254033": "2026-11-20T02:14:57Z",
+  "5253511": "2026-11-20T02:14:57Z",
+  "5253504": "2026-11-20T02:14:57Z",
+  "5253489": "2026-11-20T02:14:57Z",
+  "5253466": "2026-11-20T02:14:57Z",
+  "5253454": "2026-11-20T02:14:57Z",
+  "5253447": "2026-11-20T02:14:57Z",
+  "5253438": "2026-11-20T02:14:57Z",
+  "5253436": "2026-11-20T02:14:57Z",
+  "5253432": "2026-11-20T02:14:57Z",
+  "5253213": "2026-11-20T02:14:57Z",
+  "5253158": "2026-11-20T02:14:57Z",
+  "5252719": "2026-11-20T02:14:57Z",
+  "5252683": "2026-11-20T02:14:57Z",
+  "5252332": "2026-11-20T02:14:57Z",
+  "5252824": "2026-11-20T02:14:57Z",
+  "5252823": "2026-11-20T02:14:57Z",
+  "5252741": "2026-11-20T02:14:57Z",
+  "5251976": "2026-11-20T02:14:57Z",
+  "5251960": "2026-11-20T02:14:57Z",
+  "5251920": "2026-11-20T02:14:57Z",
+  "5251918": "2026-11-20T02:14:57Z",
+  "5251917": "2026-11-20T02:14:57Z",
+  "5251908": "2026-11-20T02:14:57Z",
+  "5251899": "2026-11-20T02:14:57Z",
+  "5251886": "2026-11-20T02:14:57Z",
+  "5251878": "2026-11-20T02:14:57Z",
+  "5250840": "2026-11-20T02:14:57Z",
+  "5250767": "2026-11-20T02:14:57Z",
+  "5251763": "2026-11-20T02:14:57Z",
+  "5250150": "2026-11-20T02:14:57Z",
+  "5251356": "2026-11-20T02:14:57Z",
+  "5251444": "2026-11-20T02:14:57Z",
+  "5251471": "2026-11-20T02:14:57Z",
+  "5251484": "2026-11-20T02:14:57Z"
+ },
+ "gazetteSeenV2": {
+  "5256614": "2026-11-20T02:20:27Z",
+  "5256569": "2026-11-20T02:20:27Z",
+  "5256567": "2026-11-20T02:20:27Z",
+  "5256558": "2026-11-20T02:20:27Z",
+  "5256548": "2026-11-20T02:20:27Z",
+  "5256544": "2026-11-20T02:20:27Z",
+  "5256542": "2026-11-20T02:20:27Z",
+  "5256537": "2026-11-20T02:20:27Z",
+  "5256520": "2026-11-20T02:20:27Z",
+  "5256481": "2026-11-20T02:20:27Z",
+  "5256077": "2026-11-20T02:20:27Z",
+  "5256072": "2026-11-20T02:20:27Z",
+  "5255171": "2026-11-20T02:20:27Z",
+  "5256782": "2026-11-20T02:20:27Z",
+  "5256781": "2026-11-20T02:20:27Z",
+  "5256779": "2026-11-20T02:20:27Z",
+  "5256777": "2026-11-20T02:20:27Z",
+  "5256775": "2026-11-20T02:20:27Z",
+  "5256774": "2026-11-20T02:20:27Z",
+  "5255975": "2026-11-20T02:20:27Z",
+  "5255892": "2026-11-20T02:20:27Z",
+  "5255875": "2026-11-20T02:20:27Z",
+  "5255866": "2026-11-20T02:20:27Z",
+  "5255860": "2026-11-20T02:20:27Z",
+  "5254034": "2026-11-20T02:20:27Z",
+  "5253946": "2026-11-20T02:20:27Z",
+  "5253917": "2026-11-20T02:20:27Z",
+  "5253610": "2026-11-20T02:20:27Z",
+  "5254438": "2026-11-20T02:20:27Z",
+  "5254422": "2026-11-20T02:20:27Z",
+  "5254405": "2026-11-20T02:20:27Z",
+  "5254366": "2026-11-20T02:20:27Z",
+  "5254359": "2026-11-20T02:20:27Z",
+  "5254356": "2026-11-20T02:20:27Z",
+  "5254158": "2026-11-20T02:20:27Z",
+  "5254154": "2026-11-20T02:20:27Z",
+  "5254070": "2026-11-20T02:20:27Z",
+  "5254037": "2026-11-20T02:20:27Z",
+  "5254033": "2026-11-20T02:20:27Z",
+  "5253511": "2026-11-20T02:20:27Z",
+  "5253504": "2026-11-20T02:20:27Z",
+  "5253489": "2026-11-20T02:20:27Z",
+  "5253466": "2026-11-20T02:20:27Z",
+  "5253454": "2026-11-20T02:20:27Z",
+  "5253447": "2026-11-20T02:20:27Z",
+  "5253438": "2026-11-20T02:20:27Z",
+  "5253436": "2026-11-20T02:20:27Z",
+  "5253432": "2026-11-20T02:20:27Z",
+  "5253213": "2026-11-20T02:20:27Z",
+  "5253158": "2026-11-20T02:20:27Z",
+  "5252719": "2026-11-20T02:20:27Z",
+  "5252683": "2026-11-20T02:20:27Z",
+  "5252332": "2026-11-20T02:20:27Z",
+  "5252824": "2026-11-20T02:20:27Z",
+  "5252823": "2026-11-20T02:20:27Z",
+  "5252741": "2026-11-20T02:20:27Z",
+  "5251976": "2026-11-20T02:20:27Z",
+  "5251960": "2026-11-20T02:20:27Z",
+  "5251920": "2026-11-20T02:20:27Z",
+  "5251918": "2026-11-20T02:20:27Z",
+  "5251917": "2026-11-20T02:20:27Z",
+  "5251908": "2026-11-20T02:20:27Z",
+  "5251899": "2026-11-20T02:20:27Z",
+  "5251886": "2026-11-20T02:20:27Z",
+  "5251878": "2026-11-20T02:20:27Z",
+  "5250840": "2026-11-20T02:20:27Z",
+  "5250767": "2026-11-20T02:20:27Z",
+  "5251763": "2026-11-20T02:20:27Z",
+  "5250150": "2026-11-20T02:20:27Z",
+  "5251356": "2026-11-20T02:20:27Z",
+  "5251444": "2026-11-20T02:20:27Z",
+  "5251471": "2026-11-20T02:20:27Z",
+  "5251484": "2026-11-20T02:20:27Z",
+  "5256838": "2026-11-21T05:33:12Z",
+  "5256837": "2026-11-21T05:33:12Z",
+  "5257039": "2026-11-21T05:33:12Z",
+  "5257038": "2026-11-21T05:33:12Z",
+  "5256854": "2026-11-21T05:33:12Z",
+  "5256853": "2026-11-21T05:33:12Z",
+  "5256852": "2026-11-21T05:33:12Z",
+  "5255322": "2026-11-21T05:33:12Z",
+  "5255213": "2026-11-21T05:33:12Z",
+  "5256036": "2026-11-22T05:33:48Z",
+  "5258255": "2026-11-24T05:35:49Z",
+  "5258240": "2026-11-24T05:35:49Z",
+  "5258196": "2026-11-24T05:35:49Z",
+  "5258375": "2026-11-24T05:35:49Z",
+  "5258424": "2026-11-24T05:35:49Z",
+  "5257481": "2026-11-24T05:35:49Z",
+  "5257464": "2026-11-24T05:35:49Z",
+  "5257450": "2026-11-24T05:35:49Z",
+  "5257438": "2026-11-24T05:35:49Z",
+  "5257435": "2026-11-24T05:35:49Z",
+  "5257427": "2026-11-24T05:35:49Z",
+  "5257424": "2026-11-24T05:35:49Z",
+  "5257406": "2026-11-24T05:35:49Z",
+  "5257395": "2026-11-24T05:35:49Z",
+  "5259516": "2026-11-25T00:23:39Z",
+  "5259629": "2026-11-25T00:23:39Z",
+  "5258732": "2026-11-25T00:23:39Z",
+  "5258725": "2026-11-25T00:23:39Z",
+  "5259892": "2026-11-26T05:36:32Z",
+  "5259891": "2026-11-26T05:36:32Z",
+  "5260181": "2026-11-26T05:36:32Z",
+  "5260177": "2026-11-26T05:36:32Z",
+  "5259966": "2026-11-26T05:36:32Z",
+  "5259704": "2026-11-26T05:36:32Z",
+  "5259695": "2026-11-26T05:36:32Z",
+  "5259037": "2026-11-26T05:36:32Z",
+  "5259030": "2026-11-26T05:36:32Z",
+  "5259000": "2026-11-26T05:36:32Z",
+  "5258990": "2026-11-26T05:36:32Z",
+  "5258987": "2026-11-26T05:36:32Z",
+  "5258967": "2026-11-26T05:36:32Z",
+  "5258966": "2026-11-26T05:36:32Z",
+  "5258949": "2026-11-26T05:36:32Z",
+  "5261745": "2026-11-27T05:37:50Z",
+  "5261744": "2026-11-27T05:37:50Z",
+  "5261587": "2026-11-27T05:37:50Z",
+  "5261580": "2026-11-27T05:37:50Z",
+  "5261548": "2026-11-27T05:37:50Z",
+  "5261547": "2026-11-27T05:37:50Z",
+  "5261524": "2026-11-27T05:37:50Z",
+  "5261516": "2026-11-27T05:37:50Z",
+  "5261515": "2026-11-27T05:37:50Z",
+  "5261338": "2026-11-27T05:37:50Z",
+  "5261272": "2026-11-27T05:37:50Z",
+  "5261266": "2026-11-27T05:37:50Z",
+  "5260797": "2026-11-27T05:37:50Z",
+  "5260715": "2026-11-27T05:37:50Z",
+  "5260710": "2026-11-27T05:37:50Z",
+  "5260706": "2026-11-27T05:37:50Z",
+  "5262689": "2026-11-28T05:33:48Z",
+  "5262688": "2026-11-28T05:33:48Z"
+ },
+ "hpiMonthAt": "2026-11-20T07:12:48Z",
+ "crimeMonthAt": "2026-11-20T07:12:48Z",
+ "crimeMethod": "full-v2",
+ "crimeNoLocation": {
+  "2026-09": 216,
+  "2026-08": 249,
+  "2025-09": 205
+ },
+ "electionsSeen": {
+  "local.southend-on-sea.leigh.by.2026-12-10": {
+   "locked": false,
+   "at": "2026-11-28"
+  }
+ }
+}
