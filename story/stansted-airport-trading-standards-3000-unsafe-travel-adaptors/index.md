@@ -1,6 +1,6 @@
 # Stansted Airport checks stop 3,000 unsafe travel adaptors
 
-**Essex County Council Trading Standards has stopped a shipment of travel adaptors at Stansted Airport. Lab tests found faults that raise the risk of shocks and fires.**
+**Essex Trading Standards has stopped a shipment of travel adaptors at Stansted Airport. Lab tests found faults that raise the risk of shocks and fires.**
 
 Published by The Seax (https://theseax.com/), independent Essex news. Place: Stansted Airport, Stansted, Essex, England. Published: Friday 27 November 2026, 09:47 (UK time). Section: News. Topic: Business.
 
