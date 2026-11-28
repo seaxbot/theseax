@@ -105,6 +105,11 @@ nav.main button.adv:hover{background:var(--red)}
 /* area chips */
 .areas{padding:16px 0 4px}
 .areas .wrap{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+/* 28 Nov 2026: while the page is waiting for its script, hold open the room the area buttons, bulletin player and ticker
+   will take, so the page below does not move down when they arrive */
+.seax-wait .areas{min-height:94px}.seax-wait .ticker{min-height:43px}
+@media (min-width:700px) and (max-width:1199px){.seax-wait .areas{min-height:137px}}
+@media (min-width:1200px){.seax-wait .areas{min-height:96px}}
 .areas .lbl{font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-right:6px}
 .chip{border:1px solid var(--line);background:var(--card);border-radius:99px;padding:6px 13px;font-size:13px;font-weight:600;color:var(--ink2)}
 /* My Essex on a phone: one row of area chips you swipe sideways, so the news starts higher up the screen; the Listen pill sits on the line below (owner, 22 Nov 2026). Desktop is unchanged. */
