@@ -1,6 +1,6 @@
-# Chelmsford forecourt sign shows diesel at 389.9p a litre
+# 'Blimey': Chelmsford forecourt sign puts diesel at 389.9p a litre
 
-**Drivers on Baddow Road did a double take on Saturday morning. A fuel price app listed the real price at 189.9p.**
+**The Baddow Road price board appeared to be out by exactly £2 on Saturday morning. A fuel price app listed the station at 189.9p.**
 
 Published by The Seax (https://theseax.com/), independent Essex news. Place: Chelmsford, Essex, England. Published: Saturday 28 November 2026, 08:48 (UK time). Section: News. Topic: Business.
 
