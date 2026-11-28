@@ -2,7 +2,7 @@
 
 **The Westcliff theatre's first big makeover since the 1990s is finished. Government levelling up money helped pay for it.**
 
-Published by The Seax (https://theseax.com/), independent Essex news. Place: Westcliff-on-Sea, Southend, Essex, England. Published: Thursday 26 November 2026, 11:06 (UK time). Section: News. Topic: What's On.
+Published by The Seax (https://theseax.com/), independent Essex news. Place: Westcliff-on-Sea, Southend, Essex, England. Published: Thursday 26 November 2026, 11:06 (UK time). Updated: Saturday 28 November 2026, 08:13. Section: News. Topic: What's On.
 
 ## Key points
 
@@ -22,7 +22,7 @@ Upstairs, the Pavilion restaurant has been extended and modernised, with more se
 
 ## Who paid
 
-Work began in 2024 and shows carried on throughout. It is the first major work on the venue, which is more than 60 years old, since the 1990s. The project was backed by £5.5m from the government's Levelling Up Fund, with more money from the council, which owns the building, and from Trafalgar. Neither has said what the total bill came to.
+Work began in 2024 and shows carried on throughout. It is the first major work on the venue, which is more than 60 years old, since the 1990s. The project was backed by £5.5m from the government's Levelling Up Fund, with more money from the council, which owns the building, and from Trafalgar. BBC News described it as an £8m revamp. The council and Trafalgar have not published a breakdown of the costs.
 
 Councillor Matt Dent, the council's cabinet member for business, culture, music and tourism, called the Cliffs Pavilion "one of Southend's most iconic landmarks".
 
@@ -35,6 +35,7 @@ Pre-show dining returns for the Christmas pantomime. Oliver Stacey, venue direct
 - [Southend-on-Sea City Council](https://www.southend.gov.uk/news/article/3638/landmark-transformation-unveiled-at-the-cliffs-pavilion)
 - [Trafalgar Entertainment](https://www.trafalgarentertainment.com/2026/11/26/the-cliffs-pavilion-unveils-new-restaurant-and-cafe-bar/)
 - [Hospitality & Catering News](https://www.hospitalityandcateringnews.com/2026/11/cliffs-pavilion-refurbishment-delivers-expanded-restaurant-and-new-cafe-bar/)
+- [BBC News](https://www.bbc.co.uk/news/articles/crn805p8n011o)
 
 ---
 Story page: https://theseax.com/story/southend-cliffs-pavilion-new-foyer-restaurant-cafe-bar-opens/
