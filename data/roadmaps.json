@@ -599,6 +599,17 @@
   "none": "no road called Brook Street near Thurrock",
   "sig": "[[\"Brook Street\"], \"Thurrock\", null]"
  },
+ "maldon-christmas-lights-switch-on-moot-hall-2026": {
+  "after": 0,
+  "h": 750,
+  "kicker": "On the map",
+  "made": "2026-11-28T10:45:33Z",
+  "road": "High Street",
+  "sig": "[[\"High Street\"], \"Maldon\", null]",
+  "src": "/img/maps/maldon-christmas-lights-switch-on-moot-hall-2026.svg",
+  "town": "Maldon",
+  "w": 1200
+ },
  "maldon-high-street-gas-main-fire-properties-evacuated": {
   "after": 0,
   "h": 750,
@@ -811,6 +822,10 @@
   "sig": "[[], \"Stansted\", null]"
  },
  "stansted-airport-poppy-appeal-record-26190-royal-british-legion": {
+  "none": "no road named",
+  "sig": "[[], \"Stansted\", null]"
+ },
+ "stansted-airport-trading-standards-3000-unsafe-travel-adaptors": {
   "none": "no road named",
   "sig": "[[], \"Stansted\", null]"
  },
