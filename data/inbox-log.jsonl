@@ -156,3 +156,4 @@
 {"at":"2026-11-27T20:20:41Z","stage":"started"}
 {"at":"2026-11-27T20:21:04Z","stage":"inbox","unhandled":3}
 {"at":"2026-11-27T20:27:04Z","stage":"done","handled":1,"stories":[],"events":1,"flags":0,"left":2,"error":"web fetch not permitted, Ofsted reports not read"}
+{"at":"2026-11-28T09:20:38Z","stage":"started"}
