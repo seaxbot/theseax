@@ -1,5 +1,5 @@
 {
- "at": "2026-11-27T16:42:27.734570+00:00",
+ "at": "2026-11-28T06:33:55.543493+00:00",
  "councils": {
   "thurrock": {
    "name": "Thurrock Council",
@@ -33,7 +33,7 @@
    "system": "mg",
    "base": "https://democracy.maldon.gov.uk",
    "meetings": 16,
-   "changed": 1,
+   "changed": 0,
    "state": "ok",
    "note": ""
   },
@@ -44,7 +44,7 @@
    "meetings": 0,
    "changed": 0,
    "state": "unreachable",
-   "note": "calendar 502 HTTP Error 502: Bad Gateway"
+   "note": "calendar 0 TimeoutError('The read operation timed out')"
   },
   "harlow": {
    "name": "Harlow Council",
@@ -60,9 +60,9 @@
    "system": "mg",
    "base": "https://www.basildonmeetings.info",
    "meetings": 17,
-   "changed": 2,
+   "changed": 0,
    "state": "ok",
-   "note": ""
+   "note": "per-council time cap reached"
   },
   "brentwood": {
    "name": "Brentwood Borough Council",
@@ -144,7 +144,7 @@
   "maldon": 18,
   "tendring": 2,
   "harlow": 2,
-  "basildon": 20,
+  "basildon": 9,
   "brentwood": 2,
   "uttlesford": 2,
   "rochford": 1,
