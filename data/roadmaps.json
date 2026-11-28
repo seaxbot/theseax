@@ -143,6 +143,17 @@
   "none": "no road named",
   "sig": "[[], \"Chelmsford\", null]"
  },
+ "chelmsford-baddow-road-texaco-sign-diesel-389-9p": {
+  "after": 0,
+  "h": 750,
+  "kicker": "On the map",
+  "made": "2026-11-28T08:49:08Z",
+  "road": "Baddow Road",
+  "sig": "[[\"Baddow Road\"], \"Chelmsford\", null]",
+  "src": "/img/maps/chelmsford-baddow-road-texaco-sign-diesel-389-9p.svg",
+  "town": "Chelmsford",
+  "w": 1200
+ },
  "chelmsford-colchester-first-bus-network-changes-3-january-2027": {
   "none": "no road named",
   "sig": "[[], \"Chelmsford\", null]"
