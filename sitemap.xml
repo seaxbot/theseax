@@ -6,8 +6,10 @@
 <url><loc>https://theseax.com/whats-on/</loc><lastmod>2026-11-28</lastmod><changefreq>daily</changefreq><priority>0.8</priority></url>
 <url><loc>https://theseax.com/standards/</loc><changefreq>monthly</changefreq><priority>0.4</priority></url>
 <url><loc>https://theseax.com/corrections/</loc><changefreq>weekly</changefreq><priority>0.3</priority></url>
-<url><loc>https://theseax.com/briefing/</loc><lastmod>2026-11-27</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://theseax.com/briefing/</loc><lastmod>2026-11-28</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
 <url><loc>https://theseax.com/story/the-seax-launches/</loc><lastmod>2026-11-09</lastmod><priority>0.5</priority></url>
+<url><loc>https://theseax.com/story/s-preview-colchester-york-2026-11-28/</loc><lastmod>2026-11-28</lastmod></url>
+<url><loc>https://theseax.com/story/s-essex-fixtures-2026-11-28/</loc><lastmod>2026-11-28</lastmod></url>
 <url><loc>https://theseax.com/story/tendring-second-homes-premium-council-tax-discounts-2027-28/</loc><lastmod>2026-11-28</lastmod></url>
 <url><loc>https://theseax.com/story/anglia-ruskin-study-most-dog-attacks-preventable-battersea/</loc><lastmod>2026-11-27</lastmod></url>
 <url><loc>https://theseax.com/story/anglia-ruskin-chancellor-sue-black-installed-chelmsford/</loc><lastmod>2026-11-27</lastmod></url>
@@ -21,6 +23,7 @@
 <url><loc>https://theseax.com/story/brentwood-kfc-high-street-3am-late-night-licence/</loc><lastmod>2026-11-27</lastmod></url>
 <url><loc>https://theseax.com/story/shenfield-priests-lane-97-homes-appeal-costs-brentwood-council/</loc><lastmod>2026-11-27</lastmod></url>
 <url><loc>https://theseax.com/story/wickford-cameron-weedon-jailed-30m-cocaine-recovery-dover-strait/</loc><lastmod>2026-11-27</lastmod></url>
+<url><loc>https://theseax.com/story/s-preview-southend-hartlepool-2026-11-28/</loc><lastmod>2026-11-27</lastmod></url>
 <url><loc>https://theseax.com/story/clacton-nhs-essex-health-checks-flu-jabs-research-event-30-november/</loc><lastmod>2026-11-27</lastmod></url>
 <url><loc>https://theseax.com/story/ct-grays-oksana-antanaitiene-prison-tutor-sentenced-hmp-chelmsford/</loc><lastmod>2026-11-27</lastmod></url>
 <url><loc>https://theseax.com/story/c2c-grays-fire-near-railway-delays-27-november/</loc><lastmod>2026-11-27</lastmod></url>
@@ -877,6 +880,7 @@
 <url><loc>https://theseax.com/story/chelmsford-local-plan-examination-hearings-begin/</loc><lastmod>2026-10-06</lastmod></url>
 <url><loc>https://theseax.com/story/o-chelmsford-local-plan-examination-hearings/</loc><lastmod>2026-10-06</lastmod></url>
 <url><loc>https://theseax.com/story/o-chelmsford-local-plan-hearings-10-november/</loc><lastmod>2026-10-06</lastmod></url>
+<url><loc>https://theseax.com/briefing/2026-11-28/</loc><lastmod>2026-11-28</lastmod></url>
 <url><loc>https://theseax.com/briefing/2026-11-27/</loc><lastmod>2026-11-27</lastmod></url>
 <url><loc>https://theseax.com/briefing/2026-11-26/</loc><lastmod>2026-11-26</lastmod></url>
 <url><loc>https://theseax.com/briefing/2026-11-25/</loc><lastmod>2026-11-25</lastmod></url>
@@ -901,7 +905,7 @@
 <url><loc>https://theseax.com/briefing/2026-11-06/</loc><lastmod>2026-11-06</lastmod></url>
 <url><loc>https://theseax.com/news/</loc><lastmod>2026-11-28</lastmod><changefreq>hourly</changefreq><priority>0.8</priority></url>
 <url><loc>https://theseax.com/news/chelmsford/</loc><lastmod>2026-11-27</lastmod><changefreq>hourly</changefreq><priority>0.8</priority></url>
-<url><loc>https://theseax.com/news/colchester/</loc><lastmod>2026-11-27</lastmod><changefreq>hourly</changefreq><priority>0.8</priority></url>
+<url><loc>https://theseax.com/news/colchester/</loc><lastmod>2026-11-28</lastmod><changefreq>hourly</changefreq><priority>0.8</priority></url>
 <url><loc>https://theseax.com/news/southend/</loc><lastmod>2026-11-27</lastmod><changefreq>hourly</changefreq><priority>0.8</priority></url>
 <url><loc>https://theseax.com/news/basildon-thurrock/</loc><lastmod>2026-11-27</lastmod><changefreq>hourly</changefreq><priority>0.8</priority></url>
 <url><loc>https://theseax.com/news/brentwood/</loc><lastmod>2026-11-27</lastmod><changefreq>hourly</changefreq><priority>0.8</priority></url>
@@ -916,7 +920,7 @@
 <url><loc>https://theseax.com/news/business/</loc><lastmod>2026-11-27</lastmod><changefreq>hourly</changefreq><priority>0.8</priority></url>
 <url><loc>https://theseax.com/news/education/</loc><lastmod>2026-11-27</lastmod><changefreq>hourly</changefreq><priority>0.8</priority></url>
 <url><loc>https://theseax.com/news/weather/</loc><lastmod>2026-11-25</lastmod><changefreq>hourly</changefreq><priority>0.8</priority></url>
-<url><loc>https://theseax.com/news/sport/</loc><lastmod>2026-11-27</lastmod><changefreq>hourly</changefreq><priority>0.8</priority></url>
+<url><loc>https://theseax.com/news/sport/</loc><lastmod>2026-11-28</lastmod><changefreq>hourly</changefreq><priority>0.8</priority></url>
 <url><loc>https://theseax.com/news/basildon/</loc><lastmod>2026-11-27</lastmod><changefreq>hourly</changefreq><priority>0.8</priority></url>
 <url><loc>https://theseax.com/news/billericay/</loc><lastmod>2026-11-24</lastmod><changefreq>hourly</changefreq><priority>0.8</priority></url>
 <url><loc>https://theseax.com/news/wickford/</loc><lastmod>2026-11-27</lastmod><changefreq>hourly</changefreq><priority>0.8</priority></url>

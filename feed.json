@@ -14,6 +14,28 @@
  ],
  "items": [
   {
+   "id": "https://theseax.com/story/s-preview-colchester-york-2026-11-28/",
+   "url": "https://theseax.com/story/s-preview-colchester-york-2026-11-28/",
+   "title": "Colchester United host fifth-placed York City in League Two",
+   "summary": "Danny Cowley's U's are three points above the League Two drop zone and face one of the division's promotion chasers at home.",
+   "content_text": "Danny Cowley's U's are three points above the League Two drop zone and face one of the division's promotion chasers at home.",
+   "date_published": "2026-11-28T07:20:00Z",
+   "tags": [
+    "Sport"
+   ]
+  },
+  {
+   "id": "https://theseax.com/story/s-essex-fixtures-2026-11-28/",
+   "url": "https://theseax.com/story/s-essex-fixtures-2026-11-28/",
+   "title": "Essex fixtures: Colchester host York City on Saturday",
+   "summary": "Southend United's trip to Hartlepool kicks off late, and Takeley against Bowers & Pitsea is one of two all-Essex derbies in the Isthmian North.",
+   "content_text": "Southend United's trip to Hartlepool kicks off late, and Takeley against Bowers & Pitsea is one of two all-Essex derbies in the Isthmian North.",
+   "date_published": "2026-11-28T07:20:00Z",
+   "tags": [
+    "Sport"
+   ]
+  },
+  {
    "id": "https://theseax.com/story/tendring-second-homes-premium-council-tax-discounts-2027-28/",
    "url": "https://theseax.com/story/tendring-second-homes-premium-council-tax-discounts-2027-28/",
    "title": "Tendring keeps 100% council tax premium on second homes",
@@ -154,6 +176,17 @@
    "date_published": "2026-11-27T17:05:00Z",
    "tags": [
     "News"
+   ]
+  },
+  {
+   "id": "https://theseax.com/story/s-preview-southend-hartlepool-2026-11-28/",
+   "url": "https://theseax.com/story/s-preview-southend-hartlepool-2026-11-28/",
+   "title": "Southend United seek back-to-back wins at 17th-placed Hartlepool",
+   "summary": "Kieron Dyer's Southend side go to the North East after a 2-0 win at Forest Green, with the kick-off pushed back to 5.30pm.",
+   "content_text": "Kieron Dyer's Southend side go to the North East after a 2-0 win at Forest Green, with the kick-off pushed back to 5.30pm.",
+   "date_published": "2026-11-27T16:51:47Z",
+   "tags": [
+    "Sport"
    ]
   },
   {
@@ -638,39 +671,6 @@
    "date_published": "2026-11-26T15:40:07Z",
    "tags": [
     "News"
-   ]
-  },
-  {
-   "id": "https://theseax.com/story/essex-nhs-32000-extra-gp-appointments-winter-2026/",
-   "url": "https://theseax.com/story/essex-nhs-32000-extra-gp-appointments-winter-2026/",
-   "title": "Essex GP surgeries to offer 32,000 extra appointments this winter",
-   "summary": "NHS Essex is paying for 8,000 more GP appointments a month until February. It is part of a county-wide plan for the busiest season.",
-   "content_text": "NHS Essex is paying for 8,000 more GP appointments a month until February. It is part of a county-wide plan for the busiest season.",
-   "date_published": "2026-11-26T15:40:07Z",
-   "tags": [
-    "News"
-   ]
-  },
-  {
-   "id": "https://theseax.com/story/c-chelmsford-family-havens-hospices-big-yes-appeal-elio/",
-   "url": "https://theseax.com/story/c-chelmsford-family-havens-hospices-big-yes-appeal-elio/",
-   "title": "Chelmsford parents back Havens Hospices appeal after baby son's care",
-   "summary": "Michael and Sarah Fragnito's son Elio spent his last two days at the Little Havens children's hospice. They now support its Christmas appeal.",
-   "content_text": "Michael and Sarah Fragnito's son Elio spent his last two days at the Little Havens children's hospice. They now support its Christmas appeal.",
-   "date_published": "2026-11-26T15:40:07Z",
-   "tags": [
-    "Community"
-   ]
-  },
-  {
-   "id": "https://theseax.com/story/c-thurrock-cvs-volunteer-centre-warm-up-for-winter-tilbury/",
-   "url": "https://theseax.com/story/c-thurrock-cvs-volunteer-centre-warm-up-for-winter-tilbury/",
-   "title": "Thurrock CVS invites would-be volunteers to drop in after Tilbury winter event",
-   "summary": "Thurrock CVS says anyone curious about volunteering can get in touch. Its co-ordinator met many residents at a busy Tilbury winter event.",
-   "content_text": "Thurrock CVS says anyone curious about volunteering can get in touch. Its co-ordinator met many residents at a busy Tilbury winter event.",
-   "date_published": "2026-11-26T14:54:00Z",
-   "tags": [
-    "Community"
    ]
   }
  ]
