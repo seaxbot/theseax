@@ -5268,6 +5268,9 @@ fetch("/data/pinned.json", { cache: "no-store" }).then(r => r.ok ? r.json() : nu
 let WK = null;
 function weekendOn(){ const now = Date.now(), f = WK && WK.feature; return !!(f && f.id && now >= +new Date(WK.from) && now < +new Date(WK.until)); }
 function weekendId(){ return weekendOn() ? WK.feature.id : null; }
+/* owner, 28 Nov 2026 ("it's ok to be on both"): a story the owner has put on top (lead "ownerUntil" still running) may lead
+   the page and be The Weekend's feature at the same time; any other time the feature stays out of the lead slots */
+function weekendSkipId(){ const id = weekendId(), L = (typeof ED !== "undefined" && ED && ED.lead) || null; return (id && L && L.id === id && L.ownerUntil && Date.now() < +new Date(L.ownerUntil)) ? null : id; }
 function renderWeekend(){
   const el = document.getElementById("weekend"); if(!el) return;
   if(!weekendOn()){ if(!el.hidden){ el.hidden = true; el.innerHTML = ""; } return; }
@@ -5498,7 +5501,7 @@ function rankStories(list, now){ return list.slice().sort((a,b) => frontScore(b,
 function frontPicks(){
   const now = Date.now();
   const pid = pinnedId();
-  const list = ED.stories.filter(inArea).filter(s => s.id !== pid && s.id !== weekendId());
+  const list = ED.stories.filter(inArea).filter(s => s.id !== pid && s.id !== weekendSkipId());
   const ranked = rankStories(list, now);
   let lead = null;
   const L = ED.lead || {};
