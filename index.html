@@ -1506,13 +1506,13 @@ var el=document.querySelector('.masthead .skyline');el.style.backgroundImage='ur
       <p class="flinks"><a href="/about/">About The Seax</a> · <a href="/about/#corrections">Corrections</a> · <a href="/contact/">Contact us</a> · <a href="/investigates/">Seax Investigates</a> · <a href="/briefing/">Morning briefing</a> · <a href="/feed.xml">RSS</a> · <a href="https://www.google.com/preferences/source?q=theseax.com" target="_blank" rel="noopener">Add The Seax as a preferred source on Google</a></p>
     </div>
     <div>
-      <h5>Sources in this edition</h5>
+      <h5 aria-level="4">Sources in this edition</h5>
       <p id="sourcesList"></p>
     </div>
     <div>
-      <h5>Sections</h5>
+      <h5 aria-level="4">Sections</h5>
       <p>News · Public Services · Community &amp; Charity · Sport · Weather · What's On · Vital Info · Specials</p>
-      <h5 style="margin-top:16px">Badge</h5>
+      <h5 aria-level="4" style="margin-top:16px">Badge</h5>
       <p>The badge follows the official blazon of the arms of Essex: gules, three seaxes fesswise in pale argent, pommels and hilts or.</p>
     </div>
     <div class="fine" id="fine"></div>
@@ -4525,7 +4525,7 @@ const WEBCAMS = [
 ];
 function renderWebcams(){
   const g = $("#camGrid"); if(!g) return;
-  g.innerHTML = WEBCAMS.map(c => `<article class="cam"><div class="cam-frame"><span class="live">Live</span><iframe src="https://webcams.windy.com/webcams/public/embed/player/${c.id}/day" title="${esc(c.title)} webcam, ${esc(c.place)}" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade"></iframe></div><div class="cam-body"><div class="pl">${esc(c.place)}</div><h4>${esc(c.title)}</h4><p>${esc(c.text)}</p><div class="cr">Camera: <a href="${esc(c.url)}" target="_blank" rel="noopener">${esc(c.owner)}</a> · <a href="https://www.windy.com/webcams/${c.id}" target="_blank" rel="noopener">windy.com</a></div></div></article>`).join("");
+  g.innerHTML = WEBCAMS.map(c => `<article class="cam"><div class="cam-frame"><span class="live">Live</span><iframe src="https://webcams.windy.com/webcams/public/embed/player/${c.id}/day" title="${esc(c.title)} webcam, ${esc(c.place)}" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade"></iframe></div><div class="cam-body"><div class="pl">${esc(c.place)}</div><h4 aria-level="3">${esc(c.title)}</h4><p>${esc(c.text)}</p><div class="cr">Camera: <a href="${esc(c.url)}" target="_blank" rel="noopener">${esc(c.owner)}</a> · <a href="https://www.windy.com/webcams/${c.id}" target="_blank" rel="noopener">windy.com</a></div></div></article>`).join("");
 }
 
 /* ============================================================
@@ -4768,7 +4768,7 @@ function renderTopList(){
   const shown = new Set(heroList.map(s => s.id));
   const others = ED.stories.filter(inArea).filter(s => !shown.has(s.id)).slice(0,5);
   const pick = others.length >= 3 ? others : ED.stories.filter(inArea).slice(1,6);
-  $("#topList").innerHTML = pick.map(s => `<li><div><h4><a href="${storyHref(s)}">${esc(s.headline)}</a></h4><div class="m">${esc(s.place||"")} · <span data-ago="${esc(shownT(s))}">${ago(shownT(s))}</span></div></div></li>`).join("") || `<li><div class="m">No other stories for this area yet.</div></li>`;
+  $("#topList").innerHTML = pick.map(s => `<li><div><h4 aria-level="3"><a href="${storyHref(s)}">${esc(s.headline)}</a></h4><div class="m">${esc(s.place||"")} · <span data-ago="${esc(shownT(s))}">${ago(shownT(s))}</span></div></div></li>`).join("") || `<li><div class="m">No other stories for this area yet.</div></li>`;
 }
 
 /* Card pictures load only as they come near the screen (owner's overnight push, 22 Nov 2026). The front page was
@@ -4810,12 +4810,12 @@ function renderDesk(){
   const DI = deskItems();
   const kinds = ["all", ...Object.keys(KIND_LABEL).filter(k => DI.some(s => s.kind === k))];
   if(!kinds.includes(DESK)) DESK = "all";
-  $("#deskTools").innerHTML = kinds.map(k => `<button class="chip${k===DESK?" on":""}" data-desk="${k}">${k==="all"?"All":esc(KIND_LABEL[k])} <span style="opacity:.6">${k==="all"?DI.length:DI.filter(s=>s.kind===k).length}</span></button>`).join("");
+  $("#deskTools").innerHTML = kinds.map(k => `<button class="chip${k===DESK?" on":""}" data-desk="${k}">${k==="all"?"All":esc(KIND_LABEL[k])} <span style="opacity:.78">${k==="all"?DI.length:DI.filter(s=>s.kind===k).length}</span></button>`).join("");
   const list = DI.filter(inArea).filter(s => DESK === "all" || s.kind === DESK).sort(byTime);
   const shown = DESK_ALL ? list : list.slice(0, 10);
   $("#deskFeed").innerHTML = list.length ? shown.map(s => `<a class="drow" href="${storyHref(s)}">
       <span class="org k-${esc(s.kind)}"><i></i>${esc(s.org)}</span>
-      <div><h4>${esc(s.headline)}</h4><p>${esc(s.summary)}</p><div class="dm"><b>${esc(s.place||"Essex")}</b><span>·</span><span data-ago="${esc(shownT(s))}">${ago(shownT(s))}</span><span>·</span><span>${esc(s.tag||KIND_LABEL[s.kind]||"Public Services")}</span><span>·</span><span>${esc(hostOf(s.url))}</span></div></div>
+      <div><h4 aria-level="3">${esc(s.headline)}</h4><p>${esc(s.summary)}</p><div class="dm"><b>${esc(s.place||"Essex")}</b><span>·</span><span data-ago="${esc(shownT(s))}">${ago(shownT(s))}</span><span>·</span><span>${esc(s.tag||KIND_LABEL[s.kind]||"Public Services")}</span><span>·</span><span>${esc(hostOf(s.url))}</span></div></div>
 </a>`).join("")
       + (list.length > shown.length ? `<button class="desk-more" data-deskall>Show all ${list.length} public service updates</button>` : "")
     : `<div class="empty">No official updates tagged for this area right now. Try All Essex.</div>`;
@@ -4921,14 +4921,14 @@ function renderEvents(){
     const cal = on ? `<div class="mo">UNTIL</div><div class="dy">${fmt(de,{day:"numeric"})}</div><div class="wd">${fmt(de,{month:"short"})}</div>`
                    : `<div class="mo">${fmt(d,{month:"short"}).toUpperCase()}</div><div class="dy">${fmt(d,{day:"numeric"})}</div><div class="wd">${fmt(d,{weekday:"short"})}</div>`;
     return `<a class="ev" href="${safeUrl(e.url)}" target="_blank" rel="noopener"><div class="cal">${cal}</div>
-      <div>${/^\/img\//.test(e.photo||"")?`<img class="ev-ph" src="${esc(e.photo)}" alt="" loading="lazy">`:""}<h4>${esc(e.title)}${on?`<span class="cd">On now</span>`:cd?`<span class="cd" data-cd="${esc(e.start)}" data-allday="1">${cd}</span>`:""}</h4><div class="where">${esc(e.where)}</div><p>${esc(e.blurb||"")}</p>
+      <div>${/^\/img\//.test(e.photo||"")?`<img class="ev-ph" src="${esc(e.photo)}" alt="" loading="lazy">`:""}<h4 aria-level="3">${esc(e.title)}${on?`<span class="cd">On now</span>`:cd?`<span class="cd" data-cd="${esc(e.start)}" data-allday="1">${cd}</span>`:""}</h4><div class="where">${esc(e.where)}</div><p>${esc(e.blurb||"")}</p>
       <div class="tags"><span>${esc(e.cat||"Event")}</span>${e.time?`<span>${esc(e.time)}</span>`:""}${e.end?`<span>Until ${fmt(new Date(e.end),{day:"numeric",month:"short"})}</span>`:""}${e.price?`<span class="${free?"free":""}">${esc(e.price)}</span>`:""}</div></div></a>`;
   }).join("") : `<div class="empty" style="grid-column:1/-1">Nothing listed for this filter yet.</div>`;
 }
 
 function renderEscape(){
   if(!$("#escapeGrid")) return;
-  $("#escapeGrid").innerHTML = ESCAPE.map(e => `<div class="esc" style="--c:${ICON_COLOUR[SCENE_ICON[e.scene]]||"#1b2a44"}"><div class="in"><div class="pl">${esc(e.place)}</div><h4>${esc(e.title)}</h4><p>${esc(e.text)}</p></div></div>`).join("");
+  $("#escapeGrid").innerHTML = ESCAPE.map(e => `<div class="esc" style="--c:${ICON_COLOUR[SCENE_ICON[e.scene]]||"#1b2a44"}"><div class="in"><div class="pl">${esc(e.place)}</div><h4 aria-level="3">${esc(e.title)}</h4><p>${esc(e.text)}</p></div></div>`).join("");
 }
 
 const ICONS = {
@@ -4946,7 +4946,7 @@ function renderVital(){
     } else {
       inner = v.items.map(([t,n,u]) => `<li>${u?`<a href="${safeUrl(u)}" target="_blank" rel="noopener">${esc(t)}</a>`:`<span>${esc(t)}</span>`}${n?`<span class="num">${esc(n)}</span>`:""}</li>`).join("");
     }
-    return `<div class="vi ${v.cls||""}"><div class="ic">${ICONS[v.icon]}</div><h4>${esc(v.title)}</h4><ul>${inner}</ul></div>`;
+    return `<div class="vi ${v.cls||""}"><div class="ic">${ICONS[v.icon]}</div><h4 aria-level="3">${esc(v.title)}</h4><ul>${inner}</ul></div>`;
   }).join("");
 }
 
@@ -4955,11 +4955,11 @@ function renderSpecials(){
   const freeList = ED.events.filter(e => /^free\b/i.test(e.price||"") && new Date(e.end||e.start) >= now).slice(0,4);
   const evergreen = [["Walk Castle Park, Colchester","Any day"],["Epping Forest trails","Any day"],["Seafront strolls from Leigh to Shoebury","Any day"]];
   $("#specialsGrid").innerHTML = `
-    <div class="free"><h4>Free this week</h4><div style="color:#9fb0cc;font-size:13px">Great days out that cost nothing.</div><ul>
+    <div class="free"><h4 aria-level="3">Free this week</h4><div style="color:#9fb0cc;font-size:13px">Great days out that cost nothing.</div><ul>
       ${freeList.map(e=>`<li><a href="${safeUrl(e.url)}" target="_blank" rel="noopener">${esc(e.title)}</a><span>${fmt(new Date(e.start),{weekday:"short",day:"numeric",month:"short"})}</span></li>`).join("")}
       ${evergreen.map(([t,s])=>`<li><span style="color:#fff;font-size:14px">${esc(t)}</span><span>${s}</span></li>`).join("")}
     </ul></div>
-    <div class="deals"><h4>Deals &amp; freebies</h4><ul>${ED.deals.filter(inArea).slice(0,8).map(d => `<li><a href="${safeUrl(d.url)}" target="_blank" rel="noopener"><span class="dt ${/free/i.test(d.tag||"")?"f":""}">${esc(d.tag||"Offer")}</span><div><b>${esc(d.title)}</b><span>${esc(d.detail||"")}${d.where?` · ${esc(d.where)}`:""}</span></div></a></li>`).join("") || `<li><span>No offers listed for this area yet.</span></li>`}</ul></div>
+    <div class="deals"><h4 aria-level="3">Deals &amp; freebies</h4><ul>${ED.deals.filter(inArea).slice(0,8).map(d => `<li><a href="${safeUrl(d.url)}" target="_blank" rel="noopener"><span class="dt ${/free/i.test(d.tag||"")?"f":""}">${esc(d.tag||"Offer")}</span><div><b>${esc(d.title)}</b><span>${esc(d.detail||"")}${d.where?` · ${esc(d.where)}`:""}</span></div></a></li>`).join("") || `<li><span>No offers listed for this area yet.</span></li>`}</ul></div>
 `;
 }
 
@@ -4995,7 +4995,7 @@ function renderTables(){
   if(!open){ full.hidden = true; full.innerHTML = ""; return; }
   const t = open.t, ess = new Set(Object.keys(t.essex));
   full.hidden = false;
-  full.innerHTML = `<div class="tf-h"><h4>${esc(t.comp)}</h4><span>${t.asOf ? "As of " + esc(fmt(new Date(t.asOf + "T12:00:00Z"), {day:"numeric", month:"long"})) + " · " : ""}<a href="${safeUrl(t.url)}" target="_blank" rel="noopener">${t.full ? "Source: " + esc(t.source) : "Full table: " + esc(t.source)} ↗</a></span></div>
+  full.innerHTML = `<div class="tf-h"><h4 aria-level="3">${esc(t.comp)}</h4><span>${t.asOf ? "As of " + esc(fmt(new Date(t.asOf + "T12:00:00Z"), {day:"numeric", month:"long"})) + " · " : ""}<a href="${safeUrl(t.url)}" target="_blank" rel="noopener">${t.full ? "Source: " + esc(t.source) : "Full table: " + esc(t.source)} ↗</a></span></div>
     ${t.full ? "" : `<p class="tf-note">Essex clubs only. The complete table is on the ${esc(t.source)} site.</p>`}
     <div class="tf-scroll"><table class="tf"><thead><tr><th>Pos</th><th class="tm">Club</th><th>P</th><th>W</th><th>D</th><th>L</th><th>GD</th><th>Pts</th></tr></thead><tbody>
     ${t.rows.map(r => { const [zc] = tblZone(t, r.pos); return `<tr class="${zc}${ess.has(r.team) ? " ex" : ""}${r.team === open.r.team ? " me" : ""}"><td>${r.pos}</td><td class="tm">${esc(r.team)}</td><td>${r.p}</td><td>${r.w}</td><td>${r.d}</td><td>${r.l}</td><td>${r.gd > 0 ? "+" : ""}${r.gd}</td><td><b>${r.pts}</b></td></tr>`; }).join("")}
@@ -5022,7 +5022,7 @@ function renderCulture(){
     const when = en && fmt(st,{day:"numeric",month:"short"}) !== fmt(en,{day:"numeric",month:"short"}) ? `${fmt(st,{day:"numeric",month:"short"})} to ${fmt(en,{day:"numeric",month:"short", year: en.getFullYear()!==st.getFullYear()?"numeric":undefined})}` : fmt(st,{weekday:"short",day:"numeric",month:"short"});
     return `<a class="cul" href="${safeUrl(c.url)}" target="_blank" rel="noopener" style="--c:${CUL_COLOUR[c.cat]||"#1b2a44"}">
       <div class="ck">${esc(c.cat||"Culture")}${on?`<span class="cd">On now</span>`:""}</div>
-      <h4>${esc(c.title)}</h4><div class="cv">${esc(c.venue)}, ${esc(c.where)}</div>
+      <h4 aria-level="3">${esc(c.title)}</h4><div class="cv">${esc(c.venue)}, ${esc(c.where)}</div>
       <p>${esc(c.blurb||"")}</p>
       <div class="tags"><span>${esc(when)}</span>${c.price?`<span class="${free?"free":""}">${esc(c.price)}</span>`:""}</div></a>`;
   }).join("") : `<div class="empty" style="grid-column:1/-1">Nothing on stage for this filter yet. Try All Essex.</div>`;
@@ -5031,15 +5031,15 @@ const CUL_COLOUR = {Panto:"#b23a48", Theatre:"#5b3f8c", Family:"#c27c1a", Dance:
 
 function renderSources(){
   const q = SRCQ.trim().toLowerCase();
-  $("#srcTools").innerHTML = [`<button class="chip${SRCCAT==="all"?" on":""}" data-srccat="all">All <span style="opacity:.6">${SOURCE_COUNT}</span></button>`,
-    ...SOURCES.map(g => `<button class="chip${SRCCAT===g.id?" on":""}" data-srccat="${g.id}">${esc(g.title)} <span style="opacity:.6">${g.list.length}</span></button>`)].join("");
+  $("#srcTools").innerHTML = [`<button class="chip${SRCCAT==="all"?" on":""}" data-srccat="all">All <span style="opacity:.78">${SOURCE_COUNT}</span></button>`,
+    ...SOURCES.map(g => `<button class="chip${SRCCAT===g.id?" on":""}" data-srccat="${g.id}">${esc(g.title)} <span style="opacity:.78">${g.list.length}</span></button>`)].join("");
   const areaOk = a => AREA === "all" || a === "all" || a === AREA;
   let shown = 0;
   const html = SOURCES.filter(g => SRCCAT === "all" || g.id === SRCCAT).map(g => {
     const items = g.list.filter(([n,u,a]) => areaOk(a) && (!q || (n + " " + u).toLowerCase().includes(q)));
     if(!items.length) return "";
     shown += items.length;
-    return `<div class="src-g"><h4>${esc(g.title)} <small>${items.length}</small></h4><p>${esc(g.blurb)}</p><ul>${items.map(([n,u]) => `<li><a href="${safeUrl(u)}" target="_blank" rel="noopener">${esc(n)}</a><span>${esc(hostOf(u))}</span></li>`).join("")}</ul></div>`;
+    return `<div class="src-g"><h4 aria-level="3">${esc(g.title)} <small>${items.length}</small></h4><p>${esc(g.blurb)}</p><ul>${items.map(([n,u]) => `<li><a href="${safeUrl(u)}" target="_blank" rel="noopener">${esc(n)}</a><span>${esc(hostOf(u))}</span></li>`).join("")}</ul></div>`;
   }).join("");
   $("#srcGrid").innerHTML = html || `<div class="empty" style="grid-column:1/-1">No sources match that search.</div>`;
   $("#srcCount").textContent = `${shown} of ${SOURCE_COUNT} sources${AREA!=="all"?` for ${AREAS.find(a=>a[0]===AREA)[1]} and countywide`:""}`;
@@ -5112,8 +5112,8 @@ function renderStory(id){
   const sportBox = artKick(s,1) === "Club" || artKick(s,1) === "Sport";
   const pinsHere = storyPins(s), placed = !s.noWhere && !isWeatherArtStory(s) && artKick(s) !== "Where" && (pinsHere.length > 0 || storyDistricts(s, pinsHere).size > 0);
   $("#storySide").innerHTML = `
-    ${sportBox || placed ? `<div class="side-box where" style="--c:${iconColour(s)}">${sportBox ? `<h4>${artKick(s,1) === "Club" ? "The club" : "The sport"}</h4>` : ""}<div class="wmap">${storyArt(s,{zoom:400,aspect:.82,map:true})}</div><div class="mcap">${esc(artCaption(s,1))}</div></div>` : ""}
-    <div class="side-box"><h4>More from Essex</h4>${more.map(x=>`<a class="rel" href="${storyHref(x)}" style="--c:${iconColour(x)}"><i></i><b>${esc(x.headline)}</b></a>`).join("")}</div>`;
+    ${sportBox || placed ? `<div class="side-box where" style="--c:${iconColour(s)}">${sportBox ? `<h4 aria-level="3">${artKick(s,1) === "Club" ? "The club" : "The sport"}</h4>` : ""}<div class="wmap">${storyArt(s,{zoom:400,aspect:.82,map:true})}</div><div class="mcap">${esc(artCaption(s,1))}</div></div>` : ""}
+    <div class="side-box"><h4 aria-level="3">More from Essex</h4>${more.map(x=>`<a class="rel" href="${storyHref(x)}" style="--c:${iconColour(x)}"><i></i><b>${esc(x.headline)}</b></a>`).join("")}</div>`;
   document.body.classList.add("reading");
   document.title = s.headline + " · The Seax";
   window.scrollTo({top:0, behavior:"instant"});
@@ -5158,7 +5158,7 @@ function renderCouncilWatch(){
   $("#cwCards").innerHTML = list.length ? list.slice(0, 4).map(card).join("")
     : `<div class="empty" style="grid-column:1/-1">${all.length ? "No Council Watch stories for this area yet. Try All Essex." : "The first Council Watch stories are on their way. Meanwhile, see what is coming up at your council."}</div>`;
   const rest = list.slice(4, 12);
-  $("#cwMore").innerHTML = rest.length ? `<h4 class="mn-h">More from Council Watch</h4><ol class="mn one">${rest.map(s => compactRow(s, s.councilName || "Council")).join("")}</ol>` : "";
+  $("#cwMore").innerHTML = rest.length ? `<h4 class="mn-h" aria-level="3">More from Council Watch</h4><ol class="mn one">${rest.map(s => compactRow(s, s.councilName || "Council")).join("")}</ol>` : "";
   const today = new Date(); today.setHours(0,0,0,0);
   const soon = new Date(today.getTime() + 15*864e5);
   const meets = CW_CAL.filter(m => { const d = new Date(m.date + "T12:00:00"); return d >= today && d <= soon; })
@@ -5801,7 +5801,7 @@ function renderNews(){
   const top = list.slice(0, slots), rest = list.slice(slots);
   $("#newsGrid").innerHTML = top.length ? top.map((s,i) => cardHtml(s, i===0)).join("") : `<div class="empty">No more stories tagged for this area right now. Try All Essex, or check back after the next newsroom refresh.</div>`;
   placeNewsExtras();
-  $("#moreNews").innerHTML = rest.length ? `<h4 class="mn-h">More Essex news</h4><ol class="mn" id="mnList" data-total="${rest.length}">${(window.SEAX_MN_ALL ? rest : rest.slice(0, window.innerWidth < 860 ? 8 : 14)).map(s => compactRow(s)).join("")}</ol><div class="show-all" id="mnMore"></div>` : "";
+  $("#moreNews").innerHTML = rest.length ? `<h4 class="mn-h" aria-level="3">More Essex news</h4><ol class="mn" id="mnList" data-total="${rest.length}">${(window.SEAX_MN_ALL ? rest : rest.slice(0, window.innerWidth < 860 ? 8 : 14)).map(s => compactRow(s)).join("")}</ol><div class="show-all" id="mnMore"></div>` : "";
 }
 function compactRow(s, label){
   return `<li style="--c:${pillar(s)}"><a href="${storyHref(s)}"><span class="mk">${esc(label || s.tag || "News")}</span><b>${esc(s.headline)}</b><span class="mm">${esc(s.place||"Essex")} · <span data-ago="${esc(shownT(s))}">${ago(shownT(s))}</span></span></a></li>`;
@@ -5815,7 +5815,7 @@ function renderAround(){
     const seen = new Set();
     const items = pool.filter(s => (s.areas||[]).includes(k)).sort(byTime).filter(s => { if(seen.has(s.headline)) return false; seen.add(s.headline); return true; });
     const top = items.slice(0, 4);
-    return `<div class="ar${AREA===k?" on":""}"><div class="ar-h"><h4>${esc(name)}</h4><button data-area="${k}" class="ar-go">${items.length} stories</button></div>
+    return `<div class="ar${AREA===k?" on":""}"><div class="ar-h"><h4 aria-level="3">${esc(name)}</h4><button data-area="${k}" class="ar-go">${items.length} stories</button></div>
       ${top.length ? `<ul>${top.map(s => `<li style="--c:${pillar(s)}"><a href="${storyHref(s)}">${esc(s.headline)}</a><span>${esc(s.place||"")} · <span data-ago="${esc(shownT(s))}">${ago(shownT(s))}</span></span></li>`).join("")}</ul>` : `<p class="ar-none">No stories tagged here yet.</p>`}</div>`;
   }).join("");
 }
@@ -5826,7 +5826,7 @@ function renderCommunity(){
   $("#commCount").textContent = AREA==="all" ? `${ED.community.length} stories from charities, volunteers and community groups` : `${list.length} for ${AREAS.find(a=>a[0]===AREA)[1]}`;
   $("#commGrid").innerHTML = list.length ? list.slice(0,4).map(s => cardHtml(s)).join("") : `<div class="empty" style="grid-column:1/-1">No community stories tagged for this area yet. Try All Essex.</div>`;
   const rest = list.slice(4);
-  $("#commMore").innerHTML = rest.length ? `<h4 class="mn-h">More from charities and community groups</h4><ol class="mn one" id="commList" data-total="${rest.length}">${(window.SEAX_COMM_ALL ? rest : rest.slice(0, 8)).map(s => compactRow(s, s.org)).join("")}</ol><div class="show-all" id="commListMore"></div>` : "";
+  $("#commMore").innerHTML = rest.length ? `<h4 class="mn-h" aria-level="3">More from charities and community groups</h4><ol class="mn one" id="commList" data-total="${rest.length}">${(window.SEAX_COMM_ALL ? rest : rest.slice(0, 8)).map(s => compactRow(s, s.org)).join("")}</ol><div class="show-all" id="commListMore"></div>` : "";
   const cls = k => /volunteer|join/i.test(k) ? "v" : /give|fund/i.test(k) ? "g" : /help/i.test(k) ? "h" : "";
   $("#helpList").innerHTML = ED.getInvolved.map(g => `<li><a href="${safeUrl(g.url)}" target="_blank" rel="noopener"><span class="hk ${cls(g.kind||"")}">${esc(g.kind||"Info")}</span><div><b>${esc(g.title)}</b><span>${esc(g.org||"")}${g.when?` · ${esc(g.when)}`:""}</span></div></a></li>`).join("");
 }
@@ -5858,7 +5858,7 @@ function renderSport(){
   const groups = {};
   const dayOf = m => m.date ? fmt(new Date(m.date),{weekday:"short",day:"numeric",month:"short"}) : "";
   res.forEach(m => { const k = m.comp + "\u0001" + dayOf(m); (groups[k] = groups[k] || []).push(m); });
-  $("#scores").innerHTML = Object.entries(groups).map(([k, ms]) => { const comp = ms[0].comp; return `<div class="rt"><h4>${esc(comp)}<span>${esc(dayOf(ms[0]))}</span></h4>
+  $("#scores").innerHTML = Object.entries(groups).map(([k, ms]) => { const comp = ms[0].comp; return `<div class="rt"><h4 aria-level="3">${esc(comp)}<span>${esc(dayOf(ms[0]))}</span></h4>
     ${ms.map(m => `<a class="rt-row" href="${safeUrl(m.url||"#")}" target="_blank" rel="noopener" title="${esc(m.note||"")}"><span class="h${isEssexClub(m.home) ? " ex" : ""}">${esc(m.home)}</span><span class="sc">${done(m) ? `${m.hs}<i>-</i>${m.as}` : esc(m.status||"v")}</span><span class="a${isEssexClub(m.away) ? " ex" : ""}">${esc(m.away)}</span><span class="st">${esc(done(m) ? (m.status||"FT") : "")}</span></a>`).join("")}</div>`; }).join("");
   $("#sportStories").innerHTML = sp.stories.filter(inArea).sort(byTime).slice(0,6).map(s => cardHtml(s, false, true)).join("");
   $("#fixtures").innerHTML = [...sp.fixtures].filter(f => new Date(f.date) >= new Date(Date.now() - 3*36e5)).sort((x,y) => new Date(x.date) - new Date(y.date)).map(f => {
@@ -5990,7 +5990,7 @@ function renderSearch(){
   if(srchNorm(q).trim().length < 2){
     tabs.innerHTML = "";
     const sugg = ["Bonfire", "Colchester United", "Panto", "Free", "Roadworks", "Chelmsford", "Court", "Southend", "Christmas", "Volunteer"];
-    box.innerHTML = `<div class="srch-empty"><h4>Try searching for</h4><div class="srch-sugg">${sugg.map(s => `<button data-srchq="${esc(s)}">${esc(s)}</button>`).join("")}</div>
+    box.innerHTML = `<div class="srch-empty"><h4 aria-level="3">Try searching for</h4><div class="srch-sugg">${sugg.map(s => `<button data-srchq="${esc(s)}">${esc(s)}</button>`).join("")}</div>
       <p>Searches every story, result, fixture, event, show, deal and all ${typeof SOURCE_COUNT !== "undefined" ? SOURCE_COUNT : ""} sources in this edition. Tip: press <kbd>/</kbd> anywhere to search.</p></div>`;
     return;
   }
