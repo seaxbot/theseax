@@ -24,6 +24,7 @@ Detective Richard March, of the Serious Collision Investigation Unit, said his t
 
 - [Essex Police](https://www.essex.police.uk/news/essex/news/)
 - [Your Thurrock: Grays man pleads guilty to causing death by careless driving](https://www.yourthurrock.com/2026/08/28/grays-man-pleads-guilty-to-causing-death-by-careless-driving/)
+- [Thurrock Nub News](https://thurrock.nub.news/news/local-news/40-months-in-jail-for-drug-driver-who-caused-death-of-local-pensioner-315772)
 
 ---
 Story page: https://theseax.com/story/grays-billy-howard-smith-jailed-roy-hibbert-lodge-lane-death/

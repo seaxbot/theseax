@@ -13,6 +13,7 @@ Published by The Seax (https://theseax.com/), independent Essex news. Place: Sou
 
 - [Southend-on-Sea City Council](https://www.southend.gov.uk/news/article/3639/first-phase-of-enviro-crime-crackdown-taskforce-new-12-month-contract-signed)
 - [Southend-on-Sea City Council (March 2025)](https://www.southend.gov.uk/news/article/3298/council-to-crack-down-on-enviro-crime-with-new-team)
+- [Your Southend](https://www.yoursouthend.co.uk/new-officers-to-patrol-southend-seven-days-a-week-in-littering-and-dog-fouling-crackdown/)
 
 ---
 Story page: https://theseax.com/story/o-southend-enviro-crime-taskforce-first-phase-contract/
