@@ -1,6 +1,6 @@
 # Southend Mencap urges disabled people to report hate crime
 
-**Southend Mencap's new director says disabled people in the city have been spat at and pressured into handing over cash.**
+**Southend Mencap's new director says disabled people in the city have been spat at. Others were pressured into handing over cash.**
 
 Published by The Seax (https://theseax.com/), independent Essex news. Place: Southend-on-Sea, Essex, England. Published: Saturday 28 November 2026, 06:30 (UK time). Section: News. Topic: Community.
 

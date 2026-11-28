@@ -1,6 +1,6 @@
 # Colchester's Cherry Tree Academy pupils win tour of Parliament
 
-**About two dozen Year 4 pupils from a Colchester primary school won a trip to Westminster through UK Parliament Week.**
+**About two dozen Year 4 pupils from a Colchester primary school won a trip to Westminster. It came through UK Parliament Week.**
 
 Published by The Seax (https://theseax.com/), independent Essex news. Place: Colchester, Essex, England. Published: Saturday 28 November 2026, 06:29 (UK time). Section: News. Topic: Education.
 
