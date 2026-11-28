@@ -27,6 +27,7 @@ Colchester City Council called the news a really positive development for the ci
 - [Essex Magazine](https://www.essexmagazine.co.uk/2026/09/developer-bags-colchester-shopping-centre-in-landmark-acquisition/)
 - [Daily Gazette](https://www.gazette-news.co.uk/news/26751387.b-m-set-open-st-johns-walk-colchester-next-week/)
 - [Property Week](https://www.propertyweek.com/news/alb-group-snaps-up-colchesters-st-johns-shopping-centre)
+- [Daily Gazette](https://www.gazette-news.co.uk/news/26771371.new-b-m-store-opens-colchester-creating-50-jobs/)
 
 ---
 Story page: https://theseax.com/story/colchester-b-and-m-st-johns-walk-former-wilko-opening/
