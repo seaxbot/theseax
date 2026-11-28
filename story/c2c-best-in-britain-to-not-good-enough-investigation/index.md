@@ -2,7 +2,7 @@
 
 **c2c topped Britain's punctuality table last spring. This autumn, just over half its stops have been on time. We look at why.**
 
-Published by The Seax (https://theseax.com/), independent Essex news. Place: Southend, Basildon and Thurrock, Essex, England. Published: Wednesday 25 November 2026, 08:44 (UK time). Section: News. Topic: Transport.
+Published by The Seax (https://theseax.com/), independent Essex news. Place: Southend, Basildon and Thurrock, Essex, England. Published: Wednesday 25 November 2026, 08:44 (UK time). Updated: Saturday 28 November 2026, 07:55. Section: News. Topic: Transport.
 
 ## Key points
 
@@ -88,6 +88,8 @@ Stuart A. wrote: "Sadly Apology not accepted. Excuses after excuses."
 Others asked why the track work was not done during what Simon Lester called "the hottest summer for years". One passenger called for c2c to "drastically reduce fares until there's no more issues on the line". Another said they had not had a reply to a complaint made 96 days earlier. c2c answered, asking for the case reference so its customer relations team could chase it.
 
 ## What happens next
+
+Update, 26 November: The day after this report was published, GBR Anglia said it would spend an extra £2m on making the route more reliable. A tamping machine, which packs the stones beneath the rails, will work nights in December, and track treatment trains will run for longer overnight between Upminster and Benfleet. GBR Anglia aims to lift the last speed limits before the new timetable starts on 13 December. [What the £2m plan means for your trains](https://theseax.com/story/c2c-gbr-anglia-2m-reliability-plan-december-works/).
 
 c2c says an elevated risk of cancellations is expected to last until February 2027. It says punctuality will not fully recover until the speed restrictions are lifted, and that this depends on the weather.
 
